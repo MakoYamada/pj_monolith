@@ -8,7 +8,7 @@
 				<table cellpadding="3" cellspacing="0" style="border-collapse: collapse;" border="1" bordercolor="#4f5b61">
 					<tr>
 						<td style="width: 110px;" align="right" class="TdTitle">
-							管理者ID
+							ログインID
 							&nbsp;
 						</td>
 						<td style="width: 160px;" align="center" class="TdItem">

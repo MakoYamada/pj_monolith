@@ -16,7 +16,7 @@ Partial Public Class Login
 
         'マスターページ設定
         With Me.Master
-            '            .HideMenu = True
+            .HideMenu = True
             .HideLoginUser = True
             .HideLogout = True
             .PageTitle = "ログイン"
@@ -62,7 +62,7 @@ Partial Public Class Login
             Session.Item(SessionDef.UserType) = AppConst.UserType.Admin
         Else
             '一致しない場合、エラー
-            CmnModule.AlertMessage(MessageDef.Error.TopLogin, Me)
+            CmnModule.AlertMessage(MessageDef.Error.Login, Me)
             Return False
         End If
         Return True
@@ -74,7 +74,7 @@ Partial Public Class Login
         If Not Check() Then Exit Sub
 
         'メニューへ
-        Response.Redirect(URL.Admin.Menu)
+        Response.Redirect(URL.Menu)
     End Sub
 
 End Class
