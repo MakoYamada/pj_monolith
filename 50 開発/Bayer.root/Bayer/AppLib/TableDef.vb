@@ -991,7 +991,7 @@
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
-            Public Const STATUS_TEHAI As String = "手配スタータス"
+            Public Const STATUS_TEHAI As String = "手配ステータス"
             Public Const DR_MPID As String = "MPID"
             Public Const DR_CD As String = "DRコード"
             Public Const DR_EDABAN As String = "枝番"
