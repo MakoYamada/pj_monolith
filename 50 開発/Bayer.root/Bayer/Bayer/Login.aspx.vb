@@ -3,6 +3,12 @@ Imports AppLib
 Partial Public Class Login
     Inherits WebBase
 
+    Private MS_USER As TableDef.MS_USER.DataStruct
+
+    Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+        Session.Item(SessionDef.MS_USER) = MS_USER
+    End Sub
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             Session.Abandon()
@@ -26,8 +32,8 @@ Partial Public Class Login
     '画面項目 初期化
     Private Sub InitControls()
         'IME設定
-        CmnModule.SetIme(Me.TOPTOUR_ID, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.TOPTOUR_PW, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.LOGIN_ID, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.PASSWORD, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -45,26 +51,35 @@ Partial Public Class Login
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.TOPTOUR_ID) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(WebConfig.Login.C_TOPTOUR_ID), Me)
+        If Not CmnCheck.IsInput(Me.LOGIN_ID) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_USER.Name.LOGIN_ID), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.TOPTOUR_PW) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(WebConfig.Login.C_TOPTOUR_PW), Me)
+        If Not CmnCheck.IsInput(Me.PASSWORD) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_USER.Name.PASSWORD), Me)
             Return False
         End If
 
-        '定義ファイルチェック
-        If Trim(Me.TOPTOUR_ID.Text) = WebConfig.Login.TOPTOUR_ID AndAlso _
-           Trim(Me.TOPTOUR_PW.Text) = WebConfig.Login.TOPTOUR_PW Then
-            Session.Item(SessionDef.LoginID) = WebConfig.Login.TOPTOUR_ID
-            Session.Item(SessionDef.UserType) = AppConst.UserType.Admin
-        Else
-            '一致しない場合、エラー
+        'ユーザマスタ
+        Dim strSQL As String = SQL.MS_USER.Login(Trim(Me.LOGIN_ID.Text), Trim(Me.PASSWORD.Text))
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+        MS_USER = Nothing
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlag = True
+            MS_USER = AppModule.SetRsData(RsData, MS_USER)
+        End If
+        RsData.Close()
+
+        '該当データがない場合はエラー
+        If wFlag = False Then
             CmnModule.AlertMessage(MessageDef.Error.Login, Me)
             Return False
         End If
+
         Return True
     End Function
 

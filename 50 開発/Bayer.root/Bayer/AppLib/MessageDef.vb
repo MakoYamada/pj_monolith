@@ -3,9 +3,7 @@ Public Class MessageDef
 
     Public Class [Error]
         Public Const SecurityCheck As String = "入力欄に正しくない文字が入力されています。「;」「--」「*」「%」「?」「=」「<」「>」は使用できません。"
-        Public Const TopLogin As String = "入力されたID、パスワードは正しくありません。"
-        Public Const LoginDr As String = "入力されたログインID、パスワードは登録されていません。"
-        Public Const LoginMr As String = "入力された社員コード、パスワードは登録されていません。"
+        Public Const Login As String = "入力されたログインID、パスワードは登録されていません。"
         Public Const MustInput_Kotsu As String = "公共交通手配がチェックされています。手配内容を入力してください。"
         Public Const MustInput_Joken As String = "検索条件を指定してください。"
         Public Const GMOErr As String = "入力されたカード番号はご利用頂けません。入力内容を再度ご確認ください。"
@@ -139,12 +137,6 @@ Public Class MessageDef
             End If
         End Function
     End Class
-
-    'ウェットラボ在庫なし
-    Public Shared Function WetLabOver(ByVal WETLAB_COURSE As String) As String
-        Dim wStr As String = AppModule.GetName_WETLAB_COURSE(WETLAB_COURSE)
-        Return wStr & "ウェットラボ " & wStr & "は、定員に達しましたので参加受付を終了させていただきました。ご了承ください。"
-    End Function
 
     Public Class Confirm
         Public Const DataInsert As String = "新規登録します。よろしいですか？"

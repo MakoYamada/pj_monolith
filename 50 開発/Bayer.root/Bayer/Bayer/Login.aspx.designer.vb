@@ -16,22 +16,22 @@ Option Explicit On
 Partial Public Class Login
 
     '''<summary>
-    '''TOPTOUR_ID コントロール。
+    '''LOGIN_ID コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TOPTOUR_ID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents LOGIN_ID As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TOPTOUR_PW コントロール。
+    '''PASSWORD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TOPTOUR_PW As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents PASSWORD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnLogin コントロール。

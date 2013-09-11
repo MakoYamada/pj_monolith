@@ -12,7 +12,7 @@
 							&nbsp;
 						</td>
 						<td style="width: 160px;" align="center" class="TdItem">
-							<asp:TextBox ID="TOPTOUR_ID" runat="server" Width="150px" MaxLength="10"></asp:TextBox>
+							<asp:TextBox ID="LOGIN_ID" runat="server" Width="150px" MaxLength="10"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>
@@ -21,7 +21,7 @@
 							&nbsp;
 						</td>
 						<td align="center" class="TdItem">
-							<asp:TextBox ID="TOPTOUR_PW" runat="server" Width="150px" MaxLength="10" TextMode="Password"></asp:TextBox>
+							<asp:TextBox ID="PASSWORD" runat="server" Width="150px" MaxLength="10" TextMode="Password"></asp:TextBox>
 						</td>
 					</tr>
 				</table>
