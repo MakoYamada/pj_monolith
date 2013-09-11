@@ -3,7 +3,7 @@ Imports AppLib
 Partial Public Class Login
     Inherits WebBase
 
-    Private MS_USER As TableDef.MS_USER.DataStruct
+    'Private MS_USER As TableDef.ms
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.MS_USER) = MS_USER
@@ -76,7 +76,7 @@ Partial Public Class Login
 
         '該当データがない場合はエラー
         If wFlag = False Then
-            CmnModule.AlertMessage(MessageDef.Error.Login, Me)
+            'CmnModule.AlertMessage(MessageDef, Me)
             Return False
         End If
 

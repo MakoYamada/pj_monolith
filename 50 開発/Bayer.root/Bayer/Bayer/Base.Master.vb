@@ -50,7 +50,7 @@ Partial Public Class Base
 
     '画面表示
     Private Sub SetForm()
-        'セッションを変数に格納
+        'セッションを変数に格納
         If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
         End If

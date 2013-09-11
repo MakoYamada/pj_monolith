@@ -3,9 +3,9 @@ Imports AppLib
 Public Class MyModule
 
     'ページアクセス時のチェック
-    Public Shared Function IsPageOK(ByVal CheckUrlReferrer As Boolean, ByVal LoginID As String, ByVal WebForm As System.Web.UI.Page, Optional ByVal AdminOnly As Boolean = True) As Boolean
+    Public Shared Function IsPageOK(ByVal CheckUrlReferror As Boolean, ByVal LoginID As String, ByVal WebForm As System.Web.UI.Page, Optional ByVal AdminOnly As Boolean = True) As Boolean
         'URL直打ちチェック
-        If CheckUrlReferrer = True Then
+        If CheckUrlReferror = True Then
             If System.Web.HttpContext.Current.Request.UrlReferrer Is Nothing Then
                 System.Web.HttpContext.Current.Response.Redirect(URL.Login)
                 Return False

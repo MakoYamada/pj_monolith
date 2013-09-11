@@ -17,7 +17,7 @@
 					</tr>
 					<tr>
 						<td align="right" class="TdTitle">
-							パスワード
+							パスワードド
 							&nbsp;
 						</td>
 						<td align="center" class="TdItem">
