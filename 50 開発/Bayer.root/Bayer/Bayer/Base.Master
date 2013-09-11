@@ -43,7 +43,7 @@
 									&nbsp;&nbsp;
 									<span id="SpnLogout" runat="server">
 										×
-										<asp:HyperLink ID="LnkBLogout" runat="server" Text="ログアウト" CssClass="baselink" NavigateUrl="~/Admin/Login.aspx"></asp:HyperLink>
+										<asp:HyperLink ID="LnkBLogout" runat="server" Text="ログアウト" CssClass="baselink" NavigateUrl="~/Login.aspx"></asp:HyperLink>
 									</span>
 									&nbsp;
 								</td>
@@ -53,7 +53,7 @@
 						<tr style="background-color: #ffffff;">
 							<td align="left" style="font-weight: bold; color: #4b4b4b; padding: 3px;">
 								&nbsp;
-								<asp:Label ID="LabelLoginUser" runat="server">管理者：トップツアー</asp:Label>
+								<asp:Label ID="LabelLoginUser" runat="server"></asp:Label>
 							</td>
 						</tr>
 					</table>

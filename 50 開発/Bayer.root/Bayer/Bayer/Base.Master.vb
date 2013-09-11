@@ -52,7 +52,7 @@ Partial Public Class Base
     Private Sub SetForm()
         'セッションを変数に格納
         If Not SetSession() Then
-            Response.Redirect(URL.Admin.TimeOut)
+            Response.Redirect(URL.TimeOut)
         End If
 
         Me.TdHeader2.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/logo.png") & "')"
@@ -95,7 +95,7 @@ Partial Public Class Base
 
     '[メニューへ]
     Protected Sub LnkBMenu_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBMenu.Click
-        Response.Redirect(URL.Admin.Menu)
+        Response.Redirect(URL.Menu)
     End Sub
 
 End Class
