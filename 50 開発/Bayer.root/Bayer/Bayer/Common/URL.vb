@@ -9,55 +9,55 @@
         Public Shared ArrivalList As String = System.Configuration.ConfigurationManager.AppSettings("URL_ArrivalList")
     End Class
 
-    Public Class Dr
-        Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL")
-        Public Shared Top As String = SiteUrl & "Top.aspx"
-        Public Shared Guide As String = SiteUrl & "Guide.aspx"
-        Public Shared SearchShisetsu As String = SiteUrl & "SearchShisetsu.aspx"
-        Public Shared DrInfoRegist As String = SiteUrl & "DrInfoRegist.aspx"
-        Public Shared DrInfoConfirm As String = SiteUrl & "DrInfoConfirm.aspx"
-        Public Shared DrInfoRegistEnd As String = SiteUrl & "DrInfoRegistEnd.aspx"
-        Public Shared PasswordRemain As String = SiteUrl & "PasswordRemain.aspx"
-        Public Shared Login As String = SiteUrl & "Login.aspx"
-        Public Shared PaymentLogin As String = SiteUrl & "Payment/Login.aspx"
-        Public Shared DrRegist As String = SiteUrl & "DrRegist.aspx"
-        Public Shared DrData As String = SiteUrl & "DrData.aspx"
-        Public Shared Payment As String = SiteUrl & "Payment.aspx"
-        Public Shared Card As String = SiteUrl & "Card.aspx"
-        Public Shared CardConfirm As String = SiteUrl & "CardConfirm.aspx"
-        Public Shared CardEnd As String = SiteUrl & "CardEnd.aspx"
-        Public Shared BillName As String = SiteUrl & "BillName.aspx"
-        Public Shared Bill As String = SiteUrl & "Bill.aspx"
-        Public Shared DrConfirm As String = SiteUrl & "DrConfirm.aspx"
-        Public Shared DrRegistEnd As String = SiteUrl & "DrRegistEnd.aspx"
-        Public Shared TimeOut As String = SiteUrl & "TimeOut.html"
-        Public Shared TimeOutPayment As String = SiteUrl & "TimeOutPayment.html"
-        Public Shared TimeOutDialog As String = SiteUrl & "TimeOutD.html"
-    End Class
+    'Public Class Dr
+    '    Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL")
+    '    Public Shared Top As String = SiteUrl & "Top.aspx"
+    '    Public Shared Guide As String = SiteUrl & "Guide.aspx"
+    '    Public Shared SearchShisetsu As String = SiteUrl & "SearchShisetsu.aspx"
+    '    Public Shared DrInfoRegist As String = SiteUrl & "DrInfoRegist.aspx"
+    '    Public Shared DrInfoConfirm As String = SiteUrl & "DrInfoConfirm.aspx"
+    '    Public Shared DrInfoRegistEnd As String = SiteUrl & "DrInfoRegistEnd.aspx"
+    '    Public Shared PasswordRemain As String = SiteUrl & "PasswordRemain.aspx"
+    '    Public Shared Login As String = SiteUrl & "Login.aspx"
+    '    Public Shared PaymentLogin As String = SiteUrl & "Payment/Login.aspx"
+    '    Public Shared DrRegist As String = SiteUrl & "DrRegist.aspx"
+    '    Public Shared DrData As String = SiteUrl & "DrData.aspx"
+    '    Public Shared Payment As String = SiteUrl & "Payment.aspx"
+    '    Public Shared Card As String = SiteUrl & "Card.aspx"
+    '    Public Shared CardConfirm As String = SiteUrl & "CardConfirm.aspx"
+    '    Public Shared CardEnd As String = SiteUrl & "CardEnd.aspx"
+    '    Public Shared BillName As String = SiteUrl & "BillName.aspx"
+    '    Public Shared Bill As String = SiteUrl & "Bill.aspx"
+    '    Public Shared DrConfirm As String = SiteUrl & "DrConfirm.aspx"
+    '    Public Shared DrRegistEnd As String = SiteUrl & "DrRegistEnd.aspx"
+    '    Public Shared TimeOut As String = SiteUrl & "TimeOut.html"
+    '    Public Shared TimeOutPayment As String = SiteUrl & "TimeOutPayment.html"
+    '    Public Shared TimeOutDialog As String = SiteUrl & "TimeOutD.html"
+    'End Class
 
-    Public Class Member
-        Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL")
-        Public Shared Top As String = SiteUrl & "Regist/Top.aspx"
-        Public Shared Guide As String = SiteUrl & "Guide2.aspx"
-        Public Shared Login As String = SiteUrl & "Login2.aspx"
-        Public Shared PasswordRemain As String = SiteUrl & "PasswordRemain2.aspx"
-        Public Shared Menu As String = SiteUrl & "Menu2.aspx"
-        Public Shared DrList As String = SiteUrl & "DrList2.aspx"
-        Public Shared Payment As String = SiteUrl & "Payment2.aspx"
-        Public Shared BillName As String = SiteUrl & "BillName2.aspx"
-        Public Shared Bill As String = SiteUrl & "Bill2.aspx"
-        Public Shared DrRegist As String = SiteUrl & "DrRegist2.aspx"
-        Public Shared Card As String = SiteUrl & "Card2.aspx"
-        Public Shared CardConfirm As String = SiteUrl & "CardConfirm2.aspx"
-        Public Shared CardEnd As String = SiteUrl & "CardEnd2.aspx"
-        Public Shared DrConfirm As String = SiteUrl & "DrConfirm2.aspx"
-        Public Shared DrData As String = SiteUrl & "DrData2.aspx"
-        Public Shared DrRegistEnd As String = SiteUrl & "DrRegistEnd2.aspx"
-        Public Shared MemberInfoRegist As String = SiteUrl & "MemberInfoRegist2.aspx"
-        Public Shared MemberInfoConfirm As String = SiteUrl & "MemberInfoConfirm2.aspx"
-        Public Shared MemberInfoRegistEnd As String = SiteUrl & "MemberInfoRegistEnd2.aspx"
-        Public Shared TimeOut As String = SiteUrl & "TimeOut2.html"
-    End Class
+    'Public Class Member
+    '    Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL")
+    '    Public Shared Top As String = SiteUrl & "Regist/Top.aspx"
+    '    Public Shared Guide As String = SiteUrl & "Guide2.aspx"
+    '    Public Shared Login As String = SiteUrl & "Login2.aspx"
+    '    Public Shared PasswordRemain As String = SiteUrl & "PasswordRemain2.aspx"
+    '    Public Shared Menu As String = SiteUrl & "Menu2.aspx"
+    '    Public Shared DrList As String = SiteUrl & "DrList2.aspx"
+    '    Public Shared Payment As String = SiteUrl & "Payment2.aspx"
+    '    Public Shared BillName As String = SiteUrl & "BillName2.aspx"
+    '    Public Shared Bill As String = SiteUrl & "Bill2.aspx"
+    '    Public Shared DrRegist As String = SiteUrl & "DrRegist2.aspx"
+    '    Public Shared Card As String = SiteUrl & "Card2.aspx"
+    '    Public Shared CardConfirm As String = SiteUrl & "CardConfirm2.aspx"
+    '    Public Shared CardEnd As String = SiteUrl & "CardEnd2.aspx"
+    '    Public Shared DrConfirm As String = SiteUrl & "DrConfirm2.aspx"
+    '    Public Shared DrData As String = SiteUrl & "DrData2.aspx"
+    '    Public Shared DrRegistEnd As String = SiteUrl & "DrRegistEnd2.aspx"
+    '    Public Shared MemberInfoRegist As String = SiteUrl & "MemberInfoRegist2.aspx"
+    '    Public Shared MemberInfoConfirm As String = SiteUrl & "MemberInfoConfirm2.aspx"
+    '    Public Shared MemberInfoRegistEnd As String = SiteUrl & "MemberInfoRegistEnd2.aspx"
+    '    Public Shared TimeOut As String = SiteUrl & "TimeOut2.html"
+    'End Class
 
     Public Class Admin
         Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL") & "Admin/"
@@ -91,16 +91,16 @@
         Public Shared TimeOut As String = SiteUrl & "TimeOut.html"
     End Class
 
-    Public Class Keiri
-        Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL") & "Admin/"
-        Public Shared Login As String = SiteUrl & "Login.aspx"
-        Public Shared Menu As String = SiteUrl & "MenuK.aspx"
-        Public Shared PayList As String = SiteUrl & "PayListK.aspx"
-        Public Shared UnPaidList As String = SiteUrl & "UnPaidListK.aspx"
-        Public Shared PayRegist As String = SiteUrl & "PayRegistK.aspx"
-        Public Shared PayRegistEnd As String = SiteUrl & "PayRegistEndK.aspx"
-        Public Shared TimeOut As String = SiteUrl & "TimeOut.html"
-    End Class
+    'Public Class Keiri
+    '    Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL") & "Admin/"
+    '    Public Shared Login As String = SiteUrl & "Login.aspx"
+    '    Public Shared Menu As String = SiteUrl & "MenuK.aspx"
+    '    Public Shared PayList As String = SiteUrl & "PayListK.aspx"
+    '    Public Shared UnPaidList As String = SiteUrl & "UnPaidListK.aspx"
+    '    Public Shared PayRegist As String = SiteUrl & "PayRegistK.aspx"
+    '    Public Shared PayRegistEnd As String = SiteUrl & "PayRegistEndK.aspx"
+    '    Public Shared TimeOut As String = SiteUrl & "TimeOut.html"
+    'End Class
 
     Public Class Manage
         Private Shared SiteUrl As String = System.Configuration.ConfigurationManager.AppSettings("URL") & "Manage/"

@@ -8,14 +8,14 @@ Public Class MyModule
         If CheckUrlReferrer = True Then
             If System.Web.HttpContext.Current.Request.UrlReferrer Is Nothing Then
                 Select Case UserType
-                    Case AppModule.UserType.Member
-                        System.Web.HttpContext.Current.Response.Redirect(URL.Member.Top)
-                    Case AppModule.UserType.Dr
-                        If IsPaymentLogin() Then
-                            System.Web.HttpContext.Current.Response.Redirect(URL.Dr.PaymentLogin)
-                        Else
-                            System.Web.HttpContext.Current.Response.Redirect(URL.Dr.Top)
-                        End If
+                    'Case AppModule.UserType.Member
+                    '    System.Web.HttpContext.Current.Response.Redirect(URL.Member.Top)
+                    'Case AppModule.UserType.Dr
+                    '    If IsPaymentLogin() Then
+                    '        System.Web.HttpContext.Current.Response.Redirect(URL.Dr.PaymentLogin)
+                    '    Else
+                    '        System.Web.HttpContext.Current.Response.Redirect(URL.Dr.Top)
+                    '    End If
                     Case AppModule.UserType.Admin, AppModule.UserType.Keiri
                         System.Web.HttpContext.Current.Response.Redirect(URL.Admin.Login)
                     Case AppModule.UserType.Manage
@@ -28,14 +28,14 @@ Public Class MyModule
         'セッションチェック
         If IsNothing(LoginID) = True OrElse Trim(LoginID) = "" Then
             Select Case UserType
-                Case AppModule.UserType.Member
-                    System.Web.HttpContext.Current.Response.Redirect(URL.Member.TimeOut)
-                Case AppModule.UserType.Dr
-                    If IsPaymentLogin() Then
-                        System.Web.HttpContext.Current.Response.Redirect(URL.Dr.TimeOutPayment)
-                    Else
-                        System.Web.HttpContext.Current.Response.Redirect(URL.Dr.TimeOut)
-                    End If
+                'Case AppModule.UserType.Member
+                '    System.Web.HttpContext.Current.Response.Redirect(URL.Member.TimeOut)
+                'Case AppModule.UserType.Dr
+                '    If IsPaymentLogin() Then
+                '        System.Web.HttpContext.Current.Response.Redirect(URL.Dr.TimeOutPayment)
+                '    Else
+                '        System.Web.HttpContext.Current.Response.Redirect(URL.Dr.TimeOut)
+                '    End If
                 Case AppModule.UserType.Admin, AppModule.UserType.Keiri
                     System.Web.HttpContext.Current.Response.Redirect(URL.Admin.TimeOut)
                 Case AppModule.UserType.Manage
