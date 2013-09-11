@@ -13,11 +13,11 @@ Partial Public Class DrRegist
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
         '共通チェック
-        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), AppModule.UserType.Dr, Me)
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me, True)
 
         'セッションを変数に格納
         If Not SetSession() Then
-            Response.Redirect(URL.Admin.TimeOut)
+            Response.Redirect(URL.TimeOut)
         End If
 
         If Not Page.IsPostBack Then
@@ -26,11 +26,6 @@ Partial Public Class DrRegist
 
             '画面項目表示
             SetForm()
-        End If
-
-        '締め切り
-        If MyModule.IsClosed() Then
-            'Response.Redirect(URL.Admin.DrData)
         End If
 
         'マスターページ設定
@@ -1927,25 +1922,6 @@ Partial Public Class DrRegist
             Me.TrTEHAI_HOTEL_5.Visible = False
         End If
 
-        If Session.Item(SessionDef.UserType) = AppConst.UserType.Dr OrElse Session.Item(SessionDef.UserType) = AppConst.UserType.Member Then
-            'MR機能 締切
-            If MyModule.IsClosed_HOTEL() Then
-                Me.TdTEHAI_HOTEL_0.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_HOTEL_1.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_HOTEL_2.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_HOTEL_3.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_HOTEL_4.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_HOTEL_5.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-            Else
-                Me.TdTEHAI_HOTEL_0.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_HOTEL_1.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_HOTEL_2.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_HOTEL_3.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_HOTEL_4.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_HOTEL_5.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-            End If
-        End If
-
         If Me.TrTEHAI_HOTEL_1.Visible = True Then
             AppModule.SetForm_CHECK_IN(AppConst.HOTEL.CHECK_IN, Me.CHECK_IN)
             AppModule.SetForm_CHECK_OUT(AppConst.HOTEL.CHECK_OUT, Me.CHECK_OUT)
@@ -2005,123 +1981,8 @@ Partial Public Class DrRegist
             Me.TrTEHAI_KOTSU_5.Visible = False
         End If
 
-        If Session.Item(SessionDef.UserType) = AppConst.UserType.Dr OrElse Session.Item(SessionDef.UserType) = AppConst.UserType.Member Then
-            'MR機能 締切
-            If MyModule.IsClosed_KOTSU() Then
-                Me.TdTEHAI_KOTSU_00.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_O_1.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_F_1.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_O_2.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_F_2.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_O_3.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_F_3.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_4.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-                Me.TdTEHAI_KOTSU_5.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.NG
-
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_1_AIR, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_1_JR, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_1_None, False)
-                CmnModule.SetEnabled(Me.O_DATE_1, False)
-                CmnModule.SetEnabled(Me.O_AIRPORT1_1, False)
-                CmnModule.SetEnabled(Me.O_AIRPORT2_1, False)
-                CmnModule.SetEnabled(Me.O_EXPRESS1_1, False)
-                CmnModule.SetEnabled(Me.O_EXPRESS2_1, False)
-                CmnModule.SetEnabled(Me.O_LOCAL1_1, False)
-                CmnModule.SetEnabled(Me.O_LOCAL2_1, False)
-                CmnModule.SetEnabled(Me.O_TIME1_1, False)
-                CmnModule.SetEnabled(Me.O_TIME2_1, False)
-                CmnModule.SetEnabled(Me.O_BIN_1, False)
-                CmnModule.SetEnabled(Me.O_SEAT_1, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_2_AIR, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_2_JR, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_2_None, False)
-                CmnModule.SetEnabled(Me.O_DATE_2, False)
-                CmnModule.SetEnabled(Me.O_AIRPORT1_2, False)
-                CmnModule.SetEnabled(Me.O_AIRPORT2_2, False)
-                CmnModule.SetEnabled(Me.O_EXPRESS1_2, False)
-                CmnModule.SetEnabled(Me.O_EXPRESS2_2, False)
-                CmnModule.SetEnabled(Me.O_LOCAL1_2, False)
-                CmnModule.SetEnabled(Me.O_LOCAL2_2, False)
-                CmnModule.SetEnabled(Me.O_TIME1_2, False)
-                CmnModule.SetEnabled(Me.O_TIME2_2, False)
-                CmnModule.SetEnabled(Me.O_BIN_2, False)
-                CmnModule.SetEnabled(Me.O_SEAT_2, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_3_AIR, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_3_JR, False)
-                CmnModule.SetEnabled(Me.O_KOTSU_KUBUN_3_None, False)
-                CmnModule.SetEnabled(Me.O_DATE_3, False)
-                CmnModule.SetEnabled(Me.O_AIRPORT1_3, False)
-                CmnModule.SetEnabled(Me.O_AIRPORT2_3, False)
-                CmnModule.SetEnabled(Me.O_EXPRESS1_3, False)
-                CmnModule.SetEnabled(Me.O_EXPRESS2_3, False)
-                CmnModule.SetEnabled(Me.O_LOCAL1_3, False)
-                CmnModule.SetEnabled(Me.O_LOCAL2_3, False)
-                CmnModule.SetEnabled(Me.O_TIME1_3, False)
-                CmnModule.SetEnabled(Me.O_TIME2_3, False)
-                CmnModule.SetEnabled(Me.O_BIN_3, False)
-                CmnModule.SetEnabled(Me.O_SEAT_3, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_1_AIR, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_1_JR, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_1_None, False)
-                CmnModule.SetEnabled(Me.F_DATE_1, False)
-                CmnModule.SetEnabled(Me.F_AIRPORT1_1, False)
-                CmnModule.SetEnabled(Me.F_AIRPORT2_1, False)
-                CmnModule.SetEnabled(Me.F_EXPRESS1_1, False)
-                CmnModule.SetEnabled(Me.F_EXPRESS2_1, False)
-                CmnModule.SetEnabled(Me.F_LOCAL1_1, False)
-                CmnModule.SetEnabled(Me.F_LOCAL2_1, False)
-                CmnModule.SetEnabled(Me.F_TIME1_1, False)
-                CmnModule.SetEnabled(Me.F_TIME2_1, False)
-                CmnModule.SetEnabled(Me.F_BIN_1, False)
-                CmnModule.SetEnabled(Me.F_SEAT_1, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_2_AIR, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_2_JR, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_2_None, False)
-                CmnModule.SetEnabled(Me.F_DATE_2, False)
-                CmnModule.SetEnabled(Me.F_AIRPORT1_2, False)
-                CmnModule.SetEnabled(Me.F_AIRPORT2_2, False)
-                CmnModule.SetEnabled(Me.F_EXPRESS1_2, False)
-                CmnModule.SetEnabled(Me.F_EXPRESS2_2, False)
-                CmnModule.SetEnabled(Me.F_LOCAL1_2, False)
-                CmnModule.SetEnabled(Me.F_LOCAL2_2, False)
-                CmnModule.SetEnabled(Me.F_TIME1_2, False)
-                CmnModule.SetEnabled(Me.F_TIME2_2, False)
-                CmnModule.SetEnabled(Me.F_BIN_2, False)
-                CmnModule.SetEnabled(Me.F_SEAT_2, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_3_AIR, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_3_JR, False)
-                CmnModule.SetEnabled(Me.F_KOTSU_KUBUN_3_None, False)
-                CmnModule.SetEnabled(Me.F_DATE_3, False)
-                CmnModule.SetEnabled(Me.F_AIRPORT1_3, False)
-                CmnModule.SetEnabled(Me.F_AIRPORT2_3, False)
-                CmnModule.SetEnabled(Me.F_EXPRESS1_3, False)
-                CmnModule.SetEnabled(Me.F_EXPRESS2_3, False)
-                CmnModule.SetEnabled(Me.F_LOCAL1_3, False)
-                CmnModule.SetEnabled(Me.F_LOCAL2_3, False)
-                CmnModule.SetEnabled(Me.F_TIME1_3, False)
-                CmnModule.SetEnabled(Me.F_TIME2_3, False)
-                CmnModule.SetEnabled(Me.F_BIN_3, False)
-                CmnModule.SetEnabled(Me.F_SEAT_3, False)
-                CmnModule.SetEnabled(Me.AIRLINE_ANA, False)
-                CmnModule.SetEnabled(Me.AIRLINE_JAL, False)
-                CmnModule.SetEnabled(Me.MILAGE_NO, False)
-                CmnModule.SetEnabled(Me.NOTE_KOTSU, False)
-            Else
-                Me.TdTEHAI_KOTSU_00.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_O_1.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_F_1.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_O_2.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_F_2.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_O_3.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_F_3.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_4.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-                Me.TdTEHAI_KOTSU_5.Style(CmnConst.Html.Style.BackgroundColor) = CmnConst.Html.Color.OK
-            End If
-        End If
-
         If flag = True Then
-            'AIR/JR切り替え
-            CmnModule.SetEnabled(Me.O_DATE_1, True)
+            'AIR/JR切り替え            CmnModule.SetEnabled(Me.O_DATE_1, True)
             CmnModule.SetEnabled(Me.O_AIRPORT1_1, True)
             CmnModule.SetEnabled(Me.O_AIRPORT2_1, True)
             CmnModule.SetEnabled(Me.O_EXPRESS1_1, True)

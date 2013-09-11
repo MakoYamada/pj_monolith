@@ -3,7 +3,7 @@ Imports AppLib
 Partial Public Class Login
     Inherits WebBase
 
-    'Private MS_USER As TableDef.ms
+    Private MS_USER As TableDef.ms_user.struct
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.MS_USER) = MS_USER
