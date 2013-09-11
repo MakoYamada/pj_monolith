@@ -116,4 +116,18 @@ Public Class CmnDb
         End Try
     End Function
 
+    'データの有無を返す
+    Public Shared Function IsExist(ByVal strSQL As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+        Dim wFlag As Boolean = False
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        RsData = CmnDb.Read(strSQL, DbConn)
+        If RsData.Read() Then
+            wFlag = True
+        End If
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
 End Class
