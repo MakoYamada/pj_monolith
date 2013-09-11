@@ -1,30 +1,21 @@
 ﻿Imports CommonLib
 Imports AppLib
-Partial Public Class Base
+Partial Public Class Base1
     Inherits System.Web.UI.MasterPage
 
     '変数定義
-    Private pHideHeader As Boolean
-    Private pHideDrInfo As Boolean
+    Private pHideMenu As Boolean
     Private pHideLogout As Boolean
     Private pHideLoginUser As Boolean
     Private pPageTitle As String
 
     'プロパティ
-    Public Property HideHeader() As Boolean
+    Public Property HideMenu() As Boolean
         Get
-            Return pHideHeader
+            Return pHideMenu
         End Get
         Set(ByVal value As Boolean)
-            pHideHeader = value
-        End Set
-    End Property
-    Public Property HideDrInfo() As Boolean
-        Get
-            Return pHideDrInfo
-        End Get
-        Set(ByVal value As Boolean)
-            pHideDrInfo = value
+            pHideMenu = value
         End Set
     End Property
     Public Property HideLogout() As Boolean
@@ -61,29 +52,19 @@ Partial Public Class Base
     Private Sub SetForm()
         'セッションを変数に格納
         If Not SetSession() Then
-            Response.Redirect(URL.Dr.TimeOut)
+            Response.Redirect(URL.Admin.TimeOut)
         End If
 
         Me.TdHeader2.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/logo.png") & "')"
         Me.TdHeader1.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
+        Me.TdHeader3.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
         Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
 
-        'ヘッダ表示設定
-        If pHideHeader = True Then
-            Me.TblHeader1.Visible = False
-            Me.TblHeader2.Visible = False
-            Me.TblLoginUser.Visible = False
+        '[メニューへ]
+        If pHideMenu = True Then
+            Me.SpnMenu.Visible = False
         Else
-            Me.TblHeader1.Visible = True
-            Me.TblHeader2.Visible = True
-            Me.TblLoginUser.Visible = True
-        End If
-
-        '[ログイン情報変更へ]
-        If pHideDrInfo = True Then
-            Me.SpnDrInfo.Visible = False
-        Else
-            Me.SpnDrInfo.Visible = True
+            Me.SpnMenu.Visible = True
         End If
 
         '[ログアウト]
@@ -92,11 +73,6 @@ Partial Public Class Base
             Me.SpnLogout.Visible = False
         Else
             Me.SpnLogout.Visible = True
-            If MyModule.IsPaymentLogin() Then
-                Me.LnkBLogout.NavigateUrl = URL.Dr.PaymentLogin
-            Else
-                Me.LnkBLogout.NavigateUrl = URL.Dr.Top
-            End If
         End If
 
         If Trim(Session.Item(SessionDef.LoginID)) = "" Then
@@ -104,12 +80,9 @@ Partial Public Class Base
         End If
 
         If pHideLoginUser = True Then
-            Me.TblLoginUser.Visible = False
+            Me.LabelLoginUser.Visible = False
         Else
-            Me.TblLoginUser.Visible = True
-            'ログイン者名
-            Dim MS_DR As TableDef.MS_DR.DataStruct = Session.Item(SessionDef.MS_DR)
-            Me.LabelLoginUser.Text = MS_DR.SHISETSU_NAME & "　" & MS_DR.DR_NAME & " 様"
+            Me.LabelLoginUser.Visible = True
         End If
 
         'ページタイトル
@@ -121,10 +94,9 @@ Partial Public Class Base
         Return True
     End Function
 
-    '[ログイン情報変更へ]
-    Protected Sub LnkBDrInfo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBDrInfo.Click
-        Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
-        Response.Redirect(URL.Dr.DrInfoRegist)
+    '[メニューへ]
+    Protected Sub LnkBMenu_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBMenu.Click
+        Response.Redirect(URL.Admin.Menu)
     End Sub
 
 End Class

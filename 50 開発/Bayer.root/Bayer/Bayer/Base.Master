@@ -1,4 +1,4 @@
-<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Base.Master.vb" Inherits="Bayer.Base" %>
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Base.Master.vb" Inherits="edwards.Base1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="ja">
 	<head id="Head1" runat="server">
@@ -10,15 +10,9 @@
 		<meta http-equiv="content-style-type" content="text/css" />
 		<meta name="robots" content="noindex,nofollow,noarchive" />
 		<title id="Title1" runat="server"></title>
-		<link rel="stylesheet" href="~/Styles.css" type="text/css" />
+		<link rel="stylesheet" href="~/Admin/Styles.css" type="text/css" />
 		<asp:ContentPlaceHolder ID="head" runat="server">
 		</asp:ContentPlaceHolder>
-	    <style type="text/css">
-            .style1
-            {
-                width: 100%;
-            }
-        </style>
 	</head>
 	<body id="body1" runat="server">
 		<form id="Form1" onkeydown="if(event.keyCode==13){if(window.event.srcElement.type=='text' || window.event.srcElement.type=='password'){return false;}}" method="post" runat="server">
@@ -28,56 +22,54 @@
 					<td>
 						<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" id="TblHeader1" runat="server">
 							<tr>
-								<td align="left" style="height: 38px; background-position: top left; background-repeat: no-repeat; background-color: #ffffff; border-bottom: 2px solid #e72410; width: 38px;" id="TdHeader1" runat="server">
+								<td align="left" style="background-position: top left; background-repeat: repeat-x; background-color: #ffffff; border-bottom: 2px solid #6AB73D;" id="TdHeader1" runat="server">
 									&nbsp;
 								</td>
-								<td align="center" style="height: 38px; background-position: top center; background-repeat: no-repeat; background-color: #ffffff; border-bottom: 2px solid #e72410;" id="TdHeader2" runat="server">
+								<td align="center" style="height: 38px; background-position: top center; background-repeat: no-repeat; background-color: #ffffff; border-bottom: 2px solid #6AB73D; width: 660px;" id="TdHeader2" runat="server">
 									&nbsp;
 								</td>
 							</tr>
 						</table>
-						<table border="0" cellpadding="0" cellspacing="0" id="TblHeader2" 
-                            runat="server" class="style1">
+						<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" id="TblHeader2" runat="server">
 							<tr style="background-position: top left; background-repeat: repeat-x; background-color: #dfe2e4; height: 22px;" id="TrPageTitle" runat="server">
 								<td align="left" style="font-weight: bold; color: #343e44;">
 									&nbsp;
 									■ <asp:Label ID="LabelPageTitle" runat="server"></asp:Label>
 								</td>
 								<td align="right" style="font-weight: bold; color: #1c75bc;">
-									<asp:LinkButton ID="LnkBMenu" runat="server" CssClass="baselink" Visible="false">▲ メニューへ</asp:LinkButton>
-									<span id="SpnDrInfo" runat="server">
-										◆
-										<asp:LinkButton ID="LnkBDrInfo" runat="server" CssClass="baselink">ログイン情報 変更</asp:LinkButton>
+									<span id="SpnMenu" runat="server">
+										▲
+										<asp:LinkButton ID="LnkBMenu" runat="server" CssClass="baselink">メニューへ</asp:LinkButton>
 									</span>
 									&nbsp;&nbsp;
 									<span id="SpnLogout" runat="server">
 										×
-										<asp:HyperLink ID="LnkBLogout" runat="server" Text="ログアウト" CssClass="baselink" NavigateUrl="~/Top.aspx"></asp:HyperLink>
+										<asp:HyperLink ID="LnkBLogout" runat="server" Text="ログアウト" CssClass="baselink" NavigateUrl="~/Admin/Login.aspx"></asp:HyperLink>
 									</span>
 									&nbsp;
 								</td>
 							</tr>
 						</table>
-						<table id="TblLoginUser" runat="server" cellpadding="2" cellspacing="0" border="0" style="width: 100%;">
-							<tr style="background-color: #ffffff;">
-								<td align="left" style="font-weight: bold; color: #4b4b4b; padding: 3px;">
-									&nbsp;
-									<asp:Label ID="LabelLoginUser" runat="server"></asp:Label>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			<table border="0" cellpadding="2" cellspacing="0" style="width: 100%;">
-				<tr>
-					<td align="center">
-						<div class="FontSize1" style="height: 10px;"></div>
-						<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-						</asp:ContentPlaceHolder>
-					</td>
-				</tr>
-			</table>
-		</form>
-	</body>
+					<table id="TblLoginUser" runat="server" cellpadding="2" cellspacing="0" border="0" style="width: 100%;">
+						<tr style="background-color: #ffffff;">
+							<td align="left" style="font-weight: bold; color: #4b4b4b; padding: 3px;">
+								&nbsp;
+								<asp:Label ID="LabelLoginUser" runat="server">管理者：トップツアー</asp:Label>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="2" cellspacing="0" style="width: 100%;">
+			<tr>
+				<td align="left">
+					<div class="FontSize1" style="height: 8px;"></div>
+					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+					</asp:ContentPlaceHolder>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
 </html>
