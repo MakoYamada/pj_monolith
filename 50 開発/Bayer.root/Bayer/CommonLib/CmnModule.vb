@@ -917,4 +917,15 @@ Public Class CmnModule
         Return CalcAge(wBirthday)
     End Function
 
+    '”äŠr‚µ‚Äˆá‚Á‚Ä‚¢‚½‚çTrue‚ð•Ô‚·
+    Public Shared Function IsChanged(ByVal Data1 As String, ByVal Data2 As String) As Boolean
+        Dim wData1 As String = Trim(StrConv(Data1, VbStrConv.Wide)).ToLower
+        Dim wData2 As String = Trim(StrConv(Data2, VbStrConv.Wide)).ToLower
+        If wData1 <> wData2 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class
