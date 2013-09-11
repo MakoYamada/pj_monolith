@@ -1,0 +1,31 @@
+USE [BAYER_DEMO]
+GO
+/****** オブジェクト:  Table [dbo].[TBL_SEIKYU]    ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TBL_SEIKYU](
+	[KOUENKAI_NO] [nvarchar](10) COLLATE Japanese_CI_AS  NOT NULL,
+	[KAIJOHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[INSHOKUHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KIZAIHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[UNEIHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[HOTELHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KOTSUHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KAIJOHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[INSHOKUHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KIZAIHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[UNEIHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[HOTELHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KOTSUHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+ CONSTRAINT [PK_TBL_SEIKYU] PRIMARY KEY CLUSTERED 
+(
+	[KOUENKAI_NO] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF

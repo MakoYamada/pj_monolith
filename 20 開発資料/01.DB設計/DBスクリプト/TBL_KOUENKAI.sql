@@ -1,0 +1,54 @@
+USE [BAYER_DEMO]
+GO
+/****** オブジェクト:  Table [dbo].[TBL_KOUENKAI]    ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TBL_KOUENKAI](
+	[KOUENKAI_NO] [nvarchar](10) COLLATE Japanese_CI_AS  NOT NULL,
+	[KOUENKAI_EDABAN] [nvarchar](3) COLLATE Japanese_CI_AS  NOT NULL,
+	[KOUENKAI_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
+	[TAXI_PRT_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
+	[FROM_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
+	[TO_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
+	[SEIHIN_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
+	[INTERNAL_ORDER_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[INTERNAL_ORDER_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[ZETIA_CD] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[BU] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_JIGYOBU] [nvarchar](50) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_AREA] [nvarchar](50) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_EIGYOSHO] [nvarchar](50) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_NO] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_NAME] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_KANA] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_EMAIL] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[KIKAKU_TANTO_KEITAI] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_JIGYOBU] [nvarchar](50) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_AREA] [nvarchar](50) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_EIGYOSHO] [nvarchar](50) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_NO] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_NAME] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_KANA] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_EMAIL] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[TEHAI_TANTO_KEITAI] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
+	[ACCOUNT_CODE_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[COST_CENTER] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[DAIKIBO_FLG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
+	[TTANTO_ID] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[INPUT_DATE] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
+	[INPUT_USER] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[UPDATE_DATE] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
+	[UPDATE_USER] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+ CONSTRAINT [PK_TBL_KOUENKAI] PRIMARY KEY CLUSTERED 
+(
+	[KOUENKAI_NO] ASC,
+	[KOUENKAI_EDABAN] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
