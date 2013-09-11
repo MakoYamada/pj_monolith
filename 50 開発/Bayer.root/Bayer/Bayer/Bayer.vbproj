@@ -101,6 +101,13 @@
     <Compile Include="Common\MyModule.vb" />
     <Compile Include="Common\URL.vb" />
     <Compile Include="Common\WebConfig.vb" />
+    <Compile Include="DrRegist.aspx.designer.vb">
+      <DependentUpon>DrRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrRegist.aspx.vb">
+      <DependentUpon>DrRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
@@ -140,6 +147,7 @@
     <Content Include="Base.Master" />
     <Content Include="Close.html" />
     <Content Include="ComingSoon.html" />
+    <Content Include="DrRegist.aspx" />
     <Content Include="Maintenance.html" />
     <Content Include="print.css" />
     <Content Include="Sorry.html" />
