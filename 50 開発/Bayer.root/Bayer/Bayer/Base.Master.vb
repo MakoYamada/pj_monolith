@@ -1,6 +1,6 @@
 ﻿Imports CommonLib
 Imports AppLib
-Partial Public Class Base1
+Partial Public Class Base
     Inherits System.Web.UI.MasterPage
 
     '変数定義
@@ -57,7 +57,6 @@ Partial Public Class Base1
 
         Me.TdHeader2.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/logo.png") & "')"
         Me.TdHeader1.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
-        Me.TdHeader3.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
         Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
 
         '[メニューへ]
