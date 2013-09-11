@@ -138,8 +138,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Base.Master" />
+    <Content Include="Close.html" />
+    <Content Include="ComingSoon.html" />
+    <Content Include="Maintenance.html" />
     <Content Include="print.css" />
+    <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
+    <Content Include="TimeOut.html" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
