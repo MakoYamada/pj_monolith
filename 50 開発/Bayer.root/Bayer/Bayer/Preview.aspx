@@ -1,16 +1,12 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Preview.aspx.vb" Inherits="Bayer.Preview" %>
+<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="Preview.aspx.vb" Inherits="Bayer.Preview" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+<%@ Register Assembly="ActiveReports.Web, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff"
+    Namespace="DataDynamics.ActiveReports.Web" TagPrefix="ActiveReportsWeb" %>
+<%@ MasterType VirtualPath="~/Base.Master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <ActiveReportsWeb:WebViewer ID="WebViewer1" runat="server" Height="434px" Width="865px">
+        <FlashViewerOptions MultiPageViewColumns="1" MultiPageViewRows="1"></FlashViewerOptions>
+    </ActiveReportsWeb:WebViewer>
+</asp:Content>
