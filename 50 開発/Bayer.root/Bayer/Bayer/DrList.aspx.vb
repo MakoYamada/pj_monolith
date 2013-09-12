@@ -123,6 +123,9 @@ Partial Public Class DrList
         '    Me.CountTEHAI_KOTSU.Visible = True
         'End If
 
+        'DDL
+
+
         '一覧 表示
         DispList()
     End Sub
@@ -195,7 +198,7 @@ Partial Public Class DrList
                 & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
                 & " ON TKH.KOUENKAI_NO = TKE.KOUENKAI_NO"
 
-        'TODO:最新の講演会情報を持ってくる必要があるかも?
+        'TODO:最新の会場手配情報を持ってくる必要があるかも?
 
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
@@ -219,6 +222,9 @@ Partial Public Class DrList
             e.Row.Cells(CellIndex.JISSHI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
             '仮
             e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
+            e.Row.Cells(CellIndex.TEHAI_O).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_O).Text)
+            e.Row.Cells(CellIndex.TEHAI_F).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_F).Text)
+            e.Row.Cells(CellIndex.TEHAI_TAXI).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
 
             'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetName_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text, True)
             'e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetName_TEHAI_KOTSU(e.Row.Cells(CellIndex.TEHAI_KOTSU).Text, True)
@@ -286,6 +292,7 @@ Partial Public Class DrList
 
 
     'TEST用
+    'TODO:(交通は1～5のどれかが手配要なら、などを見る必要あり)
     Private Function GetKigou_TEHAI_HOTEL(ByVal strValue As String) As String
         Dim strReturn As String = ""
 
