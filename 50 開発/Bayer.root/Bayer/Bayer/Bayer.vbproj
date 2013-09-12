@@ -159,6 +159,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Preview.aspx.designer.vb">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.aspx.vb">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -178,6 +185,7 @@
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRegist.aspx" />
     <Content Include="Maintenance.html" />
+    <Content Include="Preview.aspx" />
     <Content Include="print.css" />
     <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
