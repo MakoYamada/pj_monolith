@@ -34,6 +34,24 @@ Partial Public Class DrRegist
     Protected WithEvents ImgCanceled As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
+    '''BtnNozomi コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnKihon コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnKihon As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Tr1 コントロール。
     '''</summary>
     '''<remarks>
@@ -85,7 +103,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TAXI_PRT_NAME コントロール。
@@ -97,193 +115,67 @@ Partial Public Class DrRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_JIGYOBU コントロール。
+    '''MR_JIGYOBU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_JIGYOBU As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_JIGYOBU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_AREA コントロール。
+    '''MR_AREA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_EIGYOSHO コントロール。
+    '''MR_EIGYOSHO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_EIGYOSHO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_NO コントロール。
+    '''MR_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_NO As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_NAME コントロール。
+    '''MR_KEITAI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_NAME As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_KEITAI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_KEITAI コントロール。
+    '''MR_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_KEITAI As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_EMAIL コントロール。
+    '''MR_EMAIL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_JIGYOBU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_JIGYOBU As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_AREA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_EIGYOSHO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_NO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_NO As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_NAME As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_KEITAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_KEITAI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_EMAIL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_EMAIL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label6 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label7 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_EMAIL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''MR_SEND_SAKI_FS コントロール。
@@ -301,7 +193,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents MR_SEND_SAKI_OTHER As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_SEND_SAKI_OTHER As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''DR_MPID コントロール。
@@ -346,7 +238,88 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DR_NAME As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents DR_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''DR_KANA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DR_KANA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''DR_SEX コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DR_SEX As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DR_SANKA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DR_SANKA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SHONIN_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SHONIN_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SHONIN_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SHONIN_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SHONIN_NOTE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SHONIN_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CMSHONIN_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CMSHONIN_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CMSHONIN_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CMSHONIN_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''CMSHONIN_NOTE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CMSHONIN_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TblMust コントロール。
@@ -358,2101 +331,832 @@ Partial Public Class DrRegist
     Protected WithEvents TblMust As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
-    '''DR_NAME_FIRST コントロール。
+    '''TEHAI_HOTEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DR_NAME_FIRST As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TEHAI_HOTEL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''DR_NAME_LAST コントロール。
+    '''ANS_STATUS_HOTEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DR_NAME_LAST As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_STATUS_HOTEL As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''DR_NAME_KANA_FIRST コントロール。
+    '''HOTEL_IRAINAIYOU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DR_NAME_KANA_FIRST As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents HOTEL_IRAINAIYOU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''DR_NAME_KANA_LAST コントロール。
+    '''ANS_HOTEL_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DR_NAME_KANA_LAST As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_HOTEL_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SEX_Male コントロール。
+    '''BtnHotelKensaku コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SEX_Male As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents BtnHotelKensaku As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''SEX_Female コントロール。
+    '''REQ_HOTEL_DATE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SEX_Female As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_HOTEL_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''PREFECTURES_NO コントロール。
+    '''REQ_HAKUSU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents PREFECTURES_NO As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents REQ_HAKUSU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''SHISETSU_NAME コントロール。
+    '''ANS_HOTEL_ADDRESS コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SHISETSU_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_HOTEL_ADDRESS As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SHISETSU_NAME_KANA コントロール。
+    '''REQ_HOTEL_SMOKING コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SHISETSU_NAME_KANA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_HOTEL_SMOKING As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KAMOKU コントロール。
+    '''ANS_HOTEL_TEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KAMOKU As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_HOTEL_TEL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''YAKUSHOKU コントロール。
+    '''REQ_HOTEL_NOTE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents YAKUSHOKU As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''AGE コントロール。
+    '''ANS_CHECKIN_TIME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents AGE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_CHECKIN_TIME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''PUBLIC_SERVANT_Yes コントロール。
+    '''ANS_CHECKOUT_TIME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents PUBLIC_SERVANT_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_CHECKOUT_TIME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''PUBLIC_SERVANT_No コントロール。
+    '''ANS_HOTEL_DATE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents PUBLIC_SERVANT_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_HOTEL_DATE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SECANDARY_USE_Yes コントロール。
+    '''ANS_HAKUSU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SECANDARY_USE_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_HAKUSU As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SECANDARY_USE_No コントロール。
+    '''ANS_ROOM_TYPE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SECANDARY_USE_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_ROOM_TYPE As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TrTEHAI_HOTEL_0 コントロール。
+    '''ANS_ROOM_CHARGE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_HOTEL_0 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents ANS_ROOM_CHARGE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TdTEHAI_HOTEL_0 コントロール。
+    '''ANS_HOTEL_SMOKING_YES コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_HOTEL_0 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents ANS_HOTEL_SMOKING_YES As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''TEHAI_HOTEL_Yes コントロール。
+    '''ANS_HOTEL_SMOKING_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_HOTEL_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_HOTEL_SMOKING_NO As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''TEHAI_HOTEL_No コントロール。
+    '''ANS_HOTEL_NOTE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_HOTEL_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TrTEHAI_HOTEL_1 コントロール。
+    '''BtnKOTSU_O_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_HOTEL_1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents BtnKOTSU_O_1 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''TdTEHAI_HOTEL_1 コントロール。
+    '''REQ_O_TEHAI_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_HOTEL_1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents REQ_O_TEHAI_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CHECK_IN コントロール。
+    '''ANS_O_STATUS_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents CHECK_IN As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ANS_O_STATUS_1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''CHECK_OUT コントロール。
+    '''TB_KOTSU_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents CHECK_OUT As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TB_KOTSU_1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''TrTEHAI_HOTEL_2 コントロール。
+    '''BtnCopy_O_TEHAI_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_HOTEL_2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents BtnCopy_O_TEHAI_1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''TdTEHAI_HOTEL_2 コントロール。
+    '''REQ_O_IRAINAIYOU_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_HOTEL_2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents REQ_O_IRAINAIYOU_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''HOTEL_SMOKING_No コントロール。
+    '''REQ_O_KOTSUKIKAN_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents HOTEL_SMOKING_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_KOTSUKIKAN_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''HOTEL_SMOKING_Yes コントロール。
+    '''ANS_O_KOTSUKIKAN_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents HOTEL_SMOKING_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_KOTSUKIKAN_1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TrTEHAI_HOTEL_3 コントロール。
+    '''REQ_O_DATE_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_HOTEL_3 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents REQ_O_DATE_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TdTEHAI_HOTEL_5 コントロール。
+    '''ANS_O_DATE_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_HOTEL_5 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents ANS_O_DATE_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''NOTE_HOTEL コントロール。
+    '''REQ_O_AIRPORT1_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents NOTE_HOTEL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_O_AIRPORT1_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TrTEHAI_HOTEL_4 コントロール。
+    '''REQ_O_AIRPORT2_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_HOTEL_4 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents REQ_O_AIRPORT2_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TdTEHAI_HOTEL_3 コントロール。
+    '''ANS_O_AIRPORT1_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_HOTEL_3 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents ANS_O_AIRPORT1_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_FLAG_Yes コントロール。
+    '''ANS_O_AIRPORT2_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_FLAG_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_AIRPORT2_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_FLAG_No コントロール。
+    '''REQ_O_TIME1_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_FLAG_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_TIME1_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TrTEHAI_HOTEL_5 コントロール。
+    '''REQ_O_TIME2_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_HOTEL_5 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents REQ_O_TIME2_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TdTEHAI_HOTEL_4 コントロール。
+    '''ANS_O_TIME1_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_HOTEL_4 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents ANS_O_TIME1_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_STAY_Yes コントロール。
+    '''ANS_O_TIME2_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_STAY_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_TIME2_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_STAY_No コントロール。
+    '''REQ_O_BIN_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_STAY_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_BIN_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Image2 コントロール。
+    '''ANS_O_BIN_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
+    Protected WithEvents ANS_O_BIN_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''HyperLink1 コントロール。
+    '''REQ_O_SEAT_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents REQ_O_SEAT_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DivACCOMPANY コントロール。
+    '''REQ_O_AGE_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DivACCOMPANY As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents REQ_O_AGE_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_STAY_DATE コントロール。
+    '''ANS_O_SEAT_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_STAY_DATE As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents ANS_O_SEAT_1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''ACCOMPANY_SAME_ROOM コントロール。
+    '''ANS_O_AGE_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_SAME_ROOM As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents ANS_O_AGE_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TblACCOMPANY コントロール。
+    '''BtnKOTSU_O_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TblACCOMPANY As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents BtnKOTSU_O_2 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''ACCOMPANY_ADULT_SU コントロール。
+    '''REQ_O_TEHAI_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_ADULT_SU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents REQ_O_TEHAI_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ACCOMPANY_CHILD_SU コントロール。
+    '''ANS_O_STATUS_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_SU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ANS_O_STATUS_2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TblACCOMPANY_CHILD コントロール。
+    '''TB_KOTSU_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TblACCOMPANY_CHILD As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents TB_KOTSU_2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''TrACCOMPANY_CHILD_1 コントロール。
+    '''BtnCopy_O_TEHAI_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrACCOMPANY_CHILD_1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents BtnCopy_O_TEHAI_2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''ACCOMPANY_CHILD_AGE_1 コントロール。
+    '''REQ_O_IRAINAIYOU_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_AGE_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_O_IRAINAIYOU_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ACCOMPANY_CHILD_SEX_1_Male コントロール。
+    '''REQ_O_KOTSUKIKAN_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_SEX_1_Male As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_KOTSUKIKAN_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ACCOMPANY_CHILD_SEX_1_Female コントロール。
+    '''ANS_O_KOTSUKIKAN_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_SEX_1_Female As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_KOTSUKIKAN_2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''ACCOMPANY_CHILD_BED_1_Yes コントロール。
+    '''REQ_O_DATE_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_BED_1_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_DATE_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ACCOMPANY_CHILD_BED_1_No コントロール。
+    '''ANS_O_DATE_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_BED_1_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_DATE_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TrACCOMPANY_CHILD_2 コントロール。
+    '''REQ_O_AIRPORT1_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrACCOMPANY_CHILD_2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents REQ_O_AIRPORT1_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_CHILD_AGE_2 コントロール。
+    '''REQ_O_AIRPORT2_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_AGE_2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_O_AIRPORT2_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_CHILD_SEX_2_Male コントロール。
+    '''ANS_O_AIRPORT1_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_SEX_2_Male As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_AIRPORT1_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_CHILD_SEX_2_Female コントロール。
+    '''ANS_O_AIRPORT2_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_SEX_2_Female As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_AIRPORT2_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_CHILD_BED_2_Yes コントロール。
+    '''REQ_O_TIME1_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_BED_2_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_TIME1_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ACCOMPANY_CHILD_BED_2_No コントロール。
+    '''REQ_O_TIME2_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ACCOMPANY_CHILD_BED_2_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_TIME2_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''NOTE_ACCOMPANY コントロール。
+    '''ANS_O_TIME1_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents NOTE_ACCOMPANY As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_O_TIME1_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TrSANKA_KUBUN コントロール。
+    '''ANS_O_TIME2_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrSANKA_KUBUN As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents ANS_O_TIME2_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SANKA_KUBUN_Listener コントロール。
+    '''REQ_O_BIN_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SANKA_KUBUN_Listener As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_BIN_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SANKA_KUBUN_Speaker コントロール。
+    '''ANS_O_BIN_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SANKA_KUBUN_Speaker As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_BIN_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''PARTY_Yes コントロール。
+    '''REQ_O_SEAT_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents PARTY_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_SEAT_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''PARTY_No コントロール。
+    '''REQ_O_AGE_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents PARTY_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_AGE_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BYCAR_Yes コントロール。
+    '''ANS_O_SEAT_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BYCAR_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_SEAT_2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''BYCAR_No コントロール。
+    '''ANS_O_AGE_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BYCAR_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_AGE_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TrTEHAI_KOTSU_00 コントロール。
+    '''BtnKOTSU_O_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_00 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents BtnKOTSU_O_3 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''TdTEHAI_KOTSU_00 コントロール。
+    '''REQ_O_TEHAI_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_00 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents REQ_O_TEHAI_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TEHAI_KOTSU_Yes コントロール。
+    '''ANS_O_STATUS_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_KOTSU_Yes As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_STATUS_3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TEHAI_KOTSU_No コントロール。
+    '''TB_KOTSU_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_KOTSU_No As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents TB_KOTSU_3 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''TrTEHAI_KOTSU_01 コントロール。
+    '''BtnCopy_O_TEHAI_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_01 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents BtnCopy_O_TEHAI_3 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''TrTEHAI_KOTSU_02 コントロール。
+    '''REQ_O_IRAINAIYOU_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_02 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents REQ_O_IRAINAIYOU_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TrTEHAI_KOTSU_1 コントロール。
+    '''REQ_O_KOTSUKIKAN_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents REQ_O_KOTSUKIKAN_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TdTEHAI_KOTSU_1 コントロール。
+    '''ANS_O_KOTSUKIKAN_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents ANS_O_KOTSUKIKAN_3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TdTEHAI_KOTSU_O_1 コントロール。
+    '''REQ_O_DATE_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_O_1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents REQ_O_DATE_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''O_KOTSU_KUBUN_1_AIR コントロール。
+    '''ANS_O_DATE_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_1_AIR As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_O_DATE_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_KOTSU_KUBUN_1_JR コントロール。
+    '''REQ_O_AIRPORT1_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_1_JR As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_AIRPORT1_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_KOTSU_KUBUN_1_None コントロール。
+    '''REQ_O_AIRPORT2_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_1_None As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents REQ_O_AIRPORT2_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_DATE_1 コントロール。
+    '''ANS_O_AIRPORT1_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_DATE_1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ANS_O_AIRPORT1_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_BIN_1 コントロール。
+    '''ANS_O_AIRPORT2_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_BIN_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_O_AIRPORT2_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TblO_AIRPORT_1 コントロール。
+    '''REQ_O_TIME1_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TblO_AIRPORT_1 As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents REQ_O_TIME1_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_AIRPORT1_1 コントロール。
+    '''REQ_O_TIME2_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_AIRPORT1_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_O_TIME2_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_AIRPORT2_1 コントロール。
+    '''ANS_O_TIME1_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_AIRPORT2_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_O_TIME1_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TblO_EXPRESS_1 コントロール。
+    '''ANS_O_TIME2_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TblO_EXPRESS_1 As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents ANS_O_TIME2_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_EXPRESS1_1 コントロール。
+    '''REQ_O_BIN_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_EXPRESS1_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_O_BIN_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_EXPRESS2_1 コントロール。
+    '''ANS_O_BIN_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_EXPRESS2_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_O_BIN_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TblO_LOCAL_1 コントロール。
+    '''REQ_O_SEAT_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TblO_LOCAL_1 As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents REQ_O_SEAT_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_LOCAL1_1 コントロール。
+    '''REQ_O_AGE_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_LOCAL1_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_O_AGE_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''O_LOCAL2_1 コントロール。
+    '''ANS_O_SEAT_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_LOCAL2_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_O_SEAT_3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''O_TIME1_1 コントロール。
+    '''ANS_O_AGE_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents O_TIME1_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_TIME2_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_TIME2_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_SEAT_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_SEAT_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_SEAT_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_SEAT_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TblO_SEATCLASS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_SEATCLASS_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_SEATCLASS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_SEATCLASS_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_F_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_F_1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_1_AIR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_1_AIR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_1_JR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_1_JR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_1_None コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_1_None As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_DATE_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_DATE_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''F_BIN_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_BIN_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_AIRPORT_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_AIRPORT_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_AIRPORT1_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_AIRPORT1_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_AIRPORT2_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_AIRPORT2_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_EXPRESS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_EXPRESS_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_EXPRESS1_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_EXPRESS1_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_EXPRESS2_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_EXPRESS2_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_LOCAL_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_LOCAL_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_LOCAL1_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_LOCAL1_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_LOCAL2_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_LOCAL2_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_TIME1_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_TIME1_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_TIME2_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_TIME2_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_SEAT_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_SEAT_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_SEAT_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_SEAT_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TblF_SEATCLASS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_SEATCLASS_1 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_SEATCLASS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_SEATCLASS_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TrTEHAI_KOTSU_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_O_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_O_2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''O_KOTSU_KUBUN_2_AIR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_2_AIR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''O_KOTSU_KUBUN_2_JR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_2_JR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''O_KOTSU_KUBUN_2_None コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_2_None As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''O_DATE_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_DATE_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''O_BIN_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_BIN_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_AIRPORT_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_AIRPORT_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_AIRPORT1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_AIRPORT1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_AIRPORT2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_AIRPORT2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_EXPRESS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_EXPRESS_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_EXPRESS1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_EXPRESS1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_EXPRESS2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_EXPRESS2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_LOCAL_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_LOCAL_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_LOCAL1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_LOCAL1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_LOCAL2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_LOCAL2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_TIME1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_TIME1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_TIME2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_TIME2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_SEAT_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_SEAT_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_SEAT_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_SEAT_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TblO_SEATCLASS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_SEATCLASS_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_SEATCLASS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_SEATCLASS_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_F_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_F_2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_2_AIR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_2_AIR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_2_JR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_2_JR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_2_None コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_2_None As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_DATE_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_DATE_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''F_BIN_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_BIN_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_AIRPORT_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_AIRPORT_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_AIRPORT1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_AIRPORT1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_AIRPORT2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_AIRPORT2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_EXPRESS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_EXPRESS_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_EXPRESS1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_EXPRESS1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_EXPRESS2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_EXPRESS2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_LOCAL_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_LOCAL_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_LOCAL1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_LOCAL1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_LOCAL2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_LOCAL2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_TIME1_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_TIME1_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_TIME2_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_TIME2_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_SEAT_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_SEAT_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_SEAT_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_SEAT_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TblF_SEATCLASS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_SEATCLASS_2 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_SEATCLASS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_SEATCLASS_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TrTEHAI_KOTSU_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_3 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_3 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_O_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_O_3 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''O_KOTSU_KUBUN_3_AIR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_3_AIR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''O_KOTSU_KUBUN_3_JR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_3_JR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''O_KOTSU_KUBUN_3_None コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_KOTSU_KUBUN_3_None As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''O_DATE_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_DATE_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''O_BIN_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_BIN_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_AIRPORT_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_AIRPORT_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_AIRPORT1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_AIRPORT1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_AIRPORT2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_AIRPORT2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_EXPRESS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_EXPRESS_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_EXPRESS1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_EXPRESS1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_EXPRESS2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_EXPRESS2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_LOCAL_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_LOCAL_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_LOCAL1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_LOCAL1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_LOCAL2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_LOCAL2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_TIME1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_TIME1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''O_TIME2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_TIME2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblO_SEAT_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_SEAT_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_SEAT_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_SEAT_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TblO_SEATCLASS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblO_SEATCLASS_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''O_SEATCLASS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents O_SEATCLASS_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_F_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_F_3 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_3_AIR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_3_AIR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_3_JR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_3_JR As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_KOTSU_KUBUN_3_None コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_KOTSU_KUBUN_3_None As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''F_DATE_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_DATE_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''F_BIN_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_BIN_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_AIRPORT_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_AIRPORT_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_AIRPORT1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_AIRPORT1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_AIRPORT2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_AIRPORT2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_EXPRESS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_EXPRESS_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_EXPRESS1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_EXPRESS1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_EXPRESS2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_EXPRESS2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_LOCAL_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_LOCAL_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_LOCAL1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_LOCAL1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_LOCAL2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_LOCAL2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_TIME1_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_TIME1_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''F_TIME2_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_TIME2_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TblF_SEAT_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_SEAT_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_SEAT_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_SEAT_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TblF_SEATCLASS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblF_SEATCLASS_3 As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''F_SEATCLASS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents F_SEATCLASS_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TrTEHAI_KOTSU_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_4 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_4 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''AIRLINE_ANA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents AIRLINE_ANA As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''AIRLINE_JAL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents AIRLINE_JAL As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''MILAGE_NO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MILAGE_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TrTEHAI_KOTSU_5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrTEHAI_KOTSU_5 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdTEHAI_KOTSU_5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdTEHAI_KOTSU_5 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''NOTE_KOTSU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents NOTE_KOTSU As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TdSEND_SAKI_0 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdSEND_SAKI_0 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''SEND_SAKI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_SAKI As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TrSEND_SAKI_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrSEND_SAKI_1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdSEND_SAKI_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdSEND_SAKI_1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''SEND_ZIP_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_ZIP_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''SEND_ZIP_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_ZIP_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''SEND_ADDRESS コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_ADDRESS As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TrSEND_SAKI_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrSEND_SAKI_2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdSEND_SAKI_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdSEND_SAKI_3 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''SEND_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TrSEND_SAKI_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrSEND_SAKI_3 As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''TdSEND_SAKI_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TdSEND_SAKI_4 As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''SEND_TEL_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_TEL_1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''SEND_TEL_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_TEL_2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''SEND_TEL_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_TEL_3 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TrPAYMENT_METHOD コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TrPAYMENT_METHOD As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''PAYMENT_METHOD_Card コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents PAYMENT_METHOD_Card As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''PAYMENT_METHOD_Bank コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents PAYMENT_METHOD_Bank As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''NOTES コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents NOTES As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_O_AGE_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnConfirm コントロール。

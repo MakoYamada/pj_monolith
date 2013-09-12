@@ -168,6 +168,8 @@
     <Content Include="Close.html" />
     <Content Include="DrList.aspx" />
     <Content Include="DrRegist.aspx" />
+    <Content Include="Images\button-cross-alt.png" />
+    <Content Include="Images\button-tick-alt.png" />
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRegist.aspx" />
     <Content Include="Maintenance.html" />
@@ -197,7 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
