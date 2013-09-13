@@ -92,13 +92,13 @@
 		                </td>
 		            </tr>
 		            <tr>
-                        <td align="left" valign="middle" class="style1">
+                        <td align="left" valign="middle" class="TdTitleHeader">
                             CWID
                         </td>
                         <td align="left" valign="top" class="style2">
 				            <asp:Label ID="MR_NO" runat="server" Text="1234567890"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="style1">
+                        <td align="left" valign="middle" class="TdTitleHeader">
                             携帯電話
                         </td>
                         <td align="left" valign="top" class="style2">
@@ -3542,7 +3542,7 @@
 		</tr>
 		    
 		<div class="FontSize1" style="height: 10px;"></div>
-		<table cellspacing="0" cellpadding="0" border="0" class="style3">
+		<table cellspacing="0" cellpadding="0" border="0" style="width:900px;">
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:50%">
 				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" />

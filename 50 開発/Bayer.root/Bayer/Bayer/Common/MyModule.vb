@@ -23,14 +23,14 @@ Public Class MyModule
 
     'データ登録モードを返す
     Public Shared Function IsInsertMode() As Boolean
-        If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.RECORD_KUBUN.Code.Insert Then
+        If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Insert Then
             Return True
         Else
             Return False
         End If
     End Function
     Public Shared Function IsInsertMode(ByVal RECORD_KUBUN As String) As Boolean
-        If RECORD_KUBUN = AppConst.RECORD_KUBUN.Code.Insert Then
+        If RECORD_KUBUN = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Insert Then
             Return True
         Else
             Return False
@@ -38,14 +38,14 @@ Public Class MyModule
     End Function
 
     Public Shared Function IsUpdateMode() As Boolean
-        If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.RECORD_KUBUN.Code.Update Then
+        If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Update Then
             Return True
         Else
             Return False
         End If
     End Function
     Public Shared Function IsUpdateMode(ByVal RECORD_KUBUN As String) As Boolean
-        If RECORD_KUBUN = AppConst.RECORD_KUBUN.Code.Update Then
+        If RECORD_KUBUN = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Update Then
             Return True
         Else
             Return False
@@ -53,14 +53,14 @@ Public Class MyModule
     End Function
 
     Public Shared Function IsCancelMode() As Boolean
-        If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.RECORD_KUBUN.Code.Cancel Then
+        If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Cancel Then
             Return True
         Else
             Return False
         End If
     End Function
     Public Shared Function IsCancelMode(ByVal RECORD_KUBUN As String) As Boolean
-        If RECORD_KUBUN = AppConst.RECORD_KUBUN.Code.Cancel Then
+        If RECORD_KUBUN = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Cancel Then
             Return True
         Else
             Return False
@@ -79,238 +79,238 @@ Public Class MyModule
         Return True
     End Function
 
-    '手配状況チェック
-    Public Shared Function IsValidSTATUS_TEHAI(ByVal RECORD_KUBUN As String, ByVal OldSTATAUS_TEHAI As String, ByVal STATUS_TEHAI As String, ByVal TEHAI_HOTEL As String, ByVal TEHAI_KOTSU As String) As Boolean
-        Select Case RECORD_KUBUN
-            Case AppConst.RECORD_KUBUN.Code.Insert
-                '新規
-                If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                    '手配なし
-                    Select Case STATUS_TEHAI
-                        Case AppConst.STATUS_TEHAI.Code.Fuyo
-                            Return True
-                        Case Else
-                            Return False
-                    End Select
-                Else
-                    '手配あり
-                    If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) Then
-                        '宿泊手配あり
-                        Select Case STATUS_TEHAI
-                            Case AppConst.STATUS_TEHAI.Code.Input, _
-                                 AppConst.STATUS_TEHAI.Code.HotelNG, _
-                                 AppConst.STATUS_TEHAI.Code.HotelOK, _
-                                 AppConst.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
-                                 AppConst.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
-                                 AppConst.STATUS_TEHAI.Code.HotelNG_KotsuOK
-                                Return True
-                            Case Else
-                                Return False
-                        End Select
-                    End If
-                    If AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                        '交通手配あり
-                        Select Case STATUS_TEHAI
-                            Case AppConst.STATUS_TEHAI.Code.Input, _
-                                 AppConst.STATUS_TEHAI.Code.KotsuNG, _
-                                 AppConst.STATUS_TEHAI.Code.KotsuOK, _
-                                 AppConst.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
-                                 AppConst.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
-                                 AppConst.STATUS_TEHAI.Code.HotelNG_KotsuOK
-                                Return True
-                            Case Else
-                                Return False
-                        End Select
-                    End If
-                End If
-            Case AppConst.RECORD_KUBUN.Code.Update
-                '変更
-                Select Case OldSTATAUS_TEHAI
-                    Case AppConst.STATUS_TEHAI.Code.Fuyo, _
-                         AppConst.STATUS_TEHAI.Code.Input, _
-                         AppConst.STATUS_TEHAI.Code.Change, _
-                         AppConst.STATUS_TEHAI.Code.HotelNG, _
-                         AppConst.STATUS_TEHAI.Code.KotsuNG, _
-                         AppConst.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
-                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
-                         AppConst.STATUS_TEHAI.Code.HotelNG_KotsuOK
-                        '確定前
-                        If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                            '手配なし                            Select Case STATUS_TEHAI
-                                Case AppConst.STATUS_TEHAI.Code.Fuyo
-                                    Return True
-                                Case Else
-                                    Return False
-                            End Select
-                        Else
-                            If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '宿泊・交通手配あり                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.Input, _
-                                         AppConst.STATUS_TEHAI.Code.Change, _
-                                         AppConst.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelNG_KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuOK
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            ElseIf AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '宿泊のみ
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.Input, _
-                                         AppConst.STATUS_TEHAI.Code.Change, _
-                                         AppConst.STATUS_TEHAI.Code.HotelNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            ElseIf Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '交通のみ
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.Input, _
-                                         AppConst.STATUS_TEHAI.Code.Change, _
-                                         AppConst.STATUS_TEHAI.Code.KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.KotsuOK
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            End If
-                        End If
+    ''手配状況チェック
+    'Public Shared Function IsValidSTATUS_TEHAI(ByVal RECORD_KUBUN As String, ByVal OldSTATAUS_TEHAI As String, ByVal STATUS_TEHAI As String, ByVal TEHAI_HOTEL As String, ByVal TEHAI_KOTSU As String) As Boolean
+    '    Select Case RECORD_KUBUN
+    '        Case AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Insert
+    '            '新規
+    '            If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                '手配なし
+    '                Select Case STATUS_TEHAI
+    '                    Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Fuyo
+    '                        Return True
+    '                    Case Else
+    '                        Return False
+    '                End Select
+    '            Else
+    '                '手配あり
+    '                If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) Then
+    '                    '宿泊手配あり
+    '                    Select Case STATUS_TEHAI
+    '                        Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Input, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuOK
+    '                            Return True
+    '                        Case Else
+    '                            Return False
+    '                    End Select
+    '                End If
+    '                If AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                    '交通手配あり
+    '                    Select Case STATUS_TEHAI
+    '                        Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Input, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuNG, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuOK, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
+    '                             AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuOK
+    '                            Return True
+    '                        Case Else
+    '                            Return False
+    '                    End Select
+    '                End If
+    '            End If
+    '        Case AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Update
+    '            '変更
+    '            Select Case OldSTATAUS_TEHAI
+    '                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Fuyo, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Input, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Change, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuNG, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuOK
+    '                    '確定前
+    '                    If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                        '手配なし    '                        Select Case STATUS_TEHAI
+    '                            Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Fuyo
+    '                                Return True
+    '                            Case Else
+    '                                Return False
+    '                        End Select
+    '                    Else
+    '                        If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '宿泊・交通手配あり    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Input, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Change, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuOK
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        ElseIf AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '宿泊のみ
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Input, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Change, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        ElseIf Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '交通のみ
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Input, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Change, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuOK
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        End If
+    '                    End If
 
-                    Case AppConst.STATUS_TEHAI.Code.KotsuOK, _
-                         AppConst.STATUS_TEHAI.Code.HotelOK, _
-                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
-                         AppConst.STATUS_TEHAI.Code.OKToFuyo, _
-                         AppConst.STATUS_TEHAI.Code.OkToChange, _
-                         AppConst.STATUS_TEHAI.Code.OKToCancel
-                        '確定後                        If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                            '手配なし                            Select Case STATUS_TEHAI
-                                Case AppConst.STATUS_TEHAI.Code.Fuyo, _
-                                     AppConst.STATUS_TEHAI.Code.OKToFuyo
-                                    Return True
-                                Case Else
-                                    Return False
-                            End Select
-                        Else
-                            If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '宿泊・交通手配あり
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelNG_KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.OkToChange, _
-                                         AppConst.STATUS_TEHAI.Code.OKToCancel, _
-                                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            ElseIf AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '宿泊のみ
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.HotelNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK, _
-                                         AppConst.STATUS_TEHAI.Code.OkToChange, _
-                                         AppConst.STATUS_TEHAI.Code.OKToCancel, _
-                                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            ElseIf Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '交通のみ
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.OkToChange, _
-                                         AppConst.STATUS_TEHAI.Code.OKToCancel, _
-                                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            End If
-                        End If
-                    Case AppConst.STATUS_TEHAI.Code.EndToFuyo, _
-                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                        '確定後                        If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                            '手配なし                            Select Case STATUS_TEHAI
-                                Case AppConst.STATUS_TEHAI.Code.Fuyo, _
-                                     AppConst.STATUS_TEHAI.Code.EndToFuyo
-                                    Return True
-                                Case Else
-                                    Return False
-                            End Select
-                        Else
-                            If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '宿泊・交通手配あり                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelNG_KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            ElseIf AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '宿泊のみ
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.HotelNG, _
-                                         AppConst.STATUS_TEHAI.Code.HotelOK, _
-                                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            ElseIf Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
-                                '交通のみ
-                                Select Case STATUS_TEHAI
-                                    Case AppConst.STATUS_TEHAI.Code.KotsuNG, _
-                                         AppConst.STATUS_TEHAI.Code.KotsuOK, _
-                                         AppConst.STATUS_TEHAI.Code.EndToChange, _
-                                         AppConst.STATUS_TEHAI.Code.EndToCancel
-                                        Return True
-                                    Case Else
-                                        Return False
-                                End Select
-                            End If
-                        End If
-                End Select
-        End Select
-        Return True
-    End Function
-    Public Shared Function IsValidSTATUS_TEHAI(ByVal RECORD_KUBUN As String, ByVal OldSTATAUS_TEHAI As String, ByVal STATUS_TEHAI As DropDownList, ByVal TEHAI_HOTEL_Yes As RadioButton, ByVal TEHAI_KOTSU_Yes As RadioButton) As Boolean
-        Dim wSTATUS_TEHAI As String
-        Dim wTEHAI_HOTEL As String
-        Dim wTEHAI_KOTSU As String
+    '                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuOK, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OKToFuyo, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OkToChange, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OKToCancel
+    '                    '確定後    '                    If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                        '手配なし    '                        Select Case STATUS_TEHAI
+    '                            Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Fuyo, _
+    '                                 AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OKToFuyo
+    '                                Return True
+    '                            Case Else
+    '                                Return False
+    '                        End Select
+    '                    Else
+    '                        If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '宿泊・交通手配あり
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OkToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OKToCancel, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        ElseIf AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '宿泊のみ
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OkToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OKToCancel, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        ElseIf Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '交通のみ
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OkToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.OKToCancel, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        End If
+    '                    End If
+    '                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToFuyo, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                    '確定後    '                    If Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                        '手配なし    '                        Select Case STATUS_TEHAI
+    '                            Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.Fuyo, _
+    '                                 AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToFuyo
+    '                                Return True
+    '                            Case Else
+    '                                Return False
+    '                        End Select
+    '                    Else
+    '                        If AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '宿泊・交通手配あり    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG_KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        ElseIf AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso Not AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '宿泊のみ
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.HotelOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        ElseIf Not AppModule.IsTEHAI_HOTEL(TEHAI_HOTEL) AndAlso AppModule.IsTEHAI_KOTSU(TEHAI_KOTSU) Then
+    '                            '交通のみ
+    '                            Select Case STATUS_TEHAI
+    '                                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuNG, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.KotsuOK, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToChange, _
+    '                                     AppConst.KOTSUHOTEL.STATUS_TEHAI.Code.EndToCancel
+    '                                    Return True
+    '                                Case Else
+    '                                    Return False
+    '                            End Select
+    '                        End If
+    '                    End If
+    '            End Select
+    '    End Select
+    '    Return True
+    'End Function
+    'Public Shared Function IsValidSTATUS_TEHAI(ByVal RECORD_KUBUN As String, ByVal OldSTATAUS_TEHAI As String, ByVal STATUS_TEHAI As DropDownList, ByVal TEHAI_HOTEL_Yes As RadioButton, ByVal TEHAI_KOTSU_Yes As RadioButton) As Boolean
+    '    Dim wSTATUS_TEHAI As String
+    '    Dim wTEHAI_HOTEL As String
+    '    Dim wTEHAI_KOTSU As String
 
-        wSTATUS_TEHAI = CmnModule.GetSelectedItemValue(STATUS_TEHAI)
+    '    wSTATUS_TEHAI = CmnModule.GetSelectedItemValue(STATUS_TEHAI)
 
-        If TEHAI_HOTEL_Yes.Checked = True Then
-            wTEHAI_HOTEL = AppConst.TEHAI.Code.Yes
-        Else
-            wTEHAI_HOTEL = AppConst.TEHAI.Code.No
-        End If
+    '    If TEHAI_HOTEL_Yes.Checked = True Then
+    '        wTEHAI_HOTEL = AppConst.TEHAI.Code.Yes
+    '    Else
+    '        wTEHAI_HOTEL = AppConst.TEHAI.Code.No
+    '    End If
 
-        If TEHAI_KOTSU_Yes.Checked = True Then
-            wTEHAI_KOTSU = AppConst.TEHAI.Code.Yes
-        Else
-            wTEHAI_KOTSU = AppConst.TEHAI.Code.No
-        End If
+    '    If TEHAI_KOTSU_Yes.Checked = True Then
+    '        wTEHAI_KOTSU = AppConst.TEHAI.Code.Yes
+    '    Else
+    '        wTEHAI_KOTSU = AppConst.TEHAI.Code.No
+    '    End If
 
-        Return IsValidSTATUS_TEHAI(RECORD_KUBUN, OldSTATAUS_TEHAI, wSTATUS_TEHAI, wTEHAI_HOTEL, wTEHAI_KOTSU)
-    End Function
+    '    Return IsValidSTATUS_TEHAI(RECORD_KUBUN, OldSTATAUS_TEHAI, wSTATUS_TEHAI, wTEHAI_HOTEL, wTEHAI_KOTSU)
+    'End Function
 
       
     '== CSV ==
