@@ -119,6 +119,12 @@
       <DependentUpon>DrRegist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DrReport.Designer.vb">
+      <DependentUpon>DrReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="KaijoList.aspx.designer.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
     </Compile>
