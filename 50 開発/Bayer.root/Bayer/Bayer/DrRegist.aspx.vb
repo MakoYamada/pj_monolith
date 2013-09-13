@@ -59,8 +59,49 @@ Partial Public Class DrRegist
 
     '画面項目 初期化
     Private Sub InitControls()
+        ImgCanceled.Visible = False
+
         BtnKOTSU_O_1.ImageUrl = IMG_OPEN
-        TB_KOTSU_1.Visible = False
+        BtnKOTSU_O_2.ImageUrl = IMG_OPEN
+        BtnKOTSU_O_3.ImageUrl = IMG_OPEN
+        BtnKOTSU_O_4.ImageUrl = IMG_OPEN
+        BtnKOTSU_O_5.ImageUrl = IMG_OPEN
+        BtnKOTSU_F_1.ImageUrl = IMG_OPEN
+        BtnKOTSU_F_2.ImageUrl = IMG_OPEN
+        BtnKOTSU_F_3.ImageUrl = IMG_OPEN
+        BtnKOTSU_F_4.ImageUrl = IMG_OPEN
+        BtnKOTSU_F_5.ImageUrl = IMG_OPEN
+        TB_KOTSU_O_1.Visible = False
+        TB_KOTSU_O_2.Visible = False
+        TB_KOTSU_O_3.Visible = False
+        TB_KOTSU_O_4.Visible = False
+        TB_KOTSU_O_5.Visible = False
+        TB_KOTSU_F_1.Visible = False
+        TB_KOTSU_F_2.Visible = False
+        TB_KOTSU_F_3.Visible = False
+        TB_KOTSU_F_4.Visible = False
+        TB_KOTSU_F_5.Visible = False
+
+        BtnTAXI_1.ImageUrl = IMG_OPEN
+        BtnTAXI_2.ImageUrl = IMG_OPEN
+        BtnTAXI_3.ImageUrl = IMG_OPEN
+        BtnTAXI_4.ImageUrl = IMG_OPEN
+        BtnTAXI_5.ImageUrl = IMG_OPEN
+        BtnTAXI_6.ImageUrl = IMG_OPEN
+        BtnTAXI_7.ImageUrl = IMG_OPEN
+        BtnTAXI_8.ImageUrl = IMG_OPEN
+        BtnTAXI_9.ImageUrl = IMG_OPEN
+        BtnTAXI_10.ImageUrl = IMG_OPEN
+        TB_TAXI_1.Visible = False
+        TB_TAXI_2.Visible = False
+        TB_TAXI_3.Visible = False
+        TB_TAXI_4.Visible = False
+        TB_TAXI_5.Visible = False
+        TB_TAXI_6.Visible = False
+        TB_TAXI_7.Visible = False
+        TB_TAXI_8.Visible = False
+        TB_TAXI_9.Visible = False
+        TB_TAXI_10.Visible = False
 
         '共通コントロール
         'プルダウン設定
@@ -269,18 +310,6 @@ Partial Public Class DrRegist
         'TBL_DR(SEQ).NEW_STATUS_TEHAI = AppModule.GetValue_STATUS_TEHAI(TBL_DR(SEQ).NEW_RECORD_KUBUN, TBL_DR(SEQ), OldTBL_DR)
         ''支払状況
         'TBL_DR(SEQ).NEW_STATUS_PAYMENT = AppModule.GetValue_STATUS_PAYMENT(TBL_DR(SEQ).NEW_RECORD_KUBUN, TBL_DR(SEQ), OldTBL_DR)
-    End Sub
-
-    '[確認画面へ]
-    Protected Sub BtnConfirm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnConfirm.Click
-        '入力値チェック
-        If Not Check() Then Exit Sub
-
-        '入力値を取得
-        GetValue(False)
-
-        '確認画面へ
-        'Response.Redirect(URL.Admin.DrConfirm)
     End Sub
 
     '[参加取消]
@@ -2708,13 +2737,203 @@ Partial Public Class DrRegist
     '    SetMILAGE_NO()
     'End Sub
 
-    Private Sub BtnKOTSU_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_1.Click
+    Private Sub BtnKOTSU_O_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_1.Click
         If BtnKOTSU_O_1.ImageUrl = IMG_CLOSE Then
             BtnKOTSU_O_1.ImageUrl = IMG_OPEN
-            TB_KOTSU_1.Visible = False
+            TB_KOTSU_O_1.Visible = False
         Else
             BtnKOTSU_O_1.ImageUrl = IMG_CLOSE
-            TB_KOTSU_1.Visible = True
+            TB_KOTSU_O_1.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_O_2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_2.Click
+        If BtnKOTSU_O_2.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_O_2.ImageUrl = IMG_OPEN
+            TB_KOTSU_O_2.Visible = False
+        Else
+            BtnKOTSU_O_2.ImageUrl = IMG_CLOSE
+            TB_KOTSU_O_2.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_O_3_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_3.Click
+        If BtnKOTSU_O_3.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_O_3.ImageUrl = IMG_OPEN
+            TB_KOTSU_O_3.Visible = False
+        Else
+            BtnKOTSU_O_3.ImageUrl = IMG_CLOSE
+            TB_KOTSU_O_3.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_O_4_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_4.Click
+        If BtnKOTSU_O_4.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_O_4.ImageUrl = IMG_OPEN
+            TB_KOTSU_O_4.Visible = False
+        Else
+            BtnKOTSU_O_4.ImageUrl = IMG_CLOSE
+            TB_KOTSU_O_4.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_O_5_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_5.Click
+        If BtnKOTSU_O_5.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_O_5.ImageUrl = IMG_OPEN
+            TB_KOTSU_O_5.Visible = False
+        Else
+            BtnKOTSU_O_5.ImageUrl = IMG_CLOSE
+            TB_KOTSU_O_5.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_F_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_1.Click
+        If BtnKOTSU_F_1.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_F_1.ImageUrl = IMG_OPEN
+            TB_KOTSU_F_1.Visible = False
+        Else
+            BtnKOTSU_F_1.ImageUrl = IMG_CLOSE
+            TB_KOTSU_F_1.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_F_2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_2.Click
+        If BtnKOTSU_F_2.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_F_2.ImageUrl = IMG_OPEN
+            TB_KOTSU_F_2.Visible = False
+        Else
+            BtnKOTSU_F_2.ImageUrl = IMG_CLOSE
+            TB_KOTSU_F_2.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_F_3_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_3.Click
+        If BtnKOTSU_F_3.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_F_3.ImageUrl = IMG_OPEN
+            TB_KOTSU_F_3.Visible = False
+        Else
+            BtnKOTSU_F_3.ImageUrl = IMG_CLOSE
+            TB_KOTSU_F_3.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_F_4_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_4.Click
+        If BtnKOTSU_F_4.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_F_4.ImageUrl = IMG_OPEN
+            TB_KOTSU_F_4.Visible = False
+        Else
+            BtnKOTSU_F_4.ImageUrl = IMG_CLOSE
+            TB_KOTSU_F_4.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnKOTSU_F_5_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_5.Click
+        If BtnKOTSU_F_5.ImageUrl = IMG_CLOSE Then
+            BtnKOTSU_F_5.ImageUrl = IMG_OPEN
+            TB_KOTSU_F_5.Visible = False
+        Else
+            BtnKOTSU_F_5.ImageUrl = IMG_CLOSE
+            TB_KOTSU_F_5.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_1.Click
+        If BtnTAXI_1.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_1.ImageUrl = IMG_OPEN
+            TB_TAXI_1.Visible = False
+        Else
+            BtnTAXI_1.ImageUrl = IMG_CLOSE
+            TB_TAXI_1.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_2.Click
+        If BtnTAXI_2.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_2.ImageUrl = IMG_OPEN
+            TB_TAXI_2.Visible = False
+        Else
+            BtnTAXI_2.ImageUrl = IMG_CLOSE
+            TB_TAXI_2.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_3_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_3.Click
+        If BtnTAXI_3.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_3.ImageUrl = IMG_OPEN
+            TB_TAXI_3.Visible = False
+        Else
+            BtnTAXI_3.ImageUrl = IMG_CLOSE
+            TB_TAXI_3.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_4_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_4.Click
+        If BtnTAXI_4.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_4.ImageUrl = IMG_OPEN
+            TB_TAXI_4.Visible = False
+        Else
+            BtnTAXI_4.ImageUrl = IMG_CLOSE
+            TB_TAXI_4.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_5_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_5.Click
+        If BtnTAXI_5.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_5.ImageUrl = IMG_OPEN
+            TB_TAXI_5.Visible = False
+        Else
+            BtnTAXI_5.ImageUrl = IMG_CLOSE
+            TB_TAXI_5.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_6_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_6.Click
+        If BtnTAXI_6.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_6.ImageUrl = IMG_OPEN
+            TB_TAXI_6.Visible = False
+        Else
+            BtnTAXI_6.ImageUrl = IMG_CLOSE
+            TB_TAXI_6.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_7_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_7.Click
+        If BtnTAXI_7.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_7.ImageUrl = IMG_OPEN
+            TB_TAXI_7.Visible = False
+        Else
+            BtnTAXI_7.ImageUrl = IMG_CLOSE
+            TB_TAXI_7.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_8_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_8.Click
+        If BtnTAXI_8.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_8.ImageUrl = IMG_OPEN
+            TB_TAXI_8.Visible = False
+        Else
+            BtnTAXI_8.ImageUrl = IMG_CLOSE
+            TB_TAXI_8.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_9_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_9.Click
+        If BtnTAXI_9.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_9.ImageUrl = IMG_OPEN
+            TB_TAXI_9.Visible = False
+        Else
+            BtnTAXI_9.ImageUrl = IMG_CLOSE
+            TB_TAXI_9.Visible = True
+        End If
+    End Sub
+
+    Private Sub BtnTAXI_10_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_10.Click
+        If BtnTAXI_10.ImageUrl = IMG_CLOSE Then
+            BtnTAXI_10.ImageUrl = IMG_OPEN
+            TB_TAXI_10.Visible = False
+        Else
+            BtnTAXI_10.ImageUrl = IMG_CLOSE
+            TB_TAXI_10.Visible = True
         End If
     End Sub
 End Class
