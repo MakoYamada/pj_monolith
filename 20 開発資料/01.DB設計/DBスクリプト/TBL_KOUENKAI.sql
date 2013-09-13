@@ -11,7 +11,7 @@ CREATE TABLE [dbo].[TBL_KOUENKAI](
 	[KOUENKAI_NO] [nvarchar](10) COLLATE Japanese_CI_AS  NOT NULL,
 	[KOUENKAI_EDABAN] [nvarchar](3) COLLATE Japanese_CI_AS  NOT NULL,
 	[KOUENKAI_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
-	[TAXI_PRT_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
+	[TAXI_PRT_NAME] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[FROM_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
 	[TO_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
 	[SEIHIN_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
