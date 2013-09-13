@@ -2100,6 +2100,7 @@
             Public KOUENKAI_NO As String
             Public JIGYOBU As String
             Public MEETING_NAME As String
+            Public TTANTO_ID As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_ID As String = "KOUENKAI_ID"
@@ -2111,7 +2112,8 @@
             Public Const KOUENKAI_DATE As String = "KOUENKAI_DATE"
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
             Public Const JIGYOBU As String = "JIGYOBU"
-            Public MEETING_NAME As String = "MEETING_NAME"
+            Public Const MEETING_NAME As String = "MEETING_NAME"
+            Public Const TTANTO_ID As String = "TTANTO_ID"
         End Class
         Public Class Name
             Public Const KOUENKAI_ID As String = "講演会ID"
@@ -2124,6 +2126,7 @@
             Public Const KOUENKAI_NO As String = "講演会番号"
             Public Const JIGYOBU As String = "事業部"
             Public Const MEETING_NAME As String = "会合名"
+            Public Const TTANTO_ID As String = "担当者"
         End Class
     End Class
 
