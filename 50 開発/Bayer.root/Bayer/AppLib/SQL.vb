@@ -2085,6 +2085,14 @@ Public Class SQL
         = " ORDER BY" _
         & " MS_USER.SYSTEM_ID"
 
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -2166,6 +2174,14 @@ Public Class SQL
         = " ORDER BY" _
         & " MS_JIGYOSHO.SYSTEM_ID"
 
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -2228,6 +2244,14 @@ Public Class SQL
         = " ORDER BY" _
         & " MS_AREA.SYSTEM_ID"
 
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -2289,6 +2313,14 @@ Public Class SQL
         Private Const SQL_ORDERBY As String _
         = " ORDER BY" _
         & " MS_EIGYOSHO.SYSTEM_ID"
+
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
 
         Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
             Dim strSQL As String = SQL_SELECT
