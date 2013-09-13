@@ -1,5 +1,19 @@
 Public Class AppConst
 
+    Public Class RECORD_KUBUN
+        'データ区分
+        Public Class Code
+            Public Const Insert As String = "I"
+            Public Const Update As String = "U"
+            Public Const Cancel As String = "C"
+        End Class
+        Public Class Name
+            Public Const Insert As String = "登録"
+            Public Const Update As String = "変更"
+            Public Const Cancel As String = "取消"
+        End Class
+    End Class
+
     Public Class KOTSUHOTEL
 
         Public Class RECORD_KUBUN
