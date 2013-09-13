@@ -17,4 +17,5 @@
     Public Const BackURL As String = "BackURL"
     Public Const DbError As String = "DbError"
     Public Const LoginID As String = "LoginID"
+    Public Const Joken As String = "Joken"
 End Class
