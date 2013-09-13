@@ -192,6 +192,7 @@
             Public INTERNAL_ORDER As String
             Public SHONIN_NAME As String
             Public SHONIN_DATE As String
+            Public SHONIN_NOTE As String
             Public CMSHONIN_NAME As String
             Public CMSHONIN_DATE As String
             Public CMSHONIN_NOTE As String
@@ -430,6 +431,7 @@
             Public REQ_TAXI_DATE_1 As String
             Public REQ_TAXI_FROM_1 As String
             Public REQ_TAXI_TO_1 As String
+            Public REQ_TAXI_NO_1 As String
             Public TAXI_YOTEIKINGAKU_1 As String
             Public ANS_TAXI_DATE_1 As String
             Public ANS_TAXI_FROM_1 As String
@@ -444,6 +446,7 @@
             Public REQ_TAXI_DATE_2 As String
             Public REQ_TAXI_FROM_2 As String
             Public REQ_TAXI_TO_2 As String
+            Public REQ_TAXI_NO_2 As String
             Public TAXI_YOTEIKINGAKU_2 As String
             Public ANS_TAXI_DATE_2 As String
             Public ANS_TAXI_FROM_2 As String
@@ -458,6 +461,7 @@
             Public REQ_TAXI_DATE_3 As String
             Public REQ_TAXI_FROM_3 As String
             Public REQ_TAXI_TO_3 As String
+            Public REQ_TAXI_NO_3 As String
             Public TAXI_YOTEIKINGAKU_3 As String
             Public ANS_TAXI_DATE_3 As String
             Public ANS_TAXI_FROM_3 As String
@@ -472,6 +476,7 @@
             Public REQ_TAXI_DATE_4 As String
             Public REQ_TAXI_FROM_4 As String
             Public REQ_TAXI_TO_4 As String
+            Public REQ_TAXI_NO_4 As String
             Public TAXI_YOTEIKINGAKU_4 As String
             Public ANS_TAXI_DATE_4 As String
             Public ANS_TAXI_FROM_4 As String
@@ -486,6 +491,7 @@
             Public REQ_TAXI_DATE_5 As String
             Public REQ_TAXI_FROM_5 As String
             Public REQ_TAXI_TO_5 As String
+            Public REQ_TAXI_NO_5 As String
             Public TAXI_YOTEIKINGAKU_5 As String
             Public ANS_TAXI_DATE_5 As String
             Public ANS_TAXI_FROM_5 As String
@@ -500,6 +506,7 @@
             Public REQ_TAXI_DATE_6 As String
             Public REQ_TAXI_FROM_6 As String
             Public REQ_TAXI_TO_6 As String
+            Public REQ_TAXI_NO_6 As String
             Public TAXI_YOTEIKINGAKU_6 As String
             Public ANS_TAXI_DATE_6 As String
             Public ANS_TAXI_FROM_6 As String
@@ -514,6 +521,7 @@
             Public REQ_TAXI_DATE_7 As String
             Public REQ_TAXI_FROM_7 As String
             Public REQ_TAXI_TO_7 As String
+            Public REQ_TAXI_NO_7 As String
             Public TAXI_YOTEIKINGAKU_7 As String
             Public ANS_TAXI_DATE_7 As String
             Public ANS_TAXI_FROM_7 As String
@@ -528,6 +536,7 @@
             Public REQ_TAXI_DATE_8 As String
             Public REQ_TAXI_FROM_8 As String
             Public REQ_TAXI_TO_8 As String
+            Public REQ_TAXI_NO_8 As String
             Public TAXI_YOTEIKINGAKU_8 As String
             Public ANS_TAXI_DATE_8 As String
             Public ANS_TAXI_FROM_8 As String
@@ -542,6 +551,7 @@
             Public REQ_TAXI_DATE_9 As String
             Public REQ_TAXI_FROM_9 As String
             Public REQ_TAXI_TO_9 As String
+            Public REQ_TAXI_NO_9 As String
             Public TAXI_YOTEIKINGAKU_9 As String
             Public ANS_TAXI_DATE_9 As String
             Public ANS_TAXI_FROM_9 As String
@@ -556,6 +566,7 @@
             Public REQ_TAXI_DATE_10 As String
             Public REQ_TAXI_FROM_10 As String
             Public REQ_TAXI_TO_10 As String
+            Public REQ_TAXI_NO_10 As String
             Public TAXI_YOTEIKINGAKU_10 As String
             Public ANS_TAXI_DATE_10 As String
             Public ANS_TAXI_FROM_10 As String
@@ -605,6 +616,7 @@
             Public Const INTERNAL_ORDER As String = "INTERNAL_ORDER"
             Public Const SHONIN_NAME As String = "SHONIN_NAME"
             Public Const SHONIN_DATE As String = "SHONIN_DATE"
+            Public Const SHONIN_NOTE As String = "SHONIN_NOTE"
             Public Const CMSHONIN_NAME As String = "CMSHONIN_NAME"
             Public Const CMSHONIN_DATE As String = "CMSHONIN_DATE"
             Public Const CMSHONIN_NOTE As String = "CMSHONIN_NOTE"
@@ -843,6 +855,7 @@
             Public Const REQ_TAXI_DATE_1 As String = "REQ_TAXI_DATE_1"
             Public Const REQ_TAXI_FROM_1 As String = "REQ_TAXI_FROM_1"
             Public Const REQ_TAXI_TO_1 As String = "REQ_TAXI_TO_1"
+            Public Const REQ_TAXI_NO_1 As String = "REQ_TAXI_NO_1"
             Public Const TAXI_YOTEIKINGAKU_1 As String = "TAXI_YOTEIKINGAKU_1"
             Public Const ANS_TAXI_DATE_1 As String = "ANS_TAXI_DATE_1"
             Public Const ANS_TAXI_FROM_1 As String = "ANS_TAXI_FROM_1"
@@ -857,6 +870,7 @@
             Public Const REQ_TAXI_DATE_2 As String = "REQ_TAXI_DATE_2"
             Public Const REQ_TAXI_FROM_2 As String = "REQ_TAXI_FROM_2"
             Public Const REQ_TAXI_TO_2 As String = "REQ_TAXI_TO_2"
+            Public Const REQ_TAXI_NO_2 As String = "REQ_TAXI_NO_2"
             Public Const TAXI_YOTEIKINGAKU_2 As String = "TAXI_YOTEIKINGAKU_2"
             Public Const ANS_TAXI_DATE_2 As String = "ANS_TAXI_DATE_2"
             Public Const ANS_TAXI_FROM_2 As String = "ANS_TAXI_FROM_2"
@@ -871,6 +885,7 @@
             Public Const REQ_TAXI_DATE_3 As String = "REQ_TAXI_DATE_3"
             Public Const REQ_TAXI_FROM_3 As String = "REQ_TAXI_FROM_3"
             Public Const REQ_TAXI_TO_3 As String = "REQ_TAXI_TO_3"
+            Public Const REQ_TAXI_NO_3 As String = "REQ_TAXI_NO_3"
             Public Const TAXI_YOTEIKINGAKU_3 As String = "TAXI_YOTEIKINGAKU_3"
             Public Const ANS_TAXI_DATE_3 As String = "ANS_TAXI_DATE_3"
             Public Const ANS_TAXI_FROM_3 As String = "ANS_TAXI_FROM_3"
@@ -885,6 +900,7 @@
             Public Const REQ_TAXI_DATE_4 As String = "REQ_TAXI_DATE_4"
             Public Const REQ_TAXI_FROM_4 As String = "REQ_TAXI_FROM_4"
             Public Const REQ_TAXI_TO_4 As String = "REQ_TAXI_TO_4"
+            Public Const REQ_TAXI_NO_4 As String = "REQ_TAXI_NO_4"
             Public Const TAXI_YOTEIKINGAKU_4 As String = "TAXI_YOTEIKINGAKU_4"
             Public Const ANS_TAXI_DATE_4 As String = "ANS_TAXI_DATE_4"
             Public Const ANS_TAXI_FROM_4 As String = "ANS_TAXI_FROM_4"
@@ -899,6 +915,7 @@
             Public Const REQ_TAXI_DATE_5 As String = "REQ_TAXI_DATE_5"
             Public Const REQ_TAXI_FROM_5 As String = "REQ_TAXI_FROM_5"
             Public Const REQ_TAXI_TO_5 As String = "REQ_TAXI_TO_5"
+            Public Const REQ_TAXI_NO_5 As String = "REQ_TAXI_NO_5"
             Public Const TAXI_YOTEIKINGAKU_5 As String = "TAXI_YOTEIKINGAKU_5"
             Public Const ANS_TAXI_DATE_5 As String = "ANS_TAXI_DATE_5"
             Public Const ANS_TAXI_FROM_5 As String = "ANS_TAXI_FROM_5"
@@ -913,6 +930,7 @@
             Public Const REQ_TAXI_DATE_6 As String = "REQ_TAXI_DATE_6"
             Public Const REQ_TAXI_FROM_6 As String = "REQ_TAXI_FROM_6"
             Public Const REQ_TAXI_TO_6 As String = "REQ_TAXI_TO_6"
+            Public Const REQ_TAXI_NO_6 As String = "REQ_TAXI_NO_6"
             Public Const TAXI_YOTEIKINGAKU_6 As String = "TAXI_YOTEIKINGAKU_6"
             Public Const ANS_TAXI_DATE_6 As String = "ANS_TAXI_DATE_6"
             Public Const ANS_TAXI_FROM_6 As String = "ANS_TAXI_FROM_6"
@@ -927,6 +945,7 @@
             Public Const REQ_TAXI_DATE_7 As String = "REQ_TAXI_DATE_7"
             Public Const REQ_TAXI_FROM_7 As String = "REQ_TAXI_FROM_7"
             Public Const REQ_TAXI_TO_7 As String = "REQ_TAXI_TO_7"
+            Public Const REQ_TAXI_NO_7 As String = "REQ_TAXI_NO_7"
             Public Const TAXI_YOTEIKINGAKU_7 As String = "TAXI_YOTEIKINGAKU_7"
             Public Const ANS_TAXI_DATE_7 As String = "ANS_TAXI_DATE_7"
             Public Const ANS_TAXI_FROM_7 As String = "ANS_TAXI_FROM_7"
@@ -941,6 +960,7 @@
             Public Const REQ_TAXI_DATE_8 As String = "REQ_TAXI_DATE_8"
             Public Const REQ_TAXI_FROM_8 As String = "REQ_TAXI_FROM_8"
             Public Const REQ_TAXI_TO_8 As String = "REQ_TAXI_TO_8"
+            Public Const REQ_TAXI_NO_8 As String = "REQ_TAXI_NO_8"
             Public Const TAXI_YOTEIKINGAKU_8 As String = "TAXI_YOTEIKINGAKU_8"
             Public Const ANS_TAXI_DATE_8 As String = "ANS_TAXI_DATE_8"
             Public Const ANS_TAXI_FROM_8 As String = "ANS_TAXI_FROM_8"
@@ -955,6 +975,7 @@
             Public Const REQ_TAXI_DATE_9 As String = "REQ_TAXI_DATE_9"
             Public Const REQ_TAXI_FROM_9 As String = "REQ_TAXI_FROM_9"
             Public Const REQ_TAXI_TO_9 As String = "REQ_TAXI_TO_9"
+            Public Const REQ_TAXI_NO_9 As String = "REQ_TAXI_NO_9"
             Public Const TAXI_YOTEIKINGAKU_9 As String = "TAXI_YOTEIKINGAKU_9"
             Public Const ANS_TAXI_DATE_9 As String = "ANS_TAXI_DATE_9"
             Public Const ANS_TAXI_FROM_9 As String = "ANS_TAXI_FROM_9"
@@ -969,6 +990,7 @@
             Public Const REQ_TAXI_DATE_10 As String = "REQ_TAXI_DATE_10"
             Public Const REQ_TAXI_FROM_10 As String = "REQ_TAXI_FROM_10"
             Public Const REQ_TAXI_TO_10 As String = "REQ_TAXI_TO_10"
+            Public Const REQ_TAXI_NO_10 As String = "REQ_TAXI_NO_10"
             Public Const TAXI_YOTEIKINGAKU_10 As String = "TAXI_YOTEIKINGAKU_10"
             Public Const ANS_TAXI_DATE_10 As String = "ANS_TAXI_DATE_10"
             Public Const ANS_TAXI_FROM_10 As String = "ANS_TAXI_FROM_10"
@@ -991,7 +1013,7 @@
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
-            Public Const STATUS_TEHAI As String = "手配ステータス"
+            Public Const STATUS_TEHAI As String = "手配スタータス"
             Public Const DR_MPID As String = "MPID"
             Public Const DR_CD As String = "DRコード"
             Public Const DR_EDABAN As String = "枝番"
@@ -1018,6 +1040,7 @@
             Public Const INTERNAL_ORDER As String = "Internal Order"
             Public Const SHONIN_NAME As String = "承認者（氏名）"
             Public Const SHONIN_DATE As String = "承認日時"
+            Public Const SHONIN_NOTE As String = "承認者備考"
             Public Const CMSHONIN_NAME As String = "CM承認者（氏名）"
             Public Const CMSHONIN_DATE As String = "CM承認日時"
             Public Const CMSHONIN_NOTE As String = "CM承認者備考"
@@ -1256,6 +1279,7 @@
             Public Const REQ_TAXI_DATE_1 As String = "タクシーチケット１：利用日（依頼）"
             Public Const REQ_TAXI_FROM_1 As String = "タクシーチケット１：発地（依頼）"
             Public Const REQ_TAXI_TO_1 As String = "タクシーチケット１：着地（依頼）"
+            Public Const REQ_TAXI_NO_1 As String = "タクシーチケット１：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_1 As String = "タクシーチケット１：予定金額"
             Public Const ANS_TAXI_DATE_1 As String = "タクシーチケット１：利用日（回答）"
             Public Const ANS_TAXI_FROM_1 As String = "タクシーチケット１：発地（回答）"
@@ -1270,6 +1294,7 @@
             Public Const REQ_TAXI_DATE_2 As String = "タクシーチケット２：利用日（依頼）"
             Public Const REQ_TAXI_FROM_2 As String = "タクシーチケット２：発地（依頼）"
             Public Const REQ_TAXI_TO_2 As String = "タクシーチケット２：着地（依頼）"
+            Public Const REQ_TAXI_NO_2 As String = "タクシーチケット２：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_2 As String = "タクシーチケット２：予定金額"
             Public Const ANS_TAXI_DATE_2 As String = "タクシーチケット２：利用日（回答）"
             Public Const ANS_TAXI_FROM_2 As String = "タクシーチケット２：発地（回答）"
@@ -1284,6 +1309,7 @@
             Public Const REQ_TAXI_DATE_3 As String = "タクシーチケット３：利用日（依頼）"
             Public Const REQ_TAXI_FROM_3 As String = "タクシーチケット３：発地（依頼）"
             Public Const REQ_TAXI_TO_3 As String = "タクシーチケット３：着地（依頼）"
+            Public Const REQ_TAXI_NO_3 As String = "タクシーチケット３：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_3 As String = "タクシーチケット３：予定金額"
             Public Const ANS_TAXI_DATE_3 As String = "タクシーチケット３：利用日（回答）"
             Public Const ANS_TAXI_FROM_3 As String = "タクシーチケット３：発地（回答）"
@@ -1298,6 +1324,7 @@
             Public Const REQ_TAXI_DATE_4 As String = "タクシーチケット４：利用日（依頼）"
             Public Const REQ_TAXI_FROM_4 As String = "タクシーチケット４：発地（依頼）"
             Public Const REQ_TAXI_TO_4 As String = "タクシーチケット４：着地（依頼）"
+            Public Const REQ_TAXI_NO_4 As String = "タクシーチケット４：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_4 As String = "タクシーチケット４：予定金額"
             Public Const ANS_TAXI_DATE_4 As String = "タクシーチケット４：利用日（回答）"
             Public Const ANS_TAXI_FROM_4 As String = "タクシーチケット４：発地（回答）"
@@ -1312,6 +1339,7 @@
             Public Const REQ_TAXI_DATE_5 As String = "タクシーチケット５：利用日（依頼）"
             Public Const REQ_TAXI_FROM_5 As String = "タクシーチケット５：発地（依頼）"
             Public Const REQ_TAXI_TO_5 As String = "タクシーチケット５：着地（依頼）"
+            Public Const REQ_TAXI_NO_5 As String = "タクシーチケット５：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_5 As String = "タクシーチケット５：予定金額"
             Public Const ANS_TAXI_DATE_5 As String = "タクシーチケット５：利用日（回答）"
             Public Const ANS_TAXI_FROM_5 As String = "タクシーチケット５：発地（回答）"
@@ -1326,6 +1354,7 @@
             Public Const REQ_TAXI_DATE_6 As String = "タクシーチケット６：利用日（依頼）"
             Public Const REQ_TAXI_FROM_6 As String = "タクシーチケット６：発地（依頼）"
             Public Const REQ_TAXI_TO_6 As String = "タクシーチケット６：着地（依頼）"
+            Public Const REQ_TAXI_NO_6 As String = "タクシーチケット６：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_6 As String = "タクシーチケット６：予定金額"
             Public Const ANS_TAXI_DATE_6 As String = "タクシーチケット６：利用日（回答）"
             Public Const ANS_TAXI_FROM_6 As String = "タクシーチケット６：発地（回答）"
@@ -1340,6 +1369,7 @@
             Public Const REQ_TAXI_DATE_7 As String = "タクシーチケット７：利用日（依頼）"
             Public Const REQ_TAXI_FROM_7 As String = "タクシーチケット７：発地（依頼）"
             Public Const REQ_TAXI_TO_7 As String = "タクシーチケット７：着地（依頼）"
+            Public Const REQ_TAXI_NO_7 As String = "タクシーチケット７：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_7 As String = "タクシーチケット７：予定金額"
             Public Const ANS_TAXI_DATE_7 As String = "タクシーチケット７：利用日（回答）"
             Public Const ANS_TAXI_FROM_7 As String = "タクシーチケット７：発地（回答）"
@@ -1354,6 +1384,7 @@
             Public Const REQ_TAXI_DATE_8 As String = "タクシーチケット８：利用日（依頼）"
             Public Const REQ_TAXI_FROM_8 As String = "タクシーチケット８：発地（依頼）"
             Public Const REQ_TAXI_TO_8 As String = "タクシーチケット８：着地（依頼）"
+            Public Const REQ_TAXI_NO_8 As String = "タクシーチケット８：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_8 As String = "タクシーチケット８：予定金額"
             Public Const ANS_TAXI_DATE_8 As String = "タクシーチケット８：利用日（回答）"
             Public Const ANS_TAXI_FROM_8 As String = "タクシーチケット８：発地（回答）"
@@ -1368,6 +1399,7 @@
             Public Const REQ_TAXI_DATE_9 As String = "タクシーチケット９：利用日（依頼）"
             Public Const REQ_TAXI_FROM_9 As String = "タクシーチケット９：発地（依頼）"
             Public Const REQ_TAXI_TO_9 As String = "タクシーチケット９：着地（依頼）"
+            Public Const REQ_TAXI_NO_9 As String = "タクシーチケット９：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_9 As String = "タクシーチケット９：予定金額"
             Public Const ANS_TAXI_DATE_9 As String = "タクシーチケット９：利用日（回答）"
             Public Const ANS_TAXI_FROM_9 As String = "タクシーチケット９：発地（回答）"
@@ -1382,6 +1414,7 @@
             Public Const REQ_TAXI_DATE_10 As String = "タクシーチケット１０：利用日（依頼）"
             Public Const REQ_TAXI_FROM_10 As String = "タクシーチケット１０：発地（依頼）"
             Public Const REQ_TAXI_TO_10 As String = "タクシーチケット１０：着地（依頼）"
+            Public Const REQ_TAXI_NO_10 As String = "タクシーチケット１０：番号（依頼）"
             Public Const TAXI_YOTEIKINGAKU_10 As String = "タクシーチケット１０：予定金額"
             Public Const ANS_TAXI_DATE_10 As String = "タクシーチケット１０：利用日（回答）"
             Public Const ANS_TAXI_FROM_10 As String = "タクシーチケット１０：発地（回答）"
@@ -1420,15 +1453,6 @@
             Public TEL As String
             Public EMAIL As String
             Public SEND_SAKI_FS As String
-            Public DR_MPID As String
-            Public DR_NAME As String
-            Public DR_KANA As String
-            Public DR_SHISETSU_NAME As String
-            Public DR_CD As String
-            Public DR_SHISETSU_CD As String
-            Public DR_ADDRESS As String
-            Public DR_GOFFICIAL As String
-            Public DR_YAKUWARI As String
             Public BU As String
             Public ACCOUNT_CODE As String
             Public COST_CENTER As String
@@ -1452,6 +1476,7 @@
             Public MITSUMORI_TF As String
             Public MITSUMORI_T As String
             Public MITSUMORI_TOTAL As String
+            Public MITSUMORI_URL As String
             Public KAISAI_KIBOU_ADDRESS1 As String
             Public KAISAI_KIBOU_ADDRESS2 As String
             Public KAISAI_KIBOU_NOTE As String
@@ -1469,12 +1494,42 @@
             Public MANAGER_KAIJO_TEHAI As String
             Public MANAGER_KAIJO_TIME1 As String
             Public MANAGER_KAIJO_TIME2 As String
+            Public KAIJO_URL As String
             Public OTHER_NOTE As String
             Public FIX_KAISAI_SHISETSU As String
             Public FIX_KAISAI_NOTE As String
             Public FIX_SEISAN_TF As String
             Public FIX_SEISAN_GTAX As String
             Public FIX_SEISAN_NTAX As String
+
+            Public KOUENKAI_NO As String
+            Public KOUENKAI_EDABAN As String
+            Public KOUENKAI_NAME As String
+            Public TAXI_PRT_NAME As String
+            Public FROM_DATE As String
+            Public TO_DATE As String
+            Public KIKAKU_TANTO_JIGYOBU As String
+            Public KIKAKU_TANTO_AREA As String
+            Public KIKAKU_TANTO_EIGYOSHO As String
+            Public KIKAKU_TANTO_NO As String
+            Public KIKAKU_TANTO_NAME As String
+            Public KIKAKU_TANTO_KANA As String
+            Public KIKAKU_TANTO_EMAIL As String
+            Public KIKAKU_TANTO_KEITAI As String
+            Public TEHAI_TANTO_JIGYOBU As String
+            Public TEHAI_TANTO_AREA As String
+            Public TEHAI_TANTO_EIGYOSHO As String
+            Public TEHAI_TANTO_NO As String
+            Public TEHAI_TANTO_NAME As String
+            Public TEHAI_TANTO_KANA As String
+            Public TEHAI_TANTO_EMAIL As String
+            Public TEHAI_TANTO_KEITAI As String
+            Public DAIKIBO_FLG As String
+            Public TTANTO_ID As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_ID As String = "KOUENKAI_ID"
@@ -1491,15 +1546,6 @@
             Public Const TEL As String = "TEL"
             Public Const EMAIL As String = "EMAIL"
             Public Const SEND_SAKI_FS As String = "SEND_SAKI_FS"
-            Public Const DR_MPID As String = "DR_MPID"
-            Public Const DR_NAME As String = "DR_NAME"
-            Public Const DR_KANA As String = "DR_KANA"
-            Public Const DR_SHISETSU_NAME As String = "DR_SHISETSU_NAME"
-            Public Const DR_CD As String = "DR_CD"
-            Public Const DR_SHISETSU_CD As String = "DR_SHISETSU_CD"
-            Public Const DR_ADDRESS As String = "DR_ADDRESS"
-            Public Const DR_GOFFICIAL As String = "DR_GOFFICIAL"
-            Public Const DR_YAKUWARI As String = "DR_YAKUWARI"
             Public Const BU As String = "BU"
             Public Const ACCOUNT_CODE As String = "ACCOUNT_CODE"
             Public Const COST_CENTER As String = "COST_CENTER"
@@ -1523,6 +1569,7 @@
             Public Const MITSUMORI_TF As String = "MITSUMORI_TF"
             Public Const MITSUMORI_T As String = "MITSUMORI_T"
             Public Const MITSUMORI_TOTAL As String = "MITSUMORI_TOTAL"
+            Public Const MITSUMORI_URL As String = "MITSUMORI_URL"
             Public Const KAISAI_KIBOU_ADDRESS1 As String = "KAISAI_KIBOU_ADDRESS1"
             Public Const KAISAI_KIBOU_ADDRESS2 As String = "KAISAI_KIBOU_ADDRESS2"
             Public Const KAISAI_KIBOU_NOTE As String = "KAISAI_KIBOU_NOTE"
@@ -1540,12 +1587,42 @@
             Public Const MANAGER_KAIJO_TEHAI As String = "MANAGER_KAIJO_TEHAI"
             Public Const MANAGER_KAIJO_TIME1 As String = "MANAGER_KAIJO_TIME1"
             Public Const MANAGER_KAIJO_TIME2 As String = "MANAGER_KAIJO_TIME2"
+            Public Const KAIJO_URL As String = "KAIJO_URL"
             Public Const OTHER_NOTE As String = "OTHER_NOTE"
             Public Const FIX_KAISAI_SHISETSU As String = "FIX_KAISAI_SHISETSU"
             Public Const FIX_KAISAI_NOTE As String = "FIX_KAISAI_NOTE"
             Public Const FIX_SEISAN_TF As String = "FIX_SEISAN_TF"
             Public Const FIX_SEISAN_GTAX As String = "FIX_SEISAN_GTAX"
             Public Const FIX_SEISAN_NTAX As String = "FIX_SEISAN_NTAX"
+
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const KOUENKAI_EDABAN As String = "KOUENKAI_EDABAN"
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const TAXI_PRT_NAME As String = "TAXI_PRT_NAME"
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const TO_DATE As String = "TO_DATE"
+            Public Const KIKAKU_TANTO_JIGYOBU As String = "KIKAKU_TANTO_JIGYOBU"
+            Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
+            Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
+            Public Const KIKAKU_TANTO_NO As String = "KIKAKU_TANTO_NO"
+            Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"
+            Public Const KIKAKU_TANTO_KANA As String = "KIKAKU_TANTO_KANA"
+            Public Const KIKAKU_TANTO_EMAIL As String = "KIKAKU_TANTO_EMAIL"
+            Public Const KIKAKU_TANTO_KEITAI As String = "KIKAKU_TANTO_KEITAI"
+            Public Const TEHAI_TANTO_JIGYOBU As String = "TEHAI_TANTO_JIGYOBU"
+            Public Const TEHAI_TANTO_AREA As String = "TEHAI_TANTO_AREA"
+            Public Const TEHAI_TANTO_EIGYOSHO As String = "TEHAI_TANTO_EIGYOSHO"
+            Public Const TEHAI_TANTO_NO As String = "TEHAI_TANTO_NO"
+            Public Const TEHAI_TANTO_NAME As String = "TEHAI_TANTO_NAME"
+            Public Const TEHAI_TANTO_KANA As String = "TEHAI_TANTO_KANA"
+            Public Const TEHAI_TANTO_EMAIL As String = "TEHAI_TANTO_EMAIL"
+            Public Const TEHAI_TANTO_KEITAI As String = "TEHAI_TANTO_KEITAI"
+            Public Const DAIKIBO_FLG As String = "DAIKIBO_FLG"
+            Public Const TTANTO_ID As String = "TTANTO_ID"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
         End Class
         Public Class Name
             Public Const KOUENKAI_ID As String = "講演会ID"
@@ -1562,15 +1639,6 @@
             Public Const TEL As String = "電話番号"
             Public Const EMAIL As String = "Emailアドレス"
             Public Const SEND_SAKI_FS As String = "送付先FS"
-            Public Const DR_MPID As String = "MPID"
-            Public Const DR_NAME As String = "DR氏名"
-            Public Const DR_KANA As String = "DR氏名（全角カタカナ）"
-            Public Const DR_SHISETSU_NAME As String = "施設名"
-            Public Const DR_CD As String = "DRコード"
-            Public Const DR_SHISETSU_CD As String = "DCF施設コード"
-            Public Const DR_ADDRESS As String = "DR住所"
-            Public Const DR_GOFFICIAL As String = "国家公務員"
-            Public Const DR_YAKUWARI As String = "参加者役割"
             Public Const BU As String = "BU"
             Public Const ACCOUNT_CODE As String = "Account Code"
             Public Const COST_CENTER As String = "Cost Center"
@@ -1594,6 +1662,7 @@
             Public Const MITSUMORI_TF As String = "見積額（非課税）"
             Public Const MITSUMORI_T As String = "見積額（課税）"
             Public Const MITSUMORI_TOTAL As String = "見積額（合計）"
+            Public Const MITSUMORI_URL As String = "見積書保存URL"
             Public Const KAISAI_KIBOU_ADDRESS1 As String = "開催希望地　（都道府県）"
             Public Const KAISAI_KIBOU_ADDRESS2 As String = "開催希望地　（市町村）"
             Public Const KAISAI_KIBOU_NOTE As String = "開催希望　（フリーテキスト）"
@@ -1611,12 +1680,42 @@
             Public Const MANAGER_KAIJO_TEHAI As String = "世話人会場　要・不要"
             Public Const MANAGER_KAIJO_TIME1 As String = "世話人会場　開始時間"
             Public Const MANAGER_KAIJO_TIME2 As String = "世話人会場　終了時間"
+            Public Const KAIJO_URL As String = "会場URL"
             Public Const OTHER_NOTE As String = "その他備考欄"
             Public Const FIX_KAISAI_SHISETSU As String = "【確定】　開催地　（施設名）"
             Public Const FIX_KAISAI_NOTE As String = "【確定】　開催地　（備考欄）"
             Public Const FIX_SEISAN_TF As String = "【確定精算情報】　非課税"
             Public Const FIX_SEISAN_GTAX As String = "【確定精算情報】　課税１　(社外）"
             Public Const FIX_SEISAN_NTAX As String = "【確定精算情報】　課税１　(社内）"
+
+            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_EDABAN As String = "枝番"
+            Public Const KOUENKAI_NAME As String = "講演会名"
+            Public Const TAXI_PRT_NAME As String = "タクシーチケット印字名"
+            Public Const FROM_DATE As String = "講演会開催日From"
+            Public Const TO_DATE As String = "講演会開催日To"
+            Public Const KIKAKU_TANTO_JIGYOBU As String = "所属事業部"
+            Public Const KIKAKU_TANTO_AREA As String = "所属エリア"
+            Public Const KIKAKU_TANTO_EIGYOSHO As String = "所属営業所"
+            Public Const KIKAKU_TANTO_NO As String = "担当者（企画担当者）No"
+            Public Const KIKAKU_TANTO_NAME As String = "担当者（企画担当者）名"
+            Public Const KIKAKU_TANTO_KANA As String = "担当者（企画担当者）名（カタカナ）"
+            Public Const KIKAKU_TANTO_EMAIL As String = "Emailアドレス（企画担当者）"
+            Public Const KIKAKU_TANTO_KEITAI As String = "携帯電話番号"
+            Public Const TEHAI_TANTO_JIGYOBU As String = "所属事業部（手配担当者）"
+            Public Const TEHAI_TANTO_AREA As String = "所属エリア（手配担当者）"
+            Public Const TEHAI_TANTO_EIGYOSHO As String = "所属営業所（手配担当者）"
+            Public Const TEHAI_TANTO_NO As String = "担当者（手配担当者）No"
+            Public Const TEHAI_TANTO_NAME As String = "担当者（手配担当者）名"
+            Public Const TEHAI_TANTO_KANA As String = "担当者（手配担当者）名（カタカナ）"
+            Public Const TEHAI_TANTO_EMAIL As String = "Emailアドレス（手配担当者）"
+            Public Const TEHAI_TANTO_KEITAI As String = "携帯電話番号"
+            Public Const DAIKIBO_FLG As String = "特定大規模フラグ"
+            Public Const TTANTO_ID As String = "トップツアー担当者ID"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
         End Class
     End Class
 
@@ -1821,6 +1920,7 @@
             Public TEL As String
             Public CHECKIN_TIME As String
             Public CHECKOUT_TIME As String
+            Public URL As String
             Public STOP_FLG As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
@@ -1835,6 +1935,7 @@
             Public Const TEL As String = "TEL"
             Public Const CHECKIN_TIME As String = "CHECKIN_TIME"
             Public Const CHECKOUT_TIME As String = "CHECKOUT_TIME"
+            Public Const URL As String = "URL"
             Public Const STOP_FLG As String = "STOP_FLG"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
@@ -1849,6 +1950,7 @@
             Public Const TEL As String = "施設電話番号"
             Public Const CHECKIN_TIME As String = "ﾁｪｯｸｲﾝ時間"
             Public Const CHECKOUT_TIME As String = "ﾁｪｯｸｱｳﾄ時間"
+            Public Const URL As String = "ホームページURL"
             Public Const STOP_FLG As String = "利用停止フラグ"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
@@ -1996,6 +2098,8 @@
             Public KOUENKAI_NAME As String
             Public KOUENKAI_DATE As String
             Public KOUENKAI_NO As String
+            Public JIGYOBU As String
+            Public MEETING_NAME As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_ID As String = "KOUENKAI_ID"
@@ -2006,6 +2110,8 @@
             Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
             Public Const KOUENKAI_DATE As String = "KOUENKAI_DATE"
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const JIGYOBU As String = "JIGYOBU"
+            Public MEETING_NAME As String = "MEETING_NAME"
         End Class
         Public Class Name
             Public Const KOUENKAI_ID As String = "講演会ID"
@@ -2016,6 +2122,8 @@
             Public Const KOUENKAI_NAME As String = "講演会名"
             Public Const KOUENKAI_DATE As String = "講演会開催日"
             Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const JIGYOBU As String = "事業部"
+            Public Const MEETING_NAME As String = "会合名"
         End Class
     End Class
 
