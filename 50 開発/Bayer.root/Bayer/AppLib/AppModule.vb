@@ -4011,6 +4011,40 @@ Public Class AppModule
 
 
     '== プルダウン設定 ==
+    '事業部
+    Public Shared Sub SetDropDownList_JIGYOSHO(ByRef JIGYOSHO As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With JIGYOSHO
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_JIGYOSHO.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData), CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+
+    'エリア
+    Public Shared Sub SetDropDownList_AREA(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With AREA
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_AREA.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData), CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+
     '手配ステータス
     Public Shared Sub SetDropDownList_STATUS_TEHAI(ByRef STATUS_TEHAI As DropDownList, Optional ByVal KAIJO As Boolean = False)
         With STATUS_TEHAI
