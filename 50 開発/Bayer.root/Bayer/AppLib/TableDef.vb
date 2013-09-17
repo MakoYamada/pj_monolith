@@ -2114,7 +2114,7 @@
             Public Const JIGYOBU As String = "JIGYOBU"
             Public Const MEETING_NAME As String = "MEETING_NAME"
             Public Const TTANTO_ID As String = "TTANTO_ID"
-        End Class
+         End Class
         Public Class Name
             Public Const KOUENKAI_ID As String = "講演会ID"
             Public Const AREA As String = "所属エリア"
@@ -2127,7 +2127,7 @@
             Public Const JIGYOBU As String = "事業部"
             Public Const MEETING_NAME As String = "会合名"
             Public Const TTANTO_ID As String = "担当者"
-        End Class
+         End Class
     End Class
 
 
