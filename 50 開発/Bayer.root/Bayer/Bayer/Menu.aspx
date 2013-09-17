@@ -27,7 +27,8 @@
 					</tr>					
 					<tr valign="top">
 						<td align="center" style="width: 210px;" colspan="3">
-							<asp:Button ID="BtnKouenkaiList" runat="server" Text="講演会基本情報" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnKouenkaiList" runat="server" Text="講演会基本情報" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 5px;">
@@ -54,7 +55,8 @@
 					</tr>					
 					<tr valign="top">
 						<td align="center" style="width: 210px;" colspan="3">
-							<asp:Button ID="BtnKouenkai" runat="server" Text="講演会情報" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnKouenkai" runat="server" Text="講演会情報" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 					</tr>
@@ -68,25 +70,30 @@
 					</tr>					
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnJigyosho" runat="server" Text="事業部マスタ" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnJigyosho" runat="server" Text="事業部マスタ" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnArea" runat="server" Text="エリアマスタ" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnArea" runat="server" Text="エリアマスタ" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnEigyosho" runat="server" Text="営業所マスタ" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnEigyosho" runat="server" Text="営業所マスタ" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnShisetsu" runat="server" Text="施設部マスタ" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnShisetsu" runat="server" Text="施設マスタ" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnUser" runat="server" Text="ユーザマスタ" Width="200px" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnUser" runat="server" Text="ユーザマスタ" Width="200px" 
+                                CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">

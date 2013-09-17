@@ -11,16 +11,16 @@ Partial Public Class Menu1
         'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), AppModule.UserType.Admin, Me)
 
         'セッションを変数に格納
-        If Not SetSession() Then
-            Response.Redirect(URL.TimeOut)
-        End If
+        'If Not SetSession() Then
+        '    Response.Redirect(URL.TimeOut)
+        'End If
 
         If Not Page.IsPostBack Then
             '画面項目 初期化
-            InitControls()
+            'InitControls()
 
-            '画面項目表示
-            SetForm()
+            ''画面項目表示
+            'SetForm()
         End If
 
         'マスターページ設定
@@ -39,7 +39,7 @@ Partial Public Class Menu1
     Private Sub InitControls()
 
         'クリア
-        CmnModule.ClearAllControl(Me)
+        'CmnModule.ClearAllControl(Me)
     End Sub
 
     '画面項目 表示
