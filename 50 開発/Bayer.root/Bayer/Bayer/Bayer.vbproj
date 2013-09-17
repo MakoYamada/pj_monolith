@@ -131,6 +131,12 @@
     <Compile Include="DrReport2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DrReport2_1.Designer.vb">
+      <DependentUpon>DrReport2_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport2_1.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="HotelKensaku.aspx.designer.vb">
       <DependentUpon>HotelKensaku.aspx</DependentUpon>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrReport2.resx">
       <DependentUpon>DrReport2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrReport2_1.resx">
+      <DependentUpon>DrReport2_1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">

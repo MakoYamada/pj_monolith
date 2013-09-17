@@ -27,7 +27,6 @@ Partial Public Class DrReport
         Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.TextBox2 = New DataDynamics.ActiveReports.TextBox
-        Me.Shape1 = New DataDynamics.ActiveReports.Shape
         Me.TextBox3 = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
         Me.TextBox4 = New DataDynamics.ActiveReports.TextBox
@@ -65,6 +64,8 @@ Partial Public Class DrReport
         Me.Label30 = New DataDynamics.ActiveReports.Label
         Me.Label31 = New DataDynamics.ActiveReports.Label
         Me.Label32 = New DataDynamics.ActiveReports.Label
+        Me.Line1 = New DataDynamics.ActiveReports.Line
+        Me.Line2 = New DataDynamics.ActiveReports.Line
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,12 +135,12 @@ Partial Public Class DrReport
         Me.Label2.Style = ""
         Me.Label2.Text = "1/2"
         Me.Label2.Top = 0.4480315!
-        Me.Label2.Width = 0.78125!
+        Me.Label2.Width = 0.3751969!
         '
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label3, Me.Label4, Me.TextBox1, Me.Label5, Me.TextBox2, Me.Shape1, Me.TextBox3, Me.Label6, Me.TextBox4, Me.Label7, Me.Label8, Me.Label9, Me.TextBox5, Me.Label10, Me.TextBox6, Me.Label11, Me.TextBox7, Me.TextBox8, Me.TextBox9, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label3, Me.Label4, Me.TextBox1, Me.Label5, Me.TextBox2, Me.TextBox3, Me.Label6, Me.TextBox4, Me.Label7, Me.Label8, Me.Label9, Me.TextBox5, Me.Label10, Me.TextBox6, Me.Label11, Me.TextBox7, Me.TextBox8, Me.TextBox9, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Line1, Me.Line2})
         Me.Detail.Height = 7.375099!
         Me.Detail.Name = "Detail"
         '
@@ -160,7 +161,7 @@ Partial Public Class DrReport
         Me.Label3.Style = "background-color: Gainsboro; text-align: center"
         Me.Label3.Text = "＜会合情報＞"
         Me.Label3.Top = 0.1456693!
-        Me.Label3.Width = 7.510237!
+        Me.Label3.Width = 7.020473!
         '
         'Label4
         '
@@ -178,7 +179,7 @@ Partial Public Class DrReport
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "background-color: Gainsboro"
         Me.Label4.Text = "会合名"
-        Me.Label4.Top = 0.3437008!
+        Me.Label4.Top = 0.3346457!
         Me.Label4.Width = 1.0!
         '
         'TextBox1
@@ -196,8 +197,8 @@ Partial Public Class DrReport
         Me.TextBox1.Left = 1.229134!
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Text = "TextBox1"
-        Me.TextBox1.Top = 0.3437008!
-        Me.TextBox1.Width = 6.510237!
+        Me.TextBox1.Top = 0.3346457!
+        Me.TextBox1.Width = 6.020473!
         '
         'Label5
         '
@@ -215,7 +216,7 @@ Partial Public Class DrReport
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "background-color: Gainsboro"
         Me.Label5.Text = "実施日時"
-        Me.Label5.Top = 0.5417323!
+        Me.Label5.Top = 0.5326772!
         Me.Label5.Width = 1.0!
         '
         'TextBox2
@@ -234,54 +235,38 @@ Partial Public Class DrReport
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Text = Nothing
         Me.TextBox2.Top = 1.116536!
-        Me.TextBox2.Width = 1.812204!
-        '
-        'Shape1
-        '
-        Me.Shape1.Border.BottomColor = System.Drawing.Color.DimGray
-        Me.Shape1.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.Shape1.Border.LeftColor = System.Drawing.Color.DimGray
-        Me.Shape1.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.Shape1.Border.RightColor = System.Drawing.Color.DimGray
-        Me.Shape1.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.Shape1.Border.TopColor = System.Drawing.Color.DimGray
-        Me.Shape1.Height = 0.1980315!
-        Me.Shape1.Left = 1.229134!
-        Me.Shape1.Name = "Shape1"
-        Me.Shape1.RoundingRadius = 9.999999!
-        Me.Shape1.Top = 0.5417323!
-        Me.Shape1.Width = 6.510236!
+        Me.TextBox2.Width = 1.541339!
         '
         'TextBox3
         '
         Me.TextBox3.DataField = "FROM_DATE"
-        Me.TextBox3.Height = 0.1979167!
-        Me.TextBox3.Left = 1.229134!
+        Me.TextBox3.Height = 0.1665355!
+        Me.TextBox3.Left = 1.260236!
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Text = Nothing
-        Me.TextBox3.Top = 0.5417323!
+        Me.TextBox3.Top = 0.5429134!
         Me.TextBox3.Width = 0.7291337!
         '
         'Label6
         '
-        Me.Label6.Height = 0.1979167!
+        Me.Label6.Height = 0.1767717!
         Me.Label6.HyperLink = Nothing
-        Me.Label6.Left = 1.958268!
+        Me.Label6.Left = 1.98937!
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "text-align: center"
         Me.Label6.Text = "～"
-        Me.Label6.Top = 0.5417323!
+        Me.Label6.Top = 0.5326772!
         Me.Label6.Width = 0.2602363!
         '
         'TextBox4
         '
         Me.TextBox4.DataField = "TO_DATE"
-        Me.TextBox4.Height = 0.1979167!
-        Me.TextBox4.Left = 2.218504!
+        Me.TextBox4.Height = 0.1665354!
+        Me.TextBox4.Left = 2.249606!
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Text = Nothing
-        Me.TextBox4.Top = 0.5417323!
-        Me.TextBox4.Width = 0.7291337!
+        Me.TextBox4.Top = 0.5429134!
+        Me.TextBox4.Width = 0.7291338!
         '
         'Label7
         '
@@ -300,7 +285,7 @@ Partial Public Class DrReport
         Me.Label7.Style = "background-color: Gainsboro; text-align: center"
         Me.Label7.Text = "＜ドクター情報＞"
         Me.Label7.Top = 0.918504!
-        Me.Label7.Width = 7.510236!
+        Me.Label7.Width = 7.020473!
         '
         'Label8
         '
@@ -354,9 +339,8 @@ Partial Public Class DrReport
         Me.TextBox5.Height = 0.1979167!
         Me.TextBox5.Left = 1.229134!
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Text = Nothing
         Me.TextBox5.Top = 1.314567!
-        Me.TextBox5.Width = 6.510237!
+        Me.TextBox5.Width = 6.020473!
         '
         'Label10
         '
@@ -370,7 +354,7 @@ Partial Public Class DrReport
         Me.Label10.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
         Me.Label10.Height = 0.1979167!
         Me.Label10.HyperLink = Nothing
-        Me.Label10.Left = 3.041339!
+        Me.Label10.Left = 2.770473!
         Me.Label10.Name = "Label10"
         Me.Label10.Style = "background-color: Gainsboro"
         Me.Label10.Text = "フリガナ"
@@ -389,11 +373,11 @@ Partial Public Class DrReport
         Me.TextBox6.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
         Me.TextBox6.DataField = "DR_KANA"
         Me.TextBox6.Height = 0.1979167!
-        Me.TextBox6.Left = 4.041339!
+        Me.TextBox6.Left = 3.770473!
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Text = Nothing
         Me.TextBox6.Top = 1.116536!
-        Me.TextBox6.Width = 1.812204!
+        Me.TextBox6.Width = 1.541339!
         '
         'Label11
         '
@@ -407,7 +391,7 @@ Partial Public Class DrReport
         Me.Label11.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
         Me.Label11.Height = 0.1979167!
         Me.Label11.HyperLink = Nothing
-        Me.Label11.Left = 5.853544!
+        Me.Label11.Left = 5.311811!
         Me.Label11.Name = "Label11"
         Me.Label11.Style = "background-color: Gainsboro"
         Me.Label11.Text = "医師コード"
@@ -425,12 +409,12 @@ Partial Public Class DrReport
         Me.TextBox7.Border.TopColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
         Me.TextBox7.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
         Me.TextBox7.DataField = "DR_MPID"
-        Me.TextBox7.Height = 0.1979166!
-        Me.TextBox7.Left = 6.853544!
+        Me.TextBox7.Height = 0.1979167!
+        Me.TextBox7.Left = 6.311811!
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Text = Nothing
         Me.TextBox7.Top = 1.116536!
-        Me.TextBox7.Width = 0.8858271!
+        Me.TextBox7.Width = 0.9377952!
         '
         'PageFooter
         '
@@ -464,7 +448,7 @@ Partial Public Class DrReport
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Text = Nothing
         Me.TextBox8.Top = 1.512599!
-        Me.TextBox8.Width = 6.510237!
+        Me.TextBox8.Width = 6.020473!
         '
         'TextBox9
         '
@@ -481,7 +465,7 @@ Partial Public Class DrReport
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Text = Nothing
         Me.TextBox9.Top = 1.71063!
-        Me.TextBox9.Width = 6.510237!
+        Me.TextBox9.Width = 6.020473!
         '
         'Label12
         '
@@ -655,7 +639,7 @@ Partial Public Class DrReport
         Me.Label21.Style = "background-color: Gainsboro; text-align: center"
         Me.Label21.Text = "＜宿泊手配＞"
         Me.Label21.Top = 3.882563!
-        Me.Label21.Width = 7.510236!
+        Me.Label21.Width = 7.020473!
         '
         'Label22
         '
@@ -850,12 +834,40 @@ Partial Public Class DrReport
         Me.Label32.Top = 6.456693!
         Me.Label32.Width = 1.0!
         '
+        'Line1
+        '
+        Me.Line1.Height = 0.0!
+        Me.Line1.Left = 1.229134!
+        Me.Line1.LineColor = System.Drawing.Color.DimGray
+        Me.Line1.LineWeight = 1.0!
+        Me.Line1.Name = "Line1"
+        Me.Line1.Top = 0.7305939!
+        Me.Line1.Width = 6.020473!
+        Me.Line1.X1 = 1.229134!
+        Me.Line1.X2 = 7.249607!
+        Me.Line1.Y1 = 0.7305939!
+        Me.Line1.Y2 = 0.7305939!
+        '
+        'Line2
+        '
+        Me.Line2.Height = 0.18937!
+        Me.Line2.Left = 7.249607!
+        Me.Line2.LineColor = System.Drawing.Color.DimGray
+        Me.Line2.LineWeight = 1.0!
+        Me.Line2.Name = "Line2"
+        Me.Line2.Top = 0.5429134!
+        Me.Line2.Width = 0.0!
+        Me.Line2.X1 = 7.249607!
+        Me.Line2.X2 = 7.249607!
+        Me.Line2.Y1 = 0.5429134!
+        Me.Line2.Y2 = 0.7322835!
+        '
         'DrReport
         '
         Me.MasterReport = False
         Me.PageSettings.PaperHeight = 11.0!
         Me.PageSettings.PaperWidth = 8.5!
-        Me.PrintWidth = 7.989731!
+        Me.PrintWidth = 7.645981!
         Me.Sections.Add(Me.PageHeader)
         Me.Sections.Add(Me.GroupHeader1)
         Me.Sections.Add(Me.Detail)
@@ -917,7 +929,6 @@ Partial Public Class DrReport
     Private WithEvents TextBox1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label5 As DataDynamics.ActiveReports.Label
     Private WithEvents TextBox2 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents Shape1 As DataDynamics.ActiveReports.Shape
     Private WithEvents TextBox3 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label6 As DataDynamics.ActiveReports.Label
     Private WithEvents TextBox4 As DataDynamics.ActiveReports.TextBox
@@ -954,4 +965,6 @@ Partial Public Class DrReport
     Private WithEvents Label30 As DataDynamics.ActiveReports.Label
     Private WithEvents Label31 As DataDynamics.ActiveReports.Label
     Private WithEvents Label32 As DataDynamics.ActiveReports.Label
+    Private WithEvents Line1 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line2 As DataDynamics.ActiveReports.Line
 End Class 
