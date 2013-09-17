@@ -72,6 +72,11 @@ Partial Public Class DrList
     '画面項目 初期化    Private Sub InitControls()
         'クリア
         CmnModule.ClearAllControl(Me)
+
+        Me.LabelNoData.Visible = False
+        Me.BtnPrint.Visible = False
+        Me.lnkCheck.Visible = False
+
     End Sub
 
     '画面項目 表示
@@ -125,9 +130,6 @@ Partial Public Class DrList
 
         'DDL
 
-
-        '一覧 表示
-        DispList()
     End Sub
 
     'データ取得
@@ -168,12 +170,16 @@ Partial Public Class DrList
         'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            Me.BtnPrint.Visible = False
+            Me.lnkCheck.Visible = False
+
             CmnModule.SetEnabled(Me.BtnPrint, False)
 
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
             Me.BtnPrint.Visible = True
+            Me.lnkCheck.Visible = True
             
             'グリッドビュー表示
             SetGridView()
@@ -277,6 +283,9 @@ Partial Public Class DrList
 
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+
+        '一覧 表示
+        DispList()
 
     End Sub
 

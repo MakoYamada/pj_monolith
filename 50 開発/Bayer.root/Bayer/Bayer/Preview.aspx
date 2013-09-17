@@ -6,8 +6,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <ActiveReportsWeb:WebViewer ID="WebViewer1" runat="server" Height="434px" 
-        Width="865px" ViewerType="FlashViewer">
+    <ActiveReportsWeb:WebViewer ID="WebViewer1" runat="server" Height="700px" 
+        Width="900px" ViewerType="FlashViewer">
         <FlashViewerOptions MultiPageViewColumns="1" MultiPageViewRows="1"></FlashViewerOptions>
     </ActiveReportsWeb:WebViewer>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
