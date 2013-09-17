@@ -153,6 +153,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Menu.aspx.designer.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -200,6 +207,7 @@
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRegist.aspx" />
     <Content Include="Maintenance.html" />
+    <Content Include="Menu.aspx" />
     <Content Include="Preview.aspx" />
     <Content Include="print.css" />
     <Content Include="Sorry.html" />
