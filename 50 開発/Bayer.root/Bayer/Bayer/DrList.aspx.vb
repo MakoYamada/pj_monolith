@@ -264,7 +264,7 @@ Partial Public Class DrList
                 'Session.Item(SessionDef.TBL_DR) = TBL_DR
                 'Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 'Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-                'Response.Redirect(URL.)
+                Response.Redirect(URL.DrRegist)
         End Select
     End Sub
 
@@ -283,6 +283,8 @@ Partial Public Class DrList
     '[印刷]
     Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
 
+        'TODO:条件かデータを渡す
+        Response.Redirect(URL.Preview)
     End Sub
 
     '[戻る]
