@@ -1,6 +1,6 @@
 ﻿Imports CommonLib
 Imports AppLib
-Partial Public Class KaijoList
+Partial Public Class NewKaijoList
     Inherits WebBase
 
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
@@ -11,13 +11,12 @@ Partial Public Class KaijoList
         TEHAI_TANTO_JIGYOBU
         TEHAI_TANTO_AREA
         TEHAI_TANTO_EIGYOSHO
-        FROM_DATE
+        YOTEI_DATE
         KOUENKAI_NAME
+        TIME_STAMP
         TANTO_NAME
-        Button1
-        Button2
         KOUENKAI_NO
-        TO_DATE
+         Button1
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -44,7 +43,7 @@ Partial Public Class KaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "会場検索講演会情報"
+            .PageTitle = "新着・会場手配依頼"
         End With
 
     End Sub
@@ -73,9 +72,6 @@ Partial Public Class KaijoList
 
         'IME設定
         CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.DATE_YYYY, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.DATE_MM, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.DATE_DD, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TTANTO_ID, CmnModule.ImeType.Disabled)
 
         'クリア
@@ -84,7 +80,7 @@ Partial Public Class KaijoList
 
     '画面項目 表示
     Private Sub SetForm()
-        'データ取得
+         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
@@ -109,9 +105,9 @@ Partial Public Class KaijoList
         Joken.AREA = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_AREA)
         Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
         Joken.TTANTO_ID = Trim(Me.TTANTO_ID.Text)
-        Joken.KOUENKAI_DATE = CmnModule.Format_DateToString(Me.DATE_YYYY.Text, Me.DATE_MM.Text, Me.DATE_DD.Text)
 
         ReDim TBL_KAIJO(wCnt)
+
         strSQL = SQL.TBL_KAIJO.Search(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
@@ -126,7 +122,7 @@ Partial Public Class KaijoList
 
         Return wFlag
     End Function
-
+     
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
@@ -150,7 +146,8 @@ Partial Public Class KaijoList
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_DATE_FROM_TO(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
+            e.Row.Cells(CellIndex.YOTEI_DATE).Text = AppModule.GetName_YOTEI_DATE(e.Row.Cells(CellIndex.YOTEI_DATE).Text)
+            e.Row.Cells(CellIndex.TIME_STAMP).Text = AppModule.GetName_TIME_STAMP(e.Row.Cells(CellIndex.TIME_STAMP).Text)
         End If
     End Sub
 
@@ -158,9 +155,8 @@ Partial Public Class KaijoList
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
-            e.Row.Cells(CellIndex.TO_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
-            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 2
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 1
             Me.GrvList.BorderStyle = BorderStyle.None
             Dim PagerTableCell As TableCell = e.Row.Cells(0)
             PagerTableCell.BorderStyle = BorderStyle.None
@@ -194,47 +190,10 @@ Partial Public Class KaijoList
 
     '[検索]
     Protected Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
-        '入力チェック
-        If Not Check() Then Exit Sub
-
         '画面項目表示
         SetForm()
     End Sub
 
-    '入力チェック
-    Private Function Check() As Boolean
-        'セキュリティチェック
-        If Not CmnCheck.IsSecurityOK(Me) Then
-            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.DATE_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(年)"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.DATE_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(月)"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.DATE_DD) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(日)"), Me)
-            Return False
-        End If
-
-        If CmnCheck.IsInput(Me.DATE_YYYY) OrElse CmnCheck.IsInput(Me.DATE_MM) OrElse CmnCheck.IsInput(Me.DATE_DD) Then
-            Dim wStr As String = StrConv(Trim(Me.DATE_YYYY.Text) & "/" & Trim(Me.DATE_MM.Text) & "/" & Trim(Me.DATE_DD.Text), VbStrConv.Narrow)
-            If Not IsDate(wStr) Then
-                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日"), Me)
-                Return False
-            End If
-        End If
-
-        Return True
-    End Function
-    
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
         Response.Redirect(URL.Menu)

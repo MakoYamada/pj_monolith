@@ -1635,6 +1635,18 @@ Public Class SQL
                 strSQL &= " AND TBL_KOUENKAI.TTANTO_ID='" & CmnDb.SqlString(Joken.TANTO_NAME) & "'"
             End If
 
+            If Trim(Joken.KOUENKAI_DATE) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.FROM_DATE='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_DATE) <> "" Then
+                strSQL &= " AND ("
+                strSQL &= "      TBL_KOUENKAI.FROM_DATE<='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
+                strSQL &= "      AND "
+                strSQL &= "      TBL_KOUENKAI.TO_DATE>='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
+                strSQL &= ")"
+            End If
+
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KOUENKAI.KOUENKAI_NO"
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="KaijoList.aspx.vb" Inherits="Bayer.KaijoList" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="NewKaijoList.aspx.vb" Inherits="Bayer.NewKaijoList" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -24,11 +24,6 @@
 								</tr>
 								<tr>
 									<td>
-										実施日
-										<asp:TextBox ID="DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
-										<asp:TextBox ID="DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
-										<asp:TextBox ID="DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
-										&nbsp;&nbsp;&nbsp;
 										担当者
 										<asp:TextBox ID="TTANTO_ID" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
 									</td>
@@ -63,13 +58,12 @@
 						<asp:BoundField DataField="TEHAI_TANTO_JIGYOBU" HeaderText="事業部" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TEHAI_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TEHAI_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="YOTEI_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="TIME_STAMP" HeaderText="Timestamp" ItemStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TANTO_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:ButtonField ButtonType="Button" HeaderText="会場手配" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Kaijo" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="68px" />
-						<asp:ButtonField ButtonType="Button" HeaderText="参加者" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="HotelKotsu" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
+						<asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="52px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
-						<asp:BoundField DataField="TO_DATE" />
 					</Columns>
 				</asp:GridView>
 				<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>

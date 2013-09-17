@@ -191,6 +191,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NewKaijoList.aspx.designer.vb">
+      <DependentUpon>NewKaijoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewKaijoList.aspx.vb">
+      <DependentUpon>NewKaijoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Preview.aspx.designer.vb">
       <DependentUpon>Preview.aspx</DependentUpon>
     </Compile>
@@ -237,6 +244,7 @@
     <Content Include="KaijoRegist.aspx" />
     <Content Include="Maintenance.html" />
     <Content Include="Menu.aspx" />
+    <Content Include="NewKaijoList.aspx" />
     <Content Include="Preview.aspx" />
     <Content Include="print.css" />
     <Content Include="Sorry.html" />

@@ -13,7 +13,7 @@ Option Explicit On
 
 
 
-Partial Public Class KaijoList
+Partial Public Class NewKaijoList
 
     '''<summary>
     '''TEHAI_TANTO_JIGYOBU コントロール。
@@ -41,33 +41,6 @@ Partial Public Class KaijoList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''DATE_YYYY コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''DATE_MM コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents DATE_MM As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''DATE_DD コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TTANTO_ID コントロール。

@@ -337,6 +337,13 @@ Public Class CmnModule
 
         Return wStr
     End Function
+    Public Shared Function Format_DateToString(ByVal inYYYY As String, ByVal inMM As String, ByVal inDD As String) As String
+        Dim wStr As String = ""
+        wStr &= Trim(StrConv(inYYYY, VbStrConv.Narrow))
+        wStr &= Trim(StrConv(inMM, VbStrConv.Narrow)).PadLeft(2, "0c")
+        wStr &= Trim(StrConv(inDD, VbStrConv.Narrow)).PadLeft(2, "0c")
+        Return wStr
+    End Function
 
     '--------------------------------------------------------------
     ' ï∂éöóÒÇyyyy/mm/ddÇ‹ÇΩÇÕyy/mm/ddÇÃå`éÆÇ…ï“èWÇµÇƒï‘Ç∑
