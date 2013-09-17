@@ -32,7 +32,7 @@ Partial Public Class DrRegist
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "参加情報 登録"
+            .PageTitle = "宿泊・交通・タクシーチケット　手配依頼"
         End With
     End Sub
 
@@ -2935,5 +2935,28 @@ Partial Public Class DrRegist
             BtnTAXI_10.ImageUrl = IMG_CLOSE
             TB_TAXI_10.Visible = True
         End If
+    End Sub
+
+    ''' <summary>
+    ''' 施設検索ボタン
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub BtnHotelKensaku_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnHotelKensaku.Click
+        Dim scriptStr As String
+        scriptStr = "<script type='text/javascript'>"
+        scriptStr += "window.open('HotelKensaku.aspx','_blank','width=800,height=600');"
+        scriptStr += "</script>"
+
+        ClientScript.RegisterStartupScript(Me.GetType(), "施設検索", scriptStr)
+    End Sub
+
+    Protected Sub ANS_F_AIRPORT1_3_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_F_AIRPORT1_3.TextChanged
+
+    End Sub
+
+    Protected Sub ANS_F_AIRPORT1_4_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_F_AIRPORT1_4.TextChanged
+
     End Sub
 End Class

@@ -125,6 +125,13 @@
     <Compile Include="DrReport.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="HotelKensaku.aspx.designer.vb">
+      <DependentUpon>HotelKensaku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelKensaku.aspx.vb">
+      <DependentUpon>HotelKensaku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="KaijoList.aspx.designer.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
     </Compile>
@@ -187,6 +194,7 @@
     <Content Include="Close.html" />
     <Content Include="DrList.aspx" />
     <Content Include="DrRegist.aspx" />
+    <Content Include="HotelKensaku.aspx" />
     <Content Include="Images\button-cross-alt.png" />
     <Content Include="Images\button-tick-alt.png" />
     <Content Include="KaijoList.aspx" />
