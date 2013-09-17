@@ -5,32 +5,42 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table cellspacing="0" cellpadding="2" border="0">
+	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
         <tr>
             <td align="left">
-                <table cellpadding="2" cellspacing="0" border="0">
+	            <table border="0" cellpadding="4" cellspacing="0" style="width:900px">
                     <tr>
                         <td align="left">
-                            <table cellpadding="2" cellspacing="0" border="0">
+				            <table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
+                                cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                                 <tr>
-                                    <td>
-                                        都道府県&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="JIGYOBU" runat="server" Width="150px">
+                                    <td class="TdTitleHeader">
+                                        都道府県
+                                    </td>
+                                    <td class="TdItem">
+                                        <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        施設名&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
+                                    <td class="TdTitleHeader">
+                                        施設名
+                                    </td>
+                                    <td class="TdItem">
+                                        <asp:TextBox ID="TextBox2" runat="server" Width="810px" MaxLength="200"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        施設名カナ&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
+                                    <td class="TdTitleHeader">
+                                        施設名カナ
+                                    </td>
+                                    <td class="TdItem">
+                                        <asp:TextBox ID="TextBox3" runat="server" Width="810px" MaxLength="200"></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
                         </td>
-                        <td align="left" valign="bottom">
+                        <td align="right" valign="bottom">
                             <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
                         </td>
                     </tr>
@@ -42,7 +52,6 @@
             <td align="left">
                 <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
                 <br />
-                <asp:LinkButton ID="lnkCheck" runat="server">全てにチェック</asp:LinkButton>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </td>
         </tr>

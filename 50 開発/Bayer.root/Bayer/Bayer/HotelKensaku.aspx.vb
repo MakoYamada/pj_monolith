@@ -268,13 +268,6 @@ Partial Public Class HotelKensaku
         End Select
     End Sub
 
-
-    Private Sub lnkCheck_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lnkCheck.Click
-        For Each row As GridViewRow In Me.GrvList.Rows
-            DirectCast(row.FindControl("chkPrint"), CheckBox).Checked = True
-        Next
-    End Sub
-
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
 
