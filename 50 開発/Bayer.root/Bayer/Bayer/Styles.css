@@ -321,3 +321,8 @@ a.toplink:active
 	color: #ffffff;
 	background-color: #505d64;
 }
+.disp
+{
+	background-color: #dedede;
+	border: 0 none;
+}
