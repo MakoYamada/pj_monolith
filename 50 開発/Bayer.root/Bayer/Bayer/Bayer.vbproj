@@ -216,6 +216,12 @@
     <Content Include="DrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
+    <Content Include="Images\btn01.png" />
+    <Content Include="Images\btn02.png" />
+    <Content Include="Images\btn03.png" />
+    <Content Include="Images\btnlist01.png" />
+    <Content Include="Images\btnlist02.png" />
+    <Content Include="Images\btnlist03.png" />
     <Content Include="Images\button-cross-alt.png" />
     <Content Include="Images\button-tick-alt.png" />
     <Content Include="KaijoList.aspx" />
