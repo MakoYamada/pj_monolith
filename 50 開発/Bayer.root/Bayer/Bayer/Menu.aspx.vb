@@ -25,8 +25,9 @@ Partial Public Class Menu1
 
         'マスターページ設定
         With Me.Master
-            .HideMenu = True
             .PageTitle = "メインメニュー"
+            .HideMenu = True
+            .HideLogout = False
         End With
     End Sub
 
