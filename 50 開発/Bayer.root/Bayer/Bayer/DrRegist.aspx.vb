@@ -33,6 +33,8 @@ Partial Public Class DrRegist
         'マスターページ設定
         With Me.Master
             .PageTitle = "宿泊・交通・タクシーチケット　手配依頼"
+            .HideLogout = False
+            .HideMenu = False
         End With
     End Sub
 
@@ -214,6 +216,54 @@ Partial Public Class DrRegist
 
     '画面項目 表示
     Private Sub SetForm()
+
+        ANS_STATUS_HOTEL.Items.Add("選択してください")
+        ANS_ROOM_TYPE.Items.Add("選択してください")
+        ANS_O_STATUS_1.Items.Add("選択してください")
+        ANS_O_STATUS_2.Items.Add("選択してください")
+        ANS_O_STATUS_3.Items.Add("選択してください")
+        ANS_O_STATUS_4.Items.Add("選択してください")
+        ANS_O_STATUS_5.Items.Add("選択してください")
+        ANS_F_STATUS_1.Items.Add("選択してください")
+        ANS_F_STATUS_2.Items.Add("選択してください")
+        ANS_F_STATUS_3.Items.Add("選択してください")
+        ANS_F_STATUS_4.Items.Add("選択してください")
+        ANS_F_STATUS_5.Items.Add("選択してください")
+        ANS_O_KOTSUKIKAN_1.Items.Add("選択してください")
+        ANS_O_KOTSUKIKAN_2.Items.Add("選択してください")
+        ANS_O_KOTSUKIKAN_3.Items.Add("選択してください")
+        ANS_O_KOTSUKIKAN_4.Items.Add("選択してください")
+        ANS_O_KOTSUKIKAN_5.Items.Add("選択してください")
+        ANS_F_KOTSUKIKAN_1.Items.Add("選択してください")
+        ANS_F_KOTSUKIKAN_2.Items.Add("選択してください")
+        ANS_F_KOTSUKIKAN_3.Items.Add("選択してください")
+        ANS_F_KOTSUKIKAN_4.Items.Add("選択してください")
+        ANS_F_KOTSUKIKAN_5.Items.Add("選択してください")
+        ANS_O_SEAT_1.Items.Add("選択してください")
+        ANS_O_SEAT_2.Items.Add("選択してください")
+        ANS_O_SEAT_3.Items.Add("選択してください")
+        ANS_O_SEAT_4.Items.Add("選択してください")
+        ANS_O_SEAT_5.Items.Add("選択してください")
+        ANS_F_SEAT_1.Items.Add("選択してください")
+        ANS_F_SEAT_2.Items.Add("選択してください")
+        ANS_F_SEAT_3.Items.Add("選択してください")
+        ANS_F_SEAT_4.Items.Add("選択してください")
+        ANS_F_SEAT_5.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_1.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_2.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_3.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_4.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_5.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_6.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_7.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_8.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_9.Items.Add("選択してください")
+        ANS_TAXI_KENSHU_10.Items.Add("選択してください")
+
+
+
+
+
         'If Trim(TBL_DR(SEQ).DATA_NO) = "" Then
         '    Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
         'End If

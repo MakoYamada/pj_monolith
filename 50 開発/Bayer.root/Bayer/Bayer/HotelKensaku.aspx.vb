@@ -4,20 +4,17 @@ Imports AppLib
 Partial Public Class HotelKensaku
     Inherits WebBase
 
-    Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private MS_SHISETSU() As TableDef.MS_SHISETSU.DataStruct
 
     'グリッド列    Private Enum CellIndex
-        CHK_PRINT
-        JISSHI_DATE
-        MEETING_NAME
-        DR_NAME
-        TIMESTAMP
-        TANTO_NAME
-        TEHAI_HOTEL
-        TEHAI_O
-        TEHAI_F
-        TEHAI_TAXI
-        Button1
+        BTN_SELECT
+        ADDRESS1
+        SHISETSU_NAME
+        ADDRESS2
+        TEL
+        CHECKIN_TIME
+        CHECKOUT_TIME
+        SYSTEM_ID
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -145,19 +142,19 @@ Partial Public Class HotelKensaku
         '    Joken.PLACE = PLACE
         '    strSQL = SQL.TBL_DR.Search(Joken)
         'Else
-        'strSQL = SQL.TBL_KOTSUHOTEL
+        'strSQL = SQL.MS_SHISETSU
         'End If
-        ReDim TBL_KOTSUHOTEL(wCnt)
+        ReDim MS_SHISETSU(wCnt)
 
-        '仮
-        strSQL = "SELECT * FROM TBL_KOTSUHOTEL"
+        ''仮
+        strSQL = "SELECT * FROM MS_SHISETSU"
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
 
-            ReDim Preserve TBL_KOTSUHOTEL(wCnt)
-            TBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL(wCnt))
+            ReDim Preserve MS_SHISETSU(wCnt)
+            MS_SHISETSU(wCnt) = AppModule.SetRsData(RsData, MS_SHISETSU(wCnt))
 
             wCnt += 1
         End While
@@ -168,8 +165,7 @@ Partial Public Class HotelKensaku
 
     '一覧 表示
     Private Sub DispList()
-
-        'データ取得        If Not GetData() Then
+        'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
             'CmnModule.SetEnabled(Me.BtnPrint, False)
@@ -189,40 +185,34 @@ Partial Public Class HotelKensaku
         'データソース設定
         Dim strSQL As String = String.Empty
 
-        ''仮
-        'strSQL = "SELECT *" _
-        '        & ",'20130911173000' AS TIMESTAMP" _
-        '        & " FROM TBL_KOTSUHOTEL TKH" _
-        '        & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-        '        & " ON TKH.KOUENKAI_NO = TKE.KOUENKAI_NO"
+        '仮
+        strSQL = "SELECT * FROM  MS_SHISETSU"
 
-        ''TODO:最新の会場手配情報を持ってくる必要があるかも?
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
 
-        'Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
-        'Me.SqlDataSource1.SelectCommand = strSQL
-
-        'With Me.GrvList
-        '    Try
-        '        .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
-        '        .DataBind()
-        '    Catch ex As Exception
-        '        Session.Item(SessionDef.PageIndex) = 0
-        '        .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
-        '        .DataBind()
-        '    End Try
-        '    .Attributes(CmnConst.Html.Attributes.BorderColor) = CmnConst.Html.Color.Border
-        'End With
+        With Me.GrvList
+            Try
+                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
+                .DataBind()
+            Catch ex As Exception
+                Session.Item(SessionDef.PageIndex) = 0
+                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
+                .DataBind()
+            End Try
+            .Attributes(CmnConst.Html.Attributes.BorderColor) = CmnConst.Html.Color.Border
+        End With
     End Sub
 
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.JISSHI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            '仮
-            e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
-            e.Row.Cells(CellIndex.TEHAI_O).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_O).Text)
-            e.Row.Cells(CellIndex.TEHAI_F).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_F).Text)
-            e.Row.Cells(CellIndex.TEHAI_TAXI).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
+            'e.Row.Cells(CellIndex.ADDRESS1).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
+            ''仮
+            'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
+            'e.Row.Cells(CellIndex.TEHAI_O).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_O).Text)
+            'e.Row.Cells(CellIndex.TEHAI_F).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_F).Text)
+            'e.Row.Cells(CellIndex.TEHAI_TAXI).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
 
             'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetName_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text, True)
             'e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetName_TEHAI_KOTSU(e.Row.Cells(CellIndex.TEHAI_KOTSU).Text, True)

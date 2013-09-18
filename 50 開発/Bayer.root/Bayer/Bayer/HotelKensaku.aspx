@@ -5,14 +5,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
+	<table border="0" cellpadding="4" cellspacing="0" style="width:972px">
         <tr>
             <td align="left">
-	            <table border="0" cellpadding="4" cellspacing="0" style="width:900px">
+	            <table border="0" cellpadding="4" cellspacing="0" style="width:972px">
                     <tr>
                         <td align="left">
 				            <table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                                cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
+                                cellpadding="2" border="1" bordercolor="#4f5b61" style="width:972px">
                                 <tr>
                                     <td class="TdTitleHeader">
                                         都道府県
@@ -40,7 +40,9 @@
                                 </tr>
                             </table>
                         </td>
-                        <td align="right" valign="bottom">
+                    </tr>
+                    <tr>
+                        <td align="right" valign="bottom" colspan="2">
                             <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
                         </td>
                     </tr>
@@ -58,7 +60,7 @@
         <tr>
             <td>
                 <asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" AutoGenerateColumns="False"
-                    AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
+                    AllowPaging="True" PageSize="13" 
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                     <RowStyle Wrap="false" BackColor="#ffffff" />
@@ -85,16 +87,16 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="ADDRESS1" HeaderText="住所" ItemStyle-Wrap="false" 
+                        <asp:BoundField DataField="ADDRESS2" HeaderText="住所" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
+                            <ItemStyle Wrap="False" Width="200px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TEL" HeaderText="電話番号" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" 
                             ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="CHECKIN_TIME" HeaderText="ﾁｪｯｸｲﾝ" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
