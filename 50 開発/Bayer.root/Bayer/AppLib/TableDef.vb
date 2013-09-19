@@ -2101,6 +2101,7 @@
             Public JIGYOBU As String
             Public MEETING_NAME As String
             Public TTANTO_ID As String
+            Public KUBUN As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_ID As String = "KOUENKAI_ID"
@@ -2114,7 +2115,8 @@
             Public Const JIGYOBU As String = "JIGYOBU"
             Public Const MEETING_NAME As String = "MEETING_NAME"
             Public Const TTANTO_ID As String = "TTANTO_ID"
-         End Class
+            Public Const KUBUN As String = "KUBUN"
+        End Class
         Public Class Name
             Public Const KOUENKAI_ID As String = "講演会ID"
             Public Const AREA As String = "所属エリア"
@@ -2127,6 +2129,7 @@
             Public Const JIGYOBU As String = "事業部"
             Public Const MEETING_NAME As String = "会合名"
             Public Const TTANTO_ID As String = "担当者"
+            Public Const KUBUN As String = "区分"
          End Class
     End Class
 
