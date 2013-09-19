@@ -12,10 +12,6 @@
         {
             width: 230px;
         }
-        .style3
-        {
-            width: 181px;
-        }
         .style4
         {
             margin-top: 0px;
@@ -23,6 +19,10 @@
         .style5
         {
             width: 429px;
+        }
+        .style6
+        {
+            width: 210px;
         }
     </style>
 </asp:Content>
@@ -35,7 +35,7 @@
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
-                                    <td class="style1">
+                                    <td class="style6">
                                         事業部&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="JIGYOBU" runat="server" Width="150px">
                                         </asp:DropDownList>
                                     </td>
@@ -43,30 +43,31 @@
                                         エリア&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="AREA" runat="server" Width="150px">
                                         </asp:DropDownList>
                                     </td>
-                                    <td class="style3">
+                                    <td class="style1">
+                                        講演会手配担当者&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TEHAI_TANTO_NAME" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style6">
                                         講演会番号&nbsp;&nbsp;&nbsp;<asp:TextBox ID="KOUENKAI_NO" runat="server" Width="91px"
                                             MaxLength="10"></asp:TextBox>
                                     </td>
-                                    <td class="style5">
+                                    <td class="style5" colspan="2">
                                         講演会名&nbsp;&nbsp;&nbsp;<asp:TextBox ID="MEETING_NAME" runat="server" Width="350px"
                                             MaxLength="200" CssClass="style4"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="style1">
-                                        講演会手配担当者&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TEHAI_TANTO_NAME" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
-                                    </td>
-                                    <td colspan="3">
-                                        区分&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="KUBUN" runat="server">
+                                    <td class="style6">
+                                        区分&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="KUBUN" runat="server" Width="150px">
                                         </asp:DropDownList>
+                                    </td>
+                                    <td></td>
+                                    <td align="right" valign="bottom" colspan="4">
+                                        <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
                                     </td>
                                 </tr>
                             </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" valign="bottom" colspan="4">
-                            <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
                         </td>
                     </tr>
                 </table>
@@ -124,7 +125,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KUBUN" HeaderText="区分" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="STATUS_TEHAI" HeaderText="区分" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False"></ItemStyle>

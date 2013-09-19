@@ -67,7 +67,8 @@ Partial Public Class Base
         End If
 
         '[ログアウト]
-        If pHideLogout = True OrElse Trim(Session.Item(SessionDef.LoginID)) = "" Then
+        'If pHideLogout = True OrElse Trim(Session.Item(SessionDef.LoginID)) = "" Then
+        If pHideLogout = True Then
             pHideLogout = True
             Me.SpnLogout.Visible = False
         Else

@@ -13,7 +13,7 @@ Partial Public Class NewDrList
         DR_NAME
         TIMESTAMP
         TANTO_NAME
-        KUBUN
+        STATUS_TEHAI
         TEHAI_HOTEL
         TEHAI_KOTSU
         TEHAI_TAXI
