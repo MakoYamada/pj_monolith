@@ -13,11 +13,13 @@ Partial Public Class NewDrList
         DR_NAME
         TIMESTAMP
         TANTO_NAME
+        KUBUN
         TEHAI_HOTEL
-        TEHAI_O
-        TEHAI_F
+        TEHAI_KOTSU
         TEHAI_TAXI
         Button1
+        KOUENKAI_CD
+        DR_MPID
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -227,9 +229,9 @@ Partial Public Class NewDrList
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.JISSHI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
             '仮
+            'e.Row.Cells(CellIndex.KUBUN).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.KUBUN).Text)
             e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
-            e.Row.Cells(CellIndex.TEHAI_O).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_O).Text)
-            e.Row.Cells(CellIndex.TEHAI_F).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_F).Text)
+            e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_KOTSU).Text)
             e.Row.Cells(CellIndex.TEHAI_TAXI).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
 
             'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetName_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text, True)
