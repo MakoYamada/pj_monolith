@@ -33,7 +33,7 @@
 							<tr style="background-position: top left; background-repeat: repeat-x; background-color: #dfe2e4; height: 22px;" id="TrPageTitle" runat="server">
 								<td align="left" style="font-weight: bold; color: #343e44;">
 									&nbsp;
-									Å° <asp:Label ID="LabelPageTitle" runat="server"></asp:Label>
+									<asp:Label ID="LabelPageTitle" runat="server"></asp:Label>
 								</td>
 								<td align="right" style="font-weight: bold; color: #1c75bc;">
 									<span id="SpnMenu" runat="server">
