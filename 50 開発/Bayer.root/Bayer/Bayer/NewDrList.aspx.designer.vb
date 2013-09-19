@@ -13,7 +13,7 @@ Option Explicit On
 
 
 
-Partial Public Class DrList
+Partial Public Class NewDrList
 
     '''<summary>
     '''JIGYOBU コントロール。

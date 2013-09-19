@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master"
-    CodeBehind="DrList.aspx.vb" Inherits="Bayer.DrList" %>
+    CodeBehind="NewDrList.aspx.vb" Inherits="Bayer.NewDrList" %>
 
 <%@ MasterType VirtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

@@ -105,11 +105,11 @@
     <Compile Include="Common\MyModule.vb" />
     <Compile Include="Common\URL.vb" />
     <Compile Include="Common\WebConfig.vb" />
-    <Compile Include="DrList.aspx.designer.vb">
-      <DependentUpon>DrList.aspx</DependentUpon>
+    <Compile Include="NewDrList.aspx.designer.vb">
+      <DependentUpon>NewDrList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DrList.aspx.vb">
-      <DependentUpon>DrList.aspx</DependentUpon>
+    <Compile Include="NewDrList.aspx.vb">
+      <DependentUpon>NewDrList.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DrRegist.aspx.designer.vb">
@@ -229,7 +229,7 @@
     <Content Include="ActiveReports.FlashViewer.swf" />
     <Content Include="Base.Master" />
     <Content Include="Close.html" />
-    <Content Include="DrList.aspx" />
+    <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
     <Content Include="Images\btn01.png" />

@@ -1,7 +1,7 @@
 ﻿Imports CommonLib
 Imports AppLib
 
-Partial Public Class DrList
+Partial Public Class NewDrList
     Inherits WebBase
 
     Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
@@ -180,7 +180,7 @@ Partial Public Class DrList
             Me.GrvList.Visible = True
             Me.BtnPrint.Visible = True
             Me.lnkCheck.Visible = True
-            
+
             'グリッドビュー表示
             SetGridView()
         End If
