@@ -1578,7 +1578,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function Search(ByVal Joken As TableDef.TBL_KENSAKU.DataStruct) As String
+        Public Shared Function Search(ByVal Joken As TableDef.TBL_KENSAKU.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
 
             strSQL &= "SELECT"
@@ -1613,18 +1613,24 @@ Public Class SQL
             strSQL &= " FROM TBL_KOUENKAI INNER JOIN TBL_KAIJO"
             strSQL &= " ON TBL_KOUENKAI.KOUENKAI_NO=TBL_KAIJO.KOUENKAI_ID"
 
-            strSQL = " WHERE 1=1"
+            If NewData = True Then
+                '新着
+                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG='1'"
+            Else
+                '検索
+                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
+            End If
 
             If Trim(Joken.JIGYOBU) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.TEHAI_TANTO_JIGYOBU='" & CmnDb.SqlString(Joken.JIGYOBU) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TNTO_JIGYOBU='" & CmnDb.SqlString(Joken.JIGYOBU) & "'"
             End If
 
             If Trim(Joken.AREA) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.TEHAI_TANTO_AREA='" & CmnDb.SqlString(Joken.AREA) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TNTO_AREA='" & CmnDb.SqlString(Joken.AREA) & "'"
             End If
 
             If Trim(Joken.EIGYOSHO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO='" & CmnDb.SqlString(Joken.EIGYOSHO) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TNTO_EIGYOSHO='" & CmnDb.SqlString(Joken.EIGYOSHO) & "'"
             End If
 
             If Trim(Joken.MEETING_NAME) <> "" Then
@@ -1636,10 +1642,6 @@ Public Class SQL
             End If
 
             If Trim(Joken.KOUENKAI_DATE) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.FROM_DATE='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
-            End If
-
-            If Trim(Joken.KOUENKAI_DATE) <> "" Then
                 strSQL &= " AND ("
                 strSQL &= "      TBL_KOUENKAI.FROM_DATE<='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
                 strSQL &= "      AND "
@@ -1648,7 +1650,7 @@ Public Class SQL
             End If
 
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
 
             Return strSQL
         End Function
