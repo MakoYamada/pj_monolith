@@ -1625,7 +1625,7 @@
             Public Const UPDATE_USER As String = "UPDATE_USER"
         End Class
         Public Class Name
-            Public Const KOUENKAI_ID As String = "講演会ID"
+            Public Const KOUENKAI_ID As String = "講演会番号"
             Public Const TIME_STAMP As String = "Time stamp"
             Public Const AREA As String = "所属エリア"
             Public Const ADDRESS As String = "住所"
@@ -2118,7 +2118,7 @@
             Public Const KUBUN As String = "KUBUN"
         End Class
         Public Class Name
-            Public Const KOUENKAI_ID As String = "講演会ID"
+            Public Const KOUENKAI_ID As String = "講演会番号"
             Public Const AREA As String = "所属エリア"
             Public Const EIGYOSHO As String = "所属営業所"
             Public Const TANTO_NAME As String = "担当者名"
@@ -2130,7 +2130,7 @@
             Public Const MEETING_NAME As String = "会合名"
             Public Const TTANTO_ID As String = "担当者"
             Public Const KUBUN As String = "区分"
-         End Class
+        End Class
     End Class
 
 
