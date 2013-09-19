@@ -21,20 +21,40 @@
 			<td align="center">
 				<table cellpadding="3" cellspacing="2" border="0">
 					<tr valign="middle">
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="3">
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
                             ■新着情報一覧
                         </td>
 					</tr>					
 					<tr valign="top">
-						<td align="center" style="width: 210px;" colspan="3">
-							<asp:Button ID="BtnKouenkaiList" runat="server" Text="講演会基本情報" Width="200px" 
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnNewKoenkaiList" runat="server" Text="講演会基本情報" Width="200px" 
                                 CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
-						<td align="center" style="width: 5px;">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnNewKaijoList" runat="server" Text="会場手配" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">						
+							<asp:Button ID="BtnNewKotsuList" runat="server" Text="宿泊・交通" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnNewBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
 						</td>
 					</tr>
+					<tr>
+					    <td></td>
+					</tr>
+					<tr valign="middle">
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                            ■登録済　講演会検索・回答登録
+                        </td>
+					</tr>					
 					<tr valign="top">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnKoenkaiList" runat="server" Text="講演会基本情報" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
+						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnKaijoList" runat="server" Text="会場手配" Width="200px" CssClass="Button" />
 						</td>
@@ -49,42 +69,10 @@
 					    <td></td>
 					</tr>
 					<tr valign="middle">
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="3">
-                            ■登録済　講演会検索・回答登録
-                        </td>
-					</tr>					
-					<tr valign="top">
-						<td align="center" style="width: 210px;" colspan="3">
-							<asp:Button ID="BtnKouenkai" runat="server" Text="講演会情報" Width="200px" 
-                                CssClass="Button" />
-							<div class="FontSize1" style="height: 10px; display: none;"></div>
-						</td>
-					</tr>
-					<tr>
-					    <td></td>
-					</tr>
-					<tr valign="middle">
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="3">
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
                             ■マスタメンテナンス
                         </td>
 					</tr>					
-					<tr valign="top">
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnJigyosho" runat="server" Text="事業部マスタ" Width="200px" 
-                                CssClass="Button" />
-							<div class="FontSize1" style="height: 10px; display: none;"></div>
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnArea" runat="server" Text="エリアマスタ" Width="200px" 
-                                CssClass="Button" />
-							<div class="FontSize1" style="height: 10px; display: none;"></div>
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnEigyosho" runat="server" Text="営業所マスタ" Width="200px" 
-                                CssClass="Button" />
-							<div class="FontSize1" style="height: 10px; display: none;"></div>
-						</td>
-					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnShisetsu" runat="server" Text="施設マスタ" Width="200px" 
@@ -97,6 +85,44 @@
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTorikomiLog" runat="server" Text="取込ログ" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnLog" runat="server" Text="操作ログ" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
+						</td>
+					</tr>
+					<tr>
+					    <td></td>
+					</tr>
+					<tr valign="middle">
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                            ■精算処理
+                        </td>
+					</tr>					
+					<tr valign="top">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSeisan" runat="server" Text="精算金額入力" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSap" runat="server" Text="SAPデータ作成" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnKouenkaiCsv" runat="server" Text="講演会・コストセンター別集計" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSankashaCsv" runat="server" Text="参加者一覧" Width="200px" 
+                                CssClass="Button" />
+							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 					</tr>
 				</table>

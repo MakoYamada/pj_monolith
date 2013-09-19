@@ -16,13 +16,49 @@ Option Explicit On
 Partial Public Class Menu1
 
     '''<summary>
-    '''BtnKouenkaiList コントロール。
+    '''BtnNewKoenkaiList コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnKouenkaiList As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnNewKoenkaiList As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnNewKaijoList コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNewKaijoList As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnNewKotsuList コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNewKotsuList As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnNewBentoList コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNewBentoList As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnKoenkaiList コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnKoenkaiList As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnKaijoList コントロール。
@@ -52,42 +88,6 @@ Partial Public Class Menu1
     Protected WithEvents BtnBentoList As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnKouenkai コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKouenkai As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnJigyosho コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnJigyosho As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnArea コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnArea As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnEigyosho コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnEigyosho As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''BtnShisetsu コントロール。
     '''</summary>
     '''<remarks>
@@ -104,6 +104,60 @@ Partial Public Class Menu1
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnUser As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTorikomiLog コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTorikomiLog As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnLog コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnLog As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnSeisan コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSeisan As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnSap コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSap As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnKouenkaiCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnKouenkaiCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnSankashaCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSankashaCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。
