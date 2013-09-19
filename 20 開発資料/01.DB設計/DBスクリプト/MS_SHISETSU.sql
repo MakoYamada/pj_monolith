@@ -12,6 +12,7 @@ CREATE TABLE [dbo].[MS_SHISETSU](
 	[ADDRESS1] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
 	[ADDRESS2] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
 	[SHISETSU_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
+	[SHISETSU_KANA] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
 	[TEL] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
 	[CHECKIN_TIME] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
 	[CHECKOUT_TIME] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
