@@ -34,6 +34,15 @@ Partial Public Class NewDrList
     Protected WithEvents AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''KOUENKAI_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''MEETING_NAME コントロール。
     '''</summary>
     '''<remarks>
@@ -43,13 +52,22 @@ Partial Public Class NewDrList
     Protected WithEvents MEETING_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox1 コントロール。
+    '''TEHAI_TANTO_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TEHAI_TANTO_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''KUBUN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KUBUN As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''BtnSearch コントロール。

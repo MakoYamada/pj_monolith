@@ -3,6 +3,28 @@
 
 <%@ MasterType VirtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 327px;
+        }
+        .style2
+        {
+            width: 230px;
+        }
+        .style3
+        {
+            width: 181px;
+        }
+        .style4
+        {
+            margin-top: 0px;
+        }
+        .style5
+        {
+            width: 429px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table cellspacing="0" cellpadding="2" border="0">
@@ -13,28 +35,37 @@
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
-                                    <td>
+                                    <td class="style1">
                                         事業部&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="JIGYOBU" runat="server" Width="150px">
                                         </asp:DropDownList>
                                     </td>
-                                    <td>
+                                    <td class="style2">
                                         エリア&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="AREA" runat="server" Width="150px">
                                         </asp:DropDownList>
                                     </td>
-                                    <td>
-                                        会合名&nbsp;&nbsp;&nbsp;<asp:TextBox ID="MEETING_NAME" runat="server" Width="350px"
-                                            MaxLength="200"></asp:TextBox>
+                                    <td class="style3">
+                                        講演会番号&nbsp;&nbsp;&nbsp;<asp:TextBox ID="KOUENKAI_NO" runat="server" Width="91px"
+                                            MaxLength="10"></asp:TextBox>
+                                    </td>
+                                    <td class="style5">
+                                        講演会名&nbsp;&nbsp;&nbsp;<asp:TextBox ID="MEETING_NAME" runat="server" Width="350px"
+                                            MaxLength="200" CssClass="style4"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="style1">
+                                        講演会手配担当者&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TEHAI_TANTO_NAME" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
+                                    </td>
                                     <td colspan="3">
-                                        講演会担当者&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
-
+                                        区分&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="KUBUN" runat="server">
+                                        </asp:DropDownList>
                                     </td>
                                 </tr>
                             </table>
                         </td>
-                        <td align="left" valign="bottom">
+                    </tr>
+                    <tr>
+                        <td align="right" valign="bottom" colspan="4">
                             <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
                         </td>
                     </tr>
@@ -62,7 +93,8 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:TemplateField HeaderText="印刷" SortExpression="Print" ShowHeader="False">
+                        <asp:TemplateField HeaderText="印刷NOZOMIへ" SortExpression="Print" 
+                            ShowHeader="False">
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkPrint" runat="server" />
                             </ItemTemplate>
@@ -73,7 +105,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
@@ -92,20 +124,20 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
+                        <asp:BoundField DataField="KUBUN" HeaderText="区分" ItemStyle-Wrap="false"
+                            HeaderStyle-Wrap="false">
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle Wrap="False"></ItemStyle>
+                        <HeaderStyle Wrap="False" />
+                        <ItemStyle HorizontalAlign="Center" Width="30px" Wrap="False" />
+                        </asp:BoundField>
                         <asp:BoundField DataField="TEHAI_HOTEL" HeaderText="宿泊" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="往路" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="交通" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="30px" HorizontalAlign="Center"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="REQ_F_TEHAI_1" HeaderText="復路" ItemStyle-Wrap="false"
-                            HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="30px" HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TEHAI_TAXI" HeaderText="ﾀｸﾁｹ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
@@ -119,6 +151,8 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
+                        <asp:BoundField DataField="DR_MPID" HeaderText="MPID" Visible="False" />
                     </Columns>
                 </asp:GridView>
             </td>
