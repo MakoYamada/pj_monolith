@@ -62,14 +62,14 @@ Partial Public Class DrReport
         Me.Label32 = New DataDynamics.ActiveReports.Label
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line2 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.GroupHeader1 = New DataDynamics.ActiveReports.GroupHeader
-        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
         Me.SubReport1 = New DataDynamics.ActiveReports.SubReport
         Me.txtKouenkaiNo = New DataDynamics.ActiveReports.TextBox
-        Me.Label33 = New DataDynamics.ActiveReports.Label
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.GroupHeader1 = New DataDynamics.ActiveReports.GroupHeader
         Me.TextBox7 = New DataDynamics.ActiveReports.TextBox
+        Me.Label33 = New DataDynamics.ActiveReports.Label
         Me.TextBox10 = New DataDynamics.ActiveReports.TextBox
+        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,15 +111,15 @@ Partial Public Class DrReport
         CType(Me.Label31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKouenkaiNo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label1, Me.Label33, Me.TextBox7, Me.TextBox10})
-        Me.PageHeader.Height = 0.7291666!
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label1})
+        Me.PageHeader.Height = 0.4791667!
         Me.PageHeader.Name = "PageHeader"
         '
         'Label1
@@ -842,23 +842,6 @@ Partial Public Class DrReport
         Me.Line2.Y1 = 0.5429134!
         Me.Line2.Y2 = 0.7322835!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.25!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'GroupHeader1
-        '
-        Me.GroupHeader1.DataField = "DR_MPID"
-        Me.GroupHeader1.Height = 0.0!
-        Me.GroupHeader1.Name = "GroupHeader1"
-        '
-        'GroupFooter1
-        '
-        Me.GroupFooter1.Height = 0.0!
-        Me.GroupFooter1.Name = "GroupFooter1"
-        Me.GroupFooter1.NewPage = DataDynamics.ActiveReports.NewPage.After
-        '
         'SubReport1
         '
         Me.SubReport1.CloseBorder = False
@@ -889,40 +872,57 @@ Partial Public Class DrReport
         Me.txtKouenkaiNo.Visible = False
         Me.txtKouenkaiNo.Width = 0.375197!
         '
-        'Label33
+        'PageFooter
         '
-        Me.Label33.Height = 0.21875!
-        Me.Label33.HyperLink = Nothing
-        Me.Label33.Left = 6.551969!
-        Me.Label33.Name = "Label33"
-        Me.Label33.Style = ""
-        Me.Label33.Text = "/"
-        Me.Label33.Top = 0.4480315!
-        Me.Label33.Width = 0.2082677!
+        Me.PageFooter.Height = 0.25!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'GroupHeader1
+        '
+        Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TextBox7, Me.Label33, Me.TextBox10})
+        Me.GroupHeader1.DataField = "DR_MPID"
+        Me.GroupHeader1.Height = 0.21875!
+        Me.GroupHeader1.Name = "GroupHeader1"
         '
         'TextBox7
         '
         Me.TextBox7.Height = 0.2188977!
-        Me.TextBox7.Left = 6.103938!
+        Me.TextBox7.Left = 6.145278!
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.SummaryGroup = "GroupHeader1"
         Me.TextBox7.SummaryRunning = DataDynamics.ActiveReports.SummaryRunning.Group
         Me.TextBox7.SummaryType = DataDynamics.ActiveReports.SummaryType.PageCount
         Me.TextBox7.Text = Nothing
-        Me.TextBox7.Top = 0.4480315!
+        Me.TextBox7.Top = 0.0!
         Me.TextBox7.Width = 0.4480314!
+        '
+        'Label33
+        '
+        Me.Label33.Height = 0.21875!
+        Me.Label33.HyperLink = Nothing
+        Me.Label33.Left = 6.593307!
+        Me.Label33.Name = "Label33"
+        Me.Label33.Style = ""
+        Me.Label33.Text = "/"
+        Me.Label33.Top = 0.0!
+        Me.Label33.Width = 0.2082677!
         '
         'TextBox10
         '
         Me.TextBox10.Height = 0.2188976!
-        Me.TextBox10.Left = 6.760237!
+        Me.TextBox10.Left = 6.801575!
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.SummaryGroup = "GroupHeader1"
-        Me.TextBox10.SummaryRunning = DataDynamics.ActiveReports.SummaryRunning.Group
-        Me.TextBox10.SummaryType = DataDynamics.ActiveReports.SummaryType.PageTotal
+        Me.TextBox10.SummaryType = DataDynamics.ActiveReports.SummaryType.PageCount
         Me.TextBox10.Text = Nothing
-        Me.TextBox10.Top = 0.4480315!
+        Me.TextBox10.Top = 0.0!
         Me.TextBox10.Width = 0.4480315!
+        '
+        'GroupFooter1
+        '
+        Me.GroupFooter1.Height = 0.0!
+        Me.GroupFooter1.Name = "GroupFooter1"
+        Me.GroupFooter1.NewPage = DataDynamics.ActiveReports.NewPage.After
         '
         'DrReport
         '
@@ -981,8 +981,8 @@ Partial Public Class DrReport
         CType(Me.Label31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKouenkaiNo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
@@ -1033,7 +1033,7 @@ Partial Public Class DrReport
     Private WithEvents Line2 As DataDynamics.ActiveReports.Line
     Private WithEvents SubReport1 As DataDynamics.ActiveReports.SubReport
     Private WithEvents txtKouenkaiNo As DataDynamics.ActiveReports.TextBox
-    Private WithEvents Label33 As DataDynamics.ActiveReports.Label
     Private WithEvents TextBox7 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Label33 As DataDynamics.ActiveReports.Label
     Private WithEvents TextBox10 As DataDynamics.ActiveReports.TextBox
 End Class
