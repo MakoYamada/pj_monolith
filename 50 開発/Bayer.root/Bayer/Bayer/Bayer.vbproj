@@ -111,6 +111,13 @@
     <Compile Include="DrReport2_2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DrRireki.aspx.designer.vb">
+      <DependentUpon>DrRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrRireki.aspx.vb">
+      <DependentUpon>DrRireki.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="KaijoList.aspx.designer.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
     </Compile>
@@ -293,6 +300,7 @@
     <Content Include="ActiveReports.FlashViewer.swf" />
     <Content Include="Base.Master" />
     <Content Include="Close.html" />
+    <Content Include="DrRireki.aspx" />
     <Content Include="KaijoList.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
