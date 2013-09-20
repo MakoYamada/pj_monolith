@@ -250,6 +250,13 @@
       <DependentUpon>KouenkaiList.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="KouenkaiRegist.aspx.designer.vb">
+      <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiRegist.aspx.vb">
+      <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -310,6 +317,7 @@
     <Content Include="DrList.aspx" />
     <Content Include="NewKouenkaiList.aspx" />
     <Content Include="KouenkaiList.aspx" />
+    <Content Include="KouenkaiRegist.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
