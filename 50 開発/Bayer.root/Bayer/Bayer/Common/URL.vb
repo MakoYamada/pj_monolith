@@ -10,10 +10,10 @@ Public Class URL
 
     Public Shared Login As String = WebConfig.Site.URL & "Login.aspx"
     Public Shared Menu As String = WebConfig.Site.URL & "Menu.aspx"
-    Public Shared NewKouenList As String = WebConfig.Site.URL & "NewKouenList.aspx"
+    Public Shared NewKouenkaiList As String = WebConfig.Site.URL & "NewKouenkaiList.aspx"
     Public Shared NewKaijoList As String = WebConfig.Site.URL & "NewKaijoList.aspx"
     Public Shared NewDrList As String = WebConfig.Site.URL & "NewDrList.aspx"
-    Public Shared KouenList As String = WebConfig.Site.URL & "KouenList.aspx"
+    Public Shared KouenkaiList As String = WebConfig.Site.URL & "KouenkaiList.aspx"
     Public Shared KaijoList As String = WebConfig.Site.URL & "KaijoList.aspx"
     Public Shared KaijoRegist As String = WebConfig.Site.URL & "KaijoRegist.aspx"
     Public Shared Preview As String = WebConfig.Site.URL & "Preview.aspx"
