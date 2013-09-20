@@ -79,12 +79,12 @@ Partial Public Class Preview
 
     Private Sub PrintKaijoReport()
 
-        Dim rpt1 As New DrReport()  ' 1/3ページ
-        Dim rpt2 As New DrReport2() ' 2/3ページ
-        Dim rpt3 As New DrReport2() ' 3/3ページ
+        Dim rpt1 As New KaijoReport1() ' 1/3ページ
+        Dim rpt2 As New KaijoReport2() ' 2/3ページ
+        Dim rpt3 As New KaijoReport3() ' 3/3ページ
 
         'データ取得
-        Dim dtPrintData As DataTable = GetDrData()
+        Dim dtPrintData As DataTable = GetKaijoData()
 
         'データ設定
         rpt1.DataSource = dtPrintData
@@ -132,5 +132,31 @@ Partial Public Class Preview
 
     End Sub
 
+    '仮
+    Private Function GetKaijoData() As DataTable
+
+        Dim strSQL As String
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        'strSQL = SQL.TBL_DR.byMR_ID(Session.Item(SessionDef.LoginID), PLACE)
+        strSQL = "SELECT *" _
+               & " FROM TBL_KAIJO TKJ" _
+               & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
+               & " ON TKJ.KOUENKAI_NO = TKE.KOUENKAI_NO"
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        'select 
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+
+    End Function
 
 End Class
