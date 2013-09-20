@@ -111,6 +111,13 @@
     <Compile Include="DrReport2_2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="KaijoList.aspx.designer.vb">
+      <DependentUpon>KaijoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoList.aspx.vb">
+      <DependentUpon>KaijoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="KaijoReport1.Designer.vb">
       <DependentUpon>KaijoReport1.vb</DependentUpon>
     </Compile>
@@ -167,13 +174,6 @@
     <Compile Include="HotelKensaku.aspx.vb">
       <DependentUpon>HotelKensaku.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="KaijoList.aspx.designer.vb">
-      <DependentUpon>KaijoList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="KaijoList.aspx.vb">
-      <DependentUpon>KaijoList.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="KaijoRegist.aspx.designer.vb">
       <DependentUpon>KaijoRegist.aspx</DependentUpon>
@@ -293,6 +293,7 @@
     <Content Include="ActiveReports.FlashViewer.swf" />
     <Content Include="Base.Master" />
     <Content Include="Close.html" />
+    <Content Include="KaijoList.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
@@ -304,7 +305,6 @@
     <Content Include="Images\btnlist03.png" />
     <Content Include="Images\button-cross-alt.png" />
     <Content Include="Images\button-tick-alt.png" />
-    <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRegist.aspx" />
     <Content Include="Maintenance.html" />
     <Content Include="Menu.aspx" />
