@@ -143,6 +143,13 @@
     <Compile Include="KaijoReport3.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="KaijoRireki.aspx.designer.vb">
+      <DependentUpon>KaijoRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoRireki.aspx.vb">
+      <DependentUpon>KaijoRireki.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
     </Compile>
@@ -302,6 +309,7 @@
     <Content Include="Close.html" />
     <Content Include="DrRireki.aspx" />
     <Content Include="KaijoList.aspx" />
+    <Content Include="KaijoRireki.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
