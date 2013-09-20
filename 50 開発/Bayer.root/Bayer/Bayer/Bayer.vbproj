@@ -105,6 +105,30 @@
     <Compile Include="Common\MyModule.vb" />
     <Compile Include="Common\URL.vb" />
     <Compile Include="Common\WebConfig.vb" />
+    <Compile Include="DrReport2_2.Designer.vb">
+      <DependentUpon>DrReport2_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport2_2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KaijoReport1.Designer.vb">
+      <DependentUpon>KaijoReport1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoReport1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KaijoReport2.Designer.vb">
+      <DependentUpon>KaijoReport2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoReport2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KaijoReport3.Designer.vb">
+      <DependentUpon>KaijoReport3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoReport3.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
     </Compile>
@@ -236,6 +260,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrReport2_1.resx">
       <DependentUpon>DrReport2_1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrReport2_2.resx">
+      <DependentUpon>DrReport2_2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaijoReport1.resx">
+      <DependentUpon>KaijoReport1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaijoReport2.resx">
+      <DependentUpon>KaijoReport2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaijoReport3.resx">
+      <DependentUpon>KaijoReport3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
