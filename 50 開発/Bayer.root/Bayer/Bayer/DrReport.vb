@@ -3,6 +3,9 @@ Imports DataDynamics.ActiveReports.Document
 
 Public Class DrReport
 
+    Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
+        Me.lblPrintDate.Text = Now.ToString("yyyy/MM/dd HH:mm:ss")
+    End Sub
     
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
 
@@ -27,4 +30,5 @@ Public Class DrReport
         Me.SubReport1.Report = rpt
 
     End Sub
+
 End Class

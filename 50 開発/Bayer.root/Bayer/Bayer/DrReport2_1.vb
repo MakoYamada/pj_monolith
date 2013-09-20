@@ -9,4 +9,5 @@ Public Class DrReport2_1
         detailCounter += 1
         Me.txtNo.Value = detailCounter
     End Sub
+
 End Class

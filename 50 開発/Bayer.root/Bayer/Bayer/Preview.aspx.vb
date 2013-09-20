@@ -9,7 +9,10 @@ Partial Public Class Preview
 
         If Not Page.IsPostBack Then
 
-            '帳票出力            PrintReport()
+            '帳票出力            'TODO:ドクター情報か会場手配情報かを、前画面URLまたは区分などで判定            PrintDrReport()
+
+            'PrintKaijoReport()
+
         End If
 
         'マスターページ設定
@@ -19,46 +22,28 @@ Partial Public Class Preview
 
     End Sub
 
-    Private Sub PrintReport()
+    'ドクター情報印刷
+    Private Sub PrintDrReport()
 
-        Dim rpt1 As New DrReport()  ' 1/2ページ
-        'Dim rpt2 As New DrReport2() ' 2/2ページ
-
-        'データ取得
-        Dim dtPrintData As DataTable = GetData()
+        Dim rpt1 As New DrReport()
 
         'データ設定
-        rpt1.DataSource = dtPrintData
-        'rpt2.DataSource = dtPrintData
+        rpt1.DataSource = GetDrData()
 
         rpt1.Document.Printer.PrinterName = ""
-        'rpt2.Document.Printer.PrinterName = ""
-        
+
         'A4縦
         rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
         rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
-        'rpt2.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
-        'rpt2.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
 
         '必要に応じマージン設定
         rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
-        'rpt2.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
-        'rpt2.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
-        'rpt2.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
-        'rpt2.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
-
-        'それぞれのレポートを作成
+        'レポートを作成
         rpt1.Run()
-        'rpt2.Run()
-
-        'For i As Integer = 0 To rpt1.Document.Pages.Count - 1
-        '    ' 各レポートが交互に出力されるように、ページを挿入します。
-        '    rpt1.Document.Pages.Insert(i * 2 + 1, rpt2.Document.Pages(i))
-        'Next
 
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
@@ -67,7 +52,7 @@ Partial Public Class Preview
 
 
     '仮
-    Private Function GetData() As DataTable
+    Private Function GetDrData() As DataTable
 
         Dim strSQL As String
         Dim RsData As System.Data.SqlClient.SqlDataReader
@@ -91,5 +76,61 @@ Partial Public Class Preview
 
         Return dtView.Table
     End Function
+
+    Private Sub PrintKaijoReport()
+
+        Dim rpt1 As New DrReport()  ' 1/3ページ
+        Dim rpt2 As New DrReport2() ' 2/3ページ
+        Dim rpt3 As New DrReport2() ' 3/3ページ
+
+        'データ取得
+        Dim dtPrintData As DataTable = GetDrData()
+
+        'データ設定
+        rpt1.DataSource = dtPrintData
+        rpt2.DataSource = dtPrintData
+
+        rpt1.Document.Printer.PrinterName = ""
+        rpt2.Document.Printer.PrinterName = ""
+        rpt3.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+        rpt2.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt2.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+        rpt3.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt3.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+        rpt2.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt2.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt2.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt2.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+        rpt3.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt3.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt3.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt3.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        'それぞれのレポートを作成
+        rpt1.Run()
+        rpt2.Run()
+        rpt3.Run()
+
+        For i As Integer = 0 To rpt1.Document.Pages.Count - 1
+            ' 各レポートが順番に出力されるように、ページを挿入
+            rpt1.Document.Pages.Insert(i * 3 + 1, rpt2.Document.Pages(i))
+            rpt1.Document.Pages.Insert(i * 3 + 2, rpt3.Document.Pages(i))
+        Next
+
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+
+    End Sub
+
 
 End Class
