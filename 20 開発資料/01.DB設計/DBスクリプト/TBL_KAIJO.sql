@@ -31,6 +31,7 @@ CREATE TABLE [dbo].[TBL_KAIJO](
 	[KAIJO_URL] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
 	[OTHER_NOTE] [nvarchar](1000) COLLATE Japanese_CI_AS  NULL,
 	[ANS_MITSUMORI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[ANS_MITSUMORI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[ANS_MITSUMORI_TOTAL] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[ANS_MITSUMORI_URL] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
 	[ANS_SHISETSU_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
