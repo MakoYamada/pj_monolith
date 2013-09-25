@@ -43,7 +43,7 @@ select
 }
 textarea 
 {
-	height: 40px;
+	height: 50px;
 	border: 1px solid #7f9db9;
 }
 img 
@@ -98,6 +98,13 @@ img
 	background-color: #ffffff;
 	color: #0a0a0a;
 	font-weight: normal;		
+}
+.TdItemKaijo 
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
 }
 .ItemConfirm 
 {
