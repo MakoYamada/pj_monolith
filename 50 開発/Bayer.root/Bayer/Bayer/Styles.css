@@ -81,6 +81,12 @@ img
 	color: #ffffff;
 	font-weight: bold;
 }
+.TdItem 
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;		
+}
 .TdTitleKaijo
 {
 	background-color: #b8c3c8;
@@ -93,11 +99,11 @@ img
 	color: #ffffff;
 	font-weight: bold;
 }
-.TdItem 
+.TdTitleKaijoAnswer
 {
 	background-color: #ffffff;
-	color: #0a0a0a;
-	font-weight: normal;		
+	color: #273034;
+	font-weight: bold;
 }
 .TdItemKaijo 
 {
