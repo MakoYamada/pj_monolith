@@ -1909,7 +1909,7 @@ Public Class SQL
             End If
 
             If Trim(Joken.BU) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_BU='" & CmnDb.SqlString(Joken.BU) & "'"
+                strSQL &= " AND TBL_KOUENKAI.BU='" & CmnDb.SqlString(Joken.BU) & "'"
             End If
 
             If Trim(Joken.AREA) <> "" Then
@@ -1922,6 +1922,22 @@ Public Class SQL
 
             If Trim(Joken.TTANTO_ID) <> "" Then
                 strSQL &= " AND TBL_KOUENKAI.TTANTO_ID='" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE '%'" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL &= " AND TBL_KAIJO.TEHAI_TANTO_ROMA LIKE '%'" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE '%'" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO='" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then

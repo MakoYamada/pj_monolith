@@ -2392,20 +2392,12 @@
             Public TO_DATE As String
             Public TTANTO_ID As String
             Public KUBUN As String
+            Public SEIHIN_NAME As String
+            Public KIKAKU_TANTO_ROMA As String
+            Public TEHAI_TANTO_ROMA As String
+            Public REQ_STATUS_TEHAI As String
+            Public ANS_STATUS_TEHAI As String
         End Structure
-        Public Class Column
-            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
-            Public Const BU As String = "BU"
-            Public Const AREA As String = "AREA"
-            Public Const EIGYOSHO As String = "EIGYOSHO"
-            Public Const TANTO_NAME As String = "TANTO_NAME"
-            Public Const TANTO_KANA As String = "TANTO_KANA"
-            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
-            Public Const FROM_DATE As String = "FROM_DATE"
-            Public Const TO_DATE As String = "TO_DATE"
-            Public Const TTANTO_ID As String = "TTANTO_ID"
-            Public Const KUBUN As String = "KUBUN"
-        End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
             Public Const BU As String = "BU"
@@ -2418,6 +2410,11 @@
             Public Const TO_DATE As String = "講演会開催日(To)"
             Public Const TTANTO_ID As String = "担当者"
             Public Const KUBUN As String = "区分"
+            Public Const SEIHIN_NAME As String = "製品名"
+            Public Const KIKAKU_TANTO_ROMA As String = "企画担当者名"
+            Public Const TEHAI_TANTO_ROMA As String = "手配担当者名"
+            Public Const REQ_STATUS_TEHAI As String = ""
+            Public Const ANS_STATUS_TEHAI As String = ""
         End Class
     End Class
 
