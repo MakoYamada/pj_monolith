@@ -16,22 +16,40 @@ Option Explicit On
 Partial Public Class KaijoList
 
     '''<summary>
-    '''TEHAI_TANTO_JIGYOBU コントロール。
+    '''KIKAKU_TANTO_ROMA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_JIGYOBU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents KIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TEHAI_TANTO_AREA コントロール。
+    '''TEHAI_TANTO_ROMA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents TEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SEIHIN_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEIHIN_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''KOUENKAI_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''KOUENKAI_NAME コントロール。
@@ -43,31 +61,76 @@ Partial Public Class KaijoList
     Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DATE_YYYY コントロール。
+    '''FROM_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents FROM_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DATE_MM コントロール。
+    '''FROM_DATE_MM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DATE_MM As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents FROM_DATE_MM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DATE_DD コントロール。
+    '''FROM_DATE_DD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DATE_DD As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents FROM_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TO_DATE_YYYY コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TO_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TO_DATE_MM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TO_DATE_MM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TO_DATE_DD コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''KIKAKU_TANTO_BU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_BU As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''KIKAKU_TANTO_AREA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TTANTO_ID コントロール。

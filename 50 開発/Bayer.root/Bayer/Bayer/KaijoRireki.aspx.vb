@@ -5,7 +5,7 @@ Partial Public Class KaijoRireki
     Inherits WebBase
 
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
-    Private Joken As TableDef.TBL_KENSAKU.DataStruct
+    Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列
     Private Enum CellIndex

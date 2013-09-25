@@ -8,7 +8,7 @@ Partial Public Class Menu1
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         '共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), AppModule.UserType.Admin, Me)
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
         'If Not SetSession() Then
@@ -31,8 +31,7 @@ Partial Public Class Menu1
         End With
     End Sub
 
-    'セッションを変数に格納
-    Private Function SetSession() As Boolean
+    'セッションを変数に格納    Private Function SetSession() As Boolean
         Return True
     End Function
 
@@ -75,4 +74,37 @@ Partial Public Class Menu1
 
     '    Response.Redirect(URL.Admin.DrTehaiList)
     'End Sub
+
+    '[新着：会場手配]
+    Protected Sub BtnNewKaijoList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKaijoList.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_KOUENKAI)
+        Session.Remove(SessionDef.TBL_KAIJO)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS1)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS2)
+        Session.Remove(SessionDef.HotelKensaku_SHISETSU_NAME)
+        Session.Remove(SessionDef.HotelKensaku_SHISETSU_NAME_KANA)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS)
+        Session.Remove(SessionDef.HotelKensaku_TEL)
+        Session.Remove(SessionDef.HotelKensaku_URL)
+        Response.Redirect(URL.NewKaijoList)
+    End Sub
+
+    '[検索：会場手配]
+    Protected Sub BtnKaijoList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoList.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_KOUENKAI)
+        Session.Remove(SessionDef.TBL_KAIJO)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS1)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS2)
+        Session.Remove(SessionDef.HotelKensaku_SHISETSU_NAME)
+        Session.Remove(SessionDef.HotelKensaku_SHISETSU_NAME_KANA)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS)
+        Session.Remove(SessionDef.HotelKensaku_TEL)
+        Session.Remove(SessionDef.HotelKensaku_URL)
+        Response.Redirect(URL.KaijoList)
+    End Sub
+
 End Class

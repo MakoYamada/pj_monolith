@@ -16,22 +16,22 @@ Option Explicit On
 Partial Public Class NewKaijoList
 
     '''<summary>
-    '''TEHAI_TANTO_JIGYOBU コントロール。
+    '''BU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_JIGYOBU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents BU As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TEHAI_TANTO_AREA コントロール。
+    '''KIKAKU_TANTO_AREA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''KOUENKAI_NAME コントロール。
@@ -50,6 +50,15 @@ Partial Public Class NewKaijoList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents TTANTO_ID As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''REQ_STATUS_TEHAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''BtnSearch コントロール。
@@ -86,6 +95,15 @@ Partial Public Class NewKaijoList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''BtnPrint コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnPrint As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack コントロール。

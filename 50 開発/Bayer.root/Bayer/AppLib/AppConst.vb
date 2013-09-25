@@ -320,6 +320,22 @@ Public Class AppConst
             End Class
          End Class
 
+        Public Class REQ_STATUS_TEHAI
+            '【依頼】手配ステータス
+            Public Class Code
+                Public Const NewRequest As String = "01"
+                Public Const Change As String = "02"
+                Public Const Cancel As String = "03"
+                Public Const After As String = "04"
+            End Class
+            Public Class Name
+                Public Const NewRequest As String = "受付中"
+                Public Const Change As String = "手配中"
+                Public Const Cancel As String = "手配済"
+                Public Const After As String = "精算済"
+            End Class
+        End Class
+
         Public Class ANS_STATUS_TEHAI
             '【回答】手配ステータス
             Public Class Code
@@ -333,6 +349,22 @@ Public Class AppConst
                 Public Const Prepare As String = "手配中"
                 Public Const OK As String = "手配済"
                 Public Const SeisanEnd As String = "精算済"
+            End Class
+        End Class
+
+        Public Class KOUENKAI_KUBUN
+            '会合種別
+            Public Class Code
+                Public Const KouenKai As String = "1"
+                Public Const SetsumeiKai As String = "2"
+                Public Const GairaiKoshi As String = "3"
+                Public Const Other As String = "4"
+            End Class
+            Public Class Name
+                Public Const KouenKai As String = "講演会"
+                Public Const SetsumeiKai As String = "説明会"
+                Public Const GairaiKoshi As String = "外来講師"
+                Public Const Other As String = "その他"
             End Class
         End Class
 
@@ -350,6 +382,18 @@ Public Class AppConst
 
         Public Class IKENKOUKAN_KAIJO_TEHAI
             '意見交換会場　要・不要
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "2"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "要"
+                Public Const No As String = "不要"
+            End Class
+        End Class
+
+        Public Class IROUKAI_KAIJO_TEHAI
+            '慰労会会場　要・不要
             Public Class Code
                 Public Const Yes As String = "1"
                 Public Const No As String = "2"

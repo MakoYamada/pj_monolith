@@ -4,16 +4,16 @@ Partial Public Class KaijoList
     Inherits WebBase
 
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
-    Private Joken As TableDef.TBL_KENSAKU.DataStruct
+    Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列
     Private Enum CellIndex
-        TEHAI_TANTO_JIGYOBU
-        TEHAI_TANTO_AREA
-        TEHAI_TANTO_EIGYOSHO
+        KIKAKU_TANTO_BU
+        KIKAKU_TANTO_AREA
+        KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
         KOUENKAI_NAME
-        TANTO_NAME
+        USER_NAME
         Button1
         Button2
         KOUENKAI_NO
@@ -26,8 +26,8 @@ Partial Public Class KaijoList
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        '共通チェック
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
         If Not SetSession() Then
@@ -44,7 +44,7 @@ Partial Public Class KaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "会場検索講演会情報"
+            .PageTitle = "【検索】会場見積依頼"
         End With
 
     End Sub
@@ -68,14 +68,21 @@ Partial Public Class KaijoList
     '画面項目 初期化
     Private Sub InitControls()
         'プルダウン設定
-        AppModule.SetDropDownList_JIGYOSHO(Me.TEHAI_TANTO_JIGYOBU, MyBase.DbConnection)
-        AppModule.SetDropDownList_AREA(Me.TEHAI_TANTO_AREA, MyBase.DbConnection)
+        'AppModule.SetDropDownList_BU(Me.BU, MyBase.DbConnection)
+        'AppModule.SetDropDownList_AREA(Me.KIKAKU_TANTO_AREA, MyBase.DbConnection)
 
         'IME設定
+        CmnModule.SetIme(Me.KIKAKU_TANTO_ROMA, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEHAI_TANTO_ROMA, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIHIN_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.KOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.DATE_YYYY, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.DATE_MM, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.DATE_DD, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FROM_DATE_YYYY, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FROM_DATE_MM, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FROM_DATE_DD, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TO_DATE_YYYY, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TO_DATE_MM, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TO_DATE_DD, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TTANTO_ID, CmnModule.ImeType.Disabled)
 
         'クリア
@@ -105,14 +112,19 @@ Partial Public Class KaijoList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.JIGYOBU = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_JIGYOBU)
-        Joken.AREA = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_AREA)
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.KIKAKU_TANTO_ROMA.Text)
+        Joken.TEHAI_TANTO_ROMA = Trim(Me.TEHAI_TANTO_ROMA.Text)
+        Joken.SEIHIN_NAME = Trim(Me.SEIHIN_NAME.Text)
+        Joken.KOUENKAI_NO = Trim(Me.KOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
+        Joken.BU = CmnModule.GetSelectedItemValue(Me.KIKAKU_TANTO_BU)
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.FROM_DATE_YYYY.Text, Me.FROM_DATE_MM.Text, Me.FROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.TO_DATE_YYYY.Text, Me.TO_DATE_MM.Text, Me.TO_DATE_DD.Text)
+        Joken.AREA = CmnModule.GetSelectedItemValue(Me.KIKAKU_TANTO_AREA)
         Joken.TTANTO_ID = Trim(Me.TTANTO_ID.Text)
-        Joken.KOUENKAI_DATE = CmnModule.Format_DateToString(Me.DATE_YYYY.Text, Me.DATE_MM.Text, Me.DATE_DD.Text)
-
+        
         ReDim TBL_KAIJO(wCnt)
-        strSQL = SQL.TBL_KAIJO.Search(Joken)
+        strSQL = SQL.TBL_KAIJO.Search(Joken, False)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -130,7 +142,7 @@ Partial Public Class KaijoList
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken)
+        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, False)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -209,32 +221,73 @@ Partial Public Class KaijoList
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.DATE_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(年)"), Me)
+        If Not CmnCheck.IsInput(KIKAKU_TANTO_ROMA) AndAlso _
+           Not CmnCheck.IsInput(TEHAI_TANTO_ROMA) AndAlso _
+           Not CmnCheck.IsInput(SEIHIN_NAME) AndAlso _
+           Not CmnCheck.IsInput(KOUENKAI_NO) AndAlso _
+           Not CmnCheck.IsInput(KOUENKAI_NAME) AndAlso _
+           Not CmnCheck.IsInput(FROM_DATE_YYYY) AndAlso _
+           Not CmnCheck.IsInput(FROM_DATE_MM) AndAlso _
+           Not CmnCheck.IsInput(FROM_DATE_DD) AndAlso _
+           Not CmnCheck.IsInput(TO_DATE_YYYY) AndAlso _
+           Not CmnCheck.IsInput(TO_DATE_MM) AndAlso _
+           Not CmnCheck.IsInput(TO_DATE_DD) AndAlso _
+           Not CmnCheck.IsInput(KIKAKU_TANTO_BU) AndAlso _
+           Not CmnCheck.IsInput(KIKAKU_TANTO_AREA) AndAlso _
+           Not CmnCheck.IsInput(TTANTO_ID) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.DATE_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(月)"), Me)
+        If Not CmnCheck.IsNumberOnly(Me.FROM_DATE_YYYY) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.DATE_DD) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(日)"), Me)
+        If Not CmnCheck.IsNumberOnly(Me.FROM_DATE_MM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(月)"), Me)
             Return False
         End If
 
-        If CmnCheck.IsInput(Me.DATE_YYYY) OrElse CmnCheck.IsInput(Me.DATE_MM) OrElse CmnCheck.IsInput(Me.DATE_DD) Then
-            Dim wStr As String = StrConv(Trim(Me.DATE_YYYY.Text) & "/" & Trim(Me.DATE_MM.Text) & "/" & Trim(Me.DATE_DD.Text), VbStrConv.Narrow)
+        If Not CmnCheck.IsNumberOnly(Me.FROM_DATE_DD) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(日)"), Me)
+            Return False
+        End If
+
+        If CmnCheck.IsInput(Me.FROM_DATE_YYYY) OrElse CmnCheck.IsInput(Me.FROM_DATE_MM) OrElse CmnCheck.IsInput(Me.FROM_DATE_DD) Then
+            Dim wStr As String = StrConv(Trim(Me.FROM_DATE_YYYY.Text) & "/" & Trim(Me.FROM_DATE_MM.Text) & "/" & Trim(Me.FROM_DATE_DD.Text), VbStrConv.Narrow)
             If Not IsDate(wStr) Then
-                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日"), Me)
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日From"), Me)
+                Return False
+            End If
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.TO_DATE_YYYY) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.TO_DATE_MM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.TO_DATE_DD) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(日)"), Me)
+            Return False
+        End If
+
+        If CmnCheck.IsInput(Me.TO_DATE_YYYY) OrElse CmnCheck.IsInput(Me.TO_DATE_MM) OrElse CmnCheck.IsInput(Me.TO_DATE_DD) Then
+            Dim wStr As String = StrConv(Trim(Me.TO_DATE_YYYY.Text) & "/" & Trim(Me.TO_DATE_MM.Text) & "/" & Trim(Me.TO_DATE_DD.Text), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日To"), Me)
                 Return False
             End If
         End If
 
         Return True
     End Function
-    
+
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
         Response.Redirect(URL.Menu)

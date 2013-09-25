@@ -691,6 +691,35 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.INPUT_USER.ToUpper Then TBL_KAIJO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.UPDATE_DATE.ToUpper Then TBL_KAIJO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.UPDATE_USER.ToUpper Then TBL_KAIJO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TIME_STAMP.ToUpper Then TBL_KAIJO.TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TORIKESHI_FLG.ToUpper Then TBL_KAIJO.TORIKESHI_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIDOKU_FLG.ToUpper Then TBL_KAIJO.KIDOKU_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KOUENKAI_TITLE.ToUpper Then TBL_KAIJO.KOUENKAI_TITLE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KOUENKAI_NAME.ToUpper Then TBL_KAIJO.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TAXI_PRT_NAME.ToUpper Then TBL_KAIJO.TAXI_PRT_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.FROM_DATE.ToUpper Then TBL_KAIJO.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TO_DATE.ToUpper Then TBL_KAIJO.TO_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KAIJO_NAME.ToUpper Then TBL_KAIJO.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SEIHIN_NAME.ToUpper Then TBL_KAIJO.SEIHIN_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.INTERNAL_ORDER_T.ToUpper Then TBL_KAIJO.INTERNAL_ORDER_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.INTERNAL_ORDER_TF.ToUpper Then TBL_KAIJO.INTERNAL_ORDER_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.ACCOUNT_CD_T.ToUpper Then TBL_KAIJO.ACCOUNT_CD_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.ACCOUNT_CD_TF.ToUpper Then TBL_KAIJO.ACCOUNT_CD_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.ZETIA_CD.ToUpper Then TBL_KAIJO.ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SANKA_YOTEI_CNT.ToUpper Then TBL_KAIJO.SANKA_YOTEI_CNT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.BU.ToUpper Then TBL_KAIJO.BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_AREA.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_EIGYOSHO.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_NAME.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_ROMA.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_ROMA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_EMAIL_PC.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_EMAIL_PC = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_EMAIL_KEITAI.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_EMAIL_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_KEITAI.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_TEL.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_TEL = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.COST_CENTER.ToUpper Then TBL_KAIJO.COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.YOSAN_TF.ToUpper Then TBL_KAIJO.YOSAN_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.YOSAN_T.ToUpper Then TBL_KAIJO.YOSAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TTANTO_ID.ToUpper Then TBL_KAIJO.TTANTO_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KAIJO
@@ -1071,6 +1100,23 @@ Public Class AppModule
         End If
     End Function
 
+    'ÅyàÀóäÅzéËîzÉXÉeÅ[É^ÉX
+    Public Shared Function GetName_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String) As String
+        Select Case REQ_STATUS_TEHAI
+            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.NewRequest, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
+                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
+            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Change, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
+                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
+            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Cancel, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel
+                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel
+            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.After, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After
+                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
     'ÅyâÒìöÅzéËîzÉXÉeÅ[É^ÉX
     Public Shared Function GetName_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String) As String
         Select Case ANS_STATUS_TEHAI
@@ -1231,7 +1277,24 @@ Public Class AppModule
 
     'è≥îFì˙éû
     Public Shared Function GetName_SHONIN_DATE(ByVal SHONIN_DATE As String) As String
-        Return CmnModule.Format_Date(SHONIN_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        Return CmnModule.Format_Date(SHONIN_DATE, CmnModule.DateFormatType.YYYYMD)
+    End Function
+
+    'âÔçáéÌï 
+    Public Shared Function GetName_KOUENKAI_KUBUN(ByVal KOUENKAI_KUBUN As String) As String
+        Select Case KOUENKAI_KUBUN
+            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.KouenKai, AppConst.KAIJO.KOUENKAI_KUBUN.Name.KouenKai
+                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.KouenKai
+            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.SetsumeiKai, AppConst.KAIJO.KOUENKAI_KUBUN.Name.SetsumeiKai
+                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.SetsumeiKai
+            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.GairaiKoshi, AppConst.KAIJO.KOUENKAI_KUBUN.Name.GairaiKoshi
+                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.GairaiKoshi
+            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.Other, AppConst.KAIJO.KOUENKAI_KUBUN.Name.Other
+                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.Other
+
+            Case Else
+                Return ""
+        End Select
     End Function
 
     'CMè≥îFé“ÅiéÅñºÅj
@@ -3081,7 +3144,7 @@ Public Class AppModule
     'çuâââÔäJç√ì˙From
     Public Shared Function GetName_FROM_DATE(ByVal FROM_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
-            Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMMDD)
+            Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMD)
         Else
             Dim wStr As String = ""
             wStr = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
@@ -3096,7 +3159,7 @@ Public Class AppModule
     'çuâââÔäJç√ì˙To
     Public Shared Function GetName_TO_DATE(ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
-            Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMMDD)
+            Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMD)
         Else
             Dim wStr As String = ""
             wStr = CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
@@ -3113,9 +3176,9 @@ Public Class AppModule
         Dim wStr As String = ""
         If ShortFormat = False Then
             If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
-                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMMDD)
+                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMD)
             Else
-                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMMDD) & "Å`" & CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMMDD)
+                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMD) & "Å`" & CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMD)
             End If
         Else
             If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
@@ -3154,6 +3217,12 @@ Public Class AppModule
     Public Shared Function GetName_TIME_STAMP(ByVal TIME_STAMP As String) As String
         Return CmnModule.Format_Date(TIME_STAMP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
     End Function
+    Public Shared Function GetName_TIME_STAMP_BYL(ByVal TIME_STAMP_BYL As String) As String
+        Return CmnModule.Format_Date(TIME_STAMP_BYL, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+    End Function
+    Public Shared Function GetName_TIME_STAMP_TOP(ByVal TIME_STAMP_TOP As String) As String
+        Return CmnModule.Format_Date(TIME_STAMP_TOP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+    End Function
 
     'é¿é{ó\íËì˙
     Public Shared Function GetName_YOTEI_DATE(ByVal YOTEI_DATE As String) As String
@@ -3163,6 +3232,31 @@ Public Class AppModule
     'äJç√ì˙îıçlóì
     Public Shared Function GetName_KAISAI_DATE_NOTE(ByVal KAISAI_DATE_NOTE As String) As String
         Return KAISAI_DATE_NOTE
+    End Function
+
+    'Internal orderÅiâ€ê≈Åj
+    Public Shared Function GetName_INTERNAL_ORDER_T(ByVal INTERNAL_ORDER_T As String) As String
+        Return INTERNAL_ORDER_T
+    End Function
+
+    'Internal orderÅiîÒâ€ê≈Åj
+    Public Shared Function GetName_INTERNAL_ORDER_TF(ByVal INTERNAL_ORDER_TF As String) As String
+        Return INTERNAL_ORDER_TF
+    End Function
+
+    'ÉAÉJÉEÉìÉgÉRÅ[ÉhÅiâ€ê≈Åj
+    Public Shared Function GetName_ACCOUNT_CD_T(ByVal ACCOUNT_CD_T As String) As String
+        Return ACCOUNT_CD_T
+    End Function
+
+    'ÉAÉJÉEÉìÉgÉRÅ[ÉhÅiîÒâ€ê≈Åj
+    Public Shared Function GetName_ACCOUNT_CD_TF(ByVal ACCOUNT_CD_TF As String) As String
+        Return ACCOUNT_CD_TF
+    End Function
+
+    'zetia Code
+    Public Shared Function GetName_ZETIA_CD(ByVal ZETIA_CD As String) As String
+        Return ZETIA_CD
     End Function
 
     'âÔçáñº
@@ -3190,6 +3284,11 @@ Public Class AppModule
         Return KIKAKU_TANTO_JIGYOBU
     End Function
 
+    'BU
+    Public Shared Function GetName_BU(ByVal BU As String) As String
+        Return BU
+    End Function
+
     'èäëÆÉGÉäÉA
     Public Shared Function GetName_KIKAKU_TANTO_AREA(ByVal KIKAKU_TANTO_AREA As String) As String
         Return KIKAKU_TANTO_AREA
@@ -3215,9 +3314,20 @@ Public Class AppModule
         Return KIKAKU_TANTO_KANA
     End Function
 
+    'íSìñé“ÅiäÈâÊíSìñé“ÅjñºÅiÉçÅ[É}éöÅj
+    Public Shared Function GetName_KIKAKU_TANTO_ROMA(ByVal KIKAKU_TANTO_ROMA As String) As String
+        Return KIKAKU_TANTO_ROMA
+    End Function
+
     'EmailÉAÉhÉåÉXÅiäÈâÊíSìñé“Åj
     Public Shared Function GetName_KIKAKU_TANTO_EMAIL(ByVal KIKAKU_TANTO_EMAIL As String) As String
         Return KIKAKU_TANTO_EMAIL
+    End Function
+    Public Shared Function GetName_KIKAKU_TANTO_EMAIL_PC(ByVal KIKAKU_TANTO_EMAIL_PC As String) As String
+        Return KIKAKU_TANTO_EMAIL_PC
+    End Function
+    Public Shared Function GetName_KIKAKU_TANTO_EMAIL_KEITAI(ByVal KIKAKU_TANTO_EMAIL_KEITAI As String) As String
+        Return KIKAKU_TANTO_EMAIL_KEITAI
     End Function
 
     'ågë—ìdòbî‘çÜ
@@ -3225,9 +3335,19 @@ Public Class AppModule
         Return KIKAKU_TANTO_KEITAI
     End Function
 
+    'ìdòbî‘çÜ
+    Public Shared Function GetName_KIKAKU_TANTO_TEL(ByVal KIKAKU_TANTO_TEL As String) As String
+        Return KIKAKU_TANTO_TEL
+    End Function
+
     'èäëÆéñã∆ïîÅiéËîzíSìñé“Åj
     Public Shared Function GetName_TEHAI_TANTO_JIGYOBU(ByVal TEHAI_TANTO_JIGYOBU As String) As String
         Return TEHAI_TANTO_JIGYOBU
+    End Function
+
+    'èäëÆBUÅiéËîzíSìñé“Åj
+    Public Shared Function GetName_TEHAI_TANTO_BU(ByVal TEHAI_TANTO_BU As String) As String
+        Return TEHAI_TANTO_BU
     End Function
 
     'èäëÆÉGÉäÉAÅiéËîzíSìñé“Åj
@@ -3255,14 +3375,39 @@ Public Class AppModule
         Return TEHAI_TANTO_KANA
     End Function
 
+    'íSìñé“ÅiéËîzíSìñé“ÅjñºÅiÉçÅ[É}éöÅj
+    Public Shared Function GetName_TEHAI_TANTO_ROMA(ByVal TEHAI_TANTO_ROMA As String) As String
+        Return TEHAI_TANTO_ROMA
+    End Function
+
     'EmailÉAÉhÉåÉXÅiéËîzíSìñé“Åj
     Public Shared Function GetName_TEHAI_TANTO_EMAIL(ByVal TEHAI_TANTO_EMAIL As String) As String
         Return TEHAI_TANTO_EMAIL
+    End Function
+    Public Shared Function GetName_TEHAI_TANTO_EMAIL_PC(ByVal TEHAI_TANTO_EMAIL_PC As String) As String
+        Return TEHAI_TANTO_EMAIL_PC
+    End Function
+    Public Shared Function GetName_TEHAI_TANTO_EMAIL_KEITAI(ByVal TEHAI_TANTO_EMAIL_KEITAI As String) As String
+        Return TEHAI_TANTO_EMAIL_KEITAI
     End Function
 
     'ågë—ìdòbî‘çÜ
     Public Shared Function GetName_TEHAI_TANTO_KEITAI(ByVal TEHAI_TANTO_KEITAI As String) As String
         Return TEHAI_TANTO_KEITAI
+    End Function
+
+    'ìdòbî‘çÜ
+    Public Shared Function GetName_TEHAI_TANTO_TEL(ByVal TEHAI_TANTO_TEL As String) As String
+        Return TEHAI_TANTO_TEL
+    End Function
+
+    'éQâ¡ó\íËêî
+    Public Shared Function GetName_SANKA_YOTEI_CNT(ByVal SANKA_YOTEI_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(SANKA_YOTEI_CNT)
+        Else
+            Return SANKA_YOTEI_CNT
+        End If
     End Function
 
     'éQâ¡ó\íËêîÅ@Åià„étÅEñÚç‹étÅj
@@ -3280,17 +3425,6 @@ Public Class AppModule
             Return CmnModule.EditComma(SANKA_YOTEI_CNT_OTHER)
         Else
             Return SANKA_YOTEI_CNT_OTHER
-        End If
-    End Function
-
-    'éQâ¡ó\íËêîÅ@åv
-    Public Shared Function GetName_SANKA_YOTEI_CNT_TOTAL(ByVal SANKA_YOTEI_CNT_DR As String, ByVal SANKA_YOTEI_CNT_OTHER As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Dim wTOTAL As Long = 0
-        wTOTAL = CmnModule.DbVal(SANKA_YOTEI_CNT_DR) + CmnModule.DbVal(SANKA_YOTEI_CNT_OTHER)
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(wTOTAL)
-        Else
-            Return wTOTAL.ToString
         End If
     End Function
 
@@ -3312,28 +3446,28 @@ Public Class AppModule
         End If
     End Function
 
-    'ó\éZäzîÔóp1
-    Public Shared Function GetName_ó\éZäzîÔóp1(ByVal ó\éZäzîÔóp1 As String, Optional ByVal ShortFormat As Boolean = False) As String
+    'ó\éZäz(â€ê≈)
+    Public Shared Function GetName_YOSAN_T(ByVal YOSAN_T As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
-            Return CmnModule.EditComma(ó\éZäzîÔóp1)
+            Return CmnModule.EditComma(YOSAN_T)
         Else
-            Return ó\éZäzîÔóp1
+            Return YOSAN_T
         End If
     End Function
 
-    'ó\éZäzîÔóp2
-    Public Shared Function GetName_ó\éZäzîÔóp2(ByVal ó\éZäzîÔóp2 As String, Optional ByVal ShortFormat As Boolean = False) As String
+    'ó\éZäz(îÒâ€ê≈)
+    Public Shared Function GetName_YOSAN_TF(ByVal YOSAN_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
-            Return CmnModule.EditComma(ó\éZäzîÔóp2)
+            Return CmnModule.EditComma(YOSAN_TF)
         Else
-            Return ó\éZäzîÔóp2
+            Return YOSAN_TF
         End If
     End Function
 
-    'é¿é{îÔópåv
-    Public Shared Function GetName_é¿é{îÔópåv(ByVal MITSUMORI_TF As String, ByVal ó\éZäzîÔóp1 As String, ByVal ó\éZäzîÔóp2 As String, Optional ByVal ShortFormat As Boolean = False) As String
+    'ó\éZäzçáåv
+    Public Shared Function GetName_YOSAN_TOTAL(ByVal YOSAN_T As String, ByVal YOSAN_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
         Dim wTOTAL As Long = 0
-        wTOTAL = CmnModule.DbVal(MITSUMORI_TF) + CmnModule.DbVal(ó\éZäzîÔóp1) + CmnModule.DbVal(ó\éZäzîÔóp2)
+        wTOTAL = CmnModule.DbVal(YOSAN_T) + CmnModule.DbVal(YOSAN_TF)
         If ShortFormat = False Then
             Return CmnModule.EditComma(wTOTAL)
         Else
@@ -3532,6 +3666,44 @@ Public Class AppModule
         Return MANAGER_KAIJO_TIME2
     End Function
 
+    'à‘òJâÔâÔèÍÅ@óvÅEïsóv
+    Public Shared Function GetName_IROUKAI_KAIJO_TEHAI(ByVal IROUKAI_KAIJO_TEHAI As String) As String
+        Select Case IROUKAI_KAIJO_TEHAI
+            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.Yes
+                Return AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.Yes
+            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.No, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.No
+                Return AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+    Public Shared Function GetName_IROUKAI_KAIJO_TEHAI_Yes(ByVal IROUKAI_KAIJO_TEHAI As String) As String
+        Select Case IROUKAI_KAIJO_TEHAI
+            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.Yes
+                Return "Åú"
+            Case Else
+                Return "Åõ"
+        End Select
+    End Function
+    Public Shared Function GetName_IROUKAI_KAIJO_TEHAI_No(ByVal IROUKAI_KAIJO_TEHAI As String) As String
+        Select Case IROUKAI_KAIJO_TEHAI
+            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.No, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.No
+                Return "Åú"
+            Case Else
+                Return "Åõ"
+        End Select
+    End Function
+
+    'à‘òJâÔéQâ¡ó\íËé“êî
+    Public Shared Function GetName_IROUKAI_SANKA_YOTEI_CNT(ByVal IROUKAI_SANKA_YOTEI_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(IROUKAI_SANKA_YOTEI_CNT)
+        Else
+            Return IROUKAI_SANKA_YOTEI_CNT
+        End If
+    End Function
+
     'óòópäzåv
     Public Shared Function GetName_FIX_TOTAL(ByVal FIX_SEISAN_TF As String, ByVal FIX_SEISAN_GTAX As String, ByVal FIX_SEISAN_NTAX As String, Optional ByVal ShortFormat As Boolean = False) As String
         Dim wTOTAL As Long = 0
@@ -3556,6 +3728,24 @@ Public Class AppModule
             wStr &= wTo
         End If
         Return wStr
+    End Function
+
+    'å©êœäzçáåv
+    Public Shared Function GetName_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(ANS_MITSUMORI_TOTAL)
+        Else
+            Return ANS_MITSUMORI_TOTAL
+        End If
+    End Function
+    Public Shared Function GetName_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As String, ByVal ANS_MITSUMORI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_MITSUMORI_T) + CmnModule.DbVal(ANS_MITSUMORI_TF)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
     End Function
 
 
@@ -4327,6 +4517,9 @@ Public Class AppModule
     Public Shared Sub SetForm_ADDRESS(ByVal ADDRESS As String, ByRef control As TextBox)
         control.Text = ADDRESS
     End Sub
+    Public Shared Sub SetForm_ANS_SHISETSU_ADDRESS(ByVal ANS_SHISETSU_ADDRESS As String, ByRef control As TextBox)
+        control.Text = ANS_SHISETSU_ADDRESS
+    End Sub
 
     'ésí¨ë∫
     Public Shared Sub SetForm_ADDRESS2(ByVal ADDRESS2 As String, ByRef control As TextBox)
@@ -4337,20 +4530,26 @@ Public Class AppModule
     Public Shared Sub SetForm_SHISETSU_NAME(ByVal SHISETSU_NAME As String, ByRef control As TextBox)
         control.Text = SHISETSU_NAME
     End Sub
+    Public Shared Sub SetForm_ANS_SHISETSU_NAME(ByVal ANS_SHISETSU_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_SHISETSU_NAME
+    End Sub
 
     'å©êœäzÅiîÒâ€ê≈Åj
-    Public Shared Sub SetForm_MITSUMORI_TF(ByVal MITSUMORI_TF As String, ByRef control As TextBox)
-        control.Text = MITSUMORI_TF
+    Public Shared Sub SetForm_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_MITSUMORI_TF
     End Sub
 
     'å©êœäzÅiâ€ê≈Åj
-    Public Shared Sub SetForm_MITSUMORI_T(ByVal MITSUMORI_T As String, ByRef control As TextBox)
-        control.Text = MITSUMORI_T
+    Public Shared Sub SetForm_ANS_MITSUMORI_T(ByVal ANS_MITSUMORI_T As String, ByRef control As TextBox)
+        control.Text = ANS_MITSUMORI_T
     End Sub
 
     'å©êœäzÅiçáåvÅj
-    Public Shared Sub SetForm_MITSUMORI_TOTAL(ByVal MITSUMORI_TOTAL As String, ByRef control As TextBox)
-        control.Text = MITSUMORI_TOTAL
+    Public Shared Sub SetForm_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As String, ByRef control As TextBox)
+        control.Text = ANS_MITSUMORI_TOTAL
+    End Sub
+    Public Shared Sub SetForm_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As String, ByRef control As Label, Optional ByVal ShortFormat As Boolean = False)
+        control.Text = GetName_ANS_MITSUMORI_TOTAL(ANS_MITSUMORI_TOTAL, ShortFormat)
     End Sub
 
     'äJç√äÛñ]ínÅ@Åiìsìπï{åßÅj
@@ -4398,6 +4597,21 @@ Public Class AppModule
     'âÔèÍURL
     Public Shared Sub SetForm_KAIJO_URL(ByVal KAIJO_URL As String, ByRef control As TextBox)
         control.Text = KAIJO_URL
+    End Sub
+
+    'é{ê›TEL
+    Public Shared Sub SetForm_ANS_SHISETSU_TEL(ByVal ANS_SHISETSU_TEL As String, ByRef control As TextBox)
+        control.Text = ANS_SHISETSU_TEL
+    End Sub
+
+    'é{ê›URL
+    Public Shared Sub SetForm_ANS_SHISETSU_URL(ByVal ANS_SHISETSU_URL As String, ByRef control As TextBox)
+        control.Text = ANS_SHISETSU_URL
+    End Sub
+
+    'å©êœéZèëÅ@ï€ë∂èÍèäURL
+    Public Shared Sub SetForm_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As String, ByRef control As TextBox)
+        control.Text = ANS_MITSUMORI_URL
     End Sub
 
 
@@ -5529,6 +5743,9 @@ Public Class AppModule
         If wStr = "--" Then wStr = ""
         Return wStr
     End Function
+    Public Shared Function GetValue_ANS_SHISETSU_TEL(ByVal ANS_SHISETSU_TEL As TextBox) As String
+        Return Trim(StrConv(ANS_SHISETSU_TEL.Text, VbStrConv.Narrow))
+    End Function
 
     'ågë—ìdòbî‘çÜ
     Public Shared Function GetValue_KEITAI(ByVal KEITAI As TextBox) As String
@@ -5548,6 +5765,11 @@ Public Class AppModule
         Return wStr
     End Function
 
+    'é{ê›URL
+    Public Shared Function GetValue_ANS_SHISETSU_URL(ByVal ANS_SHISETSU_URL As TextBox) As String
+        Return Trim(StrConv(ANS_SHISETSU_URL.Text, VbStrConv.Narrow))
+    End Function
+
     'ìsìπï{åß
     Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As TextBox) As String
         Return Trim(ADDRESS1.Text)
@@ -5562,25 +5784,34 @@ Public Class AppModule
     Public Shared Function GetValue_ADDRESS(ByVal ADDRESS As TextBox) As String
         Return Trim(ADDRESS.Text)
     End Function
+    Public Shared Function GetValue_ANS_SHISETSU_ADDRESS(ByVal ANS_SHISETSU_ADDRESS As TextBox) As String
+        Return Trim(ANS_SHISETSU_ADDRESS.Text)
+    End Function
 
     'é{ê›ñº
     Public Shared Function GetValue_SHISETSU_NAME(ByVal SHISETSU_NAME As TextBox) As String
         Return Trim(SHISETSU_NAME.Text)
     End Function
+    Public Shared Function GetValue_ANS_SHISETSU_NAME(ByVal ANS_SHISETSU_NAME As TextBox) As String
+        Return Trim(ANS_SHISETSU_NAME.Text)
+    End Function
 
     'å©êœäzÅiîÒâ€ê≈Åj
-    Public Shared Function GetValue_MITSUMORI_TF(ByVal MITSUMORI_TF As TextBox) As String
-        Return Trim(StrConv(MITSUMORI_TF.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
     End Function
 
     'å©êœäzÅiâ€ê≈Åj
-    Public Shared Function GetValue_MITSUMORI_T(ByVal MITSUMORI_T As TextBox) As String
-        Return Trim(StrConv(MITSUMORI_T.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_MITSUMORI_T(ByVal ANS_MITSUMORI_T As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow))
     End Function
 
     'å©êœäzÅiçáåvÅj
-    Public Shared Function GetValue_MITSUMORI_TOTAL(ByVal MITSUMORI_TOTAL As TextBox) As String
-        Return Trim(StrConv(MITSUMORI_TOTAL.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_TOTAL.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As TextBox, ByVal ANS_MITSUMORI_TF As TextBox) As String
+        Return CmnModule.DbVal(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow)).ToString
     End Function
 
     'äJç√äÛñ]ínÅ@Åiìsìπï{åßÅj
@@ -5626,6 +5857,11 @@ Public Class AppModule
     'âÔèÍTEL
     Public Shared Function GetValue_KAIJO_TEL(ByVal KAIJO_TEL As TextBox) As String
         Return GetValue_TEL(KAIJO_TEL)
+    End Function
+
+    'å©êœèëï€ë∂èÍèäURL
+    Public Shared Function GetValue_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_URL.Text, VbStrConv.Narrow))
     End Function
 
 

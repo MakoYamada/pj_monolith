@@ -8,43 +8,58 @@
 			<td align="left">
 				<table cellpadding="2" cellspacing="0" border="0">
 					<tr>
-						<td align="left">
-							<table cellpadding="2" cellspacing="0" border="0">
-								<tr>
-									<td>
-										事業部
-										<asp:DropDownList ID="TEHAI_TANTO_JIGYOBU" runat="server" Width="150px"></asp:DropDownList>
-										&nbsp;&nbsp;&nbsp;
-										エリア
-										<asp:DropDownList ID="TEHAI_TANTO_AREA" runat="server" Width="150px"></asp:DropDownList>
-										&nbsp;&nbsp;&nbsp;
-										会合名
-										<asp:TextBox ID="KOUENKAI_NAME" runat="server" Width="350px" MaxLength="200"></asp:TextBox>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										実施日
-										<asp:TextBox ID="DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
-										<asp:TextBox ID="DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
-										<asp:TextBox ID="DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
-										&nbsp;&nbsp;&nbsp;
-										担当者
-										<asp:TextBox ID="TTANTO_ID" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
-									</td>
-								</tr>
-							</table>
+						<td align="left" colspan="2">
+							企画担当者
+							<asp:TextBox ID="KIKAKU_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
+							&nbsp;&nbsp;&nbsp;
+							手配担当者
+							<asp:TextBox ID="TEHAI_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
+							&nbsp;&nbsp;&nbsp;
+							製品名
+							<asp:TextBox ID="SEIHIN_NAME" runat="server" Width="200px"></asp:TextBox>
 						</td>
-						<td align="left" valign="bottom">
-							&nbsp;
+					</tr>
+					<tr>
+						<td align="left" colspan="2">
+							講演会番号
+							<asp:TextBox ID="KOUENKAI_NO" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
+							&nbsp;&nbsp;&nbsp;
+							講演会名
+							<asp:TextBox ID="KOUENKAI_NAME" runat="server" Width="350px" MaxLength="200"></asp:TextBox>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="2">
+							実施日
+							<asp:TextBox ID="FROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							<asp:TextBox ID="FROM_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+							<asp:TextBox ID="FROM_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
+							～
+							<asp:TextBox ID="TO_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							<asp:TextBox ID="TO_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+							<asp:TextBox ID="TO_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
+							&nbsp;&nbsp;&nbsp;
+							BU
+							<asp:DropDownList ID="KIKAKU_TANTO_BU" runat="server" Width="150px"></asp:DropDownList>
+							&nbsp;&nbsp;&nbsp;
+							エリア
+							<asp:DropDownList ID="KIKAKU_TANTO_AREA" runat="server" Width="150px"></asp:DropDownList>
+						</td>
+					</tr>
+					<tr>
+						<td align="left">
+							トップツアー担当者
+							<asp:TextBox ID="TTANTO_ID" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
+						</td>
+						<td align="right">
 							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
 						</td>
 					</tr>
 				</table>
-				<hr style="width:100%" />
 			</td>
 		</tr>
 	</table>
+	<hr style="width: 100%;" />
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr>
 			<td align="left">
@@ -60,12 +75,12 @@
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-						<asp:BoundField DataField="TEHAI_TANTO_JIGYOBU" HeaderText="事業部" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="TEHAI_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="TEHAI_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KIKAKU_TANTO_BU" HeaderText="BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="TANTO_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" HeaderText="会場手配" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Kaijo" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="68px" />
 						<asp:ButtonField ButtonType="Button" HeaderText="参加者" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="HotelKotsu" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />

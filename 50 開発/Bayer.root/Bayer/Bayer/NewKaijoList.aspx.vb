@@ -4,19 +4,22 @@ Partial Public Class NewKaijoList
     Inherits WebBase
 
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
-    Private Joken As TableDef.TBL_KENSAKU.DataStruct
+    Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列
     Private Enum CellIndex
-        TEHAI_TANTO_JIGYOBU
-        TEHAI_TANTO_AREA
-        TEHAI_TANTO_EIGYOSHO
-        YOTEI_DATE
+        Template1
+        BU
+        KIKAKU_TANTO_AREA
+        KIKAKU_TANTO_EIGYOSHO
+        FROM_DATE
         KOUENKAI_NAME
         TIME_STAMP
-        TANTO_NAME
+        REQ_STATUS_TEHAI
+        USER_NAME
+        Button1
         KOUENKAI_NO
-         Button1
+        TO_DATE
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -25,8 +28,8 @@ Partial Public Class NewKaijoList
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        '共通チェック
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
         If Not SetSession() Then
@@ -43,7 +46,7 @@ Partial Public Class NewKaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "新着・会場手配依頼"
+            .PageTitle = "【新着】会場見積依頼"
         End With
 
     End Sub
@@ -67,8 +70,9 @@ Partial Public Class NewKaijoList
     '画面項目 初期化
     Private Sub InitControls()
         'プルダウン設定
-        AppModule.SetDropDownList_JIGYOSHO(Me.TEHAI_TANTO_JIGYOBU, MyBase.DbConnection)
-        AppModule.SetDropDownList_AREA(Me.TEHAI_TANTO_AREA, MyBase.DbConnection)
+        'AppModule.SetDropDownList_BU(Me.BU, MyBase.DbConnection)
+        'AppModule.SetDropDownList_AREA(Me.KIKAKU_TANTO_AREA, MyBase.DbConnection)
+        'AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI, MyBase.DbConnection)
 
         'IME設定
         CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
@@ -80,7 +84,7 @@ Partial Public Class NewKaijoList
 
     '画面項目 表示
     Private Sub SetForm()
-         'データ取得
+        'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
@@ -101,14 +105,15 @@ Partial Public Class NewKaijoList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.JIGYOBU = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_JIGYOBU)
-        Joken.AREA = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_AREA)
+        Joken.BU = CmnModule.GetSelectedItemValue(Me.BU)
+        Joken.AREA = CmnModule.GetSelectedItemValue(Me.KIKAKU_TANTO_AREA)
         Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
         Joken.TTANTO_ID = Trim(Me.TTANTO_ID.Text)
+        Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.REQ_STATUS_TEHAI)
 
         ReDim TBL_KAIJO(wCnt)
 
-        strSQL = SQL.TBL_KAIJO.Search(Joken)
+        strSQL = SQL.TBL_KAIJO.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -122,11 +127,11 @@ Partial Public Class NewKaijoList
 
         Return wFlag
     End Function
-     
+
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken)
+        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -146,7 +151,7 @@ Partial Public Class NewKaijoList
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.YOTEI_DATE).Text = AppModule.GetName_YOTEI_DATE(e.Row.Cells(CellIndex.YOTEI_DATE).Text)
+            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
             e.Row.Cells(CellIndex.TIME_STAMP).Text = AppModule.GetName_TIME_STAMP(e.Row.Cells(CellIndex.TIME_STAMP).Text)
         End If
     End Sub
@@ -154,9 +159,10 @@ Partial Public Class NewKaijoList
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(CellIndex.TO_DATE).Visible = False
             e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
-            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 1
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 2
             Me.GrvList.BorderStyle = BorderStyle.None
             Dim PagerTableCell As TableCell = e.Row.Cells(0)
             PagerTableCell.BorderStyle = BorderStyle.None
@@ -197,6 +203,31 @@ Partial Public Class NewKaijoList
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
         Response.Redirect(URL.Menu)
+    End Sub
+
+    '[印刷]
+    Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim SEQ As Integer = 0
+
+        'チェック
+        For Each wRow As GridViewRow In Me.GrvList.Rows
+            If CType(wRow.Cells(CellIndex.Template1).FindControl("Check"), CheckBox).Checked = True Then
+                wFlag = True
+                Exit For
+            End If
+        Next
+        If wFlag = False Then
+            CmnModule.AlertMessage("印刷対象がありません。1件以上チェックしてください。", Me)
+            Exit Sub
+        End If
+
+        For Each wRow As GridViewRow In Me.GrvList.Rows
+            If CType(wRow.Cells(CellIndex.Template1).FindControl("Check"), CheckBox).Checked = True Then
+                'QQQ 印刷プレビューへ  複数のID???
+            End If
+        Next
     End Sub
 
 End Class
