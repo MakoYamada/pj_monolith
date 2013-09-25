@@ -81,6 +81,18 @@ img
 	color: #ffffff;
 	font-weight: bold;
 }
+.TdTitleKaijoDisp
+{
+	background-color: #b8c3c8;
+	color: #273034;
+	font-weight: bold;
+}
+.TdTitleKaijo
+{
+	background-color: #738891;
+	color: #ffffff;
+	font-weight: bold;
+}
 .TdItem 
 {
 	background-color: #ffffff;
