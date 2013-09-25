@@ -3079,13 +3079,70 @@ Public Class AppModule
     End Function
 
     '講演会開催日From
-    Public Shared Function GetName_FROM_DATE(ByVal FROM_DATE As String) As String
-        Return FROM_DATE
+    Public Shared Function GetName_FROM_DATE(ByVal FROM_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMMDD)
+        Else
+            Dim wStr As String = ""
+            wStr = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
+                 & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD), True)
+            wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
+            wStr = Replace(wStr, "月0", "月")
+            If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
+            Return wStr
+        End If
     End Function
 
     '講演会開催日To
-    Public Shared Function GetName_TO_DATE(ByVal TO_DATE As String) As String
-        Return TO_DATE
+    Public Shared Function GetName_TO_DATE(ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMMDD)
+        Else
+            Dim wStr As String = ""
+            wStr = CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
+                 & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD), True)
+            wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
+            wStr = Replace(wStr, "月0", "月")
+            If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
+            Return wStr
+        End If
+    End Function
+
+    '講演会開催日
+    Public Shared Function GetName_KOUENKAI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wStr As String = ""
+        If ShortFormat = False Then
+            If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
+                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMMDD)
+            Else
+                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMMDD) & "～" & CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMMDD)
+            End If
+        Else
+            If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
+                wStr = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
+                     & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD), True)
+                wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
+                wStr = Replace(wStr, "月0", "月")
+                If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
+            Else
+                Dim wFROM_DATE As String = ""
+                Dim wTO_DATE As String = ""
+                wFROM_DATE = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
+                     & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD), True)
+                wFROM_DATE = Replace(Replace(wFROM_DATE, "/", "月"), "(", "日(")
+                wFROM_DATE = Replace(wFROM_DATE, "月0", "月")
+                If Mid(wFROM_DATE, 1, 1) = "0" Then wFROM_DATE = Mid(wFROM_DATE, 2, 10)
+
+                wTO_DATE = CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
+                     & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD), True)
+                wTO_DATE = Replace(Replace(wTO_DATE, "/", "月"), "(", "日(")
+                wTO_DATE = Replace(wTO_DATE, "月0", "月")
+                If Mid(wTO_DATE, 1, 1) = "0" Then wTO_DATE = Mid(wTO_DATE, 2, 10)
+
+                wStr = wFROM_DATE & "～" & wTO_DATE
+            End If
+        End If
+        Return wStr
     End Function
 
     'タクシーチケット印字名

@@ -415,13 +415,17 @@ Public Class CmnModule
                 If Len(wStr) <> 14 Then Return in_Str
 
                 wStr = Mid(wStr, 9, 2) & ":" & Mid(wStr, 11, 2)
-            Case DateFormatType.YYYYMD
+            Case DateFormatType.YYYYMD, DateFormatType.YYMD
                 'yyyy/m/d
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) 'ŠÔ‚ª“ü‚Á‚Ä‚¢‚½‚çA“ú‚É‚¿•”•ª‚ğØ‚èæ‚é
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6Œ…‚Ì¨¼—ï2Œ…‚Æ”»’f
                 If Len(wStr) = 4 Then wStr &= "2013" & wStr '4Œ…¨”N‚È‚µ‚Æ”»’f
 
-                wStr = Mid(wStr, 1, 4) & "/" & CStr(Val(Mid(wStr, 5, 2))) & "/" & CStr(Val(Mid(wStr, 7, 2)))
+                If in_Type = DateFormatType.YYYYMD Then
+                    wStr = Mid(wStr, 1, 4) & "/" & CStr(Val(Mid(wStr, 5, 2))) & "/" & CStr(Val(Mid(wStr, 7, 2)))
+                Else
+                    wStr = Mid(wStr, 3, 2) & "/" & CStr(Val(Mid(wStr, 5, 2))) & "/" & CStr(Val(Mid(wStr, 7, 2)))
+                End If
         End Select
 
         If IsDate(wStr) = False Then
@@ -522,6 +526,7 @@ Public Class CmnModule
         [YYYYMMDD]
         [YYMMDD]
         [YYYYMD]
+        [YYMD]
         [MD]
         [MMDD]
         [YYYYMMDDHHMMSS]
