@@ -52,6 +52,15 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''KOUENKAI_TITLE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_TITLE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''FROM_DATE コントロール。
     '''</summary>
     '''<remarks>
@@ -76,7 +85,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KAIJO_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''SEIHIN_NAME コントロール。
@@ -85,7 +94,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SEIHIN_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SEIHIN_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''INTERNAL_ORDER_T コントロール。
@@ -133,15 +142,6 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents ZETIA_CD As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BU As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''SANKA_YOTEI_CNT コントロール。
     '''</summary>
     '''<remarks>
@@ -151,13 +151,13 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents SANKA_YOTEI_CNT As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_JIGYOBU コントロール。
+    '''BU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_JIGYOBU As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents BU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''KIKAKU_TANTO_AREA コントロール。
@@ -205,15 +205,6 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents KIKAKU_TANTO_TEL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_EMAIL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''KIKAKU_TANTO_KEITAI コントロール。
     '''</summary>
     '''<remarks>
@@ -223,6 +214,15 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents KIKAKU_TANTO_KEITAI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''KIKAKU_TANTO_EMAIL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_EMAIL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''KIKAKU_TANTO_EMAIL_KEITAI コントロール。
     '''</summary>
     '''<remarks>
@@ -230,87 +230,6 @@ Partial Public Class KouenkaiRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KIKAKU_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_JIGYOBU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_JIGYOBU As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_AREA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_EIGYOSHO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TEHAI_TANTO_ROMA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TEHAI_TANTO_TEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_TEL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_EMAIL_PC コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_EMAIL_PC As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_KEITAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_KEITAI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TEHAI_TANTO_EMAIL_KEITAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''YOSAN_TF コントロール。
