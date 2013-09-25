@@ -76,15 +76,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_KEITAI
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_TEL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.COST_CENTER
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EIGYOSHO
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_NAME
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_PC
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_KEITAI
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_KEITAI
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_TEL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KOUENKAI_KUBUN
@@ -124,15 +115,6 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_KEITAI) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_TEL) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.COST_CENTER) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_BU) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_AREA) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_NAME) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_ROMA) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_PC) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_KEITAI) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_KEITAI) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_TEL) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_KUBUN) & "'"
@@ -177,15 +159,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_KEITAI & "='" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_KEITAI) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_TEL & "='" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.COST_CENTER & "='" & CmnDb.SqlString(TBL_KOUENKAI.COST_CENTER) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_BU) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_AREA) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EIGYOSHO & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_NAME & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_NAME) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_ROMA) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_PC & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_PC) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_KEITAI & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_KEITAI) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_KEITAI & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_KEITAI) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_TEL & "='" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF & "='" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T & "='" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KOUENKAI_KUBUN & "='" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_KUBUN) & "'"
@@ -1865,68 +1838,95 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function Search(ByVal Joken As TableDef.TBL_KENSAKU.DataStruct, ByVal NewData As Boolean) As String
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
 
-            'strSQL &= "SELECT"
-            'strSQL &= " TBL_KAIJO.*"
-            'strSQL &= ",TBL_KOUENKAI.KOUENKAI_EDABAN"
-            'strSQL &= ",TBL_KOUENKAI.KOUENKAI_NAME"
-            'strSQL &= ",TBL_KOUENKAI.TAXI_PRT_NAME"
-            'strSQL &= ",TBL_KOUENKAI.FROM_DATE"
-            'strSQL &= ",TBL_KOUENKAI.TO_DATE"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_JIGYOBU"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_AREA"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_NO"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_NAME"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_KANA"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EMAIL"
-            'strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_KEITAI"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_JIGYOBU"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_AREA"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_NO"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_NAME"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_KANA"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_EMAIL"
-            'strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_KEITAI"
-            'strSQL &= ",TBL_KOUENKAI.DAIKIBO_FLG"
-            'strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
-            'strSQL &= ",TBL_KOUENKAI.INPUT_DATE"
-            'strSQL &= ",TBL_KOUENKAI.INPUT_USER"
-            'strSQL &= ",TBL_KOUENKAI.UPDATE_DATE"
-            'strSQL &= ",TBL_KOUENKAI.UPDATE_USER"
-            'strSQL &= " FROM TBL_KOUENKAI INNER JOIN TBL_KAIJO"
-            'strSQL &= " ON TBL_KOUENKAI.KOUENKAI_NO=TBL_KAIJO.KOUENKAI_ID"
+            strSQL &= "SELECT"
+            strSQL &= " TBL_KOUENKAI.*"
+            strSQL &= ",TBL_KAIJO.TEHAI_ID"
+            strSQL &= ",TBL_KAIJO.REQ_STATUS_TEHAI"
+            strSQL &= ",TBL_KAIJO.ANS_STATUS_TEHAI"
+            strSQL &= ",TBL_KAIJO.TIME_STAMP_BYL"
+            strSQL &= ",TBL_KAIJO.TIME_STAMP_TOP"
+            strSQL &= ",TBL_KAIJO.SHONIN_NAME"
+            strSQL &= ",TBL_KAIJO.SHONIN_DATE"
+            strSQL &= ",TBL_KAIJO.KAISAI_DATE_NOTE"
+            strSQL &= ",TBL_KAIJO.KAISAI_KIBOU_ADDRESS1"
+            strSQL &= ",TBL_KAIJO.KAISAI_KIBOU_ADDRESS2"
+            strSQL &= ",TBL_KAIJO.KAISAI_KIBOU_NOTE"
+            strSQL &= ",TBL_KAIJO.KOUEN_TIME1"
+            strSQL &= ",TBL_KAIJO.KOUEN_TIME2"
+            strSQL &= ",TBL_KAIJO.KOUEN_KAIJO_LAYOUT"
+            strSQL &= ",TBL_KAIJO.IKENKOUKAN_KAIJO_TEHAI"
+            strSQL &= ",TBL_KAIJO.IROUKAI_KAIJO_TEHAI"
+            strSQL &= ",TBL_KAIJO.IROUKAI_SANKA_YOTEI_CNT"
+            strSQL &= ",TBL_KAIJO.KOUSHI_ROOM_TEHAI"
+            strSQL &= ",TBL_KAIJO.SHAIN_ROOM_TEHAI"
+            strSQL &= ",TBL_KAIJO.MANAGER_KAIJO_TEHAI"
+            strSQL &= ",TBL_KAIJO.KAIJO_URL"
+            strSQL &= ",TBL_KAIJO.OTHER_NOTE"
+            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_TF"
+            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_T"
+            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_TOTAL"
+            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_URL"
+            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_ADDRESS"
+            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_TEL"
+            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_URL"
+            strSQL &= ",TBL_KAIJO.ANS_KOUEN_KAIJO_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_KOUEN_KAIJO_FLOOR"
+            strSQL &= ",TBL_KAIJO.ANS_IKENKOUKAN_KAIJO_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_IROUKAI_KAIJO_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_KOUSHI_ROOM_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_SHAIN_ROOM_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_MANAGER_KAIJO_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_KAISAI_NOTE"
+            strSQL &= ",TBL_KAIJO.ANS_SEISAN_TF"
+            strSQL &= ",TBL_KAIJO.ANS_SEISAN_T"
+            strSQL &= ",TBL_KAIJO.ANS_SEISANSHO_URL"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_BU"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_AREA"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_EIGYOSHO"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_NAME"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_ROMA"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_EMAIL_PC"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_KEITAI"
+            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_TEL"
+            strSQL &= ",MS_USER.USER_NAME"
+            strSQL &= " FROM (TBL_KOUENKAI"
+            strSQL &= " LEFT JOIN TBL_KAIJO"
+            strSQL &= " ON TBL_KOUENKAI.KOUENKAI_NO=TBL_KAIJO.KOUENKAI_NO)"
+            strSQL &= " LEFT JOIN MS_USER"
+            strSQL &= " ON TBL_KOUENKAI.TTANTO_ID=MS_USER.LOGIN_ID"
 
-            'If NewData = True Then
-            '    '新着
-            '    strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG='1'"
-            'Else
-            '    '検索
-            '    strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
-            'End If
+            If NewData = True Then
+                '新着
+                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG='1'"
+            Else
+                '検索
+                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
+            End If
 
-            'If Trim(Joken.JIGYOBU) <> "" Then
-            '    strSQL &= " AND TBL_KOUENKAI.KIKAKU_TNTO_JIGYOBU='" & CmnDb.SqlString(Joken.JIGYOBU) & "'"
-            'End If
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_BU='" & CmnDb.SqlString(Joken.BU) & "'"
+            End If
 
-            'If Trim(Joken.AREA) <> "" Then
-            '    strSQL &= " AND TBL_KOUENKAI.KIKAKU_TNTO_AREA='" & CmnDb.SqlString(Joken.AREA) & "'"
-            'End If
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA='" & CmnDb.SqlString(Joken.AREA) & "'"
+            End If
 
-            'If Trim(Joken.EIGYOSHO) <> "" Then
-            '    strSQL &= " AND TBL_KOUENKAI.KIKAKU_TNTO_EIGYOSHO='" & CmnDb.SqlString(Joken.EIGYOSHO) & "'"
-            'End If
+            If Trim(Joken.EIGYOSHO) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO='" & CmnDb.SqlString(Joken.EIGYOSHO) & "'"
+            End If
 
-            'If Trim(Joken.MEETING_NAME) <> "" Then
-            '    strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE '%" & CmnDb.SqlString(Joken.MEETING_NAME) & "%'"
-            'End If
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.TTANTO_ID='" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
 
-            'If Trim(Joken.TANTO_NAME) <> "" Then
-            '    strSQL &= " AND TBL_KOUENKAI.TTANTO_ID='" & CmnDb.SqlString(Joken.TANTO_NAME) & "'"
-            'End If
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE '%'" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
 
             'If Trim(Joken.KOUENKAI_DATE) <> "" Then
             '    strSQL &= " AND ("
@@ -1936,8 +1936,14 @@ Public Class SQL
             '    strSQL &= ")"
             'End If
 
-            'strSQL &= " ORDER BY"
-            'strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " ORDER BY"
+            If NewData = True Then
+                '新着
+                strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            Else
+                '検索
+                strSQL &= " TBL_KOUENKAI.UPDATE_DATE DESC"
+            End If
 
             Return strSQL
         End Function
@@ -2725,71 +2731,6 @@ Public Class SQL
             strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_DATE & "='" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_DATE) & "'"
             strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER & "='" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.MS_EIGYOSHO.Column.SYSTEM_ID & "='" & CmnDb.SqlString(MS_EIGYOSHO.SYSTEM_ID) & "'"
-
-            Return strSQL
-        End Function
-
-    End Class
-
-    Public Class TBL_KENSAKU
-
-        Private Const SQL_SELECT As String _
-        = "SELECT" _
-        & " TBL_KENSAKU.*" _
-        & " FROM TBL_KENSAKU"
-
-        Private Const SQL_ORDERBY As String _
-        = " ORDER BY" _
-        & " TBL_KENSAKU.SYSTEM_ID"
-
-        Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
-            Dim strSQL As String = SQL_SELECT
-
-            strSQL &= " WHERE TBL_KENSAKU.SYSTEM_ID='" & CmnDb.SqlString(SYSTEM_ID) & "'"
-            strSQL &= SQL_ORDERBY
-
-            Return strSQL
-        End Function
-
-        Public Shared Function Insert(ByVal TBL_KENSAKU As TableDef.TBL_KENSAKU.DataStruct) As String
-            Dim strSQL As String = ""
-
-            strSQL = "INSERT INTO TBL_KENSAKU"
-            strSQL &= "(" & TableDef.TBL_KENSAKU.Column.KOUENKAI_ID
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.AREA
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.EIGYOSHO
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.TANTO_NAME
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.TANTO_KANA
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.KOUENKAI_NAME
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.KOUENKAI_DATE
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.KOUENKAI_NO
-            strSQL &= ")"
-            strSQL &= " VALUES"
-            strSQL &= "('" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_ID) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.AREA) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.EIGYOSHO) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.TANTO_NAME) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.TANTO_KANA) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_NAME) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_DATE) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_NO) & "'"
-            strSQL &= ")"
-
-            Return strSQL
-        End Function
-
-        Public Shared Function Update(ByVal TBL_KENSAKU As TableDef.TBL_KENSAKU.DataStruct) As String
-            Dim strSQL As String = ""
-
-            strSQL = "UPDATE TBL_KENSAKU SET"
-            strSQL &= " " & TableDef.TBL_KENSAKU.Column.AREA & "='" & CmnDb.SqlString(TBL_KENSAKU.AREA) & "'"
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.EIGYOSHO & "='" & CmnDb.SqlString(TBL_KENSAKU.EIGYOSHO) & "'"
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.TANTO_NAME & "='" & CmnDb.SqlString(TBL_KENSAKU.TANTO_NAME) & "'"
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.TANTO_KANA & "='" & CmnDb.SqlString(TBL_KENSAKU.TANTO_KANA) & "'"
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.KOUENKAI_NAME & "='" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_NAME) & "'"
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.KOUENKAI_DATE & "='" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_DATE) & "'"
-            strSQL &= "," & TableDef.TBL_KENSAKU.Column.KOUENKAI_NO & "='" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_NO) & "'"
-            strSQL &= " WHERE " & TableDef.TBL_KENSAKU.Column.KOUENKAI_ID & "='" & CmnDb.SqlString(TBL_KENSAKU.KOUENKAI_ID) & "'"
 
             Return strSQL
         End Function

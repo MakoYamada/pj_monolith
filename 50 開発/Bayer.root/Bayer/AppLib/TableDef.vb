@@ -29,15 +29,6 @@
             Public KIKAKU_TANTO_KEITAI As String
             Public KIKAKU_TANTO_TEL As String
             Public COST_CENTER As String
-            Public TEHAI_TANTO_BU As String
-            Public TEHAI_TANTO_AREA As String
-            Public TEHAI_TANTO_EIGYOSHO As String
-            Public TEHAI_TANTO_NAME As String
-            Public TEHAI_TANTO_ROMA As String
-            Public TEHAI_TANTO_EMAIL_PC As String
-            Public TEHAI_TANTO_EMAIL_KEITAI As String
-            Public TEHAI_TANTO_KEITAI As String
-            Public TEHAI_TANTO_TEL As String
             Public YOSAN_TF As String
             Public YOSAN_T As String
             Public KOUENKAI_KUBUN As String
@@ -48,6 +39,57 @@
             Public INPUT_USER As String
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
+
+            Public TEHAI_ID As String
+            Public REQ_STATUS_TEHAI As String
+            Public ANS_STATUS_TEHAI As String
+            Public TIME_STAMP_BYL As String
+            Public TIME_STAMP_TOP As String
+            Public SHONIN_NAME As String
+            Public SHONIN_DATE As String
+            Public KAISAI_DATE_NOTE As String
+            Public KAISAI_KIBOU_ADDRESS1 As String
+            Public KAISAI_KIBOU_ADDRESS2 As String
+            Public KAISAI_KIBOU_NOTE As String
+            Public KOUEN_TIME1 As String
+            Public KOUEN_TIME2 As String
+            Public KOUEN_KAIJO_LAYOUT As String
+            Public IKENKOUKAN_KAIJO_TEHAI As String
+            Public IROUKAI_KAIJO_TEHAI As String
+            Public IROUKAI_SANKA_YOTEI_CNT As String
+            Public KOUSHI_ROOM_TEHAI As String
+            Public SHAIN_ROOM_TEHAI As String
+            Public MANAGER_KAIJO_TEHAI As String
+            Public KAIJO_URL As String
+            Public OTHER_NOTE As String
+            Public ANS_MITSUMORI_TF As String
+            Public ANS_MITSUMORI_T As String
+            Public ANS_MITSUMORI_TOTAL As String
+            Public ANS_MITSUMORI_URL As String
+            Public ANS_SHISETSU_NAME As String
+            Public ANS_SHISETSU_ADDRESS As String
+            Public ANS_SHISETSU_TEL As String
+            Public ANS_SHISETSU_URL As String
+            Public ANS_KOUEN_KAIJO_NAME As String
+            Public ANS_KOUEN_KAIJO_FLOOR As String
+            Public ANS_IKENKOUKAN_KAIJO_NAME As String
+            Public ANS_IROUKAI_KAIJO_NAME As String
+            Public ANS_KOUSHI_ROOM_NAME As String
+            Public ANS_SHAIN_ROOM_NAME As String
+            Public ANS_MANAGER_KAIJO_NAME As String
+            Public ANS_KAISAI_NOTE As String
+            Public ANS_SEISAN_TF As String
+            Public ANS_SEISAN_T As String
+            Public ANS_SEISANSHO_URL As String
+            Public TEHAI_TANTO_BU As String
+            Public TEHAI_TANTO_AREA As String
+            Public TEHAI_TANTO_EIGYOSHO As String
+            Public TEHAI_TANTO_NAME As String
+            Public TEHAI_TANTO_ROMA As String
+            Public TEHAI_TANTO_EMAIL_PC As String
+            Public TEHAI_TANTO_EMAIL_KEITAI As String
+            Public TEHAI_TANTO_KEITAI As String
+            Public TEHAI_TANTO_TEL As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -77,15 +119,6 @@
             Public Const KIKAKU_TANTO_KEITAI As String = "KIKAKU_TANTO_KEITAI"
             Public Const KIKAKU_TANTO_TEL As String = "KIKAKU_TANTO_TEL"
             Public Const COST_CENTER As String = "COST_CENTER"
-            Public Const TEHAI_TANTO_BU As String = "TEHAI_TANTO_BU"
-            Public Const TEHAI_TANTO_AREA As String = "TEHAI_TANTO_AREA"
-            Public Const TEHAI_TANTO_EIGYOSHO As String = "TEHAI_TANTO_EIGYOSHO"
-            Public Const TEHAI_TANTO_NAME As String = "TEHAI_TANTO_NAME"
-            Public Const TEHAI_TANTO_ROMA As String = "TEHAI_TANTO_ROMA"
-            Public Const TEHAI_TANTO_EMAIL_PC As String = "TEHAI_TANTO_EMAIL_PC"
-            Public Const TEHAI_TANTO_EMAIL_KEITAI As String = "TEHAI_TANTO_EMAIL_KEITAI"
-            Public Const TEHAI_TANTO_KEITAI As String = "TEHAI_TANTO_KEITAI"
-            Public Const TEHAI_TANTO_TEL As String = "TEHAI_TANTO_TEL"
             Public Const YOSAN_TF As String = "YOSAN_TF"
             Public Const YOSAN_T As String = "YOSAN_T"
             Public Const KOUENKAI_KUBUN As String = "KOUENKAI_KUBUN"
@@ -96,6 +129,57 @@
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
+
+            Public Const TEHAI_ID As String = "TEHAI_ID"
+            Public Const REQ_STATUS_TEHAI As String = "REQ_STATUS_TEHAI"
+            Public Const ANS_STATUS_TEHAI As String = "ANS_STATUS_TEHAI"
+            Public Const TIME_STAMP_BYL As String = "TIME_STAMP_BYL"
+            Public Const TIME_STAMP_TOP As String = "TIME_STAMP_TOP"
+            Public Const SHONIN_NAME As String = "SHONIN_NAME"
+            Public Const SHONIN_DATE As String = "SHONIN_DATE"
+            Public Const KAISAI_DATE_NOTE As String = "KAISAI_DATE_NOTE"
+            Public Const KAISAI_KIBOU_ADDRESS1 As String = "KAISAI_KIBOU_ADDRESS1"
+            Public Const KAISAI_KIBOU_ADDRESS2 As String = "KAISAI_KIBOU_ADDRESS2"
+            Public Const KAISAI_KIBOU_NOTE As String = "KAISAI_KIBOU_NOTE"
+            Public Const KOUEN_TIME1 As String = "KOUEN_TIME1"
+            Public Const KOUEN_TIME2 As String = "KOUEN_TIME2"
+            Public Const KOUEN_KAIJO_LAYOUT As String = "KOUEN_KAIJO_LAYOUT"
+            Public Const IKENKOUKAN_KAIJO_TEHAI As String = "IKENKOUKAN_KAIJO_TEHAI"
+            Public Const IROUKAI_KAIJO_TEHAI As String = "IROUKAI_KAIJO_TEHAI"
+            Public Const IROUKAI_SANKA_YOTEI_CNT As String = "IROUKAI_SANKA_YOTEI_CNT"
+            Public Const KOUSHI_ROOM_TEHAI As String = "KOUSHI_ROOM_TEHAI"
+            Public Const SHAIN_ROOM_TEHAI As String = "SHAIN_ROOM_TEHAI"
+            Public Const MANAGER_KAIJO_TEHAI As String = "MANAGER_KAIJO_TEHAI"
+            Public Const KAIJO_URL As String = "KAIJO_URL"
+            Public Const OTHER_NOTE As String = "OTHER_NOTE"
+            Public Const ANS_MITSUMORI_TF As String = "ANS_MITSUMORI_TF"
+            Public Const ANS_MITSUMORI_T As String = "ANS_MITSUMORI_T"
+            Public Const ANS_MITSUMORI_TOTAL As String = "ANS_MITSUMORI_TOTAL"
+            Public Const ANS_MITSUMORI_URL As String = "ANS_MITSUMORI_URL"
+            Public Const ANS_SHISETSU_NAME As String = "ANS_SHISETSU_NAME"
+            Public Const ANS_SHISETSU_ADDRESS As String = "ANS_SHISETSU_ADDRESS"
+            Public Const ANS_SHISETSU_TEL As String = "ANS_SHISETSU_TEL"
+            Public Const ANS_SHISETSU_URL As String = "ANS_SHISETSU_URL"
+            Public Const ANS_KOUEN_KAIJO_NAME As String = "ANS_KOUEN_KAIJO_NAME"
+            Public Const ANS_KOUEN_KAIJO_FLOOR As String = "ANS_KOUEN_KAIJO_FLOOR"
+            Public Const ANS_IKENKOUKAN_KAIJO_NAME As String = "ANS_IKENKOUKAN_KAIJO_NAME"
+            Public Const ANS_IROUKAI_KAIJO_NAME As String = "ANS_IROUKAI_KAIJO_NAME"
+            Public Const ANS_KOUSHI_ROOM_NAME As String = "ANS_KOUSHI_ROOM_NAME"
+            Public Const ANS_SHAIN_ROOM_NAME As String = "ANS_SHAIN_ROOM_NAME"
+            Public Const ANS_MANAGER_KAIJO_NAME As String = "ANS_MANAGER_KAIJO_NAME"
+            Public Const ANS_KAISAI_NOTE As String = "ANS_KAISAI_NOTE"
+            Public Const ANS_SEISAN_TF As String = "ANS_SEISAN_TF"
+            Public Const ANS_SEISAN_T As String = "ANS_SEISAN_T"
+            Public Const ANS_SEISANSHO_URL As String = "ANS_SEISANSHO_URL"
+            Public Const TEHAI_TANTO_BU As String = "TEHAI_TANTO_BU"
+            Public Const TEHAI_TANTO_AREA As String = "TEHAI_TANTO_AREA"
+            Public Const TEHAI_TANTO_EIGYOSHO As String = "TEHAI_TANTO_EIGYOSHO"
+            Public Const TEHAI_TANTO_NAME As String = "TEHAI_TANTO_NAME"
+            Public Const TEHAI_TANTO_ROMA As String = "TEHAI_TANTO_ROMA"
+            Public Const TEHAI_TANTO_EMAIL_PC As String = "TEHAI_TANTO_EMAIL_PC"
+            Public Const TEHAI_TANTO_EMAIL_KEITAI As String = "TEHAI_TANTO_EMAIL_KEITAI"
+            Public Const TEHAI_TANTO_KEITAI As String = "TEHAI_TANTO_KEITAI"
+            Public Const TEHAI_TANTO_TEL As String = "TEHAI_TANTO_TEL"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
