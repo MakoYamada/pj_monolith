@@ -74,6 +74,8 @@ Partial Public Class Login
         End If
         RsData.Close()
 
+        Session.Item(SessionDef.LoginID) = MS_USER.LOGIN_ID
+
         '該当データがない場合はエラー
         If wFlag = False Then
             'CmnModule.AlertMessage(MessageDef, Me)
