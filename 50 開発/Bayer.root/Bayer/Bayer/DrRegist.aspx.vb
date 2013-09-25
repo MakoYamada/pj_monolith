@@ -3009,4 +3009,8 @@ Partial Public Class DrRegist
     Protected Sub ANS_F_AIRPORT1_4_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_F_AIRPORT1_4.TextChanged
 
     End Sub
+
+    Protected Sub ANS_TAXI_NO_10_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_TAXI_NO_10.TextChanged
+
+    End Sub
 End Class

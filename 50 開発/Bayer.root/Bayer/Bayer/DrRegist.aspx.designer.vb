@@ -25,15 +25,6 @@ Partial Public Class DrRegist
     Protected WithEvents ImgCanceled As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''BtnNozomi コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''BtnKihon コントロール。
     '''</summary>
     '''<remarks>
@@ -475,13 +466,13 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_ROOM_CHARGE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_HOTEL_SMOKING_YES コントロール。
+    '''ANS_HOTEL_SMOKING_NO_MUST コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_HOTEL_SMOKING_YES As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_HOTEL_SMOKING_NO_MUST As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
     '''ANS_HOTEL_SMOKING_NO コントロール。
@@ -491,6 +482,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_HOTEL_SMOKING_NO As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''ANS_HOTEL_SMOKING_YES コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTEL_SMOKING_YES As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
     '''ANS_HOTEL_NOTE コントロール。
@@ -3974,6 +3974,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnPrint As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTaxiCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnNozomi_2 コントロール。
