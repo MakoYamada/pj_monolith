@@ -1925,15 +1925,15 @@ Public Class SQL
             End If
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE '%'" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE '%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
             End If
 
             If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
-                strSQL &= " AND TBL_KAIJO.TEHAI_TANTO_ROMA LIKE '%'" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL &= " AND TBL_KAIJO.TEHAI_TANTO_ROMA LIKE '%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
             End If
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE '%'" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+                strSQL &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE '%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
@@ -1941,7 +1941,7 @@ Public Class SQL
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE '%'" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE '%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
             End If
 
             If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
