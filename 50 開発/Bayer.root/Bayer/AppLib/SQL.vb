@@ -1902,7 +1902,7 @@ Public Class SQL
 
             If NewData = True Then
                 '新着
-                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG='1'"
+                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
             Else
                 '検索
                 strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
@@ -1928,21 +1928,21 @@ Public Class SQL
                 strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE '%'" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
             End If
 
-            'If Trim(Joken.KOUENKAI_DATE) <> "" Then
-            '    strSQL &= " AND ("
-            '    strSQL &= "      TBL_KOUENKAI.FROM_DATE<='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
-            '    strSQL &= "      AND "
-            '    strSQL &= "      TBL_KOUENKAI.TO_DATE>='" & CmnDb.SqlString(Joken.KOUENKAI_DATE) & "'"
-            '    strSQL &= ")"
-            'End If
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.FROM_DATE BETWEEN '" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND '" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND TBL_KOUENKAI.FROM_DATE='" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.FROM_DATE='" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
 
             strSQL &= " ORDER BY"
             If NewData = True Then
                 '新着
-                strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+                strSQL &= " TBL_KOUENKAI.UPDATE_DATE DESC"
             Else
                 '検索
-                strSQL &= " TBL_KOUENKAI.UPDATE_DATE DESC"
+                strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
             End If
 
             Return strSQL
