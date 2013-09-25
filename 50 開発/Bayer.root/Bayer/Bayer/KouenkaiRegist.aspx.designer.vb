@@ -25,6 +25,15 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''KOUENKAI_KUBUN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_KUBUN As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>
@@ -32,6 +41,15 @@ Partial Public Class KouenkaiRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''TIME_STAMP コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TIME_STAMP As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''KOUENKAI_NAME コントロール。
@@ -178,6 +196,15 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''COST_CENTER コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents COST_CENTER As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''KIKAKU_TANTO_NAME コントロール。
     '''</summary>
     '''<remarks>
@@ -220,7 +247,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KIKAKU_TANTO_EMAIL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''KIKAKU_TANTO_EMAIL_KEITAI コントロール。
@@ -229,7 +256,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KIKAKU_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''YOSAN_TF コントロール。
