@@ -2244,51 +2244,6 @@
         End Class
     End Class
 
-    Public Class TBL_KENSAKU
-        <Serializable()> Public Structure DataStruct
-            Public KOUENKAI_ID As String
-            Public AREA As String
-            Public EIGYOSHO As String
-            Public TANTO_NAME As String
-            Public TANTO_KANA As String
-            Public KOUENKAI_NAME As String
-            Public KOUENKAI_DATE As String
-            Public KOUENKAI_NO As String
-            Public JIGYOBU As String
-            Public MEETING_NAME As String
-            Public TTANTO_ID As String
-            Public KUBUN As String
-        End Structure
-        Public Class Column
-            Public Const KOUENKAI_ID As String = "KOUENKAI_ID"
-            Public Const AREA As String = "AREA"
-            Public Const EIGYOSHO As String = "EIGYOSHO"
-            Public Const TANTO_NAME As String = "TANTO_NAME"
-            Public Const TANTO_KANA As String = "TANTO_KANA"
-            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
-            Public Const KOUENKAI_DATE As String = "KOUENKAI_DATE"
-            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
-            Public Const JIGYOBU As String = "JIGYOBU"
-            Public Const MEETING_NAME As String = "MEETING_NAME"
-            Public Const TTANTO_ID As String = "TTANTO_ID"
-            Public Const KUBUN As String = "KUBUN"
-        End Class
-        Public Class Name
-            Public Const KOUENKAI_ID As String = "講演会番号"
-            Public Const AREA As String = "所属エリア"
-            Public Const EIGYOSHO As String = "所属営業所"
-            Public Const TANTO_NAME As String = "担当者名"
-            Public Const TANTO_KANA As String = "担当者名(カタカナ)"
-            Public Const KOUENKAI_NAME As String = "講演会名"
-            Public Const KOUENKAI_DATE As String = "講演会開催日"
-            Public Const KOUENKAI_NO As String = "講演会番号"
-            Public Const JIGYOBU As String = "事業部"
-            Public Const MEETING_NAME As String = "会合名"
-            Public Const TTANTO_ID As String = "担当者"
-            Public Const KUBUN As String = "区分"
-        End Class
-    End Class
-
     Public Class MS_CODE
         <Serializable()> Public Structure DataStruct
             Public CODE As String
@@ -2337,6 +2292,48 @@
             Public Const TABLE_NAME As String = "テーブル名"
             Public Const STATUS As String = "ステータス"
             Public Const NOTE As String = "備考"
+        End Class
+    End Class
+
+    Public Class Joken
+        <Serializable()> Public Structure DataStruct
+            Public KOUENKAI_NO As String
+            Public BU As String
+            Public AREA As String
+            Public EIGYOSHO As String
+            Public TANTO_NAME As String
+            Public TANTO_KANA As String
+            Public KOUENKAI_NAME As String
+            Public FROM_DATE As String
+            Public TO_DATE As String
+            Public TTANTO_NO As String
+            Public KUBUN As String
+        End Structure
+        Public Class Column
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const BU As String = "BU"
+            Public Const AREA As String = "AREA"
+            Public Const EIGYOSHO As String = "EIGYOSHO"
+            Public Const TANTO_NAME As String = "TANTO_NAME"
+            Public Const TANTO_KANA As String = "TANTO_KANA"
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const TO_DATE As String = "TO_DATE"
+            Public Const TTANTO_NO As String = "TTANTO_NO"
+            Public Const KUBUN As String = "KUBUN"
+        End Class
+        Public Class Name
+            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const BU As String = "BU"
+            Public Const AREA As String = "エリア"
+            Public Const EIGYOSHO As String = "営業所"
+            Public Const TANTO_NAME As String = "担当者名"
+            Public Const TANTO_KANA As String = "担当者名(カタカナ)"
+            Public Const KOUENKAI_NAME As String = "講演会名"
+            Public Const FROM_DATE As String = "講演会開催日(From)"
+            Public Const TO_DATE As String = "講演会開催日(To)"
+            Public Const TTANTO_NO As String = "担当者"
+            Public Const KUBUN As String = "区分"
         End Class
     End Class
 
