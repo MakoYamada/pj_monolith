@@ -2306,7 +2306,7 @@
             Public KOUENKAI_NAME As String
             Public FROM_DATE As String
             Public TO_DATE As String
-            Public TTANTO_NO As String
+            Public TTANTO_ID As String
             Public KUBUN As String
         End Structure
         Public Class Column
@@ -2319,7 +2319,7 @@
             Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
             Public Const FROM_DATE As String = "FROM_DATE"
             Public Const TO_DATE As String = "TO_DATE"
-            Public Const TTANTO_NO As String = "TTANTO_NO"
+            Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const KUBUN As String = "KUBUN"
         End Class
         Public Class Name
@@ -2332,7 +2332,7 @@
             Public Const KOUENKAI_NAME As String = "講演会名"
             Public Const FROM_DATE As String = "講演会開催日(From)"
             Public Const TO_DATE As String = "講演会開催日(To)"
-            Public Const TTANTO_NO As String = "担当者"
+            Public Const TTANTO_ID As String = "担当者"
             Public Const KUBUN As String = "区分"
         End Class
     End Class
