@@ -83,25 +83,7 @@ Partial Public Class DrRegist
         TB_KOTSU_F_5.Visible = False
 
         BtnTAXI_1.ImageUrl = IMG_OPEN
-        BtnTAXI_2.ImageUrl = IMG_OPEN
-        BtnTAXI_3.ImageUrl = IMG_OPEN
-        BtnTAXI_4.ImageUrl = IMG_OPEN
-        BtnTAXI_5.ImageUrl = IMG_OPEN
-        BtnTAXI_6.ImageUrl = IMG_OPEN
-        BtnTAXI_7.ImageUrl = IMG_OPEN
-        BtnTAXI_8.ImageUrl = IMG_OPEN
-        BtnTAXI_9.ImageUrl = IMG_OPEN
-        BtnTAXI_10.ImageUrl = IMG_OPEN
         TB_TAXI_1.Visible = False
-        TB_TAXI_2.Visible = False
-        TB_TAXI_3.Visible = False
-        TB_TAXI_4.Visible = False
-        TB_TAXI_5.Visible = False
-        TB_TAXI_6.Visible = False
-        TB_TAXI_7.Visible = False
-        TB_TAXI_8.Visible = False
-        TB_TAXI_9.Visible = False
-        TB_TAXI_10.Visible = False
 
         '共通コントロール
         'プルダウン設定
@@ -247,16 +229,6 @@ Partial Public Class DrRegist
         ANS_F_SEAT_3.Items.Add("選択してください")
         ANS_F_SEAT_4.Items.Add("選択してください")
         ANS_F_SEAT_5.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_1.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_2.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_3.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_4.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_5.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_6.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_7.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_8.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_9.Items.Add("選択してください")
-        ANS_TAXI_KENSHU_10.Items.Add("選択してください")
 
 
 
@@ -2892,96 +2864,6 @@ Partial Public Class DrRegist
         Else
             BtnTAXI_1.ImageUrl = IMG_CLOSE
             TB_TAXI_1.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_2.Click
-        If BtnTAXI_2.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_2.ImageUrl = IMG_OPEN
-            TB_TAXI_2.Visible = False
-        Else
-            BtnTAXI_2.ImageUrl = IMG_CLOSE
-            TB_TAXI_2.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_3_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_3.Click
-        If BtnTAXI_3.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_3.ImageUrl = IMG_OPEN
-            TB_TAXI_3.Visible = False
-        Else
-            BtnTAXI_3.ImageUrl = IMG_CLOSE
-            TB_TAXI_3.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_4_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_4.Click
-        If BtnTAXI_4.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_4.ImageUrl = IMG_OPEN
-            TB_TAXI_4.Visible = False
-        Else
-            BtnTAXI_4.ImageUrl = IMG_CLOSE
-            TB_TAXI_4.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_5_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_5.Click
-        If BtnTAXI_5.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_5.ImageUrl = IMG_OPEN
-            TB_TAXI_5.Visible = False
-        Else
-            BtnTAXI_5.ImageUrl = IMG_CLOSE
-            TB_TAXI_5.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_6_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_6.Click
-        If BtnTAXI_6.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_6.ImageUrl = IMG_OPEN
-            TB_TAXI_6.Visible = False
-        Else
-            BtnTAXI_6.ImageUrl = IMG_CLOSE
-            TB_TAXI_6.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_7_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_7.Click
-        If BtnTAXI_7.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_7.ImageUrl = IMG_OPEN
-            TB_TAXI_7.Visible = False
-        Else
-            BtnTAXI_7.ImageUrl = IMG_CLOSE
-            TB_TAXI_7.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_8_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_8.Click
-        If BtnTAXI_8.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_8.ImageUrl = IMG_OPEN
-            TB_TAXI_8.Visible = False
-        Else
-            BtnTAXI_8.ImageUrl = IMG_CLOSE
-            TB_TAXI_8.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_9_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_9.Click
-        If BtnTAXI_9.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_9.ImageUrl = IMG_OPEN
-            TB_TAXI_9.Visible = False
-        Else
-            BtnTAXI_9.ImageUrl = IMG_CLOSE
-            TB_TAXI_9.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_10_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_10.Click
-        If BtnTAXI_10.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_10.ImageUrl = IMG_OPEN
-            TB_TAXI_10.Visible = False
-        Else
-            BtnTAXI_10.ImageUrl = IMG_CLOSE
-            TB_TAXI_10.Visible = True
         End If
     End Sub
 

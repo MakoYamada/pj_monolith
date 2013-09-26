@@ -1,37 +1,43 @@
-Ôªø<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="DrRegist.aspx.vb" Inherits="Bayer.DrRegist" MaintainScrollPositionOnPostback="true" %>
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="DrRegist.aspx.vb" Inherits="Bayer.DrRegist" MaintainScrollPositionOnPostback="true" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
 		<tr>
 			<td align="left" colspan="2">
-			    <!-- Ë¨õÊºî‰ºöÊÉÖÂ†± -->
+			    <!-- çuâââÔèÓïÒ -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
-                            ‚ñ†Ë¨õÊºî‰ºöÊÉÖÂ†±
-	                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="Âü∫Êú¨ÊÉÖÂ†±„Å∏" CssClass="Button" />
+                            Å°çuâââÔèÓïÒ
+	                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="äÓñ{èÓïÒÇ÷" CssClass="Button" />
                         </td>
                     </tr>
                     <tr>
 						<td align="left" class="TdTitleHeader" style="width:120px">
-							Ë¨õÊºî‰ºöÁï™Âè∑
+							çuâââÔî‘çÜ
 						</td>
 						<td align="left" class="TdItem" style="width:100px">
 							<asp:Label ID="KOUENKAI_NO" runat="server" Text="12345678901234"></asp:Label>
 						</td>
-						<td align="left" class="TdTitleHeader" style="width:100px">
-							ÂÆüÊñΩÊó•
+						<td align="left" class="TdTitleHeader" style="width:120px">
+							çuâââÔéÌï 
 						</td>
-                        <td align="left" class="TdItem" colspan="5">
+						<td align="left" class="TdItem" style="width:100px">
+							<asp:Label ID="KOUENKAI_KUBUN" runat="server" Text="12345678901234"></asp:Label>
+						</td>
+						<td align="left" class="TdTitleHeader" style="width:100px">
+							é¿é{ì˙
+						</td>
+                        <td align="left" class="TdItem" colspan="3">
 							<asp:Label ID="FROM_DATE" runat="server" Text="1234567890"></asp:Label>
-							ÔΩû
+							Å`
 							<asp:Label ID="TO_DATE" runat="server" Text="1234567890"></asp:Label>                        
                         </td>
                     </tr>
 					<tr>
 						<td align="left" class="TdTitleHeader" style="width:120px">
-							Ë¨õÊºî‰ºöÂêç
+							çuâââÔñº
 						</td>
 						<td align="left" class="TdItem" colspan="5">
                             <asp:TextBox ID="KOUENKAI_NAME" runat="server" MaxLength="80" ReadOnly="True" 
@@ -39,7 +45,7 @@
                                 BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
 						</td>
 						<td align="left" class="TdTitleHeader">
-							„ÉÅ„Ç±„ÉÉ„ÉàÂç∞Â≠óÂêç
+							É`ÉPÉbÉgàÛéöñº
 						</td>
 						<td align="left" class="TdItem">
 							<asp:Label ID="TAXI_PRT_NAME" runat="server" Text="1234567890"></asp:Label>
@@ -51,88 +57,139 @@
 
 		<tr>
 		    <td align="left" colspan="2">
-				<!-- DRÊãÖÂΩìMR -->
+				<!-- DRíSìñMR -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="6">
-                            ‚ñ†DRÊãÖÂΩìMR
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="9">
+                            Å°DRíSìñMR
                         </td>
                     </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 			                BU
 		                </td>
-		                <td align="left" valign="top" colspan="3">
+		                <td align="left" valign="top" colspan="7">
 				            <asp:Label ID="MR_BU" runat="server" Text="1234567890123456789012345678901234567890"></asp:Label>
 		                </td>
 		            </tr>
 		            <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-			                „Ç®„É™„Ç¢
+			                ÉGÉäÉA
 		                </td>
-		                <td align="left" valign="top">
+		                <td align="left" valign="top" colspan="2">
 				            <asp:Label ID="MR_AREA" runat="server" Text="1234567890123456789012345678901234567890"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-			                Âñ∂Ê•≠ÊâÄ
+			                âcã∆èä
 		                </td>
-		                <td align="left" valign="top">
+		                <td align="left" valign="top" colspan="5">
 				            <asp:Label ID="MR_EIGYOSHO" runat="server" Text="1234567890123456789012345678901234567890"></asp:Label>
 		                </td>
 		            </tr>
 		            <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader">
-                            CWID
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+			                Account Code
+		                </td>
+		                <td align="left" valign="middle">
+				            <asp:Label ID="ACCOUNT_CODE" runat="server" Text="1234567"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+			                Cost Center
+		                </td>
+		                <td align="left" valign="middle">
+				            <asp:Label ID="COST_CENTER" runat="server" Text="123456789012"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+			                Internal Order
+		                </td>
+		                <td align="left" valign="middle">
+				            <asp:Label ID="INTERNAL_ORDER" runat="server" Text="1234567890"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+			                zetia Code
+		                </td>
+		                <td align="left" valign="middle">
+				            <asp:Label ID="ZETIA_CD" runat="server" Text="1234567890"></asp:Label>
+		                </td>
+		            </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+                            éÅñº
                         </td>
-                        <td align="left" valign="top" class="style2">
-				            <asp:Label ID="MR_NO" runat="server" Text="1234567890"></asp:Label>
+                        <td align="left" valign="top" colspan="7">
+                            <asp:TextBox ID="MR_NAME" runat="server" MaxLength="150" ReadOnly="True" 
+                                TextMode="MultiLine" Height="45px" Width="750px" TabIndex="6" 
+                                BorderStyle="None">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader">
-                            Êê∫Â∏ØÈõªË©±
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+                            éÅñº<br />ÅiÉçÅ[É}éöÅj
                         </td>
-                        <td align="left" valign="top" class="style2">
+                        <td align="left" valign="top" colspan="7">
+                            <asp:TextBox ID="MR_ROMA" runat="server" MaxLength="150" ReadOnly="True" 
+                                TextMode="MultiLine" Height="45px" Width="750px" TabIndex="6" 
+                                BorderStyle="None">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                        </td>
+                    </tr>
+		            <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+			                ågë—ìdòbî‘çÜ
+		                </td>
+		                <td align="left" valign="middle" colspan="2">
 				            <asp:Label ID="MR_KEITAI" runat="server" Text="12345678901234567890"></asp:Label>
-                        </td>
-                    </tr>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+			                ÉIÉtÉBÉXÇÃìdòbî‘çÜ
+		                </td>
+		                <td align="left" valign="middle" colspan="5">
+				            <asp:Label ID="MR_TEL" runat="server" Text="12345678901234567890"></asp:Label>
+		                </td>
+		            </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-                            Ê∞èÂêç
+                            ågë—Email<br />ÉAÉhÉåÉX
                         </td>
-                        <td align="left" valign="top" colspan="3">
-				            <asp:Label ID="MR_NAME" runat="server" Text="1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"></asp:Label>
+                        <td align="left" valign="top" colspan="8">
+                            <asp:TextBox ID="MR_EMAIL_KEITAI" runat="server" MaxLength="128" ReadOnly="True" 
+                                TextMode="MultiLine" Height="45px" Width="750px" TabIndex="6" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</asp:TextBox>
                         </td>
-                    </tr>
+	                </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-                            „Ç¢„Éâ„É¨„Çπ
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:170px" 
+                            width="170">
+                            Email<br />ÉAÉhÉåÉX
                         </td>
-                        <td align="left" valign="top" colspan="5">
-				            <asp:Label ID="MR_EMAIL" runat="server" Text="1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"></asp:Label>
+                        <td align="left" valign="top" colspan="8">
+                            <asp:TextBox ID="MR_EMAIL_PC" runat="server" MaxLength="128" ReadOnly="True" 
+                                TextMode="MultiLine" Height="45px" Width="750px" TabIndex="6" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</asp:TextBox>
                         </td>
 	                </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-                            „ÉÅ„Ç±„ÉÉ„Éà<br />ÈÄÅ‰ªòÂÖà
+                            É`ÉPÉbÉg<br />ëóïtêÊ
                         </td>
-                        <td align="left" valign="top" colspan="5">
+                        <td align="left" valign="top" colspan="8">
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td align="left" valign="top">
-                                        FSÂêçÔºö
+                                        FSñºÅF
                                     </td>
                                     <td align="left" valign="top">
-            				            <asp:Label ID="MR_SEND_SAKI_FS" runat="server" Text="12345678901234567890123456789012345678901234567890"></asp:Label>                                    
+            				            <asp:Label ID="MR_SEND_SAKI_FS" runat="server" Text="12345678901234567890123456789012345678901234567890123456789012345678901234567890"></asp:Label>                                    
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left" valign="top">
-                                        „Åù„ÅÆ‰ªñÈÄÅ‰ªòÂÖàÔºö
+                                    <td align="left" valign="top" style="width:100px">
+                                        ÇªÇÃëºëóïtêÊÅF
                                     </td>
                                     <td align="left" valign="top">
-                                        <asp:TextBox ID="MR_SEND_SAKI_OTHER" runat="server" MaxLength="100" ReadOnly="True" 
-                                            TextMode="MultiLine" Height="45px" Width="662px" TabIndex="6" 
-                                            BorderStyle="None">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                        <asp:TextBox ID="MR_SEND_SAKI_OTHER" runat="server" MaxLength="128" ReadOnly="True" 
+                                            TextMode="MultiLine" Height="45px" Width="650px" TabIndex="6" 
+                                            BorderStyle="None">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
@@ -143,131 +200,164 @@
 		</tr>
 		<tr>
 		    <td align="left"  colspan="2">
-				<!-- DRÊÉÖÂ†± -->
+				<!-- DRèÓïÒ -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
-                            ‚ñ†DRÊÉÖÂ†±
+                            Å°DRèÓïÒ
                         </td>
                     </tr>
+		            <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                éËîz<br />ÉXÉeÅ[É^ÉX
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="REQ_STATUS_TEHAI" runat="server" Text="1234567890"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                âÒìö<br />ÉXÉeÅ[É^ÉX
+		                </td>
+		                <td align="left" valign="middle" colspan="5">							
+		                    <asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="150px">
+                            </asp:DropDownList>						
+		                </td>
+		            </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                MPID
+			                éQâ¡é“ID
 		                </td>
-		                <td align="left" valign="top">
-							<asp:Label ID="DR_MPID" runat="server" Text="1234567890"></asp:Label>
+		                <td align="left" valign="middle">
+							<asp:Label ID="SANKASHA_ID" runat="server" Text="12345678901234"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                DR„Ç≥„Éº„Éâ
+			                DRÉRÅ[Éh
 		                </td>
-		                <td align="left" valign="top">
+		                <td align="left" valign="middle">
 							<asp:Label ID="DR_CD" runat="server" Text="1234567890"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                TimeStamp
+			                TimeStamp(BYL)
 		                </td>
-		                <td align="left" valign="top">
-							<asp:Label ID="UPDATE_DATE" runat="server" Text="yyyy/MM/dd HH:mm;ss"></asp:Label>
+		                <td align="left" valign="middle">
+							<asp:Label ID="TIME_STAMP_BYL" runat="server" Text="9999/99/99 99:99"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                ÊâãÈÖç„Çπ„ÉÜ„Éº„Çø„Çπ
+			                TimeStamp(TOP)
 		                </td>
-		                <td align="left" valign="top">
-							<asp:Label ID="STATUS_TEHAI" runat="server" Text="1234567890"></asp:Label>
+		                <td align="left" valign="middle">
+							<asp:Label ID="TIME_STAMP_TOP" runat="server" Text="9999/99/99 99:99"></asp:Label>
 		                </td>
 		            </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                Ê∞èÂêç
+			                éÅñº
 		                </td>
-		                <td align="left" valign="top" colspan="3">
-                            <asp:TextBox ID="DR_NAME" runat="server" MaxLength="100" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="263px" TabIndex="5">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+		                <td align="left" valign="middle" colspan="3">
+                            <asp:TextBox ID="DR_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="47px" Width="341px" TabIndex="5" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                Ê∞èÂêç„Ç´„Éä
+			                éÅñºÉJÉi
 		                </td>
-		                <td align="left" valign="top" colspan="3">
-                            <asp:TextBox ID="DR_KANA" runat="server" MaxLength="100" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="263px" TabIndex="23">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+		                <td align="left" valign="middle" colspan="3">
+                            <asp:TextBox ID="DR_KANA" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="47px" Width="341px" TabIndex="23" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
 		                </td>
 		            </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                ÊÄßÂà•
+			                ê´ï 
 		                </td>
-		                <td align="left" valign="top" colspan="3">
+		                <td align="left" valign="middle">
 							<asp:Label ID="DR_SEX" runat="server" Text="M"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                Ë¨õÊºî‰ºö„Å∏„ÅÆÂèÇÂä†Ôºà‰∫ãÂæåÔºâ
+			                îNóÓ
 		                </td>
-		                <td align="left" valign="top" colspan="3">
-                            <asp:TextBox ID="DR_SANKA" runat="server" MaxLength="50" ReadOnly="True" 
-                                TextMode="MultiLine" Height="46px" Width="263px" TabIndex="7">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_AGE" runat="server" Text="999"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                çuâââÔÇ÷ÇÃéQâ¡
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_SANKA" runat="server" Text="1234567890"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                éQâ¡é“ÇÃñäÑ
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_YAKUWARI" runat="server" Text="1234567890"></asp:Label>
 		                </td>
 		            </tr> 
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                DCF<br />é{ê›ÉRÅ[Éh
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_SHISETSU_CD" runat="server" Text="1234567890"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                é{ê›ñº
+		                </td>
+		                <td align="left" valign="middle" colspan="5">
+                            <asp:TextBox ID="DR_SHISETSU_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="47px" Width="341px" TabIndex="23" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                é{ê›èZèä
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+                            <asp:TextBox ID="DR_SHISETSU_ADDRESS" runat="server" MaxLength="128" ReadOnly="True" 
+                                TextMode="MultiLine" Height="47px" Width="750px" TabIndex="5" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</asp:TextBox>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                éwíËäO<br />ê\êøóùóR			                
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+                            <asp:TextBox ID="SHITEIGAI_RIYU" runat="server" MaxLength="128" ReadOnly="True" 
+                                TextMode="MultiLine" Height="47px" Width="750px" TabIndex="5" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</asp:TextBox>
+		                </td>
+		            </tr>
                 </table> 		        
 		    </td>		    
 		</tr>
 		<tr>
 		    <td align="left"  colspan="2">
-				<!-- ÊâøË™çËÄÖÊÉÖÂ†± -->
+				<!-- è≥îFé“èÓïÒ -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚ñ†ÊâøË™çËÄÖÊÉÖÂ†±
+                            Å°è≥îFé“èÓïÒ
                         </td>
                     </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                ÊâøË™çËÄÖÊ∞èÂêç
+			                ç≈èIè≥îFé“
 		                </td>
 		                <td align="left" valign="top">
-                            <asp:TextBox ID="SHONIN_NAME" runat="server" MaxLength="100" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="388px" TabIndex="10">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                            <asp:TextBox ID="SHONIN_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="18px" Width="388px" TabIndex="10" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                ÊâøË™çÊó•ÊôÇ
+			                ç≈èIè≥îFì˙éû
 		                </td>
 		                <td align="left" valign="top">
-							<asp:Label ID="SHONIN_DATE" runat="server" Text="yyyy/MM/dd HH:mm;ss"></asp:Label>
+							<asp:Label ID="SHONIN_DATE" runat="server" Text="yyyy/MM/dd HH:mm:ss"></asp:Label>
 		                </td>
 		            </tr>
-	                <tr>
-		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                ÊâøË™çËÄÖÂÇôËÄÉ
-		                </td>
-		                <td align="left" valign="top" colspan="3">
-                            <asp:TextBox ID="SHONIN_NOTE" runat="server" MaxLength="1000" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="784px" TabIndex="11">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
-		                </td>
-		            </tr> 
-	                <tr>
-		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                CMÊâøË™çËÄÖÊ∞èÂêç
-		                </td>
-		                <td align="left" valign="top">
-                            <asp:TextBox ID="CMSHONIN_NAME" runat="server" MaxLength="100" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="388px" TabIndex="12">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
-		                </td>
-		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                CMÊâøË™çÊó•ÊôÇ
-		                </td>
-		                <td align="left" valign="top">
-							<asp:Label ID="CMSHONIN_DATE" runat="server" Text="yyyy/MM/dd HH:mm;ss"></asp:Label>
-		                </td>
-	                <tr>
-		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                CMÊâøË™çËÄÖÂÇôËÄÉ
-		                </td>
-		                <td align="left" valign="top" colspan="3">
-                            <asp:TextBox ID="CMSHONIN_NOTE" runat="server" MaxLength="1000" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="784px" TabIndex="13">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
-		                </td>
-		            </tr> 
                 </table> 		        
 		    </td>		    
 		</tr>
@@ -277,8 +367,8 @@
 				<table border="0" cellpadding="1" cellspacing="0" id="TblMust" runat="server">
 					<tr>
 						<td align="left" style="font-weight: bold;">
-							<span class="Must">‚Äª</span>
-							„ÅØÂÖ•ÂäõÂøÖÈ†àÈ†ÖÁõÆ„Åß„Åô„ÄÇ
+							<span class="Must">Å¶</span>
+							ÇÕì¸óÕïKê{çÄñ⁄Ç≈Ç∑ÅB
 
 						</td>
 					</tr>
@@ -288,31 +378,31 @@
 
 		<tr>
 		    <td align="left"  colspan="2">
-				<!-- ÂÆøÊ≥äÊâãÈÖç -->
+				<!-- èhîëéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
-                            ‚ñ†ÂÆøÊ≥äÊâãÈÖç
+                            Å°èhîëéËîz
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
+                            ÅüâÒìöì‡óe
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂÆøÊ≥ä‰æùÈ†º
+                            èhîëàÀóä
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TEHAI_HOTEL" runat="server" Text="Â∏åÊúõ„Åô„Çã"></asp:Label>
+							<asp:Label ID="TEHAI_HOTEL" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:DropDownList ID="ANS_STATUS_HOTEL" runat="server" TabIndex="14">
@@ -321,52 +411,52 @@
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="HOTEL_IRAINAIYOU" runat="server" Text="ÊâãÈÖç‰æùÈ†º"></asp:Label>
+							<asp:Label ID="HOTEL_IRAINAIYOU" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÊñΩË®≠Âêç
+                            é{ê›ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_HOTEL_NAME" runat="server" MaxLength="200" 
-                                TextMode="MultiLine" Height="18px" Width="267px" TabIndex="15">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
-            				<asp:Button ID="BtnHotelKensaku" runat="server" Width="55px" Text="Ê§úÁ¥¢" 
+                            <asp:TextBox ID="ANS_HOTEL_NAME" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="267px" TabIndex="15">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+            				<asp:Button ID="BtnHotelKensaku" runat="server" Width="55px" Text="åüçı" 
                                 CssClass="ButtonList" TabIndex="16" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂÆøÊ≥äÊó•
+                            èhîëì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_HOTEL_DATE" runat="server" Text="YY/MM/DD"></asp:Label>
+							<asp:Label ID="REQ_HOTEL_DATE" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Ê≥äÊï∞
+                            îëêî
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_HAKUSU" runat="server" Text="99"></asp:Label>
-							&nbsp;&nbsp;Ê≥ä
+							&nbsp;&nbsp;îë
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÊñΩË®≠‰ΩèÊâÄ
+                            é{ê›èZèä
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_HOTEL_ADDRESS" runat="server" MaxLength="200" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="17">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                            <asp:TextBox ID="ANS_HOTEL_ADDRESS" runat="server" MaxLength="128" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="17">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âñ´ÁÖô
+                            ãiâå
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_HOTEL_SMOKING" runat="server" Text="Á¶ÅÁÖô"></asp:Label>
+							<asp:Label ID="REQ_HOTEL_SMOKING" runat="server" Text="ã÷âå"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÊñΩË®≠TEL
+                            é{ê›TEL
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_HOTEL_TEL" runat="server" MaxLength="20" 
@@ -374,23 +464,40 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px" rowspan="6">
-                            ÂÇôËÄÉ
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px" rowspan="5">
+                            îıçl
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="6">
-                            <asp:TextBox ID="REQ_HOTEL_NOTE" runat="server" MaxLength="1000" 
-                                readonly="true" textmode="MultiLine" Height="182px" Width="321px" 
-                                TabIndex="29">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                        <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="5">
+                            <asp:TextBox ID="REQ_HOTEL_NOTE" runat="server" MaxLength="255" 
+                                readonly="true" textmode="MultiLine" Height="143px" Width="321px" 
+                                TabIndex="29" BorderStyle="None">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            „ÉÅ„Çß„ÉÉ„ÇØ„Ç§„É≥
+                            èhîëì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">							
+                            <asp:TextBox ID="ANS_HOTEL_DATE" runat="server" MaxLength="6" 
+                                Height="18px" Width="67px">YYMMDD</asp:TextBox>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            îëêî
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">							
+                            <asp:TextBox ID="ANS_HAKUSU" runat="server" MaxLength="2" 
+                                Height="18px" Width="26px" TabIndex="22">99</asp:TextBox>
+							&nbsp;&nbsp;îë                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            É`ÉFÉbÉNÉCÉì
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_CHECKIN_TIME" runat="server" MaxLength="4" 
                                 Height="18px" Width="47px">1400</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            „ÉÅ„Çß„ÉÉ„ÇØ„Ç¢„Ç¶„Éà
+                            É`ÉFÉbÉNÉAÉEÉg
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_CHECKOUT_TIME" runat="server" MaxLength="4" 
@@ -399,58 +506,34 @@
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂÆøÊ≥äÊó•
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_HOTEL_DATE" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px">YYMMDD</asp:TextBox>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Ê≥äÊï∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_HAKUSU" runat="server" MaxLength="2" 
-                                Height="18px" Width="26px" TabIndex="22">99</asp:TextBox>
-							&nbsp;&nbsp;Ê≥ä                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈÉ®Â±ã„Çø„Ç§„Éó
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_ROOM_TYPE" runat="server" TabIndex="23">
-                            </asp:DropDownList>							
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂÆøÊ≥ä‰ª£Èáë
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_ROOM_CHARGE" runat="server" MaxLength="10" 
-                                Height="18px" Width="65px" TabIndex="24">999,999</asp:TextBox>
-							&nbsp;&nbsp;ÂÜÜ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âñ´ÁÖô
+                            ïîâÆÉ^ÉCÉv
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_NO_MUST" runat="server" Text="Á¶ÅÁÖô" 
+                            <asp:DropDownList ID="ANS_ROOM_TYPE" runat="server" TabIndex="23" Width="344px">
+                            </asp:DropDownList>							
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            ãiâå
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_NO_MUST" runat="server" Text="ã÷âå" 
                                 TabIndex="25" />&nbsp;&nbsp;
                             <asp:RadioButton ID="ANS_HOTEL_SMOKING_NO" runat="server" 
-                                Text="Á¶ÅÁÖôÔºàÊ∂àËá≠ÂØæÂøú„ÅÆÂèØËÉΩÊÄß„Åå„ÅÇ„Çä„Åæ„ÅôÔºâ" TabIndex="26" />&nbsp;&nbsp;
-                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_YES" runat="server" Text="Âñ´ÁÖô" 
+                                Text="ã÷âåÅiè¡èLëŒâûÇÃâ¬î\ê´Ç™Ç†ÇËÇ‹Ç∑Åj" TabIndex="26" />&nbsp;&nbsp;
+                            <br />
+                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_YES" runat="server" Text="ãiâå" 
                                 TabIndex="27" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁâπË®ò‰∫ãÈ†Ö
+                            îıçl
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_HOTEL_NOTE" runat="server" MaxLength="1000" 
-                                textmode="MultiLine" Height="65px" Width="347px" TabIndex="28">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                        <td align="left" valign="middle" class="TdItem" colspan="3" width="344px">							
+                            <asp:TextBox ID="ANS_HOTEL_NOTE" runat="server" MaxLength="255" 
+                                textmode="MultiLine" Height="65px" Width="347px" TabIndex="28">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>
                         </td>
                     </tr>
                 </table> 		        
@@ -459,19 +542,19 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºëÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiâùòHÇPÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_O_1" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæÄË∑ØÔºëÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiâùòHÇPÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TEHAI_1" runat="server" Text="Â∏åÊúõ„Åô„Çã"></asp:Label>
+							<asp:Label ID="REQ_O_TEHAI_1" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:DropDownList ID="ANS_O_STATUS_1" runat="server" TabIndex="29">
@@ -484,36 +567,36 @@
 
 		<tr runat="server" id="TB_KOTSU_O_1">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºëÔºâÊâãÈÖç -->
+				<!-- åí ÅiâùòHÇPÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_O_TEHAI_1" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_O_TEHAI_1" runat="server" Width="55px" Text="ÉRÉsÅ[" 
                                 CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_O_IRAINAIYOU_1" runat="server" Text="ÊâãÈÖç‰æùÈ†º"></asp:Label>
+							<asp:Label ID="REQ_O_IRAINAIYOU_1" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_O_KOTSUKIKAN_1" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:DropDownList ID="ANS_O_KOTSUKIKAN_1" runat="server" TabIndex="33">
@@ -522,73 +605,73 @@
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_1" runat="server" Text="YY/MM/DD"></asp:Label>
+							<asp:Label ID="REQ_O_DATE_1" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_DATE_1" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="34">YYMMDD</asp:TextBox>
+                            <asp:TextBox ID="ANS_O_DATE_1" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_O_AIRPORT1_1" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT1_1" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="30">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_O_AIRPORT2_1" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT2_1" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="31">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_1" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT1_1" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_1" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT2_1" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TIME1_1" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
 							<asp:Label ID="REQ_O_TIME2_1" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_1" runat="server" MaxLength="4" 
                                 Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_1" runat="server" MaxLength="4" 
@@ -597,47 +680,48 @@
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_O_BIN_1" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="REQ_O_BIN_1" runat="server" MaxLength="80" 
                                 ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
-                                TabIndex="31">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_1" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38" 
+                                ReadOnly="True">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_SEAT_1" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_AGE_1" runat="server" Text="999"></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_KIBOU1" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:DropDownList ID="ANS_O_SEAT_1" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AGE_1" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="40">999</asp:TextBox>
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU1" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -646,22 +730,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºíÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiâùòHÇQÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_O_2" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæÄË∑ØÔºíÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiâùòHÇQÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TEHAI_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TEHAI_2" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_2" runat="server" TabIndex="41">
+                            <asp:DropDownList ID="ANS_O_STATUS_2" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -671,160 +755,161 @@
 
 		<tr runat="server" id="TB_KOTSU_O_2">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºíÔºâÊâãÈÖç -->
+				<!-- åí ÅiâùòHÇQÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_O_TEHAI_2" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="45" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_O_TEHAI_2" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_O_IRAINAIYOU_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_IRAINAIYOU_2" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_KOTSUKIKAN_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_KOTSUKIKAN_2" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_2" runat="server" TabIndex="46">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_2" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_DATE_2" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_DATE_2" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="47"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_DATE_2" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_O_AIRPORT1_2" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT1_2" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="42"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_O_AIRPORT2_2" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT2_2" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="43"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_2" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="48"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT1_2" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_2" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="49"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT2_2" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TIME1_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME1_2" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_TIME2_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME2_2" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="50"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="51"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_O_BIN_2" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="44"></asp:TextBox>
+                            <asp:TextBox ID="REQ_O_BIN_2" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_2" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="52"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_SEAT_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_2" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_AGE_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label2" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_2" runat="server" TabIndex="53">
+                            <asp:DropDownList ID="ANS_O_SEAT_2" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AGE_2" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="54"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU2" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -833,22 +918,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºìÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiâùòHÇRÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_O_3" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæÄË∑ØÔºìÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiâùòHÇRÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TEHAI_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TEHAI_3" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_3" runat="server" TabIndex="55">
+                            <asp:DropDownList ID="ANS_O_STATUS_3" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -858,160 +943,161 @@
 
 		<tr runat="server" id="TB_KOTSU_O_3">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºìÔºâÊâãÈÖç -->
+				<!-- åí ÅiâùòHÇRÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_O_TEHAI_3" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="59" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_O_TEHAI_3" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_O_IRAINAIYOU_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_IRAINAIYOU_3" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_KOTSUKIKAN_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_KOTSUKIKAN_3" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_3" runat="server" TabIndex="60">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_3" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_DATE_3" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_DATE_3" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="61"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_DATE_3" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_O_AIRPORT1_3" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT1_3" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="56"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_O_AIRPORT2_3" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT2_3" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="57"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_3" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="62"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT1_3" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_3" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="63"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT2_3" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TIME1_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME1_3" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_TIME2_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME2_3" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="64"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="65"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_O_BIN_3" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="58"></asp:TextBox>
+                            <asp:TextBox ID="REQ_O_BIN_3" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_3" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="66"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_SEAT_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_3" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_AGE_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label3" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_3" runat="server" TabIndex="67">
+                            <asp:DropDownList ID="ANS_O_SEAT_3" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AGE_3" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="68"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU3" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -1020,22 +1106,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºîÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiâùòHÇSÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_O_4" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæÄË∑ØÔºîÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiâùòHÇSÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TEHAI_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TEHAI_4" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_4" runat="server" TabIndex="69">
+                            <asp:DropDownList ID="ANS_O_STATUS_4" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1045,159 +1131,161 @@
 
 		<tr runat="server" id="TB_KOTSU_O_4">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºîÔºâÊâãÈÖç -->
+				<!-- åí ÅiâùòHÇSÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_O_TEHAI_4" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="73" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_O_TEHAI_4" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_O_IRAINAIYOU_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_IRAINAIYOU_4" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_KOTSUKIKAN_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_KOTSUKIKAN_4" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_4" runat="server" TabIndex="74">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_4" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_DATE_4" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_DATE_4" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="75"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_DATE_4" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_O_AIRPORT1_4" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT1_4" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="70"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_O_AIRPORT2_4" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT2_4" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="72"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_4" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="76"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT1_4" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_4" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="77"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT2_4" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TIME1_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME1_4" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_TIME2_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME2_4" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="78"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="79"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_O_BIN_4" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px"></asp:TextBox>
+                            <asp:TextBox ID="REQ_O_BIN_4" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_4" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="80"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_SEAT_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_4" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_AGE_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label4" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_4" runat="server" TabIndex="80">
+                            <asp:DropDownList ID="ANS_O_SEAT_4" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AGE_4" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="81"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU4" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -1206,22 +1294,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºïÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiâùòHÇTÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_O_5" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæÄË∑ØÔºïÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiâùòHÇTÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TEHAI_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TEHAI_5" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_5" runat="server" TabIndex="82">
+                            <asp:DropDownList ID="ANS_O_STATUS_5" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1231,216 +1319,185 @@
 
 		<tr runat="server" id="TB_KOTSU_O_5">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæÄË∑ØÔºïÔºâÊâãÈÖç -->
+				<!-- åí ÅiâùòHÇTÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_O_TEHAI_5" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="86" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_O_TEHAI_5" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_O_IRAINAIYOU_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_IRAINAIYOU_5" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_KOTSUKIKAN_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_KOTSUKIKAN_5" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_5" runat="server" TabIndex="87">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_5" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_DATE_5" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_DATE_5" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="88"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_DATE_5" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_O_AIRPORT1_5" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT1_5" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="83"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_O_AIRPORT2_5" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_O_AIRPORT2_5" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="84"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_5" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="89"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT1_5" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_5" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="90"></asp:TextBox>
+                            <asp:TextBox ID="ANS_O_AIRPORT2_5" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_TIME1_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME1_5" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_TIME2_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_TIME2_5" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="91"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="92"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_O_BIN_5" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="85"></asp:TextBox>
+                            <asp:TextBox ID="REQ_O_BIN_5" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_5" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="93"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_O_SEAT_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_5" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_O_AGE_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label5" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_5" runat="server" TabIndex="94">
+                            <asp:DropDownList ID="ANS_O_SEAT_5" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AGE_5" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="95"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU5" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
 		    </td>		    
-		</tr>
+		</tr>		
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ÂæÄË∑ØÂÇôËÄÉ -->				
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" colspan="5">
-							‚ñ†ÂæÄË∑ØÂÇôËÄÉ
-                        </td>
-					</tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_O_NOTE_1" runat="server" MaxLength="1000" ReadOnly="True" 
-                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="96">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="4">
-                            <asp:TextBox ID="ANS_O_NOTE_1" runat="server" MaxLength="1000" 
-                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="97">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
-                        </td>
-                    </tr>
-				</table>
-		    </td>
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºëÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiïúòHÇPÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_F_1" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºëÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiïúòHÇPÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TEHAI_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TEHAI_1" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_1" runat="server" TabIndex="98">
+                            <asp:DropDownList ID="ANS_F_STATUS_1" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1450,160 +1507,161 @@
 
 		<tr runat="server" id="TB_KOTSU_F_1">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºëÔºâÊâãÈÖç -->
+				<!-- åí ÅiïúòHÇPÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="Button1" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="102" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_F_TEHAI_1" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_F_IRAINAIYOU_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_IRAINAIYOU_1" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_KOTSUKIKAN_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_KOTSUKIKAN_1" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_1" runat="server" TabIndex="103">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_1" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_DATE_1" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_DATE_1" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="104"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_DATE_1" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_F_AIRPORT1_1" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT1_1" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="99"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_F_AIRPORT2_1" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT2_1" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="100"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_1" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="105"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT1_1" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_1" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="106"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT2_1" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TIME1_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME1_1" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_TIME2_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME2_1" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_1" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="107"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_1" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="108"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_F_BIN_1" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="101"></asp:TextBox>
+                            <asp:TextBox ID="REQ_F_BIN_1" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_1" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="109"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_SEAT_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_1" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_AGE_1" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_KIBOU1" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_1" runat="server" TabIndex="110">
+                            <asp:DropDownList ID="ANS_F_SEAT_1" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AGE_1" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="111"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU1" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -1612,22 +1670,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºíÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiïúòHÇQÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_F_2" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºíÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiïúòHÇQÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TEHAI_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TEHAI_2" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_2" runat="server" TabIndex="112">
+                            <asp:DropDownList ID="ANS_F_STATUS_2" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1637,160 +1695,161 @@
 
 		<tr runat="server" id="TB_KOTSU_F_2">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºíÔºâÊâãÈÖç -->
+				<!-- åí ÅiïúòHÇQÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="Button2" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="116" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_F_TEHAI_2" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_F_IRAINAIYOU_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_IRAINAIYOU_2" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_KOTSUKIKAN_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_KOTSUKIKAN_2" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_2" runat="server" TabIndex="117">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_2" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_DATE_2" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_DATE_2" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="118"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_DATE_2" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_F_AIRPORT1_2" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT1_2" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="113"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_F_AIRPORT2_2" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT2_2" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="114"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_2" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="119"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT1_2" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_2" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="120"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT2_2" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TIME1_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME1_2" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_TIME2_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME2_2" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="121"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="122"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_F_BIN_2" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="115"></asp:TextBox>
+                            <asp:TextBox ID="REQ_F_BIN_2" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_2" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="123"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_SEAT_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_2" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_AGE_2" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label6" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_2" runat="server" TabIndex="124">
+                            <asp:DropDownList ID="ANS_F_SEAT_2" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AGE_2" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="125"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU2" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -1799,22 +1858,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºìÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiïúòHÇRÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_F_3" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºìÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiïúòHÇRÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TEHAI_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TEHAI_3" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_3" runat="server" TabIndex="126">
+                            <asp:DropDownList ID="ANS_F_STATUS_3" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1824,159 +1883,161 @@
 
 		<tr runat="server" id="TB_KOTSU_F_3">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºìÔºâÊâãÈÖç -->
+				<!-- åí ÅiïúòHÇRÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="Button3" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="130" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_F_TEHAI_3" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_F_IRAINAIYOU_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_IRAINAIYOU_3" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_KOTSUKIKAN_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_KOTSUKIKAN_3" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_3" runat="server" TabIndex="131">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_3" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_DATE_3" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_DATE_3" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="133"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_DATE_3" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_F_AIRPORT1_3" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT1_3" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="127"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_F_AIRPORT2_3" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT2_3" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="129"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_3" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT1_3" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_3" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="134"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT2_3" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TIME1_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME1_3" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_TIME2_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME2_3" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="135"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="136"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_F_BIN_3" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px"></asp:TextBox>
+                            <asp:TextBox ID="REQ_F_BIN_3" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_3" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="137"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_SEAT_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_3" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_AGE_3" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label7" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_3" runat="server" TabIndex="138">
+                            <asp:DropDownList ID="ANS_F_SEAT_3" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AGE_3" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="139"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU3" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -1985,22 +2046,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºîÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiïúòHÇSÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_F_4" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºîÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiïúòHÇSÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TEHAI_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TEHAI_4" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_4" runat="server" TabIndex="140">
+                            <asp:DropDownList ID="ANS_F_STATUS_4" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -2010,160 +2071,161 @@
 
 		<tr runat="server" id="TB_KOTSU_F_4">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºîÔºâÊâãÈÖç -->
+				<!-- åí ÅiïúòHÇSÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="Button4" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="144" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_F_TEHAI_4" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_F_IRAINAIYOU_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_IRAINAIYOU_4" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_KOTSUKIKAN_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_KOTSUKIKAN_4" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_4" runat="server" TabIndex="145">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_4" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_DATE_4" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_DATE_4" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="146"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_DATE_4" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_F_AIRPORT1_4" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT1_4" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="141"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_F_AIRPORT2_4" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT2_4" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="142"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_4" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="147"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT1_4" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_4" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="148"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT2_4" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TIME1_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME1_4" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_TIME2_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME2_4" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="149"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="150"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_F_BIN_4" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="143"></asp:TextBox>
+                            <asp:TextBox ID="REQ_F_BIN_4" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_4" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px" TabIndex="151"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_SEAT_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_4" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_AGE_4" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label8" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_4" runat="server" TabIndex="152">
+                            <asp:DropDownList ID="ANS_F_SEAT_4" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AGE_4" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="153"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU4" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
@@ -2172,22 +2234,22 @@
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºïÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- åí ÅiïúòHÇTÅjÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							<asp:ImageButton ID="BtnKOTSU_F_5" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºïÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°åí ÅiïúòHÇTÅjéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TEHAI_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TEHAI_5" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂõûÁ≠î„Çπ„ÉÜ„Éº„Çø„Çπ
+                            âÒìöÉXÉeÅ[É^ÉX
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_5" runat="server">
+                            <asp:DropDownList ID="ANS_F_STATUS_5" runat="server" TabIndex="29">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -2197,304 +2259,256 @@
 
 		<tr runat="server" id="TB_KOTSU_F_5">
 		    <td align="left"  colspan="2">
-				<!-- ‰∫§ÈÄöÔºàÂæ©Ë∑ØÔºïÔºâÊâãÈÖç -->
+				<!-- åí ÅiïúòHÇTÅjéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="Button5" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="157" />
+                            ÅüâÒìöì‡óe
+            				<asp:Button ID="BtnCopy_F_TEHAI_5" runat="server" Width="55px" Text="ÉRÉsÅ[" 
+                                CssClass="ButtonList" TabIndex="32" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰æùÈ†ºÂÜÖÂÆπ
+                            àÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
-							<asp:Label ID="REQ_F_IRAINAIYOU_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_IRAINAIYOU_5" runat="server" Text="éËîzàÀóä"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_KOTSUKIKAN_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_KOTSUKIKAN_5" runat="server" Text="123456789012345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ‰∫§ÈÄöÊâãÊÆµ
+                            åí ã@ä÷
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_5" runat="server" TabIndex="158">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_5" runat="server" TabIndex="33">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_DATE_5" runat="server" Text="YYYY/MM/DD"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_DATE_5" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px" TabIndex="159"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_DATE_5" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="34">YYYYMMDD</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_F_AIRPORT1_5" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT1_5" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="154"></asp:TextBox>
+                                TabIndex="30" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="REQ_F_AIRPORT2_5" runat="server" MaxLength="60" 
+                            <asp:TextBox ID="REQ_F_AIRPORT2_5" runat="server" MaxLength="80" 
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="155"></asp:TextBox>
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫Âú∞
+                            èoî≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_5" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="160"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT1_5" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÂú∞
+                            ìûíÖín
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_5" runat="server" MaxLength="60" 
-                                textmode="MultiLine" Height="18px" Width="148px" TabIndex="161"></asp:TextBox>
+                            <asp:TextBox ID="ANS_F_AIRPORT2_5" runat="server" MaxLength="80" 
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_TIME1_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME1_5" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_TIME2_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_TIME2_5" runat="server" Text="HH:MM"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âá∫Áô∫ÊôÇÂàª
+                            èoî≠éûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="162"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="36">HHMM</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà∞ÁùÄÊôÇÂàª
+                            ìûíÖéûçè
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="164"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="37">HHMM</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_F_BIN_5" runat="server" MaxLength="100" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="344px" 
-                                TabIndex="156"></asp:TextBox>
+                            <asp:TextBox ID="REQ_F_BIN_5" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="19px" Width="344px" 
+                                TabIndex="31" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÂàóËªä„Éª‰æøÂêç
+                            óÒé‘ÅEï÷ñº
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_5" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="18px" Width="344px"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_F_SEAT_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_5" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="REQ_F_AGE_5" runat="server" Text=""></asp:Label>
+							<asp:Label ID="Label9" runat="server" Text="12345678901234567890"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Â∫ßÂ∏≠Âå∫ÂàÜ
+                            ç¿ê»ãÊï™
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_5" runat="server" TabIndex="165">
+                            <asp:DropDownList ID="ANS_F_SEAT_5" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âπ¥ÈΩ¢
+                            ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AGE_5" runat="server" MaxLength="3" 
-                                Height="18px" Width="33px" TabIndex="166"></asp:TextBox>
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU5" runat="server" TabIndex="39">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                 </table> 		        
 		    </td>		    
-		</tr>
-		
+		</tr>		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- Âæ©Ë∑ØÂÇôËÄÉ -->				
+				<!-- åí îıçl -->				
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="5">
-							‚ñ†Âæ©Ë∑ØÂÇôËÄÉ
+							Å°åí îıçl
                         </td>
 					</tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
+                            ÅüâÒìöì‡óe
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdItem" rowspan="4">
-                            <asp:TextBox ID="REQ_F_NOTE_1" runat="server" MaxLength="1000" ReadOnly="True" 
-                                TextMode="MultiLine" Height="147px" Width="344px" TabIndex="167">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        <td align="left" valign="top" class="TdItem" rowspan="4">
+                            <asp:TextBox ID="REQ_F_NOTE_1" runat="server" MaxLength="255" ReadOnly="True" 
+                                TextMode="MultiLine" Height="68px" Width="445px" TabIndex="167" 
+                                BorderStyle="None">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="4">
-                            <asp:TextBox ID="ANS_F_NOTE_1" runat="server" MaxLength="1000" 
-                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="168">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                            <asp:TextBox ID="ANS_F_NOTE_1" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="68px" Width="445px" TabIndex="168">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitle">
-                            JRÂà∏‰ª£
+                            JRåîë„
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="FIX_RAIL_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="91px" TabIndex="169">1234567890</asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="169">1234567890</asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
-                            JRÂà∏ÂèñÊ∂àÊñô
+                            JRåîéÊè¡óø
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="FIX_RAIL_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="91px" TabIndex="170">1234567890</asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="170">1234567890</asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitle">
-                            Ëà™Á©∫Âà∏‰ª£
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_AIR_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="91px" TabIndex="171">1234567890</asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle">
-                            Ëà™Á©∫Âà∏ÂèñÊ∂àÊñô
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_AIR_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="91px" TabIndex="172">1234567890</asp:TextBox>                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitle">
-                            „Åù„ÅÆ‰ªñ‰∫§ÈÄöË≤ª
+                            ÇªÇÃëºìSìπë„ìôë„ã‡
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="FIX_OTHER_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="91px" TabIndex="173">1234567890</asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="173">1234567890</asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
-                            „Åù„ÅÆ‰ªñ‰∫§ÈÄöË≤ªÂèñÊ∂àÊñô
+                            ÇªÇÃëºìSìπë„ìôéÊè¡óø
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="FIX_OTHER_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="91px" TabIndex="174">1234567890</asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="174">1234567890</asp:TextBox>â~                            
                         </td>
                     </tr>
-				</table>
-		    </td>
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±Ë¶Å„Éª‰∏çË¶Å -->				
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px" colspan="4">
-							‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÊâãÈÖç
-                        </td>
-					</tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="2">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                        <td align="left" valign="middle" class="TdTitle">
+                            çqãÛåîë„
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" colspan="2">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="Button6" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="176" />
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="FIX_AIR_FARE" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="171">1234567890</asp:TextBox>â~                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            çqãÛåîéÊè¡óø
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="FIX_AIR_CANCELLATION" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="172">1234567890</asp:TextBox>â~                            
                         </td>
                     </tr>
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-							„ÉÅ„Ç±„ÉÉ„ÉàÊâãÈÖç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="Label1" runat="server" Text="Ë¶Å"></asp:Label>
-                        </td>
-					</tr>
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-							ÂÇôËÄÉ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_NOTE" runat="server" MaxLength="1000" 
-                                ReadOnly="true" TextMode="MultiLine" Height="68px" Width="344px" 
-                                TabIndex="175">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
-                        </td>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-							ÂÇôËÄÉ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_NOTE" runat="server" MaxLength="1000" 
-                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="177">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
-                        </td>
-					</tr>
 				</table>
 		    </td>
 		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºëÔºâ„Çø„Ç§„Éà„É´ -->				
+				<!-- É^ÉNÉ`ÉPÉ^ÉCÉgÉã -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
 						<td align="left" valign="middle" class="TdTitleHeader">
 							<asp:ImageButton ID="BtnTAXI_1" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºëÔºâÊâãÈÖç
+                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />Å°É^ÉNÉVÅ[É`ÉPÉbÉgéËîz
                         </td>
 					</tr>
 				</table>
@@ -2502,1103 +2516,1097 @@
 		</tr>
 		<tr runat="server" id="TB_TAXI_1">
 		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºëÔºâÊâãÈÖç -->
+				<!-- É^ÉNÉ`ÉPéËîz -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
+					<tr>
+						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+							É`ÉPÉbÉgéËîz
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="Label1" runat="server" Text="óv"></asp:Label>
+                        </td>
+					</tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
+                            Å°É^ÉNÉ`ÉPîıçl
+                        </td>
+                    </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüàÀóäì‡óe
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_1" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="180" />
-                        </td>
+                            ÅüâÒìöì‡óe
+            			</td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+					<tr>
+						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+							îıçl
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_1" runat="server" Text="YY/MM/DD"></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_NOTE" runat="server" MaxLength="255" 
+                                ReadOnly="true" TextMode="MultiLine" Height="68px" Width="344px" 
+                                TabIndex="175" BorderStyle="None">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
+						<td align="left" valign="middle" class="TdTitle" style="width:170px">
+							îıçl
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_1" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="181">YYMMDD</asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_NOTE" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="177">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+					</tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                            ÅüçsíˆÇP
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇP
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_1" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_1" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            î≠ín
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_1" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="178">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_1" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="179">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="REQ_TAXI_FROM_1" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_1" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_1" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="183">123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_1" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
+                            àÀóäã‡äz
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="TAXI_YOTEIKINGAKU_1" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
+                            î‘çÜ
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_1" runat="server" TabIndex="184">
-                            </asp:DropDownList>
+                            <asp:TextBox ID="ANS_TAXI_NO_1" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_1" runat="server" Text="1234567890"></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_1" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="185">1234567890</asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºíÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_2" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºíÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_2">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºíÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇQ
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_2" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="188" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇQ
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_2" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_2" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_2" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_2" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_2" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="189"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_2" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_2" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="186"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_2" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="187"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_2" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_2" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="190"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_2" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="191"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_2" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_2" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_2" runat="server" Height="18px" 
-                                TabIndex="192">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_2" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_2" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="193"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºìÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_3" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºìÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_3">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºìÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇR
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_3" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="196" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇR
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_3" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_3" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_3" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_3" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_3" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="197"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_3" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_3" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="194"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_3" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="195"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_3" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_3" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="198"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_3" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="199"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_3" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_3" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_3" runat="server" TabIndex="200">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_3" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_3" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="201"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºîÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_4" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºîÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_4">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºîÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇS
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_4" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="204" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇS
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_4" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_4" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_4" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_4" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_4" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="205"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_4" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_4" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="202"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_4" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="203"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_4" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_4" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="206"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_4" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="207"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_4" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_4" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_4" runat="server" TabIndex="208">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_4" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_4" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="209"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºïÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_5" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºïÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_5">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºïÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇT
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_5" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="212" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇT
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_5" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_5" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_5" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_5" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_5" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="213"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_5" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_5" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="210"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_5" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="211"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_5" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_5" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="214"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_5" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="215"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_5" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_5" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_5" runat="server" TabIndex="216">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_5" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_5" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="217"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºñÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_6" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºñÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_6">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºñÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇU
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_6" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="220" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇU
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_6" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_6" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_6" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_6" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_6" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="221"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_6" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_6" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="218"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_6" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="219"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_6" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_6" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="222"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_6" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="223"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_6" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_6" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_6" runat="server" TabIndex="224">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_6" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_6" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="225"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºóÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_7" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºóÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_7">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºóÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇV
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_7" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="228" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇV
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_7" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_7" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_7" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_7" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_7" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="229"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_7" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_7" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="226"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_7" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="227"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_7" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_7" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="230"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_7" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="231"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_7" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_7" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_7" runat="server" TabIndex="232">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_7" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_7" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="233"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºòÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_8" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºòÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_8">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºòÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇW
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_8" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="236" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇW
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_8" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_8" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_8" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_8" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_8" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="237"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_8" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_8" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="234"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_8" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="235"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_8" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_8" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="238"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_8" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="239"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_8" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_8" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_8" runat="server" TabIndex="240">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_8" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_8" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="241"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºôÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_9" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºôÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_9">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºôÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇX
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_9" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="244" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇX
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_9" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_9" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_9" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_9" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_9" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="245"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_9" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_9" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="242"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_9" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="243"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_9" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_9" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="246"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_9" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="247"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_9" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_9" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_9" runat="server" TabIndex="248">
-                            </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_9" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_9" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="249"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                </table> 		        
-		    </td>		    
-		</tr>
-		
-		<tr>
-			<td align="left" colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºëÔºêÔºâ„Çø„Ç§„Éà„É´ -->				
-				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
-					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader">
-							<asp:ImageButton ID="BtnTAXI_10" runat="server" Height="20px" 
-                                ImageUrl="~/Images/button-tick-alt.png" Width="19px" />‚ñ†„Çø„ÇØ„Ç∑„Éº„ÉÅ„Ç±„ÉÉ„ÉàÔºàË°åÁ®ãÔºëÔºêÔºâÊâãÈÖç
-                        </td>
-					</tr>
-				</table>
-		    </td>
-		</tr>
-		<tr runat="server" id="TB_TAXI_10">
-		    <td align="left"  colspan="2">
-				<!-- „Çø„ÇØ„ÉÅ„Ç±ÔºàË°åÁ®ãÔºëÔºêÔºâÊâãÈÖç -->
-				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
-                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-                            ‚óÜ‰æùÈ†ºÂÜÖÂÆπ
+                            ÅüçsíˆÇPÇO
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ‚óÜÂõûÁ≠îÂÜÖÂÆπ
-            				<asp:Button ID="BtnCopy_TAXI_10" runat="server" Width="55px" Text="„Ç≥„Éî„Éº" 
-                                CssClass="ButtonList" TabIndex="252" />
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇO
+            				</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_TAXI_DATE_10" runat="server" Text="YYYY/MM/DD"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_10" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Âà©Áî®Êó•
+                            î≠ín
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_10" runat="server" Text=""></asp:Label>
+                            <asp:TextBox ID="REQ_TAXI_FROM_10" runat="server" MaxLength="80" 
+                                ReadOnly="true" TextMode="MultiLine" Height="47px" Width="344px" 
+                                TabIndex="178" BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Âà©Áî®Êó•
-                        </td>
+                            åîéÌ</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_DATE_10" runat="server" MaxLength="6" 
-                                Height="18px" Width="69px" TabIndex="253"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_FROM_10" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áô∫Âú∞
+                            àÀóäã‡äz
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_FROM_10" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="250"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="REQ_TAXI_TO_10" runat="server" MaxLength="60" 
-                                ReadOnly="true" TextMode="MultiLine" Height="18px" Width="148px" 
-                                TabIndex="251"></asp:TextBox>                            
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+							<asp:Label ID="TAXI_YOTEIKINGAKU_10" runat="server" Text="1234567890"></asp:Label>
+                            &nbsp;â~
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áô∫Âú∞
+                            î‘çÜ
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_FROM_10" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="254"></asp:TextBox>                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÁùÄÂú∞
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_TO_10" runat="server" MaxLength="60" 
-                                TextMode="MultiLine" Height="18px" Width="148px" TabIndex="255"></asp:TextBox>                            
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_10" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            ‰∫àÂÆöÈáëÈ°ç
+                        <td colspan="4" rowspan="40">
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="TAXI_YOTEIKINGAKU_10" runat="server" Text=""></asp:Label>
-                        </td>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇP
+            			</td>
+                    </tr>
+                    <tr>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            ÈáëÈ°çÂà∏Á®Æ
+                            óòópì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_TAXI_KENSHU_10" runat="server" TabIndex="256">
-                            </asp:DropDownList>
+                            <asp:TextBox ID="ANS_TAXI_DATE_11" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-                            Áï™Âè∑
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_NO_10" runat="server" Text=""></asp:Label>
-                        </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            Áï™Âè∑
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_11" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_NO_10" runat="server" MaxLength="10" 
-                                Height="18px" Width="98px" TabIndex="257"></asp:TextBox>                            
+                            <asp:TextBox ID="ANS_TAXI_NO_11" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇQ
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_12" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_12" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_12" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇR
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_13" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_13" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_13" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇS
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_14" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_14" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_14" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇT
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_15" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_15" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_15" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇU
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_16" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_16" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_16" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇV
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_17" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_17" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_17" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇW
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_18" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_18" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_18" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇPÇX
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_19" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_19" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_19" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüÉ^ÉNÉVÅ[É`ÉPÉbÉgÇQÇO
+            			</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            óòópì˙
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_DATE_20" runat="server" MaxLength="8" 
+                                Height="18px" Width="85px" TabIndex="181">YYYYMMDD</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            åîéÌ</td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_FROM_20" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            î‘çÜ
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_TAXI_NO_20" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</asp:TextBox>                            
                         </td>
                     </tr>
                 </table> 		        
 		    </td>		    
+		</tr>
+
+		<tr>
+			<td align="left" colspan="2">
+				<!-- MRéËîzèÓïÒ -->				
+				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
+                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
+					<tr>
+						<td align="left" valign="middle" class="TdTitleHeader" colspan="8">
+							Å°MRéËîzèÓïÒ
+                        </td>
+					</tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                            ÅüàÀóäì‡óe
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ÅüâÒìöì‡óe
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader">
+                            é–àıópâùòHó◊ê»äÛñ]
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_MR_O_TEHAI" runat="server" Text="12345678901234"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            é–àıópâùòHéËîz
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+		                    <asp:DropDownList ID="ANS_MR_O_TEHAI" runat="server" Width="150px">
+                            </asp:DropDownList>						
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader">
+                            é–àıópïúòHó◊ê»äÛñ]
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+							<asp:Label ID="Label10" runat="server" Text="12345678901234"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            é–àıópïúòHéËîz
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+		                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                            </asp:DropDownList>						
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader">
+                            ê´ï 
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+							<asp:Label ID="MR_SEX" runat="server" Text="1234"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitleHeader">
+                            îNóÓ
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+							<asp:Label ID="MR_AGE" runat="server" Text="123"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" rowspan="4">
+                            èhîëäÛñ]
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="4">
+							<asp:Label ID="REQ_MR_TEHAI_HOTEL" runat="server" Text="äÛñ]Ç∑ÇÈ"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            ÉzÉeÉãñº
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_MR_HOTEL_NAME" runat="server" MaxLength="80" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            èZèä
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_MR_HOTEL_ADDRESS" runat="server" MaxLength="128" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            TEL
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_MR_HOTEL_TEL" runat="server" MaxLength="40" Height="18px" 
+                                Width="328px" TabIndex="182">1234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            É`ÉFÉbÉNÉCÉì
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+                            <asp:TextBox ID="ANS_MR_CHECKIN_TIME" runat="server" MaxLength="4" Height="18px" 
+                                Width="47px" TabIndex="182">1234</asp:TextBox>                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            É`ÉFÉbÉNÉAÉEÉg
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+                            <asp:TextBox ID="ANS_MR_CHECKOUT_TIME" runat="server" MaxLength="4" Height="18px" 
+                                Width="47px" TabIndex="182">1234</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader">
+                            èhîëãiâå
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_MR_HOTEL_SMOKING" runat="server" Text="ã÷âå"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            èhîëãiâå
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:RadioButton ID="ANS_MR_HOTEL_SMOKING_NO_MUST" runat="server" Text="ã÷âå" 
+                                TabIndex="25" />&nbsp;&nbsp;
+                            <asp:RadioButton ID="ANS_MR_HOTEL_SMOKING_NO" runat="server" 
+                                Text="ã÷âåÅiè¡èLëŒâûÇÃâ¬î\ê´Ç™Ç†ÇËÇ‹Ç∑Åj" TabIndex="26" />&nbsp;&nbsp;
+                            <br />
+                            <asp:RadioButton ID="ANS_MR_HOTEL_SMOKING_YES" runat="server" Text="ãiâå" 
+                                TabIndex="27" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader">
+                            îıçl
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+                            <asp:TextBox ID="TextBox1" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182" 
+                                BorderStyle="None" ReadOnly="True">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            îıçl
+                        </td>
+                        <td align="left" valign="top" class="TdItem" colspan="3">
+                            <asp:TextBox ID="TextBox2" runat="server" MaxLength="255" 
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdItem" colspan="4">
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            MRåí îÔ
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+                            <asp:TextBox ID="ANS_MR_KOTSUHI" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="172">1234567890</asp:TextBox>â~                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            MRèhîëîÔ
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+                            <asp:TextBox ID="ANS_MR_HOTELHI" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="172">1234567890</asp:TextBox>â~                            
+                        </td>
+                    </tr>
+				</table>
+		    </td>
 		</tr>
 		    
 		<div class="FontSize1" style="height: 10px;"></div>
 		<table cellspacing="0" cellpadding="0" border="0" style="width:900px;">
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:50%">
-				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="Â±•Ê≠¥Ë°®Á§∫" CssClass="Button" />
-					<asp:Button ID="BtnPrint" runat="server" Width="150px" Text="ÊâãÈÖçÊõ∏Âç∞Âà∑" CssClass="Button" />
+				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="óöóï\é¶" CssClass="Button" />
+					<asp:Button ID="BtnPrint" runat="server" Width="150px" Text="éËîzèëàÛç¸" CssClass="Button" />
 					<asp:Button ID="BtnTaxiCsv" runat="server" Width="150px" Text="TAXI CSV" CssClass="Button" />
 				</td>
 				<td align="right" style="width:50%">
-				    <asp:Button ID="BtnToroku" runat="server" Width="150px" Text="ÁôªÈå≤" CssClass="Button" />
-				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMI„Å∏" CssClass="Button" />
-					<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="„Ç≠„É£„É≥„Çª„É´" CssClass="ButtonCancel" />
+				    <asp:Button ID="BtnToroku" runat="server" Width="150px" Text="ìoò^" CssClass="Button" />
+				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIÇ÷" CssClass="Button" />
+					<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="ÉLÉÉÉìÉZÉã" CssClass="ButtonCancel" />
 				</td>
 			</tr>
 		</table>
@@ -3606,15 +3614,5 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
 
-		<style type="text/css">
-            .style1
-            {
-                background-color: #ffffff;
-                color: #0a0a0a;
-                font-weight: normal;
-                width: 44px;
-            }
-        </style>
-
-</asp:Content>
+		</asp:Content>
 
