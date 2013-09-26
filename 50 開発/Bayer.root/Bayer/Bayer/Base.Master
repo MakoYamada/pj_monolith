@@ -63,7 +63,7 @@
 		<table border="0" cellpadding="2" cellspacing="0" style="width: 100%;">
 			<tr>
 				<td align="left">
-					<div class="FontSize1" style="height: 8px;"></div>
+					<div class="FontSize1" style="height: 5px;"></div>
 					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 					</asp:ContentPlaceHolder>
 				</td>
