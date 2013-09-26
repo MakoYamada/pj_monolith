@@ -2458,6 +2458,10 @@
             Public TEHAI_TANTO_ROMA As String
             Public REQ_STATUS_TEHAI As String
             Public ANS_STATUS_TEHAI As String
+            Public ADDRESS1 As String
+            Public ADDRESS2 As String
+            Public SHISETSU_NAME As String
+            Public SHISETSU_NAME_KANA As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2476,6 +2480,10 @@
             Public Const TEHAI_TANTO_ROMA As String = "手配担当者名"
             Public Const REQ_STATUS_TEHAI As String = ""
             Public Const ANS_STATUS_TEHAI As String = ""
+            Public ADDRESS1 As String = "都道府県"
+            Public ADDRESS2 As String = "市区町村"
+            Public SHISETSU_NAME As String = "施設名"
+            Public SHISETSU_NAME_KANA As String = "施設名(カナ)"
         End Class
     End Class
 
