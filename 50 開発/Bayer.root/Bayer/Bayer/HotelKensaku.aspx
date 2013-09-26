@@ -80,17 +80,17 @@
                         <asp:BoundField DataField="ADDRESS1" HeaderText="都道府県" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="60px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="SHISETSU_NAME" HeaderText="施設名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
+                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="ADDRESS2" HeaderText="住所" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="200px" HorizontalAlign="Left"></ItemStyle>
+                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TEL" HeaderText="電話番号" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" 
@@ -102,13 +102,13 @@
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Left" Wrap="False" Width="60px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="CHECKOUT_TIME" HeaderText="ﾁｪｯｸｱｳﾄ" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" ReadOnly="True">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="60px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="SYSTEM_ID" HeaderText="システムID" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" Visible="False">
