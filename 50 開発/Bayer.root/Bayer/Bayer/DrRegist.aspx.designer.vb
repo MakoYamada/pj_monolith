@@ -16,15 +16,6 @@ Option Explicit On
 Partial Public Class DrRegist
 
     '''<summary>
-    '''ImgCanceled コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ImgCanceled As Global.System.Web.UI.WebControls.Image
-
-    '''<summary>
     '''BtnKihon コントロール。
     '''</summary>
     '''<remarks>
@@ -32,15 +23,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnKihon As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Tr1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Tr1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
     '''KOUENKAI_NO コントロール。
@@ -52,31 +34,22 @@ Partial Public Class DrRegist
     Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KOUENKAI_FROM_DATE コントロール。
+    '''FROM_DATE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_FROM_DATE As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KOUENKAI_TO_DATE コントロール。
+    '''TO_DATE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_TO_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Tr2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Tr2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents TO_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''KOUENKAI_NAME コントロール。
@@ -97,13 +70,13 @@ Partial Public Class DrRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''MR_JIGYOBU コントロール。
+    '''MR_BU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents MR_JIGYOBU As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MR_BU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''MR_AREA コントロール。
@@ -112,7 +85,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents MR_AREA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents MR_AREA As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''MR_EIGYOSHO コントロール。
@@ -121,7 +94,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents MR_EIGYOSHO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents MR_EIGYOSHO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''MR_NO コントロール。
@@ -3985,13 +3958,22 @@ Partial Public Class DrRegist
     Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnNozomi_2 コントロール。
+    '''BtnToroku コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnNozomi_2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnToroku As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnNozomi コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnCancel コントロール。

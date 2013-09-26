@@ -61,8 +61,6 @@ Partial Public Class DrRegist
 
     '画面項目 初期化
     Private Sub InitControls()
-        ImgCanceled.Visible = False
-
         BtnKOTSU_O_1.ImageUrl = IMG_OPEN
         BtnKOTSU_O_2.ImageUrl = IMG_OPEN
         BtnKOTSU_O_3.ImageUrl = IMG_OPEN

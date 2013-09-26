@@ -2,53 +2,46 @@
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
-		<!-- 参加取消ボタン・NOZOMIボタン等 -->
-		<tr>
-			<td align="left">
-				<asp:Image ID="ImgCanceled" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/Canceled.png" />
-			</td>
-			<td align="right">
-				&nbsp;</td>
-		</tr>
 		<tr>
 			<td align="left" colspan="2">
 			    <!-- 講演会情報 -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
                             ■講演会情報
 	                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="基本情報へ" CssClass="Button" />
                         </td>
                     </tr>
-					<tr id="Tr1" runat="server">
-						<td align="left" class="TdTitleHeader" >
+                    <tr>
+						<td align="left" class="TdTitleHeader" style="width:120px">
 							講演会番号
 						</td>
-						<td align="left">
-							<asp:Label ID="KOUENKAI_NO" runat="server" Text="1234567890"></asp:Label>
+						<td align="left" class="TdItem" style="width:100px">
+							<asp:Label ID="KOUENKAI_NO" runat="server" Text="12345678901234"></asp:Label>
 						</td>
-						<td align="left" style="width: 170px;" class="TdTitleHeader">
+						<td align="left" class="TdTitleHeader" style="width:100px">
 							実施日
 						</td>
-						<td align="left" class="TdItem" style="width: 710px;">
-							<asp:Label ID="KOUENKAI_FROM_DATE" runat="server" Text="yyyy/mm/dd"></asp:Label>
-							&nbsp;～&nbsp;
-							<asp:Label ID="KOUENKAI_TO_DATE" runat="server" Text="yyyy/mm/dd"></asp:Label>
+                        <td align="left" class="TdItem" colspan="5">
+							<asp:Label ID="FROM_DATE" runat="server" Text="1234567890"></asp:Label>
+							～
+							<asp:Label ID="TO_DATE" runat="server" Text="1234567890"></asp:Label>                        
+                        </td>
+                    </tr>
+					<tr>
+						<td align="left" class="TdTitleHeader" style="width:120px">
+							講演会名
 						</td>
-					</tr>
-					<tr id="Tr2" runat="server">
-						<td align="left" class="TdTitleHeader" style="width:170px">
-							会合名
+						<td align="left" class="TdItem" colspan="5">
+                            <asp:TextBox ID="KOUENKAI_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="45px" Width="427px" TabIndex="6" 
+                                BorderStyle="None">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
 						</td>
-						<td align="left">
-                            <asp:TextBox ID="KOUENKAI_NAME" runat="server" MaxLength="200" ReadOnly="True" 
-                                TextMode="MultiLine" TabIndex="1">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
-						</td>
-						<td align="left" class="TdTitleHeader" style="width:170px">
+						<td align="left" class="TdTitleHeader">
 							チケット印字名
 						</td>
-						<td align="left">
+						<td align="left" class="TdItem">
 							<asp:Label ID="TAXI_PRT_NAME" runat="server" Text="1234567890"></asp:Label>
 						</td>
 					</tr>
@@ -68,10 +61,10 @@
                     </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-			                事業部
+			                BU
 		                </td>
 		                <td align="left" valign="top" colspan="3">
-				            <asp:Label ID="MR_JIGYOBU" runat="server" Text="12345678901234567890123456789012345678901234567890"></asp:Label>
+				            <asp:Label ID="MR_BU" runat="server" Text="1234567890123456789012345678901234567890"></asp:Label>
 		                </td>
 		            </tr>
 		            <tr>
@@ -79,15 +72,13 @@
 			                エリア
 		                </td>
 		                <td align="left" valign="top">
-                            <asp:TextBox ID="MR_AREA" runat="server" MaxLength="50" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="263px" TabIndex="2"></asp:TextBox>
+				            <asp:Label ID="MR_AREA" runat="server" Text="1234567890123456789012345678901234567890"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 			                営業所
 		                </td>
 		                <td align="left" valign="top">
-                            <asp:TextBox ID="MR_EIGYOSHO" runat="server" MaxLength="50" ReadOnly="True" 
-                                TextMode="MultiLine" Height="18px" Width="263px" TabIndex="3"></asp:TextBox>
+				            <asp:Label ID="MR_EIGYOSHO" runat="server" Text="1234567890123456789012345678901234567890"></asp:Label>
 		                </td>
 		            </tr>
 		            <tr>
@@ -140,7 +131,8 @@
                                     </td>
                                     <td align="left" valign="top">
                                         <asp:TextBox ID="MR_SEND_SAKI_OTHER" runat="server" MaxLength="100" ReadOnly="True" 
-                                            TextMode="MultiLine" Height="45px" Width="662px" TabIndex="6">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                            TextMode="MultiLine" Height="45px" Width="662px" TabIndex="6" 
+                                            BorderStyle="None">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
@@ -3604,10 +3596,25 @@
 					<asp:Button ID="BtnTaxiCsv" runat="server" Width="150px" Text="TAXI CSV" CssClass="Button" />
 				</td>
 				<td align="right" style="width:50%">
-				    <asp:Button ID="BtnNozomi_2" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
+				    <asp:Button ID="BtnToroku" runat="server" Width="150px" Text="登録" CssClass="Button" />
+				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
 					<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="ButtonCancel" />
 				</td>
 			</tr>
 		</table>
 	</table>
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+
+		<style type="text/css">
+            .style1
+            {
+                background-color: #ffffff;
+                color: #0a0a0a;
+                font-weight: normal;
+                width: 44px;
+            }
+        </style>
+
+</asp:Content>
+
