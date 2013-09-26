@@ -2401,6 +2401,30 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_SHISETSU.STOP_FLG<>'1'"
+
+            If Trim(Joken.ADDRESS1) <> "" Then
+                strSQL &= " AND MS_SHISETSU.ADDRESS1='" & CmnDb.SqlString(Joken.ADDRESS1) & "'"
+            End If
+
+            If Trim(Joken.ADDRESS2) <> "" Then
+                strSQL &= " AND MS_SHISETSU.ADDRESS2 LIKE '%" & CmnDb.SqlString(Joken.ADDRESS2) & "%'"
+            End If
+
+            If Trim(Joken.SHISETSU_NAME) <> "" Then
+                strSQL &= " AND MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
+            End If
+
+            If Trim(Joken.SHISETSU_NAME_KANA) <> "" Then
+                strSQL &= " AND MS_SHISETSU.SHISETSU_NAME_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME_KANA) & "%'"
+            End If
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal MS_SHISETSU As TableDef.MS_SHISETSU.DataStruct) As String
             Dim strSQL As String = ""
 
