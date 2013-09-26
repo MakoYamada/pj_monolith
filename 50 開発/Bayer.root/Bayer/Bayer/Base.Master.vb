@@ -80,9 +80,9 @@ Partial Public Class Base
         End If
 
         If pHideLoginUser = True Then
-            Me.LabelLoginUser.Visible = False
+            Me.TblLoginUser.Visible = False
         Else
-            Me.LabelLoginUser.Visible = True
+            Me.TblLoginUser.Visible = True
         End If
 
         'ページタイトル
