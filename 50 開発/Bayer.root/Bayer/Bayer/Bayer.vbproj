@@ -271,6 +271,13 @@
       <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="ShisetsuKensaku.aspx.designer.vb">
+      <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShisetsuKensaku.aspx.vb">
+      <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -327,6 +334,7 @@
     <Content Include="NewKaijoList.aspx" />
     <Content Include="Preview.aspx" />
     <Content Include="print.css" />
+    <Content Include="ShisetsuKensaku.aspx" />
     <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
     <Content Include="TimeOut.html" />

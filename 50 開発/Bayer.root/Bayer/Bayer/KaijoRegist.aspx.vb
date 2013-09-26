@@ -29,14 +29,21 @@ Partial Public Class KaijoRegist
 
         'マスターページ設定
         With Me.Master
+            .HideLoginUser = True   'QQQ
             .PageTitle = "講演会場　手配・見積依頼"
         End With
 
+        ''QQQ ハーコピー用
+        'Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = "日産スタジアム"
+        'Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = "神奈川県横浜市港北区小机町3300"
+        'Session.Item(SessionDef.ShisetsuKensaku_TEL) = "045-477-5000"
+        'Session.Item(SessionDef.ShisetsuKensaku_URL) = "http://www.nissan-stadium.jp/"
+
         '検索画面戻り
-        Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME)
-        Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.HotelKensaku_ADDRESS)
-        Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.HotelKensaku_TEL)
-        Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.HotelKensaku_URL)
+        Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
+        Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
+        Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
+        Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
     End Sub
 
     'セッションを変数に格納
@@ -76,7 +83,7 @@ Partial Public Class KaijoRegist
     Private Sub SetForm()
         '依頼(表示)
         Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KAIJO(SEQ).KOUENKAI_NO)
-        Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(TBL_KAIJO(SEQ).REQ_STATUS_TEHAI)
+        Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(TBL_KAIJO(SEQ).REQ_STATUS_TEHAI, True)
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Me.SHONIN_NAME.Text = AppModule.GetName_SHONIN_NAME(TBL_KAIJO(SEQ).SHONIN_NAME)
         Me.SHONIN_DATE.Text = AppModule.GetName_SHONIN_DATE(TBL_KAIJO(SEQ).SHONIN_DATE)
@@ -132,12 +139,12 @@ Partial Public Class KaijoRegist
 
         '回答
         AppModule.SetForm_ANS_STATUS_TEHAI(TBL_KAIJO(SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)
-        AppModule.SetForm_ADDRESS1(Session.Item(SessionDef.HotelKensaku_ADDRESS1), Me.ADDRESS1)
-        AppModule.SetForm_ADDRESS2(Session.Item(SessionDef.HotelKensaku_ADDRESS2), Me.ADDRESS2)
-        AppModule.SetForm_ANS_SHISETSU_NAME(Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME), Me.ANS_SHISETSU_NAME)
-        AppModule.SetForm_ANS_SHISETSU_ADDRESS(Session.Item(SessionDef.HotelKensaku_ADDRESS), Me.ANS_SHISETSU_ADDRESS)
-        AppModule.SetForm_ANS_SHISETSU_TEL(Session.Item(SessionDef.HotelKensaku_TEL), Me.ANS_SHISETSU_TEL)
-        AppModule.SetForm_ANS_SHISETSU_URL(Session.Item(SessionDef.HotelKensaku_URL), Me.ANS_SHISETSU_URL)
+        AppModule.SetForm_ADDRESS1(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1), Me.ADDRESS1)
+        AppModule.SetForm_ADDRESS2(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2), Me.ADDRESS2)
+        AppModule.SetForm_ANS_SHISETSU_NAME(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME), Me.ANS_SHISETSU_NAME)
+        AppModule.SetForm_ANS_SHISETSU_ADDRESS(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS), Me.ANS_SHISETSU_ADDRESS)
+        AppModule.SetForm_ANS_SHISETSU_TEL(Session.Item(SessionDef.ShisetsuKensaku_TEL), Me.ANS_SHISETSU_TEL)
+        AppModule.SetForm_ANS_SHISETSU_URL(Session.Item(SessionDef.ShisetsuKensaku_URL), Me.ANS_SHISETSU_URL)
         AppModule.SetForm_ANS_MITSUMORI_TF(TBL_KAIJO(SEQ).ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF)
         AppModule.SetForm_ANS_MITSUMORI_T(TBL_KAIJO(SEQ).ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T)
         AppModule.SetForm_ANS_MITSUMORI_URL(TBL_KAIJO(SEQ).ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL)
@@ -176,21 +183,35 @@ Partial Public Class KaijoRegist
     End Function
 
     '[検索]
-    Protected Sub BtnHotelKensaku_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnHotelKensaku.Click
-        Session.Item(SessionDef.HotelKensaku_ADDRESS1) = Trim(Me.ADDRESS1.Text)
-        Session.Item(SessionDef.HotelKensaku_ADDRESS2) = Trim(Me.ADDRESS2.Text)
-        Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME) = Trim(Me.ANS_SHISETSU_NAME.Text)
-        Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME_KANA) = ""
-        Session.Item(SessionDef.HotelKensaku_ADDRESS) = ""
-        Session.Item(SessionDef.HotelKensaku_TEL) = ""
-        Session.Item(SessionDef.HotelKensaku_URL) = ""
+    Protected Sub BtnShisetsuKensaku_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnShisetsuKensaku.Click
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = Trim(Me.ADDRESS1.Text)
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Trim(Me.ADDRESS2.Text)
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Trim(Me.ANS_SHISETSU_NAME.Text)
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_TEL) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_URL) = ""
 
         Dim scriptStr As String
-        scriptStr = "<script type='text/javascript'>"
-        scriptStr &= "window.open('" & URL.HotelKensaku & "','_blank','width=300,height=300');"
+        scriptStr = "<script language='javascript' type='text/javascript'>"
+        scriptStr &= "window.open('" & URL.ShisetsuKensaku & "','Shisetsu','width=980,height=750,scrollbars=yes,resizable=yes,statusbar=yes');"
         scriptStr &= "</script>"
 
-        ClientScript.RegisterStartupScript(Me.GetType(), "HotelKensaku", scriptStr)
+        ClientScript.RegisterStartupScript(Me.GetType(), "ShisetsuKensaku", scriptStr)
+    End Sub
+
+    '[登録]
+    Protected Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSubmit.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
+
+        '入力値を取得
+        GetValue()
+
+        'データ更新
+        If ExecuteTransaction() Then
+            'QQQ ??????? Response.Redirect(URL.KaijoRegistEnd)
+        End If
     End Sub
 
     '[NOZOMIへ]
@@ -200,6 +221,8 @@ Partial Public Class KaijoRegist
 
         '入力値を取得
         GetValue()
+
+        'QQQ ???? 送信対象のフラグ等
 
         'データ更新
         If ExecuteTransaction() Then
@@ -218,8 +241,6 @@ Partial Public Class KaijoRegist
         TBL_KAIJO(SEQ).ANS_MITSUMORI_T = AppModule.GetValue_ANS_MITSUMORI_T(Me.ANS_MITSUMORI_T)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL = AppModule.GetValue_ANS_MITSUMORI_TOTAL(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_TF)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_URL = AppModule.GetValue_ANS_MITSUMORI_URL(Me.ANS_MITSUMORI_URL)
-
-        'QQQ ???? 送信対象のフラグ等
     End Sub
 
     'データ更新
@@ -257,6 +278,11 @@ Partial Public Class KaijoRegist
         If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_MITSUMORI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_MITSUMORI_TF)) Then
             Me.ANS_MITSUMORI_TOTAL.Text = AppModule.GetName_ANS_MITSUMORI_TOTAL(wANS_MITSUMORI_T, wANS_MITSUMORI_TF)
         End If
+    End Sub
+
+    '[キャンセル]
+    Protected Sub BtnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCancel.Click
+        Response.Redirect(Session.Item(SessionDef.BackURL))
     End Sub
 
 End Class

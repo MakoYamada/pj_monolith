@@ -4690,6 +4690,11 @@ Public Class AppModule
         control.Text = ANS_SHISETSU_NAME
     End Sub
 
+    '施設名(カナ)
+    Public Shared Sub SetForm_SHISETSU_NAME_KANA(ByVal SHISETSU_NAME_KANA As String, ByRef control As TextBox)
+        control.Text = SHISETSU_NAME_KANA
+    End Sub
+
     '見積額（非課税）
     Public Shared Sub SetForm_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As String, ByRef control As TextBox)
         control.Text = ANS_MITSUMORI_TF

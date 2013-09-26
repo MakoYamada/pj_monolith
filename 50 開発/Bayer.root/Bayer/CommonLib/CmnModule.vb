@@ -287,33 +287,32 @@ Public Class CmnModule
     End Sub
 
     'コントロールクリア(全項目)
-    Public Shared Sub ClearAllControl(ByVal WebForm As Page)
-        For Each wPageControl As Control In WebForm.Controls
-            If wPageControl.Controls.Count > 0 Then
-                For Each wControl As Control In wPageControl.Controls
-                    If TypeOf wControl Is WebControls.TextBox Then
-                        'テキストボックス
-                        CType(wControl, WebControls.TextBox).Text = ""
-                    ElseIf TypeOf wControl Is WebControls.DropDownList Then
-                        'プルダウン
-                        CType(wControl, WebControls.DropDownList).SelectedIndex = 0
-                    ElseIf TypeOf wControl Is WebControls.CheckBox Then
-                        'チェックボックス
-                        CType(wControl, WebControls.CheckBox).Checked = False
-                    ElseIf TypeOf wControl Is WebControls.RadioButton Then
-                        'ラジオボタン
-                        CType(wControl, WebControls.RadioButton).Checked = False
-                    ElseIf TypeOf wControl Is WebControls.Label Then
-                        'ラベル
-                        If LCase(Mid(CType(wControl, WebControls.Label).ID, 1, LenB("lablel"))) = "label" Then
-                            'ID頭が「Label」の場合をのぞく
-                        Else
-                            CType(wControl, WebControls.Label).Text = ""
-                        End If
+    Public Shared Sub ClearAllControl(ByVal wControl As Control)
+        If wControl.HasControls Then
+            For Each wChildControl As Control In wControl.Controls
+                ClearAllControl(wChildControl)              '再帰的に繰り返す
+                If TypeOf wChildControl Is WebControls.TextBox Then
+                    'テキストボックス
+                    CType(wChildControl, WebControls.TextBox).Text = ""
+                ElseIf TypeOf wChildControl Is WebControls.DropDownList Then
+                    'プルダウン
+                    CType(wChildControl, WebControls.DropDownList).SelectedIndex = 0
+                ElseIf TypeOf wChildControl Is WebControls.CheckBox Then
+                    'チェックボックス
+                    CType(wChildControl, WebControls.CheckBox).Checked = False
+                ElseIf TypeOf wChildControl Is WebControls.RadioButton Then
+                    'ラジオボタン
+                    CType(wChildControl, WebControls.RadioButton).Checked = False
+                ElseIf TypeOf wChildControl Is WebControls.Label Then
+                    'ラベル
+                    If LCase(Mid(CType(wChildControl, WebControls.Label).ID, 1, LenB("lablel"))) = "label" Then
+                        'ID頭が「Label」の場合をのぞく
+                    Else
+                        CType(wChildControl, WebControls.Label).Text = ""
                     End If
-                Next
-            End If
-        Next
+                End If
+            Next wChildControl
+        End If
     End Sub
 
     '--------------------------------------------------------------

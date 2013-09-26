@@ -10,7 +10,7 @@
 					<tr>
 						<td align="left" colspan="2">
 							企画担当者
-							<asp:TextBox ID="KIKAKU_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
+							<asp:TextBox ID="KIKAKU_TANTO_ROMA" runat="server" Width="230px" TextMode="MultiLine"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							手配担当者
 							<asp:TextBox ID="TEHAI_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>

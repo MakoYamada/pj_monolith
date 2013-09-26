@@ -2,11 +2,11 @@
 Public Class MessageDef
 
     Public Class [Error]
-        Public Const SecurityCheck As String = "入力欄に正しくない文字が入力されています。「;」「--」「*」「%」「?」「=」「<」「>」は使用できません。"
+        'Public Const SecurityCheck As String = "入力欄に正しくない文字が入力されています。「;」「--」「*」「%」「?」「=」「<」「>」は使用できません。"
+        Public Const SecurityCheck As String = "以下の文字は使用できません。\n\n「\""」\n改行"
         Public Const Login As String = "入力されたログインID、パスワードは登録されていません。"
         Public Const MustInput_Kotsu As String = "公共交通手配がチェックされています。手配内容を入力してください。"
         Public Const MustInput_Joken As String = "検索条件を指定してください。"
-        Public Const GMOErr As String = "入力されたカード番号はご利用頂けません。入力内容を再度ご確認ください。"
         Public Const InvalidTime As String = "時間は半角数字4桁で入力してください。：は不要です。"
 
         '必須        Public Shared Function MustInput(ByVal ItemName As String) As String

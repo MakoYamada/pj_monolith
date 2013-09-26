@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<td nowrap="nowrap" align="left">
-				<table style="margin-top: 10px; width: 940px;" cellspacing="0" border="0">
+				<table style="width: 940px; border: 1px solid #738891;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 							■ 講演会情報
@@ -111,8 +111,6 @@
 							</table>
 						</td>
 					</tr>
-				</table>
-				<table cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left">
 							<table border="0" cellpadding="1" cellspacing="2">
@@ -153,12 +151,6 @@
 							</table>
 						</td>
 					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<table style="margin-top: 10px; width: 940px;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 							■ 講演会 企画担当者
@@ -241,12 +233,6 @@
 							</table>
 						</td>
 					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<table style="margin-top: 10px; width: 940px;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 							■ 講演会 手配担当者
@@ -329,12 +315,6 @@
 							</table>
 						</td>
 					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<table style="margin-top: 10px; width: 940px;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 							■ 概要
@@ -378,12 +358,6 @@
 							</table>
 						</td>
 					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<table style="margin-top: 10px; width: 940px;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 							■ 会場
@@ -585,7 +559,7 @@
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
 													<asp:TextBox ID="ANS_SHISETSU_NAME" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" Width="650px"></asp:TextBox>
 													&nbsp;
-													<asp:Button ID="BtnHotelKensaku" runat="server" Text="検索" Width="50px" CssClass="ButtonList" />
+													<asp:Button ID="BtnShisetsuKensaku" runat="server" Text="検索" Width="50px" CssClass="ButtonList" />
 												</td>
 											</tr>
 											<tr>
@@ -677,11 +651,13 @@
 		<tr>
 			<td nowrap="nowrap" align="left">
 				<div class="FontSize1" style="height: 10px;"></div>
-				<table cellspacing="0" cellpadding="0" border="0" class="style3">
-					<tr style="height: 36px; width: 100%;">
+				<table cellspacing="0" cellpadding="0" border="0" style="width: 940px;">
+					<tr style="height: 36px;">
 						<td nowrap="nowrap" align="left">
 							<asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" />
 							<asp:Button ID="BtnPrint" runat="server" Width="150px" Text="手配書印刷" CssClass="Button" />
+						</td>
+						<td nowrap="nowrap" align="right">
 							<asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
 							<asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" CssClass="Button" />
 							<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="ButtonCancel" />

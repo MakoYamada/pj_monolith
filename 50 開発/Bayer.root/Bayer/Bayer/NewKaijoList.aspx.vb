@@ -46,6 +46,7 @@ Partial Public Class NewKaijoList
 
         'マスターページ設定
         With Me.Master
+            .HideLoginUser = True   'QQQ
             .PageTitle = "【新着】会場見積依頼"
         End With
 

@@ -2404,7 +2404,7 @@ Public Class SQL
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE MS_SHISETSU.STOP_FLG<>'1'"
+            strSQL &= " WHERE ISNULL(MS_SHISETSU.STOP_FLG,'')<>'1'"
 
             If Trim(Joken.ADDRESS1) <> "" Then
                 strSQL &= " AND MS_SHISETSU.ADDRESS1='" & CmnDb.SqlString(Joken.ADDRESS1) & "'"

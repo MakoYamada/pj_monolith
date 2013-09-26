@@ -538,13 +538,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_SHISETSU_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnHotelKensaku コントロール。
+    '''BtnShisetsuKensaku コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnHotelKensaku As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnShisetsuKensaku As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''ANS_SHISETSU_ADDRESS コントロール。

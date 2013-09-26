@@ -574,28 +574,38 @@ Public Class CmnCheck
     End Function
 
     'フォームの全テキストボックスの値をチェック(セキュリティ対策)
-    Public Shared Function IsSecurityOK(ByVal WebForm As Page) As Boolean
-        For Each wPageControl As Control In WebForm.Controls
-            If wPageControl.Controls.Count > 0 Then
-                For Each wControl As Control In wPageControl.Controls
-                    If TypeOf wControl Is WebControls.TextBox Then
-                        '入力禁止文字チェック
-                        If InStr(CType(wControl, WebControls.TextBox).Text, ";") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, "--") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, "*") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, "%") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, "?") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, "=") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, "<") > 0 OrElse _
-                           InStr(CType(wControl, WebControls.TextBox).Text, ">") > 0 Then
-                            Return False
-                        End If
-                    End If
-                Next
-            End If
-        Next
-        Return True
+    Public Shared Function IsSecurityOK(ByVal WebForm As Control) As Boolean
+        Dim wFlag As Boolean = True
+        IsSecurityOK2(WebForm, wFlag)
+        Return wFlag
     End Function
+    Public Shared Sub IsSecurityOK2(ByVal wControl As Control, ByRef wFlag As Boolean)
+        If wFlag = False Then Exit Sub
+        If wControl.HasControls Then
+            For Each wChildControl As Control In wControl.Controls
+                IsSecurityOK2(wChildControl, wFlag)        '再帰的に繰り返す
+                If TypeOf wChildControl Is WebControls.TextBox Then
+                    '入力禁止文字チェック
+                    'If InStr(CType(wchildControl, WebControls.TextBox).Text, ";") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "--") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "*") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "%") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "?") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "=") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "<") > 0 OrElse _
+                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, ">") > 0 Then
+                    If InStr(CType(wChildControl, WebControls.TextBox).Text, """") > 0 Then
+                        wFlag = False
+                        Exit Sub
+                    End If
+                    If CType(wChildControl, WebControls.TextBox).Text.Contains(Environment.NewLine) Then
+                        wFlag = False
+                        Exit Sub
+                    End If
+                End If
+            Next wChildControl
+        End If
+    End Sub
 
     '入力/選択/チェック されていたらTrueを返す
     Public Shared Function IsInput(ByVal Data As String) As Boolean
