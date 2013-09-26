@@ -2765,6 +2765,14 @@ Public Class SQL
         & " MS_CODE.CODE" _
         & ",MS_CODE.DATA_ID"
 
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function byCODE(ByVal CODE As String) As String
             Dim strSQL As String = SQL_SELECT
 
