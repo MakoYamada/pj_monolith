@@ -3,7 +3,7 @@ Imports AppLib
 Public Class MyModule
 
     'ページアクセス時のチェック
-    Public Shared Function IsPageOK(ByVal CheckUrlReferror As Boolean, ByVal LoginID As String, ByVal WebForm As System.Web.UI.Page, Optional ByVal AdminOnly As Boolean = True) As Boolean
+    Public Shared Function IsPageOK(ByVal CheckUrlReferror As Boolean, ByVal LoginID As String, ByVal WebForm As WebBase, Optional ByVal AdminOnly As Boolean = True) As Boolean
         'URL直打ちチェック
         If CheckUrlReferror = True Then
             If System.Web.HttpContext.Current.Request.UrlReferrer Is Nothing Then
@@ -16,6 +16,36 @@ Public Class MyModule
         If IsNothing(LoginID) = True OrElse Trim(LoginID) = "" Then
             System.Web.HttpContext.Current.Response.Redirect(URL.TimeOut)
             Return False
+        End If
+
+        'コードマスタ
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wFlag As Boolean = False
+        Try
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            If IsNothing(MS_CODE) Then wFlag = True
+        Catch ex As Exception
+            wFlag = False
+        End Try
+        If wFlag = True Then
+            'Nothingの場合、コードマスタ再取得
+            MS_CODE = New List(Of TableDef.MS_CODE.DataStruct)
+            Dim strSQL As String = SQL.MS_CODE.AllData()
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            CmnDb.DbOpen(WebForm.DbConnection)
+            RsData = CmnDb.Read(strSQL, WebForm.DbConnection)
+            While RsData.Read()
+                Dim MS_CODE_Item As New TableDef.MS_CODE.DataStruct
+                With MS_CODE_Item
+                    .CODE = CmnDb.DbData(TableDef.MS_CODE.Column.CODE, RsData)
+                    .DATA_ID = CmnDb.DbData(TableDef.MS_CODE.Column.DATA_ID, RsData)
+                    .DISP_VALUE = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
+                    .DISP_TEXT = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_TEXT, RsData)
+                End With
+                MS_CODE.Add(MS_CODE_Item)
+            End While
+            RsData.Close()
+            System.Web.HttpContext.Current.Session.Item(SessionDef.MS_CODE) = MS_CODE
         End If
 
         Return True

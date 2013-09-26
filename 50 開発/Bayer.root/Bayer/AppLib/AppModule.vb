@@ -1101,20 +1101,34 @@ Public Class AppModule
     End Function
 
     '【依頼】手配ステータス
-    Public Shared Function GetName_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String) As String
-        Select Case REQ_STATUS_TEHAI
-            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.NewRequest, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
-                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
-            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Change, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
-                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
-            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Cancel, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel
-                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel
-            Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.After, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After
-                Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After
+    Public Shared Function GetName_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False) As String
+        If KAIJO = False Then
+            Select Case REQ_STATUS_TEHAI
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
 
-            Case Else
-                Return ""
-        End Select
+                Case Else
+                    Return ""
+            End Select
+        Else
+            Select Case REQ_STATUS_TEHAI
+                Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.NewRequest, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
+                    Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
+                Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Change, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
+                    Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
+                Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Cancel, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel
+                    Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel
+                Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.After, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After
+                    Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After
+
+                Case Else
+                    Return ""
+            End Select
+        End If
     End Function
 
     '【回答】手配ステータス
@@ -1161,15 +1175,16 @@ Public Class AppModule
 
     'DR性別
     Public Shared Function GetName_DR_SEX(ByVal DR_SEX As String) As String
-        Select Case DR_SEX
-            Case AppConst.KOTSUHOTEL.SEX.Code.Male, AppConst.KOTSUHOTEL.SEX.Name.Male
-                Return AppConst.KOTSUHOTEL.SEX.Name.Male
-            Case AppConst.KOTSUHOTEL.SEX.Code.Female, AppConst.KOTSUHOTEL.SEX.Name.Female
-                Return AppConst.KOTSUHOTEL.SEX.Name.Female
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEX AndAlso MS_CODE(wCnt).DISP_VALUE = DR_SEX Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     'DCF施設コード
@@ -1189,7 +1204,16 @@ Public Class AppModule
 
     '参加者役割
     Public Shared Function GetName_DR_YAKUWARI(ByVal DR_YAKUWARI As String) As String
-        Return DR_YAKUWARI
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.DR_YAKUWARI AndAlso MS_CODE(wCnt).DISP_VALUE = DR_YAKUWARI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     '参加／不参加
@@ -1282,19 +1306,16 @@ Public Class AppModule
 
     '会合種別
     Public Shared Function GetName_KOUENKAI_KUBUN(ByVal KOUENKAI_KUBUN As String) As String
-        Select Case KOUENKAI_KUBUN
-            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.KouenKai, AppConst.KAIJO.KOUENKAI_KUBUN.Name.KouenKai
-                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.KouenKai
-            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.SetsumeiKai, AppConst.KAIJO.KOUENKAI_KUBUN.Name.SetsumeiKai
-                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.SetsumeiKai
-            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.GairaiKoshi, AppConst.KAIJO.KOUENKAI_KUBUN.Name.GairaiKoshi
-                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.GairaiKoshi
-            Case AppConst.KAIJO.KOUENKAI_KUBUN.Code.Other, AppConst.KAIJO.KOUENKAI_KUBUN.Name.Other
-                Return AppConst.KAIJO.KOUENKAI_KUBUN.Name.Other
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOUENKAI_KUBUN AndAlso MS_CODE(wCnt).DISP_VALUE = KOUENKAI_KUBUN Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     'CM承認者（氏名）
@@ -1352,17 +1373,16 @@ Public Class AppModule
 
     '宿泊ホテル喫煙（依頼）
     Public Shared Function GetName_REQ_HOTEL_SMOKING(ByVal REQ_HOTEL_SMOKING As String) As String
-        Select Case REQ_HOTEL_SMOKING
-            Case AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Code.No, AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Name.No
-                Return AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Name.No
-            Case AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Code.Deodorant, AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Name.Deodorant
-                Return AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Name.Deodorant
-            Case AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Code.Yes, AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Name.Yes
-                Return AppConst.KOTSUHOTEL.REQ_HOTEL_SMOKING.Name.Yes
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.REQ_HOTEL_SMOKING AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_HOTEL_SMOKING Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     '宿泊備考（依頼）
@@ -1422,32 +1442,30 @@ Public Class AppModule
 
     '宿泊部屋タイプ（回答）
     Public Shared Function GetName_ANS_ROOM_TYPE(ByVal ANS_ROOM_TYPE As String) As String
-        Select Case ANS_ROOM_TYPE
-            Case AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Code.Single, AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Single
-                Return AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Single
-            Case AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Code.Twin, AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Twin
-                Return AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Twin
-            Case AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Code.Triple, AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Triple
-                Return AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Triple
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ROOM_TYPE AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_ROOM_TYPE Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     '宿泊ホテル喫煙（回答）
     Public Shared Function GetName_ANS_HOTEL_SMOKING(ByVal ANS_HOTEL_SMOKING As String) As String
-        Select Case ANS_HOTEL_SMOKING
-            Case AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Code.No, AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.No
-                Return AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.No
-            Case AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Code.Deodorant, AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.Deodorant
-                Return AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.Deodorant
-            Case AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Code.Yes, AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.Yes
-                Return AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.Yes
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_HOTEL_SMOKING AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_HOTEL_SMOKING Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     '宿泊備考（回答）
@@ -1515,21 +1533,16 @@ Public Class AppModule
 
     '往路：交通機関
     Public Shared Function GetName_REQ_O_KOTSUKIKAN(ByVal REQ_O_KOTSUKIKAN As String) As String
-        Select Case REQ_O_KOTSUKIKAN
-            Case AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Code.JR, AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.JR
-                Return AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.JR
-            Case AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Code.Air, AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Air
-                Return AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Air
-            Case AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Code.Railway, AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Railway
-                Return AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Railway
-            Case AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Code.Ship, AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Ship
-                Return AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Ship
-            Case AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Code.Bus, AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Bus
-                Return AppConst.KOTSUHOTEL.REQ_O_KOTSUKIKAN.Name.Bus
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_KOTSUKIKAN Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_REQ_O_KOTSUKIKAN_1(ByVal REQ_O_KOTSUKIKAN_1 As String) As String
         Return GetName_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_1)
@@ -1669,23 +1682,16 @@ Public Class AppModule
 
     '往路：座席区分
     Public Shared Function GetName_REQ_O_SEAT(ByVal REQ_O_SEAT As String) As String
-        Select Case REQ_O_SEAT
-            Case AppConst.KOTSUHOTEL.REQ_O_SEAT.Code.Reserved, AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.Reserved
-                Return AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.Reserved
-            Case AppConst.KOTSUHOTEL.REQ_O_SEAT.Code.Green, AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.Green
-                Return AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.Green
-            Case AppConst.KOTSUHOTEL.REQ_O_SEAT.Code.ClassJ, AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.ClassJ
-                Return AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.ClassJ
-            Case AppConst.KOTSUHOTEL.REQ_O_SEAT.Code.Premium, AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.Premium
-                Return AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.Premium
-            Case AppConst.KOTSUHOTEL.REQ_O_SEAT.Code.FirstClass, AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.FirstClass
-                Return AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.FirstClass
-            Case AppConst.KOTSUHOTEL.REQ_O_SEAT.Code.GranClass, AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.GranClass
-                Return AppConst.KOTSUHOTEL.REQ_O_SEAT.Name.GranClass
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_SEAT Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_REQ_O_SEAT_1(ByVal REQ_O_SEAT_1 As String) As String
         Return GetName_REQ_O_SEAT(REQ_O_SEAT_1)
@@ -1701,6 +1707,35 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_REQ_O_SEAT_5(ByVal REQ_O_SEAT_5 As String) As String
         Return GetName_REQ_O_SEAT(REQ_O_SEAT_5)
+    End Function
+
+    '往路：座席希望
+    Public Shared Function GetName_REQ_O_SEAT_KIBOU(ByVal REQ_O_SEAT_KIBOU As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_SEAT_KIBOU Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+    Public Shared Function GetName_REQ_O_SEAT_KIBOU_1(ByVal REQ_O_SEAT_KIBOU_1 As String) As String
+        Return GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU_1)
+    End Function
+    Public Shared Function GetName_REQ_O_SEAT_KIBOU_2(ByVal REQ_O_SEAT_KIBOU_2 As String) As String
+        Return GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU_2)
+    End Function
+    Public Shared Function GetName_REQ_O_SEAT_KIBOU_3(ByVal REQ_O_SEAT_KIBOU_3 As String) As String
+        Return GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU_3)
+    End Function
+    Public Shared Function GetName_REQ_O_SEAT_KIBOU_4(ByVal REQ_O_SEAT_KIBOU_4 As String) As String
+        Return GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU_4)
+    End Function
+    Public Shared Function GetName_REQ_O_SEAT_KIBOU_5(ByVal REQ_O_SEAT_KIBOU_5 As String) As String
+        Return GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU_5)
     End Function
 
     '往路：航空搭乗者年齢（年齢）
@@ -1763,7 +1798,16 @@ Public Class AppModule
 
     '往路：交通機関（回答）
     Public Shared Function GetName_ANS_O_KOTSUKIKAN(ByVal ANS_O_KOTSUKIKAN As String) As String
-        Return ANS_O_KOTSUKIKAN
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_O_KOTSUKIKAN Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_ANS_O_KOTSUKIKAN_1(ByVal ANS_O_KOTSUKIKAN_1 As String) As String
         Return GetName_ANS_O_KOTSUKIKAN(ANS_O_KOTSUKIKAN_1)
@@ -1903,23 +1947,16 @@ Public Class AppModule
 
     '往路：座席区分
     Public Shared Function GetName_ANS_O_SEAT(ByVal ANS_O_SEAT As String) As String
-        Select Case ANS_O_SEAT
-            Case AppConst.KOTSUHOTEL.ANS_O_SEAT.Code.Reserved, AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.Reserved
-                Return AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.Reserved
-            Case AppConst.KOTSUHOTEL.ANS_O_SEAT.Code.Green, AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.Green
-                Return AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.Green
-            Case AppConst.KOTSUHOTEL.ANS_O_SEAT.Code.ClassJ, AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.ClassJ
-                Return AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.ClassJ
-            Case AppConst.KOTSUHOTEL.ANS_O_SEAT.Code.Premium, AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.Premium
-                Return AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.Premium
-            Case AppConst.KOTSUHOTEL.ANS_O_SEAT.Code.FirstClass, AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.FirstClass
-                Return AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.FirstClass
-            Case AppConst.KOTSUHOTEL.ANS_O_SEAT.Code.GranClass, AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.GranClass
-                Return AppConst.KOTSUHOTEL.ANS_O_SEAT.Name.GranClass
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_O_SEAT Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_ANS_O_SEAT_1(ByVal ANS_O_SEAT_1 As String) As String
         Return GetName_ANS_O_SEAT(ANS_O_SEAT_1)
@@ -1935,6 +1972,35 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_ANS_O_SEAT_5(ByVal ANS_O_SEAT_5 As String) As String
         Return GetName_ANS_O_SEAT(ANS_O_SEAT_5)
+    End Function
+
+    '往路：座席希望
+    Public Shared Function GetName_ANS_O_SEAT_KIBOU(ByVal ANS_O_SEAT_KIBOU As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_O_SEAT_KIBOU Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+    Public Shared Function GetName_ANS_O_SEAT_KIBOU_1(ByVal ANS_O_SEAT_KIBOU_1 As String) As String
+        Return GetName_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_1)
+    End Function
+    Public Shared Function GetName_ANS_O_SEAT_KIBOU_2(ByVal ANS_O_SEAT_KIBOU_2 As String) As String
+        Return GetName_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_2)
+    End Function
+    Public Shared Function GetName_ANS_O_SEAT_KIBOU_3(ByVal ANS_O_SEAT_KIBOU_3 As String) As String
+        Return GetName_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_3)
+    End Function
+    Public Shared Function GetName_ANS_O_SEAT_KIBOU_4(ByVal ANS_O_SEAT_KIBOU_4 As String) As String
+        Return GetName_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_4)
+    End Function
+    Public Shared Function GetName_ANS_O_SEAT_KIBOU_5(ByVal ANS_O_SEAT_KIBOU_5 As String) As String
+        Return GetName_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_5)
     End Function
 
     '復路：交通手配
@@ -1997,21 +2063,16 @@ Public Class AppModule
 
     '復路：交通機関
     Public Shared Function GetName_REQ_F_KOTSUKIKAN(ByVal REQ_F_KOTSUKIKAN As String) As String
-        Select Case REQ_F_KOTSUKIKAN
-            Case AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Code.JR, AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.JR
-                Return AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.JR
-            Case AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Code.Air, AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Air
-                Return AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Air
-            Case AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Code.Railway, AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Railway
-                Return AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Railway
-            Case AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Code.Ship, AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Ship
-                Return AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Ship
-            Case AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Code.Bus, AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Bus
-                Return AppConst.KOTSUHOTEL.REQ_F_KOTSUKIKAN.Name.Bus
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_F_KOTSUKIKAN Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_REQ_F_KOTSUKIKAN_1(ByVal REQ_F_KOTSUKIKAN_1 As String) As String
         Return GetName_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_1)
@@ -2151,23 +2212,16 @@ Public Class AppModule
 
     '復路：座席区分
     Public Shared Function GetName_REQ_F_SEAT(ByVal REQ_F_SEAT As String) As String
-        Select Case REQ_F_SEAT
-            Case AppConst.KOTSUHOTEL.REQ_F_SEAT.Code.Reserved, AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.Reserved
-                Return AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.Reserved
-            Case AppConst.KOTSUHOTEL.REQ_F_SEAT.Code.Green, AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.Green
-                Return AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.Green
-            Case AppConst.KOTSUHOTEL.REQ_F_SEAT.Code.ClassJ, AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.ClassJ
-                Return AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.ClassJ
-            Case AppConst.KOTSUHOTEL.REQ_F_SEAT.Code.Premium, AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.Premium
-                Return AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.Premium
-            Case AppConst.KOTSUHOTEL.REQ_F_SEAT.Code.FirstClass, AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.FirstClass
-                Return AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.FirstClass
-            Case AppConst.KOTSUHOTEL.REQ_F_SEAT.Code.GranClass, AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.GranClass
-                Return AppConst.KOTSUHOTEL.REQ_F_SEAT.Name.GranClass
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_F_SEAT Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_REQ_F_SEAT_1(ByVal REQ_F_SEAT_1 As String) As String
         Return GetName_REQ_F_SEAT(REQ_F_SEAT_1)
@@ -2183,6 +2237,35 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_REQ_F_SEAT_5(ByVal REQ_F_SEAT_5 As String) As String
         Return GetName_REQ_F_SEAT(REQ_F_SEAT_5)
+    End Function
+
+    '復路：座席希望
+    Public Shared Function GetName_REQ_F_SEAT_KIBOU(ByVal REQ_F_SEAT_KIBOU As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_F_SEAT_KIBOU Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+    Public Shared Function GetName_REQ_F_SEAT_KIBOU_1(ByVal REQ_F_SEAT_KIBOU_1 As String) As String
+        Return GetName_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU_1)
+    End Function
+    Public Shared Function GetName_REQ_F_SEAT_KIBOU_2(ByVal REQ_F_SEAT_KIBOU_2 As String) As String
+        Return GetName_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU_2)
+    End Function
+    Public Shared Function GetName_REQ_F_SEAT_KIBOU_3(ByVal REQ_F_SEAT_KIBOU_3 As String) As String
+        Return GetName_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU_3)
+    End Function
+    Public Shared Function GetName_REQ_F_SEAT_KIBOU_4(ByVal REQ_F_SEAT_KIBOU_4 As String) As String
+        Return GetName_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU_4)
+    End Function
+    Public Shared Function GetName_REQ_F_SEAT_KIBOU_5(ByVal REQ_F_SEAT_KIBOU_5 As String) As String
+        Return GetName_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU_5)
     End Function
 
     '復路：航空搭乗者年齢（年齢）
@@ -2245,7 +2328,16 @@ Public Class AppModule
 
     '復路：交通機関（回答）
     Public Shared Function GetName_ANS_F_KOTSUKIKAN(ByVal ANS_F_KOTSUKIKAN As String) As String
-        Return ANS_F_KOTSUKIKAN
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_F_KOTSUKIKAN Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_ANS_F_KOTSUKIKAN_1(ByVal ANS_F_KOTSUKIKAN_1 As String) As String
         Return GetName_ANS_F_KOTSUKIKAN(ANS_F_KOTSUKIKAN_1)
@@ -2385,23 +2477,16 @@ Public Class AppModule
 
     '復路：座席区分
     Public Shared Function GetName_ANS_F_SEAT(ByVal ANS_F_SEAT As String) As String
-        Select Case ANS_F_SEAT
-            Case AppConst.KOTSUHOTEL.ANS_F_SEAT.Code.Reserved, AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.Reserved
-                Return AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.Reserved
-            Case AppConst.KOTSUHOTEL.ANS_F_SEAT.Code.Green, AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.Green
-                Return AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.Green
-            Case AppConst.KOTSUHOTEL.ANS_F_SEAT.Code.ClassJ, AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.ClassJ
-                Return AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.ClassJ
-            Case AppConst.KOTSUHOTEL.ANS_F_SEAT.Code.Premium, AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.Premium
-                Return AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.Premium
-            Case AppConst.KOTSUHOTEL.ANS_F_SEAT.Code.FirstClass, AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.FirstClass
-                Return AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.FirstClass
-            Case AppConst.KOTSUHOTEL.ANS_F_SEAT.Code.GranClass, AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.GranClass
-                Return AppConst.KOTSUHOTEL.ANS_F_SEAT.Name.GranClass
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_F_SEAT Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
     Public Shared Function GetName_ANS_F_SEAT_1(ByVal ANS_F_SEAT_1 As String) As String
         Return GetName_ANS_F_SEAT(ANS_F_SEAT_1)
@@ -2417,6 +2502,35 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_ANS_F_SEAT_5(ByVal ANS_F_SEAT_5 As String) As String
         Return GetName_ANS_F_SEAT(ANS_F_SEAT_5)
+    End Function
+
+    '復路：座席希望
+    Public Shared Function GetName_ANS_F_SEAT_KIBOU(ByVal ANS_F_SEAT_KIBOU As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_F_SEAT_KIBOU Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+    Public Shared Function GetName_ANS_F_SEAT_KIBOU_1(ByVal ANS_F_SEAT_KIBOU_1 As String) As String
+        Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_1)
+    End Function
+    Public Shared Function GetName_ANS_F_SEAT_KIBOU_2(ByVal ANS_F_SEAT_KIBOU_2 As String) As String
+        Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_2)
+    End Function
+    Public Shared Function GetName_ANS_F_SEAT_KIBOU_3(ByVal ANS_F_SEAT_KIBOU_3 As String) As String
+        Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_3)
+    End Function
+    Public Shared Function GetName_ANS_F_SEAT_KIBOU_4(ByVal ANS_F_SEAT_KIBOU_4 As String) As String
+        Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_4)
+    End Function
+    Public Shared Function GetName_ANS_F_SEAT_KIBOU_5(ByVal ANS_F_SEAT_KIBOU_5 As String) As String
+        Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_5)
     End Function
 
     '往路備考（依頼）
@@ -3097,15 +3211,58 @@ Public Class AppModule
 
     'MR性別
     Public Shared Function GetName_MR_SEX(ByVal MR_SEX As String) As String
-        Select Case MR_SEX
-            Case AppConst.KOTSUHOTEL.SEX.Code.Male, AppConst.KOTSUHOTEL.SEX.Name.Male
-                Return AppConst.KOTSUHOTEL.SEX.Name.Male
-            Case AppConst.KOTSUHOTEL.SEX.Code.Female, AppConst.KOTSUHOTEL.SEX.Name.Female
-                Return AppConst.KOTSUHOTEL.SEX.Name.Female
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEX AndAlso MS_CODE(wCnt).DISP_VALUE = MR_SEX Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
 
-            Case Else
-                Return ""
-        End Select
+    '社員用往路臨席希望（依頼）
+    Public Shared Function GetName_REQ_MR_O_TEHAI(ByVal REQ_MR_O_TEHAI As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_O_TEHAI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    '社員用復路臨席希望（依頼）
+    Public Shared Function GetName_REQ_MR_F_TEHAI(ByVal REQ_MR_F_TEHAI As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_F_TEHAI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    '社員用宿泊（禁煙・喫煙）
+    Public Shared Function GetName_REQ_MR_HOTEL_SMOKING(ByVal REQ_MR_HOTEL_SMOKING As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_HOTEL_SMOKING AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_HOTEL_SMOKING Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     'MR年齢
@@ -3531,17 +3688,16 @@ Public Class AppModule
 
     '講演会場　レイアウト
     Public Shared Function GetName_KOUEN_KAIJO_LAYOUT(ByVal KOUEN_KAIJO_LAYOUT As String) As String
-        Select Case KOUEN_KAIJO_LAYOUT
-            Case AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Code.School, AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Name.School
-                Return AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Name.School
-            Case AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Code.Konoji, AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Name.Konoji
-                Return AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Name.Konoji
-            Case AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Code.Other, AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Name.Other
-                Return AppConst.KAIJO.KOUEN_KAIJO_LAYOUT.Name.Other
-
-            Case Else
-                Return ""
-        End Select
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOUEN_KAIJO_LAYOUT AndAlso MS_CODE(wCnt).DISP_VALUE = KOUEN_KAIJO_LAYOUT Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
     End Function
 
     '意見交換会場　要・不要
@@ -4675,16 +4831,50 @@ Public Class AppModule
         End With
     End Sub
 
+    '【依頼】手配ステータス
+    Public Shared Sub SetDropDownList_REQ_STATUS_TEHAI(ByRef REQ_STATUS_TEHAI As DropDownList, Optional ByVal KAIJO As Boolean = False)
+        With REQ_STATUS_TEHAI
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            If KAIJO = False Then
+                '宿泊交通
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel))
+            Else
+                '会場
+                .Items.Add(New ListItem(AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest, AppConst.KAIJO.REQ_STATUS_TEHAI.Code.NewRequest))
+                .Items.Add(New ListItem(AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change, AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Change))
+                .Items.Add(New ListItem(AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Cancel, AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Cancel))
+                .Items.Add(New ListItem(AppConst.KAIJO.REQ_STATUS_TEHAI.Name.After, AppConst.KAIJO.REQ_STATUS_TEHAI.Code.After))
+            End If
+        End With
+    End Sub
+
     '【回答】手配ステータス
-    Public Shared Sub SetDropDownList_ANS_STATUS_TEHAI(ByRef ANS_STATUS_TEHAI As DropDownList)
+    Public Shared Sub SetDropDownList_ANS_STATUS_TEHAI(ByRef ANS_STATUS_TEHAI As DropDownList, Optional ByVal KAIJO As Boolean = False)
         With ANS_STATUS_TEHAI
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
 
-            .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Uketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Uketsuke))
-            .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Prepare, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Prepare))
-            .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.OK, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.OK))
-            .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanEnd, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanEnd))
+            If KAIJO = False Then
+                '宿泊交通
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Uketsuke, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Uketsuke))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Prepare, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Prepare))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK_Daian))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Changed))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NG))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled))
+            Else
+                '会場
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Uketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Uketsuke))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Prepare, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Prepare))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.OK, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.OK))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanEnd, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanEnd))
+            End If
         End With
     End Sub
 
@@ -4706,9 +4896,14 @@ Public Class AppModule
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
 
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Single, AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Code.Single))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Twin, AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Code.Twin))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Name.Triple, AppConst.KOTSUHOTEL.ANS_ROOM_TYPE.Code.Triple))
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ROOM_TYPE Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
         End With
     End Sub
 
@@ -4718,9 +4913,14 @@ Public Class AppModule
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
 
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.No, AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Code.No))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.Deodorant, AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Code.Deodorant))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Name.Yes, AppConst.KOTSUHOTEL.ANS_HOTEL_SMOKING.Code.Yes))
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_HOTEL_SMOKING Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
         End With
     End Sub
 
@@ -4807,17 +5007,20 @@ Public Class AppModule
         SetDropDownList_ANS_O_STATUS(ANS_O_STATUS_5)
     End Sub
 
-    '往路：：交通機関（回答）
+    '往路：交通機関（回答）
     Public Shared Sub SetDropDownList_ANS_O_KOTSUKIKAN(ByRef ANS_O_KOTSUKIKAN As DropDownList)
         With ANS_O_KOTSUKIKAN
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
 
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Name.Air, AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Code.Air))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Name.Railway, AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Code.Railway))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Name.Railway, AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Code.Railway))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Name.Ship, AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Code.Ship))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Name.Bus, AppConst.KOTSUHOTEL.ANS_O_KOTSUKIKAN.Code.Bus))
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
         End With
     End Sub
     Public Shared Sub SetDropDownList_ANS_O_KOTSUKIKAN_1(ByRef ANS_O_KOTSUKIKAN_1 As DropDownList)
@@ -4834,6 +5037,70 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetDropDownList_ANS_O_KOTSUKIKAN_5(ByRef ANS_O_KOTSUKIKAN_5 As DropDownList)
         SetDropDownList_ANS_O_KOTSUKIKAN(ANS_O_KOTSUKIKAN_5)
+    End Sub
+
+    '往路：座席区分（回答）
+    Public Shared Sub SetDropDownList_ANS_O_SEAT(ByRef ANS_O_SEAT As DropDownList)
+        With ANS_O_SEAT
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_1(ByRef ANS_O_SEAT_1 As DropDownList)
+        SetDropDownList_ANS_O_SEAT(ANS_O_SEAT_1)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_2(ByRef ANS_O_SEAT_2 As DropDownList)
+        SetDropDownList_ANS_O_SEAT(ANS_O_SEAT_2)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_3(ByRef ANS_O_SEAT_3 As DropDownList)
+        SetDropDownList_ANS_O_SEAT(ANS_O_SEAT_3)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_4(ByRef ANS_O_SEAT_4 As DropDownList)
+        SetDropDownList_ANS_O_SEAT(ANS_O_SEAT_4)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_5(ByRef ANS_O_SEAT_5 As DropDownList)
+        SetDropDownList_ANS_O_SEAT(ANS_O_SEAT_5)
+    End Sub
+
+    '往路：座席希望（回答）
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU(ByRef ANS_O_SEAT_KIBOU As DropDownList)
+        With ANS_O_SEAT_KIBOU
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU_1(ByRef ANS_O_SEAT_KIBOU_1 As DropDownList)
+        SetDropDownList_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_1)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU_2(ByRef ANS_O_SEAT_KIBOU_2 As DropDownList)
+        SetDropDownList_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_2)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU_3(ByRef ANS_O_SEAT_KIBOU_3 As DropDownList)
+        SetDropDownList_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_3)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU_4(ByRef ANS_O_SEAT_KIBOU_4 As DropDownList)
+        SetDropDownList_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_4)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU_5(ByRef ANS_O_SEAT_KIBOU_5 As DropDownList)
+        SetDropDownList_ANS_O_SEAT_KIBOU(ANS_O_SEAT_KIBOU_5)
     End Sub
 
     '復路：ステータス（回答）
@@ -4863,17 +5130,20 @@ Public Class AppModule
         SetDropDownList_ANS_F_STATUS(ANS_F_STATUS_5)
     End Sub
 
-    '復路：：交通機関（回答）
+    '復路：交通機関（回答）
     Public Shared Sub SetDropDownList_ANS_F_KOTSUKIKAN(ByRef ANS_F_KOTSUKIKAN As DropDownList)
         With ANS_F_KOTSUKIKAN
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
 
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Name.Air, AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Code.Air))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Name.Railway, AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Code.Railway))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Name.Railway, AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Code.Railway))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Name.Ship, AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Code.Ship))
-            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Name.Bus, AppConst.KOTSUHOTEL.ANS_F_KOTSUKIKAN.Code.Bus))
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
         End With
     End Sub
     Public Shared Sub SetDropDownList_ANS_F_KOTSUKIKAN_1(ByRef ANS_F_KOTSUKIKAN_1 As DropDownList)
@@ -4890,6 +5160,70 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetDropDownList_ANS_F_KOTSUKIKAN_5(ByRef ANS_F_KOTSUKIKAN_5 As DropDownList)
         SetDropDownList_ANS_F_KOTSUKIKAN(ANS_F_KOTSUKIKAN_5)
+    End Sub
+
+    '復路：座席区分（回答）
+    Public Shared Sub SetDropDownList_ANS_F_SEAT(ByRef ANS_F_SEAT As DropDownList)
+        With ANS_F_SEAT
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_1(ByRef ANS_F_SEAT_1 As DropDownList)
+        SetDropDownList_ANS_F_SEAT(ANS_F_SEAT_1)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_2(ByRef ANS_F_SEAT_2 As DropDownList)
+        SetDropDownList_ANS_F_SEAT(ANS_F_SEAT_2)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_3(ByRef ANS_F_SEAT_3 As DropDownList)
+        SetDropDownList_ANS_F_SEAT(ANS_F_SEAT_3)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_4(ByRef ANS_F_SEAT_4 As DropDownList)
+        SetDropDownList_ANS_F_SEAT(ANS_F_SEAT_4)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_5(ByRef ANS_F_SEAT_5 As DropDownList)
+        SetDropDownList_ANS_F_SEAT(ANS_F_SEAT_5)
+    End Sub
+
+    '復路：座席希望（回答）
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU(ByRef ANS_F_SEAT_KIBOU As DropDownList)
+        With ANS_F_SEAT_KIBOU
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU_1(ByRef ANS_F_SEAT_KIBOU_1 As DropDownList)
+        SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_1)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU_2(ByRef ANS_F_SEAT_KIBOU_2 As DropDownList)
+        SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_2)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU_3(ByRef ANS_F_SEAT_KIBOU_3 As DropDownList)
+        SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_3)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU_4(ByRef ANS_F_SEAT_KIBOU_4 As DropDownList)
+        SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_4)
+    End Sub
+    Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU_5(ByRef ANS_F_SEAT_KIBOU_5 As DropDownList)
+        SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_5)
     End Sub
 
 

@@ -70,18 +70,6 @@ Public Class AppConst
             End Class
         End Class
 
-        Public Class SEX
-            '性別
-            Public Class Code
-                Public Const Male As String = "M"
-                Public Const Female As String = "F"
-            End Class
-            Public Class Name
-                Public Const Male As String = "男性"
-                Public Const Female As String = "女性"
-            End Class
-        End Class
-
         Public Class DR_SANKA
             '参加／不参加
             Public Class Code
@@ -134,39 +122,6 @@ Public Class AppConst
             End Class
         End Class
 
-        Public Class ANS_ROOM_TYPE
-            '宿泊部屋タイプ（回答）
-            Public Class Code
-                Public Const [Single] As String = "51"
-                Public Const Twin As String = "52"
-                Public Const Triple As String = "53"
-            End Class
-            Public Class Name
-                Public Const [Single] As String = "シングル"
-                Public Const Twin As String = "ツイン"
-                Public Const Triple As String = "トリプル"
-            End Class
-        End Class
-
-        Public Class REQ_HOTEL_SMOKING
-            '宿泊ホテル喫煙（依頼）
-            Public Class Code
-                Public Const No As String = "1"
-                Public Const Deodorant As String = "2"
-                Public Const Yes As String = "3"
-            End Class
-            Public Class Name
-                Public Const No As String = "禁煙"
-                Public Const Deodorant As String = "禁煙（消臭対応の可能性があります）"
-                Public Const Yes As String = "喫煙"
-            End Class
-        End Class
-
-        Public Class ANS_HOTEL_SMOKING
-            '宿泊ホテル喫煙（回答）
-            Inherits REQ_HOTEL_SMOKING
-        End Class
-
         Public Class REQ_O_TEHAI
             '往路：交通手配
             Public Class Code
@@ -201,74 +156,6 @@ Public Class AppConst
         Public Class REQ_F_IRAINAIYOU
             '復路：交通依頼内容（依頼）
             Inherits REQ_O_IRAINAIYOU
-        End Class
-
-        Public Class REQ_O_KOTSUKIKAN
-            '往路：交通機関（依頼）
-            Public Class Code
-                Public Const JR As String = "01"
-                Public Const Air As String = "02"
-                Public Const Railway As String = "03"
-                Public Const Ship As String = "04"
-                Public Const Bus As String = "05"
-            End Class
-            Public Class Name
-                Public Const JR As String = "JR"
-                Public Const Air As String = "航空"
-                Public Const Railway As String = "私鉄"
-                Public Const Ship As String = "船舶"
-                Public Const Bus As String = "バス"
-            End Class
-        End Class
-
-        Public Class REQ_F_KOTSUKIKAN
-            '復路：交通機関（依頼）
-            Inherits REQ_O_KOTSUKIKAN
-        End Class
-
-        Public Class ANS_O_KOTSUKIKAN
-            '往路：交通機関（回答）
-            Inherits REQ_O_KOTSUKIKAN
-        End Class
-
-        Public Class ANS_F_KOTSUKIKAN
-            '復路：交通機関（回答）
-            Inherits REQ_F_KOTSUKIKAN
-        End Class
-
-        Public Class REQ_O_SEAT
-            '往路：座席区分（依頼）
-            Public Class Code
-                Public Const Reserved As String = "普通席"
-                Public Const Green As String = "グリーン席"
-                Public Const ClassJ As String = "クラスJ"
-                Public Const Premium As String = "プレミアム"
-                Public Const FirstClass As String = "ファースト"
-                Public Const GranClass As String = "グランクラス"
-            End Class
-            Public Class Name
-                Public Const Reserved As String = "01"
-                Public Const Green As String = "02"
-                Public Const ClassJ As String = "03"
-                Public Const Premium As String = "04"
-                Public Const FirstClass As String = "05"
-                Public Const GranClass As String = "06"
-            End Class
-        End Class
-
-        Public Class REQ_F_SEAT
-            '復路：座席区分（依頼）
-            Inherits REQ_O_SEAT
-        End Class
-
-        Public Class ANS_O_SEAT
-            '往路：座席区分（回答）
-            Inherits REQ_O_SEAT
-        End Class
-
-        Public Class ANS_F_SEAT
-            '復路：座席区分（回答）
-            Inherits REQ_F_SEAT
         End Class
 
         Public Class ANS_O_STATUS
@@ -308,7 +195,7 @@ Public Class AppConst
 
         Public Class STATUS_TEHAI
             '手配ステータス
-             Public Class Code
+            Public Class Code
                 Public Const Tehai As String = "01"
                 Public Const Change As String = "02"
                 Public Const Cancel As String = "03"
@@ -318,21 +205,21 @@ Public Class AppConst
                 Public Const Change As String = "変更"
                 Public Const Cancel As String = "取消"
             End Class
-         End Class
+        End Class
 
         Public Class REQ_STATUS_TEHAI
             '【依頼】手配ステータス
             Public Class Code
-                Public Const NewRequest As String = "01"
-                Public Const Change As String = "02"
-                Public Const Cancel As String = "03"
-                Public Const After As String = "04"
+                Public Const NewRequest As String = "1"
+                Public Const Change As String = "2"
+                Public Const Cancel As String = "3"
+                Public Const After As String = "4"
             End Class
             Public Class Name
-                Public Const NewRequest As String = "受付中"
-                Public Const Change As String = "手配中"
-                Public Const Cancel As String = "手配済"
-                Public Const After As String = "精算済"
+                Public Const NewRequest As String = "新規手配依頼"
+                Public Const Change As String = "変更依頼"
+                Public Const Cancel As String = "取消依頼"
+                Public Const After As String = "事後登録"
             End Class
         End Class
 
@@ -349,22 +236,6 @@ Public Class AppConst
                 Public Const Prepare As String = "手配中"
                 Public Const OK As String = "手配済"
                 Public Const SeisanEnd As String = "精算済"
-            End Class
-        End Class
-
-        Public Class KOUENKAI_KUBUN
-            '会合種別
-            Public Class Code
-                Public Const KouenKai As String = "1"
-                Public Const SetsumeiKai As String = "2"
-                Public Const GairaiKoshi As String = "3"
-                Public Const Other As String = "4"
-            End Class
-            Public Class Name
-                Public Const KouenKai As String = "講演会"
-                Public Const SetsumeiKai As String = "説明会"
-                Public Const GairaiKoshi As String = "外来講師"
-                Public Const Other As String = "その他"
             End Class
         End Class
 
@@ -428,20 +299,21 @@ Public Class AppConst
             End Class
         End Class
 
-        Public Class KOUEN_KAIJO_LAYOUT
-            '世話人会場　要・不要
-            Public Class Code
-                Public Const School As String = "1"
-                Public Const Konoji As String = "2"
-                Public Const Other As String = "3"
-            End Class
-            Public Class Name
-                Public Const School As String = "スクール"
-                Public Const Konoji As String = "コの字"
-                Public Const Other As String = "その他"
-            End Class
-        End Class
+    End Class
 
+    Public Class MS_CODE
+        Public Const SEX As String = "01"                   '性別
+        Public Const KOUENKAI_KUBUN As String = "02"        '会合種別
+        Public Const KOUEN_KAIJO_LAYOUT As String = "03"    'レイアウト
+        Public Const DR_YAKUWARI As String = "04"           '参加者役割
+        Public Const REQ_HOTEL_SMOKING As String = "05"     '依頼：ホテル喫煙
+        Public Const ANS_HOTEL_SMOKING As String = "06"     '回答：ホテル喫煙
+        Public Const KOTSUKIKAN As String = "07"            '交通機関
+        Public Const SEAT As String = "08"                  '座席区分
+        Public Const SEAT_KIBOU As String = "09"            '座席希望
+        Public Const MR_TEHAI As String = "10"              '社員臨席希望
+        Public Const MR_HOTEL_SMOKING As String = "11"      '社員ホテル禁煙
+        Public Const ROOM_TYPE As String = "12"             '宿泊部屋タイプ
     End Class
 
 End Class

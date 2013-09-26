@@ -72,7 +72,7 @@ Partial Public Class NewKaijoList
         'プルダウン設定
         'AppModule.SetDropDownList_BU(Me.BU, MyBase.DbConnection)
         'AppModule.SetDropDownList_AREA(Me.KIKAKU_TANTO_AREA, MyBase.DbConnection)
-        'AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI, MyBase.DbConnection)
+        AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI, True)
 
         'IME設定
         CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
@@ -152,6 +152,7 @@ Partial Public Class NewKaijoList
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
+            e.Row.Cells(CellIndex.REQ_STATUS_TEHAI).Text = AppModule.GetName_REQ_STATUS_TEHAI(e.Row.Cells(CellIndex.REQ_STATUS_TEHAI).Text, True)
             e.Row.Cells(CellIndex.TIME_STAMP).Text = AppModule.GetName_TIME_STAMP(e.Row.Cells(CellIndex.TIME_STAMP).Text)
         End If
     End Sub
