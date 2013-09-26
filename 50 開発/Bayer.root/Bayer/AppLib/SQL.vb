@@ -2390,12 +2390,12 @@ Public Class SQL
 
         Private Const SQL_ORDERBY As String _
         = " ORDER BY" _
-        & " MS_SHISETSU.ID"
+        & " MS_SHISETSU.SYSTEM_ID"
 
-        Public Shared Function byID(ByVal ID As String) As String
+        Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE MS_SHISETSU.ID='" & CmnDb.SqlString(ID) & "'"
+            strSQL &= " WHERE MS_SHISETSU.SYSTEM_ID='" & CmnDb.SqlString(SYSTEM_ID) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
