@@ -3838,8 +3838,10 @@ Public Class AppModule
         End If
         Dim wTo As String = CmnModule.Format_Date(DATE_TO, CmnModule.DateFormatType.YYYYMMDD)
         If IsDate(wTo) Then
-            If Trim(wStr) <> "" Then wStr &= "Å`"
-            wStr &= wTo
+            If wFrom <> wTo Then
+                If Trim(wStr) <> "" Then wStr &= "Å`"
+                wStr &= wTo
+            End If
         End If
         Return wStr
     End Function
