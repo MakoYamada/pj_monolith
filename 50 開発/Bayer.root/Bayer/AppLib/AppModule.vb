@@ -3259,7 +3259,7 @@ Public Class AppModule
     'çuâââÔäJç√ì˙From
     Public Shared Function GetName_FROM_DATE(ByVal FROM_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
-            Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMD)
+            Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
             wStr = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
