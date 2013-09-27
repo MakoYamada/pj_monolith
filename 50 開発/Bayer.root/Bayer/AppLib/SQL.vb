@@ -45,6 +45,96 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT"
+            strSQL &= " TBL_KOUENKAI.*"
+
+            If NewData = True Then
+                '新着
+                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
+                wFlag = True
+            Else
+                '検索
+                strSQL &= " WHERE"
+            End If
+
+            If Trim(Joken.BU) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.BU LIKE '%" & CmnDb.SqlString(Joken.BU) & "%'"                
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.KIKAKU_TANTO_AREA LIKE '%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE '%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.SEIHIN_NAME LIKE '%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.KOUENKAI_NO='" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.KOUENKAI_NAME LIKE '%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.FROM_DATE BETWEEN '" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND '" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.FROM_DATE='" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.FROM_DATE='" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.SEIHIN_NAME LIKE '%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                If wFlag Then strSQL &= " AND"
+                wFlag = True
+                strSQL &= " TBL_KOUENKAI.TTANTO_ID='" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            strSQL &= " ORDER BY"
+            If NewData Then
+                '新着
+                strSQL &= " TBL_KOUENKAI.TIME_STAMP DESC"
+            Else
+                '検索
+                strSQL &= " TBL_KOUENKAI.UPDATE_DATE DESC"
+            End If
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As String
             Dim strSQL As String = ""
 
