@@ -5,27 +5,29 @@ Partial Public Class NewKouenkaiList
     Inherits WebBase
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
-        KIKAKU_TANTO_JIGYOBU
+        BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
         JISSHI_DATE
-        MEETING_NAME
-        TIMESTAMP
-        STATUS_TEHAI
+        KOUENKAI_NAME
+        TIME_STAMP
+        KUBUN
         Button1
-        KOUENKAI_CD
+        KOUENKAI_NO
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        'Session.Item(SessionDef.TBL_DR) = TBL_DR
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.Joken) = Joken
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), AppModule.UserType.Manage, Me)
+        '共通チェック
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納        If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
@@ -48,84 +50,44 @@ Partial Public Class NewKouenkaiList
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
-        'If Not MyModule.IsValidPLACE(Session.Item(SessionDef.PLACE)) Then
-        '    Return False
-        'Else
-        '    PLACE = Session.Item(SessionDef.PLACE)
-        'End If
-        'Try
-        '    Joken = Session.Item(SessionDef.Joken)
-        'Catch ex As Exception
-        '    Joken = Nothing
-        'End Try
-        'Try
-        '    TBL_DR = Session.Item(SessionDef.TBL_DR)
-        '    If TBL_DR Is Nothing Then ReDim TBL_DR(0)
-        'Catch ex As Exception
-        '    ReDim TBL_DR(0)
-        'End Try
+        Try
+            Joken = Session.Item(SessionDef.Joken)
+        Catch ex As Exception
+            Joken = Nothing
+        End Try
+        Try
+            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KAIJO)
+            If TBL_KOUENKAI Is Nothing Then ReDim TBL_KOUENKAI(0)
+        Catch ex As Exception
+            ReDim TBL_KOUENKAI(0)
+        End Try
         Return True
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        AppModule.SetDropDownList_KUBUN(Me.KUBUN)
+
+        'IME設定        CmnModule.SetIme(Me.BU, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.KIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
+
         'クリア
         CmnModule.ClearAllControl(Me)
-
-        Me.LabelNoData.Visible = False
-
     End Sub
 
     '画面項目 表示
     Private Sub SetForm()
-        ''条件
-        'If Session.Item(SessionDef.Search) = CmnConst.Flag.On Then
-        '    Me.DivJoken.Visible = True
-        '    Me.LabelTitle_CountALL.Text = "該当者数："
-        '    Me.LabelTitle_CountPARTY.Visible = False
-        '    Me.CountPARTY.Visible = False
-        '    Me.LabelTitle_CountTEHAI_HOTEL.Visible = False
-        '    Me.CountTEHAI_HOTEL.Visible = False
-        '    Me.LabelTitle_CountTEHAI_KOTSU.Visible = False
-        '    Me.CountTEHAI_KOTSU.Visible = False
-        '    Dim wStr As String = ""
-        '    If Trim(Joken.DR_NAME) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "Dr.氏名＝" & Joken.DR_NAME
-        '    End If
-        '    If Trim(Joken.DATA_NO) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "申込番号＝" & Joken.DATA_NO
-        '    End If
-        '    If Trim(Joken.SHISETSU_NAME) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "施設・病院名＝" & Joken.SHISETSU_NAME
-        '    End If
-        '    If Trim(Joken.MR_NAME) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "登録者氏名＝" & Joken.MR_NAME
-        '    End If
-        '    If Trim(Joken.SHITEN) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "支店＝" & Joken.SHITEN
-        '    End If
-        '    If Trim(Joken.EIGYOSHO) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "営業所＝" & Joken.EIGYOSHO
-        '    End If
-        '    Me.LabelJoken.Text = wStr
-        'Else
-        '    Me.DivJoken.Visible = False
-        '    Me.LabelTitle_CountALL.Text = "登録者数："
-        '    Me.LabelTitle_CountPARTY.Visible = True
-        '    Me.CountPARTY.Visible = True
-        '    Me.LabelTitle_CountTEHAI_HOTEL.Visible = True
-        '    Me.CountTEHAI_HOTEL.Visible = True
-        '    Me.LabelTitle_CountTEHAI_KOTSU.Visible = True
-        '    Me.CountTEHAI_KOTSU.Visible = True
-        'End If
+        'データ取得
+        If Not GetData() Then
+            Me.LabelNoData.Visible = True
+            Me.GrvList.Visible = False
+        Else
+            Me.LabelNoData.Visible = False
+            Me.GrvList.Visible = True
 
-        'DDL
-
+            'グリッドビュー表示
+            SetGridView()
+        End If
     End Sub
 
     'データ取得
@@ -135,17 +97,15 @@ Partial Public Class NewKouenkaiList
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        'If Session.Item(SessionDef.Search) = CmnConst.Flag.On Then
-        '    Joken.PLACE = PLACE
-        '    strSQL = SQL.TBL_DR.Search(Joken)
-        'Else
-        'strSQL = SQL.TBL_KOTSUHOTEL
-        'End If
+        Joken = Nothing
+        Joken.BU = Trim(Me.BU.Text)
+        Joken.AREA = Trim(Me.KIKAKU_TANTO_AREA.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
+        Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.KUBUN)
+
         ReDim TBL_KOUENKAI(wCnt)
 
-        '仮
-        strSQL = "SELECT *,'20130920101000' as timestamp FROM TBL_KOUENKAI"
-
+        strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -179,21 +139,7 @@ Partial Public Class NewKouenkaiList
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String
-        'If Session.Item(SessionDef.Search) = CmnConst.Flag.On Then
-        '    Joken.PLACE = PLACE
-        '    strSQL = SQL.TBL_DR.Search(Joken)
-        'Else
-        '    strSQL = SQL.TBL_DR.SankaData(PLACE)
-        'End If
-
-        '仮
-        strSQL = "SELECT *" _
-                & ",'20130911173000' AS TIMESTAMP" _
-                & " FROM TBL_KOUENKAI"
-
-        'TODO:最新の会場手配情報を持ってくる必要があるかも?
-
+        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -274,19 +220,4 @@ Partial Public Class NewKouenkaiList
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
 
     End Sub
-
-
-    'TEST用
-    'TODO:(交通は1～5のどれかが手配要なら、などを見る必要あり)
-    Private Function GetKigou_TEHAI_HOTEL(ByVal strValue As String) As String
-        Dim strReturn As String = ""
-
-        If strValue = CmnConst.Flag.On Then
-            strReturn = "○"
-        End If
-
-        Return strReturn
-
-    End Function
-
 End Class

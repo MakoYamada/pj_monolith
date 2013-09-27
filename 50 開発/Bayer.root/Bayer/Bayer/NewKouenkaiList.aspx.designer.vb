@@ -16,49 +16,40 @@ Option Explicit On
 Partial Public Class NewKouenkaiList
 
     '''<summary>
-    '''JIGYOBU コントロール。
+    '''BU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JIGYOBU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents BU As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''AREA コントロール。
+    '''KIKAKU_TANTO_AREA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents AREA As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TEHAI_TANTO_NAME コントロール。
+    '''KUBUN コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KUBUN As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''KOUENKAI_NO コントロール。
+    '''KOUENKAI_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MEETING_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MEETING_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnSearch コントロール。
