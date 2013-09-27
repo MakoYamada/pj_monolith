@@ -341,6 +341,7 @@ Public Class CmnModule
         wStr &= Trim(StrConv(inYYYY, VbStrConv.Narrow))
         wStr &= Trim(StrConv(inMM, VbStrConv.Narrow)).PadLeft(2, "0c")
         wStr &= Trim(StrConv(inDD, VbStrConv.Narrow)).PadLeft(2, "0c")
+        If Val(wStr) = 0 Then wStr = ""
         Return wStr
     End Function
 
