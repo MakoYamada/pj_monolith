@@ -5231,7 +5231,16 @@ Public Class AppModule
         SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_5)
     End Sub
 
+    '新着一覧　区分
+    Public Shared Sub SetDropDownList_KUBUN(ByRef KUBUN As DropDownList)
+        With KUBUN
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+            .Items.Add(New ListItem("新規", "A"))
+            .Items.Add(New ListItem("変更", "U"))
 
+        End With
+    End Sub
     '== コントロールからDB用の値を返す ==
     'ログインID
     Public Shared Function GetValue_LOGIN_ID(ByVal LOGIN_ID As TextBox) As String
