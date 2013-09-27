@@ -50,7 +50,7 @@ Public Class SQL
             Dim wFlag As Boolean = False
 
             strSQL &= "SELECT"
-            strSQL &= " TBL_KOUENKAI.*"
+            strSQL &= " * FROM TBL_KOUENKAI"
 
             If NewData = True Then
                 '新着
