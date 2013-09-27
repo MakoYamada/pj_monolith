@@ -37,8 +37,6 @@ CREATE TABLE [dbo].[TBL_KOUENKAI](
 	[COST_CENTER] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[YOSAN_TF] [nvarchar](18) COLLATE Japanese_CI_AS  NULL,
 	[YOSAN_T] [nvarchar](18) COLLATE Japanese_CI_AS  NULL,
-	[KOUENKAI_KUBUN] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
-	[DELETE_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[SEND_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[TTANTO_ID] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
