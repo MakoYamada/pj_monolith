@@ -308,8 +308,6 @@
             Public TAXI_SEISAN_TF_13 As String
             Public TAXI_SEISAN_TF_14 As String
             Public TAXI_SEISAN_TF_15 As String
-            Public KOUENKAI_KUBUN As String
-            Public DELETE_FLAG As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -408,8 +406,6 @@
             Public Const TAXI_SEISAN_TF_13 As String = "TAXI_SEISAN_TF_13"
             Public Const TAXI_SEISAN_TF_14 As String = "TAXI_SEISAN_TF_14"
             Public Const TAXI_SEISAN_TF_15 As String = "TAXI_SEISAN_TF_15"
-            Public Const KOUENKAI_KUBUN As String = "KOUENKAI_KUBUN"
-            Public Const DELETE_FLAG As String = "DELETE_FLAG"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -508,8 +504,6 @@
             Public Const TAXI_SEISAN_TF_13 As String = "タクチケ精算代金(非課税金額) Cost Center 13"
             Public Const TAXI_SEISAN_TF_14 As String = "タクチケ精算代金(非課税金額) Cost Center 14"
             Public Const TAXI_SEISAN_TF_15 As String = "タクチケ精算代金(非課税金額) Cost Center 15"
-            Public Const KOUENKAI_KUBUN As String = "講演会区分"
-            Public Const DELETE_FLAG As String = "削除フラグ"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"

@@ -394,8 +394,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_13
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_14
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_15
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.KOUENKAI_KUBUN
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.DELETE_FLAG
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_DATE
@@ -494,8 +492,6 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF_13) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF_14) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF_15) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_KUBUN) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.DELETE_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_SEIKYU.INPUT_DATE) & "'"
@@ -598,8 +594,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_13 & "='" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF_13) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_14 & "='" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF_14) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_15 & "='" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF_15) & "'"
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.KOUENKAI_KUBUN & "='" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_KUBUN) & "'"
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.DELETE_FLAG & "='" & CmnDb.SqlString(TBL_SEIKYU.DELETE_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG & "='" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TTANTO_ID & "='" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "='" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_DATE) & "'"

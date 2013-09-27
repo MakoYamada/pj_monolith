@@ -195,8 +195,6 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_13.ToUpper Then TBL_SEIKYU.TAXI_SEISAN_TF_13 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_14.ToUpper Then TBL_SEIKYU.TAXI_SEISAN_TF_14 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF_15.ToUpper Then TBL_SEIKYU.TAXI_SEISAN_TF_15 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KOUENKAI_KUBUN.ToUpper Then TBL_SEIKYU.KOUENKAI_KUBUN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.DELETE_FLAG.ToUpper Then TBL_SEIKYU.DELETE_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SEND_FLAG.ToUpper Then TBL_SEIKYU.SEND_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TTANTO_ID.ToUpper Then TBL_SEIKYU.TTANTO_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.INPUT_DATE.ToUpper Then TBL_SEIKYU.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
