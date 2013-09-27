@@ -305,7 +305,7 @@ Public Class CmnModule
                     CType(wChildControl, WebControls.RadioButton).Checked = False
                 ElseIf TypeOf wChildControl Is WebControls.Label Then
                     'ƒ‰ƒxƒ‹
-                    If LCase(Mid(CType(wChildControl, WebControls.Label).ID, 1, LenB("lablel"))) = "label" Then
+                    If LCase(Mid(CType(wChildControl, WebControls.Label).ID, 1, LenB("label"))) = "label" Then
                         'ID“ª‚ªuLabelv‚Ìê‡‚ğ‚Ì‚¼‚­
                     Else
                         CType(wChildControl, WebControls.Label).Text = ""
