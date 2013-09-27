@@ -303,17 +303,16 @@ Public Class AppConst
 
     Public Class MS_CODE
         Public Const SEX As String = "01"                   '性別
-        Public Const KOUENKAI_KUBUN As String = "02"        '会合種別
-        Public Const KOUEN_KAIJO_LAYOUT As String = "03"    'レイアウト
-        Public Const DR_YAKUWARI As String = "04"           '参加者役割
-        Public Const REQ_HOTEL_SMOKING As String = "05"     '依頼：ホテル喫煙
-        Public Const ANS_HOTEL_SMOKING As String = "06"     '回答：ホテル喫煙
-        Public Const KOTSUKIKAN As String = "07"            '交通機関
-        Public Const SEAT As String = "08"                  '座席区分
-        Public Const SEAT_KIBOU As String = "09"            '座席希望
-        Public Const MR_TEHAI As String = "10"              '社員臨席希望
-        Public Const MR_HOTEL_SMOKING As String = "11"      '社員ホテル禁煙
-        Public Const ROOM_TYPE As String = "12"             '宿泊部屋タイプ
+        Public Const KOUEN_KAIJO_LAYOUT As String = "02"    'レイアウト
+        Public Const DR_YAKUWARI As String = "03"           '参加者役割
+        Public Const REQ_HOTEL_SMOKING As String = "04"     '依頼：ホテル喫煙
+        Public Const ANS_HOTEL_SMOKING As String = "05"     '回答：ホテル喫煙
+        Public Const KOTSUKIKAN As String = "06"            '交通機関
+        Public Const SEAT As String = "07"                  '座席区分
+        Public Const SEAT_KIBOU As String = "08"            '座席希望
+        Public Const MR_TEHAI As String = "09"              '社員臨席希望
+        Public Const MR_HOTEL_SMOKING As String = "10"      '社員ホテル禁煙
+        Public Const ROOM_TYPE As String = "11"             '宿泊部屋タイプ
     End Class
 
 End Class

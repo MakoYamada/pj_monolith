@@ -31,8 +31,6 @@
             Public COST_CENTER As String
             Public YOSAN_TF As String
             Public YOSAN_T As String
-            Public KOUENKAI_KUBUN As String
-            Public DELETE_FLAG As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -121,8 +119,6 @@
             Public Const COST_CENTER As String = "COST_CENTER"
             Public Const YOSAN_TF As String = "YOSAN_TF"
             Public Const YOSAN_T As String = "YOSAN_T"
-            Public Const KOUENKAI_KUBUN As String = "KOUENKAI_KUBUN"
-            Public Const DELETE_FLAG As String = "DELETE_FLAG"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -209,19 +205,8 @@
             Public Const KIKAKU_TANTO_KEITAI As String = "携帯電話番号(企画担当者)"
             Public Const KIKAKU_TANTO_TEL As String = "オフィスの電話番号(企画担当者)"
             Public Const COST_CENTER As String = "Cost Center"
-            Public Const TEHAI_TANTO_BU As String = "所属BU(手配担当者)"
-            Public Const TEHAI_TANTO_AREA As String = "所属エリア(手配担当者)"
-            Public Const TEHAI_TANTO_EIGYOSHO As String = "所属営業所(手配担当者)"
-            Public Const TEHAI_TANTO_NAME As String = "担当者(手配担当者)名"
-            Public Const TEHAI_TANTO_ROMA As String = "担当者(手配担当者)名(ローマ字)"
-            Public Const TEHAI_TANTO_EMAIL_PC As String = "Emailアドレス(手配担当者)"
-            Public Const TEHAI_TANTO_EMAIL_KEITAI As String = "携帯のアドレス(手配担当者)"
-            Public Const TEHAI_TANTO_KEITAI As String = "携帯電話番号(手配担当者)"
-            Public Const TEHAI_TANTO_TEL As String = "オフィスの電話番号(手配担当者)"
             Public Const YOSAN_TF As String = "予算額_非課税"
             Public Const YOSAN_T As String = "予算額_課税"
-            Public Const KOUENKAI_KUBUN As String = "講演会区分"
-            Public Const DELETE_FLAG As String = "削除フラグ"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"
@@ -839,83 +824,63 @@
             Public TAXI_YOTEIKINGAKU_10 As String
             Public REQ_TAXI_NOTE As String
             Public ANS_TAXI_DATE_1 As String
-            Public ANS_TAXI_TICKET_1 As String
             Public ANS_TAXI_KENSHU_1 As String
             Public ANS_TAXI_NO_1 As String
             Public ANS_TAXI_DATE_2 As String
-            Public ANS_TAXI_TICKET_2 As String
             Public ANS_TAXI_KENSHU_2 As String
             Public ANS_TAXI_NO_2 As String
             Public ANS_TAXI_DATE_3 As String
-            Public ANS_TAXI_TICKET_3 As String
             Public ANS_TAXI_KENSHU_3 As String
             Public ANS_TAXI_NO_3 As String
             Public ANS_TAXI_DATE_4 As String
-            Public ANS_TAXI_TICKET_4 As String
             Public ANS_TAXI_KENSHU_4 As String
             Public ANS_TAXI_NO_4 As String
             Public ANS_TAXI_DATE_5 As String
-            Public ANS_TAXI_TICKET_5 As String
             Public ANS_TAXI_KENSHU_5 As String
             Public ANS_TAXI_NO_5 As String
             Public ANS_TAXI_DATE_6 As String
-            Public ANS_TAXI_TICKET_6 As String
             Public ANS_TAXI_KENSHU_6 As String
             Public ANS_TAXI_NO_6 As String
             Public ANS_TAXI_DATE_7 As String
-            Public ANS_TAXI_TICKET_7 As String
             Public ANS_TAXI_KENSHU_7 As String
             Public ANS_TAXI_NO_7 As String
             Public ANS_TAXI_DATE_8 As String
-            Public ANS_TAXI_TICKET_8 As String
             Public ANS_TAXI_KENSHU_8 As String
             Public ANS_TAXI_NO_8 As String
             Public ANS_TAXI_DATE_9 As String
-            Public ANS_TAXI_TICKET_9 As String
             Public ANS_TAXI_KENSHU_9 As String
             Public ANS_TAXI_NO_9 As String
             Public ANS_TAXI_DATE_10 As String
-            Public ANS_TAXI_TICKET_10 As String
             Public ANS_TAXI_KENSHU_10 As String
             Public ANS_TAXI_NO_10 As String
             Public ANS_TAXI_DATE_11 As String
-            Public ANS_TAXI_TICKET_11 As String
             Public ANS_TAXI_KENSHU_11 As String
             Public ANS_TAXI_NO_11 As String
             Public ANS_TAXI_DATE_12 As String
-            Public ANS_TAXI_TICKET_12 As String
             Public ANS_TAXI_KENSHU_12 As String
             Public ANS_TAXI_NO_12 As String
             Public ANS_TAXI_DATE_13 As String
-            Public ANS_TAXI_TICKET_13 As String
             Public ANS_TAXI_KENSHU_13 As String
             Public ANS_TAXI_NO_13 As String
             Public ANS_TAXI_DATE_14 As String
-            Public ANS_TAXI_TICKET_14 As String
             Public ANS_TAXI_KENSHU_14 As String
             Public ANS_TAXI_NO_14 As String
             Public ANS_TAXI_DATE_15 As String
-            Public ANS_TAXI_TICKET_15 As String
             Public ANS_TAXI_KENSHU_15 As String
             Public ANS_TAXI_NO_15 As String
             Public ANS_TAXI_DATE_16 As String
-            Public ANS_TAXI_TICKET_16 As String
             Public ANS_TAXI_KENSHU_16 As String
             Public ANS_TAXI_NO_16 As String
             Public ANS_TAXI_DATE_17 As String
-            Public ANS_TAXI_TICKET_17 As String
             Public ANS_TAXI_KENSHU_17 As String
             Public ANS_TAXI_NO_17 As String
             Public ANS_TAXI_DATE_18 As String
-            Public ANS_TAXI_TICKET_18 As String
             Public ANS_TAXI_KENSHU_18 As String
             Public ANS_TAXI_NO_18 As String
             Public ANS_TAXI_DATE_19 As String
-            Public ANS_TAXI_TICKET_19 As String
             Public ANS_TAXI_KENSHU_19 As String
             Public ANS_TAXI_NO_19 As String
             Public ANS_TAXI_DATE_20 As String
-            Public ANS_TAXI_TICKET_20 As String
             Public ANS_TAXI_KENSHU_20 As String
             Public ANS_TAXI_NO_20 As String
             Public ANS_TAXI_NOTE As String
@@ -937,8 +902,6 @@
             Public ANS_MR_HOTEL_NOTE As String
             Public ANS_MR_KOTSUHI As String
             Public ANS_MR_HOTELHI As String
-            Public KOUENKAI_KUBUN As String
-            Public DELETE_FLAG As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -1251,83 +1214,63 @@
             Public Const TAXI_YOTEIKINGAKU_10 As String = "TAXI_YOTEIKINGAKU_10"
             Public Const REQ_TAXI_NOTE As String = "REQ_TAXI_NOTE"
             Public Const ANS_TAXI_DATE_1 As String = "ANS_TAXI_DATE_1"
-            Public Const ANS_TAXI_TICKET_1 As String = "ANS_TAXI_TICKET_1"
             Public Const ANS_TAXI_KENSHU_1 As String = "ANS_TAXI_KENSHU_1"
             Public Const ANS_TAXI_NO_1 As String = "ANS_TAXI_NO_1"
             Public Const ANS_TAXI_DATE_2 As String = "ANS_TAXI_DATE_2"
-            Public Const ANS_TAXI_TICKET_2 As String = "ANS_TAXI_TICKET_2"
             Public Const ANS_TAXI_KENSHU_2 As String = "ANS_TAXI_KENSHU_2"
             Public Const ANS_TAXI_NO_2 As String = "ANS_TAXI_NO_2"
             Public Const ANS_TAXI_DATE_3 As String = "ANS_TAXI_DATE_3"
-            Public Const ANS_TAXI_TICKET_3 As String = "ANS_TAXI_TICKET_3"
             Public Const ANS_TAXI_KENSHU_3 As String = "ANS_TAXI_KENSHU_3"
             Public Const ANS_TAXI_NO_3 As String = "ANS_TAXI_NO_3"
             Public Const ANS_TAXI_DATE_4 As String = "ANS_TAXI_DATE_4"
-            Public Const ANS_TAXI_TICKET_4 As String = "ANS_TAXI_TICKET_4"
             Public Const ANS_TAXI_KENSHU_4 As String = "ANS_TAXI_KENSHU_4"
             Public Const ANS_TAXI_NO_4 As String = "ANS_TAXI_NO_4"
             Public Const ANS_TAXI_DATE_5 As String = "ANS_TAXI_DATE_5"
-            Public Const ANS_TAXI_TICKET_5 As String = "ANS_TAXI_TICKET_5"
             Public Const ANS_TAXI_KENSHU_5 As String = "ANS_TAXI_KENSHU_5"
             Public Const ANS_TAXI_NO_5 As String = "ANS_TAXI_NO_5"
             Public Const ANS_TAXI_DATE_6 As String = "ANS_TAXI_DATE_6"
-            Public Const ANS_TAXI_TICKET_6 As String = "ANS_TAXI_TICKET_6"
             Public Const ANS_TAXI_KENSHU_6 As String = "ANS_TAXI_KENSHU_6"
             Public Const ANS_TAXI_NO_6 As String = "ANS_TAXI_NO_6"
             Public Const ANS_TAXI_DATE_7 As String = "ANS_TAXI_DATE_7"
-            Public Const ANS_TAXI_TICKET_7 As String = "ANS_TAXI_TICKET_7"
             Public Const ANS_TAXI_KENSHU_7 As String = "ANS_TAXI_KENSHU_7"
             Public Const ANS_TAXI_NO_7 As String = "ANS_TAXI_NO_7"
             Public Const ANS_TAXI_DATE_8 As String = "ANS_TAXI_DATE_8"
-            Public Const ANS_TAXI_TICKET_8 As String = "ANS_TAXI_TICKET_8"
             Public Const ANS_TAXI_KENSHU_8 As String = "ANS_TAXI_KENSHU_8"
             Public Const ANS_TAXI_NO_8 As String = "ANS_TAXI_NO_8"
             Public Const ANS_TAXI_DATE_9 As String = "ANS_TAXI_DATE_9"
-            Public Const ANS_TAXI_TICKET_9 As String = "ANS_TAXI_TICKET_9"
             Public Const ANS_TAXI_KENSHU_9 As String = "ANS_TAXI_KENSHU_9"
             Public Const ANS_TAXI_NO_9 As String = "ANS_TAXI_NO_9"
             Public Const ANS_TAXI_DATE_10 As String = "ANS_TAXI_DATE_10"
-            Public Const ANS_TAXI_TICKET_10 As String = "ANS_TAXI_TICKET_10"
             Public Const ANS_TAXI_KENSHU_10 As String = "ANS_TAXI_KENSHU_10"
             Public Const ANS_TAXI_NO_10 As String = "ANS_TAXI_NO_10"
             Public Const ANS_TAXI_DATE_11 As String = "ANS_TAXI_DATE_11"
-            Public Const ANS_TAXI_TICKET_11 As String = "ANS_TAXI_TICKET_11"
             Public Const ANS_TAXI_KENSHU_11 As String = "ANS_TAXI_KENSHU_11"
             Public Const ANS_TAXI_NO_11 As String = "ANS_TAXI_NO_11"
             Public Const ANS_TAXI_DATE_12 As String = "ANS_TAXI_DATE_12"
-            Public Const ANS_TAXI_TICKET_12 As String = "ANS_TAXI_TICKET_12"
             Public Const ANS_TAXI_KENSHU_12 As String = "ANS_TAXI_KENSHU_12"
             Public Const ANS_TAXI_NO_12 As String = "ANS_TAXI_NO_12"
             Public Const ANS_TAXI_DATE_13 As String = "ANS_TAXI_DATE_13"
-            Public Const ANS_TAXI_TICKET_13 As String = "ANS_TAXI_TICKET_13"
             Public Const ANS_TAXI_KENSHU_13 As String = "ANS_TAXI_KENSHU_13"
             Public Const ANS_TAXI_NO_13 As String = "ANS_TAXI_NO_13"
             Public Const ANS_TAXI_DATE_14 As String = "ANS_TAXI_DATE_14"
-            Public Const ANS_TAXI_TICKET_14 As String = "ANS_TAXI_TICKET_14"
             Public Const ANS_TAXI_KENSHU_14 As String = "ANS_TAXI_KENSHU_14"
             Public Const ANS_TAXI_NO_14 As String = "ANS_TAXI_NO_14"
             Public Const ANS_TAXI_DATE_15 As String = "ANS_TAXI_DATE_15"
-            Public Const ANS_TAXI_TICKET_15 As String = "ANS_TAXI_TICKET_15"
             Public Const ANS_TAXI_KENSHU_15 As String = "ANS_TAXI_KENSHU_15"
             Public Const ANS_TAXI_NO_15 As String = "ANS_TAXI_NO_15"
             Public Const ANS_TAXI_DATE_16 As String = "ANS_TAXI_DATE_16"
-            Public Const ANS_TAXI_TICKET_16 As String = "ANS_TAXI_TICKET_16"
             Public Const ANS_TAXI_KENSHU_16 As String = "ANS_TAXI_KENSHU_16"
             Public Const ANS_TAXI_NO_16 As String = "ANS_TAXI_NO_16"
             Public Const ANS_TAXI_DATE_17 As String = "ANS_TAXI_DATE_17"
-            Public Const ANS_TAXI_TICKET_17 As String = "ANS_TAXI_TICKET_17"
             Public Const ANS_TAXI_KENSHU_17 As String = "ANS_TAXI_KENSHU_17"
             Public Const ANS_TAXI_NO_17 As String = "ANS_TAXI_NO_17"
             Public Const ANS_TAXI_DATE_18 As String = "ANS_TAXI_DATE_18"
-            Public Const ANS_TAXI_TICKET_18 As String = "ANS_TAXI_TICKET_18"
             Public Const ANS_TAXI_KENSHU_18 As String = "ANS_TAXI_KENSHU_18"
             Public Const ANS_TAXI_NO_18 As String = "ANS_TAXI_NO_18"
             Public Const ANS_TAXI_DATE_19 As String = "ANS_TAXI_DATE_19"
-            Public Const ANS_TAXI_TICKET_19 As String = "ANS_TAXI_TICKET_19"
             Public Const ANS_TAXI_KENSHU_19 As String = "ANS_TAXI_KENSHU_19"
             Public Const ANS_TAXI_NO_19 As String = "ANS_TAXI_NO_19"
             Public Const ANS_TAXI_DATE_20 As String = "ANS_TAXI_DATE_20"
-            Public Const ANS_TAXI_TICKET_20 As String = "ANS_TAXI_TICKET_20"
             Public Const ANS_TAXI_KENSHU_20 As String = "ANS_TAXI_KENSHU_20"
             Public Const ANS_TAXI_NO_20 As String = "ANS_TAXI_NO_20"
             Public Const ANS_TAXI_NOTE As String = "ANS_TAXI_NOTE"
@@ -1349,8 +1292,6 @@
             Public Const ANS_MR_HOTEL_NOTE As String = "ANS_MR_HOTEL_NOTE"
             Public Const ANS_MR_KOTSUHI As String = "ANS_MR_KOTSUHI"
             Public Const ANS_MR_HOTELHI As String = "ANS_MR_HOTELHI"
-            Public Const KOUENKAI_KUBUN As String = "KOUENKAI_KUBUN"
-            Public Const DELETE_FLAG As String = "DELETE_FLAG"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -1663,83 +1604,63 @@
             Public Const TAXI_YOTEIKINGAKU_10 As String = "行程10:依頼金額(依頼)"
             Public Const REQ_TAXI_NOTE As String = "タクシーチケット:備考(依頼)"
             Public Const ANS_TAXI_DATE_1 As String = "タクシーチケット1:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_1 As String = "タクシーチケット1:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_1 As String = "タクシーチケット1:券種(回答)"
             Public Const ANS_TAXI_NO_1 As String = "タクシーチケット1:番号(回答)"
             Public Const ANS_TAXI_DATE_2 As String = "タクシーチケット2:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_2 As String = "タクシーチケット2:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_2 As String = "タクシーチケット2:券種(回答)"
             Public Const ANS_TAXI_NO_2 As String = "タクシーチケット2:番号(回答)"
             Public Const ANS_TAXI_DATE_3 As String = "タクシーチケット3:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_3 As String = "タクシーチケット3:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_3 As String = "タクシーチケット3:券種(回答)"
             Public Const ANS_TAXI_NO_3 As String = "タクシーチケット3:番号(回答)"
             Public Const ANS_TAXI_DATE_4 As String = "タクシーチケット4:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_4 As String = "タクシーチケット4:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_4 As String = "タクシーチケット4:券種(回答)"
             Public Const ANS_TAXI_NO_4 As String = "タクシーチケット4:番号(回答)"
             Public Const ANS_TAXI_DATE_5 As String = "タクシーチケット5:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_5 As String = "タクシーチケット5:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_5 As String = "タクシーチケット5:券種(回答)"
             Public Const ANS_TAXI_NO_5 As String = "タクシーチケット5:番号(回答)"
             Public Const ANS_TAXI_DATE_6 As String = "タクシーチケット6:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_6 As String = "タクシーチケット6:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_6 As String = "タクシーチケット6:券種(回答)"
             Public Const ANS_TAXI_NO_6 As String = "タクシーチケット6:番号(回答)"
             Public Const ANS_TAXI_DATE_7 As String = "タクシーチケット7:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_7 As String = "タクシーチケット7:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_7 As String = "タクシーチケット7:券種(回答)"
             Public Const ANS_TAXI_NO_7 As String = "タクシーチケット7:番号(回答)"
             Public Const ANS_TAXI_DATE_8 As String = "タクシーチケット8:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_8 As String = "タクシーチケット8:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_8 As String = "タクシーチケット8:券種(回答)"
             Public Const ANS_TAXI_NO_8 As String = "タクシーチケット8:番号(回答)"
             Public Const ANS_TAXI_DATE_9 As String = "タクシーチケット9:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_9 As String = "タクシーチケット9:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_9 As String = "タクシーチケット9:券種(回答)"
             Public Const ANS_TAXI_NO_9 As String = "タクシーチケット9:番号(回答)"
             Public Const ANS_TAXI_DATE_10 As String = "タクシーチケット10:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_10 As String = "タクシーチケット10:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_10 As String = "タクシーチケット10:券種(回答)"
             Public Const ANS_TAXI_NO_10 As String = "タクシーチケット10:番号(回答)"
             Public Const ANS_TAXI_DATE_11 As String = "タクシーチケット11:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_11 As String = "タクシーチケット11:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_11 As String = "タクシーチケット11:券種(回答)"
             Public Const ANS_TAXI_NO_11 As String = "タクシーチケット11:番号(回答)"
             Public Const ANS_TAXI_DATE_12 As String = "タクシーチケット12:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_12 As String = "タクシーチケット12:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_12 As String = "タクシーチケット12:券種(回答)"
             Public Const ANS_TAXI_NO_12 As String = "タクシーチケット12:番号(回答)"
             Public Const ANS_TAXI_DATE_13 As String = "タクシーチケット13:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_13 As String = "タクシーチケット13:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_13 As String = "タクシーチケット13:券種(回答)"
             Public Const ANS_TAXI_NO_13 As String = "タクシーチケット13:番号(回答)"
             Public Const ANS_TAXI_DATE_14 As String = "タクシーチケット14:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_14 As String = "タクシーチケット14:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_14 As String = "タクシーチケット14:券種(回答)"
             Public Const ANS_TAXI_NO_14 As String = "タクシーチケット14:番号(回答)"
             Public Const ANS_TAXI_DATE_15 As String = "タクシーチケット15:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_15 As String = "タクシーチケット15:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_15 As String = "タクシーチケット15:券種(回答)"
             Public Const ANS_TAXI_NO_15 As String = "タクシーチケット15:番号(回答)"
             Public Const ANS_TAXI_DATE_16 As String = "タクシーチケット16:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_16 As String = "タクシーチケット16:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_16 As String = "タクシーチケット16:券種(回答)"
             Public Const ANS_TAXI_NO_16 As String = "タクシーチケット16:番号(回答)"
             Public Const ANS_TAXI_DATE_17 As String = "タクシーチケット17:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_17 As String = "タクシーチケット17:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_17 As String = "タクシーチケット17:券種(回答)"
             Public Const ANS_TAXI_NO_17 As String = "タクシーチケット17:番号(回答)"
             Public Const ANS_TAXI_DATE_18 As String = "タクシーチケット18:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_18 As String = "タクシーチケット18:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_18 As String = "タクシーチケット18:券種(回答)"
             Public Const ANS_TAXI_NO_18 As String = "タクシーチケット18:番号(回答)"
             Public Const ANS_TAXI_DATE_19 As String = "タクシーチケット19:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_19 As String = "タクシーチケット19:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_19 As String = "タクシーチケット19:券種(回答)"
             Public Const ANS_TAXI_NO_19 As String = "タクシーチケット19:番号(回答)"
             Public Const ANS_TAXI_DATE_20 As String = "タクシーチケット20:利用日(回答)"
-            Public Const ANS_TAXI_TICKET_20 As String = "タクシーチケット20:利用チケット(回答)"
             Public Const ANS_TAXI_KENSHU_20 As String = "タクシーチケット20:券種(回答)"
             Public Const ANS_TAXI_NO_20 As String = "タクシーチケット20:番号(回答)"
             Public Const ANS_TAXI_NOTE As String = "タクシーチケット:備考(回答)"
@@ -1761,8 +1682,6 @@
             Public Const ANS_MR_HOTEL_NOTE As String = "社員用交通・宿泊備考(回答)"
             Public Const ANS_MR_KOTSUHI As String = "【回答】MR 交通費"
             Public Const ANS_MR_HOTELHI As String = "【回答】MR 宿泊費"
-            Public Const KOUENKAI_KUBUN As String = "講演会区分"
-            Public Const DELETE_FLAG As String = "削除フラグ"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"
@@ -1826,8 +1745,6 @@
             Public TEHAI_TANTO_EMAIL_KEITAI As String
             Public TEHAI_TANTO_KEITAI As String
             Public TEHAI_TANTO_TEL As String
-            Public KOUENKAI_KUBUN As String
-            Public DELETE_FLAG As String
             Public SEND_FLAG As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
@@ -1916,8 +1833,6 @@
             Public Const TEHAI_TANTO_EMAIL_KEITAI As String = "TEHAI_TANTO_EMAIL_KEITAI"
             Public Const TEHAI_TANTO_KEITAI As String = "TEHAI_TANTO_KEITAI"
             Public Const TEHAI_TANTO_TEL As String = "TEHAI_TANTO_TEL"
-            Public Const KOUENKAI_KUBUN As String = "KOUENKAI_KUBUN"
-            Public Const DELETE_FLAG As String = "DELETE_FLAG"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
@@ -2006,8 +1921,6 @@
             Public Const TEHAI_TANTO_EMAIL_KEITAI As String = "携帯のアドレス(手配担当者)"
             Public Const TEHAI_TANTO_KEITAI As String = "携帯電話番号(手配担当者)"
             Public Const TEHAI_TANTO_TEL As String = "オフィスの電話番号(手配担当者)"
-            Public Const KOUENKAI_KUBUN As String = "講演会区分"
-            Public Const DELETE_FLAG As String = "削除フラグ"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"

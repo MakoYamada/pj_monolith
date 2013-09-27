@@ -168,8 +168,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.COST_CENTER
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KOUENKAI_KUBUN
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.DELETE_FLAG
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.INPUT_DATE
@@ -207,8 +205,6 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.COST_CENTER) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_KUBUN) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.DELETE_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOUENKAI.INPUT_DATE) & "'"
@@ -251,8 +247,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.COST_CENTER & "='" & CmnDb.SqlString(TBL_KOUENKAI.COST_CENTER) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF & "='" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T & "='" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KOUENKAI_KUBUN & "='" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_KUBUN) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.DELETE_FLAG & "='" & CmnDb.SqlString(TBL_KOUENKAI.DELETE_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG & "='" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID & "='" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "='" & CmnDb.SqlString(TBL_KOUENKAI.UPDATE_DATE) & "'"
@@ -966,83 +960,63 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TAXI_YOTEIKINGAKU_10
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.REQ_TAXI_NOTE
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_1
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_1
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_1
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_2
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_2
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_2
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_3
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_3
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_3
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_4
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_4
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_4
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_5
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_5
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_5
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_6
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_6
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_6
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_7
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_7
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_7
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_8
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_8
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_8
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_9
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_9
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_9
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_10
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_10
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_10
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_11
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_11
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_11
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_12
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_12
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_12
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_13
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_13
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_13
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_14
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_14
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_14
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_15
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_15
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_15
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_16
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_16
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_16
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_17
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_17
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_17
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_18
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_18
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_18
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_19
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_19
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_19
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_20
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_20
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_20
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NOTE
@@ -1064,8 +1038,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTEL_NOTE
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_KOTSUHI
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_KUBUN
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.DELETE_FLAG
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.INPUT_DATE
@@ -1378,83 +1350,63 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TAXI_YOTEIKINGAKU_10) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.REQ_TAXI_NOTE) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_1) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_1) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_1) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_2) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_2) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_2) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_3) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_3) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_3) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_4) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_4) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_4) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_5) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_5) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_5) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_6) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_6) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_6) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_7) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_7) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_7) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_8) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_8) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_8) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_9) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_9) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_9) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_10) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_10) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_10) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_11) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_11) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_11) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_12) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_12) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_12) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_13) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_13) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_13) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_14) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_14) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_14) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_15) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_15) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_15) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_16) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_16) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_16) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_17) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_17) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_17) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_18) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_18) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_18) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_19) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_19) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_19) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_20) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_20) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_20) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NOTE) & "'"
@@ -1476,8 +1428,6 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTEL_NOTE) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_KOTSUHI) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_KUBUN) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DELETE_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KOTSUHOTEL.INPUT_DATE) & "'"
@@ -1793,83 +1743,63 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TAXI_YOTEIKINGAKU_10 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.TAXI_YOTEIKINGAKU_10) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.REQ_TAXI_NOTE & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.REQ_TAXI_NOTE) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_1 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_1) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_1 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_1) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_1 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_1) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_2 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_2) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_2 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_2) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_2 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_2) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_3 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_3) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_3 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_3) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_3 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_3) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_4 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_4) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_4 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_4) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_4 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_4) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_5 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_5) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_5 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_5) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_5 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_5) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_6 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_6) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_6 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_6) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_6 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_6) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_7 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_7) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_7 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_7) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_7 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_7) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_8 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_8) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_8 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_8) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_8 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_8) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_9 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_9) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_9 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_9) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_9 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_9) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_10 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_10) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_10 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_10) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_10 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_10) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_11 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_11) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_11 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_11) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_11 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_11) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_12 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_12) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_12 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_12) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_12 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_12) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_13 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_13) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_13 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_13) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_13 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_13) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_14 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_14) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_14 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_14) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_14 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_14) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_15 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_15) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_15 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_15) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_15 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_15) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_16 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_16) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_16 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_16) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_16 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_16) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_17 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_17) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_17 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_17) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_17 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_17) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_18 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_18) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_18 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_18) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_18 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_18) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_19 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_19) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_19 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_19) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_19 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_19) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_DATE_20 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_DATE_20) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_TICKET_20 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_TICKET_20) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NO_20 & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NO_20) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_NOTE & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TAXI_NOTE) & "'"
@@ -1891,10 +1821,10 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTEL_NOTE & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTEL_NOTE) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_KOTSUHI & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_KOTSUHI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_KUBUN & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_KUBUN) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.DELETE_FLAG & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.DELETE_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.INPUT_DATE & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.INPUT_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.INPUT_USER & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.INPUT_USER) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_DATE) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE & "='" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_DATE) & "'"
@@ -1990,12 +1920,13 @@ Public Class SQL
             strSQL &= " LEFT JOIN MS_USER"
             strSQL &= " ON TBL_KOUENKAI.TTANTO_ID=MS_USER.LOGIN_ID"
 
+            strSQL &= " WHERE 1=1"
+
             If NewData = True Then
                 '新着
-                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
+                strSQL &= " AND ISNULL(TBL_KOUENKAI.KIDOKU_FLG,'')<>'1'"
             Else
                 '検索
-                strSQL &= " WHERE TBL_KOUENKAI.KIDOKU_FLG<>'1'"
             End If
 
             If Trim(Joken.BU) <> "" Then
@@ -2109,8 +2040,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EMAIL_KEITAI
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_KEITAI
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_TEL
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUENKAI_KUBUN
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.DELETE_FLAG
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KAIJO.Column.INPUT_DATE
             strSQL &= "," & TableDef.TBL_KAIJO.Column.INPUT_USER
@@ -2169,8 +2098,6 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_KEITAI) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_TEL) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_KUBUN) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.DELETE_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.INPUT_DATE) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.INPUT_USER) & "'"
@@ -2233,8 +2160,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EMAIL_KEITAI & "='" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_KEITAI & "='" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_KEITAI) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_TEL & "='" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_TEL) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUENKAI_KUBUN & "='" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_KUBUN) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.DELETE_FLAG & "='" & CmnDb.SqlString(TBL_KAIJO.DELETE_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG & "='" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "='" & CmnDb.SqlString(TBL_KAIJO.UPDATE_DATE) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "='" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
