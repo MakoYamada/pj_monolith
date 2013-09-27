@@ -59,8 +59,6 @@ CREATE TABLE [dbo].[TBL_KAIJO](
 	[TEHAI_TANTO_EMAIL_KEITAI] [nvarchar](128) COLLATE Japanese_CI_AS  NULL,
 	[TEHAI_TANTO_KEITAI] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
 	[TEHAI_TANTO_TEL] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
-	[KOUENKAI_KUBUN] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
-	[DELETE_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[SEND_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
