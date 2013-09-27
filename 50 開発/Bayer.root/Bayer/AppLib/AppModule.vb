@@ -3274,7 +3274,7 @@ Public Class AppModule
     'çuâââÔäJç√ì˙To
     Public Shared Function GetName_TO_DATE(ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
-            Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMD)
+            Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
             wStr = CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
@@ -3291,9 +3291,9 @@ Public Class AppModule
         Dim wStr As String = ""
         If ShortFormat = False Then
             If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
-                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMD)
+                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
             Else
-                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYMD) & "Å`" & CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYMD)
+                wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD) & "Å`" & CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYYYMD)
             End If
         Else
             If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
