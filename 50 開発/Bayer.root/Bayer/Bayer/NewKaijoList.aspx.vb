@@ -187,7 +187,7 @@ Partial Public Class NewKaijoList
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
-            Case "Detail"
+            Case "Kaijo"
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex

@@ -33,12 +33,6 @@ Partial Public Class KaijoRegist
             .PageTitle = "講演会場　手配・見積依頼"
         End With
 
-        ''QQQ ハーコピー用
-        'Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = "日産スタジアム"
-        'Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = "神奈川県横浜市港北区小机町3300"
-        'Session.Item(SessionDef.ShisetsuKensaku_TEL) = "045-477-5000"
-        'Session.Item(SessionDef.ShisetsuKensaku_URL) = "http://www.nissan-stadium.jp/"
-
         '検索画面戻り
         Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
         Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
@@ -87,7 +81,6 @@ Partial Public Class KaijoRegist
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Me.SHONIN_NAME.Text = AppModule.GetName_SHONIN_NAME(TBL_KAIJO(SEQ).SHONIN_NAME)
         Me.SHONIN_DATE.Text = AppModule.GetName_SHONIN_DATE(TBL_KAIJO(SEQ).SHONIN_DATE)
-        Me.KOUENKAI_KUBUN.Text = AppModule.GetName_KOUENKAI_KUBUN(TBL_KAIJO(SEQ).KOUENKAI_KUBUN)
         Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KAIJO(SEQ).KOUENKAI_NAME)
         Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(TBL_KAIJO(SEQ).FROM_DATE)
         Me.TO_DATE.Text = AppModule.GetName_TO_DATE(TBL_KAIJO(SEQ).TO_DATE)
@@ -194,7 +187,7 @@ Partial Public Class KaijoRegist
 
         Dim scriptStr As String
         scriptStr = "<script language='javascript' type='text/javascript'>"
-        scriptStr &= "window.open('" & URL.ShisetsuKensaku & "','Shisetsu','width=980,height=750,scrollbars=yes,resizable=yes,statusbar=yes');"
+        scriptStr &= "window.open('" & URL.ShisetsuKensaku & "','Shisetsu','width=980,height=700,scrollbars=yes,resizable=yes,statusbar=yes');"
         scriptStr &= "</script>"
 
         ClientScript.RegisterStartupScript(Me.GetType(), "ShisetsuKensaku", scriptStr)
@@ -210,7 +203,6 @@ Partial Public Class KaijoRegist
 
         'データ更新
         If ExecuteTransaction() Then
-            'QQQ ??????? Response.Redirect(URL.KaijoRegistEnd)
         End If
     End Sub
 

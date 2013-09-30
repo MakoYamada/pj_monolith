@@ -8,7 +8,7 @@ Partial Public Class KaijoList
 
     'グリッド列
     Private Enum CellIndex
-        KIKAKU_TANTO_BU
+        BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
@@ -118,7 +118,7 @@ Partial Public Class KaijoList
         Joken.SEIHIN_NAME = Trim(Me.SEIHIN_NAME.Text)
         Joken.KOUENKAI_NO = Trim(Me.KOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
-        Joken.BU = CmnModule.GetSelectedItemValue(Me.KIKAKU_TANTO_BU)
+        Joken.BU = CmnModule.GetSelectedItemValue(Me.BU)
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.FROM_DATE_YYYY.Text, Me.FROM_DATE_MM.Text, Me.FROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.TO_DATE_YYYY.Text, Me.TO_DATE_MM.Text, Me.TO_DATE_DD.Text)
         Joken.AREA = CmnModule.GetSelectedItemValue(Me.KIKAKU_TANTO_AREA)
@@ -163,7 +163,7 @@ Partial Public Class KaijoList
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_DATE_FROM_TO(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
+            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
         End If
     End Sub
 
@@ -196,12 +196,17 @@ Partial Public Class KaijoList
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
-            Case "Detail"
+            Case "Kaijo"
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
                 Response.Redirect(URL.KaijoRegist)
+            Case "Dr"
+                'QQQ 講演会番号を参加者一覧に渡す?
+                Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+                Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+                Response.Redirect(URL.DrRegist)
         End Select
     End Sub
 
@@ -222,23 +227,23 @@ Partial Public Class KaijoList
             Return False
         End If
 
-        If Not CmnCheck.IsInput(KIKAKU_TANTO_ROMA) AndAlso _
-           Not CmnCheck.IsInput(TEHAI_TANTO_ROMA) AndAlso _
-           Not CmnCheck.IsInput(SEIHIN_NAME) AndAlso _
-           Not CmnCheck.IsInput(KOUENKAI_NO) AndAlso _
-           Not CmnCheck.IsInput(KOUENKAI_NAME) AndAlso _
-           Not CmnCheck.IsInput(FROM_DATE_YYYY) AndAlso _
-           Not CmnCheck.IsInput(FROM_DATE_MM) AndAlso _
-           Not CmnCheck.IsInput(FROM_DATE_DD) AndAlso _
-           Not CmnCheck.IsInput(TO_DATE_YYYY) AndAlso _
-           Not CmnCheck.IsInput(TO_DATE_MM) AndAlso _
-           Not CmnCheck.IsInput(TO_DATE_DD) AndAlso _
-           Not CmnCheck.IsInput(KIKAKU_TANTO_BU) AndAlso _
-           Not CmnCheck.IsInput(KIKAKU_TANTO_AREA) AndAlso _
-           Not CmnCheck.IsInput(TTANTO_ID) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
-            Return False
-        End If
+        'If Not CmnCheck.IsInput(Me.KIKAKU_TANTO_ROMA) AndAlso _
+        '   Not CmnCheck.IsInput(Me.TEHAI_TANTO_ROMA) AndAlso _
+        '   Not CmnCheck.IsInput(Me.SEIHIN_NAME) AndAlso _
+        '   Not CmnCheck.IsInput(Me.KOUENKAI_NO) AndAlso _
+        '   Not CmnCheck.IsInput(Me.KOUENKAI_NAME) AndAlso _
+        '   Not CmnCheck.IsInput(Me.FROM_DATE_YYYY) AndAlso _
+        '   Not CmnCheck.IsInput(Me.FROM_DATE_MM) AndAlso _
+        '   Not CmnCheck.IsInput(Me.FROM_DATE_DD) AndAlso _
+        '   Not CmnCheck.IsInput(Me.TO_DATE_YYYY) AndAlso _
+        '   Not CmnCheck.IsInput(Me.TO_DATE_MM) AndAlso _
+        '   Not CmnCheck.IsInput(Me.TO_DATE_DD) AndAlso _
+        '   Not CmnCheck.IsInput(Me.BU) AndAlso _
+        '   Not CmnCheck.IsInput(Me.KIKAKU_TANTO_AREA) AndAlso _
+        '   Not CmnCheck.IsInput(Me.TTANTO_ID) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
+        '    Return False
+        'End If
 
         If Not CmnCheck.IsNumberOnly(Me.FROM_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)

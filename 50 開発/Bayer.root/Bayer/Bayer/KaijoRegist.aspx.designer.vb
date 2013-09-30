@@ -70,15 +70,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents SHONIN_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KOUENKAI_KUBUN コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KOUENKAI_KUBUN As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''KOUENKAI_NAME コントロール。
     '''</summary>
     '''<remarks>

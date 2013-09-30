@@ -60,14 +60,8 @@
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
 										承認日
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="3">
 										<asp:Label ID="SHONIN_DATE" runat="server" Text="yyyy/MM/dd"></asp:Label>
-									</td>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
-										会合種別
-									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo">
-										<asp:Label ID="KOUENKAI_KUBUN" runat="server" Text="◎◎◎◎◎◎◎◎"></asp:Label>
 									</td>
 								</tr>
 								<tr>
