@@ -2369,6 +2369,10 @@
             Public ADDRESS2 As String
             Public SHISETSU_NAME As String
             Public SHISETSU_NAME_KANA As String
+            Public LOGIN_ID As String
+            Public USER_NAME As String
+            Public STOP_FLG As String
+            Public KENGEN As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2391,6 +2395,10 @@
             Public Const ADDRESS2 As String = "市区町村"
             Public Const SHISETSU_NAME As String = "施設名"
             Public Const SHISETSU_NAME_KANA As String = "施設名(カナ)"
+            Public Const LOGIN_ID As String = "ログインID"
+            Public Const USER_NAME As String = "氏名"
+            Public Const KENGEN As String = "権限"
+            Public Const STOP_FLG As String = "利用停止フラグ"
         End Class
     End Class
 
