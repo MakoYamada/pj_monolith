@@ -3340,6 +3340,11 @@ Public Class AppModule
         Return TAXI_PRT_NAME
     End Function
 
+    'çuâââÔÉ^ÉCÉgÉã
+    Public Shared Function GetName_KOUENKAI_TITLE(ByVal KOUENKAI_TITLE As String) As String
+        Return KOUENKAI_TITLE
+    End Function
+
     'Time stamp
     Public Shared Function GetName_TIME_STAMP(ByVal TIME_STAMP As String) As String
         Return CmnModule.Format_Date(TIME_STAMP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
