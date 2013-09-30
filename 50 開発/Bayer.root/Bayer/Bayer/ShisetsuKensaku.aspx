@@ -52,9 +52,10 @@
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-						<asp:ButtonField ButtonType="Button" HeaderText="選択" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="OK" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
+						<asp:ButtonField ButtonType="Button" HeaderText="" Text="選択" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="OK" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="ADDRESS1" HeaderText="都道府県" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SHISETSU_NAME" HeaderText="施設名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="ZIP" HeaderText="郵便番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="ADDRESS2" HeaderText="住所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TEL" HeaderText="電話番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SYSTEM_ID" />

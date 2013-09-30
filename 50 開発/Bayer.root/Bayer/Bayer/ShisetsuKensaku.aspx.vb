@@ -11,6 +11,7 @@ Partial Public Class ShisetsuKensaku
         Button1
         ADDRESS1
         SHISETSU_NAME
+        ZIP
         ADDRESS2
         TEL
         SYSTEM_ID
@@ -200,6 +201,7 @@ Partial Public Class ShisetsuKensaku
                 Dim SEQ As Integer
                 SEQ = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = MS_SHISETSU(SEQ).SHISETSU_NAME
+                Session.Item(SessionDef.ShisetsuKensaku_ZIP) = MS_SHISETSU(SEQ).ZIP
                 Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = MS_SHISETSU(SEQ).ADDRESS2
                 Session.Item(SessionDef.ShisetsuKensaku_TEL) = MS_SHISETSU(SEQ).TEL
                 Session.Item(SessionDef.ShisetsuKensaku_URL) = MS_SHISETSU(SEQ).URL

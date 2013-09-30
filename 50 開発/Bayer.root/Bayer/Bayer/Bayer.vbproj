@@ -95,6 +95,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\MstUser.aspx.designer.vb">
+      <DependentUpon>MstUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MstUser.aspx.vb">
+      <DependentUpon>MstUser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Base.Master.designer.vb">
       <DependentUpon>Base.Master</DependentUpon>
     </Compile>
@@ -149,13 +156,6 @@
     <Compile Include="KaijoRireki.aspx.vb">
       <DependentUpon>KaijoRireki.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="MstUser.aspx.designer.vb">
-      <DependentUpon>MstUser.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MstUser.aspx.vb">
-      <DependentUpon>MstUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
@@ -319,6 +319,7 @@
   <ItemGroup>
     <Content Include="ActiveReports.FlashViewer.Resources.swf" />
     <Content Include="ActiveReports.FlashViewer.swf" />
+    <Content Include="admin\MstUser.aspx" />
     <Content Include="Base.Master" />
     <Content Include="Close.html" />
     <Content Include="DrRireki.aspx" />
@@ -367,7 +368,6 @@
     <Content Include="Images\triangle.gif" />
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRireki.aspx" />
-    <Content Include="MstUser.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
@@ -429,12 +429,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55423</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/Bayer</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
