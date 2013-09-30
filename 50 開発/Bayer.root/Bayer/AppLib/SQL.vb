@@ -2641,6 +2641,8 @@ Public Class SQL
                 strSQL &= " AND MS_USER.STOP_FLG='" & CmnDb.SqlString(Joken.STOP_FLG) & "'"
             End If
 
+            strSQL &= SQL_ORDERBY
+
             Return strSQL
         End Function
 
