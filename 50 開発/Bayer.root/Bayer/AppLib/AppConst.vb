@@ -14,6 +14,20 @@ Public Class AppConst
         End Class
     End Class
 
+    Public Class SEND_FLAG
+        'データ区分
+        Public Class Code
+            Public Const Mi As String = "0"
+            Public Const Taisho As String = "1"
+            Public Const Sumi As String = "2"
+        End Class
+        Public Class Name
+            Public Const Mi As String = "未送信"
+            Public Const Taisho As String = "送信対象"
+            Public Const Sumi As String = "送信済"
+        End Class
+    End Class
+
     Public Class KOTSUHOTEL
 
         Public Class RECORD_KUBUN
