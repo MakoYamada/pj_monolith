@@ -298,7 +298,9 @@ Public Class AppConst
                 Public Const No As String = "不要"
             End Class
         End Class
+    End Class
 
+    Public Class KOUENKAI
         Public Class KIDOKU_FLG
             '世話人会場　要・不要
             Public Class Code

@@ -3251,6 +3251,18 @@ Public Class AppModule
         Return CmnModule.Format_Date(UPDATE_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
     End Function
 
+    '講演基本情報　未読・既読
+    Public Shared Function GetName_KIDOKU_FLG(ByVal KIDOKU_FLG As String) As String
+        Select Case KIDOKU_FLG
+            Case AppConst.KOUENKAI.KIDOKU_FLG.Code.Yes
+                Return AppConst.KOUENKAI.KIDOKU_FLG.Name.Yes
+            Case AppConst.KOUENKAI.KIDOKU_FLG.Code.No
+                Return AppConst.KOUENKAI.KIDOKU_FLG.Name.No
+            Case Else
+                Return ""
+        End Select
+    End Function
+
     '講演会名
     Public Shared Function GetName_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String) As String
         Return KOUENKAI_NAME
@@ -5244,6 +5256,15 @@ Public Class AppModule
             .Items.Add(New ListItem("---", "0"))
             .Items.Add(New ListItem("新規", "A"))
             .Items.Add(New ListItem("変更", "U"))
+        End With
+    End Sub
+
+    '講演会基本情報　ステータス
+    Public Shared Sub SetDropDownList_KIDOKU(ByRef KUBUN As DropDownList)
+        With KUBUN
+            .Items.Clear()
+            .Items.Add(New ListItem(AppConst.KOUENKAI.KIDOKU_FLG.Name.No, AppConst.KOUENKAI.KIDOKU_FLG.Code.No))
+            .Items.Add(New ListItem(AppConst.KOUENKAI.KIDOKU_FLG.Name.Yes, AppConst.KOUENKAI.KIDOKU_FLG.Code.Yes))
 
         End With
     End Sub
