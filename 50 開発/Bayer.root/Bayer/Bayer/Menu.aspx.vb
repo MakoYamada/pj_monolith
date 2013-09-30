@@ -107,4 +107,12 @@ Partial Public Class Menu1
         Response.Redirect(URL.KaijoList)
     End Sub
 
+    '[ユーザマスタ]
+    Protected Sub BtnUser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnUser.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.MS_USER)
+        Session.Remove(SessionDef.SEQ)
+        Response.Redirect(URL.MstUser)
+    End Sub
+
 End Class
