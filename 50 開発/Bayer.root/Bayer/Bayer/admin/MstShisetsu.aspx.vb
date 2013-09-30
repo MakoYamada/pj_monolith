@@ -1,24 +1,24 @@
 ﻿Imports CommonLib
 Imports AppLib
-Partial Public Class MstUser
+Partial Public Class MstShisetsu
     Inherits WebBase
 
-    Private MS_USER() As TableDef.MS_USER.DataStruct
+    Private MS_SHISETSU() As TableDef.MS_SHISETSU.DataStruct
     Private Joken As TableDef.Joken.DataStruct
     Private SEQ As Integer
 
     'グリッド列
     Private Enum CellIndex
         Button1
-        LOGIN_ID
-        KENGEN
-        USER_NAME
+        SHISETSU_NAME
+        ADDRESS1
+        ADDRESS2
         STOP_FLG
         SYSTEM_ID
     End Enum
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        Session.Item(SessionDef.MS_USER) = MS_USER
+        Session.Item(SessionDef.MS_SHISETSU) = MS_SHISETSU
         Session.Item(SessionDef.Joken) = Joken
     End Sub
 
@@ -46,7 +46,7 @@ Partial Public Class MstUser
         'マスターページ設定
         With Me.Master
             .HideLoginUser = True   'QQQ
-            .PageTitle = "ユーザマスタメンテナンス"
+            .PageTitle = "施設マスタメンテナンス"
         End With
 
     End Sub
@@ -59,10 +59,10 @@ Partial Public Class MstUser
             Joken = Nothing
         End Try
         Try
-            MS_USER = Session.Item(SessionDef.MS_USER)
-            If MS_USER Is Nothing Then ReDim MS_USER(0)
+            MS_SHISETSU = Session.Item(SessionDef.MS_SHISETSU)
+            If MS_SHISETSU Is Nothing Then ReDim MS_SHISETSU(0)
         Catch ex As Exception
-            ReDim MS_USER(0)
+            ReDim MS_SHISETSU(0)
         End Try
         Try
             SEQ = CmnModule.DbVal(Session.Item(SessionDef.SEQ))
@@ -74,12 +74,24 @@ Partial Public Class MstUser
 
     '画面項目 初期化
     Private Sub InitControls()
+        'プルダウン設定
+        AppModule.SetDropDownList_ADDRESS1(Me.JokenADDRESS1)
+
         'IME設定
-        CmnModule.SetIme(Me.JokenLOGIN_ID, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenUSER_NAME, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.LOGIN_ID, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.PASSWORD, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.USER_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.JokenSHISETSU_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SHISETSU_KANA, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ZIP_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ZIP_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.TEL_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEL_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEL_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKIN_TIME_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKIN_TIME_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKOUT_TIME_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKOUT_TIME_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SHISETSU_URL, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -92,13 +104,14 @@ Partial Public Class MstUser
         Else
             Me.DivMessage.Visible = True
             Dim wStr As String = ""
-            wStr &= "ユーザ情報を" & AppModule.GetName_RECORD_KUBUN(Session.Item(SessionDef.RECORD_KUBUN)) & "しました。"
+            wStr &= "施設情報を" & AppModule.GetName_RECORD_KUBUN(Session.Item(SessionDef.RECORD_KUBUN)) & "しました。"
             wStr &= CmnConst.Html.Break
             wStr &= CmnConst.Html.Break
-            wStr &= "ログインID＝" & MS_USER(SEQ).LOGIN_ID
+            wStr &= "施設名＝" & MS_SHISETSU(SEQ).SHISETSU_NAME
             wStr &= CmnConst.Html.Break
-            wStr &= "氏名＝" & MS_USER(SEQ).USER_NAME
-            If MS_USER(SEQ).STOP_FLG = AppConst.STOP_FLG.Code.Stop Then
+            wStr &= "住所＝" & "〒" & MS_SHISETSU(SEQ).ZIP & CmnConst.Html.Space _
+                  & MS_SHISETSU(SEQ).ADDRESS1 & MS_SHISETSU(SEQ).ADDRESS2
+            If MS_SHISETSU(SEQ).STOP_FLG = AppConst.STOP_FLG.Code.Stop Then
                 wStr &= CmnConst.Html.Break
                 wStr &= "(利用停止)"
             End If
@@ -130,14 +143,14 @@ Partial Public Class MstUser
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        ReDim MS_USER(wCnt)
-        strSQL = SQL.MS_USER.Search(Joken)
+        ReDim MS_SHISETSU(wCnt)
+        strSQL = SQL.MS_SHISETSU.Search(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
 
-            ReDim Preserve MS_USER(wCnt)
-            MS_USER(wCnt) = AppModule.SetRsData(RsData, MS_USER(wCnt))
+            ReDim Preserve MS_SHISETSU(wCnt)
+            MS_SHISETSU(wCnt) = AppModule.SetRsData(RsData, MS_SHISETSU(wCnt))
 
             wCnt += 1
         End While
@@ -149,7 +162,7 @@ Partial Public Class MstUser
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.MS_USER.Search(Joken)
+        Dim strSQL As String = SQL.MS_SHISETSU.Search(Joken)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -169,7 +182,6 @@ Partial Public Class MstUser
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.KENGEN).Text = AppModule.GetName_KENGEN(e.Row.Cells(CellIndex.KENGEN).Text)
             e.Row.Cells(CellIndex.STOP_FLG).Text = AppModule.GetName_STOP_FLG(e.Row.Cells(CellIndex.STOP_FLG).Text)
         End If
     End Sub
@@ -206,8 +218,8 @@ Partial Public Class MstUser
                 SEQ = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.SEQ) = SEQ
                 Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
-                Session.Item(SessionDef.SYSTEM_ID) = MS_USER(SEQ).SYSTEM_ID
-                 
+                Session.Item(SessionDef.SYSTEM_ID) = MS_SHISETSU(SEQ).SYSTEM_ID
+
                 Me.DivMessage.Visible = False
                 Me.TblRegist.Visible = True
 
@@ -222,16 +234,8 @@ Partial Public Class MstUser
         If Not Check_Joken() Then Exit Sub
 
         Joken = Nothing
-        Joken.LOGIN_ID = Trim(Me.JokenLOGIN_ID.Text)
-        Joken.USER_NAME = Trim(Me.JokenUSER_NAME.Text)
-        If CmnCheck.IsInput(Me.JokenKENGEN_1) OrElse CmnCheck.IsInput(Me.JokenKENGEN_2) Then
-            If CmnCheck.IsInput(Me.JokenKENGEN_1) AndAlso Not CmnCheck.IsInput(Me.JokenKENGEN_2) Then
-                Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_1
-            End If
-            If Not CmnCheck.IsInput(Me.JokenKENGEN_1) AndAlso CmnCheck.IsInput(Me.JokenKENGEN_2) Then
-                Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_2
-            End If
-        End If
+        Joken.ADDRESS1 = CmnModule.GetSelectedItemValue(Me.JokenADDRESS1)
+        Joken.SHISETSU_NAME = Trim(Me.JokenSHISETSU_NAME.Text)
         If CmnCheck.IsInput(Me.JokenSTOP_FLG) Then
             Joken.STOP_FLG = AppConst.STOP_FLG.Code.Stop
         End If
@@ -246,10 +250,8 @@ Partial Public Class MstUser
         Joken = Nothing
         Session.Item(SessionDef.Joken) = Joken
 
-        CmnModule.ClearControl(Me.JokenLOGIN_ID)
-        CmnModule.ClearControl(Me.JokenUSER_NAME)
-        CmnModule.ClearControl(Me.JokenKENGEN_1)
-        CmnModule.ClearControl(Me.JokenKENGEN_2)
+        CmnModule.ClearControl(Me.JokenADDRESS1)
+        CmnModule.ClearControl(Me.JokenSHISETSU_NAME)
         CmnModule.ClearControl(Me.JokenSTOP_FLG)
 
         '画面項目表示
@@ -264,10 +266,8 @@ Partial Public Class MstUser
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.JokenLOGIN_ID) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenUSER_NAME) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenKENGEN_1) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenKENGEN_2) AndAlso _
+        If Not CmnCheck.IsInput(Me.JokenADDRESS1) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenSHISETSU_NAME) AndAlso _
            Not CmnCheck.IsInput(Me.JokenSTOP_FLG) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
             Return False
@@ -276,7 +276,7 @@ Partial Public Class MstUser
         Return True
     End Function
 
-    '[新規ユーザ登録]
+    '[新規施設登録]
     Protected Sub BtnRegist_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnRegist.Click
         Session.Item(SessionDef.SYSTEM_ID) = ""
         Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
@@ -290,29 +290,42 @@ Partial Public Class MstUser
 
     '登録枠
     Private Sub SetForm_Regist()
+        'プルダウン設定
+        AppModule.SetDropDownList_ADDRESS1(Me.ADDRESS1)
+
         'IME設定
-        CmnModule.SetIme(Me.LOGIN_ID, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.PASSWORD, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.USER_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SHISETSU_KANA, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ZIP_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ZIP_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.TEL_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEL_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEL_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKIN_TIME_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKIN_TIME_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKOUT_TIME_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.CHECKOUT_TIME_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SHISETSU_URL, CmnModule.ImeType.Disabled)
 
         If Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update Then
             '変更時
-            Me.LOGIN_ID.Visible = False
-            Me.DispLOGIN_ID.Visible = True
             Me.DivMessage.Visible = False
             Me.BtnSubmit.Text = "変更"
 
-            Me.DispLOGIN_ID.Text = AppModule.GetName_LOGIN_ID(MS_USER(SEQ).LOGIN_ID)
-            AppModule.SetForm_LOGIN_ID(MS_USER(SEQ).LOGIN_ID, Me.LOGIN_ID)
-            AppModule.SetForm_PASSWORD(MS_USER(SEQ).PASSWORD, Me.PASSWORD)
-            AppModule.SetForm_USER_NAME(MS_USER(SEQ).USER_NAME, Me.USER_NAME)
-            AppModule.SetForm_KENGEN(MS_USER(SEQ).KENGEN, Me.KENGEN_1, Me.KENGEN_2)
-            AppModule.SetForm_STOP_FLG(MS_USER(SEQ).STOP_FLG, Me.STOP_FLG)
-            Me.SYSTEM_ID.Value = MS_USER(SEQ).SYSTEM_ID
+            AppModule.SetForm_SHISETSU_NAME(MS_SHISETSU(SEQ).SHISETSU_NAME, Me.SHISETSU_NAME)
+            AppModule.SetForm_SHISETSU_KANA(MS_SHISETSU(SEQ).SHISETSU_KANA, Me.SHISETSU_KANA)
+            AppModule.SetForm_ZIP(MS_SHISETSU(SEQ).ZIP, Me.ZIP_1, Me.ZIP_2)
+            AppModule.SetForm_ADDRESS1(MS_SHISETSU(SEQ).ADDRESS1, Me.ADDRESS1)
+            AppModule.SetForm_ADDRESS2(MS_SHISETSU(SEQ).ADDRESS2, Me.ADDRESS2)
+            AppModule.SetForm_TEL(MS_SHISETSU(SEQ).TEL, Me.TEL_1, Me.TEL_2, Me.TEL_3)
+            AppModule.SetForm_CHECKIN_TIME(MS_SHISETSU(SEQ).CHECKIN_TIME, Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2)
+            AppModule.SetForm_CHECKOUT_TIME(MS_SHISETSU(SEQ).CHECKOUT_TIME, Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2)
+            AppModule.SetForm_URL(MS_SHISETSU(SEQ).URL, Me.SHISETSU_URL)
+            AppModule.SetForm_STOP_FLG(MS_SHISETSU(SEQ).STOP_FLG, Me.STOP_FLG)
+            Me.SYSTEM_ID.Value = MS_SHISETSU(SEQ).SYSTEM_ID
         Else
             '登録時
-            Me.LOGIN_ID.Visible = True
-            Me.DispLOGIN_ID.Visible = False
             Me.DivMessage.Visible = False
             Me.BtnSubmit.Text = "登録"
             Me.SYSTEM_ID.Value = ""
@@ -329,26 +342,26 @@ Partial Public Class MstUser
 
         'データ更新
         If ExecuteTransaction() Then
-            Me.SYSTEM_ID.Value = MS_USER(SEQ).SYSTEM_ID
+            Me.SYSTEM_ID.Value = MS_SHISETSU(SEQ).SYSTEM_ID
 
             '再取得＋行数取得
-            Dim strSQL As String = SQL.MS_USER.AllData()
+            Dim strSQL As String = SQL.MS_SHISETSU.AllData()
             Dim RsData As System.Data.SqlClient.SqlDataReader
             Dim wCnt As Integer = 0
-            ReDim MS_USER(wCnt)
+            ReDim MS_SHISETSU(wCnt)
             RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
             While RsData.Read()
-                ReDim Preserve MS_USER(wCnt)
-                MS_USER(wCnt) = AppModule.SetRsData(RsData, MS_USER(wCnt))
+                ReDim Preserve MS_SHISETSU(wCnt)
+                MS_SHISETSU(wCnt) = AppModule.SetRsData(RsData, MS_SHISETSU(wCnt))
 
-                If Val(MS_USER(wCnt).SYSTEM_ID) = Val(Me.SYSTEM_ID.Value) Then
+                If Val(MS_SHISETSU(wCnt).SYSTEM_ID) = Val(Me.SYSTEM_ID.Value) Then
                     SEQ = wCnt
                     Session.Item(SessionDef.SEQ) = SEQ
                 End If
                 wCnt += 1
             End While
 
-            Response.Redirect(URL.MstUser & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
+            Response.Redirect(URL.MstShisetsu & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
     End Sub
 
@@ -360,30 +373,71 @@ Partial Public Class MstUser
             Return False
         End If
 
-        If Me.LOGIN_ID.Visible = True Then
-            If Not CmnCheck.IsInput(Me.LOGIN_ID) Then
-                CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_USER.Name.LOGIN_ID), Me)
-                Return False
-            End If
-
-            If CmnDb.IsExist(SQL.MS_USER.byLOGIN_ID(Trim(Me.LOGIN_ID.Text)), MyBase.DbConnection) Then
-                CmnModule.AlertMessage(MessageDef.Error.IsRegistered("入力されたログインID"), Me)
-                Return False
-            End If
-        End If
-
-        If Not CmnCheck.IsInput(Me.PASSWORD) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_USER.Name.PASSWORD), Me)
+        If Not CmnCheck.IsInput(Me.SHISETSU_NAME) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.SHISETSU_NAME), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.USER_NAME) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_USER.Name.USER_NAME), Me)
+        If MyModule.IsInsertMode() Then
+            If CmnDb.IsExist(SQL.MS_SHISETSU.bySHISETSU_NAME(Trim(Me.SHISETSU_NAME.Text)), MyBase.DbConnection) Then
+                CmnModule.AlertMessage(MessageDef.Error.IsRegistered("入力された施設名"), Me)
+                Return False
+            End If
+        End If
+
+        If Not CmnCheck.IsInput(Me.SHISETSU_KANA) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.SHISETSU_KANA), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.KENGEN_1, Me.KENGEN_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustSelect(TableDef.MS_USER.Name.KENGEN), Me)
+        If Not CmnCheck.IsInput(Me.ZIP_1, Me.ZIP_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.ZIP), Me)
+            Return False
+        Else
+            If Not CmnCheck.IsValidZip(Me.ZIP_1, Me.ZIP_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.ZIP), Me)
+                Return False
+            End If
+        End If
+
+        If Not CmnCheck.IsInput(Me.ADDRESS1) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect(TableDef.MS_SHISETSU.Name.ADDRESS1), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.ADDRESS2) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.ADDRESS2), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.TEL_1, Me.TEL_2, Me.TEL_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.TEL), Me)
+            Return False
+        Else
+            If Not CmnCheck.IsValidTel(Me.TEL_1, Me.TEL_2, Me.TEL_3) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.TEL), Me)
+                Return False
+            End If
+        End If
+
+        If CmnCheck.IsInput(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2) Then
+        Else
+            If Not CmnCheck.IsValidTime(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.CHECKIN_TIME), Me)
+                Return False
+            End If
+        End If
+
+        If CmnCheck.IsInput(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2) Then
+        Else
+            If Not CmnCheck.IsValidTime(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.CHECKOUT_TIME), Me)
+                Return False
+            End If
+        End If
+
+        If Not CmnCheck.IsInput(Me.SHISETSU_URL) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.URL), Me)
             Return False
         End If
 
@@ -392,13 +446,16 @@ Partial Public Class MstUser
 
     '入力値を取得
     Private Sub GetValue()
-        If Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert Then
-            MS_USER(SEQ).LOGIN_ID = AppModule.GetValue_LOGIN_ID(Me.LOGIN_ID)
-        End If
-        MS_USER(SEQ).PASSWORD = AppModule.GetValue_PASSWORD(Me.PASSWORD)
-        MS_USER(SEQ).USER_NAME = AppModule.GetValue_USER_NAME(Me.USER_NAME)
-        MS_USER(SEQ).KENGEN = AppModule.GetValue_KENGEN(Me.KENGEN_1, Me.KENGEN_2)
-        MS_USER(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
+        MS_SHISETSU(SEQ).SHISETSU_NAME = AppModule.GetValue_SHISETSU_NAME(Me.SHISETSU_NAME)
+        MS_SHISETSU(SEQ).SHISETSU_KANA = AppModule.GetValue_SHISETSU_KANA(Me.SHISETSU_KANA)
+        MS_SHISETSU(SEQ).ZIP = AppModule.GetValue_ZIP(Me.ZIP_1, Me.ZIP_2)
+        MS_SHISETSU(SEQ).ADDRESS1 = AppModule.GetValue_ADDRESS1(Me.ADDRESS1)
+        MS_SHISETSU(SEQ).ADDRESS2 = AppModule.GetValue_ADDRESS2(Me.ADDRESS2)
+        MS_SHISETSU(SEQ).TEL = AppModule.GetValue_TEL(Me.TEL_1, Me.TEL_2, Me.TEL_3)
+        MS_SHISETSU(SEQ).CHECKIN_TIME = AppModule.GetValue_CHECKIN_TIME(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2)
+        MS_SHISETSU(SEQ).CHECKOUT_TIME = AppModule.GetValue_CHECKOUT_TIME(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2)
+        MS_SHISETSU(SEQ).URL = AppModule.GetValue_URL(Me.SHISETSU_URL)
+        MS_SHISETSU(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
     End Sub
 
     'データ更新
@@ -414,12 +471,12 @@ Partial Public Class MstUser
     Private Function InsertData() As Boolean
         Dim strSQL As String
 
-        MS_USER(SEQ).SYSTEM_ID = MyModule.GetMaxSYSTEM_ID(MyBase.DbConnection)
+        MS_SHISETSU(SEQ).SYSTEM_ID = MyModule.GetMaxSYSTEM_ID(MyBase.DbConnection)
 
         MyBase.BeginTransaction()
         Try
             'データ更新
-            strSQL = SQL.MS_USER.Insert(MS_USER(SEQ))
+            strSQL = SQL.MS_SHISETSU.Insert(MS_SHISETSU(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             MyBase.Commit()
@@ -441,7 +498,7 @@ Partial Public Class MstUser
         MyBase.BeginTransaction()
         Try
             'データ更新
-            strSQL = SQL.MS_USER.Update(MS_USER(SEQ))
+            strSQL = SQL.MS_SHISETSU.Update(MS_SHISETSU(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             MyBase.Commit()

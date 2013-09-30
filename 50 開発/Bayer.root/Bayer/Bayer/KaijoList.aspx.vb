@@ -20,7 +20,7 @@ Partial Public Class KaijoList
         TO_DATE
     End Enum
 
-    Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+    Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
         Session.Item(SessionDef.Joken) = Joken
     End Sub

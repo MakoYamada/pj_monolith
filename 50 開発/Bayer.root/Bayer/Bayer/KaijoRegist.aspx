@@ -533,6 +533,15 @@
 										<table cellspacing="2" border="0">
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 70px;">
+													施設<br />
+													選定理由
+												</td>
+												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
+													<asp:TextBox ID="ANS_SENTEI_RIYU" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" Width="650px" MaxLength="500" TextMode="MultiLine"></asp:TextBox>
+												</td>
+											</tr>
+											<tr>
+												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 70px;">
 													都道府県
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 110px;">
@@ -547,7 +556,7 @@
 												<td nowrap="nowrap">&nbsp;</td>
 											</tr>
 											<tr>
-												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
+												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 70px;">
 													施設名
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
@@ -561,7 +570,8 @@
 													会場住所
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
-													<asp:TextBox ID="ANS_SHISETSU_ADDRESS" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎●" Width="650px" ReadOnly="true" TabIndex="-1" CssClass="disp"></asp:TextBox>
+													<asp:TextBox ID="ANS_SHISETSU_ZIP" runat="server" Text="888-8888" Width="120px" ReadOnly="true" TabIndex="-1" CssClass="disp"></asp:TextBox>
+													<asp:TextBox ID="ANS_SHISETSU_ADDRESS" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎●" Width="550px" ReadOnly="true" TabIndex="-1" CssClass="disp"></asp:TextBox>
 												</td>
 											</tr>
 											<tr>

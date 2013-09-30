@@ -6,7 +6,7 @@ Partial Public Class KaijoRegist
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
     Private SEQ As Integer
 
-    Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
+    Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
     End Sub
 
@@ -35,6 +35,7 @@ Partial Public Class KaijoRegist
 
         '検索画面戻り
         Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
+        Me.ANS_SHISETSU_ZIP.Text = Session.Item(SessionDef.ShisetsuKensaku_ZIP)
         Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
         Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
         Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
@@ -64,6 +65,7 @@ Partial Public Class KaijoRegist
 
         'IME設定
         CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_SENTEI_RIYU, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_SHISETSU_NAME, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_T, CmnModule.ImeType.Disabled)
@@ -134,7 +136,9 @@ Partial Public Class KaijoRegist
         AppModule.SetForm_ANS_STATUS_TEHAI(TBL_KAIJO(SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)
         AppModule.SetForm_ADDRESS1(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1), Me.ADDRESS1)
         AppModule.SetForm_ADDRESS2(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2), Me.ADDRESS2)
+        AppModule.SetForm_ANS_SENTEI_RIYU(TBL_KAIJO(SEQ).ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU)
         AppModule.SetForm_ANS_SHISETSU_NAME(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME), Me.ANS_SHISETSU_NAME)
+        AppModule.SetForm_ANS_SHISETSU_ZIP(Session.Item(SessionDef.ShisetsuKensaku_ZIP), Me.ANS_SHISETSU_ZIP)
         AppModule.SetForm_ANS_SHISETSU_ADDRESS(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS), Me.ANS_SHISETSU_ADDRESS)
         AppModule.SetForm_ANS_SHISETSU_TEL(Session.Item(SessionDef.ShisetsuKensaku_TEL), Me.ANS_SHISETSU_TEL)
         AppModule.SetForm_ANS_SHISETSU_URL(Session.Item(SessionDef.ShisetsuKensaku_URL), Me.ANS_SHISETSU_URL)
@@ -218,14 +222,15 @@ Partial Public Class KaijoRegist
 
         'データ更新
         If ExecuteTransaction() Then
-            'QQQ ??????? Response.Redirect(URL.KaijoRegistEnd)
         End If
     End Sub
 
     '入力値を取得
     Private Sub GetValue()
         TBL_KAIJO(SEQ).ANS_STATUS_TEHAI = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
+        TBL_KAIJO(SEQ).ANS_SENTEI_RIYU = AppModule.GetValue_ANS_SENTEI_RIYU(Me.ANS_SENTEI_RIYU)
         TBL_KAIJO(SEQ).ANS_SHISETSU_NAME = AppModule.GetValue_ANS_SHISETSU_NAME(Me.ANS_SHISETSU_NAME)
+        TBL_KAIJO(SEQ).ANS_SHISETSU_ZIP = AppModule.GetValue_ANS_SHISETSU_ZIP(Me.ANS_SHISETSU_ZIP)
         TBL_KAIJO(SEQ).ANS_SHISETSU_ADDRESS = AppModule.GetValue_ANS_SHISETSU_ADDRESS(Me.ANS_SHISETSU_ADDRESS)
         TBL_KAIJO(SEQ).ANS_SHISETSU_TEL = AppModule.GetValue_ANS_SHISETSU_TEL(Me.ANS_SHISETSU_TEL)
         TBL_KAIJO(SEQ).ANS_SHISETSU_URL = AppModule.GetValue_ANS_SHISETSU_URL(Me.ANS_SHISETSU_URL)

@@ -502,6 +502,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents MANAGER_KAIJO_TEHAI_No As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''ANS_SENTEI_RIYU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SENTEI_RIYU As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ADDRESS1 コントロール。
     '''</summary>
     '''<remarks>
@@ -536,6 +545,15 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnShisetsuKensaku As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_SHISETSU_ZIP コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SHISETSU_ZIP As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_SHISETSU_ADDRESS コントロール。

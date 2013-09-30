@@ -308,24 +308,42 @@ Public Class CmnCheck
         End If
         Return True
     End Function
+    Public Shared Function IsValidTel(ByVal str1 As String, ByVal str2 As String, ByVal str3 As String) As Boolean
+        Return IsValidTel(Trim(StrConv(str1, VbStrConv.Narrow)) & "-" & Trim(StrConv(str2, VbStrConv.Narrow)) & "-" & Trim(StrConv(str3, VbStrConv.Narrow)))
+    End Function
     Public Shared Function IsValidTel(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
         Return IsValidTel(TextBox.Text)
+    End Function
+    Public Shared Function IsValidTel(ByVal TextBox1 As System.Web.UI.WebControls.TextBox, ByVal TextBox2 As System.Web.UI.WebControls.TextBox, ByVal TextBox3 As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsValidTel(Trim(StrConv(TextBox1.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox2.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox3.Text, VbStrConv.Narrow)))
     End Function
 
     'Fax番号チェック
     Public Shared Function IsValidFax(ByVal str As String) As Boolean
         Return IsValidTel(str)
     End Function
+    Public Shared Function IsValidFax(ByVal str1 As String, ByVal str2 As String, ByVal str3 As String) As Boolean
+        Return IsValidTel(Trim(StrConv(str1, VbStrConv.Narrow)) & "-" & Trim(StrConv(str2, VbStrConv.Narrow)) & "-" & Trim(StrConv(str3, VbStrConv.Narrow)))
+    End Function
     Public Shared Function IsValidFax(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
         Return IsValidTel(TextBox.Text)
+    End Function
+    Public Shared Function IsValidFax(ByVal TextBox1 As System.Web.UI.WebControls.TextBox, ByVal TextBox2 As System.Web.UI.WebControls.TextBox, ByVal TextBox3 As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsValidTel(Trim(StrConv(TextBox1.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox2.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox3.Text, VbStrConv.Narrow)))
     End Function
 
     '携帯番号チェック
     Public Shared Function IsValidKeitai(ByVal str As String) As Boolean
         Return IsValidTel(str)
     End Function
+    Public Shared Function IsValidKeitai(ByVal str1 As String, ByVal str2 As String, ByVal str3 As String) As Boolean
+        Return IsValidTel(Trim(StrConv(str1, VbStrConv.Narrow)) & "-" & Trim(StrConv(str2, VbStrConv.Narrow)) & "-" & Trim(StrConv(str3, VbStrConv.Narrow)))
+    End Function
     Public Shared Function IsValidKeitai(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
         Return IsValidTel(TextBox.Text)
+    End Function
+    Public Shared Function IsValidKeitai(ByVal TextBox1 As System.Web.UI.WebControls.TextBox, ByVal TextBox2 As System.Web.UI.WebControls.TextBox, ByVal TextBox3 As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsValidTel(Trim(StrConv(TextBox1.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox2.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox3.Text, VbStrConv.Narrow)))
     End Function
 
     '郵便番号チェック
@@ -350,8 +368,14 @@ Public Class CmnCheck
         End If
         Return True
     End Function
+    Public Shared Function IsValidZip(ByVal str1 As String, ByVal str2 As String) As Boolean
+        Return IsValidZip(Trim(StrConv(str1, VbStrConv.Narrow)) & "-" & Trim(StrConv(str2, VbStrConv.Narrow)))
+    End Function
     Public Shared Function IsValidZip(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
         Return IsValidZip(TextBox.Text)
+    End Function
+    Public Shared Function IsValidZip(ByVal TextBox1 As System.Web.UI.WebControls.TextBox, ByVal TextBox2 As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsValidZip(Trim(StrConv(TextBox1.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TextBox2.Text, VbStrConv.Narrow)))
     End Function
 
     '年月日チェック

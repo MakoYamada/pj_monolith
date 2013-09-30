@@ -4707,8 +4707,8 @@ Public Class AppModule
     End Sub
 
     '施設名(カナ)
-    Public Shared Sub SetForm_SHISETSU_NAME_KANA(ByVal SHISETSU_NAME_KANA As String, ByRef control As TextBox)
-        control.Text = SHISETSU_NAME_KANA
+    Public Shared Sub SetForm_SHISETSU_KANA(ByVal SHISETSU_KANA As String, ByRef control As TextBox)
+        control.Text = SHISETSU_KANA
     End Sub
 
     '【回答】施設選定理由
@@ -4801,7 +4801,7 @@ Public Class AppModule
         control.Text = ANS_MITSUMORI_URL
     End Sub
 
-    '権限
+    'ユーザマスタ：権限
     Public Shared Sub SetForm_KENGEN(ByVal KENGEN As String, ByRef control_KENGEN_1 As RadioButton, ByRef control_KENGEN_2 As RadioButton)
         If KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_1 Then
             control_KENGEN_1.Checked = True
@@ -4815,6 +4815,44 @@ Public Class AppModule
         End If
     End Sub
 
+    '施設マスタ：チェックイン時間
+    Public Shared Sub SetForm_CHECKIN_TIME(ByVal CHECKIN_TIME As String, ByRef control As TextBox)
+        control.Text = CHECKIN_TIME
+    End Sub
+    Public Shared Sub SetForm_CHECKIN_TIME(ByVal CHECKIN_TIME As String, ByRef control_1 As TextBox, ByRef control_2 As TextBox)
+        Dim wCHECKIN_TIME_1 As String = ""
+        Dim wCHECKIN_TIME_2 As String = ""
+        If Trim(CHECKIN_TIME) = "" OrElse Trim(StrConv(CHECKIN_TIME, VbStrConv.Narrow)) = ":" Then
+        Else
+            Dim wSplit() As String
+            If InStr(CHECKIN_TIME, ":") > 0 Then
+                wSplit = Split(Trim(CHECKIN_TIME), ":")
+                Try
+                    wCHECKIN_TIME_1 = wSplit(0)
+                    wCHECKIN_TIME_2 = wSplit(1)
+                Catch ex As Exception
+                    wCHECKIN_TIME_1 = ""
+                    wCHECKIN_TIME_2 = ""
+                End Try
+            End If
+        End If
+        control_1.Text = wCHECKIN_TIME_1
+        control_2.Text = wCHECKIN_TIME_2
+    End Sub
+
+    '施設マスタ：チェックアウト時間
+    Public Shared Sub SetForm_CHECKOUT_TIME(ByVal CHECKOUT_TIME As String, ByRef control As TextBox)
+        SetForm_CHECKIN_TIME(CHECKOUT_TIME, control)
+    End Sub
+    Public Shared Sub SetForm_CHECKOUT_TIME(ByVal CHECKOUT_TIME As String, ByRef control_1 As TextBox, ByRef control_2 As TextBox)
+        SetForm_CHECKIN_TIME(CHECKOUT_TIME, control_1, control_2)
+    End Sub
+
+    '施設マスタ：URL
+    Public Shared Sub SetForm_URL(ByVal URL As String, ByRef control As TextBox)
+        control.Text = URL
+    End Sub
+
     '利用停止フラグ
     Public Shared Sub SetForm_STOP_FLG(ByVal [Stop] As String, ByRef control As CheckBox)
         If [Stop] = AppConst.STOP_FLG.Code.Stop Then
@@ -4823,6 +4861,7 @@ Public Class AppModule
             control.Checked = False
         End If
     End Sub
+
 
     '== プルダウン設定 ==
     '事業部
@@ -6179,6 +6218,9 @@ Public Class AppModule
     Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As TextBox) As String
         Return Trim(ADDRESS1.Text)
     End Function
+    Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ADDRESS1)
+    End Function
 
     '市町村
     Public Shared Function GetValue_ADDRESS2(ByVal ADDRESS2 As TextBox) As String
@@ -6199,6 +6241,9 @@ Public Class AppModule
     End Function
     Public Shared Function GetValue_ANS_SHISETSU_NAME(ByVal ANS_SHISETSU_NAME As TextBox) As String
         Return Trim(ANS_SHISETSU_NAME.Text)
+    End Function
+    Public Shared Function GetValue_SHISETSU_KANA(ByVal SHISETSU_KANA As TextBox) As String
+        Return Trim(SHISETSU_KANA.Text)
     End Function
 
     '【回答】施設選定理由
@@ -6279,7 +6324,7 @@ Public Class AppModule
         Return Trim(StrConv(ANS_MITSUMORI_URL.Text, VbStrConv.Narrow))
     End Function
 
-    '権限
+    'ユーザマスタ：権限
     Public Shared Function GetValue_KENGEN(ByVal KENGEN_1 As RadioButton, ByVal KENGEN_2 As RadioButton) As String
         If KENGEN_1.Checked = True Then
             Return AppConst.MS_USER.KENGEN.Code.KENGEN_1
@@ -6288,6 +6333,25 @@ Public Class AppModule
         Else
             Return ""
         End If
+    End Function
+
+    '施設マスタ：チェックイン時間
+    Public Shared Function GetValue_CHECKIN_TIME(ByVal CHECKIN_TIME_1 As TextBox, ByVal CHECKIN_TIME_2 As TextBox) As String
+        If Trim(CHECKIN_TIME_1.Text) = "" OrElse Trim(CHECKIN_TIME_2.Text) = "" Then
+            Return ""
+        End If
+        Dim wStr As String = Val(StrConv(CHECKIN_TIME_1.Text, VbStrConv.Narrow)).ToString.PadLeft(2, "0"c) & ":" & Val(StrConv(CHECKIN_TIME_2.Text, VbStrConv.Narrow)).ToString.PadLeft(2, "0"c)
+        Return wStr
+    End Function
+
+    '施設マスタ：チェックアウト時間
+    Public Shared Function GetValue_CHECKOUT_TIME(ByVal CHECKOUT_TIME_1 As TextBox, ByVal CHECKOUT_TIME_2 As TextBox) As String
+        Return GetValue_CHECKIN_TIME(CHECKOUT_TIME_1, CHECKOUT_TIME_2)
+    End Function
+
+    '施設マスタ：URL
+    Public Shared Function GetValue_URL(ByVal URL As TextBox) As String
+        Return Trim(StrConv(URL.Text, VbStrConv.Narrow))
     End Function
 
     '利用停止フラグ

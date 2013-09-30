@@ -92,7 +92,7 @@ Partial Public Class ShisetsuKensaku
             AppModule.SetForm_SHISETSU_NAME(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME), Me.SHISETSU_NAME)
         End If
         If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA)) <> "" Then
-            AppModule.SetForm_SHISETSU_NAME_KANA(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA), Me.SHISETSU_NAME_KANA)
+            AppModule.SetForm_SHISETSU_KANA(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA), Me.SHISETSU_NAME_KANA)
         End If
 
         'データ取得

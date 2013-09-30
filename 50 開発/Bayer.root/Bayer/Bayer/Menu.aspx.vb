@@ -116,4 +116,13 @@ Partial Public Class Menu1
         Response.Redirect(URL.MstUser)
     End Sub
 
+    '[施設マスタ]
+    Protected Sub BtnShisetsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnShisetsu.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.MS_SHISETSU)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.SYSTEM_ID)
+        Response.Redirect(URL.MstShisetsu)
+    End Sub
+
 End Class

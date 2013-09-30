@@ -2479,10 +2479,27 @@ Public Class SQL
         = " ORDER BY" _
         & " MS_SHISETSU.SYSTEM_ID"
 
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
             strSQL &= " WHERE MS_SHISETSU.SYSTEM_ID='" & CmnDb.SqlString(SYSTEM_ID) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function bySHISETSU_NAME(ByVal SHISETSU_NAME As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_SHISETSU.SHISETSU_NAME='" & CmnDb.SqlString(SHISETSU_NAME) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
@@ -2502,11 +2519,19 @@ Public Class SQL
             End If
 
             If Trim(Joken.SHISETSU_NAME) <> "" Then
-                strSQL &= " AND MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
+                strSQL &= " AND ("
+                strSQL &= "      MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
+                strSQL &= "      OR "
+                strSQL &= "      MS_SHISETSU.SHISETSU_NAME_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
+                strSQL &= ")"
             End If
 
             If Trim(Joken.SHISETSU_NAME_KANA) <> "" Then
-                strSQL &= " AND MS_SHISETSU.SHISETSU_NAME_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME_KANA) & "%'"
+                strSQL &= " AND ("
+                strSQL &= "      MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME_KANA) & "%'"
+                strSQL &= "      OR "
+                strSQL &= "      MS_SHISETSU.SHISETSU_NAME_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME_KANA) & "%'"
+                strSQL &= ")"
             End If
 
             Return strSQL
