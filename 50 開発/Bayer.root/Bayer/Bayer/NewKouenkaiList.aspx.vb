@@ -59,7 +59,7 @@ Partial Public Class NewKouenkaiList
             Joken = Nothing
         End Try
         Try
-            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KAIJO)
+            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
             If TBL_KOUENKAI Is Nothing Then ReDim TBL_KOUENKAI(0)
         Catch ex As Exception
             ReDim TBL_KOUENKAI(0)
@@ -165,10 +165,15 @@ Partial Public Class NewKouenkaiList
         If e.Row.RowType = DataControlRowType.DataRow Then
 
             '実施日
-            e.Row.Cells(CellIndex.JISSHI_DATE).Text = _
-                CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD) _
-                & "～" _
-                & CmnModule.Format_Date(e.Row.Cells(CellIndex.TO_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
+            If e.Row.Cells(CellIndex.JISSHI_DATE).Text <> e.Row.Cells(CellIndex.TO_DATE).Text Then
+                e.Row.Cells(CellIndex.JISSHI_DATE).Text = _
+                    CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD) _
+                    & "～" _
+                    & CmnModule.Format_Date(e.Row.Cells(CellIndex.TO_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
+            Else
+                e.Row.Cells(CellIndex.JISSHI_DATE).Text = _
+                    CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
+            End If
 
             'TimeStamp
             e.Row.Cells(CellIndex.TIME_STAMP).Text = _
