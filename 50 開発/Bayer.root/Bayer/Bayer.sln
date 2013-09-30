@@ -9,9 +9,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CommonLib", "CommonLib\Comm
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintLog", "PrintLog\PrintLog.vbproj", "{9381C786-FB93-4DDB-B594-33D29E849BF5}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKouenkai", "ImportKouenkai\ImportKouenkai.vbproj", "{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}"
+EndProject
 Global
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 5
+		SccNumberOfProjects = 6
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = AppLib\\AppLib.vbproj
 		SccLocalPath1 = .
@@ -25,6 +27,9 @@ Global
 		SccProjectUniqueName4 = PrintLog\\PrintLog.vbproj
 		SccLocalPath4 = .
 		SccProjectFilePathRelativizedFromConnection4 = PrintLog\\
+		SccProjectUniqueName5 = ImportKouenkai\\ImportKouenkai.vbproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = ImportKouenkai\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +52,10 @@ Global
 		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
