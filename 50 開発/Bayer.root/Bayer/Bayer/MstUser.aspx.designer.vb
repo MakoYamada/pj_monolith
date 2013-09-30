@@ -187,6 +187,24 @@ Partial Public Class MstUser
     Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''SYSTEM_ID コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SYSTEM_ID As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''LabelNoData コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''GrvList コントロール。
     '''</summary>
     '''<remarks>

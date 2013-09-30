@@ -41,7 +41,7 @@
 	<hr style="width: 100%;" />
 	<div ID="DivMessage" runat="server">
 		<asp:Label ID="LabelMessage" runat="server" Font-Bold="true">
-			ユーザ情報を登録しました。 <br />
+			ユーザ情報を登録しました。 <br /><br />
 			ログインID＝1234567890<br />
 			氏名＝斗津府 太郎
 		</asp:Label>
@@ -104,7 +104,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td align="center" colspan="2" style="padding: 8px;">
+						<td align="center" colspan="2" style="padding-top: 5px; padding-bottom: 5px;">
 							<asp:Button ID="BtnSubmit" runat="server" Text="登録" Width="150px" CssClass="Button" />
 						</td>
 					</tr>
@@ -112,12 +112,14 @@
 			</td>
 		</tr>
 	</table>
+	<asp:HiddenField ID="SYSTEM_ID" runat="server" />
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr>
 			<td align="left">
+				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
 				<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" CellSpacing="0" 
 				 AutoGenerateColumns="false" ShowHeader="true" ShowFooter="false" 
-				 AllowPaging="true" PageSize="10"
+				 AllowPaging="false" PageSize="10"
 				 DataKeyNames="SYSTEM_ID" DataSourceID="SqlDataSource1">
 					<HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
 					<AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -125,7 +127,7 @@
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-						<asp:ButtonField ButtonType="Button" Text="変更" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Update" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="68px" />
+						<asp:ButtonField ButtonType="Button" Text="変更" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="68px" />
 						<asp:BoundField DataField="LOGIN_ID" HeaderText="ログインID" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KENGEN" HeaderText="権限" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
