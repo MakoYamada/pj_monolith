@@ -9,6 +9,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[MS_SHISETSU](
 	[SYSTEM_ID] [nvarchar](10) COLLATE Japanese_CI_AS  NOT NULL,
+	[ZIP] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
 	[ADDRESS1] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
 	[ADDRESS2] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
 	[SHISETSU_NAME] [nvarchar](200) COLLATE Japanese_CI_AS  NULL,
