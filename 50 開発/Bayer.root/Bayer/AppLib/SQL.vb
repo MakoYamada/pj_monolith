@@ -49,7 +49,7 @@ Public Class SQL
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
 
-            strSQL &= " SELECT *"
+            strSQL &= " SELECT *,"
             strSQL &= " ROW_NUMBER() OVER( partition by kouenkai_no order by time_stamp ) as CNT"
             strSQL &= " FROM TBL_KOUENKAI"
 
