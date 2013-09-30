@@ -16,12 +16,14 @@ CREATE TABLE [dbo].[TBL_SEIKYU](
 	[KAIJOHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[KIZAIHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[INSHOKUHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[OTHER_TATEKAE_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[KEI_99133040_1] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[UNEIHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[JINKENHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[KEI_41120200_1] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[HOTELHI_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[JR_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[AIR_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[OTHER_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[HOTEL_COMMISSION_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_COMMISSION_TF] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
@@ -34,7 +36,7 @@ CREATE TABLE [dbo].[TBL_SEIKYU](
 	[INSHOKUHI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[KEI_99133040_2] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[KEI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
-	[SEIKYU_NO_TOPTOUR] [nvarchar](100) COLLATE Japanese_CI_AS  NULL,
+	[SEIKYU_NO_TOPTOUR] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_SEISAN_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_TICKET_URL] [nvarchar](255) COLLATE Japanese_CI_AS  NULL,
@@ -98,8 +100,6 @@ CREATE TABLE [dbo].[TBL_SEIKYU](
 	[TAXI_SEISAN_TF_13] [nvarchar](12) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_SEISAN_TF_14] [nvarchar](12) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_SEISAN_TF_15] [nvarchar](12) COLLATE Japanese_CI_AS  NULL,
-	[KOUENKAI_KUBUN] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
-	[DELETE_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[SEND_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[TTANTO_ID] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
@@ -108,7 +108,9 @@ CREATE TABLE [dbo].[TBL_SEIKYU](
 	[UPDATE_USER] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
  CONSTRAINT [PK_TBL_SEIKYU] PRIMARY KEY CLUSTERED 
 (
-	[KOUENKAI_NO] ASC
+	[KOUENKAI_NO] ASC,
+	[SEISAN_YM] ASC,
+	[PAYMENT_NO] ASC
 ) ON [PRIMARY]
 ) ON [PRIMARY]
 
