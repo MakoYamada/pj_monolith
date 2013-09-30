@@ -80,7 +80,13 @@ Partial Public Class NewKouenkaiList
 
     '画面項目 表示
     Private Sub SetForm()
-        'データ取得
+
+        If Joken.BU <> "" Then Me.BU.Text = Joken.BU
+        If Joken.KIKAKU_TANTO_ROMA <> "" Then Me.KIKAKU_TANTO_AREA.Text = Joken.KIKAKU_TANTO_ROMA
+        If Joken.KOUENKAI_NAME <> "" Then Me.KOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
+        If Joken.KUBUN <> "" Then Me.KUBUN.SelectedValue = Joken.KUBUN
+
+        'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
