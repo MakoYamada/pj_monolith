@@ -2603,6 +2603,24 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " WHERE 1=1"
+
+            If Trim(Joken.LOGIN_ID) <> "" Then
+                strSQL &= " AND MS_USER.LOGIN_ID='" & CmnDb.SqlString(Joken.LOGIN_ID) & "'"
+            End If
+            If Trim(Joken.KENGEN) <> "" Then
+                strSQL &= " AND MS_USER.KENGEN='" & CmnDb.SqlString(Joken.KENGEN) & "'"
+            End If
+            If Trim(Joken.STOP_FLG) <> "" Then
+                strSQL &= " AND MS_USER.STOP_FLG='" & CmnDb.SqlString(Joken.STOP_FLG) & "'"
+            End If
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal MS_USER As TableDef.MS_USER.DataStruct) As String
             Dim strSQL As String = ""
 

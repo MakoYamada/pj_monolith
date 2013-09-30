@@ -150,6 +150,13 @@
       <DependentUpon>KaijoRireki.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="MstUser.aspx.designer.vb">
+      <DependentUpon>MstUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MstUser.aspx.vb">
+      <DependentUpon>MstUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
     </Compile>
@@ -360,6 +367,7 @@
     <Content Include="Images\triangle.gif" />
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRireki.aspx" />
+    <Content Include="MstUser.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
