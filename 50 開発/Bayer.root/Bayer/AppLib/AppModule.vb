@@ -3864,6 +3864,30 @@ Public Class AppModule
         End If
     End Function
 
+    'ユーザマスタ：権限
+    Public Shared Function GetName_KENGEN(ByVal KENGEN As String) As String
+        Select Case KENGEN
+            Case AppConst.MS_USER.KENGEN.Code.KENGEN_1, AppConst.MS_USER.KENGEN.Name.KENGEN_1
+                Return AppConst.MS_USER.KENGEN.Name.KENGEN_1
+            Case AppConst.MS_USER.KENGEN.Code.KENGEN_2, AppConst.MS_USER.KENGEN.Name.KENGEN_2
+                Return AppConst.MS_USER.KENGEN.Name.KENGEN_2
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
+    'ユーザマスタ：利用停止フラグ
+    Public Shared Function GetName_STOP_FLG(ByVal STOP_FLG As String) As String
+        Select Case STOP_FLG
+            Case AppConst.STOP_FLG.Code.Stop, AppConst.STOP_FLG.Name.Stop
+                Return AppConst.STOP_FLG.Name.Stop
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
 
     '== コントロールをセット ==
     'ログインID
@@ -4735,6 +4759,28 @@ Public Class AppModule
         control.Text = ANS_MITSUMORI_URL
     End Sub
 
+    '権限
+    Public Shared Sub SetForm_KENGEN(ByVal KENGEN As String, ByRef control_KENGEN_1 As RadioButton, ByRef control_KENGEN_2 As RadioButton)
+        If KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_1 Then
+            control_KENGEN_1.Checked = True
+            control_KENGEN_2.Checked = False
+        ElseIf KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_2 Then
+            control_KENGEN_1.Checked = False
+            control_KENGEN_2.Checked = True
+        Else
+            control_KENGEN_1.Checked = False
+            control_KENGEN_2.Checked = False
+        End If
+    End Sub
+
+    '利用停止フラグ
+    Public Shared Sub SetForm_STOP_FLG(ByVal [Stop] As String, ByRef control As CheckBox)
+        If [Stop] = AppConst.STOP_FLG.Code.Stop Then
+            control.Checked = True
+        Else
+            control.Checked = False
+        End If
+    End Sub
 
     '== プルダウン設定 ==
     '事業部
@@ -6170,6 +6216,26 @@ Public Class AppModule
     '見積書保存場所URL
     Public Shared Function GetValue_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As TextBox) As String
         Return Trim(StrConv(ANS_MITSUMORI_URL.Text, VbStrConv.Narrow))
+    End Function
+
+    '権限
+    Public Shared Function GetValue_KENGEN(ByVal KENGEN_1 As RadioButton, ByVal KENGEN_2 As RadioButton) As String
+        If KENGEN_1.Checked = True Then
+            Return AppConst.MS_USER.KENGEN.Code.KENGEN_1
+        ElseIf KENGEN_2.Checked = True Then
+            Return AppConst.MS_USER.KENGEN.Code.KENGEN_2
+        Else
+            Return ""
+        End If
+    End Function
+
+    '利用停止フラグ
+    Public Shared Function GetValue_STOP_FLG(ByVal STOP_FLG As CheckBox) As String
+        If STOP_FLG.Checked = True Then
+            Return AppConst.STOP_FLG.Code.Stop
+        Else
+            Return ""
+        End If
     End Function
 
 

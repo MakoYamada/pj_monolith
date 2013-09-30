@@ -2593,6 +2593,15 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byLOGIN_ID(ByVal LOGIN_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_USER.LOGIN_ID='" & CmnDb.SqlString(LOGIN_ID) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Login(ByVal LOGIN_ID As String, ByVal PASSWORD As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -2604,12 +2613,15 @@ Public Class SQL
         End Function
 
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
-            Dim strSQL As String = ""
+            Dim strSQL As String = SQL_SELECT
 
             strSQL &= " WHERE 1=1"
 
             If Trim(Joken.LOGIN_ID) <> "" Then
                 strSQL &= " AND MS_USER.LOGIN_ID='" & CmnDb.SqlString(Joken.LOGIN_ID) & "'"
+            End If
+            If Trim(Joken.USER_NAME) <> "" Then
+                strSQL &= " AND MS_USER.USER_NAME LIKE '%" & CmnDb.SqlString(Joken.USER_NAME) & "%'"
             End If
             If Trim(Joken.KENGEN) <> "" Then
                 strSQL &= " AND MS_USER.KENGEN='" & CmnDb.SqlString(Joken.KENGEN) & "'"
@@ -2618,6 +2630,12 @@ Public Class SQL
                 strSQL &= " AND MS_USER.STOP_FLG='" & CmnDb.SqlString(Joken.STOP_FLG) & "'"
             End If
 
+            Return strSQL
+        End Function
+
+        Public Shared Function MaxSYSTEM_ID() As String
+            Dim strSQL As String = ""
+            strSQL &= "SELECT CONVERT(INT,SYSTEM_ID) AS SYSTEM_ID FROM MS_USER"
             Return strSQL
         End Function
 

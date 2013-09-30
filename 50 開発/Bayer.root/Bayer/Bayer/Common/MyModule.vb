@@ -109,6 +109,21 @@ Public Class MyModule
         Return True
     End Function
 
+    '登録用システムID
+    Public Shared Function GetMaxSYSTEM_ID(ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+        Dim wSYSTEM_ID As Integer = 0
+        Dim strSQL As String = SQL.MS_USER.MaxSYSTEM_ID()
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        RsData = CmnDb.Read(strSQL, DbConn)
+        If RsData.Read() Then
+            wSYSTEM_ID = CmnModule.DbVal(CmnDb.DbData(TableDef.MS_USER.Column.SYSTEM_ID, RsData))
+        End If
+        RsData.Close()
+        wSYSTEM_ID += 1
+
+        Return wSYSTEM_ID.ToString.PadLeft(10, "0"c)
+    End Function
+
     ''手配状況チェック
     'Public Shared Function IsValidSTATUS_TEHAI(ByVal RECORD_KUBUN As String, ByVal OldSTATAUS_TEHAI As String, ByVal STATUS_TEHAI As String, ByVal TEHAI_HOTEL As String, ByVal TEHAI_KOTSU As String) As Boolean
     '    Select Case RECORD_KUBUN
