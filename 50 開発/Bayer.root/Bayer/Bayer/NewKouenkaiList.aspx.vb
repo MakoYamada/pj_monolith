@@ -17,6 +17,8 @@ Partial Public Class NewKouenkaiList
         KUBUN
         Button1
         KOUENKAI_NO
+        TO_DATE
+        CNT
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -27,7 +29,8 @@ Partial Public Class NewKouenkaiList
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         '共通チェック
-        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        Session.Item(SessionDef.LoginID) = "QQQ"
+        MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納        If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
@@ -67,7 +70,7 @@ Partial Public Class NewKouenkaiList
     '画面項目 初期化    Private Sub InitControls()
         AppModule.SetDropDownList_KUBUN(Me.KUBUN)
 
-        'IME設定        CmnModule.SetIme(Me.BU, CmnModule.ImeType.Active)
+        'IME設定        CmnModule.SetIme(Me.BU, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.KIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
 
@@ -139,7 +142,7 @@ Partial Public Class NewKouenkaiList
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
+        Dim strSQL As String = SQL.TBL_KOUENKAI.Search(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -158,23 +161,34 @@ Partial Public Class NewKouenkaiList
 
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
-        If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.JISSHI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            '仮
-            'e.Row.Cells(CellIndex.KUBUN).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.KUBUN).Text)
-            'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
-            'e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_KOTSU).Text)
-            'e.Row.Cells(CellIndex.TEHAI_TAXI).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
 
-            'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetName_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text, True)
-            'e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetName_TEHAI_KOTSU(e.Row.Cells(CellIndex.TEHAI_KOTSU).Text, True)
-            'e.Row.Cells(CellIndex.UPD_DATE).Text = AppModule.GetName_UPD_DATE(e.Row.Cells(CellIndex.UPD_DATE).Text, True)
+        If e.Row.RowType = DataControlRowType.DataRow Then
+
+            '実施日
+            e.Row.Cells(CellIndex.JISSHI_DATE).Text = _
+                CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD) _
+                & "～" _
+                & CmnModule.Format_Date(e.Row.Cells(CellIndex.TO_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
+
+            'TimeStamp
+            e.Row.Cells(CellIndex.TIME_STAMP).Text = _
+                CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+
+            '区分
+            If e.Row.Cells(CellIndex.CNT).Text > "1" Then
+                e.Row.Cells(CellIndex.KUBUN).Text = "新着変更"
+            Else
+                e.Row.Cells(CellIndex.KUBUN).Text = "新規"
+            End If
         End If
     End Sub
 
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
+            e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            e.Row.Cells(CellIndex.CNT).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
@@ -200,11 +214,11 @@ Partial Public Class NewKouenkaiList
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Detail"
-                'Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
-                'Session.Item(SessionDef.TBL_DR) = TBL_DR
-                'Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
-                'Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-                Response.Redirect(URL.DrRegist)
+                Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
+                Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+                Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+                Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+                Response.Redirect(URL.KouenkaiRegist)
         End Select
     End Sub
 

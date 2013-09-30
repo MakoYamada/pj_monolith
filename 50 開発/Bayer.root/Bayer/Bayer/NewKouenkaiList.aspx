@@ -18,14 +18,14 @@
                                     </td>
                                     <td>
                                         <asp:TextBox ID="BU" runat="server" Width="333px"
-                                            MaxLength="40">1234567890123456789012345678901234567890</asp:TextBox>
+                                            MaxLength="40" TabIndex="1">1234567890123456789012345678901234567890</asp:TextBox>
                                     </td>
                                     <td align="right">
                                         エリア
                                     </td>
                                     <td>
                                         <asp:TextBox ID="KIKAKU_TANTO_AREA" runat="server" Width="333px"
-                                            MaxLength="40" TabIndex="1">1234567890123456789012345678901234567890</asp:TextBox>
+                                            MaxLength="40" TabIndex="2">1234567890123456789012345678901234567890</asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -33,7 +33,7 @@
                                         区分
                                     </td>
                                     <td colspan="3">
-                                        <asp:DropDownList ID="KUBUN" runat="server" TabIndex="2">
+                                        <asp:DropDownList ID="KUBUN" runat="server" TabIndex="3">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -43,13 +43,13 @@
                                     </td>
                                     <td colspan="3">
                                         <asp:TextBox ID="KOUENKAI_NAME" runat="server" Width="651px"
-                                            MaxLength="80" TabIndex="3">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
+                                            MaxLength="80" TabIndex="4">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr style="width:900px">
                                     <td align="right" valign="bottom" colspan="4" style="width:100%">
                                         <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
-                                            CssClass="Button" TabIndex="4" />
+                                            CssClass="Button" TabIndex="5" />
                                     </td>
                                 </tr>
                             </table>
@@ -68,7 +68,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="5" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="6" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -78,7 +78,7 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="KIKAKU_TANTO_JIGYOBU" HeaderText="BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="BU" HeaderText="BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
@@ -100,12 +100,12 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="TIMESTAMP" HeaderText="Timestamp" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="TIME_STAMP" HeaderText="Timestamp" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="STATUS_TEHAI" HeaderText="区分" ItemStyle-Wrap="false"
+                        <asp:BoundField HeaderText="区分" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
@@ -118,7 +118,9 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" />
+                        <asp:BoundField DataField="TO_DATE" HeaderText="実施日TO" ReadOnly="True" />
+                        <asp:BoundField DataField="CNT" HeaderText="件数" />
                     </Columns>
                 </asp:GridView>
             </td>
@@ -126,7 +128,7 @@
         <tr align="center">
             <td>
                 <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" 
-                    CssClass="Button" TabIndex="6" />
+                    CssClass="Button" TabIndex="7" />
             </td>
         </tr>
     </table>
