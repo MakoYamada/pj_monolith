@@ -2129,6 +2129,7 @@
     Public Class MS_SHISETSU
         <Serializable()> Public Structure DataStruct
             Public SYSTEM_ID As String
+            Public ZIP As String
             Public ADDRESS1 As String
             Public ADDRESS2 As String
             Public SHISETSU_NAME As String
@@ -2145,6 +2146,7 @@
         End Structure
         Public Class Column
             Public Const SYSTEM_ID As String = "SYSTEM_ID"
+            Public Const ZIP As String = "ZIP"
             Public Const ADDRESS1 As String = "ADDRESS1"
             Public Const ADDRESS2 As String = "ADDRESS2"
             Public Const SHISETSU_NAME As String = "SHISETSU_NAME"
@@ -2161,6 +2163,7 @@
         End Class
         Public Class Name
             Public Const SYSTEM_ID As String = "システムID"
+            Public Const ZIP As String = "郵便番号"
             Public Const ADDRESS1 As String = "都道府県"
             Public Const ADDRESS2 As String = "住所"
             Public Const SHISETSU_NAME As String = "施設名"

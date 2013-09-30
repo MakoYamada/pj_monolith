@@ -776,6 +776,7 @@ Public Class AppModule
 
         For wCnt = 0 To RsData.FieldCount - 1
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_SHISETSU.Column.SYSTEM_ID.ToUpper Then MS_SHISETSU.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SHISETSU.Column.ZIP.ToUpper Then MS_SHISETSU.ZIP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_SHISETSU.Column.ADDRESS1.ToUpper Then MS_SHISETSU.ADDRESS1 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_SHISETSU.Column.ADDRESS2.ToUpper Then MS_SHISETSU.ADDRESS2 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_SHISETSU.Column.SHISETSU_NAME.ToUpper Then MS_SHISETSU.SHISETSU_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -4710,6 +4711,16 @@ Public Class AppModule
         control.Text = SHISETSU_NAME_KANA
     End Sub
 
+    'ÅyâÒìöÅzé{ê›ëIíËóùóR
+    Public Shared Sub SetForm_ANS_SENTEI_RIYU(ByVal ANS_SENTEI_RIYU As String, ByRef control As TextBox)
+        control.Text = ANS_SENTEI_RIYU
+    End Sub
+
+    'ÅyâÒìöÅz äJç√ín (é{ê›óXï÷î‘çÜ)
+    Public Shared Sub SetForm_ANS_SHISETSU_ZIP(ByVal ANS_SHISETSU_ZIP As String, ByRef control As TextBox)
+        control.Text = ANS_SHISETSU_ZIP
+    End Sub
+
     'å©êœäzÅiîÒâ€ê≈Åj
     Public Shared Sub SetForm_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As String, ByRef control As TextBox)
         control.Text = ANS_MITSUMORI_TF
@@ -6188,6 +6199,16 @@ Public Class AppModule
     End Function
     Public Shared Function GetValue_ANS_SHISETSU_NAME(ByVal ANS_SHISETSU_NAME As TextBox) As String
         Return Trim(ANS_SHISETSU_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzé{ê›ëIíËóùóR
+    Public Shared Function GetValue_ANS_SENTEI_RIYU(ByVal ANS_SENTEI_RIYU As TextBox) As String
+        Return Trim(ANS_SENTEI_RIYU.Text)
+    End Function
+
+    'ÅyâÒìöÅz äJç√ín (é{ê›óXï÷î‘çÜ)
+    Public Shared Function GetValue_ANS_SHISETSU_ZIP(ByVal ANS_SHISETSU_ZIP As TextBox) As String
+        Return Trim(ANS_SHISETSU_ZIP.Text)
     End Function
 
     'å©êœäzÅiîÒâ€ê≈Åj

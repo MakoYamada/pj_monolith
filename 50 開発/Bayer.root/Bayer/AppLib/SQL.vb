@@ -2517,6 +2517,7 @@ Public Class SQL
 
             strSQL = "INSERT INTO MS_SHISETSU"
             strSQL &= "(" & TableDef.MS_SHISETSU.Column.SYSTEM_ID
+            strSQL &= "," & TableDef.MS_SHISETSU.Column.ZIP
             strSQL &= "," & TableDef.MS_SHISETSU.Column.ADDRESS1
             strSQL &= "," & TableDef.MS_SHISETSU.Column.ADDRESS2
             strSQL &= "," & TableDef.MS_SHISETSU.Column.SHISETSU_NAME
@@ -2533,6 +2534,7 @@ Public Class SQL
             strSQL &= ")"
             strSQL &= " VALUES"
             strSQL &= "('" & CmnDb.SqlString(MS_SHISETSU.SYSTEM_ID) & "'"
+            strSQL &= ",'" & CmnDb.SqlString(MS_SHISETSU.ZIP) & "'"
             strSQL &= ",'" & CmnDb.SqlString(MS_SHISETSU.ADDRESS1) & "'"
             strSQL &= ",'" & CmnDb.SqlString(MS_SHISETSU.ADDRESS2) & "'"
             strSQL &= ",'" & CmnDb.SqlString(MS_SHISETSU.SHISETSU_NAME) & "'"
@@ -2555,7 +2557,8 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL = "UPDATE MS_SHISETSU SET"
-            strSQL &= " " & TableDef.MS_SHISETSU.Column.ADDRESS1 & "='" & CmnDb.SqlString(MS_SHISETSU.ADDRESS1) & "'"
+            strSQL &= " " & TableDef.MS_SHISETSU.Column.ZIP & "='" & CmnDb.SqlString(MS_SHISETSU.ZIP) & "'"
+            strSQL &= "," & TableDef.MS_SHISETSU.Column.ADDRESS1 & "='" & CmnDb.SqlString(MS_SHISETSU.ADDRESS1) & "'"
             strSQL &= "," & TableDef.MS_SHISETSU.Column.ADDRESS2 & "='" & CmnDb.SqlString(MS_SHISETSU.ADDRESS2) & "'"
             strSQL &= "," & TableDef.MS_SHISETSU.Column.SHISETSU_NAME & "='" & CmnDb.SqlString(MS_SHISETSU.SHISETSU_NAME) & "'"
             strSQL &= "," & TableDef.MS_SHISETSU.Column.SHISETSU_KANA & "='" & CmnDb.SqlString(MS_SHISETSU.SHISETSU_KANA) & "'"
