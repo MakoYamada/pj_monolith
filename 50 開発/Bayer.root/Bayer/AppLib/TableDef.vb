@@ -60,11 +60,13 @@
             Public MANAGER_KAIJO_TEHAI As String
             Public KAIJO_URL As String
             Public OTHER_NOTE As String
+            Public ANS_SENTEI_RIYU As String
             Public ANS_MITSUMORI_TF As String
             Public ANS_MITSUMORI_T As String
             Public ANS_MITSUMORI_TOTAL As String
             Public ANS_MITSUMORI_URL As String
             Public ANS_SHISETSU_NAME As String
+            Public ANS_SHISETSU_ZIP As String
             Public ANS_SHISETSU_ADDRESS As String
             Public ANS_SHISETSU_TEL As String
             Public ANS_SHISETSU_URL As String
@@ -148,11 +150,13 @@
             Public Const MANAGER_KAIJO_TEHAI As String = "MANAGER_KAIJO_TEHAI"
             Public Const KAIJO_URL As String = "KAIJO_URL"
             Public Const OTHER_NOTE As String = "OTHER_NOTE"
+            Public Const ANS_SENTEI_RIYU As String = "ANS_SENTEI_RIYU"
             Public Const ANS_MITSUMORI_TF As String = "ANS_MITSUMORI_TF"
             Public Const ANS_MITSUMORI_T As String = "ANS_MITSUMORI_T"
             Public Const ANS_MITSUMORI_TOTAL As String = "ANS_MITSUMORI_TOTAL"
             Public Const ANS_MITSUMORI_URL As String = "ANS_MITSUMORI_URL"
             Public Const ANS_SHISETSU_NAME As String = "ANS_SHISETSU_NAME"
+            Public Const ANS_SHISETSU_ZIP As String = "ANS_SHISETSU_ZIP"
             Public Const ANS_SHISETSU_ADDRESS As String = "ANS_SHISETSU_ADDRESS"
             Public Const ANS_SHISETSU_TEL As String = "ANS_SHISETSU_TEL"
             Public Const ANS_SHISETSU_URL As String = "ANS_SHISETSU_URL"
@@ -1711,11 +1715,13 @@
             Public MANAGER_KAIJO_TEHAI As String
             Public KAIJO_URL As String
             Public OTHER_NOTE As String
+            Public ANS_SENTEI_RIYU As String
             Public ANS_MITSUMORI_TF As String
             Public ANS_MITSUMORI_T As String
             Public ANS_MITSUMORI_TOTAL As String
             Public ANS_MITSUMORI_URL As String
             Public ANS_SHISETSU_NAME As String
+            Public ANS_SHISETSU_ZIP As String
             Public ANS_SHISETSU_ADDRESS As String
             Public ANS_SHISETSU_TEL As String
             Public ANS_SHISETSU_URL As String
@@ -1799,11 +1805,13 @@
             Public Const MANAGER_KAIJO_TEHAI As String = "MANAGER_KAIJO_TEHAI"
             Public Const KAIJO_URL As String = "KAIJO_URL"
             Public Const OTHER_NOTE As String = "OTHER_NOTE"
+            Public Const ANS_SENTEI_RIYU As String = "ANS_SENTEI_RIYU"
             Public Const ANS_MITSUMORI_TF As String = "ANS_MITSUMORI_TF"
             Public Const ANS_MITSUMORI_T As String = "ANS_MITSUMORI_T"
             Public Const ANS_MITSUMORI_TOTAL As String = "ANS_MITSUMORI_TOTAL"
             Public Const ANS_MITSUMORI_URL As String = "ANS_MITSUMORI_URL"
             Public Const ANS_SHISETSU_NAME As String = "ANS_SHISETSU_NAME"
+            Public Const ANS_SHISETSU_ZIP As String = "ANS_SHISETSU_ZIP"
             Public Const ANS_SHISETSU_ADDRESS As String = "ANS_SHISETSU_ADDRESS"
             Public Const ANS_SHISETSU_TEL As String = "ANS_SHISETSU_TEL"
             Public Const ANS_SHISETSU_URL As String = "ANS_SHISETSU_URL"
@@ -1887,11 +1895,13 @@
             Public Const MANAGER_KAIJO_TEHAI As String = "世話人会場 要・不要"
             Public Const KAIJO_URL As String = "会場URL"
             Public Const OTHER_NOTE As String = "その他備考欄"
+            Public Const ANS_SENTEI_RIYU As String = "【回答】施設選定理由"
             Public Const ANS_MITSUMORI_TF As String = "【回答】 概算見積_非課税"
             Public Const ANS_MITSUMORI_T As String = "【回答】 概算見積_課税"
             Public Const ANS_MITSUMORI_TOTAL As String = "【回答】 利用額 合計"
             Public Const ANS_MITSUMORI_URL As String = "【回答】 見積書 保存場所URL"
             Public Const ANS_SHISETSU_NAME As String = "【回答】 開催地 (施設名)"
+            Public Const ANS_SHISETSU_ZIP As String = "【回答】 開催地 (施設郵便番号)"
             Public Const ANS_SHISETSU_ADDRESS As String = "【回答】 開催地 (施設住所)"
             Public Const ANS_SHISETSU_TEL As String = "【回答】 開催地 (施設TEL)"
             Public Const ANS_SHISETSU_URL As String = "【回答】 開催地 (施設HP URL)"

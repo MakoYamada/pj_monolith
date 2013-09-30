@@ -1949,11 +1949,13 @@ Public Class SQL
             strSQL &= ",TBL_KAIJO.MANAGER_KAIJO_TEHAI"
             strSQL &= ",TBL_KAIJO.KAIJO_URL"
             strSQL &= ",TBL_KAIJO.OTHER_NOTE"
+            strSQL &= ",TBL_KAIJO.ANS_SENTEI_RIYU"
             strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_TF"
             strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_T"
             strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_TOTAL"
             strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_URL"
             strSQL &= ",TBL_KAIJO.ANS_SHISETSU_NAME"
+            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_ZIP"
             strSQL &= ",TBL_KAIJO.ANS_SHISETSU_ADDRESS"
             strSQL &= ",TBL_KAIJO.ANS_SHISETSU_TEL"
             strSQL &= ",TBL_KAIJO.ANS_SHISETSU_URL"
@@ -2076,11 +2078,13 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_KAIJO_TEHAI
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KAIJO_URL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.OTHER_NOTE
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SENTEI_RIYU
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_TF
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_T
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_TOTAL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_URL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_NAME
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_ZIP
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_ADDRESS
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_TEL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_URL
@@ -2134,11 +2138,13 @@ Public Class SQL
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_KAIJO_TEHAI) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.KAIJO_URL) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.OTHER_NOTE) & "'"
+            strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_SENTEI_RIYU) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_TF) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_T) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_TOTAL) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_URL) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_NAME) & "'"
+            strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_ZIP) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_ADDRESS) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_TEL) & "'"
             strSQL &= ",'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_URL) & "'"
@@ -2196,11 +2202,13 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_KAIJO_TEHAI & "='" & CmnDb.SqlString(TBL_KAIJO.MANAGER_KAIJO_TEHAI) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KAIJO_URL & "='" & CmnDb.SqlString(TBL_KAIJO.KAIJO_URL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.OTHER_NOTE & "='" & CmnDb.SqlString(TBL_KAIJO.OTHER_NOTE) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SENTEI_RIYU & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_SENTEI_RIYU) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_TF & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_TF) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_T & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_T) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_TOTAL & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_TOTAL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MITSUMORI_URL & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_MITSUMORI_URL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_NAME & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_NAME) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_ZIP & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_ZIP) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_ADDRESS & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_ADDRESS) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_TEL & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHISETSU_URL & "='" & CmnDb.SqlString(TBL_KAIJO.ANS_SHISETSU_URL) & "'"
