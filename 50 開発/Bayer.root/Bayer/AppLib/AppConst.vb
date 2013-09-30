@@ -299,6 +299,17 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class KIDOKU_FLG
+            '世話人会場　要・不要
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "0"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "既読"
+                Public Const No As String = "未読"
+            End Class
+        End Class
     End Class
 
     Public Class MS_CODE
