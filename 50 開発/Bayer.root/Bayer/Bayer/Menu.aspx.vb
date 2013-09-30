@@ -112,6 +112,7 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.Joken)
         Session.Remove(SessionDef.MS_USER)
         Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.SYSTEM_ID)
         Response.Redirect(URL.MstUser)
     End Sub
 

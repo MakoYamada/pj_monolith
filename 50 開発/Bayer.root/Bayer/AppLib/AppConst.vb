@@ -315,4 +315,26 @@ Public Class AppConst
         Public Const ROOM_TYPE As String = "11"             'èhîëïîâÆÉ^ÉCÉv
     End Class
 
+    Public Class MS_USER
+        Public Class KENGEN
+            '????
+            Public Class Code
+                Public Const KENGEN_1 As String = "1"
+                Public Const KENGEN_2 As String = "2"
+            End Class
+            Public Class Name
+                Public Const KENGEN_1 As String = "å†å¿ÇªÇÃÇP"
+                Public Const KENGEN_2 As String = "å†å¿ÇªÇÃÇQ"
+            End Class
+        End Class
+        Public Class STOP_FLG
+            Public Class Code
+                Public Const [Stop] As String = "1"
+            End Class
+            Public Class Name
+                Public Const [Stop] As String = "óòópí‚é~"
+            End Class
+        End Class
+    End Class
+
 End Class
