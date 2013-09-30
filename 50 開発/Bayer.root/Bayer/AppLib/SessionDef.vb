@@ -19,6 +19,7 @@
     Public Const DbError As String = "DbError"
     Public Const LoginID As String = "LoginID"
     Public Const Joken As String = "Joken"
+    Public Const SYSTEM_ID As String = "SYSTEM_ID"
     Public Const HotelKensaku_ADDRESS1 As String = "HotelKensaku_ADDRESS1"
     Public Const HotelKensaku_ADDRESS2 As String = "HotelKensaku_ADDRESS2"
     Public Const HotelKensaku_SHISETSU_NAME As String = "HotelKensaku_SHISETSU_NAME"
