@@ -1029,6 +1029,18 @@ Public Class AppModule
         Return KOUENKAI_NO
     End Function
 
+    '取消フラグ
+    Public Shared Function GetName_TORIKESHI_FLG(ByVal TORIKESHI_FLG As String) As String
+        Select Case TORIKESHI_FLG
+            Case AppConst.KOUENKAI.TORIKESHI_FLG.Code.No
+                Return AppConst.KOUENKAI.TORIKESHI_FLG.Name.No
+            Case AppConst.KOUENKAI.TORIKESHI_FLG.Code.Yes
+                Return AppConst.KOUENKAI.TORIKESHI_FLG.Name.Yes
+            Case Else
+                Return String.Empty
+        End Select
+    End Function
+
     '手配ステータス
     Public Shared Function GetName_STATUS_TEHAI(ByVal STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False) As String
         If KAIJO = False Then
