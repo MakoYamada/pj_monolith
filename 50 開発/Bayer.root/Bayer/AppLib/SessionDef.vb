@@ -35,4 +35,5 @@
     Public Const ShisetsuKensaku_ADDRESS As String = "ShisetsuKensaku_ADDRESS"
     Public Const ShisetsuKensaku_TEL As String = "ShisetsuKensaku_TEL"
     Public Const ShisetsuKensaku_URL As String = "ShisetsuKensaku_URL"
+    Public Const ShisetsuKensaku_Back As String = "ShisetsuKensaku_Back"
 End Class
