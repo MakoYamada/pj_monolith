@@ -139,6 +139,13 @@
       <DependentUpon>KaijoList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="KaijoRegist.aspx.designer.vb">
+      <DependentUpon>KaijoRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoRegist.aspx.vb">
+      <DependentUpon>KaijoRegist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="KaijoReport1.Designer.vb">
       <DependentUpon>KaijoReport1.vb</DependentUpon>
     </Compile>
@@ -202,13 +209,6 @@
     <Compile Include="HotelKensaku.aspx.vb">
       <DependentUpon>HotelKensaku.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="KaijoRegist.aspx.designer.vb">
-      <DependentUpon>KaijoRegist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="KaijoRegist.aspx.vb">
-      <DependentUpon>KaijoRegist.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -283,6 +283,13 @@
     </Compile>
     <Compile Include="KouenkaiRegist.aspx.vb">
       <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="KouenkaiRireki.aspx.designer.vb">
+      <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiRireki.aspx.vb">
+      <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ShisetsuKensaku.aspx.designer.vb">
@@ -375,6 +382,7 @@
     <Content Include="Images\toptour.png" />
     <Content Include="Images\triangle.gif" />
     <Content Include="KaijoList.aspx" />
+    <Content Include="KaijoRegist.aspx" />
     <Content Include="KaijoRireki.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
@@ -387,7 +395,6 @@
     <Content Include="Images\btnlist03.png" />
     <Content Include="Images\button-cross-alt.png" />
     <Content Include="Images\button-tick-alt.png" />
-    <Content Include="KaijoRegist.aspx" />
     <Content Include="Maintenance.html" />
     <Content Include="Menu.aspx" />
     <Content Include="NewKaijoList.aspx" />
@@ -401,6 +408,7 @@
     <Content Include="NewKouenkaiList.aspx" />
     <Content Include="KouenkaiList.aspx" />
     <Content Include="KouenkaiRegist.aspx" />
+    <Content Include="KouenkaiRireki.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

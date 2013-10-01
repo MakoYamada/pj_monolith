@@ -34,6 +34,15 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents KIDOKU_FLG As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''TORIKESHI_FLG コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TORIKESHI_FLG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''TIME_STAMP コントロール。
     '''</summary>
     '''<remarks>

@@ -12,16 +12,22 @@
 						<td nowrap="nowrap" align="left" style="width: 100px;">
 							<asp:Label ID="KOUENKAI_NO" runat="server" Text=""></asp:Label>
 						</td>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
-							ステータス
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 120px;">
+							新着ステータス
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
 							<asp:DropDownList ID="KIDOKU_FLG" runat="server" Width="100px"></asp:DropDownList>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
+							ステータス
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem">
+							<asp:Label ID="TORIKESHI_FLG" runat="server" Text=""></asp:Label>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
 							TimeStamp(BYL)
 						</td>
-						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
 							<asp:Label ID="TIME_STAMP" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
