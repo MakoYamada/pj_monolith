@@ -31,7 +31,7 @@
     Public Const ShisetsuKensaku_ADDRESS1 As String = "ShisetsuKensaku_ADDRESS1"
     Public Const ShisetsuKensaku_ADDRESS2 As String = "ShisetsuKensaku_ADDRESS2"
     Public Const ShisetsuKensaku_SHISETSU_NAME As String = "ShisetsuKensaku_SHISETSU_NAME"
-    Public Const ShisetsuKensaku_SHISETSU_NAME_KANA As String = "ShisetsuKensaku_SHISETSU_NAME_KANA"
+    Public Const ShisetsuKensaku_SHISETSU_KANA As String = "ShisetsuKensaku_SHISETSU_KANA"
     Public Const ShisetsuKensaku_ADDRESS As String = "ShisetsuKensaku_ADDRESS"
     Public Const ShisetsuKensaku_TEL As String = "ShisetsuKensaku_TEL"
     Public Const ShisetsuKensaku_URL As String = "ShisetsuKensaku_URL"
