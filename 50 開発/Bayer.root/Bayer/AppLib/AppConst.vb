@@ -316,7 +316,7 @@ Public Class AppConst
 
     Public Class KOUENKAI
         Public Class KIDOKU_FLG
-            '世話人会場　要・不要
+            '新着情報　既読・未読
             Public Class Code
                 Public Const Yes As String = "1"
                 Public Const No As String = "0"
@@ -324,6 +324,18 @@ Public Class AppConst
             Public Class Name
                 Public Const Yes As String = "既読"
                 Public Const No As String = "未読"
+            End Class
+        End Class
+
+        Public Class TORIKESHI_FLG
+            '取消フラグ
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "0"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "取消済み"
+                Public Const No As String = "有効"
             End Class
         End Class
     End Class
