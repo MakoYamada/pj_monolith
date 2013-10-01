@@ -25,22 +25,13 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KOUENKAI_KUBUN コントロール。
+    '''KIDOKU_FLG コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_KUBUN As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_STATUS_TEHAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents KIDOKU_FLG As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TIME_STAMP コントロール。
@@ -58,7 +49,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TAXI_PRT_NAME コントロール。
@@ -76,7 +67,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_TITLE As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KOUENKAI_TITLE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''FROM_DATE コントロール。
@@ -103,7 +94,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KAIJO_NAME As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''SEIHIN_NAME コントロール。
@@ -184,7 +175,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''KIKAKU_TANTO_EIGYOSHO コントロール。
@@ -193,7 +184,7 @@ Partial Public Class KouenkaiRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''COST_CENTER コントロール。
@@ -286,13 +277,13 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents BtnRireki As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnToroku コントロール。
+    '''BtnSubmit コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnToroku As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnNozomi コントロール。
