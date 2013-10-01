@@ -3345,9 +3345,9 @@ Public Class AppModule
         Return TAXI_PRT_NAME
     End Function
 
-    '講演会名
-    Public Shared Function GetName_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String) As String
-        Return KOUENKAI_NAME
+    '会場名
+    Public Shared Function GetName_KAIJO_NAME(ByVal KAIJO_NAME As String) As String
+        Return KAIJO_NAME
     End Function
 
     '講演会タイトル
@@ -5356,6 +5356,11 @@ Public Class AppModule
     '氏名
     Public Shared Function GetValue_USER_NAME(ByVal USER_NAME As TextBox) As String
         Return Trim(USER_NAME.Text)
+    End Function
+
+    '新着　既読フラグ
+    Public Shared Function GetValue_KIDOKU_FLAG(ByVal KIDOKU_FLAG As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(KIDOKU_FLAG)
     End Function
 
     '手配ステータス
