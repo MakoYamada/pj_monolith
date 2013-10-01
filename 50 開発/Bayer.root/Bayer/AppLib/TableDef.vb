@@ -2381,7 +2381,7 @@
             Public ADDRESS1 As String
             Public ADDRESS2 As String
             Public SHISETSU_NAME As String
-            Public SHISETSU_NAME_KANA As String
+            Public SHISETSU_KANA As String
             Public LOGIN_ID As String
             Public USER_NAME As String
             Public STOP_FLG As String
@@ -2407,7 +2407,7 @@
             Public Const ADDRESS1 As String = "都道府県"
             Public Const ADDRESS2 As String = "市区町村"
             Public Const SHISETSU_NAME As String = "施設名"
-            Public Const SHISETSU_NAME_KANA As String = "施設名(カナ)"
+            Public Const SHISETSU_KANA As String = "施設名(カナ)"
             Public Const LOGIN_ID As String = "ログインID"
             Public Const USER_NAME As String = "氏名"
             Public Const KENGEN As String = "権限"

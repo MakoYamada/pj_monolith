@@ -2522,15 +2522,15 @@ Public Class SQL
                 strSQL &= " AND ("
                 strSQL &= "      MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
                 strSQL &= "      OR "
-                strSQL &= "      MS_SHISETSU.SHISETSU_NAME_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
+                strSQL &= "      MS_SHISETSU.SHISETSU_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME) & "%'"
                 strSQL &= ")"
             End If
 
-            If Trim(Joken.SHISETSU_NAME_KANA) <> "" Then
+            If Trim(Joken.SHISETSU_KANA) <> "" Then
                 strSQL &= " AND ("
-                strSQL &= "      MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME_KANA) & "%'"
+                strSQL &= "      MS_SHISETSU.SHISETSU_NAME LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_KANA) & "%'"
                 strSQL &= "      OR "
-                strSQL &= "      MS_SHISETSU.SHISETSU_NAME_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_NAME_KANA) & "%'"
+                strSQL &= "      MS_SHISETSU.SHISETSU_KANA LIKE '%" & CmnDb.SqlString(Joken.SHISETSU_KANA) & "%'"
                 strSQL &= ")"
             End If
 
