@@ -68,7 +68,7 @@
 
             Return ret
         Catch ex As Exception
-            Throw New Exception(ex.Message & vbNewLine & strSQL)
+            Throw New Exception(ex.Message)
         End Try
     End Function
     Public Shared Function Execute(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection) As Integer
@@ -84,7 +84,7 @@
 
             Return ret
         Catch ex As Exception
-            Throw New Exception(ex.Message & vbNewLine & strSQL)
+            Throw New Exception(ex.Message)
         End Try
     End Function
 
@@ -103,7 +103,7 @@
 
             Return RsData
         Catch ex As Exception
-            Throw New Exception(ex.Message & vbNewLine & strSQL)
+            Throw New Exception(ex.Message)
         End Try
     End Function
     Public Shared Function Read(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection) As SqlClient.SqlDataReader
@@ -119,7 +119,7 @@
 
             Return RsData
         Catch ex As Exception
-            Throw New Exception(ex.Message & vbNewLine & strSQL)
+            Throw New Exception(ex.Message)
         End Try
     End Function
 
