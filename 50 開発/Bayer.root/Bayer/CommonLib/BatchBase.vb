@@ -73,7 +73,7 @@ Public MustInherit Class batchBase
             ' èIóπÉçÉOÇÃèoóÕ
             Console.WriteLine(batchID & " End " & System.DateTime.Now().ToString("yyyy/MM/dd HH:mm:ss"))
             logger.PrintEndLog(batchID)
-            postAction()
+            PostAction()
         End Try
 
         Return Me.batchStatus
@@ -199,7 +199,7 @@ Public MustInherit Class batchBase
             pDbConnection = New SqlClient.SqlConnection(Configuration.ConfigurationManager.AppSettings("ConnectionString"))
         End If
 
-        CmnDb.DbOpen(pDbConnection)
+        CmnDbBatch.DbOpen(pDbConnection)
     End Sub
 
     '---------------------------------------------------------
@@ -209,7 +209,7 @@ Public MustInherit Class batchBase
     '---------------------------------------------------------
     Private Sub PostAction()
         'DBêÿíf
-        CmnDb.DbClose(pDbConnection)
+        CmnDbBatch.DbClose(pDbConnection)
     End Sub
 
     '---------------------------------------------------------

@@ -72,6 +72,7 @@
     <Compile Include="CmnConst.vb" />
     <Compile Include="CmnCsv.vb" />
     <Compile Include="CmnDb.vb" />
+    <Compile Include="CmnDbBatch.vb" />
     <Compile Include="CmnModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
