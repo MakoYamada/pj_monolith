@@ -365,4 +365,28 @@ Public Class AppConst
         End Class
     End Class
 
+    Public Class TBL_LOG
+        Public Class SYORI_KBN
+            Public Class Code
+                Public Const GAMEN As String = "1"
+                Public Const BATCH As String = "2"
+            End Class
+            Public Class Name
+                Public Const GAMEN As String = "画面"
+                Public Const BATCH As String = "バッチ"
+            End Class
+        End Class
+
+        Public Class STATUS
+            Public Class Code
+                Public Const OK As String = "0"
+                Public Const NG As String = "1"
+            End Class
+            Public Class Name
+                Public Const OK As String = "正常"
+                Public Const NG As String = "エラー"
+            End Class
+        End Class
+    End Class
+
 End Class
