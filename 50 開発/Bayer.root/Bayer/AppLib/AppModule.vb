@@ -3345,6 +3345,11 @@ Public Class AppModule
         Return TAXI_PRT_NAME
     End Function
 
+    'çuâââÔñº
+    Public Shared Function GetName_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String) As String
+        Return KOUENKAI_NAME
+    End Function
+
     'çuâââÔÉ^ÉCÉgÉã
     Public Shared Function GetName_KOUENKAI_TITLE(ByVal KOUENKAI_TITLE As String) As String
         Return KOUENKAI_TITLE
