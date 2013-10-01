@@ -5359,8 +5359,8 @@ Public Class AppModule
     End Function
 
     '新着　既読フラグ
-    Public Shared Function GetValue_KIDOKU_FLAG(ByVal KIDOKU_FLAG As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(KIDOKU_FLAG)
+    Public Shared Function GetValue_KIDOKU_FLG(ByVal KIDOKU_FLG As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(KIDOKU_FLG)
     End Function
 
     '手配ステータス
