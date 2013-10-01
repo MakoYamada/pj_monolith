@@ -7,16 +7,14 @@ Partial Public Class KaijoRireki
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
     Private Joken As TableDef.Joken.DataStruct
 
-    'グリッド列
-    Private Enum CellIndex
-        TIMESTAMP
+    'グリッド列    Private Enum CellIndex
+        TIME_STAMP_BYL
         UPDATE_DATE
-        TEHAI_TANTO_JIGYOBU
-        TEHAI_TANTO_AREA
-        TEHAI_TANTO_EIGYOSHO
+        BU
+        KIKAKU_TANTO_AREA
+        KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
-        'KOUENKAI_NAME
-        TANTO_NAME
+        USER_NAME
         Button1
         KOUENKAI_NO
         TO_DATE
@@ -28,8 +26,8 @@ Partial Public Class KaijoRireki
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        '共通チェック
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
         If Not SetSession() Then
@@ -44,15 +42,12 @@ Partial Public Class KaijoRireki
             SetForm()
         End If
 
-        'マスターページ設定
-        With Me.Master
+        'マスターページ設定        With Me.Master
             .PageTitle = "会場手配履歴"
         End With
-
     End Sub
 
-    'セッションを変数に格納
-    Private Function SetSession() As Boolean
+    'セッションを変数に格納    Private Function SetSession() As Boolean
         Try
             Joken = Session.Item(SessionDef.Joken)
         Catch ex As Exception
@@ -73,11 +68,9 @@ Partial Public Class KaijoRireki
         CmnModule.ClearAllControl(Me)
     End Sub
 
-
     '画面項目 表示
     Private Sub SetForm()
-        'データ取得
-        If Not GetData() Then
+        'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
         Else
@@ -96,20 +89,13 @@ Partial Public Class KaijoRireki
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        'Joken = Nothing
-        'Joken.JIGYOBU = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_JIGYOBU)
-        'Joken.AREA = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_AREA)
-        'Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
-        'Joken.TTANTO_ID = Trim(Me.TTANTO_ID.Text)
-        'Joken.KOUENKAI_DATE = CmnModule.Format_DateToString(Me.DATE_YYYY.Text, Me.DATE_MM.Text, Me.DATE_DD.Text)
-
         ReDim TBL_KAIJO(wCnt)
-        'strSQL = SQL.TBL_KAIJO.Search(Joken)
+        strSQL = SQL.TBL_KAIJO.Rireki(Joken)
 
-        '仮
-        strSQL = "SELECT * FROM TBL_KAIJO" _
-                & " WHERE KOUENKAI_NO = '0000000001'" _
-                & " ORDER BY TIME_STAMP_BYL DESC"
+        ''仮
+        'strSQL = "SELECT * FROM TBL_KAIJO" _
+        '        & " WHERE KOUENKAI_NO = '0000000001'" _
+        '        & " ORDER BY TIME_STAMP_BYL DESC"
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
@@ -128,16 +114,16 @@ Partial Public Class KaijoRireki
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        '仮
-        Dim strSQL As String = "SELECT * " _
-                & ",'担当者AAA' AS TANTO_NAME" _
-                & " FROM TBL_KAIJO TKJ" _
-                & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-                & " ON TKJ.KOUENKAI_NO = TKE.KOUENKAI_NO" _
-                & " WHERE TKJ.KOUENKAI_NO = '0000000001'" _
-                & " ORDER BY TKJ.TIME_STAMP_BYL DESC"
+        ''仮
+        'Dim strSQL As String = "SELECT * " _
+        '        & ",'担当者AAA' AS TANTO_NAME" _
+        '        & " FROM TBL_KAIJO TKJ" _
+        '        & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
+        '        & " ON TKJ.KOUENKAI_NO = TKE.KOUENKAI_NO" _
+        '        & " WHERE TKJ.KOUENKAI_NO = '0000000001'" _
+        '        & " ORDER BY TKJ.TIME_STAMP_BYL DESC"
 
-        'Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken)
+        Dim strSQL As String = SQL.TBL_KAIJO.Rireki(Joken)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -157,8 +143,9 @@ Partial Public Class KaijoRireki
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_DATE_FROM_TO(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
+            e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text = AppModule.GetName_TIME_STAMP_BYL(e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text)
             e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_DATE_FROM_TO(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
         End If
     End Sub
 
@@ -191,7 +178,7 @@ Partial Public Class KaijoRireki
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
-            Case "Detail"
+            Case "Regist"
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex

@@ -43,13 +43,13 @@ Partial Public Class ShisetsuKensaku
     Protected WithEvents SHISETSU_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SHISETSU_NAME_KANA コントロール。
+    '''SHISETSU_KANA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SHISETSU_NAME_KANA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SHISETSU_KANA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnSearch コントロール。

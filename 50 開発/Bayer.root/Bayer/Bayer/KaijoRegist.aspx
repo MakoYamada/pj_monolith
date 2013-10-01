@@ -537,7 +537,7 @@
 													選定理由
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
-													<asp:TextBox ID="ANS_SENTEI_RIYU" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" Width="650px" MaxLength="500" TextMode="MultiLine"></asp:TextBox>
+													<asp:TextBox ID="ANS_SENTEI_RIYU" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" Width="650px" MaxLength="510" TextMode="MultiLine"></asp:TextBox>
 												</td>
 											</tr>
 											<tr>
@@ -551,7 +551,7 @@
 													市区町村
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 330px;">
-													<asp:TextBox ID="ADDRESS2" runat="server" Text="◎◎◎◎◎◎◎◎◎◎" Width="300px"></asp:TextBox>
+													<asp:TextBox ID="ADDRESS2" runat="server" Text="◎◎◎◎◎◎◎◎◎◎" Width="300px" MaxLength="100"></asp:TextBox>
 												</td>
 												<td nowrap="nowrap">&nbsp;</td>
 											</tr>
@@ -560,7 +560,7 @@
 													施設名
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
-													<asp:TextBox ID="ANS_SHISETSU_NAME" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" Width="650px"></asp:TextBox>
+													<asp:TextBox ID="ANS_SHISETSU_NAME" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" Width="650px" MaxLength="80"></asp:TextBox>
 													&nbsp;
 													<asp:Button ID="BtnShisetsuKensaku" runat="server" Text="検索" Width="50px" CssClass="ButtonList" />
 												</td>
@@ -570,7 +570,8 @@
 													会場住所
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
-													<asp:TextBox ID="ANS_SHISETSU_ZIP" runat="server" Text="888-8888" Width="120px" ReadOnly="true" TabIndex="-1" CssClass="disp"></asp:TextBox>
+													〒<asp:TextBox ID="ANS_SHISETSU_ZIP" runat="server" Text="888-8888" Width="120px" ReadOnly="true" TabIndex="-1" CssClass="disp"></asp:TextBox>
+													<asp:Image ID="Image1" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/spacer.gif" Width="2px" Height="1px" />
 													<asp:TextBox ID="ANS_SHISETSU_ADDRESS" runat="server" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎●" Width="550px" ReadOnly="true" TabIndex="-1" CssClass="disp"></asp:TextBox>
 												</td>
 											</tr>
@@ -606,14 +607,14 @@
 													非課税額
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_MITSUMORI_TF" runat="server" Text="1234567890" Width="100px"></asp:TextBox>
+													<asp:TextBox ID="ANS_MITSUMORI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
 													円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 70px;">
 													課税額
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_MITSUMORI_T" runat="server" Text="1234567890" Width="100px"></asp:TextBox>
+													<asp:TextBox ID="ANS_MITSUMORI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
 													円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 70px;">
@@ -640,7 +641,7 @@
 										<table cellspacing="2" border="0">
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
-													<asp:TextBox ID="ANS_MITSUMORI_URL" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="650px"></asp:TextBox>
+													<asp:TextBox ID="ANS_MITSUMORI_URL" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="650px" MaxLength="255"></asp:TextBox>
 												</td>
 											</tr>
 										</table>

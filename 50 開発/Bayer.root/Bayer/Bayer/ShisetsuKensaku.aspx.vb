@@ -47,6 +47,7 @@ Partial Public Class ShisetsuKensaku
             .PageTitle = "施設検索"
         End With
 
+        Session.Item(SessionDef.ShisetsuKensaku_Back) = CmnConst.Flag.Off
     End Sub
 
     'セッションを変数に格納
@@ -73,7 +74,7 @@ Partial Public Class ShisetsuKensaku
         'IME設定
         CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.SHISETSU_NAME_KANA, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SHISETSU_KANA, CmnModule.ImeType.Active)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -91,8 +92,8 @@ Partial Public Class ShisetsuKensaku
         If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)) <> "" Then
             AppModule.SetForm_SHISETSU_NAME(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME), Me.SHISETSU_NAME)
         End If
-        If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA)) <> "" Then
-            AppModule.SetForm_SHISETSU_KANA(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA), Me.SHISETSU_NAME_KANA)
+        If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA)) <> "" Then
+            AppModule.SetForm_SHISETSU_KANA(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA), Me.SHISETSU_KANA)
         End If
 
         'データ取得
@@ -114,18 +115,17 @@ Partial Public Class ShisetsuKensaku
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
-        Dim Joken As TableDef.Joken.DataStruct = Nothing
-
+ 
         Joken.ADDRESS1 = CmnModule.GetSelectedItemValue(Me.ADDRESS1)
         Joken.ADDRESS2 = Trim(Me.ADDRESS2.Text)
         Joken.SHISETSU_NAME = Trim(Me.SHISETSU_NAME.Text)
-        Joken.SHISETSU_NAME_KANA = Trim(Me.SHISETSU_NAME_KANA.Text)
+        Joken.SHISETSU_KANA = Trim(Me.SHISETSU_KANA.Text)
         Session.Item(SessionDef.Joken) = Joken
 
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = Joken.ADDRESS1
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Joken.ADDRESS2
         Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Joken.SHISETSU_NAME
-        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA) = Joken.SHISETSU_NAME_KANA
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = Joken.SHISETSU_KANA
 
         ReDim MS_SHISETSU(wCnt)
         strSQL = SQL.MS_SHISETSU.Search(Joken)
@@ -205,6 +205,7 @@ Partial Public Class ShisetsuKensaku
                 Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = MS_SHISETSU(SEQ).ADDRESS2
                 Session.Item(SessionDef.ShisetsuKensaku_TEL) = MS_SHISETSU(SEQ).TEL
                 Session.Item(SessionDef.ShisetsuKensaku_URL) = MS_SHISETSU(SEQ).URL
+                Session.Item(SessionDef.ShisetsuKensaku_Back) = CmnConst.Flag.On
 
                 Dim scriptStr As String = ""
                 scriptStr &= "<script language='javascript' type='text/javascript'>"
@@ -224,13 +225,13 @@ Partial Public Class ShisetsuKensaku
         Joken.ADDRESS1 = CmnModule.GetSelectedItemValue(Me.ADDRESS1)
         Joken.ADDRESS2 = Trim(Me.ADDRESS2.Text)
         Joken.SHISETSU_NAME = Trim(Me.SHISETSU_NAME.Text)
-        Joken.SHISETSU_NAME_KANA = Trim(Me.SHISETSU_NAME_KANA.Text)
+        Joken.SHISETSU_KANA = Trim(Me.SHISETSU_KANA.Text)
         Session.Item(SessionDef.Joken) = Joken
 
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = Joken.ADDRESS1
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Joken.ADDRESS2
         Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Joken.SHISETSU_NAME
-        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA) = Joken.SHISETSU_NAME_KANA
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = Joken.SHISETSU_KANA
 
         '画面項目表示
         SetForm()
@@ -247,7 +248,7 @@ Partial Public Class ShisetsuKensaku
         'If Not CmnCheck.IsInput(ADDRESS1) AndAlso _
         '   Not CmnCheck.IsInput(ADDRESS2) AndAlso _
         '   Not CmnCheck.IsInput(SHISETSU_NAME) AndAlso _
-        '   Not CmnCheck.IsInput(SHISETSU_NAME_KANA) Then
+        '   Not CmnCheck.IsInput(SHISETSU_KANA) Then
         '    CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
         '    Return False
         'End If

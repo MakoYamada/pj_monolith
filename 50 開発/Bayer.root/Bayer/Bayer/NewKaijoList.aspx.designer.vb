@@ -16,49 +16,49 @@ Option Explicit On
 Partial Public Class NewKaijoList
 
     '''<summary>
-    '''BU コントロール。
+    '''JokenBU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_AREA コントロール。
+    '''JokenKIKAKU_TANTO_AREA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KOUENKAI_NAME コントロール。
+    '''JokenKOUENKAI_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TTANTO_ID コントロール。
+    '''JokenTTANTO_ID コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TTANTO_ID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTTANTO_ID As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''REQ_STATUS_TEHAI コントロール。
+    '''JokenREQ_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents REQ_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenREQ_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''BtnSearch コントロール。

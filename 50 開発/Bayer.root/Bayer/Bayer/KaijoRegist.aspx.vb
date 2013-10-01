@@ -25,20 +25,23 @@ Partial Public Class KaijoRegist
 
             '画面項目表示
             SetForm()
+        Else
+            If Trim(Session.Item(SessionDef.ShisetsuKensaku_Back)) = CmnConst.Flag.On Then
+                '検索画面戻り
+                Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
+                Me.ANS_SHISETSU_ZIP.Text = Session.Item(SessionDef.ShisetsuKensaku_ZIP)
+                Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
+                Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
+                Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
+            End If
         End If
+        Session.Remove(SessionDef.ShisetsuKensaku_Back)
 
         'マスターページ設定
         With Me.Master
             .HideLoginUser = True   'QQQ
             .PageTitle = "講演会場　手配・見積依頼"
         End With
-
-        '検索画面戻り
-        Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
-        Me.ANS_SHISETSU_ZIP.Text = Session.Item(SessionDef.ShisetsuKensaku_ZIP)
-        Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
-        Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
-        Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
     End Sub
 
     'セッションを変数に格納
@@ -66,7 +69,7 @@ Partial Public Class KaijoRegist
         'IME設定
         CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_SENTEI_RIYU, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_SHISETSU_NAME, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_SHISETSU_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_MITSUMORI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_URL, CmnModule.ImeType.Disabled)
@@ -156,7 +159,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If CmnCheck.IsInput(Me.ANS_STATUS_TEHAI) Then
+        If Not CmnCheck.IsInput(Me.ANS_STATUS_TEHAI) Then
             CmnModule.AlertMessage(MessageDef.Error.MustSelect(TableDef.TBL_KAIJO.Name.ANS_STATUS_TEHAI), Me)
             Return False
         End If
@@ -171,8 +174,28 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
+        If Not CmnCheck.IsLengthLE(Me.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength), Me)
+            Return False
+        End If
+
         If Not CmnCheck.IsValidTel(Me.ANS_SHISETSU_TEL) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_KAIJO.Name.ANS_SHISETSU_TEL), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength), Me)
             Return False
         End If
 
@@ -181,10 +204,11 @@ Partial Public Class KaijoRegist
 
     '[検索]
     Protected Sub BtnShisetsuKensaku_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnShisetsuKensaku.Click
+        Session.Remove(SessionDef.ShisetsuKensaku_Back)
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = Trim(Me.ADDRESS1.Text)
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Trim(Me.ADDRESS2.Text)
         Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Trim(Me.ANS_SHISETSU_NAME.Text)
-        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME_KANA) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = ""
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = ""
         Session.Item(SessionDef.ShisetsuKensaku_TEL) = ""
         Session.Item(SessionDef.ShisetsuKensaku_URL) = ""
@@ -218,7 +242,8 @@ Partial Public Class KaijoRegist
         '入力値を取得
         GetValue()
 
-        'QQQ ???? 送信対象のフラグ等
+        '送信対象
+        TBL_KAIJO(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Taisho
 
         'データ更新
         If ExecuteTransaction() Then
@@ -280,6 +305,14 @@ Partial Public Class KaijoRegist
     '[キャンセル]
     Protected Sub BtnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCancel.Click
         Response.Redirect(Session.Item(SessionDef.BackURL))
+    End Sub
+
+    '[履歴表示]
+    Protected Sub BtnRireki_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnRireki.Click
+        Dim Joken As TableDef.Joken.DataStruct = Nothing
+        Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
+        Session.Item(SessionDef.Joken) = Joken
+        Response.Redirect(URL.KaijoRireki)
     End Sub
 
 End Class

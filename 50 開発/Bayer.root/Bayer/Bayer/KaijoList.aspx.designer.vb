@@ -16,130 +16,130 @@ Option Explicit On
 Partial Public Class KaijoList
 
     '''<summary>
-    '''KIKAKU_TANTO_ROMA コントロール。
+    '''JokenKIKAKU_TANTO_ROMA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TEHAI_TANTO_ROMA コントロール。
+    '''JokenTEHAI_TANTO_ROMA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SEIHIN_NAME コントロール。
+    '''JokenSEIHIN_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SEIHIN_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenSEIHIN_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KOUENKAI_NO コントロール。
+    '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KOUENKAI_NAME コントロール。
+    '''JokenKOUENKAI_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FROM_DATE_YYYY コントロール。
+    '''JokenFROM_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FROM_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenFROM_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FROM_DATE_MM コントロール。
+    '''JokenFROM_DATE_MM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FROM_DATE_MM As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenFROM_DATE_MM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FROM_DATE_DD コントロール。
+    '''JokenFROM_DATE_DD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FROM_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenFROM_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TO_DATE_YYYY コントロール。
+    '''JokenTO_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TO_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTO_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TO_DATE_MM コントロール。
+    '''JokenTO_DATE_MM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TO_DATE_MM As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTO_DATE_MM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TO_DATE_DD コントロール。
+    '''JokenTO_DATE_DD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BU コントロール。
+    '''JokenBU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_AREA コントロール。
+    '''JokenKIKAKU_TANTO_AREA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TTANTO_ID コントロール。
+    '''JokenTTANTO_ID コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TTANTO_ID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTTANTO_ID As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnSearch コントロール。

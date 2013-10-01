@@ -556,6 +556,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_SHISETSU_ZIP As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Image1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
     '''ANS_SHISETSU_ADDRESS コントロール。
     '''</summary>
     '''<remarks>

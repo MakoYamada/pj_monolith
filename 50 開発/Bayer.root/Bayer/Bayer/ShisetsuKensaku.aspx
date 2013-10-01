@@ -24,7 +24,7 @@
 							<asp:TextBox ID="SHISETSU_NAME" runat="server" Width="300px" MaxLength="200"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							施設名カナ
-							<asp:TextBox ID="SHISETSU_NAME_KANA" runat="server" Width="300px" MaxLength="200"></asp:TextBox>
+							<asp:TextBox ID="SHISETSU_KANA" runat="server" Width="300px" MaxLength="200"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>

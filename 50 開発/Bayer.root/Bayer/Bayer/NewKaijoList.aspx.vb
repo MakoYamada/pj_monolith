@@ -14,7 +14,7 @@ Partial Public Class NewKaijoList
         KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
         KOUENKAI_NAME
-        TIME_STAMP
+        TIME_STAMP_BYL
         REQ_STATUS_TEHAI
         USER_NAME
         Button1
@@ -71,13 +71,11 @@ Partial Public Class NewKaijoList
     '画面項目 初期化
     Private Sub InitControls()
         'プルダウン設定
-        'AppModule.SetDropDownList_BU(Me.BU, MyBase.DbConnection)
-        'AppModule.SetDropDownList_AREA(Me.KIKAKU_TANTO_AREA, MyBase.DbConnection)
-        AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI, True)
+        AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.JokenREQ_STATUS_TEHAI, True)
 
         'IME設定
-        CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.TTANTO_ID, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.JokenTTANTO_ID, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -106,11 +104,11 @@ Partial Public Class NewKaijoList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.BU = CmnModule.GetSelectedItemValue(Me.BU)
-        Joken.AREA = CmnModule.GetSelectedItemValue(Me.KIKAKU_TANTO_AREA)
-        Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
-        Joken.TTANTO_ID = Trim(Me.TTANTO_ID.Text)
-        Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.REQ_STATUS_TEHAI)
+        Joken.BU = Trim(Me.JokenBU.Text)
+        Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
+        Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.JokenREQ_STATUS_TEHAI)
 
         ReDim TBL_KAIJO(wCnt)
 
@@ -154,7 +152,7 @@ Partial Public Class NewKaijoList
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
             e.Row.Cells(CellIndex.REQ_STATUS_TEHAI).Text = AppModule.GetName_REQ_STATUS_TEHAI(e.Row.Cells(CellIndex.REQ_STATUS_TEHAI).Text, True)
-            e.Row.Cells(CellIndex.TIME_STAMP).Text = AppModule.GetName_TIME_STAMP(e.Row.Cells(CellIndex.TIME_STAMP).Text)
+            e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text = AppModule.GetName_TIME_STAMP_BYL(e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text)
         End If
     End Sub
 
@@ -187,7 +185,7 @@ Partial Public Class NewKaijoList
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
-            Case "Kaijo"
+            Case "Regist"
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
