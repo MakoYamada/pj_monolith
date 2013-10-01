@@ -290,7 +290,7 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL = "UPDATE TBL_KOUENKAI SET"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TORIKESHI_FLG & "='" & CmnDb.SqlString(TBL_KOUENKAI.TORIKESHI_FLG) & "'"
+            strSQL &= " " & TableDef.TBL_KOUENKAI.Column.TORIKESHI_FLG & "='" & CmnDb.SqlString(TBL_KOUENKAI.TORIKESHI_FLG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & "='" & CmnDb.SqlString(TBL_KOUENKAI.KIDOKU_FLG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE & "='" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_TITLE) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME & "='" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_NAME) & "'"
