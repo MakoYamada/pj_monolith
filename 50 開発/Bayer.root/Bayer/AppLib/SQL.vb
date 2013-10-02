@@ -3111,13 +3111,13 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_LOG.Column.NOTE
             strSQL &= ")"
             strSQL &= " VALUES"
-            strSQL &= "('" & CmnDb.SqlString(TBL_LOG.INPUT_DATE) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_LOG.INPUT_USER) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_LOG.SYORI_KBN) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_LOG.SYORI_NAME) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_LOG.TABLE_NAME) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_LOG.STATUS) & "'"
-            strSQL &= ",'" & CmnDb.SqlString(TBL_LOG.NOTE) & "'"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_LOG.INPUT_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_LOG.INPUT_USER) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_LOG.SYORI_KBN) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_LOG.SYORI_NAME) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_LOG.TABLE_NAME) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_LOG.STATUS) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_LOG.NOTE) & "'"
             strSQL &= ")"
 
             Return strSQL
