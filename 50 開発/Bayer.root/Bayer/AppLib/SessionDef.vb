@@ -27,6 +27,8 @@
     Public Const HotelKensaku_SHISETSU_NAME_KANA As String = "HotelKensaku_SHISETSU_NAME_KANA"
     Public Const HotelKensaku_ADDRESS As String = "HotelKensaku_ADDRESS"
     Public Const HotelKensaku_TEL As String = "HotelKensaku_TEL"
+    Public Const HotelKensaku_CHECKIN_TIME As String = "HotelKensaku_CHECKIN_TIME"
+    Public Const HotelKensaku_CHECKOUT_TIME As String = "HotelKensaku_CHECKOUT_TIME"
     Public Const HotelKensaku_URL As String = "HotelKensaku_URL"
     Public Const HotelKensaku_Back As String = "HotelKensaku_Back"
     Public Const ShisetsuKensaku_ZIP As String = "ShisetsuKensaku_ZIP"
