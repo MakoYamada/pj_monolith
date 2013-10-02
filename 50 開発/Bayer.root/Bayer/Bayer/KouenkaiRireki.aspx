@@ -17,7 +17,7 @@
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-					    <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" 
+					    <asp:BoundField DataField="TIME_STAMP" HeaderText="Timestamp" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
 
@@ -29,19 +29,19 @@
 
 <ItemStyle Wrap="False" HorizontalAlign="Center" Width="180px"></ItemStyle>
                         </asp:BoundField>
-						<asp:BoundField DataField="TEHAI_TANTO_JIGYOBU" HeaderText="事業部" 
+						<asp:BoundField DataField="BU" HeaderText="BU" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
 
 <ItemStyle Wrap="False" HorizontalAlign="Center" Width="100px"></ItemStyle>
                         </asp:BoundField>
-						<asp:BoundField DataField="TEHAI_TANTO_AREA" HeaderText="エリア" 
+						<asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="エリア" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
 
 <ItemStyle Wrap="False" HorizontalAlign="Center" Width="80px"></ItemStyle>
                         </asp:BoundField>
-						<asp:BoundField DataField="TEHAI_TANTO_EIGYOSHO" HeaderText="営業所" 
+						<asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="営業所" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
 
@@ -53,7 +53,7 @@
 
 <ItemStyle Wrap="False"></ItemStyle>
                         </asp:BoundField>
-						<asp:BoundField DataField="TANTO_NAME" HeaderText="担当者" ItemStyle-Wrap="false" 
+						<asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="担当者" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
 

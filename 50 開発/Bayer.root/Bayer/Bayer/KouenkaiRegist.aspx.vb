@@ -23,11 +23,28 @@ Partial Public Class KouenkaiRegist
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
+            '画面項目 初期化
             InitControls()
 
             '画面項目表示
             SetForm()
+
+            '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
+            If Session.Item(SessionDef.BackURL) <> URL.NewKouenkaiList AndAlso _
+                Session.Item(SessionDef.BackURL) <> URL.KouenkaiList Then
+                BtnSubmit.Visible = False
+                BtnNozomi.Visible = False
+            Else
+                BtnSubmit.Visible = True
+                BtnNozomi.Visible = True
+            End If
+
+            '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
+            If Session.Item(SessionDef.BackURL) = URL.KouenkaiRireki Then
+                BtnRireki.Visible = False
+            Else
+                BtnRireki.Visible = True
+            End If
         End If
 
         'マスターページ設定
@@ -144,6 +161,8 @@ Partial Public Class KouenkaiRegist
 
     '[登録]
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
+        If Not Check() Then Exit Sub
+
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Mi)
 
@@ -154,11 +173,21 @@ Partial Public Class KouenkaiRegist
 
     '[NOZOMIへ]
     Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi.Click
+        If Not Check() Then Exit Sub
+
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Taisho)
 
         'データ更新
         If ExecuteTransaction() Then
         End If
+    End Sub
+
+    '[履歴表示]
+    Private Sub BtnRireki_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnRireki.Click
+        Session.Item(SessionDef.SEQ) = SEQ
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Response.Redirect(URL.KouenkaiRireki)
     End Sub
 End Class

@@ -243,6 +243,6 @@ Partial Public Class NewKouenkaiList
 
     '[戻る]
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
-
+        Response.Redirect(URL.Menu)
     End Sub
 End Class

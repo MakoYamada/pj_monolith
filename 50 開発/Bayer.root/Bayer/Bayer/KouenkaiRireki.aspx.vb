@@ -5,18 +5,18 @@ Partial Public Class KouenkaiRireki
     Inherits WebBase
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
-    Private Joken As TableDef.Joken.DataStruct
+    Private RRK_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private SEQ As Integer
 
-    'グリッド列
+    'グリッド列
     Private Enum CellIndex
-        TIMESTAMP
+        TIME_STAMP
         UPDATE_DATE
-        TEHAI_TANTO_JIGYOBU
-        TEHAI_TANTO_AREA
-        TEHAI_TANTO_EIGYOSHO
+        BU
+        KIKAKU_TANTO_AREA
+        KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
-        'KOUENKAI_NAME
-        TANTO_NAME
+        KIKAKU_TANTO_NAME
         Button1
         KOUENKAI_NO
         TO_DATE
@@ -24,12 +24,11 @@ Partial Public Class KouenkaiRireki
 
     Private Sub KouenkaiRireki_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-        Session.Item(SessionDef.Joken) = Joken
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        '共通チェック
+        MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
         If Not SetSession() Then
@@ -37,7 +36,7 @@ Partial Public Class KouenkaiRireki
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
+            '画面項目 初期化
             InitControls()
 
             '画面項目表示
@@ -54,16 +53,16 @@ Partial Public Class KouenkaiRireki
     'セッションを変数に格納
     Private Function SetSession() As Boolean
         Try
-            Joken = Session.Item(SessionDef.Joken)
-        Catch ex As Exception
-            Joken = Nothing
-        End Try
-        Try
             TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
-            If TBL_KOUENKAI Is Nothing Then ReDim TBL_KOUENKAI(0)
+            If IsNothing(TBL_KOUENKAI) Then Return False
         Catch ex As Exception
-            ReDim TBL_KOUENKAI(0)
+            Return False
         End Try
+        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+            Return False
+        Else
+            SEQ = Session.Item(SessionDef.SEQ)
+        End If
         Return True
     End Function
 
@@ -96,27 +95,15 @@ Partial Public Class KouenkaiRireki
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        'Joken = Nothing
-        'Joken.JIGYOBU = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_JIGYOBU)
-        'Joken.AREA = CmnModule.GetSelectedItemValue(Me.TEHAI_TANTO_AREA)
-        'Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
-        'Joken.TTANTO_ID = Trim(Me.TTANTO_ID.Text)
-        'Joken.KOUENKAI_DATE = CmnModule.Format_DateToString(Me.DATE_YYYY.Text, Me.DATE_MM.Text, Me.DATE_DD.Text)
-
-        ReDim TBL_KOUENKAI(wCnt)
-        'strSQL = SQL.TBL_KOUENKAI.Search(Joken)
-
-        '仮
-        strSQL = "SELECT * FROM TBL_KOUENKAI" _
-                & " WHERE KOUENKAI_NO = '0000000001'" _
-                & " ORDER BY TIME_STAMP_BYL DESC"
+        strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        ReDim RRK_KOUENKAI(wCnt)
         While RsData.Read()
             wFlag = True
 
-            ReDim Preserve TBL_KOUENKAI(wCnt)
-            TBL_KOUENKAI(wCnt) = AppModule.SetRsData(RsData, TBL_KOUENKAI(wCnt))
+            ReDim Preserve RRK_KOUENKAI(wCnt)
+            RRK_KOUENKAI(wCnt) = AppModule.SetRsData(RsData, RRK_KOUENKAI(wCnt))
 
             wCnt += 1
         End While
@@ -127,17 +114,7 @@ Partial Public Class KouenkaiRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定
-        '仮
-        Dim strSQL As String = "SELECT * " _
-                & ",'担当者AAA' AS TANTO_NAME" _
-                & " FROM TBL_KOUENKAI TKJ" _
-                & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-                & " ON TKJ.KOUENKAI_NO = TKE.KOUENKAI_NO" _
-                & " WHERE TKJ.KOUENKAI_NO = '0000000001'" _
-                & " ORDER BY TKJ.TIME_STAMP_BYL DESC"
-
-        'Dim strSQL As String = SQL.TBL_KOUENKAI.Search(Joken)
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -192,17 +169,22 @@ Partial Public Class KouenkaiRireki
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Detail"
-                Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
-                Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-                Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+                Session.Item(SessionDef.KouenkaiRireki_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
+                Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
+                Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-                Response.Redirect(URL.KaijoRegist)
+
+                Dim scriptStr As String
+                scriptStr = "<script type='text/javascript'>"
+                scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1000,height=600');"
+                scriptStr += "</script>"
+                ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
         End Select
     End Sub
 
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
-        Response.Redirect(URL.Menu)
+        Response.Redirect(Session.Item(SessionDef.BackURL))
     End Sub
 
 End Class
