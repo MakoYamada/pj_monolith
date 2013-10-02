@@ -202,6 +202,7 @@ Partial Public Class HotelKensaku
                 Dim SEQ As Integer
                 SEQ = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME) = MS_SHISETSU(SEQ).SHISETSU_NAME
+                Session.Item(SessionDef.HotelKensaku_SHISETSU_KANA) = MS_SHISETSU(SEQ).SHISETSU_KANA
                 Session.Item(SessionDef.HotelKensaku_ZIP) = MS_SHISETSU(SEQ).ZIP
                 Session.Item(SessionDef.HotelKensaku_ADDRESS2) = MS_SHISETSU(SEQ).ADDRESS2
                 Session.Item(SessionDef.HotelKensaku_TEL) = MS_SHISETSU(SEQ).TEL
