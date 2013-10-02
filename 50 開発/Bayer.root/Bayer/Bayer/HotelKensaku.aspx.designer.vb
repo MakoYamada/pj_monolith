@@ -16,31 +16,31 @@ Option Explicit On
 Partial Public Class HotelKensaku
 
     '''<summary>
-    '''DropDownList1 コントロール。
+    '''ADDRESS1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ADDRESS1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''TextBox2 コントロール。
+    '''SHISETSU_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SHISETSU_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox3 コントロール。
+    '''SHISETSU_KANA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SHISETSU_KANA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnSearch コントロール。
@@ -77,15 +77,6 @@ Partial Public Class HotelKensaku
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''BtnBack コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

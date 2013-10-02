@@ -5,6 +5,7 @@ Partial Public Class HotelKensaku
     Inherits WebBase
 
     Private MS_SHISETSU() As TableDef.MS_SHISETSU.DataStruct
+    Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
         BTN_SELECT
@@ -18,13 +19,14 @@ Partial Public Class HotelKensaku
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        'Session.Item(SessionDef.TBL_DR) = TBL_DR
+        Session.Item(SessionDef.MS_SHISETSU) = MS_SHISETSU
+        Session.Item(SessionDef.Joken) = Joken
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), AppModule.UserType.Manage, Me)
+        '共通チェック
+        MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納        If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
@@ -41,35 +43,36 @@ Partial Public Class HotelKensaku
         'マスターページ設定
         With Me.Master
             .PageTitle = "宿泊施設検索"
-            .HideMenu = True
+            .HideLoginUser = True
             .HideLogout = True
+            .HideMenu = True
         End With
 
     End Sub
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
-        'If Not MyModule.IsValidPLACE(Session.Item(SessionDef.PLACE)) Then
-        '    Return False
-        'Else
-        '    PLACE = Session.Item(SessionDef.PLACE)
-        'End If
-        'Try
-        '    Joken = Session.Item(SessionDef.Joken)
-        'Catch ex As Exception
-        '    Joken = Nothing
-        'End Try
-        'Try
-        '    TBL_DR = Session.Item(SessionDef.TBL_DR)
-        '    If TBL_DR Is Nothing Then ReDim TBL_DR(0)
-        'Catch ex As Exception
-        '    ReDim TBL_DR(0)
-        'End Try
+        Try
+            Joken = Session.Item(SessionDef.Joken)
+        Catch ex As Exception
+            Joken = Nothing
+        End Try
+        Try
+            MS_SHISETSU = Session.Item(SessionDef.MS_SHISETSU)
+            If MS_SHISETSU Is Nothing Then ReDim MS_SHISETSU(0)
+        Catch ex As Exception
+            ReDim MS_SHISETSU(0)
+        End Try
         Return True
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        'プルダウン設定
+        AppModule.SetDropDownList_ADDRESS1(Me.ADDRESS1)
 
+        'IME設定
+        CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SHISETSU_KANA, CmnModule.ImeType.Active)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -77,58 +80,31 @@ Partial Public Class HotelKensaku
 
     '画面項目 表示
     Private Sub SetForm()
-        ''条件
-        'If Session.Item(SessionDef.Search) = CmnConst.Flag.On Then
-        '    Me.DivJoken.Visible = True
-        '    Me.LabelTitle_CountALL.Text = "該当者数："
-        '    Me.LabelTitle_CountPARTY.Visible = False
-        '    Me.CountPARTY.Visible = False
-        '    Me.LabelTitle_CountTEHAI_HOTEL.Visible = False
-        '    Me.CountTEHAI_HOTEL.Visible = False
-        '    Me.LabelTitle_CountTEHAI_KOTSU.Visible = False
-        '    Me.CountTEHAI_KOTSU.Visible = False
-        '    Dim wStr As String = ""
-        '    If Trim(Joken.DR_NAME) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "Dr.氏名＝" & Joken.DR_NAME
-        '    End If
-        '    If Trim(Joken.DATA_NO) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "申込番号＝" & Joken.DATA_NO
-        '    End If
-        '    If Trim(Joken.SHISETSU_NAME) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "施設・病院名＝" & Joken.SHISETSU_NAME
-        '    End If
-        '    If Trim(Joken.MR_NAME) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "登録者氏名＝" & Joken.MR_NAME
-        '    End If
-        '    If Trim(Joken.SHITEN) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "支店＝" & Joken.SHITEN
-        '    End If
-        '    If Trim(Joken.EIGYOSHO) <> "" Then
-        '        If Trim(wStr) <> "" Then wStr &= "／"
-        '        wStr &= "営業所＝" & Joken.EIGYOSHO
-        '    End If
-        '    Me.LabelJoken.Text = wStr
-        'Else
-        '    Me.DivJoken.Visible = False
-        '    Me.LabelTitle_CountALL.Text = "登録者数："
-        '    Me.LabelTitle_CountPARTY.Visible = True
-        '    Me.CountPARTY.Visible = True
-        '    Me.LabelTitle_CountTEHAI_HOTEL.Visible = True
-        '    Me.CountTEHAI_HOTEL.Visible = True
-        '    Me.LabelTitle_CountTEHAI_KOTSU.Visible = True
-        '    Me.CountTEHAI_KOTSU.Visible = True
+        '条件
+        If Trim(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1)) <> "" Then
+            AppModule.SetForm_ADDRESS1(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1), Me.ADDRESS1)
+        End If
+        'If Trim(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2)) <> "" Then
+        '    AppModule.SetForm_ADDRESS2(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2), Me.ADDRESS2)
         'End If
+        If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)) <> "" Then
+            AppModule.SetForm_SHISETSU_NAME(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME), Me.SHISETSU_NAME)
+        End If
+        If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA)) <> "" Then
+            AppModule.SetForm_SHISETSU_KANA(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA), Me.SHISETSU_KANA)
+        End If
 
-        'DDL
+        'データ取得
+        If Not GetData() Then
+            Me.LabelNoData.Visible = True
+            Me.GrvList.Visible = False
+        Else
+            Me.LabelNoData.Visible = False
+            Me.GrvList.Visible = True
 
-
-        '一覧 表示
-        DispList()
+            'グリッドビュー表示
+            SetGridView()
+        End If
     End Sub
 
     'データ取得
@@ -138,17 +114,19 @@ Partial Public Class HotelKensaku
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        'If Session.Item(SessionDef.Search) = CmnConst.Flag.On Then
-        '    Joken.PLACE = PLACE
-        '    strSQL = SQL.TBL_DR.Search(Joken)
-        'Else
-        'strSQL = SQL.MS_SHISETSU
-        'End If
+        Joken.ADDRESS1 = CmnModule.GetSelectedItemValue(Me.ADDRESS1)
+        'Joken.ADDRESS2 = Trim(Me.ADDRESS2.Text)
+        Joken.SHISETSU_NAME = Trim(Me.SHISETSU_NAME.Text)
+        Joken.SHISETSU_KANA = Trim(Me.SHISETSU_KANA.Text)
+        Session.Item(SessionDef.Joken) = Joken
+
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = Joken.ADDRESS1
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Joken.ADDRESS2
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Joken.SHISETSU_NAME
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = Joken.SHISETSU_KANA
+
         ReDim MS_SHISETSU(wCnt)
-
-        ''仮
-        strSQL = "SELECT * FROM MS_SHISETSU"
-
+        strSQL = SQL.MS_SHISETSU.Search(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -162,23 +140,6 @@ Partial Public Class HotelKensaku
 
         Return wFlag
     End Function
-
-    '一覧 表示
-    Private Sub DispList()
-        'データ取得        If Not GetData() Then
-            Me.LabelNoData.Visible = True
-            Me.GrvList.Visible = False
-            'CmnModule.SetEnabled(Me.BtnPrint, False)
-
-        Else
-            Me.LabelNoData.Visible = False
-            Me.GrvList.Visible = True
-            'Me.BtnPrint.Visible = True
-
-            'グリッドビュー表示
-            SetGridView()
-        End If
-    End Sub
 
     'データソース設定
     Private Sub SetGridView()
@@ -207,16 +168,6 @@ Partial Public Class HotelKensaku
     'グリッドビュー内書式設定
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            'e.Row.Cells(CellIndex.ADDRESS1).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            ''仮
-            'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
-            'e.Row.Cells(CellIndex.TEHAI_O).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_O).Text)
-            'e.Row.Cells(CellIndex.TEHAI_F).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_F).Text)
-            'e.Row.Cells(CellIndex.TEHAI_TAXI).Text = GetKigou_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
-
-            'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetName_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text, True)
-            'e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetName_TEHAI_KOTSU(e.Row.Cells(CellIndex.TEHAI_KOTSU).Text, True)
-            'e.Row.Cells(CellIndex.UPD_DATE).Text = AppModule.GetName_UPD_DATE(e.Row.Cells(CellIndex.UPD_DATE).Text, True)
         End If
     End Sub
 
@@ -248,13 +199,24 @@ Partial Public Class HotelKensaku
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Detail"
-                Dim scriptStr As String
-                scriptStr = "<script type='text/javascript'>"
-                scriptStr += "window.opener.form1.submit();"
-                scriptStr += "window.close();"
-                scriptStr += "</script>"
+                Dim SEQ As Integer
+                SEQ = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
+                Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME) = MS_SHISETSU(SEQ).SHISETSU_NAME
+                Session.Item(SessionDef.HotelKensaku_ZIP) = MS_SHISETSU(SEQ).ZIP
+                Session.Item(SessionDef.HotelKensaku_ADDRESS2) = MS_SHISETSU(SEQ).ADDRESS2
+                Session.Item(SessionDef.HotelKensaku_TEL) = MS_SHISETSU(SEQ).TEL
+                Session.Item(SessionDef.HotelKensaku_CHECKIN_TIME) = MS_SHISETSU(SEQ).CHECKIN_TIME
+                Session.Item(SessionDef.HotelKensaku_CHECKOUT_TIME) = MS_SHISETSU(SEQ).CHECKOUT_TIME
+                Session.Item(SessionDef.HotelKensaku_URL) = MS_SHISETSU(SEQ).URL
+                Session.Item(SessionDef.HotelKensaku_Back) = CmnConst.Flag.On
 
-                ClientScript.RegisterStartupScript(Me.GetType(), "施設検索", scriptStr)
+                Dim scriptStr As String = ""
+                scriptStr &= "<script language='javascript' type='text/javascript'>"
+                scriptStr &= "window.opener.aspnetForm.submit();"
+                scriptStr &= "window.close();"
+                scriptStr &= "</script>"
+
+                ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
         End Select
     End Sub
 
@@ -262,24 +224,4 @@ Partial Public Class HotelKensaku
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
 
     End Sub
-
-    '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
-
-    End Sub
-
-
-    'TEST用
-    'TODO:(交通は1～5のどれかが手配要なら、などを見る必要あり)
-    Private Function GetKigou_TEHAI_HOTEL(ByVal strValue As String) As String
-        Dim strReturn As String = ""
-
-        If strValue = CmnConst.Flag.On Then
-            strReturn = "○"
-        End If
-
-        Return strReturn
-
-    End Function
-
 End Class

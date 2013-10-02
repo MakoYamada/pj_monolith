@@ -18,7 +18,7 @@
                                         都道府県
                                     </td>
                                     <td class="TdItem">
-                                        <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                                        <asp:DropDownList ID="ADDRESS1" runat="server" Width="150px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -27,7 +27,7 @@
                                         施設名
                                     </td>
                                     <td class="TdItem">
-                                        <asp:TextBox ID="TextBox2" runat="server" Width="810px" MaxLength="200"></asp:TextBox>
+                                        <asp:TextBox ID="SHISETSU_NAME" runat="server" Width="810px" MaxLength="200"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -35,7 +35,7 @@
                                         施設名カナ
                                     </td>
                                     <td class="TdItem">
-                                        <asp:TextBox ID="TextBox3" runat="server" Width="810px" MaxLength="200"></asp:TextBox>
+                                        <asp:TextBox ID="SHISETSU_KANA" runat="server" Width="810px" MaxLength="200"></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
@@ -121,7 +121,7 @@
         </tr>
         <tr align="center">
             <td>
-                <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+				<input type="button" value="戻る" style="width: 130px;" class="Button" onclick="window.close()" />
             </td>
         </tr>
     </table>

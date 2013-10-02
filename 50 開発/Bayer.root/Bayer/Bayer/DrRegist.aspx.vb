@@ -14,8 +14,11 @@ Partial Public Class DrRegist
     End Sub
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
+        'QQQ
+        Session.Item(SessionDef.LoginID) = "QQQ"
+
         '共通チェック
-        ''MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me, True)
+        MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
         If Not SetSession() Then
@@ -28,6 +31,12 @@ Partial Public Class DrRegist
 
             '画面項目表示
             SetForm()
+        Else
+            Me.ANS_HOTEL_NAME.Text = Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME)
+            Me.ANS_HOTEL_ADDRESS.Text = Session.Item(SessionDef.HotelKensaku_ADDRESS2)
+            Me.ANS_HOTEL_TEL.Text = Session.Item(SessionDef.HotelKensaku_TEL)
+            Me.ANS_CHECKIN_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKIN_TIME)
+            Me.ANS_CHECKOUT_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKOUT_TIME)
         End If
 
         'マスターページ設定
@@ -2876,7 +2885,7 @@ Partial Public Class DrRegist
     Private Sub BtnHotelKensaku_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnHotelKensaku.Click
         Dim scriptStr As String
         scriptStr = "<script type='text/javascript'>"
-        scriptStr += "window.open('HotelKensaku.aspx','_blank','width=800,height=600');"
+        scriptStr += "window.open('HotelKensaku.aspx','_blank','width=1000,height=600');"
         scriptStr += "</script>"
 
         ClientScript.RegisterStartupScript(Me.GetType(), "施設検索", scriptStr)
