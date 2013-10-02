@@ -15,6 +15,7 @@ Public Class URL
     Public Shared NewDrList As String = WebConfig.Site.URL & "NewDrList.aspx"
     Public Shared KouenkaiList As String = WebConfig.Site.URL & "KouenkaiList.aspx"
     Public Shared KouenkaiRegist As String = WebConfig.Site.URL & "KouenkaiRegist.aspx"
+    Public Shared KouenkaiRireki As String = WebConfig.Site.URL & "KouenkaiRireki.aspx"
     Public Shared KaijoList As String = WebConfig.Site.URL & "KaijoList.aspx"
     Public Shared KaijoRegist As String = WebConfig.Site.URL & "KaijoRegist.aspx"
     Public Shared KaijoRireki As String = WebConfig.Site.URL & "KaijoRireki.aspx"
