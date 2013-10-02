@@ -2885,7 +2885,7 @@ Partial Public Class DrRegist
     Private Sub BtnHotelKensaku_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnHotelKensaku.Click
         Dim scriptStr As String
         scriptStr = "<script type='text/javascript'>"
-        scriptStr += "window.open('HotelKensaku.aspx','_blank','width=1000,height=600');"
+        scriptStr += "window.open('" & URL.HotelKensaku & "','_blank','width=1000,height=600');"
         scriptStr += "</script>"
 
         ClientScript.RegisterStartupScript(Me.GetType(), "施設検索", scriptStr)
