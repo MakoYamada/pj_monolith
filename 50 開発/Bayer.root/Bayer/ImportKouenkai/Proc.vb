@@ -8,8 +8,6 @@ Public Class Proc
     Private Const pbatchID As String = "ImportKouenkai" 'バッチID
     Private Const pDelimiter As String = ","
 
-    Private errorFlg As Boolean = False
-
 #Region "ファイル項目"
 
     'TODO:項目確定次第定義する
@@ -117,10 +115,6 @@ Public Class Proc
             File.Delete(filePath)
         Next
 
-        If errorFlg Then
-            MyBase.SendAlertMail("処理中にエラーが発生しました。ログテーブルを確認してください。")
-        End If
-
     End Sub
 
     'ファイル読み込み
@@ -214,10 +208,6 @@ Public Class Proc
 
         'ログファイル出力
         MyBase.WriteInfoLog(strMsg & " " & strSQL)
-
-        If status = AppConst.TBL_LOG.STATUS.Code.NG Then
-            errorFlg = True
-        End If
 
     End Sub
 
