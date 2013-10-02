@@ -84,7 +84,9 @@ Public Class Proc
 
         Dim receiveFiles() As String = Directory.GetFiles(My.Settings.PATH_RECEIVE)
 
-        'フォルダが存在しないとエラーになるので注意（念のためフォルダの存在チェックを入れる？）
+        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        If Not Directory.Exists(My.Settings.PATH_WORK_KOUENKAI) Then Directory.CreateDirectory(My.Settings.PATH_WORK_KOUENKAI)
+        If Not Directory.Exists(My.Settings.PATH_RECEIVE_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_RECEIVE_BKUP)
 
         '受信フォルダ→作業フォルダへコピー
         '受信フォルダからファイルを削除
@@ -106,7 +108,7 @@ Public Class Proc
             ImportData(filePath, insCnt)
         Next
 
-        MyBase.WriteInfoLog(insCnt.ToString & "件のデータを登録しました。")
+        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, insCnt.ToString & "件のデータを登録しました。")
 
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
