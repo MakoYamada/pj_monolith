@@ -4704,7 +4704,7 @@ Public Class AppModule
 
     '【回答】手配ステータス
     Public Shared Sub SetForm_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_TEHAI, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_TEHAI, control, True)
     End Sub
 
     '都道府県
