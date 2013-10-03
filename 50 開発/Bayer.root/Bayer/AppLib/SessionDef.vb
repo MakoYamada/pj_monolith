@@ -26,6 +26,7 @@
     Public Const KaijoRireki_TBL_KAIJO As String = "KaijoRireki_TBL_KAIJO"
     Public Const KaijoRireki_SEQ As String = "KaijoRireki_SEQ"
     Public Const KaijoRireki_PageIndex As String = "KaijoRireki_PageIndex"
+    Public Const KaijoRireki_Joken As String = "KaijoRireki_Joken"
     Public Const HotelKensaku_ZIP As String = "HotelKensaku_ZIP"
     Public Const HotelKensaku_ADDRESS1 As String = "HotelKensaku_ADDRESS1"
     Public Const HotelKensaku_ADDRESS2 As String = "HotelKensaku_ADDRESS2"
