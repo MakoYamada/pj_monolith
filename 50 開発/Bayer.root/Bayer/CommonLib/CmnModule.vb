@@ -627,14 +627,16 @@ Public Class CmnModule
     End Function
 
     'ƒvƒ‹ƒ_ƒEƒ“‚ÌSelectedIndex‚ð•Ô‚·
-    Public Shared Function GetSelectedIndex(ByVal data As String, ByVal DropDownList As System.Web.UI.WebControls.DropDownList) As Integer
+    Public Shared Function GetSelectedIndex(ByVal data As String, ByVal DropDownList As System.Web.UI.WebControls.DropDownList, Optional ByVal ALL As Boolean = False) As Integer
         On Error Resume Next
 
         Dim wCount As Integer
         Dim wDropDownList As New WebControls.DropDownList
         wDropDownList = DropDownList
 
-        If Trim(data) = "" Then Return 0
+        If ALL = False Then
+            If Trim(data) = "" Then Return 0
+        End If
 
         For wCount = 0 To wDropDownList.Items.Count - 1
             If data = Trim(wDropDownList.Items(wCount).Text) OrElse data = Trim(wDropDownList.Items(wCount).Value) Then

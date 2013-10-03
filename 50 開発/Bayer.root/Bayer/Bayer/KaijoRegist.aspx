@@ -7,7 +7,7 @@
 				<table cellspacing="0" border="0" style="width: 940px;">
 					<tr>
 						<td>&nbsp;</td>
-						<td nowrap="nowrap" align="left" class="TdTitleKaijo" style="width: 90px;">
+						<td nowrap="nowrap" align="center" class="TdTitleKaijo" style="width: 90px;">
 							&nbsp;
 							ステータス
 							&nbsp;
@@ -31,7 +31,7 @@
 						<td nowrap="nowrap" align="left">
 							<table cellspacing="2" border="0">
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										講演会番号
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
@@ -51,7 +51,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										承認者
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
@@ -65,7 +65,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										講演会名
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
@@ -73,7 +73,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										講演開催日
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
@@ -95,7 +95,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										開催日備考
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
@@ -109,7 +109,7 @@
 						<td nowrap="nowrap" align="left">
 							<table border="0" cellpadding="1" cellspacing="2">
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										Internal order<br />(課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
@@ -318,7 +318,7 @@
 						<td nowrap="nowrap" align="left">
 							<table cellspacing="2" border="0">
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 110px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										参加予定数
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
@@ -327,7 +327,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 110px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										予算額(課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
@@ -665,7 +665,7 @@
 						<td nowrap="nowrap" align="right">
 							<asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
 							<asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" CssClass="Button" />
-							<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="ButtonCancel" />
+							<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="Button" />
 						</td>
 					</tr>
 				</table>

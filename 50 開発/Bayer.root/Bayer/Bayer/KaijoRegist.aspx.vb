@@ -7,7 +7,10 @@ Partial Public Class KaijoRegist
     Private SEQ As Integer
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+        Else
+            Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
+        End If
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -26,13 +29,16 @@ Partial Public Class KaijoRegist
             '画面項目表示
             SetForm()
         Else
-            If Trim(Session.Item(SessionDef.ShisetsuKensaku_Back)) = CmnConst.Flag.On Then
-                '検索画面戻り
-                Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
-                Me.ANS_SHISETSU_ZIP.Text = Session.Item(SessionDef.ShisetsuKensaku_ZIP)
-                Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
-                Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
-                Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
+            If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            Else
+                If Trim(Session.Item(SessionDef.ShisetsuKensaku_Back)) = CmnConst.Flag.On Then
+                    '検索画面戻り
+                    Me.ANS_SHISETSU_NAME.Text = Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
+                    Me.ANS_SHISETSU_ZIP.Text = Session.Item(SessionDef.ShisetsuKensaku_ZIP)
+                    Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
+                    Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
+                    Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
+                End If
             End If
         End If
         Session.Remove(SessionDef.ShisetsuKensaku_Back)
@@ -46,16 +52,31 @@ Partial Public Class KaijoRegist
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
-        Try
-            TBL_KAIJO = Session.Item(SessionDef.TBL_KAIJO)
-            If IsNothing(TBL_KAIJO) Then Return False
-        Catch ex As Exception
-            Return False
-        End Try
-        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
-            Return False
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            '履歴の場合
+            Try
+                TBL_KAIJO = Session.Item(SessionDef.KaijoRireki_TBL_KAIJO)
+                If IsNothing(TBL_KAIJO) Then Return False
+            Catch ex As Exception
+                Return False
+            End Try
+            If Not MyModule.IsValidSEQ(Session.Item(SessionDef.KaijoRireki_SEQ)) Then
+                Return False
+            Else
+                SEQ = Session.Item(SessionDef.KaijoRireki_SEQ)
+            End If
         Else
-            SEQ = Session.Item(SessionDef.SEQ)
+            Try
+                TBL_KAIJO = Session.Item(SessionDef.TBL_KAIJO)
+                If IsNothing(TBL_KAIJO) Then Return False
+            Catch ex As Exception
+                Return False
+            End Try
+            If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+                Return False
+            Else
+                SEQ = Session.Item(SessionDef.SEQ)
+            End If
         End If
         Return True
     End Function
@@ -63,7 +84,7 @@ Partial Public Class KaijoRegist
     '画面項目 初期化
     Private Sub InitControls()
         'プルダウン設定
-        AppModule.SetDropDownList_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
+        AppModule.SetDropDownList_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI, True)
         AppModule.SetDropDownList_ADDRESS1(Me.ADDRESS1)
 
         'IME設定
@@ -76,6 +97,23 @@ Partial Public Class KaijoRegist
 
         'クリア
         CmnModule.ClearAllControl(Me)
+
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            '履歴からの場合、キャンセル以外のボタンを非表示にする
+            Me.BtnShisetsuKensaku.Visible = False
+            Me.BtnCalc.Visible = False
+            Me.BtnRireki.Visible = False
+            Me.BtnPrint.Visible = False
+            Me.BtnNozomi.Visible = False
+            Me.BtnSubmit.Visible = False
+        Else
+            Me.BtnShisetsuKensaku.Visible = True
+            Me.BtnCalc.Visible = True
+            Me.BtnRireki.Visible = True
+            Me.BtnPrint.Visible = True
+            Me.BtnNozomi.Visible = True
+            Me.BtnSubmit.Visible = True
+        End If
     End Sub
 
     '画面項目 表示
@@ -263,6 +301,8 @@ Partial Public Class KaijoRegist
         TBL_KAIJO(SEQ).ANS_MITSUMORI_T = AppModule.GetValue_ANS_MITSUMORI_T(Me.ANS_MITSUMORI_T)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL = AppModule.GetValue_ANS_MITSUMORI_TOTAL(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_TF)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_URL = AppModule.GetValue_ANS_MITSUMORI_URL(Me.ANS_MITSUMORI_URL)
+        TBL_KAIJO(SEQ).UPDATE_DATE = CmnModule.GetSysDateTime()
+        TBL_KAIJO(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
 
     'データ更新
@@ -304,14 +344,24 @@ Partial Public Class KaijoRegist
 
     '[キャンセル]
     Protected Sub BtnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCancel.Click
-        Response.Redirect(Session.Item(SessionDef.BackURL))
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            Response.Redirect(URL.KaijoRireki)
+        Else
+            Response.Redirect(Session.Item(SessionDef.BackURL))
+        End If
     End Sub
 
     '[履歴表示]
     Protected Sub BtnRireki_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnRireki.Click
-        Dim Joken As TableDef.Joken.DataStruct = Nothing
-        Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
-        Session.Item(SessionDef.Joken) = Joken
+        Dim KaijoRireki_Joken As TableDef.Joken.DataStruct = Nothing
+        KaijoRireki_Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
+        Session.Item(SessionDef.KaijoRireki_Joken) = KaijoRireki_Joken
+
+        Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
+        Session.Remove(SessionDef.KaijoRireki_SEQ)
+        Session.Remove(SessionDef.KaijoRireki_PageIndex)
+        Session.Remove(SessionDef.KaijoRireki)
+
         Response.Redirect(URL.KaijoRireki)
     End Sub
 

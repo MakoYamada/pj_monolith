@@ -69,6 +69,8 @@ Partial Public Class KaijoList
     '画面項目 初期化
     Private Sub InitControls()
         'IME設定
+        CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKIKAKU_TANTO_ROMA, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenTEHAI_TANTO_ROMA, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSEIHIN_NAME, CmnModule.ImeType.Active)

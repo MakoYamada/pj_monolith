@@ -74,6 +74,8 @@ Partial Public Class NewKaijoList
         AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.JokenREQ_STATUS_TEHAI, True)
 
         'IME設定
+        CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenTTANTO_ID, CmnModule.ImeType.Disabled)
 
