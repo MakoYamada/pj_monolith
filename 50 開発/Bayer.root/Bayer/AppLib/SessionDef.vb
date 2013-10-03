@@ -19,6 +19,7 @@
     Public Const DbError As String = "DbError"
     Public Const LoginID As String = "LoginID"
     Public Const Joken As String = "Joken"
+    Public Const KIDOKU As String = "KIDOKU"
     Public Const SYSTEM_ID As String = "SYSTEM_ID"
     Public Const KouenkaiRireki_TBL_KOUENKAI As String = "KouenkaiRireki_TBL_KOUENKAI"
     Public Const KouenkaiRireki_SEQ As String = "KouenkaiRireki_SEQ"
