@@ -225,10 +225,17 @@ Partial Public Class NewKouenkaiList
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Detail"
+                '選択レコード情報をセッション変数にセット
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+
+                '履歴画面用セッション変数をクリア
+                Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Nothing
+                Session.Item(SessionDef.KouenkaiRireki_SEQ) = Nothing
+                Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = Nothing
+
                 Response.Redirect(URL.KouenkaiRegist)
         End Select
     End Sub

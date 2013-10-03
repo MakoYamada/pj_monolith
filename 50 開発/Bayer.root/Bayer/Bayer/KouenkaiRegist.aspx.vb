@@ -5,6 +5,7 @@ Partial Public Class KouenkaiRegist
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private SEQ As Integer
+    Private Popup As Boolean = False
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
@@ -15,9 +16,17 @@ Partial Public Class KouenkaiRegist
         Session.Item(SessionDef.LoginID) = "QQQ"
 
         '共通チェック
-        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        If Session.Item(SessionDef.KouenkaiRireki_SEQ) = Nothing Then
+            '呼び元が新着一覧・検索の場合
+            MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+            Popup = False
+        Else
+            '呼び元が履歴一覧・手配画面の場合
+            MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
+            Popup = True
+        End If
 
-        'セッションを変数に格納
+        'セッションを変数に格納
         If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
         End If
@@ -40,18 +49,16 @@ Partial Public Class KouenkaiRegist
             End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
-            If URL.KouenkaiRireki.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            If Popup Then
                 BtnRireki.Visible = False
             Else
                 BtnRireki.Visible = True
             End If
 
-            '表示対象より新しい講演会基本情報がある場合は登録・NOZOMIボタンは使用不可
+            '表示対象より新しい講演会基本情報がある場合はNOZOMIボタンは使用不可
             If ChkNewData() Then
-                BtnSubmit.Enabled = True
                 BtnNozomi.Enabled = True
             Else
-                BtnSubmit.Enabled = False
                 BtnNozomi.Enabled = False
             End If
 
@@ -60,13 +67,24 @@ Partial Public Class KouenkaiRegist
         'マスターページ設定
         With Me.Master
             .PageTitle = "講演会基本情報"
+            If Popup Then
+                .HideLogout = True
+                .HideMenu = True
+            Else
+                .HideLogout = False
+                .HideMenu = False
+            End If
         End With
     End Sub
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
         Try
-            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+            If Popup Then
+                TBL_KOUENKAI = Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
+            Else
+                TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+            End If
             If IsNothing(TBL_KOUENKAI) Then Return False
         Catch ex As Exception
             Return False
@@ -74,7 +92,11 @@ Partial Public Class KouenkaiRegist
         If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
             Return False
         Else
-            SEQ = Session.Item(SessionDef.SEQ)
+            If Popup Then
+                SEQ = Session.Item(SessionDef.KouenkaiRireki_SEQ)
+            Else
+                SEQ = Session.Item(SessionDef.SEQ)
+            End If
         End If
         Return True
     End Function
@@ -186,9 +208,23 @@ Partial Public Class KouenkaiRegist
         End If
     End Function
 
-    '[キャンセル]
+    '[戻る]
     Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
-        Response.Redirect(Session.Item(SessionDef.BackURL))
+        Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Nothing
+        Session.Item(SessionDef.KouenkaiRireki_SEQ) = Nothing
+        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = Nothing
+
+        If Popup Then
+            Dim scriptStr As String = ""
+            scriptStr &= "<script language='javascript' type='text/javascript'>"
+            scriptStr &= "window.opener.aspnetForm.submit();"
+            scriptStr &= "window.close();"
+            scriptStr &= "</script>"
+
+            ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
+        Else
+            Response.Redirect(Session.Item(SessionDef.BackURL))
+        End If
     End Sub
 
     '[登録]

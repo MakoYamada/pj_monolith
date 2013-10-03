@@ -61,7 +61,7 @@
                         </asp:BoundField>
 						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" 
-                            ItemStyle-HorizontalAlign="Center" CommandName="Kaijo" 
+                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" 
                             ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" 
                             ItemStyle-Width="68px" >
 <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>

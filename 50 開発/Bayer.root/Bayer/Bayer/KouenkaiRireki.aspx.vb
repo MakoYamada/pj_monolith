@@ -108,6 +108,7 @@ Partial Public Class KouenkaiRireki
             wCnt += 1
         End While
         RsData.Close()
+        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = RRK_KOUENKAI
 
         Return wFlag
     End Function
@@ -136,6 +137,7 @@ Partial Public Class KouenkaiRireki
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_DATE_FROM_TO(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
             e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
         End If
     End Sub
 
@@ -170,13 +172,11 @@ Partial Public Class KouenkaiRireki
         Select Case e.CommandName
             Case "Detail"
                 Session.Item(SessionDef.KouenkaiRireki_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
-                Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
                 Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Me.GrvList.PageIndex
-                Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
 
                 Dim scriptStr As String
                 scriptStr = "<script type='text/javascript'>"
-                scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1000,height=600');"
+                scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1200,height=800,resizable=yes,scrollbars=yes');"
                 scriptStr += "</script>"
                 ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
         End Select
