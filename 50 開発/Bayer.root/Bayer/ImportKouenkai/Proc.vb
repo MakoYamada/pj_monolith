@@ -46,9 +46,9 @@ Public Class Proc
 
     Private Class COL_NAME
         Public Const KOUENKAI_NO As String = "講演会番号"
-        Public Const TIME_STAMP As String = ""
+        Public Const TIME_STAMP As String = "Timestamp（BYL)"
         Public Const TORIKESHI_FLG As String = ""
-        Public Const KOUENKAI_TITLE As String = ""
+        Public Const KOUENKAI_TITLE As String = "タイトル"
         Public Const KOUENKAI_NAME As String = ""
         Public Const TAXI_PRT_NAME As String = ""
         Public Const FROM_DATE As String = ""
@@ -171,6 +171,13 @@ Public Class Proc
                 Throw New Exception(COL_NAME.KOUENKAI_NO & "がセットされていません。")
             End If
 
+            If fileData(COL_NO.TIME_STAMP).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.TIME_STAMP & "がセットされていません。")
+            End If
+
+            If fileData(COL_NO.KOUENKAI_TITLE).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.KOUENKAI_TITLE & "がセットされていません。")
+            End If
 
             '禁則文字チェック
             If Not strNGMoji.Equals(String.Empty) Then
