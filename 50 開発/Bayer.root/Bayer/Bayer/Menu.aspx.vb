@@ -125,4 +125,12 @@ Partial Public Class Menu1
         Response.Redirect(URL.MstShisetsu)
     End Sub
 
+    '[新着 講演会基本情報一覧]
+    Private Sub BtnNewKoenkaiList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNewKoenkaiList.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_KOUENKAI)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.SYSTEM_ID)
+        Response.Redirect(URL.NewKouenkaiList)
+    End Sub
 End Class

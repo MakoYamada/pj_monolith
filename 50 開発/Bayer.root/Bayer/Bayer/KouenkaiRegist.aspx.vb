@@ -212,7 +212,7 @@ Partial Public Class KouenkaiRegist
     Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
         Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Nothing
         Session.Item(SessionDef.KouenkaiRireki_SEQ) = Nothing
-        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = Nothing
+        'Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = Nothing
 
         If Popup Then
             Dim scriptStr As String = ""
