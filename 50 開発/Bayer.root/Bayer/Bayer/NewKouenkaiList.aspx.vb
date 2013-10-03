@@ -230,6 +230,7 @@ Partial Public Class NewKouenkaiList
                 Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+                Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
                 '履歴画面用セッション変数をクリア
                 Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Nothing

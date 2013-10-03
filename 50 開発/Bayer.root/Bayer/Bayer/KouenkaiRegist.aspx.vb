@@ -39,8 +39,8 @@ Partial Public Class KouenkaiRegist
             SetForm()
 
             '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
-            If URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 OrElse _
-                URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            If URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
+                URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
                 BtnSubmit.Visible = True
                 BtnNozomi.Visible = True
             Else
@@ -51,8 +51,12 @@ Partial Public Class KouenkaiRegist
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
             If Popup Then
                 BtnRireki.Visible = False
+                BtnSubmit.Visible = False
+                BtnNozomi.Visible = False
             Else
                 BtnRireki.Visible = True
+                BtnSubmit.Visible = True
+                BtnNozomi.Visible = True
             End If
 
             '表示対象より新しい講演会基本情報がある場合はNOZOMIボタンは使用不可
@@ -222,7 +226,7 @@ Partial Public Class KouenkaiRegist
 
             ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
         Else
-            Response.Redirect(Session.Item(SessionDef.BackURL))
+            Response.Redirect(Session.Item(SessionDef.BackURL2))
         End If
     End Sub
 
