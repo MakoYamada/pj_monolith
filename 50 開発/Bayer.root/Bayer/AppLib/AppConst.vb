@@ -207,6 +207,18 @@ Public Class AppConst
 
     Public Class KAIJO
 
+        Public Class KIDOKU_FLG
+            '新着情報　既読・未読
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "0"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "既読"
+                Public Const No As String = "未読"
+            End Class
+        End Class
+
         Public Class STATUS_TEHAI
             '手配ステータス
             Public Class Code
