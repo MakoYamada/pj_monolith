@@ -81,12 +81,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\Work\Kouenkai")>  _
-        Public Property PATH_WORK_KOUENKAI() As String
+        Public Property PATH_WORK() As String
             Get
-                Return CType(Me("PATH_WORK_KOUENKAI"),String)
+                Return CType(Me("PATH_WORK"),String)
             End Get
             Set
-                Me("PATH_WORK_KOUENKAI") = value
+                Me("PATH_WORK") = value
             End Set
         End Property
         

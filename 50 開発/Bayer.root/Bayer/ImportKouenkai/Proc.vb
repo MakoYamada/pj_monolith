@@ -85,19 +85,19 @@ Public Class Proc
         Dim receiveFiles() As String = Directory.GetFiles(My.Settings.PATH_RECEIVE)
 
         'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(My.Settings.PATH_WORK_KOUENKAI) Then Directory.CreateDirectory(My.Settings.PATH_WORK_KOUENKAI)
+        If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
         If Not Directory.Exists(My.Settings.PATH_RECEIVE_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_RECEIVE_BKUP)
 
         '受信フォルダ→作業フォルダへコピー
         '受信フォルダからファイルを削除
         For Each motofile As String In receiveFiles
             If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
-                File.Copy(motofile, My.Settings.PATH_WORK_KOUENKAI & "\" & Path.GetFileName(motofile))
+                File.Copy(motofile, My.Settings.PATH_WORK & "\" & Path.GetFileName(motofile))
                 File.Delete(motofile)
             End If
         Next
 
-        Dim workFiles() As String = Directory.GetFiles(My.Settings.PATH_WORK_KOUENKAI)
+        Dim workFiles() As String = Directory.GetFiles(My.Settings.PATH_WORK)
         If workFiles.Length = 0 Then
             InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "処理対象ファイルがありません。")
             Exit Sub
