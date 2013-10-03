@@ -296,7 +296,7 @@ Public Class CmnModule
                     CType(wChildControl, WebControls.TextBox).Text = ""
                 ElseIf TypeOf wChildControl Is WebControls.DropDownList Then
                     'プルダウン
-                    CType(wChildControl, WebControls.DropDownList).SelectedIndex = 0
+                    CType(wChildControl, WebControls.DropDownList).SelectedIndex = -1
                 ElseIf TypeOf wChildControl Is WebControls.CheckBox Then
                     'チェックボックス
                     CType(wChildControl, WebControls.CheckBox).Checked = False
