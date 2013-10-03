@@ -2007,6 +2007,10 @@ Public Class SQL
                 '検索
             End If
 
+            If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
+                strSQL &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
+            End If
+
             If Trim(Joken.BU) <> "" Then
                 strSQL &= " AND TBL_KOUENKAI.BU=N'" & CmnDb.SqlString(Joken.BU) & "'"
             End If
