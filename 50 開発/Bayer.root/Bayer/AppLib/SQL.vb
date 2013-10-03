@@ -2012,15 +2012,15 @@ Public Class SQL
             End If
 
             If Trim(Joken.BU) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.BU=N'" & CmnDb.SqlString(Joken.BU) & "'"
+                strSQL &= " AND TBL_KOUENKAI.BU LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
             End If
 
             If Trim(Joken.AREA) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA=N'" & CmnDb.SqlString(Joken.AREA) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
             End If
 
             If Trim(Joken.EIGYOSHO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO=N'" & CmnDb.SqlString(Joken.EIGYOSHO) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO LIKE N'%" & CmnDb.SqlString(Joken.EIGYOSHO) & "%'"
             End If
 
             If Trim(Joken.TTANTO_ID) <> "" Then
