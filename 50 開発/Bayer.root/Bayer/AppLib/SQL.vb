@@ -2002,7 +2002,7 @@ Public Class SQL
 
             If NewData = True Then
                 '新着
-                strSQL &= " AND ISNULL(TBL_KOUENKAI.KIDOKU_FLG,'')<>'1'"
+                strSQL &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
             Else
                 '検索
             End If

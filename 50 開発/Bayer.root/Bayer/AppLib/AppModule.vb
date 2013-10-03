@@ -1123,14 +1123,24 @@ Public Class AppModule
     '【回答】手配ステータス
     Public Shared Function GetName_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String) As String
         Select Case ANS_STATUS_TEHAI
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Uketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Uketsuke
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Uketsuke
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Prepare, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Prepare
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Prepare
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.OK, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.OK
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.OK
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanEnd, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanEnd
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanEnd
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoSearch, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.UchiawaseSeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.TehaiFuka, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.ShoninIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KiajoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KiajoKettei
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KiajoKettei
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanZumi, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
 
             Case Else
                 Return ""
@@ -4979,10 +4989,15 @@ Public Class AppModule
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled))
             Else
                 '会場
-                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Uketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Uketsuke))
-                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.Prepare, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.Prepare))
-                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.OK, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.OK))
-                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanEnd, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanEnd))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoSearch))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.UchiawaseSeisanUketsuke))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanUketsuke))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.TehaiFuka))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.ShoninIrai))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KiajoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KiajoKettei))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanIrai))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanZumi))
             End If
         End With
     End Sub
