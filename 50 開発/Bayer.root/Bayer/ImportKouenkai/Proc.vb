@@ -247,6 +247,8 @@ Public Class Proc
 
         Dim TBL_KOUENKAI_Ins As New TableDef.TBL_KOUENKAI.DataStruct
 
+        'TODO:ダブルクォート囲みのとき、またダブルクォートのエスケープの仕様が確定したら処理追加
+
         TBL_KOUENKAI_Ins.KOUENKAI_NO = fileData(COL_NO.KOUENKAI_NO)
         TBL_KOUENKAI_Ins.TIME_STAMP = fileData(COL_NO.TIME_STAMP)
         TBL_KOUENKAI_Ins.TORIKESHI_FLG = fileData(COL_NO.TORIKESHI_FLG)
