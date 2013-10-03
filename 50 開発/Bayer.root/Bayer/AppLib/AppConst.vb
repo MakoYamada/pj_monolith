@@ -258,7 +258,7 @@ Public Class AppConst
                 Public Const SeisanUketsuke As String = "3"
                 Public Const TehaiFuka As String = "4"
                 Public Const ShoninIrai As String = "5"
-                Public Const KiajoKettei As String = "6"
+                Public Const KaijoKettei As String = "6"
                 Public Const SeisanIrai As String = "7"
                 Public Const SeisanZumi As String = "8"
             End Class
@@ -269,7 +269,7 @@ Public Class AppConst
                 Public Const SeisanUketsuke As String = "精算のみ受付済"
                 Public Const TehaiFuka As String = "手配不可"
                 Public Const ShoninIrai As String = "承認依頼中"
-                Public Const KiajoKettei As String = "会場決定済"
+                Public Const KaijoKettei As String = "会場決定済"
                 Public Const SeisanIrai As String = "精算承認依頼中"
                 Public Const SeisanZumi As String = "精算済"
             End Class

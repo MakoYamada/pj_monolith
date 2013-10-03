@@ -1135,8 +1135,8 @@ Public Class AppModule
                 Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
             Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.ShoninIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
                 Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KiajoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KiajoKettei
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KiajoKettei
+            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei
+                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei
             Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
                 Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
             Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanZumi, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
@@ -4995,7 +4995,7 @@ Public Class AppModule
                 .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanUketsuke))
                 .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.TehaiFuka))
                 .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.ShoninIrai))
-                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KiajoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KiajoKettei))
+                .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoKettei))
                 .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanIrai))
                 .Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanZumi))
             End If
