@@ -291,9 +291,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -333,7 +333,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.TIME_STAMP & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TIME_STAMP) & "'"
 
@@ -578,9 +578,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -680,7 +680,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_SEIKYU.Column.SEISAN_YM & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_YM) & "'"
             strSQL &= " AND " & TableDef.TBL_SEIKYU.Column.PAYMENT_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.PAYMENT_NO) & "'"
@@ -1508,9 +1508,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_DATE) & "'"
             strSQL &= ")"
 
@@ -1901,7 +1901,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_DATE) & "'"
             strSQL &= " WHERE " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_NO) & "'"
@@ -2259,9 +2259,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_TEL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -2323,7 +2323,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_TEL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_KAIJO.Column.TEHAI_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TIME_STAMP_BYL) & "'"
@@ -2659,9 +2659,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(MS_SHISETSU.URL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(MS_SHISETSU.STOP_FLG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_SHISETSU.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_SHISETSU.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -2682,7 +2682,7 @@ Public Class SQL
             strSQL &= "," & TableDef.MS_SHISETSU.Column.URL & "=N'" & CmnDb.SqlString(MS_SHISETSU.URL) & "'"
             strSQL &= "," & TableDef.MS_SHISETSU.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_SHISETSU.STOP_FLG) & "'"
             strSQL &= "," & TableDef.MS_SHISETSU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_SHISETSU.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.MS_SHISETSU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_SHISETSU.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.MS_SHISETSU.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_SHISETSU.SYSTEM_ID) & "'"
 
             Return strSQL
@@ -2789,9 +2789,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(MS_USER.USER_NAME) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(MS_USER.STOP_FLG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_USER.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_USER.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -2807,7 +2807,7 @@ Public Class SQL
             strSQL &= "," & TableDef.MS_USER.Column.USER_NAME & "=N'" & CmnDb.SqlString(MS_USER.USER_NAME) & "'"
             strSQL &= "," & TableDef.MS_USER.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_USER.STOP_FLG) & "'"
             strSQL &= "," & TableDef.MS_USER.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_USER.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.MS_USER.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_USER.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.MS_USER.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_USER.SYSTEM_ID) & "'"
 
             Return strSQL
@@ -2860,9 +2860,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.未定) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.STOP_FLG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -2875,7 +2875,7 @@ Public Class SQL
             strSQL &= " " & TableDef.MS_JIGYOSHO.Column.未定 & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.未定) & "'"
             strSQL &= "," & TableDef.MS_JIGYOSHO.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.STOP_FLG) & "'"
             strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.MS_JIGYOSHO.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.SYSTEM_ID) & "'"
 
             Return strSQL
@@ -2928,9 +2928,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.未定) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.STOP_FLG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -2943,7 +2943,7 @@ Public Class SQL
             strSQL &= " " & TableDef.MS_AREA.Column.未定 & "=N'" & CmnDb.SqlString(MS_AREA.未定) & "'"
             strSQL &= "," & TableDef.MS_AREA.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_AREA.STOP_FLG) & "'"
             strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_AREA.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.MS_AREA.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_AREA.SYSTEM_ID) & "'"
 
             Return strSQL
@@ -2996,9 +2996,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.未定) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.STOP_FLG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & GetValue.USER() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -3011,7 +3011,7 @@ Public Class SQL
             strSQL &= " " & TableDef.MS_EIGYOSHO.Column.未定 & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.未定) & "'"
             strSQL &= "," & TableDef.MS_EIGYOSHO.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.STOP_FLG) & "'"
             strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER & "=N'" & GetValue.USER() & "'"
+            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.MS_EIGYOSHO.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.SYSTEM_ID) & "'"
 
             Return strSQL
