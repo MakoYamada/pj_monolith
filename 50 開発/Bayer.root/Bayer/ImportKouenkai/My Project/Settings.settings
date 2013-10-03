@@ -5,17 +5,17 @@
     <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer\Receive</Value>
     </Setting>
-    <Setting Name="FILE_KOUENKAI" Type="System.String" Scope="User">
+    <Setting Name="FILE_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">kouenkai</Value>
     </Setting>
     <Setting Name="PATH_WORK_KOUENKAI" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer\Work\Kouenkai</Value>
     </Setting>
-    <Setting Name="NG_MOJI" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer\ReceiveBkup</Value>
+    </Setting>
+    <Setting Name="NG_MOJI" Type="System.String" Scope="User">
+      <Value Profile="(Default)">鷗</Value>
     </Setting>
   </Settings>
 </SettingsFile>

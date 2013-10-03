@@ -69,12 +69,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("kouenkai")>  _
-        Public Property FILE_KOUENKAI() As String
+        Public Property FILE_NAME() As String
             Get
-                Return CType(Me("FILE_KOUENKAI"),String)
+                Return CType(Me("FILE_NAME"),String)
             End Get
             Set
-                Me("FILE_KOUENKAI") = value
+                Me("FILE_NAME") = value
             End Set
         End Property
         
@@ -92,18 +92,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property NG_MOJI() As String
-            Get
-                Return CType(Me("NG_MOJI"),String)
-            End Get
-            Set
-                Me("NG_MOJI") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\ReceiveBkup")>  _
         Public Property PATH_RECEIVE_BKUP() As String
             Get
@@ -111,6 +99,18 @@ Namespace My
             End Get
             Set
                 Me("PATH_RECEIVE_BKUP") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("鷗")>  _
+        Public Property NG_MOJI() As String
+            Get
+                Return CType(Me("NG_MOJI"),String)
+            End Get
+            Set
+                Me("NG_MOJI") = value
             End Set
         End Property
     End Class

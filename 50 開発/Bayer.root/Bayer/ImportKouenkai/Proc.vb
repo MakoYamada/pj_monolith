@@ -91,7 +91,7 @@ Public Class Proc
         '受信フォルダ→作業フォルダへコピー
         '受信フォルダからファイルを削除
         For Each motofile As String In receiveFiles
-            If motofile.ToLower.IndexOf(My.Settings.FILE_KOUENKAI.ToLower) >= 0 Then
+            If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
                 File.Copy(motofile, My.Settings.PATH_WORK_KOUENKAI & "\" & Path.GetFileName(motofile))
                 File.Delete(motofile)
             End If
