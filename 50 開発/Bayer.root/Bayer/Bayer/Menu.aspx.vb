@@ -131,6 +131,9 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.TBL_KOUENKAI)
         Session.Remove(SessionDef.SEQ)
         Session.Remove(SessionDef.SYSTEM_ID)
+        Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
+        Session.Remove(SessionDef.KouenkaiRireki_SEQ)
+        Session.Remove(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
         Response.Redirect(URL.NewKouenkaiList)
     End Sub
 End Class
