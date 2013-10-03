@@ -279,14 +279,8 @@ Public Class Proc
         TBL_KOUENKAI_Ins.YOSAN_TF = fileData(COL_NO.YOSAN_TF)
         TBL_KOUENKAI_Ins.YOSAN_T = fileData(COL_NO.YOSAN_T)
         TBL_KOUENKAI_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
-
-        Dim strNow As String = Now.ToString("yyyyMMddHHmmss")
-
-        TBL_KOUENKAI_Ins.INPUT_DATE = strNow
         TBL_KOUENKAI_Ins.INPUT_USER = pbatchID
-        TBL_KOUENKAI_Ins.UPDATE_DATE = strNow
         TBL_KOUENKAI_Ins.UPDATE_USER = pbatchID
-
 
         '同一キーのデータを検索
         Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct = GetData(fileData(COL_NO.KOUENKAI_NO))
