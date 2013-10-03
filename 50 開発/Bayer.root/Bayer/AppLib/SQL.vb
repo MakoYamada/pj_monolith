@@ -76,7 +76,7 @@ Public Class SQL
 
             If NewData = True Then
                 '新着
-                strSQL &= " WHERE " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>'1'"
+                strSQL &= " WHERE " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
                 wFlag = True
             End If
 
@@ -1935,6 +1935,73 @@ Public Class SQL
 
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
+            Dim strSQL_WHERE_KAIJO As String = ""
+            Dim strSQL_WHERE_KOUENKAI As String = ""
+
+            'WHERE
+            '会場手配テーブル
+            strSQL_WHERE_KAIJO &= " WHERE 1=1"
+
+            If NewData = True Then
+                strSQL_WHERE_KAIJO &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,N'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
+            End If
+            If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
+                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL_WHERE_KAIJO &= " AND ("
+                strSQL_WHERE_KAIJO &= "      TBL_KAIJO.TEHAI_TANTO LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KAIJO &= "      OR "
+                strSQL_WHERE_KAIJO &= "      TBL_KAIJO.TEHAI_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KAIJO &= ")"
+            End If
+
+            '講演会テーブル
+            strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
+            If Trim(Joken.BU) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.BU LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.EIGYOSHO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO LIKE N'%" & CmnDb.SqlString(Joken.EIGYOSHO) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.TTANTO_ID=N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= "      OR "
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.FROM_DATE BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.FROM_DATE=N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
 
             strSQL &= "SELECT"
             strSQL &= " DISTINCT"
@@ -1969,100 +2036,41 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.SEND_FLAG"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
-            If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL &= ",MS_USER.USER_NAME"
-            Else
-                strSQL &= ",'' AS USER_NAME"
-            End If
+            strSQL &= ",MS_USER.USER_NAME"
             strSQL &= " FROM"
             strSQL &= "("
             strSQL &= " SELECT TBL_KOUENKAI_1.* FROM "
-            strSQL &= " (SELECT * FROM TBL_KOUENKAI) AS TBL_KOUENKAI_1"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
+            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
             strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
             strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KOUENKAI"
             strSQL &= ","
             strSQL &= "("
             strSQL &= " SELECT TBL_KAIJO_1.* FROM "
-            strSQL &= " (SELECT * FROM TBL_KAIJO) AS TBL_KAIJO_1"
+            strSQL &= " (SELECT * FROM TBL_KAIJO"
+            strSQL &= strSQL_WHERE_KAIJO
+            strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
+            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= strSQL_WHERE_KAIJO
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
             strSQL &= "  WHERE TBL_KAIJO_1.UPDATE_DATE=TBL_KAIJO_2.UPDATE_DATE"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KAIJO"
-            If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL &= ",MS_USER"
-            End If
+            strSQL &= ","
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.TTANTO_ID=MS_USER.LOGIN_ID"
-            End If
-
-            If NewData = True Then
-                '新着
-                strSQL &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
-            Else
-                '検索
-            End If
-
-            If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
-                strSQL &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
-            End If
-
-            If Trim(Joken.BU) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.BU LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
-            End If
-
-            If Trim(Joken.AREA) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
-            End If
-
-            If Trim(Joken.EIGYOSHO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO LIKE N'%" & CmnDb.SqlString(Joken.EIGYOSHO) & "%'"
-            End If
-
-            If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.TTANTO_ID=N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
-            End If
-
-            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
-                strSQL &= " AND ("
-                strSQL &= "      TBL_KOUENKAI.KIKAKU_TANTO LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
-                strSQL &= "      OR "
-                strSQL &= "      TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
-                strSQL &= ")"
-            End If
-
-            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
-                strSQL &= " AND ("
-                strSQL &= "      TBL_KAIJO.TEHAI_TANTO LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
-                strSQL &= "      OR "
-                strSQL &= "      TBL_KAIJO.TEHAI_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
-                strSQL &= ")"
-            End If
-
-            If Trim(Joken.SEIHIN_NAME) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
-            End If
-
-            If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            End If
-
-            If Trim(Joken.KOUENKAI_NAME) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
-            End If
-
-            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.FROM_DATE BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
-            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
-                strSQL &= " AND TBL_KOUENKAI.FROM_DATE=N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
-            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
-            End If
-
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+ 
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
 
@@ -2073,68 +2081,66 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL &= "SELECT"
-            strSQL &= " TBL_KOUENKAI.*"
-            strSQL &= ",TBL_KAIJO.TEHAI_ID"
-            strSQL &= ",TBL_KAIJO.REQ_STATUS_TEHAI"
-            strSQL &= ",TBL_KAIJO.ANS_STATUS_TEHAI"
-            strSQL &= ",TBL_KAIJO.TIME_STAMP_BYL"
-            strSQL &= ",TBL_KAIJO.TIME_STAMP_TOP"
-            strSQL &= ",TBL_KAIJO.SHONIN_NAME"
-            strSQL &= ",TBL_KAIJO.SHONIN_DATE"
-            strSQL &= ",TBL_KAIJO.KAISAI_DATE_NOTE"
-            strSQL &= ",TBL_KAIJO.KAISAI_KIBOU_ADDRESS1"
-            strSQL &= ",TBL_KAIJO.KAISAI_KIBOU_ADDRESS2"
-            strSQL &= ",TBL_KAIJO.KAISAI_KIBOU_NOTE"
-            strSQL &= ",TBL_KAIJO.KOUEN_TIME1"
-            strSQL &= ",TBL_KAIJO.KOUEN_TIME2"
-            strSQL &= ",TBL_KAIJO.KOUEN_KAIJO_LAYOUT"
-            strSQL &= ",TBL_KAIJO.IKENKOUKAN_KAIJO_TEHAI"
-            strSQL &= ",TBL_KAIJO.IROUKAI_KAIJO_TEHAI"
-            strSQL &= ",TBL_KAIJO.IROUKAI_SANKA_YOTEI_CNT"
-            strSQL &= ",TBL_KAIJO.KOUSHI_ROOM_TEHAI"
-            strSQL &= ",TBL_KAIJO.SHAIN_ROOM_TEHAI"
-            strSQL &= ",TBL_KAIJO.MANAGER_KAIJO_TEHAI"
-            strSQL &= ",TBL_KAIJO.KAIJO_URL"
-            strSQL &= ",TBL_KAIJO.OTHER_NOTE"
-            strSQL &= ",TBL_KAIJO.ANS_SENTEI_RIYU"
-            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_TF"
-            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_T"
-            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_TOTAL"
-            strSQL &= ",TBL_KAIJO.ANS_MITSUMORI_URL"
-            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_ZIP"
-            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_ADDRESS"
-            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_TEL"
-            strSQL &= ",TBL_KAIJO.ANS_SHISETSU_URL"
-            strSQL &= ",TBL_KAIJO.ANS_KOUEN_KAIJO_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_KOUEN_KAIJO_FLOOR"
-            strSQL &= ",TBL_KAIJO.ANS_IKENKOUKAN_KAIJO_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_IROUKAI_KAIJO_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_KOUSHI_ROOM_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_SHAIN_ROOM_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_MANAGER_KAIJO_NAME"
-            strSQL &= ",TBL_KAIJO.ANS_KAISAI_NOTE"
-            strSQL &= ",TBL_KAIJO.ANS_SEISAN_TF"
-            strSQL &= ",TBL_KAIJO.ANS_SEISAN_T"
-            strSQL &= ",TBL_KAIJO.ANS_SEISANSHO_URL"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_BU"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_AREA"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_EIGYOSHO"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_NAME"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_ROMA"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_EMAIL_PC"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_KEITAI"
-            strSQL &= ",TBL_KAIJO.TEHAI_TANTO_TEL"
+            strSQL &= " DISTINCT"
+            strSQL &= " TBL_KAIJO.*"
+            strSQL &= ",TBL_KOUENKAI.TIME_STAMP"
+            strSQL &= ",TBL_KOUENKAI.TORIKESHI_FLG"
+            strSQL &= ",TBL_KOUENKAI.KIDOKU_FLG"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_TITLE"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",TBL_KOUENKAI.TAXI_PRT_NAME"
+            strSQL &= ",TBL_KOUENKAI.FROM_DATE"
+            strSQL &= ",TBL_KOUENKAI.TO_DATE"
+            strSQL &= ",TBL_KOUENKAI.KAIJO_NAME"
+            strSQL &= ",TBL_KOUENKAI.SEIHIN_NAME"
+            strSQL &= ",TBL_KOUENKAI.INTERNAL_ORDER_T"
+            strSQL &= ",TBL_KOUENKAI.INTERNAL_ORDER_TF"
+            strSQL &= ",TBL_KOUENKAI.ACCOUNT_CD_T"
+            strSQL &= ",TBL_KOUENKAI.ACCOUNT_CD_TF"
+            strSQL &= ",TBL_KOUENKAI.ZETIA_CD"
+            strSQL &= ",TBL_KOUENKAI.SANKA_YOTEI_CNT"
+            strSQL &= ",TBL_KOUENKAI.BU"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_NAME"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_ROMA"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EMAIL_PC"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_KEITAI"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_TEL"
+            strSQL &= ",TBL_KOUENKAI.COST_CENTER"
+            strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
+            strSQL &= ",TBL_KOUENKAI.YOSAN_T"
+            strSQL &= ",TBL_KOUENKAI.SEND_FLAG"
+            strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
             strSQL &= ",MS_USER.USER_NAME"
             strSQL &= " FROM TBL_KAIJO"
-            strSQL &= " INNER JOIN (TBL_KOUENKAI"
-            strSQL &= " INNER JOIN MS_USER"
-            strSQL &= " ON TBL_KOUENKAI.TTANTO_ID=MS_USER.LOGIN_ID)"
-            strSQL &= " ON TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-
+            strSQL &= ","
+            strSQL &= "(SELECT"
+            strSQL &= " TBL_KOUENKAI_1.*"
+            strSQL &= " FROM (SELECT"
+            strSQL &= " *"
+            strSQL &= " FROM TBL_KOUENKAI) AS TBL_KOUENKAI_1"
+            strSQL &= ",(SELECT"
+            strSQL &= " MAX(UPDATE_DATE) AS UPDATE_DATE"
+            strSQL &= ",KOUENKAI_NO"
+            strSQL &= " FROM TBL_KOUENKAI"
+            strSQL &= " WHERE 1=1"
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
+            strSQL &= " WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= " AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO) AS TBL_KOUENKAI"
+            strSQL &= ",(SELECT"
+            strSQL &= " N'' AS LOGIN_ID"
+            strSQL &= ",N'' AS USER_NAME"
+            strSQL &= " UNION ALL"
+            strSQL &= " SELECT"
+            strSQL &= " LOGIN_ID"
+            strSQL &= ",USER_NAME"
+            strSQL &= " FROM MS_USER) AS MS_USER"
+            strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO='" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
                 strSQL &= " ORDER BY"
                 strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
             Else
@@ -2601,7 +2607,7 @@ Public Class SQL
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE ISNULL(MS_SHISETSU.STOP_FLG,'')<>'1'"
+            strSQL &= " WHERE ISNULL(MS_SHISETSU.STOP_FLG,N'')<>N'" & AppConst.STOP_FLG.Code.Stop & "'"
 
             If Trim(Joken.ADDRESS1) <> "" Then
                 strSQL &= " AND MS_SHISETSU.ADDRESS1=N'" & CmnDb.SqlString(Joken.ADDRESS1) & "'"
