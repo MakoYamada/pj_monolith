@@ -45,6 +45,19 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byNEW_TIME_STAMP(ByVal KOUENKAI_NO As String, ByVal TIME_STAMP As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT COUNT(*) AS CNT"
+            strSQL &= " FROM TBL_KOUENKAI"
+            strSQL &= " WHERE "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP & ">N'" & CmnDb.SqlString(TIME_STAMP) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
