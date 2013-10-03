@@ -30,21 +30,31 @@ Partial Public Class KouenkaiRegist
             SetForm()
 
             '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
-            If Session.Item(SessionDef.BackURL).ToString.IndexOf(URL.NewKouenkaiList) > 0 OrElse _
-                Session.Item(SessionDef.BackURL).ToString.IndexOf(URL.KouenkaiList) > 0 Then
-                BtnSubmit.Visible = False
-                BtnNozomi.Visible = False
-            Else
+            If URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 OrElse _
+                URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 BtnSubmit.Visible = True
                 BtnNozomi.Visible = True
+            Else
+                BtnSubmit.Visible = False
+                BtnNozomi.Visible = False
             End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
-            If Session.Item(SessionDef.BackURL).ToString.IndexOf(URL.KouenkaiRireki) > 0 Then
+            If URL.KouenkaiRireki.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 BtnRireki.Visible = False
             Else
                 BtnRireki.Visible = True
             End If
+
+            '表示対象より新しい講演会基本情報がある場合は登録・NOZOMIボタンは使用不可
+            If ChkNewData() Then
+                BtnSubmit.Enabled = True
+                BtnNozomi.Enabled = True
+            Else
+                BtnSubmit.Enabled = False
+                BtnNozomi.Enabled = False
+            End If
+
         End If
 
         'マスターページ設定
@@ -152,6 +162,28 @@ Partial Public Class KouenkaiRegist
         End Try
 
         Return True
+    End Function
+
+    '最新版データ存在チェック
+    Private Function ChkNewData() As Boolean
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim NewCnt(0) As String
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_KOUENKAI.byNEW_TIME_STAMP(TBL_KOUENKAI(SEQ).KOUENKAI_NO, TBL_KOUENKAI(SEQ).TIME_STAMP)
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            NewCnt(0) = CmnDb.DbData(RsData.GetName(0), RsData)
+        End If
+        RsData.Close()
+
+        If NewCnt(0) = "0" Then
+            Return True
+        Else
+            Return False
+        End If
     End Function
 
     '[キャンセル]
