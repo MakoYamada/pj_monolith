@@ -16,6 +16,7 @@
     Public Const SEQ As String = "SEQ"
     Public Const PageIndex As String = "PageIndex"
     Public Const BackURL As String = "BackURL"
+    Public Const BackURL2 As String = "BackURL2"
     Public Const DbError As String = "DbError"
     Public Const LoginID As String = "LoginID"
     Public Const Joken As String = "Joken"
