@@ -236,12 +236,14 @@ Public Class AppConst
         Public Class REQ_STATUS_TEHAI
             '【依頼】手配ステータス
             Public Class Code
+                Public Const Mitsumori As String = "0"
                 Public Const NewRequest As String = "1"
                 Public Const Change As String = "2"
                 Public Const Cancel As String = "3"
                 Public Const After As String = "4"
             End Class
             Public Class Name
+                Public Const Mitsumori As String = "見積依頼"
                 Public Const NewRequest As String = "新規手配依頼"
                 Public Const Change As String = "変更依頼"
                 Public Const Cancel As String = "取消依頼"
