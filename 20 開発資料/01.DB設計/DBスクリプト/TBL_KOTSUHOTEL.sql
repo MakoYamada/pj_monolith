@@ -40,7 +40,7 @@ CREATE TABLE [dbo].[TBL_KOTSUHOTEL](
 	[MR_SEND_SAKI_OTHER] [nvarchar](510) COLLATE Japanese_CI_AS  NULL,
 	[ACCOUNT_CD] [nvarchar](7) COLLATE Japanese_CI_AS  NULL,
 	[COST_CENTER] [nvarchar](12) COLLATE Japanese_CI_AS  NULL,
-	[INTERNAL_ORDER] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
+	[INTERNAL_ORDER] [nvarchar](12) COLLATE Japanese_CI_AS  NULL,
 	[ZETIA_CD] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[SHONIN_NAME] [nvarchar](160) COLLATE Japanese_CI_AS  NULL,
 	[SHONIN_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
