@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\Work\KotsuHotel")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\Work\KotsuHotel_R")>  _
         Public Property PATH_WORK() As String
             Get
                 Return CType(Me("PATH_WORK"),String)

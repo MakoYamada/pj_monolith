@@ -9,7 +9,7 @@
       <Value Profile="(Default)">kotsuhotel</Value>
     </Setting>
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer\Work\KotsuHotel</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer\Work\KotsuHotel_R</Value>
     </Setting>
     <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer\ReceiveBkup</Value>
