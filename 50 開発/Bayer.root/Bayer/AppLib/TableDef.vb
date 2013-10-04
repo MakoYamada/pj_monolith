@@ -519,6 +519,7 @@
 
     Public Class TBL_KOTSUHOTEL
         <Serializable()> Public Structure DataStruct
+            Public SALEFORCE_ID As String
             Public SANKASHA_ID As String
             Public KOUENKAI_NO As String
             Public REQ_STATUS_TEHAI As String
@@ -909,6 +910,7 @@
             Public SEND_DATE As String
         End Structure
         Public Class Column
+            Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
             Public Const SANKASHA_ID As String = "SANKASHA_ID"
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
             Public Const REQ_STATUS_TEHAI As String = "REQ_STATUS_TEHAI"
@@ -1299,6 +1301,7 @@
             Public Const SEND_DATE As String = "SEND_DATE"
         End Class
         Public Class Name
+            Public Const SALEFORCE_ID As String = "SalesForceID"
             Public Const SANKASHA_ID As String = "参加者ID"
             Public Const KOUENKAI_NO As String = "講演会番号"
             Public Const REQ_STATUS_TEHAI As String = "手配スタータス(依頼)"
@@ -1692,6 +1695,7 @@
 
     Public Class TBL_KAIJO
         <Serializable()> Public Structure DataStruct
+            Public SALEFORCE_ID As String
             Public TEHAI_ID As String
             Public KOUENKAI_NO As String
             Public REQ_STATUS_TEHAI As String
@@ -1782,6 +1786,7 @@
             Public TTANTO_ID As String
         End Structure
         Public Class Column
+            Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
             Public Const TEHAI_ID As String = "TEHAI_ID"
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
             Public Const REQ_STATUS_TEHAI As String = "REQ_STATUS_TEHAI"
@@ -1872,6 +1877,7 @@
             Public Const TTANTO_ID As String = "TTANTO_ID"
         End Class
         Public Class Name
+            Public Const SALEFORCE_ID As String = "SalesForceID"
             Public Const TEHAI_ID As String = "講演会手配ID"
             Public Const KOUENKAI_NO As String = "講演会番号"
             Public Const REQ_STATUS_TEHAI As String = "手配スタータス(依頼)"
@@ -1931,7 +1937,6 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
         End Class
-
     End Class
 
     Public Class TBL_BENTO

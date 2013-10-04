@@ -212,7 +212,8 @@ Public Class AppModule
         Dim wCnt As Integer = 0
 
         For wCnt = 0 To RsData.FieldCount - 1
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID.ToUpper Then TBL_KOTSUHOTEL.SANKASHA_ID = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID.ToUpper Then TBL_KOTSUHOTEL.SALEFORCE_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID.ToUpper Then TBL_KOTSUHOTEL.SANKASHA_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO.ToUpper Then TBL_KOTSUHOTEL.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI.ToUpper Then TBL_KOTSUHOTEL.REQ_STATUS_TEHAI = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI.ToUpper Then TBL_KOTSUHOTEL.ANS_STATUS_TEHAI = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
@@ -609,6 +610,7 @@ Public Class AppModule
         Dim wCnt As Integer = 0
 
         For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SALEFORCE_ID.ToUpper Then TBL_KAIJO.SALEFORCE_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TEHAI_ID.ToUpper Then TBL_KAIJO.TEHAI_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KOUENKAI_NO.ToUpper Then TBL_KAIJO.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.REQ_STATUS_TEHAI.ToUpper Then TBL_KAIJO.REQ_STATUS_TEHAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -3913,6 +3915,24 @@ Public Class AppModule
         End If
     End Function
 
+    '精算額合計
+    Public Shared Function GetName_ANS_SEISAN_TOTAL(ByVal ANS_SEISAN_TOTAL As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(ANS_SEISAN_TOTAL)
+        Else
+            Return ANS_SEISAN_TOTAL
+        End If
+    End Function
+    Public Shared Function GetName_ANS_SEISAN_TOTAL(ByVal ANS_SEISAN_T As String, ByVal ANS_SEISAN_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_SEISAN_T) + CmnModule.DbVal(ANS_SEISAN_TF)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
+    End Function
+
     '【回答】施設選定理由
     Public Shared Function GetName_ANS_SENTEI_RIYU(ByVal ANS_SENTEI_RIYU As String) As String
         Return Trim(ANS_SENTEI_RIYU)
@@ -4748,6 +4768,46 @@ Public Class AppModule
         control.Text = ANS_SHISETSU_ZIP
     End Sub
 
+    '【回答】開催地(講演会会場名)
+    Public Shared Sub SetForm_ANS_KOUEN_KAIJO_NAME(ByVal ANS_KOUEN_KAIJO_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_KOUEN_KAIJO_NAME
+    End Sub
+
+    '【回答】開催地(講演会会場フロア)
+    Public Shared Sub SetForm_ANS_KOUEN_KAIJO_FLOOR(ByVal ANS_KOUEN_KAIJO_FLOOR As String, ByRef control As TextBox)
+        control.Text = ANS_KOUEN_KAIJO_FLOOR
+    End Sub
+
+    '【回答】開催地(意見交換会場名)
+    Public Shared Sub SetForm_ANS_IKENKOUKAN_KAIJO_NAME(ByVal ANS_IKENKOUKAN_KAIJO_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_IKENKOUKAN_KAIJO_NAME
+    End Sub
+
+    '【回答】開催地(慰労会会場名)
+    Public Shared Sub SetForm_ANS_IROUKAI_KAIJO_NAME(ByVal ANS_IROUKAI_KAIJO_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_IROUKAI_KAIJO_NAME
+    End Sub
+
+    '【回答】開催地(講師控室会場名)
+    Public Shared Sub SetForm_ANS_KOUSHI_ROOM_NAME(ByVal ANS_KOUSHI_ROOM_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_KOUSHI_ROOM_NAME
+    End Sub
+
+    '【回答】開催地(社員控室会場名)
+    Public Shared Sub SetForm_ANS_SHAIN_ROOM_NAME(ByVal ANS_SHAIN_ROOM_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_SHAIN_ROOM_NAME
+    End Sub
+
+    '【回答】開催地(世話人会会場名)
+    Public Shared Sub SetForm_ANS_MANAGER_KAIJO_NAME(ByVal ANS_MANAGER_KAIJO_NAME As String, ByRef control As TextBox)
+        control.Text = ANS_MANAGER_KAIJO_NAME
+    End Sub
+
+    '【回答】開催地(備考欄)
+    Public Shared Sub SetForm_ANS_KAISAI_NOTE(ByVal ANS_KAISAI_NOTE As String, ByRef control As TextBox)
+        control.Text = ANS_KAISAI_NOTE
+    End Sub
+
     '見積額（非課税）
     Public Shared Sub SetForm_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As String, ByRef control As TextBox)
         control.Text = ANS_MITSUMORI_TF
@@ -4764,6 +4824,21 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetForm_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As String, ByRef control As Label, Optional ByVal ShortFormat As Boolean = False)
         control.Text = GetName_ANS_MITSUMORI_TOTAL(ANS_MITSUMORI_TOTAL, ShortFormat)
+    End Sub
+
+    '精算額（非課税）
+    Public Shared Sub SetForm_ANS_SEISAN_TF(ByVal ANS_SEISAN_TF As String, ByRef control As TextBox)
+        control.Text = ANS_SEISAN_TF
+    End Sub
+
+    '精算額（課税）
+    Public Shared Sub SetForm_ANS_SEISAN_T(ByVal ANS_SEISAN_T As String, ByRef control As TextBox)
+        control.Text = ANS_SEISAN_T
+    End Sub
+
+    '精算額（合計）
+    Public Shared Sub SetForm_ANS_SEISAN_TOTAL(ByVal ANS_SEISAN_TF As String, ByVal ANS_SEISAN_T As String, ByRef control As Label, Optional ByVal ShortFormat As Boolean = False)
+        control.Text = GetName_ANS_SEISAN_TOTAL(ANS_SEISAN_TF, ANS_SEISAN_T, ShortFormat)
     End Sub
 
     '開催希望地　（都道府県）
@@ -4826,6 +4901,11 @@ Public Class AppModule
     '見積算書　保存場所URL
     Public Shared Sub SetForm_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As String, ByRef control As TextBox)
         control.Text = ANS_MITSUMORI_URL
+    End Sub
+
+    '精算算書　保存場所URL
+    Public Shared Sub SetForm_ANS_SEISANSHO_URL(ByVal ANS_SEISANSHO_URL As String, ByRef control As TextBox)
+        control.Text = ANS_SEISANSHO_URL
     End Sub
 
     'ユーザマスタ：権限
@@ -6293,6 +6373,46 @@ Public Class AppModule
         Return Trim(ANS_SHISETSU_ZIP.Text)
     End Function
 
+    '【回答】開催地(講演会会場名)
+    Public Shared Function GetValue_ANS_KOUEN_KAIJO_NAME(ByVal ANS_KOUEN_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_KOUEN_KAIJO_NAME.Text)
+    End Function
+
+    '【回答】開催地(講演会会場フロア)
+    Public Shared Function GetValue_ANS_KOUEN_KAIJO_FLOOR(ByVal ANS_KOUEN_KAIJO_FLOOR As TextBox) As String
+        Return Trim(ANS_KOUEN_KAIJO_FLOOR.Text)
+    End Function
+
+    '【回答】開催地(意見交換会場名)
+    Public Shared Function GetValue_ANS_IKENKOUKAN_KAIJO_NAME(ByVal ANS_IKENKOUKAN_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_IKENKOUKAN_KAIJO_NAME.Text)
+    End Function
+
+    '【回答】開催地(慰労会会場名)
+    Public Shared Function GetValue_ANS_IROUKAI_KAIJO_NAME(ByVal ANS_IROUKAI_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_IROUKAI_KAIJO_NAME.Text)
+    End Function
+
+    '【回答】開催地(講師控室会場名)
+    Public Shared Function GetValue_ANS_KOUSHI_ROOM_NAME(ByVal ANS_KOUSHI_ROOM_NAME As TextBox) As String
+        Return Trim(ANS_KOUSHI_ROOM_NAME.Text)
+    End Function
+
+    '【回答】開催地(社員控室会場名)
+    Public Shared Function GetValue_ANS_SHAIN_ROOM_NAME(ByVal ANS_SHAIN_ROOM_NAME As TextBox) As String
+        Return Trim(ANS_SHAIN_ROOM_NAME.Text)
+    End Function
+
+    '【回答】開催地(世話人会会場名)
+    Public Shared Function GetValue_ANS_MANAGER_KAIJO_NAME(ByVal ANS_MANAGER_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_MANAGER_KAIJO_NAME.Text)
+    End Function
+
+    '【回答】開催地(備考欄)
+    Public Shared Function GetValue_ANS_KAISAI_NOTE(ByVal ANS_KAISAI_NOTE As TextBox) As String
+        Return Trim(ANS_KAISAI_NOTE.Text)
+    End Function
+
     '見積額（非課税）
     Public Shared Function GetValue_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As TextBox) As String
         Return Trim(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
@@ -6309,6 +6429,16 @@ Public Class AppModule
     End Function
     Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As TextBox, ByVal ANS_MITSUMORI_TF As TextBox) As String
         Return CmnModule.DbVal(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow)).ToString
+    End Function
+
+    '精算額（非課税）
+    Public Shared Function GetValue_ANS_SEISAN_TF(ByVal ANS_SEISAN_TF As TextBox) As String
+        Return Trim(StrConv(ANS_SEISAN_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    '精算額（課税）
+    Public Shared Function GetValue_ANS_SEISAN_T(ByVal ANS_SEISAN_T As TextBox) As String
+        Return Trim(StrConv(ANS_SEISAN_T.Text, VbStrConv.Narrow))
     End Function
 
     '開催希望地　（都道府県）
@@ -6359,6 +6489,11 @@ Public Class AppModule
     '見積書保存場所URL
     Public Shared Function GetValue_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As TextBox) As String
         Return Trim(StrConv(ANS_MITSUMORI_URL.Text, VbStrConv.Narrow))
+    End Function
+
+    '精算書保存場所URL
+    Public Shared Function GetValue_ANS_SEISANSHO_URL(ByVal ANS_SEISANSHO_URL As TextBox) As String
+        Return Trim(StrConv(ANS_SEISANSHO_URL.Text, VbStrConv.Narrow))
     End Function
 
     'ユーザマスタ：権限

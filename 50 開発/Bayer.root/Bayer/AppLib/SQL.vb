@@ -734,7 +734,8 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL = "INSERT INTO TBL_KOTSUHOTEL"
-            strSQL &= "(" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+            strSQL &= "(" & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI
@@ -1124,7 +1125,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE
             strSQL &= ")"
             strSQL &= " VALUES"
-            strSQL &= "(N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SALEFORCE_ID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_NO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.REQ_STATUS_TEHAI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_STATUS_TEHAI) & "'"
@@ -1903,7 +1905,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_DATE) & "'"
-            strSQL &= " WHERE " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SALEFORCE_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TIME_STAMP_BYL) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.DR_MPID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DR_MPID) & "'"
@@ -2154,7 +2157,8 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL = "INSERT INTO TBL_KAIJO"
-            strSQL &= "(" & TableDef.TBL_KAIJO.Column.TEHAI_ID
+            strSQL &= "(" & TableDef.TBL_KAIJO.Column.SALEFORCE_ID
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_ID
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUENKAI_NO
             strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_STATUS_TEHAI
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_STATUS_TEHAI
@@ -2214,7 +2218,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER
             strSQL &= ")"
             strSQL &= " VALUES"
-            strSQL &= "(N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_KAIJO.SALEFORCE_ID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_NO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.REQ_STATUS_TEHAI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_STATUS_TEHAI) & "'"
@@ -2334,7 +2339,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
-            strSQL &= " WHERE " & TableDef.TBL_KAIJO.Column.TEHAI_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_KAIJO.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.SALEFORCE_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TEHAI_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TIME_STAMP_BYL) & "'"
 
