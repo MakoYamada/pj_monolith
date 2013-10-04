@@ -249,6 +249,15 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_KEITAI
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_TEL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.COST_CENTER
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EIGYOSHO
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_NAME
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_PC
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_KEITAI
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_KEITAI
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_TEL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG
@@ -286,6 +295,15 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_KEITAI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_TEL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.COST_CENTER) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_BU) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_AREA) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_NAME) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_ROMA) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_PC) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_KEITAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_KEITAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_TEL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
@@ -328,6 +346,15 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_KEITAI & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_KEITAI) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_TEL & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.COST_CENTER & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.COST_CENTER) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_BU) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_AREA) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EIGYOSHO & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_NAME & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_NAME) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_ROMA) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_PC & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_PC) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_EMAIL_KEITAI & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_EMAIL_KEITAI) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_KEITAI & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_KEITAI) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_TEL & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
@@ -2204,15 +2231,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_TF
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_T
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISANSHO_URL
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_BU
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_AREA
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EIGYOSHO
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_NAME
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_ROMA
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EMAIL_PC
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EMAIL_KEITAI
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_KEITAI
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_TEL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KAIJO.Column.INPUT_DATE
             strSQL &= "," & TableDef.TBL_KAIJO.Column.INPUT_USER
@@ -2265,15 +2283,6 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISANSHO_URL) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_BU) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_AREA) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EIGYOSHO) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_NAME) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_ROMA) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EMAIL_PC) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_KEITAI) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_TEL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.INPUT_USER) & "'"
@@ -2329,15 +2338,6 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_TF) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_T) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISANSHO_URL & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISANSHO_URL) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_BU & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_BU) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_AREA & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_AREA) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EIGYOSHO & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EIGYOSHO) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_NAME & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_NAME) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_ROMA & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_ROMA) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EMAIL_PC & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EMAIL_PC) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_EMAIL_KEITAI & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_KEITAI & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_KEITAI) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.TEHAI_TANTO_TEL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
