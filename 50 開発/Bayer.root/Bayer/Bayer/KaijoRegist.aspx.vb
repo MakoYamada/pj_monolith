@@ -47,6 +47,9 @@ Partial Public Class KaijoRegist
         With Me.Master
             .HideLoginUser = True   'QQQ
             .PageTitle = "講演会場　手配・見積依頼"
+            If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+                .PageTitle &= " ：履歴照会"
+            End If
         End With
     End Sub
 
@@ -91,9 +94,20 @@ Partial Public Class KaijoRegist
         CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_SENTEI_RIYU, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_SHISETSU_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_KOUEN_KAIJO_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_KOUEN_KAIJO_FLOOR, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_IKENKOUKAN_KAIJO_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_IROUKAI_KAIJO_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_KOUSHI_ROOM_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_SHAIN_ROOM_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_MANAGER_KAIJO_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_KAISAI_NOTE, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_MITSUMORI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_URL, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_SEISAN_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_SEISAN_T, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_SEISANSHO_URL, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -101,14 +115,16 @@ Partial Public Class KaijoRegist
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
             '履歴からの場合、キャンセル以外のボタンを非表示にする
             Me.BtnShisetsuKensaku.Visible = False
-            Me.BtnCalc.Visible = False
+            Me.BtnCalc_MITSUMORI.Visible = False
+            Me.BtnCalc_SEISAN.Visible = False
             Me.BtnRireki.Visible = False
             Me.BtnPrint.Visible = False
             Me.BtnNozomi.Visible = False
             Me.BtnSubmit.Visible = False
         Else
             Me.BtnShisetsuKensaku.Visible = True
-            Me.BtnCalc.Visible = True
+            Me.BtnCalc_MITSUMORI.Visible = True
+            Me.BtnCalc_SEISAN.Visible = True
             Me.BtnRireki.Visible = True
             Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
@@ -183,10 +199,22 @@ Partial Public Class KaijoRegist
         AppModule.SetForm_ANS_SHISETSU_ADDRESS(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS), Me.ANS_SHISETSU_ADDRESS)
         AppModule.SetForm_ANS_SHISETSU_TEL(Session.Item(SessionDef.ShisetsuKensaku_TEL), Me.ANS_SHISETSU_TEL)
         AppModule.SetForm_ANS_SHISETSU_URL(Session.Item(SessionDef.ShisetsuKensaku_URL), Me.ANS_SHISETSU_URL)
+        AppModule.SetForm_ANS_KOUEN_KAIJO_NAME(TBL_KAIJO(SEQ).ANS_KOUEN_KAIJO_NAME, Me.ANS_KOUEN_KAIJO_NAME)
+        AppModule.SetForm_ANS_KOUEN_KAIJO_FLOOR(TBL_KAIJO(SEQ).ANS_KOUEN_KAIJO_FLOOR, Me.ANS_KOUEN_KAIJO_FLOOR)
+        AppModule.SetForm_ANS_IKENKOUKAN_KAIJO_NAME(TBL_KAIJO(SEQ).ANS_IKENKOUKAN_KAIJO_NAME, Me.ANS_IKENKOUKAN_KAIJO_NAME)
+        AppModule.SetForm_ANS_IROUKAI_KAIJO_NAME(TBL_KAIJO(SEQ).ANS_IROUKAI_KAIJO_NAME, Me.ANS_IROUKAI_KAIJO_NAME)
+        AppModule.SetForm_ANS_KOUSHI_ROOM_NAME(TBL_KAIJO(SEQ).ANS_KOUSHI_ROOM_NAME, Me.ANS_KOUSHI_ROOM_NAME)
+        AppModule.SetForm_ANS_SHAIN_ROOM_NAME(TBL_KAIJO(SEQ).ANS_SHAIN_ROOM_NAME, Me.ANS_SHAIN_ROOM_NAME)
+        AppModule.SetForm_ANS_MANAGER_KAIJO_NAME(TBL_KAIJO(SEQ).ANS_MANAGER_KAIJO_NAME, Me.ANS_MANAGER_KAIJO_NAME)
+        AppModule.SetForm_ANS_KAISAI_NOTE(TBL_KAIJO(SEQ).ANS_KAISAI_NOTE, Me.ANS_KAISAI_NOTE)
         AppModule.SetForm_ANS_MITSUMORI_TF(TBL_KAIJO(SEQ).ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF)
         AppModule.SetForm_ANS_MITSUMORI_T(TBL_KAIJO(SEQ).ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T)
         AppModule.SetForm_ANS_MITSUMORI_URL(TBL_KAIJO(SEQ).ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL)
         AppModule.SetForm_ANS_MITSUMORI_TOTAL(TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL, Me.ANS_MITSUMORI_TOTAL)
+        AppModule.SetForm_ANS_SEISAN_TF(TBL_KAIJO(SEQ).ANS_SEISAN_TF, Me.ANS_SEISAN_TF)
+        AppModule.SetForm_ANS_SEISAN_T(TBL_KAIJO(SEQ).ANS_SEISAN_T, Me.ANS_SEISAN_T)
+        AppModule.SetForm_ANS_SEISANSHO_URL(TBL_KAIJO(SEQ).ANS_SEISANSHO_URL, Me.ANS_SEISANSHO_URL)
+        AppModule.SetForm_ANS_SEISAN_TOTAL(TBL_KAIJO(SEQ).ANS_SEISAN_TF, TBL_KAIJO(SEQ).ANS_SEISAN_T, Me.ANS_SEISAN_TOTAL)
     End Sub
 
     '入力チェック
@@ -202,6 +230,11 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
+        If Not CmnCheck.IsLengthLE(Me.ANS_SHISETSU_NAME, Me.ANS_SHISETSU_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SHISETSU_NAME, Me.ANS_SHISETSU_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
         If Not CmnCheck.IsNumberOnly(Me.ANS_MITSUMORI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T), Me)
             Return False
@@ -211,19 +244,30 @@ Partial Public Class KaijoRegist
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF), Me)
             Return False
         End If
-
-        If Not CmnCheck.IsLengthLE(Me.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength, True), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength), Me)
             Return False
         End If
-
         If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_SEISAN_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_SEISAN_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_SEISAN_TF, Me.ANS_SEISAN_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SEISAN_TF, Me.ANS_SEISAN_TF.MaxLength), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_SEISAN_T, Me.ANS_SEISAN_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SEISAN_T, Me.ANS_SEISAN_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength, True), Me)
             Return False
         End If
 
@@ -237,6 +281,51 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
+        If Not CmnCheck.IsLengthLE(Me.ANS_SEISANSHO_URL, Me.ANS_SEISANSHO_URL.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SEISANSHO_URL, Me.ANS_SEISANSHO_URL.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_KOUEN_KAIJO_NAME, Me.ANS_KOUEN_KAIJO_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KOUEN_KAIJO_NAME, Me.ANS_KOUEN_KAIJO_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_KOUEN_KAIJO_FLOOR, Me.ANS_KOUEN_KAIJO_FLOOR.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KOUEN_KAIJO_FLOOR, Me.ANS_KOUEN_KAIJO_FLOOR.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_IKENKOUKAN_KAIJO_NAME, Me.ANS_IKENKOUKAN_KAIJO_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_IKENKOUKAN_KAIJO_NAME, Me.ANS_IKENKOUKAN_KAIJO_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_IROUKAI_KAIJO_NAME, Me.ANS_IROUKAI_KAIJO_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_IROUKAI_KAIJO_NAME, Me.ANS_IROUKAI_KAIJO_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_KOUSHI_ROOM_NAME, Me.ANS_KOUSHI_ROOM_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KOUSHI_ROOM_NAME, Me.ANS_KOUSHI_ROOM_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_SHAIN_ROOM_NAME, Me.ANS_SHAIN_ROOM_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SHAIN_ROOM_NAME, Me.ANS_SHAIN_ROOM_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_MANAGER_KAIJO_NAME, Me.ANS_MANAGER_KAIJO_NAME.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MANAGER_KAIJO_NAME, Me.ANS_MANAGER_KAIJO_NAME.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_KAISAI_NOTE, Me.ANS_KAISAI_NOTE.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KAISAI_NOTE, Me.ANS_KAISAI_NOTE.MaxLength, True), Me)
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -247,6 +336,7 @@ Partial Public Class KaijoRegist
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Trim(Me.ADDRESS2.Text)
         Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Trim(Me.ANS_SHISETSU_NAME.Text)
         Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_ZIP) = ""
         Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = ""
         Session.Item(SessionDef.ShisetsuKensaku_TEL) = ""
         Session.Item(SessionDef.ShisetsuKensaku_URL) = ""
@@ -297,10 +387,21 @@ Partial Public Class KaijoRegist
         TBL_KAIJO(SEQ).ANS_SHISETSU_ADDRESS = AppModule.GetValue_ANS_SHISETSU_ADDRESS(Me.ANS_SHISETSU_ADDRESS)
         TBL_KAIJO(SEQ).ANS_SHISETSU_TEL = AppModule.GetValue_ANS_SHISETSU_TEL(Me.ANS_SHISETSU_TEL)
         TBL_KAIJO(SEQ).ANS_SHISETSU_URL = AppModule.GetValue_ANS_SHISETSU_URL(Me.ANS_SHISETSU_URL)
+        TBL_KAIJO(SEQ).ANS_KOUEN_KAIJO_NAME = AppModule.GetValue_ANS_KOUEN_KAIJO_NAME(Me.ANS_KOUEN_KAIJO_NAME)
+        TBL_KAIJO(SEQ).ANS_KOUEN_KAIJO_FLOOR = AppModule.GetValue_ANS_KOUEN_KAIJO_FLOOR(Me.ANS_KOUEN_KAIJO_FLOOR)
+        TBL_KAIJO(SEQ).ANS_IKENKOUKAN_KAIJO_NAME = AppModule.GetValue_ANS_IKENKOUKAN_KAIJO_NAME(Me.ANS_IKENKOUKAN_KAIJO_NAME)
+        TBL_KAIJO(SEQ).ANS_IROUKAI_KAIJO_NAME = AppModule.GetValue_ANS_IROUKAI_KAIJO_NAME(Me.ANS_IROUKAI_KAIJO_NAME)
+        TBL_KAIJO(SEQ).ANS_KOUSHI_ROOM_NAME = AppModule.GetValue_ANS_KOUSHI_ROOM_NAME(Me.ANS_KOUSHI_ROOM_NAME)
+        TBL_KAIJO(SEQ).ANS_SHAIN_ROOM_NAME = AppModule.GetValue_ANS_SHAIN_ROOM_NAME(Me.ANS_SHAIN_ROOM_NAME)
+        TBL_KAIJO(SEQ).ANS_MANAGER_KAIJO_NAME = AppModule.GetValue_ANS_MANAGER_KAIJO_NAME(Me.ANS_MANAGER_KAIJO_NAME)
+        TBL_KAIJO(SEQ).ANS_KAISAI_NOTE = AppModule.GetValue_ANS_KAISAI_NOTE(Me.ANS_KAISAI_NOTE)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_TF = AppModule.GetValue_ANS_MITSUMORI_TF(Me.ANS_MITSUMORI_TF)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_T = AppModule.GetValue_ANS_MITSUMORI_T(Me.ANS_MITSUMORI_T)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL = AppModule.GetValue_ANS_MITSUMORI_TOTAL(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_TF)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_URL = AppModule.GetValue_ANS_MITSUMORI_URL(Me.ANS_MITSUMORI_URL)
+        TBL_KAIJO(SEQ).ANS_SEISAN_TF = AppModule.GetValue_ANS_SEISAN_TF(Me.ANS_SEISAN_TF)
+        TBL_KAIJO(SEQ).ANS_SEISAN_T = AppModule.GetValue_ANS_SEISAN_T(Me.ANS_SEISAN_T)
+        TBL_KAIJO(SEQ).ANS_SEISANSHO_URL = AppModule.GetValue_ANS_SEISANSHO_URL(Me.ANS_SEISANSHO_URL)
         TBL_KAIJO(SEQ).UPDATE_DATE = CmnModule.GetSysDateTime()
         TBL_KAIJO(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
@@ -333,12 +434,20 @@ Partial Public Class KaijoRegist
     End Function
 
     '[再計算]
-    Protected Sub BtnCalc_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc.Click
+    Protected Sub BtnCalc_MITSUMORI_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_MITSUMORI.Click
         Dim wANS_MITSUMORI_T As String = Trim(StrConv(Me.ANS_MITSUMORI_T.Text, VbStrConv.Narrow))
         Dim wANS_MITSUMORI_TF As String = Trim(StrConv(Me.ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
 
         If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_MITSUMORI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_MITSUMORI_TF)) Then
             Me.ANS_MITSUMORI_TOTAL.Text = AppModule.GetName_ANS_MITSUMORI_TOTAL(wANS_MITSUMORI_T, wANS_MITSUMORI_TF)
+        End If
+    End Sub
+    Protected Sub BtnCalc_SEISAN_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_SEISAN.Click
+        Dim wANS_SEISAN_T As String = Trim(StrConv(Me.ANS_SEISAN_T.Text, VbStrConv.Narrow))
+        Dim wANS_SEISAN_TF As String = Trim(StrConv(Me.ANS_SEISAN_TF.Text, VbStrConv.Narrow))
+
+        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_SEISAN_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_SEISAN_TF)) Then
+            Me.ANS_SEISAN_TOTAL.Text = AppModule.GetName_ANS_SEISAN_TOTAL(wANS_SEISAN_T, wANS_SEISAN_TF)
         End If
     End Sub
 

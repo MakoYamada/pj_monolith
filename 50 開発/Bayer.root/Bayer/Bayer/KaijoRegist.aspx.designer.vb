@@ -592,6 +592,78 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_SHISETSU_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_KOUEN_KAIJO_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KOUEN_KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KOUEN_KAIJO_FLOOR コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KOUEN_KAIJO_FLOOR As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_IKENKOUKAN_KAIJO_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_IKENKOUKAN_KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_IROUKAI_KAIJO_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_IROUKAI_KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KOUSHI_ROOM_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KOUSHI_ROOM_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_SHAIN_ROOM_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SHAIN_ROOM_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_MANAGER_KAIJO_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MANAGER_KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KAISAI_NOTE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KAISAI_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ANS_MITSUMORI_TF コントロール。
     '''</summary>
     '''<remarks>
@@ -619,13 +691,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_MITSUMORI_TOTAL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnCalc コントロール。
+    '''BtnCalc_MITSUMORI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnCalc_MITSUMORI As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''ANS_MITSUMORI_URL コントロール。
@@ -635,6 +707,51 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_MITSUMORI_URL As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_SEISAN_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SEISAN_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_SEISAN_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SEISAN_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_SEISAN_TOTAL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SEISAN_TOTAL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_SEISAN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_SEISAN As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_SEISANSHO_URL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_SEISANSHO_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnRireki コントロール。
