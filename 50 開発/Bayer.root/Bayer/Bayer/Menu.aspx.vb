@@ -133,9 +133,35 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.TBL_KOUENKAI)
         Session.Remove(SessionDef.SEQ)
         Session.Remove(SessionDef.SYSTEM_ID)
+        Session.Remove(SessionDef.KouenkaiRireki)
         Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
         Session.Remove(SessionDef.KouenkaiRireki_SEQ)
         Session.Remove(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
         Response.Redirect(URL.NewKouenkaiList)
+    End Sub
+
+    '[検索 講演会基本情報一覧]
+    Private Sub BtnKoenkaiList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKoenkaiList.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_KOUENKAI)
+        Session.Remove(SessionDef.TBL_KAIJO)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS1)
+        Session.Remove(SessionDef.HotelKensaku_ADDRESS2)
+        Session.Remove(SessionDef.HotelKensaku_Back)
+        Session.Remove(SessionDef.KouenkaiRireki)
+        Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
+        Session.Remove(SessionDef.KouenkaiRireki_SEQ)
+        Session.Remove(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
+        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS1)
+        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS2)
+        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
+        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_KANA)
+        Session.Remove(SessionDef.ShisetsuKensaku_ZIP)
+        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS)
+        Session.Remove(SessionDef.ShisetsuKensaku_TEL)
+        Session.Remove(SessionDef.ShisetsuKensaku_URL)
+        Response.Redirect(URL.KouenkaiList)
     End Sub
 End Class
