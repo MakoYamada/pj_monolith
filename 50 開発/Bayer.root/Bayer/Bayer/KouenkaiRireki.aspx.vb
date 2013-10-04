@@ -63,6 +63,8 @@ Partial Public Class KouenkaiRireki
         Else
             SEQ = Session.Item(SessionDef.SEQ)
         End If
+
+        Session.Item(SessionDef.KouenkaiRireki) = True
         Return True
     End Function
 
@@ -96,6 +98,7 @@ Partial Public Class KouenkaiRireki
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+        strSQL &= " DESC"
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         ReDim RRK_KOUENKAI(wCnt)
@@ -115,7 +118,7 @@ Partial Public Class KouenkaiRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO) & " DESC"
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -184,6 +187,7 @@ Partial Public Class KouenkaiRireki
 
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+        Session.Item(SessionDef.KouenkaiRireki) = False
         Response.Redirect(Session.Item(SessionDef.BackURL))
     End Sub
 

@@ -233,9 +233,10 @@ Partial Public Class NewKouenkaiList
                 Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
                 '履歴画面用セッション変数をクリア
-                Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Nothing
-                Session.Item(SessionDef.KouenkaiRireki_SEQ) = Nothing
-                Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = Nothing
+                Session.Remove(SessionDef.KaijoRireki)
+                Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
+                Session.Remove(SessionDef.KouenkaiRireki_SEQ)
+                Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = False
 
                 Response.Redirect(URL.KouenkaiRegist)
         End Select
