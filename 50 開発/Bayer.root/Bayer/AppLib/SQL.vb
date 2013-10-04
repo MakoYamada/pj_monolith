@@ -1981,14 +1981,6 @@ Public Class SQL
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
             End If
 
-            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
-                strSQL_WHERE_KAIJO &= " AND ("
-                strSQL_WHERE_KAIJO &= "      TBL_KAIJO.TEHAI_TANTO LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
-                strSQL_WHERE_KAIJO &= "      OR "
-                strSQL_WHERE_KAIJO &= "      TBL_KAIJO.TEHAI_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
-                strSQL_WHERE_KAIJO &= ")"
-            End If
-
             '講演会テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             If Trim(Joken.BU) <> "" Then
@@ -2009,9 +2001,17 @@ Public Class SQL
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND ("
-                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
                 strSQL_WHERE_KOUENKAI &= "      OR "
                 strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= "      OR "
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
                 strSQL_WHERE_KOUENKAI &= ")"
             End If
 
