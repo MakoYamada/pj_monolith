@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\Receive")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\request\general")>  _
         Public Property PATH_RECEIVE() As String
             Get
                 Return CType(Me("PATH_RECEIVE"),String)
@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("kouenkai")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("reqgnl")>  _
         Public Property FILE_NAME() As String
             Get
                 Return CType(Me("FILE_NAME"),String)

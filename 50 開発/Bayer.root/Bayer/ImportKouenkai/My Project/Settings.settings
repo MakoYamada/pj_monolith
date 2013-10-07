@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer\Receive</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer\request\general</Value>
     </Setting>
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
-      <Value Profile="(Default)">kouenkai</Value>
+      <Value Profile="(Default)">reqgnl</Value>
     </Setting>
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer\Work\Kouenkai</Value>

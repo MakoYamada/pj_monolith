@@ -10,93 +10,86 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    'TODO:項目確定次第定義する
-    Private Const COL_COUNT As Integer = 40 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 37'ファイルの項目数
 
     Private Enum COL_NO
-        Name = 0
-        MeetingName__c
-        MeetingNo__c
-        TT_TimestampBYL__c
-        TT_NameForTicket__c
-        TT_StartDate__c
-        TT_EndDate__c
-        TT_Cancel__c
-        TT_ItemName__c
-        TT_InternalOrderTaxable__c
-        TT_InternalOrderNonTaxable__c
-        TT_AccountCodeTaxable__c
-        TT_AccountCodeNonTaxable__c
-        TT_ZetiaCode__c
-        TT_NumberOfInvitedMember__c
-        TT_PlanPersonBU_NameEN__c
-        TT_PlanPersonAreaName__c
-        TT_PlanPersonFS_Name__c
-        TT_PlanPersonNameKanji__c
-        TT_PlanPersonName__c
-        TT_PlanPersonPhone__c
-        TT_PlanPersonEmail__c
-        TT_PlanPersonMobile__c
-        TT_PlanPersonMobileMail__c
-        TT_CostCenter__c
-        TT_ArrangePersonBU_NameEN__c
-        TT_ArrangePersonAreaName__c
-        TT_ArrangePersonFS_Name__c
-        TT_ArrangePersonNameKanji__c
-        TT_ArrangePersonName__c
-        TT_ArrangePersonPhone__c
-        TT_ArrangePersonEmail__c
-        TT_ArrangePersonMobile__c
-        TT_ArrangePersonMobileMail__c
-        TT_BudgetTaxableTotal__c
-        TT_BudgetNonTaxableTotal__c
-        TT_MeetingPlaceName__c
-        TT_StatusRequest__c
-        TT_LastModifiedDate__c
-        Invalid__c
+        Field1 = 0
+        Field2
+        Field3
+        Field4
+        Field5
+        Field6
+        Field7
+        Field8
+        Field9
+        Field10
+        Field11
+        Field12
+        Field13
+        Field14
+        Field15
+        Field16
+        Field17
+        Field18
+        Field19
+        Field20
+        Field21
+        Field22
+        Field23
+        Field24
+        Field25
+        Field26
+        Field27
+        Field28
+        Field29
+        Field30
+        Field31
+        Field32
+        Field33
+        Field34
+        Field35
+        Field36
+        Field37
     End Enum
 
     Private Class COL_NAME
-        Public Const Name As String = "タイトル"
-        Public Const MeetingName__c As String = "会合名"
-        Public Const MeetingNo__c As String = "会合番号"
-        Public Const TT_TimestampBYL__c As String = "Timestamp (BYL)"
-        Public Const TT_NameForTicket__c As String = "会合名 (チケット印字用)"
-        Public Const TT_StartDate__c As String = "開催開始日"
-        Public Const TT_EndDate__c As String = "開催終了日"
-        Public Const TT_Cancel__c As String = "取消フラグ"
-        Public Const TT_ItemName__c As String = "品名"
-        Public Const TT_InternalOrderTaxable__c As String = "Internal Order (課税)"
-        Public Const TT_InternalOrderNonTaxable__c As String = "Internal Order (非課税)"
-        Public Const TT_AccountCodeTaxable__c As String = "Account Code (課税)"
-        Public Const TT_AccountCodeNonTaxable__c As String = "Account Code (非課税)"
-        Public Const TT_ZetiaCode__c As String = "Zetiaコード"
-        Public Const TT_NumberOfInvitedMember__c As String = "参加予定人数"
-        Public Const TT_PlanPersonBU_NameEN__c As String = "企画担当者のBU英名"
-        Public Const TT_PlanPersonAreaName__c As String = "企画担当者のエリア名"
-        Public Const TT_PlanPersonFS_Name__c As String = "企画担当者の営業所名"
-        Public Const TT_PlanPersonNameKanji__c As String = "企画担当者の氏名"
-        Public Const TT_PlanPersonName__c As String = "企画担当者の氏名(ﾛｰﾏ字)"
-        Public Const TT_PlanPersonPhone__c As String = "企画担当者の会社電話"
-        Public Const TT_PlanPersonEmail__c As String = "企画担当者のEmail"
-        Public Const TT_PlanPersonMobile__c As String = "企画担当者の携帯番号"
-        Public Const TT_PlanPersonMobileMail__c As String = "企画担当者の携帯メール"
-        Public Const TT_CostCenter__c As String = "企画担当者のCostCenter"
-        Public Const TT_ArrangePersonBU_NameEN__c As String = "手配担当者のBU英名"
-        Public Const TT_ArrangePersonAreaName__c As String = "手配担当者のエリア名"
-        Public Const TT_ArrangePersonFS_Name__c As String = "手配担当者の営業所名"
-        Public Const TT_ArrangePersonNameKanji__c As String = "手配担当者の氏名"
-        Public Const TT_ArrangePersonName__c As String = "手配担当者の氏名(ﾛｰﾏ字)"
-        Public Const TT_ArrangePersonPhone__c As String = "手配担当者の会社電話"
-        Public Const TT_ArrangePersonEmail__c As String = "手配担当者のEmail"
-        Public Const TT_ArrangePersonMobile__c As String = "手配担当者の携帯番号"
-        Public Const TT_ArrangePersonMobileMail__c As String = "手配担当者の携帯メール"
-        Public Const TT_BudgetTaxableTotal__c As String = "概算予算（課税）"
-        Public Const TT_BudgetNonTaxableTotal__c As String = "概算予算（非課税）"
-        Public Const TT_MeetingPlaceName__c As String = "会場名"
-        Public Const TT_StatusRequest__c As String = "TT連携ステータス(Request)"
-        Public Const TT_LastModifiedDate__c As String = "TT連携用最終更新日"
-        Public Const Invalid__c As String = "無効"
+        Public Const Field1 As String = "講演会番号"
+        Public Const Field2 As String = "Timestamp（BYL)"
+        Public Const Field3 As String = "取消フラグ"
+        Public Const Field4 As String = "講演会名"
+        Public Const Field5 As String = "講演会名（チケット印字用）"
+        Public Const Field6 As String = "講演会開催日From"
+        Public Const Field7 As String = "講演会開催日To"
+        Public Const Field8 As String = "講演会会場名"
+        Public Const Field9 As String = "製品名"
+        Public Const Field10 As String = "Internal order（課税）"
+        Public Const Field11 As String = "Internal order（非課税）"
+        Public Const Field12 As String = "アカウントコード（課税）"
+        Public Const Field13 As String = "アカウントコード（非課税）"
+        Public Const Field14 As String = "zetia Code"
+        Public Const Field15 As String = "BU（領域）"
+        Public Const Field16 As String = "参加予定数"
+        Public Const Field17 As String = "所属事業部"
+        Public Const Field18 As String = "所属エリア"
+        Public Const Field19 As String = "所属営業所"
+        Public Const Field20 As String = "担当者（企画担当者）名"
+        Public Const Field21 As String = "担当者（企画担当者）名（ﾛｰﾏ字）"
+        Public Const Field22 As String = "Emailアドレス（企画担当者）"
+        Public Const Field23 As String = "携帯のアドレス（企画担当者）"
+        Public Const Field24 As String = "携帯電話番号（企画担当者）"
+        Public Const Field25 As String = "オフィスの電話番号（企画担当者）"
+        Public Const Field26 As String = "Cost Center"
+        Public Const Field27 As String = "手配担当者のBU英名"
+        Public Const Field28 As String = "手配担当者のエリア名"
+        Public Const Field29 As String = "手配担当者の営業所名"
+        Public Const Field30 As String = "手配担当者の氏名"
+        Public Const Field31 As String = "手配担当者の氏名(ﾛｰﾏ字)"
+        Public Const Field32 As String = "手配担当者の会社電話"
+        Public Const Field33 As String = "手配担当者のEmail"
+        Public Const Field34 As String = "手配担当者の携帯番号"
+        Public Const Field35 As String = "手配担当者の携帯メール"
+        Public Const Field36 As String = "予算額_非課税"
+        Public Const Field37 As String = "予算額_課税"
     End Class
 #End Region
 
@@ -161,6 +154,9 @@ Public Class Proc
         parser.TextFieldType = FileIO.FieldType.Delimited
         parser.SetDelimiters(pDelimiter)
 
+        'ダブルクォート囲み、ダブルクォートのエスケープ対応
+        parser.HasFieldsEnclosedInQuotes = True
+
         Dim strNgMoji As String = My.Settings.NG_MOJI
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
@@ -191,16 +187,12 @@ Public Class Proc
             End If
 
             '必須入力チェック
-            If fileData(COL_NO.MeetingNo__c).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.MeetingNo__c & "がセットされていません。")
+            If fileData(COL_NO.Field1).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field1 & "がセットされていません。")
             End If
 
-            If fileData(COL_NO.TT_TimestampBYL__c).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.TT_TimestampBYL__c & "がセットされていません。")
-            End If
-
-            If fileData(COL_NO.Name).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.Name & "がセットされていません。")
+            If fileData(COL_NO.Field2).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field2 & "がセットされていません。")
             End If
 
             '禁則文字チェック
@@ -271,52 +263,51 @@ Public Class Proc
 
         Dim TBL_KOUENKAI_Ins As New TableDef.TBL_KOUENKAI.DataStruct
 
-        'TODO:ダブルクォート囲みのとき、またダブルクォートのエスケープの仕様が確定したら処理追加
-
-        TBL_KOUENKAI_Ins.KOUENKAI_NO = fileData(COL_NO.MeetingNo__c)
-        TBL_KOUENKAI_Ins.TIME_STAMP = fileData(COL_NO.TT_TimestampBYL__c)
-        TBL_KOUENKAI_Ins.TORIKESHI_FLG = fileData(COL_NO.TT_Cancel__c)
+        TBL_KOUENKAI_Ins.KOUENKAI_NO = fileData(COL_NO.Field1)
+        TBL_KOUENKAI_Ins.TIME_STAMP = fileData(COL_NO.Field2)
+        TBL_KOUENKAI_Ins.TORIKESHI_FLG = fileData(COL_NO.Field3)
         TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
-        TBL_KOUENKAI_Ins.KOUENKAI_TITLE = fileData(COL_NO.Name)
-        TBL_KOUENKAI_Ins.KOUENKAI_NAME = fileData(COL_NO.MeetingName__c)
-        TBL_KOUENKAI_Ins.TAXI_PRT_NAME = fileData(COL_NO.TT_NameForTicket__c)
-        TBL_KOUENKAI_Ins.FROM_DATE = fileData(COL_NO.TT_StartDate__c)
-        TBL_KOUENKAI_Ins.TO_DATE = fileData(COL_NO.TT_EndDate__c)
-        TBL_KOUENKAI_Ins.KAIJO_NAME = fileData(COL_NO.TT_MeetingPlaceName__c)
-        TBL_KOUENKAI_Ins.SEIHIN_NAME = fileData(COL_NO.TT_ItemName__c)
-        TBL_KOUENKAI_Ins.INTERNAL_ORDER_T = fileData(COL_NO.TT_InternalOrderTaxable__c)
-        TBL_KOUENKAI_Ins.INTERNAL_ORDER_TF = fileData(COL_NO.TT_InternalOrderNonTaxable__c)
-        TBL_KOUENKAI_Ins.ACCOUNT_CD_T = fileData(COL_NO.TT_AccountCodeTaxable__c)
-        TBL_KOUENKAI_Ins.ACCOUNT_CD_TF = fileData(COL_NO.TT_AccountCodeNonTaxable__c)
-        TBL_KOUENKAI_Ins.ZETIA_CD = fileData(COL_NO.TT_ZetiaCode__c)
-        TBL_KOUENKAI_Ins.SANKA_YOTEI_CNT = fileData(COL_NO.TT_NumberOfInvitedMember__c)
-        TBL_KOUENKAI_Ins.BU = fileData(COL_NO.TT_PlanPersonBU_NameEN__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_AREA = fileData(COL_NO.TT_PlanPersonAreaName__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EIGYOSHO = fileData(COL_NO.TT_PlanPersonFS_Name__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_NAME = fileData(COL_NO.TT_PlanPersonNameKanji__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_ROMA = fileData(COL_NO.TT_PlanPersonName__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_PC = fileData(COL_NO.TT_PlanPersonEmail__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_KEITAI = fileData(COL_NO.TT_PlanPersonMobileMail__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_KEITAI = fileData(COL_NO.TT_PlanPersonMobile__c)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_TEL = fileData(COL_NO.TT_PlanPersonPhone__c)
-        TBL_KOUENKAI_Ins.COST_CENTER = fileData(COL_NO.TT_CostCenter__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_BU = fileData(COL_NO.TT_ArrangePersonBU_NameEN__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_AREA = fileData(COL_NO.TT_ArrangePersonAreaName__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_EIGYOSHO = fileData(COL_NO.TT_ArrangePersonFS_Name__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_NAME = fileData(COL_NO.TT_ArrangePersonNameKanji__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_ROMA = fileData(COL_NO.TT_ArrangePersonName__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_PC = fileData(COL_NO.TT_ArrangePersonEmail__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_KEITAI = fileData(COL_NO.TT_ArrangePersonMobileMail__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_KEITAI = fileData(COL_NO.TT_ArrangePersonMobile__c)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_TEL = fileData(COL_NO.TT_ArrangePersonPhone__c)
-        TBL_KOUENKAI_Ins.YOSAN_TF = fileData(COL_NO.TT_BudgetNonTaxableTotal__c)
-        TBL_KOUENKAI_Ins.YOSAN_T = fileData(COL_NO.TT_BudgetTaxableTotal__c)
+        TBL_KOUENKAI_Ins.KOUENKAI_TITLE = fileData(COL_NO.Field4) 'TODO:確認
+        TBL_KOUENKAI_Ins.KOUENKAI_NAME = fileData(COL_NO.Field4)
+        TBL_KOUENKAI_Ins.TAXI_PRT_NAME = fileData(COL_NO.Field5)
+        TBL_KOUENKAI_Ins.FROM_DATE = fileData(COL_NO.Field6)
+        TBL_KOUENKAI_Ins.TO_DATE = fileData(COL_NO.Field7)
+        TBL_KOUENKAI_Ins.KAIJO_NAME = fileData(COL_NO.Field8)
+        TBL_KOUENKAI_Ins.SEIHIN_NAME = fileData(COL_NO.Field9)
+        TBL_KOUENKAI_Ins.INTERNAL_ORDER_T = fileData(COL_NO.Field10)
+        TBL_KOUENKAI_Ins.INTERNAL_ORDER_TF = fileData(COL_NO.Field11)
+        TBL_KOUENKAI_Ins.ACCOUNT_CD_T = fileData(COL_NO.Field12)
+        TBL_KOUENKAI_Ins.ACCOUNT_CD_TF = fileData(COL_NO.Field13)
+        TBL_KOUENKAI_Ins.ZETIA_CD = fileData(COL_NO.Field14)
+        'TBL_KOUENKAI_Ins.BU = fileData(COL_NO.Field15)
+        TBL_KOUENKAI_Ins.SANKA_YOTEI_CNT = fileData(COL_NO.Field16)
+        TBL_KOUENKAI_Ins.BU = fileData(COL_NO.Field17)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_AREA = fileData(COL_NO.Field18)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EIGYOSHO = fileData(COL_NO.Field19)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_NAME = fileData(COL_NO.Field20)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_ROMA = fileData(COL_NO.Field21)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_PC = fileData(COL_NO.Field22)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_KEITAI = fileData(COL_NO.Field23)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_KEITAI = fileData(COL_NO.Field24)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_TEL = fileData(COL_NO.Field25)
+        TBL_KOUENKAI_Ins.COST_CENTER = fileData(COL_NO.Field26)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_BU = fileData(COL_NO.Field27)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_AREA = fileData(COL_NO.Field28)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_EIGYOSHO = fileData(COL_NO.Field29)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_NAME = fileData(COL_NO.Field30)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_ROMA = fileData(COL_NO.Field31)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_PC = fileData(COL_NO.Field33)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_KEITAI = fileData(COL_NO.Field35)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_KEITAI = fileData(COL_NO.Field34)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_TEL = fileData(COL_NO.Field32)
+        TBL_KOUENKAI_Ins.YOSAN_TF = fileData(COL_NO.Field36)
+        TBL_KOUENKAI_Ins.YOSAN_T = fileData(COL_NO.Field37)
         TBL_KOUENKAI_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
         TBL_KOUENKAI_Ins.INPUT_USER = pbatchID
         TBL_KOUENKAI_Ins.UPDATE_USER = pbatchID
 
         '同一キーのデータを検索
-        Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct = GetData(fileData(COL_NO.MeetingNo__c))
+        Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct = GetData(fileData(COL_NO.Field1))
         If Not TBL_KOUENKAI Is Nothing Then
             '該当データがあるとき
             Dim idx As Integer = GetLastData(TBL_KOUENKAI)
