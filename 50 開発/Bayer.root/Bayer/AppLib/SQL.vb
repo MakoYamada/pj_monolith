@@ -1953,13 +1953,13 @@ Public Class SQL
 
         Private Const SQL_ORDERBY As String _
         = " ORDER BY" _
-        & " TBL_KAIJO.KOUENKAI_ID" _
+        & " TBL_KAIJO.KOUENKAI_NO" _
         & ",TBL_KAIJO.TIME_STAMP_BYL"
 
-        Public Shared Function byKOUENKAI_ID(ByVal KOUENKAI_ID As String) As String
+        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE TBL_KAIJO.KOUENKAI_ID=N'" & CmnDb.SqlString(KOUENKAI_ID) & "'"
+            strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
