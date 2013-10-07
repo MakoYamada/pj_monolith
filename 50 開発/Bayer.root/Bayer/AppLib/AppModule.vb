@@ -3299,7 +3299,7 @@ Public Class AppModule
 
     'çuâââÔäJç√ì˙From
     Public Shared Function GetName_FROM_DATE(ByVal FROM_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
+        If ShortFormat = True Then
             Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
@@ -3314,7 +3314,7 @@ Public Class AppModule
 
     'çuâââÔäJç√ì˙To
     Public Shared Function GetName_TO_DATE(ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
+        If ShortFormat = True Then
             Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
@@ -3330,7 +3330,7 @@ Public Class AppModule
     'çuâââÔäJç√ì˙
     Public Shared Function GetName_KOUENKAI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         Dim wStr As String = ""
-        If ShortFormat = False Then
+        If ShortFormat = True Then
             If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
                 wStr = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
             Else

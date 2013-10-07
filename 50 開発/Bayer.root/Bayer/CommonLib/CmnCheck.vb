@@ -447,44 +447,44 @@ Public Class CmnCheck
         Return IsValidDateYMD(year.Text, month.Text, day.Text)
     End Function
 
-    '月日チェック
-    Public Shared Function IsValidDateMD(ByVal str As String) As Boolean
-        '数字/ のみ可
-        Const DATE_LETTER As String = "0123456789/ "
-        Dim wCnt As Integer = 0
-        Dim buff As String
+    ''月日チェック
+    'Public Shared Function IsValidDateMD(ByVal str As String) As Boolean
+    '    '数字/ のみ可
+    '    Const DATE_LETTER As String = "0123456789/ "
+    '    Dim wCnt As Integer = 0
+    '    Dim buff As String
 
-        If Trim(str).Length = 0 Then
-            Return True
-        ElseIf Trim(str).Length < 3 OrElse Trim(str).Length > 5 Then
-            Return False
-        Else
-            For wCnt = 0 To str.Length() - 1
-                buff = str.Substring(wCnt, 1)
-                If DATE_LETTER.IndexOf(buff) = -1 Then
-                    Return False
-                End If
-            Next
-        End If
+    '    If Trim(str).Length = 0 Then
+    '        Return True
+    '    ElseIf Trim(str).Length < 3 OrElse Trim(str).Length > 5 Then
+    '        Return False
+    '    Else
+    '        For wCnt = 0 To str.Length() - 1
+    '            buff = str.Substring(wCnt, 1)
+    '            If DATE_LETTER.IndexOf(buff) = -1 Then
+    '                Return False
+    '            End If
+    '        Next
+    '    End If
 
-        '日付チェック
-        If InStr(Trim(str), "/") <= 0 Then
-            If CmnModule.LenB(Trim(str)) = 4 Then
-                str = Mid(Trim(str), 1, 2) & "/" & Mid(Trim(str), 3, 2)
-            Else
-                Return False
-            End If
-        Else
-            str = "2013/" & Trim(str)
-        End If
-        If Not IsDate(Trim(str)) Then
-            Return False
-        End If
-        Return True
-    End Function
-    Public Shared Function IsValidDateMD(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
-        Return IsValidDateMD(TextBox.Text)
-    End Function
+    '    '日付チェック
+    '    If InStr(Trim(str), "/") <= 0 Then
+    '        If CmnModule.LenB(Trim(str)) = 4 Then
+    '            str = Mid(Trim(str), 1, 2) & "/" & Mid(Trim(str), 3, 2)
+    '        Else
+    '            Return False
+    '        End If
+    '    Else
+    '        str = "2013/" & Trim(str)
+    '    End If
+    '    If Not IsDate(Trim(str)) Then
+    '        Return False
+    '    End If
+    '    Return True
+    'End Function
+    'Public Shared Function IsValidDateMD(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
+    '    Return IsValidDateMD(TextBox.Text)
+    'End Function
 
     '時分チェック
     Public Shared Function IsValidTime(ByVal str As String) As Boolean

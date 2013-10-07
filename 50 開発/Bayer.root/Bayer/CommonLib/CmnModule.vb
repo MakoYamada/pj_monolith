@@ -375,7 +375,7 @@ Public Class CmnModule
                 'yyyy/mm/dd
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) 'ŠÔ‚ª“ü‚Á‚Ä‚¢‚½‚çA“ú‚É‚¿•”•ª‚ğØ‚èæ‚é
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6Œ…‚Ì¨¼—ï2Œ…‚Æ”»’f
-                If Len(wStr) = 4 Then wStr &= "2013" & wStr '4Œ…¨”N‚È‚µ‚Æ”»’f
+                'If Len(wStr) = 4 Then wStr &= "2013" & wStr '4Œ…¨”N‚È‚µ‚Æ”»’f
 
                 wStr = Mid(wStr, 1, 4) & "/" & Mid(wStr, 5, 2) & "/" & Mid(wStr, 7, 2)
             Case DateFormatType.YYMMDD
@@ -419,7 +419,7 @@ Public Class CmnModule
                 'yyyy/m/d
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) 'ŠÔ‚ª“ü‚Á‚Ä‚¢‚½‚çA“ú‚É‚¿•”•ª‚ğØ‚èæ‚é
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6Œ…‚Ì¨¼—ï2Œ…‚Æ”»’f
-                If Len(wStr) = 4 Then wStr &= "2013" & wStr '4Œ…¨”N‚È‚µ‚Æ”»’f
+                'If Len(wStr) = 4 Then wStr &= "2013" & wStr '4Œ…¨”N‚È‚µ‚Æ”»’f
 
                 If in_Type = DateFormatType.YYYYMD Then
                     wStr = Mid(wStr, 1, 4) & "/" & CStr(Val(Mid(wStr, 5, 2))) & "/" & CStr(Val(Mid(wStr, 7, 2)))
@@ -648,7 +648,7 @@ Public Class CmnModule
 
     '—j“ú‚ğ•Ô‚·
     Public Shared Function GetName_Weekday(ByVal inDate As String, ByVal Kakko As Boolean) As String
-        Dim wDate As String = "2013" & "/" & inDate
+        Dim wDate As String = inDate
         If IsDate(wDate) = False Then
             Return ""
         Else
