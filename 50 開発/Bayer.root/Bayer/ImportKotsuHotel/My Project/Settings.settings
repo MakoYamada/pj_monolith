@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer\Receive</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer\request\traffic</Value>
     </Setting>
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
-      <Value Profile="(Default)">kotsuhotel</Value>
+      <Value Profile="(Default)">reqtrf</Value>
     </Setting>
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer\Work\KotsuHotel_R</Value>

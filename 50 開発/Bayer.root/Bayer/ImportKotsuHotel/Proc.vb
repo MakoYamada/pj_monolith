@@ -9,411 +9,388 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    'TODO:項目確定次第定義する
-    Private Const COL_COUNT As Integer = 199 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 188 'ファイルの項目数
 
     Private Enum COL_NO
-        Id
-        Name
-        MeetingName__c
-        MeetingNo__c
-        TT_ArrangeStatusRequest__c
-        TT_ArrangeStatusResponse__c
-        TT_TimestampBYL__c
-        TT_TimestampTOP__c
-        TT_LastApprovalUserName__c
-        TT_LastApprovalDate__c
-        TT_DoctorName__c
-        TT_DoctorNameKana__c
-        TT_DoctorCode__c
-        TT_DoctorInstituteCode__c
-        TT_DoctorInstituteName__c
-        TT_DoctorInstituteAddress__c
-        TT_DoctorPart__c
-        TT_DoctorSex__c
-        TT_DoctorAge__c
-        TT_ReasonOutSpec__c
-        TT_ContactPersonBU_NameEN__c
-        TT_ContactPersonAreaName__c
-        TT_ContactPersonFS_Name__c
-        TT_ContactPersonNameKanji__c
-        TT_ContactPersonName__c
-        TT_ContactPersonPhone__c
-        TT_ContactPersonEmail__c
-        TT_ContactPersonMobile__c
-        TT_ContactPersonMobileMail__c
-        TT_SendFS__c
-        TT_SendFS_Other__c
-        TT_AccountCode__c
-        TT_CostCenter__c
-        TT_InternalOrder__c
-        TT_ZetiaCode__c
-        TT_ReqStay__c
-        TT_ReqStayStatus__c
-        TT_ReqStayDate__c
-        TT_ReqStayNumber__c
-        TT_ReqStaySmoking__c
-        TT_ReqStayRemarks__c
-        TT_ReqOutBound1__c
-        TT_ReqOutBoundStatus1__c
-        TT_ReqOutBoundTransport1__c
-        TT_ReqOutBoundDate1__c
-        TT_ReqOutBoundDeparture1__c
-        TT_ReqOutBoundArrival1__c
-        TT_ReqOutBoundDepartureTime1__c
-        TT_ReqOutBoundArrivalTime1__c
-        TT_ReqOutBoundTrainName1__c
-        TT_ReqOutBoundSeatClass1__c
-        TT_ReqOutBoundSeat1__c
-        TT_ReqOutBound2__c
-        TT_ReqOutBoundStatus2__c
-        TT_ReqOutBoundTransport2__c
-        TT_ReqOutBoundDate2__c
-        TT_ReqOutBoundDeparture2__c
-        TT_ReqOutBoundArrival2__c
-        TT_ReqOutBoundDepartureTime2__c
-        TT_ReqOutBoundArrivalTime2__c
-        TT_ReqOutBoundTrainName2__c
-        TT_ReqOutBoundSeatClass2_c
-        TT_ReqOutBoundSeat2__c
-        TT_ReqOutBound3__c
-        TT_ReqOutBoundStatus3__c
-        TT_ReqOutBoundTransport3__c
-        TT_ReqOutBoundDate3__c
-        TT_ReqOutBoundDeparture3__c
-        TT_ReqOutBoundArrival3__c
-        TT_ReqOutBoundDepartureTime3__c
-        TT_ReqOutBoundArrivalTime3__c
-        TT_ReqOutBoundTrainName3__c
-        TT_ReqOutBoundSeatClass3__c
-        TT_ReqOutBoundSeat3__c
-        TT_ReqOutBound4__c
-        TT_ReqOutBoundStatus4__c
-        TT_ReqOutBoundTransport4__c
-        TT_ReqOutBoundDate4__c
-        TT_ReqOutBoundDeparture4__c
-        TT_ReqOutBoundArrival4__c
-        TT_ReqOutBoundDepartureTime4__c
-        TT_ReqOutBoundArrivalTime4__c
-        TT_ReqOutBoundTrainName4__c
-        TT_ReqOutBoundSeatClass4__c
-        TT_ReqOutBoundSeat4__c
-        TT_ReqOutBound5__c
-        TT_ReqOutBoundStatus5__c
-        TT_ReqOutBoundTransport5__c
-        TT_ReqOutBoundDate5__c
-        TT_ReqOutBoundDeparture5__c
-        TT_ReqOutBoundArrival5__c
-        TT_ReqOutBoundDepartureTime5__c
-        TT_ReqOutBoundArrivalTime5__c
-        TT_ReqOutBoundTrainName5__c
-        TT_ReqOutBoundSeatClass5__c
-        TT_ReqOutBoundSeat5__c
-        TT_ReqInBound1__c
-        TT_ReqInBoundStatus1__c
-        TT_ReqInBoundTransport1__c
-        TT_ReqInBoundDate1__c
-        TT_ReqInBoundDeparture1__c
-        TT_ReqInBoundArrival1__c
-        TT_ReqInBoundDepartureTime1__c
-        TT_ReqInBoundArrivalTime1__c
-        TT_ReqInBoundTrainName1__c
-        TT_ReqInBoundSeatClass1__c
-        TT_ReqInBoundSeat1__c
-        TT_ReqInBound2__c
-        TT_ReqInBoundStatus2__c
-        TT_ReqInBoundTransport2__c
-        TT_ReqInBoundDate2__c
-        TT_ReqInBoundDeparture2__c
-        TT_ReqInBoundArrival2__c
-        TT_ReqInBoundDepartureTime2__c
-        TT_ReqInBoundArrivalTime2__c
-        TT_ReqInBoundTrainName2__c
-        TT_ReqInBoundSeatClass2__c
-        TT_ReqInBoundSeat2__c
-        TT_ReqInBound3__c
-        TT_ReqInBoundStatus3__c
-        TT_ReqInBoundTransport3__c
-        TT_ReqInBoundDate3__c
-        TT_ReqInBoundDeparture3__c
-        TT_ReqInBoundArrival3__c
-        TT_ReqInBoundDepartureTime3__c
-        TT_ReqInBoundArrivalTime3__c
-        TT_ReqInBoundTrainName3__c
-        TT_ReqInBoundSeatClass3__c
-        TT_ReqInBoundSeat3__c
-        TT_ReqInBound4__c
-        TT_ReqInBoundStatus4__c
-        TT_ReqInBoundTransport4__c
-        TT_ReqInBoundDate4__c
-        TT_ReqInBoundDeparture4__c
-        TT_ReqInBoundArrival4__c
-        TT_ReqInBoundDepartureTime4__c
-        TT_ReqInBoundArrivalTime4__c
-        TT_ReqInBoundTrainName4__c
-        TT_ReqInBoundSeatClass4__c
-        TT_ReqInBoundSeat4__c
-        TT_ReqInBound5__c
-        TT_ReqInBoundStatus5__c
-        TT_ReqInBoundTransport5__c
-        TT_ReqInBoundDate5__c
-        TT_ReqInBoundDeparture5__c
-        TT_ReqInBoundArrival5__c
-        TT_ReqInBoundDepartureTime5__c
-        TT_ReqInBoundArrivalTime5__c
-        TT_ReqInBoundTrainName5__c
-        TT_ReqInBoundSeatClass5__c
-        TT_ReqInBoundSeat5__c
-        TT_ReqRemarksTraffic__c
-        TT_ReqTaxi__c
-        TT_ReqTaxiDate1__c
-        TT_ReqTaxiArrival1__c
-        TT_ReqTaxiAmount1__c
-        TT_ReqTaxiDate2__c
-        TT_ReqTaxiArrival2__c
-        TT_ReqTaxiAmount2__c
-        TT_ReqTaxiDate3__c
-        TT_ReqTaxiArrival3__c
-        TT_ReqTaxiAmount3__c
-        TT_ReqTaxiDate4__c
-        TT_ReqTaxiArrival4__c
-        TT_ReqTaxiAmount4__c
-        TT_ReqTaxiDate5__c
-        TT_ReqTaxiArrival5__c
-        TT_ReqTaxiAmount5__c
-        TT_ReqTaxiDate6__c
-        TT_ReqTaxiArrival6__c
-        TT_ReqTaxiAmount6__c
-        TT_ReqTaxiDate7__c
-        TT_ReqTaxiArrival7__c
-        TT_ReqTaxiAmount7__c
-        TT_ReqTaxiDate8__c
-        TT_ReqTaxiArrival8__c
-        TT_ReqTaxiAmount8__c
-        TT_ReqTaxiDate9__c
-        TT_ReqTaxiArrival9__c
-        TT_ReqTaxiAmount9__c
-        TT_ReqTaxiDate10__c
-        TT_ReqTaxiArrival10__c
-        TT_ReqTaxiAmount10__c
-        TT_ReqTaxiRemarks__c
-        TT_ReqEmployeeOutBound__c
-        TT_ReqEmployeeInBound__c
-        TT_ReqEmployeeSex__c
-        TT_ReqEmployeeAge__c
-        TT_ReqEmployeeStay__c
-        TT_ReqEmployeeStaySmorking__c
-        TT_ReqEmployeeStayRemarks__c
-        TT_Attendance__c
-        TT_StatusRequest__c
-        TT_StatusRequestActual__c
-        TT_LastModifiedDate__c
-        MeetingDivision__c
-        Invalid__c
-        CreatedDate
-        LastModifiedDate
+        Field1
+        Field2
+        Field3
+        Field4
+        Field5
+        Field6
+        Field7
+        Field8
+        Field9
+        Field10
+        Field11
+        Field12
+        Field13
+        Field14
+        Field15
+        Field16
+        Field17
+        Field18
+        Field19
+        Field20
+        Field21
+        Field22
+        Field23
+        Field24
+        Field25
+        Field26
+        Field27
+        Field28
+        Field29
+        Field30
+        Field31
+        Field32
+        Field33
+        Field34
+        Field35
+        Field36
+        Field37
+        Field38
+        Field39
+        Field40
+        Field41
+        Field42
+        Field43
+        Field44
+        Field45
+        Field46
+        Field47
+        Field48
+        Field49
+        Field50
+        Field51
+        Field52
+        Field53
+        Field54
+        Field55
+        Field56
+        Field57
+        Field58
+        Field59
+        Field60
+        Field61
+        Field62
+        Field63
+        Field64
+        Field65
+        Field66
+        Field67
+        Field68
+        Field69
+        Field70
+        Field71
+        Field72
+        Field73
+        Field74
+        Field75
+        Field76
+        Field77
+        Field78
+        Field79
+        Field80
+        Field81
+        Field82
+        Field83
+        Field84
+        Field85
+        Field86
+        Field87
+        Field88
+        Field89
+        Field90
+        Field91
+        Field92
+        Field93
+        Field94
+        Field95
+        Field96
+        Field97
+        Field98
+        Field99
+        Field100
+        Field101
+        Field102
+        Field103
+        Field104
+        Field105
+        Field106
+        Field107
+        Field108
+        Field109
+        Field110
+        Field111
+        Field112
+        Field113
+        Field114
+        Field115
+        Field116
+        Field117
+        Field118
+        Field119
+        Field120
+        Field121
+        Field122
+        Field123
+        Field124
+        Field125
+        Field126
+        Field127
+        Field128
+        Field129
+        Field130
+        Field131
+        Field132
+        Field133
+        Field134
+        Field135
+        Field136
+        Field137
+        Field138
+        Field139
+        Field140
+        Field141
+        Field142
+        Field143
+        Field144
+        Field145
+        Field146
+        Field147
+        Field148
+        Field149
+        Field150
+        Field151
+        Field152
+        Field153
+        Field154
+        Field155
+        Field156
+        Field157
+        Field158
+        Field159
+        Field160
+        Field161
+        Field162
+        Field163
+        Field164
+        Field165
+        Field166
+        Field167
+        Field168
+        Field169
+        Field170
+        Field171
+        Field172
+        Field173
+        Field174
+        Field175
+        Field176
+        Field177
+        Field178
+        Field179
+        Field180
+        Field181
+        Field182
+        Field183
+        Field184
+        Field185
+        Field186
+        Field187
+        Field188
     End Enum
 
     Private Class COL_NAME
-        Public Const Id As String = "Salesforce Id"
-        Public Const Name As String = "会合参加者Id"
-        Public Const MeetingName__c As String = "会合名"
-        Public Const MeetingNo__c As String = "会合番号"
-        Public Const TT_ArrangeStatusRequest__c As String = "手配ステータス (依頼)"
-        Public Const TT_ArrangeStatusResponse__c As String = "手配ステータス (回答)"
-        Public Const TT_TimestampBYL__c As String = "Timestamp (BYL)"
-        Public Const TT_TimestampTOP__c As String = "Timestamp (TOP)"
-        Public Const TT_LastApprovalUserName__c As String = "最終承認者"
-        Public Const TT_LastApprovalDate__c As String = "最終承認日"
-        Public Const TT_DoctorName__c As String = "医師名"
-        Public Const TT_DoctorNameKana__c As String = "医師名(カナ)"
-        Public Const TT_DoctorCode__c As String = "医師コード"
-        Public Const TT_DoctorInstituteCode__c As String = "施設コード"
-        Public Const TT_DoctorInstituteName__c As String = "施設名"
-        Public Const TT_DoctorInstituteAddress__c As String = "施設住所"
-        Public Const TT_DoctorPart__c As String = "参加者役割"
-        Public Const TT_DoctorSex__c As String = "性別"
-        Public Const TT_DoctorAge__c As String = "年齢"
-        Public Const TT_ReasonOutSpec__c As String = "指定外申請理由（依頼）"
-        Public Const TT_ContactPersonBU_NameEN__c As String = "担当MRのBU英名"
-        Public Const TT_ContactPersonAreaName__c As String = "担当MRのエリア名"
-        Public Const TT_ContactPersonFS_Name__c As String = "担当MRの営業所名"
-        Public Const TT_ContactPersonNameKanji__c As String = "担当MRの氏名"
-        Public Const TT_ContactPersonName__c As String = "担当MRの氏名(ﾛｰﾏ字)"
-        Public Const TT_ContactPersonPhone__c As String = "担当MRの会社電話"
-        Public Const TT_ContactPersonEmail__c As String = "担当MRのEmail"
-        Public Const TT_ContactPersonMobile__c As String = "担当MRの携帯番号"
-        Public Const TT_ContactPersonMobileMail__c As String = "担当MRの携帯メール"
-        Public Const TT_SendFS__c As String = "チケット送付先FS"
-        Public Const TT_SendFS_Other__c As String = "チケット送付先（その他）"
-        Public Const TT_AccountCode__c As String = "Account Code"
-        Public Const TT_CostCenter__c As String = "Cost Center"
-        Public Const TT_InternalOrder__c As String = "Internal Order"
-        Public Const TT_ZetiaCode__c As String = "Zetia Code"
-        Public Const TT_ReqStay__c As String = "宿泊手配（希望する）"
-        Public Const TT_ReqStayStatus__c As String = "宿泊依頼内容"
-        Public Const TT_ReqStayDate__c As String = "宿泊日（依頼）"
-        Public Const TT_ReqStayNumber__c As String = "泊数（依頼）"
-        Public Const TT_ReqStaySmoking__c As String = "宿泊ホテル喫煙（依頼）"
-        Public Const TT_ReqStayRemarks__c As String = "宿泊備考（依頼）"
-        Public Const TT_ReqOutBound1__c As String = "往路1：希望する（依頼）"
-        Public Const TT_ReqOutBoundStatus1__c As String = "往路1：依頼内容（依頼）"
-        Public Const TT_ReqOutBoundTransport1__c As String = "往路1：交通機関（依頼）"
-        Public Const TT_ReqOutBoundDate1__c As String = "往路1：利用日（依頼）"
-        Public Const TT_ReqOutBoundDeparture1__c As String = "往路1：出発地（依頼）"
-        Public Const TT_ReqOutBoundArrival1__c As String = "往路1：到着地（依頼）"
-        Public Const TT_ReqOutBoundDepartureTime1__c As String = "往路1：出発時間（依頼）"
-        Public Const TT_ReqOutBoundArrivalTime1__c As String = "往路1：到着時間（依頼）"
-        Public Const TT_ReqOutBoundTrainName1__c As String = "往路1：列車名・便名（依頼）"
-        Public Const TT_ReqOutBoundSeatClass1__c As String = "往路1：座席区分（依頼）"
-        Public Const TT_ReqOutBoundSeat1__c As String = "往路1：座席希望（依頼）"
-        Public Const TT_ReqOutBound2__c As String = "往路2：希望する（依頼）"
-        Public Const TT_ReqOutBoundStatus2__c As String = "往路2：依頼内容（依頼）"
-        Public Const TT_ReqOutBoundTransport2__c As String = "往路2：交通機関（依頼）"
-        Public Const TT_ReqOutBoundDate2__c As String = "往路2：利用日（依頼）"
-        Public Const TT_ReqOutBoundDeparture2__c As String = "往路2：出発地（依頼）"
-        Public Const TT_ReqOutBoundArrival2__c As String = "往路2：到着地（依頼）"
-        Public Const TT_ReqOutBoundDepartureTime2__c As String = "往路2：出発時間（依頼）"
-        Public Const TT_ReqOutBoundArrivalTime2__c As String = "往路2：到着時間（依頼）"
-        Public Const TT_ReqOutBoundTrainName2__c As String = "往路2：列車名・便名（依頼）"
-        Public Const TT_ReqOutBoundSeatClass2_c As String = "往路2：座席区分（依頼）"
-        Public Const TT_ReqOutBoundSeat2__c As String = "往路2：座席希望（依頼）"
-        Public Const TT_ReqOutBound3__c As String = "往路3：希望する（依頼）"
-        Public Const TT_ReqOutBoundStatus3__c As String = "往路3：依頼内容（依頼）"
-        Public Const TT_ReqOutBoundTransport3__c As String = "往路3：交通機関（依頼）"
-        Public Const TT_ReqOutBoundDate3__c As String = "往路3：利用日（依頼）"
-        Public Const TT_ReqOutBoundDeparture3__c As String = "往路3：出発地（依頼）"
-        Public Const TT_ReqOutBoundArrival3__c As String = "往路3：到着地（依頼）"
-        Public Const TT_ReqOutBoundDepartureTime3__c As String = "往路3：出発時間（依頼）"
-        Public Const TT_ReqOutBoundArrivalTime3__c As String = "往路3：到着時間（依頼）"
-        Public Const TT_ReqOutBoundTrainName3__c As String = "往路3：列車名・便名（依頼）"
-        Public Const TT_ReqOutBoundSeatClass3__c As String = "往路3：座席区分（依頼）"
-        Public Const TT_ReqOutBoundSeat3__c As String = "往路3：座席希望（依頼）"
-        Public Const TT_ReqOutBound4__c As String = "往路4：希望する（依頼）"
-        Public Const TT_ReqOutBoundStatus4__c As String = "往路4：依頼内容（依頼）"
-        Public Const TT_ReqOutBoundTransport4__c As String = "往路4：交通機関（依頼）"
-        Public Const TT_ReqOutBoundDate4__c As String = "往路4：利用日（依頼）"
-        Public Const TT_ReqOutBoundDeparture4__c As String = "往路4：出発地（依頼）"
-        Public Const TT_ReqOutBoundArrival4__c As String = "往路4：到着地（依頼）"
-        Public Const TT_ReqOutBoundDepartureTime4__c As String = "往路4：出発時間（依頼）"
-        Public Const TT_ReqOutBoundArrivalTime4__c As String = "往路4：到着時間（依頼）"
-        Public Const TT_ReqOutBoundTrainName4__c As String = "往路4：列車名・便名（依頼）"
-        Public Const TT_ReqOutBoundSeatClass4__c As String = "往路4：座席区分（依頼）"
-        Public Const TT_ReqOutBoundSeat4__c As String = "往路4：座席希望（依頼）"
-        Public Const TT_ReqOutBound5__c As String = "往路5：希望する（依頼）"
-        Public Const TT_ReqOutBoundStatus5__c As String = "往路5：依頼内容（依頼）"
-        Public Const TT_ReqOutBoundTransport5__c As String = "往路5：交通機関（依頼）"
-        Public Const TT_ReqOutBoundDate5__c As String = "往路5：利用日（依頼）"
-        Public Const TT_ReqOutBoundDeparture5__c As String = "往路5：出発地（依頼）"
-        Public Const TT_ReqOutBoundArrival5__c As String = "往路5：到着地（依頼）"
-        Public Const TT_ReqOutBoundDepartureTime5__c As String = "往路5：出発時間（依頼）"
-        Public Const TT_ReqOutBoundArrivalTime5__c As String = "往路5：到着時間（依頼）"
-        Public Const TT_ReqOutBoundTrainName5__c As String = "往路5：列車名・便名（依頼）"
-        Public Const TT_ReqOutBoundSeatClass5__c As String = "往路5：座席区分（依頼）"
-        Public Const TT_ReqOutBoundSeat5__c As String = "往路5：座席希望（依頼）"
-        Public Const TT_ReqInBound1__c As String = "復路1：希望する（依頼）"
-        Public Const TT_ReqInBoundStatus1__c As String = "復路1：依頼内容（依頼）"
-        Public Const TT_ReqInBoundTransport1__c As String = "復路1：交通機関（依頼）"
-        Public Const TT_ReqInBoundDate1__c As String = "復路1：利用日（依頼）"
-        Public Const TT_ReqInBoundDeparture1__c As String = "復路1：出発地（依頼）"
-        Public Const TT_ReqInBoundArrival1__c As String = "復路1：到着地（依頼）"
-        Public Const TT_ReqInBoundDepartureTime1__c As String = "復路1：出発時間（依頼）"
-        Public Const TT_ReqInBoundArrivalTime1__c As String = "復路1：到着時間（依頼）"
-        Public Const TT_ReqInBoundTrainName1__c As String = "復路1：列車名・便名（依頼）"
-        Public Const TT_ReqInBoundSeatClass1__c As String = "復路1：座席区分（依頼）"
-        Public Const TT_ReqInBoundSeat1__c As String = "復路1：座席希望（依頼）"
-        Public Const TT_ReqInBound2__c As String = "復路2：希望する（依頼）"
-        Public Const TT_ReqInBoundStatus2__c As String = "復路2：依頼内容（依頼）"
-        Public Const TT_ReqInBoundTransport2__c As String = "復路2：交通機関（依頼）"
-        Public Const TT_ReqInBoundDate2__c As String = "復路2：利用日（依頼）"
-        Public Const TT_ReqInBoundDeparture2__c As String = "復路2：出発地（依頼）"
-        Public Const TT_ReqInBoundArrival2__c As String = "復路2：到着地（依頼）"
-        Public Const TT_ReqInBoundDepartureTime2__c As String = "復路2：出発時間（依頼）"
-        Public Const TT_ReqInBoundArrivalTime2__c As String = "復路2：到着時間（依頼）"
-        Public Const TT_ReqInBoundTrainName2__c As String = "復路2：列車名・便名（依頼）"
-        Public Const TT_ReqInBoundSeatClass2__c As String = "復路2：座席区分（依頼）"
-        Public Const TT_ReqInBoundSeat2__c As String = "復路2：座席希望（依頼）"
-        Public Const TT_ReqInBound3__c As String = "復路3：希望する（依頼）"
-        Public Const TT_ReqInBoundStatus3__c As String = "復路3：依頼内容（依頼）"
-        Public Const TT_ReqInBoundTransport3__c As String = "復路3：交通機関（依頼）"
-        Public Const TT_ReqInBoundDate3__c As String = "復路3：利用日（依頼）"
-        Public Const TT_ReqInBoundDeparture3__c As String = "復路3：出発地（依頼）"
-        Public Const TT_ReqInBoundArrival3__c As String = "復路3：到着地（依頼）"
-        Public Const TT_ReqInBoundDepartureTime3__c As String = "復路3：出発時間（依頼）"
-        Public Const TT_ReqInBoundArrivalTime3__c As String = "復路3：到着時間（依頼）"
-        Public Const TT_ReqInBoundTrainName3__c As String = "復路3：列車名・便名（依頼）"
-        Public Const TT_ReqInBoundSeatClass3__c As String = "復路3：座席区分（依頼）"
-        Public Const TT_ReqInBoundSeat3__c As String = "復路3：座席希望（依頼）"
-        Public Const TT_ReqInBound4__c As String = "復路4：希望する（依頼）"
-        Public Const TT_ReqInBoundStatus4__c As String = "復路4：依頼内容（依頼）"
-        Public Const TT_ReqInBoundTransport4__c As String = "復路4：交通機関（依頼）"
-        Public Const TT_ReqInBoundDate4__c As String = "復路4：利用日（依頼）"
-        Public Const TT_ReqInBoundDeparture4__c As String = "復路4：出発地（依頼）"
-        Public Const TT_ReqInBoundArrival4__c As String = "復路4：到着地（依頼）"
-        Public Const TT_ReqInBoundDepartureTime4__c As String = "復路4：出発時間（依頼）"
-        Public Const TT_ReqInBoundArrivalTime4__c As String = "復路4：到着時間（依頼）"
-        Public Const TT_ReqInBoundTrainName4__c As String = "復路4：列車名・便名（依頼）"
-        Public Const TT_ReqInBoundSeatClass4__c As String = "復路4：座席区分（依頼）"
-        Public Const TT_ReqInBoundSeat4__c As String = "復路4：座席希望（依頼）"
-        Public Const TT_ReqInBound5__c As String = "復路5：希望する（依頼）"
-        Public Const TT_ReqInBoundStatus5__c As String = "復路5：依頼内容（依頼）"
-        Public Const TT_ReqInBoundTransport5__c As String = "復路5：交通機関（依頼）"
-        Public Const TT_ReqInBoundDate5__c As String = "復路5：利用日（依頼）"
-        Public Const TT_ReqInBoundDeparture5__c As String = "復路5：出発地（依頼）"
-        Public Const TT_ReqInBoundArrival5__c As String = "復路5：到着地（依頼）"
-        Public Const TT_ReqInBoundDepartureTime5__c As String = "復路5：出発時間（依頼）"
-        Public Const TT_ReqInBoundArrivalTime5__c As String = "復路5：到着時間（依頼）"
-        Public Const TT_ReqInBoundTrainName5__c As String = "復路5：列車名・便名（依頼）"
-        Public Const TT_ReqInBoundSeatClass5__c As String = "復路5：座席区分（依頼）"
-        Public Const TT_ReqInBoundSeat5__c As String = "復路5：座席希望（依頼）"
-        Public Const TT_ReqRemarksTraffic__c As String = "交通備考（依頼）"
-        Public Const TT_ReqTaxi__c As String = "タクシーチケット（有・無）"
-        Public Const TT_ReqTaxiDate1__c As String = "行程1：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival1__c As String = "行程1：発地（依頼）"
-        Public Const TT_ReqTaxiAmount1__c As String = "行程1：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate2__c As String = "行程2：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival2__c As String = "行程2：発地（依頼）"
-        Public Const TT_ReqTaxiAmount2__c As String = "行程2：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate3__c As String = "行程3：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival3__c As String = "行程3：発地（依頼）"
-        Public Const TT_ReqTaxiAmount3__c As String = "行程3：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate4__c As String = "行程4：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival4__c As String = "行程4：発地（依頼）"
-        Public Const TT_ReqTaxiAmount4__c As String = "行程4：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate5__c As String = "行程5：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival5__c As String = "行程5：発地（依頼）"
-        Public Const TT_ReqTaxiAmount5__c As String = "行程5：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate6__c As String = "行程6：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival6__c As String = "行程6：発地（依頼）"
-        Public Const TT_ReqTaxiAmount6__c As String = "行程6：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate7__c As String = "行程7：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival7__c As String = "行程7：発地（依頼）"
-        Public Const TT_ReqTaxiAmount7__c As String = "行程7：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate8__c As String = "行程8：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival8__c As String = "行程8：発地（依頼）"
-        Public Const TT_ReqTaxiAmount8__c As String = "行程8：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate9__c As String = "行程9：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival9__c As String = "行程9：発地（依頼）"
-        Public Const TT_ReqTaxiAmount9__c As String = "行程9：依頼金額（依頼）"
-        Public Const TT_ReqTaxiDate10__c As String = "行程10：利用日（依頼）"
-        Public Const TT_ReqTaxiArrival10__c As String = "行程10：発地（依頼）"
-        Public Const TT_ReqTaxiAmount10__c As String = "行程10：依頼金額（依頼）"
-        Public Const TT_ReqTaxiRemarks__c As String = "タクチケ備考（依頼）"
-        Public Const TT_ReqEmployeeOutBound__c As String = "社員用往路臨席希望（依頼）"
-        Public Const TT_ReqEmployeeInBound__c As String = "社員用復路臨席希望（依頼）"
-        Public Const TT_ReqEmployeeSex__c As String = "MR性別（航空券の場合）"
-        Public Const TT_ReqEmployeeAge__c As String = "MR年齢（航空券の場合）"
-        Public Const TT_ReqEmployeeStay__c As String = "社員用宿泊希望（有・無）"
-        Public Const TT_ReqEmployeeStaySmorking__c As String = "社員用宿泊　（禁煙・喫煙）"
-        Public Const TT_ReqEmployeeStayRemarks__c As String = "社員用交通・宿泊備考"
-        Public Const TT_Attendance__c As String = "参加/不参加"
-        Public Const TT_StatusRequest__c As String = "連携ステータス(Request)"
-        Public Const TT_StatusRequestActual__c As String = "出欠情報連携ステータス(Request)"
-        Public Const TT_LastModifiedDate__c As String = "TT連携用最終更新日"
-        Public Const MeetingDivision__c As String = "会合種別"
-        Public Const Invalid__c As String = "無効"
-        Public Const CreatedDate As String = "作成日時"
-        Public Const LastModifiedDate As String = "最終更新日時"
+        Public Const Field1 As String = "Salesforce Id"
+        Public Const Field2 As String = "講演会番号"
+        Public Const Field3 As String = "手配スタータス (依頼)"
+        Public Const Field4 As String = "Timestamp (BYL)"
+        Public Const Field5 As String = "MTP ID (参加者ID)"
+        Public Const Field6 As String = "DRコード"
+        Public Const Field7 As String = "DR氏名"
+        Public Const Field8 As String = "DR氏名 (半角カタカナ)"
+        Public Const Field9 As String = "DCF施設コード"
+        Public Const Field10 As String = "施設名"
+        Public Const Field11 As String = "施設住所"
+        Public Const Field12 As String = "参加者役割"
+        Public Const Field13 As String = "性別 (航空券の場合必須)"
+        Public Const Field14 As String = "航空搭乗者年齢 (年齢)(航空券の場合必須)"
+        Public Const Field15 As String = "指定外申請理由 (依頼)"
+        Public Const Field16 As String = "所属事業部 (担当MR)"
+        Public Const Field17 As String = "所属エリア (担当MR)"
+        Public Const Field18 As String = "所属営業所 (担当MR)"
+        Public Const Field19 As String = "担当者(担当MR)名"
+        Public Const Field20 As String = "担当者名(担当MR)(ローマ字)"
+        Public Const Field21 As String = "Emailアドレス (担当MR)"
+        Public Const Field22 As String = "携帯Emailアドレス (担当MR)"
+        Public Const Field23 As String = "携帯電話番号 (担当MR)"
+        Public Const Field24 As String = "オフィスの電話番号 (担当MR)"
+        Public Const Field25 As String = "チケット送付先FS"
+        Public Const Field26 As String = "チケット送付先 (その他)"
+        Public Const Field27 As String = "Account Code"
+        Public Const Field28 As String = "Cost Center"
+        Public Const Field29 As String = "Internal Order"
+        Public Const Field30 As String = "zetia Code"
+        Public Const Field31 As String = "最終承認者（氏名）"
+        Public Const Field32 As String = "最終承認日時"
+        Public Const Field33 As String = "宿泊手配（希望する）"
+        Public Const Field34 As String = "宿泊依頼内容"
+        Public Const Field35 As String = "宿泊日（依頼）"
+        Public Const Field36 As String = "泊数（依頼）"
+        Public Const Field37 As String = "宿泊ホテル喫煙（依頼）"
+        Public Const Field38 As String = "宿泊備考（依頼）"
+        Public Const Field39 As String = "往路1：希望する（依頼）"
+        Public Const Field40 As String = "往路1：依頼内容（依頼）"
+        Public Const Field41 As String = "往路1：交通機関（依頼）"
+        Public Const Field42 As String = "往路1：利用日（依頼）"
+        Public Const Field43 As String = "往路1：出発地（依頼）"
+        Public Const Field44 As String = "往路1：到着地（依頼）"
+        Public Const Field45 As String = "往路1：出発時間（依頼）"
+        Public Const Field46 As String = "往路1：到着時間（依頼）"
+        Public Const Field47 As String = "往路1：列車名・便名（依頼）"
+        Public Const Field48 As String = "往路1：座席区分（依頼）"
+        Public Const Field49 As String = "往路1：座席希望（依頼）"
+        Public Const Field50 As String = "往路2：希望する（依頼）"
+        Public Const Field51 As String = "往路2：依頼内容（依頼）"
+        Public Const Field52 As String = "往路2：交通機関（依頼）"
+        Public Const Field53 As String = "往路2：利用日（依頼）"
+        Public Const Field54 As String = "往路2：出発地（依頼）"
+        Public Const Field55 As String = "往路2：到着地（依頼）"
+        Public Const Field56 As String = "往路2：出発時間（依頼）"
+        Public Const Field57 As String = "往路2：到着時間（依頼）"
+        Public Const Field58 As String = "往路2：列車名・便名（依頼）"
+        Public Const Field59 As String = "往路2：座席区分（依頼）"
+        Public Const Field60 As String = "往路2：座席希望（依頼）"
+        Public Const Field61 As String = "往路3：希望する（依頼）"
+        Public Const Field62 As String = "往路3：依頼内容（依頼）"
+        Public Const Field63 As String = "往路3：交通機関（依頼）"
+        Public Const Field64 As String = "往路3：利用日（依頼）"
+        Public Const Field65 As String = "往路3：出発地（依頼）"
+        Public Const Field66 As String = "往路3：到着地（依頼）"
+        Public Const Field67 As String = "往路3：出発時間（依頼）"
+        Public Const Field68 As String = "往路3：到着時間（依頼）"
+        Public Const Field69 As String = "往路3：列車名・便名（依頼）"
+        Public Const Field70 As String = "往路3：座席区分（依頼）"
+        Public Const Field71 As String = "往路3：座席希望（依頼）"
+        Public Const Field72 As String = "往路4：希望する（依頼）"
+        Public Const Field73 As String = "往路4：依頼内容（依頼）"
+        Public Const Field74 As String = "往路4：交通機関（依頼）"
+        Public Const Field75 As String = "往路4：利用日（依頼）"
+        Public Const Field76 As String = "往路4：出発地（依頼）"
+        Public Const Field77 As String = "往路4：到着地（依頼）"
+        Public Const Field78 As String = "往路4：出発時間（依頼）"
+        Public Const Field79 As String = "往路4：到着時間（依頼）"
+        Public Const Field80 As String = "往路4：列車名・便名（依頼）"
+        Public Const Field81 As String = "往路4：座席区分（依頼）"
+        Public Const Field82 As String = "往路4：座席希望（依頼）"
+        Public Const Field83 As String = "往路5：希望する（依頼）"
+        Public Const Field84 As String = "往路5：依頼内容（依頼）"
+        Public Const Field85 As String = "往路5：交通機関（依頼）"
+        Public Const Field86 As String = "往路5：利用日（依頼）"
+        Public Const Field87 As String = "往路5：出発地（依頼）"
+        Public Const Field88 As String = "往路5：到着地（依頼）"
+        Public Const Field89 As String = "往路5：出発時間（依頼）"
+        Public Const Field90 As String = "往路5：到着時間（依頼）"
+        Public Const Field91 As String = "往路5：列車名・便名（依頼）"
+        Public Const Field92 As String = "往路5：座席区分（依頼）"
+        Public Const Field93 As String = "往路5：座席希望（依頼）"
+        Public Const Field94 As String = "復路1：希望する（依頼）"
+        Public Const Field95 As String = "復路1：依頼内容（依頼）"
+        Public Const Field96 As String = "復路1：交通機関（依頼）"
+        Public Const Field97 As String = "復路1：利用日（依頼）"
+        Public Const Field98 As String = "復路1：出発地（依頼）"
+        Public Const Field99 As String = "復路1：到着地（依頼）"
+        Public Const Field100 As String = "復路1：出発時間（依頼）"
+        Public Const Field101 As String = "復路1：到着時間（依頼）"
+        Public Const Field102 As String = "復路1：列車名・便名（依頼）"
+        Public Const Field103 As String = "復路1：座席区分（依頼）"
+        Public Const Field104 As String = "復路1：座席希望（依頼）"
+        Public Const Field105 As String = "復路2：希望する（依頼）"
+        Public Const Field106 As String = "復路2：依頼内容（依頼）"
+        Public Const Field107 As String = "復路2：交通機関（依頼）"
+        Public Const Field108 As String = "復路2：利用日（依頼）"
+        Public Const Field109 As String = "復路2：出発地（依頼）"
+        Public Const Field110 As String = "復路2：到着地（依頼）"
+        Public Const Field111 As String = "復路2：出発時間（依頼）"
+        Public Const Field112 As String = "復路2：到着時間（依頼）"
+        Public Const Field113 As String = "復路2：列車名・便名（依頼）"
+        Public Const Field114 As String = "復路2：座席区分（依頼）"
+        Public Const Field115 As String = "復路2：座席希望（依頼）"
+        Public Const Field116 As String = "復路3：希望する（依頼）"
+        Public Const Field117 As String = "復路3：依頼内容（依頼）"
+        Public Const Field118 As String = "復路3：交通機関（依頼）"
+        Public Const Field119 As String = "復路3：利用日（依頼）"
+        Public Const Field120 As String = "復路3：出発地（依頼）"
+        Public Const Field121 As String = "復路3：到着地（依頼）"
+        Public Const Field122 As String = "復路3：出発時間（依頼）"
+        Public Const Field123 As String = "復路3：到着時間（依頼）"
+        Public Const Field124 As String = "復路3：列車名・便名（依頼）"
+        Public Const Field125 As String = "復路3：座席区分（依頼）"
+        Public Const Field126 As String = "復路3：座席希望（依頼）"
+        Public Const Field127 As String = "復路4：希望する（依頼）"
+        Public Const Field128 As String = "復路4：依頼内容（依頼）"
+        Public Const Field129 As String = "復路4：交通機関（依頼）"
+        Public Const Field130 As String = "復路4：利用日（依頼）"
+        Public Const Field131 As String = "復路4：出発地（依頼）"
+        Public Const Field132 As String = "復路4：到着地（依頼）"
+        Public Const Field133 As String = "復路4：出発時間（依頼）"
+        Public Const Field134 As String = "復路4：到着時間（依頼）"
+        Public Const Field135 As String = "復路4：列車名・便名（依頼）"
+        Public Const Field136 As String = "復路4：座席区分（依頼）"
+        Public Const Field137 As String = "復路4：座席希望（依頼）"
+        Public Const Field138 As String = "復路5：希望する（依頼）"
+        Public Const Field139 As String = "復路5：依頼内容（依頼）"
+        Public Const Field140 As String = "復路5：交通機関（依頼）"
+        Public Const Field141 As String = "復路5：利用日（依頼）"
+        Public Const Field142 As String = "復路5：出発地（依頼）"
+        Public Const Field143 As String = "復路5：到着地（依頼）"
+        Public Const Field144 As String = "復路5：出発時間（依頼）"
+        Public Const Field145 As String = "復路5：到着時間（依頼）"
+        Public Const Field146 As String = "復路5：列車名・便名（依頼）"
+        Public Const Field147 As String = "復路5：座席区分（依頼）"
+        Public Const Field148 As String = "復路5：座席希望（依頼）"
+        Public Const Field149 As String = "交通備考（依頼）"
+        Public Const Field150 As String = "タクシーチケット（有・無）"
+        Public Const Field151 As String = "行程１：利用日（依頼）"
+        Public Const Field152 As String = "行程１：発地（依頼）"
+        Public Const Field153 As String = "行程１：依頼金額（依頼）"
+        Public Const Field154 As String = "行程２：利用日（依頼）"
+        Public Const Field155 As String = "行程２：発地（依頼）"
+        Public Const Field156 As String = "行程２：依頼金額（依頼）"
+        Public Const Field157 As String = "行程3：利用日（依頼）"
+        Public Const Field158 As String = "行程3：発地（依頼）"
+        Public Const Field159 As String = "行程3：依頼金額（依頼）"
+        Public Const Field160 As String = "行程4：利用日（依頼）"
+        Public Const Field161 As String = "行程4：発地（依頼）"
+        Public Const Field162 As String = "行程4：依頼金額（依頼）"
+        Public Const Field163 As String = "行程5：利用日（依頼）"
+        Public Const Field164 As String = "行程5：発地（依頼）"
+        Public Const Field165 As String = "行程5：依頼金額（依頼）"
+        Public Const Field166 As String = "行程6：利用日（依頼）"
+        Public Const Field167 As String = "行程6：発地（依頼）"
+        Public Const Field168 As String = "行程6：依頼金額（依頼）"
+        Public Const Field169 As String = "行程7：利用日（依頼）"
+        Public Const Field170 As String = "行程7：発地（依頼）"
+        Public Const Field171 As String = "行程7：依頼金額（依頼）"
+        Public Const Field172 As String = "行程8：利用日（依頼）"
+        Public Const Field173 As String = "行程8：発地（依頼）"
+        Public Const Field174 As String = "行程8：依頼金額（依頼）"
+        Public Const Field175 As String = "行程9：利用日（依頼）"
+        Public Const Field176 As String = "行程9：発地（依頼）"
+        Public Const Field177 As String = "行程9：依頼金額 (依頼)"
+        Public Const Field178 As String = "行程１0：利用日 (依頼)"
+        Public Const Field179 As String = "行程１0：発地 (依頼)"
+        Public Const Field180 As String = "行程１0：依頼金額 (依頼)"
+        Public Const Field181 As String = "タクチケ備考 (依頼)"
+        Public Const Field182 As String = "社員用往路臨席希望 (依頼)"
+        Public Const Field183 As String = "社員用復路臨席希望 (依頼)"
+        Public Const Field184 As String = "MR性別 (航空券の場合)"
+        Public Const Field185 As String = "MR年齢 (航空券の場合)"
+        Public Const Field186 As String = "社員用宿泊希望 (有・無)"
+        Public Const Field187 As String = "社員用宿泊 (禁煙・喫煙)"
+        Public Const Field188 As String = "社員用交通・宿泊備考"
     End Class
 #End Region
 
@@ -478,6 +455,9 @@ Public Class Proc
         parser.TextFieldType = FileIO.FieldType.Delimited
         parser.SetDelimiters(pDelimiter)
 
+        'ダブルクォート囲み、ダブルクォートのエスケープ対応
+        parser.HasFieldsEnclosedInQuotes = True
+
         Dim strNgMoji As String = My.Settings.NG_MOJI
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
@@ -508,20 +488,20 @@ Public Class Proc
             End If
 
             '必須入力チェック
-            If fileData(COL_NO.Id).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.Id & "がセットされていません。")
+            If fileData(COL_NO.Field1).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field1 & "がセットされていません。")
             End If
 
-            If fileData(COL_NO.Name).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.Name & "がセットされていません。")
+            If fileData(COL_NO.Field2).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field2 & "がセットされていません。")
             End If
 
-            If fileData(COL_NO.MeetingNo__c).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.MeetingNo__c & "がセットされていません。")
+            If fileData(COL_NO.Field4).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field4 & "がセットされていません。")
             End If
 
-            If fileData(COL_NO.TT_TimestampBYL__c).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.TT_TimestampBYL__c & "がセットされていません。")
+            If fileData(COL_NO.Field5).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field5 & "がセットされていません。")
             End If
 
             '禁則文字チェック
@@ -592,226 +572,221 @@ Public Class Proc
 
         Dim TBL_KOTSUHOTEL_Ins As New TableDef.TBL_KOTSUHOTEL.DataStruct
 
-        'TODO:ダブルクォート囲みのとき、またダブルクォートのエスケープの仕様が確定したら処理追加
-
-        'TODO:ファイル項目が確定次第セットする値を修正する
-
-        TBL_KOTSUHOTEL_Ins.SALEFORCE_ID = fileData(COL_NO.Id)
-        TBL_KOTSUHOTEL_Ins.SANKASHA_ID = fileData(COL_NO.Name)
-        TBL_KOTSUHOTEL_Ins.KOUENKAI_NO = fileData(COL_NO.MeetingNo__c)
-        TBL_KOTSUHOTEL_Ins.REQ_STATUS_TEHAI = fileData(COL_NO.TT_ArrangeStatusRequest__c)
-        'TODO:要確認
+        TBL_KOTSUHOTEL_Ins.SALEFORCE_ID = fileData(COL_NO.Field1)
+        TBL_KOTSUHOTEL_Ins.SANKASHA_ID = fileData(COL_NO.Field5)
+        TBL_KOTSUHOTEL_Ins.KOUENKAI_NO = fileData(COL_NO.Field2)
+        TBL_KOTSUHOTEL_Ins.REQ_STATUS_TEHAI = fileData(COL_NO.Field3)
+        'TODO:ステータスの初期値要確認
         TBL_KOTSUHOTEL_Ins.ANS_STATUS_TEHAI = "1"
-        TBL_KOTSUHOTEL_Ins.TIME_STAMP_BYL = fileData(COL_NO.TT_TimestampBYL__c)
-        TBL_KOTSUHOTEL_Ins.TIME_STAMP_TOP = fileData(COL_NO.TT_TimestampTOP__c)
-        TBL_KOTSUHOTEL_Ins.DR_MPID = fileData(COL_NO.Name)
-        TBL_KOTSUHOTEL_Ins.DR_CD = fileData(COL_NO.TT_DoctorCode__c)
-        TBL_KOTSUHOTEL_Ins.DR_NAME = fileData(COL_NO.TT_DoctorName__c)
-        TBL_KOTSUHOTEL_Ins.DR_KANA = fileData(COL_NO.TT_DoctorNameKana__c)
-        TBL_KOTSUHOTEL_Ins.DR_SHISETSU_CD = fileData(COL_NO.TT_DoctorInstituteCode__c)
-        TBL_KOTSUHOTEL_Ins.DR_SHISETSU_NAME = fileData(COL_NO.TT_DoctorInstituteName__c)
-        TBL_KOTSUHOTEL_Ins.DR_SHISETSU_ADDRESS = fileData(COL_NO.TT_DoctorInstituteAddress__c)
-        TBL_KOTSUHOTEL_Ins.DR_YAKUWARI = fileData(COL_NO.TT_DoctorPart__c)
-        TBL_KOTSUHOTEL_Ins.DR_SEX = fileData(COL_NO.TT_DoctorSex__c)
-        TBL_KOTSUHOTEL_Ins.DR_AGE = fileData(COL_NO.TT_DoctorAge__c)
-        TBL_KOTSUHOTEL_Ins.SHITEIGAI_RIYU = fileData(COL_NO.TT_ReasonOutSpec__c)
+        TBL_KOTSUHOTEL_Ins.TIME_STAMP_BYL = fileData(COL_NO.Field4)
+        TBL_KOTSUHOTEL_Ins.TIME_STAMP_TOP = ""
+        TBL_KOTSUHOTEL_Ins.DR_MPID = fileData(COL_NO.Field5)
+        TBL_KOTSUHOTEL_Ins.DR_CD = fileData(COL_NO.Field6)
+        TBL_KOTSUHOTEL_Ins.DR_NAME = fileData(COL_NO.Field7)
+        TBL_KOTSUHOTEL_Ins.DR_KANA = fileData(COL_NO.Field8)
+        TBL_KOTSUHOTEL_Ins.DR_SHISETSU_CD = fileData(COL_NO.Field9)
+        TBL_KOTSUHOTEL_Ins.DR_SHISETSU_NAME = fileData(COL_NO.Field10)
+        TBL_KOTSUHOTEL_Ins.DR_SHISETSU_ADDRESS = fileData(COL_NO.Field11)
+        TBL_KOTSUHOTEL_Ins.DR_YAKUWARI = fileData(COL_NO.Field12)
+        TBL_KOTSUHOTEL_Ins.DR_SEX = fileData(COL_NO.Field13)
+        TBL_KOTSUHOTEL_Ins.DR_AGE = fileData(COL_NO.Field14)
+        TBL_KOTSUHOTEL_Ins.SHITEIGAI_RIYU = fileData(COL_NO.Field15)
+
         TBL_KOTSUHOTEL_Ins.DR_SANKA = ""
-        TBL_KOTSUHOTEL_Ins.MR_BU = fileData(COL_NO.TT_ContactPersonBU_NameEN__c)
-        TBL_KOTSUHOTEL_Ins.MR_AREA = fileData(COL_NO.TT_ContactPersonAreaName__c)
-        TBL_KOTSUHOTEL_Ins.MR_EIGYOSHO = fileData(COL_NO.TT_ContactPersonFS_Name__c)
-        TBL_KOTSUHOTEL_Ins.MR_NAME = fileData(COL_NO.TT_ContactPersonNameKanji__c)
-        TBL_KOTSUHOTEL_Ins.MR_ROMA = fileData(COL_NO.TT_ContactPersonName__c)
-        TBL_KOTSUHOTEL_Ins.MR_EMAIL_PC = fileData(COL_NO.TT_ContactPersonEmail__c)
-        TBL_KOTSUHOTEL_Ins.MR_EMAIL_KEITAI = fileData(COL_NO.TT_ContactPersonMobileMail__c)
-        TBL_KOTSUHOTEL_Ins.MR_KEITAI = fileData(COL_NO.TT_ContactPersonMobile__c)
-        TBL_KOTSUHOTEL_Ins.MR_TEL = fileData(COL_NO.TT_ContactPersonPhone__c)
-        TBL_KOTSUHOTEL_Ins.MR_SEND_SAKI_FS = fileData(COL_NO.TT_SendFS__c)
-        TBL_KOTSUHOTEL_Ins.MR_SEND_SAKI_OTHER = fileData(COL_NO.TT_SendFS_Other__c)
-        TBL_KOTSUHOTEL_Ins.ACCOUNT_CD = fileData(COL_NO.TT_AccountCode__c)
-        TBL_KOTSUHOTEL_Ins.COST_CENTER = fileData(COL_NO.TT_CostCenter__c)
-        TBL_KOTSUHOTEL_Ins.INTERNAL_ORDER = fileData(COL_NO.TT_InternalOrder__c)
-        TBL_KOTSUHOTEL_Ins.ZETIA_CD = fileData(COL_NO.TT_ZetiaCode__c)
-        TBL_KOTSUHOTEL_Ins.SHONIN_NAME = fileData(COL_NO.TT_LastApprovalUserName__c)
-        TBL_KOTSUHOTEL_Ins.SHONIN_DATE = fileData(COL_NO.TT_LastApprovalDate__c)
-        TBL_KOTSUHOTEL_Ins.TEHAI_HOTEL = fileData(COL_NO.TT_ReqStay__c)
-        TBL_KOTSUHOTEL_Ins.HOTEL_IRAINAIYOU = fileData(COL_NO.TT_ReqStayStatus__c)
-        TBL_KOTSUHOTEL_Ins.REQ_HOTEL_DATE = fileData(COL_NO.TT_ReqStayDate__c)
-        TBL_KOTSUHOTEL_Ins.REQ_HAKUSU = fileData(COL_NO.TT_ReqStayNumber__c)
-        TBL_KOTSUHOTEL_Ins.REQ_HOTEL_SMOKING = fileData(COL_NO.TT_ReqStaySmoking__c)
-        TBL_KOTSUHOTEL_Ins.REQ_HOTEL_NOTE = fileData(COL_NO.TT_ReqStayRemarks__c)
-        TBL_KOTSUHOTEL_Ins.ANS_STATUS_HOTEL = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HOTEL_NAME = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HOTEL_ADDRESS = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HOTEL_TEL = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HOTEL_DATE = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HAKUSU = ""
-        TBL_KOTSUHOTEL_Ins.ANS_CHECKIN_TIME = ""
-        TBL_KOTSUHOTEL_Ins.ANS_CHECKOUT_TIME = ""
-        TBL_KOTSUHOTEL_Ins.ANS_ROOM_TYPE = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HOTEL_SMOKING = ""
-        TBL_KOTSUHOTEL_Ins.ANS_HOTEL_NOTE = ""
-        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_1 = fileData(COL_NO.TT_ReqOutBound1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_1 = fileData(COL_NO.TT_ReqOutBoundStatus1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_1 = fileData(COL_NO.TT_ReqOutBoundTransport1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_1 = fileData(COL_NO.TT_ReqOutBoundDate1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_1 = fileData(COL_NO.TT_ReqOutBoundDeparture1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_1 = fileData(COL_NO.TT_ReqOutBoundArrival1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_1 = fileData(COL_NO.TT_ReqOutBoundDepartureTime1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_1 = fileData(COL_NO.TT_ReqOutBoundArrivalTime1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_1 = fileData(COL_NO.TT_ReqOutBoundTrainName1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_1 = fileData(COL_NO.TT_ReqOutBoundSeatClass1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU1 = fileData(COL_NO.TT_ReqOutBoundSeat1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_2 = fileData(COL_NO.TT_ReqOutBound2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_2 = fileData(COL_NO.TT_ReqOutBoundStatus2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_2 = fileData(COL_NO.TT_ReqOutBoundTransport2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_2 = fileData(COL_NO.TT_ReqOutBoundDate2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_2 = fileData(COL_NO.TT_ReqOutBoundDeparture2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_2 = fileData(COL_NO.TT_ReqOutBoundArrival2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_2 = fileData(COL_NO.TT_ReqOutBoundDepartureTime2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_2 = fileData(COL_NO.TT_ReqOutBoundArrivalTime2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_2 = fileData(COL_NO.TT_ReqOutBoundTrainName2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_2 = fileData(COL_NO.TT_ReqOutBoundSeatClass2_c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU2 = fileData(COL_NO.TT_ReqOutBoundSeat2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_3 = fileData(COL_NO.TT_ReqOutBound3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_3 = fileData(COL_NO.TT_ReqOutBoundStatus3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_3 = fileData(COL_NO.TT_ReqOutBoundTransport3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_3 = fileData(COL_NO.TT_ReqOutBoundDate3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_3 = fileData(COL_NO.TT_ReqOutBoundDeparture3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_3 = fileData(COL_NO.TT_ReqOutBoundArrival3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_3 = fileData(COL_NO.TT_ReqOutBoundDepartureTime3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_3 = fileData(COL_NO.TT_ReqOutBoundArrivalTime3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_3 = fileData(COL_NO.TT_ReqOutBoundTrainName3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_3 = fileData(COL_NO.TT_ReqOutBoundSeatClass3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU3 = fileData(COL_NO.TT_ReqOutBoundSeat3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_4 = fileData(COL_NO.TT_ReqOutBound4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_4 = fileData(COL_NO.TT_ReqOutBoundStatus4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_4 = fileData(COL_NO.TT_ReqOutBoundTransport4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_4 = fileData(COL_NO.TT_ReqOutBoundDate4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_4 = fileData(COL_NO.TT_ReqOutBoundDeparture4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_4 = fileData(COL_NO.TT_ReqOutBoundArrival4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_4 = fileData(COL_NO.TT_ReqOutBoundDepartureTime4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_4 = fileData(COL_NO.TT_ReqOutBoundArrivalTime4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_4 = fileData(COL_NO.TT_ReqOutBoundTrainName4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_4 = fileData(COL_NO.TT_ReqOutBoundSeatClass4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU4 = fileData(COL_NO.TT_ReqOutBoundSeat4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_5 = fileData(COL_NO.TT_ReqOutBound5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_5 = fileData(COL_NO.TT_ReqOutBoundStatus5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_5 = fileData(COL_NO.TT_ReqOutBoundTransport5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_5 = fileData(COL_NO.TT_ReqOutBoundDate5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_5 = fileData(COL_NO.TT_ReqOutBoundDeparture5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_5 = fileData(COL_NO.TT_ReqOutBoundArrival5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_5 = fileData(COL_NO.TT_ReqOutBoundDepartureTime5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_5 = fileData(COL_NO.TT_ReqOutBoundArrivalTime5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_5 = fileData(COL_NO.TT_ReqOutBoundTrainName5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_5 = fileData(COL_NO.TT_ReqOutBoundSeatClass5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU5 = fileData(COL_NO.TT_ReqOutBoundSeat5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_1 = fileData(COL_NO.TT_ReqInBound1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_1 = fileData(COL_NO.TT_ReqInBoundStatus1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_1 = fileData(COL_NO.TT_ReqInBoundTransport1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_1 = fileData(COL_NO.TT_ReqInBoundDate1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_1 = fileData(COL_NO.TT_ReqInBoundDeparture1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_1 = fileData(COL_NO.TT_ReqInBoundArrival1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_1 = fileData(COL_NO.TT_ReqInBoundDepartureTime1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_1 = fileData(COL_NO.TT_ReqInBoundArrivalTime1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_1 = fileData(COL_NO.TT_ReqInBoundTrainName1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_1 = fileData(COL_NO.TT_ReqInBoundSeatClass1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU1 = fileData(COL_NO.TT_ReqInBoundSeat1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_2 = fileData(COL_NO.TT_ReqInBound2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_2 = fileData(COL_NO.TT_ReqInBoundStatus2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_2 = fileData(COL_NO.TT_ReqInBoundTransport2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_2 = fileData(COL_NO.TT_ReqInBoundDate2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_2 = fileData(COL_NO.TT_ReqInBoundDeparture2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_2 = fileData(COL_NO.TT_ReqInBoundArrival2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_2 = fileData(COL_NO.TT_ReqInBoundDepartureTime2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_2 = fileData(COL_NO.TT_ReqInBoundArrivalTime2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_2 = fileData(COL_NO.TT_ReqInBoundTrainName2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_2 = fileData(COL_NO.TT_ReqInBoundSeatClass2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU2 = fileData(COL_NO.TT_ReqInBoundSeat2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_3 = fileData(COL_NO.TT_ReqInBound3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_3 = fileData(COL_NO.TT_ReqInBoundStatus3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_3 = fileData(COL_NO.TT_ReqInBoundTransport3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_3 = fileData(COL_NO.TT_ReqInBoundDate3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_3 = fileData(COL_NO.TT_ReqInBoundDeparture3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_3 = fileData(COL_NO.TT_ReqInBoundArrival3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_3 = fileData(COL_NO.TT_ReqInBoundDepartureTime3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_3 = fileData(COL_NO.TT_ReqInBoundArrivalTime3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_3 = fileData(COL_NO.TT_ReqInBoundTrainName3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_3 = fileData(COL_NO.TT_ReqInBoundSeatClass3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU3 = fileData(COL_NO.TT_ReqInBoundSeat3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_4 = fileData(COL_NO.TT_ReqInBound4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_4 = fileData(COL_NO.TT_ReqInBoundStatus4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_4 = fileData(COL_NO.TT_ReqInBoundTransport4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_4 = fileData(COL_NO.TT_ReqInBoundDate4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_4 = fileData(COL_NO.TT_ReqInBoundDeparture4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_4 = fileData(COL_NO.TT_ReqInBoundArrival4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_4 = fileData(COL_NO.TT_ReqInBoundDepartureTime4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_4 = fileData(COL_NO.TT_ReqInBoundArrivalTime4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_4 = fileData(COL_NO.TT_ReqInBoundTrainName4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_4 = fileData(COL_NO.TT_ReqInBoundSeatClass4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU4 = fileData(COL_NO.TT_ReqInBoundSeat4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_5 = fileData(COL_NO.TT_ReqInBound5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_5 = fileData(COL_NO.TT_ReqInBoundStatus5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_5 = fileData(COL_NO.TT_ReqInBoundTransport5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_5 = fileData(COL_NO.TT_ReqInBoundDate5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_5 = fileData(COL_NO.TT_ReqInBoundDeparture5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_5 = fileData(COL_NO.TT_ReqInBoundArrival5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_5 = fileData(COL_NO.TT_ReqInBoundDepartureTime5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_5 = fileData(COL_NO.TT_ReqInBoundArrivalTime5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_5 = fileData(COL_NO.TT_ReqInBoundTrainName5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_5 = fileData(COL_NO.TT_ReqInBoundSeatClass5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU5 = fileData(COL_NO.TT_ReqInBoundSeat5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_KOTSU_BIKO = fileData(COL_NO.TT_ReqRemarksTraffic__c)
-        TBL_KOTSUHOTEL_Ins.ANS_O_STATUS_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_KOTSUKIKAN_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_DATE_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_AIRPORT1_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_AIRPORT2_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_TIME1_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_TIME2_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_BIN_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_SEAT_1 = ""
-        TBL_KOTSUHOTEL_Ins.ANS_O_SEAT_KIBOU1 = ""
+        TBL_KOTSUHOTEL_Ins.MR_BU = fileData(COL_NO.Field16)
+        TBL_KOTSUHOTEL_Ins.MR_AREA = fileData(COL_NO.Field17)
+        TBL_KOTSUHOTEL_Ins.MR_EIGYOSHO = fileData(COL_NO.Field18)
+        TBL_KOTSUHOTEL_Ins.MR_NAME = fileData(COL_NO.Field19)
+        TBL_KOTSUHOTEL_Ins.MR_ROMA = fileData(COL_NO.Field20)
+        TBL_KOTSUHOTEL_Ins.MR_EMAIL_PC = fileData(COL_NO.Field21)
+        TBL_KOTSUHOTEL_Ins.MR_EMAIL_KEITAI = fileData(COL_NO.Field22)
+        TBL_KOTSUHOTEL_Ins.MR_KEITAI = fileData(COL_NO.Field23)
+        TBL_KOTSUHOTEL_Ins.MR_TEL = fileData(COL_NO.Field24)
+        TBL_KOTSUHOTEL_Ins.MR_SEND_SAKI_FS = fileData(COL_NO.Field25)
+        TBL_KOTSUHOTEL_Ins.MR_SEND_SAKI_OTHER = fileData(COL_NO.Field26)
+        TBL_KOTSUHOTEL_Ins.ACCOUNT_CD = fileData(COL_NO.Field27)
+        TBL_KOTSUHOTEL_Ins.COST_CENTER = fileData(COL_NO.Field28)
+        TBL_KOTSUHOTEL_Ins.INTERNAL_ORDER = fileData(COL_NO.Field29)
+        TBL_KOTSUHOTEL_Ins.ZETIA_CD = fileData(COL_NO.Field30)
+        TBL_KOTSUHOTEL_Ins.SHONIN_NAME = fileData(COL_NO.Field31)
+        TBL_KOTSUHOTEL_Ins.SHONIN_DATE = fileData(COL_NO.Field32)
+        TBL_KOTSUHOTEL_Ins.TEHAI_HOTEL = fileData(COL_NO.Field33)
+        TBL_KOTSUHOTEL_Ins.HOTEL_IRAINAIYOU = fileData(COL_NO.Field34)
+        TBL_KOTSUHOTEL_Ins.REQ_HOTEL_DATE = fileData(COL_NO.Field35)
+        TBL_KOTSUHOTEL_Ins.REQ_HAKUSU = fileData(COL_NO.Field36)
+        TBL_KOTSUHOTEL_Ins.REQ_HOTEL_SMOKING = fileData(COL_NO.Field37)
+        TBL_KOTSUHOTEL_Ins.REQ_HOTEL_NOTE = fileData(COL_NO.Field38)
         
-        TBL_KOTSUHOTEL_Ins.TEHAI_TAXI = fileData(COL_NO.TT_ReqTaxi__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_1 = fileData(COL_NO.TT_ReqTaxiDate1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_1 = fileData(COL_NO.TT_ReqTaxiArrival1__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_1 = fileData(COL_NO.TT_ReqTaxiAmount1__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_2 = fileData(COL_NO.TT_ReqTaxiDate2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_2 = fileData(COL_NO.TT_ReqTaxiArrival2__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_2 = fileData(COL_NO.TT_ReqTaxiAmount2__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_3 = fileData(COL_NO.TT_ReqTaxiDate3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_3 = fileData(COL_NO.TT_ReqTaxiArrival3__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_3 = fileData(COL_NO.TT_ReqTaxiAmount3__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_4 = fileData(COL_NO.TT_ReqTaxiDate4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_4 = fileData(COL_NO.TT_ReqTaxiArrival4__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_4 = fileData(COL_NO.TT_ReqTaxiAmount4__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_5 = fileData(COL_NO.TT_ReqTaxiDate5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_5 = fileData(COL_NO.TT_ReqTaxiArrival5__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_5 = fileData(COL_NO.TT_ReqTaxiAmount5__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_6 = fileData(COL_NO.TT_ReqTaxiDate6__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_6 = fileData(COL_NO.TT_ReqTaxiArrival6__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_6 = fileData(COL_NO.TT_ReqTaxiAmount6__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_7 = fileData(COL_NO.TT_ReqTaxiDate7__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_7 = fileData(COL_NO.TT_ReqTaxiArrival7__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_7 = fileData(COL_NO.TT_ReqTaxiAmount7__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_8 = fileData(COL_NO.TT_ReqTaxiDate8__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_8 = fileData(COL_NO.TT_ReqTaxiArrival8__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_8 = fileData(COL_NO.TT_ReqTaxiAmount8__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_9 = fileData(COL_NO.TT_ReqTaxiDate9__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_9 = fileData(COL_NO.TT_ReqTaxiArrival9__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_9 = fileData(COL_NO.TT_ReqTaxiAmount9__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_10 = fileData(COL_NO.TT_ReqTaxiDate10__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_10 = fileData(COL_NO.TT_ReqTaxiArrival10__c)
-        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_10 = fileData(COL_NO.TT_ReqTaxiAmount10__c)
-        TBL_KOTSUHOTEL_Ins.REQ_TAXI_NOTE = fileData(COL_NO.TT_ReqTaxiRemarks__c)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_1 = fileData(COL_NO.Field39)
+        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_1 = fileData(COL_NO.Field40)
+        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_1 = fileData(COL_NO.Field41)
+        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_1 = fileData(COL_NO.Field42)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_1 = fileData(COL_NO.Field43)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_1 = fileData(COL_NO.Field44)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_1 = fileData(COL_NO.Field45)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_1 = fileData(COL_NO.Field46)
+        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_1 = fileData(COL_NO.Field47)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_1 = fileData(COL_NO.Field48)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU1 = fileData(COL_NO.Field49)
+
+        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_2 = fileData(COL_NO.Field50)
+        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_2 = fileData(COL_NO.Field51)
+        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_2 = fileData(COL_NO.Field52)
+        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_2 = fileData(COL_NO.Field53)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_2 = fileData(COL_NO.Field54)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_2 = fileData(COL_NO.Field55)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_2 = fileData(COL_NO.Field56)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_2 = fileData(COL_NO.Field57)
+        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_2 = fileData(COL_NO.Field58)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_2 = fileData(COL_NO.Field59)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU2 = fileData(COL_NO.Field60)
+
+        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_3 = fileData(COL_NO.Field61)
+        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_3 = fileData(COL_NO.Field62)
+        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_3 = fileData(COL_NO.Field63)
+        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_3 = fileData(COL_NO.Field64)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_3 = fileData(COL_NO.Field65)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_3 = fileData(COL_NO.Field66)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_3 = fileData(COL_NO.Field67)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_3 = fileData(COL_NO.Field68)
+        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_3 = fileData(COL_NO.Field69)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_3 = fileData(COL_NO.Field70)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU3 = fileData(COL_NO.Field71)
+
+        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_4 = fileData(COL_NO.Field72)
+        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_4 = fileData(COL_NO.Field73)
+        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_4 = fileData(COL_NO.Field74)
+        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_4 = fileData(COL_NO.Field75)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_4 = fileData(COL_NO.Field76)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_4 = fileData(COL_NO.Field77)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_4 = fileData(COL_NO.Field78)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_4 = fileData(COL_NO.Field79)
+        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_4 = fileData(COL_NO.Field80)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_4 = fileData(COL_NO.Field81)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU4 = fileData(COL_NO.Field82)
+
+        TBL_KOTSUHOTEL_Ins.REQ_O_TEHAI_5 = fileData(COL_NO.Field83)
+        TBL_KOTSUHOTEL_Ins.REQ_O_IRAINAIYOU_5 = fileData(COL_NO.Field84)
+        TBL_KOTSUHOTEL_Ins.REQ_O_KOTSUKIKAN_5 = fileData(COL_NO.Field85)
+        TBL_KOTSUHOTEL_Ins.REQ_O_DATE_5 = fileData(COL_NO.Field86)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT1_5 = fileData(COL_NO.Field87)
+        TBL_KOTSUHOTEL_Ins.REQ_O_AIRPORT2_5 = fileData(COL_NO.Field88)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME1_5 = fileData(COL_NO.Field89)
+        TBL_KOTSUHOTEL_Ins.REQ_O_TIME2_5 = fileData(COL_NO.Field90)
+        TBL_KOTSUHOTEL_Ins.REQ_O_BIN_5 = fileData(COL_NO.Field91)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_5 = fileData(COL_NO.Field92)
+        TBL_KOTSUHOTEL_Ins.REQ_O_SEAT_KIBOU5 = fileData(COL_NO.Field93)
+
+        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_1 = fileData(COL_NO.Field94)
+        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_1 = fileData(COL_NO.Field95)
+        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_1 = fileData(COL_NO.Field96)
+        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_1 = fileData(COL_NO.Field97)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_1 = fileData(COL_NO.Field98)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_1 = fileData(COL_NO.Field99)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_1 = fileData(COL_NO.Field100)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_1 = fileData(COL_NO.Field101)
+        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_1 = fileData(COL_NO.Field102)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_1 = fileData(COL_NO.Field103)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU1 = fileData(COL_NO.Field104)
+
+        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_2 = fileData(COL_NO.Field105)
+        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_2 = fileData(COL_NO.Field106)
+        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_2 = fileData(COL_NO.Field107)
+        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_2 = fileData(COL_NO.Field108)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_2 = fileData(COL_NO.Field109)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_2 = fileData(COL_NO.Field110)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_2 = fileData(COL_NO.Field111)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_2 = fileData(COL_NO.Field112)
+        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_2 = fileData(COL_NO.Field113)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_2 = fileData(COL_NO.Field114)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU2 = fileData(COL_NO.Field115)
+
+        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_3 = fileData(COL_NO.Field116)
+        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_3 = fileData(COL_NO.Field117)
+        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_3 = fileData(COL_NO.Field118)
+        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_3 = fileData(COL_NO.Field119)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_3 = fileData(COL_NO.Field120)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_3 = fileData(COL_NO.Field121)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_3 = fileData(COL_NO.Field122)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_3 = fileData(COL_NO.Field123)
+        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_3 = fileData(COL_NO.Field124)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_3 = fileData(COL_NO.Field125)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU3 = fileData(COL_NO.Field126)
+
+        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_4 = fileData(COL_NO.Field127)
+        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_4 = fileData(COL_NO.Field128)
+        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_4 = fileData(COL_NO.Field129)
+        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_4 = fileData(COL_NO.Field130)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_4 = fileData(COL_NO.Field131)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_4 = fileData(COL_NO.Field132)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_4 = fileData(COL_NO.Field133)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_4 = fileData(COL_NO.Field134)
+        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_4 = fileData(COL_NO.Field135)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_4 = fileData(COL_NO.Field136)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU4 = fileData(COL_NO.Field137)
+
+        TBL_KOTSUHOTEL_Ins.REQ_F_TEHAI_5 = fileData(COL_NO.Field138)
+        TBL_KOTSUHOTEL_Ins.REQ_F_IRAINAIYOU_5 = fileData(COL_NO.Field139)
+        TBL_KOTSUHOTEL_Ins.REQ_F_KOTSUKIKAN_5 = fileData(COL_NO.Field140)
+        TBL_KOTSUHOTEL_Ins.REQ_F_DATE_5 = fileData(COL_NO.Field141)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT1_5 = fileData(COL_NO.Field142)
+        TBL_KOTSUHOTEL_Ins.REQ_F_AIRPORT2_5 = fileData(COL_NO.Field143)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME1_5 = fileData(COL_NO.Field144)
+        TBL_KOTSUHOTEL_Ins.REQ_F_TIME2_5 = fileData(COL_NO.Field145)
+        TBL_KOTSUHOTEL_Ins.REQ_F_BIN_5 = fileData(COL_NO.Field146)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_5 = fileData(COL_NO.Field147)
+        TBL_KOTSUHOTEL_Ins.REQ_F_SEAT_KIBOU5 = fileData(COL_NO.Field148)
+        TBL_KOTSUHOTEL_Ins.REQ_KOTSU_BIKO = fileData(COL_NO.Field149)
+
+        TBL_KOTSUHOTEL_Ins.TEHAI_TAXI = fileData(COL_NO.Field150)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_1 = fileData(COL_NO.Field151)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_1 = fileData(COL_NO.Field152)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_1 = fileData(COL_NO.Field153)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_2 = fileData(COL_NO.Field154)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_2 = fileData(COL_NO.Field155)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_2 = fileData(COL_NO.Field156)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_3 = fileData(COL_NO.Field157)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_3 = fileData(COL_NO.Field158)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_3 = fileData(COL_NO.Field159)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_4 = fileData(COL_NO.Field160)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_4 = fileData(COL_NO.Field161)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_4 = fileData(COL_NO.Field162)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_5 = fileData(COL_NO.Field163)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_5 = fileData(COL_NO.Field164)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_5 = fileData(COL_NO.Field165)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_6 = fileData(COL_NO.Field166)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_6 = fileData(COL_NO.Field167)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_6 = fileData(COL_NO.Field168)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_7 = fileData(COL_NO.Field169)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_7 = fileData(COL_NO.Field170)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_7 = fileData(COL_NO.Field171)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_8 = fileData(COL_NO.Field172)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_8 = fileData(COL_NO.Field173)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_8 = fileData(COL_NO.Field174)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_9 = fileData(COL_NO.Field175)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_9 = fileData(COL_NO.Field176)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_9 = fileData(COL_NO.Field177)
+
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_DATE_10 = fileData(COL_NO.Field178)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_FROM_10 = fileData(COL_NO.Field179)
+        TBL_KOTSUHOTEL_Ins.TAXI_YOTEIKINGAKU_10 = fileData(COL_NO.Field180)
+        TBL_KOTSUHOTEL_Ins.REQ_TAXI_NOTE = fileData(COL_NO.Field181)
         
-        TBL_KOTSUHOTEL_Ins.REQ_MR_O_TEHAI = fileData(COL_NO.TT_ReqEmployeeOutBound__c)
-        TBL_KOTSUHOTEL_Ins.REQ_MR_F_TEHAI = fileData(COL_NO.TT_ReqEmployeeInBound__c)
-        TBL_KOTSUHOTEL_Ins.MR_SEX = fileData(COL_NO.TT_ReqEmployeeSex__c)
-        TBL_KOTSUHOTEL_Ins.MR_AGE = fileData(COL_NO.TT_ReqEmployeeAge__c)
-        TBL_KOTSUHOTEL_Ins.REQ_MR_TEHAI_HOTEL = fileData(COL_NO.TT_ReqEmployeeStay__c)
-        TBL_KOTSUHOTEL_Ins.REQ_MR_HOTEL_SMOKING = fileData(COL_NO.TT_ReqEmployeeStaySmorking__c)
-        TBL_KOTSUHOTEL_Ins.REQ_MR_HOTEL_NOTE = fileData(COL_NO.TT_ReqEmployeeStayRemarks__c)
+        TBL_KOTSUHOTEL_Ins.REQ_MR_O_TEHAI = fileData(COL_NO.Field182)
+        TBL_KOTSUHOTEL_Ins.REQ_MR_F_TEHAI = fileData(COL_NO.Field183)
+        TBL_KOTSUHOTEL_Ins.MR_SEX = fileData(COL_NO.Field184)
+        TBL_KOTSUHOTEL_Ins.MR_AGE = fileData(COL_NO.Field185)
+        TBL_KOTSUHOTEL_Ins.REQ_MR_TEHAI_HOTEL = fileData(COL_NO.Field186)
+        TBL_KOTSUHOTEL_Ins.REQ_MR_HOTEL_SMOKING = fileData(COL_NO.Field187)
+        TBL_KOTSUHOTEL_Ins.REQ_MR_HOTEL_NOTE = fileData(COL_NO.Field188)
         
         TBL_KOTSUHOTEL_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
 
@@ -820,7 +795,7 @@ Public Class Proc
         TBL_KOTSUHOTEL_Ins.SEND_DATE = ""
 
         '同一キーのデータを検索
-        Dim TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct = GetData(fileData(COL_NO.Name), fileData(COL_NO.MeetingNo__c))
+        Dim TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct = GetData(fileData(COL_NO.Field5), fileData(COL_NO.Field2))
 
         If Not TBL_KOTSUHOTEL Is Nothing Then
             '該当データがあるとき
