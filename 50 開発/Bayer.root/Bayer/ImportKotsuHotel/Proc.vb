@@ -1041,6 +1041,7 @@ Public Class Proc
         Dim TBL_KOTSUHOTEL(wCnt) As TableDef.TBL_KOTSUHOTEL.DataStruct
         Dim wFlag As Boolean = False
 
+        'TODO:SALEFORCE_IDも検索時のキーとして必要な場合はSQLを変更する。
         Dim strSQL As String = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(strKouenkaiNo, strSankashaId)
         Dim RsData As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
         While RsData.Read()
