@@ -12,7 +12,7 @@ Public Class Proc
     Private Const COL_COUNT As Integer = 188 'ファイルの項目数
 
     Private Enum COL_NO
-        Field1
+        Field1 = 0
         Field2
         Field3
         Field4
