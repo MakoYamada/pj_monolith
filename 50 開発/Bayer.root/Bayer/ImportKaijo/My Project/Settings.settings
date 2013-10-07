@@ -15,7 +15,7 @@
       <Value Profile="(Default)">C:\Keiwa\Bayer\ReceiveBkup</Value>
     </Setting>
     <Setting Name="NG_MOJI" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">あ</Value>
     </Setting>
   </Settings>
 </SettingsFile>
