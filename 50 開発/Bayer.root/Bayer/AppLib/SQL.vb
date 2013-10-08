@@ -766,6 +766,21 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function bySEND_FLAG(ByVal SEND_FLAG As String) As String
+            Dim strSQL As String = "SELECT" _
+                                & " TBL_KOTSUHOTEL.*" _
+                                & ",(SELECT TOP 1 TBL_KOUENKAI.KOUENKAI_NAME FROM TBL_KOUENKAI" _
+                                & " WHERE TBL_KOUENKAI.KOUENKAI_NO = TBL_KOTSUHOTEL.KOUENKAI_NO" _
+                                & " ORDER BY TBL_KOUENKAI.TIME_STAMP DESC" _
+                                & ") AS KOUENKAI_NAME" _
+                                & " FROM TBL_KOTSUHOTEL"
+
+            strSQL &= " WHERE TBL_KOTSUHOTEL.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
             Dim strSQL As String = ""
 
