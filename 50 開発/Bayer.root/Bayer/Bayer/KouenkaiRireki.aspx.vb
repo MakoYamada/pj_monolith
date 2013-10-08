@@ -179,7 +179,7 @@ Partial Public Class KouenkaiRireki
 
                 Dim scriptStr As String
                 scriptStr = "<script type='text/javascript'>"
-                scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1200,height=800,resizable=yes,scrollbars=yes,controlbox=no');"
+                scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1200,height=800,resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=no');"
                 scriptStr += "</script>"
                 ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
         End Select
