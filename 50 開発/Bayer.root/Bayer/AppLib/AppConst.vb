@@ -62,6 +62,7 @@ Public Class AppConst
             Public Class Answer
                 '回答
                 Public Class Code
+                    Public Const NewTehai As String = ""
                     Public Const Uketsuke As String = "51"
                     Public Const Prepare As String = "52"
                     Public Const OK As String = "53"
@@ -72,6 +73,7 @@ Public Class AppConst
                     Public Const Canceled As String = "58"
                 End Class
                 Public Class Name
+                    Public Const NewTehai As String = "新着"
                     Public Const Uketsuke As String = "受付中"
                     Public Const Prepare As String = "手配中"
                     Public Const OK As String = "手配済"
