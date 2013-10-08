@@ -159,7 +159,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="STATUS_TEHAI" HeaderText="担当者" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
@@ -173,6 +173,7 @@
                             </ItemStyle>
                         </asp:ButtonField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
+                        <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
                     </Columns>
                 </asp:GridView>
             </td>
