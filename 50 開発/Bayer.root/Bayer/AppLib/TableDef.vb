@@ -917,6 +917,8 @@
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
             Public SEND_DATE As String
+
+            Public KOUENKAI_NAME As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1308,6 +1310,8 @@
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
             Public Const SEND_DATE As String = "SEND_DATE"
+
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
@@ -1699,6 +1703,8 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
             Public Const SEND_DATE As String = "発送日"
+
+            Public Const KOUENKAI_NAME As String = "講演会名"
         End Class
     End Class
 
