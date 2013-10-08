@@ -15,9 +15,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKotsuHotel", "ImportK
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKaijo", "ImportKaijo\ImportKaijo.vbproj", "{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportKotsuHotel", "ExportKotsuHotel\ExportKotsuHotel.vbproj", "{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}"
+EndProject
 Global
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 8
+		SccNumberOfProjects = 9
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = AppLib\\AppLib.vbproj
 		SccLocalPath1 = .
@@ -40,6 +42,9 @@ Global
 		SccProjectUniqueName7 = ImportKaijo\\ImportKaijo.vbproj
 		SccLocalPath7 = .
 		SccProjectFilePathRelativizedFromConnection7 = ImportKaijo\\
+		SccProjectUniqueName8 = ExportKotsuHotel\\ExportKotsuHotel.vbproj
+		SccLocalPath8 = .
+		SccProjectFilePathRelativizedFromConnection8 = ExportKotsuHotel\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +79,10 @@ Global
 		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
