@@ -2195,12 +2195,14 @@ Public Class SQL
             strSQL &= " TBL_KOUENKAI_1.*"
             strSQL &= " FROM (SELECT"
             strSQL &= " *"
-            strSQL &= " FROM TBL_KOUENKAI) AS TBL_KOUENKAI_1"
+            strSQL &= " FROM TBL_KOUENKAI"
+            strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= ",(SELECT"
             strSQL &= " MAX(UPDATE_DATE) AS UPDATE_DATE"
             strSQL &= ",KOUENKAI_NO"
             strSQL &= " FROM TBL_KOUENKAI"
-            strSQL &= " WHERE 1=1"
+            strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
             strSQL &= " WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
             strSQL &= " AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO) AS TBL_KOUENKAI"
@@ -2214,11 +2216,12 @@ Public Class SQL
             strSQL &= " FROM MS_USER) AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
             strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
-            If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-                strSQL &= " ORDER BY"
-                strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
-            Else
+            strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " ORDER BY"
+            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+
+            If Trim(Joken.KOUENKAI_NO) = "" Then
                 strSQL = "TBL_KAIJO.Rireki: JOKEN.KOUTENKAI_NO ERROR!!"
             End If
 
