@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" UseMySettingsClassName="true">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="PATH_WORK" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa\Bayer\Work\answer\traffic</Value>
+    </Setting>
+    <Setting Name="FILE_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">anstrf</Value>
+    </Setting>
+    <Setting Name="PATH_SEND_BKUP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa\Bayer\answerBkup</Value>
+    </Setting>
+    <Setting Name="PATH_SEND" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa\Bayer\answer</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
