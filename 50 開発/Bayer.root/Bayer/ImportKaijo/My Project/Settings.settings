@@ -8,14 +8,14 @@
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">reqarg</Value>
     </Setting>
-    <Setting Name="PATH_WORK" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer\Work\Kaijo_R</Value>
-    </Setting>
-    <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer\ReceiveBkup</Value>
-    </Setting>
     <Setting Name="NG_MOJI" Type="System.String" Scope="User">
       <Value Profile="(Default)">あ</Value>
+    </Setting>
+    <Setting Name="PATH_WORK" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa\Bayer\Work\request\arrange</Value>
+    </Setting>
+    <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa\Bayer\requestBkup</Value>
     </Setting>
   </Settings>
 </SettingsFile>

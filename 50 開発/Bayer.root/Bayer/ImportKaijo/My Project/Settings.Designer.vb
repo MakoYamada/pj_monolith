@@ -80,7 +80,19 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\Work\Kaijo_R")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("あ")>  _
+        Public Property NG_MOJI() As String
+            Get
+                Return CType(Me("NG_MOJI"),String)
+            End Get
+            Set
+                Me("NG_MOJI") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\Work\request\arrange")>  _
         Public Property PATH_WORK() As String
             Get
                 Return CType(Me("PATH_WORK"),String)
@@ -92,25 +104,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\ReceiveBkup")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\requestBkup")>  _
         Public Property PATH_RECEIVE_BKUP() As String
             Get
                 Return CType(Me("PATH_RECEIVE_BKUP"),String)
             End Get
             Set
                 Me("PATH_RECEIVE_BKUP") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("あ")>  _
-        Public Property NG_MOJI() As String
-            Get
-                Return CType(Me("NG_MOJI"),String)
-            End Get
-            Set
-                Me("NG_MOJI") = value
             End Set
         End Property
     End Class
