@@ -108,6 +108,10 @@ Public Class AppConst
                 Public Const Yes As String = "äÛñ]Ç∑ÇÈ"
                 Public Const No As String = "äÛñ]ÇµÇ»Ç¢"
             End Class
+            Public Class Mark
+                Public Const Yes As String = "Åú"
+                Public Const No As String = "Åõ"
+            End Class
         End Class
 
         Public Class HOTEL_IRAINAIYOU
@@ -147,6 +151,10 @@ Public Class AppConst
             Public Class Name
                 Public Const Yes As String = "äÛñ]Ç∑ÇÈ"
                 Public Const No As String = "äÛñ]ÇµÇ»Ç¢"
+            End Class
+            Public Class Mark
+                Public Const Yes As String = "Åú"
+                Public Const No As String = "Åõ"
             End Class
         End Class
 
@@ -202,6 +210,10 @@ Public Class AppConst
             Public Class Name
                 Public Const Yes As String = "óv"
                 Public Const No As String = "ïsóv"
+            End Class
+            Public Class Mark
+                Public Const Yes As String = "Åú"
+                Public Const No As String = "Åõ"
             End Class
         End Class
 

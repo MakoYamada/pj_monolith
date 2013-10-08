@@ -1358,6 +1358,19 @@ Public Class AppModule
         End Select
     End Function
 
+    '宿泊手配
+    Public Shared Function GetMark_TEHAI_HOTEL(ByVal TEHAI_HOTEL As String) As String
+        Select Case TEHAI_HOTEL
+            Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.Yes, AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.Yes
+                Return AppConst.KOTSUHOTEL.TEHAI_HOTEL.Mark.Yes
+            Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.No, AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.No
+                Return AppConst.KOTSUHOTEL.TEHAI_HOTEL.Mark.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
     '宿泊依頼内容
     Public Shared Function GetName_HOTEL_IRAINAIYOU(ByVal HOTEL_IRAINAIYOU As String) As String
         Select Case HOTEL_IRAINAIYOU
@@ -1513,6 +1526,34 @@ Public Class AppModule
         Return GetName_REQ_O_TEHAI(REQ_O_TEHAI_5)
     End Function
 
+    '往路：交通手配
+    Public Shared Function GetMark_REQ_O_TEHAI(ByVal REQ_O_TEHAI As String) As String
+        Select Case REQ_O_TEHAI
+            Case AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes, AppConst.KOTSUHOTEL.REQ_O_TEHAI.Name.Yes
+                Return AppConst.KOTSUHOTEL.REQ_O_TEHAI.Mark.Yes
+            Case AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No, AppConst.KOTSUHOTEL.REQ_O_TEHAI.Name.No
+                Return AppConst.KOTSUHOTEL.REQ_O_TEHAI.Mark.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+    Public Shared Function GetMark_REQ_O_TEHAI_1(ByVal REQ_O_TEHAI_1 As String) As String
+        Return GetMark_REQ_O_TEHAI(REQ_O_TEHAI_1)
+    End Function
+    Public Shared Function GetMark_REQ_O_TEHAI_2(ByVal REQ_O_TEHAI_2 As String) As String
+        Return GetMark_REQ_O_TEHAI(REQ_O_TEHAI_2)
+    End Function
+    Public Shared Function GetMark_REQ_O_TEHAI_3(ByVal REQ_O_TEHAI_3 As String) As String
+        Return GetMark_REQ_O_TEHAI(REQ_O_TEHAI_3)
+    End Function
+    Public Shared Function GetMark_REQ_O_TEHAI_4(ByVal REQ_O_TEHAI_4 As String) As String
+        Return GetMark_REQ_O_TEHAI(REQ_O_TEHAI_4)
+    End Function
+    Public Shared Function GetMark_REQ_O_TEHAI_5(ByVal REQ_O_TEHAI_5 As String) As String
+        Return GetMark_REQ_O_TEHAI(REQ_O_TEHAI_5)
+    End Function
+
     '往路：交通依頼内容
     Public Shared Function GetName_REQ_O_IRAINAIYOU(ByVal REQ_O_IRAINAIYOU As String) As String
         Select Case REQ_O_IRAINAIYOU
@@ -1541,6 +1582,34 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_REQ_O_IRAINAIYOU_5(ByVal REQ_O_IRAINAIYOU_5 As String) As String
         Return GetName_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_5)
+    End Function
+
+    '復路・交通手配
+    Public Shared Function GetMark_REQ_F_TEHAI(ByVal REQ_F_TEHAI As String) As String
+        Select Case REQ_F_TEHAI
+            Case AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes, AppConst.KOTSUHOTEL.REQ_F_TEHAI.Name.Yes
+                Return AppConst.KOTSUHOTEL.REQ_F_TEHAI.Mark.Yes
+            Case AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.No, AppConst.KOTSUHOTEL.REQ_F_TEHAI.Name.No
+                Return AppConst.KOTSUHOTEL.REQ_F_TEHAI.Mark.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+    Public Shared Function GetMark_REQ_F_TEHAI_1(ByVal REQ_F_TEHAI_1 As String) As String
+        Return GetMark_REQ_F_TEHAI(REQ_F_TEHAI_1)
+    End Function
+    Public Shared Function GetMark_REQ_F_TEHAI_2(ByVal REQ_F_TEHAI_2 As String) As String
+        Return GetMark_REQ_F_TEHAI(REQ_F_TEHAI_2)
+    End Function
+    Public Shared Function GetMark_REQ_F_TEHAI_3(ByVal REQ_F_TEHAI_3 As String) As String
+        Return GetMark_REQ_F_TEHAI(REQ_F_TEHAI_3)
+    End Function
+    Public Shared Function GetMark_REQ_F_TEHAI_4(ByVal REQ_F_TEHAI_4 As String) As String
+        Return GetMark_REQ_F_TEHAI(REQ_F_TEHAI_4)
+    End Function
+    Public Shared Function GetMark_REQ_F_TEHAI_5(ByVal REQ_F_TEHAI_5 As String) As String
+        Return GetMark_REQ_F_TEHAI(REQ_F_TEHAI_5)
     End Function
 
     '往路：交通機関
@@ -2689,6 +2758,19 @@ Public Class AppModule
                 Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.Yes
             Case AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.No, AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.No
                 Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
+    'タクシーチケット
+    Public Shared Function GetMark_TEHAI_TAXI(ByVal TEHAI_TAXI As String) As String
+        Select Case TEHAI_TAXI
+            Case AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.Yes, AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.Yes
+                Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Mark.Yes
+            Case AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.No, AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.No
+                Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Mark.No
 
             Case Else
                 Return ""
