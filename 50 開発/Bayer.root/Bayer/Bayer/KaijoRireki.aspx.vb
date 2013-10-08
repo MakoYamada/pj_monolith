@@ -183,7 +183,12 @@ Partial Public Class KaijoRireki
                 Session.Item(SessionDef.KaijoRireki_TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.KaijoRireki_PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.KaijoRireki) = Session.SessionID
-                Response.Redirect(URL.KaijoRegist)
+
+                Dim scriptStr As String
+                scriptStr = "<script language='javascript' type='text/javascript'>" & vbNewLine
+                scriptStr &= "window.open('" & URL.KaijoRegist & "','Rireki','width=980,height=700,scrollbars=yes,resizable=yes,statusbar=yes');" & vbNewLine
+                scriptStr &= "</script>" & vbNewLine
+                ClientScript.RegisterStartupScript(Me.GetType(), "Rireki", scriptStr)
         End Select
     End Sub
 

@@ -210,26 +210,22 @@ Partial Public Class NewKaijoList
     '[印刷]
     Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
         Dim wFlag As Boolean = False
-        Dim strSQL As String = ""
         Dim SEQ As Integer = 0
 
         'チェック
         For Each wRow As GridViewRow In Me.GrvList.Rows
             If CType(wRow.Cells(CellIndex.Template1).FindControl("Check"), CheckBox).Checked = True Then
                 wFlag = True
-                Exit For
+                'QQQ 印刷用の何かを行う
+
             End If
         Next
-        If wFlag = False Then
+        If wFlag = True Then
+            'QQQ 印刷プレビューへ
+        Else
             CmnModule.AlertMessage("印刷対象がありません。1件以上チェックしてください。", Me)
             Exit Sub
         End If
-
-        For Each wRow As GridViewRow In Me.GrvList.Rows
-            If CType(wRow.Cells(CellIndex.Template1).FindControl("Check"), CheckBox).Checked = True Then
-                'QQQ 印刷プレビューへ  複数のID???
-            End If
-        Next
     End Sub
 
 End Class

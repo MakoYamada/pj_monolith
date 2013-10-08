@@ -15,7 +15,11 @@ Partial Public Class KaijoRegist
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '共通チェック
-        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
+        Else
+            MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        End If
 
         'セッションを変数に格納
         If Not SetSession() Then
@@ -49,6 +53,8 @@ Partial Public Class KaijoRegist
             .PageTitle = "講演会場　手配・見積依頼"
             If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
                 .PageTitle &= " ：履歴照会"
+                .HideMenu = True
+                .HideLogout = True
             End If
         End With
     End Sub
@@ -129,8 +135,23 @@ Partial Public Class KaijoRegist
             Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
+            ''タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
+            'If IsExistLaterData() Then
+            '    CmnModule.SetEnabled(Me.BtnSubmit, False)
+            '    CmnModule.SetEnabled(Me.BtnNozomi, False)
+            'End If
         End If
     End Sub
+
+    '新しいタイムスタンプのデータをチェック
+    Private Function IsExistLaterData() As Boolean
+        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TIME_STAMP_BYL(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
+        If CmnDb.IsExist(strSQL, MyBase.DbConnection) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
     '画面項目 表示
     Private Sub SetForm()
@@ -342,9 +363,9 @@ Partial Public Class KaijoRegist
         Session.Item(SessionDef.ShisetsuKensaku_URL) = ""
 
         Dim scriptStr As String
-        scriptStr = "<script language='javascript' type='text/javascript'>"
-        scriptStr &= "window.open('" & URL.ShisetsuKensaku & "','Shisetsu','width=980,height=700,scrollbars=yes,resizable=yes,statusbar=yes');"
-        scriptStr &= "</script>"
+        scriptStr = "<script language='javascript' type='text/javascript'>" & vbNewLine
+        scriptStr &= "window.open('" & URL.ShisetsuKensaku & "','ShisetsuKensaku','width=980,height=700,scrollbars=yes,resizable=yes,statusbar=yes');" & vbNewLine
+        scriptStr &= "</script>" & vbNewLine
 
         ClientScript.RegisterStartupScript(Me.GetType(), "ShisetsuKensaku", scriptStr)
     End Sub
@@ -356,6 +377,9 @@ Partial Public Class KaijoRegist
 
         '入力値を取得
         GetValue()
+
+        '送信対象 外
+        TBL_KAIJO(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
 
         'データ更新
         If ExecuteTransaction() Then
@@ -454,7 +478,11 @@ Partial Public Class KaijoRegist
     '[キャンセル]
     Protected Sub BtnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCancel.Click
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
-            Response.Redirect(URL.KaijoRireki)
+            Dim scriptStr As String
+            scriptStr = "<script language='javascript' type='text/javascript'>" & vbNewLine
+            scriptStr &= "window.close();" & vbNewLine
+            scriptStr &= "</script>" & vbNewLine
+            ClientScript.RegisterStartupScript(Me.GetType(), "RirekiClose", scriptStr)
         Else
             Response.Redirect(Session.Item(SessionDef.BackURL))
         End If
@@ -472,6 +500,12 @@ Partial Public Class KaijoRegist
         Session.Remove(SessionDef.KaijoRireki)
 
         Response.Redirect(URL.KaijoRireki)
+    End Sub
+
+    '[手配書印刷]
+    Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
+        'QQQ 印刷用の何かを行う
+        'QQQ 印刷プレビューへ
     End Sub
 
 End Class

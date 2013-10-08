@@ -90,6 +90,26 @@ Partial Public Class KaijoList
 
     '画面項目 表示
     Private Sub SetForm()
+        '条件表示
+        Me.JokenKIKAKU_TANTO_ROMA.Text = Trim(Joken.KIKAKU_TANTO_ROMA)
+        Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
+        Me.JokenSEIHIN_NAME.Text = Trim(Joken.SEIHIN_NAME)
+        Me.JokenKOUENKAI_NO.Text = Trim(Joken.KOUENKAI_NO)
+        Me.JokenKOUENKAI_NAME.Text = Trim(Joken.KOUENKAI_NAME)
+        Me.JokenBU.Text = Trim(Joken.BU)
+        If Trim(Joken.FROM_DATE) <> "" Then
+            Me.JokenFROM_DATE_YYYY.Text = Mid(Joken.FROM_DATE, 1, 4)
+            Me.JokenFROM_DATE_MM.Text = Mid(Joken.FROM_DATE, 5, 2)
+            Me.JokenFROM_DATE_DD.Text = Mid(Joken.FROM_DATE, 7, 2)
+        End If
+        If Trim(Joken.TO_DATE) <> "" Then
+            Me.JokenTO_DATE_YYYY.Text = Mid(Joken.TO_DATE, 1, 4)
+            Me.JokenTO_DATE_MM.Text = Mid(Joken.TO_DATE, 5, 2)
+            Me.JokenTO_DATE_DD.Text = Mid(Joken.TO_DATE, 7, 2)
+        End If
+        Me.JokenKIKAKU_TANTO_AREA.Text = Trim(Joken.AREA)
+        Me.JokenTTANTO_ID.Text = Trim(Joken.TTANTO_ID)
+
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
@@ -110,17 +130,17 @@ Partial Public Class KaijoList
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        Joken = Nothing
-        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
-        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
-        Joken.SEIHIN_NAME = Trim(Me.JokenSEIHIN_NAME.Text)
-        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
-        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        Joken.BU = Trim(Me.JokenBU.Text)
-        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
-        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
-        Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
-        Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
+        'Joken = Nothing
+        'Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
+        'Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+        'Joken.SEIHIN_NAME = Trim(Me.JokenSEIHIN_NAME.Text)
+        'Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        'Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        'Joken.BU = Trim(Me.JokenBU.Text)
+        'Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        'Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        'Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
+        'Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
 
         ReDim TBL_KAIJO(wCnt)
         strSQL = SQL.TBL_KAIJO.Search(Joken, False)
@@ -208,6 +228,18 @@ Partial Public Class KaijoList
     Protected Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
         '入力チェック
         If Not Check() Then Exit Sub
+
+        Joken = Nothing
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
+        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+        Joken.SEIHIN_NAME = Trim(Me.JokenSEIHIN_NAME.Text)
+        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.BU = Trim(Me.JokenBU.Text)
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
+        Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
 
         '画面項目表示
         SetForm()
