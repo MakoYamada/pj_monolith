@@ -63,6 +63,7 @@ Public Class SQL
             Dim wFlag As Boolean = False
 
             strSQL &= " SELECT *"
+            strSQL &= ", USER_NAME"
             strSQL &= " FROM"
             strSQL &= " (SELECT *,"
             strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
@@ -72,11 +73,18 @@ Public Class SQL
             strSQL &= " ) CNT"
             strSQL &= " FROM"
             strSQL &= " TBL_KOUENKAI)"
-            strSQL &= " WK_KOUENKAI"
+            strSQL &= " WK_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
 
             If NewData = True Then
                 '新着
-                strSQL &= " WHERE " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
+                strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
                 wFlag = True
             End If
 
