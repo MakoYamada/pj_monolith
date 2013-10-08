@@ -65,14 +65,19 @@ Public Class Proc
         'ファイル作成
         If Not CreateFile(strFileWork, outputData) Then
             'エラー
+            If File.Exists(strFileWork) Then
+                File.Delete(strFileWork)
+            End If
             Exit Sub
         End If
 
         '送信フラグ更新
-        'UpdateData()
+        UpdateData(outputData)
 
         '送信フォルダへコピー
         'ワークフォルダのファイル削除
+        File.Copy(strFileWork, My.Settings.PATH_SEND & "\" & Path.GetFileName(strFileWork))
+        File.Delete(strFileWork)
 
     End Sub
 
@@ -86,7 +91,7 @@ Public Class Proc
 
         Try
             Dim sb As New System.Text.StringBuilder
-            For wCnt = 0 To UBound(CsvData)
+            For wCnt As Integer = 0 To UBound(CsvData)
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.SetQuotesEsc(CsvData(wCnt).SALEFORCE_ID))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.SetQuotesEsc(CsvData(wCnt).KOUENKAI_NAME))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.SetQuotesEsc(CsvData(wCnt).KOUENKAI_NO))))
@@ -304,6 +309,16 @@ Public Class Proc
         Return True
 
     End Function
+
+    'テーブル更新
+    Private Sub UpdateData(ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct)
+
+        'CSV出力したデータを更新
+        For wCnt As Integer = 0 To UBound(CsvData)
+
+        Next
+
+    End Sub
 
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
