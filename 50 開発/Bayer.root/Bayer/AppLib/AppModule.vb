@@ -1123,30 +1123,55 @@ Public Class AppModule
     End Function
 
     '【回答】手配ステータス
-    Public Shared Function GetName_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String) As String
-        Select Case ANS_STATUS_TEHAI
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoSearch, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.UchiawaseSeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.TehaiFuka, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.ShoninIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
-            Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanZumi, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
-                Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
+    Public Shared Function GetName_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False) As String
+        If KAIJO = False Then
+            Select Case ANS_STATUS_TEHAI
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NewTehai
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Uketsuke
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Uketsuke
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Prepare
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Prepare
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK_Daian
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Changed
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NG
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled
+                Case Else
+                    Return ""
+            End Select
+        Else
+            Select Case ANS_STATUS_TEHAI
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoSearch, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoSearch
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.UchiawaseSeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.UchiawaseSeisanUketsuke
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanUketsuke, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanUketsuke
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.TehaiFuka, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.TehaiFuka
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.ShoninIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.ShoninIrai
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.KaijoKettei, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.KaijoKettei
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanIrai, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanIrai
+                Case AppConst.KAIJO.ANS_STATUS_TEHAI.Code.SeisanZumi, AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
+                    Return AppConst.KAIJO.ANS_STATUS_TEHAI.Name.SeisanZumi
 
-            Case Else
-                Return ""
-        End Select
+                Case Else
+                    Return ""
+            End Select
+        End If
     End Function
 
     'MPID
