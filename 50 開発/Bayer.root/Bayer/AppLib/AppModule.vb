@@ -1093,15 +1093,27 @@ Public Class AppModule
     End Function
 
     '【依頼】手配ステータス
-    Public Shared Function GetName_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False) As String
+    Public Shared Function GetName_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False, Optional ByVal ShortName As Boolean = False) As String
         If KAIJO = False Then
             Select Case REQ_STATUS_TEHAI
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.Tehai
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
+                    End If
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.Change
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
+                    End If
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.Cancel
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
+                    End If
 
                 Case Else
                     Return ""
@@ -1364,11 +1376,10 @@ Public Class AppModule
         Select Case TEHAI_HOTEL
             Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.Yes, AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.Yes
                 Return AppConst.KOTSUHOTEL.TEHAI_HOTEL.Mark.Yes
-            Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.No, AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.No
+                'Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.No, AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.No
+            Case Else
                 Return AppConst.KOTSUHOTEL.TEHAI_HOTEL.Mark.No
 
-            Case Else
-                Return ""
         End Select
     End Function
 
@@ -2770,11 +2781,9 @@ Public Class AppModule
         Select Case TEHAI_TAXI
             Case AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.Yes, AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.Yes
                 Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Mark.Yes
-            Case AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.No, AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.No
-                Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Mark.No
-
+                'Case AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.No, AppConst.KOTSUHOTEL.TEHAI_TAXI.Name.No
             Case Else
-                Return ""
+                Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Mark.No
         End Select
     End Function
 

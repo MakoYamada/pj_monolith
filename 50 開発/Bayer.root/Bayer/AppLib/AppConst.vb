@@ -58,6 +58,11 @@ Public Class AppConst
                     Public Const Change As String = "•ÏXˆË—Š"
                     Public Const Cancel As String = "æÁˆË—Š"
                 End Class
+                Public Class ShortName
+                    Public Const Tehai As String = "V‹K"
+                    Public Const Change As String = "•ÏX"
+                    Public Const Cancel As String = "æÁ"
+                End Class
             End Class
             Public Class Answer
                 '‰ñ“š
