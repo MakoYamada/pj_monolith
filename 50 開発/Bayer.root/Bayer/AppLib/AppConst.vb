@@ -49,9 +49,9 @@ Public Class AppConst
             Public Class Request
                 '依頼
                 Public Class Code
-                    Public Const Tehai As String = "01"
-                    Public Const Change As String = "02"
-                    Public Const Cancel As String = "03"
+                    Public Const Tehai As String = "1"
+                    Public Const Change As String = "2"
+                    Public Const Cancel As String = "3"
                 End Class
                 Public Class Name
                     Public Const Tehai As String = "新規手配依頼"
@@ -62,15 +62,15 @@ Public Class AppConst
             Public Class Answer
                 '回答
                 Public Class Code
-                    Public Const NewTehai As String = "01"
-                    Public Const Uketsuke As String = "51"
-                    Public Const Prepare As String = "52"
-                    Public Const OK As String = "53"
-                    Public Const OK_Daian As String = "54"
-                    Public Const Changed As String = "55"
-                    Public Const NG As String = "56"
-                    Public Const TicketSend As String = "57"
-                    Public Const Canceled As String = "58"
+                    Public Const NewTehai As String = "0"
+                    Public Const Uketsuke As String = "1"
+                    Public Const Prepare As String = "2"
+                    Public Const OK As String = "3"
+                    Public Const OK_Daian As String = "4"
+                    Public Const Changed As String = "5"
+                    Public Const NG As String = "6"
+                    Public Const TicketSend As String = "7"
+                    Public Const Canceled As String = "8"
                 End Class
                 Public Class Name
                     Public Const NewTehai As String = "新着"
@@ -131,9 +131,9 @@ Public Class AppConst
         Public Class ANS_STATUS_HOTEL
             '宿泊ステータス（回答）
             Public Class Code
-                Public Const Prepare As String = "51"
-                Public Const OK As String = "52"
-                Public Const Canceled As String = "53"
+                Public Const Prepare As String = "1"
+                Public Const OK As String = "2"
+                Public Const Canceled As String = "3"
             End Class
             Public Class Name
                 Public Const Prepare As String = "手配中"
@@ -166,9 +166,9 @@ Public Class AppConst
         Public Class REQ_O_IRAINAIYOU
             '往路：交通依頼内容
             Public Class Code
-                Public Const Tehai As String = "01"
-                Public Const Change As String = "02"
-                Public Const Cancel As String = "03"
+                Public Const Tehai As String = "1"
+                Public Const Change As String = "2"
+                Public Const Cancel As String = "3"
             End Class
             Public Class Name
                 Public Const Tehai As String = "手配依頼"
@@ -185,9 +185,9 @@ Public Class AppConst
         Public Class ANS_O_STATUS
             '往路：回答ステータス
             Public Class Code
-                Public Const Prepare As String = "51"
-                Public Const OK As String = "52"
-                Public Const Canceled As String = "53"
+                Public Const Prepare As String = "1"
+                Public Const OK As String = "2"
+                Public Const Canceled As String = "3"
             End Class
             Public Class Name
                 Public Const Prepare As String = "手配中"
