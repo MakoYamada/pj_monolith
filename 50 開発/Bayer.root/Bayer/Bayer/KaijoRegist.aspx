@@ -2,6 +2,18 @@
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table cellspacing="2" border="0">
+		<tr id="TrComment" runat="server">
+			<td nowrap="nowrap" align="left">
+				<table cellspacing="2" border="0" style="border: 3px double #339933; width: 100%; background-color: #eaf8ff; margin-bottom: 5px;">
+					<tr>
+						<td align="center" style="padding: 3px; color: #0099cc; font-weight: bold;">
+							ダブルクォーテーション・改行(Enterキー)は<br />
+							入力できません。
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
 		<tr>
 			<td nowrap="nowrap" align="right">
 				<table cellspacing="0" border="0" style="width: 940px;">

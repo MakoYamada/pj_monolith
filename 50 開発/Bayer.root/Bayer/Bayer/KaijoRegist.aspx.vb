@@ -127,6 +127,7 @@ Partial Public Class KaijoRegist
             Me.BtnPrint.Visible = False
             Me.BtnNozomi.Visible = False
             Me.BtnSubmit.Visible = False
+            Me.TrComment.Visible = False
         Else
             Me.BtnShisetsuKensaku.Visible = True
             Me.BtnCalc_MITSUMORI.Visible = True
@@ -135,6 +136,7 @@ Partial Public Class KaijoRegist
             Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
+            Me.TrComment.Visible = True
             ''タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
             'If IsExistLaterData() Then
             '    CmnModule.SetEnabled(Me.BtnSubmit, False)
