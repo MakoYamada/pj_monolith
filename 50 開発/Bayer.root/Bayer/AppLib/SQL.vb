@@ -719,6 +719,15 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function bySALESFORCE_ID(ByVal SALESFORCE_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_KOTSUHOTEL.SALEFORCE_ID=N'" & CmnDb.SqlString(SALESFORCE_ID) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
