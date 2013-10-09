@@ -2452,6 +2452,21 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Update_SEND_FLAG(ByVal TBL_KAIJO As TableDef.TBL_KAIJO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_KAIJO SET"
+            strSQL &= " " & TableDef.TBL_KAIJO.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_KAIJO.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.SALEFORCE_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TEHAI_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KAIJO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TIME_STAMP_BYL) & "'"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class TBL_BENTO
