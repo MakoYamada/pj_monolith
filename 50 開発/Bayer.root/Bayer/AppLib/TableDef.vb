@@ -2397,6 +2397,7 @@
             Public USER_NAME As String
             Public STOP_FLG As String
             Public KENGEN As String
+            Public SALESFORCE_ID As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2423,6 +2424,7 @@
             Public Const USER_NAME As String = "氏名"
             Public Const KENGEN As String = "権限"
             Public Const STOP_FLG As String = "利用停止フラグ"
+            Public Const SALESFORCE_ID As String = "SalesForceID"
         End Class
     End Class
 
