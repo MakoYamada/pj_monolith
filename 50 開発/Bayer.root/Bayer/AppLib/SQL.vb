@@ -719,6 +719,100 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " TBL_KOTSUHOTEL.*"
+            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            strSQL &= " , USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " ,"
+            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= " ) AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(TBL_KOTSUHOTEL.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
+            If NewData = True Then
+                '新着
+                strSQL &= " AND TBL_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
+            End If
+
+            If Trim(Joken.KUBUN) = "A" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai & "'"
+            ElseIf Trim(Joken.KUBUN) = "U" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change & "'"
+            ElseIf Trim(Joken.KUBUN) = "C" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel & "'"
+            End If
+
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            strSQL &= " ORDER BY TBL_KOTSUHOTEL."
+            If NewData Then
+                '新着
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+                strSQL &= " DESC"
+            Else
+                '検索
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
+                strSQL &= " DESC"
+            End If
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
             Dim strSQL As String = ""
 
