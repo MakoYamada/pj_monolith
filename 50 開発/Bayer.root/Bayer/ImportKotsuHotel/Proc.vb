@@ -592,7 +592,6 @@ Public Class Proc
         TBL_KOTSUHOTEL_Ins.DR_AGE = fileData(COL_NO.Field14)
         TBL_KOTSUHOTEL_Ins.SHITEIGAI_RIYU = fileData(COL_NO.Field15)
 
-        TBL_KOTSUHOTEL_Ins.DR_SANKA = ""
         TBL_KOTSUHOTEL_Ins.MR_BU = fileData(COL_NO.Field16)
         TBL_KOTSUHOTEL_Ins.MR_AREA = fileData(COL_NO.Field17)
         TBL_KOTSUHOTEL_Ins.MR_EIGYOSHO = fileData(COL_NO.Field18)
@@ -800,6 +799,8 @@ Public Class Proc
         If Not TBL_KOTSUHOTEL Is Nothing Then
             '該当データがあるとき
             Dim idx As Integer = GetLastData(TBL_KOTSUHOTEL)
+
+            TBL_KOTSUHOTEL_Ins.DR_SANKA = TBL_KOTSUHOTEL(idx).DR_SANKA
 
             TBL_KOTSUHOTEL_Ins.ANS_STATUS_HOTEL = TBL_KOTSUHOTEL(idx).ANS_STATUS_HOTEL
             TBL_KOTSUHOTEL_Ins.ANS_HOTEL_NAME = TBL_KOTSUHOTEL(idx).ANS_HOTEL_NAME
