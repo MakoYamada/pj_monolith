@@ -609,22 +609,24 @@ Public Class CmnCheck
             For Each wChildControl As Control In wControl.Controls
                 IsSecurityOK2(wChildControl, wFlag)        '再帰的に繰り返す
                 If TypeOf wChildControl Is WebControls.TextBox Then
-                    '入力禁止文字チェック
-                    'If InStr(CType(wchildControl, WebControls.TextBox).Text, ";") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "--") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "*") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "%") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "?") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "=") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, "<") > 0 OrElse _
-                    '   InStr(CType(wchildControl, WebControls.TextBox).Text, ">") > 0 Then
-                    If InStr(CType(wChildControl, WebControls.TextBox).Text, """") > 0 Then
-                        wFlag = False
-                        Exit Sub
-                    End If
-                    If CType(wChildControl, WebControls.TextBox).Text.Contains(Environment.NewLine) Then
-                        wFlag = False
-                        Exit Sub
+                    If CType(wChildControl, WebControls.TextBox).ReadOnly = False AndAlso CType(wChildControl, WebControls.TextBox).Enabled = True Then
+                        '入力禁止文字チェック
+                        'If InStr(CType(wchildControl, WebControls.TextBox).Text, ";") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, "--") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, "*") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, "%") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, "?") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, "=") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, "<") > 0 OrElse _
+                        '   InStr(CType(wchildControl, WebControls.TextBox).Text, ">") > 0 Then
+                        If InStr(CType(wChildControl, WebControls.TextBox).Text, """") > 0 Then
+                            wFlag = False
+                            Exit Sub
+                        End If
+                        If CType(wChildControl, WebControls.TextBox).Text.Contains(Environment.NewLine) Then
+                            wFlag = False
+                            Exit Sub
+                        End If
                     End If
                 End If
             Next wChildControl
