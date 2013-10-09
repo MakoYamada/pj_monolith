@@ -577,7 +577,7 @@ Public Class Proc
         TBL_KOTSUHOTEL_Ins.KOUENKAI_NO = fileData(COL_NO.Field2)
         TBL_KOTSUHOTEL_Ins.REQ_STATUS_TEHAI = fileData(COL_NO.Field3)
         'TODO:ステータスの初期値要確認
-        TBL_KOTSUHOTEL_Ins.ANS_STATUS_TEHAI = "1"
+        TBL_KOTSUHOTEL_Ins.ANS_STATUS_TEHAI = AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai
         TBL_KOTSUHOTEL_Ins.TIME_STAMP_BYL = fileData(COL_NO.Field4)
         TBL_KOTSUHOTEL_Ins.TIME_STAMP_TOP = ""
         TBL_KOTSUHOTEL_Ins.DR_MPID = fileData(COL_NO.Field5)
