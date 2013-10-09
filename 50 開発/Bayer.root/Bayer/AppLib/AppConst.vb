@@ -62,7 +62,7 @@ Public Class AppConst
             Public Class Answer
                 '‰ñ“š
                 Public Class Code
-                    Public Const NewTehai As String = ""
+                    Public Const NewTehai As String = "01"
                     Public Const Uketsuke As String = "51"
                     Public Const Prepare As String = "52"
                     Public Const OK As String = "53"
