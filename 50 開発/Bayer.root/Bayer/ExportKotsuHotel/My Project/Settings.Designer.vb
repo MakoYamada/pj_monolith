@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\answer")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer\answer\traffic")>  _
         Public Property PATH_SEND() As String
             Get
                 Return CType(Me("PATH_SEND"),String)

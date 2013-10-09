@@ -12,7 +12,7 @@
       <Value Profile="(Default)">C:\Keiwa\Bayer\answerBkup</Value>
     </Setting>
     <Setting Name="PATH_SEND" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer\answer</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer\answer\traffic</Value>
     </Setting>
   </Settings>
 </SettingsFile>
