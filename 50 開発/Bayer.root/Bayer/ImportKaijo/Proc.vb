@@ -313,7 +313,6 @@ Public Class Proc
         Dim TBL_KAIJO(wCnt) As TableDef.TBL_KAIJO.DataStruct
         Dim wFlag As Boolean = False
 
-        'TODO:SALEFORCE_IDも検索時のキーとして必要な場合はSQLを変更する。
         Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TEHAI_ID(strKouenkaiNo, strTehaiId)
         Dim RsData As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
         While RsData.Read()
