@@ -5548,12 +5548,16 @@ Public Class AppModule
     End Sub
 
     '新着一覧　区分
-    Public Shared Sub SetDropDownList_KUBUN(ByRef KUBUN As DropDownList)
+    Public Shared Sub SetDropDownList_KUBUN(ByRef KUBUN As DropDownList, Optional ByVal KOTSUHOTEL As Boolean = False)
         With KUBUN
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
             .Items.Add(New ListItem("新規", "A"))
             .Items.Add(New ListItem("変更", "U"))
+
+            If KOTSUHOTEL Then
+                .Items.Add(New ListItem("取消", "C"))
+            End If
         End With
     End Sub
 
