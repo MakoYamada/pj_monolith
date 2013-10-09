@@ -262,8 +262,8 @@
 				        <td align="right" style="width:70%">
 				            <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="“o˜^" 
                                 CssClass="Button" />
-				            <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMI‚Ö" 
-                                CssClass="Button" />
+				            <!-- <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMI‚Ö" 
+                                CssClass="Button" /> -->
 					        <asp:Button ID="BtnCancel" runat="server" Width="150px" Text="–ß‚é" CssClass="Button" />
 				        </td>
 			        </tr>

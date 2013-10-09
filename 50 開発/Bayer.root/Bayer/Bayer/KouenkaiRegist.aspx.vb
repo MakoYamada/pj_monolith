@@ -43,29 +43,29 @@ Partial Public Class KouenkaiRegist
             If URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
                 URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
                 BtnSubmit.Visible = True
-                BtnNozomi.Visible = True
+                '''BtnNozomi.Visible = True
             Else
                 BtnSubmit.Visible = False
-                BtnNozomi.Visible = False
+                '''BtnNozomi.Visible = False
             End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
             If Popup Then
                 BtnRireki.Visible = False
                 BtnSubmit.Visible = False
-                BtnNozomi.Visible = False
+                '''BtnNozomi.Visible = False
             Else
                 BtnRireki.Visible = True
                 BtnSubmit.Visible = True
-                BtnNozomi.Visible = True
+                '''BtnNozomi.Visible = True
             End If
 
-            '表示対象より新しい講演会基本情報がある場合はNOZOMIボタンは使用不可
-            If ChkNewData() Then
-                BtnNozomi.Enabled = True
-            Else
-                BtnNozomi.Enabled = False
-            End If
+            '' ''表示対象より新しい講演会基本情報がある場合はNOZOMIボタンは使用不可
+            ' ''If ChkNewData() Then
+            ' ''    BtnNozomi.Enabled = True
+            ' ''Else
+            ' ''    BtnNozomi.Enabled = False
+            ' ''End If
 
         End If
 
@@ -253,17 +253,17 @@ Partial Public Class KouenkaiRegist
         End If
     End Sub
 
-    '[NOZOMIへ]
-    Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi.Click
-        If Not Check() Then Exit Sub
+    '' ''[NOZOMIへ]
+    ' ''Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi.Click
+    ' ''    If Not Check() Then Exit Sub
 
-        '入力値を取得
-        GetValue(AppConst.SEND_FLAG.Code.Taisho)
+    ' ''    '入力値を取得
+    ' ''    GetValue(AppConst.SEND_FLAG.Code.Taisho)
 
-        'データ更新
-        If ExecuteTransaction() Then
-        End If
-    End Sub
+    ' ''    'データ更新
+    ' ''    If ExecuteTransaction() Then
+    ' ''    End If
+    ' ''End Sub
 
     '[履歴表示]
     Private Sub BtnRireki_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnRireki.Click
