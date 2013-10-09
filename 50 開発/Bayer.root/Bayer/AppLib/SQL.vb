@@ -2056,6 +2056,15 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function bySEND_FLAG(ByVal SEND_FLAG As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_KAIJO.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
             Dim strSQL_WHERE_KAIJO As String = ""
