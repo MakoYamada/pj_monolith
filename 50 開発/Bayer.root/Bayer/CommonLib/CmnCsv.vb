@@ -10,8 +10,4 @@
         Return str1 & CmnConst.Csv.Comma
     End Function
 
-    '項目中のダブルクオートにエスケープ文字をつける
-    Public Shared Function SetQuotesEsc(ByVal str1 As String) As String
-        Return str1.Replace(CmnConst.Csv.Delimiter, CmnConst.Csv.Delimiter & CmnConst.Csv.Delimiter)
-    End Function
 End Class
