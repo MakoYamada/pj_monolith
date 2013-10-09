@@ -60,7 +60,6 @@ Public Class SQL
 
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
-            Dim wFlag As Boolean = False
 
             strSQL &= " SELECT *"
             strSQL &= ", USER_NAME"
@@ -85,129 +84,68 @@ Public Class SQL
             If NewData = True Then
                 '新着
                 strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
-                wFlag = True
             End If
 
             If Trim(Joken.KUBUN) = "A" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= " CNT = 1"
             ElseIf Trim(Joken.KUBUN) = "U" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= " CNT > 1"
             End If
 
             If Trim(Joken.BU) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.BU
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
             End If
 
             If Trim(Joken.AREA) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
             End If
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_ROMA
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
             End If
 
             If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
                 strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
             ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
             ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
                 strSQL &= " FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             End If
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.SEIHIN_NAME
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
             End If
 
             If Trim(Joken.TTANTO_ID) <> "" Then
-                If wFlag Then
-                    strSQL &= " AND "
-                Else
-                    strSQL &= " WHERE "
-                End If
-                wFlag = True
+                strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.TTANTO_ID
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
