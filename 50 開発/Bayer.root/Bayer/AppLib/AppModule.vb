@@ -5575,7 +5575,7 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_DR_SANKA(ByRef KUBUN As DropDownList)
         With KUBUN
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
+            .Items.Add(New ListItem("---", ""))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.DR_SANKA.Name.Yes, AppConst.KOTSUHOTEL.DR_SANKA.Code.Yes))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.DR_SANKA.Name.No, AppConst.KOTSUHOTEL.DR_SANKA.Code.No))
         End With
