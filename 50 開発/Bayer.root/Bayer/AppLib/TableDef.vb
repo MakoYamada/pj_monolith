@@ -2398,6 +2398,8 @@
             Public STOP_FLG As String
             Public KENGEN As String
             Public DR_SANKA As String
+            Public MR_ROMA As String
+            Public DR_KANA As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2425,6 +2427,8 @@
             Public Const KENGEN As String = "権限"
             Public Const STOP_FLG As String = "利用停止フラグ"
             Public Const SALESFORCE_ID As String = "SalesForceID"
+            Public Const MR_ROMA As String = "Dr担当MR名(ローマ字)"
+            Public Const DR_KANA As String = "Dr氏名(カナ)"
         End Class
     End Class
 
