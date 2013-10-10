@@ -99,6 +99,27 @@ Public Class CmnCheck
     End Function
 
     '半角英数チェック
+    Public Shared Function IsAlphanumericHyphen(ByVal str As String) As Boolean
+        Const HAN_ALPHANUMERIC As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
+        Dim wCnt As Integer = 0
+        Dim buff As String
+        If str.Length = 0 Then
+            Return True
+        Else
+            For wCnt = 0 To str.Length() - 1
+                buff = str.Substring(wCnt, 1)
+                If HAN_ALPHANUMERIC.IndexOf(buff) = -1 Then
+                    Return False
+                End If
+            Next
+        End If
+        Return True
+    End Function
+    Public Shared Function IsAlphanumericHyphen(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsAlphanumericHyphen(TextBox.Text)
+    End Function
+
+    '半角英数チェック
     Public Shared Function IsAlphanumeric(ByVal str As String) As Boolean
         Const HAN_ALPHANUMERIC As String = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         Dim wCnt As Integer = 0
