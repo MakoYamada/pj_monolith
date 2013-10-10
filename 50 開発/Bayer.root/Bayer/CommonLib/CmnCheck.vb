@@ -203,6 +203,27 @@ Public Class CmnCheck
         Return IsZenKatakana(TextBox.Text)
     End Function
 
+    '半角カナチェック
+    Public Shared Function IsHanKatakana(ByVal str As String) As Boolean
+        Const HANKATAKANA As String = " ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝﾞｧｨｩｪｫｯｬｭｮｰ･"
+        Dim wCnt As Integer = 0
+        Dim buff As String
+        If str.Length = 0 Then
+            Return True
+        Else
+            For wCnt = 0 To str.Length() - 1
+                buff = str.Substring(wCnt, 1)
+                If HANKATAKANA.IndexOf(buff) = -1 Then
+                    Return False
+                End If
+            Next
+        End If
+        Return True
+    End Function
+    Public Shared Function IsHanKatakana(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsHanKatakana(TextBox.Text)
+    End Function
+
     'アルファベットとカタカナがあったらエラー
     Public Shared Function IsNoAlphabetKana(ByVal str As String) As Boolean
         'QQQ

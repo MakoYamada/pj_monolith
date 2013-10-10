@@ -71,6 +71,11 @@ Public Class MessageDef
             Return ItemName & "は半角英字で入力してください。"
         End Function
 
+        '半角英数字またはハイフンで入力
+        Public Shared Function AlphanumericHyphenOnly(ByVal ItemName As String) As String
+            Return ItemName & "は半角英数字またはハイフンを入力してください。"
+        End Function
+
         '全角カタカナ
         Public Shared Function ZenKatakanaOnly(ByVal ItemName As String) As String
             Return ItemName & "は全角カタカナで入力してください。"
