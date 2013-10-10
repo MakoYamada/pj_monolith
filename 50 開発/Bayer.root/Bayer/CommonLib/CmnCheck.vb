@@ -98,7 +98,7 @@ Public Class CmnCheck
         Return IsHankaku(TextBox.Text)
     End Function
 
-    '半角英数チェック
+    '半角英数ハイフンチェック
     Public Shared Function IsAlphanumericHyphen(ByVal str As String) As Boolean
         Const HAN_ALPHANUMERIC As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
         Dim wCnt As Integer = 0
