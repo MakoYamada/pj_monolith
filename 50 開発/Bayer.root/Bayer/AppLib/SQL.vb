@@ -808,6 +808,12 @@ Public Class SQL
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
             End If
 
+            If Trim(Joken.DR_SANKA) <> "" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
+                strSQL &= " = N'%" & CmnDb.SqlString(Joken.DR_SANKA) & "%'"
+            End If
+
             strSQL &= " ORDER BY TBL_KOTSUHOTEL."
             If NewData Then
                 '新着
