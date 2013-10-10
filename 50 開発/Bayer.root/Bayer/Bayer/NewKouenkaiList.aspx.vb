@@ -244,6 +244,10 @@ Partial Public Class NewKouenkaiList
 
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+        '入力チェック
+        If Not Check() Then
+            Exit Sub
+        End If
 
         '一覧 表示
         DispList()
@@ -254,4 +258,20 @@ Partial Public Class NewKouenkaiList
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
         Response.Redirect(URL.Menu)
     End Sub
+
+    '入力チェック
+    Private Function Check() As Boolean
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphabetOnly(Me.BU) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者BU"), Me)
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class
