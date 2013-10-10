@@ -36,14 +36,14 @@
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
                                     <td align="right" style="width:70px">
-                                        BU
+                                        手配担当者<br />BU
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenBU" runat="server" Width="333px"
                                             MaxLength="40" TabIndex="1"></asp:TextBox>
                                     </td>
                                     <td align="right" style="width:70px">
-                                        エリア
+                                        手配担当者<br />エリア
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenTEHAI_TANTO_AREA" runat="server" Width="333px"

@@ -35,35 +35,107 @@
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
-                                    <td class="style6">
-                                        事業部&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="JIGYOBU" runat="server" Width="150px">
-                                        </asp:DropDownList>
+                                    <td align="right" style="width:130px">
+                                        Dr担当MR名<br />
+                                        (ローマ字)
                                     </td>
-                                    <td class="style2">
-                                        エリア&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="AREA" runat="server" Width="150px">
-                                        </asp:DropDownList>
+                                    <td>
+                                        <asp:TextBox ID="JokenMR_ROMA" runat="server" Width="350px" 
+                                            MaxLength="300" TabIndex="1"></asp:TextBox>                                        
                                     </td>
-                                    <td class="style1">
-                                        講演会手配担当者&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TEHAI_TANTO_NAME" runat="server" Width="200px" MaxLength="100"></asp:TextBox>
+                                    <td align="right" style="width:100px">
+                                        DR名(カナ)
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="style6">
-                                        講演会番号&nbsp;&nbsp;&nbsp;<asp:TextBox ID="KOUENKAI_NO" runat="server" Width="91px"
-                                            MaxLength="10"></asp:TextBox>
-                                    </td>
-                                    <td class="style5" colspan="2">
-                                        講演会名&nbsp;&nbsp;&nbsp;<asp:TextBox ID="MEETING_NAME" runat="server" Width="350px"
-                                            MaxLength="200" CssClass="style4"></asp:TextBox>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="JokenDR_KANA" runat="server" Width="279px" MaxLength="80" 
+                                            TabIndex="2"></asp:TextBox>                                        
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="style6">
-                                        更新日時&nbsp;&nbsp;&nbsp;<asp:TextBox ID="UPDATE_DATE" runat="server"
-                                            MaxLength="14" Width="126px"></asp:TextBox></td>
-                                    <td></td>
-                                    <td align="right" valign="bottom" colspan="4">
-                                        <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
+                                    <td align="right">
+                                        参加・不参加
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:DropDownList ID="JokenDR_SANKA" runat="server" TabIndex="3">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        講演会番号
+                                    </td>
+                                    <td colspan="5">
+                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
+                                            TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
+                                        講演会名&nbsp;&nbsp;&nbsp;
+                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
+                                            TabIndex="5"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        実施日
+                                    </td>
+                                    <td colspan="5">
+							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
+                                            TabIndex="6"></asp:TextBox>年
+							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="7"></asp:TextBox>月
+
+							            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="8"></asp:TextBox>日
+							            ～
+
+							            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
+                                            TabIndex="9"></asp:TextBox>年
+							            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="10"></asp:TextBox>月
+
+							            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="11"></asp:TextBox>日
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width:70px">
+                                        BU
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="JokenBU" runat="server" Width="333px"
+                                            MaxLength="40" TabIndex="12"></asp:TextBox>
+                                    </td>
+                                    <td align="right">
+                                        エリア
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="JokenTEHAI_TANTO_AREA" runat="server" Width="333px"
+                                            MaxLength="80" TabIndex="13"></asp:TextBox>
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <td align="right">
+                                        TOPTOUR担当者                                        
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="JokenTTANTO_ID" runat="server" Width="94px" MaxLength="10" 
+                                            TabIndex="14"></asp:TextBox>                                        
+                                    </td>
+                                    <td align="right">
+                                        更新日
+                                    </td>
+                                    <td>
+							            <asp:TextBox ID="JokenUPDATE_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
+                                            TabIndex="15"></asp:TextBox>年
+							            <asp:TextBox ID="JokenUPDATE_DATE_MM" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="16"></asp:TextBox>月
+
+							            <asp:TextBox ID="JokenUPDATE_DATE_DD" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="17"></asp:TextBox>日
+                                    </td>
+                                </tr>
+                                <tr style="width:900px">
+                                    <td align="right" valign="bottom" colspan="4" style="width:100%">
+                                        <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
+                                            CssClass="Button" TabIndex="18" />
                                     </td>
                                 </tr>
                             </table>
@@ -106,7 +178,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="TIMESTAMP" HeaderText="Timestamp" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
@@ -116,7 +188,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="MR_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
@@ -128,6 +200,9 @@
                         </asp:BoundField>
                         <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="交通" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
+<HeaderStyle Wrap="False"></HeaderStyle>
+
+<ItemStyle Wrap="False"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TEHAI_TAXI" HeaderText="ﾀｸﾁｹ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
@@ -142,7 +217,19 @@
                             </ItemStyle>
                         </asp:ButtonField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
-                        <asp:BoundField DataField="DR_MPID" HeaderText="MPID" Visible="False" />
+                        <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SalesForceID" 
+                            Visible="False" />
+                        <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="REQ_O_TEHAI_1" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_2" HeaderText="REQ_O_TEHAI_2" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_3" HeaderText="REQ_O_TEHAI_3" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_4" HeaderText="REQ_O_TEHAI_4" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_5" HeaderText="REQ_O_TEHAI_5" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_1" HeaderText="REQ_F_TEHAI_1" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_2" HeaderText="REQ_F_TEHAI_2" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_3" HeaderText="REQ_F_TEHAI_3" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_4" HeaderText="REQ_F_TEHAI_4" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_5" HeaderText="REQ_F_TEHAI_5" />
                     </Columns>
                 </asp:GridView>
             </td>

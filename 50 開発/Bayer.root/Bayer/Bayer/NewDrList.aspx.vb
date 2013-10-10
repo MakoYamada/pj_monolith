@@ -300,6 +300,8 @@ Partial Public Class NewDrList
 
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
 
         '一覧 表示
         DispList()
@@ -331,6 +333,32 @@ Partial Public Class NewDrList
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
         Response.Redirect(URL.Menu)
     End Sub
+
+    '入力チェック
+    Private Function Check() As Boolean
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者BU"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenTEHAI_TANTO_ROMA) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者(ローマ字)"), Me)
+            Return False
+        End If
+
+        Return True
+    End Function
 
     'データ更新
     Private Function ExecuteTransaction(ByVal seq As Integer) As Boolean
