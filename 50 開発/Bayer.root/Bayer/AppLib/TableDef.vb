@@ -2397,7 +2397,7 @@
             Public USER_NAME As String
             Public STOP_FLG As String
             Public KENGEN As String
-            Public SALESFORCE_ID As String
+            Public DR_SANKA As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
