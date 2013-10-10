@@ -796,6 +796,12 @@ Public Class SQL
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
             End If
 
+            If Trim(Joken.DR_KANA) <> "" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_KANA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.DR_KANA) & "%'"
+            End If
+
             If Trim(Joken.KOUENKAI_NO) <> "" Then
                 strSQL &= " AND TBL_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
