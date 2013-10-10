@@ -811,7 +811,7 @@ Public Class SQL
             If Trim(Joken.DR_SANKA) <> "" Then
                 strSQL &= " AND TBL_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
-                strSQL &= " = N'%" & CmnDb.SqlString(Joken.DR_SANKA) & "%'"
+                strSQL &= " = N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
             End If
 
             strSQL &= " ORDER BY TBL_KOTSUHOTEL."
