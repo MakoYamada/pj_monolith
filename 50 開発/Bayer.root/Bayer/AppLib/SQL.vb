@@ -834,6 +834,12 @@ Public Class SQL
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
             End If
 
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID
+                strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
             strSQL &= " ORDER BY TBL_KOTSUHOTEL."
             If NewData Then
                 '新着
