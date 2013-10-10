@@ -2400,6 +2400,7 @@
             Public DR_SANKA As String
             Public MR_ROMA As String
             Public DR_KANA As String
+            Public UPDATE_DATE As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2429,6 +2430,7 @@
             Public Const SALESFORCE_ID As String = "SalesForceID"
             Public Const MR_ROMA As String = "Dr担当MR名(ローマ字)"
             Public Const DR_KANA As String = "Dr氏名(カナ)"
+            Public Const UPDATE_DATE As String = "更新日"
         End Class
     End Class
 
