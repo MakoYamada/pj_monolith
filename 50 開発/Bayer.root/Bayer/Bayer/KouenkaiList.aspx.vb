@@ -38,6 +38,11 @@ Partial Public Class KouenkaiList
         If Not Page.IsPostBack Then
             '画面項目 初期化
             InitControls()
+
+            If UBound(TBL_KOUENKAI) = 0 And TBL_KOUENKAI(0).KOUENKAI_NO Is Nothing Then
+            Else
+                SetForm()
+            End If
         End If
 
         'マスターページ設定
@@ -84,8 +89,8 @@ Partial Public Class KouenkaiList
         CmnModule.ClearAllControl(Me)
     End Sub
 
-    '画面項目 表示
-    Private Sub SetForm()
+    '抽出条件表示
+    Private Sub SetJoken()
 
         If Joken.KIKAKU_TANTO_ROMA <> "" Then Me.JokenKIKAKU_TANTO_ROMA.Text = Joken.KIKAKU_TANTO_ROMA
         If Joken.TEHAI_TANTO_ROMA <> "" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.TEHAI_TANTO_ROMA
@@ -105,6 +110,12 @@ Partial Public Class KouenkaiList
         If Joken.BU <> "" Then Me.JokenBU.Text = Joken.BU
         If Joken.AREA <> "" Then Me.JokenKIKAKU_TANTO_AREA.Text = Joken.AREA
         If Joken.TTANTO_ID <> "" Then Me.JokenTTANTO_ID.Text = Joken.TTANTO_ID
+    End Sub
+
+    '画面項目 表示
+    Private Sub SetForm()
+
+        Call SetJoken()
 
         'データ取得
         If Not GetData() Then
@@ -263,6 +274,21 @@ Partial Public Class KouenkaiList
             Return False
         End If
 
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenKIKAKU_TANTO_ROMA) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者(ローマ字)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenTEHAI_TANTO_ROMA) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者(ローマ字)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            Return False
+        End If
+
         If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
             Return False
@@ -307,6 +333,16 @@ Partial Public Class KouenkaiList
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日To"), Me)
                 Return False
             End If
+        End If
+
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者BU"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumeric(Me.JokenTTANTO_ID) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("トップツアー担当者"), Me)
+            Return False
         End If
 
         Return True
