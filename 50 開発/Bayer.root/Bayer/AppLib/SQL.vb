@@ -733,7 +733,7 @@ Public Class SQL
             Dim wFlag As Boolean = False
 
             strSQL &= "SELECT DISTINCT"
-            strSQL &= " TBL_KOTSUHOTEL.*"
+            strSQL &= " WK_KOTSUHOTEL.*"
             strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
             strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
             strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
@@ -742,7 +742,7 @@ Public Class SQL
             strSQL &= " ,WK_KOUENKAI.TO_DATE"
             strSQL &= " , USER_NAME"
             strSQL &= " FROM"
-            strSQL &= " TBL_KOTSUHOTEL"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
             strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
             strSQL &= " ,"
             strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
@@ -750,7 +750,7 @@ Public Class SQL
             strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= " ) AS MS_USER"
             strSQL &= " WHERE"
-            strSQL &= " ISNULL(TBL_KOTSUHOTEL.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " ISNULL(WK_KOTSUHOTEL.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
             strSQL &= " AND"
             strSQL &= " WK_KOUENKAI.TIME_STAMP=("
             strSQL &= " SELECT MAX(TIME_STAMP)"
@@ -760,21 +760,26 @@ Public Class SQL
             strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
             strSQL &= " )"
             strSQL &= " AND"
-            strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
 
             If NewData = True Then
                 '新着
-                strSQL &= " AND TBL_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
+                strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
+            Else
+                '検索
+                strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+                strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+                strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & " )"
             End If
 
             If Trim(Joken.KUBUN) = "A" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai & "'"
             ElseIf Trim(Joken.KUBUN) = "U" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change & "'"
             ElseIf Trim(Joken.KUBUN) = "C" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel & "'"
             End If
 
@@ -797,13 +802,13 @@ Public Class SQL
             End If
 
             If Trim(Joken.DR_KANA) <> "" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_KANA
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.DR_KANA) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
@@ -829,24 +834,24 @@ Public Class SQL
             End If
 
             If Trim(Joken.UPDATE_DATE) <> "" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.UPDATE_DATE) & "%'"
             End If
 
             If Trim(Joken.DR_SANKA) <> "" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
             End If
 
             If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
-            strSQL &= " ORDER BY TBL_KOTSUHOTEL."
+            strSQL &= " ORDER BY WK_KOTSUHOTEL."
             If NewData Then
                 '新着
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
