@@ -16,58 +16,58 @@ Option Explicit On
 Partial Public Class NewDrList
 
     '''<summary>
-    '''JIGYOBU コントロール。
+    '''JokenBU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JIGYOBU As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''AREA コントロール。
+    '''JokenTEHAI_TANTO_AREA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents AREA As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenTEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TEHAI_TANTO_NAME コントロール。
+    '''JokenKUBUN コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TEHAI_TANTO_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKUBUN As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''KOUENKAI_NO コントロール。
+    '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''MEETING_NAME コントロール。
+    '''JokenKOUENKAI_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents MEETING_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KUBUN コントロール。
+    '''JokenTEHAI_TANTO_ROMA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KUBUN As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnSearch コントロール。
@@ -95,6 +95,15 @@ Partial Public Class NewDrList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents lnkCheck As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''lnkNoCheck コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents lnkNoCheck As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''SqlDataSource1 コントロール。
