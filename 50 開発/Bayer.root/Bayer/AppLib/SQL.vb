@@ -808,6 +808,26 @@ Public Class SQL
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
             End If
 
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.UPDATE_DATE) <> "" Then
+                strSQL &= " AND TBL_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.UPDATE_DATE) & "%'"
+            End If
+
             If Trim(Joken.DR_SANKA) <> "" Then
                 strSQL &= " AND TBL_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
