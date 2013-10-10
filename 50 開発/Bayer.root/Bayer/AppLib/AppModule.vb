@@ -5570,6 +5570,17 @@ Public Class AppModule
 
         End With
     End Sub
+
+    '参加/不参加　区分
+    Public Shared Sub SetDropDownList_DR_SANKA(ByRef KUBUN As DropDownList)
+        With KUBUN
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.DR_SANKA.Name.Yes, AppConst.KOTSUHOTEL.DR_SANKA.Code.Yes))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.DR_SANKA.Name.No, AppConst.KOTSUHOTEL.DR_SANKA.Code.No))
+        End With
+    End Sub
+
     '== コントロールからDB用の値を返す ==
     'ログインID
     Public Shared Function GetValue_LOGIN_ID(ByVal LOGIN_ID As TextBox) As String
