@@ -5547,6 +5547,40 @@ Public Class AppModule
         SetDropDownList_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_5)
     End Sub
 
+    '社員用往路手配（回答）
+    Public Shared Sub SetDropDownList_ANS_MR_O_TEHAI(ByRef ANS_MR_O_TEHAI As DropDownList)
+        With ANS_MR_O_TEHAI
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+
+    '社員用復路手配（回答）
+    Public Shared Sub SetDropDownList_ANS_MR_F_TEHAI(ByRef ANS_MR_F_TEHAI As DropDownList)
+        With ANS_MR_F_TEHAI
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+
     '新着一覧　区分
     Public Shared Sub SetDropDownList_KUBUN(ByRef KUBUN As DropDownList, Optional ByVal KOTSUHOTEL As Boolean = False)
         With KUBUN
