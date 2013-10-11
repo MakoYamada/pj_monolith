@@ -1212,8 +1212,8 @@ Public Class AppModule
     End Function
 
     '所属事業部（担当MR）
-    Public Shared Function GetName_MR_JIGYOBU(ByVal MR_JIGYOBU As String) As String
-        Return MR_JIGYOBU
+    Public Shared Function GetName_MR_BU(ByVal MR_BU As String) As String
+        Return MR_BU
     End Function
 
     '所属エリア（担当MR）
@@ -1236,9 +1236,9 @@ Public Class AppModule
         Return MR_NAME
     End Function
 
-    '担当者名（担当MR）（カタカナ）
-    Public Shared Function GetName_MR_KANA(ByVal MR_KANA As String) As String
-        Return MR_KANA
+    '担当者名（担当MR）（ローマ字）
+    Public Shared Function GetName_MR_ROMA(ByVal MR_ROMA As String) As String
+        Return MR_ROMA
     End Function
 
     'Emailアドレス（担当MR）
