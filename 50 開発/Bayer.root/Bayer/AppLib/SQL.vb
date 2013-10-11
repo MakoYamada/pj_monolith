@@ -345,12 +345,10 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function byKOUENKAI_NO_SEISAN_YM_PAYMENT_NO(ByVal KOUENKAI_NO As String, ByVal SEISAN_YM As String, ByVal PAYMENT_NO As String) As String
+        Public Shared Function bySEND_FLAG(ByVal SEND_FLAG As String) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE TBL_SEIKYU.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
-            strSQL &= " AND TBL_SEIKYU.SEISAN_YM=N'" & CmnDb.SqlString(SEISAN_YM) & "'"
-            strSQL &= " AND TBL_SEIKYU.PAYMENT_NO=N'" & CmnDb.SqlString(PAYMENT_NO) & "'"
+            strSQL &= " WHERE TBL_SEIKYU.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
