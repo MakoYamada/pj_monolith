@@ -1246,6 +1246,11 @@ Public Class AppModule
         Return MR_EMAIL
     End Function
 
+    '携帯Emailアドレス（担当MR）
+    Public Shared Function GetName_MR_EMAIL_KEITAI(ByVal MR_EMAIL_KEITAI As String) As String
+        Return MR_EMAIL_KEITAI
+    End Function
+
     '携帯電話番号（担当MR）
     Public Shared Function GetName_MR_KEITAI(ByVal MR_KEITAI As String) As String
         Return MR_KEITAI
