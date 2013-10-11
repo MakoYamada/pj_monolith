@@ -222,6 +222,38 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class ANS_MR_O_TEHAI
+            '社員往路：回答ステータス
+            Public Class Code
+                Public Const Side As String = "1"
+                Public Const DifferntSeat As String = "2"
+                Public Const DifferntTraffic As String = "3"
+                Public Const No = "9"
+            End Class
+            Public Class Name
+                Public Const Side As String = "ドクターの隣席"
+                Public Const DifferntSeat As String = "ドクターと同便別席"
+                Public Const DifferntTraffic As String = "ドクターと別便"
+                Public Const No = "不要"
+            End Class
+        End Class
+
+        Public Class ANS_MR_F_TEHAI
+            '社員復路：回答ステータス
+            Public Class Code
+                Public Const Side As String = "1"
+                Public Const DifferntSeat As String = "2"
+                Public Const DifferntTraffic As String = "3"
+                Public Const No = "9"
+            End Class
+            Public Class Name
+                Public Const Side As String = "ドクターの隣席"
+                Public Const DifferntSeat As String = "ドクターと同便別席"
+                Public Const DifferntTraffic As String = "ドクターと別便"
+                Public Const No = "不要"
+            End Class
+        End Class
+
     End Class
 
     Public Class KAIJO
