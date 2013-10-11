@@ -22,7 +22,7 @@
 					<tr>
 						<td align="left" colspan="2">
 							講演会番号
-							<asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
+							<asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="140px" MaxLength="14"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							講演会名
 							<asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="350px" MaxLength="200"></asp:TextBox>
