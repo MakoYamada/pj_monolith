@@ -488,6 +488,19 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Update_SEND_FLAG(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_SEIKYU SET"
+            strSQL &= " " & TableDef.TBL_SEIKYU.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_SEIKYU.Column.SEISAN_YM & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_YM) & "'"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class TBL_KOTSUHOTEL
