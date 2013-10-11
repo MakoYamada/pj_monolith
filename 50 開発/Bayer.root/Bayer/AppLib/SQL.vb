@@ -2354,7 +2354,7 @@ Public Class SQL
             strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 
             If Trim(Joken.KOUENKAI_NO) = "" Then
                 strSQL = "TBL_KAIJO.Rireki: JOKEN.KOUTENKAI_NO ERROR!!"
