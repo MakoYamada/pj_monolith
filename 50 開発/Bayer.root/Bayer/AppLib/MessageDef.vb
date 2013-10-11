@@ -86,6 +86,11 @@ Public Class MessageDef
             Return ItemName & "はカタカナで入力してください。"
         End Function
 
+        '半角カタカナ
+        Public Shared Function HanKatakanaOnly(ByVal ItemName As String) As String
+            Return ItemName & "は半角カタカナで入力してください。"
+        End Function
+
         'カタカナ、アルファベット不可
         Public Shared Function NoAlphabetKana(ByVal ItemName As String) As String
             Return ItemName & "にはカタカナ、アルファベットは入力できません。"
