@@ -1251,6 +1251,11 @@ Public Class AppModule
         Return MR_KEITAI
     End Function
 
+    'オフィスの電話番号（担当MR）
+    Public Shared Function GetName_MR_TEL(ByVal MR_TEL As String) As String
+        Return MR_TEL
+    End Function
+
     'チケット送付先FS
     Public Shared Function GetName_MR_SEND_SAKI_FS(ByVal MR_SEND_SAKI_FS As String) As String
         Return MR_SEND_SAKI_FS
