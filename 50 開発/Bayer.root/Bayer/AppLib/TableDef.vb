@@ -233,18 +233,19 @@
         <Serializable()> Public Structure DataStruct
             Public KOUENKAI_NO As String
             Public SEISAN_YM As String
-            Public PAYMENT_NO As String
             Public SHOUNIN_KUBUN As String
             Public SHOUNIN_DATE As String
             Public KAIJOHI_TF As String
             Public KIZAIHI_TF As String
             Public INSHOKUHI_TF As String
-            Public KEI_99133040_1 As String
+            Public OTHER_TATEKAE_TF As String
+            Public KEI_991330401_1 As String
             Public UNEIHI_TF As String
             Public JINKENHI_TF As String
             Public KEI_41120200_1 As String
             Public HOTELHI_TF As String
             Public JR_TF As String
+            Public AIR_TF As String
             Public OTHER_TF As String
             Public HOTEL_COMMISSION_TF As String
             Public TAXI_COMMISSION_TF As String
@@ -255,72 +256,14 @@
             Public KAIJOUHI_T As String
             Public KIZAIHI_T As String
             Public INSHOKUHI_T As String
-            Public KEI_99133040_2 As String
+            Public KEI_991330401_2 As String
             Public KEI_T As String
             Public SEIKYU_NO_TOPTOUR As String
             Public TAXI_T As String
             Public TAXI_SEISAN_T As String
             Public TAXI_TICKET_URL As String
-            Public MR_JR_1 As String
-            Public MR_JR_2 As String
-            Public MR_JR_3 As String
-            Public MR_JR_4 As String
-            Public MR_JR_5 As String
-            Public MR_JR_6 As String
-            Public MR_JR_7 As String
-            Public MR_JR_8 As String
-            Public MR_JR_9 As String
-            Public MR_JR_10 As String
-            Public MR_JR_11 As String
-            Public MR_JR_12 As String
-            Public MR_JR_13 As String
-            Public MR_JR_14 As String
-            Public MR_JR_15 As String
-            Public MR_HOTEL_1 As String
-            Public MR_HOTEL_2 As String
-            Public MR_HOTEL_3 As String
-            Public MR_HOTEL_4 As String
-            Public MR_HOTEL_5 As String
-            Public MR_HOTEL_6 As String
-            Public MR_HOTEL_7 As String
-            Public MR_HOTEL_8 As String
-            Public MR_HOTEL_9 As String
-            Public MR_HOTEL_10 As String
-            Public MR_HOTEL_11 As String
-            Public MR_HOTEL_12 As String
-            Public MR_HOTEL_13 As String
-            Public MR_HOTEL_14 As String
-            Public MR_HOTEL_15 As String
-            Public TAXI_TF_1 As String
-            Public TAXI_TF_2 As String
-            Public TAXI_TF_3 As String
-            Public TAXI_TF_4 As String
-            Public TAXI_TF_5 As String
-            Public TAXI_TF_6 As String
-            Public TAXI_TF_7 As String
-            Public TAXI_TF_8 As String
-            Public TAXI_TF_9 As String
-            Public TAXI_TF_10 As String
-            Public TAXI_TF_11 As String
-            Public TAXI_TF_12 As String
-            Public TAXI_TF_13 As String
-            Public TAXI_TF_14 As String
-            Public TAXI_TF_15 As String
-            Public TAXI_SEISAN_TF_1 As String
-            Public TAXI_SEISAN_TF_2 As String
-            Public TAXI_SEISAN_TF_3 As String
-            Public TAXI_SEISAN_TF_4 As String
-            Public TAXI_SEISAN_TF_5 As String
-            Public TAXI_SEISAN_TF_6 As String
-            Public TAXI_SEISAN_TF_7 As String
-            Public TAXI_SEISAN_TF_8 As String
-            Public TAXI_SEISAN_TF_9 As String
-            Public TAXI_SEISAN_TF_10 As String
-            Public TAXI_SEISAN_TF_11 As String
-            Public TAXI_SEISAN_TF_12 As String
-            Public TAXI_SEISAN_TF_13 As String
-            Public TAXI_SEISAN_TF_14 As String
-            Public TAXI_SEISAN_TF_15 As String
+            Public MR_JR As String
+            Public MR_HOTEL As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -331,18 +274,19 @@
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
             Public Const SEISAN_YM As String = "SEISAN_YM"
-            Public Const PAYMENT_NO As String = "PAYMENT_NO"
             Public Const SHOUNIN_KUBUN As String = "SHOUNIN_KUBUN"
             Public Const SHOUNIN_DATE As String = "SHOUNIN_DATE"
             Public Const KAIJOHI_TF As String = "KAIJOHI_TF"
             Public Const KIZAIHI_TF As String = "KIZAIHI_TF"
             Public Const INSHOKUHI_TF As String = "INSHOKUHI_TF"
-            Public Const KEI_99133040_1 As String = "KEI_99133040_1"
+            Public Const OTHER_TATEKAE_TF As String = "OTHER_TATEKAE_TF"
+            Public Const KEI_991330401_1 As String = "KEI_991330401_1"
             Public Const UNEIHI_TF As String = "UNEIHI_TF"
             Public Const JINKENHI_TF As String = "JINKENHI_TF"
             Public Const KEI_41120200_1 As String = "KEI_41120200_1"
             Public Const HOTELHI_TF As String = "HOTELHI_TF"
             Public Const JR_TF As String = "JR_TF"
+            Public Const AIR_TF As String = "AIR_TF"
             Public Const OTHER_TF As String = "OTHER_TF"
             Public Const HOTEL_COMMISSION_TF As String = "HOTEL_COMMISSION_TF"
             Public Const TAXI_COMMISSION_TF As String = "TAXI_COMMISSION_TF"
@@ -353,72 +297,14 @@
             Public Const KAIJOUHI_T As String = "KAIJOUHI_T"
             Public Const KIZAIHI_T As String = "KIZAIHI_T"
             Public Const INSHOKUHI_T As String = "INSHOKUHI_T"
-            Public Const KEI_99133040_2 As String = "KEI_99133040_2"
+            Public Const KEI_991330401_2 As String = "KEI_991330401_2"
             Public Const KEI_T As String = "KEI_T"
             Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
             Public Const TAXI_T As String = "TAXI_T"
             Public Const TAXI_SEISAN_T As String = "TAXI_SEISAN_T"
             Public Const TAXI_TICKET_URL As String = "TAXI_TICKET_URL"
-            Public Const MR_JR_1 As String = "MR_JR_1"
-            Public Const MR_JR_2 As String = "MR_JR_2"
-            Public Const MR_JR_3 As String = "MR_JR_3"
-            Public Const MR_JR_4 As String = "MR_JR_4"
-            Public Const MR_JR_5 As String = "MR_JR_5"
-            Public Const MR_JR_6 As String = "MR_JR_6"
-            Public Const MR_JR_7 As String = "MR_JR_7"
-            Public Const MR_JR_8 As String = "MR_JR_8"
-            Public Const MR_JR_9 As String = "MR_JR_9"
-            Public Const MR_JR_10 As String = "MR_JR_10"
-            Public Const MR_JR_11 As String = "MR_JR_11"
-            Public Const MR_JR_12 As String = "MR_JR_12"
-            Public Const MR_JR_13 As String = "MR_JR_13"
-            Public Const MR_JR_14 As String = "MR_JR_14"
-            Public Const MR_JR_15 As String = "MR_JR_15"
-            Public Const MR_HOTEL_1 As String = "MR_HOTEL_1"
-            Public Const MR_HOTEL_2 As String = "MR_HOTEL_2"
-            Public Const MR_HOTEL_3 As String = "MR_HOTEL_3"
-            Public Const MR_HOTEL_4 As String = "MR_HOTEL_4"
-            Public Const MR_HOTEL_5 As String = "MR_HOTEL_5"
-            Public Const MR_HOTEL_6 As String = "MR_HOTEL_6"
-            Public Const MR_HOTEL_7 As String = "MR_HOTEL_7"
-            Public Const MR_HOTEL_8 As String = "MR_HOTEL_8"
-            Public Const MR_HOTEL_9 As String = "MR_HOTEL_9"
-            Public Const MR_HOTEL_10 As String = "MR_HOTEL_10"
-            Public Const MR_HOTEL_11 As String = "MR_HOTEL_11"
-            Public Const MR_HOTEL_12 As String = "MR_HOTEL_12"
-            Public Const MR_HOTEL_13 As String = "MR_HOTEL_13"
-            Public Const MR_HOTEL_14 As String = "MR_HOTEL_14"
-            Public Const MR_HOTEL_15 As String = "MR_HOTEL_15"
-            Public Const TAXI_TF_1 As String = "TAXI_TF_1"
-            Public Const TAXI_TF_2 As String = "TAXI_TF_2"
-            Public Const TAXI_TF_3 As String = "TAXI_TF_3"
-            Public Const TAXI_TF_4 As String = "TAXI_TF_4"
-            Public Const TAXI_TF_5 As String = "TAXI_TF_5"
-            Public Const TAXI_TF_6 As String = "TAXI_TF_6"
-            Public Const TAXI_TF_7 As String = "TAXI_TF_7"
-            Public Const TAXI_TF_8 As String = "TAXI_TF_8"
-            Public Const TAXI_TF_9 As String = "TAXI_TF_9"
-            Public Const TAXI_TF_10 As String = "TAXI_TF_10"
-            Public Const TAXI_TF_11 As String = "TAXI_TF_11"
-            Public Const TAXI_TF_12 As String = "TAXI_TF_12"
-            Public Const TAXI_TF_13 As String = "TAXI_TF_13"
-            Public Const TAXI_TF_14 As String = "TAXI_TF_14"
-            Public Const TAXI_TF_15 As String = "TAXI_TF_15"
-            Public Const TAXI_SEISAN_TF_1 As String = "TAXI_SEISAN_TF_1"
-            Public Const TAXI_SEISAN_TF_2 As String = "TAXI_SEISAN_TF_2"
-            Public Const TAXI_SEISAN_TF_3 As String = "TAXI_SEISAN_TF_3"
-            Public Const TAXI_SEISAN_TF_4 As String = "TAXI_SEISAN_TF_4"
-            Public Const TAXI_SEISAN_TF_5 As String = "TAXI_SEISAN_TF_5"
-            Public Const TAXI_SEISAN_TF_6 As String = "TAXI_SEISAN_TF_6"
-            Public Const TAXI_SEISAN_TF_7 As String = "TAXI_SEISAN_TF_7"
-            Public Const TAXI_SEISAN_TF_8 As String = "TAXI_SEISAN_TF_8"
-            Public Const TAXI_SEISAN_TF_9 As String = "TAXI_SEISAN_TF_9"
-            Public Const TAXI_SEISAN_TF_10 As String = "TAXI_SEISAN_TF_10"
-            Public Const TAXI_SEISAN_TF_11 As String = "TAXI_SEISAN_TF_11"
-            Public Const TAXI_SEISAN_TF_12 As String = "TAXI_SEISAN_TF_12"
-            Public Const TAXI_SEISAN_TF_13 As String = "TAXI_SEISAN_TF_13"
-            Public Const TAXI_SEISAN_TF_14 As String = "TAXI_SEISAN_TF_14"
-            Public Const TAXI_SEISAN_TF_15 As String = "TAXI_SEISAN_TF_15"
+            Public Const MR_JR As String = "MR_JR"
+            Public Const MR_HOTEL As String = "MR_HOTEL"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -429,94 +315,37 @@
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
             Public Const SEISAN_YM As String = "トップツアー精算年月"
-            Public Const PAYMENT_NO As String = "精算番号"
             Public Const SHOUNIN_KUBUN As String = "承認区分"
             Public Const SHOUNIN_DATE As String = "精算承認日"
-            Public Const KAIJOHI_TF As String = "会場費(非課税) 99133040"
-            Public Const KIZAIHI_TF As String = "機材費(非課税) 99133040"
-            Public Const INSHOKUHI_TF As String = "飲食費(非課税) 99133040"
-            Public Const KEI_99133040_1 As String = "99133040小計"
-            Public Const UNEIHI_TF As String = "運営費(非課税) 41120200"
-            Public Const JINKENHI_TF As String = "人件費(非課税) 41120200"
+            Public Const KAIJOHI_TF As String = "会場費（非課税）991330401"
+            Public Const KIZAIHI_TF As String = "機材費（非課税）991330401"
+            Public Const INSHOKUHI_TF As String = "飲食費（非課税）991330401"
+            Public Const OTHER_TATEKAE_TF As String = "その他立替等（非課税）991330401"
+            Public Const KEI_991330401_1 As String = "991330401小計"
+            Public Const UNEIHI_TF As String = "運営費（非課税）41120200"
+            Public Const JINKENHI_TF As String = "人件費（非課税）41120200"
             Public Const KEI_41120200_1 As String = "41120200小計"
-            Public Const HOTELHI_TF As String = "宿泊費(非課税) 41120200"
-            Public Const JR_TF As String = "JR代(非課税) 41120200"
-            Public Const OTHER_TF As String = "その他鉄道等費用(非課税) 41120200"
-            Public Const HOTEL_COMMISSION_TF As String = "宿泊・交通手数料(非課税) 41120200"
-            Public Const TAXI_COMMISSION_TF As String = "タクチケ発券手数料(非課税) 41120200"
-            Public Const TAXI_TF As String = "タクチケ実車料金(非課税) 41120200"
-            Public Const TAXI_SEISAN_TF As String = "タクチケ精算代金(非課税) 41120200"
+            Public Const HOTELHI_TF As String = "宿泊費（非課税）41120200"
+            Public Const JR_TF As String = "JR代（非課税）41120200"
+            Public Const AIR_TF As String = "航空券代（非課税）41120200"
+            Public Const OTHER_TF As String = "その他鉄道等費用（非課税）41120200"
+            Public Const HOTEL_COMMISSION_TF As String = "宿泊・交通手数料(非課税)41120200"
+            Public Const TAXI_COMMISSION_TF As String = "タクチケ発券手数料(非課税)41120200"
+            Public Const TAXI_TF As String = "タクチケ実車料金(非課税)41120200"
+            Public Const TAXI_SEISAN_TF As String = "タクチケ精算代金(非課税)41120200"
             Public Const KEI_41120200_2 As String = "41120200小計"
             Public Const KEI_TF As String = "非課税金額合計"
-            Public Const KAIJOUHI_T As String = "会場費(課税) 99133040"
-            Public Const KIZAIHI_T As String = "機材費(課税) "
-            Public Const INSHOKUHI_T As String = "飲食費(課税) "
-            Public Const KEI_99133040_2 As String = "99133040小計"
+            Public Const KAIJOUHI_T As String = "会場費（課税）991330401"
+            Public Const KIZAIHI_T As String = "機材費（課税）991330401"
+            Public Const INSHOKUHI_T As String = "飲食費（課税）991330401"
+            Public Const KEI_991330401_2 As String = "991330401小計"
             Public Const KEI_T As String = "課税金額合計"
             Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
-            Public Const TAXI_T As String = "タクチケ実車料金(課税) "
-            Public Const TAXI_SEISAN_T As String = "タクチケ精算代金(課税) "
+            Public Const TAXI_T As String = "タクチケ実車料金(課税)"
+            Public Const TAXI_SEISAN_T As String = "タクチケ精算代金(課税)"
             Public Const TAXI_TICKET_URL As String = "タクチケ保存場所URL"
-            Public Const MR_JR_1 As String = "社員の国内旅費(JR/航空券) CostCenter1"
-            Public Const MR_JR_2 As String = "社員の国内旅費(JR/航空券) CostCenter2"
-            Public Const MR_JR_3 As String = "社員の国内旅費(JR/航空券) CostCenter3"
-            Public Const MR_JR_4 As String = "社員の国内旅費(JR/航空券) CostCenter4"
-            Public Const MR_JR_5 As String = "社員の国内旅費(JR/航空券) CostCenter5"
-            Public Const MR_JR_6 As String = "社員の国内旅費(JR/航空券) CostCenter6"
-            Public Const MR_JR_7 As String = "社員の国内旅費(JR/航空券) CostCenter7"
-            Public Const MR_JR_8 As String = "社員の国内旅費(JR/航空券) CostCenter8"
-            Public Const MR_JR_9 As String = "社員の国内旅費(JR/航空券) CostCenter9"
-            Public Const MR_JR_10 As String = "社員の国内旅費(JR/航空券) CostCenter10"
-            Public Const MR_JR_11 As String = "社員の国内旅費(JR/航空券) CostCenter11"
-            Public Const MR_JR_12 As String = "社員の国内旅費(JR/航空券) CostCenter12"
-            Public Const MR_JR_13 As String = "社員の国内旅費(JR/航空券) CostCenter13"
-            Public Const MR_JR_14 As String = "社員の国内旅費(JR/航空券) CostCenter14"
-            Public Const MR_JR_15 As String = "社員の国内旅費(JR/航空券) CostCenter15"
-            Public Const MR_HOTEL_1 As String = "社員の国内旅費(宿泊) CostCenter1"
-            Public Const MR_HOTEL_2 As String = "社員の国内旅費(宿泊) CostCenter2"
-            Public Const MR_HOTEL_3 As String = "社員の国内旅費(宿泊) CostCenter3"
-            Public Const MR_HOTEL_4 As String = "社員の国内旅費(宿泊) CostCenter4"
-            Public Const MR_HOTEL_5 As String = "社員の国内旅費(宿泊) CostCenter5"
-            Public Const MR_HOTEL_6 As String = "社員の国内旅費(宿泊) CostCenter6"
-            Public Const MR_HOTEL_7 As String = "社員の国内旅費(宿泊) CostCenter7"
-            Public Const MR_HOTEL_8 As String = "社員の国内旅費(宿泊) CostCenter8"
-            Public Const MR_HOTEL_9 As String = "社員の国内旅費(宿泊) CostCenter9"
-            Public Const MR_HOTEL_10 As String = "社員の国内旅費(宿泊) CostCenter10"
-            Public Const MR_HOTEL_11 As String = "社員の国内旅費(宿泊) CostCenter11"
-            Public Const MR_HOTEL_12 As String = "社員の国内旅費(宿泊) CostCenter12"
-            Public Const MR_HOTEL_13 As String = "社員の国内旅費(宿泊) CostCenter13"
-            Public Const MR_HOTEL_14 As String = "社員の国内旅費(宿泊) CostCenter14"
-            Public Const MR_HOTEL_15 As String = "社員の国内旅費(宿泊) CostCenter15"
-            Public Const TAXI_TF_1 As String = "タクチケ実車料金(非課税金額) Cost Center 1"
-            Public Const TAXI_TF_2 As String = "タクチケ実車料金(非課税金額) Cost Center 2"
-            Public Const TAXI_TF_3 As String = "タクチケ実車料金(非課税金額) Cost Center 3"
-            Public Const TAXI_TF_4 As String = "タクチケ実車料金(非課税金額) Cost Center 4"
-            Public Const TAXI_TF_5 As String = "タクチケ実車料金(非課税金額) Cost Center 5"
-            Public Const TAXI_TF_6 As String = "タクチケ実車料金(非課税金額) Cost Center 6"
-            Public Const TAXI_TF_7 As String = "タクチケ実車料金(非課税金額) Cost Center 7"
-            Public Const TAXI_TF_8 As String = "タクチケ実車料金(非課税金額) Cost Center 8"
-            Public Const TAXI_TF_9 As String = "タクチケ実車料金(非課税金額) Cost Center 9"
-            Public Const TAXI_TF_10 As String = "タクチケ実車料金(非課税金額) Cost Center 10"
-            Public Const TAXI_TF_11 As String = "タクチケ実車料金(非課税金額) Cost Center 11"
-            Public Const TAXI_TF_12 As String = "タクチケ実車料金(非課税金額) Cost Center 12"
-            Public Const TAXI_TF_13 As String = "タクチケ実車料金(非課税金額) Cost Center 13"
-            Public Const TAXI_TF_14 As String = "タクチケ実車料金(非課税金額) Cost Center 14"
-            Public Const TAXI_TF_15 As String = "タクチケ実車料金(非課税金額) Cost Center 15"
-            Public Const TAXI_SEISAN_TF_1 As String = "タクチケ精算代金(非課税金額) Cost Center 1"
-            Public Const TAXI_SEISAN_TF_2 As String = "タクチケ精算代金(非課税金額) Cost Center 2"
-            Public Const TAXI_SEISAN_TF_3 As String = "タクチケ精算代金(非課税金額) Cost Center 3"
-            Public Const TAXI_SEISAN_TF_4 As String = "タクチケ精算代金(非課税金額) Cost Center 4"
-            Public Const TAXI_SEISAN_TF_5 As String = "タクチケ精算代金(非課税金額) Cost Center 5"
-            Public Const TAXI_SEISAN_TF_6 As String = "タクチケ精算代金(非課税金額) Cost Center 6"
-            Public Const TAXI_SEISAN_TF_7 As String = "タクチケ精算代金(非課税金額) Cost Center 7"
-            Public Const TAXI_SEISAN_TF_8 As String = "タクチケ精算代金(非課税金額) Cost Center 8"
-            Public Const TAXI_SEISAN_TF_9 As String = "タクチケ精算代金(非課税金額) Cost Center 9"
-            Public Const TAXI_SEISAN_TF_10 As String = "タクチケ精算代金(非課税金額) Cost Center 10"
-            Public Const TAXI_SEISAN_TF_11 As String = "タクチケ精算代金(非課税金額) Cost Center 11"
-            Public Const TAXI_SEISAN_TF_12 As String = "タクチケ精算代金(非課税金額) Cost Center 12"
-            Public Const TAXI_SEISAN_TF_13 As String = "タクチケ精算代金(非課税金額) Cost Center 13"
-            Public Const TAXI_SEISAN_TF_14 As String = "タクチケ精算代金(非課税金額) Cost Center 14"
-            Public Const TAXI_SEISAN_TF_15 As String = "タクチケ精算代金(非課税金額) Cost Center 15"
+            Public Const MR_JR As String = "社員の国内旅費(JR/航空券)"
+            Public Const MR_HOTEL As String = "社員の国内旅費(宿泊)"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"
