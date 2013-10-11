@@ -728,6 +728,19 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byNEW_TIME_STAMP(ByVal SALEFORCE_ID As String, ByVal TIME_STAMP_BYL As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT COUNT(*) AS CNT"
+            strSQL &= " FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE "
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(SALEFORCE_ID) & "'"
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ">N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
