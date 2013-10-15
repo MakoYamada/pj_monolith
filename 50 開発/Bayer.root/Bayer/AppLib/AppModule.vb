@@ -4335,7 +4335,7 @@ Public Class AppModule
         SetForm_ANS_O_BIN(ANS_O_BIN_5, control)
     End Sub
 
-    '往路：座席区分（回答）
+    '往路：座席希望（回答）
     Public Shared Sub SetForm_ANS_O_SEAT_KIBOU(ByVal ANS_O_SEAT_KIBOU As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT_KIBOU, control)
     End Sub
@@ -4375,7 +4375,7 @@ Public Class AppModule
         SetForm_ANS_O_SEAT(ANS_O_SEAT_5, control)
     End Sub
 
-    '往路：ステータス（回答）
+    '復路：ステータス（回答）
     Public Shared Sub SetForm_ANS_F_STATUS(ByVal ANS_F_STATUS As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_STATUS, control)
     End Sub
@@ -4395,7 +4395,7 @@ Public Class AppModule
         SetForm_ANS_F_STATUS(ANS_F_STATUS_5, control)
     End Sub
 
-    '往路：交通機関（回答）
+    '復路：交通機関（回答）
     Public Shared Sub SetForm_ANS_F_KOTSUKIKAN(ByVal ANS_F_KOTSUKIKAN As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_KOTSUKIKAN, control)
     End Sub
@@ -4415,7 +4415,7 @@ Public Class AppModule
         SetForm_ANS_F_KOTSUKIKAN(ANS_F_KOTSUKIKAN_5, control)
     End Sub
 
-    '往路：利用日（回答）
+    '復路：利用日（回答）
     Public Shared Sub SetForm_ANS_F_DATE(ByVal ANS_F_DATE As String, ByRef control As TextBox)
         control.Text = ANS_F_DATE
     End Sub
@@ -4435,7 +4435,7 @@ Public Class AppModule
         SetForm_ANS_F_DATE(ANS_F_DATE_5, control)
     End Sub
 
-    '往路：出発地（回答）
+    '復路：出発地（回答）
     Public Shared Sub SetForm_ANS_F_AIRPORT1(ByVal ANS_F_AIRPORT1 As String, ByRef control As TextBox)
         control.Text = ANS_F_AIRPORT1
     End Sub
@@ -4455,7 +4455,7 @@ Public Class AppModule
         SetForm_ANS_F_AIRPORT1(ANS_F_AIRPORT1_5, control)
     End Sub
 
-    '往路：到着地（回答）
+    '復路：到着地（回答）
     Public Shared Sub SetForm_ANS_F_AIRPORT2(ByVal ANS_F_AIRPORT2 As String, ByRef control As TextBox)
         control.Text = ANS_F_AIRPORT2
     End Sub
@@ -4475,7 +4475,7 @@ Public Class AppModule
         SetForm_ANS_F_AIRPORT2(ANS_F_AIRPORT2_5, control)
     End Sub
 
-    '往路：出発時間（回答）
+    '復路：出発時間（回答）
     Public Shared Sub SetForm_ANS_F_TIME1(ByVal ANS_F_TIME1 As String, ByRef control As TextBox)
         control.Text = ANS_F_TIME1
     End Sub
@@ -4495,7 +4495,7 @@ Public Class AppModule
         SetForm_ANS_F_TIME1(ANS_F_TIME1_5, control)
     End Sub
 
-    '往路：到着時間（回答）
+    '復路：到着時間（回答）
     Public Shared Sub SetForm_ANS_F_TIME2(ByVal ANS_F_TIME2 As String, ByRef control As TextBox)
         control.Text = ANS_F_TIME2
     End Sub
@@ -4515,7 +4515,7 @@ Public Class AppModule
         SetForm_ANS_F_TIME2(ANS_F_TIME2_5, control)
     End Sub
 
-    '往路：列車名・便名（回答）
+    '復路：列車名・便名（回答）
     Public Shared Sub SetForm_ANS_F_BIN(ByVal ANS_F_BIN As String, ByRef control As TextBox)
         control.Text = ANS_F_BIN
     End Sub
@@ -4535,7 +4535,7 @@ Public Class AppModule
         SetForm_ANS_F_BIN(ANS_F_BIN_5, control)
     End Sub
 
-    '往路：座席区分（回答）
+    '復路：座席区分（回答）
     Public Shared Sub SetForm_ANS_F_SEAT(ByVal ANS_F_SEAT As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_SEAT, control)
     End Sub
@@ -4553,6 +4553,26 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetForm_ANS_F_SEAT_5(ByVal ANS_F_SEAT_5 As String, ByRef control As DropDownList)
         SetForm_ANS_F_SEAT(ANS_F_SEAT_5, control)
+    End Sub
+
+    '復路：座席希望（回答）
+    Public Shared Sub SetForm_ANS_F_SEAT_KIBOU(ByVal ANS_F_SEAT_KIBOU As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_SEAT_KIBOU, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_F_SEAT_KIBOU1(ByVal ANS_F_SEAT_KIBOU1 As String, ByRef control As DropDownList)
+        SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU1, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_F_SEAT_KIBOU2(ByVal ANS_F_SEAT_KIBOU2 As String, ByRef control As DropDownList)
+        SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU2, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_F_SEAT_KIBOU3(ByVal ANS_F_SEAT_KIBOU3 As String, ByRef control As DropDownList)
+        SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU3, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_F_SEAT_KIBOU4(ByVal ANS_F_SEAT_KIBOU4 As String, ByRef control As DropDownList)
+        SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU4, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_F_SEAT_KIBOU5(ByVal ANS_F_SEAT_KIBOU5 As String, ByRef control As DropDownList)
+        SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU5, control)
     End Sub
 
     '往路備考（依頼）
