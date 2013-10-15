@@ -85,7 +85,7 @@
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTorikomiLog" runat="server" Text="取込ログ" Width="200px" 
+							<asp:Button ID="BtnTorikomiLog" runat="server" Text="送受信ログ照会" Width="200px" 
                                 CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>

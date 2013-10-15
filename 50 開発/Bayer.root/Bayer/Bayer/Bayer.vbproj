@@ -95,6 +95,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\LogFile.aspx.designer.vb">
+      <DependentUpon>LogFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\LogFile.aspx.vb">
+      <DependentUpon>LogFile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="admin\MstShisetsu.aspx.designer.vb">
       <DependentUpon>MstShisetsu.aspx</DependentUpon>
     </Compile>
@@ -333,6 +340,7 @@
   <ItemGroup>
     <Content Include="ActiveReports.FlashViewer.Resources.swf" />
     <Content Include="ActiveReports.FlashViewer.swf" />
+    <Content Include="admin\LogFile.aspx" />
     <Content Include="admin\MstShisetsu.aspx" />
     <Content Include="admin\MstUser.aspx" />
     <Content Include="Base.Master" />

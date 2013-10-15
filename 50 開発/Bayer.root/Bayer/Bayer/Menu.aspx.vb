@@ -164,4 +164,10 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.ShisetsuKensaku_URL)
         Response.Redirect(URL.KouenkaiList)
     End Sub
+
+    '[送受信ログ照会]
+    Protected Sub BtnTorikomiLog_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTorikomiLog.Click
+
+    End Sub
+
 End Class
