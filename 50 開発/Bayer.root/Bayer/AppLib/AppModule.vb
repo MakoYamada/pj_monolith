@@ -4336,6 +4336,26 @@ Public Class AppModule
     End Sub
 
     '往路：座席区分（回答）
+    Public Shared Sub SetForm_ANS_O_SEAT_KIBOU(ByVal ANS_O_SEAT_KIBOU As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT_KIBOU, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_O_SEAT_KIBOU1(ByVal ANS_O_SEAT_KIBOU1 As String, ByRef control As DropDownList)
+        SetForm_ANS_O_SEAT(ANS_O_SEAT_KIBOU1, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_O_SEAT_KIBOU2(ByVal ANS_O_SEAT_KIBOU2 As String, ByRef control As DropDownList)
+        SetForm_ANS_O_SEAT(ANS_O_SEAT_KIBOU2, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_O_SEAT_KIBOU3(ByVal ANS_O_SEAT_KIBOU3 As String, ByRef control As DropDownList)
+        SetForm_ANS_O_SEAT(ANS_O_SEAT_KIBOU3, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_O_SEAT_KIBOU4(ByVal ANS_O_SEAT_KIBOU4 As String, ByRef control As DropDownList)
+        SetForm_ANS_O_SEAT(ANS_O_SEAT_KIBOU4, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_O_SEAT_KIBOU5(ByVal ANS_O_SEAT_KIBOU5 As String, ByRef control As DropDownList)
+        SetForm_ANS_O_SEAT(ANS_O_SEAT_KIBOU5, control)
+    End Sub
+
+    '往路：座席区分（回答）
     Public Shared Sub SetForm_ANS_O_SEAT(ByVal ANS_O_SEAT As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT, control)
     End Sub
