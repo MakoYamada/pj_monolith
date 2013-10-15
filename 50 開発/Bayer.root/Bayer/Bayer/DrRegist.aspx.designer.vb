@@ -529,31 +529,13 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_ROOM_TYPE As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''ANS_HOTEL_SMOKING_NO_MUST コントロール。
+    '''ANS_HOTEL_SMOKING コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_HOTEL_SMOKING_NO_MUST As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''ANS_HOTEL_SMOKING_NO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_HOTEL_SMOKING_NO As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''ANS_HOTEL_SMOKING_YES コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_HOTEL_SMOKING_YES As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_HOTEL_SMOKING As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_HOTEL_NOTE コントロール。
@@ -970,13 +952,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_SEAT_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label2 コントロール。
+    '''REQ_O_SEAT_KIBOU2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_O_SEAT_KIBOU2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_O_SEAT_2 コントロール。
@@ -1186,13 +1168,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_SEAT_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label3 コントロール。
+    '''REQ_O_SEAT_KIBOU3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_O_SEAT_KIBOU3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_O_SEAT_3 コントロール。
@@ -1402,13 +1384,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_SEAT_4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label4 コントロール。
+    '''REQ_O_SEAT_KIBOU4 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_O_SEAT_KIBOU4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_O_SEAT_4 コントロール。
@@ -1618,13 +1600,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_SEAT_5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label5 コントロール。
+    '''REQ_O_SEAT_KIBOU5 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_O_SEAT_KIBOU5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_O_SEAT_5 コントロール。
@@ -2050,13 +2032,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_SEAT_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label6 コントロール。
+    '''REQ_F_SEAT_KIBOU2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_F_SEAT_KIBOU2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_F_SEAT_2 コントロール。
@@ -2266,13 +2248,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_SEAT_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label7 コントロール。
+    '''REQ_F_SEAT_KIBOU3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_F_SEAT_KIBOU3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_F_SEAT_3 コントロール。
@@ -2482,13 +2464,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_SEAT_4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label8 コントロール。
+    '''REQ_F_SEAT_KIBOU4 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_F_SEAT_KIBOU4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_F_SEAT_4 コントロール。
@@ -2698,13 +2680,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_SEAT_5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label9 コントロール。
+    '''REQ_F_SEAT_KIBOU5 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_F_SEAT_KIBOU5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_F_SEAT_5 コントロール。
@@ -2725,22 +2707,22 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_F_SEAT_KIBOU5 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''REQ_F_NOTE_1 コントロール。
+    '''REQ_KOTSU_BIKO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents REQ_F_NOTE_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_KOTSU_BIKO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_F_NOTE_1 コントロール。
+    '''ANS_KOTSU_BIKO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_F_NOTE_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_KOTSU_BIKO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''FIX_RAIL_FARE コントロール。

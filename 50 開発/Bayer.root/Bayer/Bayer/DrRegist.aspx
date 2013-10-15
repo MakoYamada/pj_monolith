@@ -477,14 +477,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_HOTEL_DATE" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px">YYMMDD</asp:TextBox>
+                                Height="18px" Width="67px"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             îëêî
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_HAKUSU" runat="server" MaxLength="2" 
-                                Height="18px" Width="26px" TabIndex="22">99</asp:TextBox>
+                                Height="18px" Width="26px" TabIndex="22"></asp:TextBox>
 							&nbsp;&nbsp;îë                            
                         </td>
                     </tr>
@@ -494,14 +494,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_CHECKIN_TIME" runat="server" MaxLength="4" 
-                                Height="18px" Width="47px">1400</asp:TextBox>
+                                Height="18px" Width="47px"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             É`ÉFÉbÉNÉAÉEÉg
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_CHECKOUT_TIME" runat="server" MaxLength="4" 
-                                Height="18px" Width="47px">1200</asp:TextBox>
+                                Height="18px" Width="47px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -518,13 +518,9 @@
                             ãiâå
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_NO_MUST" runat="server" 
-                                TabIndex="25" />&nbsp;&nbsp;
-                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_NO" runat="server" 
-                                TabIndex="26" />&nbsp;&nbsp;
-                            <br />
-                            <asp:RadioButton ID="ANS_HOTEL_SMOKING_YES" runat="server" 
-                                TabIndex="27" />
+                            <asp:DropDownList ID="ANS_HOTEL_SMOKING" runat="server" TabIndex="24" 
+                                Width="344px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -895,7 +891,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label2" runat="server" ></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_KIBOU2" runat="server" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -1083,7 +1079,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label3" runat="server" ></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_KIBOU3" runat="server" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -1271,7 +1267,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label4" runat="server"></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_KIBOU4" runat="server"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -1459,7 +1455,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label5" runat="server"></asp:Label>
+							<asp:Label ID="REQ_O_SEAT_KIBOU5" runat="server"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -1835,7 +1831,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label6" runat="server" ></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_KIBOU2" runat="server" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -2023,7 +2019,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label7" runat="server" ></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_KIBOU3" runat="server" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -2211,7 +2207,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label8" runat="server" ></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_KIBOU4" runat="server" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -2399,7 +2395,7 @@
                             ç¿ê»äÛñ]
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-							<asp:Label ID="Label9" runat="server" ></asp:Label>
+							<asp:Label ID="REQ_F_SEAT_KIBOU5" runat="server" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             ç¿ê»ãÊï™
@@ -2439,12 +2435,12 @@
                     </tr>
                     <tr>
                         <td align="left" valign="top" class="TdItem" rowspan="4">
-                            <asp:TextBox ID="REQ_F_NOTE_1" runat="server" MaxLength="255" ReadOnly="True" 
+                            <asp:TextBox ID="REQ_KOTSU_BIKO" runat="server" MaxLength="255" ReadOnly="True" 
                                 TextMode="MultiLine" Height="68px" Width="445px" TabIndex="167" 
                                 BorderStyle="None"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="4">
-                            <asp:TextBox ID="ANS_F_NOTE_1" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="ANS_KOTSU_BIKO" runat="server" MaxLength="255" 
                                 TextMode="MultiLine" Height="68px" Width="445px" TabIndex="168"></asp:TextBox>                            
                         </td>
                     </tr>

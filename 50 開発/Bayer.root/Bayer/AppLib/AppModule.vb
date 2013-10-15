@@ -2590,24 +2590,14 @@ Public Class AppModule
         Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_5)
     End Function
 
-    '往路備考（依頼）
-    Public Shared Function GetName_REQ_O_NOTE_1(ByVal REQ_O_NOTE_1 As String) As String
-        Return REQ_O_NOTE_1
+    '交通備考（依頼）
+    Public Shared Function GetName_REQ_KOTSU_BIKO(ByVal REQ_KOTSU_BIKO As String) As String
+        Return REQ_KOTSU_BIKO
     End Function
 
-    '往路備考（回答）
-    Public Shared Function GetName_ANS_O_NOTE_1(ByVal ANS_O_NOTE_1 As String) As String
-        Return ANS_O_NOTE_1
-    End Function
-
-    '復路備考（依頼）
-    Public Shared Function GetName_REQ_F_NOTE_1(ByVal REQ_F_NOTE_1 As String) As String
-        Return REQ_F_NOTE_1
-    End Function
-
-    '復路備考（回答）
-    Public Shared Function GetName_ANS_F_NOTE_1(ByVal ANS_F_NOTE_1 As String) As String
-        Return ANS_F_NOTE_1
+    '交通備考（回答）
+    Public Shared Function GetName_ANS_KOTSU_BIKO(ByVal ANS_KOTSU_BIKO As String) As String
+        Return ANS_KOTSU_BIKO
     End Function
 
     '【確定】JR・鉄道代金
