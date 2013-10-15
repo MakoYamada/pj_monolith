@@ -23,9 +23,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportSanka", "ImportSanka\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportSeisan", "ExportSeisan\ExportSeisan.vbproj", "{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportSeisan", "ImportSeisan\ImportSeisan.vbproj", "{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}"
+EndProject
 Global
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 12
+		SccNumberOfProjects = 13
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = AppLib\\AppLib.vbproj
 		SccLocalPath1 = .
@@ -60,6 +62,9 @@ Global
 		SccProjectUniqueName11 = ExportSeisan\\ExportSeisan.vbproj
 		SccLocalPath11 = .
 		SccProjectFilePathRelativizedFromConnection11 = ExportSeisan\\
+		SccProjectUniqueName12 = ImportSeisan\\ImportSeisan.vbproj
+		SccLocalPath12 = .
+		SccProjectFilePathRelativizedFromConnection12 = ImportSeisan\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +115,10 @@ Global
 		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
