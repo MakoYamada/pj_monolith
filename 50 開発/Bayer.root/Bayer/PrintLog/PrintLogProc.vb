@@ -77,7 +77,7 @@ Public Class PrintLogProc
     End Sub
 
     ''' <summary>
-    ''' ジョブ開始のログを出力する
+    ''' ジョブ開始のログを出力する
     ''' </summary>
     ''' <param name="jobName"></param>
     ''' <remarks></remarks>
@@ -86,7 +86,7 @@ Public Class PrintLogProc
     End Sub
 
     ''' <summary>
-    ''' ジョブ終了のログを出力する
+    ''' ジョブ終了のログを出力する
     ''' </summary>
     ''' <param name="jobName"></param>
     ''' <remarks></remarks>
@@ -95,7 +95,7 @@ Public Class PrintLogProc
     End Sub
 
     ''' <summary>
-    ''' ジョブの実行に関するログを出力する。
+    ''' ジョブの実行に関するログを出力する。
     ''' </summary>
     ''' <param name="jobName"></param>
     ''' <param name="msg">メッセージ</param>
@@ -105,8 +105,7 @@ Public Class PrintLogProc
     End Sub
 
     ''' <summary>
-    ''' ジョブエラーのログを出力する
-    ''' </summary>
+    ''' ジョブエラーのログを出力する    ''' </summary>
     ''' <param name="jobName"></param>
     ''' <param name="errroNaiyo"></param>
     ''' <remarks></remarks>
@@ -115,7 +114,7 @@ Public Class PrintLogProc
     End Sub
 
     ''' <summary>
-    ''' メールにて通知を行う。
+    ''' メールにて通知を行う。
     ''' </summary>
     ''' <param name="jobName"></param>
     ''' <param name="errroNaiyo"></param>
