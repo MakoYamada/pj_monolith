@@ -16,9 +16,9 @@
 							<asp:TextBox ID="JokenUSER_NAME" runat="server" Width="160px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							権限
-							<asp:RadioButton ID="JokenKENGEN_1" runat="server" Text="？？？？？" GroupName="KENGEN" />
+							<asp:RadioButton ID="JokenKENGEN_Admin" runat="server" Text="管理者" GroupName="KENGEN" />
 							&nbsp;&nbsp;
-							<asp:RadioButton ID="JokenKENGEN_2" runat="server" Text="？？？？？" GroupName="KENGEN" />
+							<asp:RadioButton ID="JokenKENGEN_User" runat="server" Text="一般ユーザー" GroupName="KENGEN" />
 							&nbsp;&nbsp;&nbsp;
 							<asp:CheckBox ID="JokenSTOP_FLG" runat="server" Text="利用停止" />
 						</td>
@@ -89,9 +89,9 @@
 							&nbsp;
 						</td>
 						<td align="left" class="TdItem">
-							<asp:RadioButton ID="KENGEN_1" runat="server" Text="権限その１" GroupName="KENGEN"></asp:RadioButton>
+							<asp:RadioButton ID="Admin" runat="server" Text="管理者" GroupName="KENGEN"></asp:RadioButton>
 							&nbsp;&nbsp;
-							<asp:RadioButton ID="KENGEN_2" runat="server" Text="権限その２" GroupName="KENGEN"></asp:RadioButton>
+							<asp:RadioButton ID="User" runat="server" Text="一般ユーザー" GroupName="KENGEN"></asp:RadioButton>
 						</td>
 					</tr>
 					<tr>

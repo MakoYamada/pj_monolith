@@ -42,7 +42,7 @@ Partial Public Class LogFile
         'マスターページ設定
         With Me.Master
             .HideLoginUser = True   'QQQ
-            .PageTitle = "送受信ログ参照"
+            .PageTitle = "送受信ログ照会"
         End With
 
     End Sub
@@ -199,7 +199,11 @@ Partial Public Class LogFile
         End If
 
         If Not CmnCheck.IsInput(Me.JokenEXPORTIMPORT) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenSYORI_NAME) Then
+           Not CmnCheck.IsInput(Me.JokenSYORI_NAME) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenINPUT_DATE_YYYY) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenINPUT_DATE_MM) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenINPUT_DATE_DD) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenSTATUS) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
             Return False
         End If

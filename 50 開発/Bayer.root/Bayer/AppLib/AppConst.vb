@@ -440,14 +440,14 @@ Public Class AppConst
 
     Public Class MS_USER
         Public Class KENGEN
-            '????
+            'å†å¿
             Public Class Code
-                Public Const KENGEN_1 As String = "1"
-                Public Const KENGEN_2 As String = "2"
+                Public Const Admin As String = "1"
+                Public Const User As String = "2"
             End Class
             Public Class Name
-                Public Const KENGEN_1 As String = "å†å¿ÇªÇÃÇP"
-                Public Const KENGEN_2 As String = "å†å¿ÇªÇÃÇQ"
+                Public Const Admin As String = "ä«óùé“"
+                Public Const User As String = "àÍî ÉÜÅ[ÉUÅ["
             End Class
         End Class
     End Class

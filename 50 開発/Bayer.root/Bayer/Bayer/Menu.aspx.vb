@@ -3,6 +3,8 @@ Imports AppLib
 Partial Public Class Menu1
     Inherits WebBase
 
+    Private MS_USER As TableDef.MS_USER.DataStruct
+
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
     End Sub
 
@@ -10,17 +12,15 @@ Partial Public Class Menu1
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
-        'セッションを変数に格納
-        'If Not SetSession() Then
-        '    Response.Redirect(URL.TimeOut)
-        'End If
+        'セッションを変数に格納        If Not SetSession() Then
+            Response.Redirect(URL.TimeOut)
+        End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
-            'InitControls()
+            '画面項目 初期化            InitControls()
 
-            ''画面項目表示
-            'SetForm()
+            '画面項目表示
+            SetForm()
         End If
 
         'マスターページ設定
@@ -32,6 +32,12 @@ Partial Public Class Menu1
     End Sub
 
     'セッションを変数に格納    Private Function SetSession() As Boolean
+        Try
+            MS_USER = Session.Item(SessionDef.MS_USER)
+            If IsNothing(MS_USER) Then Return False
+        Catch ex As Exception
+            Return False
+        End Try
         Return True
     End Function
 
@@ -44,6 +50,15 @@ Partial Public Class Menu1
 
     '画面項目 表示
     Private Sub SetForm()
+        If MS_USER.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
+            CmnModule.SetEnabled(Me.BtnMstUser, True)
+            CmnModule.SetEnabled(Me.BtnLogFile, True)
+            CmnModule.SetEnabled(Me.BtnLogSousa, True)
+        Else
+            CmnModule.SetEnabled(Me.BtnMstUser, False)
+            CmnModule.SetEnabled(Me.BtnLogFile, False)
+            CmnModule.SetEnabled(Me.BtnLogSousa, False)
+        End If
     End Sub
 
     ''[参加者一覧]
@@ -110,7 +125,7 @@ Partial Public Class Menu1
     End Sub
 
     '[ユーザマスタ]
-    Protected Sub BtnUser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnUser.Click
+    Protected Sub BtnMstUser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstUser.Click
         Session.Remove(SessionDef.Joken)
         Session.Remove(SessionDef.MS_USER)
         Session.Remove(SessionDef.SEQ)
@@ -119,7 +134,7 @@ Partial Public Class Menu1
     End Sub
 
     '[施設マスタ]
-    Protected Sub BtnShisetsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnShisetsu.Click
+    Protected Sub BtnMstShisetsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstShisetsu.Click
         Session.Remove(SessionDef.Joken)
         Session.Remove(SessionDef.MS_SHISETSU)
         Session.Remove(SessionDef.SEQ)
@@ -172,6 +187,15 @@ Partial Public Class Menu1
         Session.Item(SessionDef.Joken) = Joken
         Session.Remove(SessionDef.TBL_LOG)
         Response.Redirect(URL.LogFile)
+    End Sub
+
+    '[操作ログ照会]
+    Protected Sub BtnLogSousa_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnLogSousa.Click
+        Dim Joken As TableDef.Joken.DataStruct = Nothing
+        Joken.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.GAMEN
+        Session.Item(SessionDef.Joken) = Joken
+        Session.Remove(SessionDef.TBL_LOG)
+        Response.Redirect(URL.LogSousa)
     End Sub
 
 End Class

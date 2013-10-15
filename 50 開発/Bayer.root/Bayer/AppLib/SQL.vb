@@ -3166,7 +3166,13 @@ Public Class SQL
         End Function
 
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
-            Dim strSQL As String = SQL_SELECT
+            Dim strSQL As String = ""
+            strSQL &= "SELECT"
+            strSQL &= " TBL_LOG.*"
+            strSQL &= ",MS_USER.USER_NAME"
+            strSQL &= " FROM MS_USER"
+            strSQL &= " RIGHT JOIN TBL_LOG"
+            strSQL &= " ON MS_USER.LOGIN_ID=TBL_LOG.INPUT_USER"
 
             strSQL &= " WHERE 1=1"
 
@@ -3190,7 +3196,7 @@ Public Class SQL
                 strSQL &= " AND TBL_LOG.STATUS=N'" & CmnDb.SqlString(Joken.STATUS) & "'"
             End If
 
-            If Trim(Joken.EXPORTIMPORT) <> "" Then
+            If Trim(Joken.SYORI_KBN) = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH AndAlso Trim(Joken.EXPORTIMPORT) <> "" Then
                 If Joken.EXPORTIMPORT = AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT Then
                     strSQL &= " AND TBL_LOG.SYORI_NAME LIKE N'" & "Export%'"
                 ElseIf Joken.EXPORTIMPORT = AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT Then

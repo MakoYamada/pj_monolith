@@ -88,22 +88,22 @@ Partial Public Class Menu1
     Protected WithEvents BtnBentoList As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnShisetsu コントロール。
+    '''BtnMstShisetsu コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnShisetsu As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnMstShisetsu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnUser コントロール。
+    '''BtnMstUser コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnUser As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnMstUser As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnLogFile コントロール。
@@ -115,13 +115,13 @@ Partial Public Class Menu1
     Protected WithEvents BtnLogFile As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnLog コントロール。
+    '''BtnLogSousa コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnLog As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnLogSousa As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnSeisan コントロール。

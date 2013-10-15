@@ -832,6 +832,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_LOG.Column.TABLE_NAME.ToUpper Then TBL_LOG.TABLE_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_LOG.Column.STATUS.ToUpper Then TBL_LOG.STATUS = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_LOG.Column.NOTE.ToUpper Then TBL_LOG.NOTE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_LOG.Column.USER_NAME.ToUpper Then TBL_LOG.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_LOG
@@ -4021,10 +4022,10 @@ Public Class AppModule
     'ユーザマスタ：権限
     Public Shared Function GetName_KENGEN(ByVal KENGEN As String) As String
         Select Case KENGEN
-            Case AppConst.MS_USER.KENGEN.Code.KENGEN_1, AppConst.MS_USER.KENGEN.Name.KENGEN_1
-                Return AppConst.MS_USER.KENGEN.Name.KENGEN_1
-            Case AppConst.MS_USER.KENGEN.Code.KENGEN_2, AppConst.MS_USER.KENGEN.Name.KENGEN_2
-                Return AppConst.MS_USER.KENGEN.Name.KENGEN_2
+            Case AppConst.MS_USER.KENGEN.Code.Admin, AppConst.MS_USER.KENGEN.Name.Admin
+                Return AppConst.MS_USER.KENGEN.Name.Admin
+            Case AppConst.MS_USER.KENGEN.Code.User, AppConst.MS_USER.KENGEN.Name.User
+                Return AppConst.MS_USER.KENGEN.Name.User
 
             Case Else
                 Return ""
@@ -4063,6 +4064,17 @@ Public Class AppModule
             Case Else
                 Return ""
         End Select
+    End Function
+
+    'ログテーブル：ログイン者
+    Public Shared Function GetName_INPUT_USER(ByVal INPUT_USER As String, ByVal USER_NAME As String) As String
+        If Trim(CmnModule.ClearHtmlSpace(INPUT_USER)) = "" AndAlso Trim(CmnModule.ClearHtmlSpace(USER_NAME)) = "" Then
+            Return ""
+        ElseIf Trim(CmnModule.ClearHtmlSpace(INPUT_USER)) <> "" AndAlso Trim(CmnModule.ClearHtmlSpace(USER_NAME)) <> "" Then
+            Return Trim(CmnModule.ClearHtmlSpace(INPUT_USER)) & "：" & Trim(CmnModule.ClearHtmlSpace(USER_NAME))
+        Else
+            Return Trim(CmnModule.ClearHtmlSpace(INPUT_USER) & CmnModule.ClearHtmlSpace(USER_NAME))
+        End If
     End Function
 
 
@@ -5007,16 +5019,16 @@ Public Class AppModule
     End Sub
 
     'ユーザマスタ：権限
-    Public Shared Sub SetForm_KENGEN(ByVal KENGEN As String, ByRef control_KENGEN_1 As RadioButton, ByRef control_KENGEN_2 As RadioButton)
-        If KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_1 Then
-            control_KENGEN_1.Checked = True
-            control_KENGEN_2.Checked = False
-        ElseIf KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_2 Then
-            control_KENGEN_1.Checked = False
-            control_KENGEN_2.Checked = True
+    Public Shared Sub SetForm_KENGEN(ByVal KENGEN As String, ByRef control_Admin As RadioButton, ByRef control_User As RadioButton)
+        If KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
+            control_Admin.Checked = True
+            control_User.Checked = False
+        ElseIf KENGEN = AppConst.MS_USER.KENGEN.Code.User Then
+            control_Admin.Checked = False
+            control_User.Checked = True
         Else
-            control_KENGEN_1.Checked = False
-            control_KENGEN_2.Checked = False
+            control_Admin.Checked = False
+            control_User.Checked = False
         End If
     End Sub
 
@@ -6644,11 +6656,11 @@ Public Class AppModule
     End Function
 
     'ユーザマスタ：権限
-    Public Shared Function GetValue_KENGEN(ByVal KENGEN_1 As RadioButton, ByVal KENGEN_2 As RadioButton) As String
-        If KENGEN_1.Checked = True Then
-            Return AppConst.MS_USER.KENGEN.Code.KENGEN_1
-        ElseIf KENGEN_2.Checked = True Then
-            Return AppConst.MS_USER.KENGEN.Code.KENGEN_2
+    Public Shared Function GetValue_KENGEN(ByVal Admin As RadioButton, ByVal User As RadioButton) As String
+        If Admin.Checked = True Then
+            Return AppConst.MS_USER.KENGEN.Code.Admin
+        ElseIf User.Checked = True Then
+            Return AppConst.MS_USER.KENGEN.Code.User
         Else
             Return ""
         End If

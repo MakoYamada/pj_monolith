@@ -207,7 +207,7 @@ Partial Public Class MstUser
                 Session.Item(SessionDef.SEQ) = SEQ
                 Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
                 Session.Item(SessionDef.SYSTEM_ID) = MS_USER(SEQ).SYSTEM_ID
-                 
+
                 Me.DivMessage.Visible = False
                 Me.TblRegist.Visible = True
 
@@ -224,12 +224,12 @@ Partial Public Class MstUser
         Joken = Nothing
         Joken.LOGIN_ID = Trim(Me.JokenLOGIN_ID.Text)
         Joken.USER_NAME = Trim(Me.JokenUSER_NAME.Text)
-        If CmnCheck.IsInput(Me.JokenKENGEN_1) OrElse CmnCheck.IsInput(Me.JokenKENGEN_2) Then
-            If CmnCheck.IsInput(Me.JokenKENGEN_1) AndAlso Not CmnCheck.IsInput(Me.JokenKENGEN_2) Then
-                Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_1
+        If CmnCheck.IsInput(Me.JokenKENGEN_Admin) OrElse CmnCheck.IsInput(Me.JokenKENGEN_User) Then
+            If CmnCheck.IsInput(Me.JokenKENGEN_Admin) AndAlso Not CmnCheck.IsInput(Me.JokenKENGEN_User) Then
+                Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin
             End If
-            If Not CmnCheck.IsInput(Me.JokenKENGEN_1) AndAlso CmnCheck.IsInput(Me.JokenKENGEN_2) Then
-                Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.KENGEN_2
+            If Not CmnCheck.IsInput(Me.JokenKENGEN_Admin) AndAlso CmnCheck.IsInput(Me.JokenKENGEN_User) Then
+                Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.User
             End If
         End If
         If CmnCheck.IsInput(Me.JokenSTOP_FLG) Then
@@ -248,8 +248,8 @@ Partial Public Class MstUser
 
         CmnModule.ClearControl(Me.JokenLOGIN_ID)
         CmnModule.ClearControl(Me.JokenUSER_NAME)
-        CmnModule.ClearControl(Me.JokenKENGEN_1)
-        CmnModule.ClearControl(Me.JokenKENGEN_2)
+        CmnModule.ClearControl(Me.JokenKENGEN_Admin)
+        CmnModule.ClearControl(Me.JokenKENGEN_User)
         CmnModule.ClearControl(Me.JokenSTOP_FLG)
 
         '画面項目表示
@@ -266,8 +266,8 @@ Partial Public Class MstUser
 
         If Not CmnCheck.IsInput(Me.JokenLOGIN_ID) AndAlso _
            Not CmnCheck.IsInput(Me.JokenUSER_NAME) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenKENGEN_1) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenKENGEN_2) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenKENGEN_Admin) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenKENGEN_User) AndAlso _
            Not CmnCheck.IsInput(Me.JokenSTOP_FLG) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
             Return False
@@ -306,7 +306,7 @@ Partial Public Class MstUser
             AppModule.SetForm_LOGIN_ID(MS_USER(SEQ).LOGIN_ID, Me.LOGIN_ID)
             AppModule.SetForm_PASSWORD(MS_USER(SEQ).PASSWORD, Me.PASSWORD)
             AppModule.SetForm_USER_NAME(MS_USER(SEQ).USER_NAME, Me.USER_NAME)
-            AppModule.SetForm_KENGEN(MS_USER(SEQ).KENGEN, Me.KENGEN_1, Me.KENGEN_2)
+            AppModule.SetForm_KENGEN(MS_USER(SEQ).KENGEN, Me.Admin, Me.User)
             AppModule.SetForm_STOP_FLG(MS_USER(SEQ).STOP_FLG, Me.STOP_FLG)
             Me.SYSTEM_ID.Value = MS_USER(SEQ).SYSTEM_ID
         Else
@@ -382,7 +382,7 @@ Partial Public Class MstUser
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.KENGEN_1, Me.KENGEN_2) Then
+        If Not CmnCheck.IsInput(Me.Admin, Me.User) Then
             CmnModule.AlertMessage(MessageDef.Error.MustSelect(TableDef.MS_USER.Name.KENGEN), Me)
             Return False
         End If
@@ -397,7 +397,7 @@ Partial Public Class MstUser
         End If
         MS_USER(SEQ).PASSWORD = AppModule.GetValue_PASSWORD(Me.PASSWORD)
         MS_USER(SEQ).USER_NAME = AppModule.GetValue_USER_NAME(Me.USER_NAME)
-        MS_USER(SEQ).KENGEN = AppModule.GetValue_KENGEN(Me.KENGEN_1, Me.KENGEN_2)
+        MS_USER(SEQ).KENGEN = AppModule.GetValue_KENGEN(Me.Admin, Me.User)
         MS_USER(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
     End Sub
 

@@ -75,12 +75,12 @@
 					</tr>					
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnShisetsu" runat="server" Text="施設マスタ" Width="200px" 
+							<asp:Button ID="BtnMstShisetsu" runat="server" Text="施設マスタ" Width="200px" 
                                 CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnUser" runat="server" Text="ユーザマスタ" Width="200px" 
+							<asp:Button ID="BtnMstUser" runat="server" Text="ユーザマスタ" Width="200px" 
                                 CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
@@ -90,7 +90,7 @@
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnLog" runat="server" Text="操作ログ" Width="200px" 
+							<asp:Button ID="BtnLogSousa" runat="server" Text="操作ログ照会" Width="200px" 
                                 CssClass="Button" />
 							<div class="FontSize1" style="height: 10px; display: none;"></div>
 						</td>

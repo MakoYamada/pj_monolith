@@ -34,22 +34,22 @@ Partial Public Class MstUser
     Protected WithEvents JokenUSER_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenKENGEN_1 コントロール。
+    '''JokenKENGEN_Admin コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenKENGEN_1 As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents JokenKENGEN_Admin As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''JokenKENGEN_2 コントロール。
+    '''JokenKENGEN_User コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenKENGEN_2 As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents JokenKENGEN_User As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
     '''JokenSTOP_FLG コントロール。
@@ -151,22 +151,22 @@ Partial Public Class MstUser
     Protected WithEvents USER_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KENGEN_1 コントロール。
+    '''Admin コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KENGEN_1 As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents Admin As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''KENGEN_2 コントロール。
+    '''User コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KENGEN_2 As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents User As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
     '''STOP_FLG コントロール。

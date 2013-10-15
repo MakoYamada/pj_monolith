@@ -2179,6 +2179,7 @@
             Public TABLE_NAME As String
             Public STATUS As String
             Public NOTE As String
+            Public USER_NAME As String
         End Structure
         Public Class Column
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -2188,6 +2189,7 @@
             Public Const TABLE_NAME As String = "TABLE_NAME"
             Public Const STATUS As String = "STATUS"
             Public Const NOTE As String = "NOTE"
+            Public Const USER_NAME As String = "USER_NAME"
         End Class
         Public Class Name
             Public Const INPUT_DATE As String = "登録日時"
@@ -2197,6 +2199,7 @@
             Public Const TABLE_NAME As String = "テーブル名"
             Public Const STATUS As String = "ステータス"
             Public Const NOTE As String = "備考"
+            Public Const USER_NAME As String = "ログイン者"
         End Class
     End Class
 
