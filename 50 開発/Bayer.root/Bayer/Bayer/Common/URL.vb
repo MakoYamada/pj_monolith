@@ -26,5 +26,6 @@ Public Class URL
     Public Shared ShisetsuKensaku As String = WebConfig.Site.URL & "ShisetsuKensaku.aspx"
     Public Shared MstUser As String = WebConfig.Site.URL & "admin/MstUser.aspx"
     Public Shared MstShisetsu As String = WebConfig.Site.URL & "admin/MstShisetsu.aspx"
+    Public Shared LogFile As String = WebConfig.Site.URL & "admin/LogFile.aspx"
 
 End Class

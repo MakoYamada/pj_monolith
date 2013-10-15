@@ -106,13 +106,13 @@ Partial Public Class Menu1
     Protected WithEvents BtnUser As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTorikomiLog コントロール。
+    '''BtnLogFile コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTorikomiLog As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnLogFile As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnLog コントロール。

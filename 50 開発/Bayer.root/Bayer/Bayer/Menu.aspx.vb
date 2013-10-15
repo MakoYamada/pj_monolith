@@ -166,8 +166,10 @@ Partial Public Class Menu1
     End Sub
 
     '[送受信ログ照会]
-    Protected Sub BtnTorikomiLog_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTorikomiLog.Click
-
+    Protected Sub BtnLogFile_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnLogFile.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_LOG)
+        Response.Redirect(URL.LogFile)
     End Sub
 
 End Class
