@@ -96,15 +96,15 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right" style="width:70px">
-                                        BU
+                                    <td align="right">
+                                        手配担当者<br />BU
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenBU" runat="server" Width="333px"
                                             MaxLength="40" TabIndex="12"></asp:TextBox>
                                     </td>
                                     <td align="right">
-                                        エリア
+                                        手配担当者<br />エリア
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenTEHAI_TANTO_AREA" runat="server" Width="333px"
@@ -113,7 +113,7 @@
                                 </tr>
                                <tr>
                                     <td align="right">
-                                        TOPTOUR担当者                                        
+                                        トップツアー<br />担当者                                        
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenTTANTO_ID" runat="server" Width="94px" MaxLength="10" 

@@ -3,11 +3,14 @@ Imports AppLib
 Partial Public Class DrRegist
     Inherits WebBase
 
-    'Private MS_DR As TableDef.MS_DR
-    'Private TBL_DR() As TableDef.TBL_DR.DataStruct
+    Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private DSP_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private SEQ As Integer
+    Private Popup As Boolean = False
+
     Private Const IMG_CLOSE = "~/Images/button-cross-alt.png"
     Private Const IMG_OPEN = "~/Images/button-tick-alt.png"
-    Private SEQ As Integer = 0
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
         'Session.Item(SessionDef.TBL_DR) = TBL_DR
@@ -18,19 +21,56 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.LoginID) = "QQQ"
 
         '共通チェック
-        MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
+        If Not Session.Item(SessionDef.DrRireki) Then
+            '呼び元が新着一覧・検索の場合
+            MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+            Popup = False
+        Else
+            '呼び元が履歴一覧・手配画面の場合
+            MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
+            Popup = True
+        End If
 
-        'セッションを変数に格納
+        'セッションを変数に格納
         If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
+            '画面項目 初期化
             InitControls()
 
             '画面項目表示
             SetForm()
+
+            '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
+            If URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
+                URL.DrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
+                BtnSubmit.Visible = True
+                BtnNozomi.Visible = True
+            Else
+                BtnSubmit.Visible = False
+                BtnNozomi.Visible = False
+            End If
+
+            '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
+            If Popup Then
+                BtnRireki.Visible = False
+                BtnSubmit.Visible = False
+                BtnNozomi.Visible = False
+            Else
+                BtnRireki.Visible = True
+                BtnSubmit.Visible = True
+                BtnNozomi.Visible = True
+            End If
+
+            '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
+            If ChkNewData() Then
+                BtnNozomi.Enabled = True
+            Else
+                BtnNozomi.Enabled = False
+            End If
+
         Else
             Me.ANS_HOTEL_NAME.Text = Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME)
             Me.ANS_HOTEL_ADDRESS.Text = Session.Item(SessionDef.HotelKensaku_ADDRESS2)
@@ -39,7 +79,7 @@ Partial Public Class DrRegist
             Me.ANS_CHECKOUT_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKOUT_TIME)
         End If
 
-        'マスターページ設定
+        'マスターページ設定
         With Me.Master
             .PageTitle = "宿泊・交通・タクシーチケット　手配依頼"
             .HideLogout = False
@@ -49,22 +89,27 @@ Partial Public Class DrRegist
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
-        'Try
-        '    MS_DR = Session.Item(SessionDef.MS_DR)
-        '    If IsNothing(MS_DR) Then Return False
-        'Catch ex As Exception
-        '    Return False
-        'End Try
-        'Try
-        '    TBL_DR = Session.Item(SessionDef.TBL_DR)
-        '    If IsNothing(TBL_DR) Then
-        '        If MyModule.IsInsertMode() Then
-        '            ReDim TBL_DR(0)
-        '        End If
-        '    End If
-        'Catch ex As Exception
-        '    Return False
-        'End Try
+        Try
+            If Popup Then
+                TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+                DSP_KOTSUHOTEL = Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL)
+            Else
+                TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+                DSP_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+            End If
+            If IsNothing(DSP_KOTSUHOTEL) Then Return False
+        Catch ex As Exception
+            Return False
+        End Try
+        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+            Return False
+        Else
+            If Popup Then
+                SEQ = Session.Item(SessionDef.DrRireki_SEQ)
+            Else
+                SEQ = Session.Item(SessionDef.SEQ)
+            End If
+        End If
         Return True
     End Function
 
@@ -94,110 +139,197 @@ Partial Public Class DrRegist
         BtnTAXI_1.ImageUrl = IMG_OPEN
         TB_TAXI_1.Visible = False
 
-        '共通コントロール
-        'プルダウン設定
-        'AppModule.SetDropDownList_PREFECTURES_NO(Me.PREFECTURES_NO, MyBase.DbConnection)
-        'AppModule.SetDropDownList_O_DATE_1(Me.O_DATE_1, MyBase.DbConnection)
-        'AppModule.SetDropDownList_O_SEAT_1(Me.O_SEAT_1)
-        'AppModule.SetDropDownList_O_DATE_2(Me.O_DATE_2, MyBase.DbConnection)
-        'AppModule.SetDropDownList_O_SEAT_2(Me.O_SEAT_2)
-        'AppModule.SetDropDownList_O_DATE_3(Me.O_DATE_3, MyBase.DbConnection)
-        'AppModule.SetDropDownList_O_SEAT_3(Me.O_SEAT_3)
-        'AppModule.SetDropDownList_F_DATE_1(Me.F_DATE_1, MyBase.DbConnection)
-        'AppModule.SetDropDownList_F_SEAT_1(Me.F_SEAT_1)
-        'AppModule.SetDropDownList_F_DATE_2(Me.F_DATE_2, MyBase.DbConnection)
-        'AppModule.SetDropDownList_F_SEAT_2(Me.F_SEAT_2)
-        'AppModule.SetDropDownList_F_DATE_3(Me.F_DATE_3, MyBase.DbConnection)
-        'AppModule.SetDropDownList_F_SEAT_3(Me.F_SEAT_3)
-        'AppModule.SetDropDownList_SEND_SAKI(Me.SEND_SAKI, Session.Item(SessionDef.UserType))
-        '
-        'If Session.Item(SessionDef.UserType) = AppConst.UserType.Admin Then
-        '    AppModule.SetDropDownList_O_SEATCLASS_1(Me.O_SEATCLASS_1)
-        '    AppModule.SetDropDownList_O_SEATCLASS_2(Me.O_SEATCLASS_2)
-        '    AppModule.SetDropDownList_O_SEATCLASS_3(Me.O_SEATCLASS_3)
-        '    AppModule.SetDropDownList_F_SEATCLASS_1(Me.F_SEATCLASS_1)
-        '    AppModule.SetDropDownList_F_SEATCLASS_2(Me.F_SEATCLASS_2)
-        '    AppModule.SetDropDownList_F_SEATCLASS_3(Me.F_SEATCLASS_3)
-        'End If
+        'プルダウン設定
+        AppModule.SetDropDownList_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
+        AppModule.SetDropDownList_ANS_STATUS_HOTEL(Me.ANS_STATUS_HOTEL)
+        AppModule.SetDropDownList_ANS_ROOM_TYPE(Me.ANS_ROOM_TYPE)
+        AppModule.SetDropDownList_ANS_O_STATUS_1(Me.ANS_O_STATUS_1)
+        AppModule.SetDropDownList_ANS_O_STATUS_2(Me.ANS_O_STATUS_2)
+        AppModule.SetDropDownList_ANS_O_STATUS_3(Me.ANS_O_STATUS_3)
+        AppModule.SetDropDownList_ANS_O_STATUS_4(Me.ANS_O_STATUS_4)
+        AppModule.SetDropDownList_ANS_O_STATUS_5(Me.ANS_O_STATUS_5)
+        AppModule.SetDropDownList_ANS_F_STATUS_1(Me.ANS_F_STATUS_1)
+        AppModule.SetDropDownList_ANS_F_STATUS_2(Me.ANS_F_STATUS_2)
+        AppModule.SetDropDownList_ANS_F_STATUS_3(Me.ANS_F_STATUS_3)
+        AppModule.SetDropDownList_ANS_F_STATUS_4(Me.ANS_F_STATUS_4)
+        AppModule.SetDropDownList_ANS_F_STATUS_5(Me.ANS_F_STATUS_5)
+        AppModule.SetDropDownList_ANS_O_KOTSUKIKAN_1(Me.ANS_O_KOTSUKIKAN_1)
+        AppModule.SetDropDownList_ANS_O_KOTSUKIKAN_2(Me.ANS_O_KOTSUKIKAN_2)
+        AppModule.SetDropDownList_ANS_O_KOTSUKIKAN_3(Me.ANS_O_KOTSUKIKAN_3)
+        AppModule.SetDropDownList_ANS_O_KOTSUKIKAN_4(Me.ANS_O_KOTSUKIKAN_4)
+        AppModule.SetDropDownList_ANS_O_KOTSUKIKAN_5(Me.ANS_O_KOTSUKIKAN_5)
+        AppModule.SetDropDownList_ANS_F_KOTSUKIKAN_1(Me.ANS_F_KOTSUKIKAN_1)
+        AppModule.SetDropDownList_ANS_F_KOTSUKIKAN_2(Me.ANS_F_KOTSUKIKAN_2)
+        AppModule.SetDropDownList_ANS_F_KOTSUKIKAN_3(Me.ANS_F_KOTSUKIKAN_3)
+        AppModule.SetDropDownList_ANS_F_KOTSUKIKAN_4(Me.ANS_F_KOTSUKIKAN_4)
+        AppModule.SetDropDownList_ANS_F_KOTSUKIKAN_5(Me.ANS_F_KOTSUKIKAN_5)
+        AppModule.SetDropDownList_ANS_O_SEAT_1(Me.ANS_O_SEAT_1)
+        AppModule.SetDropDownList_ANS_O_SEAT_2(Me.ANS_O_SEAT_2)
+        AppModule.SetDropDownList_ANS_O_SEAT_3(Me.ANS_O_SEAT_3)
+        AppModule.SetDropDownList_ANS_O_SEAT_4(Me.ANS_O_SEAT_4)
+        AppModule.SetDropDownList_ANS_O_SEAT_5(Me.ANS_O_SEAT_5)
+        AppModule.SetDropDownList_ANS_F_SEAT_1(Me.ANS_F_SEAT_1)
+        AppModule.SetDropDownList_ANS_F_SEAT_2(Me.ANS_F_SEAT_2)
+        AppModule.SetDropDownList_ANS_F_SEAT_3(Me.ANS_F_SEAT_3)
+        AppModule.SetDropDownList_ANS_F_SEAT_4(Me.ANS_F_SEAT_4)
+        AppModule.SetDropDownList_ANS_F_SEAT_5(Me.ANS_F_SEAT_5)
+        AppModule.SetDropDownList_ANS_F_SEAT_5(Me.ANS_F_SEAT_5)
+        AppModule.SetDropDownList_ANS_O_SEAT_KIBOU_1(Me.ANS_O_SEAT_KIBOU1)
+        AppModule.SetDropDownList_ANS_O_SEAT_KIBOU_2(Me.ANS_O_SEAT_KIBOU2)
+        AppModule.SetDropDownList_ANS_O_SEAT_KIBOU_3(Me.ANS_O_SEAT_KIBOU3)
+        AppModule.SetDropDownList_ANS_O_SEAT_KIBOU_4(Me.ANS_O_SEAT_KIBOU4)
+        AppModule.SetDropDownList_ANS_O_SEAT_KIBOU_5(Me.ANS_O_SEAT_KIBOU5)
+        AppModule.SetDropDownList_ANS_F_SEAT_KIBOU_1(Me.ANS_F_SEAT_KIBOU1)
+        AppModule.SetDropDownList_ANS_F_SEAT_KIBOU_2(Me.ANS_F_SEAT_KIBOU2)
+        AppModule.SetDropDownList_ANS_F_SEAT_KIBOU_3(Me.ANS_F_SEAT_KIBOU3)
+        AppModule.SetDropDownList_ANS_F_SEAT_KIBOU_4(Me.ANS_F_SEAT_KIBOU4)
+        AppModule.SetDropDownList_ANS_F_SEAT_KIBOU_5(Me.ANS_F_SEAT_KIBOU5)
+        AppModule.SetDropDownList_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
+        AppModule.SetDropDownList_ANS_MR_f_TEHAI(Me.ANS_MR_F_TEHAI)
 
-        ''IME設定
-        'CmnModule.SetIme(Me.DR_NAME_FIRST, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.DR_NAME_LAST, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.DR_NAME_KANA_FIRST, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.DR_NAME_KANA_LAST, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.SHISETSU_NAME_KANA, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.KAMOKU, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.YAKUSHOKU, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.AGE, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.ACCOMPANY_CHILD_AGE_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.ACCOMPANY_CHILD_AGE_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.NOTE_ACCOMPANY, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.NOTE_HOTEL, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_BIN_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_AIRPORT1_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_AIRPORT2_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_EXPRESS1_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_EXPRESS2_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_LOCAL1_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_LOCAL2_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_TIME1_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.O_TIME2_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.O_BIN_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_AIRPORT1_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_AIRPORT2_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_EXPRESS1_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_EXPRESS2_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_LOCAL1_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_LOCAL2_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_TIME1_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.O_TIME2_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.O_BIN_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_AIRPORT1_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_AIRPORT2_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_EXPRESS1_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_EXPRESS2_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_LOCAL1_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_LOCAL2_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.O_TIME1_3, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.O_TIME2_3, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.F_BIN_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_AIRPORT1_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_AIRPORT2_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_EXPRESS1_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_EXPRESS2_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_LOCAL1_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_LOCAL2_1, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_TIME1_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.F_TIME2_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.F_BIN_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_AIRPORT1_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_AIRPORT2_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_EXPRESS1_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_EXPRESS2_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_LOCAL1_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_LOCAL2_2, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_TIME1_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.F_TIME2_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.F_BIN_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_AIRPORT1_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_AIRPORT2_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_EXPRESS1_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_EXPRESS2_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_LOCAL1_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_LOCAL2_3, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.F_TIME1_3, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.F_TIME2_3, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.MILAGE_NO, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.NOTE_KOTSU, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.SEND_ZIP_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.SEND_ZIP_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.SEND_ADDRESS, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.SEND_NAME, CmnModule.ImeType.Active)
-        'CmnModule.SetIme(Me.SEND_TEL_1, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.SEND_TEL_2, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.SEND_TEL_3, CmnModule.ImeType.Disabled)
-        'CmnModule.SetIme(Me.NOTES, CmnModule.ImeType.Active)
+        'IME設定        CmnModule.SetIme(Me.ANS_HOTEL_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_HOTEL_ADDRESS, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_HOTEL_TEL, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HOTEL_DATE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HAKUSU, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_CHECKIN_TIME, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_CHECKOUT_TIME, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HOTEL_NOTE, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_DATE_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_DATE_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_DATE_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_DATE_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_DATE_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_DATE_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_DATE_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_DATE_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_DATE_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_DATE_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT1_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT1_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT1_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT1_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT1_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT1_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT1_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT1_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT1_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT1_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT2_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT2_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT2_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT2_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_AIRPORT2_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT2_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT2_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT2_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT2_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_AIRPORT2_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_TIME1_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME1_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME1_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME1_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME1_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME1_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME1_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME1_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME1_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME1_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME2_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME2_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME2_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME2_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_TIME2_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME2_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME2_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME2_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME2_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_F_TIME2_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_O_BIN_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_BIN_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_BIN_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_BIN_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_O_BIN_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_BIN_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_BIN_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_BIN_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_BIN_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_BIN_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_F_NOTE_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.FIX_RAIL_FARE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FIX_RAIL_CANCELLATION, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FIX_OTHER_FARE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FIX_AIR_FARE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.FIX_AIR_CANCELLATION, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NOTE, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_1, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_2, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_3, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_4, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_5, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_6, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_7, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_8, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_9, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_10, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_11, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_12, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_13, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_14, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_15, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_16, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_17, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_18, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_19, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_DATE_20, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_1, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_3, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_4, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_5, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_6, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_7, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_8, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_9, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_10, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_11, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_12, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_13, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_14, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_15, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_16, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_17, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_18, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_19, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_20, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_1, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_4, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_5, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_6, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_7, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_8, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_9, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_10, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_11, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_12, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_13, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_14, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_15, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_16, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_17, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_18, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_19, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_NO_20, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_HOTEL_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_MR_HOTEL_ADDRESS, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_MR_HOTEL_TEL, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_CHECKIN_TIME, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_CHECKOUT_TIME, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_HOTEL_NOTE, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.ANS_MR_KOTSUHI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_HOTELHI, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -205,106 +337,78 @@ Partial Public Class DrRegist
 
     '画面項目 表示
     Private Sub SetForm()
+        Dim DSP_SEQ As Integer = 0
 
-        ANS_STATUS_HOTEL.Items.Add("選択してください")
-        ANS_ROOM_TYPE.Items.Add("選択してください")
-        ANS_O_STATUS_1.Items.Add("選択してください")
-        ANS_O_STATUS_2.Items.Add("選択してください")
-        ANS_O_STATUS_3.Items.Add("選択してください")
-        ANS_O_STATUS_4.Items.Add("選択してください")
-        ANS_O_STATUS_5.Items.Add("選択してください")
-        ANS_F_STATUS_1.Items.Add("選択してください")
-        ANS_F_STATUS_2.Items.Add("選択してください")
-        ANS_F_STATUS_3.Items.Add("選択してください")
-        ANS_F_STATUS_4.Items.Add("選択してください")
-        ANS_F_STATUS_5.Items.Add("選択してください")
-        ANS_O_KOTSUKIKAN_1.Items.Add("選択してください")
-        ANS_O_KOTSUKIKAN_2.Items.Add("選択してください")
-        ANS_O_KOTSUKIKAN_3.Items.Add("選択してください")
-        ANS_O_KOTSUKIKAN_4.Items.Add("選択してください")
-        ANS_O_KOTSUKIKAN_5.Items.Add("選択してください")
-        ANS_F_KOTSUKIKAN_1.Items.Add("選択してください")
-        ANS_F_KOTSUKIKAN_2.Items.Add("選択してください")
-        ANS_F_KOTSUKIKAN_3.Items.Add("選択してください")
-        ANS_F_KOTSUKIKAN_4.Items.Add("選択してください")
-        ANS_F_KOTSUKIKAN_5.Items.Add("選択してください")
-        ANS_O_SEAT_1.Items.Add("選択してください")
-        ANS_O_SEAT_2.Items.Add("選択してください")
-        ANS_O_SEAT_3.Items.Add("選択してください")
-        ANS_O_SEAT_4.Items.Add("選択してください")
-        ANS_O_SEAT_5.Items.Add("選択してください")
-        ANS_F_SEAT_1.Items.Add("選択してください")
-        ANS_F_SEAT_2.Items.Add("選択してください")
-        ANS_F_SEAT_3.Items.Add("選択してください")
-        ANS_F_SEAT_4.Items.Add("選択してください")
-        ANS_F_SEAT_5.Items.Add("選択してください")
+        If Popup Then
+            DSP_KOTSUHOTEL = Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL)
+            DSP_SEQ = Session.Item(SessionDef.DrRireki_SEQ)
+        Else
+            DSP_SEQ = SEQ
+        End If
 
+        '講演会最新情報取得
+        If Not GetKouenkaiData() Then Exit Sub
 
+        '画面項目表示
+        '講演会情報
+        Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(DSP_KOTSUHOTEL(DSP_SEQ).KOUENKAI_NO)
+        Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(TBL_KOUENKAI(0).FROM_DATE)
+        Me.TO_DATE.Text = AppModule.GetName_TO_DATE(TBL_KOUENKAI(0).TO_DATE)
+        Me.TIME_STAMP.Text = AppModule.GetName_TIME_STAMP(TBL_KOUENKAI(0).TIME_STAMP)
+        Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KOUENKAI(0).KOUENKAI_NAME)
+        Me.TAXI_PRT_NAME.Text = AppModule.GetName_SEIHIN_NAME(TBL_KOUENKAI(0).TAXI_PRT_NAME)
 
+        'MR情報
+        Me.MR_BU.Text = AppModule.GetName_MR_BU(DSP_KOTSUHOTEL(DSP_SEQ).MR_BU)
+        Me.MR_AREA.Text = AppModule.GetName_MR_AREA(DSP_KOTSUHOTEL(DSP_SEQ).MR_AREA)
+        Me.MR_EIGYOSHO.Text = AppModule.GetName_MR_EIGYOSHO(DSP_KOTSUHOTEL(DSP_SEQ).MR_EIGYOSHO)
+        Me.ACCOUNT_CODE.Text = AppModule.GetName_ACCOUNT_CODE(DSP_KOTSUHOTEL(DSP_SEQ).ACCOUNT_CD)
+        Me.COST_CENTER.Text = AppModule.GetName_COST_CENTER(DSP_KOTSUHOTEL(DSP_SEQ).COST_CENTER)
+        Me.INTERNAL_ORDER.Text = AppModule.GetName_INTERNAL_ORDER(DSP_KOTSUHOTEL(DSP_SEQ).INTERNAL_ORDER)
+        Me.ZETIA_CD.Text = AppModule.GetName_ZETIA_CD(DSP_KOTSUHOTEL(DSP_SEQ).ZETIA_CD)
+        Me.MR_NAME.Text = AppModule.GetName_MR_NAME(DSP_KOTSUHOTEL(DSP_SEQ).MR_NAME)
+        Me.MR_ROMA.Text = AppModule.GetName_mr_roma(DSP_KOTSUHOTEL(DSP_SEQ).MR_ROMA)
+        Me.MR_KEITAI.Text = AppModule.GetName_MR_KEITAI(DSP_KOTSUHOTEL(DSP_SEQ).MR_KEITAI)
+        Me.MR_TEL.Text = AppModule.GetName_MR_TEL(DSP_KOTSUHOTEL(DSP_SEQ).MR_TEL)
+        Me.MR_EMAIL_KEITAI.Text = AppModule.GetName_MR_EMAIL_KEITAI(DSP_KOTSUHOTEL(DSP_SEQ).MR_EMAIL_KEITAI)
+        Me.MR_EMAIL_PC.Text = AppModule.GetName_MR_EMAIL(DSP_KOTSUHOTEL(DSP_SEQ).MR_EMAIL_PC)
+        Me.MR_SEND_SAKI_FS.Text = AppModule.GetName_MR_SEND_SAKI_FS(DSP_KOTSUHOTEL(DSP_SEQ).MR_SEND_SAKI_FS)
+        Me.MR_SEND_SAKI_OTHER.Text = AppModule.GetName_MR_SEND_SAKI_OTHER(DSP_KOTSUHOTEL(DSP_SEQ).MR_SEND_SAKI_OTHER)
 
-
-        'If Trim(TBL_DR(SEQ).DATA_NO) = "" Then
-        '    Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
-        'End If
-
-        'If MyModule.IsInsertMode() Then
-        '    '新規
-        '    Me.BtnCancel.Visible = False
-        '    Me.ImgCanceled.Visible = False
-        '    CmnModule.SetEnabled(Me.BtnConfirm, True)
-        'Else
-        '    If TBL_DR(SEQ).INS_TYPE <> AppConst.INS_TYPE.Code.Dr Then
-        '        '営業担当が登録したデータは、参照のみ
-        '        'Response.Redirect(URL.Admin.DrData)
-        '    Else
-        '        Select Case TBL_DR(SEQ).STATUS_PAYMENT
-        '            Case AppConst.STATUS_PAYMENT.Code.Fuyo, AppConst.STATUS_PAYMENT.Code.Input
-        '                '手配未完了
-        '                Me.BtnConfirm.Text = "確認画面へ"
-        '                Me.BtnCancel.Text = "参加取消"
-        '            Case Else
-        '                '手配済み以降は「依頼」
-        '                Me.BtnConfirm.Text = "依頼内容確認へ"
-        '                Me.BtnCancel.Text = "参加取消依頼"
-        '        End Select
-
-        '        If AppModule.IsCanceled(TBL_DR(SEQ).RECORD_KUBUN) Then
-        '            '参加取消済
-        '            'Response.Redirect(URL.Admin.DrData)
-        '        Else
-        '            '変更
-        '            Me.BtnCancel.Visible = True
-        '            Me.ImgCanceled.Visible = False
-        '            CmnModule.SetEnabled(Me.BtnConfirm, True)
-
-        '        End If
-        '    End If
-        'End If
-        'Session.Item(SessionDef.Back) = CmnConst.Flag.Off
-
-        ''Me.DATA_NO.Text = AppModule.GetName_DATA_NO(TBL_DR(SEQ).DATA_NO)
-        ''Me.OFFICE.Text = AppModule.GetName_OFFICE(TBL_DR(SEQ).OFFICE)
-        ''Me.MEMBER_NAME.Text = AppModule.GetName_MEMBER_NAME(TBL_DR(SEQ).MEMBER_NAME)
-
-        ''共通コントロール
-        'Call SetForm(TBL_DR(SEQ))
-
-        ''手配完了後は「依頼」
-        'Select Case TBL_DR(SEQ).STATUS_TEHAI
-        '    Case AppConst.STATUS_TEHAI.Code.KotsuOK, _
-        '         AppConst.STATUS_TEHAI.Code.HotelOK, _
-        '         AppConst.STATUS_TEHAI.Code.HotelOK_KotsuOK, _
-        '         AppConst.STATUS_TEHAI.Code.OKToFuyo, _
-        '         AppConst.STATUS_TEHAI.Code.OkToChange, _
-        '         AppConst.STATUS_TEHAI.Code.OKToCancel, _
-        '         AppConst.STATUS_TEHAI.Code.EndToFuyo, _
-        '         AppConst.STATUS_TEHAI.Code.EndToChange, _
-        '         AppConst.STATUS_TEHAI.Code.EndToCancel
-        '        'Me.TblComment.Visible = True
-        '    Case Else
-        '        'Me.TblComment.Visible = False
-        'End Select
+        'DR情報
+        Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_STATUS_TEHAI)
+        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)
+        Me.SANKASHA_ID.Text = AppModule.GetName_REQ_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_STATUS_TEHAI)
+        Me.DR_CD.Text = AppModule.GetName_DR_CD(DSP_KOTSUHOTEL(DSP_SEQ).DR_CD)
+        Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(DSP_KOTSUHOTEL(DSP_SEQ).TIME_STAMP_BYL)
+        Me.TIME_STAMP_TOP.Text = AppModule.GetName_TIME_STAMP_TOP(DSP_KOTSUHOTEL(DSP_SEQ).TIME_STAMP_TOP)
+        Me.DR_NAME.Text = AppModule.GetName_DR_NAME(DSP_KOTSUHOTEL(DSP_SEQ).DR_NAME)
+        Me.DR_KANA.Text = AppModule.GetName_DR_KANA(DSP_KOTSUHOTEL(DSP_SEQ).DR_KANA)
+        Me.DR_SEX.Text = AppModule.GetName_DR_SEX(DSP_KOTSUHOTEL(DSP_SEQ).DR_SEX)
+        Me.DR_AGE.Text = AppModule.GetName_DR_age(DSP_KOTSUHOTEL(DSP_SEQ).DR_AGE)
     End Sub
+
+    '講演会最新情報取得
+    Private Function GetKouenkaiData() As Boolean
+        Dim wFlag As Boolean = False
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO)
+        strSQL &= "ORDER BY " & TableDef.TBL_KOUENKAI.Column.TIME_STAMP & " DESC"
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlag = True
+
+            ReDim Preserve TBL_KOUENKAI(wCnt)
+            TBL_KOUENKAI(0) = AppModule.SetRsData(RsData, TBL_KOUENKAI(0))
+        End If
+        RsData.Close()
+
+        Return wFlag
+    End Function
 
     '入力値を取得
     Private Sub GetValue(ByVal Cancel As Boolean)
@@ -2891,15 +2995,43 @@ Partial Public Class DrRegist
         ClientScript.RegisterStartupScript(Me.GetType(), "施設検索", scriptStr)
     End Sub
 
-    Protected Sub ANS_F_AIRPORT1_3_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_F_AIRPORT1_3.TextChanged
+    '最新版データ存在チェック
+    Private Function ChkNewData() As Boolean
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim NewCnt(0) As String
+        Dim RsData As System.Data.SqlClient.SqlDataReader
 
-    End Sub
+        strSQL = SQL.TBL_KOTSUHOTEL.byNEW_TIME_STAMP(DSP_KOTSUHOTEL(SEQ).SALEFORCE_ID, DSP_KOTSUHOTEL(SEQ).TIME_STAMP_BYL)
 
-    Protected Sub ANS_F_AIRPORT1_4_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_F_AIRPORT1_4.TextChanged
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            NewCnt(0) = CmnDb.DbData(RsData.GetName(0), RsData)
+        End If
+        RsData.Close()
 
-    End Sub
+        If NewCnt(0) = "0" Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
-    Protected Sub ANS_TAXI_NO_10_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_TAXI_NO_10.TextChanged
+    '講演会基本情報ボタン
+    Private Sub BtnKihon_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKihon.Click
+        '選択レコード情報をセッション変数にセット
+        Session.Item(SessionDef.SEQ) = 0
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        'Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
+        '履歴画面用セッション変数をクリア
+        Session.Remove(SessionDef.KaijoRireki)
+        Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
+        Session.Remove(SessionDef.KouenkaiRireki_SEQ)
+        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = False
+
+        Response.Redirect(URL.KouenkaiRegist)
     End Sub
 End Class

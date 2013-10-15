@@ -52,8 +52,10 @@ Partial Public Class DrList
             '画面項目 初期化
             InitControls()
 
-            '画面項目表示
-            SetForm()
+            If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
+            Else
+                SetForm()
+            End If
         End If
 
         'マスターページ設定
@@ -81,8 +83,8 @@ Partial Public Class DrList
 
     '画面項目 初期化    Private Sub InitControls()
 
-        'IME設定        CmnModule.SetIme(Me.JokenMR_ROMA, CmnModule.ImeType.InActive)
-        CmnModule.SetIme(Me.JokenDR_KANA, CmnModule.ImeType.InActive)
+        'IME設定            CmnModule.SetIme(Me.JokenMR_ROMA, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.JokenDR_KANA, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenFROM_DATE_YYYY, CmnModule.ImeType.InActive)
@@ -105,7 +107,24 @@ Partial Public Class DrList
 
     '画面項目 表示
     Private Sub SetForm()
+        '抽出条件表示
+        Call SetJoken()
 
+        'データ取得
+        If Not GetData() Then
+            Me.LabelNoData.Visible = True
+            Me.GrvList.Visible = False
+        Else
+            Me.LabelNoData.Visible = False
+            Me.GrvList.Visible = True
+
+            'グリッドビュー表示
+            SetGridView()
+        End If
+    End Sub
+
+    '抽出条件表示
+    Private Sub SetJoken()
         If Joken.MR_ROMA <> "" Then Me.JokenMR_ROMA.Text = Joken.MR_ROMA
         If Joken.DR_KANA <> "" Then Me.JokenDR_KANA.Text = Joken.DR_KANA
         If Joken.DR_SANKA <> "" Then Me.JokenDR_SANKA.SelectedValue = Joken.DR_SANKA
@@ -124,22 +143,10 @@ Partial Public Class DrList
         If Joken.BU <> "" Then Me.JokenBU.Text = Joken.BU
         If Joken.AREA <> "" Then Me.JokenTEHAI_TANTO_AREA.Text = Joken.AREA
         If Joken.TTANTO_ID <> "" Then Me.JokenTTANTO_ID.Text = Joken.TTANTO_ID
-        If Joken.update_Date <> "" Then
+        If Joken.UPDATE_DATE <> "" Then
             Me.JokenUPDATE_DATE_YYYY.Text = Joken.UPDATE_DATE.Substring(0, 4)
             Me.JokenUPDATE_DATE_MM.Text = Joken.UPDATE_DATE.Substring(4, 2)
             Me.JokenUPDATE_DATE_DD.Text = Joken.UPDATE_DATE.Substring(6, 2)
-        End If
-
-        'データ取得
-        If Not GetData() Then
-            Me.LabelNoData.Visible = True
-            Me.GrvList.Visible = False
-        Else
-            Me.LabelNoData.Visible = False
-            Me.GrvList.Visible = True
-
-            'グリッドビュー表示
-            SetGridView()
         End If
     End Sub
 
@@ -324,6 +331,21 @@ Partial Public Class DrList
             Return False
         End If
 
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenMR_ROMA) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("Dr担当MR名(ローマ字)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsHanKatakana(Me.JokenDR_KANA) Then
+            CmnModule.AlertMessage(MessageDef.Error.HanKatakanaOnly("DR名(カナ)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            Return False
+        End If
+
         If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
             Return False
@@ -366,6 +388,39 @@ Partial Public Class DrList
             Dim wStr As String = StrConv(Trim(Me.JokenTO_DATE_YYYY.Text) & "/" & Trim(Me.JokenTO_DATE_MM.Text) & "/" & Trim(Me.JokenTO_DATE_DD.Text), VbStrConv.Narrow)
             If Not IsDate(wStr) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日To"), Me)
+                Return False
+            End If
+        End If
+
+        If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者BU"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumeric(Me.JokenTTANTO_ID) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("トップツアー担当者"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenUPDATE_DATE_YYYY) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("更新日(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenUPDATE_DATE_MM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("更新日(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenUPDATE_DATE_DD) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("更新日(日)"), Me)
+            Return False
+        End If
+
+        If CmnCheck.IsInput(Me.JokenUPDATE_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenUPDATE_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenUPDATE_DATE_DD) Then
+            Dim wStr As String = StrConv(Trim(Me.JokenUPDATE_DATE_YYYY.Text) & "/" & Trim(Me.JokenUPDATE_DATE_MM.Text) & "/" & Trim(Me.JokenUPDATE_DATE_DD.Text), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("更新日"), Me)
                 Return False
             End If
         End If
