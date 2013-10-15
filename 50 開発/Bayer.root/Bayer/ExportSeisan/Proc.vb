@@ -90,6 +90,8 @@ Public Class Proc
         Dim sw As New StreamWriter(fileName, False, New System.Text.UTF8Encoding(False))
         sw.NewLine = vbCrLf
 
+        'TODO:ファイルレイアウトの変更があった場合反映させること！
+
         Try
             Dim sb As New System.Text.StringBuilder
             For wCnt As Integer = 0 To UBound(CsvData)
