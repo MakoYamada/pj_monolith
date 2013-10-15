@@ -4037,6 +4037,29 @@ Public Class AppModule
         End Select
     End Function
 
+    'ログテーブル：送受信
+    Public Shared Function GetName_EXPORTIMPORT(ByVal INPUT_USER As String) As String
+        If Mid(Trim(INPUT_USER).ToUpper, 1, 6) = "EXPORT" Then
+            Return AppConst.TBL_LOG.EXPORTIMPORT.Name.EXPORT
+        ElseIf Mid(Trim(INPUT_USER).ToUpper, 1, 6) = "IMPORT" Then
+            Return AppConst.TBL_LOG.EXPORTIMPORT.Name.IMPORT
+        Else
+            Return ""
+        End If
+    End Function
+
+    'ログテーブル：ステータス
+    Public Shared Function GetName_STATUS(ByVal STATUS As String) As String
+        Select Case STATUS
+            Case AppConst.TBL_LOG.STATUS.Code.OK, AppConst.TBL_LOG.STATUS.Name.OK
+                Return AppConst.TBL_LOG.STATUS.Name.OK
+            Case AppConst.TBL_LOG.STATUS.Code.NG, AppConst.TBL_LOG.STATUS.Name.NG
+                Return AppConst.TBL_LOG.STATUS.Name.NG
+            Case Else
+                Return ""
+        End Select
+    End Function
+
 
     '== コントロールをセット ==
     'ログインID

@@ -3165,6 +3165,44 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE 1=1"
+
+            If Trim(Joken.SYORI_KBN) <> "" Then
+                strSQL &= " AND TBL_LOG.SYORI_KBN=N'" & CmnDb.SqlString(Joken.SYORI_KBN) & "'"
+            End If
+
+            If Trim(Joken.INPUT_DATE) <> "" Then
+                strSQL &= " AND SUBSTRING(TBL_LOG.INPUT_DATE,1,8)=N'" & CmnDb.SqlString(Joken.INPUT_DATE) & "'"
+            End If
+
+            If Trim(Joken.INPUT_USER) <> "" Then
+                strSQL &= " AND TBL_LOG.INPUT_USER=N'" & CmnDb.SqlString(Joken.INPUT_USER) & "'"
+            End If
+
+            If Trim(Joken.SYORI_NAME) <> "" Then
+                strSQL &= " AND TBL_LOG.SYORI_NAME=N'" & CmnDb.SqlString(Joken.SYORI_NAME) & "'"
+            End If
+
+            If Trim(Joken.STATUS) <> "" Then
+                strSQL &= " AND TBL_LOG.STATUS=N'" & CmnDb.SqlString(Joken.STATUS) & "'"
+            End If
+
+            If Trim(Joken.EXPORTIMPORT) <> "" Then
+                If Joken.EXPORTIMPORT = AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT Then
+                    strSQL &= " AND TBL_LOG.SYORI_NAME LIKE N'" & "Export%'"
+                ElseIf Joken.EXPORTIMPORT = AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT Then
+                    strSQL &= " AND TBL_LOG.SYORI_NAME LIKE N'" & "Import%'"
+                End If
+            End If
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_LOG As TableDef.TBL_LOG.DataStruct) As String
             Dim strSQL As String = ""
 

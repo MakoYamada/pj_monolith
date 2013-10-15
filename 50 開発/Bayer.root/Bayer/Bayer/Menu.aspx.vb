@@ -167,7 +167,9 @@ Partial Public Class Menu1
 
     '[送受信ログ照会]
     Protected Sub BtnLogFile_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnLogFile.Click
-        Session.Remove(SessionDef.Joken)
+        Dim Joken As TableDef.Joken.DataStruct = Nothing
+        Joken.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
+        Session.Item(SessionDef.Joken) = Joken
         Session.Remove(SessionDef.TBL_LOG)
         Response.Redirect(URL.LogFile)
     End Sub

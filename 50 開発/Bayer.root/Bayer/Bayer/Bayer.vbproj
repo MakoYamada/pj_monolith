@@ -100,6 +100,12 @@
     </Compile>
     <Compile Include="admin\LogFile.aspx.vb">
       <DependentUpon>LogFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\LogSousa.aspx.designer.vb">
+      <DependentUpon>LogSousa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\LogSousa.aspx.vb">
+      <DependentUpon>LogSousa.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\MstShisetsu.aspx.designer.vb">
@@ -107,14 +113,12 @@
     </Compile>
     <Compile Include="admin\MstShisetsu.aspx.vb">
       <DependentUpon>MstShisetsu.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\MstUser.aspx.designer.vb">
       <DependentUpon>MstUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\MstUser.aspx.vb">
       <DependentUpon>MstUser.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Base.Master.designer.vb">
       <DependentUpon>Base.Master</DependentUpon>
@@ -137,21 +141,18 @@
     </Compile>
     <Compile Include="DrRireki.aspx.vb">
       <DependentUpon>DrRireki.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="KaijoList.aspx.designer.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
     </Compile>
     <Compile Include="KaijoList.aspx.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="KaijoRegist.aspx.designer.vb">
       <DependentUpon>KaijoRegist.aspx</DependentUpon>
     </Compile>
     <Compile Include="KaijoRegist.aspx.vb">
       <DependentUpon>KaijoRegist.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="KaijoReport1.Designer.vb">
       <DependentUpon>KaijoReport1.vb</DependentUpon>
@@ -176,21 +177,18 @@
     </Compile>
     <Compile Include="KaijoRireki.aspx.vb">
       <DependentUpon>KaijoRireki.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewDrList.aspx.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DrRegist.aspx.designer.vb">
       <DependentUpon>DrRegist.aspx</DependentUpon>
     </Compile>
     <Compile Include="DrRegist.aspx.vb">
       <DependentUpon>DrRegist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DrReport.Designer.vb">
       <DependentUpon>DrReport.vb</DependentUpon>
@@ -215,21 +213,18 @@
     </Compile>
     <Compile Include="HotelKensaku.aspx.vb">
       <DependentUpon>HotelKensaku.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Menu.aspx.designer.vb">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu.aspx.vb">
       <DependentUpon>Menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -255,56 +250,48 @@
     </Compile>
     <Compile Include="NewKaijoList.aspx.vb">
       <DependentUpon>NewKaijoList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Preview.aspx.designer.vb">
       <DependentUpon>Preview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Preview.aspx.vb">
       <DependentUpon>Preview.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DrList.aspx.designer.vb">
       <DependentUpon>DrList.aspx</DependentUpon>
     </Compile>
     <Compile Include="DrList.aspx.vb">
       <DependentUpon>DrList.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="NewKouenkaiList.aspx.designer.vb">
       <DependentUpon>NewKouenkaiList.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewKouenkaiList.aspx.vb">
       <DependentUpon>NewKouenkaiList.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="KouenkaiList.aspx.designer.vb">
       <DependentUpon>KouenkaiList.aspx</DependentUpon>
     </Compile>
     <Compile Include="KouenkaiList.aspx.vb">
       <DependentUpon>KouenkaiList.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="KouenkaiRegist.aspx.designer.vb">
       <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
     </Compile>
     <Compile Include="KouenkaiRegist.aspx.vb">
       <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="KouenkaiRireki.aspx.designer.vb">
       <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
     </Compile>
     <Compile Include="KouenkaiRireki.aspx.vb">
       <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ShisetsuKensaku.aspx.designer.vb">
       <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
     </Compile>
     <Compile Include="ShisetsuKensaku.aspx.vb">
       <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +328,7 @@
     <Content Include="ActiveReports.FlashViewer.Resources.swf" />
     <Content Include="ActiveReports.FlashViewer.swf" />
     <Content Include="admin\LogFile.aspx" />
+    <Content Include="admin\LogSousa.aspx" />
     <Content Include="admin\MstShisetsu.aspx" />
     <Content Include="admin\MstUser.aspx" />
     <Content Include="Base.Master" />
@@ -435,6 +423,10 @@
     <ProjectReference Include="..\CommonLib\CommonLib.vbproj">
       <Project>{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}</Project>
       <Name>CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrintLog\PrintLog.vbproj">
+      <Project>{9381C786-FB93-4DDB-B594-33D29E849BF5}</Project>
+      <Name>PrintLog</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

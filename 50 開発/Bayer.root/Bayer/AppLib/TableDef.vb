@@ -2232,6 +2232,8 @@
             Public UPDATE_DATE As String
             Public EXPORTIMPORT As String
             Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public SYORI_KBN As String
             Public SYORI_NAME As String
             Public STATUS As String
         End Structure
@@ -2266,6 +2268,8 @@
             Public Const UPDATE_DATE As String = "更新日"
             Public Const EXPORTIMPORT As String = "送信／受信"
             Public Const INPUT_DATE As String = "送受信日時"
+            Public Const INPUT_USER As String = "処理ユーザ"
+            Public Const SYORI_KBN As String = "処理区分"
             Public Const SYORI_NAME As String = "処理名"
             Public Const STATUS As String = "処理結果"
         End Class
