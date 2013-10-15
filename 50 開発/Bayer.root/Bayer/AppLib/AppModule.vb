@@ -1190,6 +1190,11 @@ Public Class AppModule
         Return DR_SHISETSU_ADDRESS
     End Function
 
+    '指定外理由
+    Public Shared Function GetName_SHITEIGAI_RIYU(ByVal SHITEIGAI_RIYU As String) As String
+        Return SHITEIGAI_RIYU
+    End Function
+
     '参加者役割
     Public Shared Function GetName_DR_YAKUWARI(ByVal DR_YAKUWARI As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
