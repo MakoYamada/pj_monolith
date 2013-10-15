@@ -474,6 +474,17 @@ Public Class AppConst
                 Public Const NG As String = "エラー"
             End Class
         End Class
+
+        Public Class EXPORTIMPORT
+            Public Class Code
+                Public Const EXPORT As String = "E"
+                Public Const IMPORT As String = "I"
+            End Class
+            Public Class Name
+                Public Const EXPORT As String = "送信"
+                Public Const IMPORT As String = "受信"
+            End Class
+        End Class
     End Class
 
 End Class
