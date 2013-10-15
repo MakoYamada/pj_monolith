@@ -2179,6 +2179,7 @@
             Public TABLE_NAME As String
             Public STATUS As String
             Public NOTE As String
+            Public EXPORTIMPORT As String
         End Structure
         Public Class Column
             Public Const INPUT_DATE As String = "INPUT_DATE"
