@@ -66,7 +66,7 @@ Public Class Proc
             If File.Exists(strFileWork) Then
                 File.Delete(strFileWork)
             End If
-            Throw New Exception("ファイル作成エラー")
+            Exit Sub
         End If
 
         '送信フラグ更新
@@ -145,6 +145,7 @@ Public Class Proc
         Catch ex As Exception
             'エラー
             InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[ファイル出力失敗]" & ex.Message)
+            MyBase.SendAlertMail("[ファイル出力失敗]" & ex.Message)
             Return False
         Finally
             sw.Flush()
