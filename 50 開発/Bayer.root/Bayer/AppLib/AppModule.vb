@@ -1169,6 +1169,11 @@ Public Class AppModule
         Return wStr
     End Function
 
+    'DR年齢
+    Public Shared Function GetName_DR_AGE(ByVal DR_AGE As String) As String
+        Return DR_AGE
+    End Function
+
     'DCF施設コード
     Public Shared Function GetName_DR_SHISETSU_CD(ByVal DR_SHISETSU_CD As String) As String
         Return DR_SHISETSU_CD
