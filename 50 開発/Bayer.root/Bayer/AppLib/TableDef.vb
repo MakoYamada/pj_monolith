@@ -2230,6 +2230,10 @@
             Public MR_ROMA As String
             Public DR_KANA As String
             Public UPDATE_DATE As String
+            Public EXPORTIMPORT As String
+            Public INPUT_DATE As String
+            Public SYORI_NAME As String
+            Public STATUS As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2260,6 +2264,10 @@
             Public Const MR_ROMA As String = "Dr担当MR名(ローマ字)"
             Public Const DR_KANA As String = "Dr氏名(カナ)"
             Public Const UPDATE_DATE As String = "更新日"
+            Public Const EXPORTIMPORT As String = "送信／受信"
+            Public Const INPUT_DATE As String = "送受信日時"
+            Public Const SYORI_NAME As String = "処理名"
+            Public Const STATUS As String = "処理結果"
         End Class
     End Class
 
