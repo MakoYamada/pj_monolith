@@ -6061,6 +6061,26 @@ Public Class AppModule
         Return GetValue_ANS_O_SEAT(ANS_O_SEAT_5)
     End Function
 
+    '往路：座席希望（回答）
+    Public Shared Function GetValue_ANS_O_SEAT_KIBOU(ByVal ANS_O_SEAT_KIBOU As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_O_SEAT_KIBOU)
+    End Function
+    Public Shared Function GetValue_ANS_O_SEAT_KIBOU1(ByVal ANS_O_SEAT_KIBOU1 As DropDownList) As String
+        Return GetValue_ANS_O_SEAT(ANS_O_SEAT_KIBOU1)
+    End Function
+    Public Shared Function GetValue_ANS_O_SEAT_KIBOU2(ByVal ANS_O_SEAT_KIBOU2 As DropDownList) As String
+        Return GetValue_ANS_O_SEAT(ANS_O_SEAT_KIBOU2)
+    End Function
+    Public Shared Function GetValue_ANS_O_SEAT_KIBOU3(ByVal ANS_O_SEAT_KIBOU3 As DropDownList) As String
+        Return GetValue_ANS_O_SEAT(ANS_O_SEAT_KIBOU3)
+    End Function
+    Public Shared Function GetValue_ANS_O_SEAT_KIBOU4(ByVal ANS_O_SEAT_KIBOU4 As DropDownList) As String
+        Return GetValue_ANS_O_SEAT(ANS_O_SEAT_KIBOU4)
+    End Function
+    Public Shared Function GetValue_ANS_O_SEAT_KIBOU5(ByVal ANS_O_SEAT_KIBOU5 As DropDownList) As String
+        Return GetValue_ANS_O_SEAT(ANS_O_SEAT_KIBOU5)
+    End Function
+
     '復路：ステータス（回答）
     Public Shared Function GetValue_ANS_F_STATUS(ByVal ANS_F_STATUS As DropDownList) As String
         Return CmnModule.GetSelectedItemValue(ANS_F_STATUS)
@@ -6241,9 +6261,29 @@ Public Class AppModule
         Return GetValue_ANS_F_SEAT(ANS_F_SEAT_5)
     End Function
 
-    '往路備考（回答）
-    Public Shared Function GetValue_ANS_O_NOTE_1(ByVal ANS_O_NOTE_1 As TextBox) As String
-        Return Trim(ANS_O_NOTE_1.Text)
+    '復路：座席希望（回答）
+    Public Shared Function GetValue_ANS_F_SEAT_KIBOU(ByVal ANS_F_SEAT_KIBOU As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_F_SEAT_KIBOU)
+    End Function
+    Public Shared Function GetValue_ANS_F_SEAT_KIBOU1(ByVal ANS_F_SEAT_KIBOU1 As DropDownList) As String
+        Return GetValue_ANS_F_SEAT(ANS_F_SEAT_KIBOU1)
+    End Function
+    Public Shared Function GetValue_ANS_F_SEAT_KIBOU2(ByVal ANS_F_SEAT_KIBOU2 As DropDownList) As String
+        Return GetValue_ANS_F_SEAT(ANS_F_SEAT_KIBOU2)
+    End Function
+    Public Shared Function GetValue_ANS_F_SEAT_KIBOU3(ByVal ANS_F_SEAT_KIBOU3 As DropDownList) As String
+        Return GetValue_ANS_F_SEAT(ANS_F_SEAT_KIBOU3)
+    End Function
+    Public Shared Function GetValue_ANS_F_SEAT_KIBOU4(ByVal ANS_F_SEAT_KIBOU4 As DropDownList) As String
+        Return GetValue_ANS_F_SEAT(ANS_F_SEAT_KIBOU4)
+    End Function
+    Public Shared Function GetValue_ANS_F_SEAT_KIBOU5(ByVal ANS_F_SEAT_KIBOU5 As DropDownList) As String
+        Return GetValue_ANS_F_SEAT(ANS_F_SEAT_KIBOU5)
+    End Function
+
+    '交通備考（回答）
+    Public Shared Function GetValue_ANS_KOTSU_BIKO(ByVal ANS_KOTSU_BIKO As TextBox) As String
+        Return Trim(ANS_KOTSU_BIKO.Text)
     End Function
 
     '復路備考（回答）
