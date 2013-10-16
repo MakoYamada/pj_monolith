@@ -311,7 +311,7 @@
     </Compile>
     <Compile Include="SeisanRegist.aspx.vb">
       <DependentUpon>SeisanRegist.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ShisetsuKensaku.aspx.designer.vb">
       <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
@@ -319,6 +319,13 @@
     <Compile Include="ShisetsuKensaku.aspx.vb">
       <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiCsv.aspx.designer.vb">
+      <DependentUpon>TaxiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiCsv.aspx.vb">
+      <DependentUpon>TaxiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -427,6 +434,7 @@
     <Content Include="ShisetsuKensaku.aspx" />
     <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
+    <Content Include="TaxiCsv.aspx" />
     <Content Include="TimeOut.html" />
     <Content Include="DrList.aspx" />
     <Content Include="NewKouenkaiList.aspx" />

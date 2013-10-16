@@ -381,6 +381,7 @@
             Public MR_EIGYOSHO As String
             Public MR_NAME As String
             Public MR_ROMA As String
+            Public MR_KANA As String
             Public MR_EMAIL_PC As String
             Public MR_EMAIL_KEITAI As String
             Public MR_KEITAI As String
@@ -748,6 +749,12 @@
             Public SEND_DATE As String
 
             Public KOUENKAI_NAME As String
+            Public TORIKESHI_FLG As String
+            Public TAXI_PRT_NAME As String
+            Public FROM_DATE As String
+            Public TO_DATE As String
+            Public KAIJO_NAME As String
+            Public SEIHIN_NAME As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -774,6 +781,7 @@
             Public Const MR_EIGYOSHO As String = "MR_EIGYOSHO"
             Public Const MR_NAME As String = "MR_NAME"
             Public Const MR_ROMA As String = "MR_ROMA"
+            Public Const MR_KANA As String = "MR_KANA"
             Public Const MR_EMAIL_PC As String = "MR_EMAIL_PC"
             Public Const MR_EMAIL_KEITAI As String = "MR_EMAIL_KEITAI"
             Public Const MR_KEITAI As String = "MR_KEITAI"
@@ -1141,6 +1149,12 @@
             Public Const SEND_DATE As String = "SEND_DATE"
 
             Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const TORIKESHI_FLG As String = "TORIKESHI_FLG"
+            Public Const TAXI_PRT_NAME As String = "TAXI_PRT_NAME"
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const TO_DATE As String = "TO_DATE"
+            Public Const KAIJO_NAME As String = "KAIJO_NAME"
+            Public Const SEIHIN_NAME As String = "SEIHIN_NAME"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
@@ -1167,6 +1181,7 @@
             Public Const MR_EIGYOSHO As String = "所属営業所(担当MR)"
             Public Const MR_NAME As String = "担当者(担当MR)名"
             Public Const MR_ROMA As String = "担当者名(担当MR)(ローマ字)"
+            Public Const MR_KANA As String = "担当者名(担当MR)(カナ)"
             Public Const MR_EMAIL_PC As String = "Emailアドレス(担当MR)"
             Public Const MR_EMAIL_KEITAI As String = "携帯Emailアドレス(担当MR)"
             Public Const MR_KEITAI As String = "携帯電話番号(担当MR)"
@@ -2231,6 +2246,7 @@
             Public KENGEN As String
             Public DR_SANKA As String
             Public MR_ROMA As String
+            Public MR_KANA As String
             Public DR_KANA As String
             Public UPDATE_DATE As String
             Public EXPORTIMPORT As String
@@ -2267,6 +2283,7 @@
             Public Const STOP_FLG As String = "利用停止フラグ"
             Public Const SALESFORCE_ID As String = "SalesForceID"
             Public Const MR_ROMA As String = "Dr担当MR名(ローマ字)"
+            Public Const MR_KANA As String = "Dr担当MR名(カナ)"
             Public Const DR_KANA As String = "Dr氏名(カナ)"
             Public Const UPDATE_DATE As String = "更新日"
             Public Const EXPORTIMPORT As String = "送信／受信"

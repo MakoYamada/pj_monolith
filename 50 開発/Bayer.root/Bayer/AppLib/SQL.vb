@@ -732,6 +732,122 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function TaxiCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+            Dim strSQL_WHERE_KOTSUHOTEL As String = ""
+            Dim strSQL_WHERE_KOUENKAI As String = ""
+
+            'WHERE
+            '交通宿泊手配テーブル
+            strSQL_WHERE_KOTSUHOTEL &= " WHERE 1=1"
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL_WHERE_KOTSUHOTEL &= " AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
+                strSQL_WHERE_KOTSUHOTEL &= " AND TBL_KOTSUHOTEL.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
+            End If
+
+            '講演会テーブル
+            strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
+            If Trim(Joken.BU) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.BU LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.EIGYOSHO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO LIKE N'%" & CmnDb.SqlString(Joken.EIGYOSHO) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.TTANTO_ID=N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= "      OR "
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= "      OR "
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NAME LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.FROM_DATE BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.FROM_DATE=N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            strSQL &= "SELECT"
+            strSQL &= " DISTINCT"
+            strSQL &= " TBL_KOTSUHOTEL.*"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= ",TBL_KOUENKAI.TORIKESHI_FLG"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",TBL_KOUENKAI.TAXI_PRT_NAME"
+            strSQL &= ",TBL_KOUENKAI.FROM_DATE"
+            strSQL &= ",TBL_KOUENKAI.TO_DATE"
+            strSQL &= ",TBL_KOUENKAI.KAIJO_NAME"
+            strSQL &= ",TBL_KOUENKAI.SEIHIN_NAME"
+            strSQL &= " FROM"
+            strSQL &= "("
+            strSQL &= " SELECT TBL_KOUENKAI_1.* FROM "
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= ") AS TBL_KOUENKAI_1"
+            strSQL &= "  ,"
+            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
+            strSQL &= ") AS TBL_KOUENKAI"
+            strSQL &= ","
+            strSQL &= "("
+            strSQL &= " SELECT TBL_KOTSUHOTEL_1.* FROM "
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL"
+            strSQL &= strSQL_WHERE_KOTSUHOTEL
+            strSQL &= ") AS TBL_KOTSUHOTEL_1"
+            strSQL &= "  ,"
+            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO,DR_MPID FROM TBL_KOTSUHOTEL"
+            strSQL &= strSQL_WHERE_KOTSUHOTEL
+            strSQL &= " GROUP BY KOUENKAI_NO,DR_MPID) AS TBL_KOTSUHOTEL_2"
+            strSQL &= "  WHERE TBL_KOTSUHOTEL_1.UPDATE_DATE=TBL_KOTSUHOTEL_2.UPDATE_DATE"
+            strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO=TBL_KOTSUHOTEL_2.KOUENKAI_NO"
+            strSQL &= "   AND TBL_KOTSUHOTEL_1.DR_MPID=TBL_KOTSUHOTEL_2.DR_MPID"
+            strSQL &= ") AS TBL_KOTSUHOTEL"
+
+            strSQL &= " ORDER BY"
+            strSQL &= " TBL_KOTSUHOTEL.UPDATE_DATE ASC"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
             Dim strSQL As String = ""
 

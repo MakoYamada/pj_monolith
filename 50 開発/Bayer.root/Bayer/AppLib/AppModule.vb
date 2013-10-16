@@ -178,8 +178,9 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_AREA.ToUpper Then TBL_KOTSUHOTEL.MR_AREA = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_EIGYOSHO.ToUpper Then TBL_KOTSUHOTEL.MR_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_NAME.ToUpper Then TBL_KOTSUHOTEL.MR_NAME = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_ROMA.ToUpper Then TBL_KOTSUHOTEL.MR_ROMA = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_EMAIL_PC.ToUpper Then TBL_KOTSUHOTEL.MR_EMAIL_PC = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_ROMA.ToUpper Then TBL_KOTSUHOTEL.MR_ROMA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_KANA.ToUpper Then TBL_KOTSUHOTEL.MR_KANA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_EMAIL_PC.ToUpper Then TBL_KOTSUHOTEL.MR_EMAIL_PC = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_EMAIL_KEITAI.ToUpper Then TBL_KOTSUHOTEL.MR_EMAIL_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_KEITAI.ToUpper Then TBL_KOTSUHOTEL.MR_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.MR_TEL.ToUpper Then TBL_KOTSUHOTEL.MR_TEL = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
@@ -545,6 +546,12 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER.ToUpper Then TBL_KOTSUHOTEL.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RSDATA)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE.ToUpper Then TBL_KOTSUHOTEL.SEND_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NAME.ToUpper Then TBL_KOTSUHOTEL.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TORIKESHI_FLG.ToUpper Then TBL_KOTSUHOTEL.TORIKESHI_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TAXI_PRT_NAME.ToUpper Then TBL_KOTSUHOTEL.TAXI_PRT_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.FROM_DATE.ToUpper Then TBL_KOTSUHOTEL.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TO_DATE.ToUpper Then TBL_KOTSUHOTEL.TO_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KAIJO_NAME.ToUpper Then TBL_KOTSUHOTEL.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEIHIN_NAME.ToUpper Then TBL_KOTSUHOTEL.SEIHIN_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KOTSUHOTEL
@@ -1252,9 +1259,17 @@ Public Class AppModule
         Return MR_ROMA
     End Function
 
+    '担当者名（担当MR）（カナ）
+    Public Shared Function GetName_MR_KANA(ByVal MR_KANA As String) As String
+        Return MR_KANA
+    End Function
+
     'Emailアドレス（担当MR）
     Public Shared Function GetName_MR_EMAIL(ByVal MR_EMAIL As String) As String
         Return MR_EMAIL
+    End Function
+    Public Shared Function GetName_MR_EMAIL_PC(ByVal MR_EMAIL_PC As String) As String
+        Return MR_EMAIL_PC
     End Function
 
     '携帯Emailアドレス（担当MR）
@@ -4228,6 +4243,12 @@ Public Class AppModule
             Return Trim(CmnModule.ClearHtmlSpace(INPUT_USER) & CmnModule.ClearHtmlSpace(USER_NAME))
         End If
     End Function
+
+    'SalesForceID
+    Public Shared Function GetName_SALEFORCE_ID(ByVal SALEFORCE_ID As String) As String
+        Return Trim(SALEFORCE_ID)
+    End Function
+
 
 
     '== コントロールをセット ==

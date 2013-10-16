@@ -160,6 +160,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnSankashaCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnTaxiCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>

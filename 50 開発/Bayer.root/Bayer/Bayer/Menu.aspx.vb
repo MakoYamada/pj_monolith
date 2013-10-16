@@ -8,7 +8,7 @@ Partial Public Class Menu1
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
     End Sub
 
-    Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
@@ -196,6 +196,13 @@ Partial Public Class Menu1
         Session.Item(SessionDef.Joken) = Joken
         Session.Remove(SessionDef.TBL_LOG)
         Response.Redirect(URL.LogSousa)
+    End Sub
+
+    '[CSVファイル作成]
+    Protected Sub BtnTaxiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsv.Click
+        Session.Remove(SessionDef.TBL_KOTSUHOTEL)
+        Session.Remove(SessionDef.Joken)
+        Response.Redirect(URL.TaxiCsv)
     End Sub
 
 End Class
