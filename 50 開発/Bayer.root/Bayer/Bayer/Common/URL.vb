@@ -22,6 +22,7 @@ Public Class URL
     Public Shared Preview As String = WebConfig.Site.URL & "Preview.aspx"
     Public Shared DrList As String = WebConfig.Site.URL & "DrList.aspx"
     Public Shared DrRegist As String = WebConfig.Site.URL & "DrRegist.aspx"
+    Public Shared DrRireki As String = WebConfig.Site.URL & "DrRireki.aspx"
     Public Shared HotelKensaku As String = WebConfig.Site.URL & "HotelKensaku.aspx"
     Public Shared ShisetsuKensaku As String = WebConfig.Site.URL & "ShisetsuKensaku.aspx"
     Public Shared MstUser As String = WebConfig.Site.URL & "admin/MstUser.aspx"
