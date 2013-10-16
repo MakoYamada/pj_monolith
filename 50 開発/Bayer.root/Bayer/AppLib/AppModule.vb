@@ -6292,23 +6292,23 @@ Public Class AppModule
     End Function
 
     'ÅyämíËÅzJRÅEìSìπë„ã‡
-    Public Shared Function GetValue_FIX_RAIL_FARE(ByVal FIX_RAIL_FARE As TextBox) As String
+    Public Shared Function GetValue_ANS_RAIL_FARE(ByVal FIX_RAIL_FARE As TextBox) As String
         Return Trim(StrConv(FIX_RAIL_FARE.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzJRÅEìSìπéÊè¡óø
-    Public Shared Function GetValue_FIX_RAIL_CANCELLATION(ByVal FIX_RAIL_CANCELLATION As TextBox) As String
+    Public Shared Function GetValue_ANSs_RAIL_CANCELLATION(ByVal FIX_RAIL_CANCELLATION As TextBox) As String
         Return Trim(StrConv(FIX_RAIL_CANCELLATION.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzçqãÛåîë„ã‡
-    Public Shared Function GetValue_FIX_AIR_FARE(ByVal FIX_AIR_FARE As TextBox) As String
-        Return Trim(StrConv(FIX_AIR_FARE.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_AIR_FARE(ByVal ANS_AIR_FARE As TextBox) As String
+        Return Trim(StrConv(ANS_AIR_FARE.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzçqãÛåîéÊè¡óø
-    Public Shared Function GetValue_FIX_AIR_CANCELLATION(ByVal FIX_AIR_CANCELLATION As TextBox) As String
-        Return Trim(StrConv(FIX_AIR_CANCELLATION.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_AIR_CANCELLATION(ByVal ANS_AIR_CANCELLATION As TextBox) As String
+        Return Trim(StrConv(ANS_AIR_CANCELLATION.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzÉoÉXÅEëDìôë„ã‡
