@@ -2691,6 +2691,16 @@ Public Class AppModule
         End If
     End Function
 
+    'タクチケ備考（依頼）
+    Public Shared Function GetName_REQ_TAXI_NOTE(ByVal REQ_TAXI_NOTE As String) As String
+        Return REQ_TAXI_NOTE
+    End Function
+
+    'タクチケ備考（回答）
+    Public Shared Function GetName_ANS_TAXI_NOTE(ByVal ANS_TAXI_NOTE As String) As String
+        Return ANS_TAXI_NOTE
+    End Function
+
     'タクチケ発券手数料
     Public Shared Function GetName_TAXI_HAKKEN_FEE(ByVal TAXI_HAKKEN_FEE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If Val(TAXI_HAKKEN_FEE) = 0 Then
