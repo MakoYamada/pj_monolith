@@ -6292,13 +6292,13 @@ Public Class AppModule
     End Function
 
     'ÅyämíËÅzJRÅEìSìπë„ã‡
-    Public Shared Function GetValue_ANS_RAIL_FARE(ByVal FIX_RAIL_FARE As TextBox) As String
-        Return Trim(StrConv(FIX_RAIL_FARE.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_RAIL_FARE(ByVal ANS_RAIL_FARE As TextBox) As String
+        Return Trim(StrConv(ANS_RAIL_FARE.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzJRÅEìSìπéÊè¡óø
-    Public Shared Function GetValue_ANSs_RAIL_CANCELLATION(ByVal FIX_RAIL_CANCELLATION As TextBox) As String
-        Return Trim(StrConv(FIX_RAIL_CANCELLATION.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_RAIL_CANCELLATION(ByVal ANS_RAIL_CANCELLATION As TextBox) As String
+        Return Trim(StrConv(ANS_RAIL_CANCELLATION.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzçqãÛåîë„ã‡
@@ -6312,13 +6312,13 @@ Public Class AppModule
     End Function
 
     'ÅyämíËÅzÉoÉXÅEëDìôë„ã‡
-    Public Shared Function GetValue_FIX_OTHER_FARE(ByVal FIX_OTHER_FARE As TextBox) As String
-        Return Trim(StrConv(FIX_OTHER_FARE.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_OTHER_FARE(ByVal ANS_OTHER_FARE As TextBox) As String
+        Return Trim(StrConv(ANS_OTHER_FARE.Text, VbStrConv.Narrow))
     End Function
 
     'ÅyämíËÅzÉoÉXÅEëDìôéÊè¡óø
-    Public Shared Function GetValue_FIX_OTHER_CANCELLATION(ByVal FIX_OTHER_CANCELLATION As TextBox) As String
-        Return Trim(StrConv(FIX_OTHER_CANCELLATION.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_OTHER_CANCELLATION(ByVal ANS_OTHER_CANCELLATION As TextBox) As String
+        Return Trim(StrConv(ANS_OTHER_CANCELLATION.Text, VbStrConv.Narrow))
     End Function
 
     'ìoò^ä«óùéËêîóø
