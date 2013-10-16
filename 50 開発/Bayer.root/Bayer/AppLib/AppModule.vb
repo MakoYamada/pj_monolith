@@ -2601,79 +2601,79 @@ Public Class AppModule
     End Function
 
     'ÅyämíËÅzJRÅEìSìπë„ã‡
-    Public Shared Function GetName_FIX_RAIL_FARE(ByVal FIX_RAIL_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(FIX_RAIL_FARE) = 0 Then
+    Public Shared Function GetName_ANS_RAIL_FARE(ByVal ANS_RAIL_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_RAIL_FARE) = 0 Then
             Return "0"
         Else
             If ShortFormat = False Then
-                Return CLng(FIX_RAIL_FARE).ToString("#,#")
+                Return CLng(ANS_RAIL_FARE).ToString("#,#")
             Else
-                Return FIX_RAIL_FARE
+                Return ANS_RAIL_FARE
             End If
         End If
     End Function
 
     'ÅyämíËÅzJRÅEìSìπéÊè¡óø
-    Public Shared Function GetName_FIX_RAIL_CANCELLATION(ByVal FIX_RAIL_CANCELLATION As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(FIX_RAIL_CANCELLATION) = 0 Then
+    Public Shared Function GetName_ANS_RAIL_CANCELLATION(ByVal ANS_RAIL_CANCELLATION As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_RAIL_CANCELLATION) = 0 Then
             Return "0"
         Else
             If ShortFormat = False Then
-                Return CLng(FIX_RAIL_CANCELLATION).ToString("#,#")
+                Return CLng(ANS_RAIL_CANCELLATION).ToString("#,#")
             Else
-                Return FIX_RAIL_CANCELLATION
+                Return ANS_RAIL_CANCELLATION
             End If
         End If
     End Function
 
     'ÅyämíËÅzçqãÛåîë„ã‡
-    Public Shared Function GetName_FIX_AIR_FARE(ByVal FIX_AIR_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(FIX_AIR_FARE) = 0 Then
+    Public Shared Function GetName_ANS_AIR_FARE(ByVal ANS_AIR_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_AIR_FARE) = 0 Then
             Return "0"
         Else
             If ShortFormat = False Then
-                Return CLng(FIX_AIR_FARE).ToString("#,#")
+                Return CLng(ANS_AIR_FARE).ToString("#,#")
             Else
-                Return FIX_AIR_FARE
+                Return ANS_AIR_FARE
             End If
         End If
     End Function
 
     'ÅyämíËÅzçqãÛåîéÊè¡óø
-    Public Shared Function GetName_FIX_AIR_CANCELLATION(ByVal FIX_AIR_CANCELLATION As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(FIX_AIR_CANCELLATION) = 0 Then
+    Public Shared Function GetName_ANS_AIR_CANCELLATION(ByVal ANS_AIR_CANCELLATION As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_AIR_CANCELLATION) = 0 Then
             Return "0"
         Else
             If ShortFormat = False Then
-                Return CLng(FIX_AIR_CANCELLATION).ToString("#,#")
+                Return CLng(ANS_AIR_CANCELLATION).ToString("#,#")
             Else
-                Return FIX_AIR_CANCELLATION
+                Return ANS_AIR_CANCELLATION
             End If
         End If
     End Function
 
     'ÅyämíËÅzÉoÉXÅEëDìôë„ã‡
-    Public Shared Function GetName_FIX_OTHER_FARE(ByVal FIX_OTHER_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(FIX_OTHER_FARE) = 0 Then
+    Public Shared Function GetName_ANS_OTHER_FARE(ByVal ANS_OTHER_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_OTHER_FARE) = 0 Then
             Return "0"
         Else
             If ShortFormat = False Then
-                Return CLng(FIX_OTHER_FARE).ToString("#,#")
+                Return CLng(ANS_OTHER_FARE).ToString("#,#")
             Else
-                Return FIX_OTHER_FARE
+                Return ANS_OTHER_FARE
             End If
         End If
     End Function
 
     'ÅyämíËÅzÉoÉXÅEëDìôéÊè¡óø
-    Public Shared Function GetName_FIX_OTHER_CANCELLATION(ByVal FIX_OTHER_CANCELLATION As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(FIX_OTHER_CANCELLATION) = 0 Then
+    Public Shared Function GetName_ANS_OTHER_CANCELLATION(ByVal ANS_OTHER_CANCELLATION As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_OTHER_CANCELLATION) = 0 Then
             Return "0"
         Else
             If ShortFormat = False Then
-                Return CLng(FIX_OTHER_CANCELLATION).ToString("#,#")
+                Return CLng(ANS_OTHER_CANCELLATION).ToString("#,#")
             Else
-                Return FIX_OTHER_CANCELLATION
+                Return ANS_OTHER_CANCELLATION
             End If
         End If
     End Function
