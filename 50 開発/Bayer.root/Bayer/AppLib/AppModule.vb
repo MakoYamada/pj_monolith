@@ -6781,6 +6781,41 @@ Public Class AppModule
         Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_10)
     End Function
 
+    '社員用往路手配（回答）
+    Public Shared Function GetValue_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI)
+    End Function
+
+    '社員用復路手配（回答）
+    Public Shared Function GetValue_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_MR_O_TEHAI)
+    End Function
+
+    '社員用宿泊ホテル名（回答）
+    Public Shared Function GetValue_ANS_MR_HOTEL_NAME(ByVal ANS_MR_HOTEL_NAME As TextBox) As String
+        Return Trim(ANS_MR_HOTEL_NAME.Text)
+    End Function
+
+    '社員用宿泊ホテル住所（回答）
+    Public Shared Function GetValue_ANS_MR_HOTEL_ADDRESS(ByVal ANS_MR_HOTEL_ADDRESS As TextBox) As String
+        Return Trim(ANS_MR_HOTEL_ADDRESS.Text)
+    End Function
+
+    '社員用宿泊ホテルTEL（回答）
+    Public Shared Function GetValue_ANS_MR_HOTEL_TEL(ByVal ANS_MR_HOTEL_TEL As TextBox) As String
+        Return Trim(ANS_MR_HOTEL_TEL.Text)
+    End Function
+
+    '社員用宿泊喫煙（回答）
+    Public Shared Function GetValue_ANS_MR_HOTEL_SMOKING(ByVal ANS_MR_HOTEL_SMOKING As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_MR_HOTEL_SMOKING)
+    End Function
+
+    '社員用宿泊備考（回答）
+    Public Shared Function GetValue_ANS_MR_HOTEL_NOTE(ByVal ANS_MR_HOTEL_NOTE As TextBox) As String
+        Return Trim(ANS_MR_HOTEL_NOTE.Text)
+    End Function
+
     '電話番号
     Public Shared Function GetValue_TEL(ByVal TEL As TextBox) As String
         Return Trim(StrConv(TEL.Text, VbStrConv.Narrow))

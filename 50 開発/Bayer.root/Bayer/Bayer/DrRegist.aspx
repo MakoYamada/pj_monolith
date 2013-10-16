@@ -2449,14 +2449,14 @@
                             JRåîë„
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_RAIL_FARE" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_RAIL_FARE" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="169"></asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             JRåîéÊè¡óø
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_RAIL_CANCELLATION" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_RAIL_CANCELLATION" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="170"></asp:TextBox>â~                            
                         </td>
                     </tr>
@@ -2465,14 +2465,14 @@
                             ÇªÇÃëºìSìπë„ìôë„ã‡
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_OTHER_FARE" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_OTHER_FARE" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="173"></asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             ÇªÇÃëºìSìπë„ìôéÊè¡óø
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_OTHER_CANCELLATION" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_OTHER_CANCELLATION" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="174"></asp:TextBox>â~                            
                         </td>
                     </tr>
@@ -2481,14 +2481,14 @@
                             çqãÛåîë„
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_AIR_FARE" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_AIR_FARE" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="171"></asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             çqãÛåîéÊè¡óø
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="FIX_AIR_CANCELLATION" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_AIR_CANCELLATION" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="172"></asp:TextBox>â~                            
                         </td>
                     </tr>
@@ -2520,7 +2520,7 @@
 							É`ÉPÉbÉgéËîz
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="Label1" runat="server"></asp:Label>
+							<asp:Label ID="TEHAI_TAXI" runat="server"></asp:Label>
                         </td>
 					</tr>
                     <tr>
@@ -3457,7 +3457,7 @@
                             é–àıópïúòHó◊ê»äÛñ]
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="3">
-							<asp:Label ID="Label10" runat="server"></asp:Label>
+							<asp:Label ID="REQ_MR_F_TEHAI" runat="server"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             é–àıópïúòHéËîz
@@ -3543,13 +3543,8 @@
                             èhîëãiâå
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:RadioButton ID="ANS_MR_HOTEL_SMOKING_NO_MUST" runat="server" Text="ã÷âå" 
-                                TabIndex="25" />&nbsp;&nbsp;
-                            <asp:RadioButton ID="ANS_MR_HOTEL_SMOKING_NO" runat="server" 
-                                Text="ã÷âåÅiè¡èLëŒâûÇÃâ¬î\ê´Ç™Ç†ÇËÇ‹Ç∑Åj" TabIndex="26" />&nbsp;&nbsp;
-                            <br />
-                            <asp:RadioButton ID="ANS_MR_HOTEL_SMOKING_YES" runat="server" Text="ãiâå" 
-                                TabIndex="27" />
+		                    <asp:DropDownList ID="ANS_MR_HOTEL_SMOKING" runat="server" Width="150px">
+                            </asp:DropDownList>						
                         </td>
                     </tr>
                     <tr>
@@ -3557,7 +3552,7 @@
                             îıçl
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="3">
-                            <asp:TextBox ID="TextBox1" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="REQ_MR_HOTEL_NOTE" runat="server" MaxLength="255" 
                                 TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182" 
                                 BorderStyle="None" ReadOnly="True"></asp:TextBox>                            
                         </td>

@@ -2725,58 +2725,58 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_KOTSU_BIKO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FIX_RAIL_FARE コントロール。
+    '''ANS_RAIL_FARE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FIX_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FIX_RAIL_CANCELLATION コントロール。
+    '''ANS_RAIL_CANCELLATION コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FIX_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FIX_OTHER_FARE コントロール。
+    '''ANS_OTHER_FARE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FIX_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FIX_OTHER_CANCELLATION コントロール。
+    '''ANS_OTHER_CANCELLATION コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FIX_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FIX_AIR_FARE コントロール。
+    '''ANS_AIR_FARE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FIX_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''FIX_AIR_CANCELLATION コントロール。
+    '''ANS_AIR_CANCELLATION コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FIX_AIR_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_AIR_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnTAXI_1 コントロール。
@@ -2797,13 +2797,13 @@ Partial Public Class DrRegist
     Protected WithEvents TB_TAXI_1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''Label1 コントロール。
+    '''TEHAI_TAXI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TEHAI_TAXI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_NOTE コントロール。
@@ -3652,13 +3652,13 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_MR_O_TEHAI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Label10 コントロール。
+    '''REQ_MR_F_TEHAI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents REQ_MR_F_TEHAI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_MR_F_TEHAI コントロール。
@@ -3751,40 +3751,22 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_MR_HOTEL_SMOKING As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_MR_HOTEL_SMOKING_NO_MUST コントロール。
+    '''ANS_MR_HOTEL_SMOKING コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_SMOKING_NO_MUST As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents ANS_MR_HOTEL_SMOKING As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''ANS_MR_HOTEL_SMOKING_NO コントロール。
+    '''REQ_MR_HOTEL_NOTE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_SMOKING_NO As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''ANS_MR_HOTEL_SMOKING_YES コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_SMOKING_YES As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''TextBox1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents REQ_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_MR_HOTEL_NOTE コントロール。
