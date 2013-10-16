@@ -3435,6 +3435,51 @@ Public Class AppModule
         Return wStr
     End Function
 
+    '社員用交通・宿泊備考
+    Public Shared Function GetName_REQ_MR_HOTEL_NOTE(ByVal REQ_MR_HOTEL_NOTE As String) As String
+        Return REQ_MR_HOTEL_NOTE
+    End Function
+
+    '社員用ホテル名
+    Public Shared Function GetName_ANS_MR_HOTEL_ADDRESS(ByVal ANS_MR_HOTEL_ADDRESS As String) As String
+        Return ANS_MR_HOTEL_ADDRESS
+    End Function
+
+    '社員用ホテル住所
+    Public Shared Function GetName_ANS_MR_HOTEL_NAME(ByVal ANS_MR_HOTEL_NAME As String) As String
+        Return ANS_MR_HOTEL_NAME
+    End Function
+
+    '社員用ホテルTEL
+    Public Shared Function GetName_ANS_MR_HOTEL_TEL(ByVal ANS_MR_HOTEL_TEL As String) As String
+        Return ANS_MR_HOTEL_TEL
+    End Function
+
+    '社員用チェックイン時間
+    Public Shared Function GetName_ANS_MR_CHECKIN_TIME(ByVal ANS_MR_CHECKIN_TIME As String) As String
+        Return ANS_MR_CHECKIN_TIME
+    End Function
+
+    '社員用チェックアウト時間
+    Public Shared Function GetName_ANS_MR_CHECKOUT_TIME(ByVal ANS_MR_CHECKOUT_TIME As String) As String
+        Return ANS_MR_CHECKOUT_TIME
+    End Function
+
+    '社員用宿泊備考
+    Public Shared Function GetName_ANS_MR_HOTEL_NOTE(ByVal ANS_MR_HOTEL_NOTE As String) As String
+        Return ANS_MR_HOTEL_NOTE
+    End Function
+
+    '社員用交通費
+    Public Shared Function GetName_ANS_MR_KOTSUHI(ByVal ANS_MR_KOTSUHI As String) As String
+        Return ANS_MR_KOTSUHI
+    End Function
+
+    '社員用宿泊費
+    Public Shared Function GetName_ANS_MR_HOTELHI(ByVal ANS_MR_HOTELHI As String) As String
+        Return ANS_MR_HOTELHI
+    End Function
+
     'MR年齢
     Public Shared Function GetName_MR_AGE(ByVal MR_AGE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If Val(MR_AGE) = 0 Then
