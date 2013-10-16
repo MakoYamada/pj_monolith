@@ -3409,6 +3409,18 @@ Public Class AppModule
         Return wStr
     End Function
 
+    'é–àıópèhîëäÛñ]
+    Public Shared Function GetName_REQ_MR_TEHAI_HOTEL(ByVal REQ_MR_TEHAI_HOTEL As String) As String
+        Select Case REQ_MR_TEHAI_HOTEL
+            Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.Yes
+                Return AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.Yes
+            Case AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.No
+                Return AppConst.KOTSUHOTEL.TEHAI_HOTEL.Name.No
+            Case Else
+                Return ""
+        End Select
+    End Function
+
     'é–àıópèhîëÅiã÷âåÅEãiâåÅj
     Public Shared Function GetName_REQ_MR_HOTEL_SMOKING(ByVal REQ_MR_HOTEL_SMOKING As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
