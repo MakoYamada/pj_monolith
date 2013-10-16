@@ -2938,6 +2938,36 @@ Public Class AppModule
     Public Shared Function GetName_ANS_TAXI_DATE_10(ByVal ANS_TAXI_DATE_10 As String) As String
         Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_10)
     End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_11(ByVal ANS_TAXI_DATE_11 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_11)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_12(ByVal ANS_TAXI_DATE_12 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_12)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_13(ByVal ANS_TAXI_DATE_13 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_13)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_14(ByVal ANS_TAXI_DATE_14 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_14)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_15(ByVal ANS_TAXI_DATE_15 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_15)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_16(ByVal ANS_TAXI_DATE_16 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_16)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_17(ByVal ANS_TAXI_DATE_17 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_17)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_18(ByVal ANS_TAXI_DATE_18 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_18)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_19(ByVal ANS_TAXI_DATE_19 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_19)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_DATE_20(ByVal ANS_TAXI_DATE_20 As String) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_20)
+    End Function
 
     'タクシーチケット：発地（回答）
     Public Shared Function GetName_ANS_TAXI_FROM(ByVal ANS_TAXI_FROM As String) As String
@@ -3043,6 +3073,36 @@ Public Class AppModule
     Public Shared Function GetName_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As String) As String
         Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_10)
     End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_11)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_12)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_13)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_14)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_15)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_16)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_17)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_18)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_19)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As String) As String
+        Return GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_20)
+    End Function
 
     'タクシーチケット：番号（回答）
     Public Shared Function GetName_ANS_TAXI_NO(ByVal ANS_TAXI_NO As String) As String
@@ -3077,6 +3137,36 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_ANS_TAXI_NO_10(ByVal ANS_TAXI_NO_10 As String) As String
         Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_10)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_11(ByVal ANS_TAXI_NO_11 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_11)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_12(ByVal ANS_TAXI_NO_12 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_12)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_13(ByVal ANS_TAXI_NO_13 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_13)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_14(ByVal ANS_TAXI_NO_14 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_14)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_15(ByVal ANS_TAXI_NO_15 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_15)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_16(ByVal ANS_TAXI_NO_16 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_16)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_17(ByVal ANS_TAXI_NO_17 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_17)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_18(ByVal ANS_TAXI_NO_18 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_18)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_19(ByVal ANS_TAXI_NO_19 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_19)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_NO_20(ByVal ANS_TAXI_NO_20 As String) As String
+        Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_20)
     End Function
 
     'タクシーチケット：利用額（回答）
