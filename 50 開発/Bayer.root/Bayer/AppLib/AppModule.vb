@@ -1139,31 +1139,6 @@ Public Class AppModule
         End If
     End Function
 
-    'MPID
-    Public Shared Function GetName_DR_MPID(ByVal DR_MPID As String) As String
-        Return DR_MPID
-    End Function
-
-    'DRコード
-    Public Shared Function GetName_DR_CD(ByVal DR_CD As String) As String
-        Return DR_CD
-    End Function
-
-    '枝番
-    Public Shared Function GetName_DR_EDABAN(ByVal DR_EDABAN As String) As String
-        Return DR_EDABAN
-    End Function
-
-    'DR氏名
-    Public Shared Function GetName_DR_NAME(ByVal DR_NAME As String) As String
-        Return DR_NAME
-    End Function
-
-    'DR氏名（全角カタカナ）
-    Public Shared Function GetName_DR_KANA(ByVal DR_KANA As String) As String
-        Return DR_KANA
-    End Function
-
     'DR性別
     Public Shared Function GetName_DR_SEX(ByVal DR_SEX As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
@@ -1176,31 +1151,6 @@ Public Class AppModule
             End If
         Next
         Return wStr
-    End Function
-
-    'DR年齢
-    Public Shared Function GetName_DR_AGE(ByVal DR_AGE As String) As String
-        Return DR_AGE
-    End Function
-
-    'DCF施設コード
-    Public Shared Function GetName_DR_SHISETSU_CD(ByVal DR_SHISETSU_CD As String) As String
-        Return DR_SHISETSU_CD
-    End Function
-
-    '施設名
-    Public Shared Function GetName_DR_SHISETSU_NAME(ByVal DR_SHISETSU_NAME As String) As String
-        Return DR_SHISETSU_NAME
-    End Function
-
-    '施設住所
-    Public Shared Function GetName_DR_SHISETSU_ADDRESS(ByVal DR_SHISETSU_ADDRESS As String) As String
-        Return DR_SHISETSU_ADDRESS
-    End Function
-
-    '指定外理由
-    Public Shared Function GetName_SHITEIGAI_RIYU(ByVal SHITEIGAI_RIYU As String) As String
-        Return SHITEIGAI_RIYU
     End Function
 
     '参加者役割
@@ -1230,73 +1180,6 @@ Public Class AppModule
         End Select
     End Function
 
-    '所属事業部（担当MR）
-    Public Shared Function GetName_MR_BU(ByVal MR_BU As String) As String
-        Return MR_BU
-    End Function
-
-    '所属エリア（担当MR）
-    Public Shared Function GetName_MR_AREA(ByVal MR_AREA As String) As String
-        Return MR_AREA
-    End Function
-
-    '所属営業所（担当MR）
-    Public Shared Function GetName_MR_EIGYOSHO(ByVal MR_EIGYOSHO As String) As String
-        Return MR_EIGYOSHO
-    End Function
-
-    '担当者（担当MR）No
-    Public Shared Function GetName_MR_NO(ByVal MR_NO As String) As String
-        Return MR_NO
-    End Function
-
-    '担当者（担当MR）名
-    Public Shared Function GetName_MR_NAME(ByVal MR_NAME As String) As String
-        Return MR_NAME
-    End Function
-
-    '担当者名（担当MR）（ローマ字）
-    Public Shared Function GetName_MR_ROMA(ByVal MR_ROMA As String) As String
-        Return MR_ROMA
-    End Function
-
-    '担当者名（担当MR）（カナ）
-    Public Shared Function GetName_MR_KANA(ByVal MR_KANA As String) As String
-        Return MR_KANA
-    End Function
-
-    'Emailアドレス（担当MR）
-    Public Shared Function GetName_MR_EMAIL(ByVal MR_EMAIL As String) As String
-        Return MR_EMAIL
-    End Function
-    Public Shared Function GetName_MR_EMAIL_PC(ByVal MR_EMAIL_PC As String) As String
-        Return MR_EMAIL_PC
-    End Function
-
-    '携帯Emailアドレス（担当MR）
-    Public Shared Function GetName_MR_EMAIL_KEITAI(ByVal MR_EMAIL_KEITAI As String) As String
-        Return MR_EMAIL_KEITAI
-    End Function
-
-    '携帯電話番号（担当MR）
-    Public Shared Function GetName_MR_KEITAI(ByVal MR_KEITAI As String) As String
-        Return MR_KEITAI
-    End Function
-
-    'オフィスの電話番号（担当MR）
-    Public Shared Function GetName_MR_TEL(ByVal MR_TEL As String) As String
-        Return MR_TEL
-    End Function
-
-    'チケット送付先FS
-    Public Shared Function GetName_MR_SEND_SAKI_FS(ByVal MR_SEND_SAKI_FS As String) As String
-        Return MR_SEND_SAKI_FS
-    End Function
-
-    'チケット送付先（その他）
-    Public Shared Function GetName_MR_SEND_SAKI_OTHER(ByVal MR_SEND_SAKI_OTHER As String) As String
-        Return MR_SEND_SAKI_OTHER
-    End Function
 
     'Account Code
     Public Shared Function GetName_ACCOUNT_CODE(ByVal ACCOUNT_CODE As String) As String
@@ -1422,41 +1305,6 @@ Public Class AppModule
         End Select
     End Function
 
-    '宿泊先（回答）
-    Public Shared Function GetName_ANS_HOTEL_NAME(ByVal ANS_HOTEL_NAME As String) As String
-        Return ANS_HOTEL_NAME
-    End Function
-
-    '宿泊先住所（回答）
-    Public Shared Function GetName_ANS_HOTEL_ADDRESS(ByVal ANS_HOTEL_ADDRESS As String) As String
-        Return ANS_HOTEL_ADDRESS
-    End Function
-
-    '宿泊先電話番号（回答）
-    Public Shared Function GetName_ANS_HOTEL_TEL(ByVal ANS_HOTEL_TEL As String) As String
-        Return ANS_HOTEL_TEL
-    End Function
-
-    '宿泊日（回答）
-    Public Shared Function GetName_ANS_HOTEL_DATE(ByVal ANS_HOTEL_DATE As String) As String
-        Return ANS_HOTEL_DATE
-    End Function
-
-    '泊数（回答）
-    Public Shared Function GetName_ANS_HAKUSU(ByVal ANS_HAKUSU As String) As String
-        Return ANS_HAKUSU
-    End Function
-
-    '宿泊先チェックイン時間（回答）
-    Public Shared Function GetName_ANS_CHECKIN_TIME(ByVal ANS_CHECKIN_TIME As String) As String
-        Return ANS_CHECKIN_TIME
-    End Function
-
-    '宿泊先チェックアウト時間（回答）
-    Public Shared Function GetName_ANS_CHECKOUT_TIME(ByVal ANS_CHECKOUT_TIME As String) As String
-        Return ANS_CHECKOUT_TIME
-    End Function
-
     '宿泊部屋タイプ（回答）
     Public Shared Function GetName_ANS_ROOM_TYPE(ByVal ANS_ROOM_TYPE As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
@@ -1483,11 +1331,6 @@ Public Class AppModule
             End If
         Next
         Return wStr
-    End Function
-
-    '宿泊備考（回答）
-    Public Shared Function GetName_ANS_HOTEL_NOTE(ByVal ANS_HOTEL_NOTE As String) As String
-        Return ANS_HOTEL_NOTE
     End Function
 
     '往路：交通手配
@@ -2606,16 +2449,6 @@ Public Class AppModule
         Return GetName_ANS_F_SEAT_KIBOU(ANS_F_SEAT_KIBOU_5)
     End Function
 
-    '交通備考（依頼）
-    Public Shared Function GetName_REQ_KOTSU_BIKO(ByVal REQ_KOTSU_BIKO As String) As String
-        Return REQ_KOTSU_BIKO
-    End Function
-
-    '交通備考（回答）
-    Public Shared Function GetName_ANS_KOTSU_BIKO(ByVal ANS_KOTSU_BIKO As String) As String
-        Return ANS_KOTSU_BIKO
-    End Function
-
     '【確定】JR・鉄道代金
     Public Shared Function GetName_ANS_RAIL_FARE(ByVal ANS_RAIL_FARE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If Val(ANS_RAIL_FARE) = 0 Then
@@ -2765,11 +2598,6 @@ Public Class AppModule
             Case Else
                 Return AppConst.KOTSUHOTEL.TEHAI_TAXI.Mark.No
         End Select
-    End Function
-
-    'タクシーチケット申込先
-    Public Shared Function GetName_TAXI_MOUSHIKOMI_SAKI(ByVal TAXI_MOUSHIKOMI_SAKI As String) As String
-        Return TAXI_MOUSHIKOMI_SAKI
     End Function
 
     'タクシーチケット：利用日（依頼）
@@ -4420,7 +4248,7 @@ Public Class AppModule
 
     'DR年齢
     Public Shared Sub SetForm_DR_AGE(ByVal DR_AGE As String, ByRef control As Label)
-        control.Text = GetName_DR_AGE(DR_AGE)
+        control.Text = DR_AGE
     End Sub
 
     '講演会への参加
