@@ -1476,106 +1476,6 @@ Public Class AppModule
         Return GetName_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_5)
     End Function
 
-    '往路：利用日（依頼）
-    Public Shared Function GetName_REQ_O_DATE(ByVal REQ_O_DATE As String) As String
-        Return CmnModule.Format_Date(REQ_O_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-    End Function
-    Public Shared Function GetName_REQ_O_DATE_1(ByVal REQ_O_DATE_1 As String) As String
-        Return GetName_REQ_O_DATE(REQ_O_DATE_1)
-    End Function
-    Public Shared Function GetName_REQ_O_DATE_2(ByVal REQ_O_DATE_2 As String) As String
-        Return GetName_REQ_O_DATE(REQ_O_DATE_2)
-    End Function
-    Public Shared Function GetName_REQ_O_DATE_3(ByVal REQ_O_DATE_3 As String) As String
-        Return GetName_REQ_O_DATE(REQ_O_DATE_3)
-    End Function
-    Public Shared Function GetName_REQ_O_DATE_4(ByVal REQ_O_DATE_4 As String) As String
-        Return GetName_REQ_O_DATE(REQ_O_DATE_4)
-    End Function
-    Public Shared Function GetName_REQ_O_DATE_5(ByVal REQ_O_DATE_5 As String) As String
-        Return GetName_REQ_O_DATE(REQ_O_DATE_5)
-    End Function
-
-    '往路：出発地（依頼）
-    Public Shared Function GetName_REQ_O_AIRPORT1(ByVal REQ_O_AIRPORT1 As String) As String
-        Return REQ_O_AIRPORT1
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT1_1(ByVal REQ_O_AIRPORT1_1 As String) As String
-        Return GetName_REQ_O_AIRPORT1(REQ_O_AIRPORT1_1)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT1_2(ByVal REQ_O_AIRPORT1_2 As String) As String
-        Return GetName_REQ_O_AIRPORT1(REQ_O_AIRPORT1_2)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT1_3(ByVal REQ_O_AIRPORT1_3 As String) As String
-        Return GetName_REQ_O_AIRPORT1(REQ_O_AIRPORT1_3)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT1_4(ByVal REQ_O_AIRPORT1_4 As String) As String
-        Return GetName_REQ_O_AIRPORT1(REQ_O_AIRPORT1_4)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT1_5(ByVal REQ_O_AIRPORT1_5 As String) As String
-        Return GetName_REQ_O_AIRPORT1(REQ_O_AIRPORT1_5)
-    End Function
-
-    '往路：到着地（依頼）
-    Public Shared Function GetName_REQ_O_AIRPORT2(ByVal REQ_O_AIRPORT2 As String) As String
-        Return REQ_O_AIRPORT2
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT2_1(ByVal REQ_O_AIRPORT2_1 As String) As String
-        Return GetName_REQ_O_AIRPORT2(REQ_O_AIRPORT2_1)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT2_2(ByVal REQ_O_AIRPORT2_2 As String) As String
-        Return GetName_REQ_O_AIRPORT2(REQ_O_AIRPORT2_2)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT2_3(ByVal REQ_O_AIRPORT2_3 As String) As String
-        Return GetName_REQ_O_AIRPORT2(REQ_O_AIRPORT2_3)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT2_4(ByVal REQ_O_AIRPORT2_4 As String) As String
-        Return GetName_REQ_O_AIRPORT2(REQ_O_AIRPORT2_4)
-    End Function
-    Public Shared Function GetName_REQ_O_AIRPORT2_5(ByVal REQ_O_AIRPORT2_5 As String) As String
-        Return GetName_REQ_O_AIRPORT2(REQ_O_AIRPORT2_5)
-    End Function
-
-    '往路：出発時間（依頼）
-    Public Shared Function GetName_REQ_O_TIME1(ByVal REQ_O_TIME1 As String) As String
-        Return REQ_O_TIME1
-    End Function
-    Public Shared Function GetName_REQ_O_TIME1_1(ByVal REQ_O_TIME1_1 As String) As String
-        Return GetName_REQ_O_TIME1(REQ_O_TIME1_1)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME1_2(ByVal REQ_O_TIME1_2 As String) As String
-        Return GetName_REQ_O_TIME1(REQ_O_TIME1_2)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME1_3(ByVal REQ_O_TIME1_3 As String) As String
-        Return GetName_REQ_O_TIME1(REQ_O_TIME1_3)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME1_4(ByVal REQ_O_TIME1_4 As String) As String
-        Return GetName_REQ_O_TIME1(REQ_O_TIME1_4)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME1_5(ByVal REQ_O_TIME1_5 As String) As String
-        Return GetName_REQ_O_TIME1(REQ_O_TIME1_5)
-    End Function
-
-    '往路：到着時間（依頼）
-    Public Shared Function GetName_REQ_O_TIME2(ByVal REQ_O_TIME2 As String) As String
-        Return REQ_O_TIME2
-    End Function
-    Public Shared Function GetName_REQ_O_TIME2_1(ByVal REQ_O_TIME2_1 As String) As String
-        Return GetName_REQ_O_TIME2(REQ_O_TIME2_1)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME2_2(ByVal REQ_O_TIME2_2 As String) As String
-        Return GetName_REQ_O_TIME2(REQ_O_TIME2_2)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME2_3(ByVal REQ_O_TIME2_3 As String) As String
-        Return GetName_REQ_O_TIME2(REQ_O_TIME2_3)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME2_4(ByVal REQ_O_TIME2_4 As String) As String
-        Return GetName_REQ_O_TIME2(REQ_O_TIME2_4)
-    End Function
-    Public Shared Function GetName_REQ_O_TIME2_5(ByVal REQ_O_TIME2_5 As String) As String
-        Return GetName_REQ_O_TIME2(REQ_O_TIME2_5)
-    End Function
-
     '往路：列車名・便名（依頼）
     Public Shared Function GetName_REQ_O_BIN(ByVal REQ_O_BIN As String) As String
         Return REQ_O_BIN
@@ -4459,7 +4359,7 @@ Public Class AppModule
 
     '往路：利用日（依頼）
     Public Shared Sub SetForm_REQ_O_DATE(ByVal REQ_O_DATE As String, ByRef control As Label)
-        control.Text = GetName_REQ_O_DATE(REQ_O_DATE)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_O_DATE, CmnModule.DateFormatType.YYYYMD)
     End Sub
     Public Shared Sub SetForm_REQ_O_DATE_1(ByVal REQ_O_DATE_1 As String, ByRef control As Label)
         SetForm_REQ_O_DATE(REQ_O_DATE_1, control)
@@ -4475,6 +4375,365 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetForm_REQ_O_DATE_5(ByVal REQ_O_DATE_5 As String, ByRef control As Label)
         SetForm_REQ_O_DATE(REQ_O_DATE_5, control)
+    End Sub
+
+    '往路：出発地（依頼）
+    Public Shared Sub SetForm_REQ_O_AIRPORT1(ByVal REQ_O_AIRPORT1 As String, ByRef control As TextBox)
+        control.Text = REQ_O_AIRPORT1
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT1_1(ByVal REQ_O_AIRPORT1_1 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT1(REQ_O_AIRPORT1_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT1_2(ByVal REQ_O_AIRPORT1_2 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT1(REQ_O_AIRPORT1_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT1_3(ByVal REQ_O_AIRPORT1_3 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT1(REQ_O_AIRPORT1_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT1_4(ByVal REQ_O_AIRPORT1_4 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT1(REQ_O_AIRPORT1_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT1_5(ByVal REQ_O_AIRPORT1_5 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT1(REQ_O_AIRPORT1_5, control)
+    End Sub
+
+    '往路：到着地（依頼）
+    Public Shared Sub SetForm_REQ_O_AIRPORT2(ByVal REQ_O_AIRPORT2 As String, ByRef control As TextBox)
+        control.Text = REQ_O_AIRPORT2
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT2_1(ByVal REQ_O_AIRPORT2_1 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT2(REQ_O_AIRPORT2_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT2_2(ByVal REQ_O_AIRPORT2_2 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT2(REQ_O_AIRPORT2_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT2_3(ByVal REQ_O_AIRPORT2_3 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT2(REQ_O_AIRPORT2_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT2_4(ByVal REQ_O_AIRPORT2_4 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT2(REQ_O_AIRPORT2_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_AIRPORT2_5(ByVal REQ_O_AIRPORT2_5 As String, ByRef control As TextBox)
+        SetForm_REQ_O_AIRPORT2(REQ_O_AIRPORT2_5, control)
+    End Sub
+
+    '往路：出発時刻（依頼）
+    Public Shared Sub SetForm_REQ_O_TIME1(ByVal REQ_O_TIME1 As String, ByRef control As Label)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_O_TIME1, CmnModule.DateFormatType.HHMM)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME1_1(ByVal REQ_O_TIME1_1 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME1(REQ_O_TIME1_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME1_2(ByVal REQ_O_TIME1_2 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME1(REQ_O_TIME1_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME1_3(ByVal REQ_O_TIME1_3 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME1(REQ_O_TIME1_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME1_4(ByVal REQ_O_TIME1_4 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME1(REQ_O_TIME1_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME1_5(ByVal REQ_O_TIME1_5 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME1(REQ_O_TIME1_5, control)
+    End Sub
+
+    '往路：到着時刻（依頼）
+    Public Shared Sub SetForm_REQ_O_TIME2(ByVal REQ_O_TIME2 As String, ByRef control As Label)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_O_TIME2, CmnModule.DateFormatType.HHMM)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME2_1(ByVal REQ_O_TIME2_1 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME2(REQ_O_TIME2_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME2_2(ByVal REQ_O_TIME2_2 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME2(REQ_O_TIME2_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME2_3(ByVal REQ_O_TIME2_3 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME2(REQ_O_TIME2_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME2_4(ByVal REQ_O_TIME2_4 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME2(REQ_O_TIME2_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TIME2_5(ByVal REQ_O_TIME2_5 As String, ByRef control As Label)
+        SetForm_REQ_O_TIME2(REQ_O_TIME2_5, control)
+    End Sub
+
+    '往路：列車・便名（依頼）
+    Public Shared Sub SetForm_REQ_O_BIN(ByVal REQ_O_BIN As String, ByRef control As TextBox)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_O_BIN, CmnModule.DateFormatType.HHMM)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_BIN_1(ByVal REQ_O_BIN_1 As String, ByRef control As TextBox)
+        SetForm_REQ_O_BIN(REQ_O_BIN_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_BIN_2(ByVal REQ_O_BIN_2 As String, ByRef control As TextBox)
+        SetForm_REQ_O_BIN(REQ_O_BIN_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_BIN_3(ByVal REQ_O_BIN_3 As String, ByRef control As TextBox)
+        SetForm_REQ_O_BIN(REQ_O_BIN_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_BIN_4(ByVal REQ_O_BIN_4 As String, ByRef control As TextBox)
+        SetForm_REQ_O_BIN(REQ_O_BIN_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_BIN_5(ByVal REQ_O_BIN_5 As String, ByRef control As TextBox)
+        SetForm_REQ_O_BIN(REQ_O_BIN_5, control)
+    End Sub
+
+    '往路：座席区分（依頼）
+    Public Shared Sub SetForm_REQ_O_SEAT(ByVal REQ_O_SEAT As String, ByRef control As Label)
+        control.Text = GetName_REQ_O_SEAT(REQ_O_SEAT)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_1(ByVal REQ_O_SEAT_1 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT(REQ_O_SEAT_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_2(ByVal REQ_O_SEAT_2 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT(REQ_O_SEAT_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_3(ByVal REQ_O_SEAT_3 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT(REQ_O_SEAT_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_4(ByVal REQ_O_SEAT_4 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT(REQ_O_SEAT_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_5(ByVal REQ_O_SEAT_5 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT(REQ_O_SEAT_5, control)
+    End Sub
+
+    '往路：座席位置（依頼）
+    Public Shared Sub SetForm_REQ_O_SEAT_KIBOU(ByVal REQ_O_SEAT_KIBOU As String, ByRef control As Label)
+        control.Text = GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_KIBOU1(ByVal REQ_O_SEAT_KIBOU1 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_KIBOU2(ByVal REQ_O_SEAT_KIBOU2 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_KIBOU3(ByVal REQ_O_SEAT_KIBOU3 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_KIBOU4(ByVal REQ_O_SEAT_KIBOU4 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_SEAT_KIBOU5(ByVal REQ_O_SEAT_KIBOU5 As String, ByRef control As Label)
+        SetForm_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU5, control)
+    End Sub
+    '復路：手配（依頼）
+    Public Shared Sub SetForm_REQ_F_TEHAI(ByVal REQ_F_TEHAI As String, ByRef control As Label)
+        control.Text = GetName_REQ_F_TEHAI(REQ_F_TEHAI)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TEHAI_1(ByVal REQ_F_TEHAI_1 As String, ByRef control As Label)
+        SetForm_REQ_F_TEHAI(REQ_F_TEHAI_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TEHAI_2(ByVal REQ_F_TEHAI_2 As String, ByRef control As Label)
+        SetForm_REQ_F_TEHAI(REQ_F_TEHAI_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TEHAI_3(ByVal REQ_F_TEHAI_3 As String, ByRef control As Label)
+        SetForm_REQ_F_TEHAI(REQ_F_TEHAI_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TEHAI_4(ByVal REQ_F_TEHAI_4 As String, ByRef control As Label)
+        SetForm_REQ_F_TEHAI(REQ_F_TEHAI_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TEHAI_5(ByVal REQ_F_TEHAI_5 As String, ByRef control As Label)
+        SetForm_REQ_F_TEHAI(REQ_F_TEHAI_5, control)
+    End Sub
+
+    '復路：依頼内容（依頼）
+    Public Shared Sub SetForm_REQ_F_IRAINAIYOU(ByVal REQ_F_IRAINAIYOU As String, ByRef control As Label)
+        control.Text = REQ_F_IRAINAIYOU
+    End Sub
+    Public Shared Sub SetForm_REQ_F_IRAINAIYOU_1(ByVal REQ_F_IRAINAIYOU_1 As String, ByRef control As Label)
+        SetForm_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_IRAINAIYOU_2(ByVal REQ_F_IRAINAIYOU_2 As String, ByRef control As Label)
+        SetForm_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_IRAINAIYOU_3(ByVal REQ_F_IRAINAIYOU_3 As String, ByRef control As Label)
+        SetForm_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_IRAINAIYOU_4(ByVal REQ_F_IRAINAIYOU_4 As String, ByRef control As Label)
+        SetForm_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_IRAINAIYOU_5(ByVal REQ_F_IRAINAIYOU_5 As String, ByRef control As Label)
+        SetForm_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_5, control)
+    End Sub
+
+    '復路：交通機関（依頼）
+    Public Shared Sub SetForm_REQ_F_KOTSUKIKAN(ByVal REQ_F_KOTSUKIKAN As String, ByRef control As Label)
+        control.Text = GetName_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_KOTSUKIKAN_1(ByVal REQ_F_KOTSUKIKAN_1 As String, ByRef control As Label)
+        SetForm_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_KOTSUKIKAN_2(ByVal REQ_F_KOTSUKIKAN_2 As String, ByRef control As Label)
+        SetForm_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_KOTSUKIKAN_3(ByVal REQ_F_KOTSUKIKAN_3 As String, ByRef control As Label)
+        SetForm_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_KOTSUKIKAN_4(ByVal REQ_F_KOTSUKIKAN_4 As String, ByRef control As Label)
+        SetForm_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_KOTSUKIKAN_5(ByVal REQ_F_KOTSUKIKAN_5 As String, ByRef control As Label)
+        SetForm_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_5, control)
+    End Sub
+
+    '復路：利用日（依頼）
+    Public Shared Sub SetForm_REQ_F_DATE(ByVal REQ_F_DATE As String, ByRef control As Label)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_F_DATE, CmnModule.DateFormatType.YYYYMD)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_DATE_1(ByVal REQ_F_DATE_1 As String, ByRef control As Label)
+        SetForm_REQ_F_DATE(REQ_F_DATE_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_DATE_2(ByVal REQ_F_DATE_2 As String, ByRef control As Label)
+        SetForm_REQ_F_DATE(REQ_F_DATE_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_DATE_3(ByVal REQ_F_DATE_3 As String, ByRef control As Label)
+        SetForm_REQ_F_DATE(REQ_F_DATE_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_DATE_4(ByVal REQ_F_DATE_4 As String, ByRef control As Label)
+        SetForm_REQ_F_DATE(REQ_F_DATE_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_DATE_5(ByVal REQ_F_DATE_5 As String, ByRef control As Label)
+        SetForm_REQ_F_DATE(REQ_F_DATE_5, control)
+    End Sub
+
+    '復路：出発地（依頼）
+    Public Shared Sub SetForm_REQ_F_AIRPORT1(ByVal REQ_F_AIRPORT1 As String, ByRef control As TextBox)
+        control.Text = REQ_F_AIRPORT1
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT1_1(ByVal REQ_F_AIRPORT1_1 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT1(REQ_F_AIRPORT1_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT1_2(ByVal REQ_F_AIRPORT1_2 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT1(REQ_F_AIRPORT1_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT1_3(ByVal REQ_F_AIRPORT1_3 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT1(REQ_F_AIRPORT1_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT1_4(ByVal REQ_F_AIRPORT1_4 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT1(REQ_F_AIRPORT1_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT1_5(ByVal REQ_F_AIRPORT1_5 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT1(REQ_F_AIRPORT1_5, control)
+    End Sub
+
+    '復路：到着地（依頼）
+    Public Shared Sub SetForm_REQ_F_AIRPORT2(ByVal REQ_F_AIRPORT2 As String, ByRef control As TextBox)
+        control.Text = REQ_F_AIRPORT2
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT2_1(ByVal REQ_F_AIRPORT2_1 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT2(REQ_F_AIRPORT2_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT2_2(ByVal REQ_F_AIRPORT2_2 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT2(REQ_F_AIRPORT2_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT2_3(ByVal REQ_F_AIRPORT2_3 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT2(REQ_F_AIRPORT2_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT2_4(ByVal REQ_F_AIRPORT2_4 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT2(REQ_F_AIRPORT2_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_AIRPORT2_5(ByVal REQ_F_AIRPORT2_5 As String, ByRef control As TextBox)
+        SetForm_REQ_F_AIRPORT2(REQ_F_AIRPORT2_5, control)
+    End Sub
+
+    '復路：出発時刻（依頼）
+    Public Shared Sub SetForm_REQ_F_TIME1(ByVal REQ_F_TIME1 As String, ByRef control As Label)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_F_TIME1, CmnModule.DateFormatType.HHMM)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME1_1(ByVal REQ_F_TIME1_1 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME1(REQ_F_TIME1_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME1_2(ByVal REQ_F_TIME1_2 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME1(REQ_F_TIME1_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME1_3(ByVal REQ_F_TIME1_3 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME1(REQ_F_TIME1_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME1_4(ByVal REQ_F_TIME1_4 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME1(REQ_F_TIME1_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME1_5(ByVal REQ_F_TIME1_5 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME1(REQ_F_TIME1_5, control)
+    End Sub
+
+    '復路：到着時刻（依頼）
+    Public Shared Sub SetForm_REQ_F_TIME2(ByVal REQ_F_TIME2 As String, ByRef control As Label)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_F_TIME2, CmnModule.DateFormatType.HHMM)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME2_1(ByVal REQ_F_TIME2_1 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME2(REQ_F_TIME2_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME2_2(ByVal REQ_F_TIME2_2 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME2(REQ_F_TIME2_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME2_3(ByVal REQ_F_TIME2_3 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME2(REQ_F_TIME2_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME2_4(ByVal REQ_F_TIME2_4 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME2(REQ_F_TIME2_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_TIME2_5(ByVal REQ_F_TIME2_5 As String, ByRef control As Label)
+        SetForm_REQ_F_TIME2(REQ_F_TIME2_5, control)
+    End Sub
+
+    '復路：列車・便名（依頼）
+    Public Shared Sub SetForm_REQ_F_BIN(ByVal REQ_F_BIN As String, ByRef control As TextBox)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_F_BIN, CmnModule.DateFormatType.HHMM)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_BIN_1(ByVal REQ_F_BIN_1 As String, ByRef control As TextBox)
+        SetForm_REQ_F_BIN(REQ_F_BIN_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_BIN_2(ByVal REQ_F_BIN_2 As String, ByRef control As TextBox)
+        SetForm_REQ_F_BIN(REQ_F_BIN_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_BIN_3(ByVal REQ_F_BIN_3 As String, ByRef control As TextBox)
+        SetForm_REQ_F_BIN(REQ_F_BIN_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_BIN_4(ByVal REQ_F_BIN_4 As String, ByRef control As TextBox)
+        SetForm_REQ_F_BIN(REQ_F_BIN_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_BIN_5(ByVal REQ_F_BIN_5 As String, ByRef control As TextBox)
+        SetForm_REQ_F_BIN(REQ_F_BIN_5, control)
+    End Sub
+
+    '復路：座席区分（依頼）
+    Public Shared Sub SetForm_REQ_F_SEAT(ByVal REQ_F_SEAT As String, ByRef control As Label)
+        control.Text = GetName_REQ_F_SEAT(REQ_F_SEAT)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_1(ByVal REQ_F_SEAT_1 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT(REQ_F_SEAT_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_2(ByVal REQ_F_SEAT_2 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT(REQ_F_SEAT_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_3(ByVal REQ_F_SEAT_3 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT(REQ_F_SEAT_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_4(ByVal REQ_F_SEAT_4 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT(REQ_F_SEAT_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_5(ByVal REQ_F_SEAT_5 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT(REQ_F_SEAT_5, control)
+    End Sub
+
+    '復路：座席位置（依頼）
+    Public Shared Sub SetForm_REQ_F_SEAT_KIBOU(ByVal REQ_F_SEAT_KIBOU As String, ByRef control As Label)
+        control.Text = GetName_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_KIBOU1(ByVal REQ_F_SEAT_KIBOU1 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_KIBOU2(ByVal REQ_F_SEAT_KIBOU2 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_KIBOU3(ByVal REQ_F_SEAT_KIBOU3 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_KIBOU4(ByVal REQ_F_SEAT_KIBOU4 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_F_SEAT_KIBOU5(ByVal REQ_F_SEAT_KIBOU5 As String, ByRef control As Label)
+        SetForm_REQ_F_SEAT_KIBOU(REQ_F_SEAT_KIBOU5, control)
     End Sub
 
     '往路：ステータス（回答）
@@ -4877,24 +5136,14 @@ Public Class AppModule
         SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU5, control)
     End Sub
 
-    '往路備考（依頼）
-    Public Shared Sub SetForm_REQ_O_NOTE_1(ByVal REQ_O_NOTE_1 As String, ByRef control As TextBox)
-        control.Text = REQ_O_NOTE_1
+    '交通備考（依頼）
+    Public Shared Sub SetForm_REQ_KOTSU_BIKO(ByVal REQ_KOTSU_BIKO As String, ByRef control As TextBox)
+        control.Text = REQ_KOTSU_BIKO
     End Sub
 
-    '往路備考（回答）
-    Public Shared Sub SetForm_ANS_O_NOTE_1(ByVal ANS_O_NOTE_1 As String, ByRef control As TextBox)
-        control.Text = ANS_O_NOTE_1
-    End Sub
-
-    '復路備考（依頼）
-    Public Shared Sub SetForm_REQ_F_NOTE_1(ByVal REQ_F_NOTE_1 As String, ByRef control As TextBox)
-        control.Text = REQ_F_NOTE_1
-    End Sub
-
-    '復路備考（回答）
-    Public Shared Sub SetForm_ANS_F_NOTE_1(ByVal ANS_F_NOTE_1 As String, ByRef control As TextBox)
-        control.Text = ANS_F_NOTE_1
+    '交通備考（回答）
+    Public Shared Sub SetForm_ANS_KOTSU_BIKO(ByVal ANS_KOTSU_BIKO As String, ByRef control As TextBox)
+        control.Text = ANS_KOTSU_BIKO
     End Sub
 
     '【確定】JR・鉄道代金
