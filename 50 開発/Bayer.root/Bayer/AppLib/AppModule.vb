@@ -4285,6 +4285,11 @@ Public Class AppModule
         control.Text = DR_SHISETSU_CD
     End Sub
 
+    'é{ê›ñº
+    Public Shared Sub SetForm_DR_SHISETSU_NAME(ByVal DR_SHISETSU_NANE As String, ByRef control As TextBox)
+        control.Text = DR_SHISETSU_NANE
+    End Sub
+
     'é{ê›èZèä
     Public Shared Sub SetForm_DR_SHISETSU_ADDRESS(ByVal DR_SHISETSU_ADDRESS As String, ByRef control As TextBox)
         control.Text = DR_SHISETSU_ADDRESS
