@@ -754,6 +754,7 @@
             Public KAIJO_NAME As String
             Public FROM_DATE As String
             Public TO_DATE As String
+            Public USER_NAME As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1153,6 +1154,7 @@
             Public Const KAIJO_NAME As String = "KAIJO_NAME"
             Public Const FROM_DATE As String = "FROM_DATE"
             Public Const TO_DATE As String = "TO_DATE"
+            Public Const USER_NAME As String = "USER_NAME"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
@@ -1552,6 +1554,7 @@
             Public Const KAIJO_NAME As String = "会場名"
             Public Const FROM_DATE As String = "開催日FROM"
             Public Const TO_DATE As String = "開催日TO"
+            Public Const USER_NAME As String = "トップツアー担当者"
         End Class
     End Class
 
