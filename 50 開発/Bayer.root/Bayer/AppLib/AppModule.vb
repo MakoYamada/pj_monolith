@@ -4344,12 +4344,12 @@ Public Class AppModule
     End Sub
 
     'MR携帯電話番号
-    Public Shared Sub SetForm_MR_KEITAI(ByVal MR_KEITAI As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_MR_KEITAI(ByVal MR_KEITAI As String, ByRef control As Label)
         control.Text = MR_KEITAI
     End Sub
 
     'MRオフィスの電話番号
-    Public Shared Sub SetForm_MR_TEL(ByVal MR_TEL As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_MR_TEL(ByVal MR_TEL As String, ByRef control As Label)
         control.Text = MR_TEL
     End Sub
 
