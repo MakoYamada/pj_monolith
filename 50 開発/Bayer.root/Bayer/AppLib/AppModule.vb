@@ -4397,6 +4397,86 @@ Public Class AppModule
 
     '宿泊代金  ?????
 
+    '往路：手配（依頼）
+    Public Shared Sub SetForm_REQ_O_TEHAI(ByVal REQ_O_TEHAI As String, ByRef control As Label)
+        control.Text = GetName_REQ_O_TEHAI(REQ_O_TEHAI)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TEHAI_1(ByVal REQ_O_TEHAI_1 As String, ByRef control As Label)
+        SetForm_REQ_O_TEHAI(REQ_O_TEHAI_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TEHAI_2(ByVal REQ_O_TEHAI_2 As String, ByRef control As Label)
+        SetForm_REQ_O_TEHAI(REQ_O_TEHAI_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TEHAI_3(ByVal REQ_O_TEHAI_3 As String, ByRef control As Label)
+        SetForm_REQ_O_TEHAI(REQ_O_TEHAI_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TEHAI_4(ByVal REQ_O_TEHAI_4 As String, ByRef control As Label)
+        SetForm_REQ_O_TEHAI(REQ_O_TEHAI_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_TEHAI_5(ByVal REQ_O_TEHAI_5 As String, ByRef control As Label)
+        SetForm_REQ_O_TEHAI(REQ_O_TEHAI_5, control)
+    End Sub
+
+    '往路：依頼内容（依頼）
+    Public Shared Sub SetForm_REQ_O_IRAINAIYOU(ByVal REQ_O_IRAINAIYOU As String, ByRef control As Label)
+        control.Text = REQ_O_IRAINAIYOU
+    End Sub
+    Public Shared Sub SetForm_REQ_O_IRAINAIYOU_1(ByVal REQ_O_IRAINAIYOU_1 As String, ByRef control As Label)
+        SetForm_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_IRAINAIYOU_2(ByVal REQ_O_IRAINAIYOU_2 As String, ByRef control As Label)
+        SetForm_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_IRAINAIYOU_3(ByVal REQ_O_IRAINAIYOU_3 As String, ByRef control As Label)
+        SetForm_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_IRAINAIYOU_4(ByVal REQ_O_IRAINAIYOU_4 As String, ByRef control As Label)
+        SetForm_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_IRAINAIYOU_5(ByVal REQ_O_IRAINAIYOU_5 As String, ByRef control As Label)
+        SetForm_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_5, control)
+    End Sub
+
+    '往路：交通機関（依頼）
+    Public Shared Sub SetForm_REQ_O_KOTSUKIKAN(ByVal REQ_O_KOTSUKIKAN As String, ByRef control As Label)
+        control.Text = GetName_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_KOTSUKIKAN_1(ByVal REQ_O_KOTSUKIKAN_1 As String, ByRef control As Label)
+        SetForm_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_KOTSUKIKAN_2(ByVal REQ_O_KOTSUKIKAN_2 As String, ByRef control As Label)
+        SetForm_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_KOTSUKIKAN_3(ByVal REQ_O_KOTSUKIKAN_3 As String, ByRef control As Label)
+        SetForm_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_KOTSUKIKAN_4(ByVal REQ_O_KOTSUKIKAN_4 As String, ByRef control As Label)
+        SetForm_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_KOTSUKIKAN_5(ByVal REQ_O_KOTSUKIKAN_5 As String, ByRef control As Label)
+        SetForm_REQ_O_KOTSUKIKAN(REQ_O_KOTSUKIKAN_5, control)
+    End Sub
+
+    '往路：利用日（依頼）
+    Public Shared Sub SetForm_REQ_O_DATE(ByVal REQ_O_DATE As String, ByRef control As Label)
+        control.Text = GetName_REQ_O_DATE(REQ_O_DATE)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_DATE_1(ByVal REQ_O_DATE_1 As String, ByRef control As Label)
+        SetForm_REQ_O_DATE(REQ_O_DATE_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_DATE_2(ByVal REQ_O_DATE_2 As String, ByRef control As Label)
+        SetForm_REQ_O_DATE(REQ_O_DATE_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_DATE_3(ByVal REQ_O_DATE_3 As String, ByRef control As Label)
+        SetForm_REQ_O_DATE(REQ_O_DATE_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_DATE_4(ByVal REQ_O_DATE_4 As String, ByRef control As Label)
+        SetForm_REQ_O_DATE(REQ_O_DATE_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_O_DATE_5(ByVal REQ_O_DATE_5 As String, ByRef control As Label)
+        SetForm_REQ_O_DATE(REQ_O_DATE_5, control)
+    End Sub
+
     '往路：ステータス（回答）
     Public Shared Sub SetForm_ANS_O_STATUS(ByVal ANS_O_STATUS As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_STATUS, control)
