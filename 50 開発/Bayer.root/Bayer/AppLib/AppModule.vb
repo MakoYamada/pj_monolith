@@ -4373,9 +4373,64 @@ Public Class AppModule
         control.Text = MR_SEND_SAKI_OTHER
     End Sub
 
-    '手配ステータス(依頼)
+    '【依頼】手配ステータス
     Public Shared Sub SetForm_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String, ByRef control As Label)
         control.Text = GetName_REQ_STATUS_TEHAI(REQ_STATUS_TEHAI)
+    End Sub
+
+    '【回答】手配ステータス
+    Public Shared Sub SetForm_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_TEHAI, control, True)
+    End Sub
+
+    '参加者ID
+    Public Shared Sub SetForm_SANKASHA_ID(ByVal SANKASHA_ID As String, ByRef control As Label)
+        control.Text = SANKASHA_ID
+    End Sub
+
+    'DRコード
+    Public Shared Sub SetForm_DR_CD(ByVal DR_CD As String, ByRef control As Label)
+        control.Text = DR_CD
+    End Sub
+
+    'TIME STAMP BYL
+    Public Shared Sub SetForm_TIME_STAMP_BYL(ByVal TIME_STAMP_BYL As String, ByRef control As Label)
+        control.Text = TIME_STAMP_BYL
+    End Sub
+
+    'TIME STAMP TOP
+    Public Shared Sub SetForm_TIME_STAMP_TOP(ByVal TIME_STAMP_TOP As String, ByRef control As Label)
+        control.Text = TIME_STAMP_TOP
+    End Sub
+
+    'DR氏名
+    Public Shared Sub SetForm_DR_NAME(ByVal DR_NAME As String, ByRef control As TextBox)
+        control.Text = DR_NAME
+    End Sub
+
+    'DR氏名（カナ）
+    Public Shared Sub SetForm_DR_KANA(ByVal DR_KANA As String, ByRef control As TextBox)
+        control.Text = DR_KANA
+    End Sub
+
+    'DR性別
+    Public Shared Sub SetForm_DR_SEX(ByVal DR_SEX As String, ByRef control As Label)
+        control.Text = GetName_DR_SEX(DR_SEX)
+    End Sub
+
+    'DR年齢
+    Public Shared Sub SetForm_DR_AGE(ByVal DR_AGE As String, ByRef control As Label)
+        control.Text = GetName_DR_AGE(DR_AGE)
+    End Sub
+
+    '講演会への参加
+    Public Shared Sub SetForm_DR_SANKA(ByVal DR_SANKA As String, ByRef control As Label)
+        control.Text = GetName_DR_SANKA(DR_SANKA)
+    End Sub
+
+    '参加者の役割
+    Public Shared Sub SetForm_DR_YAKUWARI(ByVal DR_YAKUWARI As String, ByRef control As Label)
+        control.Text = GetName_DR_YAKUWARI(DR_YAKUWARI)
     End Sub
 
     '参加／不参加
@@ -4397,9 +4452,64 @@ Public Class AppModule
         control.SelectedIndex = CmnModule.GetSelectedIndex(STATUS_TEHAI, control)
     End Sub
 
+    'DCF施設コード
+    Public Shared Sub SetForm_SHISETSU_CODE(ByVal SHISETSU_CODE As String, ByRef control As Label)
+        control.Text = SHISETSU_CODE
+    End Sub
+
+    '施設住所
+    Public Shared Sub SetForm_SHISETSU_ADDRESS(ByVal SHISETSU_ADDRESS As String, ByRef control As TextBox)
+        control.Text = SHISETSU_ADDRESS
+    End Sub
+
+    '指定外理由
+    Public Shared Sub SetForm_SHITEIGAI_RIYU(ByVal SHITEIGAI_RIYU As String, ByRef control As TextBox)
+        control.Text = SHITEIGAI_RIYU
+    End Sub
+
+    '承認者
+    Public Shared Sub SetForm_SHONIN_NAME(ByVal SHONIN_NAME As String, ByRef control As TextBox)
+        control.Text = SHONIN_NAME
+    End Sub
+
+    '承認日
+    Public Shared Sub SetForm_SHONIN_DATE(ByVal SHONIN_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(SHONIN_DATE, CmnModule.DateFormatType.YYYYMD)
+    End Sub
+
+    '宿泊依頼（依頼）
+    Public Shared Sub SetForm_TEHAI_HOTEL(ByVal TEHAI_HOTEL As String, ByRef control As Label)
+        control.Text = GetName_TEHAI_HOTEL(TEHAI_HOTEL)
+    End Sub
+
+    '宿泊依頼内容（依頼）
+    Public Shared Sub SetForm_HOTEL_IRAINAIYOU(ByVal HOTEL_IRAINAIYOU As String, ByRef control As Label)
+        control.Text = HOTEL_IRAINAIYOU
+    End Sub
+
+    '宿泊日（依頼）
+    Public Shared Sub SetForm_REQ_HOTEL_DATE(ByVal REQ_HOTEL_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(REQ_HOTEL_DATE, CmnModule.DateFormatType.YYYYMD)
+    End Sub
+
+    '泊数（依頼）
+    Public Shared Sub SetForm_REQ_HAKUSU(ByVal REQ_HAKUSU As String, ByRef control As Label)
+        control.Text = REQ_HAKUSU
+    End Sub
+
+    '喫煙（依頼）
+    Public Shared Sub SetForm_REQ_HOTEL_SMOKING(ByVal REQ_HOTEL_SMOKING As String, ByRef control As Label)
+        control.Text = GetName_REQ_HOTEL_SMOKING(REQ_HOTEL_SMOKING)
+    End Sub
+
+    '宿泊備考（依頼）
+    Public Shared Sub SetForm_REQ_HOTEL_NOTE(ByVal REQ_HOTEL_NOTE As String, ByRef control As TextBox)
+        control.Text = REQ_HOTEL_NOTE
+    End Sub
+
     '宿泊ステータス（回答）
-    Public Shared Sub SetForm_ANS_STATUS_HOTEL(ByVal ANS_STATUS_HOTEL As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_HOTEL, control)
+    Public Shared Sub SetForm_ANS_HOTEL_STATUS(ByVal ANS_HOTEL_STATUS As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_HOTEL_STATUS, control)
     End Sub
 
     '宿泊先（回答）
@@ -5154,11 +5264,6 @@ Public Class AppModule
         End If
         control_1.Text = wZIP_1
         control_2.Text = wZIP_2
-    End Sub
-
-    '【回答】手配ステータス
-    Public Shared Sub SetForm_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_TEHAI, control, True)
     End Sub
 
     '都道府県
