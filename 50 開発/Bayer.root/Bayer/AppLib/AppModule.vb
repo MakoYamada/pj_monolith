@@ -4341,8 +4341,8 @@ Public Class AppModule
     End Sub
 
     '宿泊ステータス（回答）
-    Public Shared Sub SetForm_ANS_HOTEL_STATUS(ByVal ANS_HOTEL_STATUS As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_HOTEL_STATUS, control)
+    Public Shared Sub SetForm_ANS_STATUS_HOTEL(ByVal ANS_STATUS_HOTEL As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_HOTEL, control)
     End Sub
 
     '宿泊先（回答）
