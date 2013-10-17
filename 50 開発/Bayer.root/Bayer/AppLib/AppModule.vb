@@ -4298,9 +4298,84 @@ Public Class AppModule
         control.Text = TAXI_PRT_NAME
     End Sub
 
-    '会場名
-    Public Shared Sub SetForm_KAIJO_NAME(ByVal KAIJO_NAME As String, ByRef control As TextBox)
-        control.Text = KAIJO_NAME
+    'MR BU
+    Public Shared Sub SetForm_MR_BU(ByVal MR_BU As String, ByRef control As Label)
+        control.Text = MR_BU
+    End Sub
+
+    'MR エリア
+    Public Shared Sub SetForm_MR_AREA(ByVal MR_AREA As String, ByRef control As Label)
+        control.Text = MR_AREA
+    End Sub
+
+    'MR 営業所
+    Public Shared Sub SetForm_MR_EIGYOSHO(ByVal MR_EIGYOSHO As String, ByRef control As Label)
+        control.Text = MR_EIGYOSHO
+    End Sub
+
+    'MR ACCOUNT CODE
+    Public Shared Sub SetForm_ACCOUNT_CODE(ByVal ACCOUNT_CODE As String, ByRef control As Label)
+        control.Text = ACCOUNT_CODE
+    End Sub
+
+    'MR COST CENTER
+    Public Shared Sub SetForm_COST_CENTER(ByVal COST_CENTER As String, ByRef control As Label)
+        control.Text = COST_CENTER
+    End Sub
+
+    'MR INTERNAL ORDER
+    Public Shared Sub SetForm_INTERNAL_ORDER(ByVal INTERNAL_ORDER As String, ByRef control As Label)
+        control.Text = INTERNAL_ORDER
+    End Sub
+
+    'MR ZETIA CODE
+    Public Shared Sub SetForm_ZETIA_CODE(ByVal ZETIA_CODE As String, ByRef control As Label)
+        control.Text = ZETIA_CODE
+    End Sub
+
+    'MR名
+    Public Shared Sub SetForm_MR_NAME(ByVal MR_NAME As String, ByRef control As TextBox)
+        control.Text = MR_NAME
+    End Sub
+
+    'MR名(ローマ字)
+    Public Shared Sub SetForm_MR_ROMA(ByVal MR_ROMA As String, ByRef control As TextBox)
+        control.Text = MR_ROMA
+    End Sub
+
+    'MR携帯電話番号
+    Public Shared Sub SetForm_MR_KEITAI(ByVal MR_KEITAI As String, ByRef control As TextBox)
+        control.Text = MR_KEITAI
+    End Sub
+
+    'MRオフィスの電話番号
+    Public Shared Sub SetForm_MR_TEL(ByVal MR_TEL As String, ByRef control As TextBox)
+        control.Text = MR_TEL
+    End Sub
+
+    'MR携帯メールアドレス
+    Public Shared Sub SetForm_MR_EMAIL_KEITAI(ByVal MR_EMAIL_KEITAI As String, ByRef control As TextBox)
+        control.Text = MR_EMAIL_KEITAI
+    End Sub
+
+    'MRメールアドレス
+    Public Shared Sub SetForm_MR_EMAIL_PC(ByVal MR_EMAIL_PC As String, ByRef control As TextBox)
+        control.Text = MR_EMAIL_PC
+    End Sub
+
+    'MR送付先FS
+    Public Shared Sub SetForm_MR_SEND_SAKI_FS(ByVal MR_SEND_SAKI_FS As String, ByRef control As Label)
+        control.Text = MR_SEND_SAKI_FS
+    End Sub
+
+    'MRその他送付先
+    Public Shared Sub SetForm_MR_SEND_SAKI_OTHER(ByVal MR_SEND_SAKI_OTHER As String, ByRef control As TextBox)
+        control.Text = MR_SEND_SAKI_OTHER
+    End Sub
+
+    '手配ステータス(依頼)
+    Public Shared Sub SetForm_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String, ByRef control As Label)
+        control.Text = GetName_REQ_STATUS_TEHAI(REQ_STATUS_TEHAI)
     End Sub
 
     '参加／不参加
