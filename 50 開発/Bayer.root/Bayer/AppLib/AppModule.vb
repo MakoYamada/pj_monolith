@@ -4281,13 +4281,13 @@ Public Class AppModule
     End Sub
 
     'DCF施設コード
-    Public Shared Sub SetForm_SHISETSU_CODE(ByVal SHISETSU_CODE As String, ByRef control As Label)
-        control.Text = SHISETSU_CODE
+    Public Shared Sub SetForm_DR_SHISETSU_CD(ByVal DR_SHISETSU_CD As String, ByRef control As Label)
+        control.Text = DR_SHISETSU_CD
     End Sub
 
     '施設住所
-    Public Shared Sub SetForm_SHISETSU_ADDRESS(ByVal SHISETSU_ADDRESS As String, ByRef control As TextBox)
-        control.Text = SHISETSU_ADDRESS
+    Public Shared Sub SetForm_DR_SHISETSU_ADDRESS(ByVal DR_SHISETSU_ADDRESS As String, ByRef control As TextBox)
+        control.Text = DR_SHISETSU_ADDRESS
     End Sub
 
     '指定外理由
