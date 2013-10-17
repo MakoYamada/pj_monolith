@@ -549,9 +549,10 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_TIME_STAMP.ToUpper Then TBL_KOTSUHOTEL.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TORIKESHI_FLG.ToUpper Then TBL_KOTSUHOTEL.TORIKESHI_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TAXI_PRT_NAME.ToUpper Then TBL_KOTSUHOTEL.TAXI_PRT_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KAIJO_NAME.ToUpper Then TBL_KOTSUHOTEL.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.FROM_DATE.ToUpper Then TBL_KOTSUHOTEL.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TO_DATE.ToUpper Then TBL_KOTSUHOTEL.TO_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KAIJO_NAME.ToUpper Then TBL_KOTSUHOTEL.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.USER_NAME.ToUpper Then TBL_KOTSUHOTEL.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KOTSUHOTEL
@@ -4265,6 +4266,41 @@ Public Class AppModule
     '氏名
     Public Shared Sub SetForm_USER_NAME(ByVal USER_NAME As String, ByRef control As TextBox)
         control.Text = USER_NAME
+    End Sub
+
+    '講演会番号
+    Public Shared Sub SetForm_KOUENKAI_NO(ByVal KOUENKAI_NO As String, ByRef control As Label)
+        control.Text = KOUENKAI_NO
+    End Sub
+
+    '講演会名
+    Public Shared Sub SetForm_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String, ByRef control As TextBox)
+        control.Text = KOUENKAI_NAME
+    End Sub
+
+    '講演会基本情報TimeStamp
+    Public Shared Sub SetForm_KOUENKAI_TIME_STAMP(ByVal KOUENKAI_TIME_STAMP As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(KOUENKAI_TIME_STAMP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+    End Sub
+
+    '開催日FROM
+    Public Shared Sub SetForm_FROM_DATE(ByVal FROM_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
+    End Sub
+
+    '開催日TO
+    Public Shared Sub SetForm_TO_DATE(ByVal TO_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYYYMD)
+    End Sub
+
+    'タクシー印字名
+    Public Shared Sub SetForm_TAXI_PRT_NAME(ByVal TAXI_PRT_NAME As String, ByRef control As Label)
+        control.Text = TAXI_PRT_NAME
+    End Sub
+
+    '会場名
+    Public Shared Sub SetForm_KAIJO_NAME(ByVal KAIJO_NAME As String, ByRef control As TextBox)
+        control.Text = KAIJO_NAME
     End Sub
 
     '参加／不参加
