@@ -2806,6 +2806,15 @@ Partial Public Class DrRegist
     Protected WithEvents TEHAI_TAXI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''ANS_TAXI_TESURYO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_NOTE コントロール。
     '''</summary>
     '''<remarks>
@@ -3686,78 +3695,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents MR_AGE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''REQ_MR_TEHAI_HOTEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents REQ_MR_TEHAI_HOTEL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_MR_HOTEL_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MR_HOTEL_ADDRESS コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_ADDRESS As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MR_HOTEL_TEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_TEL As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MR_CHECKIN_TIME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_CHECKIN_TIME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MR_CHECKOUT_TIME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_CHECKOUT_TIME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''REQ_MR_HOTEL_SMOKING コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents REQ_MR_HOTEL_SMOKING As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_MR_HOTEL_SMOKING コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_SMOKING As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_MR_HOTEL_NOTE コントロール。
