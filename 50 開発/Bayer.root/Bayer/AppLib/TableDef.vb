@@ -1589,8 +1589,17 @@
             Public IROUKAI_KAIJO_TEHAI As String
             Public IROUKAI_SANKA_YOTEI_CNT As String
             Public KOUSHI_ROOM_TEHAI As String
+            Public KOUSHI_ROOM_FROM As String
+            Public KOUSHI_ROOM_CNT As String
             Public SHAIN_ROOM_TEHAI As String
+            Public SHAIN_ROOM_CNT As String
             Public MANAGER_KAIJO_TEHAI As String
+            Public MANAGER_ROOM_FROM As String
+            Public MANAGER_ROOM_CNT As String
+            Public REQ_ROOM_CNT As String
+            Public REQ_STAY_DATE As String
+            Public REQ_KOTSU_CNT As String
+            Public REQ_TAXI_CNT As String
             Public KAIJO_URL As String
             Public OTHER_NOTE As String
             Public ANS_SENTEI_RIYU As String
@@ -1611,9 +1620,30 @@
             Public ANS_SHAIN_ROOM_NAME As String
             Public ANS_MANAGER_KAIJO_NAME As String
             Public ANS_KAISAI_NOTE As String
-            Public ANS_SEISAN_TF As String
-            Public ANS_SEISAN_T As String
-            Public ANS_SEISANSHO_URL As String
+            Public ANS_KAIJOUHI_TF As String
+            Public ANS_KIZAIHI_TF As String
+            Public ANS_INSHOKUHI_TF As String
+            Public ANS_991330401_TF As String
+            Public ANS_HOTELHI_TF As String
+            Public ANS_KOTSUHI_TF As String
+            Public ANS_TAXI_TF As String
+            Public ANS_TEHAI_TESURYO_TF As String
+            Public ANS_TAXI_HAKKEN_TESURYO_TF As String
+            Public ANS_TAXI_SEISAN_TESURYO_TF As String
+            Public ANS_JINKENHI_TF As String
+            Public ANS_OTHER_TF As String
+            Public ANS_KANRIHI_TF As String
+            Public ANS_41120200_TF As String
+            Public ANS_TOTAL_TF As String
+            Public ANS_KAIJOUHI_T As String
+            Public ANS_KIZAIHI_T As String
+            Public ANS_INSHOKUHI_T As String
+            Public ANS_991330401_T As String
+            Public ANS_JINKENHI_T As String
+            Public ANS_OTHER_T As String
+            Public ANS_KANRIHI_T As String
+            Public ANS_41120200_T As String
+            Public ANS_TOTAL_T As String
             Public SEND_FLAG As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
@@ -1680,8 +1710,17 @@
             Public Const IROUKAI_KAIJO_TEHAI As String = "IROUKAI_KAIJO_TEHAI"
             Public Const IROUKAI_SANKA_YOTEI_CNT As String = "IROUKAI_SANKA_YOTEI_CNT"
             Public Const KOUSHI_ROOM_TEHAI As String = "KOUSHI_ROOM_TEHAI"
+            Public Const KOUSHI_ROOM_FROM As String = "KOUSHI_ROOM_FROM"
+            Public Const KOUSHI_ROOM_CNT As String = "KOUSHI_ROOM_CNT"
             Public Const SHAIN_ROOM_TEHAI As String = "SHAIN_ROOM_TEHAI"
+            Public Const SHAIN_ROOM_CNT As String = "SHAIN_ROOM_CNT"
             Public Const MANAGER_KAIJO_TEHAI As String = "MANAGER_KAIJO_TEHAI"
+            Public Const MANAGER_ROOM_FROM As String = "MANAGER_ROOM_FROM"
+            Public Const MANAGER_ROOM_CNT As String = "MANAGER_ROOM_CNT"
+            Public Const REQ_ROOM_CNT As String = "REQ_ROOM_CNT"
+            Public Const REQ_STAY_DATE As String = "REQ_STAY_DATE"
+            Public Const REQ_KOTSU_CNT As String = "REQ_KOTSU_CNT"
+            Public Const REQ_TAXI_CNT As String = "REQ_TAXI_CNT"
             Public Const KAIJO_URL As String = "KAIJO_URL"
             Public Const OTHER_NOTE As String = "OTHER_NOTE"
             Public Const ANS_SENTEI_RIYU As String = "ANS_SENTEI_RIYU"
@@ -1702,9 +1741,30 @@
             Public Const ANS_SHAIN_ROOM_NAME As String = "ANS_SHAIN_ROOM_NAME"
             Public Const ANS_MANAGER_KAIJO_NAME As String = "ANS_MANAGER_KAIJO_NAME"
             Public Const ANS_KAISAI_NOTE As String = "ANS_KAISAI_NOTE"
-            Public Const ANS_SEISAN_TF As String = "ANS_SEISAN_TF"
-            Public Const ANS_SEISAN_T As String = "ANS_SEISAN_T"
-            Public Const ANS_SEISANSHO_URL As String = "ANS_SEISANSHO_URL"
+            Public Const ANS_KAIJOUHI_TF As String = "ANS_KAIJOUHI_TF"
+            Public Const ANS_KIZAIHI_TF As String = "ANS_KIZAIHI_TF"
+            Public Const ANS_INSHOKUHI_TF As String = "ANS_INSHOKUHI_TF"
+            Public Const ANS_991330401_TF As String = "ANS_991330401_TF"
+            Public Const ANS_HOTELHI_TF As String = "ANS_HOTELHI_TF"
+            Public Const ANS_KOTSUHI_TF As String = "ANS_KOTSUHI_TF"
+            Public Const ANS_TAXI_TF As String = "ANS_TAXI_TF"
+            Public Const ANS_TEHAI_TESURYO_TF As String = "ANS_TEHAI_TESURYO_TF"
+            Public Const ANS_TAXI_HAKKEN_TESURYO_TF As String = "ANS_TAXI_HAKKEN_TESURYO_TF"
+            Public Const ANS_TAXI_SEISAN_TESURYO_TF As String = "ANS_TAXI_SEISAN_TESURYO_TF"
+            Public Const ANS_JINKENHI_TF As String = "ANS_JINKENHI_TF"
+            Public Const ANS_OTHER_TF As String = "ANS_OTHER_TF"
+            Public Const ANS_KANRIHI_TF As String = "ANS_KANRIHI_TF"
+            Public Const ANS_41120200_TF As String = "ANS_41120200_TF"
+            Public Const ANS_TOTAL_TF As String = "ANS_TOTAL_TF"
+            Public Const ANS_KAIJOUHI_T As String = "ANS_KAIJOUHI_T"
+            Public Const ANS_KIZAIHI_T As String = "ANS_KIZAIHI_T"
+            Public Const ANS_INSHOKUHI_T As String = "ANS_INSHOKUHI_T"
+            Public Const ANS_991330401_T As String = "ANS_991330401_T"
+            Public Const ANS_JINKENHI_T As String = "ANS_JINKENHI_T"
+            Public Const ANS_OTHER_T As String = "ANS_OTHER_T"
+            Public Const ANS_KANRIHI_T As String = "ANS_KANRIHI_T"
+            Public Const ANS_41120200_T As String = "ANS_41120200_T"
+            Public Const ANS_TOTAL_T As String = "ANS_TOTAL_T"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
@@ -1771,8 +1831,17 @@
             Public Const IROUKAI_KAIJO_TEHAI As String = "慰労会会場 (要・不要)"
             Public Const IROUKAI_SANKA_YOTEI_CNT As String = "慰労会参加予定者数"
             Public Const KOUSHI_ROOM_TEHAI As String = "講師控室 要・不要"
+            Public Const KOUSHI_ROOM_FROM As String = "講師控室 時間From"
+            Public Const KOUSHI_ROOM_CNT As String = "講師控室 人数"
             Public Const SHAIN_ROOM_TEHAI As String = "社員控室  (要・不要)"
+            Public Const SHAIN_ROOM_CNT As String = "社員控室 人数"
             Public Const MANAGER_KAIJO_TEHAI As String = "世話人会場 要・不要"
+            Public Const MANAGER_ROOM_FROM As String = "世話人控室 時間From"
+            Public Const MANAGER_ROOM_CNT As String = "世話人控室 人数"
+            Public Const REQ_ROOM_CNT As String = "宿泊希望室数"
+            Public Const REQ_STAY_DATE As String = "宿泊希望日"
+            Public Const REQ_KOTSU_CNT As String = "交通手配予定人数(JR/AIR)"
+            Public Const REQ_TAXI_CNT As String = "タクシー手配予定人数"
             Public Const KAIJO_URL As String = "会場URL"
             Public Const OTHER_NOTE As String = "その他備考欄"
             Public Const ANS_SENTEI_RIYU As String = "【回答】施設選定理由"
@@ -1793,9 +1862,30 @@
             Public Const ANS_SHAIN_ROOM_NAME As String = "【回答】 開催地 (社員控室会場名)"
             Public Const ANS_MANAGER_KAIJO_NAME As String = "【回答】 開催地 (世話人会会場名)"
             Public Const ANS_KAISAI_NOTE As String = "【回答】 開催地 (備考欄)"
-            Public Const ANS_SEISAN_TF As String = "【回答】 精算額 非課税"
-            Public Const ANS_SEISAN_T As String = "【回答】 精算額 課税"
-            Public Const ANS_SEISANSHO_URL As String = "【回答】 精算書 保存場所URL"
+            Public Const ANS_KAIJOUHI_TF As String = "【回答】概算見積_会場費(非課税)"
+            Public Const ANS_KIZAIHI_TF As String = "【回答】概算見積_機材費(非課税)"
+            Public Const ANS_INSHOKUHI_TF As String = "【回答】概算見積_飲食費(非課税)"
+            Public Const ANS_991330401_TF As String = "【回答】991330401(非課税)小計"
+            Public Const ANS_HOTELHI_TF As String = "【回答】概算見積_宿泊費(非課税)"
+            Public Const ANS_KOTSUHI_TF As String = "【回答】概算見積_交通費(非課税)"
+            Public Const ANS_TAXI_TF As String = "【回答】概算見積_タクシー実車料金(非課税)"
+            Public Const ANS_TEHAI_TESURYO_TF As String = "【回答】概算見積_交通宿泊手配手数料(非課税)"
+            Public Const ANS_TAXI_HAKKEN_TESURYO_TF As String = "【回答】概算見積_タクシー発券手数料(非課税)"
+            Public Const ANS_TAXI_SEISAN_TESURYO_TF As String = "【回答】概算見積_タクシー精算手数料(非課税)"
+            Public Const ANS_JINKENHI_TF As String = "【回答】概算見積_人件費(非課税)"
+            Public Const ANS_OTHER_TF As String = "【回答】概算見積_その他(非課税)"
+            Public Const ANS_KANRIHI_TF As String = "【回答】概算見積_管理費(非課税)"
+            Public Const ANS_41120200_TF As String = "【回答】41120200 (非課税)小計"
+            Public Const ANS_TOTAL_TF As String = "【回答】非課税合計"
+            Public Const ANS_KAIJOUHI_T As String = "【回答】概算見積_会場費(課税)"
+            Public Const ANS_KIZAIHI_T As String = "【回答】概算見積_機材費(課税)"
+            Public Const ANS_INSHOKUHI_T As String = "【回答】概算見積_飲食費(課税)"
+            Public Const ANS_991330401_T As String = "【回答】991330401(課税)小計"
+            Public Const ANS_JINKENHI_T As String = "【回答】概算見積_人件費(課税)"
+            Public Const ANS_OTHER_T As String = "【回答】概算見積_その他(課税)"
+            Public Const ANS_KANRIHI_T As String = "【回答】概算見積_管理費(課税)"
+            Public Const ANS_41120200_T As String = "【回答】41120200(課税)小計"
+            Public Const ANS_TOTAL_T As String = "【回答】課税合計"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"

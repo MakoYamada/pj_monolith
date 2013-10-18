@@ -291,8 +291,11 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.ACCOUNT_CD_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.ACCOUNT_CD_T) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.ACCOUNT_CD_TF & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.ACCOUNT_CD_TF) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.ZETIA_CD & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.ZETIA_CD) & "'"
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SANKA_YOTEI_CNT & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SANKA_YOTEI_CNT) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SANKA_YOTEI_CNT_NMBR & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SANKA_YOTEI_CNT_NMBR) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SANKA_YOTEI_CNT_MBR & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SANKA_YOTEI_CNT_MBR) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SRM_HACYU_KBN & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SRM_HACYU_KBN) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.BU & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.BU) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_JIGYOUBU & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_AREA) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_EIGYOSHO & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_NAME & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_NAME) & "'"
@@ -313,6 +316,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_TEL & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_TEL) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IROUKAI_YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.IROUKAI_YOSAN_T) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IKENKOUKAN_YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.IKENKOUKAN_YOSAN_T) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
@@ -2361,8 +2366,17 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.IROUKAI_KAIJO_TEHAI
             strSQL &= "," & TableDef.TBL_KAIJO.Column.IROUKAI_SANKA_YOTEI_CNT
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUSHI_ROOM_TEHAI
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUSHI_ROOM_FROM
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUSHI_ROOM_CNT
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SHAIN_ROOM_TEHAI
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.SHAIN_ROOM_CNT
             strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_KAIJO_TEHAI
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_ROOM_FROM
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_ROOM_CNT
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_ROOM_CNT
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_STAY_DATE
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_KOTSU_CNT
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_TAXI_CNT
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KAIJO_URL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.OTHER_NOTE
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SENTEI_RIYU
@@ -2383,9 +2397,30 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHAIN_ROOM_NAME
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MANAGER_KAIJO_NAME
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KAISAI_NOTE
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_TF
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_T
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISANSHO_URL
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KAIJOUHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KIZAIHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_INSHOKUHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_991330401_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_HOTELHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KOTSUHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TAXI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TEHAI_TESURYO_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TAXI_HAKKEN_TESURYO_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TAXI_SEISAN_TESURYO_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_JINKENHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_OTHER_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KANRIHI_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_41120200_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TOTAL_TF
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KAIJOUHI_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KIZAIHI_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_INSHOKUHI_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_991330401_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_JINKENHI_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_OTHER_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KANRIHI_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_41120200_T
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TOTAL_T
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KAIJO.Column.INPUT_DATE
             strSQL &= "," & TableDef.TBL_KAIJO.Column.INPUT_USER
@@ -2413,8 +2448,17 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.IROUKAI_KAIJO_TEHAI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.IROUKAI_SANKA_YOTEI_CNT) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.KOUSHI_ROOM_TEHAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.KOUSHI_ROOM_FROM) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.KOUSHI_ROOM_CNT) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.SHAIN_ROOM_TEHAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.SHAIN_ROOM_CNT) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_KAIJO_TEHAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_ROOM_FROM) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_ROOM_CNT) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.REQ_ROOM_CNT) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.REQ_STAY_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.REQ_KOTSU_CNT) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.REQ_TAXI_CNT) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.KAIJO_URL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.OTHER_NOTE) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SENTEI_RIYU) & "'"
@@ -2435,9 +2479,30 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHAIN_ROOM_NAME) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_MANAGER_KAIJO_NAME) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KAISAI_NOTE) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_TF) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_T) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISANSHO_URL) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KAIJOUHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KIZAIHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_INSHOKUHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_991330401_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_HOTELHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KOTSUHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TAXI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TEHAI_TESURYO_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TAXI_HAKKEN_TESURYO_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TAXI_SEISAN_TESURYO_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_JINKENHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_OTHER_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KANRIHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_41120200_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TOTAL_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KAIJOUHI_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KIZAIHI_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_INSHOKUHI_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_991330401_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_JINKENHI_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_OTHER_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KANRIHI_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_41120200_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TOTAL_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.INPUT_USER) & "'"
@@ -2468,8 +2533,17 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.IROUKAI_KAIJO_TEHAI & "=N'" & CmnDb.SqlString(TBL_KAIJO.IROUKAI_KAIJO_TEHAI) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.IROUKAI_SANKA_YOTEI_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.IROUKAI_SANKA_YOTEI_CNT) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUSHI_ROOM_TEHAI & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUSHI_ROOM_TEHAI) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUSHI_ROOM_FROM & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUSHI_ROOM_FROM) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.KOUSHI_ROOM_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUSHI_ROOM_CNT) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SHAIN_ROOM_TEHAI & "=N'" & CmnDb.SqlString(TBL_KAIJO.SHAIN_ROOM_TEHAI) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.SHAIN_ROOM_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.SHAIN_ROOM_CNT) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_KAIJO_TEHAI & "=N'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_KAIJO_TEHAI) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_ROOM_FROM & "=N'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_ROOM_FROM) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.MANAGER_ROOM_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.MANAGER_ROOM_CNT) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_ROOM_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.REQ_ROOM_CNT) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_STAY_DATE & "=N'" & CmnDb.SqlString(TBL_KAIJO.REQ_STAY_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_KOTSU_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.REQ_KOTSU_CNT) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.REQ_TAXI_CNT & "=N'" & CmnDb.SqlString(TBL_KAIJO.REQ_TAXI_CNT) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.KAIJO_URL & "=N'" & CmnDb.SqlString(TBL_KAIJO.KAIJO_URL) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.OTHER_NOTE & "=N'" & CmnDb.SqlString(TBL_KAIJO.OTHER_NOTE) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SENTEI_RIYU & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SENTEI_RIYU) & "'"
@@ -2490,9 +2564,30 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SHAIN_ROOM_NAME & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SHAIN_ROOM_NAME) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_MANAGER_KAIJO_NAME & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_MANAGER_KAIJO_NAME) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KAISAI_NOTE & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KAISAI_NOTE) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_TF) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISAN_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISAN_T) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_SEISANSHO_URL & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_SEISANSHO_URL) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KAIJOUHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KAIJOUHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KIZAIHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KIZAIHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_INSHOKUHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_INSHOKUHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_991330401_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_991330401_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_HOTELHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_HOTELHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KOTSUHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KOTSUHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TAXI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TAXI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TEHAI_TESURYO_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TEHAI_TESURYO_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TAXI_HAKKEN_TESURYO_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TAXI_HAKKEN_TESURYO_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TAXI_SEISAN_TESURYO_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TAXI_SEISAN_TESURYO_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_JINKENHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_JINKENHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_OTHER_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_OTHER_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KANRIHI_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KANRIHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_41120200_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_41120200_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TOTAL_TF & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TOTAL_TF) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KAIJOUHI_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KAIJOUHI_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KIZAIHI_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KIZAIHI_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_INSHOKUHI_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_INSHOKUHI_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_991330401_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_991330401_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_JINKENHI_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_JINKENHI_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_OTHER_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_OTHER_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_KANRIHI_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_KANRIHI_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_41120200_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_41120200_T) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TOTAL_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TOTAL_T) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
