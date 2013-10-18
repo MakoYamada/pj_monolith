@@ -5011,38 +5011,38 @@ Public Class AppModule
     End Sub
 
     'タクシーチケット：発地（依頼）
-    Public Shared Sub SetForm_REQ_TAXI_FROM(ByVal REQ_TAXI_FROM As String, ByRef control As Label)
+    Public Shared Sub SetForm_REQ_TAXI_FROM(ByVal REQ_TAXI_FROM As String, ByRef control As TextBox)
         control.Text = REQ_TAXI_FROM
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_1(ByVal REQ_TAXI_FROM_1 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_1, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_1(ByVal REQ_TAXI_FROM_1 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_1, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_2(ByVal REQ_TAXI_FROM_2 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_2, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_2(ByVal REQ_TAXI_FROM_2 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_2, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_3(ByVal REQ_TAXI_FROM_3 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_3, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_3(ByVal REQ_TAXI_FROM_3 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_3, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_4(ByVal REQ_TAXI_FROM_4 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_4, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_4(ByVal REQ_TAXI_FROM_4 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_4, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_5(ByVal REQ_TAXI_FROM_5 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_5, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_5(ByVal REQ_TAXI_FROM_5 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_5, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_6(ByVal REQ_TAXI_FROM_6 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_6, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_6(ByVal REQ_TAXI_FROM_6 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_6, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_7(ByVal REQ_TAXI_FROM_7 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_7, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_7(ByVal REQ_TAXI_FROM_7 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_7, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_8(ByVal REQ_TAXI_FROM_8 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_8, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_8(ByVal REQ_TAXI_FROM_8 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_8, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_9(ByVal REQ_TAXI_FROM_9 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_9, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_9(ByVal REQ_TAXI_FROM_9 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_9, control)
     End Sub
-    Public Shared Sub SetForm_REQ_TAXI_FROM_10(ByVal REQ_TAXI_FROM_10 As String, ByRef control As Label)
-        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_10, control)
+    Public Shared Sub SetForm_REQ_TAXI_FROM_10(ByVal REQ_TAXI_FROM_10 As String, ByRef control As TextBox)
+        SetForm_REQ_TAXI_FROM(REQ_TAXI_FROM_10, control)
     End Sub
 
     'タクシーチケット：予定金額（依頼）
