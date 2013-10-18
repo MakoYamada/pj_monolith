@@ -2745,76 +2745,6 @@ Public Class AppModule
         Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_20)
     End Function
 
-    'タクシーチケット：発地（回答）
-    Public Shared Function GetName_ANS_TAXI_FROM(ByVal ANS_TAXI_FROM As String) As String
-        Return ANS_TAXI_FROM
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_1(ByVal ANS_TAXI_FROM_1 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_1)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_2(ByVal ANS_TAXI_FROM_2 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_2)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_3(ByVal ANS_TAXI_FROM_3 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_3)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_4(ByVal ANS_TAXI_FROM_4 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_4)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_5(ByVal ANS_TAXI_FROM_5 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_5)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_6(ByVal ANS_TAXI_FROM_6 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_6)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_7(ByVal ANS_TAXI_FROM_7 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_7)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_8(ByVal ANS_TAXI_FROM_8 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_8)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_9(ByVal ANS_TAXI_FROM_9 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_9)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_FROM_10(ByVal ANS_TAXI_FROM_10 As String) As String
-        Return GetName_ANS_TAXI_FROM(ANS_TAXI_FROM_10)
-    End Function
-
-    'タクシーチケット：着地（回答）
-    Public Shared Function GetName_ANS_TAXI_TO(ByVal ANS_TAXI_TO As String) As String
-        Return ANS_TAXI_TO
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_1(ByVal ANS_TAXI_TO_1 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_1)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_2(ByVal ANS_TAXI_TO_2 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_2)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_3(ByVal ANS_TAXI_TO_3 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_3)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_4(ByVal ANS_TAXI_TO_4 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_4)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_5(ByVal ANS_TAXI_TO_5 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_5)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_6(ByVal ANS_TAXI_TO_6 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_6)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_7(ByVal ANS_TAXI_TO_7 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_7)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_8(ByVal ANS_TAXI_TO_8 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_8)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_9(ByVal ANS_TAXI_TO_9 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_9)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_TO_10(ByVal ANS_TAXI_TO_10 As String) As String
-        Return GetName_ANS_TAXI_TO(ANS_TAXI_TO_10)
-    End Function
-
     'タクシーチケット：券種（回答）
     Public Shared Function GetName_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String) As String
         Return ANS_TAXI_KENSHU
@@ -2943,194 +2873,6 @@ Public Class AppModule
     End Function
     Public Shared Function GetName_ANS_TAXI_NO_20(ByVal ANS_TAXI_NO_20 As String) As String
         Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_20)
-    End Function
-
-    'タクシーチケット：利用額（回答）
-    Public Shared Function GetName_ANS_TAXI_KINGAKU(ByVal ANS_TAXI_KINGAKU As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If Val(ANS_TAXI_KINGAKU) = 0 Then
-            Return "0"
-        Else
-            If ShortFormat = False Then
-                Return CLng(ANS_TAXI_KINGAKU).ToString("#,#")
-            Else
-                Return ANS_TAXI_KINGAKU
-            End If
-        End If
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_1(ByVal ANS_TAXI_KINGAKU_1 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_1, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_2(ByVal ANS_TAXI_KINGAKU_2 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_2, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_3(ByVal ANS_TAXI_KINGAKU_3 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_3, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_4(ByVal ANS_TAXI_KINGAKU_4 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_4, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_5(ByVal ANS_TAXI_KINGAKU_5 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_5, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_6(ByVal ANS_TAXI_KINGAKU_6 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_6, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_7(ByVal ANS_TAXI_KINGAKU_7 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_7, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_8(ByVal ANS_TAXI_KINGAKU_8 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_8, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_9(ByVal ANS_TAXI_KINGAKU_9 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_9, ShortFormat)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_KINGAKU_10(ByVal ANS_TAXI_KINGAKU_10 As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_ANS_TAXI_KINGAKU(ANS_TAXI_KINGAKU_10, ShortFormat)
-    End Function
-
-    'タクシーチケット：明細（回答）
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO(ByVal ANS_TAXI_MEISAI_NO As String) As String
-        Return ANS_TAXI_MEISAI_NO
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_1(ByVal ANS_TAXI_MEISAI_NO_1 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_1)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_2(ByVal ANS_TAXI_MEISAI_NO_2 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_2)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_3(ByVal ANS_TAXI_MEISAI_NO_3 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_3)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_4(ByVal ANS_TAXI_MEISAI_NO_4 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_4)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_5(ByVal ANS_TAXI_MEISAI_NO_5 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_5)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_6(ByVal ANS_TAXI_MEISAI_NO_6 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_6)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_7(ByVal ANS_TAXI_MEISAI_NO_7 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_7)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_8(ByVal ANS_TAXI_MEISAI_NO_8 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_8)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_9(ByVal ANS_TAXI_MEISAI_NO_9 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_9)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_MEISAI_NO_10(ByVal ANS_TAXI_MEISAI_NO_10 As String) As String
-        Return GetName_ANS_TAXI_MEISAI_NO(ANS_TAXI_MEISAI_NO_10)
-    End Function
-
-    'タクシーチケット：VOID（回答）
-    Public Shared Function GetName_ANS_TAXI_VOID(ByVal ANS_TAXI_VOID As String) As String
-        Return ANS_TAXI_VOID
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_1(ByVal ANS_TAXI_VOID_1 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_1)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_2(ByVal ANS_TAXI_VOID_2 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_2)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_3(ByVal ANS_TAXI_VOID_3 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_3)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_4(ByVal ANS_TAXI_VOID_4 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_4)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_5(ByVal ANS_TAXI_VOID_5 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_5)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_6(ByVal ANS_TAXI_VOID_6 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_6)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_7(ByVal ANS_TAXI_VOID_7 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_7)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_8(ByVal ANS_TAXI_VOID_8 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_8)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_9(ByVal ANS_TAXI_VOID_9 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_9)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_VOID_10(ByVal ANS_TAXI_VOID_10 As String) As String
-        Return GetName_ANS_TAXI_VOID(ANS_TAXI_VOID_10)
-    End Function
-
-    'タクシーチケット：印刷日（回答）
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE(ByVal ANS_TAXI_PRINTDATE As String) As String
-        Return ANS_TAXI_PRINTDATE
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_1(ByVal ANS_TAXI_PRINTDATE_1 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_1)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_2(ByVal ANS_TAXI_PRINTDATE_2 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_2)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_3(ByVal ANS_TAXI_PRINTDATE_3 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_3)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_4(ByVal ANS_TAXI_PRINTDATE_4 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_4)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_5(ByVal ANS_TAXI_PRINTDATE_5 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_5)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_6(ByVal ANS_TAXI_PRINTDATE_6 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_6)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_7(ByVal ANS_TAXI_PRINTDATE_7 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_7)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_8(ByVal ANS_TAXI_PRINTDATE_8 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_8)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_9(ByVal ANS_TAXI_PRINTDATE_9 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_9)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_PRINTDATE_10(ByVal ANS_TAXI_PRINTDATE_10 As String) As String
-        Return GetName_ANS_TAXI_PRINTDATE(ANS_TAXI_PRINTDATE_10)
-    End Function
-
-    'タクシーチケット：請求月（回答）
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE(ByVal ANS_TAXI_SEIKYUDATE As String) As String
-        Return ANS_TAXI_SEIKYUDATE
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_1(ByVal ANS_TAXI_SEIKYUDATE_1 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_1)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_2(ByVal ANS_TAXI_SEIKYUDATE_2 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_2)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_3(ByVal ANS_TAXI_SEIKYUDATE_3 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_3)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_4(ByVal ANS_TAXI_SEIKYUDATE_4 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_4)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_5(ByVal ANS_TAXI_SEIKYUDATE_5 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_5)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_6(ByVal ANS_TAXI_SEIKYUDATE_6 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_6)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_7(ByVal ANS_TAXI_SEIKYUDATE_7 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_7)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_8(ByVal ANS_TAXI_SEIKYUDATE_8 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_8)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_9(ByVal ANS_TAXI_SEIKYUDATE_9 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_9)
-    End Function
-    Public Shared Function GetName_ANS_TAXI_SEIKYUDATE_10(ByVal ANS_TAXI_SEIKYUDATE_10 As String) As String
-        Return GetName_ANS_TAXI_SEIKYUDATE(ANS_TAXI_SEIKYUDATE_10)
-    End Function
-
-    'タクチケ備考
-    Public Shared Function GetName_TAXI_NOTE(ByVal TAXI_NOTE As String) As String
-        Return TAXI_NOTE
     End Function
 
     'MR随行有無(MR入力）
@@ -5228,6 +4970,116 @@ Public Class AppModule
         control.Text = TAXI_SEISAN_FEE
     End Sub
 
+    'タクシーチケット：手配（依頼）
+    Public Shared Sub SetForm_TEHAI_TAXI(ByVal TEHAI_TAXI As String, ByRef control As Label)
+        control.Text = GetName_TEHAI_TAXI(TEHAI_TAXI)
+    End Sub
+
+    'タクシーチケット：利用日（依頼）
+    Public Shared Sub SetForm_REQ_TAXI_DATE(ByVal REQ_TAXI_DATE As String, ByRef control As Label)
+        control.Text = GetName_REQ_TAXI_DATE(REQ_TAXI_DATE)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_1(ByVal REQ_TAXI_DATE_1 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_2(ByVal REQ_TAXI_DATE_2 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_3(ByVal REQ_TAXI_DATE_3 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_4(ByVal REQ_TAXI_DATE_4 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_5(ByVal REQ_TAXI_DATE_5 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_5, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_6(ByVal REQ_TAXI_DATE_6 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_6, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_7(ByVal REQ_TAXI_DATE_7 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_7, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_8(ByVal REQ_TAXI_DATE_8 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_8, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_9(ByVal REQ_TAXI_DATE_9 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_9, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_DATE_10(ByVal REQ_TAXI_DATE_10 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_DATE_10, control)
+    End Sub
+
+    'タクシーチケット：発地（依頼）
+    Public Shared Sub SetForm_REQ_TAXI_FROM(ByVal REQ_TAXI_FROM As String, ByRef control As Label)
+        control.Text = REQ_TAXI_FROM
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_1(ByVal REQ_TAXI_FROM_1 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_1, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_2(ByVal REQ_TAXI_FROM_2 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_2, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_3(ByVal REQ_TAXI_FROM_3 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_3, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_4(ByVal REQ_TAXI_FROM_4 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_4, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_5(ByVal REQ_TAXI_FROM_5 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_5, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_6(ByVal REQ_TAXI_FROM_6 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_6, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_7(ByVal REQ_TAXI_FROM_7 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_7, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_8(ByVal REQ_TAXI_FROM_8 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_8, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_9(ByVal REQ_TAXI_FROM_9 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_9, control)
+    End Sub
+    Public Shared Sub SetForm_REQ_TAXI_FROM_10(ByVal REQ_TAXI_FROM_10 As String, ByRef control As Label)
+        SetForm_REQ_TAXI_DATE(REQ_TAXI_FROM_10, control)
+    End Sub
+
+    'タクシーチケット：予定金額（依頼）
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU(ByVal TAXI_YOTEIKINGAKU As String, ByRef control As Label)
+        control.Text = GetName_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_1(ByVal TAXI_YOTEIKINGAKU_1 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_1, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_2(ByVal TAXI_YOTEIKINGAKU_2 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_2, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_3(ByVal TAXI_YOTEIKINGAKU_3 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_3, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_4(ByVal TAXI_YOTEIKINGAKU_4 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_4, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_5(ByVal TAXI_YOTEIKINGAKU_5 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_5, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_6(ByVal TAXI_YOTEIKINGAKU_6 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_6, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_7(ByVal TAXI_YOTEIKINGAKU_7 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_7, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_8(ByVal TAXI_YOTEIKINGAKU_8 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_8, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_9(ByVal TAXI_YOTEIKINGAKU_9 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_9, control)
+    End Sub
+    Public Shared Sub SetForm_TAXI_YOTEIKINGAKU_10(ByVal TAXI_YOTEIKINGAKU_10 As String, ByRef control As Label)
+        SetForm_TAXI_YOTEIKINGAKU(TAXI_YOTEIKINGAKU_10, control)
+    End Sub
+
     'タクシーチケット：利用日（回答）
     Public Shared Sub SetForm_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String, ByRef control As TextBox)
         control.Text = ANS_TAXI_DATE
@@ -5262,75 +5114,35 @@ Public Class AppModule
     Public Shared Sub SetForm_ANS_TAXI_DATE_10(ByVal ANS_TAXI_DATE_10 As String, ByRef control As TextBox)
         SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_10, control)
     End Sub
-
-    'タクシーチケット：発地（回答）
-    Public Shared Sub SetForm_ANS_TAXI_FROM(ByVal ANS_TAXI_FROM As String, ByRef control As TextBox)
-        control.Text = ANS_TAXI_FROM
+    Public Shared Sub SetForm_ANS_TAXI_DATE_11(ByVal ANS_TAXI_DATE_11 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_11, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_1(ByVal ANS_TAXI_FROM_1 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_1, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_12(ByVal ANS_TAXI_DATE_12 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_12, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_2(ByVal ANS_TAXI_FROM_2 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_2, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_13(ByVal ANS_TAXI_DATE_13 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_13, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_3(ByVal ANS_TAXI_FROM_3 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_3, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_14(ByVal ANS_TAXI_DATE_14 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_14, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_4(ByVal ANS_TAXI_FROM_4 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_4, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_15(ByVal ANS_TAXI_DATE_15 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_15, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_5(ByVal ANS_TAXI_FROM_5 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_5, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_16(ByVal ANS_TAXI_DATE_16 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_16, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_6(ByVal ANS_TAXI_FROM_6 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_6, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_17(ByVal ANS_TAXI_DATE_17 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_17, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_7(ByVal ANS_TAXI_FROM_7 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_7, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_18(ByVal ANS_TAXI_DATE_18 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_18, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_8(ByVal ANS_TAXI_FROM_8 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_8, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_19(ByVal ANS_TAXI_DATE_19 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_19, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_9(ByVal ANS_TAXI_FROM_9 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_9, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_FROM_10(ByVal ANS_TAXI_FROM_10 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_FROM(ANS_TAXI_FROM_10, control)
-    End Sub
-
-    'タクシーチケット：着地（回答）
-    Public Shared Sub SetForm_ANS_TAXI_TO(ByVal ANS_TAXI_TO As String, ByRef control As TextBox)
-        control.Text = ANS_TAXI_TO
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_1(ByVal ANS_TAXI_TO_1 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_1, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_2(ByVal ANS_TAXI_TO_2 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_2, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_3(ByVal ANS_TAXI_TO_3 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_3, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_4(ByVal ANS_TAXI_TO_4 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_4, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_5(ByVal ANS_TAXI_TO_5 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_5, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_6(ByVal ANS_TAXI_TO_6 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_6, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_7(ByVal ANS_TAXI_TO_7 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_7, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_8(ByVal ANS_TAXI_TO_8 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_8, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_9(ByVal ANS_TAXI_TO_9 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_9, control)
-    End Sub
-    Public Shared Sub SetForm_ANS_TAXI_TO_10(ByVal ANS_TAXI_TO_10 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_TO(ANS_TAXI_TO_10, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_20(ByVal ANS_TAXI_DATE_20 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_20, control)
     End Sub
 
     'タクシーチケット：券種（回答）
@@ -5367,6 +5179,36 @@ Public Class AppModule
     Public Shared Sub SetForm_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_10, control)
     End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_11, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_12, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_13, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_14, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_15, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_16, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_17, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_18, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_19, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As String, ByRef control As DropDownList)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_20, control)
+    End Sub
 
     'タクシーチケット：番号（回答）
     Public Shared Sub SetForm_ANS_TAXI_NO(ByVal ANS_TAXI_NO As String, ByRef control As TextBox)
@@ -5401,6 +5243,46 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetForm_ANS_TAXI_NO_10(ByVal ANS_TAXI_NO_10 As String, ByRef control As TextBox)
         SetForm_ANS_TAXI_NO(ANS_TAXI_NO_10, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_11(ByVal ANS_TAXI_NO_11 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_11, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_12(ByVal ANS_TAXI_NO_12 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_12, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_13(ByVal ANS_TAXI_NO_13 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_13, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_14(ByVal ANS_TAXI_NO_14 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_14, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_15(ByVal ANS_TAXI_NO_15 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_15, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_16(ByVal ANS_TAXI_NO_16 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_16, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_17(ByVal ANS_TAXI_NO_17 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_17, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_18(ByVal ANS_TAXI_NO_18 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_18, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_19(ByVal ANS_TAXI_NO_19 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_19, control)
+    End Sub
+    Public Shared Sub SetForm_ANS_TAXI_NO_20(ByVal ANS_TAXI_NO_20 As String, ByRef control As TextBox)
+        SetForm_ANS_TAXI_NO(ANS_TAXI_NO_20, control)
+    End Sub
+
+    'タクチケ備考（依頼）
+    Public Shared Sub SetForm_REQ_TAXI_NOTE(ByVal REQ_TAXI_NOTE As String, ByRef control As TextBox)
+        control.Text = REQ_TAXI_NOTE
+    End Sub
+
+    'タクチケ備考（回答）
+    Public Shared Sub SetForm_ANS_TAXI_NOTE(ByVal ANS_TAXI_NOTE As String, ByRef control As TextBox)
+        control.Text = ANS_TAXI_NOTE
     End Sub
 
     '電話番号
@@ -6842,76 +6724,6 @@ Public Class AppModule
         Return GetValue_ANS_TAXI_DATE(ANS_TAXI_DATE_20)
     End Function
 
-    'タクシーチケット：発地（回答）
-    Public Shared Function GetValue_ANS_TAXI_FROM(ByVal ANS_TAXI_FROM As TextBox) As String
-        Return Trim(StrConv(ANS_TAXI_FROM.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_1(ByVal ANS_TAXI_FROM_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_2(ByVal ANS_TAXI_FROM_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_3(ByVal ANS_TAXI_FROM_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_4(ByVal ANS_TAXI_FROM_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_5(ByVal ANS_TAXI_FROM_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_6(ByVal ANS_TAXI_FROM_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_7(ByVal ANS_TAXI_FROM_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_8(ByVal ANS_TAXI_FROM_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_9(ByVal ANS_TAXI_FROM_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_FROM_10(ByVal ANS_TAXI_FROM_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_FROM(ANS_TAXI_FROM_10)
-    End Function
-
-    'タクシーチケット：着地（回答）
-    Public Shared Function GetValue_ANS_TAXI_TO(ByVal ANS_TAXI_TO As TextBox) As String
-        Return Trim(StrConv(ANS_TAXI_TO.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_1(ByVal ANS_TAXI_TO_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_2(ByVal ANS_TAXI_TO_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_3(ByVal ANS_TAXI_TO_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_4(ByVal ANS_TAXI_TO_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_5(ByVal ANS_TAXI_TO_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_6(ByVal ANS_TAXI_TO_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_7(ByVal ANS_TAXI_TO_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_8(ByVal ANS_TAXI_TO_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_9(ByVal ANS_TAXI_TO_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_TO_10(ByVal ANS_TAXI_TO_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_TO_10)
-    End Function
-
     'タクシーチケット：券種（回答）
     Public Shared Function GetValue_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As TextBox) As String
         Return Trim(ANS_TAXI_KENSHU.Text)
@@ -6982,239 +6794,64 @@ Public Class AppModule
         Return Trim(ANS_TAXI_NO.Text)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_1(ByVal ANS_TAXI_NO_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_1)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_1)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_2(ByVal ANS_TAXI_NO_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_2)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_2)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_3(ByVal ANS_TAXI_NO_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_3)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_3)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_4(ByVal ANS_TAXI_NO_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_4)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_4)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_5(ByVal ANS_TAXI_NO_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_5)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_5)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_6(ByVal ANS_TAXI_NO_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_6)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_6)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_7(ByVal ANS_TAXI_NO_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_7)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_7)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_8(ByVal ANS_TAXI_NO_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_8)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_8)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_9(ByVal ANS_TAXI_NO_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_9)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_9)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_10(ByVal ANS_TAXI_NO_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_10)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_10)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_11(ByVal ANS_TAXI_NO_11 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_11)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_11)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_12(ByVal ANS_TAXI_NO_12 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_12)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_12)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_13(ByVal ANS_TAXI_NO_13 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_13)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_13)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_14(ByVal ANS_TAXI_NO_14 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_14)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_14)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_15(ByVal ANS_TAXI_NO_15 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_15)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_15)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_16(ByVal ANS_TAXI_NO_16 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_16)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_16)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_17(ByVal ANS_TAXI_NO_17 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_17)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_17)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_18(ByVal ANS_TAXI_NO_18 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_18)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_18)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_19(ByVal ANS_TAXI_NO_19 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_19)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_19)
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_20(ByVal ANS_TAXI_NO_20 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_NO_20)
-    End Function
-
-    'タクシーチケット：金額（回答）
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU(ByVal ANS_TAXI_KINGAKU As TextBox) As String
-        Return Trim(StrConv(ANS_TAXI_KINGAKU.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_1(ByVal ANS_TAXI_KINGAKU_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_2(ByVal ANS_TAXI_KINGAKU_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_3(ByVal ANS_TAXI_KINGAKU_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_4(ByVal ANS_TAXI_KINGAKU_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_5(ByVal ANS_TAXI_KINGAKU_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_6(ByVal ANS_TAXI_KINGAKU_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_7(ByVal ANS_TAXI_KINGAKU_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_8(ByVal ANS_TAXI_KINGAKU_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_9(ByVal ANS_TAXI_KINGAKU_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_KINGAKU_10(ByVal ANS_TAXI_KINGAKU_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_KINGAKU_10)
-    End Function
-
-    'タクシーチケット：明細（回答）
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO(ByVal ANS_TAXI_MEISAI_NO As TextBox) As String
-        Return Trim(ANS_TAXI_MEISAI_NO.Text)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_1(ByVal ANS_TAXI_MEISAI_NO_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_2(ByVal ANS_TAXI_MEISAI_NO_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_3(ByVal ANS_TAXI_MEISAI_NO_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_4(ByVal ANS_TAXI_MEISAI_NO_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_5(ByVal ANS_TAXI_MEISAI_NO_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_6(ByVal ANS_TAXI_MEISAI_NO_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_7(ByVal ANS_TAXI_MEISAI_NO_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_8(ByVal ANS_TAXI_MEISAI_NO_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_9(ByVal ANS_TAXI_MEISAI_NO_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_MEISAI_NO_10(ByVal ANS_TAXI_MEISAI_NO_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_MEISAI_NO_10)
-    End Function
-
-    'タクシーチケット：VOID（回答）
-    Public Shared Function GetValue_ANS_TAXI_VOID(ByVal ANS_TAXI_VOID As TextBox) As String
-        Return Trim(ANS_TAXI_VOID.Text)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_1(ByVal ANS_TAXI_VOID_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_2(ByVal ANS_TAXI_VOID_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_3(ByVal ANS_TAXI_VOID_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_4(ByVal ANS_TAXI_VOID_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_5(ByVal ANS_TAXI_VOID_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_6(ByVal ANS_TAXI_VOID_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_7(ByVal ANS_TAXI_VOID_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_8(ByVal ANS_TAXI_VOID_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_9(ByVal ANS_TAXI_VOID_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_VOID_10(ByVal ANS_TAXI_VOID_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_VOID_10)
-    End Function
-
-    'タクシーチケット：印刷日（回答）
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE(ByVal ANS_TAXI_PRINTDATE As TextBox) As String
-        Return Trim(StrConv(ANS_TAXI_PRINTDATE.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_1(ByVal ANS_TAXI_PRINTDATE_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_2(ByVal ANS_TAXI_PRINTDATE_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_3(ByVal ANS_TAXI_PRINTDATE_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_4(ByVal ANS_TAXI_PRINTDATE_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_5(ByVal ANS_TAXI_PRINTDATE_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_6(ByVal ANS_TAXI_PRINTDATE_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_7(ByVal ANS_TAXI_PRINTDATE_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_8(ByVal ANS_TAXI_PRINTDATE_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_9(ByVal ANS_TAXI_PRINTDATE_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_PRINTDATE_10(ByVal ANS_TAXI_PRINTDATE_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_PRINTDATE_10)
-    End Function
-
-    'タクシーチケット：請求月（回答）
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE(ByVal ANS_TAXI_SEIKYUDATE As TextBox) As String
-        Return Trim(StrConv(ANS_TAXI_SEIKYUDATE.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_1(ByVal ANS_TAXI_SEIKYUDATE_1 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_1)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_2(ByVal ANS_TAXI_SEIKYUDATE_2 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_2)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_3(ByVal ANS_TAXI_SEIKYUDATE_3 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_3)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_4(ByVal ANS_TAXI_SEIKYUDATE_4 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_4)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_5(ByVal ANS_TAXI_SEIKYUDATE_5 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_5)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_6(ByVal ANS_TAXI_SEIKYUDATE_6 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_6)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_7(ByVal ANS_TAXI_SEIKYUDATE_7 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_7)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_8(ByVal ANS_TAXI_SEIKYUDATE_8 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_8)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_9(ByVal ANS_TAXI_SEIKYUDATE_9 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_9)
-    End Function
-    Public Shared Function GetValue_ANS_TAXI_SEIKYUDATE_10(ByVal ANS_TAXI_SEIKYUDATE_10 As TextBox) As String
-        Return GetValue_ANS_TAXI_TO(ANS_TAXI_SEIKYUDATE_10)
+        Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_20)
     End Function
 
     '社員用往路手配（回答）
