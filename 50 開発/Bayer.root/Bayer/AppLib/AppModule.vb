@@ -4112,6 +4112,11 @@ Public Class AppModule
     End Sub
 
     '【回答】手配ステータス
+    Public Shared Sub SetForm_ANS_TICKET_SEND_DAY(ByVal ANS_TICKET_SEND_DAY As String, ByRef control As TextBox)
+        control.Text = ANS_TICKET_SEND_DAY
+    End Sub
+
+    'チケット類発送日（最新）
     Public Shared Sub SetForm_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As String, ByRef control As DropDownList)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_TEHAI, control, True)
     End Sub
