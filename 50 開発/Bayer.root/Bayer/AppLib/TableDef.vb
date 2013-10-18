@@ -396,6 +396,7 @@
             Public MR_EIGYOSHO As String
             Public MR_NAME As String
             Public MR_ROMA As String
+            Public MR_KANA As String
             Public MR_EMAIL_PC As String
             Public MR_EMAIL_KEITAI As String
             Public MR_KEITAI As String
@@ -425,6 +426,8 @@
             Public ANS_ROOM_TYPE As String
             Public ANS_HOTEL_SMOKING As String
             Public ANS_HOTEL_NOTE As String
+            Public ANS_HOTELHI As String
+            Public ANS_HOTELHI_CANCEL As String
             Public REQ_O_TEHAI_1 As String
             Public REQ_O_IRAINAIYOU_1 As String
             Public REQ_O_KOTSUKIKAN_1 As String
@@ -643,6 +646,9 @@
             Public ANS_OTHER_CANCELLATION As String
             Public ANS_AIR_FARE As String
             Public ANS_AIR_CANCELLATION As String
+            Public ANS_KOTSUHOTEL_TESURYO As String
+            Public ANS_TAXI_TESURYO As String
+            Public ANS_TICKET_SEND_DAY As String
             Public TEHAI_TAXI As String
             Public REQ_TAXI_DATE_1 As String
             Public REQ_TAXI_FROM_1 As String
@@ -740,17 +746,9 @@
             Public REQ_MR_F_TEHAI As String
             Public MR_SEX As String
             Public MR_AGE As String
-            Public REQ_MR_TEHAI_HOTEL As String
-            Public REQ_MR_HOTEL_SMOKING As String
             Public REQ_MR_HOTEL_NOTE As String
             Public ANS_MR_O_TEHAI As String
             Public ANS_MR_F_TEHAI As String
-            Public ANS_MR_HOTEL_NAME As String
-            Public ANS_MR_HOTEL_ADDRESS As String
-            Public ANS_MR_HOTEL_TEL As String
-            Public ANS_MR_CHECKIN_TIME As String
-            Public ANS_MR_CHECKOUT_TIME As String
-            Public ANS_MR_HOTEL_SMOKING As String
             Public ANS_MR_HOTEL_NOTE As String
             Public ANS_MR_KOTSUHI As String
             Public ANS_MR_HOTELHI As String
@@ -796,6 +794,7 @@
             Public Const MR_EIGYOSHO As String = "MR_EIGYOSHO"
             Public Const MR_NAME As String = "MR_NAME"
             Public Const MR_ROMA As String = "MR_ROMA"
+            Public Const MR_KANA As String = "MR_KANA"
             Public Const MR_EMAIL_PC As String = "MR_EMAIL_PC"
             Public Const MR_EMAIL_KEITAI As String = "MR_EMAIL_KEITAI"
             Public Const MR_KEITAI As String = "MR_KEITAI"
@@ -825,6 +824,8 @@
             Public Const ANS_ROOM_TYPE As String = "ANS_ROOM_TYPE"
             Public Const ANS_HOTEL_SMOKING As String = "ANS_HOTEL_SMOKING"
             Public Const ANS_HOTEL_NOTE As String = "ANS_HOTEL_NOTE"
+            Public Const ANS_HOTELHI As String = "ANS_HOTELHI"
+            Public Const ANS_HOTELHI_CANCEL As String = "ANS_HOTELHI_CANCEL"
             Public Const REQ_O_TEHAI_1 As String = "REQ_O_TEHAI_1"
             Public Const REQ_O_IRAINAIYOU_1 As String = "REQ_O_IRAINAIYOU_1"
             Public Const REQ_O_KOTSUKIKAN_1 As String = "REQ_O_KOTSUKIKAN_1"
@@ -1043,6 +1044,9 @@
             Public Const ANS_OTHER_CANCELLATION As String = "ANS_OTHER_CANCELLATION"
             Public Const ANS_AIR_FARE As String = "ANS_AIR_FARE"
             Public Const ANS_AIR_CANCELLATION As String = "ANS_AIR_CANCELLATION"
+            Public Const ANS_KOTSUHOTEL_TESURYO As String = "ANS_KOTSUHOTEL_TESURYO"
+            Public Const ANS_TAXI_TESURYO As String = "ANS_TAXI_TESURYO"
+            Public Const ANS_TICKET_SEND_DAY As String = "ANS_TICKET_SEND_DAY"
             Public Const TEHAI_TAXI As String = "TEHAI_TAXI"
             Public Const REQ_TAXI_DATE_1 As String = "REQ_TAXI_DATE_1"
             Public Const REQ_TAXI_FROM_1 As String = "REQ_TAXI_FROM_1"
@@ -1140,17 +1144,9 @@
             Public Const REQ_MR_F_TEHAI As String = "REQ_MR_F_TEHAI"
             Public Const MR_SEX As String = "MR_SEX"
             Public Const MR_AGE As String = "MR_AGE"
-            Public Const REQ_MR_TEHAI_HOTEL As String = "REQ_MR_TEHAI_HOTEL"
-            Public Const REQ_MR_HOTEL_SMOKING As String = "REQ_MR_HOTEL_SMOKING"
             Public Const REQ_MR_HOTEL_NOTE As String = "REQ_MR_HOTEL_NOTE"
             Public Const ANS_MR_O_TEHAI As String = "ANS_MR_O_TEHAI"
             Public Const ANS_MR_F_TEHAI As String = "ANS_MR_F_TEHAI"
-            Public Const ANS_MR_HOTEL_NAME As String = "ANS_MR_HOTEL_NAME"
-            Public Const ANS_MR_HOTEL_ADDRESS As String = "ANS_MR_HOTEL_ADDRESS"
-            Public Const ANS_MR_HOTEL_TEL As String = "ANS_MR_HOTEL_TEL"
-            Public Const ANS_MR_CHECKIN_TIME As String = "ANS_MR_CHECKIN_TIME"
-            Public Const ANS_MR_CHECKOUT_TIME As String = "ANS_MR_CHECKOUT_TIME"
-            Public Const ANS_MR_HOTEL_SMOKING As String = "ANS_MR_HOTEL_SMOKING"
             Public Const ANS_MR_HOTEL_NOTE As String = "ANS_MR_HOTEL_NOTE"
             Public Const ANS_MR_KOTSUHI As String = "ANS_MR_KOTSUHI"
             Public Const ANS_MR_HOTELHI As String = "ANS_MR_HOTELHI"
@@ -1196,6 +1192,7 @@
             Public Const MR_EIGYOSHO As String = "所属営業所(担当MR)"
             Public Const MR_NAME As String = "担当者(担当MR)名"
             Public Const MR_ROMA As String = "担当者名(担当MR)(ローマ字)"
+            Public Const MR_KANA As String = "担当者名(担当MR)(カナ)"
             Public Const MR_EMAIL_PC As String = "Emailアドレス(担当MR)"
             Public Const MR_EMAIL_KEITAI As String = "携帯Emailアドレス(担当MR)"
             Public Const MR_KEITAI As String = "携帯電話番号(担当MR)"
@@ -1225,6 +1222,8 @@
             Public Const ANS_ROOM_TYPE As String = "宿泊部屋タイプ(回答)"
             Public Const ANS_HOTEL_SMOKING As String = "宿泊ホテル喫煙(回答)"
             Public Const ANS_HOTEL_NOTE As String = "宿泊備考(回答)"
+            Public Const ANS_HOTELHI As String = "宿泊費(回答)"
+            Public Const ANS_HOTELHI_CANCEL As String = "宿泊取消料(回答)"
             Public Const REQ_O_TEHAI_1 As String = "往路1:希望する(依頼)"
             Public Const REQ_O_IRAINAIYOU_1 As String = "往路1:依頼内容(依頼)"
             Public Const REQ_O_KOTSUKIKAN_1 As String = "往路1:交通機関(依頼)"
@@ -1443,6 +1442,9 @@
             Public Const ANS_OTHER_CANCELLATION As String = "【回答】その他鉄道等取消料"
             Public Const ANS_AIR_FARE As String = "【回答】航空券代金"
             Public Const ANS_AIR_CANCELLATION As String = "【回答】航空券取消料"
+            Public Const ANS_KOTSUHOTEL_TESURYO As String = "【回答】手数料(交通・宿泊)"
+            Public Const ANS_TAXI_TESURYO As String = "【回答】手数料(タクチケ発券手数料)"
+            Public Const ANS_TICKET_SEND_DAY As String = "【回答】チケット類発送日(最新)"
             Public Const TEHAI_TAXI As String = "タクシーチケット(有・無)"
             Public Const REQ_TAXI_DATE_1 As String = "行程1:利用日(依頼)"
             Public Const REQ_TAXI_FROM_1 As String = "行程1:発地(依頼)"
@@ -1540,17 +1542,9 @@
             Public Const REQ_MR_F_TEHAI As String = "社員用復路臨席希望(依頼)"
             Public Const MR_SEX As String = "MR性別(航空券の場合)"
             Public Const MR_AGE As String = "MR年齢(航空券の場合)"
-            Public Const REQ_MR_TEHAI_HOTEL As String = "社員用宿泊希望(有・無)"
-            Public Const REQ_MR_HOTEL_SMOKING As String = "社員用宿泊 (禁煙・喫煙)"
             Public Const REQ_MR_HOTEL_NOTE As String = "社員用交通・宿泊備考"
             Public Const ANS_MR_O_TEHAI As String = "社員用往路手配(回答)"
             Public Const ANS_MR_F_TEHAI As String = "社員用復路手配(回答)"
-            Public Const ANS_MR_HOTEL_NAME As String = "社員用宿泊ホテル名(回答)"
-            Public Const ANS_MR_HOTEL_ADDRESS As String = "社員用ホテル住所(回答)"
-            Public Const ANS_MR_HOTEL_TEL As String = "社員用ホテルTEL(回答)"
-            Public Const ANS_MR_CHECKIN_TIME As String = "社員用ホテルチェックイン時間(回答)"
-            Public Const ANS_MR_CHECKOUT_TIME As String = "社員用ホテルチェックアウト時間(回答)"
-            Public Const ANS_MR_HOTEL_SMOKING As String = "社員用宿泊(禁煙・喫煙)(回答)"
             Public Const ANS_MR_HOTEL_NOTE As String = "社員用交通・宿泊備考(回答)"
             Public Const ANS_MR_KOTSUHI As String = "【回答】MR 交通費"
             Public Const ANS_MR_HOTELHI As String = "【回答】MR 宿泊費"
