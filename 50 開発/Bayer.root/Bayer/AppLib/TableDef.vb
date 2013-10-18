@@ -253,29 +253,33 @@
             Public KAIJOHI_TF As String
             Public KIZAIHI_TF As String
             Public INSHOKUHI_TF As String
-            Public OTHER_TATEKAE_TF As String
             Public KEI_991330401_1 As String
-            Public UNEIHI_TF As String
-            Public JINKENHI_TF As String
-            Public KEI_41120200_1 As String
             Public HOTELHI_TF As String
             Public JR_TF As String
             Public AIR_TF As String
-            Public OTHER_TF As String
+            Public OTHER_TRAFFIC_TF As String
+            Public TAXI_TF As String
             Public HOTEL_COMMISSION_TF As String
             Public TAXI_COMMISSION_TF As String
-            Public TAXI_TF As String
             Public TAXI_SEISAN_TF As String
-            Public KEI_41120200_2 As String
+            Public JINKENHI_TF As String
+            Public OTHER_TF As String
+            Public KANRIHI_TF As String
+            Public KEI_41120200_TF As String
             Public KEI_TF As String
             Public KAIJOUHI_T As String
             Public KIZAIHI_T As String
             Public INSHOKUHI_T As String
             Public KEI_991330401_2 As String
+            Public JINKENHI_T As String
+            Public OTHER_T As String
+            Public KANRIHI_T As String
+            Public KEI_41120200_T As String
             Public KEI_T As String
             Public SEIKYU_NO_TOPTOUR As String
             Public TAXI_T As String
             Public TAXI_SEISAN_T As String
+            Public SEISANSHO_URL As String
             Public TAXI_TICKET_URL As String
             Public MR_JR As String
             Public MR_HOTEL As String
@@ -294,29 +298,33 @@
             Public Const KAIJOHI_TF As String = "KAIJOHI_TF"
             Public Const KIZAIHI_TF As String = "KIZAIHI_TF"
             Public Const INSHOKUHI_TF As String = "INSHOKUHI_TF"
-            Public Const OTHER_TATEKAE_TF As String = "OTHER_TATEKAE_TF"
             Public Const KEI_991330401_1 As String = "KEI_991330401_1"
-            Public Const UNEIHI_TF As String = "UNEIHI_TF"
-            Public Const JINKENHI_TF As String = "JINKENHI_TF"
-            Public Const KEI_41120200_1 As String = "KEI_41120200_1"
             Public Const HOTELHI_TF As String = "HOTELHI_TF"
             Public Const JR_TF As String = "JR_TF"
             Public Const AIR_TF As String = "AIR_TF"
-            Public Const OTHER_TF As String = "OTHER_TF"
+            Public Const OTHER_TRAFFIC_TF As String = "OTHER_TRAFFIC_TF"
+            Public Const TAXI_TF As String = "TAXI_TF"
             Public Const HOTEL_COMMISSION_TF As String = "HOTEL_COMMISSION_TF"
             Public Const TAXI_COMMISSION_TF As String = "TAXI_COMMISSION_TF"
-            Public Const TAXI_TF As String = "TAXI_TF"
             Public Const TAXI_SEISAN_TF As String = "TAXI_SEISAN_TF"
-            Public Const KEI_41120200_2 As String = "KEI_41120200_2"
+            Public Const JINKENHI_TF As String = "JINKENHI_TF"
+            Public Const OTHER_TF As String = "OTHER_TF"
+            Public Const KANRIHI_TF As String = "KANRIHI_TF"
+            Public Const KEI_41120200_TF As String = "KEI_41120200_TF"
             Public Const KEI_TF As String = "KEI_TF"
             Public Const KAIJOUHI_T As String = "KAIJOUHI_T"
             Public Const KIZAIHI_T As String = "KIZAIHI_T"
             Public Const INSHOKUHI_T As String = "INSHOKUHI_T"
             Public Const KEI_991330401_2 As String = "KEI_991330401_2"
+            Public Const JINKENHI_T As String = "JINKENHI_T"
+            Public Const OTHER_T As String = "OTHER_T"
+            Public Const KANRIHI_T As String = "KANRIHI_T"
+            Public Const KEI_41120200_T As String = "KEI_41120200_T"
             Public Const KEI_T As String = "KEI_T"
             Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
             Public Const TAXI_T As String = "TAXI_T"
             Public Const TAXI_SEISAN_T As String = "TAXI_SEISAN_T"
+            Public Const SEISANSHO_URL As String = "SEISANSHO_URL"
             Public Const TAXI_TICKET_URL As String = "TAXI_TICKET_URL"
             Public Const MR_JR As String = "MR_JR"
             Public Const MR_HOTEL As String = "MR_HOTEL"
@@ -332,33 +340,37 @@
             Public Const SEISAN_YM As String = "トップツアー精算年月"
             Public Const SHOUNIN_KUBUN As String = "承認区分"
             Public Const SHOUNIN_DATE As String = "精算承認日"
-            Public Const KAIJOHI_TF As String = "会場費（非課税）991330401"
-            Public Const KIZAIHI_TF As String = "機材費（非課税）991330401"
-            Public Const INSHOKUHI_TF As String = "飲食費（非課税）991330401"
-            Public Const OTHER_TATEKAE_TF As String = "その他立替等（非課税）991330401"
+            Public Const KAIJOHI_TF As String = "会場費(非課税)991330401"
+            Public Const KIZAIHI_TF As String = "機材費(非課税)991330401"
+            Public Const INSHOKUHI_TF As String = "飲食費(非課税)991330401"
             Public Const KEI_991330401_1 As String = "991330401小計"
-            Public Const UNEIHI_TF As String = "運営費（非課税）41120200"
-            Public Const JINKENHI_TF As String = "人件費（非課税）41120200"
-            Public Const KEI_41120200_1 As String = "41120200小計"
-            Public Const HOTELHI_TF As String = "宿泊費（非課税）41120200"
-            Public Const JR_TF As String = "JR代（非課税）41120200"
-            Public Const AIR_TF As String = "航空券代（非課税）41120200"
-            Public Const OTHER_TF As String = "その他鉄道等費用（非課税）41120200"
+            Public Const HOTELHI_TF As String = "宿泊費(非課税)41120200"
+            Public Const JR_TF As String = "JR代(非課税)41120200"
+            Public Const AIR_TF As String = "航空券代(非課税)41120200"
+            Public Const OTHER_TRAFFIC_TF As String = "その他鉄道等費用(非課税)41120200"
+            Public Const TAXI_TF As String = "タクシー実車料金(非課税)41120200"
             Public Const HOTEL_COMMISSION_TF As String = "宿泊・交通手数料(非課税)41120200"
             Public Const TAXI_COMMISSION_TF As String = "タクチケ発券手数料(非課税)41120200"
-            Public Const TAXI_TF As String = "タクチケ実車料金(非課税)41120200"
-            Public Const TAXI_SEISAN_TF As String = "タクチケ精算代金(非課税)41120200"
-            Public Const KEI_41120200_2 As String = "41120200小計"
+            Public Const TAXI_SEISAN_TF As String = "タクチケ精算手数料 (非課税)41120200"
+            Public Const JINKENHI_TF As String = "人件費(非課税)41120200"
+            Public Const OTHER_TF As String = "その他費(非課税)41120200"
+            Public Const KANRIHI_TF As String = "管理費(非課税)41120200"
+            Public Const KEI_41120200_TF As String = "41120200(非課税)小計"
             Public Const KEI_TF As String = "非課税金額合計"
-            Public Const KAIJOUHI_T As String = "会場費（課税）991330401"
-            Public Const KIZAIHI_T As String = "機材費（課税）991330401"
-            Public Const INSHOKUHI_T As String = "飲食費（課税）991330401"
+            Public Const KAIJOUHI_T As String = "会場費(課税)991330401"
+            Public Const KIZAIHI_T As String = "機材費(課税)991330401"
+            Public Const INSHOKUHI_T As String = "飲食費(課税)991330401"
             Public Const KEI_991330401_2 As String = "991330401小計"
+            Public Const JINKENHI_T As String = "人件費(課税)41120200"
+            Public Const OTHER_T As String = "その他費(課税)41120200"
+            Public Const KANRIHI_T As String = "管理費(課税)41120200"
+            Public Const KEI_41120200_T As String = "41120200(課税)小計"
             Public Const KEI_T As String = "課税金額合計"
             Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
             Public Const TAXI_T As String = "タクチケ実車料金(課税)"
-            Public Const TAXI_SEISAN_T As String = "タクチケ精算代金(課税)"
-            Public Const TAXI_TICKET_URL As String = "タクチケ保存場所URL"
+            Public Const TAXI_SEISAN_T As String = "タクチケ精算手数料(課税)"
+            Public Const SEISANSHO_URL As String = "精算書保存場所URL"
+            Public Const TAXI_TICKET_URL As String = "タクチケ管理表保存場所URL"
             Public Const MR_JR As String = "社員の国内旅費(JR/航空券)"
             Public Const MR_HOTEL As String = "社員の国内旅費(宿泊)"
             Public Const SEND_FLAG As String = "送信フラグ"
