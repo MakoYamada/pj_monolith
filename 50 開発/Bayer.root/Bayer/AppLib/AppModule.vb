@@ -7054,6 +7054,11 @@ Public Class AppModule
     End Function
 
     '社員用往路手配（回答）
+    Public Shared Function GetValue_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_MR_O_TEHAI)
+    End Function
+
+    '社員用復路手配（回答）
     Public Shared Function GetValue_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As DropDownList) As String
         Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI)
     End Function
