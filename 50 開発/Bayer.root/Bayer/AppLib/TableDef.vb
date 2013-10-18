@@ -18,8 +18,11 @@
             Public ACCOUNT_CD_T As String
             Public ACCOUNT_CD_TF As String
             Public ZETIA_CD As String
-            Public SANKA_YOTEI_CNT As String
+            Public SANKA_YOTEI_CNT_NMBR As String
+            Public SANKA_YOTEI_CNT_MBR As String
+            Public SRM_HACYU_KBN As String
             Public BU As String
+            Public KIKAKU_TANTO_JIGYOUBU As String
             Public KIKAKU_TANTO_AREA As String
             Public KIKAKU_TANTO_EIGYOSHO As String
             Public KIKAKU_TANTO_NAME As String
@@ -40,6 +43,8 @@
             Public TEHAI_TANTO_TEL As String
             Public YOSAN_TF As String
             Public YOSAN_T As String
+            Public IROUKAI_YOSAN_T As String
+            Public IKENKOUKAN_YOSAN_T As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -108,8 +113,11 @@
             Public Const ACCOUNT_CD_T As String = "ACCOUNT_CD_T"
             Public Const ACCOUNT_CD_TF As String = "ACCOUNT_CD_TF"
             Public Const ZETIA_CD As String = "ZETIA_CD"
-            Public Const SANKA_YOTEI_CNT As String = "SANKA_YOTEI_CNT"
+            Public Const SANKA_YOTEI_CNT_NMBR As String = "SANKA_YOTEI_CNT_NMBR"
+            Public Const SANKA_YOTEI_CNT_MBR As String = "SANKA_YOTEI_CNT_MBR"
+            Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
             Public Const BU As String = "BU"
+            Public Const KIKAKU_TANTO_JIGYOUBU As String = "KIKAKU_TANTO_JIGYOUBU"
             Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
             Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"
@@ -130,6 +138,8 @@
             Public Const TEHAI_TANTO_TEL As String = "TEHAI_TANTO_TEL"
             Public Const YOSAN_TF As String = "YOSAN_TF"
             Public Const YOSAN_T As String = "YOSAN_T"
+            Public Const IROUKAI_YOSAN_T As String = "IROUKAI_YOSAN_T"
+            Public Const IKENKOUKAN_YOSAN_T As String = "IKENKOUKAN_YOSAN_T"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -198,8 +208,11 @@
             Public Const ACCOUNT_CD_T As String = "アカウントコード(課税)"
             Public Const ACCOUNT_CD_TF As String = "アカウントコード(非課税)"
             Public Const ZETIA_CD As String = "zetia Code"
-            Public Const SANKA_YOTEI_CNT As String = "参加予定数"
+            Public Const SANKA_YOTEI_CNT_NMBR As String = "参加予定数(従業員以外)"
+            Public Const SANKA_YOTEI_CNT_MBR As String = "参加予定数(従業員)"
+            Public Const SRM_HACYU_KBN As String = "SRM発注区分"
             Public Const BU As String = "BU(企画担当者)"
+            Public Const KIKAKU_TANTO_JIGYOUBU As String = "事業部(企画担当者)"
             Public Const KIKAKU_TANTO_AREA As String = "エリア(企画担当者)"
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "営業所(企画担当者)"
             Public Const KIKAKU_TANTO_NAME As String = "担当者(企画担当者)名"
@@ -220,6 +233,8 @@
             Public Const TEHAI_TANTO_TEL As String = "オフィスの電話番号(手配担当者)"
             Public Const YOSAN_TF As String = "予算額_非課税"
             Public Const YOSAN_T As String = "予算額_課税"
+            Public Const IROUKAI_YOSAN_T As String = "慰労会予算_課税"
+            Public Const IKENKOUKAN_YOSAN_T As String = "意見交換会予算_課税"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"

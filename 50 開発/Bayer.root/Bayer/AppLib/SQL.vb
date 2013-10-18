@@ -184,8 +184,11 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.ACCOUNT_CD_T
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.ACCOUNT_CD_TF
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.ZETIA_CD
-            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SANKA_YOTEI_CNT
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SANKA_YOTEI_CNT_NMBR
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SANKA_YOTEI_CNT_MBR
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SRM_HACYU_KBN
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.BU
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_JIGYOUBU
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_EIGYOSHO
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_NAME
@@ -206,6 +209,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_TEL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_TF
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IROUKAI_YOSAN_T
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IKENKOUKAN_YOSAN_T
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.INPUT_DATE
@@ -230,8 +235,11 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.ACCOUNT_CD_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.ACCOUNT_CD_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.ZETIA_CD) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SANKA_YOTEI_CNT) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SANKA_YOTEI_CNT_NMBR) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SANKA_YOTEI_CNT_MBR) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SRM_HACYU_KBN) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.BU) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_AREA) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.KIKAKU_TANTO_NAME) & "'"
@@ -252,6 +260,8 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TEHAI_TANTO_TEL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.IROUKAI_YOSAN_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.IKENKOUKAN_YOSAN_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
