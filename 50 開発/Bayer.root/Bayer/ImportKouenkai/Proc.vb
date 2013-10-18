@@ -10,7 +10,7 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    Private Const COL_COUNT As Integer = 37'ファイルの項目数
+    Private Const COL_COUNT As Integer = 41 'ファイルの項目数
 
     Private Enum COL_NO
         Field1 = 0
@@ -50,46 +50,54 @@ Public Class Proc
         Field35
         Field36
         Field37
+        Field38
+        Field39
+        Field40
+        Field41
     End Enum
 
     Private Class COL_NAME
         Public Const Field1 As String = "講演会番号"
-        Public Const Field2 As String = "Timestamp（BYL)"
+        Public Const Field2 As String = "Timestamp(BYL)"
         Public Const Field3 As String = "取消フラグ"
         Public Const Field4 As String = "講演会名"
-        Public Const Field5 As String = "講演会名（チケット印字用）"
+        Public Const Field5 As String = "講演会名(チケット印字用)"
         Public Const Field6 As String = "講演会開催日From"
         Public Const Field7 As String = "講演会開催日To"
         Public Const Field8 As String = "講演会会場名"
         Public Const Field9 As String = "製品名"
-        Public Const Field10 As String = "Internal order（課税）"
-        Public Const Field11 As String = "Internal order（非課税）"
-        Public Const Field12 As String = "アカウントコード（課税）"
-        Public Const Field13 As String = "アカウントコード（非課税）"
+        Public Const Field10 As String = "Internal order(課税)"
+        Public Const Field11 As String = "Internal order(非課税)"
+        Public Const Field12 As String = "アカウントコード(課税)"
+        Public Const Field13 As String = "アカウントコード(非課税)"
         Public Const Field14 As String = "zetia Code"
-        Public Const Field15 As String = "BU（領域）"
-        Public Const Field16 As String = "参加予定数"
-        Public Const Field17 As String = "所属事業部"
-        Public Const Field18 As String = "所属エリア"
-        Public Const Field19 As String = "所属営業所"
-        Public Const Field20 As String = "担当者（企画担当者）名"
-        Public Const Field21 As String = "担当者（企画担当者）名（ﾛｰﾏ字）"
-        Public Const Field22 As String = "Emailアドレス（企画担当者）"
-        Public Const Field23 As String = "携帯のアドレス（企画担当者）"
-        Public Const Field24 As String = "携帯電話番号（企画担当者）"
-        Public Const Field25 As String = "オフィスの電話番号（企画担当者）"
-        Public Const Field26 As String = "Cost Center"
-        Public Const Field27 As String = "手配担当者のBU英名"
-        Public Const Field28 As String = "手配担当者のエリア名"
-        Public Const Field29 As String = "手配担当者の営業所名"
-        Public Const Field30 As String = "手配担当者の氏名"
-        Public Const Field31 As String = "手配担当者の氏名(ﾛｰﾏ字)"
-        Public Const Field32 As String = "手配担当者の会社電話"
-        Public Const Field33 As String = "手配担当者のEmail"
-        Public Const Field34 As String = "手配担当者の携帯番号"
-        Public Const Field35 As String = "手配担当者の携帯メール"
-        Public Const Field36 As String = "予算額_非課税"
-        Public Const Field37 As String = "予算額_課税"
+        Public Const Field15 As String = "BU(領域)"
+        Public Const Field16 As String = "参加予定数(従業員以外)"
+        Public Const Field17 As String = "参加予定数(従業員)"
+        Public Const Field18 As String = "ＳＲＭ発注区分"
+        Public Const Field19 As String = "所属事業部"
+        Public Const Field20 As String = "所属エリア"
+        Public Const Field21 As String = "所属営業所"
+        Public Const Field22 As String = "担当者(企画担当者)名"
+        Public Const Field23 As String = "担当者(企画担当者)名(ﾛｰﾏ字)"
+        Public Const Field24 As String = "Emailアドレス(企画担当者)"
+        Public Const Field25 As String = "携帯のアドレス(企画担当者)"
+        Public Const Field26 As String = "携帯電話番号(企画担当者)"
+        Public Const Field27 As String = "オフィスの電話番号(企画担当者)"
+        Public Const Field28 As String = "Cost Center"
+        Public Const Field29 As String = "手配担当者のBU英名"
+        Public Const Field30 As String = "手配担当者のエリア名"
+        Public Const Field31 As String = "手配担当者の営業所名"
+        Public Const Field32 As String = "手配担当者の氏名"
+        Public Const Field33 As String = "手配担当者の氏名(ﾛｰﾏ字)"
+        Public Const Field34 As String = "手配担当者の会社電話"
+        Public Const Field35 As String = "手配担当者のEmail"
+        Public Const Field36 As String = "手配担当者の携帯番号"
+        Public Const Field37 As String = "手配担当者の携帯メール"
+        Public Const Field38 As String = "予算額_非課税"
+        Public Const Field39 As String = "予算額_課税"
+        Public Const Field40 As String = "慰労会予算_課税"
+        Public Const Field41 As String = "意見交換会予算_課税"
     End Class
 #End Region
 
@@ -220,7 +228,7 @@ Public Class Proc
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
 
-        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct
+        Dim TBL_LOG As New TableDef.TBL_LOG.DataStruct
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
@@ -267,7 +275,7 @@ Public Class Proc
         TBL_KOUENKAI_Ins.TIME_STAMP = fileData(COL_NO.Field2)
         TBL_KOUENKAI_Ins.TORIKESHI_FLG = fileData(COL_NO.Field3)
         TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
-        TBL_KOUENKAI_Ins.KOUENKAI_TITLE = fileData(COL_NO.Field4) 'TODO:確認
+        TBL_KOUENKAI_Ins.KOUENKAI_TITLE = fileData(COL_NO.Field4)
         TBL_KOUENKAI_Ins.KOUENKAI_NAME = fileData(COL_NO.Field4)
         TBL_KOUENKAI_Ins.TAXI_PRT_NAME = fileData(COL_NO.Field5)
         TBL_KOUENKAI_Ins.FROM_DATE = fileData(COL_NO.Field6)
@@ -279,29 +287,33 @@ Public Class Proc
         TBL_KOUENKAI_Ins.ACCOUNT_CD_T = fileData(COL_NO.Field12)
         TBL_KOUENKAI_Ins.ACCOUNT_CD_TF = fileData(COL_NO.Field13)
         TBL_KOUENKAI_Ins.ZETIA_CD = fileData(COL_NO.Field14)
-        'TBL_KOUENKAI_Ins.BU = fileData(COL_NO.Field15)
-        TBL_KOUENKAI_Ins.SANKA_YOTEI_CNT = fileData(COL_NO.Field16)
-        TBL_KOUENKAI_Ins.BU = fileData(COL_NO.Field17)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_AREA = fileData(COL_NO.Field18)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EIGYOSHO = fileData(COL_NO.Field19)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_NAME = fileData(COL_NO.Field20)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_ROMA = fileData(COL_NO.Field21)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_PC = fileData(COL_NO.Field22)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_KEITAI = fileData(COL_NO.Field23)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_KEITAI = fileData(COL_NO.Field24)
-        TBL_KOUENKAI_Ins.KIKAKU_TANTO_TEL = fileData(COL_NO.Field25)
-        TBL_KOUENKAI_Ins.COST_CENTER = fileData(COL_NO.Field26)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_BU = fileData(COL_NO.Field27)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_AREA = fileData(COL_NO.Field28)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_EIGYOSHO = fileData(COL_NO.Field29)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_NAME = fileData(COL_NO.Field30)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_ROMA = fileData(COL_NO.Field31)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_PC = fileData(COL_NO.Field33)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_KEITAI = fileData(COL_NO.Field35)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_KEITAI = fileData(COL_NO.Field34)
-        TBL_KOUENKAI_Ins.TEHAI_TANTO_TEL = fileData(COL_NO.Field32)
-        TBL_KOUENKAI_Ins.YOSAN_TF = fileData(COL_NO.Field36)
-        TBL_KOUENKAI_Ins.YOSAN_T = fileData(COL_NO.Field37)
+        TBL_KOUENKAI_Ins.SANKA_YOTEI_CNT_NMBR = fileData(COL_NO.Field16)
+        TBL_KOUENKAI_Ins.SANKA_YOTEI_CNT_MBR = fileData(COL_NO.Field17)
+        TBL_KOUENKAI_Ins.SRM_HACYU_KBN = fileData(COL_NO.Field18)
+        TBL_KOUENKAI_Ins.BU = fileData(COL_NO.Field15)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_JIGYOUBU = fileData(COL_NO.Field19)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_AREA = fileData(COL_NO.Field20)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EIGYOSHO = fileData(COL_NO.Field21)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_NAME = fileData(COL_NO.Field22)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_ROMA = fileData(COL_NO.Field23)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_PC = fileData(COL_NO.Field24)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_EMAIL_KEITAI = fileData(COL_NO.Field25)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_KEITAI = fileData(COL_NO.Field26)
+        TBL_KOUENKAI_Ins.KIKAKU_TANTO_TEL = fileData(COL_NO.Field27)
+        TBL_KOUENKAI_Ins.COST_CENTER = fileData(COL_NO.Field28)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_BU = fileData(COL_NO.Field29)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_AREA = fileData(COL_NO.Field30)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_EIGYOSHO = fileData(COL_NO.Field31)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_NAME = fileData(COL_NO.Field32)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_ROMA = fileData(COL_NO.Field33)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_PC = fileData(COL_NO.Field35)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_EMAIL_KEITAI = fileData(COL_NO.Field37)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_KEITAI = fileData(COL_NO.Field36)
+        TBL_KOUENKAI_Ins.TEHAI_TANTO_TEL = fileData(COL_NO.Field34)
+        TBL_KOUENKAI_Ins.YOSAN_TF = fileData(COL_NO.Field38)
+        TBL_KOUENKAI_Ins.YOSAN_T = fileData(COL_NO.Field39)
+        TBL_KOUENKAI_Ins.IROUKAI_YOSAN_T = fileData(COL_NO.Field40)
+        TBL_KOUENKAI_Ins.IKENKOUKAN_YOSAN_T = fileData(COL_NO.Field41)
         TBL_KOUENKAI_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
         TBL_KOUENKAI_Ins.INPUT_USER = pbatchID
         TBL_KOUENKAI_Ins.UPDATE_USER = pbatchID
