@@ -1910,6 +1910,21 @@ Public Class AppModule
         End Select
     End Function
 
+    'MR BU
+    Public Shared Function GetName_MR_BU(ByVal MR_BU As String) As String
+        Return MR_BU
+    End Function
+
+    'MR エリア
+    Public Shared Function GetName_MR_AREA(ByVal MR_AREA As String) As String
+        Return MR_AREA
+    End Function
+
+    'MR 営業所
+    Public Shared Function GetName_MR_EIGYOSHO(ByVal MR_EIGYOSHO As String) As String
+        Return MR_EIGYOSHO
+    End Function
+
 
     'Account Code
     Public Shared Function GetName_ACCOUNT_CODE(ByVal ACCOUNT_CODE As String) As String
@@ -1925,6 +1940,97 @@ Public Class AppModule
     Public Shared Function GetName_INTERNAL_ORDER(ByVal INTERNAL_ORDER As String) As String
         Return INTERNAL_ORDER
     End Function
+
+    'MR 氏名
+    Public Shared Function GetName_MR_NAME(ByVal MR_NAME As String) As String
+        Return MR_NAME
+    End Function
+
+    'MR 氏名（ローマ字）
+    Public Shared Function GetName_MR_ROMA(ByVal MR_ROMA As String) As String
+        Return MR_ROMA
+    End Function
+
+    'MR 氏名（カナ）
+    Public Shared Function GetName_MR_KANA(ByVal MR_KANA As String) As String
+        Return MR_KANA
+    End Function
+
+    'MR 携帯電話番号
+    Public Shared Function GetName_MR_KEITAI(ByVal MR_KEITAI As String) As String
+        Return MR_KEITAI
+    End Function
+
+    'MR オフィスの電話番号
+    Public Shared Function GetName_MR_TEL(ByVal MR_TEL As String) As String
+        Return MR_TEL
+    End Function
+
+    'MR 携帯Emailアドレス
+    Public Shared Function GetName_MR_EMAIL_KEITAI(ByVal MR_EMAIL_KEITAI As String) As String
+        Return MR_EMAIL_KEITAI
+    End Function
+
+    'MR Emailアドレス
+    Public Shared Function GetName_MR_EMAIL_PC(ByVal MR_EMAIL_PC As String) As String
+        Return MR_EMAIL_PC
+    End Function
+
+    'チケット送付先FS名
+    Public Shared Function GetName_MR_SEND_SAKI_FS(ByVal MR_SEND_SAKI_FS As String) As String
+        Return MR_SEND_SAKI_FS
+    End Function
+
+    'チケットその他送付先
+    Public Shared Function GetName_MR_SEND_SAKI_OTHER(ByVal MR_SEND_SAKI_OTHER As String) As String
+        Return MR_SEND_SAKI_OTHER
+    End Function
+
+    'DR MPID
+    Public Shared Function GetName_DR_MPID(ByVal DR_MPID As String) As String
+        Return DR_MPID
+    End Function
+
+    'DR CD
+    Public Shared Function GetName_DR_CD(ByVal DR_CD As String) As String
+        Return DR_CD
+    End Function
+
+    'DR 氏名
+    Public Shared Function GetName_DR_NAME(ByVal DR_NAME As String) As String
+        Return DR_NAME
+    End Function
+
+    'DR 氏名（カナ）
+    Public Shared Function GetName_DR_KANA(ByVal DR_KANA As String) As String
+        Return DR_KANA
+    End Function
+
+    'DCF施設コード
+    Public Shared Function GetName_DR_SHISETSU_CD(ByVal DR_SHISETSU_CD As String) As String
+        Return DR_SHISETSU_CD
+    End Function
+
+    '施設名
+    Public Shared Function GetName_DR_SHISETSU_NAME(ByVal DR_SHISETSU_NAME As String) As String
+        Return DR_SHISETSU_NAME
+    End Function
+
+    '施設住所
+    Public Shared Function GetName_DR_SHISETSU_ADDRESS(ByVal DR_SHISETSU_ADDRESS As String) As String
+        Return DR_SHISETSU_ADDRESS
+    End Function
+
+    'DR年齢
+    Public Shared Function GetName_DR_AGE(ByVal DR_AGE As String) As String
+        Return DR_AGE
+    End Function
+
+    '指定外申請理由
+    Public Shared Function GetName_SHITEIGAI_RIYU(ByVal SHITEIGAI_RIYU As String) As String
+        Return SHITEIGAI_RIYU
+    End Function
+
 
     '承認者（氏名）
     Public Shared Function GetName_SHONIN_NAME(ByVal SHONIN_NAME As String) As String
@@ -5279,7 +5385,7 @@ Public Class AppModule
 
     '社員用往路隣席希望（回答）
     Public Shared Sub SetForm_ANS_MR_O_TEHAI(ByVal ANR_MR_O_TEHAI As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_MR_O_TEHAI, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANR_MR_O_TEHAI, control)
     End Sub
 
     '社員用復路隣席希望（依頼）
@@ -5288,8 +5394,8 @@ Public Class AppModule
     End Sub
 
     '社員用復路隣席希望（回答）
-    Public Shared Sub SetForm_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As String, ByRef control As Label)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_MR_O_TEHAI, control)
+    Public Shared Sub SetForm_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_MR_F_TEHAI, control)
     End Sub
 
     'MR性別
@@ -5300,6 +5406,56 @@ Public Class AppModule
     'MR年齢
     Public Shared Sub SetForm_MR_AGE(ByVal MR_AGE As String, ByRef control As Label)
         control.Text = MR_AGE
+    End Sub
+
+    '社員用交通・宿泊備考（依頼）
+    Public Shared Sub SetForm_REQ_MR_HOTEL_NOTE(ByVal REQ_MR_HOTEL_NOTE As String, ByRef control As TextBox)
+        control.Text = REQ_MR_HOTEL_NOTE
+    End Sub
+
+    '社員用交通・宿泊備考（回答）
+    Public Shared Sub SetForm_ANS_MR_HOTEL_NOTE(ByVal ANS_MR_HOTEL_NOTE As String, ByRef control As TextBox)
+        control.Text = ANS_MR_HOTEL_NOTE
+    End Sub
+
+    'JR・鉄道代金（回答）
+    Public Shared Sub SetForm_ANS_RAIL_FARE(ByVal ANS_RAIL_FARE As String, ByRef control As TextBox)
+        control.Text = ANS_RAIL_FARE
+    End Sub
+
+    'JR・鉄道取消料（回答）
+    Public Shared Sub SetForm_ANS_RAIL_CANCELLATION(ByVal RAIL_CANCELLATION As String, ByRef control As TextBox)
+        control.Text = RAIL_CANCELLATION
+    End Sub
+
+    'その他鉄道等代金（回答）
+    Public Shared Sub SetForm_ANS_OTHER_FARE(ByVal ANS_OTHER_FARE As String, ByRef control As TextBox)
+        control.Text = ANS_OTHER_FARE
+    End Sub
+
+    'その他鉄道等取消料（回答）
+    Public Shared Sub SetForm_ANS_OTHER_CANCELLATION(ByVal ANS_OTHER_CANCELLATION As String, ByRef control As TextBox)
+        control.Text = ANS_OTHER_CANCELLATION
+    End Sub
+
+    '航空券代金（回答）
+    Public Shared Sub SetForm_ANS_AIRL_FARE(ByVal ANS_AIRL_FARE As String, ByRef control As TextBox)
+        control.Text = ANS_AIRL_FARE
+    End Sub
+
+    '航空券取消料（回答）
+    Public Shared Sub SetForm_ANS_AIR_CANCELLATION(ByVal ANS_AIR_CANCELLATION As String, ByRef control As TextBox)
+        control.Text = ANS_AIR_CANCELLATION
+    End Sub
+
+    'MR交通費（回答）
+    Public Shared Sub SetForm_ANS_MR_KOTSUHI(ByVal ANS_MR_KOTSUHI As String, ByRef control As TextBox)
+        control.Text = ANS_MR_KOTSUHI
+    End Sub
+
+    'MR宿泊費（回答）
+    Public Shared Sub SetForm_ANS_MR_HOTELHI(ByVal ANS_MR_HOTELHI As String, ByRef control As TextBox)
+        control.Text = ANS_MR_HOTELHI
     End Sub
 #End Region
 
@@ -6161,7 +6317,7 @@ Public Class AppModule
 #End Region
 #End Region
 
-    '== コントロールからDB用の値を返す ==
+#Region "== コントロールからDB用の値を返す =="
     'ログインID
     Public Shared Function GetValue_LOGIN_ID(ByVal LOGIN_ID As TextBox) As String
         Return Trim(StrConv(LOGIN_ID.Text, VbStrConv.Narrow))
@@ -6901,276 +7057,7 @@ Public Class AppModule
     Public Shared Function GetValue_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As DropDownList) As String
         Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI)
     End Function
-
-    '社員用復路手配（回答）
-    Public Shared Function GetValue_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_MR_O_TEHAI)
-    End Function
-
-    '社員用宿泊ホテル名（回答）
-    Public Shared Function GetValue_ANS_MR_HOTEL_NAME(ByVal ANS_MR_HOTEL_NAME As TextBox) As String
-        Return Trim(ANS_MR_HOTEL_NAME.Text)
-    End Function
-
-    '社員用宿泊ホテル住所（回答）
-    Public Shared Function GetValue_ANS_MR_HOTEL_ADDRESS(ByVal ANS_MR_HOTEL_ADDRESS As TextBox) As String
-        Return Trim(ANS_MR_HOTEL_ADDRESS.Text)
-    End Function
-
-    '社員用宿泊ホテルTEL（回答）
-    Public Shared Function GetValue_ANS_MR_HOTEL_TEL(ByVal ANS_MR_HOTEL_TEL As TextBox) As String
-        Return Trim(ANS_MR_HOTEL_TEL.Text)
-    End Function
-
-    '社員用宿泊喫煙（回答）
-    Public Shared Function GetValue_ANS_MR_HOTEL_SMOKING(ByVal ANS_MR_HOTEL_SMOKING As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_MR_HOTEL_SMOKING)
-    End Function
-
-    '社員用宿泊備考（回答）
-    Public Shared Function GetValue_ANS_MR_HOTEL_NOTE(ByVal ANS_MR_HOTEL_NOTE As TextBox) As String
-        Return Trim(ANS_MR_HOTEL_NOTE.Text)
-    End Function
-
-    '電話番号
-    Public Shared Function GetValue_TEL(ByVal TEL As TextBox) As String
-        Return Trim(StrConv(TEL.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_TEL(ByVal TEL_1 As TextBox, ByVal TEL_2 As TextBox, ByVal TEL_3 As TextBox) As String
-        Dim wStr As String = Trim(StrConv(TEL_1.Text & "-" & TEL_2.Text & "-" & TEL_3.Text, VbStrConv.Narrow))
-        If wStr = "--" Then wStr = ""
-        Return wStr
-    End Function
-    Public Shared Function GetValue_ANS_SHISETSU_TEL(ByVal ANS_SHISETSU_TEL As TextBox) As String
-        Return Trim(StrConv(ANS_SHISETSU_TEL.Text, VbStrConv.Narrow))
-    End Function
-
-    '携帯電話番号
-    Public Shared Function GetValue_KEITAI(ByVal KEITAI As TextBox) As String
-        Return GetValue_TEL(KEITAI)
-    End Function
-    Public Shared Function GetValue_KEITAI(ByVal KEITAI_1 As TextBox, ByVal KEITAI_2 As TextBox, ByVal KEITAI_3 As TextBox) As String
-        Return GetValue_TEL(KEITAI_1, KEITAI_2, KEITAI_3)
-    End Function
-
-    '郵便番号
-    Public Shared Function GetValue_ZIP(ByVal ZIP As TextBox) As String
-        Return Trim(StrConv(ZIP.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ZIP(ByVal ZIP_1 As TextBox, ByVal ZIP_2 As TextBox) As String
-        Dim wStr As String = Trim(StrConv(ZIP_1.Text & "-" & ZIP_2.Text, VbStrConv.Narrow))
-        If wStr = "-" Then wStr = ""
-        Return wStr
-    End Function
-
-    '施設URL
-    Public Shared Function GetValue_ANS_SHISETSU_URL(ByVal ANS_SHISETSU_URL As TextBox) As String
-        Return Trim(StrConv(ANS_SHISETSU_URL.Text, VbStrConv.Narrow))
-    End Function
-
-    '都道府県
-    Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As TextBox) As String
-        Return Trim(ADDRESS1.Text)
-    End Function
-    Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ADDRESS1)
-    End Function
-
-    '市町村
-    Public Shared Function GetValue_ADDRESS2(ByVal ADDRESS2 As TextBox) As String
-        Return Trim(ADDRESS2.Text)
-    End Function
-
-    '住所
-    Public Shared Function GetValue_ADDRESS(ByVal ADDRESS As TextBox) As String
-        Return Trim(ADDRESS.Text)
-    End Function
-    Public Shared Function GetValue_ANS_SHISETSU_ADDRESS(ByVal ANS_SHISETSU_ADDRESS As TextBox) As String
-        Return Trim(ANS_SHISETSU_ADDRESS.Text)
-    End Function
-
-    '施設名
-    Public Shared Function GetValue_SHISETSU_NAME(ByVal SHISETSU_NAME As TextBox) As String
-        Return Trim(SHISETSU_NAME.Text)
-    End Function
-    Public Shared Function GetValue_ANS_SHISETSU_NAME(ByVal ANS_SHISETSU_NAME As TextBox) As String
-        Return Trim(ANS_SHISETSU_NAME.Text)
-    End Function
-    Public Shared Function GetValue_SHISETSU_KANA(ByVal SHISETSU_KANA As TextBox) As String
-        Return Trim(SHISETSU_KANA.Text)
-    End Function
-
-    '【回答】施設選定理由
-    Public Shared Function GetValue_ANS_SENTEI_RIYU(ByVal ANS_SENTEI_RIYU As TextBox) As String
-        Return Trim(ANS_SENTEI_RIYU.Text)
-    End Function
-
-    '【回答】 開催地 (施設郵便番号)
-    Public Shared Function GetValue_ANS_SHISETSU_ZIP(ByVal ANS_SHISETSU_ZIP As TextBox) As String
-        Return Trim(ANS_SHISETSU_ZIP.Text)
-    End Function
-
-    '【回答】開催地(講演会会場名)
-    Public Shared Function GetValue_ANS_KOUEN_KAIJO_NAME(ByVal ANS_KOUEN_KAIJO_NAME As TextBox) As String
-        Return Trim(ANS_KOUEN_KAIJO_NAME.Text)
-    End Function
-
-    '【回答】開催地(講演会会場フロア)
-    Public Shared Function GetValue_ANS_KOUEN_KAIJO_FLOOR(ByVal ANS_KOUEN_KAIJO_FLOOR As TextBox) As String
-        Return Trim(ANS_KOUEN_KAIJO_FLOOR.Text)
-    End Function
-
-    '【回答】開催地(意見交換会場名)
-    Public Shared Function GetValue_ANS_IKENKOUKAN_KAIJO_NAME(ByVal ANS_IKENKOUKAN_KAIJO_NAME As TextBox) As String
-        Return Trim(ANS_IKENKOUKAN_KAIJO_NAME.Text)
-    End Function
-
-    '【回答】開催地(慰労会会場名)
-    Public Shared Function GetValue_ANS_IROUKAI_KAIJO_NAME(ByVal ANS_IROUKAI_KAIJO_NAME As TextBox) As String
-        Return Trim(ANS_IROUKAI_KAIJO_NAME.Text)
-    End Function
-
-    '【回答】開催地(講師控室会場名)
-    Public Shared Function GetValue_ANS_KOUSHI_ROOM_NAME(ByVal ANS_KOUSHI_ROOM_NAME As TextBox) As String
-        Return Trim(ANS_KOUSHI_ROOM_NAME.Text)
-    End Function
-
-    '【回答】開催地(社員控室会場名)
-    Public Shared Function GetValue_ANS_SHAIN_ROOM_NAME(ByVal ANS_SHAIN_ROOM_NAME As TextBox) As String
-        Return Trim(ANS_SHAIN_ROOM_NAME.Text)
-    End Function
-
-    '【回答】開催地(世話人会会場名)
-    Public Shared Function GetValue_ANS_MANAGER_KAIJO_NAME(ByVal ANS_MANAGER_KAIJO_NAME As TextBox) As String
-        Return Trim(ANS_MANAGER_KAIJO_NAME.Text)
-    End Function
-
-    '【回答】開催地(備考欄)
-    Public Shared Function GetValue_ANS_KAISAI_NOTE(ByVal ANS_KAISAI_NOTE As TextBox) As String
-        Return Trim(ANS_KAISAI_NOTE.Text)
-    End Function
-
-    '見積額（非課税）
-    Public Shared Function GetValue_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As TextBox) As String
-        Return Trim(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
-    End Function
-
-    '見積額（課税）
-    Public Shared Function GetValue_ANS_MITSUMORI_T(ByVal ANS_MITSUMORI_T As TextBox) As String
-        Return Trim(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow))
-    End Function
-
-    '見積額（合計）
-    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As TextBox) As String
-        Return Trim(StrConv(ANS_MITSUMORI_TOTAL.Text, VbStrConv.Narrow))
-    End Function
-    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As TextBox, ByVal ANS_MITSUMORI_TF As TextBox) As String
-        Return CmnModule.DbVal(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow)).ToString
-    End Function
-
-    '精算額（非課税）
-    Public Shared Function GetValue_ANS_SEISAN_TF(ByVal ANS_SEISAN_TF As TextBox) As String
-        Return Trim(StrConv(ANS_SEISAN_TF.Text, VbStrConv.Narrow))
-    End Function
-
-    '精算額（課税）
-    Public Shared Function GetValue_ANS_SEISAN_T(ByVal ANS_SEISAN_T As TextBox) As String
-        Return Trim(StrConv(ANS_SEISAN_T.Text, VbStrConv.Narrow))
-    End Function
-
-    '開催希望地　（都道府県）
-    Public Shared Function GetValue_KAISAI_KIBOU_ADDRESS1(ByVal KAISAI_KIBOU_ADDRESS1 As TextBox) As String
-        Return Trim(KAISAI_KIBOU_ADDRESS1.Text)
-    End Function
-
-    '開催希望地　（市町村）
-    Public Shared Function GetValue_KAISAI_KIBOU_ADDRESS2(ByVal KAISAI_KIBOU_ADDRESS2 As TextBox) As String
-        Return Trim(KAISAI_KIBOU_ADDRESS2.Text)
-    End Function
-
-    '【確定】　開催地　（施設名）
-    Public Shared Function GetValue_FIX_KAISAI_SHISETSU(ByVal FIX_KAISAI_SHISETSU As TextBox) As String
-        Return Trim(FIX_KAISAI_SHISETSU.Text)
-    End Function
-
-    '【確定】　開催地　（備考欄）
-    Public Shared Function GetValue_FIX_KAISAI_NOTE(ByVal FIX_KAISAI_NOTE As TextBox) As String
-        Return Trim(FIX_KAISAI_NOTE.Text)
-    End Function
-
-    '【確定精算情報】　非課税
-    Public Shared Function GetValue_FIX_SEISAN_TF(ByVal FIX_SEISAN_TF As TextBox) As String
-        Return Trim(StrConv(FIX_SEISAN_TF.Text, VbStrConv.Narrow))
-    End Function
-
-    '【確定精算情報】　課税１　(社外）
-    Public Shared Function GetValue_FIX_SEISAN_GTAX(ByVal FIX_SEISAN_GTAX As TextBox) As String
-        Return Trim(StrConv(FIX_SEISAN_GTAX.Text, VbStrConv.Narrow))
-    End Function
-
-    '【確定精算情報】　課税１　(社内）
-    Public Shared Function GetValue_FIX_SEISAN_NTAX(ByVal FIX_SEISAN_NTAX As TextBox) As String
-        Return Trim(StrConv(FIX_SEISAN_NTAX.Text, VbStrConv.Narrow))
-    End Function
-
-    '会場URL
-    Public Shared Function GetValue_KAIJO_URL(ByVal KAIJO_URL As TextBox) As String
-        Return Trim(StrConv(KAIJO_URL.Text, VbStrConv.Narrow))
-    End Function
-
-    '会場TEL
-    Public Shared Function GetValue_KAIJO_TEL(ByVal KAIJO_TEL As TextBox) As String
-        Return GetValue_TEL(KAIJO_TEL)
-    End Function
-
-    '見積書保存場所URL
-    Public Shared Function GetValue_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As TextBox) As String
-        Return Trim(StrConv(ANS_MITSUMORI_URL.Text, VbStrConv.Narrow))
-    End Function
-
-    '精算書保存場所URL
-    Public Shared Function GetValue_ANS_SEISANSHO_URL(ByVal ANS_SEISANSHO_URL As TextBox) As String
-        Return Trim(StrConv(ANS_SEISANSHO_URL.Text, VbStrConv.Narrow))
-    End Function
-
-    'ユーザマスタ：権限
-    Public Shared Function GetValue_KENGEN(ByVal Admin As RadioButton, ByVal User As RadioButton) As String
-        If Admin.Checked = True Then
-            Return AppConst.MS_USER.KENGEN.Code.Admin
-        ElseIf User.Checked = True Then
-            Return AppConst.MS_USER.KENGEN.Code.User
-        Else
-            Return ""
-        End If
-    End Function
-
-    '施設マスタ：チェックイン時間
-    Public Shared Function GetValue_CHECKIN_TIME(ByVal CHECKIN_TIME_1 As TextBox, ByVal CHECKIN_TIME_2 As TextBox) As String
-        If Trim(CHECKIN_TIME_1.Text) = "" OrElse Trim(CHECKIN_TIME_2.Text) = "" Then
-            Return ""
-        End If
-        Dim wStr As String = Val(StrConv(CHECKIN_TIME_1.Text, VbStrConv.Narrow)).ToString.PadLeft(2, "0"c) & ":" & Val(StrConv(CHECKIN_TIME_2.Text, VbStrConv.Narrow)).ToString.PadLeft(2, "0"c)
-        Return wStr
-    End Function
-
-    '施設マスタ：チェックアウト時間
-    Public Shared Function GetValue_CHECKOUT_TIME(ByVal CHECKOUT_TIME_1 As TextBox, ByVal CHECKOUT_TIME_2 As TextBox) As String
-        Return GetValue_CHECKIN_TIME(CHECKOUT_TIME_1, CHECKOUT_TIME_2)
-    End Function
-
-    '施設マスタ：URL
-    Public Shared Function GetValue_URL(ByVal URL As TextBox) As String
-        Return Trim(StrConv(URL.Text, VbStrConv.Narrow))
-    End Function
-
-    '利用停止フラグ
-    Public Shared Function GetValue_STOP_FLG(ByVal STOP_FLG As CheckBox) As String
-        If STOP_FLG.Checked = True Then
-            Return AppConst.STOP_FLG.Code.Stop
-        Else
-            Return ""
-        End If
-    End Function
+#End Region
 
 
     '==
