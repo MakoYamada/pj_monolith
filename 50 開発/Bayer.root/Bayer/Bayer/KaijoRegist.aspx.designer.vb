@@ -358,6 +358,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents SANKA_YOTEI_CNT_MBR As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''SRM_HACYU_KBN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SRM_HACYU_KBN As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''YOSAN_T コントロール。
     '''</summary>
     '''<remarks>
@@ -383,6 +392,24 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents YOSAN_TOTAL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''IROUKAI_YOSAN_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents IROUKAI_YOSAN_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''IKENKOUKAN_YOSAN_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents IKENKOUKAN_YOSAN_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''KAISAI_KIBOU_ADDRESS1 コントロール。

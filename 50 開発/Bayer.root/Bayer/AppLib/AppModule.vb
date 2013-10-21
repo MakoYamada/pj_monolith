@@ -697,6 +697,8 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.YOSAN_TF.ToUpper Then TBL_KAIJO.YOSAN_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.YOSAN_T.ToUpper Then TBL_KAIJO.YOSAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TTANTO_ID.ToUpper Then TBL_KAIJO.TTANTO_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.IROUKAI_YOSAN_T.ToUpper Then TBL_KAIJO.IROUKAI_YOSAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.IKENKOUKAN_YOSAN_T.ToUpper Then TBL_KAIJO.IKENKOUKAN_YOSAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KAIJO
@@ -1359,6 +1361,20 @@ Public Class AppModule
             Return SANKA_YOTEI_CNT
         End If
     End Function
+    Public Shared Function GetName_SANKA_YOTEI_CNT_NMBR(ByVal SANKA_YOTEI_CNT_NMBR As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(SANKA_YOTEI_CNT_NMBR)
+        Else
+            Return SANKA_YOTEI_CNT_NMBR
+        End If
+    End Function
+    Public Shared Function GetName_SANKA_YOTEI_CNT_MBR(ByVal SANKA_YOTEI_CNT_MBR As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(SANKA_YOTEI_CNT_MBR)
+        Else
+            Return SANKA_YOTEI_CNT_MBR
+        End If
+    End Function
 
     'éQâ¡ó\íËêîÅ@Åià„étÅEñÚç‹étÅj
     Public Shared Function GetName_SANKA_YOTEI_CNT_DR(ByVal SANKA_YOTEI_CNT_DR As String, Optional ByVal ShortFormat As Boolean = False) As String
@@ -1376,6 +1392,19 @@ Public Class AppModule
         Else
             Return SANKA_YOTEI_CNT_OTHER
         End If
+    End Function
+
+    'SRMî≠íçãÊï™
+    Public Shared Function GetName_SRM_HACYU_KBN(ByVal SRM_HACYU_KBN As String) As String
+        Select Case SRM_HACYU_KBN
+            Case AppConst.KAIJO.SRM_HACYU_KBN.Code.Yes, AppConst.KAIJO.SRM_HACYU_KBN.Name.Yes
+                Return AppConst.KAIJO.SRM_HACYU_KBN.Name.Yes
+            Case AppConst.KAIJO.SRM_HACYU_KBN.Code.No, AppConst.KAIJO.SRM_HACYU_KBN.Name.No
+                Return AppConst.KAIJO.SRM_HACYU_KBN.Name.No
+
+            Case Else
+                Return ""
+        End Select
     End Function
 
     'å©êœäzÅiîÒâ€ê≈Åj
@@ -1422,6 +1451,24 @@ Public Class AppModule
             Return CmnModule.EditComma(wTOTAL)
         Else
             Return wTOTAL.ToString
+        End If
+    End Function
+
+    'à‘òJâÔó\éZ(â€ê≈)
+    Public Shared Function GetName_IROUKAI_YOSAN_T(ByVal IROUKAI_YOSAN_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(IROUKAI_YOSAN_T)
+        Else
+            Return IROUKAI_YOSAN_T
+        End If
+    End Function
+
+    'à”å©åä∑âÔó\éZ(â€ê≈)
+    Public Shared Function GetName_IKENKOUKAN_YOSAN_T(ByVal IKENKOUKAN_YOSAN_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(IKENKOUKAN_YOSAN_T)
+        Else
+            Return IKENKOUKAN_YOSAN_T
         End If
     End Function
 

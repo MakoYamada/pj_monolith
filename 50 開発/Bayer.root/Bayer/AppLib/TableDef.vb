@@ -1705,6 +1705,8 @@
             Public YOSAN_TF As String
             Public YOSAN_T As String
             Public TTANTO_ID As String
+            Public IROUKAI_YOSAN_T As String
+            Public IKENKOUKAN_YOSAN_T As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1829,6 +1831,8 @@
             Public Const YOSAN_TF As String = "YOSAN_TF"
             Public Const YOSAN_T As String = "YOSAN_T"
             Public Const TTANTO_ID As String = "TTANTO_ID"
+            Public Const IROUKAI_YOSAN_T As String = "IROUKAI_YOSAN_T"
+            Public Const IKENKOUKAN_YOSAN_T As String = "IKENKOUKAN_YOSAN_T"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"

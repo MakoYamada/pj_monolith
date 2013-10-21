@@ -335,7 +335,7 @@
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										参加予定数
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="3">
 										従業員以外：
 										<asp:Label ID="SANKA_YOTEI_CNT_NMBR" runat="server" Text="12,345"></asp:Label>
 										名
@@ -343,6 +343,12 @@
 										従業員：
 										<asp:Label ID="SANKA_YOTEI_CNT_MBR" runat="server" Text="12,345"></asp:Label>
 										名
+									</td>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 120px;">
+										SRM発注区分
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo">
+										<asp:Label ID="SRM_HACYU_KBN" runat="server" Text="◎◎◎◎◎◎"></asp:Label>
 									</td>
 								</tr>
 								<tr>
@@ -353,7 +359,7 @@
 										<asp:Label ID="YOSAN_T" runat="server" Text="1,234,567,890"></asp:Label>
 										円
 									</td>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 110px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 										予算額(非課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
@@ -365,6 +371,22 @@
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
 										<asp:Label ID="YOSAN_TOTAL" runat="server" Text="1,234,567,890"></asp:Label>
+										円
+									</td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
+										慰労会予算(課税)
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
+										<asp:Label ID="IROUKAI_YOSAN_T" runat="server" Text="1,234,567,890"></asp:Label>
+										円
+									</td>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 135px;">
+										意見交換会予算(課税)
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;" colspan="3">
+										<asp:Label ID="IKENKOUKAN_YOSAN_T" runat="server" Text="1,234,567,890"></asp:Label>
 										円
 									</td>
 								</tr>
