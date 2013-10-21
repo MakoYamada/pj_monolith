@@ -780,6 +780,7 @@
             Public FROM_DATE As String
             Public TO_DATE As String
             Public USER_NAME As String
+            Public SEIHIN_NAME As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1178,6 +1179,7 @@
             Public Const FROM_DATE As String = "FROM_DATE"
             Public Const TO_DATE As String = "TO_DATE"
             Public Const USER_NAME As String = "USER_NAME"
+            Public Const SEIHIN_NAME As String = "SEIHIN_NAME"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
