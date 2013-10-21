@@ -115,6 +115,10 @@ Partial Public Class DrRegist
 
     '画面項目 初期化
     Private Sub InitControls()
+
+        'クリア
+        CmnModule.ClearAllControl(Me)
+
         BtnKOTSU_O_1.ImageUrl = IMG_OPEN
         BtnKOTSU_O_2.ImageUrl = IMG_OPEN
         BtnKOTSU_O_3.ImageUrl = IMG_OPEN
@@ -256,11 +260,6 @@ Partial Public Class DrRegist
         CmnModule.SetIme(Me.ANS_F_BIN_4, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_F_BIN_5, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_KOTSU_BIKO, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_RAIL_FARE, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_RAIL_CANCELLATION, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_OTHER_FARE, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_AIR_FARE, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_AIR_CANCELLATION, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_TAXI_NOTE, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_TAXI_DATE_1, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.ANS_TAXI_DATE_2, CmnModule.ImeType.InActive)
@@ -325,9 +324,14 @@ Partial Public Class DrRegist
         CmnModule.SetIme(Me.ANS_MR_HOTEL_NOTE, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_MR_KOTSUHI, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MR_HOTELHI, CmnModule.ImeType.Disabled)
-
-        'クリア
-        CmnModule.ClearAllControl(Me)
+        CmnModule.SetIme(Me.ANS_RAIL_FARE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_RAIL_CANCELLATION, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_OTHER_FARE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_OTHER_CANCELLATION, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_AIR_FARE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_AIR_CANCELLATION, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KOTSUHOTEL_TESURYO, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_TESURYO, CmnModule.ImeType.Disabled)
     End Sub
 
     '画面項目 表示
@@ -373,6 +377,7 @@ Partial Public Class DrRegist
         'DR情報
         AppModule.SetForm_REQ_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_STATUS_TEHAI, Me.REQ_STATUS_TEHAI)
         AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)
+        AppModule.setform_ANS_TICKET_SEND_DAY(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TICKET_SEND_DAY, Me.ANS_TICKET_SEND_DAY)
         AppModule.SetForm_SANKASHA_ID(DSP_KOTSUHOTEL(DSP_SEQ).SANKASHA_ID, Me.SANKASHA_ID)
         AppModule.SetForm_DR_CD(DSP_KOTSUHOTEL(DSP_SEQ).DR_CD, Me.DR_CD)
         AppModule.SetForm_TIME_STAMP_BYL(DSP_KOTSUHOTEL(DSP_SEQ).TIME_STAMP_BYL, Me.TIME_STAMP_BYL)
@@ -644,150 +649,152 @@ Partial Public Class DrRegist
         '交通備考
         AppModule.SetForm_REQ_KOTSU_BIKO(DSP_KOTSUHOTEL(DSP_SEQ).REQ_KOTSU_BIKO, Me.REQ_KOTSU_BIKO)
         AppModule.SetForm_ANS_KOTSU_BIKO(DSP_KOTSUHOTEL(DSP_SEQ).ANS_KOTSU_BIKO, Me.ANS_KOTSU_BIKO)
+
+        'タクチケ手配
+        AppModule.SetForm_TEHAI_TAXI(DSP_KOTSUHOTEL(DSP_SEQ).TEHAI_TAXI, Me.TEHAI_TAXI)
+        AppModule.SetForm_REQ_TAXI_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_NOTE, Me.REQ_TAXI_NOTE)
+        AppModule.SetForm_ANS_TAXI_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NOTE, Me.ANS_TAXI_NOTE)
+
+        'タクチケ（依頼）
+        '行程１
+        AppModule.SetForm_REQ_TAXI_DATE_1(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_1, Me.REQ_TAXI_DATE_1)
+        AppModule.SetForm_REQ_TAXI_FROM_1(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_1, Me.REQ_TAXI_FROM_1)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_1(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_1, Me.TAXI_YOTEIKINGAKU_1)
+        '行程２
+        AppModule.SetForm_REQ_TAXI_DATE_2(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_2, Me.REQ_TAXI_DATE_2)
+        AppModule.SetForm_REQ_TAXI_FROM_2(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_2, Me.REQ_TAXI_FROM_2)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_2(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_2, Me.TAXI_YOTEIKINGAKU_2)
+        '行程３
+        AppModule.SetForm_REQ_TAXI_DATE_3(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_3, Me.REQ_TAXI_DATE_3)
+        AppModule.SetForm_REQ_TAXI_FROM_3(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_3, Me.REQ_TAXI_FROM_3)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_3(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_3, Me.TAXI_YOTEIKINGAKU_3)
+        '行程４
+        AppModule.SetForm_REQ_TAXI_DATE_4(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_4, Me.REQ_TAXI_DATE_4)
+        AppModule.SetForm_REQ_TAXI_FROM_4(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_4, Me.REQ_TAXI_FROM_4)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_4(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_4, Me.TAXI_YOTEIKINGAKU_4)
+        '行程５
+        AppModule.SetForm_REQ_TAXI_DATE_5(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_5, Me.REQ_TAXI_DATE_5)
+        AppModule.SetForm_REQ_TAXI_FROM_5(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_5, Me.REQ_TAXI_FROM_5)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_5(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_5, Me.TAXI_YOTEIKINGAKU_5)
+        '行程６
+        AppModule.SetForm_REQ_TAXI_DATE_6(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_6, Me.REQ_TAXI_DATE_6)
+        AppModule.SetForm_REQ_TAXI_FROM_6(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_6, Me.REQ_TAXI_FROM_6)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_6(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_6, Me.TAXI_YOTEIKINGAKU_6)
+        '行程７
+        AppModule.SetForm_REQ_TAXI_DATE_7(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_7, Me.REQ_TAXI_DATE_7)
+        AppModule.SetForm_REQ_TAXI_FROM_7(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_7, Me.REQ_TAXI_FROM_7)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_7(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_7, Me.TAXI_YOTEIKINGAKU_7)
+        '行程８
+        AppModule.SetForm_REQ_TAXI_DATE_8(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_8, Me.REQ_TAXI_DATE_8)
+        AppModule.SetForm_REQ_TAXI_FROM_8(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_8, Me.REQ_TAXI_FROM_8)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_8(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_8, Me.TAXI_YOTEIKINGAKU_8)
+        '行程９
+        AppModule.SetForm_REQ_TAXI_DATE_9(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_9, Me.REQ_TAXI_DATE_9)
+        AppModule.SetForm_REQ_TAXI_FROM_9(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_9, Me.REQ_TAXI_FROM_9)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_9(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_9, Me.TAXI_YOTEIKINGAKU_9)
+        '行程１０
+        AppModule.SetForm_REQ_TAXI_DATE_10(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_10, Me.REQ_TAXI_DATE_10)
+        AppModule.SetForm_REQ_TAXI_FROM_10(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_10, Me.REQ_TAXI_FROM_10)
+        AppModule.SetForm_TAXI_YOTEIKINGAKU_10(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_10, Me.TAXI_YOTEIKINGAKU_10)
+
+        'タクチケ１
+        AppModule.SetForm_ANS_TAXI_DATE_1(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_1, Me.ANS_TAXI_DATE_1)
+        AppModule.SetForm_ANS_TAXI_KENSHU_1(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_1, Me.ANS_TAXI_KENSHU_1)
+        AppModule.SetForm_ANS_TAXI_NO_1(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_1, Me.ANS_TAXI_NO_1)
+        'タクチケ２
+        AppModule.SetForm_ANS_TAXI_DATE_2(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_2, Me.ANS_TAXI_DATE_2)
+        AppModule.SetForm_ANS_TAXI_KENSHU_2(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_2, Me.ANS_TAXI_KENSHU_2)
+        AppModule.SetForm_ANS_TAXI_NO_2(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_2, Me.ANS_TAXI_NO_2)
+        'タクチケ３
+        AppModule.SetForm_ANS_TAXI_DATE_3(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_3, Me.ANS_TAXI_DATE_3)
+        AppModule.SetForm_ANS_TAXI_KENSHU_3(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_3, Me.ANS_TAXI_KENSHU_3)
+        AppModule.SetForm_ANS_TAXI_NO_3(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_3, Me.ANS_TAXI_NO_3)
+        'タクチケ４
+        AppModule.SetForm_ANS_TAXI_DATE_4(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_4, Me.ANS_TAXI_DATE_4)
+        AppModule.SetForm_ANS_TAXI_KENSHU_4(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_4, Me.ANS_TAXI_KENSHU_4)
+        AppModule.SetForm_ANS_TAXI_NO_4(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_4, Me.ANS_TAXI_NO_4)
+        'タクチケ５
+        AppModule.SetForm_ANS_TAXI_DATE_5(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_5, Me.ANS_TAXI_DATE_5)
+        AppModule.SetForm_ANS_TAXI_KENSHU_5(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_5, Me.ANS_TAXI_KENSHU_5)
+        AppModule.SetForm_ANS_TAXI_NO_5(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_5, Me.ANS_TAXI_NO_5)
+        'タクチケ６
+        AppModule.SetForm_ANS_TAXI_DATE_6(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_6, Me.ANS_TAXI_DATE_6)
+        AppModule.SetForm_ANS_TAXI_KENSHU_6(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_6, Me.ANS_TAXI_KENSHU_6)
+        AppModule.SetForm_ANS_TAXI_NO_6(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_6, Me.ANS_TAXI_NO_6)
+        'タクチケ７
+        AppModule.SetForm_ANS_TAXI_DATE_7(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_7, Me.ANS_TAXI_DATE_7)
+        AppModule.SetForm_ANS_TAXI_KENSHU_7(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_7, Me.ANS_TAXI_KENSHU_7)
+        AppModule.SetForm_ANS_TAXI_NO_7(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_7, Me.ANS_TAXI_NO_7)
+        'タクチケ８
+        AppModule.SetForm_ANS_TAXI_DATE_8(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_8, Me.ANS_TAXI_DATE_8)
+        AppModule.SetForm_ANS_TAXI_KENSHU_8(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_8, Me.ANS_TAXI_KENSHU_8)
+        AppModule.SetForm_ANS_TAXI_NO_8(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_8, Me.ANS_TAXI_NO_8)
+        'タクチケ９
+        AppModule.SetForm_ANS_TAXI_DATE_9(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_9, Me.ANS_TAXI_DATE_9)
+        AppModule.SetForm_ANS_TAXI_KENSHU_9(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_9, Me.ANS_TAXI_KENSHU_9)
+        AppModule.SetForm_ANS_TAXI_NO_9(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_9, Me.ANS_TAXI_NO_9)
+        'タクチケ１０
+        AppModule.SetForm_ANS_TAXI_DATE_10(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_10, Me.ANS_TAXI_DATE_10)
+        AppModule.SetForm_ANS_TAXI_KENSHU_10(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_10, Me.ANS_TAXI_KENSHU_10)
+        AppModule.SetForm_ANS_TAXI_NO_10(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_10, Me.ANS_TAXI_NO_10)
+        'タクチケ１１
+        AppModule.SetForm_ANS_TAXI_DATE_11(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_11, Me.ANS_TAXI_DATE_11)
+        AppModule.SetForm_ANS_TAXI_KENSHU_11(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_11, Me.ANS_TAXI_KENSHU_11)
+        AppModule.SetForm_ANS_TAXI_NO_11(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_11, Me.ANS_TAXI_NO_11)
+        'タクチケ１２
+        AppModule.SetForm_ANS_TAXI_DATE_12(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_12, Me.ANS_TAXI_DATE_12)
+        AppModule.SetForm_ANS_TAXI_KENSHU_12(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_12, Me.ANS_TAXI_KENSHU_12)
+        AppModule.SetForm_ANS_TAXI_NO_12(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_12, Me.ANS_TAXI_NO_12)
+        'タクチケ１３
+        AppModule.SetForm_ANS_TAXI_DATE_13(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_13, Me.ANS_TAXI_DATE_13)
+        AppModule.SetForm_ANS_TAXI_KENSHU_13(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_13, Me.ANS_TAXI_KENSHU_13)
+        AppModule.SetForm_ANS_TAXI_NO_13(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_13, Me.ANS_TAXI_NO_13)
+        'タクチケ１４
+        AppModule.SetForm_ANS_TAXI_DATE_14(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_14, Me.ANS_TAXI_DATE_14)
+        AppModule.SetForm_ANS_TAXI_KENSHU_14(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_14, Me.ANS_TAXI_KENSHU_14)
+        AppModule.SetForm_ANS_TAXI_NO_14(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_14, Me.ANS_TAXI_NO_14)
+        'タクチケ１５
+        AppModule.SetForm_ANS_TAXI_DATE_15(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_15, Me.ANS_TAXI_DATE_15)
+        AppModule.SetForm_ANS_TAXI_KENSHU_15(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_15, Me.ANS_TAXI_KENSHU_15)
+        AppModule.SetForm_ANS_TAXI_NO_15(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_15, Me.ANS_TAXI_NO_15)
+        'タクチケ１６
+        AppModule.SetForm_ANS_TAXI_DATE_16(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_16, Me.ANS_TAXI_DATE_16)
+        AppModule.SetForm_ANS_TAXI_KENSHU_16(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_16, Me.ANS_TAXI_KENSHU_16)
+        AppModule.SetForm_ANS_TAXI_NO_16(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_16, Me.ANS_TAXI_NO_16)
+        'タクチケ１７
+        AppModule.SetForm_ANS_TAXI_DATE_17(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_17, Me.ANS_TAXI_DATE_17)
+        AppModule.SetForm_ANS_TAXI_KENSHU_17(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_17, Me.ANS_TAXI_KENSHU_17)
+        AppModule.SetForm_ANS_TAXI_NO_17(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_17, Me.ANS_TAXI_NO_17)
+        'タクチケ１８
+        AppModule.SetForm_ANS_TAXI_DATE_18(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_18, Me.ANS_TAXI_DATE_18)
+        AppModule.SetForm_ANS_TAXI_KENSHU_18(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_18, Me.ANS_TAXI_KENSHU_18)
+        AppModule.SetForm_ANS_TAXI_NO_18(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_18, Me.ANS_TAXI_NO_18)
+        'タクチケ１９
+        AppModule.SetForm_ANS_TAXI_DATE_19(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_19, Me.ANS_TAXI_DATE_19)
+        AppModule.SetForm_ANS_TAXI_KENSHU_19(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_19, Me.ANS_TAXI_KENSHU_19)
+        AppModule.SetForm_ANS_TAXI_NO_19(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_19, Me.ANS_TAXI_NO_19)
+        'タクチケ２０
+        AppModule.SetForm_ANS_TAXI_DATE_20(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_20, Me.ANS_TAXI_DATE_20)
+        AppModule.SetForm_ANS_TAXI_KENSHU_20(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_20, Me.ANS_TAXI_KENSHU_20)
+        AppModule.SetForm_ANS_TAXI_NO_20(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_20, Me.ANS_TAXI_NO_20)
+
+        'MR手配情報
+        AppModule.SetForm_REQ_MR_O_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_O_TEHAI, Me.REQ_MR_O_TEHAI)
+        AppModule.SetForm_REQ_MR_F_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_F_TEHAI, Me.REQ_MR_F_TEHAI)
+        AppModule.SetForm_MR_SEX(DSP_KOTSUHOTEL(DSP_SEQ).MR_SEX, Me.MR_SEX)
+        AppModule.SetForm_MR_AGE(DSP_KOTSUHOTEL(DSP_SEQ).MR_AGE, Me.MR_AGE)
+        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_O_TEHAI, Me.ANS_MR_O_TEHAI)
+        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_F_TEHAI, Me.ANS_MR_F_TEHAI)
+        AppModule.setform_REQ_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_HOTEL_NOTE, Me.REQ_MR_HOTEL_NOTE)
+        AppModule.SetForm_ANS_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTEL_NOTE, Me.ANS_MR_HOTEL_NOTE)
+
+        '各種代金
         Me.ANS_RAIL_FARE.Text = AppModule.GetName_ANS_RAIL_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_FARE)
         Me.ANS_RAIL_CANCELLATION.Text = AppModule.GetName_ANS_RAIL_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_CANCELLATION)
         Me.ANS_OTHER_FARE.Text = AppModule.GetName_ANS_OTHER_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_FARE)
         Me.ANS_OTHER_CANCELLATION.Text = AppModule.GetName_ANS_OTHER_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_CANCELLATION)
         Me.ANS_AIR_FARE.Text = AppModule.GetName_ANS_AIR_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_AIR_FARE)
         Me.ANS_AIR_CANCELLATION.Text = AppModule.GetName_ANS_AIR_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_AIR_CANCELLATION)
-
-        'タクチケ手配
-        Me.TEHAI_TAXI.Text = AppModule.GetName_TEHAI_TAXI(DSP_KOTSUHOTEL(DSP_SEQ).TEHAI_TAXI)
-        Me.REQ_TAXI_NOTE.Text = AppModule.GetName_REQ_TAXI_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_NOTE)
-        Me.ANS_TAXI_NOTE.Text = AppModule.GetName_ANS_TAXI_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NOTE)
-
-        'タクチケ（依頼）
-        '行程１
-        Me.REQ_TAXI_DATE_1.Text = AppModule.GetName_REQ_TAXI_DATE_1(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_1)
-        Me.REQ_TAXI_FROM_1.Text = AppModule.GetName_REQ_TAXI_FROM_1(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_1)
-        Me.TAXI_YOTEIKINGAKU_1.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_1(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_1)
-        '行程２
-        Me.REQ_TAXI_DATE_2.Text = AppModule.GetName_REQ_TAXI_DATE_2(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_2)
-        Me.REQ_TAXI_FROM_2.Text = AppModule.GetName_REQ_TAXI_FROM_2(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_2)
-        Me.TAXI_YOTEIKINGAKU_2.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_2(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_2)
-        '行程３
-        Me.REQ_TAXI_DATE_3.Text = AppModule.GetName_REQ_TAXI_DATE_3(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_3)
-        Me.REQ_TAXI_FROM_3.Text = AppModule.GetName_REQ_TAXI_FROM_3(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_3)
-        Me.TAXI_YOTEIKINGAKU_3.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_3(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_3)
-        '行程４
-        Me.REQ_TAXI_DATE_4.Text = AppModule.GetName_REQ_TAXI_DATE_4(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_4)
-        Me.REQ_TAXI_FROM_4.Text = AppModule.GetName_REQ_TAXI_FROM_4(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_4)
-        Me.TAXI_YOTEIKINGAKU_4.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_4(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_4)
-        '行程５
-        Me.REQ_TAXI_DATE_5.Text = AppModule.GetName_REQ_TAXI_DATE_5(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_5)
-        Me.REQ_TAXI_FROM_5.Text = AppModule.GetName_REQ_TAXI_FROM_5(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_5)
-        Me.TAXI_YOTEIKINGAKU_5.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_5(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_5)
-        '行程６
-        Me.REQ_TAXI_DATE_6.Text = AppModule.GetName_REQ_TAXI_DATE_6(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_6)
-        Me.REQ_TAXI_FROM_6.Text = AppModule.GetName_REQ_TAXI_FROM_6(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_6)
-        Me.TAXI_YOTEIKINGAKU_6.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_6(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_6)
-        '行程７
-        Me.REQ_TAXI_DATE_7.Text = AppModule.GetName_REQ_TAXI_DATE_7(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_7)
-        Me.REQ_TAXI_FROM_7.Text = AppModule.GetName_REQ_TAXI_FROM_7(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_7)
-        Me.TAXI_YOTEIKINGAKU_7.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_7(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_7)
-        '行程８
-        Me.REQ_TAXI_DATE_8.Text = AppModule.GetName_REQ_TAXI_DATE_8(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_8)
-        Me.REQ_TAXI_FROM_8.Text = AppModule.GetName_REQ_TAXI_FROM_8(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_8)
-        Me.TAXI_YOTEIKINGAKU_8.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_8(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_8)
-        '行程９
-        Me.REQ_TAXI_DATE_9.Text = AppModule.GetName_REQ_TAXI_DATE_9(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_9)
-        Me.REQ_TAXI_FROM_9.Text = AppModule.GetName_REQ_TAXI_FROM_9(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_9)
-        Me.TAXI_YOTEIKINGAKU_9.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_9(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_9)
-        '行程１０
-        Me.REQ_TAXI_DATE_10.Text = AppModule.GetName_REQ_TAXI_DATE_10(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_DATE_10)
-        Me.REQ_TAXI_FROM_10.Text = AppModule.GetName_REQ_TAXI_FROM_10(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_FROM_10)
-        Me.TAXI_YOTEIKINGAKU_10.Text = AppModule.GetName_TAXI_YOTEIKINGAKU_10(DSP_KOTSUHOTEL(DSP_SEQ).TAXI_YOTEIKINGAKU_10)
-
-        'タクチケ１
-        Me.ANS_TAXI_DATE_1.Text = AppModule.GetName_ANS_TAXI_DATE_1(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_1)
-        Me.ANS_TAXI_KENSHU_1.Text = AppModule.GetName_ANS_TAXI_KENSHU_1(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_1)
-        Me.ANS_TAXI_NO_1.Text = AppModule.GetName_ANS_TAXI_NO_1(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_1)
-        'タクチケ２
-        Me.ANS_TAXI_DATE_2.Text = AppModule.GetName_ANS_TAXI_DATE_2(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_2)
-        Me.ANS_TAXI_KENSHU_2.Text = AppModule.GetName_ANS_TAXI_KENSHU_2(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_2)
-        Me.ANS_TAXI_NO_2.Text = AppModule.GetName_ANS_TAXI_NO_2(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_2)
-        'タクチケ３
-        Me.ANS_TAXI_DATE_3.Text = AppModule.GetName_ANS_TAXI_DATE_3(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_3)
-        Me.ANS_TAXI_KENSHU_3.Text = AppModule.GetName_ANS_TAXI_KENSHU_3(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_3)
-        Me.ANS_TAXI_NO_3.Text = AppModule.GetName_ANS_TAXI_NO_3(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_3)
-        'タクチケ４
-        Me.ANS_TAXI_DATE_4.Text = AppModule.GetName_ANS_TAXI_DATE_4(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_4)
-        Me.ANS_TAXI_KENSHU_4.Text = AppModule.GetName_ANS_TAXI_KENSHU_4(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_4)
-        Me.ANS_TAXI_NO_4.Text = AppModule.GetName_ANS_TAXI_NO_4(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_4)
-        'タクチケ５
-        Me.ANS_TAXI_DATE_5.Text = AppModule.GetName_ANS_TAXI_DATE_5(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_5)
-        Me.ANS_TAXI_KENSHU_5.Text = AppModule.GetName_ANS_TAXI_KENSHU_5(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_5)
-        Me.ANS_TAXI_NO_5.Text = AppModule.GetName_ANS_TAXI_NO_5(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_5)
-        'タクチケ６
-        Me.ANS_TAXI_DATE_6.Text = AppModule.GetName_ANS_TAXI_DATE_6(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_6)
-        Me.ANS_TAXI_KENSHU_6.Text = AppModule.GetName_ANS_TAXI_KENSHU_6(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_6)
-        Me.ANS_TAXI_NO_6.Text = AppModule.GetName_ANS_TAXI_NO_6(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_6)
-        'タクチケ７
-        Me.ANS_TAXI_DATE_7.Text = AppModule.GetName_ANS_TAXI_DATE_7(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_7)
-        Me.ANS_TAXI_KENSHU_7.Text = AppModule.GetName_ANS_TAXI_KENSHU_7(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_7)
-        Me.ANS_TAXI_NO_7.Text = AppModule.GetName_ANS_TAXI_NO_7(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_7)
-        'タクチケ８
-        Me.ANS_TAXI_DATE_8.Text = AppModule.GetName_ANS_TAXI_DATE_8(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_8)
-        Me.ANS_TAXI_KENSHU_8.Text = AppModule.GetName_ANS_TAXI_KENSHU_8(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_8)
-        Me.ANS_TAXI_NO_8.Text = AppModule.GetName_ANS_TAXI_NO_8(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_8)
-        'タクチケ９
-        Me.ANS_TAXI_DATE_9.Text = AppModule.GetName_ANS_TAXI_DATE_9(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_9)
-        Me.ANS_TAXI_KENSHU_9.Text = AppModule.GetName_ANS_TAXI_KENSHU_9(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_9)
-        Me.ANS_TAXI_NO_9.Text = AppModule.GetName_ANS_TAXI_NO_9(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_9)
-        'タクチケ１０
-        Me.ANS_TAXI_DATE_10.Text = AppModule.GetName_ANS_TAXI_DATE_10(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_10)
-        Me.ANS_TAXI_KENSHU_10.Text = AppModule.GetName_ANS_TAXI_KENSHU_10(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_10)
-        Me.ANS_TAXI_NO_10.Text = AppModule.GetName_ANS_TAXI_NO_10(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_10)
-        'タクチケ１１
-        Me.ANS_TAXI_DATE_11.Text = AppModule.GetName_ANS_TAXI_DATE_11(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_11)
-        Me.ANS_TAXI_KENSHU_11.Text = AppModule.GetName_ANS_TAXI_KENSHU_11(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_11)
-        Me.ANS_TAXI_NO_11.Text = AppModule.GetName_ANS_TAXI_NO_11(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_11)
-        'タクチケ１２
-        Me.ANS_TAXI_DATE_12.Text = AppModule.GetName_ANS_TAXI_DATE_12(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_12)
-        Me.ANS_TAXI_KENSHU_12.Text = AppModule.GetName_ANS_TAXI_KENSHU_12(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_12)
-        Me.ANS_TAXI_NO_12.Text = AppModule.GetName_ANS_TAXI_NO_12(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_12)
-        'タクチケ１３
-        Me.ANS_TAXI_DATE_13.Text = AppModule.GetName_ANS_TAXI_DATE_13(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_13)
-        Me.ANS_TAXI_KENSHU_13.Text = AppModule.GetName_ANS_TAXI_KENSHU_13(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_13)
-        Me.ANS_TAXI_NO_13.Text = AppModule.GetName_ANS_TAXI_NO_13(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_13)
-        'タクチケ１４
-        Me.ANS_TAXI_DATE_14.Text = AppModule.GetName_ANS_TAXI_DATE_14(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_14)
-        Me.ANS_TAXI_KENSHU_14.Text = AppModule.GetName_ANS_TAXI_KENSHU_14(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_14)
-        Me.ANS_TAXI_NO_14.Text = AppModule.GetName_ANS_TAXI_NO_14(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_14)
-        'タクチケ１５
-        Me.ANS_TAXI_DATE_15.Text = AppModule.GetName_ANS_TAXI_DATE_15(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_15)
-        Me.ANS_TAXI_KENSHU_15.Text = AppModule.GetName_ANS_TAXI_KENSHU_15(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_15)
-        Me.ANS_TAXI_NO_15.Text = AppModule.GetName_ANS_TAXI_NO_15(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_15)
-        'タクチケ１６
-        Me.ANS_TAXI_DATE_16.Text = AppModule.GetName_ANS_TAXI_DATE_16(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_16)
-        Me.ANS_TAXI_KENSHU_16.Text = AppModule.GetName_ANS_TAXI_KENSHU_16(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_16)
-        Me.ANS_TAXI_NO_16.Text = AppModule.GetName_ANS_TAXI_NO_16(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_16)
-        'タクチケ１７
-        Me.ANS_TAXI_DATE_17.Text = AppModule.GetName_ANS_TAXI_DATE_17(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_17)
-        Me.ANS_TAXI_KENSHU_17.Text = AppModule.GetName_ANS_TAXI_KENSHU_17(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_17)
-        Me.ANS_TAXI_NO_17.Text = AppModule.GetName_ANS_TAXI_NO_17(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_17)
-        'タクチケ１８
-        Me.ANS_TAXI_DATE_18.Text = AppModule.GetName_ANS_TAXI_DATE_18(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_18)
-        Me.ANS_TAXI_KENSHU_18.Text = AppModule.GetName_ANS_TAXI_KENSHU_18(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_18)
-        Me.ANS_TAXI_NO_18.Text = AppModule.GetName_ANS_TAXI_NO_18(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_18)
-        'タクチケ１９
-        Me.ANS_TAXI_DATE_19.Text = AppModule.GetName_ANS_TAXI_DATE_19(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_19)
-        Me.ANS_TAXI_KENSHU_19.Text = AppModule.GetName_ANS_TAXI_KENSHU_19(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_19)
-        Me.ANS_TAXI_NO_19.Text = AppModule.GetName_ANS_TAXI_NO_19(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_19)
-        'タクチケ２０
-        Me.ANS_TAXI_DATE_20.Text = AppModule.GetName_ANS_TAXI_DATE_20(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_DATE_20)
-        Me.ANS_TAXI_KENSHU_20.Text = AppModule.GetName_ANS_TAXI_KENSHU_20(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_KENSHU_20)
-        Me.ANS_TAXI_NO_20.Text = AppModule.GetName_ANS_TAXI_NO_20(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NO_20)
-
-        'MR手配情報
-        Me.REQ_MR_O_TEHAI.Text = AppModule.GetName_REQ_MR_O_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_O_TEHAI)
-        Me.REQ_MR_F_TEHAI.Text = AppModule.GetName_REQ_MR_F_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_F_TEHAI)
-        Me.MR_SEX.Text = AppModule.GetName_MR_SEX(DSP_KOTSUHOTEL(DSP_SEQ).MR_SEX)
-        Me.MR_AGE.Text = AppModule.GetName_MR_AGE(DSP_KOTSUHOTEL(DSP_SEQ).MR_AGE)
-        Me.REQ_MR_HOTEL_NOTE.Text = AppModule.GetName_REQ_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_HOTEL_NOTE)
-        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_O_TEHAI, Me.ANS_MR_O_TEHAI)
-        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_F_TEHAI, Me.ANS_MR_F_TEHAI)
-        Me.ANS_MR_HOTEL_NOTE.Text = AppModule.GetName_ANS_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTEL_NOTE)
         Me.ANS_MR_KOTSUHI.Text = AppModule.GetName_ANS_MR_KOTSUHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_KOTSUHI)
         Me.ANS_MR_HOTELHI.Text = AppModule.GetName_ANS_MR_HOTELHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI)
     End Sub
@@ -924,6 +931,7 @@ Partial Public Class DrRegist
         End If
     End Sub
 
+
     ''' <summary>
     ''' 施設検索ボタン
     ''' </summary>
@@ -1018,6 +1026,624 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
             Return False
         End If
+
+        'チケット類発送日
+        If Not CmnCheck.IsNumberOnly(Me.ANS_TICKET_SEND_DAY) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("チケット類発送日（最新）"), Me)
+            Return False
+        End If
+
+        If CmnCheck.IsInput(Me.ANS_TICKET_SEND_DAY) Then
+            If Me.ANS_TICKET_SEND_DAY.Text.Trim.Length < 8 Then
+                CmnModule.AlertMessage(MessageDef.Error.LengthEQ("チケット類発送日（最新）", 8, False), Me)
+                Return False
+            End If
+
+            Dim wStr As String = StrConv(Me.ANS_TICKET_SEND_DAY.Text.Substring(0, 4) & "/" & Me.ANS_TICKET_SEND_DAY.Text.Substring(4, 2) & "/" & Me.ANS_TICKET_SEND_DAY.Text.Substring(6, 2), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("チケット類発送日（最新）"), Me)
+                Return False
+            End If
+        End If
+
+        '宿泊施設TEL
+        If Me.ANS_HOTEL_TEL.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidTel(Me.ANS_HOTEL_TEL) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊施設TELの入力形式"), Me)
+            Return False
+        End If
+
+        '宿泊日
+        If Me.ANS_HOTEL_DATE.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_HOTEL_DATE) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊日"), Me)
+            Return False
+        End If
+
+        '泊数
+        If Me.ANS_HAKUSU.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isnumberonly(Me.ANS_HAKUSU) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("泊数"), Me)
+            Return False
+        End If
+
+        'チェックイン
+        If Me.ANS_CHECKIN_TIME.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_CHECKIN_TIME) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("チェックイン"), Me)
+            Return False
+        End If
+
+        'チェックアウト
+        If Me.ANS_CHECKOUT_TIME.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_CHECKOUT_TIME) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("チェックアウト"), Me)
+            Return False
+        End If
+
+        '往路
+        '利用日1
+        If Me.ANS_O_DATE_1.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_O_DATE_1) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻1
+        If Me.ANS_O_TIME1_1.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_1) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻1
+        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日2
+        If Me.ANS_O_DATE_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_O_DATE_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻2
+        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻2
+        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日3
+        If Me.ANS_O_DATE_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_O_DATE_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻3
+        If Me.ANS_O_TIME1_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻3
+        If Me.ANS_O_TIME1_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日4
+        If Me.ANS_O_DATE_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_O_DATE_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻4
+        If Me.ANS_O_TIME1_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻4
+        If Me.ANS_O_TIME1_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日5
+        If Me.ANS_O_DATE_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_O_DATE_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻5
+        If Me.ANS_O_TIME1_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻5
+        If Me.ANS_O_TIME1_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '復路
+        '利用日1
+        If Me.ANS_F_DATE_1.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_F_DATE_1) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻1
+        If Me.ANS_F_TIME1_1.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_1) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻1
+        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日2
+        If Me.ANS_F_DATE_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_F_DATE_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻2
+        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻2
+        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日3
+        If Me.ANS_F_DATE_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_F_DATE_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻3
+        If Me.ANS_F_TIME1_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻3
+        If Me.ANS_F_TIME1_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日4
+        If Me.ANS_F_DATE_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_F_DATE_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻4
+        If Me.ANS_F_TIME1_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻4
+        If Me.ANS_F_TIME1_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        '利用日5
+        If Me.ANS_F_DATE_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_F_DATE_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '出発時刻5
+        If Me.ANS_F_TIME1_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+            Return False
+        End If
+
+        '到着時刻5
+        If Me.ANS_F_TIME1_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+            Return False
+        End If
+
+        'タクチケ
+        '利用日1
+        If Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_1) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号1
+        If Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.ishankaku(Me.ANS_TAXI_NO_1) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日2
+        If Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号2
+        If Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_2) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日3
+        If Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号3
+        If Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_3) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日4
+        If Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号4
+        If Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_4) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日5
+        If Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号5
+        If Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_5) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日6
+        If Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_6) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号6
+        If Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_6) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日7
+        If Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_7) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号7
+        If Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_7) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日8
+        If Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_8) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号8
+        If Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_8) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日9
+        If Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_9) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号9
+        If Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_9) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日10
+        If Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_10) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号10
+        If Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_10) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日11
+        If Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_11) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号11
+        If Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_11) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日12
+        If Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_12) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号12
+        If Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_12) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日13
+        If Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_13) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号13
+        If Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_13) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日14
+        If Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_14) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号14
+        If Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_14) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日15
+        If Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_15) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号15
+        If Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_15) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日16
+        If Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_16) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号16
+        If Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_16) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日17
+        If Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_17) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号17
+        If Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_17) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日18
+        If Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_18) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号18
+        If Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_18) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日19
+        If Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_19) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号19
+        If Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_19) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        '利用日20
+        If Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_20) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("利用日"), Me)
+            Return False
+        End If
+
+        '番号20
+        If Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_20) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            Return False
+        End If
+
+        'JR券代
+        If Me.ANS_RAIL_FARE.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_RAIL_FARE) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("JR券代"), Me)
+            Return False
+        End If
+
+        'JR券取消料
+        If Me.ANS_RAIL_CANCELLATION.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_RAIL_CANCELLATION) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("JR券取消料"), Me)
+            Return False
+        End If
+
+        'その他鉄道等代金
+        If Me.ANS_OTHER_FARE.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_OTHER_FARE) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("その他鉄道等代金"), Me)
+            Return False
+        End If
+
+        'その他鉄道等取消料
+        If Me.ANS_OTHER_CANCELLATION.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_OTHER_CANCELLATION) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("その他鉄道等取消料"), Me)
+            Return False
+        End If
+
+        '航空券代
+        If Me.ANS_AIR_FARE.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_AIR_FARE) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("航空券代"), Me)
+            Return False
+        End If
+
+        '航空券取消料
+        If Me.ANS_AIR_CANCELLATION.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_AIR_CANCELLATION) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("航空券取消料"), Me)
+            Return False
+        End If
+
+        '手数料（交通・宿泊）
+        If Me.ANS_KOTSUHOTEL_TESURYO.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_KOTSUHOTEL_TESURYO) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("手数料（交通・宿泊）"), Me)
+            Return False
+        End If
+
+        'タクチケ発券手数料
+        If Me.ANS_TAXI_TESURYO.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_TAXI_TESURYO) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("タクチケ発券手数料"), Me)
+            Return False
+        End If
+
+        'MR交通費
+        If Me.ANS_MR_KOTSUHI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_MR_KOTSUHI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("MR交通費"), Me)
+            Return False
+        End If
+
+        'MR宿泊費
+        If Me.ANS_MR_HOTELHI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費"), Me)
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -1139,14 +1765,9 @@ Partial Public Class DrRegist
         DSP_KOTSUHOTEL(SEQ).ANS_F_BIN_5 = AppModule.GetValue_ANS_F_BIN_5(Me.ANS_F_BIN_5)
         DSP_KOTSUHOTEL(SEQ).ANS_F_SEAT_5 = AppModule.GetValue_ANS_F_SEAT_5(Me.ANS_F_SEAT_5)
         DSP_KOTSUHOTEL(SEQ).ANS_F_SEAT_KIBOU5 = AppModule.GetValue_ANS_F_SEAT_KIBOU5(Me.ANS_F_SEAT_KIBOU5)
+
         '交通備考
         DSP_KOTSUHOTEL(SEQ).ANS_KOTSU_BIKO = AppModule.GetValue_ANS_KOTSU_BIKO(Me.ANS_KOTSU_BIKO)
-        DSP_KOTSUHOTEL(SEQ).ANS_RAIL_FARE = AppModule.GetValue_ANS_RAIL_FARE(Me.ANS_RAIL_FARE)
-        DSP_KOTSUHOTEL(SEQ).ANS_RAIL_CANCELLATION = AppModule.GetValue_ANS_RAIL_CANCELLATION(Me.ANS_RAIL_CANCELLATION)
-        DSP_KOTSUHOTEL(SEQ).ANS_AIR_FARE = AppModule.GetValue_ANS_AIR_FARE(Me.ANS_AIR_FARE)
-        DSP_KOTSUHOTEL(SEQ).ANS_AIR_CANCELLATION = AppModule.GetValue_ANS_AIR_CANCELLATION(Me.ANS_AIR_CANCELLATION)
-        DSP_KOTSUHOTEL(SEQ).ANS_OTHER_FARE = AppModule.GetValue_ANS_OTHER_FARE(Me.ANS_OTHER_FARE)
-        DSP_KOTSUHOTEL(SEQ).ANS_OTHER_CANCELLATION = AppModule.GetValue_ANS_OTHER_CANCELLATION(Me.ANS_OTHER_CANCELLATION)
 
         'タクチケ備考
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NOTE = AppModule.GetValue_ANS_TAXI_NOTE(Me.ANS_TAXI_NOTE)
@@ -1234,6 +1855,19 @@ Partial Public Class DrRegist
         'MR手配
         DSP_KOTSUHOTEL(SEQ).ANS_MR_O_TEHAI = AppModule.getvalue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_F_TEHAI = AppModule.GetValue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTEL_NOTE = AppModule.getvalue_ans_mr_hotel_note(Me.ANS_MR_HOTEL_NOTE)
+
+        '各種代金
+        DSP_KOTSUHOTEL(SEQ).ANS_RAIL_FARE = AppModule.GetValue_ANS_RAIL_FARE(Me.ANS_RAIL_FARE)
+        DSP_KOTSUHOTEL(SEQ).ANS_RAIL_CANCELLATION = AppModule.GetValue_ANS_RAIL_CANCELLATION(Me.ANS_RAIL_CANCELLATION)
+        DSP_KOTSUHOTEL(SEQ).ANS_OTHER_FARE = AppModule.GetValue_ANS_OTHER_FARE(Me.ANS_OTHER_FARE)
+        DSP_KOTSUHOTEL(SEQ).ANS_OTHER_CANCELLATION = AppModule.GetValue_ANS_OTHER_CANCELLATION(Me.ANS_OTHER_CANCELLATION)
+        DSP_KOTSUHOTEL(SEQ).ANS_AIR_FARE = AppModule.GetValue_ANS_AIR_FARE(Me.ANS_AIR_FARE)
+        DSP_KOTSUHOTEL(SEQ).ANS_AIR_CANCELLATION = AppModule.GetValue_ANS_AIR_CANCELLATION(Me.ANS_AIR_CANCELLATION)
+        ' ''DSP_KOTSUHOTEL(SEQ).ANS_KOTSUHOTEL_TESURYO = AppModule.GetValue_ANS_KOTSUHOTEL_TESURYO(Me.ANS_KOTSUHOTEL_TESURYO)
+        ' ''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_TESURYO = AppModule.GetValue_ANS_TAXI_TESURYO(Me.ANS_TAXI_TESURYO)
+        ' ''DSP_KOTSUHOTEL(SEQ).ANS_MR_KOTSUHI = AppModule.GetValue_ANS_MR_KOTSUHI(Me.ANS_MR_KOTSUHI)
+        ' ''DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTELHI = AppModule.GetValue_ANS_MR_HOTELHI(Me.ANS_MR_HOTELHI)
 
         DSP_KOTSUHOTEL(SEQ).SEND_FLAG = SEND_FLAG
 
@@ -1265,4 +1899,24 @@ Partial Public Class DrRegist
 
         Return True
     End Function
+
+    '交通往路１コピーボタン
+    Protected Sub BtnCopy_O_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_1.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_O_KOTSUKIKAN_1.SelectedIndex >= 1 OrElse _
+            ANS_O_DATE_1.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT1_1.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT1_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME1_1.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME1_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_BIN_1.Text.Trim <> String.Empty OrElse _
+            ANS_O_SEAT_1.SelectedIndex >= 1 OrElse _
+            ANS_O_SEAT_KIBOU1.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+    End Sub
 End Class

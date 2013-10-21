@@ -10,7 +10,8 @@
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
                             ■講演会情報
-	                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="基本情報へ" CssClass="Button" />
+	                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="基本情報へ" 
+                                CssClass="Button" TabIndex="1" />
                         </td>
                     </tr>
                     <tr>
@@ -215,12 +216,20 @@
 		                <td align="left" valign="middle">
 							<asp:Label ID="REQ_STATUS_TEHAI" runat="server" Text=""></asp:Label>
 		                </td>
-		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+		                <td align="left" valign="middle" class="TdTitle" style="width:100px">
 			                回答<br />ステータス
 		                </td>
-		                <td align="left" valign="middle" colspan="5">							
-		                    <asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="150px">
+		                <td align="left" valign="middle">							
+		                    <asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="150px" 
+                                TabIndex="2">
                             </asp:DropDownList>						
+		                </td>
+		                <td align="left" valign="middle" class="TdTitle" style="width:100px">
+			                チケット類<br />発送日<br />（最新）
+		                </td>
+		                <td align="left" valign="middle" colspan="3">							
+                            <asp:TextBox ID="ANS_TICKET_SEND_DAY" runat="server" MaxLength="8" 
+                                Height="18px" Width="79px" TabIndex="3"></asp:TextBox>
 		                </td>
 		            </tr>
 	                <tr>
@@ -405,7 +414,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_STATUS_HOTEL" runat="server" TabIndex="14">
+                            <asp:DropDownList ID="ANS_STATUS_HOTEL" runat="server" TabIndex="4">
                             </asp:DropDownList>							
                         </td>
                     </tr>
@@ -421,7 +430,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_HOTEL_NAME" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="267px" TabIndex="15"></asp:TextBox>
+                                TextMode="MultiLine" Height="47px" Width="267px" TabIndex="5"></asp:TextBox>
             				<asp:Button ID="BtnHotelKensaku" runat="server" Width="55px" Text="検索" 
                                 CssClass="ButtonList" TabIndex="16" />
                         </td>
@@ -445,7 +454,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_HOTEL_ADDRESS" runat="server" MaxLength="128" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="17"></asp:TextBox>
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="6"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -460,7 +469,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_HOTEL_TEL" runat="server" MaxLength="20" 
-                                Height="18px" Width="173px" TabIndex="21"></asp:TextBox>
+                                Height="18px" Width="173px" TabIndex="7"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -477,14 +486,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_HOTEL_DATE" runat="server" MaxLength="6" 
-                                Height="18px" Width="67px"></asp:TextBox>
+                                Height="18px" Width="67px" TabIndex="8"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             泊数
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_HAKUSU" runat="server" MaxLength="2" 
-                                Height="18px" Width="26px" TabIndex="22"></asp:TextBox>
+                                Height="18px" Width="26px" TabIndex="9"></asp:TextBox>
 							&nbsp;&nbsp;泊                            
                         </td>
                     </tr>
@@ -494,14 +503,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_CHECKIN_TIME" runat="server" MaxLength="4" 
-                                Height="18px" Width="47px"></asp:TextBox>
+                                Height="18px" Width="47px" TabIndex="10"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             チェックアウト
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_CHECKOUT_TIME" runat="server" MaxLength="4" 
-                                Height="18px" Width="47px"></asp:TextBox>
+                                Height="18px" Width="47px" TabIndex="11"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -509,7 +518,7 @@
                             部屋タイプ
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_ROOM_TYPE" runat="server" TabIndex="23" Width="344px">
+                            <asp:DropDownList ID="ANS_ROOM_TYPE" runat="server" TabIndex="12" Width="344px">
                             </asp:DropDownList>							
                         </td>
                     </tr>
@@ -518,7 +527,7 @@
                             喫煙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_HOTEL_SMOKING" runat="server" TabIndex="24" 
+                            <asp:DropDownList ID="ANS_HOTEL_SMOKING" runat="server" TabIndex="13" 
                                 Width="344px">
                             </asp:DropDownList>							
                         </td>
@@ -529,7 +538,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3" width="344px">							
                             <asp:TextBox ID="ANS_HOTEL_NOTE" runat="server" MaxLength="255" 
-                                textmode="MultiLine" Height="65px" Width="347px" TabIndex="28"></asp:TextBox>
+                                textmode="MultiLine" Height="65px" Width="347px" TabIndex="14"></asp:TextBox>
                         </td>
                     </tr>
                 </table> 		        
@@ -553,7 +562,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_1" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_O_STATUS_1" runat="server" TabIndex="15">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -573,7 +582,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_1" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="16" />
                         </td>
                     </tr>
                     <tr>
@@ -595,7 +604,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_1" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_1" runat="server" TabIndex="17">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -611,7 +620,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_DATE_1" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="18"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -636,14 +645,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT1_1" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="19"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT2_1" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="20"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -664,14 +673,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_1" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="21"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_1" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="22"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -688,7 +697,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_1" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38" 
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="23" 
                                 ReadOnly="True"></asp:TextBox>
                         </td>
                     </tr>
@@ -709,14 +718,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_1" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_1" runat="server" TabIndex="24">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU1" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU1" runat="server" TabIndex="25">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -741,7 +750,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_2" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_O_STATUS_2" runat="server" TabIndex="26">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -761,7 +770,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_2" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="27" />
                         </td>
                     </tr>
                     <tr>
@@ -783,7 +792,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_2" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_2" runat="server" TabIndex="28">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -799,7 +808,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_DATE_2" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="29"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -824,15 +833,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT1_2" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="30"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT2_2" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="31"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -853,14 +861,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="32"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="33"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -877,7 +885,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_2" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="34"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -897,14 +905,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_2" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_2" runat="server" TabIndex="35">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU2" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU2" runat="server" TabIndex="36">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -929,7 +937,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_3" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_O_STATUS_3" runat="server" TabIndex="37">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -949,7 +957,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_3" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="38" />
                         </td>
                     </tr>
                     <tr>
@@ -971,7 +979,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_3" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_3" runat="server" TabIndex="39">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -987,7 +995,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_DATE_3" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="40"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1012,15 +1020,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT1_3" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="41"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT2_3" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="42"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1048,7 +1055,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="43"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1065,7 +1072,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_3" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="44"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1085,14 +1092,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_3" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_3" runat="server" TabIndex="45">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU3" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU3" runat="server" TabIndex="46">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1117,7 +1124,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_4" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_O_STATUS_4" runat="server" TabIndex="47">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1137,7 +1144,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_4" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="48" />
                         </td>
                     </tr>
                     <tr>
@@ -1159,7 +1166,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_4" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_4" runat="server" TabIndex="49">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1175,7 +1182,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_DATE_4" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="49"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1200,15 +1207,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT1_4" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="50"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT2_4" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="51"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1229,7 +1235,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="53"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
@@ -1253,7 +1259,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_4" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="54"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1273,14 +1279,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_4" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_4" runat="server" TabIndex="55">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU4" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU4" runat="server" TabIndex="56">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1305,7 +1311,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_5" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_O_STATUS_5" runat="server" TabIndex="57">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1325,7 +1331,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_5" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="58" />
                         </td>
                     </tr>
                     <tr>
@@ -1347,7 +1353,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_5" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_5" runat="server" TabIndex="59">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1363,7 +1369,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_DATE_5" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="60"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1388,15 +1394,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT1_5" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="61"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_AIRPORT2_5" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="62"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1417,14 +1422,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME1_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="63"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_O_TIME2_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="64"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1441,7 +1446,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_5" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="65"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1461,14 +1466,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_5" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_5" runat="server" TabIndex="66">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU5" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_O_SEAT_KIBOU5" runat="server" TabIndex="67">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1493,7 +1498,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_1" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_F_STATUS_1" runat="server" TabIndex="68">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1513,7 +1518,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_1" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="69" />
                         </td>
                     </tr>
                     <tr>
@@ -1551,7 +1556,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_DATE_1" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="70"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1576,15 +1581,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT1_1" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="71"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT2_1" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="72"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1605,14 +1609,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_1" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="73"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_1" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="74"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1629,7 +1633,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_1" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="75"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1649,14 +1653,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_1" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_1" runat="server" TabIndex="76">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU1" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU1" runat="server" TabIndex="77">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1681,7 +1685,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_2" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_F_STATUS_2" runat="server" TabIndex="78">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1701,7 +1705,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_2" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="79" />
                         </td>
                     </tr>
                     <tr>
@@ -1723,7 +1727,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_2" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_2" runat="server" TabIndex="80">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1739,7 +1743,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_DATE_2" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="81"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1764,15 +1768,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT1_2" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="82"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT2_2" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="83"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1793,14 +1796,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="84"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_2" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="85"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1817,7 +1820,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_2" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="86"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1837,14 +1840,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_2" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_2" runat="server" TabIndex="87">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU2" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU2" runat="server" TabIndex="88">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1869,7 +1872,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_3" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_F_STATUS_3" runat="server" TabIndex="89">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -1889,7 +1892,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_3" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="90" />
                         </td>
                     </tr>
                     <tr>
@@ -1911,7 +1914,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_3" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_3" runat="server" TabIndex="91">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1927,7 +1930,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_DATE_3" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="92"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1952,15 +1955,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT1_3" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="93"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT2_3" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="94"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -1981,14 +1983,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="95"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_3" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="96"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2005,7 +2007,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_3" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="97"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2025,14 +2027,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_3" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_3" runat="server" TabIndex="98">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU3" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU3" runat="server" TabIndex="99">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2057,7 +2059,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_4" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_F_STATUS_4" runat="server" TabIndex="100">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -2077,7 +2079,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_4" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="101" />
                         </td>
                     </tr>
                     <tr>
@@ -2099,7 +2101,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_4" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_4" runat="server" TabIndex="102">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2115,7 +2117,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_DATE_4" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="103"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2140,15 +2142,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT1_4" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="104"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT2_4" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="105"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2169,14 +2170,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="106"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_4" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="107"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2193,7 +2194,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_4" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="108"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2213,14 +2214,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_4" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_4" runat="server" TabIndex="109">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU4" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU4" runat="server" TabIndex="110">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2245,7 +2246,7 @@
                             回答ステータス
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_5" runat="server" TabIndex="29">
+                            <asp:DropDownList ID="ANS_F_STATUS_5" runat="server" TabIndex="111">
                             </asp:DropDownList>							
                         </td>
 					</tr>
@@ -2265,7 +2266,7 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_5" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="32" />
+                                CssClass="ButtonList" TabIndex="112" />
                         </td>
                     </tr>
                     <tr>
@@ -2287,7 +2288,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_5" runat="server" TabIndex="33">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_5" runat="server" TabIndex="113">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2303,7 +2304,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_DATE_5" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="34"></asp:TextBox>
+                                Height="18px" Width="85px" TabIndex="114"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2328,15 +2329,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT1_5" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="34"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="115"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_AIRPORT2_5" runat="server" MaxLength="80" 
-                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="35" 
-                                BorderStyle="None"></asp:TextBox>
+                                textmode="MultiLine" Height="19px" Width="148px" TabIndex="116"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2357,14 +2357,14 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME1_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="36"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="117"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
                             <asp:TextBox ID="ANS_F_TIME2_5" runat="server" MaxLength="4" 
-                                Height="18px" Width="148px" TabIndex="37"></asp:TextBox>
+                                Height="18px" Width="148px" TabIndex="118"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2381,7 +2381,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_F_BIN_5" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="38"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="119"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -2401,14 +2401,14 @@
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_5" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_5" runat="server" TabIndex="120">
                             </asp:DropDownList>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU5" runat="server" TabIndex="39">
+                            <asp:DropDownList ID="ANS_F_SEAT_KIBOU5" runat="server" TabIndex="121">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2434,62 +2434,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="top" class="TdItem" rowspan="4">
+                        <td align="left" valign="top" class="TdItem">
                             <asp:TextBox ID="REQ_KOTSU_BIKO" runat="server" MaxLength="255" ReadOnly="True" 
                                 TextMode="MultiLine" Height="68px" Width="445px" TabIndex="167" 
                                 BorderStyle="None"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="4">
                             <asp:TextBox ID="ANS_KOTSU_BIKO" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="68px" Width="445px" TabIndex="168"></asp:TextBox>                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitle">
-                            JR券代
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_RAIL_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="169"></asp:TextBox>円                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle">
-                            JR券取消料
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_RAIL_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="170"></asp:TextBox>円                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitle">
-                            その他鉄道代等代金
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_OTHER_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="173"></asp:TextBox>円                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle">
-                            その他鉄道代等取消料
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_OTHER_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="174"></asp:TextBox>円                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" valign="middle" class="TdTitle">
-                            航空券代
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_AIR_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="171"></asp:TextBox>円                            
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle">
-                            航空券取消料
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_AIR_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="172"></asp:TextBox>円                            
+                                TextMode="MultiLine" Height="68px" Width="445px" TabIndex="122"></asp:TextBox>                            
                         </td>
                     </tr>
 				</table>
@@ -2519,15 +2471,8 @@
 						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
 							チケット手配
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                        <td align="left" valign="middle" class="TdItem" colspan="7">
 							<asp:Label ID="TEHAI_TAXI" runat="server"></asp:Label>
-                        </td>
-						<td align="left" valign="middle" class="TdTitle" style="width:170px">
-							タクチケ発券手数料
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_TAXI_TESURYO" runat="server" MaxLength="10" 
-                                Height="18px" Width="92px" TabIndex="177"></asp:TextBox>&nbsp;円                            
                         </td>
 					</tr>
                     <tr>
@@ -2557,7 +2502,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NOTE" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="177"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="68px" Width="344px" TabIndex="123"></asp:TextBox>                            
                         </td>
 					</tr>
                     <tr>
@@ -2580,7 +2525,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_1" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="124"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2596,7 +2541,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_1" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="125"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2612,7 +2557,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_1" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="126"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2635,7 +2580,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_2" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="127"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2651,7 +2596,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_2" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="128"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2667,7 +2612,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_2" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="129"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2690,7 +2635,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_3" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="130"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2706,7 +2651,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_3" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="131"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2722,7 +2667,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_3" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="132"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2745,7 +2690,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_4" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="133"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2761,7 +2706,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_4" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="134"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2777,7 +2722,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_4" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="135"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2800,7 +2745,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_5" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="136"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2816,7 +2761,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_5" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="137"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2832,7 +2777,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_5" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="138"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2855,7 +2800,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_6" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="139"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2871,7 +2816,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_6" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="140"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2887,7 +2832,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_6" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="141"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2910,7 +2855,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_7" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="142"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2926,7 +2871,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_7" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="143"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2942,7 +2887,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_7" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="144"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2965,7 +2910,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_8" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="145"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2981,7 +2926,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_8" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="146"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -2997,7 +2942,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_8" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="147"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3020,7 +2965,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_9" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="148"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3036,7 +2981,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_9" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="149"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3052,7 +2997,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_9" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="150"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3075,7 +3020,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_10" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="151"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3091,7 +3036,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_10" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="152"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3107,7 +3052,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_10" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="153"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3123,7 +3068,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_11" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="154"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3131,7 +3076,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_11" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="155"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3140,7 +3085,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_11" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="156"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3154,7 +3099,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_12" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="157"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3162,7 +3107,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_12" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="158"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3171,7 +3116,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_12" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="159"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3185,7 +3130,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_13" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="160"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3193,7 +3138,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_13" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="161"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3202,7 +3147,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_13" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="162"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3216,7 +3161,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_14" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="163"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3224,7 +3169,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_14" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="164"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3233,7 +3178,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_14" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="165"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3247,7 +3192,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_15" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="166"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3255,7 +3200,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_15" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="167"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3264,7 +3209,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_15" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="168"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3278,7 +3223,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_16" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="169"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3286,7 +3231,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_16" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="170"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3295,7 +3240,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_16" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="171"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3309,7 +3254,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_17" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="172"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3317,7 +3262,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_17" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="173"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3326,7 +3271,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_17" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="174"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3340,7 +3285,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_18" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="175"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3348,7 +3293,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_18" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="176"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3357,7 +3302,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_18" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="177"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3371,7 +3316,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_DATE_19" runat="server" MaxLength="8" 
-                                Height="18px" Width="85px" TabIndex="181"></asp:TextBox>                            
+                                Height="18px" Width="85px" TabIndex="178"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3379,7 +3324,7 @@
                             券種</td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_KENSHU_19" runat="server" MaxLength="80" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="179"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3388,7 +3333,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_19" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="180"></asp:TextBox>                            
                         </td>
                     </tr>
                     <tr>
@@ -3419,7 +3364,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_TAXI_NO_20" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="183"></asp:TextBox>                            
                         </td>
                     </tr>
                 </table> 		        
@@ -3455,7 +3400,8 @@
                             社員用往路手配
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-		                    <asp:DropDownList ID="ANS_MR_O_TEHAI" runat="server" Width="150px">
+		                    <asp:DropDownList ID="ANS_MR_O_TEHAI" runat="server" Width="150px" 
+                                TabIndex="184">
                             </asp:DropDownList>						
                         </td>
                     </tr>
@@ -3470,7 +3416,8 @@
                             社員用復路手配
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-		                    <asp:DropDownList ID="ANS_MR_F_TEHAI" runat="server" Width="150px">
+		                    <asp:DropDownList ID="ANS_MR_F_TEHAI" runat="server" Width="150px" 
+                                TabIndex="185">
                             </asp:DropDownList>						
                         </td>
                     </tr>
@@ -3504,25 +3451,100 @@
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_MR_HOTEL_NOTE" runat="server" MaxLength="255" 
-                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="182"></asp:TextBox>                            
+                                TextMode="MultiLine" Height="47px" Width="344px" TabIndex="186"></asp:TextBox>                            
+                        </td>
+                    </tr>
+				</table>
+		    </td>
+		</tr>
+		<tr>
+			<td align="left" colspan="2">
+				<!-- 各種代金 -->				
+				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
+                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
+					<tr>
+						<td align="left" valign="middle" class="TdTitleHeader" colspan="5">
+							■各種代金
+                        </td>
+					</tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            JR券代
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_RAIL_FARE" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="187"></asp:TextBox>円                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            JR券取消料
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_RAIL_CANCELLATION" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="188"></asp:TextBox>円                            
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdItem" colspan="4">
+                        <td align="left" valign="middle" class="TdTitle">
+                            その他鉄道代等代金
                         </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_OTHER_FARE" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="189"></asp:TextBox>円                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            その他鉄道代等取消料
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_OTHER_CANCELLATION" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="190"></asp:TextBox>円                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            航空券代
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_AIR_FARE" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="191"></asp:TextBox>円                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            航空券取消料
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_AIR_CANCELLATION" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="192"></asp:TextBox>円                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            手数料（交通・宿泊）
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_KOTSUHOTEL_TESURYO" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="193"></asp:TextBox>円                            
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle">
+                            タクチケ発券手数料
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+                            <asp:TextBox ID="ANS_TAXI_TESURYO" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="194"></asp:TextBox>円                            
+                        </td>
+                    </tr>
+                    <tr>
                         <td align="left" valign="middle" class="TdTitle">
                             MR交通費
                         </td>
                         <td align="left" valign="top" class="TdItem">
                             <asp:TextBox ID="ANS_MR_KOTSUHI" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="172"></asp:TextBox>円                            
+                                Height="18px" Width="85px" TabIndex="195"></asp:TextBox>円                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             MR宿泊費
                         </td>
                         <td align="left" valign="top" class="TdItem">
                             <asp:TextBox ID="ANS_MR_HOTELHI" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="172"></asp:TextBox>円                            
+                                Height="18px" Width="85px" TabIndex="196"></asp:TextBox>円                            
                         </td>
                     </tr>
 				</table>
@@ -3533,14 +3555,20 @@
 		<table cellspacing="0" cellpadding="0" border="0" style="width:900px;">
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:50%">
-				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" />
-					<asp:Button ID="BtnPrint" runat="server" Width="150px" Text="手配書印刷" CssClass="Button" />
-					<asp:Button ID="BtnTaxiCsv" runat="server" Width="150px" Text="TAXI CSV" CssClass="Button" />
+				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" 
+                        CssClass="Button" TabIndex="197" />
+					<asp:Button ID="BtnPrint" runat="server" Width="150px" Text="手配書印刷" 
+                        CssClass="Button" TabIndex="198" />
+					<asp:Button ID="BtnTaxiCsv" runat="server" Width="150px" Text="TAXI CSV" 
+                        CssClass="Button" TabIndex="199" />
 				</td>
 				<td align="right" style="width:50%">
-				    <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" CssClass="Button" />
-				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
-					<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="ButtonCancel" />
+				    <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" 
+                        CssClass="Button" TabIndex="200" />
+				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" 
+                        CssClass="Button" TabIndex="201" />
+					<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="戻る" 
+                        CssClass="Button" TabIndex="202" />
 				</td>
 			</tr>
 		</table>

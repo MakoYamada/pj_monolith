@@ -232,6 +232,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''ANS_TICKET_SEND_DAY コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TICKET_SEND_DAY As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''SANKASHA_ID コントロール。
     '''</summary>
     '''<remarks>
@@ -2725,60 +2734,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_KOTSU_BIKO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_RAIL_FARE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_RAIL_CANCELLATION コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_OTHER_FARE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_OTHER_CANCELLATION コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_AIR_FARE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_AIR_CANCELLATION コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_AIR_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''BtnTAXI_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -2804,15 +2759,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents TEHAI_TAXI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_TAXI_TESURYO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''REQ_TAXI_NOTE コントロール。
@@ -3713,6 +3659,78 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_RAIL_FARE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_RAIL_CANCELLATION コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_OTHER_FARE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_OTHER_CANCELLATION コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_AIR_FARE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_AIR_CANCELLATION コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_AIR_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KOTSUHOTEL_TESURYO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KOTSUHOTEL_TESURYO As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_TESURYO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_MR_KOTSUHI コントロール。
