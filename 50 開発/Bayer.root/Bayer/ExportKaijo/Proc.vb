@@ -134,9 +134,31 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_SHAIN_ROOM_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MANAGER_KAIJO_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KAISAI_NOTE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_SEISAN_T)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_SEISAN_TF)))
-                sb.Append(CmnCsv.Quotes(CsvData(wCnt).ANS_SEISANSHO_URL))
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KAIJOUHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KIZAIHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_INSHOKUHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_991330401_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KOTSUHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TEHAI_TESURYO_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKEN_TESURYO_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_SEISAN_TESURYO_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_JINKENHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KANRIHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_41120200_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TOTAL_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KAIJOUHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KIZAIHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_INSHOKUHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_991330401_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_JINKENHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KANRIHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_41120200_T)))
+                sb.Append(CmnCsv.Quotes(CsvData(wCnt).ANS_TOTAL_T))
                 sb.Append(vbNewLine)
             Next
 
@@ -175,7 +197,7 @@ Public Class Proc
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
 
-        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct
+        Dim TBL_LOG As New TableDef.TBL_LOG.DataStruct
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
