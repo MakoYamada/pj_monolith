@@ -328,6 +328,18 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class SRM_HACYU_KBN
+            'SRM発注区分
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "0"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "SRM発注"
+                Public Const No As String = "SRM発注以外"
+            End Class
+        End Class
+
         Public Class KOUEN_KAIJO_TEHAI
             '講演会場　要・不要
             Public Class Code
