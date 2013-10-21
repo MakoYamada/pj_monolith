@@ -835,13 +835,22 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_MITSUMORI_TOTAL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnCalc_MITSUMORI コントロール。
+    '''Label3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc_MITSUMORI As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_ANS_MITSUMORI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_ANS_MITSUMORI As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''ANS_MITSUMORI_URL コントロール。
@@ -889,13 +898,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_991330401_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnCalc_991330401_TF コントロール。
+    '''Label1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc_991330401_TF As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_HOTELHI_TF コントロール。
@@ -988,13 +997,40 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_41120200_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnCalc_41120200_TF コントロール。
+    '''Label4 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc_41120200_TF As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TOTAL_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TOTAL_TF As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label6 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_ANS_TOTAL_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_ANS_TOTAL_TF As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''ANS_KAIJOUHI_T コントロール。
@@ -1033,13 +1069,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_991330401_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnCalc_991330401_T コントロール。
+    '''Label2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc_991330401_T As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_JINKENHI_T コントロール。
@@ -1078,13 +1114,40 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_41120200_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnCalc_41120200_T コントロール。
+    '''Label5 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc_41120200_T As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TOTAL_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TOTAL_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label7 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_ANS_TOTAL_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_ANS_TOTAL_T As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnRireki コントロール。

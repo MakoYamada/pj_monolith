@@ -136,11 +136,9 @@ Partial Public Class KaijoRegist
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
             '履歴からの場合、キャンセル以外のボタンを非表示にする
             Me.BtnShisetsuKensaku.Visible = False
-            Me.BtnCalc_MITSUMORI.Visible = False
-            Me.BtnCalc_991330401_TF.Visible = False
-            Me.BtnCalc_41120200_TF.Visible = False
-            Me.BtnCalc_991330401_T.Visible = False
-            Me.BtnCalc_41120200_T.Visible = False
+            Me.BtnCalc_ANS_MITSUMORI.Visible = False
+            Me.BtnCalc_ANS_TOTAL_TF.Visible = False
+            Me.BtnCalc_ANS_TOTAL_T.Visible = False
             Me.BtnRireki.Visible = False
             Me.BtnPrint.Visible = False
             Me.BtnNozomi.Visible = False
@@ -148,11 +146,9 @@ Partial Public Class KaijoRegist
             Me.TrComment.Visible = False
         Else
             Me.BtnShisetsuKensaku.Visible = True
-            Me.BtnCalc_MITSUMORI.Visible = True
-            Me.BtnCalc_991330401_TF.Visible = True
-            Me.BtnCalc_41120200_TF.Visible = True
-            Me.BtnCalc_991330401_T.Visible = True
-            Me.BtnCalc_41120200_T.Visible = True
+            Me.BtnCalc_ANS_MITSUMORI.Visible = True
+            Me.BtnCalc_ANS_TOTAL_TF.Visible = True
+            Me.BtnCalc_ANS_TOTAL_T.Visible = True
             Me.BtnRireki.Visible = True
             Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
@@ -236,7 +232,7 @@ Partial Public Class KaijoRegist
         Me.KOUSHI_ROOM_TEHAI_No.Text = AppModule.GetName_KOUSHI_ROOM_TEHAI_No(TBL_KAIJO(SEQ).KOUSHI_ROOM_TEHAI)
         Me.KOUSHI_ROOM_FROM.Text = AppModule.GetName_KOUSHI_ROOM_FROM(TBL_KAIJO(SEQ).KOUSHI_ROOM_FROM)
         Me.KOUSHI_ROOM_CNT.Text = AppModule.GetName_KOUSHI_ROOM_CNT(TBL_KAIJO(SEQ).KOUSHI_ROOM_CNT)
-        Me.SHAIN_ROOM_TEHAI_Yes.Text = AppModule.GetName_SHAIN_ROOM_TEHAI_yes(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI)
+        Me.SHAIN_ROOM_TEHAI_Yes.Text = AppModule.GetName_SHAIN_ROOM_TEHAI_Yes(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI)
         Me.SHAIN_ROOM_TEHAI_No.Text = AppModule.GetName_SHAIN_ROOM_TEHAI_No(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI)
         Me.SHAIN_ROOM_CNT.Text = AppModule.GetName_SHAIN_ROOM_CNT(TBL_KAIJO(SEQ).SHAIN_ROOM_CNT)
         Me.MANAGER_KAIJO_TEHAI_Yes.Text = AppModule.GetName_MANAGER_KAIJO_TEHAI_Yes(TBL_KAIJO(SEQ).MANAGER_KAIJO_TEHAI)
@@ -288,6 +284,18 @@ Partial Public Class KaijoRegist
         AppModule.SetForm_ANS_JINKENHI_T(TBL_KAIJO(SEQ).ANS_JINKENHI_T, Me.ANS_JINKENHI_T)
         AppModule.SetForm_ANS_OTHER_T(TBL_KAIJO(SEQ).ANS_OTHER_T, Me.ANS_OTHER_T)
         AppModule.SetForm_ANS_KANRIHI_T(TBL_KAIJO(SEQ).ANS_KANRIHI_T, Me.ANS_KANRIHI_T)
+        'AppModule.SetForm_ANS_991330401_TF(TBL_KAIJO(SEQ).ANS_991330401_TF, Me.ANS_991330401_TF)
+        'AppModule.SetForm_ANS_41120200_TF(TBL_KAIJO(SEQ).ANS_41120200_TF, Me.ANS_41120200_TF)
+        'AppModule.SetForm_ANS_TOTAL_TF(TBL_KAIJO(SEQ).ANS_TOTAL_TF, Me.ANS_TOTAL_TF)
+        'AppModule.SetForm_ANS_991330401_T(TBL_KAIJO(SEQ).ANS_991330401_T, Me.ANS_991330401_T)
+        'AppModule.SetForm_ANS_41120200_T(TBL_KAIJO(SEQ).ANS_41120200_T, Me.ANS_41120200_T)
+        'AppModule.SetForm_ANS_TOTAL_T(TBL_KAIJO(SEQ).ANS_TOTAL_T, Me.ANS_TOTAL_T)
+        Me.ANS_991330401_TF.Text = AppModule.GetName_ANS_991330401_TF(TBL_KAIJO(SEQ).ANS_991330401_TF)
+        Me.ANS_41120200_TF.Text = AppModule.GetName_ANS_41120200_TF(TBL_KAIJO(SEQ).ANS_41120200_TF)
+        Me.ANS_TOTAL_TF.Text = AppModule.GetName_ANS_TOTAL_TF(TBL_KAIJO(SEQ).ANS_TOTAL_TF)
+        Me.ANS_991330401_T.Text = AppModule.GetName_ANS_991330401_T(TBL_KAIJO(SEQ).ANS_991330401_T)
+        Me.ANS_41120200_T.Text = AppModule.GetName_ANS_41120200_T(TBL_KAIJO(SEQ).ANS_41120200_T)
+        Me.ANS_TOTAL_T.Text = AppModule.GetName_ANS_TOTAL_T(TBL_KAIJO(SEQ).ANS_TOTAL_T)
     End Sub
 
     '入力チェック
@@ -671,7 +679,7 @@ Partial Public Class KaijoRegist
     End Function
 
     '[再計算]
-    Protected Sub BtnCalc_MITSUMORI_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_MITSUMORI.Click
+    Protected Sub BtnCalc_ANS_MITSUMORI_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_ANS_MITSUMORI.Click
         Dim wANS_MITSUMORI_T As String = Trim(StrConv(Me.ANS_MITSUMORI_T.Text, VbStrConv.Narrow))
         Dim wANS_MITSUMORI_TF As String = Trim(StrConv(Me.ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
 
@@ -679,34 +687,29 @@ Partial Public Class KaijoRegist
             Me.ANS_MITSUMORI_TOTAL.Text = AppModule.GetName_ANS_MITSUMORI_TOTAL(wANS_MITSUMORI_T, wANS_MITSUMORI_TF)
         End If
     End Sub
-    Protected Sub BtnCalc_991330401_TF_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_991330401_TF.Click
-        Dim wANS_KAIJOUHI_TF As String = Trim(StrConv(Me.ANS_KAIJOUHI_TF.Text, VbStrConv.Narrow))
-        Dim wANS_KIZAIHI_TF As String = Trim(StrConv(Me.ANS_KIZAIHI_TF.Text, VbStrConv.Narrow))
-        Dim wANS_INSHOKUHI_TF As String = Trim(StrConv(Me.ANS_INSHOKUHI_TF.Text, VbStrConv.Narrow))
+    Protected Sub BtnCalc_ANS_TOTAL_TF_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_ANS_TOTAL_TF.Click
+        Dim wANS_TOTAL_TF As Long = 0
+
+        '991330401
+        Dim wANS_KAIJOUHI_TF As String = Trim(Replace(StrConv(Me.ANS_KAIJOUHI_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_KIZAIHI_TF As String = Trim(Replace(StrConv(Me.ANS_KIZAIHI_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_INSHOKUHI_TF As String = Trim(Replace(StrConv(Me.ANS_INSHOKUHI_TF.Text, VbStrConv.Narrow), ",", ""))
 
         If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KAIJOUHI_TF)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KIZAIHI_TF)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_INSHOKUHI_TF)) Then
             Me.ANS_991330401_TF.Text = AppModule.GetName_ANS_991330401_TF(wANS_KAIJOUHI_TF, wANS_KIZAIHI_TF, wANS_INSHOKUHI_TF)
+            wANS_TOTAL_TF += CmnModule.DbVal(Replace(Me.ANS_991330401_TF.Text, ",", ""))
         End If
-    End Sub
-    Protected Sub BtnCalc_991330401_T_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_991330401_T.Click
-        Dim wANS_KAIJOUHI_T As String = Trim(StrConv(Me.ANS_KAIJOUHI_T.Text, VbStrConv.Narrow))
-        Dim wANS_KIZAIHI_T As String = Trim(StrConv(Me.ANS_KIZAIHI_T.Text, VbStrConv.Narrow))
-        Dim wANS_INSHOKUHI_T As String = Trim(StrConv(Me.ANS_INSHOKUHI_T.Text, VbStrConv.Narrow))
 
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KAIJOUHI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KIZAIHI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_INSHOKUHI_T)) Then
-            Me.ANS_991330401_T.Text = AppModule.GetName_ANS_991330401_T(wANS_KAIJOUHI_T, wANS_KIZAIHI_T, wANS_INSHOKUHI_T)
-        End If
-    End Sub
-    Protected Sub BtnCalc_41120200_TF_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_41120200_TF.Click
-        Dim wANS_HOTELHI_TF As String = Trim(StrConv(Me.ANS_HOTELHI_TF.Text, VbStrConv.Narrow))
-        Dim wANS_KOTSUHI_TF As String = Trim(StrConv(Me.ANS_KOTSUHI_TF.Text, VbStrConv.Narrow))
-        Dim wANS_TAXI_TF As String = Trim(StrConv(Me.ANS_TAXI_TF.Text, VbStrConv.Narrow))
-        Dim wANS_TEHAI_TESURYO_TF As String = Trim(StrConv(Me.ANS_TEHAI_TESURYO_TF.Text, VbStrConv.Narrow))
-        Dim wANS_TAXI_HAKKEN_TESURYO_TF As String = Trim(StrConv(Me.ANS_TAXI_HAKKEN_TESURYO_TF.Text, VbStrConv.Narrow))
-        Dim wANS_TAXI_SEISAN_TESURYO_TF As String = Trim(StrConv(Me.ANS_TAXI_SEISAN_TESURYO_TF.Text, VbStrConv.Narrow))
-        Dim wANS_JINKENHI_TF As String = Trim(StrConv(Me.ANS_JINKENHI_TF.Text, VbStrConv.Narrow))
-        Dim wANS_OTHER_TF As String = Trim(StrConv(Me.ANS_OTHER_TF.Text, VbStrConv.Narrow))
-        Dim wANS_KANRIHI_TF As String = Trim(StrConv(Me.ANS_KANRIHI_TF.Text, VbStrConv.Narrow))
+        '41120200
+        Dim wANS_HOTELHI_TF As String = Trim(Replace(StrConv(Me.ANS_HOTELHI_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_KOTSUHI_TF As String = Trim(Replace(StrConv(Me.ANS_KOTSUHI_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_TAXI_TF As String = Trim(Replace(StrConv(Me.ANS_TAXI_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_TEHAI_TESURYO_TF As String = Trim(Replace(StrConv(Me.ANS_TEHAI_TESURYO_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_TAXI_HAKKEN_TESURYO_TF As String = Trim(Replace(StrConv(Me.ANS_TAXI_HAKKEN_TESURYO_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_TAXI_SEISAN_TESURYO_TF As String = Trim(Replace(StrConv(Me.ANS_TAXI_SEISAN_TESURYO_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_JINKENHI_TF As String = Trim(Replace(StrConv(Me.ANS_JINKENHI_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_OTHER_TF As String = Trim(Replace(StrConv(Me.ANS_OTHER_TF.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_KANRIHI_TF As String = Trim(Replace(StrConv(Me.ANS_KANRIHI_TF.Text, VbStrConv.Narrow), ",", ""))
 
         If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_HOTELHI_TF)) AndAlso _
            CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KOTSUHI_TF)) AndAlso _
@@ -718,18 +721,37 @@ Partial Public Class KaijoRegist
            CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_OTHER_TF)) AndAlso _
            CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KANRIHI_TF)) Then
             Me.ANS_41120200_TF.Text = AppModule.GetName_ANS_41120200_TF(wANS_HOTELHI_TF, wANS_KOTSUHI_TF, wANS_TAXI_TF, wANS_TEHAI_TESURYO_TF, wANS_TAXI_HAKKEN_TESURYO_TF, wANS_TAXI_SEISAN_TESURYO_TF, wANS_JINKENHI_TF, wANS_OTHER_TF, wANS_KANRIHI_TF)
+            wANS_TOTAL_TF += CmnModule.DbVal(Replace(Me.ANS_41120200_TF.Text, ",", ""))
         End If
+
+        Me.ANS_TOTAL_TF.Text = AppModule.GetName_ANS_TOTAL_TF(wANS_TOTAL_TF)
     End Sub
-    Protected Sub BtnCalc_41120200_T_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_41120200_T.Click
-        Dim wANS_JINKENHI_T As String = Trim(StrConv(Me.ANS_JINKENHI_T.Text, VbStrConv.Narrow))
-        Dim wANS_OTHER_T As String = Trim(StrConv(Me.ANS_OTHER_T.Text, VbStrConv.Narrow))
-        Dim wANS_KANRIHI_T As String = Trim(StrConv(Me.ANS_KANRIHI_T.Text, VbStrConv.Narrow))
+    Protected Sub BtnCalc_ANS_TOTAL_T_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_ANS_TOTAL_T.Click
+        Dim wANS_TOTAL_T As Long = 0
+
+        '991330401
+        Dim wANS_KAIJOUHI_T As String = Trim(Replace(StrConv(Me.ANS_KAIJOUHI_T.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_KIZAIHI_T As String = Trim(Replace(StrConv(Me.ANS_KIZAIHI_T.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_INSHOKUHI_T As String = Trim(Replace(StrConv(Me.ANS_INSHOKUHI_T.Text, VbStrConv.Narrow), ",", ""))
+
+        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KAIJOUHI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KIZAIHI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_INSHOKUHI_T)) Then
+            Me.ANS_991330401_T.Text = AppModule.GetName_ANS_991330401_T(wANS_KAIJOUHI_T, wANS_KIZAIHI_T, wANS_INSHOKUHI_T)
+            wANS_TOTAL_T += CmnModule.DbVal(Replace(Me.ANS_991330401_T.Text, ",", ""))
+        End If
+
+        '41120200
+        Dim wANS_JINKENHI_T As String = Trim(Replace(StrConv(Me.ANS_JINKENHI_T.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_OTHER_T As String = Trim(Replace(StrConv(Me.ANS_OTHER_T.Text, VbStrConv.Narrow), ",", ""))
+        Dim wANS_KANRIHI_T As String = Trim(Replace(StrConv(Me.ANS_KANRIHI_T.Text, VbStrConv.Narrow), ",", ""))
 
         If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_JINKENHI_T)) AndAlso _
            CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_OTHER_T)) AndAlso _
            CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KANRIHI_T)) Then
             Me.ANS_41120200_T.Text = AppModule.GetName_ANS_41120200_T(wANS_JINKENHI_T, wANS_OTHER_T, wANS_KANRIHI_T)
+            wANS_TOTAL_T += CmnModule.DbVal(Replace(Me.ANS_41120200_T.Text, ",", ""))
         End If
+
+        Me.ANS_TOTAL_T.Text = AppModule.GetName_ANS_TOTAL_T(wANS_TOTAL_T)
     End Sub
 
     '[キャンセル]
