@@ -137,6 +137,10 @@ Partial Public Class KaijoRegist
             '履歴からの場合、キャンセル以外のボタンを非表示にする
             Me.BtnShisetsuKensaku.Visible = False
             Me.BtnCalc_MITSUMORI.Visible = False
+            Me.BtnCalc_991330401_TF.Visible = False
+            Me.BtnCalc_41120200_TF.Visible = False
+            Me.BtnCalc_991330401_T.Visible = False
+            Me.BtnCalc_41120200_T.Visible = False
             Me.BtnRireki.Visible = False
             Me.BtnPrint.Visible = False
             Me.BtnNozomi.Visible = False
@@ -145,6 +149,10 @@ Partial Public Class KaijoRegist
         Else
             Me.BtnShisetsuKensaku.Visible = True
             Me.BtnCalc_MITSUMORI.Visible = True
+            Me.BtnCalc_991330401_TF.Visible = True
+            Me.BtnCalc_41120200_TF.Visible = True
+            Me.BtnCalc_991330401_T.Visible = True
+            Me.BtnCalc_41120200_T.Visible = True
             Me.BtnRireki.Visible = True
             Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
@@ -226,8 +234,19 @@ Partial Public Class KaijoRegist
         Me.IROUKAI_SANKA_YOTEI_CNT.Text = AppModule.GetName_IROUKAI_SANKA_YOTEI_CNT(TBL_KAIJO(SEQ).IROUKAI_SANKA_YOTEI_CNT)
         Me.KOUSHI_ROOM_TEHAI_Yes.Text = AppModule.GetName_KOUSHI_ROOM_TEHAI_Yes(TBL_KAIJO(SEQ).KOUSHI_ROOM_TEHAI)
         Me.KOUSHI_ROOM_TEHAI_No.Text = AppModule.GetName_KOUSHI_ROOM_TEHAI_No(TBL_KAIJO(SEQ).KOUSHI_ROOM_TEHAI)
+        Me.KOUSHI_ROOM_FROM.Text = AppModule.GetName_KOUSHI_ROOM_FROM(TBL_KAIJO(SEQ).KOUSHI_ROOM_FROM)
+        Me.KOUSHI_ROOM_CNT.Text = AppModule.GetName_KOUSHI_ROOM_CNT(TBL_KAIJO(SEQ).KOUSHI_ROOM_CNT)
+        Me.SHAIN_ROOM_TEHAI_Yes.Text = AppModule.GetName_SHAIN_ROOM_TEHAI_yes(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI)
+        Me.SHAIN_ROOM_TEHAI_No.Text = AppModule.GetName_SHAIN_ROOM_TEHAI_No(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI)
+        Me.SHAIN_ROOM_CNT.Text = AppModule.GetName_SHAIN_ROOM_CNT(TBL_KAIJO(SEQ).SHAIN_ROOM_CNT)
         Me.MANAGER_KAIJO_TEHAI_Yes.Text = AppModule.GetName_MANAGER_KAIJO_TEHAI_Yes(TBL_KAIJO(SEQ).MANAGER_KAIJO_TEHAI)
         Me.MANAGER_KAIJO_TEHAI_No.Text = AppModule.GetName_MANAGER_KAIJO_TEHAI_No(TBL_KAIJO(SEQ).MANAGER_KAIJO_TEHAI)
+        Me.MANAGER_ROOM_FROM.Text = AppModule.GetName_MANAGER_ROOM_FROM(TBL_KAIJO(SEQ).MANAGER_ROOM_FROM)
+        Me.MANAGER_ROOM_CNT.Text = AppModule.GetName_MANAGER_ROOM_CNT(TBL_KAIJO(SEQ).MANAGER_ROOM_CNT)
+        Me.REQ_ROOM_CNT.Text = AppModule.GetName_REQ_ROOM_CNT(TBL_KAIJO(SEQ).REQ_ROOM_CNT)
+        Me.REQ_STAY_DATE.Text = AppModule.GetName_REQ_STAY_DATE(TBL_KAIJO(SEQ).REQ_STAY_DATE)
+        Me.REQ_KOTSU_CNT.Text = AppModule.GetName_REQ_KOTSU_CNT(TBL_KAIJO(SEQ).REQ_KOTSU_CNT)
+        Me.REQ_TAXI_CNT.Text = AppModule.GetName_REQ_TAXI_CNT(TBL_KAIJO(SEQ).REQ_TAXI_CNT)
 
         '回答
         AppModule.SetForm_ANS_STATUS_TEHAI(TBL_KAIJO(SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)

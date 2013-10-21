@@ -438,7 +438,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left">
-							<table cellpadding="2" cellspacing="0">
+							<table cellpadding="2" cellspacing="0" style="margin-bottom: 3px;">
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp2" style="width: 75px;" rowspan="2">
 										必要会場
@@ -637,7 +637,7 @@
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
 										宿泊希望日
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 100px;">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
 										<asp:Label ID="REQ_STAY_DATE" runat="server" Text="yyyy/MM/dd"></asp:Label>
 									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 180px;">

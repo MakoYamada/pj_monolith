@@ -352,6 +352,18 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class SHAIN_ROOM_TEHAI
+            '社員控室　要・不要
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "2"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "要"
+                Public Const No As String = "不要"
+            End Class
+        End Class
+
         Public Class IKENKOUKAN_KAIJO_TEHAI
             '意見交換会場　要・不要
             Public Class Code

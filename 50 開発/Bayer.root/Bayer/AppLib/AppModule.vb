@@ -1612,6 +1612,9 @@ Public Class AppModule
     Public Shared Function GetName_KOUSHI_ROOM_TIME1(ByVal KOUSHI_ROOM_TIME1 As String) As String
         Return KOUSHI_ROOM_TIME1
     End Function
+    Public Shared Function GetName_KOUSHI_ROOM_FROM(ByVal KOUSHI_ROOM_FROM As String) As String
+        Return KOUSHI_ROOM_FROM
+    End Function
 
     '講師控室　終了時間
     Public Shared Function GetName_KOUSHI_ROOM_TIME2(ByVal KOUSHI_ROOM_TIME2 As String) As String
@@ -1621,6 +1624,45 @@ Public Class AppModule
     '講師控室　室数
     Public Shared Function GetName_KOUSHI_ROOM_CNT(ByVal KOUSHI_ROOM_CNT As String) As String
         Return KOUSHI_ROOM_CNT
+    End Function
+
+
+    '社員控室　要・不要
+    Public Shared Function GetName_SHAIN_ROOM_TEHAI(ByVal SHAIN_ROOM_TEHAI As String) As String
+        Select Case SHAIN_ROOM_TEHAI
+            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.Yes, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.Yes
+                Return AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.Yes
+            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.No, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.No
+                Return AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+    Public Shared Function GetName_SHAIN_ROOM_TEHAI_Yes(ByVal SHAIN_ROOM_TEHAI As String) As String
+        Select Case SHAIN_ROOM_TEHAI
+            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.Yes, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.Yes
+                Return "●"
+            Case Else
+                Return "○"
+        End Select
+    End Function
+    Public Shared Function GetName_SHAIN_ROOM_TEHAI_No(ByVal SHAIN_ROOM_TEHAI As String) As String
+        Select Case SHAIN_ROOM_TEHAI
+            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.No, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.No
+                Return "●"
+            Case Else
+                Return "○"
+        End Select
+    End Function
+
+    '社員控室 人数
+    Public Shared Function GetName_SHAIN_ROOM_CNT(ByVal SHAIN_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(SHAIN_ROOM_CNT)
+        Else
+            Return SHAIN_ROOM_CNT
+        End If
     End Function
 
     '世話人会場　要・不要
@@ -1650,6 +1692,20 @@ Public Class AppModule
             Case Else
                 Return "○"
         End Select
+    End Function
+
+    '世話人会場　開始時間
+    Public Shared Function GetName_MANAGER_ROOM_FROM(ByVal MANAGER_ROOM_FROM As String) As String
+        Return MANAGER_ROOM_FROM
+    End Function
+
+    '世話人控室 人数
+    Public Shared Function GetName_MANAGER_ROOM_CNT(ByVal MANAGER_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(MANAGER_ROOM_CNT)
+        Else
+            Return MANAGER_ROOM_CNT
+        End If
     End Function
 
     '世話人会場　開始時間
@@ -1728,6 +1784,47 @@ Public Class AppModule
         Return wStr
     End Function
 
+    '(依頼)宿泊希望者数
+    Public Shared Function GetName_REQ_ROOM_CNT(ByVal REQ_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(REQ_ROOM_CNT)
+        Else
+            Return REQ_ROOM_CNT
+        End If
+    End Function
+
+    '(依頼)宿泊希望日
+    Public Shared Function GetName_REQ_STAY_DATE(ByVal REQ_STAY_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = True Then
+            Return CmnModule.Format_Date(REQ_STAY_DATE, CmnModule.DateFormatType.YYYYMD)
+        Else
+            Dim wStr As String = ""
+            wStr = CmnModule.Format_Date(Trim(REQ_STAY_DATE), CmnModule.DateFormatType.YYYYMD) _
+                 & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_STAY_DATE), CmnModule.DateFormatType.YYYYMD), True)
+            wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
+            wStr = Replace(wStr, "月0", "月")
+            If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
+            Return wStr
+        End If
+    End Function
+
+    '(依頼)交通手配予定人数(JR/AIR) 
+    Public Shared Function GetName_REQ_KOTSU_CNT(ByVal REQ_KOTSU_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(REQ_KOTSU_CNT)
+        Else
+            Return REQ_KOTSU_CNT
+        End If
+    End Function
+
+    '(依頼)タクシー手配予定人数
+    Public Shared Function GetName_REQ_TAXI_CNT(ByVal REQ_TAXI_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(REQ_TAXI_CNT)
+        Else
+            Return REQ_TAXI_CNT
+        End If
+    End Function
 
     '見積額（非課税）
     Public Shared Function GetName_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
