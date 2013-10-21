@@ -10,7 +10,7 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    Private Const COL_COUNT As Integer = 21 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 30 'ファイルの項目数
 
     Private Enum COL_NO
         Field1 = 0
@@ -34,6 +34,15 @@ Public Class Proc
         Field19
         Field20
         Field21
+        Field22
+        Field23
+        Field24
+        Field25
+        Field26
+        Field27
+        Field28
+        Field29
+        Field30
     End Enum
 
     Private Class COL_NAME
@@ -55,9 +64,18 @@ Public Class Proc
         Public Const Field16 As String = "慰労会会場 (要・不要)"
         Public Const Field17 As String = "慰労会参加予定者数"
         Public Const Field18 As String = "講師控室 (要・不要)"
-        Public Const Field19 As String = "社員控室 (要・不要)"
-        Public Const Field20 As String = "世話人会会場 (要・不要)"
-        Public Const Field21 As String = "その他備考欄"
+        Public Const Field19 As String = "講師控室 (時間 From)"
+        Public Const Field20 As String = "講師控室 (人数)"
+        Public Const Field21 As String = "社員控室 (要・不要)"
+        Public Const Field22 As String = "社員控室 (人数)"
+        Public Const Field23 As String = "世話人会会場 (要・不要)"
+        Public Const Field24 As String = "世話人控室 (時間 From)"
+        Public Const Field25 As String = "世話人控室 (人数)"
+        Public Const Field26 As String = "宿泊希望室数"
+        Public Const Field27 As String = "宿泊希望日"
+        Public Const Field28 As String = "交通手配予定人数（JR/AIR）"
+        Public Const Field29 As String = "タクシー手配予定人数"
+        Public Const Field30 As String = "その他備考欄"
     End Class
 
 #End Region
@@ -197,7 +215,7 @@ Public Class Proc
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
 
-        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct
+        Dim TBL_LOG As New TableDef.TBL_LOG.DataStruct
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
@@ -244,8 +262,7 @@ Public Class Proc
         TBL_KAIJO_Ins.TEHAI_ID = fileData(COL_NO.Field2)
         TBL_KAIJO_Ins.KOUENKAI_NO = fileData(COL_NO.Field3)
         TBL_KAIJO_Ins.REQ_STATUS_TEHAI = fileData(COL_NO.Field4)
-        'TODO:ステータス初期値確認
-        TBL_KAIJO_Ins.ANS_STATUS_TEHAI = ""
+        TBL_KAIJO_Ins.ANS_STATUS_TEHAI = AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai
         TBL_KAIJO_Ins.TIME_STAMP_BYL = fileData(COL_NO.Field5)
 
         TBL_KAIJO_Ins.SHONIN_NAME = fileData(COL_NO.Field6)
@@ -261,10 +278,21 @@ Public Class Proc
         TBL_KAIJO_Ins.IROUKAI_KAIJO_TEHAI = fileData(COL_NO.Field16)
         TBL_KAIJO_Ins.IROUKAI_SANKA_YOTEI_CNT = fileData(COL_NO.Field17)
         TBL_KAIJO_Ins.KOUSHI_ROOM_TEHAI = fileData(COL_NO.Field18)
-        TBL_KAIJO_Ins.SHAIN_ROOM_TEHAI = fileData(COL_NO.Field19)
-        TBL_KAIJO_Ins.MANAGER_KAIJO_TEHAI = fileData(COL_NO.Field20)
-        TBL_KAIJO_Ins.KAIJO_URL = ""
-        TBL_KAIJO_Ins.OTHER_NOTE = fileData(COL_NO.Field21)
+        TBL_KAIJO_Ins.KOUSHI_ROOM_FROM = fileData(COL_NO.Field19)
+        TBL_KAIJO_Ins.KOUSHI_ROOM_CNT = fileData(COL_NO.Field20)
+
+        TBL_KAIJO_Ins.SHAIN_ROOM_TEHAI = fileData(COL_NO.Field21)
+        TBL_KAIJO_Ins.SHAIN_ROOM_CNT = fileData(COL_NO.Field22)
+
+        TBL_KAIJO_Ins.MANAGER_KAIJO_TEHAI = fileData(COL_NO.Field23)
+        TBL_KAIJO_Ins.MANAGER_ROOM_FROM = fileData(COL_NO.Field24)
+        TBL_KAIJO_Ins.MANAGER_ROOM_CNT = fileData(COL_NO.Field25)
+
+        TBL_KAIJO_Ins.REQ_ROOM_CNT = fileData(COL_NO.Field26)
+        TBL_KAIJO_Ins.REQ_STAY_DATE = fileData(COL_NO.Field27)
+        TBL_KAIJO_Ins.REQ_KOTSU_CNT = fileData(COL_NO.Field28)
+        TBL_KAIJO_Ins.REQ_TAXI_CNT = fileData(COL_NO.Field29)
+        TBL_KAIJO_Ins.OTHER_NOTE = fileData(COL_NO.Field30)
 
         TBL_KAIJO_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
         TBL_KAIJO_Ins.INPUT_USER = pbatchID
@@ -295,10 +323,30 @@ Public Class Proc
             TBL_KAIJO_Ins.ANS_SHAIN_ROOM_NAME = TBL_KAIJO(idx).ANS_SHAIN_ROOM_NAME
             TBL_KAIJO_Ins.ANS_MANAGER_KAIJO_NAME = TBL_KAIJO(idx).ANS_MANAGER_KAIJO_NAME
             TBL_KAIJO_Ins.ANS_KAISAI_NOTE = TBL_KAIJO(idx).ANS_KAISAI_NOTE
-            TBL_KAIJO_Ins.ANS_SEISAN_TF = TBL_KAIJO(idx).ANS_SEISAN_TF
-            TBL_KAIJO_Ins.ANS_SEISAN_T = TBL_KAIJO(idx).ANS_SEISAN_T
-            TBL_KAIJO_Ins.ANS_SEISANSHO_URL = TBL_KAIJO(idx).ANS_SEISANSHO_URL
-
+            TBL_KAIJO_Ins.ANS_KAIJOUHI_TF = TBL_KAIJO(idx).ANS_KAIJOUHI_TF
+            TBL_KAIJO_Ins.ANS_KIZAIHI_TF = TBL_KAIJO(idx).ANS_KIZAIHI_TF
+            TBL_KAIJO_Ins.ANS_INSHOKUHI_TF = TBL_KAIJO(idx).ANS_INSHOKUHI_TF
+            TBL_KAIJO_Ins.ANS_991330401_TF = TBL_KAIJO(idx).ANS_991330401_TF
+            TBL_KAIJO_Ins.ANS_HOTELHI_TF = TBL_KAIJO(idx).ANS_HOTELHI_TF
+            TBL_KAIJO_Ins.ANS_KOTSUHI_TF = TBL_KAIJO(idx).ANS_KOTSUHI_TF
+            TBL_KAIJO_Ins.ANS_TAXI_TF = TBL_KAIJO(idx).ANS_TAXI_TF
+            TBL_KAIJO_Ins.ANS_TEHAI_TESURYO_TF = TBL_KAIJO(idx).ANS_TEHAI_TESURYO_TF
+            TBL_KAIJO_Ins.ANS_TAXI_HAKKEN_TESURYO_TF = TBL_KAIJO(idx).ANS_TAXI_HAKKEN_TESURYO_TF
+            TBL_KAIJO_Ins.ANS_TAXI_SEISAN_TESURYO_TF = TBL_KAIJO(idx).ANS_TAXI_SEISAN_TESURYO_TF
+            TBL_KAIJO_Ins.ANS_JINKENHI_TF = TBL_KAIJO(idx).ANS_JINKENHI_TF
+            TBL_KAIJO_Ins.ANS_OTHER_TF = TBL_KAIJO(idx).ANS_OTHER_TF
+            TBL_KAIJO_Ins.ANS_KANRIHI_TF = TBL_KAIJO(idx).ANS_KANRIHI_TF
+            TBL_KAIJO_Ins.ANS_41120200_TF = TBL_KAIJO(idx).ANS_41120200_TF
+            TBL_KAIJO_Ins.ANS_TOTAL_TF = TBL_KAIJO(idx).ANS_TOTAL_TF
+            TBL_KAIJO_Ins.ANS_KAIJOUHI_T = TBL_KAIJO(idx).ANS_KAIJOUHI_T
+            TBL_KAIJO_Ins.ANS_KIZAIHI_T = TBL_KAIJO(idx).ANS_KIZAIHI_T
+            TBL_KAIJO_Ins.ANS_INSHOKUHI_T = TBL_KAIJO(idx).ANS_INSHOKUHI_T
+            TBL_KAIJO_Ins.ANS_991330401_T = TBL_KAIJO(idx).ANS_991330401_T
+            TBL_KAIJO_Ins.ANS_JINKENHI_T = TBL_KAIJO(idx).ANS_JINKENHI_T
+            TBL_KAIJO_Ins.ANS_OTHER_T = TBL_KAIJO(idx).ANS_OTHER_T
+            TBL_KAIJO_Ins.ANS_KANRIHI_T = TBL_KAIJO(idx).ANS_KANRIHI_T
+            TBL_KAIJO_Ins.ANS_41120200_T = TBL_KAIJO(idx).ANS_41120200_T
+            TBL_KAIJO_Ins.ANS_TOTAL_T = TBL_KAIJO(idx).ANS_TOTAL_T
         End If
 
         Return TBL_KAIJO_Ins
