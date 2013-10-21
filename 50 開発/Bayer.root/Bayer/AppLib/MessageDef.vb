@@ -158,6 +158,7 @@ Public Class MessageDef
         Public Const DataUpdate As String = "更新します。よろしいですか？"
         Public Const DataCancel As String = "キャンセルします。よろしいですか？"
         Public Const DataDelete As String = "削除します。よろしいですか？"
+        Public Const Copy As String = "依頼内容を回答欄に上書きコピーします。よろしいですか？"
     End Class
 
     Public Class Message
