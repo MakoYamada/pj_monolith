@@ -115,6 +115,8 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_ROOM_TYPE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTEL_SMOKING)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTEL_NOTE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI_CANCEL)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_STATUS_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_KOTSUKIKAN_1)))
@@ -125,7 +127,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_TIME2_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_1)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU1)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_STATUS_2)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_KOTSUKIKAN_2)))
@@ -136,7 +138,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_TIME2_2)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_2)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_2)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU2)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_STATUS_3)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_KOTSUKIKAN_3)))
@@ -147,7 +149,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_TIME2_3)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_3)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_3)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU3)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_STATUS_4)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_KOTSUKIKAN_4)))
@@ -158,7 +160,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_TIME2_4)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_4)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_4)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU4)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_STATUS_5)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_KOTSUKIKAN_5)))
@@ -169,7 +171,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_TIME2_5)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_5)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_5)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_SEAT_KIBOU5)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_STATUS_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_KOTSUKIKAN_1)))
@@ -180,7 +182,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_TIME2_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_1)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU1)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_STATUS_2)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_KOTSUKIKAN_2)))
@@ -191,7 +193,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_TIME2_2)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_2)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_2)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU2)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_STATUS_3)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_KOTSUKIKAN_3)))
@@ -202,7 +204,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_TIME2_3)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_3)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_3)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU3)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_STATUS_4)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_KOTSUKIKAN_4)))
@@ -213,7 +215,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_TIME2_4)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_4)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_4)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU4)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_STATUS_5)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_KOTSUKIKAN_5)))
@@ -224,7 +226,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_TIME2_5)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_5)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_5)))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_SEAT_KIBOU5)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KOTSU_BIKO)))
 
@@ -234,6 +236,9 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_CANCELLATION)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_AIR_FARE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_AIR_CANCELLATION)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_TESURYO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TICKET_SEND_DAY)))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_1)))
@@ -318,12 +323,6 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NOTE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_O_TEHAI)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_F_TEHAI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_HOTEL_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_HOTEL_ADDRESS)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_HOTEL_TEL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_CHECKIN_TIME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_CHECKOUT_TIME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_HOTEL_SMOKING)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_HOTEL_NOTE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_KOTSUHI)))
                 sb.Append(CmnCsv.Quotes(CsvData(wCnt).ANS_MR_HOTELHI))
@@ -365,7 +364,7 @@ Public Class Proc
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
 
-        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct
+        Dim TBL_LOG As New TableDef.TBL_LOG.DataStruct
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
