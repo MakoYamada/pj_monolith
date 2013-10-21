@@ -35,7 +35,6 @@ Partial Public Class DrRireki
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
-        Session.Item(SessionDef.Joken) = Joken
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -129,7 +128,7 @@ Partial Public Class DrRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO) & " DESC"
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.bySALESFORCE_ID(TBL_KOTSUHOTEL(SEQ).SALEFORCE_ID) & " DESC"
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
