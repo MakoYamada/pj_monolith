@@ -90,39 +90,43 @@ Public Class Proc
         Dim sw As New StreamWriter(fileName, False, New System.Text.UTF8Encoding(False))
         sw.NewLine = vbCrLf
 
-        'TODO:ファイルレイアウトの変更があった場合反映させること！
-
         Try
             Dim sb As New System.Text.StringBuilder
             For wCnt As Integer = 0 To UBound(CsvData)
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISAN_YM)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHOUNIN_KUBUN)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHOUNIN_DATE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAIJOHI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIZAIHI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INSHOKUHI_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TATEKAE_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_991330401_1)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UNEIHI_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JINKENHI_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_41120200_1)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JR_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).AIR_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TRAFFIC_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTEL_COMMISSION_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_COMMISSION_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_SEISAN_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_41120200_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JINKENHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KANRIHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_41120200_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAIJOUHI_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIZAIHI_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INSHOKUHI_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_991330401_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JINKENHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KANRIHI_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_41120200_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYU_NO_TOPTOUR)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_SEISAN_T)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISANSHO_URL)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TICKET_URL)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_JR)))
                 sb.Append(CmnCsv.Quotes(CsvData(wCnt).MR_HOTEL))
@@ -164,7 +168,7 @@ Public Class Proc
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
 
-        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct
+        Dim TBL_LOG As New TableDef.TBL_LOG.DataStruct
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
