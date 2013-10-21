@@ -890,7 +890,7 @@
 													小計
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
-													<asp:Label ID="ANS_991330401_TF" runat="server" Text="1,234,567,890"></asp:Label>
+													<asp:Label ID="ANS_991330401_TF" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
 													円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">

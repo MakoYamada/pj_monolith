@@ -1765,6 +1765,44 @@ Public Class AppModule
         End If
     End Function
 
+    '見積額合計関連
+    Public Shared Function GetName_ANS_991330401_TF(ByVal ANS_KAIJOUHI_TF As String, ByVal ANS_KIZAIHI_TF As String, ByVal ANS_INSHOKUHI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_KAIJOUHI_TF) + CmnModule.DbVal(ANS_KIZAIHI_TF) + CmnModule.DbVal(ANS_INSHOKUHI_TF)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
+    End Function
+    Public Shared Function GetName_ANS_991330401_T(ByVal ANS_KAIJOUHI_T As String, ByVal ANS_KIZAIHI_T As String, ByVal ANS_INSHOKUHI_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_KAIJOUHI_T) + CmnModule.DbVal(ANS_KIZAIHI_T) + CmnModule.DbVal(ANS_INSHOKUHI_T)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
+    End Function
+    Public Shared Function GetName_ANS_41120200_TF(ByVal ANS_HOTELHI_TF As String, ByVal ANS_KOTSUHI_TF As String, ByVal ANS_TAXI_TF As String, ByVal ANS_TEHAI_TESURYO_TF As String, ByVal ANS_TAXI_HAKKEN_TESURYO_TF As String, ByVal ANS_TAXI_SEISAN_TESURYO_TF As String, ByVal ANS_JINKENHI_TF As String, ByVal ANS_OTHER_TF As String, ByVal ANS_KANRIHI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_HOTELHI_TF) + CmnModule.DbVal(ANS_KOTSUHI_TF) + CmnModule.DbVal(ANS_TAXI_TF) + CmnModule.DbVal(ANS_TEHAI_TESURYO_TF) + CmnModule.DbVal(ANS_TAXI_HAKKEN_TESURYO_TF) + CmnModule.DbVal(ANS_TAXI_SEISAN_TESURYO_TF) + CmnModule.DbVal(ANS_JINKENHI_TF) + CmnModule.DbVal(ANS_OTHER_TF) + CmnModule.DbVal(ANS_KANRIHI_TF)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
+    End Function
+    Public Shared Function GetName_ANS_41120200_T(ByVal ANS_JINKENHI_T As String, ByVal ANS_OTHER_T As String, ByVal ANS_KAIJOUHI_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_JINKENHI_T) + CmnModule.DbVal(ANS_OTHER_T) + CmnModule.DbVal(ANS_KAIJOUHI_T)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
+    End Function
+
     '精算額合計
     Public Shared Function GetName_ANS_SEISAN_TOTAL(ByVal ANS_SEISAN_TOTAL As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
@@ -7374,6 +7412,22 @@ Public Class AppModule
 
     Public Shared Function GetValue_ANS_KANRIHI_T(ByVal ANS_KANRIHI_T As TextBox) As String
         Return Trim(StrConv(ANS_KANRIHI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_991330401_TF(ByVal ANS_KAIJOUHI_TF As TextBox, ByVal ANS_KIZAIHI_TF As TextBox, ByVal ANS_INSHOKUHI_TF As TextBox) As String
+        Return CmnModule.DbVal(StrConv(ANS_KAIJOUHI_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_KIZAIHI_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_INSHOKUHI_TF.Text, VbStrConv.Narrow)).ToString
+    End Function
+
+    Public Shared Function GetValue_ANS_991330401_T(ByVal ANS_KAIJOUHI_T As TextBox, ByVal ANS_KIZAIHI_T As TextBox, ByVal ANS_INSHOKUHI_T As TextBox) As String
+        Return CmnModule.DbVal(StrConv(ANS_KAIJOUHI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_KIZAIHI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_INSHOKUHI_T.Text, VbStrConv.Narrow)).ToString
+    End Function
+
+    Public Shared Function GetValue_ANS_41120200_TF(ByVal ANS_HOTELHI_TF As TextBox, ByVal ANS_KOTSUHI_TF As TextBox, ByVal ANS_TAXI_TF As TextBox, ByVal ANS_TEHAI_TESURYO_TF As TextBox, ByVal ANS_TAXI_HAKKEN_TESURYO_TF As TextBox, ByVal ANS_TAXI_SEISAN_TESURYO_TF As TextBox, ByVal ANS_JINKENHI_TF As TextBox, ByVal ANS_OTHER_TF As TextBox, ByVal ANS_KANRIHI_TF As TextBox) As String
+        Return CmnModule.DbVal(StrConv(ANS_HOTELHI_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_KOTSUHI_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_TAXI_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_TEHAI_TESURYO_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_TAXI_HAKKEN_TESURYO_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_TAXI_SEISAN_TESURYO_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_JINKENHI_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_OTHER_TF.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_KANRIHI_TF.Text, VbStrConv.Narrow)).ToString
+    End Function
+
+    Public Shared Function GetValue_ANS_41120200_T(ByVal ANS_JINKENHI_T As TextBox, ByVal ANS_OTHER_T As TextBox, ByVal ANS_KANRIHI_T As TextBox) As String
+        Return CmnModule.DbVal(StrConv(ANS_JINKENHI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_OTHER_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_KANRIHI_T.Text, VbStrConv.Narrow)).toString
     End Function
 
     'マスタ全般
