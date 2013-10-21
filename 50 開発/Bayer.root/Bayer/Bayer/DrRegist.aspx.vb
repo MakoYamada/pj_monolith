@@ -1906,9 +1906,9 @@ Partial Public Class DrRegist
         If ANS_O_KOTSUKIKAN_1.SelectedIndex >= 1 OrElse _
             ANS_O_DATE_1.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT1_1.Text.Trim <> String.Empty OrElse _
-            ANS_O_AIRPORT1_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT2_1.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME1_1.Text.Trim <> String.Empty OrElse _
-            ANS_O_TIME1_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME2_1.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_1.Text.Trim <> String.Empty OrElse _
             ANS_O_SEAT_1.SelectedIndex >= 1 OrElse _
             ANS_O_SEAT_KIBOU1.SelectedIndex >= 1 Then
@@ -1918,5 +1918,265 @@ Partial Public Class DrRegist
             End If
         End If
 
+        '交通機関
+        For i As Integer = 0 To ANS_O_KOTSUKIKAN_1.Items.Count - 1
+            If REQ_O_KOTSUKIKAN_1.Text = ANS_O_KOTSUKIKAN_1.Items(i).Text Then
+                ANS_O_KOTSUKIKAN_1.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_O_DATE_1.Text = Trim(Replace(REQ_O_DATE_1.Text, "/", ""))
+        '出発地
+        ANS_O_AIRPORT1_1.Text = Trim(REQ_O_AIRPORT1_1.Text)
+        '到着地
+        ANS_O_AIRPORT2_1.Text = Trim(REQ_O_AIRPORT2_1.Text)
+        '出発時刻
+        ANS_O_TIME1_1.Text = Trim(Replace(REQ_O_TIME1_1.Text, ":", ""))
+        '到着時刻
+        ANS_O_TIME2_1.Text = Trim(Replace(REQ_O_TIME2_1.Text, ":", ""))
+        '列車・便名
+        ANS_O_BIN_1.Text = Trim(REQ_O_BIN_1.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_O_SEAT_1.Items.Count - 1
+            If REQ_O_SEAT_1.Text = ANS_O_SEAT_1.Items(i).Text Then
+                ANS_O_SEAT_1.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_O_SEAT_KIBOU1.Items.Count - 1
+            If REQ_O_SEAT_KIBOU1.Text = ANS_O_SEAT_KIBOU1.Items(i).Text Then
+                ANS_O_SEAT_KIBOU1.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路２コピーボタン
+    Protected Sub BtnCopy_O_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_2.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_O_KOTSUKIKAN_2.SelectedIndex >= 1 OrElse _
+            ANS_O_DATE_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT1_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT2_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME1_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME2_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_BIN_2.Text.Trim <> String.Empty OrElse _
+            ANS_O_SEAT_2.SelectedIndex >= 1 OrElse _
+            ANS_O_SEAT_kibou2.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_O_KOTSUKIKAN_2.Items.Count - 1
+            If REQ_O_KOTSUKIKAN_2.Text = ANS_O_KOTSUKIKAN_2.Items(i).Text Then
+                ANS_O_KOTSUKIKAN_2.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_O_DATE_2.Text = Trim(Replace(REQ_O_DATE_2.Text, "/", ""))
+        '出発地
+        ANS_O_AIRPORT1_2.Text = Trim(REQ_O_AIRPORT1_2.Text)
+        '到着地
+        ANS_O_AIRPORT2_2.Text = Trim(REQ_O_AIRPORT2_2.Text)
+        '出発時刻
+        ANS_O_TIME1_2.Text = Trim(Replace(REQ_O_TIME1_2.Text, ":", ""))
+        '到着時刻
+        ANS_O_TIME2_2.Text = Trim(Replace(REQ_O_TIME2_2.Text, ":", ""))
+        '列車・便名
+        ANS_O_BIN_2.Text = Trim(REQ_O_BIN_2.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_O_SEAT_2.Items.Count - 1
+            If REQ_O_SEAT_2.Text = ANS_O_SEAT_2.Items(i).Text Then
+                ANS_O_SEAT_2.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_O_SEAT_kibou2.Items.Count - 1
+            If REQ_O_SEAT_kibou2.Text = ANS_O_SEAT_kibou2.Items(i).Text Then
+                ANS_O_SEAT_kibou2.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路３コピーボタン
+    Protected Sub BtnCopy_O_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_3.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_O_KOTSUKIKAN_3.SelectedIndex >= 1 OrElse _
+            ANS_O_DATE_3.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT1_3.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT2_3.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME1_3.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME2_3.Text.Trim <> String.Empty OrElse _
+            ANS_O_BIN_3.Text.Trim <> String.Empty OrElse _
+            ANS_O_SEAT_3.SelectedIndex >= 1 OrElse _
+            ANS_O_SEAT_kibou3.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_O_KOTSUKIKAN_3.Items.Count - 1
+            If REQ_O_KOTSUKIKAN_3.Text = ANS_O_KOTSUKIKAN_3.Items(i).Text Then
+                ANS_O_KOTSUKIKAN_3.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_O_DATE_3.Text = Trim(Replace(REQ_O_DATE_3.Text, "/", ""))
+        '出発地
+        ANS_O_AIRPORT1_3.Text = Trim(REQ_O_AIRPORT1_3.Text)
+        '到着地
+        ANS_O_AIRPORT2_3.Text = Trim(REQ_O_AIRPORT2_3.Text)
+        '出発時刻
+        ANS_O_TIME1_3.Text = Trim(Replace(REQ_O_TIME1_3.Text, ":", ""))
+        '到着時刻
+        ANS_O_TIME2_3.Text = Trim(Replace(REQ_O_TIME2_3.Text, ":", ""))
+        '列車・便名
+        ANS_O_BIN_3.Text = Trim(REQ_O_BIN_3.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_O_SEAT_3.Items.Count - 1
+            If REQ_O_SEAT_3.Text = ANS_O_SEAT_3.Items(i).Text Then
+                ANS_O_SEAT_3.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_O_SEAT_kibou3.Items.Count - 1
+            If REQ_O_SEAT_kibou3.Text = ANS_O_SEAT_kibou3.Items(i).Text Then
+                ANS_O_SEAT_kibou3.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路４コピーボタン
+    Protected Sub BtnCopy_O_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_4.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_O_KOTSUKIKAN_4.SelectedIndex >= 1 OrElse _
+            ANS_O_DATE_4.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT1_4.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT2_4.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME1_4.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME2_4.Text.Trim <> String.Empty OrElse _
+            ANS_O_BIN_4.Text.Trim <> String.Empty OrElse _
+            ANS_O_SEAT_4.SelectedIndex >= 1 OrElse _
+            ANS_O_SEAT_kibou4.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_O_KOTSUKIKAN_4.Items.Count - 1
+            If REQ_O_KOTSUKIKAN_4.Text = ANS_O_KOTSUKIKAN_4.Items(i).Text Then
+                ANS_O_KOTSUKIKAN_4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_O_DATE_4.Text = Trim(Replace(REQ_O_DATE_4.Text, "/", ""))
+        '出発地
+        ANS_O_AIRPORT1_4.Text = Trim(REQ_O_AIRPORT1_4.Text)
+        '到着地
+        ANS_O_AIRPORT2_4.Text = Trim(REQ_O_AIRPORT2_4.Text)
+        '出発時刻
+        ANS_O_TIME1_4.Text = Trim(Replace(REQ_O_TIME1_4.Text, ":", ""))
+        '到着時刻
+        ANS_O_TIME2_4.Text = Trim(Replace(REQ_O_TIME2_4.Text, ":", ""))
+        '列車・便名
+        ANS_O_BIN_4.Text = Trim(REQ_O_BIN_4.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_O_SEAT_4.Items.Count - 1
+            If REQ_O_SEAT_4.Text = ANS_O_SEAT_4.Items(i).Text Then
+                ANS_O_SEAT_4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_O_SEAT_kibou4.Items.Count - 1
+            If REQ_O_SEAT_kibou4.Text = ANS_O_SEAT_kibou4.Items(i).Text Then
+                ANS_O_SEAT_kibou4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路５コピーボタン
+    Protected Sub BtnCopy_O_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_5.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_O_KOTSUKIKAN_5.SelectedIndex >= 1 OrElse _
+            ANS_O_DATE_5.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT1_5.Text.Trim <> String.Empty OrElse _
+            ANS_O_AIRPORT2_5.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME1_5.Text.Trim <> String.Empty OrElse _
+            ANS_O_TIME2_5.Text.Trim <> String.Empty OrElse _
+            ANS_O_BIN_5.Text.Trim <> String.Empty OrElse _
+            ANS_O_SEAT_5.SelectedIndex >= 1 OrElse _
+            ANS_O_SEAT_kibou4.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_O_KOTSUKIKAN_5.Items.Count - 1
+            If REQ_O_KOTSUKIKAN_5.Text = ANS_O_KOTSUKIKAN_5.Items(i).Text Then
+                ANS_O_KOTSUKIKAN_5.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_O_DATE_5.Text = Trim(Replace(REQ_O_DATE_5.Text, "/", ""))
+        '出発地
+        ANS_O_AIRPORT1_5.Text = Trim(REQ_O_AIRPORT1_5.Text)
+        '到着地
+        ANS_O_AIRPORT2_5.Text = Trim(REQ_O_AIRPORT2_5.Text)
+        '出発時刻
+        ANS_O_TIME1_5.Text = Trim(Replace(REQ_O_TIME1_5.Text, ":", ""))
+        '到着時刻
+        ANS_O_TIME2_5.Text = Trim(Replace(REQ_O_TIME2_5.Text, ":", ""))
+        '列車・便名
+        ANS_O_BIN_5.Text = Trim(REQ_O_BIN_5.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_O_SEAT_5.Items.Count - 1
+            If REQ_O_SEAT_5.Text = ANS_O_SEAT_5.Items(i).Text Then
+                ANS_O_SEAT_5.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_O_SEAT_kibou4.Items.Count - 1
+            If REQ_O_SEAT_kibou4.Text = ANS_O_SEAT_kibou4.Items(i).Text Then
+                ANS_O_SEAT_kibou4.SelectedIndex = i
+                Exit For
+            End If
+        Next
     End Sub
 End Class
