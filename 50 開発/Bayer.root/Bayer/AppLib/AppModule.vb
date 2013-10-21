@@ -671,8 +671,11 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.ACCOUNT_CD_T.ToUpper Then TBL_KAIJO.ACCOUNT_CD_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.ACCOUNT_CD_TF.ToUpper Then TBL_KAIJO.ACCOUNT_CD_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.ZETIA_CD.ToUpper Then TBL_KAIJO.ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SANKA_YOTEI_CNT.ToUpper Then TBL_KAIJO.SANKA_YOTEI_CNT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SANKA_YOTEI_CNT_NMBR.ToUpper Then TBL_KAIJO.SANKA_YOTEI_CNT_NMBR = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SANKA_YOTEI_CNT_MBR.ToUpper Then TBL_KAIJO.SANKA_YOTEI_CNT_MBR = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.SRM_HACYU_KBN.ToUpper Then TBL_KAIJO.SRM_HACYU_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.BU.ToUpper Then TBL_KAIJO.BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_JIGYOUBU.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_JIGYOUBU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_AREA.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_EIGYOSHO.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.KIKAKU_TANTO_NAME.ToUpper Then TBL_KAIJO.KIKAKU_TANTO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -1676,6 +1679,25 @@ Public Class AppModule
             End If
         End If
         Return wStr
+    End Function
+
+
+    'å©êœäzÅiîÒâ€ê≈Åj
+    Public Shared Function GetName_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(ANS_MITSUMORI_TF)
+        Else
+            Return ANS_MITSUMORI_TF
+        End If
+    End Function
+
+    'å©êœäzÅiâ€ê≈Åj
+    Public Shared Function GetName_ANS_MITSUMORI_T(ByVal ANS_MITSUMORI_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(ANS_MITSUMORI_T)
+        Else
+            Return ANS_MITSUMORI_T
+        End If
     End Function
 
     'å©êœäzçáåv
@@ -5621,6 +5643,80 @@ Public Class AppModule
         control.Text = GetName_ANS_MITSUMORI_TOTAL(ANS_MITSUMORI_TOTAL, ShortFormat)
     End Sub
 
+    '(âÒìö)å©êœä÷òA
+    Public Shared Sub SetForm_ANS_KAIJOUHI_TF(ByVal ANS_KAIJOUHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_KAIJOUHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_KIZAIHI_TF(ByVal ANS_KIZAIHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_KIZAIHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_INSHOKUHI_TF(ByVal ANS_INSHOKUHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_INSHOKUHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_HOTELHI_TF(ByVal ANS_HOTELHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_HOTELHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_KOTSUHI_TF(ByVal ANS_KOTSUHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_KOTSUHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_TAXI_TF(ByVal ANS_TAXI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_TAXI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_TEHAI_TESURYO_TF(ByVal ANS_TEHAI_TESURYO_TF As String, ByRef control As TextBox)
+        control.Text = ANS_TEHAI_TESURYO_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_TAXI_HAKKEN_TESURYO_TF(ByVal ANS_TAXI_HAKKEN_TESURYO_TF As String, ByRef control As TextBox)
+        control.Text = ANS_TAXI_HAKKEN_TESURYO_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_TAXI_SEISAN_TESURYO_TF(ByVal ANS_TAXI_SEISAN_TESURYO_TF As String, ByRef control As TextBox)
+        control.Text = ANS_TAXI_SEISAN_TESURYO_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_JINKENHI_TF(ByVal ANS_JINKENHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_JINKENHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_OTHER_TF(ByVal ANS_OTHER_TF As String, ByRef control As TextBox)
+        control.Text = ANS_OTHER_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_KANRIHI_TF(ByVal ANS_KANRIHI_TF As String, ByRef control As TextBox)
+        control.Text = ANS_KANRIHI_TF
+    End Sub
+
+    Public Shared Sub SetForm_ANS_KAIJOUHI_T(ByVal ANS_KAIJOUHI_T As String, ByRef control As TextBox)
+        control.Text = ANS_KAIJOUHI_T
+    End Sub
+
+    Public Shared Sub SetForm_ANS_KIZAIHI_T(ByVal ANS_KIZAIHI_T As String, ByRef control As TextBox)
+        control.Text = ANS_KIZAIHI_T
+    End Sub
+
+    Public Shared Sub SetForm_ANS_INSHOKUHI_T(ByVal ANS_INSHOKUHI_T As String, ByRef control As TextBox)
+        control.Text = ANS_INSHOKUHI_T
+    End Sub
+
+    Public Shared Sub SetForm_ANS_JINKENHI_T(ByVal ANS_JINKENHI_T As String, ByRef control As TextBox)
+        control.Text = ANS_JINKENHI_T
+    End Sub
+
+    Public Shared Sub SetForm_ANS_OTHER_T(ByVal ANS_OTHER_T As String, ByRef control As TextBox)
+        control.Text = ANS_OTHER_T
+    End Sub
+
+    Public Shared Sub SetForm_ANS_KANRIHI_T(ByVal ANS_KANRIHI_T As String, ByRef control As TextBox)
+        control.Text = ANS_KANRIHI_T
+    End Sub
+
+
     'ê∏éZäzÅiîÒâ€ê≈Åj
     Public Shared Sub SetForm_ANS_SEISAN_TF(ByVal ANS_SEISAN_TF As String, ByRef control As TextBox)
         control.Text = ANS_SEISAN_TF
@@ -7062,6 +7158,250 @@ Public Class AppModule
     Public Shared Function GetValue_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As DropDownList) As String
         Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI)
     End Function
+
+
+    'ÅyâÒìöÅzé{ê›ëIíËóùóR
+    Public Shared Function GetValue_ANS_SENTEI_RIYU(ByVal ANS_SENTEI_RIYU As TextBox) As String
+        Return Trim(ANS_SENTEI_RIYU.Text)
+    End Function
+
+    'ÅyâÒìöÅz äJç√ín (é{ê›óXï÷î‘çÜ)
+    Public Shared Function GetValue_ANS_SHISETSU_ZIP(ByVal ANS_SHISETSU_ZIP As TextBox) As String
+        Return Trim(ANS_SHISETSU_ZIP.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(çuâââÔâÔèÍñº)
+    Public Shared Function GetValue_ANS_KOUEN_KAIJO_NAME(ByVal ANS_KOUEN_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_KOUEN_KAIJO_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(çuâââÔâÔèÍÉtÉçÉA)
+    Public Shared Function GetValue_ANS_KOUEN_KAIJO_FLOOR(ByVal ANS_KOUEN_KAIJO_FLOOR As TextBox) As String
+        Return Trim(ANS_KOUEN_KAIJO_FLOOR.Text)
+    End Function
+
+    'ÅyâÒìöÅzé{ê›ñº
+    Public Shared Function GetValue_ANS_SHISETSU_NAME(ByVal ANS_SHISETSU_NAME As TextBox) As String
+        Return Trim(ANS_SHISETSU_NAME.Text)
+    End Function
+    Public Shared Function GetValue_SHISETSU_KANA(ByVal SHISETSU_KANA As TextBox) As String
+        Return Trim(SHISETSU_KANA.Text)
+    End Function
+
+    'ÅyâÒìöÅz äJç√ín (é{ê›èZèä)
+    Public Shared Function GetValue_ANS_SHISETSU_ADDRESS(ByVal ANS_SHISETSU_ADDRESS As TextBox) As String
+        Return Trim(ANS_SHISETSU_ADDRESS.Text)
+    End Function
+
+    'ÅyâÒìöÅz äJç√ín (é{ê›TEL)
+    Public Shared Function GetValue_ANS_SHISETSU_TEL(ByVal ANS_SHISETSU_TEL As TextBox) As String
+        Return Trim(StrConv(ANS_SHISETSU_TEL.Text, VbStrConv.Narrow))
+    End Function
+
+    'ÅyâÒìöÅz äJç√ín (é{ê›URL)
+    Public Shared Function GetValue_ANS_SHISETSU_URL(ByVal ANS_SHISETSU_URL As TextBox) As String
+        Return Trim(StrConv(ANS_SHISETSU_URL.Text, VbStrConv.Narrow))
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(à”å©åä∑âÔèÍñº)
+    Public Shared Function GetValue_ANS_IKENKOUKAN_KAIJO_NAME(ByVal ANS_IKENKOUKAN_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_IKENKOUKAN_KAIJO_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(à‘òJâÔâÔèÍñº)
+    Public Shared Function GetValue_ANS_IROUKAI_KAIJO_NAME(ByVal ANS_IROUKAI_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_IROUKAI_KAIJO_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(çuétçTé∫âÔèÍñº)
+    Public Shared Function GetValue_ANS_KOUSHI_ROOM_NAME(ByVal ANS_KOUSHI_ROOM_NAME As TextBox) As String
+        Return Trim(ANS_KOUSHI_ROOM_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(é–àıçTé∫âÔèÍñº)
+    Public Shared Function GetValue_ANS_SHAIN_ROOM_NAME(ByVal ANS_SHAIN_ROOM_NAME As TextBox) As String
+        Return Trim(ANS_SHAIN_ROOM_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(ê¢òbêlâÔâÔèÍñº)
+    Public Shared Function GetValue_ANS_MANAGER_KAIJO_NAME(ByVal ANS_MANAGER_KAIJO_NAME As TextBox) As String
+        Return Trim(ANS_MANAGER_KAIJO_NAME.Text)
+    End Function
+
+    'ÅyâÒìöÅzäJç√ín(îıçlóì)
+    Public Shared Function GetValue_ANS_KAISAI_NOTE(ByVal ANS_KAISAI_NOTE As TextBox) As String
+        Return Trim(ANS_KAISAI_NOTE.Text)
+    End Function
+
+    'å©êœäzÅiîÒâ€ê≈Åj
+    Public Shared Function GetValue_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    'å©êœäzÅiâ€ê≈Åj
+    Public Shared Function GetValue_ANS_MITSUMORI_T(ByVal ANS_MITSUMORI_T As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    'å©êœäzÅiçáåvÅj
+    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_TOTAL As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_TOTAL.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As TextBox, ByVal ANS_MITSUMORI_TF As TextBox) As String
+        Return CmnModule.DbVal(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow)).ToString
+    End Function
+
+    'å©êœèëï€ë∂èÍèäURL
+    Public Shared Function GetValue_ANS_MITSUMORI_URL(ByVal ANS_MITSUMORI_URL As TextBox) As String
+        Return Trim(StrConv(ANS_MITSUMORI_URL.Text, VbStrConv.Narrow))
+    End Function
+
+    '(âÒìö) å©êœä÷òA
+    Public Shared Function GetValue_ANS_KAIJOUHI_TF(ByVal ANS_KAIJOUHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_KAIJOUHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_KIZAIHI_TF(ByVal ANS_KIZAIHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_KIZAIHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_INSHOKUHI_TF(ByVal ANS_INSHOKUHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_INSHOKUHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_HOTELHI_TF(ByVal ANS_HOTELHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_HOTELHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_KOTSUHI_TF(ByVal ANS_KOTSUHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_KOTSUHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_TAXI_TF(ByVal ANS_TAXI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_TAXI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_TEHAI_TESURYO_TF(ByVal ANS_TEHAI_TESURYO_TF As TextBox) As String
+        Return Trim(StrConv(ANS_TEHAI_TESURYO_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_TAXI_HAKKEN_TESURYO_TF(ByVal ANS_TAXI_HAKKEN_TESURYO_TF As TextBox) As String
+        Return Trim(StrConv(ANS_TAXI_HAKKEN_TESURYO_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_TAXI_SEISAN_TESURYO_TF(ByVal ANS_TAXI_SEISAN_TESURYO_TF As TextBox) As String
+        Return Trim(StrConv(ANS_TAXI_SEISAN_TESURYO_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_JINKENHI_TF(ByVal ANS_JINKENHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_JINKENHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_OTHER_TF(ByVal ANS_OTHER_TF As TextBox) As String
+        Return Trim(StrConv(ANS_OTHER_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_KANRIHI_TF(ByVal ANS_KANRIHI_TF As TextBox) As String
+        Return Trim(StrConv(ANS_KANRIHI_TF.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_KAIJOUHI_T(ByVal ANS_KAIJOUHI_T As TextBox) As String
+        Return Trim(StrConv(ANS_KAIJOUHI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_KIZAIHI_T(ByVal ANS_KIZAIHI_T As TextBox) As String
+        Return Trim(StrConv(ANS_KIZAIHI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_INSHOKUHI_T(ByVal ANS_INSHOKUHI_T As TextBox) As String
+        Return Trim(StrConv(ANS_INSHOKUHI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_JINKENHI_T(ByVal ANS_JINKENHI_T As TextBox) As String
+        Return Trim(StrConv(ANS_JINKENHI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_OTHER_T(ByVal ANS_OTHER_T As TextBox) As String
+        Return Trim(StrConv(ANS_OTHER_T.Text, VbStrConv.Narrow))
+    End Function
+
+    Public Shared Function GetValue_ANS_KANRIHI_T(ByVal ANS_KANRIHI_T As TextBox) As String
+        Return Trim(StrConv(ANS_KANRIHI_T.Text, VbStrConv.Narrow))
+    End Function
+
+    'É}ÉXÉ^ëSî 
+    Public Shared Function GetValue_STOP_FLG(ByVal STOP_FLG As CheckBox) As String
+        If STOP_FLG.Checked = True Then
+            Return AppConst.STOP_FLG.Code.Stop
+        Else
+            Return ""
+        End If
+    End Function
+
+    'é{ê›É}ÉXÉ^ä÷òA
+    Public Shared Function GetValue_SHISETSU_NAME(ByVal SHISETSU_NAME As TextBox) As String
+        Return Trim(SHISETSU_NAME.Text)
+    End Function
+    Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As TextBox) As String
+        Return Trim(ADDRESS1.Text)
+    End Function
+    Public Shared Function GetValue_ADDRESS1(ByVal ADDRESS1 As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ADDRESS1)
+    End Function
+    Public Shared Function GetValue_ADDRESS2(ByVal ADDRESS2 As TextBox) As String
+        Return Trim(ADDRESS2.Text)
+    End Function
+    Public Shared Function GetValue_ZIP(ByVal ZIP As TextBox) As String
+        Return Trim(StrConv(ZIP.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_ZIP(ByVal ZIP1 As TextBox, ByVal ZIP2 As TextBox) As String
+        Dim wStr As String = ""
+        wStr = Trim(StrConv(ZIP1.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(ZIP2.Text, VbStrConv.Narrow))
+        If Trim(wStr) = "-" Then wStr = ""
+        Return wStr
+    End Function
+    Public Shared Function GetValue_TEL(ByVal TEL As TextBox) As String
+        Return Trim(StrConv(TEL.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_TEL(ByVal TEL1 As TextBox, ByVal TEL2 As TextBox, ByVal TEL3 As TextBox) As String
+        Dim wStr As String = ""
+        wStr = Trim(StrConv(TEL1.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TEL2.Text, VbStrConv.Narrow)) & "-" & Trim(StrConv(TEL3.Text, VbStrConv.Narrow))
+        If Trim(wStr) = "--" Then wStr = ""
+        Return wStr
+    End Function
+    Public Shared Function GetValue_CHECKIN_TIME(ByVal CHECKIN_TIME As TextBox) As String
+        Return Trim(StrConv(CHECKIN_TIME.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_CHECKIN_TIME(ByVal CHECKIN_TIME1 As TextBox, ByVal CHECKIN_TIME2 As TextBox) As String
+        Dim wStr As String = ""
+        wStr = Trim(StrConv(CHECKIN_TIME1.Text, VbStrConv.Narrow)) & ":" & Trim(StrConv(CHECKIN_TIME2.Text, VbStrConv.Narrow))
+        If Trim(wStr) = ":" Then wStr = ""
+        Return wStr
+    End Function
+    Public Shared Function GetValue_CHECKOUT_TIME(ByVal CHECKOUT_TIME As TextBox) As String
+        Return Trim(StrConv(CHECKOUT_TIME.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_CHECKOUT_TIME(ByVal CHECKOUT_TIME1 As TextBox, ByVal CHECKOUT_TIME2 As TextBox) As String
+        Dim wStr As String = ""
+        wStr = Trim(StrConv(CHECKOUT_TIME1.Text, VbStrConv.Narrow)) & ":" & Trim(StrConv(CHECKOUT_TIME2.Text, VbStrConv.Narrow))
+        If Trim(wStr) = ":" Then wStr = ""
+        Return wStr
+    End Function
+    Public Shared Function GetValue_URL(ByVal URL As TextBox) As String
+        Return Trim(StrConv(URL.Text, VbStrConv.Narrow))
+    End Function
+    
+    'ÉÜÅ[ÉUÉ}ÉXÉ^ä÷òA
+    Public Shared Function GetValue_KENGEN(ByVal KENGEN_Admin As CheckBox, ByVal KENGEN_User As CheckBox) As String
+        If KENGEN_ADMIN.Checked = True Then
+            Return AppConst.MS_USER.KENGEN.Code.Admin
+        ElseIf KENGEN_USER.Checked = True Then
+            Return AppConst.MS_USER.KENGEN.Code.User
+        Else
+            Return ""
+        End If
+    End Function
+
 #End Region
 
 

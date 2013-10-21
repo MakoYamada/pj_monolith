@@ -1679,8 +1679,11 @@
             Public ACCOUNT_CD_T As String
             Public ACCOUNT_CD_TF As String
             Public ZETIA_CD As String
-            Public SANKA_YOTEI_CNT As String
+            Public SANKA_YOTEI_CNT_NMBR As String
+            Public SANKA_YOTEI_CNT_MBR As String
+            Public SRM_HACYU_KBN As String
             Public BU As String
+            Public KIKAKU_TANTO_JIGYOUBU As String
             Public KIKAKU_TANTO_AREA As String
             Public KIKAKU_TANTO_EIGYOSHO As String
             Public KIKAKU_TANTO_NAME As String
@@ -1800,8 +1803,11 @@
             Public Const ACCOUNT_CD_T As String = "ACCOUNT_CD_T"
             Public Const ACCOUNT_CD_TF As String = "ACCOUNT_CD_TF"
             Public Const ZETIA_CD As String = "ZETIA_CD"
-            Public Const SANKA_YOTEI_CNT As String = "SANKA_YOTEI_CNT"
+            Public Const SANKA_YOTEI_CNT_NMBR As String = "SANKA_YOTEI_CNT_NMBR"
+            Public Const SANKA_YOTEI_CNT_MBR As String = "SANKA_YOTEI_CNT_MBR"
+            Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
             Public Const BU As String = "BU"
+            Public Const KIKAKU_TANTO_JIGYOUBU As String = "KIKAKU_TANTO_JIGYOUBU"
             Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
             Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"

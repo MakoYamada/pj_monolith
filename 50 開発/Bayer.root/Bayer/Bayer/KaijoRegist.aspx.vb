@@ -111,9 +111,24 @@ Partial Public Class KaijoRegist
         CmnModule.SetIme(Me.ANS_MITSUMORI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MITSUMORI_URL, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_SEISAN_TF, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_SEISAN_T, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_SEISANSHO_URL, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KAIJOUHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KIZAIHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_INSHOKUHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HOTELHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KOTSUHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TEHAI_TESURYO_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_HAKKEN_TESURYO_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_TAXI_SEISAN_TESURYO_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_JINKENHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_OTHER_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KANRIHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KAIJOUHI_T, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KIZAIHI_T, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_INSHOKUHI_T, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_JINKENHI_T, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_OTHER_T, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_KANRIHI_T, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -122,7 +137,6 @@ Partial Public Class KaijoRegist
             '履歴からの場合、キャンセル以外のボタンを非表示にする
             Me.BtnShisetsuKensaku.Visible = False
             Me.BtnCalc_MITSUMORI.Visible = False
-            Me.BtnCalc_SEISAN.Visible = False
             Me.BtnRireki.Visible = False
             Me.BtnPrint.Visible = False
             Me.BtnNozomi.Visible = False
@@ -131,7 +145,6 @@ Partial Public Class KaijoRegist
         Else
             Me.BtnShisetsuKensaku.Visible = True
             Me.BtnCalc_MITSUMORI.Visible = True
-            Me.BtnCalc_SEISAN.Visible = True
             Me.BtnRireki.Visible = True
             Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
@@ -192,7 +205,8 @@ Partial Public Class KaijoRegist
         Me.TEHAI_TANTO_TEL.Text = AppModule.GetName_TEHAI_TANTO_TEL(TBL_KAIJO(SEQ).TEHAI_TANTO_TEL)
         Me.TEHAI_TANTO_EMAIL_PC.Text = AppModule.GetName_TEHAI_TANTO_EMAIL_PC(TBL_KAIJO(SEQ).TEHAI_TANTO_EMAIL_PC)
         Me.TEHAI_TANTO_EMAIL_KEITAI.Text = AppModule.GetName_TEHAI_TANTO_EMAIL_KEITAI(TBL_KAIJO(SEQ).TEHAI_TANTO_EMAIL_KEITAI)
-        Me.SANKA_YOTEI_CNT.Text = AppModule.GetName_SANKA_YOTEI_CNT(TBL_KAIJO(SEQ).SANKA_YOTEI_CNT)
+        Me.SANKA_YOTEI_CNT_NMBR.Text = AppModule.GetName_SANKA_YOTEI_CNT(TBL_KAIJO(SEQ).SANKA_YOTEI_CNT_NMBR)
+        Me.SANKA_YOTEI_CNT_MBR.TEXT = AppModule.GetName_SANKA_YOTEI_CNT(TBL_KAIJO(SEQ).SANKA_YOTEI_CNT_MBR)
         Me.YOSAN_T.Text = AppModule.GetName_YOSAN_T(TBL_KAIJO(SEQ).YOSAN_T)
         Me.YOSAN_TF.Text = AppModule.GetName_YOSAN_TF(TBL_KAIJO(SEQ).YOSAN_TF)
         Me.YOSAN_TOTAL.Text = AppModule.GetName_YOSAN_TOTAL(TBL_KAIJO(SEQ).YOSAN_T, TBL_KAIJO(SEQ).YOSAN_TF)
@@ -234,10 +248,24 @@ Partial Public Class KaijoRegist
         AppModule.SetForm_ANS_MITSUMORI_T(TBL_KAIJO(SEQ).ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T)
         AppModule.SetForm_ANS_MITSUMORI_URL(TBL_KAIJO(SEQ).ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL)
         AppModule.SetForm_ANS_MITSUMORI_TOTAL(TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL, Me.ANS_MITSUMORI_TOTAL)
-        AppModule.SetForm_ANS_SEISAN_TF(TBL_KAIJO(SEQ).ANS_SEISAN_TF, Me.ANS_SEISAN_TF)
-        AppModule.SetForm_ANS_SEISAN_T(TBL_KAIJO(SEQ).ANS_SEISAN_T, Me.ANS_SEISAN_T)
-        AppModule.SetForm_ANS_SEISANSHO_URL(TBL_KAIJO(SEQ).ANS_SEISANSHO_URL, Me.ANS_SEISANSHO_URL)
-        AppModule.SetForm_ANS_SEISAN_TOTAL(TBL_KAIJO(SEQ).ANS_SEISAN_TF, TBL_KAIJO(SEQ).ANS_SEISAN_T, Me.ANS_SEISAN_TOTAL)
+        AppModule.SetForm_ANS_KAIJOUHI_TF(TBL_KAIJO(SEQ).ANS_KAIJOUHI_TF, Me.ANS_KAIJOUHI_TF)
+        AppModule.SetForm_ANS_KIZAIHI_TF(TBL_KAIJO(SEQ).ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF)
+        AppModule.SetForm_ANS_INSHOKUHI_TF(TBL_KAIJO(SEQ).ANS_INSHOKUHI_TF, Me.ANS_INSHOKUHI_TF)
+        AppModule.SetForm_ANS_HOTELHI_TF(TBL_KAIJO(SEQ).ANS_HOTELHI_TF, Me.ANS_HOTELHI_TF)
+        AppModule.SetForm_ANS_KOTSUHI_TF(TBL_KAIJO(SEQ).ANS_KOTSUHI_TF, Me.ANS_KOTSUHI_TF)
+        AppModule.SetForm_ANS_TAXI_TF(TBL_KAIJO(SEQ).ANS_TAXI_TF, Me.ANS_TAXI_TF)
+        AppModule.SetForm_ANS_TEHAI_TESURYO_TF(TBL_KAIJO(SEQ).ANS_TEHAI_TESURYO_TF, Me.ANS_TEHAI_TESURYO_TF)
+        AppModule.SetForm_ANS_TAXI_HAKKEN_TESURYO_TF(TBL_KAIJO(SEQ).ANS_TAXI_HAKKEN_TESURYO_TF, Me.ANS_TAXI_HAKKEN_TESURYO_TF)
+        AppModule.SetForm_ANS_TAXI_SEISAN_TESURYO_TF(TBL_KAIJO(SEQ).ANS_TAXI_SEISAN_TESURYO_TF, Me.ANS_TAXI_SEISAN_TESURYO_TF)
+        AppModule.SetForm_ANS_JINKENHI_TF(TBL_KAIJO(SEQ).ANS_JINKENHI_TF, Me.ANS_JINKENHI_TF)
+        AppModule.SetForm_ANS_OTHER_TF(TBL_KAIJO(SEQ).ANS_OTHER_TF, Me.ANS_OTHER_TF)
+        AppModule.SetForm_ANS_KANRIHI_TF(TBL_KAIJO(SEQ).ANS_KANRIHI_TF, Me.ANS_KANRIHI_TF)
+        AppModule.SetForm_ANS_KAIJOUHI_T(TBL_KAIJO(SEQ).ANS_KAIJOUHI_T, Me.ANS_KAIJOUHI_T)
+        AppModule.SetForm_ANS_KIZAIHI_T(TBL_KAIJO(SEQ).ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T)
+        AppModule.SetForm_ANS_INSHOKUHI_T(TBL_KAIJO(SEQ).ANS_INSHOKUHI_T, Me.ANS_INSHOKUHI_T)
+        AppModule.SetForm_ANS_JINKENHI_T(TBL_KAIJO(SEQ).ANS_JINKENHI_T, Me.ANS_JINKENHI_T)
+        AppModule.SetForm_ANS_OTHER_T(TBL_KAIJO(SEQ).ANS_OTHER_T, Me.ANS_OTHER_T)
+        AppModule.SetForm_ANS_KANRIHI_T(TBL_KAIJO(SEQ).ANS_KANRIHI_T, Me.ANS_KANRIHI_T)
     End Sub
 
     '入力チェック
@@ -255,57 +283,6 @@ Partial Public Class KaijoRegist
 
         If Not CmnCheck.IsLengthLE(Me.ANS_SHISETSU_NAME, Me.ANS_SHISETSU_NAME.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SHISETSU_NAME, Me.ANS_SHISETSU_NAME.MaxLength, True), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.ANS_MITSUMORI_T) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.ANS_MITSUMORI_TF) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.ANS_SEISAN_TF) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_SEISAN_TF), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_SEISAN_TF, Me.ANS_SEISAN_TF.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SEISAN_TF, Me.ANS_SEISAN_TF.MaxLength), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_SEISAN_T, Me.ANS_SEISAN_T.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SEISAN_T, Me.ANS_SEISAN_T.MaxLength), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsLengthLE(Me.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength, True), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsValidTel(Me.ANS_SHISETSU_TEL) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_KAIJO.Name.ANS_SHISETSU_TEL), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsLengthLE(Me.ANS_SEISANSHO_URL, Me.ANS_SEISANSHO_URL.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SEISANSHO_URL, Me.ANS_SEISANSHO_URL.MaxLength), Me)
             Return False
         End If
 
@@ -346,6 +323,199 @@ Partial Public Class KaijoRegist
 
         If Not CmnCheck.IsLengthLE(Me.ANS_KAISAI_NOTE, Me.ANS_KAISAI_NOTE.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KAISAI_NOTE, Me.ANS_KAISAI_NOTE.MaxLength, True), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsNumberOnly(Me.ANS_MITSUMORI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_T.MaxLength), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsNumberOnly(Me.ANS_MITSUMORI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_TF, Me.ANS_MITSUMORI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_SENTEI_RIYU, Me.ANS_SENTEI_RIYU.MaxLength, True), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsValidTel(Me.ANS_SHISETSU_TEL) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_KAIJO.Name.ANS_SHISETSU_TEL), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KAIJOUHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KAIJOUHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KAIJOUHI_TF, Me.ANS_KAIJOUHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KAIJOUHI_TF, Me.ANS_KAIJOUHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_INSHOKUHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_INSHOKUHI_TF, Me.ANS_INSHOKUHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_TF, Me.ANS_INSHOKUHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_HOTELHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_HOTELHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_HOTELHI_TF, Me.ANS_HOTELHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_HOTELHI_TF, Me.ANS_HOTELHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KOTSUHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KOTSUHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KOTSUHI_TF, Me.ANS_KOTSUHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KOTSUHI_TF, Me.ANS_KOTSUHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_TAXI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TAXI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_TF, Me.ANS_TAXI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_TAXI_TF, Me.ANS_TAXI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_TEHAI_TESURYO_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TEHAI_TESURYO_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_TEHAI_TESURYO_TF, Me.ANS_TEHAI_TESURYO_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_TEHAI_TESURYO_TF, Me.ANS_TEHAI_TESURYO_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_TAXI_HAKKEN_TESURYO_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TAXI_HAKKEN_TESURYO_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_HAKKEN_TESURYO_TF, Me.ANS_TAXI_HAKKEN_TESURYO_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_TAXI_HAKKEN_TESURYO_TF, Me.ANS_TAXI_HAKKEN_TESURYO_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_TAXI_SEISAN_TESURYO_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TAXI_SEISAN_TESURYO_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SEISAN_TESURYO_TF, Me.ANS_TAXI_SEISAN_TESURYO_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_TAXI_SEISAN_TESURYO_TF, Me.ANS_TAXI_SEISAN_TESURYO_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_JINKENHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_JINKENHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_JINKENHI_TF, Me.ANS_JINKENHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_JINKENHI_TF, Me.ANS_JINKENHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_OTHER_TF, Me.ANS_OTHER_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF, Me.ANS_OTHER_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KANRIHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KANRIHI_TF, Me.ANS_KANRIHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_TF, Me.ANS_KANRIHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KAIJOUHI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KAIJOUHI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KAIJOUHI_T, Me.ANS_KAIJOUHI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KAIJOUHI_T, Me.ANS_KAIJOUHI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_INSHOKUHI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_INSHOKUHI_T, Me.ANS_INSHOKUHI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_T, Me.ANS_INSHOKUHI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_JINKENHI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_JINKENHI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_JINKENHI_T, Me.ANS_JINKENHI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_JINKENHI_T, Me.ANS_JINKENHI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_OTHER_T, Me.ANS_OTHER_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_OTHER_T, Me.ANS_OTHER_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KANRIHI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KANRIHI_T, Me.ANS_KANRIHI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_T, Me.ANS_KANRIHI_T.MaxLength), Me)
             Return False
         End If
 
@@ -425,9 +595,24 @@ Partial Public Class KaijoRegist
         TBL_KAIJO(SEQ).ANS_MITSUMORI_T = AppModule.GetValue_ANS_MITSUMORI_T(Me.ANS_MITSUMORI_T)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL = AppModule.GetValue_ANS_MITSUMORI_TOTAL(Me.ANS_MITSUMORI_T, Me.ANS_MITSUMORI_TF)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_URL = AppModule.GetValue_ANS_MITSUMORI_URL(Me.ANS_MITSUMORI_URL)
-        TBL_KAIJO(SEQ).ANS_SEISAN_TF = AppModule.GetValue_ANS_SEISAN_TF(Me.ANS_SEISAN_TF)
-        TBL_KAIJO(SEQ).ANS_SEISAN_T = AppModule.GetValue_ANS_SEISAN_T(Me.ANS_SEISAN_T)
-        TBL_KAIJO(SEQ).ANS_SEISANSHO_URL = AppModule.GetValue_ANS_SEISANSHO_URL(Me.ANS_SEISANSHO_URL)
+        TBL_KAIJO(SEQ).ANS_KAIJOUHI_TF = AppModule.GetValue_ANS_KAIJOUHI_TF(Me.ANS_KAIJOUHI_TF)
+        TBL_KAIJO(SEQ).ANS_KIZAIHI_TF = AppModule.GetValue_ANS_KIZAIHI_TF(Me.ANS_KIZAIHI_TF)
+        TBL_KAIJO(SEQ).ANS_INSHOKUHI_TF = AppModule.GetValue_ANS_INSHOKUHI_TF(Me.ANS_INSHOKUHI_TF)
+        TBL_KAIJO(SEQ).ANS_HOTELHI_TF = AppModule.GetValue_ANS_HOTELHI_TF(Me.ANS_HOTELHI_TF)
+        TBL_KAIJO(SEQ).ANS_KOTSUHI_TF = AppModule.GetValue_ANS_KOTSUHI_TF(Me.ANS_KOTSUHI_TF)
+        TBL_KAIJO(SEQ).ANS_TAXI_TF = AppModule.GetValue_ANS_TAXI_TF(Me.ANS_TAXI_TF)
+        TBL_KAIJO(SEQ).ANS_TEHAI_TESURYO_TF = AppModule.GetValue_ANS_TEHAI_TESURYO_TF(Me.ANS_TEHAI_TESURYO_TF)
+        TBL_KAIJO(SEQ).ANS_TAXI_HAKKEN_TESURYO_TF = AppModule.GetValue_ANS_TAXI_HAKKEN_TESURYO_TF(Me.ANS_TAXI_HAKKEN_TESURYO_TF)
+        TBL_KAIJO(SEQ).ANS_TAXI_SEISAN_TESURYO_TF = AppModule.GetValue_ANS_TAXI_SEISAN_TESURYO_TF(Me.ANS_TAXI_SEISAN_TESURYO_TF)
+        TBL_KAIJO(SEQ).ANS_JINKENHI_TF = AppModule.GetValue_ANS_JINKENHI_TF(Me.ANS_JINKENHI_TF)
+        TBL_KAIJO(SEQ).ANS_OTHER_TF = AppModule.GetValue_ANS_OTHER_TF(Me.ANS_OTHER_TF)
+        TBL_KAIJO(SEQ).ANS_KANRIHI_TF = AppModule.GetValue_ANS_KANRIHI_TF(Me.ANS_KANRIHI_TF)
+        TBL_KAIJO(SEQ).ANS_KAIJOUHI_T = AppModule.GetValue_ANS_KAIJOUHI_T(Me.ANS_KAIJOUHI_T)
+        TBL_KAIJO(SEQ).ANS_KIZAIHI_T = AppModule.GetValue_ANS_KIZAIHI_T(Me.ANS_KIZAIHI_T)
+        TBL_KAIJO(SEQ).ANS_INSHOKUHI_T = AppModule.GetValue_ANS_INSHOKUHI_T(Me.ANS_INSHOKUHI_T)
+        TBL_KAIJO(SEQ).ANS_JINKENHI_T = AppModule.GetValue_ANS_JINKENHI_T(Me.ANS_JINKENHI_T)
+        TBL_KAIJO(SEQ).ANS_OTHER_T = AppModule.GetValue_ANS_OTHER_T(Me.ANS_OTHER_T)
+        TBL_KAIJO(SEQ).ANS_KANRIHI_T = AppModule.GetValue_ANS_KANRIHI_T(Me.ANS_KANRIHI_T)
         TBL_KAIJO(SEQ).UPDATE_DATE = CmnModule.GetSysDateTime()
         TBL_KAIJO(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
@@ -468,15 +653,7 @@ Partial Public Class KaijoRegist
             Me.ANS_MITSUMORI_TOTAL.Text = AppModule.GetName_ANS_MITSUMORI_TOTAL(wANS_MITSUMORI_T, wANS_MITSUMORI_TF)
         End If
     End Sub
-    Protected Sub BtnCalc_SEISAN_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_SEISAN.Click
-        Dim wANS_SEISAN_T As String = Trim(StrConv(Me.ANS_SEISAN_T.Text, VbStrConv.Narrow))
-        Dim wANS_SEISAN_TF As String = Trim(StrConv(Me.ANS_SEISAN_TF.Text, VbStrConv.Narrow))
-
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_SEISAN_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_SEISAN_TF)) Then
-            Me.ANS_SEISAN_TOTAL.Text = AppModule.GetName_ANS_SEISAN_TOTAL(wANS_SEISAN_T, wANS_SEISAN_TF)
-        End If
-    End Sub
-
+    
     '[キャンセル]
     Protected Sub BtnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCancel.Click
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then

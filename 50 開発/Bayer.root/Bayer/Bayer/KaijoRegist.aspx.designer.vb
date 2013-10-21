@@ -340,13 +340,22 @@ Partial Public Class KaijoRegist
     Protected WithEvents TEHAI_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''SANKA_YOTEI_CNT コントロール。
+    '''SANKA_YOTEI_CNT_NMBR コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SANKA_YOTEI_CNT As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SANKA_YOTEI_CNT_NMBR As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SANKA_YOTEI_CNT_MBR コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SANKA_YOTEI_CNT_MBR As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''YOSAN_T コントロール。
@@ -493,6 +502,51 @@ Partial Public Class KaijoRegist
     Protected WithEvents KOUSHI_ROOM_TEHAI_No As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''KOUSHI_ROOM_FROM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUSHI_ROOM_FROM As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KOUSHI_ROOM_CNT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUSHI_ROOM_CNT As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SHAIN_ROOM_TEHAI_Yes コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SHAIN_ROOM_TEHAI_Yes As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SHAIN_ROOM_TEHAI_No コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SHAIN_ROOM_TEHAI_No As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SHAIN_ROOM_CNT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SHAIN_ROOM_CNT As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''MANAGER_KAIJO_TEHAI_Yes コントロール。
     '''</summary>
     '''<remarks>
@@ -509,6 +563,60 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents MANAGER_KAIJO_TEHAI_No As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MANAGER_ROOM_FROM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MANAGER_ROOM_FROM As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MANAGER_ROOM_CNT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MANAGER_ROOM_CNT As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''REQ_ROOM_CNT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_ROOM_CNT As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''REQ_STAY_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_STAY_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''REQ_KOTSU_CNT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_KOTSU_CNT As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''REQ_TAXI_CNT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_TAXI_CNT As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_SENTEI_RIYU コントロール。
@@ -718,49 +826,238 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_MITSUMORI_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_SEISAN_TF コントロール。
+    '''ANS_KAIJOUHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_SEISAN_TF As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_KAIJOUHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_SEISAN_T コントロール。
+    '''ANS_KIZAIHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_SEISAN_T As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_KIZAIHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_SEISAN_TOTAL コントロール。
+    '''ANS_INSHOKUHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_SEISAN_TOTAL As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ANS_INSHOKUHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnCalc_SEISAN コントロール。
+    '''ANS_991330401_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCalc_SEISAN As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ANS_991330401_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_SEISANSHO_URL コントロール。
+    '''BtnCalc_991330401_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_SEISANSHO_URL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents BtnCalc_991330401_TF As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_HOTELHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTELHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KOTSUHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KOTSUHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TEHAI_TESURYO_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TEHAI_TESURYO_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKEN_TESURYO_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKEN_TESURYO_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_SEISAN_TESURYO_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_SEISAN_TESURYO_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_JINKENHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_JINKENHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_OTHER_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KANRIHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KANRIHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_41120200_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_41120200_TF As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_41120200_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_41120200_TF As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_KAIJOUHI_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KAIJOUHI_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KIZAIHI_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KIZAIHI_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_INSHOKUHI_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_INSHOKUHI_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_991330401_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_991330401_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_991330401_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_991330401_T As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_JINKENHI_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_JINKENHI_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_OTHER_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_KANRIHI_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_KANRIHI_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_41120200_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_41120200_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_41120200_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_41120200_T As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnRireki コントロール。
