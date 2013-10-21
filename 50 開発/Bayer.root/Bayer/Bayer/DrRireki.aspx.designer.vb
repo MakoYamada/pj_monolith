@@ -25,6 +25,15 @@ Partial Public Class DrRireki
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
+    '''LabelNoData コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''GrvList コントロール。
     '''</summary>
     '''<remarks>

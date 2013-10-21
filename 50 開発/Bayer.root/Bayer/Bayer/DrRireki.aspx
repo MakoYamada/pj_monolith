@@ -11,6 +11,7 @@
         </tr>
         <tr>
             <td>
+		        <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
                 <asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
                     DataSourceID="SqlDataSource1" Width="792px">
@@ -40,7 +41,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="200px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="MR_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
@@ -50,7 +51,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="交通" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="TEHAI_KOTSU" HeaderText="交通" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
 <HeaderStyle Wrap="False"></HeaderStyle>
 
@@ -69,7 +70,13 @@
                             </ItemStyle>
                         </asp:ButtonField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
-                        <asp:BoundField DataField="DR_MPID" HeaderText="MPID" Visible="False" />
+                        <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALEFORCE_ID" />
+                        <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="REQ_O_TEHAI_1" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_2" HeaderText="REQ_O_TEHAI_2" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_3" HeaderText="REQ_O_TEHAI_3" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_4" HeaderText="REQ_O_TEHAI_4" />
+                        <asp:BoundField DataField="REQ_O_TEHAI_5" HeaderText="REQ_O_TEHAI_5" />
                     </Columns>
                 </asp:GridView>
             </td>
