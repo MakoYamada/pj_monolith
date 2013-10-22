@@ -3545,6 +3545,32 @@ Public Class AppModule
         End If
     End Function
 
+    'y‰ñ“šzè”—¿(Œğ’ÊEh”‘)
+    Public Shared Function GetName_ANS_KOTSUHOTEL_TESURYO(ByVal KOTSUHOTEL_TESURYO As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(KOTSUHOTEL_TESURYO) = 0 Then
+            Return "0"
+        Else
+            If ShortFormat = False Then
+                Return CLng(KOTSUHOTEL_TESURYO).ToString("#,#")
+            Else
+                Return KOTSUHOTEL_TESURYO
+            End If
+        End If
+    End Function
+
+    'y‰ñ“šzè”—¿(ƒ^ƒNƒ`ƒP”­Œ”è”—¿)
+    Public Shared Function GetName_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If Val(ANS_TAXI_TESURYO) = 0 Then
+            Return "0"
+        Else
+            If ShortFormat = False Then
+                Return CLng(ANS_TAXI_TESURYO).ToString("#,#")
+            Else
+                Return ANS_TAXI_TESURYO
+            End If
+        End If
+    End Function
+
     '“o˜^ŠÇ—è”—¿
     Public Shared Function GetName_TOUROKUKANRI_FEE(ByVal TOUROKUKANRI_FEE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If Val(TOUROKUKANRI_FEE) = 0 Then
@@ -7228,6 +7254,26 @@ Public Class AppModule
     'yŠm’èzƒoƒXE‘D“™æÁ—¿
     Public Shared Function GetValue_ANS_OTHER_CANCELLATION(ByVal ANS_OTHER_CANCELLATION As TextBox) As String
         Return Trim(StrConv(ANS_OTHER_CANCELLATION.Text, VbStrConv.Narrow))
+    End Function
+
+    'y‰ñ“šzè”—¿(Œğ’ÊEh”‘)
+    Public Shared Function GetValue_ANS_KOTSUHOTEL_TESURYO(ByVal ANS_KOTSUHOTEL_TESURYO As TextBox) As String
+        Return Trim(StrConv(ANS_KOTSUHOTEL_TESURYO.Text, VbStrConv.Narrow))
+    End Function
+
+    'y‰ñ“šzè”—¿(ƒ^ƒNƒ`ƒP”­Œ”è”—¿)
+    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As TextBox) As String
+        Return Trim(StrConv(ANS_TAXI_TESURYO.Text, VbStrConv.Narrow))
+    End Function
+
+    'y‰ñ“šzMR@Œğ’Ê”ï
+    Public Shared Function GetValue_ANS_MR_KOTSUHI(ByVal ANS_MR_KOTSUHI As TextBox) As String
+        Return Trim(StrConv(ANS_MR_KOTSUHI.Text, VbStrConv.Narrow))
+    End Function
+
+    'y‰ñ“šzMR@h”‘”ï
+    Public Shared Function GetValue_ANS_MR_HOTELHI(ByVal ANS_MR_HOTELHI As TextBox) As String
+        Return Trim(StrConv(ANS_MR_HOTELHI.Text, VbStrConv.Narrow))
     End Function
 
     '“o˜^ŠÇ—è”—¿
