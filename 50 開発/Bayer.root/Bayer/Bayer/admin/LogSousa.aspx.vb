@@ -178,7 +178,7 @@ Partial Public Class LogSousa
         'If Not Check() Then Exit Sub
 
         Joken = Nothing
-        Joken.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
+        Joken.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.GAMEN
         Joken.INPUT_USER = Trim(Me.JokenINPUT_USER.Text)
         Joken.SYORI_NAME = CmnModule.GetSelectedItemValue(Me.JokenSYORI_NAME)
         Joken.INPUT_DATE = CmnModule.Format_DateToString(Me.JokenINPUT_DATE_YYYY.Text, Me.JokenINPUT_DATE_MM.Text, Me.JokenINPUT_DATE_DD.Text)

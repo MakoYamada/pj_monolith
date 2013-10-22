@@ -75,31 +75,33 @@ Partial Public Class TaxiCsv
         Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
         Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
 
-        Response.Clear()
-        Response.ContentType = CmnConst.Csv.ContentType
-        Response.Charset = CmnConst.Csv.Charset
-        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "Taxi.csv")
-        Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
-
         Dim CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct
-        CsvData = GetData()
+        If GetData(CsvData) Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "Taxi.csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
 
-        Response.Write(MyModule.Csv.TaxiCsv(CsvData))
-        Response.End()
+            Response.Write(MyModule.Csv.TaxiCsv(CsvData))
+            Response.End()
+        End If
     End Sub
 
     'CSV用データ取得
-    Private Function GetData() As TableDef.TBL_KOTSUHOTEL.DataStruct()
+    Private Function GetData(ByRef CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
-        Dim CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct
+         Dim wFlag As Boolean = False
 
         ReDim CsvData(wCnt)
 
         strSQL = SQL.TBL_KOTSUHOTEL.TaxiCsv(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
+            wFlag = True
             ReDim Preserve CsvData(wCnt)
             CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
 
@@ -107,7 +109,12 @@ Partial Public Class TaxiCsv
         End While
         RsData.Close()
 
-        Return CsvData
+        If wFlag = False Then
+            CmnModule.AlertMessage("対象データがありません。", Me)
+            Return False
+        End If
+
+        Return True
     End Function
 
     '入力チェック

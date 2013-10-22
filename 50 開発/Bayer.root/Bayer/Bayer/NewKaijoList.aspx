@@ -25,7 +25,7 @@
 							<asp:TextBox ID="JokenTTANTO_ID" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							区分
-							<asp:DropDownList ID="JokenREQ_STATUS_TEHAI" runat="server" Width="100px"></asp:DropDownList>
+							<asp:DropDownList ID="JokenREQ_STATUS_TEHAI" runat="server" Width="140px"></asp:DropDownList>
 						</td>
 						<td align="right">
 							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />

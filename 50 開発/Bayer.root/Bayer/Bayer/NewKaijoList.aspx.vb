@@ -89,9 +89,11 @@ Partial Public Class NewKaijoList
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            CmnModule.SetEnabled(Me.BtnPrint, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            CmnModule.SetEnabled(Me.BtnPrint, True)
 
             'グリッドビュー表示
             SetGridView()
