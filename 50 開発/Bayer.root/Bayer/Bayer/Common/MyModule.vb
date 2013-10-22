@@ -124,6 +124,21 @@ Public Class MyModule
         Return wSYSTEM_ID.ToString.PadLeft(10, "0"c)
     End Function
 
+    'コードマスタ
+    Public Shared Function GetMaxDATA_ID(ByVal CODE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+        Dim wDATA_ID As Integer = 0
+        Dim strSQL As String = SQL.MS_CODE.MaxDATA_ID(CODE)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        RsData = CmnDb.Read(strSQL, DbConn)
+        If RsData.Read() Then
+            wDATA_ID = CmnModule.DbVal(CmnDb.DbData(TableDef.MS_CODE.Column.DATA_ID, RsData))
+        End If
+        RsData.Close()
+        wDATA_ID += 1
+
+        Return wDATA_ID.ToString.PadLeft(2, "0"c)
+    End Function
+
     ''手配状況チェック
     'Public Shared Function IsValidSTATUS_TEHAI(ByVal RECORD_KUBUN As String, ByVal OldSTATAUS_TEHAI As String, ByVal STATUS_TEHAI As String, ByVal TEHAI_HOTEL As String, ByVal TEHAI_KOTSU As String) As Boolean
     '    Select Case RECORD_KUBUN
@@ -357,7 +372,7 @@ Public Class MyModule
     '    Return IsValidSTATUS_TEHAI(RECORD_KUBUN, OldSTATAUS_TEHAI, wSTATUS_TEHAI, wTEHAI_HOTEL, wTEHAI_KOTSU)
     'End Function
 
-      
+
     '== CSV ==
     Public Class Csv
         Public Shared Function TaxiCsv(ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As String

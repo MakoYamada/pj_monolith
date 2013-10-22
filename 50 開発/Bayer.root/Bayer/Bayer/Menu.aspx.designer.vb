@@ -106,6 +106,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnMstUser As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnMstCode コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnMstCode As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnLogFile コントロール。
     '''</summary>
     '''<remarks>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="Menu.aspx.vb" Inherits="Bayer.Menu1" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	gg<table border="0" cellpadding="2" cellspacing="0" style="width: 100%;">
+	<table border="0" cellpadding="2" cellspacing="0" style="width: 100%;">
 		<tr valign="top">
 			<td align="center">
 				<table border="0" cellpadding="2" cellspacing="0">
@@ -76,7 +76,9 @@
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnMstUser" runat="server" Text="ユーザマスタ" Width="200px" CssClass="Button" />
 						</td>
-						<td></td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnMstCode" runat="server" Text="コードマスタ" Width="200px" CssClass="Button" />
+						</td>
 						<td></td>
 					</tr>
 					<tr>

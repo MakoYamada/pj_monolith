@@ -52,10 +52,12 @@ Partial Public Class Menu1
     Private Sub SetForm()
         If MS_USER.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
             CmnModule.SetEnabled(Me.BtnMstUser, True)
+            CmnModule.SetEnabled(Me.BtnMstCode, True)
             CmnModule.SetEnabled(Me.BtnLogFile, True)
             CmnModule.SetEnabled(Me.BtnLogSousa, True)
         Else
             CmnModule.SetEnabled(Me.BtnMstUser, False)
+            CmnModule.SetEnabled(Me.BtnMstCode, False)
             CmnModule.SetEnabled(Me.BtnLogFile, False)
             CmnModule.SetEnabled(Me.BtnLogSousa, False)
         End If
@@ -132,7 +134,7 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.SYSTEM_ID)
         Response.Redirect(URL.MstUser)
     End Sub
-
+     
     '[施設マスタ]
     Protected Sub BtnMstShisetsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstShisetsu.Click
         Session.Remove(SessionDef.Joken)
@@ -140,6 +142,13 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.SEQ)
         Session.Remove(SessionDef.SYSTEM_ID)
         Response.Redirect(URL.MstShisetsu)
+    End Sub
+
+    '[コードマスタ]
+    Protected Sub BtnMstCode_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstCode.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.MS_Code)
+        Response.Redirect(URL.MstCode)
     End Sub
 
     '[新着 講演会基本情報一覧]

@@ -3086,7 +3086,7 @@ Public Class SQL
 
         Public Shared Function MaxSYSTEM_ID() As String
             Dim strSQL As String = ""
-            strSQL &= "SELECT CONVERT(INT,SYSTEM_ID) AS SYSTEM_ID FROM MS_USER"
+            strSQL &= "SELECT MAX(CONVERT(INT,SYSTEM_ID)) AS SYSTEM_ID FROM MS_USER"
             Return strSQL
         End Function
 
@@ -3382,6 +3382,35 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byCODE_DISP_VALUE(ByVal CODE As String, ByVal DISP_VALUE As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_CODE.CODE=N'" & CmnDb.SqlString(CODE) & "'"
+            strSQL &= " AND MS_CODE.DISP_VALUE=N'" & CmnDb.SqlString(DISP_VALUE) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byCODE_DISP_TEXT(ByVal CODE As String, ByVal DISP_TEXT As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_CODE.CODE=N'" & CmnDb.SqlString(CODE) & "'"
+            strSQL &= " AND MS_CODE.DISP_TEXT=N'" & CmnDb.SqlString(DISP_TEXT) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function MaxDATA_ID(ByVal CODE As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT MAX(CONVERT(INT,DATA_ID)) AS DATA_ID FROM MS_CODE"
+            strSQL &= " WHERE CODE='" & CmnDb.SqlString(CODE) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal MS_CODE As TableDef.MS_CODE.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -3408,7 +3437,7 @@ Public Class SQL
             strSQL &= " " & TableDef.MS_CODE.Column.DISP_TEXT & "=N'" & CmnDb.SqlString(MS_CODE.DISP_TEXT) & "'"
             strSQL &= "," & TableDef.MS_CODE.Column.DISP_VALUE & "=N'" & CmnDb.SqlString(MS_CODE.DISP_VALUE) & "'"
             strSQL &= " WHERE " & TableDef.MS_CODE.Column.CODE & "=N'" & CmnDb.SqlString(MS_CODE.CODE) & "'"
-            strSQL &= " AND" & TableDef.MS_CODE.Column.DATA_ID & "=N'" & CmnDb.SqlString(MS_CODE.DATA_ID) & "'"
+            strSQL &= " AND " & TableDef.MS_CODE.Column.DATA_ID & "=N'" & CmnDb.SqlString(MS_CODE.DATA_ID) & "'"
 
             Return strSQL
         End Function
