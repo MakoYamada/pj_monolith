@@ -716,7 +716,7 @@ Public Class SQL
             If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
@@ -775,8 +775,6 @@ Public Class SQL
             If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
                 strSQL_WHERE_KOTSUHOTEL &= " AND TBL_KOTSUHOTEL.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
             End If
-
-            strSQL_WHERE_KOTSUHOTEL &= " AND TBL_KOTSUHOTEL.TEHAI_TAXI=N'" & AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.Yes & "'"
 
             '講演会テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
@@ -843,7 +841,6 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.TO_DATE"
             strSQL &= ",TBL_KOUENKAI.KAIJO_NAME"
             strSQL &= ",TBL_KOUENKAI.SEIHIN_NAME"
-            strSQL &= ",TBL_KOUENKAI.TIME_STAMP"
             strSQL &= " FROM"
             strSQL &= "("
             strSQL &= " SELECT TBL_KOUENKAI_1.* FROM "

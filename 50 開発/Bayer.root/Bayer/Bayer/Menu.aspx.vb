@@ -205,4 +205,29 @@ Partial Public Class Menu1
         Response.Redirect(URL.TaxiCsv)
     End Sub
 
+    '[新着 交通・宿泊]
+    Protected Sub BtnNewKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKotsuList.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_KOTSUHOTEL)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.SYSTEM_ID)
+        Session.Remove(SessionDef.DrRireki)
+        Session.Remove(SessionDef.DrRireki_PageIndex)
+        Session.Remove(SessionDef.DrRireki_SEQ)
+        Session.Remove(SessionDef.DrRireki_TBL_KOUENKAI)
+        Response.Redirect(URL.NewDrList)
+    End Sub
+
+    '[検索 交通・宿泊]
+    Protected Sub BtnKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKotsuList.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_KOTSUHOTEL)
+        Session.Remove(SessionDef.SEQ)
+        Session.Remove(SessionDef.SYSTEM_ID)
+        Session.Remove(SessionDef.DrRireki)
+        Session.Remove(SessionDef.DrRireki_PageIndex)
+        Session.Remove(SessionDef.DrRireki_SEQ)
+        Session.Remove(SessionDef.DrRireki_TBL_KOUENKAI)
+        Response.Redirect(URL.DrList)
+    End Sub
 End Class
