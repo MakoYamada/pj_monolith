@@ -128,6 +128,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_SEISAN_T)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISANSHO_URL)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TICKET_URL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("1"))) 'TODO:精算完了
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_JR)))
                 sb.Append(CmnCsv.Quotes(CsvData(wCnt).MR_HOTEL))
                 sb.Append(vbNewLine)
