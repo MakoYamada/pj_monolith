@@ -4,7 +4,7 @@ Partial Public Class DrRegist
     Inherits WebBase
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
-    Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private DSP_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private SEQ As Integer
     Private Popup As Boolean = False
@@ -13,7 +13,9 @@ Partial Public Class DrRegist
     Private Const IMG_OPEN = "~/Images/button-tick-alt.png"
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
-        'Session.Item(SessionDef.TBL_DR) = TBL_DR
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
     End Sub
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
@@ -147,6 +149,7 @@ Partial Public Class DrRegist
         AppModule.SetDropDownList_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
         AppModule.SetDropDownList_ANS_STATUS_HOTEL(Me.ANS_STATUS_HOTEL)
         AppModule.SetDropDownList_ANS_ROOM_TYPE(Me.ANS_ROOM_TYPE)
+        AppModule.SetDropDownList_ANS_HOTEL_SMOKING(Me.ANS_HOTEL_SMOKING)
         AppModule.SetDropDownList_ANS_O_STATUS_1(Me.ANS_O_STATUS_1)
         AppModule.SetDropDownList_ANS_O_STATUS_2(Me.ANS_O_STATUS_2)
         AppModule.SetDropDownList_ANS_O_STATUS_3(Me.ANS_O_STATUS_3)
@@ -807,7 +810,7 @@ Partial Public Class DrRegist
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO)
-        strSQL &= "ORDER BY " & TableDef.TBL_KOUENKAI.Column.TIME_STAMP & " DESC"
+        strSQL &= " DESC"
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
@@ -954,7 +957,7 @@ Partial Public Class DrRegist
         Dim NewCnt(0) As String
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOTSUHOTEL.byNEW_TIME_STAMP(DSP_KOTSUHOTEL(SEQ).SALEFORCE_ID, DSP_KOTSUHOTEL(SEQ).TIME_STAMP_BYL)
+        strSQL = SQL.TBL_KOTSUHOTEL.byNEW_TIME_STAMP(DSP_KOTSUHOTEL(SEQ).SALEFORCE_ID, DSP_KOTSUHOTEL(SEQ).TIME_STAMP_BYL, DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
@@ -973,18 +976,22 @@ Partial Public Class DrRegist
     Private Sub BtnKihon_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKihon.Click
         '選択レコード情報をセッション変数にセット
         Session.Item(SessionDef.SEQ) = 0
-        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-        'Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+        TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+        'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-        Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
+        'Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
         '履歴画面用セッション変数をクリア
-        Session.Remove(SessionDef.KaijoRireki)
+        Session.Item(SessionDef.KouenkaiRireki) = True
         Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
-        Session.Remove(SessionDef.KouenkaiRireki_SEQ)
-        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = False
+        Session.Item(SessionDef.KouenkaiRireki_SEQ) = 0
+        'Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
 
-        Response.Redirect(URL.KouenkaiRegist)
+        Dim scriptStr As String
+        scriptStr = "<script type='text/javascript'>"
+        scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1200,height=800,resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=no');"
+        scriptStr += "</script>"
+        ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
     End Sub
 
     '[登録]
@@ -1933,9 +1940,9 @@ Partial Public Class DrRegist
         '到着地
         ANS_O_AIRPORT2_1.Text = Trim(REQ_O_AIRPORT2_1.Text)
         '出発時刻
-        ANS_O_TIME1_1.Text = Trim(Replace(REQ_O_TIME1_1.Text, ":", ""))
+        ANS_O_TIME1_1.Text = Trim(Replace(Replace(REQ_O_TIME1_1.Text, ":", ""), "：", ""))
         '到着時刻
-        ANS_O_TIME2_1.Text = Trim(Replace(REQ_O_TIME2_1.Text, ":", ""))
+        ANS_O_TIME2_1.Text = Trim(Replace(Replace(REQ_O_TIME2_1.Text, ":", ""), "：", ""))
         '列車・便名
         ANS_O_BIN_1.Text = Trim(REQ_O_BIN_1.Text)
 
@@ -1989,9 +1996,9 @@ Partial Public Class DrRegist
         '到着地
         ANS_O_AIRPORT2_2.Text = Trim(REQ_O_AIRPORT2_2.Text)
         '出発時刻
-        ANS_O_TIME1_2.Text = Trim(Replace(REQ_O_TIME1_2.Text, ":", ""))
+        ANS_O_TIME1_2.Text = Trim(Replace(Replace(REQ_O_TIME1_2.Text, ":", ""), "：", ""))
         '到着時刻
-        ANS_O_TIME2_2.Text = Trim(Replace(REQ_O_TIME2_2.Text, ":", ""))
+        ANS_O_TIME2_2.Text = Trim(Replace(Replace(REQ_O_TIME2_2.Text, ":", ""), "：", ""))
         '列車・便名
         ANS_O_BIN_2.Text = Trim(REQ_O_BIN_2.Text)
 
@@ -2045,9 +2052,9 @@ Partial Public Class DrRegist
         '到着地
         ANS_O_AIRPORT2_3.Text = Trim(REQ_O_AIRPORT2_3.Text)
         '出発時刻
-        ANS_O_TIME1_3.Text = Trim(Replace(REQ_O_TIME1_3.Text, ":", ""))
+        ANS_O_TIME1_3.Text = Trim(Replace(Replace(REQ_O_TIME1_3.Text, ":", ""), "：", ""))
         '到着時刻
-        ANS_O_TIME2_3.Text = Trim(Replace(REQ_O_TIME2_3.Text, ":", ""))
+        ANS_O_TIME2_3.Text = Trim(Replace(Replace(REQ_O_TIME2_3.Text, ":", ""), "：", ""))
         '列車・便名
         ANS_O_BIN_3.Text = Trim(REQ_O_BIN_3.Text)
 
@@ -2101,9 +2108,9 @@ Partial Public Class DrRegist
         '到着地
         ANS_O_AIRPORT2_4.Text = Trim(REQ_O_AIRPORT2_4.Text)
         '出発時刻
-        ANS_O_TIME1_4.Text = Trim(Replace(REQ_O_TIME1_4.Text, ":", ""))
+        ANS_O_TIME1_4.Text = Trim(Replace(Replace(REQ_O_TIME1_4.Text, ":", ""), "：", ""))
         '到着時刻
-        ANS_O_TIME2_4.Text = Trim(Replace(REQ_O_TIME2_4.Text, ":", ""))
+        ANS_O_TIME2_4.Text = Trim(Replace(Replace(REQ_O_TIME2_4.Text, ":", ""), "：", ""))
         '列車・便名
         ANS_O_BIN_4.Text = Trim(REQ_O_BIN_4.Text)
 
@@ -2157,9 +2164,9 @@ Partial Public Class DrRegist
         '到着地
         ANS_O_AIRPORT2_5.Text = Trim(REQ_O_AIRPORT2_5.Text)
         '出発時刻
-        ANS_O_TIME1_5.Text = Trim(Replace(REQ_O_TIME1_5.Text, ":", ""))
+        ANS_O_TIME1_5.Text = Trim(Replace(Replace(REQ_O_TIME1_5.Text, ":", ""), "：", ""))
         '到着時刻
-        ANS_O_TIME2_5.Text = Trim(Replace(REQ_O_TIME2_5.Text, ":", ""))
+        ANS_O_TIME2_5.Text = Trim(Replace(Replace(REQ_O_TIME2_5.Text, ":", ""), "：", ""))
         '列車・便名
         ANS_O_BIN_5.Text = Trim(REQ_O_BIN_5.Text)
 
@@ -2178,5 +2185,302 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+    End Sub
+    '交通往路１コピーボタン
+    Protected Sub BtnCopy_F_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_1.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_F_KOTSUKIKAN_1.SelectedIndex >= 1 OrElse _
+            ANS_F_DATE_1.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT1_1.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT2_1.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME1_1.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME2_1.Text.Trim <> String.Empty OrElse _
+            ANS_F_BIN_1.Text.Trim <> String.Empty OrElse _
+            ANS_F_SEAT_1.SelectedIndex >= 1 OrElse _
+            ANS_F_SEAT_KIBOU1.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_F_KOTSUKIKAN_1.Items.Count - 1
+            If REQ_F_KOTSUKIKAN_1.Text = ANS_F_KOTSUKIKAN_1.Items(i).Text Then
+                ANS_F_KOTSUKIKAN_1.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_F_DATE_1.Text = Trim(Replace(REQ_F_DATE_1.Text, "/", ""))
+        '出発地
+        ANS_F_AIRPORT1_1.Text = Trim(REQ_F_AIRPORT1_1.Text)
+        '到着地
+        ANS_F_AIRPORT2_1.Text = Trim(REQ_F_AIRPORT2_1.Text)
+        '出発時刻
+        ANS_F_TIME1_1.Text = Trim(Replace(Replace(REQ_F_TIME1_1.Text, ":", ""), "：", ""))
+        '到着時刻
+        ANS_F_TIME2_1.Text = Trim(Replace(Replace(REQ_F_TIME2_1.Text, ":", ""), "：", ""))
+        '列車・便名
+        ANS_F_BIN_1.Text = Trim(REQ_F_BIN_1.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_F_SEAT_1.Items.Count - 1
+            If REQ_F_SEAT_1.Text = ANS_F_SEAT_1.Items(i).Text Then
+                ANS_F_SEAT_1.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_F_SEAT_KIBOU1.Items.Count - 1
+            If REQ_F_SEAT_KIBOU1.Text = ANS_F_SEAT_KIBOU1.Items(i).Text Then
+                ANS_F_SEAT_KIBOU1.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路２コピーボタン
+    Protected Sub BtnCopy_F_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_2.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_F_KOTSUKIKAN_2.SelectedIndex >= 1 OrElse _
+            ANS_F_DATE_2.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT1_2.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT2_2.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME1_2.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME2_2.Text.Trim <> String.Empty OrElse _
+            ANS_F_BIN_2.Text.Trim <> String.Empty OrElse _
+            ANS_F_SEAT_2.SelectedIndex >= 1 OrElse _
+            ANS_F_SEAT_kibou2.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_F_KOTSUKIKAN_2.Items.Count - 1
+            If REQ_F_KOTSUKIKAN_2.Text = ANS_F_KOTSUKIKAN_2.Items(i).Text Then
+                ANS_F_KOTSUKIKAN_2.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_F_DATE_2.Text = Trim(Replace(REQ_F_DATE_2.Text, "/", ""))
+        '出発地
+        ANS_F_AIRPORT1_2.Text = Trim(REQ_F_AIRPORT1_2.Text)
+        '到着地
+        ANS_F_AIRPORT2_2.Text = Trim(REQ_F_AIRPORT2_2.Text)
+        '出発時刻
+        ANS_F_TIME1_2.Text = Trim(Replace(Replace(REQ_F_TIME1_2.Text, ":", ""), "：", ""))
+        '到着時刻
+        ANS_F_TIME2_2.Text = Trim(Replace(Replace(REQ_F_TIME2_2.Text, ":", ""), "：", ""))
+        '列車・便名
+        ANS_F_BIN_2.Text = Trim(REQ_F_BIN_2.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_F_SEAT_2.Items.Count - 1
+            If REQ_F_SEAT_2.Text = ANS_F_SEAT_2.Items(i).Text Then
+                ANS_F_SEAT_2.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_F_SEAT_kibou2.Items.Count - 1
+            If REQ_F_SEAT_kibou2.Text = ANS_F_SEAT_kibou2.Items(i).Text Then
+                ANS_F_SEAT_kibou2.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路３コピーボタン
+    Protected Sub BtnCopy_F_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_3.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_F_KOTSUKIKAN_3.SelectedIndex >= 1 OrElse _
+            ANS_F_DATE_3.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT1_3.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT2_3.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME1_3.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME2_3.Text.Trim <> String.Empty OrElse _
+            ANS_F_BIN_3.Text.Trim <> String.Empty OrElse _
+            ANS_F_SEAT_3.SelectedIndex >= 1 OrElse _
+            ANS_F_SEAT_kibou3.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_F_KOTSUKIKAN_3.Items.Count - 1
+            If REQ_F_KOTSUKIKAN_3.Text = ANS_F_KOTSUKIKAN_3.Items(i).Text Then
+                ANS_F_KOTSUKIKAN_3.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_F_DATE_3.Text = Trim(Replace(REQ_F_DATE_3.Text, "/", ""))
+        '出発地
+        ANS_F_AIRPORT1_3.Text = Trim(REQ_F_AIRPORT1_3.Text)
+        '到着地
+        ANS_F_AIRPORT2_3.Text = Trim(REQ_F_AIRPORT2_3.Text)
+        '出発時刻
+        ANS_F_TIME1_3.Text = Trim(Replace(Replace(REQ_F_TIME1_3.Text, ":", ""), "：", ""))
+        '到着時刻
+        ANS_F_TIME2_3.Text = Trim(Replace(Replace(REQ_F_TIME2_3.Text, ":", ""), "：", ""))
+        '列車・便名
+        ANS_F_BIN_3.Text = Trim(REQ_F_BIN_3.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_F_SEAT_3.Items.Count - 1
+            If REQ_F_SEAT_3.Text = ANS_F_SEAT_3.Items(i).Text Then
+                ANS_F_SEAT_3.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_F_SEAT_kibou3.Items.Count - 1
+            If REQ_F_SEAT_kibou3.Text = ANS_F_SEAT_kibou3.Items(i).Text Then
+                ANS_F_SEAT_kibou3.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路４コピーボタン
+    Protected Sub BtnCopy_F_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_4.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_F_KOTSUKIKAN_4.SelectedIndex >= 1 OrElse _
+            ANS_F_DATE_4.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT1_4.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT2_4.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME1_4.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME2_4.Text.Trim <> String.Empty OrElse _
+            ANS_F_BIN_4.Text.Trim <> String.Empty OrElse _
+            ANS_F_SEAT_4.SelectedIndex >= 1 OrElse _
+            ANS_F_SEAT_kibou4.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_F_KOTSUKIKAN_4.Items.Count - 1
+            If REQ_F_KOTSUKIKAN_4.Text = ANS_F_KOTSUKIKAN_4.Items(i).Text Then
+                ANS_F_KOTSUKIKAN_4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_F_DATE_4.Text = Trim(Replace(REQ_F_DATE_4.Text, "/", ""))
+        '出発地
+        ANS_F_AIRPORT1_4.Text = Trim(REQ_F_AIRPORT1_4.Text)
+        '到着地
+        ANS_F_AIRPORT2_4.Text = Trim(REQ_F_AIRPORT2_4.Text)
+        '出発時刻
+        ANS_F_TIME1_4.Text = Trim(Replace(Replace(REQ_F_TIME1_4.Text, ":", ""), "：", ""))
+        '到着時刻
+        ANS_F_TIME2_4.Text = Trim(Replace(Replace(REQ_F_TIME2_4.Text, ":", ""), "：", ""))
+        '列車・便名
+        ANS_F_BIN_4.Text = Trim(REQ_F_BIN_4.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_F_SEAT_4.Items.Count - 1
+            If REQ_F_SEAT_4.Text = ANS_F_SEAT_4.Items(i).Text Then
+                ANS_F_SEAT_4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_F_SEAT_kibou4.Items.Count - 1
+            If REQ_F_SEAT_kibou4.Text = ANS_F_SEAT_kibou4.Items(i).Text Then
+                ANS_F_SEAT_kibou4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '交通往路５コピーボタン
+    Protected Sub BtnCopy_F_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_5.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If ANS_F_KOTSUKIKAN_5.SelectedIndex >= 1 OrElse _
+            ANS_F_DATE_5.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT1_5.Text.Trim <> String.Empty OrElse _
+            ANS_F_AIRPORT2_5.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME1_5.Text.Trim <> String.Empty OrElse _
+            ANS_F_TIME2_5.Text.Trim <> String.Empty OrElse _
+            ANS_F_BIN_5.Text.Trim <> String.Empty OrElse _
+            ANS_F_SEAT_5.SelectedIndex >= 1 OrElse _
+            ANS_F_SEAT_kibou4.SelectedIndex >= 1 Then
+
+            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
+                Exit Sub
+            End If
+        End If
+
+        '交通機関
+        For i As Integer = 0 To ANS_F_KOTSUKIKAN_5.Items.Count - 1
+            If REQ_F_KOTSUKIKAN_5.Text = ANS_F_KOTSUKIKAN_5.Items(i).Text Then
+                ANS_F_KOTSUKIKAN_5.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '利用日
+        ANS_F_DATE_5.Text = Trim(Replace(REQ_F_DATE_5.Text, "/", ""))
+        '出発地
+        ANS_F_AIRPORT1_5.Text = Trim(REQ_F_AIRPORT1_5.Text)
+        '到着地
+        ANS_F_AIRPORT2_5.Text = Trim(REQ_F_AIRPORT2_5.Text)
+        '出発時刻
+        ANS_F_TIME1_5.Text = Trim(Replace(Replace(REQ_F_TIME1_5.Text, ":", ""), "：", ""))
+        '到着時刻
+        ANS_F_TIME2_5.Text = Trim(Replace(Replace(REQ_F_TIME2_5.Text, ":", ""), "：", ""))
+        '列車・便名
+        ANS_F_BIN_5.Text = Trim(REQ_F_BIN_5.Text)
+
+        '座席区分
+        For i As Integer = 0 To ANS_F_SEAT_5.Items.Count - 1
+            If REQ_F_SEAT_5.Text = ANS_F_SEAT_5.Items(i).Text Then
+                ANS_F_SEAT_5.SelectedIndex = i
+                Exit For
+            End If
+        Next
+
+        '座席希望
+        For i As Integer = 0 To ANS_F_SEAT_kibou4.Items.Count - 1
+            If REQ_F_SEAT_kibou4.Text = ANS_F_SEAT_kibou4.Items(i).Text Then
+                ANS_F_SEAT_kibou4.SelectedIndex = i
+                Exit For
+            End If
+        Next
+    End Sub
+
+    '[戻る]
+    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
+        Session.Remove(SessionDef.DrRireki_PageIndex)
+        Session.Remove(SessionDef.DrRireki_SEQ)
+
+        If Popup Then
+            Dim scriptStr As String = ""
+            scriptStr &= "<script language='javascript' type='text/javascript'>"
+            scriptStr &= "window.opener.aspnetForm.submit();"
+            scriptStr &= "window.close();"
+            scriptStr &= "</script>"
+
+            ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
+        Else
+            Response.Redirect(Session.Item(SessionDef.BackURL2))
+        End If
     End Sub
 End Class

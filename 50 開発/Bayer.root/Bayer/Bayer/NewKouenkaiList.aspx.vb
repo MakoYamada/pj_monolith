@@ -171,15 +171,7 @@ Partial Public Class NewKouenkaiList
         If e.Row.RowType = DataControlRowType.DataRow Then
 
             '実施日
-            If e.Row.Cells(CellIndex.JISSHI_DATE).Text <> e.Row.Cells(CellIndex.TO_DATE).Text Then
-                e.Row.Cells(CellIndex.JISSHI_DATE).Text = _
-                    CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD) _
-                    & "～" _
-                    & CmnModule.Format_Date(e.Row.Cells(CellIndex.TO_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            Else
-                e.Row.Cells(CellIndex.JISSHI_DATE).Text = _
-                    CmnModule.Format_Date(e.Row.Cells(CellIndex.JISSHI_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            End If
+            e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.JISSHI_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
 
             'TimeStamp
             e.Row.Cells(CellIndex.TIME_STAMP).Text = _

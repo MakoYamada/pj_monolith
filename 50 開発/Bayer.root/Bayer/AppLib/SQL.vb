@@ -609,12 +609,16 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function byNEW_TIME_STAMP(ByVal SALEFORCE_ID As String, ByVal TIME_STAMP_BYL As String) As String
+        Public Shared Function byNEW_TIME_STAMP(ByVal SALEFORCE_ID As String, ByVal TIME_STAMP_BYL As String, Optional ByVal KOUENKAI_NO As String = "") As String
             Dim strSQL As String = ""
 
             strSQL &= "SELECT COUNT(*) AS CNT"
             strSQL &= " FROM TBL_KOTSUHOTEL"
             strSQL &= " WHERE "
+            If KOUENKAI_NO.Trim <> "" Then
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+                strSQL &= " AND "
+            End If
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(SALEFORCE_ID) & "'"
             strSQL &= " AND "
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ">N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
