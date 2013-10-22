@@ -23,7 +23,7 @@ Partial Public Class TaxiCsv
             InitControls()
         End If
 
-        'マスターページ設定
+        'マステーページ設定
         With Me.Master
             .HideLoginUser = True   'QQQ
             .PageTitle = "タクシー管理システム用CSVファイル作成"
@@ -46,9 +46,6 @@ Partial Public Class TaxiCsv
         'IME設定
         CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenKIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_ROMA, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenTEHAI_TANTO_ROMA, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenSEIHIN_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenFROM_DATE_YYYY, CmnModule.ImeType.Disabled)
@@ -65,18 +62,11 @@ Partial Public Class TaxiCsv
 
     '[CSVファイル作成]ボタン
     Protected Sub BtnCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCsv.Click
-        'QQQ
-        Exit Sub
-
         '入力チェック
         If Not Check() Then Exit Sub
 
         '条件
         Joken = Nothing
-        Joken = Nothing
-        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
-        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
-        Joken.SEIHIN_NAME = Trim(Me.JokenSEIHIN_NAME.Text)
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
         Joken.BU = Trim(Me.JokenBU.Text)

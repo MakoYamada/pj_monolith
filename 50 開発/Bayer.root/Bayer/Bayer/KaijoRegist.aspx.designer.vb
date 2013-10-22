@@ -898,15 +898,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_991330401_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''ANS_HOTELHI_TF コントロール。
     '''</summary>
     '''<remarks>
@@ -997,15 +988,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_41120200_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''ANS_TOTAL_TF コントロール。
     '''</summary>
     '''<remarks>
@@ -1013,15 +995,6 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TOTAL_TF As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label6 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnCalc_ANS_TOTAL_TF コントロール。
@@ -1069,15 +1042,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_991330401_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''ANS_JINKENHI_T コントロール。
     '''</summary>
     '''<remarks>
@@ -1114,15 +1078,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_41120200_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''ANS_TOTAL_T コントロール。
     '''</summary>
     '''<remarks>
@@ -1130,15 +1085,6 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TOTAL_T As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label7 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnCalc_ANS_TOTAL_T コントロール。

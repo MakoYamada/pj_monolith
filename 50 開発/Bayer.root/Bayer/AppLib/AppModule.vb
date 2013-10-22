@@ -565,6 +565,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.FROM_DATE.ToUpper Then TBL_KOTSUHOTEL.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TO_DATE.ToUpper Then TBL_KOTSUHOTEL.TO_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.USER_NAME.ToUpper Then TBL_KOTSUHOTEL.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP.ToUpper Then TBL_KOTSUHOTEL.TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KOTSUHOTEL
@@ -1849,7 +1850,7 @@ Public Class AppModule
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_MITSUMORI_TOTAL)
         Else
-            Return ANS_MITSUMORI_TOTAL
+            Return CmnModule.DbVal(ANS_MITSUMORI_TOTAL).ToString
         End If
     End Function
     Public Shared Function GetName_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As String, ByVal ANS_MITSUMORI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
@@ -1939,42 +1940,42 @@ Public Class AppModule
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_991330401_TF)
         Else
-            Return ANS_991330401_TF
+            Return CmnModule.DbVal(ANS_991330401_TF).ToString
         End If
     End Function
     Public Shared Function GetName_ANS_41120200_TF(ByVal ANS_41120200_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_41120200_TF)
         Else
-            Return ANS_41120200_TF
+            Return CmnModule.DbVal(ANS_41120200_TF).ToString
         End If
     End Function
     Public Shared Function GetName_ANS_TOTAL_TF(ByVal ANS_TOTAL_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_TOTAL_TF)
         Else
-            Return ANS_TOTAL_TF
+            Return CmnModule.DbVal(ANS_TOTAL_TF).ToString
         End If
     End Function
     Public Shared Function GetName_ANS_991330401_T(ByVal ANS_991330401_T As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_991330401_T)
         Else
-            Return ANS_991330401_T
+            Return CmnModule.DbVal(ANS_991330401_T).ToString
         End If
     End Function
     Public Shared Function GetName_ANS_41120200_T(ByVal ANS_41120200_T As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_41120200_T)
         Else
-            Return ANS_41120200_T
+            Return CmnModule.DbVal(ANS_41120200_T).ToString
         End If
     End Function
     Public Shared Function GetName_ANS_TOTAL_T(ByVal ANS_TOTAL_T As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = False Then
             Return CmnModule.EditComma(ANS_TOTAL_T)
         Else
-            Return ANS_TOTAL_T
+            Return CmnModule.DbVal(ANS_TOTAL_T).ToString
         End If
     End Function
 
@@ -3793,68 +3794,72 @@ Public Class AppModule
     End Function
 
     'タクシーチケット：利用日（回答）
-    Public Shared Function GetName_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String) As String
-        Return CmnModule.Format_Date(ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+    Public Shared Function GetName_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.Format_Date(ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        Else
+            Return ANS_TAXI_DATE
+        End If
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_1(ByVal ANS_TAXI_DATE_1 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_1)
+    Public Shared Function GetName_ANS_TAXI_DATE_1(ByVal ANS_TAXI_DATE_1 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_1, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_2(ByVal ANS_TAXI_DATE_2 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_2)
+    Public Shared Function GetName_ANS_TAXI_DATE_2(ByVal ANS_TAXI_DATE_2 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_2, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_3(ByVal ANS_TAXI_DATE_3 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_3)
+    Public Shared Function GetName_ANS_TAXI_DATE_3(ByVal ANS_TAXI_DATE_3 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_3, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_4(ByVal ANS_TAXI_DATE_4 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_4)
+    Public Shared Function GetName_ANS_TAXI_DATE_4(ByVal ANS_TAXI_DATE_4 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_4, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_5(ByVal ANS_TAXI_DATE_5 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_5)
+    Public Shared Function GetName_ANS_TAXI_DATE_5(ByVal ANS_TAXI_DATE_5 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_5, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_6(ByVal ANS_TAXI_DATE_6 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_6)
+    Public Shared Function GetName_ANS_TAXI_DATE_6(ByVal ANS_TAXI_DATE_6 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_6, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_7(ByVal ANS_TAXI_DATE_7 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_7)
+    Public Shared Function GetName_ANS_TAXI_DATE_7(ByVal ANS_TAXI_DATE_7 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_7, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_8(ByVal ANS_TAXI_DATE_8 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_8)
+    Public Shared Function GetName_ANS_TAXI_DATE_8(ByVal ANS_TAXI_DATE_8 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_8, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_9(ByVal ANS_TAXI_DATE_9 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_9)
+    Public Shared Function GetName_ANS_TAXI_DATE_9(ByVal ANS_TAXI_DATE_9 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_9, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_10(ByVal ANS_TAXI_DATE_10 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_10)
+    Public Shared Function GetName_ANS_TAXI_DATE_10(ByVal ANS_TAXI_DATE_10 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_10, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_11(ByVal ANS_TAXI_DATE_11 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_11)
+    Public Shared Function GetName_ANS_TAXI_DATE_11(ByVal ANS_TAXI_DATE_11 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_11, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_12(ByVal ANS_TAXI_DATE_12 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_12)
+    Public Shared Function GetName_ANS_TAXI_DATE_12(ByVal ANS_TAXI_DATE_12 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_12, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_13(ByVal ANS_TAXI_DATE_13 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_13)
+    Public Shared Function GetName_ANS_TAXI_DATE_13(ByVal ANS_TAXI_DATE_13 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_13, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_14(ByVal ANS_TAXI_DATE_14 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_14)
+    Public Shared Function GetName_ANS_TAXI_DATE_14(ByVal ANS_TAXI_DATE_14 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_14, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_15(ByVal ANS_TAXI_DATE_15 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_15)
+    Public Shared Function GetName_ANS_TAXI_DATE_15(ByVal ANS_TAXI_DATE_15 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_15, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_16(ByVal ANS_TAXI_DATE_16 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_16)
+    Public Shared Function GetName_ANS_TAXI_DATE_16(ByVal ANS_TAXI_DATE_16 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_16, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_17(ByVal ANS_TAXI_DATE_17 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_17)
+    Public Shared Function GetName_ANS_TAXI_DATE_17(ByVal ANS_TAXI_DATE_17 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_17, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_18(ByVal ANS_TAXI_DATE_18 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_18)
+    Public Shared Function GetName_ANS_TAXI_DATE_18(ByVal ANS_TAXI_DATE_18 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_18, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_19(ByVal ANS_TAXI_DATE_19 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_19)
+    Public Shared Function GetName_ANS_TAXI_DATE_19(ByVal ANS_TAXI_DATE_19 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_19, ShortFormat)
     End Function
-    Public Shared Function GetName_ANS_TAXI_DATE_20(ByVal ANS_TAXI_DATE_20 As String) As String
-        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_20)
+    Public Shared Function GetName_ANS_TAXI_DATE_20(ByVal ANS_TAXI_DATE_20 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_20, ShortFormat)
     End Function
 
     'タクシーチケット：券種（回答）
@@ -7780,12 +7785,12 @@ Public Class AppModule
     Public Shared Function GetValue_URL(ByVal URL As TextBox) As String
         Return Trim(StrConv(URL.Text, VbStrConv.Narrow))
     End Function
-    
+
     'ユーザマスタ関連
     Public Shared Function GetValue_KENGEN(ByVal KENGEN_Admin As CheckBox, ByVal KENGEN_User As CheckBox) As String
-        If KENGEN_ADMIN.Checked = True Then
+        If KENGEN_Admin.Checked = True Then
             Return AppConst.MS_USER.KENGEN.Code.Admin
-        ElseIf KENGEN_USER.Checked = True Then
+        ElseIf KENGEN_User.Checked = True Then
             Return AppConst.MS_USER.KENGEN.Code.User
         Else
             Return ""

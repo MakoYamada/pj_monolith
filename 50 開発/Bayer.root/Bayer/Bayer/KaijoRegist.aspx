@@ -892,8 +892,7 @@
 													円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-													<asp:Label ID="ANS_991330401_TF" runat="server" Text="1,234,567,890" Width="90px"></asp:Label>
-													<asp:Label ID="Label1" runat="server" Text="円" Width="30px"></asp:Label>
+													<asp:Label ID="ANS_991330401_TF" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													&nbsp;
@@ -982,8 +981,7 @@
 													<asp:TextBox ID="ANS_KANRIHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-													<asp:Label ID="ANS_41120200_TF" runat="server" Text="1,234,567,890" Width="90px"></asp:Label>
-													<asp:Label ID="Label4" runat="server" Text="円" Width="30px"></asp:Label>
+													<asp:Label ID="ANS_41120200_TF" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													&nbsp;
@@ -1002,8 +1000,7 @@
 											</tr>
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-													<asp:Label ID="ANS_TOTAL_TF" runat="server" Text="1,234,567,890" Width="90px"></asp:Label>
-													<asp:Label ID="Label6" runat="server" Text="円" Width="30px"></asp:Label>
+													<asp:Label ID="ANS_TOTAL_TF" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													<asp:Button ID="BtnCalc_ANS_TOTAL_TF" runat="server" Text="再計算" Width="60px" CssClass="ButtonList" />
@@ -1054,8 +1051,7 @@
 													円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-													<asp:Label ID="ANS_991330401_T" runat="server" Text="1,234,567,890" Width="90px"></asp:Label>
-													<asp:Label ID="Label2" runat="server" Text="円" Width="30px"></asp:Label>
+													<asp:Label ID="ANS_991330401_T" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													&nbsp;
@@ -1096,8 +1092,7 @@
 													<asp:TextBox ID="ANS_KANRIHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-													<asp:Label ID="ANS_41120200_T" runat="server" Text="1,234,567,890" Width="90px"></asp:Label>
-													<asp:Label ID="Label5" runat="server" Text="円" Width="30px"></asp:Label>
+													<asp:Label ID="ANS_41120200_T" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													&nbsp;
@@ -1116,8 +1111,7 @@
 											</tr>
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-													<asp:Label ID="ANS_TOTAL_T" runat="server" Text="1,234,567,890" Width="90px"></asp:Label>
-													<asp:Label ID="Label7" runat="server" Text="円" Width="30px"></asp:Label>
+													<asp:Label ID="ANS_TOTAL_T" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													<asp:Button ID="BtnCalc_ANS_TOTAL_T" runat="server" Text="再計算" Width="60px" CssClass="ButtonList" />

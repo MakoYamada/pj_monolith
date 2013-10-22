@@ -776,6 +776,8 @@ Public Class SQL
                 strSQL_WHERE_KOTSUHOTEL &= " AND TBL_KOTSUHOTEL.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
             End If
 
+            strSQL_WHERE_KOTSUHOTEL &= " AND TBL_KOTSUHOTEL.TEHAI_TAXI=N'" & AppConst.KOTSUHOTEL.TEHAI_TAXI.Code.Yes & "'"
+
             '講演会テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             If Trim(Joken.BU) <> "" Then
@@ -841,6 +843,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.TO_DATE"
             strSQL &= ",TBL_KOUENKAI.KAIJO_NAME"
             strSQL &= ",TBL_KOUENKAI.SEIHIN_NAME"
+            strSQL &= ",TBL_KOUENKAI.TIME_STAMP"
             strSQL &= " FROM"
             strSQL &= "("
             strSQL &= " SELECT TBL_KOUENKAI_1.* FROM "

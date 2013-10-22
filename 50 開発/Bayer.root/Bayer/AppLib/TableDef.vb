@@ -781,6 +781,7 @@
             Public TO_DATE As String
             Public USER_NAME As String
             Public SEIHIN_NAME As String
+            Public TIME_STAMP As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1180,6 +1181,7 @@
             Public Const TO_DATE As String = "TO_DATE"
             Public Const USER_NAME As String = "USER_NAME"
             Public Const SEIHIN_NAME As String = "SEIHIN_NAME"
+            Public Const TIME_STAMP As String = "TIME_STAMP"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"

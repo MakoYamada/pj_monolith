@@ -9,18 +9,6 @@
 				<table cellpadding="2" cellspacing="0" border="0">
 					<tr>
 						<td align="left">
-							企画担当者
-							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
-							&nbsp;&nbsp;&nbsp;
-							手配担当者
-							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
-							&nbsp;&nbsp;&nbsp;
-							製品名
-							<asp:TextBox ID="JokenSEIHIN_NAME" runat="server" Width="200px"></asp:TextBox>
-						</td>
-					</tr>
-					<tr>
-						<td align="left">
 							講演会番号
 							<asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="140px" MaxLength="14"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;

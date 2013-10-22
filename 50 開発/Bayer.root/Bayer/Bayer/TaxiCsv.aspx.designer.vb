@@ -16,33 +16,6 @@ Option Explicit On
 Partial Public Class TaxiCsv
 
     '''<summary>
-    '''JokenKIKAKU_TANTO_ROMA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTEHAI_TANTO_ROMA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSEIHIN_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSEIHIN_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
