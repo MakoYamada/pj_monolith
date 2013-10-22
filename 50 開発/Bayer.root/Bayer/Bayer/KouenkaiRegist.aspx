@@ -118,10 +118,16 @@
 							<asp:Label ID="ZETIA_CD" runat="server" Text=""></asp:Label>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 75px;">
-							ŽQ‰Ál”
+							ŽQ‰Ál”(]‹Æˆõ)
 						</td>
-						<td nowrap="nowrap" align="left" colspan="5">
-							<asp:Label ID="SANKA_YOTEI_CNT" runat="server" Text=""></asp:Label>
+						<td nowrap="nowrap" align="left">
+							<asp:Label ID="SANKA_YOTEI_CNT_MBR" runat="server" Text=""></asp:Label>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 75px;">
+							ŽQ‰Ál”(]‹ÆˆõˆÈŠO)
+						</td>
+						<td nowrap="nowrap" align="left" colspan="3">
+							<asp:Label ID="SANKA_YOTEI_CNT_NMBR" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
 				</table>
@@ -134,6 +140,14 @@
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" colspan="8">
 							¡ u‰‰‰ï Šé‰æ’S“–ŽÒ
 
+						</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							Ž–‹Æ•”
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="7">
+							<asp:Label ID="KIKAKU_TANTO_JIGYOUBU" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
 					<tr>
@@ -245,6 +259,23 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
 							<asp:Label ID="YOSAN_T" runat="server" Text=""></asp:Label>
+							‰~
+						</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+							ˆÔ˜J‰ï—\ŽZ(‰ÛÅ)
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" style="width: 200px;">
+							<asp:Label ID="IROUKAI_YOSAN_T" runat="server" Text=""></asp:Label>
+							‰~
+
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+							ˆÓŒ©ŒðŠ·‰ï—\ŽZ(‰ÛÅ)
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
+							<asp:Label ID="IKENKOUKAN_YOSAN_T" runat="server" Text=""></asp:Label>
 							‰~
 						</td>
 					</tr>

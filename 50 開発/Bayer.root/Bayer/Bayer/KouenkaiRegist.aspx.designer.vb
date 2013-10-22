@@ -160,13 +160,31 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents ZETIA_CD As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''SANKA_YOTEI_CNT コントロール。
+    '''SANKA_YOTEI_CNT_MBR コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SANKA_YOTEI_CNT As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SANKA_YOTEI_CNT_MBR As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SANKA_YOTEI_CNT_NMBR コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SANKA_YOTEI_CNT_NMBR As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KIKAKU_TANTO_JIGYOUBU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_JIGYOUBU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BU コントロール。
@@ -275,6 +293,24 @@ Partial Public Class KouenkaiRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents YOSAN_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''IROUKAI_YOSAN_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents IROUKAI_YOSAN_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''IKENKOUKAN_YOSAN_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents IKENKOUKAN_YOSAN_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnRireki コントロール。
