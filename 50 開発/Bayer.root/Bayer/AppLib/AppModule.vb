@@ -5356,6 +5356,16 @@ Public Class AppModule
         control.Text = FIX_OTHER_CANCELLATION
     End Sub
 
+    'y‰ñ“šzè”—¿(Œğ’ÊEh”‘)
+    Public Shared Sub SetForm_ANS_KOTSUHOTEL_TESURYO(ByVal ANS_KOTSUHOTEL_TESURYO As String, ByRef control As TextBox)
+        control.Text = ANS_KOTSUHOTEL_TESURYO
+    End Sub
+
+    'y‰ñ“šzè”—¿(ƒ^ƒNƒ`ƒP”­Œ”è”—¿)
+    Public Shared Sub SetForm_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As String, ByRef control As TextBox)
+        control.Text = ANS_TAXI_TESURYO
+    End Sub
+
     '“o˜^ŠÇ—è”—¿
     Public Shared Sub SetForm_TOUROKUKANRI_FEE(ByVal TOUROKUKANRI_FEE As String, ByRef control As TextBox)
         control.Text = TOUROKUKANRI_FEE
@@ -5747,7 +5757,7 @@ Public Class AppModule
     End Sub
 
     'q‹óŒ”‘ã‹ài‰ñ“šj
-    Public Shared Sub SetForm_ANS_AIRL_FARE(ByVal ANS_AIRL_FARE As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_AIR_FARE(ByVal ANS_AIRL_FARE As String, ByRef control As TextBox)
         control.Text = ANS_AIRL_FARE
     End Sub
 
