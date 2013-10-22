@@ -70,15 +70,6 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KOUENKAI_TITLE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KOUENKAI_TITLE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''FROM_DATE コントロール。
     '''</summary>
     '''<remarks>

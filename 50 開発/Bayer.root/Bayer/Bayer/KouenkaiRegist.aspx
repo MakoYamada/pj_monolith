@@ -49,15 +49,6 @@
 						</td>
 					</tr>
 					<tr>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							タイトル
-						</td>
-						<td nowrap="nowrap" align="left" class="TdItem" colspan="7">
-                            <asp:TextBox ID="KOUENKAI_TITLE" runat="server" BorderStyle="None" Height="35px" 
-                                ReadOnly="True" TextMode="MultiLine" Width="624px"></asp:TextBox>
-						</td>
-					</tr>
-					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
 							講演会開催日
 						</td>
