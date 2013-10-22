@@ -23,6 +23,7 @@
     Public Const SYSTEM_ID As String = "SYSTEM_ID"
     Public Const DrRireki As String = "DrRireki"
     Public Const DrRireki_TBL_KOTSUHOTEL As String = "DrRireki_TBL_KOTSUHOTEL"
+    Public Const DrRireki_TBL_KOUENKAI As String = "DrRireki_TBL_KOUENKAI"
     Public Const DrRireki_SEQ As String = "DrRireki_SEQ"
     Public Const DrRireki_PageIndex As String = "DrRireki_PageIndex"
     Public Const KouenkaiRireki As String = "KouenkaiRireki"
