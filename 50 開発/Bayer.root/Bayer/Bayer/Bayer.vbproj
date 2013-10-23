@@ -313,6 +313,13 @@
       <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SeisanList.aspx.designer.vb">
+      <DependentUpon>SeisanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanList.aspx.vb">
+      <DependentUpon>SeisanList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="SeisanRegist.aspx.designer.vb">
       <DependentUpon>SeisanRegist.aspx</DependentUpon>
     </Compile>
@@ -438,6 +445,7 @@
     <Content Include="NewKaijoList.aspx" />
     <Content Include="Preview.aspx" />
     <Content Include="print.css" />
+    <Content Include="SeisanList.aspx" />
     <Content Include="SeisanRegist.aspx" />
     <Content Include="ShisetsuKensaku.aspx" />
     <Content Include="Sorry.html" />
