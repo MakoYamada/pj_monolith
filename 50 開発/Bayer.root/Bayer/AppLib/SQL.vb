@@ -538,7 +538,8 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL = "UPDATE TBL_SEIKYU SET"
-            strSQL &= " " & TableDef.TBL_SEIKYU.Column.SHOUNIN_KUBUN & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SHOUNIN_KUBUN) & "'"
+            strSQL &= " " & TableDef.TBL_SEIKYU.Column.SHIHARAI_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SHIHARAI_NO) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SHOUNIN_KUBUN & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SHOUNIN_KUBUN) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SHOUNIN_DATE & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SHOUNIN_DATE) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
