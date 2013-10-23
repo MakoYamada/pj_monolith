@@ -25,22 +25,22 @@ Partial Public Class SeisanRegist
     Protected WithEvents TextBox30 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox31 コントロール。
+    '''TextBox25 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox31 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBox25 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnSearch コントロール。
+    '''TextBox27 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnSearch As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox27 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''DropDownList1 コントロール。
@@ -295,13 +295,13 @@ Partial Public Class SeisanRegist
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox25 コントロール。
+    '''TextBox31 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox25 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBox31 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TextBox23 コントロール。
@@ -376,15 +376,6 @@ Partial Public Class SeisanRegist
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnNozomi コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''BtnSubmit コントロール。
     '''</summary>
     '''<remarks>
@@ -392,6 +383,15 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnNozomi コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnCancel コントロール。
