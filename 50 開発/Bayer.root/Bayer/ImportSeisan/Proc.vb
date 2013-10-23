@@ -9,20 +9,22 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    Private Const COL_COUNT As Integer = 4 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 5 'ファイルの項目数
 
     Private Enum COL_NO
         Field1 = 0
         Field2
         Field3
         Field4
+        Field5
     End Enum
 
     Private Class COL_NAME
         Public Const Field1 As String = "講演会番号"
-        Public Const Field2 As String = "トップツアー精算年月"
-        Public Const Field3 As String = "承認区分"
-        Public Const Field4 As String = "精算承認日"
+        Public Const Field2 As String = "支払番号"
+        Public Const Field3 As String = "TOP請求書番号"
+        Public Const Field4 As String = "承認区分"
+        Public Const Field5 As String = "精算承認日"
     End Class
 
 #End Region
@@ -125,8 +127,8 @@ Public Class Proc
                 Throw New Exception(COL_NAME.Field1 & "がセットされていません。")
             End If
 
-            If fileData(COL_NO.Field2).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.Field2 & "がセットされていません。")
+            If fileData(COL_NO.Field3).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field3 & "がセットされていません。")
             End If
 
             '禁則文字チェック
@@ -179,9 +181,10 @@ Public Class Proc
 
         Try
             TBL_SEIKYU.KOUENKAI_NO = fileData(COL_NO.Field1)
-            TBL_SEIKYU.SEISAN_YM = fileData(COL_NO.Field2)
-            TBL_SEIKYU.SHOUNIN_KUBUN = fileData(COL_NO.Field3)
-            TBL_SEIKYU.SHOUNIN_DATE = fileData(COL_NO.Field4)
+            TBL_SEIKYU.SHIHARAI_NO = fileData(COL_NO.Field2)
+            TBL_SEIKYU.SEIKYU_NO_TOPTOUR = fileData(COL_NO.Field3)
+            TBL_SEIKYU.SHOUNIN_KUBUN = fileData(COL_NO.Field4)
+            TBL_SEIKYU.SHOUNIN_DATE = fileData(COL_NO.Field5)
             TBL_SEIKYU.UPDATE_USER = pbatchID
 
             strSQL = SQL.TBL_SEIKYU.Update_SHOUNIN_KEKKA(TBL_SEIKYU)
@@ -190,7 +193,7 @@ Public Class Proc
             If updCnt = 0 Then
                 Dim strMsg As String = strfileName & "【" & strRowCnt & "行目】" _
                                     & COL_NAME.Field1 & ":" & fileData(COL_NO.Field1) & "、" _
-                                    & COL_NAME.Field2 & ":" & fileData(COL_NO.Field2) & " のデータは登録されていません。"
+                                    & COL_NAME.Field3 & ":" & fileData(COL_NO.Field3) & " のデータは登録されていません。"
                 InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, strMsg, "TBL_SEIKYU", " SQL:" & strSQL)
             End If
 
