@@ -79,13 +79,13 @@ Partial Public Class Base
     Protected WithEvents TdHeader1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
 
     '''<summary>
-    '''TdHeader2 コントロール。
+    '''ImgSiteName コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TdHeader2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+    Protected WithEvents ImgSiteName As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
     '''TblHeader2 コントロール。

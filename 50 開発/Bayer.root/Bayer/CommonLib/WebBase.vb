@@ -12,7 +12,7 @@ Public Class WebBase
     '---------------------------------------------------------
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         PreAction()
-        MyBase.Title = Configuration.ConfigurationManager.AppSettings("EventName")
+        MyBase.Title = Configuration.ConfigurationManager.AppSettings("SystemName")
     End Sub
 
     '---------------------------------------------------------

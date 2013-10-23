@@ -130,18 +130,6 @@ Partial Public Class KaijoList
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        'Joken = Nothing
-        'Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
-        'Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
-        'Joken.SEIHIN_NAME = Trim(Me.JokenSEIHIN_NAME.Text)
-        'Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
-        'Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        'Joken.BU = Trim(Me.JokenBU.Text)
-        'Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
-        'Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
-        'Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
-        'Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
-
         ReDim TBL_KAIJO(wCnt)
         strSQL = SQL.TBL_KAIJO.Search(Joken, False)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)

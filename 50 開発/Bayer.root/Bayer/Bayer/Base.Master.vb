@@ -55,7 +55,7 @@ Partial Public Class Base
             Response.Redirect(URL.TimeOut)
         End If
 
-        Me.TdHeader2.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/logo.png") & "')"
+        Me.ImgSiteName.ImageUrl = "~/Images/logo.png"
         Me.TdHeader1.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
         Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
 
