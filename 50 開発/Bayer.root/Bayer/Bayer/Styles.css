@@ -139,12 +139,20 @@ img
 	font-weight: bold;
 	width: 180px;
 }
-.TdTitleSeisanKei
+.TdTitleSeisanKei1
 {
 	background-color: #e3e8eb;
 	color: #273034;
 	font-weight: bold;
 	width: 85px;
+}
+.TdTitleSeisanKei2
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 618px;
+	height:30px;
 }
 .TdItemSeisan1
 {
@@ -153,6 +161,24 @@ img
 	font-weight: normal;
 	padding-right: 5px;
 	width: 130px;
+}
+.TdItemSeisanKei1
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
+	width: 130px;
+	text-align:right;
+}
+.TdItemSeisanKei2
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: bold;
+	padding-right: 5px;
+	width: 130px;
+	text-align:right;
 }
 .ItemConfirm 
 {
