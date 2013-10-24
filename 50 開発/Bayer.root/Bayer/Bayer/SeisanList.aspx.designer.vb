@@ -16,31 +16,40 @@ Option Explicit On
 Partial Public Class SeisanList
 
     '''<summary>
-    '''TextBox30 コントロール。
+    '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox30 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox1 コントロール。
+    '''JokenSEIKYU_NO_TOPTOUR コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenSEIKYU_NO_TOPTOUR As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Button1 コントロール。
+    '''BtnSearch コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSearch As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnInsert コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnInsert As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''LabelNoData コントロール。
@@ -68,6 +77,15 @@ Partial Public Class SeisanList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''BtnBack コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

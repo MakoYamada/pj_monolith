@@ -16,49 +16,49 @@ Option Explicit On
 Partial Public Class SeisanRegist
 
     '''<summary>
-    '''TextBox30 コントロール。
+    '''Label8 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox30 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox25 コントロール。
+    '''label4 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox25 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents label4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox27 コントロール。
+    '''Label9 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox27 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''DropDownList1 コントロール。
+    '''Label10 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox22 コントロール。
+    '''Label11 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox22 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TextBox1 コントロール。
@@ -205,13 +205,13 @@ Partial Public Class SeisanRegist
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label7 コントロール。
+    '''Label12 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TextBox19 コントロール。
@@ -286,13 +286,13 @@ Partial Public Class SeisanRegist
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label6 コントロール。
+    '''Label13 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TextBox31 コントロール。
