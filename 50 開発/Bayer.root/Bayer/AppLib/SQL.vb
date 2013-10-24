@@ -372,7 +372,11 @@ Public Class SQL
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
 
-            strSQL &= " SELECT *"
+            strSQL &= " SELECT TBL_SEIKYU.*"
+            strSQL &= ",(SELECT TOP 1 TBL_KOUENKAI.KOUENKAI_NAME FROM TBL_KOUENKAI"
+            strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO = TBL_SEIKYU.KOUENKAI_NO"
+            strSQL &= " ORDER BY TBL_KOUENKAI.TIME_STAMP DESC"
+            strSQL &= ") AS KOUENKAI_NAME"
             strSQL &= " FROM"
             strSQL &= " TBL_SEIKYU "
             strSQL &= " WHERE 1=1"
