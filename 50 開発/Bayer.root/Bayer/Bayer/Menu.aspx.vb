@@ -239,4 +239,12 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.DrRireki_TBL_KOUENKAI)
         Response.Redirect(URL.DrList)
     End Sub
+
+    '[精算金額入力]
+    Protected Sub BtnSeisan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisan.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_SEIKYU)
+        Session.Remove(SessionDef.SEQ)
+        Response.Redirect(URL.SeisanList)
+    End Sub
 End Class
