@@ -1938,7 +1938,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_KOTSUHI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_KOTSUHI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID & "=N'" & GetValue.USER() & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_DATE) & "'"
