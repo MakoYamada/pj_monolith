@@ -2392,6 +2392,7 @@
             Public SYORI_NAME As String
             Public STATUS As String
             Public CODE As String
+            Public SEIKYU_NO_TOPTOUR As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -2429,6 +2430,7 @@
             Public Const SYORI_NAME As String = "処理名"
             Public Const STATUS As String = "処理結果"
             Public Const CODE As String = "コード区分"
+            Public Const SEIKYU_NO_TOPTOUR As String = "TOP請求書番号"
         End Class
     End Class
 
