@@ -369,6 +369,34 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT *"
+            strSQL &= " FROM"
+            strSQL &= " TBL_SEIKYU "
+            strSQL &= " WHERE 1=1"
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.SEIKYU_NO_TOPTOUR) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            End If
+
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_YM & " DESC"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
