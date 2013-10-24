@@ -647,6 +647,7 @@ Partial Public Class KaijoRegist
         TBL_KAIJO(SEQ).ANS_OTHER_T = AppModule.GetValue_ANS_OTHER_T(Me.ANS_OTHER_T)
         TBL_KAIJO(SEQ).ANS_KANRIHI_T = AppModule.GetValue_ANS_KANRIHI_T(Me.ANS_KANRIHI_T)
         TBL_KAIJO(SEQ).ANS_41120200_T = AppModule.GetValue_ANS_41120200_T(Me.ANS_JINKENHI_T, Me.ANS_OTHER_T, Me.ANS_KAIJOUHI_T)
+        TBL_KAIJO(SEQ).TIME_STAMP_TOP = CmnModule.GetSysDateTime()
         TBL_KAIJO(SEQ).UPDATE_DATE = CmnModule.GetSysDateTime()
         TBL_KAIJO(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
