@@ -396,7 +396,7 @@ Public Class SQL
             strSQL &= " ORDER BY "
             strSQL &= TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_YM & " DESC"
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR & " DESC"
 
             Return strSQL
         End Function
