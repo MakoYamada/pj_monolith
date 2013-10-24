@@ -551,7 +551,7 @@ Public Class CmnCheck
         '時刻チェック
         If InStr(Trim(str), ":") <= 0 Then
             If CmnModule.LenB(Trim(str)) = 4 Then
-                str = Mid(Trim(str), 1, 4) & ":" & Mid(Trim(str), 5, 2)
+                str = Mid(Trim(str), 1, 2) & ":" & Mid(Trim(str), 3, 2)
             Else
                 Return False
             End If
