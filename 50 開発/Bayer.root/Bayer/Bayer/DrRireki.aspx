@@ -51,7 +51,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="TEHAI_KOTSU" HeaderText="交通" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="交通" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
 <HeaderStyle Wrap="False"></HeaderStyle>
 
@@ -77,6 +77,7 @@
                         <asp:BoundField DataField="REQ_O_TEHAI_3" HeaderText="REQ_O_TEHAI_3" />
                         <asp:BoundField DataField="REQ_O_TEHAI_4" HeaderText="REQ_O_TEHAI_4" />
                         <asp:BoundField DataField="REQ_O_TEHAI_5" HeaderText="REQ_O_TEHAI_5" />
+                        <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALESFORCE ID" />
                     </Columns>
                 </asp:GridView>
             </td>

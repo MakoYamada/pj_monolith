@@ -75,7 +75,7 @@ Partial Public Class DrRireki
             SEQ = Session.Item(SessionDef.SEQ)
         End If
 
-        Session.Item(SessionDef.KouenkaiRireki) = True
+        Session.Item(SessionDef.DrRireki) = True
         Return True
     End Function
 
@@ -108,7 +108,6 @@ Partial Public Class DrRireki
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         strSQL = SQL.TBL_KOTSUHOTEL.bySALESFORCE_ID(TBL_KOTSUHOTEL(SEQ).SALEFORCE_ID)
-        strSQL &= " DESC"
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         ReDim RRK_KOTSUHOTEL(wCnt)
@@ -121,14 +120,14 @@ Partial Public Class DrRireki
             wCnt += 1
         End While
         RsData.Close()
-        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = RRK_KOTSUHOTEL
+        Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL) = RRK_KOTSUHOTEL
 
         Return wFlag
     End Function
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.bySALESFORCE_ID(TBL_KOTSUHOTEL(SEQ).SALEFORCE_ID) & " DESC"
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.bySALESFORCE_ID(TBL_KOTSUHOTEL(SEQ).SALEFORCE_ID)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -187,11 +186,11 @@ Partial Public Class DrRireki
             e.Row.Cells(CellIndex.REQ_O_TEHAI_3).Visible = False
             e.Row.Cells(CellIndex.REQ_O_TEHAI_4).Visible = False
             e.Row.Cells(CellIndex.REQ_O_TEHAI_5).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
