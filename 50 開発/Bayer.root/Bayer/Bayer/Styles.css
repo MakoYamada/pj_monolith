@@ -118,6 +118,35 @@ img
 	font-weight: normal;
 	padding-right: 5px;
 }
+.TdTitleSeisan1
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 130px;
+}
+.TdTitleSeisan2
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 180px;
+}
+.TdTitleSeisanKei
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 85px;
+}
+.TdItemSeisan1
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
+	width: 130px;
+}
 .ItemConfirm 
 {
 	background-color: #ffffff;
