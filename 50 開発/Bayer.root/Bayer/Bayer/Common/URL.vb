@@ -31,5 +31,7 @@ Public Class URL
     Public Shared LogFile As String = WebConfig.Site.URL & "admin/LogFile.aspx"
     Public Shared LogSousa As String = WebConfig.Site.URL & "admin/LogSousa.aspx"
     Public Shared TaxiCsv As String = WebConfig.Site.URL & "TaxiCsv.aspx"
+    Public Shared SeisanList As String = WebConfig.Site.URL & "SeisanList.aspx"
+    Public Shared SeisanRegist As String = WebConfig.Site.URL & "SeisanRegist.aspx"
 
 End Class
