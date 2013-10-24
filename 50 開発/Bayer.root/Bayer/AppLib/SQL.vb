@@ -608,10 +608,49 @@ Public Class SQL
         End Function
 
         Public Shared Function bySALESFORCE_ID(ByVal SALESFORCE_ID As String) As String
-            Dim strSQL As String = SQL_SELECT
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
 
-            strSQL &= " WHERE TBL_KOTSUHOTEL.SALEFORCE_ID=N'" & CmnDb.SqlString(SALESFORCE_ID) & "'"
-            strSQL &= SQL_ORDERBY
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            strSQL &= " , USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " ,"
+            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= " ) AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOTSUHOTEL.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
+            ''検索
+            'strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+            'strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+            'strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & " )"
+
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.SALEFORCE_ID=N'" & CmnDb.SqlString(SALESFORCE_ID) & "'"
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO,"
+            strSQL &= " WK_KOTSUHOTEL.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
