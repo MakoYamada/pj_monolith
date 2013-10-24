@@ -120,12 +120,19 @@ img
 }
 .TdTitleSeisan1
 {
+	background-color: #b8c3c8;
+	color: #273034;
+	font-weight: bold;
+	width: 80px;
+}
+.TdTitleSeisan2
+{
 	background-color: #e3e8eb;
 	color: #273034;
 	font-weight: bold;
 	width: 130px;
 }
-.TdTitleSeisan2
+.TdTitleSeisan3
 {
 	background-color: #e3e8eb;
 	color: #273034;
