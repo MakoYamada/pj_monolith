@@ -1716,7 +1716,7 @@ Public Class SQL
             strSQL = "UPDATE TBL_KOTSUHOTEL SET"
             strSQL &= " " & TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.REQ_STATUS_TEHAI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_STATUS_TEHAI) & "'"
-            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_TOP & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TIME_STAMP_TOP) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_TOP & ",N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.DR_CD & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DR_CD) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.DR_NAME & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DR_NAME) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.DR_KANA & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DR_KANA) & "'"
