@@ -529,6 +529,7 @@ Public Class AppConst
                     Public Const NewDrList As String = "新着 宿泊・交通一覧"
                     Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
                     Public Const KaijoRegist As String = "講演会場 手配・見積依頼"
+                    Public Const SeisanRegist As String = "精算金額入力"
                     Public Const MstShisetsu As String = "施設マスタメンテナンス"
                     Public Const MstUser As String = "ユーザマスタメンテナンス"
                     Public Const MstCode As String = "コードマスタメンテナンス"
@@ -538,6 +539,7 @@ Public Class AppConst
                     NewDrList
                     DrRegist
                     KaijoRegist
+                    SeisanRegist
                     MstShisetsu
                     MstUser
                     MstCode

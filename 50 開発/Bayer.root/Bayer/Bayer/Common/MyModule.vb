@@ -192,6 +192,21 @@ Public Class MyModule
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "講演会番号：" & TBL_SEIKYU.KOUENKAI_NO _
+                     & "／" _
+                     & "トップツアー請求番号：" & TBL_SEIKYU.SEIKYU_NO_TOPTOUR _
+                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal MS_USER As TableDef.MS_USER.DataStruct, _
                                          ByVal STATUS_OK As Boolean, _
                                          ByVal Message As String, _
@@ -295,6 +310,8 @@ Public Class MyModule
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser
@@ -313,6 +330,8 @@ Public Class MyModule
                 TBL_LOG.TABLE_NAME = "TBL_KOTSUHOTEL"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist
                 TBL_LOG.TABLE_NAME = "TBL_KAIJO"
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist
+                TBL_LOG.TABLE_NAME = "TBL_SEIKYU"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu
                 TBL_LOG.TABLE_NAME = "MS_SHISETSU"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser

@@ -6777,6 +6777,7 @@ Public Class AppModule
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode))
