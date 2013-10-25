@@ -110,6 +110,11 @@ Partial Public Class MstUser
 
         Me.TblRegist.Visible = False
 
+        AppModule.SetForm_LOGIN_ID(Joken.LOGIN_ID, Me.JokenLOGIN_ID)
+        AppModule.SetForm_USER_NAME(Joken.USER_NAME, Me.JokenUSER_NAME)
+        AppModule.SetForm_KENGEN(Joken.KENGEN, Me.JokenKENGEN_Admin, Me.JokenKENGEN_User)
+        AppModule.SetForm_STOP_FLG(Joken.STOP_FLG, Me.JokenSTOP_FLG)
+
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
