@@ -4080,6 +4080,22 @@ Public Class AppModule
     End Function
 #End Region
 
+#Region "ê∏éZèÓïÒ"
+
+    'è≥îFãÊï™
+    Public Shared Function GetName_SHOUNIN_KUBUN(ByVal SHOUNIN_KUBUN As String) As String
+        Select Case SHOUNIN_KUBUN
+            Case AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN
+                Return AppConst.SEISAN.SHOUNIN_KUBUN.Name.SHOUNIN
+            Case AppConst.SEISAN.SHOUNIN_KUBUN.Code.HININ
+                Return AppConst.SEISAN.SHOUNIN_KUBUN.Name.HININ
+            Case Else
+                Return String.Empty
+        End Select
+    End Function
+
+#End Region
+
     'î≠ëóì˙
     Public Shared Function GetName_SEND_DATE(ByVal SEND_DATE As String) As String
         Return CmnModule.Format_Date(SEND_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)

@@ -439,6 +439,20 @@ Public Class AppConst
         End Class
     End Class
 
+    Public Class SEISAN
+        Public Class SHOUNIN_KUBUN
+            '承認区分
+            Public Class Code
+                Public Const SHOUNIN As String = "0"
+                Public Const HININ As String = "1"
+            End Class
+            Public Class Name
+                Public Const SHOUNIN As String = "承認"
+                Public Const HININ As String = "否認"
+            End Class
+        End Class
+    End Class
+
     Public Class MS_CODE
         Public Const SEX As String = "01"                   '性別
         Public Const KOUEN_KAIJO_LAYOUT As String = "02"    'レイアウト
