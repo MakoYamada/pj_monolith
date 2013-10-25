@@ -393,7 +393,7 @@ Partial Public Class DrList
         End If
 
         If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者BU"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者BU"), Me)
             Return False
         End If
 

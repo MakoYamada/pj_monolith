@@ -69,8 +69,10 @@ Partial Public Class DrRegist
             '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
             If ChkNewData() Then
                 BtnNozomi.Enabled = True
+                BtnSubmit.Visible = True
             Else
                 BtnNozomi.Enabled = False
+                BtnSubmit.Visible = False
             End If
 
         Else
@@ -996,6 +998,7 @@ Partial Public Class DrRegist
 
     '[登録]
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
+        '入力チェック
         If Not Check() Then Exit Sub
 
         '入力値を取得
@@ -1070,7 +1073,7 @@ Partial Public Class DrRegist
         '泊数
         If Me.ANS_HAKUSU.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.isnumberonly(Me.ANS_HAKUSU) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("泊数"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("泊数"), Me)
             Return False
         End If
 
@@ -1311,7 +1314,7 @@ Partial Public Class DrRegist
         '番号1
         If Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.ishankaku(Me.ANS_TAXI_NO_1) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1325,7 +1328,7 @@ Partial Public Class DrRegist
         '番号2
         If Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1339,7 +1342,7 @@ Partial Public Class DrRegist
         '番号3
         If Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_3) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1353,7 +1356,7 @@ Partial Public Class DrRegist
         '番号4
         If Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_4) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1367,7 +1370,7 @@ Partial Public Class DrRegist
         '番号5
         If Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_5) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1381,7 +1384,7 @@ Partial Public Class DrRegist
         '番号6
         If Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_6) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1395,7 +1398,7 @@ Partial Public Class DrRegist
         '番号7
         If Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_7) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1409,7 +1412,7 @@ Partial Public Class DrRegist
         '番号8
         If Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_8) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1423,7 +1426,7 @@ Partial Public Class DrRegist
         '番号9
         If Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_9) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1437,7 +1440,7 @@ Partial Public Class DrRegist
         '番号10
         If Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_10) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1451,7 +1454,7 @@ Partial Public Class DrRegist
         '番号11
         If Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_11) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1465,7 +1468,7 @@ Partial Public Class DrRegist
         '番号12
         If Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_12) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1479,7 +1482,7 @@ Partial Public Class DrRegist
         '番号13
         If Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_13) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1493,7 +1496,7 @@ Partial Public Class DrRegist
         '番号14
         If Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_14) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1507,7 +1510,7 @@ Partial Public Class DrRegist
         '番号15
         If Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_15) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1521,7 +1524,7 @@ Partial Public Class DrRegist
         '番号16
         If Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_16) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1535,7 +1538,7 @@ Partial Public Class DrRegist
         '番号17
         If Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_17) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1549,7 +1552,7 @@ Partial Public Class DrRegist
         '番号18
         If Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_18) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1563,7 +1566,7 @@ Partial Public Class DrRegist
         '番号19
         If Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_19) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1577,7 +1580,7 @@ Partial Public Class DrRegist
         '番号20
         If Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_20) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
 
@@ -1658,6 +1661,9 @@ Partial Public Class DrRegist
     Private Sub GetValue(ByVal SEND_FLAG As String)
         'DR手配
         DSP_KOTSUHOTEL(SEQ).ANS_STATUS_TEHAI = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
+
+        'TIMESTAMP(TOP)
+        DSP_KOTSUHOTEL(SEQ).TIME_STAMP_TOP = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
 
         '宿泊手配
         DSP_KOTSUHOTEL(SEQ).ANS_STATUS_HOTEL = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_HOTEL)

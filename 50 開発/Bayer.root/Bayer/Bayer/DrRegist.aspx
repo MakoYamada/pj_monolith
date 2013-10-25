@@ -485,7 +485,7 @@
                             èhîëì˙
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_HOTEL_DATE" runat="server" MaxLength="6" 
+                            <asp:TextBox ID="ANS_HOTEL_DATE" runat="server" MaxLength="8" 
                                 Height="18px" Width="67px" TabIndex="8"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -697,8 +697,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
                             <asp:TextBox ID="ANS_O_BIN_1" runat="server" MaxLength="100" 
-                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="23" 
-                                ReadOnly="True"></asp:TextBox>
+                                TextMode="MultiLine" Height="19px" Width="344px" TabIndex="23"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
