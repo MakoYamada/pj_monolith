@@ -123,6 +123,9 @@ Partial Public Class MstShisetsu
 
         Me.TblRegist.Visible = False
 
+        AppModule.SetForm_ADDRESS1(Joken.ADDRESS1, Me.JokenADDRESS1)
+        AppModule.SetForm_SHISETSU_NAME(Joken.SHISETSU_NAME, Me.JokenSHISETSU_NAME)
+
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True

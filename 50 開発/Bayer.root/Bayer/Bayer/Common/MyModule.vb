@@ -211,7 +211,9 @@ Public Class MyModule
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
         Dim wStr As String = ""
 
-        TBL_LOG.NOTE = "ログインID：" & MS_USER.LOGIN_ID
+        TBL_LOG.NOTE = "ログインID：" & MS_USER.LOGIN_ID _
+                     & "／" _
+                     & "氏名：" & MS_USER.USER_NAME
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
