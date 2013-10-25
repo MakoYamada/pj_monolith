@@ -157,7 +157,7 @@ Public Class MyModule
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
         TBL_LOG.NOTE = "講演会番号：" & TBL_KOUENKAI.KOUENKAI_NO _
-                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+                     & "（ログイン者：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -170,7 +170,7 @@ Public Class MyModule
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
         TBL_LOG.NOTE = "講演会番号：" & TBL_KAIJO.KOUENKAI_NO _
-                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+                     & "（ログイン者：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -187,7 +187,7 @@ Public Class MyModule
                      & "参加者ID：" & TBL_KOTSUHOTEL.SANKASHA_ID _
                      & "／" _
                      & "MPID：" & TBL_KOTSUHOTEL.DR_MPID _
-                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+                     & "（ログイン者：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -202,7 +202,7 @@ Public Class MyModule
         TBL_LOG.NOTE = "講演会番号：" & TBL_SEIKYU.KOUENKAI_NO _
                      & "／" _
                      & "トップツアー請求番号：" & TBL_SEIKYU.SEIKYU_NO_TOPTOUR _
-                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+                     & "（ログイン者：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -216,7 +216,7 @@ Public Class MyModule
         Dim wStr As String = ""
 
         TBL_LOG.NOTE = "ログインID：" & MS_USER.LOGIN_ID _
-                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+                     & "（ログイン者：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -229,7 +229,7 @@ Public Class MyModule
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
         TBL_LOG.NOTE = "施設名：" & MS_SHISETSU.SHISETSU_NAME _
-                     & "（担当者ID：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
+                     & "（ログイン者：" & System.Web.HttpContext.Current.Session.Item(SessionDef.LoginID) & "）"
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
