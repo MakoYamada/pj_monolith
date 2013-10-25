@@ -759,6 +759,12 @@ Public Class SQL
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel & "'"
             End If
 
+            If Trim(Joken.MR_ROMA) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.MR_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.MR_ROMA) & "%'"
+            End If
+
             If Trim(Joken.BU) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
@@ -781,6 +787,12 @@ Public Class SQL
                 strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_KANA
                 strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.DR_KANA) & "%'"
+            End If
+
+            If Trim(Joken.DR_SANKA) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
