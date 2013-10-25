@@ -85,7 +85,7 @@ Partial Public Class DrRegist
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "宿泊・交通・タクシーチケット　手配依頼"
+            .PageTitle = "交通・宿泊手配回答登録"
             .HideLogout = False
             .HideMenu = False
         End With
