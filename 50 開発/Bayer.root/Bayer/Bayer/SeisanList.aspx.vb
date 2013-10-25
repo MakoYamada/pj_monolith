@@ -24,9 +24,6 @@ Partial Public Class SeisanList
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'TODO:削除
-        Session.Item(SessionDef.LoginID) = "QQQ"
-
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
@@ -165,7 +162,6 @@ Partial Public Class SeisanList
     'グリッドビュー内書式設定
     Private Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            'TODO:YYYY年MM月に変換する？
             e.Row.Cells(CellIndex.SEISAN_YM).Text = Mid(CmnModule.Format_DateJP(e.Row.Cells(CellIndex.SEISAN_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
             e.Row.Cells(CellIndex.KEI_TF).Text = CmnModule.EditComma(e.Row.Cells(CellIndex.KEI_TF).Text)
             e.Row.Cells(CellIndex.KEI_T).Text = CmnModule.EditComma(e.Row.Cells(CellIndex.KEI_T).Text)
@@ -194,20 +190,13 @@ Partial Public Class SeisanList
     Private Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Detail"
-                ''選択レコード情報をセッション変数にセット
-                'Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
-                'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-                'Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
-                'Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-                'Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
+                '選択レコード情報をセッション変数にセット
+                Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
+                Session.Item(SessionDef.TBL_SEIKYU) = TBL_SEIKYU
+                Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+                Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
 
-                ''履歴画面用セッション変数をクリア
-                'Session.Remove(SessionDef.KaijoRireki)
-                'Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
-                'Session.Remove(SessionDef.KouenkaiRireki_SEQ)
-                'Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = False
-
-                'Response.Redirect(URL.KouenkaiRegist)
+                Response.Redirect(URL.SeisanRegist)
         End Select
     End Sub
 
@@ -242,6 +231,7 @@ Partial Public Class SeisanList
 
     '[新規登録]
     Private Sub BtnInsert_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnInsert.Click
+        Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
         Response.Redirect(URL.SeisanRegist)
     End Sub
 End Class

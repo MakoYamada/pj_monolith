@@ -16,364 +16,364 @@ Option Explicit On
 Partial Public Class SeisanRegist
 
     '''<summary>
-    '''Label8 コントロール。
+    '''KOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''label4 コントロール。
+    '''SEIKYU_NO_TOPTOUR コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SEIKYU_NO_TOPTOUR As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label9 コントロール。
+    '''SHIHARAI_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SHIHARAI_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label10 コントロール。
+    '''SHOUNIN_KUBUN コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SHOUNIN_KUBUN As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label11 コントロール。
+    '''SHOUNIN_DATE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SHOUNIN_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox1 コントロール。
+    '''KAIJOHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KAIJOHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox2 コントロール。
+    '''KIZAIHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KIZAIHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox3 コントロール。
+    '''INSHOKUHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents INSHOKUHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label1 コントロール。
+    '''KEI_991330401_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KEI_991330401_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox9 コントロール。
+    '''HOTELHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents HOTELHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox10 コントロール。
+    '''JR_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JR_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox11 コントロール。
+    '''AIR_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents AIR_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox12 コントロール。
+    '''OTHER_TRAFFIC_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox12 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents OTHER_TRAFFIC_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox4 コントロール。
+    '''TAXI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox5 コントロール。
+    '''HOTEL_COMMISSION_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents HOTEL_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox13 コントロール。
+    '''TAXI_COMMISSION_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox13 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox14 コントロール。
+    '''TAXI_SEISAN_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox14 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_SEISAN_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox8 コントロール。
+    '''JINKENHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JINKENHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox17 コントロール。
+    '''OTHER_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox17 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents OTHER_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox15 コントロール。
+    '''KANRIHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox15 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KANRIHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label3 コントロール。
+    '''KEI_41120200_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KEI_41120200_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label12 コントロール。
+    '''KEI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KEI_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox19 コントロール。
+    '''KAIJOUHI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox19 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KAIJOUHI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox20 コントロール。
+    '''KIZAIHI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox20 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KIZAIHI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox21 コントロール。
+    '''INSHOKUHI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox21 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents INSHOKUHI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label5 コントロール。
+    '''KEI_991330401_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KEI_991330401_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox6 コントロール。
+    '''JINKENHI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JINKENHI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox7 コントロール。
+    '''OTHER_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents OTHER_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox16 コントロール。
+    '''KANRIHI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox16 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents KANRIHI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label2 コントロール。
+    '''KEI_41120200_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KEI_41120200_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label13 コントロール。
+    '''KEI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KEI_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox31 コントロール。
+    '''SEISAN_YM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox31 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SEISAN_YM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox23 コントロール。
+    '''TAXI_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox23 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox24 コントロール。
+    '''TAXI_SEISAN_T コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox24 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_SEISAN_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox18 コントロール。
+    '''SEISANSHO_URL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox18 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SEISANSHO_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox26 コントロール。
+    '''TAXI_TICKET_URL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox26 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_TICKET_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox32 コントロール。
+    '''SEISAN_KANRYO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox32 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SEISAN_KANRYO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox28 コントロール。
+    '''MR_JR コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox28 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents MR_JR As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TextBox29 コントロール。
+    '''MR_HOTEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TextBox29 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents MR_HOTEL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Button1 コントロール。
+    '''BtnCalc コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnCalc As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnSubmit コントロール。
