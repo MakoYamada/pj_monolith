@@ -1901,10 +1901,17 @@ Partial Public Class DrRegist
             strSQL = SQL.TBL_KOTSUHOTEL.Update(DSP_KOTSUHOTEL(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.DrRegist, DSP_KOTSUHOTEL(SEQ), True, "", MyBase.DbConnection)
+
             MyBase.Commit()
             Return True
         Catch ex As Exception
             MyBase.Rollback()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.DrRegist, DSP_KOTSUHOTEL(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
 
             Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
             Return False
