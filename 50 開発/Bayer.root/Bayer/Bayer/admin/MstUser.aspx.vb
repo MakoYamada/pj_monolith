@@ -401,7 +401,7 @@ Partial Public Class MstUser
         MS_USER(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
     End Sub
 
-    'データ更新
+    'データ登録/更新
     Private Function ExecuteTransaction() As Boolean
         If Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert Then
             Return InsertData()
@@ -414,29 +414,37 @@ Partial Public Class MstUser
     Private Function InsertData() As Boolean
         Dim strSQL As String
 
-        MS_USER(SEQ).SYSTEM_ID = MyModule.GetMaxSYSTEM_ID(MyBase.DbConnection)
+        MS_USER(SEQ).SYSTEM_ID = MyModule.GetMaxSYSTEM_ID(AppModule.TableType.MS_USER, MyBase.DbConnection)
+        MS_USER(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
+        MS_USER(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
         MyBase.BeginTransaction()
         Try
-            'データ更新
+            'データ登録
             strSQL = SQL.MS_USER.Insert(MS_USER(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MSTUSER, MS_USER(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MSTUSER, MS_USER(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
     'データ更新
     Private Function UpdateData() As Boolean
         Dim strSQL As String
+
+        MS_USER(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
         MyBase.BeginTransaction()
         Try
@@ -445,15 +453,20 @@ Partial Public Class MstUser
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MSTUSER, MS_USER(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MSTUSER, MS_USER(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
 End Class

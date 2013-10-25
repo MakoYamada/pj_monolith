@@ -6,15 +6,14 @@ Partial Public Class Login
     Private MS_USER As TableDef.MS_USER.DataStruct
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        Session.Item(SessionDef.MS_USER) = MS_USER
+        Session.Item(SessionDef.LoginUser) = MS_USER
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             Session.Abandon()
 
-            '画面項目 初期化
-            InitControls()
+            '画面項目 初期化            InitControls()
 
             '画面項目表示
             SetForm()
@@ -29,10 +28,8 @@ Partial Public Class Login
         End With
     End Sub
 
-    '画面項目 初期化
-    Private Sub InitControls()
-        'IME設定
-        CmnModule.SetIme(Me.LOGIN_ID, CmnModule.ImeType.Disabled)
+    '画面項目 初期化    Private Sub InitControls()
+        'IME設定        CmnModule.SetIme(Me.LOGIN_ID, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.PASSWORD, CmnModule.ImeType.Disabled)
 
         'クリア

@@ -23,8 +23,7 @@ Partial Public Class Menu1
             SetForm()
         End If
 
-        'マスターページ設定
-        With Me.Master
+        'マスターページ設定        With Me.Master
             .PageTitle = "メインメニュー"
             .HideMenu = True
             .HideLogout = False
@@ -33,7 +32,7 @@ Partial Public Class Menu1
 
     'セッションを変数に格納    Private Function SetSession() As Boolean
         Try
-            MS_USER = Session.Item(SessionDef.MS_USER)
+            MS_USER = Session.Item(SessionDef.LoginUser)
             If IsNothing(MS_USER) Then Return False
         Catch ex As Exception
             Return False

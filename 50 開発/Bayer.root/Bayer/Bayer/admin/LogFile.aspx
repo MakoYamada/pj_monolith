@@ -17,17 +17,7 @@
 							</asp:DropDownList>
 							&nbsp;&nbsp;&nbsp;
 							処理名
-							<asp:DropDownList ID="JokenSYORI_NAME" runat="server" Width="250px">
-								<asp:ListItem Value="0" Text="---"></asp:ListItem>
-								<asp:ListItem Value="講演会基本情報ファイル取込" Text="講演会基本情報ファイル取込"></asp:ListItem>
-								<asp:ListItem Value="会場手配ファイル取込" Text="会場手配ファイル取込"></asp:ListItem>
-								<asp:ListItem Value="会場手配回答ファイル作成" Text="会場手配回答ファイル作成"></asp:ListItem>
-								<asp:ListItem Value="交通宿泊手配依頼ファイル取込" Text="交通宿泊手配依頼ファイル取込"></asp:ListItem>
-								<asp:ListItem Value="交通宿泊手配回答ファイル作成" Text="交通宿泊手配回答ファイル作成"></asp:ListItem>
-								<asp:ListItem Value="参加者出席ファイル取込" Text="参加者出席ファイル取込"></asp:ListItem>
-								<asp:ListItem Value="精算ファイル作成" Text="精算ファイル作成"></asp:ListItem>
-								<asp:ListItem Value="タクシーチケット" Text="タクシーチケット"></asp:ListItem>
-							</asp:DropDownList>
+							<asp:DropDownList ID="JokenSYORI_NAME" runat="server" Width="250px"></asp:DropDownList>
 							<div class="FontSize1" style="height: 4px;"></div>
 							処理日
 							<asp:TextBox ID="JokenINPUT_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
@@ -35,11 +25,7 @@
 							<asp:TextBox ID="JokenINPUT_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
 							&nbsp;&nbsp;&nbsp;
 							処理結果
-							<asp:DropDownList ID="JokenSTATUS" runat="server" Width="100px">
-								<asp:ListItem Value=" " Text="---"></asp:ListItem>
-								<asp:ListItem Value="0" Text="正常"></asp:ListItem>
-								<asp:ListItem Value="1" Text="エラー"></asp:ListItem>
-							</asp:DropDownList>
+							<asp:DropDownList ID="JokenSTATUS" runat="server" Width="100px"></asp:DropDownList>
 						</td>
 						<td align="right" valign="bottom">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

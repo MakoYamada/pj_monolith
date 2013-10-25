@@ -71,7 +71,7 @@ Public Class CmnDb
 
             Return ret
         Catch ex As Exception
-            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & vbNewLine & strSQL
+            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & "    SQLÅF" & strSQL
             Throw New Exception(System.Web.HttpContext.Current.Session.Item(SessionDbError))
         End Try
     End Function
@@ -90,7 +90,7 @@ Public Class CmnDb
 
             Return ret
         Catch ex As Exception
-            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & vbNewLine & strSQL
+            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & "    SQLÅF" & strSQL
             Throw New Exception(System.Web.HttpContext.Current.Session.Item(SessionDbError))
         End Try
     End Function
@@ -111,7 +111,7 @@ Public Class CmnDb
 
             Return RsData
         Catch ex As Exception
-            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & vbNewLine & strSQL
+            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & "    SQLÅF" & strSQL
             Throw New Exception(System.Web.HttpContext.Current.Session.Item(SessionDbError))
         End Try
     End Function

@@ -13,32 +13,7 @@
 							<asp:TextBox ID="JokenINPUT_USER" runat="server" Width="150px" MaxLength="10"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							画面名
-							<asp:DropDownList ID="JokenSYORI_NAME" runat="server" Width="400px">
-								<asp:ListItem Value="0" Text="---"></asp:ListItem>
-								<asp:ListItem Value="ログイン" Text="ログイン"></asp:ListItem>
-								<asp:ListItem Value="メニュー" Text="メニュー"></asp:ListItem>
-								<asp:ListItem Value="新着・講演会基本情報一覧" Text="新着・講演会基本情報一覧"></asp:ListItem>
-								<asp:ListItem Value="検索・講演会情報一覧" Text="検索・講演会情報一覧"></asp:ListItem>
-								<asp:ListItem Value="講演会基本情報画面" Text="講演会基本情報画面"></asp:ListItem>
-								<asp:ListItem Value="講演会基本情報履歴一覧" Text="講演会基本情報履歴一覧"></asp:ListItem>
-								<asp:ListItem Value="新着・会場手配依頼一覧" Text="新着・会場手配依頼一覧"></asp:ListItem>
-								<asp:ListItem Value="検索・会場手配依頼一覧" Text="検索・会場手配依頼一覧"></asp:ListItem>
-								<asp:ListItem Value="会場手配・見積依頼画面" Text="会場手配・見積依頼画面"></asp:ListItem>
-								<asp:ListItem Value="会場手配・見積依頼履歴一覧" Text="会場手配・見積依頼履歴一覧"></asp:ListItem>
-								<asp:ListItem Value="新着・宿泊・交通・タクシーチケット手配依頼一覧" Text="新着・宿泊・交通・タクシーチケット手配依頼一覧"></asp:ListItem>
-								<asp:ListItem Value="検索・宿泊・交通・タクシーチケット手配依頼一覧" Text="検索・宿泊・交通・タクシーチケット手配依頼一覧"></asp:ListItem>
-								<asp:ListItem Value="宿泊・交通・タクシーチケット手配依頼画面" Text="宿泊・交通・タクシーチケット手配依頼画面"></asp:ListItem>
-								<asp:ListItem Value="宿泊・交通・タクシーチケット手配依頼履歴一覧" Text="宿泊・交通・タクシーチケット手配依頼履歴一覧"></asp:ListItem>
-								<asp:ListItem Value="帳票プレビュー" Text="帳票プレビュー"></asp:ListItem>
-								<asp:ListItem Value="施設マスタメンテナンス" Text="施設マスタメンテナンス"></asp:ListItem>
-								<asp:ListItem Value="ユーザマスタメンテナンス" Text="ユーザマスタメンテナンス"></asp:ListItem>
-								<asp:ListItem Value="送受信ログ照会" Text="送受信ログ照会"></asp:ListItem>
-								<asp:ListItem Value="操作ログ照会" Text="操作ログ照会"></asp:ListItem>
-								<asp:ListItem Value="精算金額入力" Text="精算金額入力"></asp:ListItem>
-								<asp:ListItem Value="SAPデータ作成" Text="SAPデータ作成"></asp:ListItem>
-								<asp:ListItem Value="講演会・コストセンター別集計CSV出力" Text="講演会・コストセンター別集計CSV出力"></asp:ListItem>
-								<asp:ListItem Value="参加者一覧CSV出力" Text="参加者一覧CSV出力"></asp:ListItem>
-							</asp:DropDownList>
+							<asp:DropDownList ID="JokenSYORI_NAME" runat="server" Width="300px"></asp:DropDownList>
 						</td>
 					</tr>
 					<tr>
@@ -49,11 +24,7 @@
 							<asp:TextBox ID="JokenINPUT_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
 							&nbsp;&nbsp;&nbsp;
 							処理結果
-							<asp:DropDownList ID="JokenSTATUS" runat="server" Width="100px">
-								<asp:ListItem Value=" " Text="---"></asp:ListItem>
-								<asp:ListItem Value="0" Text="正常"></asp:ListItem>
-								<asp:ListItem Value="1" Text="エラー"></asp:ListItem>
-							</asp:DropDownList>
+							<asp:DropDownList ID="JokenSTATUS" runat="server" Width="100px"></asp:DropDownList>
 						</td>
 						<td align="right">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

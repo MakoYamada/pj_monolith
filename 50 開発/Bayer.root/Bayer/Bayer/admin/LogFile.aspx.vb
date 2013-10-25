@@ -65,6 +65,16 @@ Partial Public Class LogFile
 
     '画面項目 初期化
     Private Sub InitControls()
+        'プルダウン設定
+        AppModule.SetDropDownList_EXPORTIMPORT(Me.JokenEXPORTIMPORT)
+        AppModule.SetDropDownList_SYORI_NAME.LogFile(Me.JokenSYORI_NAME)
+        AppModule.SetDropDownList_STATUS.LogFile(Me.JokenSTATUS)
+
+        'IME設定
+        CmnModule.SetIme(Me.JokenINPUT_DATE_YYYY, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenINPUT_DATE_MM, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenINPUT_DATE_DD, CmnModule.ImeType.Disabled)
+
         'クリア
         CmnModule.ClearAllControl(Me)
     End Sub

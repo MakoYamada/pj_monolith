@@ -2825,6 +2825,12 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function MaxSYSTEM_ID() As String
+            Dim strSQL As String = ""
+            strSQL &= "SELECT MAX(CONVERT(INT,SYSTEM_ID)) AS SYSTEM_ID FROM MS_SHISETSU"
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal MS_SHISETSU As TableDef.MS_SHISETSU.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -3341,12 +3347,19 @@ Public Class SQL
 
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
-            strSQL &= "SELECT"
-            strSQL &= " TBL_LOG.*"
-            strSQL &= ",MS_USER.USER_NAME"
-            strSQL &= " FROM MS_USER"
-            strSQL &= " RIGHT JOIN TBL_LOG"
-            strSQL &= " ON MS_USER.LOGIN_ID=TBL_LOG.INPUT_USER"
+
+            If Trim(Joken.SYORI_KBN) = AppConst.TBL_LOG.SYORI_KBN.Code.GAMEN Then
+                strSQL &= "SELECT"
+                strSQL &= " TBL_LOG.*"
+                strSQL &= ",MS_USER.USER_NAME"
+                strSQL &= " FROM MS_USER"
+                strSQL &= " RIGHT JOIN TBL_LOG"
+                strSQL &= " ON MS_USER.LOGIN_ID=TBL_LOG.INPUT_USER"
+            Else
+                strSQL &= "SELECT"
+                strSQL &= " TBL_LOG.*"
+                strSQL &= " FROM TBL_LOG"
+            End If
 
             strSQL &= " WHERE 1=1"
 
@@ -3372,9 +3385,9 @@ Public Class SQL
 
             If Trim(Joken.SYORI_KBN) = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH AndAlso Trim(Joken.EXPORTIMPORT) <> "" Then
                 If Joken.EXPORTIMPORT = AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT Then
-                    strSQL &= " AND TBL_LOG.SYORI_NAME LIKE N'" & "Export%'"
+                    strSQL &= " AND TBL_LOG.INPUT_USER LIKE N'" & "Export%'"
                 ElseIf Joken.EXPORTIMPORT = AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT Then
-                    strSQL &= " AND TBL_LOG.SYORI_NAME LIKE N'" & "Import%'"
+                    strSQL &= " AND TBL_LOG.INPUT_USER LIKE N'" & "Import%'"
                 End If
             End If
 

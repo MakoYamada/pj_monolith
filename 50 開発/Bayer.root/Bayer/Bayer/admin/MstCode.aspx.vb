@@ -296,33 +296,37 @@ Partial Public Class MstCode
 
     'データ登録
     Private Function InsertData() As Boolean
-        Dim strSQL As String
         Dim wCnt As Integer = UBound(MS_CODE)
+        Dim strSQL As String
 
         MS_CODE(wCnt).DATA_ID = MyModule.GetMaxDATA_ID(Me.CODE.Value, MyBase.DbConnection)
 
         MyBase.BeginTransaction()
         Try
-            'データ更新
+            'データ登録
             strSQL = SQL.MS_CODE.Insert(MS_CODE(wCnt))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode, MS_CODE(wCnt), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode, MS_CODE(wCnt), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
     'データ更新
     Private Function UpdateData() As Boolean
-        Dim strSQL As String
         Dim wCnt As Integer
+        Dim strSQL As String
 
         MyBase.BeginTransaction()
         Try
@@ -333,15 +337,20 @@ Partial Public Class MstCode
             Next wCnt
 
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode, MS_CODE(0), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode, MS_CODE(0), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
 End Class

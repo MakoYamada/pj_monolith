@@ -420,7 +420,7 @@ Partial Public Class MstShisetsu
             End If
         End If
 
-        If CmnCheck.IsInput(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2) Then
+        If Not CmnCheck.IsInput(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2) Then
         Else
             If Not CmnCheck.IsValidTime(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.CHECKIN_TIME), Me)
@@ -428,7 +428,7 @@ Partial Public Class MstShisetsu
             End If
         End If
 
-        If CmnCheck.IsInput(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2) Then
+        If Not CmnCheck.IsInput(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2) Then
         Else
             If Not CmnCheck.IsValidTime(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.CHECKOUT_TIME), Me)
@@ -458,7 +458,7 @@ Partial Public Class MstShisetsu
         MS_SHISETSU(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
     End Sub
 
-    'データ更新
+    'データ登録/更新
     Private Function ExecuteTransaction() As Boolean
         If Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert Then
             Return InsertData()
@@ -471,29 +471,37 @@ Partial Public Class MstShisetsu
     Private Function InsertData() As Boolean
         Dim strSQL As String
 
-        MS_SHISETSU(SEQ).SYSTEM_ID = MyModule.GetMaxSYSTEM_ID(MyBase.DbConnection)
+        MS_SHISETSU(SEQ).SYSTEM_ID = MyModule.GetMaxSYSTEM_ID(AppModule.TableType.MS_SHISETSU, MyBase.DbConnection)
+        MS_SHISETSU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
+        MS_SHISETSU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
         MyBase.BeginTransaction()
         Try
-            'データ更新
+            'データ登録
             strSQL = SQL.MS_SHISETSU.Insert(MS_SHISETSU(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu, MS_SHISETSU(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu, MS_SHISETSU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
     'データ更新
     Private Function UpdateData() As Boolean
         Dim strSQL As String
+
+        MS_SHISETSU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
         MyBase.BeginTransaction()
         Try
@@ -502,15 +510,20 @@ Partial Public Class MstShisetsu
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu, MS_SHISETSU(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu, MS_SHISETSU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
 End Class

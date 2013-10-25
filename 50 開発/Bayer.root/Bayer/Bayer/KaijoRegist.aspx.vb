@@ -566,7 +566,7 @@ Partial Public Class KaijoRegist
 
         Dim scriptStr As String
         scriptStr = "<script language='javascript' type='text/javascript'>" & vbNewLine
-        scriptStr &= "window.open('" & URL.ShisetsuKensaku & "','ShisetsuKensaku','width=980,height=700,scrollbars=yes,resizable=yes,statusbar=yes');" & vbNewLine
+        scriptStr &= vbTab & "window.open('" & URL.ShisetsuKensaku & "','ShisetsuKensaku','width=980,height=700,scrollbars=yes,resizable=yes,statusbar=yes');" & vbNewLine
         scriptStr &= "</script>" & vbNewLine
 
         ClientScript.RegisterStartupScript(Me.GetType(), "ShisetsuKensaku", scriptStr)
@@ -660,23 +660,27 @@ Partial Public Class KaijoRegist
     'データ更新
     Private Function UpdateData() As Boolean
         Dim strSQL As String
-
+ 
         MyBase.BeginTransaction()
         Try
             'データ更新
             strSQL = SQL.TBL_KAIJO.Update(TBL_KAIJO(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist, TBL_KAIJO(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist, TBL_KAIJO(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
     '[再計算]
@@ -760,7 +764,7 @@ Partial Public Class KaijoRegist
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
             Dim scriptStr As String
             scriptStr = "<script language='javascript' type='text/javascript'>" & vbNewLine
-            scriptStr &= "window.close();" & vbNewLine
+            scriptStr &= vbTab & "window.close();" & vbNewLine
             scriptStr &= "</script>" & vbNewLine
             ClientScript.RegisterStartupScript(Me.GetType(), "RirekiClose", scriptStr)
         Else

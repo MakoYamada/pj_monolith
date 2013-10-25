@@ -65,6 +65,16 @@ Partial Public Class LogSousa
 
     '画面項目 初期化
     Private Sub InitControls()
+        'プルダウン設定
+        AppModule.SetDropDownList_SYORI_NAME.LogSousa(Me.JokenSYORI_NAME)
+        AppModule.SetDropDownList_STATUS.LogSousa(Me.JokenSTATUS)
+
+        'IME設定
+        CmnModule.SetIme(Me.JokenINPUT_USER, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenINPUT_DATE_YYYY, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenINPUT_DATE_MM, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenINPUT_DATE_DD, CmnModule.ImeType.Disabled)
+
         'クリア
         CmnModule.ClearAllControl(Me)
     End Sub
@@ -135,7 +145,7 @@ Partial Public Class LogSousa
             e.Row.Cells(CellIndex.INPUT_USER).Text = AppModule.GetName_INPUT_USER(e.Row.Cells(CellIndex.INPUT_USER).Text, e.Row.Cells(CellIndex.USER_NAME).Text)
 
             CType(e.Row.Cells(CellIndex.Template1).FindControl("STATUS"), Label).Text = AppModule.GetName_STATUS(e.Row.Cells(CellIndex.STATUS).Text)
-            CType(e.Row.Cells(CellIndex.Template1).FindControl("NOTE"), Label).Text = CmnModule.ClearHtmlSpace(e.Row.Cells(CellIndex.NOTE).Text)
+            CType(e.Row.Cells(CellIndex.Template1).FindControl("NOTE"), Label).Text = Trim(CmnModule.ClearHtmlSpace(e.Row.Cells(CellIndex.NOTE).Text))
             Select Case CmnModule.ClearHtmlSpace(e.Row.Cells(CellIndex.STATUS).Text)
                 Case AppConst.TBL_LOG.STATUS.Code.OK
                     CType(e.Row.Cells(CellIndex.Template1).FindControl("NOTE"), Label).ForeColor = Drawing.Color.FromArgb(49, 81, 11)

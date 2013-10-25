@@ -57,7 +57,7 @@ Public Class WebBase
         wStWrite.Write("【" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "】")
         wStWrite.Write(vbNewLine)
 
-        wStWrite.Write(Replace(Server.GetLastError.ToString, "--->", vbNewLine & "→"))
+        wStWrite.Write(Replace(Server.GetLastError.ToString, "    SQL：", vbNewLine))
         wStWrite.Write(vbNewLine)
         wStWrite.Write(vbNewLine)
         wStWrite.Close()

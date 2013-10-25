@@ -6750,6 +6750,73 @@ Public Class AppModule
         End With
     End Sub
 #End Region
+
+#Region "ログ照会 画面名"
+    '送受信ログ
+    Public Class SetDropDownList_SYORI_NAME
+        Public Shared Sub LogFile(ByRef SYORI_NAME As DropDownList)
+            With SYORI_NAME
+                .Items.Clear()
+                .Items.Add(New ListItem("---", ""))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportKouenkai, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportKouenkai))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportKaijo, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportKaijo))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ExportKaijo, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ExportKaijo))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportKotsuHotel, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportKotsuHotel))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ExportKotsuHotel, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ExportKotsuHotel))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportSanka, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportSanka))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ExportSeisan, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ExportSeisan))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportSeisan, AppConst.TBL_LOG.SYORI_NAME.BATCH.Name.ImportSeisan))
+            End With
+        End Sub
+        '操作ログ
+        Public Shared Sub LogSousa(ByRef SYORI_NAME As DropDownList)
+            With SYORI_NAME
+                .Items.Clear()
+                .Items.Add(New ListItem("---", ""))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KouenkaiRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KouenkaiRegist))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode))
+            End With
+        End Sub
+    End Class
+#End Region
+
+#Region "ログ照会 送受信"
+    Public Shared Sub SetDropDownList_EXPORTIMPORT(ByRef EXPORTIMPORT As DropDownList)
+        With EXPORTIMPORT
+            .Items.Clear()
+            .Items.Add(New ListItem("---", ""))
+            .Items.Add(New ListItem(AppConst.TBL_LOG.EXPORTIMPORT.Name.IMPORT, AppConst.TBL_LOG.EXPORTIMPORT.CODE.IMPORT))
+            .Items.Add(New ListItem(AppConst.TBL_LOG.EXPORTIMPORT.Name.EXPORT, AppConst.TBL_LOG.EXPORTIMPORT.CODE.EXPORT))
+        End With
+    End Sub
+#End Region
+
+#Region "ログ照会 結果"
+    Public Class SetDropDownList_STATUS
+        Public Shared Sub LogFile(ByRef STATUS As DropDownList)
+            With STATUS
+                .Items.Clear()
+                .Items.Add(New ListItem("---", ""))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.OK, AppConst.TBL_LOG.STATUS.CODE.OK))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.NG, AppConst.TBL_LOG.STATUS.CODE.NG))
+            End With
+        End Sub
+        Public Shared Sub LogSousa(ByRef STATUS As DropDownList)
+            With STATUS
+                .Items.Clear()
+                .Items.Add(New ListItem("---", ""))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.OK, AppConst.TBL_LOG.STATUS.CODE.OK))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.NG, AppConst.TBL_LOG.STATUS.CODE.NG))
+            End With
+        End Sub
+    End Class
+#End Region
+
 #End Region
 
 #Region "== コントロールからDB用の値を返す =="
@@ -7939,7 +8006,7 @@ Public Class AppModule
 
     '== 列挙型 ==
     'テーブル
-    Enum TableType
+    Public Enum TableType
         [TBL_KOUENKAI]
         [TBL_SEIKYU]
         [TBL_KOTSUHOTEL]

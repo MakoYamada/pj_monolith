@@ -18,6 +18,7 @@
     Public Const BackURL As String = "BackURL"
     Public Const BackURL2 As String = "BackURL2"
     Public Const DbError As String = "DbError"
+    Public Const LoginUser As String = "LoginUser"
     Public Const LoginID As String = "LoginID"
     Public Const Joken As String = "Joken"
     Public Const SYSTEM_ID As String = "SYSTEM_ID"

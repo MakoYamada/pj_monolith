@@ -509,6 +509,41 @@ Public Class AppConst
                 Public Const IMPORT As String = "受信"
             End Class
         End Class
+
+        Public Class SYORI_NAME
+            Public Class BATCH
+                Public Class Name
+                    Public Const ImportKouenkai As String = "講演会基本情報ファイル取込"
+                    Public Const ImportKaijo As String = "会場手配ファイル取込"
+                    Public Const ExportKaijo As String = "会場手配回答ファイル作成"
+                    Public Const ImportKotsuHotel As String = "交通宿泊手配依頼ファイル取込"
+                    Public Const ExportKotsuHotel As String = "交通宿泊手配回答ファイル作成"
+                    Public Const ImportSanka As String = "参加者出席ファイル取込"
+                    Public Const ExportSeisan As String = "精算ファイル作成"
+                    Public Const ImportSeisan As String = "精算承認結果ファイル取込"
+                End Class
+            End Class
+            Public Class GAMEN
+                 Public Class Name
+                    Public Const KouenkaiRegist As String = "講演会基本情報"
+                    Public Const NewDrList As String = "新着 宿泊・交通一覧"
+                    Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
+                    Public Const KaijoRegist As String = "講演会場 手配・見積依頼"
+                    Public Const MstShisetsu As String = "施設マスタメンテナンス"
+                    Public Const MstUser As String = "ユーザマスタメンテナンス"
+                    Public Const MstCode As String = "コードマスタメンテナンス"
+                End Class
+                Public Enum GamenType
+                    KouenkaiRegist
+                    NewDrList
+                    DrRegist
+                    KaijoRegist
+                    MstShisetsu
+                    MstUser
+                    MstCode
+                End Enum
+            End Class
+        End Class
     End Class
 
 End Class

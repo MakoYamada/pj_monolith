@@ -190,17 +190,21 @@ Partial Public Class KouenkaiRegist
             'データ更新
             strSQL = SQL.TBL_KOUENKAI.Update(DSP_KOUENKAI(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist, DSP_KOUENKAI(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist, DSP_KOUENKAI(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
             Return False
         End Try
-
-        Return True
     End Function
 
     '最新版データ存在チェック
