@@ -3,44 +3,50 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table cellspacing="2" border="0">
         <tr>
-            <td nowrap="nowrap" align="left" class="style1">
-                <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="100%">
+            <td nowrap="nowrap" align="left" >
+                <table  border="0" cellpadding="2" cellspacing="0" width="100%">
                     <tr>
-                        <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
-                            講演会番号
-                        </td>
-                        <td nowrap="nowrap" align="left" style="width: 130px;">
-                            <asp:Label ID="Label8" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td  nowrap="nowrap" align="left" class="TdTitleHeader" style="width:130px;">
-                            TOP請求書番号
-                        </td>
-                        <td nowrap="nowrap" align="left" colspan="3">
-							<asp:Label ID="label4" runat="server" Text=""></asp:Label>
-						</td>
-                    </tr>
-                    <tr>
-                        <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
-                            支払番号
-                        </td>
                         <td>
-                            <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
-                            承認区分
-                        </td>
-                        <td>
-                            <asp:Label ID="Label10" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
-                            精算承認日
-                        </td>
-                        <td>
-                            <asp:Label ID="Label11" runat="server" Text=""></asp:Label>
-                        </td>
-                    </tr>
+                            <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="100%">
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
+                                        講演会番号
+                                    </td>
+                                    <td nowrap="nowrap" align="left" style="width: 130px;">
+                                        <asp:Label ID="Label8" runat="server" Text=""></asp:Label>
+                                    </td>
+                                    <td  nowrap="nowrap" align="left" class="TdTitleHeader" style="width:130px;">
+                                        TOP請求書番号
+                                    </td>
+                                    <td nowrap="nowrap" align="left" colspan="3">
+							            <asp:Label ID="label4" runat="server" Text=""></asp:Label>
+						            </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
+                                        支払番号
+                                    </td>
+                                    <td nowrap="nowrap" align="left" style="width: 130px;">
+                                        <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
+                                        承認区分
+                                    </td>
+                                    <td nowrap="nowrap" align="left" style="width: 130px;">
+                                        <asp:Label ID="Label10" runat="server" Text=""></asp:Label>
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 130px;">
+                                        精算承認日
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="Label11" runat="server" Text=""></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>                        
+                    </tr>                    
                 </table>
-                <table border="0" cellpadding="1" cellspacing="2">
+                <table border="0" cellpadding="2" cellspacing="0">
                     <tr>
                         <td nowrap="nowrap" align="left">
                             <table cellspacing="2" style="border: 1px solid #9babb3;">
@@ -320,72 +326,78 @@
         </tr>
         <tr>
             <td nowrap="nowrap" align="left" >
-                <table cellpadding="1" cellspacing="2" style="border: 1px solid #9babb3;">
+                <table border="0" cellpadding="2" cellspacing="0" width="100%">
                     <tr>
-                        <td nowrap="nowrap" align="left" class="TdTitleSeisan3">
-                            トップツアー精算年月
-                        </td>
-                        <td class="TdItem">
-                            <asp:TextBox ID="TextBox31" runat="server" Text="123456" Width="60px" MaxLength="6"></asp:TextBox>
+                        <td>
+                            <table cellpadding="1" cellspacing="2" style="border: 1px solid #9babb3;" width="100%">
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleSeisan3">
+                                        トップツアー精算年月
+                                    </td>
+                                    <td class="TdItem">
+                                        <asp:TextBox ID="TextBox31" runat="server" Text="123456" Width="60px" MaxLength="6"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleSeisan3">
+		                                タクチケ実車料金(課税)
+	                                </td>
+	                                <td nowrap="nowrap" align="left" class="TdItem">
+				                        <asp:TextBox ID="TextBox23" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
+			                        </td>
+                                </tr>
+                                <tr>
+			                        <td nowrap="nowrap" align="left" class="TdTitleSeisan3">
+		                                タクチケ精算手数料(課税)
+	                                </td>
+	                                <td nowrap="nowrap" align="left" class="TdItem">
+				                        <asp:TextBox ID="TextBox24" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
+			                        </td>
+		                        </tr>
+                                <tr>
+                                    <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
+                                        精算書保存場所URL
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdItem">
+							            <asp:TextBox ID="TextBox18" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="650px" MaxLength="255"></asp:TextBox>
+						            </td>
+                                </tr>
+                                <tr>
+                                    <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
+                                        タクチケ管理表保存場所URL
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdItem">
+							            <asp:TextBox ID="TextBox26" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="650px" MaxLength="255"></asp:TextBox>
+						            </td>
+                                </tr>
+                                <tr>
+                                    <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
+                                        精算完了
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdItem">
+							            <asp:TextBox ID="TextBox32" runat="server" Height="45px" TextMode="MultiLine" Width="624px"></asp:TextBox>
+						            </td>
+                                </tr>
+                                <tr>
+                                    <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
+                                        社員の国内旅費(JR/航空券)
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdItem">
+							            <asp:TextBox ID="TextBox28" runat="server" Text="123456789012" Width="120px" MaxLength="12"></asp:TextBox>
+						            </td>
+                                </tr>
+                                <tr>
+                                    <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
+                                        社員の国内旅費(宿泊)
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdItem">
+							            <asp:TextBox ID="TextBox29" runat="server" Text="123456789012" Width="120px" MaxLength="12"></asp:TextBox>
+						            </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
-                    <tr>
-                        <td nowrap="nowrap" align="left" class="TdTitleSeisan3">
-		                    タクチケ実車料金(課税)
-	                    </td>
-	                    <td nowrap="nowrap" align="left" class="TdItem">
-				            <asp:TextBox ID="TextBox23" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
-			            </td>
-                    </tr>
-                    <tr>
-			            <td nowrap="nowrap" align="left" class="TdTitleSeisan3">
-		                    タクチケ精算手数料(課税)
-	                    </td>
-	                    <td nowrap="nowrap" align="left" class="TdItem">
-				            <asp:TextBox ID="TextBox24" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
-			            </td>
-		            </tr>
-                    <tr>
-                        <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
-                            精算書保存場所URL
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdItem">
-							<asp:TextBox ID="TextBox18" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="650px" MaxLength="255"></asp:TextBox>
-						</td>
-                    </tr>
-                    <tr>
-                        <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
-                            タクチケ管理表保存場所URL
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdItem">
-							<asp:TextBox ID="TextBox26" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="650px" MaxLength="255"></asp:TextBox>
-						</td>
-                    </tr>
-                    <tr>
-                        <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
-                            精算完了
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdItem">
-							<asp:TextBox ID="TextBox32" runat="server" Height="45px" TextMode="MultiLine" Width="624px"></asp:TextBox>
-						</td>
-                    </tr>
-                    <tr>
-                        <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
-                            社員の国内旅費(JR/航空券)
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdItem">
-							<asp:TextBox ID="TextBox28" runat="server" Text="123456789012" Width="120px" MaxLength="12"></asp:TextBox>
-						</td>
-                    </tr>
-                    <tr>
-                        <td  nowrap="nowrap" align="left" class="TdTitleSeisan3">
-                            社員の国内旅費(宿泊)
-                        </td>
-                        <td nowrap="nowrap" align="left" class="TdItem">
-							<asp:TextBox ID="TextBox29" runat="server" Text="123456789012" Width="120px" MaxLength="12"></asp:TextBox>
-						</td>
-                    </tr>
-                </table>
+                </table>                
             </td>
         </tr>
         <tr>
