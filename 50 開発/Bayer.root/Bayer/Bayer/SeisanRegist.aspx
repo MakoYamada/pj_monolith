@@ -375,7 +375,8 @@
                                         精算完了
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdItem">
-							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Height="45px" TextMode="MultiLine" Width="624px"></asp:TextBox>
+							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Height="45px" 
+                                            TextMode="MultiLine" Width="624px" MaxLength="255"></asp:TextBox>
 						            </td>
                                 </tr>
                                 <tr>
@@ -409,7 +410,8 @@
 						    <asp:Button ID="BtnCalc" runat="server" Width="150px" Text="再計算" CssClass="Button" />
 							<asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" CssClass="Button" />
 							<asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
-							<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="Button" />
+							<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="戻る" 
+                                CssClass="Button" />
 						</td>
 					</tr>
 				</table>

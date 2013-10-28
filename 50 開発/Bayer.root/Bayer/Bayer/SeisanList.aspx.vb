@@ -36,13 +36,13 @@ Partial Public Class SeisanList
             '画面項目 初期化
             InitControls()
 
+            SetJoken()
             SetForm()
-
         End If
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
+            .HideLoginUser = True
             .PageTitle = "【検索】精算データ"
         End With
     End Sub
@@ -63,8 +63,7 @@ Partial Public Class SeisanList
         Return True
     End Function
 
-    '画面項目 初期化
-    Private Sub InitControls()
+    '画面項目 初期化    Private Sub InitControls()
         'IME設定        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
 
@@ -80,7 +79,6 @@ Partial Public Class SeisanList
 
     '画面項目 表示
     Private Sub SetForm()
-        Call SetJoken()
 
         'データ取得
         If Not GetData() Then
@@ -123,25 +121,10 @@ Partial Public Class SeisanList
         Return wFlag
     End Function
 
-    '一覧 表示
-    Private Sub DispList()
-
-        'データ取得        If Not GetData() Then
-            Me.LabelNoData.Visible = True
-            Me.GrvList.Visible = False
-
-        Else
-            Me.LabelNoData.Visible = False
-            Me.GrvList.Visible = True
-
-            'グリッドビュー表示
-            SetGridView()
-        End If
-    End Sub
-
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定
+
+        'データソース設定
         Dim strSQL As String = SQL.TBL_SEIKYU.Search(Joken)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
@@ -205,10 +188,6 @@ Partial Public Class SeisanList
         '入力チェック
         If Not Check() Then Exit Sub
 
-        Joken = Nothing
-        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
-        Joken.SEIKYU_NO_TOPTOUR = Trim(Me.JokenSEIKYU_NO_TOPTOUR.Text)
-
         '画面項目表示
         SetForm()
     End Sub
@@ -231,6 +210,7 @@ Partial Public Class SeisanList
 
     '[新規登録]
     Private Sub BtnInsert_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnInsert.Click
+        TBL_SEIKYU = Nothing
         Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
         Response.Redirect(URL.SeisanRegist)
     End Sub

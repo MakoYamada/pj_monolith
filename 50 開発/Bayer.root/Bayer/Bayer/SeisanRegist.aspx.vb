@@ -17,10 +17,7 @@ Partial Public Class SeisanRegist
         If Not Page.IsPostBack Then
             '画面項目 初期化            InitControls()
 
-            If MyModule.IsInsertMode() Then
-                Session.Remove(SessionDef.TBL_SEIKYU)
-                Session.Remove(SessionDef.SEQ)
-            Else
+            If Not MyModule.IsInsertMode() Then
                 '画面項目表示
                 SetForm()
             End If
@@ -38,19 +35,29 @@ Partial Public Class SeisanRegist
     Private Function SetSession() As Boolean
         Try
             TBL_SEIKYU = Session.Item(SessionDef.TBL_SEIKYU)
+            If TBL_SEIKYU Is Nothing Then
+                If MyModule.IsInsertMode() Then
+                    Session.Item(SessionDef.SEQ) = 0
+                    SEQ = 0
+                    ReDim TBL_SEIKYU(SEQ)
+                Else
+                    Return False
+                End If
+            End If
         Catch ex As Exception
             Return False
         End Try
-        Try
+        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+            Return False
+        Else
             SEQ = Session.Item(SessionDef.SEQ)
-        Catch ex As Exception
-            Return False
-        End Try
+        End If
         Return True
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
         'IME設定        CmnModule.SetIme(Me.KOUENKAI_NO, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.KAIJOHI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.KIZAIHI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.INSHOKUHI_TF, CmnModule.ImeType.Disabled)
@@ -71,7 +78,7 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.JINKENHI_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.OTHER_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.KANRIHI_T, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.SEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEISAN_YM, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TAXI_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TAXI_SEISAN_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.SEISANSHO_URL, CmnModule.ImeType.Disabled)
@@ -151,8 +158,6 @@ Partial Public Class SeisanRegist
                          CmnModule.DbVal(Me.KIZAIHI_TF.Text.Trim) + _
                          CmnModule.DbVal(Me.INSHOKUHI_TF.Text.Trim)
 
-            Me.KEI_991330401_TF.Text = CmnModule.EditComma(wTOTAL_TF1.ToString)
-
             '41120200
             wTOTAL_TF2 = CmnModule.DbVal(Me.HOTELHI_TF.Text.Trim) + _
                          CmnModule.DbVal(Me.JR_TF.Text.Trim) + _
@@ -166,31 +171,28 @@ Partial Public Class SeisanRegist
                          CmnModule.DbVal(Me.OTHER_TF.Text.Trim) + _
                          CmnModule.DbVal(Me.KANRIHI_TF.Text.Trim)
 
-            Me.KEI_41120200_TF.Text = CmnModule.EditComma(wTOTAL_TF2.ToString)
-
-            '非課税金額合計
-            Me.KEI_TF.Text = CmnModule.EditComma(CStr(wTOTAL_TF1 + wTOTAL_TF2))
-
-
             '991330401
             wTOTAL_T1 = CmnModule.DbVal(Me.KAIJOUHI_T.Text.Trim) + _
                          CmnModule.DbVal(Me.KIZAIHI_T.Text.Trim) + _
                          CmnModule.DbVal(Me.INSHOKUHI_T.Text.Trim)
-
-            Me.KEI_991330401_T.Text = CmnModule.EditComma(wTOTAL_T1.ToString)
 
             '41120200
             wTOTAL_T2 = CmnModule.DbVal(Me.JINKENHI_T.Text.Trim) + _
                          CmnModule.DbVal(Me.OTHER_T.Text.Trim) + _
                          CmnModule.DbVal(Me.KANRIHI_T.Text.Trim)
 
-            Me.KEI_41120200_T.Text = CmnModule.EditComma(wTOTAL_T2.ToString)
-
-            '課税金額合計
-            Me.KEI_T.Text = CmnModule.EditComma(CStr(wTOTAL_T1 + wTOTAL_T2))
-
         Catch ex As Exception
         End Try
+
+        '非課税金額
+        Me.KEI_991330401_TF.Text = CmnModule.EditComma(wTOTAL_TF1.ToString)
+        Me.KEI_41120200_TF.Text = CmnModule.EditComma(wTOTAL_TF2.ToString)
+        Me.KEI_TF.Text = CmnModule.EditComma(CStr(wTOTAL_TF1 + wTOTAL_TF2))
+
+        '課税金額
+        Me.KEI_991330401_T.Text = CmnModule.EditComma(wTOTAL_T1.ToString)
+        Me.KEI_41120200_T.Text = CmnModule.EditComma(wTOTAL_T2.ToString)
+        Me.KEI_T.Text = CmnModule.EditComma(CStr(wTOTAL_T1 + wTOTAL_T2))
 
     End Sub
 
@@ -322,6 +324,12 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
+        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, _
+                                                             Me.SEISAN_KANRYO.MaxLength), Me)
+            Return False
+        End If
+
         If Not CmnCheck.IsNumberOnly(Me.MR_JR) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
             Return False
@@ -343,7 +351,7 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).KAIJOHI_TF = Me.KAIJOHI_TF.Text
         TBL_SEIKYU(SEQ).KIZAIHI_TF = Me.KIZAIHI_TF.Text
         TBL_SEIKYU(SEQ).INSHOKUHI_TF = Me.INSHOKUHI_TF.Text
-        TBL_SEIKYU(SEQ).KEI_991330401_TF = Me.KEI_991330401_TF.Text
+        TBL_SEIKYU(SEQ).KEI_991330401_TF = Me.KEI_991330401_TF.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).HOTELHI_TF = Me.HOTELHI_TF.Text
         TBL_SEIKYU(SEQ).JR_TF = Me.JR_TF.Text
@@ -356,19 +364,19 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).JINKENHI_TF = Me.JINKENHI_TF.Text
         TBL_SEIKYU(SEQ).OTHER_TF = Me.OTHER_TF.Text
         TBL_SEIKYU(SEQ).KANRIHI_TF = Me.KANRIHI_TF.Text
-        TBL_SEIKYU(SEQ).KEI_41120200_TF = Me.KEI_41120200_TF.Text
-        TBL_SEIKYU(SEQ).KEI_TF = Me.KEI_TF.Text
+        TBL_SEIKYU(SEQ).KEI_41120200_TF = Me.KEI_41120200_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).KEI_TF = Me.KEI_TF.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).KAIJOUHI_T = Me.KAIJOUHI_T.Text
         TBL_SEIKYU(SEQ).KIZAIHI_T = Me.KIZAIHI_T.Text
         TBL_SEIKYU(SEQ).INSHOKUHI_T = Me.INSHOKUHI_T.Text
-        TBL_SEIKYU(SEQ).KEI_991330401_T = Me.KEI_991330401_T.Text
+        TBL_SEIKYU(SEQ).KEI_991330401_T = Me.KEI_991330401_T.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).JINKENHI_T = Me.JINKENHI_T.Text
         TBL_SEIKYU(SEQ).OTHER_T = Me.OTHER_T.Text
         TBL_SEIKYU(SEQ).KANRIHI_T = Me.KANRIHI_T.Text
-        TBL_SEIKYU(SEQ).KEI_41120200_T = Me.KEI_41120200_T.Text
-        TBL_SEIKYU(SEQ).KEI_T = Me.KEI_T.Text
+        TBL_SEIKYU(SEQ).KEI_41120200_T = Me.KEI_41120200_T.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).KEI_T = Me.KEI_T.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
         TBL_SEIKYU(SEQ).TAXI_T = Me.TAXI_T.Text
@@ -399,23 +407,33 @@ Partial Public Class SeisanRegist
 
     'データ新規登録
     Private Function InsertData() As Boolean
-        Dim strSQL As String
 
-        'TODO:T_LOG
+        If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                            TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                            MyBase.DbConnection) Then
+            CmnModule.AlertMessage(MessageDef.Error.IsRegistered(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO & ":" & TBL_SEIKYU(SEQ).KOUENKAI_NO & "\n" & _
+                                                                 TableDef.TBL_SEIKYU.Name.SEIKYU_NO_TOPTOUR & ":" & TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR & "\nのデータ"), Me)
+            Return False
+        End If
 
         MyBase.BeginTransaction()
         Try
-            'データ登録
-            strSQL = SQL.TBL_SEIKYU.Insert(TBL_SEIKYU(SEQ))
-            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
+            'データ登録
+            Dim strSQL As String = SQL.TBL_SEIKYU.Insert(TBL_SEIKYU(SEQ))
+            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
-            Return False
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
         End Try
 
         Return True
@@ -425,21 +443,23 @@ Partial Public Class SeisanRegist
     Private Function UpdateData() As Boolean
         Dim strSQL As String
 
-        'TODO:T_LOG
-
         MyBase.BeginTransaction()
         Try
             'データ更新
             strSQL = SQL.TBL_SEIKYU.Update(TBL_SEIKYU(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
             MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), True, "", MyBase.DbConnection)
+
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
-            Return False
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
         End Try
 
         Return True
@@ -463,7 +483,7 @@ Partial Public Class SeisanRegist
 
         'データ更新
         If ExecuteTransaction() Then
-            'TODO:メッセージ出して画面遷移？
+            CmnModule.AlertMessage(MessageDef.Message.DbCommited("精算データ", MyModule.IsInsertMode()), Me)
         End If
 
     End Sub
@@ -481,11 +501,11 @@ Partial Public Class SeisanRegist
 
         'データ更新
         If ExecuteTransaction() Then
-            'TODO:メッセージ？
+            CmnModule.AlertMessage(MessageDef.Message.DbCommited("精算データ", MyModule.IsInsertMode()), Me)
         End If
     End Sub
 
-    '[キャンセル]
+    '[戻る]
     Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
         Response.Redirect(URL.SeisanList)
     End Sub
