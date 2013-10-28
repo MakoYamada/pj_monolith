@@ -243,6 +243,7 @@ Partial Public Class Menu1
     Protected Sub BtnSeisan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisan.Click
         Session.Remove(SessionDef.Joken)
         Session.Remove(SessionDef.TBL_SEIKYU)
+        Session.Remove(SessionDef.PageIndex)
         Session.Remove(SessionDef.SEQ)
         Response.Redirect(URL.SeisanList)
     End Sub
