@@ -212,7 +212,38 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
-        '数値チェック
+        If Not CmnCheck.IsNumberOnly(Me.TAXI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_T), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.TAXI_SEISAN_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_T), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, _
+                                                             Me.SEISAN_KANRYO.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.MR_JR) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.MR_HOTEL) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL), Me)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    '集計対象項目の数値チェック
+    Private Function CheckCalcItem() As Boolean
+
         If Not CmnCheck.IsNumberOnly(Me.KAIJOHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KAIJOHI_TF), Me)
             Return False
@@ -310,33 +341,6 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsNumberOnly(Me.KANRIHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KANRIHI_T), Me)
-            Return False
-        End If
-
-
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_T) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_T), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_SEISAN_T) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_T), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, _
-                                                             Me.SEISAN_KANRYO.MaxLength), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.MR_JR) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.MR_HOTEL) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL), Me)
             Return False
         End If
 
@@ -467,6 +471,7 @@ Partial Public Class SeisanRegist
 
     '[再計算]
     Private Sub BtnCalc_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCalc.Click
+        If Not CheckCalcItem() Then Exit Sub
         CalculateKingaku()
     End Sub
 
@@ -475,6 +480,7 @@ Partial Public Class SeisanRegist
 
         '入力チェック
         If Not Check() Then Exit Sub
+        If Not CheckCalcItem() Then Exit Sub
 
         CalculateKingaku()
 
@@ -493,6 +499,7 @@ Partial Public Class SeisanRegist
 
         '入力チェック
         If Not Check() Then Exit Sub
+        If Not CheckCalcItem() Then Exit Sub
 
         CalculateKingaku()
 
