@@ -147,10 +147,10 @@ Partial Public Class SeisanRegist
 
     Private Sub CalculateKingaku()
 
-        Dim wTOTAL_TF1 As Integer = 0
-        Dim wTOTAL_TF2 As Integer = 0
-        Dim wTOTAL_T1 As Integer = 0
-        Dim wTOTAL_T2 As Integer = 0
+        Dim wTOTAL_TF1 As Long = 0
+        Dim wTOTAL_TF2 As Long = 0
+        Dim wTOTAL_T1 As Long = 0
+        Dim wTOTAL_T2 As Long = 0
 
         Try
             '991330401
@@ -205,12 +205,45 @@ Partial Public Class SeisanRegist
         End If
 
         '必須入力
-        If Not CmnCheck.IsInput(Me.KOUENKAI_NO) AndAlso _
+        If Not CmnCheck.IsInput(Me.KOUENKAI_NO) OrElse _
            Not CmnCheck.IsInput(Me.SEIKYU_NO_TOPTOUR) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO & "、" & _
                                                               TableDef.TBL_SEIKYU.Name.SEIKYU_NO_TOPTOUR), Me)
             Return False
         End If
+
+        '小計、合計金額桁数
+        Dim intKetasu As Integer = 10
+        If Not CmnCheck.IsLengthLE(Me.KEI_991330401_TF.Text.Replace(",", ""), intKetasu) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.KEI_991330401_TF, intKetasu), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.KEI_41120200_TF.Text.Replace(",", ""), intKetasu) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.KEI_41120200_TF, intKetasu), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.KEI_TF.Text.Replace(",", ""), intKetasu) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.KEI_TF, intKetasu), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.KEI_991330401_T.Text.Replace(",", ""), intKetasu) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.KEI_991330401_T, intKetasu), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.KEI_41120200_T.Text.Replace(",", ""), intKetasu) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.KEI_41120200_T, intKetasu), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.KEI_T.Text.Replace(",", ""), intKetasu) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.KEI_T, intKetasu), Me)
+            Return False
+        End If
+
 
         If Not CmnCheck.IsNumberOnly(Me.TAXI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_T), Me)
@@ -224,7 +257,7 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, _
-                                                             Me.SEISAN_KANRYO.MaxLength), Me)
+                                                             Me.SEISAN_KANRYO.MaxLength, True), Me)
             Return False
         End If
 
@@ -478,11 +511,12 @@ Partial Public Class SeisanRegist
     '[登録]
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
 
+        '再計算
+        If Not CheckCalcItem() Then Exit Sub
+        CalculateKingaku()
+
         '入力チェック
         If Not Check() Then Exit Sub
-        If Not CheckCalcItem() Then Exit Sub
-
-        CalculateKingaku()
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Mi)
@@ -497,11 +531,12 @@ Partial Public Class SeisanRegist
     '[NOZOMIへ]
     Private Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNozomi.Click
 
+        '再計算
+        If Not CheckCalcItem() Then Exit Sub
+        CalculateKingaku()
+
         '入力チェック
         If Not Check() Then Exit Sub
-        If Not CheckCalcItem() Then Exit Sub
-
-        CalculateKingaku()
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Taisho)

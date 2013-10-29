@@ -16,7 +16,7 @@
                                         <asp:TextBox ID="KOUENKAI_NO" runat="server" Text="12345678901234" Width="125px" MaxLength="14"></asp:TextBox>
                                     </td>
                                     <td  nowrap="nowrap" align="left" class="TdTitleHeader" style="width:150px;">
-                                        トップツアー請求書番号
+                                        トップツアー請求番号
                                     </td>
                                     <td nowrap="nowrap" align="left" colspan="3" style="width:130px;">
 							            <asp:TextBox ID="SEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" Width="125px" MaxLength="14"></asp:TextBox>
@@ -376,7 +376,7 @@
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdItem">
 							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Height="45px" 
-                                            TextMode="MultiLine" Width="624px" MaxLength="255"></asp:TextBox>
+                                            TextMode="MultiLine" Width="624px" MaxLength="510"></asp:TextBox>
 						            </td>
                                 </tr>
                                 <tr>

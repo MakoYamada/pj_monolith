@@ -18,7 +18,7 @@
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
                                     </td>
                                     <td>
-                                        TOP請求書番号
+                                        トップツアー請求番号
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenSEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
@@ -46,7 +46,7 @@
                         <td>
                             <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                                 AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
-                                DataSourceID="SqlDataSource1" Width="882px">
+                                DataSourceID="SqlDataSource1" Width="922px">
                                 <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                                 <RowStyle Wrap="false" BackColor="#ffffff" />
                                 <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -62,13 +62,13 @@
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>                                    
-                                    <asp:BoundField DataField="SEIKYU_NO_TOPTOUR" HeaderText="TOP請求書番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                                    <asp:BoundField DataField="SEIKYU_NO_TOPTOUR" HeaderText="トップツアー請求番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
-                                        <ItemStyle Wrap="False" Width="130px" HorizontalAlign="Left"></ItemStyle>
+                                        <ItemStyle Wrap="False" Width="140px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="SEISAN_YM" HeaderText="精算年月" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                                    <asp:BoundField DataField="SEISAN_YM" HeaderText="トップツアー精算年月" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
-                                        <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Center"></ItemStyle>
+                                        <ItemStyle Wrap="False" Width="130px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="KEI_TF" HeaderText="非課税金額合計" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                                         ItemStyle-HorizontalAlign="Right">
