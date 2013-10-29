@@ -335,6 +335,12 @@
       <DependentUpon>TaxiCsv.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DrReport3.Designer.vb">
+      <DependentUpon>DrReport3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport3.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -361,6 +367,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrReport3.resx">
+      <DependentUpon>DrReport3.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
