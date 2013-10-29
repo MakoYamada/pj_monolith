@@ -2496,4 +2496,12 @@ Partial Public Class DrRegist
             Response.Redirect(Session.Item(SessionDef.BackURL2))
         End If
     End Sub
+
+    '[手配書印刷]
+    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
+        Session.Item(SessionDef.SEQ) = SEQ
+        Session.Item(SessionDef.TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+    End Sub
 End Class

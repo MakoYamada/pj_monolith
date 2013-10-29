@@ -140,10 +140,10 @@
     <Compile Include="Common\MyModule.vb" />
     <Compile Include="Common\URL.vb" />
     <Compile Include="Common\WebConfig.vb" />
-    <Compile Include="DrReport2_2.Designer.vb">
-      <DependentUpon>DrReport2_2.vb</DependentUpon>
+    <Compile Include="DrReport1.Designer.vb">
+      <DependentUpon>DrReport1.vb</DependentUpon>
     </Compile>
-    <Compile Include="DrReport2_2.vb">
+    <Compile Include="DrReport1.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DrRireki.aspx.designer.vb">
@@ -216,12 +216,6 @@
       <DependentUpon>DrReport2.vb</DependentUpon>
     </Compile>
     <Compile Include="DrReport2.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DrReport2_1.Designer.vb">
-      <DependentUpon>DrReport2_1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DrReport2_1.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="HotelKensaku.aspx.designer.vb">
@@ -318,7 +312,7 @@
     </Compile>
     <Compile Include="SeisanList.aspx.vb">
       <DependentUpon>SeisanList.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SeisanRegist.aspx.designer.vb">
       <DependentUpon>SeisanRegist.aspx</DependentUpon>
@@ -346,14 +340,11 @@
     <EmbeddedResource Include="DrReport.resx">
       <DependentUpon>DrReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DrReport1.resx">
+      <DependentUpon>DrReport1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DrReport2.resx">
       <DependentUpon>DrReport2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DrReport2_1.resx">
-      <DependentUpon>DrReport2_1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DrReport2_2.resx">
-      <DependentUpon>DrReport2_2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KaijoReport1.resx">
       <DependentUpon>KaijoReport1.vb</DependentUpon>

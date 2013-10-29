@@ -5,14 +5,36 @@ Imports DataDynamics.ActiveReports
 Partial Public Class Preview
     Inherits WebBase
 
+    Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private DSP_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private SEQ As Integer
+    Private Popup As Boolean = False
+
+    Private Sub Page_Unload1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+    End Sub
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        '呼び元が履歴一覧・手配画面の場合
+        MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
+        Popup = True
+
+        'セッションを変数に格納
+        If Not SetSession() Then
+            Response.Redirect(URL.TimeOut)
+        End If
+
         If Not Page.IsPostBack Then
-
-            '帳票出力            'TODO:ドクター情報か会場手配情報かを、前画面URLまたは区分などで判定            PrintDrReport()
-
-            'PrintKaijoReport()
-
+            '帳票出力            If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+                '呼び元画面が交通・宿泊手配回答登録画面の場合
+                PrintDrReport()
+            Else
+                '呼び元画面会場手配回答登録画面の場合
+                'PrintKaijoReport()
+            End If
         End If
 
         'マスターページ設定
@@ -21,6 +43,24 @@ Partial Public Class Preview
         End With
 
     End Sub
+
+    'セッションを変数に格納
+    Private Function SetSession() As Boolean
+        Try
+            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+            TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+            DSP_KOTSUHOTEL = Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL)
+            If IsNothing(DSP_KOTSUHOTEL) Then Return False
+        Catch ex As Exception
+            Return False
+        End Try
+        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+            Return False
+        Else
+            SEQ = Session.Item(SessionDef.DrRireki_SEQ)
+        End If
+        Return True
+    End Function
 
     'ドクター情報印刷
     Private Sub PrintDrReport()
@@ -50,8 +90,7 @@ Partial Public Class Preview
 
     End Sub
 
-
-    '仮
+    '交通・宿泊データ取得
     Private Function GetDrData() As DataTable
 
         Dim strSQL As String
@@ -59,11 +98,8 @@ Partial Public Class Preview
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        'strSQL = SQL.TBL_DR.byMR_ID(Session.Item(SessionDef.LoginID), PLACE)
-        strSQL = "SELECT *" _
-               & " FROM TBL_KOTSUHOTEL TKH" _
-               & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-               & " ON TKH.KOUENKAI_NO = TKE.KOUENKAI_NO"
+        strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
+        strSQL &= " DESC"
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
@@ -158,5 +194,4 @@ Partial Public Class Preview
         Return dtView.Table
 
     End Function
-
 End Class
