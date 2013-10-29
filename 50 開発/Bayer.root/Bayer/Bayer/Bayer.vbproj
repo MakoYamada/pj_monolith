@@ -140,6 +140,13 @@
     <Compile Include="Common\MyModule.vb" />
     <Compile Include="Common\URL.vb" />
     <Compile Include="Common\WebConfig.vb" />
+    <Compile Include="CostRegist.aspx.designer.vb">
+      <DependentUpon>CostRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CostRegist.aspx.vb">
+      <DependentUpon>CostRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="DrReport1.Designer.vb">
       <DependentUpon>DrReport1.vb</DependentUpon>
     </Compile>
@@ -382,6 +389,7 @@
     <Content Include="admin\MstUser.aspx" />
     <Content Include="Base.Master" />
     <Content Include="Close.html" />
+    <Content Include="CostRegist.aspx" />
     <Content Include="DrRireki.aspx" />
     <Content Include="Images\backlist.gif" />
     <Content Include="Images\bgall.png" />
