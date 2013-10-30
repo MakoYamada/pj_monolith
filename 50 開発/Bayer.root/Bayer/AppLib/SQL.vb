@@ -2815,7 +2815,9 @@ Public Class SQL
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
 
-            strSQL &= " SELECT TBL_COST.*"
+            strSQL &= " SELECT"
+            strSQL &= " SEIKYU_NO"
+            strSQL &= ",SEIKYU_YM "
             strSQL &= " FROM"
             strSQL &= " TBL_COST "
             strSQL &= " WHERE 1=1"
@@ -2832,7 +2834,8 @@ Public Class SQL
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_YM) & "'"
             End If
 
-            strSQL &= SQL_ORDERBY
+            strSQL &= " GROUP BY SEIKYU_NO,SEIKYU_YM"
+            strSQL &= " ORDER BY SEIKYU_NO,SEIKYU_YM"
 
             Return strSQL
         End Function
