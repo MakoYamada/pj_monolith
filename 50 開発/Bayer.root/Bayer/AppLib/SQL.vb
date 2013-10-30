@@ -982,8 +982,6 @@ Public Class SQL
             strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
             strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
             strSQL &= " WHERE"
-            strSQL &= " ISNULL(WK_KOTSUHOTEL.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
-            strSQL &= " AND"
             strSQL &= " WK_KOUENKAI.TIME_STAMP=("
             strSQL &= " SELECT MAX(TIME_STAMP)"
             strSQL &= " FROM"
