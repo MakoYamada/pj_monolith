@@ -2812,6 +2812,31 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT TBL_COST.*"
+            strSQL &= " FROM"
+            strSQL &= " TBL_COST "
+            strSQL &= " WHERE 1=1"
+
+            If Trim(Joken.SEIKYU_NO) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_COST.Column.SEIKYU_NO
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_NO) & "'"
+            End If
+
+            If Trim(Joken.SEIKYU_YM) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_COST.Column.SEIKYU_YM
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_YM) & "'"
+            End If
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_COST As TableDef.TBL_COST.DataStruct) As String
             Dim strSQL As String = ""
 
