@@ -1004,6 +1004,14 @@ Public Class AppModule
                 End If
                 RsData.Close()
                 Return TBL_BENTO
+            Case AppModule.TableType.TBL_COST
+                Dim TBL_COST As TableDef.TBL_COST.DataStruct = Nothing
+                RsData = CmnDb.Read(SQL, DbConn)
+                If RsData.Read() Then
+                    TBL_COST = SetRsData(RsData, TBL_COST)
+                End If
+                RsData.Close()
+                Return TBL_COST
             Case AppModule.TableType.MS_SHISETSU
                 Dim MS_SHISETSU As TableDef.MS_SHISETSU.DataStruct = Nothing
                 RsData = CmnDb.Read(SQL, DbConn)
@@ -1020,6 +1028,14 @@ Public Class AppModule
                 End If
                 RsData.Close()
                 Return MS_USER
+            Case AppModule.TableType.MS_COSTCENTER
+                Dim MS_COSTCENTER As TableDef.MS_COSTCENTER.DataStruct = Nothing
+                RsData = CmnDb.Read(SQL, DbConn)
+                If RsData.Read() Then
+                    MS_COSTCENTER = SetRsData(RsData, MS_COSTCENTER)
+                End If
+                RsData.Close()
+                Return MS_COSTCENTER
             Case AppModule.TableType.MS_JIGYOSHO
                 Dim MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct = Nothing
                 RsData = CmnDb.Read(SQL, DbConn)
@@ -8103,8 +8119,10 @@ Public Class AppModule
         [TBL_KOTSUHOTEL]
         [TBL_KAIJO]
         [TBL_BENTO]
+        [TBL_COST]
         [MS_SHISETSU]
         [MS_USER]
+        [MS_COSTCENTER]
         [MS_JIGYOSHO]
         [MS_AREA]
         [MS_EIGYOSHO]
