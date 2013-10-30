@@ -966,8 +966,40 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function DrReport()
+        Public Shared Function DrReport(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
 
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOTSUHOTEL.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+            strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & Joken.SANKASHA_ID & "'"
+
+            Return strSQL
         End Function
 
         Public Shared Function Insert(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
