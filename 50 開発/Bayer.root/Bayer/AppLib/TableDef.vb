@@ -2118,6 +2118,51 @@
         End Class
     End Class
 
+    Public Class TBL_COST
+        <Serializable()> Public Structure DataStruct
+            Public SEIKYU_NO As String
+            Public SEIKYU_YM As String
+            Public COSTCENTER_CD As String
+            Public KOTSUHI As String
+            Public HOTELHI As String
+            Public TAXI_T As String
+            Public TAXI_SEISAN_T As String
+            Public SAP_FLAG As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const SEIKYU_NO As String = "SEIKYU_NO"
+            Public Const SEIKYU_YM As String = "SEIKYU_YM"
+            Public Const COSTCENTER_CD As String = "COSTCENTER_CD"
+            Public Const KOTSUHI As String = "KOTSUHI"
+            Public Const HOTELHI As String = "HOTELHI"
+            Public Const TAXI_T As String = "TAXI_T"
+            Public Const TAXI_SEISAN_T As String = "TAXI_SEISAN_T"
+            Public Const SAP_FLAG As String = "SAP_FLAG"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const SEIKYU_NO As String = "トップツアー請求番号"
+            Public Const SEIKYU_YM As String = "請求年月"
+            Public Const COSTCENTER_CD As String = "コストセンターコード"
+            Public Const KOTSUHI As String = "交通費"
+            Public Const HOTELHI As String = "宿泊費"
+            Public Const TAXI_T As String = "タクチケ実車料金(課税)"
+            Public Const TAXI_SEISAN_T As String = "タクチケ精算手数料(課税)"
+            Public Const SAP_FLAG As String = "SAP作成フラグ"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
     Public Class MS_SHISETSU
         <Serializable()> Public Structure DataStruct
             Public SYSTEM_ID As String
@@ -2203,6 +2248,36 @@
             Public Const PASSWORD As String = "パスワード"
             Public Const KENGEN As String = "権限"
             Public Const USER_NAME As String = "氏名"
+            Public Const STOP_FLG As String = "利用停止フラグ"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
+    Public Class MS_COSTCENTER
+        <Serializable()> Public Structure DataStruct
+            Public COSTCENTER_CD As String
+            Public COSTCENTER_NAME As String
+            Public STOP_FLG As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const COSTCENTER_CD As String = "COSTCENTER_CD"
+            Public Const COSTCENTER_NAME As String = "COSTCENTER_NAME"
+            Public Const STOP_FLG As String = "STOP_FLG"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const COSTCENTER_CD As String = "コストセンターコード"
+            Public Const COSTCENTER_NAME As String = "コストセンター名称"
             Public Const STOP_FLG As String = "利用停止フラグ"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
