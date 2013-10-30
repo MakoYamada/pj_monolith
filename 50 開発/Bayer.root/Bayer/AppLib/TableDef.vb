@@ -2132,6 +2132,33 @@
             Public INPUT_USER As String
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
+
+            'プロパティ
+            Public ReadOnly Property pCOSTCENTER_CD() As String
+                Get
+                    Return COSTCENTER_CD
+                End Get
+            End Property
+            Public ReadOnly Property pKOTSUHI() As String
+                Get
+                    Return KOTSUHI
+                End Get
+            End Property
+            Public ReadOnly Property pHOTELHI() As String
+                Get
+                    Return HOTELHI
+                End Get
+            End Property
+            Public ReadOnly Property pTAXI_T() As String
+                Get
+                    Return TAXI_T
+                End Get
+            End Property
+            Public ReadOnly Property pTAXI_SEISAN_T() As String
+                Get
+                    Return TAXI_SEISAN_T
+                End Get
+            End Property
         End Structure
         Public Class Column
             Public Const SEIKYU_NO As String = "SEIKYU_NO"
