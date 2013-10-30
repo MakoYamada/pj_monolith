@@ -2148,7 +2148,7 @@
             Public Const UPDATE_USER As String = "UPDATE_USER"
         End Class
         Public Class Name
-            Public Const SEIKYU_NO As String = "トップツアー請求番号"
+            Public Const SEIKYU_NO As String = "請求番号"
             Public Const SEIKYU_YM As String = "請求年月"
             Public Const COSTCENTER_CD As String = "コストセンターコード"
             Public Const KOTSUHI As String = "交通費"
@@ -2161,6 +2161,7 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
         End Class
+        
     End Class
 
     Public Class MS_SHISETSU
