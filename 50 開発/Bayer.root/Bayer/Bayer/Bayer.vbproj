@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ActiveReports.Document, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.PdfExport, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
     <Reference Include="ActiveReports.Viewer6, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
     <Reference Include="ActiveReports.Web, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
     <Reference Include="ActiveReports.Web.Design, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
@@ -389,8 +390,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ActiveReports.FlashViewer.Resources.swf" />
-    <Content Include="ActiveReports.FlashViewer.swf" />
+    <Content Include="ActiveReports.FlashViewer.Resources.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ActiveReports.FlashViewer.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="admin\LogFile.aspx" />
     <Content Include="admin\LogSousa.aspx" />
     <Content Include="admin\MstCode.aspx" />

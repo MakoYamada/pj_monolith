@@ -2497,6 +2497,7 @@ Partial Public Class DrRegist
     '[手配書印刷]
     Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
         Session.Item(SessionDef.SEQ) = SEQ
+        Session.Item(SessionDef.DrRireki_SEQ) = SEQ
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
