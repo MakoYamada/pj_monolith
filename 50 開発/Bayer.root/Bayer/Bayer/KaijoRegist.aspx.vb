@@ -788,8 +788,7 @@ Partial Public Class KaijoRegist
 
     '[手配書印刷]
     Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
-        'QQQ 印刷用の何かを行う
-        'QQQ 印刷プレビューへ
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
     End Sub
 
 End Class
