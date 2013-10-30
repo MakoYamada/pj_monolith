@@ -3164,6 +3164,14 @@ Public Class SQL
         = " ORDER BY" _
         & " MS_COSTCENTER.COSTCENTER_CD"
 
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function byCOSTCENTER_CD(ByVal COSTCENTER_CD As String) As String
             Dim strSQL As String = SQL_SELECT
 
