@@ -966,6 +966,10 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function DrReport()
+
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
             Dim strSQL As String = ""
 
