@@ -6890,6 +6890,24 @@ Public Class AppModule
     End Class
 #End Region
 
+#Region "コストセンターコード"
+    Public Shared Sub SetDropDownList_COSTCENTER(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With AREA
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_COSTCENTER.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_COSTCENTER.Column.COSTCENTER_CD, RsData), CmnDb.DbData(TableDef.MS_COSTCENTER.Column.COSTCENTER_CD, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+#End Region
+
 #End Region
 
 #Region "== コントロールからDB用の値を返す =="
