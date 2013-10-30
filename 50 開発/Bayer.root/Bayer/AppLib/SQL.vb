@@ -2789,6 +2789,82 @@ Public Class SQL
 
     End Class
 
+    Public Class TBL_COST
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_COST.*" _
+        & " FROM TBL_COST"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " TBL_COST.SEIKYU_NO" _
+        & ",TBL_COST.SEIKYU_YM" _
+        & ",TBL_COST.COSTCENTER_CD"
+
+        Public Shared Function bySEIKYU_NO_SEIKYU_YM(ByVal SEIKYU_NO As String, ByVal SEIKYU_YM As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_COST.SEIKYU_NO=N'" & CmnDb.SqlString(SEIKYU_NO) & "'"
+            strSQL &= " AND TBL_COST.SEIKYU_YM=N'" & CmnDb.SqlString(SEIKYU_YM) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal TBL_COST As TableDef.TBL_COST.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_COST"
+            strSQL &= "(" & TableDef.TBL_COST.Column.SEIKYU_NO
+            strSQL &= "," & TableDef.TBL_COST.Column.SEIKYU_YM
+            strSQL &= "," & TableDef.TBL_COST.Column.COSTCENTER_CD
+            strSQL &= "," & TableDef.TBL_COST.Column.KOTSUHI
+            strSQL &= "," & TableDef.TBL_COST.Column.HOTELHI
+            strSQL &= "," & TableDef.TBL_COST.Column.TAXI_T
+            strSQL &= "," & TableDef.TBL_COST.Column.TAXI_SEISAN_T
+            strSQL &= "," & TableDef.TBL_COST.Column.SAP_FLAG
+            strSQL &= "," & TableDef.TBL_COST.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_COST.Column.INPUT_USER
+            strSQL &= "," & TableDef.TBL_COST.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.TBL_COST.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_COST.SEIKYU_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.SEIKYU_YM) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.COSTCENTER_CD) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.KOTSUHI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.HOTELHI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.TAXI_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.TAXI_SEISAN_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.SAP_FLAG) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.INPUT_USER) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.UPDATE_USER) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_COST As TableDef.TBL_COST.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_COST SET"
+            strSQL &= " " & TableDef.TBL_COST.Column.KOTSUHI & "=N'" & CmnDb.SqlString(TBL_COST.KOTSUHI) & "'"
+            strSQL &= "," & TableDef.TBL_COST.Column.HOTELHI & "=N'" & CmnDb.SqlString(TBL_COST.HOTELHI) & "'"
+            strSQL &= "," & TableDef.TBL_COST.Column.TAXI_T & "=N'" & CmnDb.SqlString(TBL_COST.TAXI_T) & "'"
+            strSQL &= "," & TableDef.TBL_COST.Column.TAXI_SEISAN_T & "=N'" & CmnDb.SqlString(TBL_COST.TAXI_SEISAN_T) & "'"
+            strSQL &= "," & TableDef.TBL_COST.Column.SAP_FLAG & "=N'" & CmnDb.SqlString(TBL_COST.SAP_FLAG) & "'"
+            strSQL &= "," & TableDef.TBL_COST.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_COST.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_COST.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_COST.Column.SEIKYU_NO & "=N'" & CmnDb.SqlString(TBL_COST.SEIKYU_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_COST.Column.SEIKYU_YM & "=N'" & CmnDb.SqlString(TBL_COST.SEIKYU_YM) & "'"
+            strSQL &= " AND " & TableDef.TBL_COST.Column.COSTCENTER_CD & "=N'" & CmnDb.SqlString(TBL_COST.COSTCENTER_CD) & "'"
+
+            Return strSQL
+        End Function
+    End Class
+
     Public Class MS_SHISETSU
 
         Private Const SQL_SELECT As String _
@@ -3051,6 +3127,64 @@ Public Class SQL
             Return strSQL
         End Function
 
+    End Class
+
+    Public Class MS_COSTCENTER
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " MS_COSTCENTER.*" _
+        & " FROM MS_COSTCENTER"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " MS_COSTCENTER.COSTCENTER_CD"
+
+        Public Shared Function byCOSTCENTER_CD(ByVal COSTCENTER_CD As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_COSTCENTER.COSTCENTER_CD=N'" & CmnDb.SqlString(COSTCENTER_CD) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal MS_COSTCENTER As TableDef.MS_COSTCENTER.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO MS_COSTCENTER"
+            strSQL &= "(" & TableDef.MS_COSTCENTER.Column.COSTCENTER_CD
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.COSTCENTER_NAME
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.STOP_FLG
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.INPUT_DATE
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.INPUT_USER
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(MS_COSTCENTER.COSTCENTER_CD) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_COSTCENTER.COSTCENTER_NAME) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_COSTCENTER.STOP_FLG) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_COSTCENTER.INPUT_USER) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_COSTCENTER.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal MS_COSTCENTER As TableDef.MS_COSTCENTER.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE MS_COSTCENTER SET"
+            strSQL &= " " & TableDef.MS_COSTCENTER.Column.COSTCENTER_NAME & "=N'" & CmnDb.SqlString(MS_COSTCENTER.COSTCENTER_NAME) & "'"
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_COSTCENTER.STOP_FLG) & "'"
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.MS_COSTCENTER.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_COSTCENTER.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.MS_COSTCENTER.Column.COSTCENTER_CD & "=N'" & CmnDb.SqlString(MS_COSTCENTER.COSTCENTER_CD) & "'"
+
+            Return strSQL
+        End Function
     End Class
 
     Public Class MS_JIGYOSHO
