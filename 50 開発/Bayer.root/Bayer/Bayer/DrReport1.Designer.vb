@@ -27,6 +27,7 @@ Partial Public Class DrReport1
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.Label4 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
@@ -94,7 +95,6 @@ Partial Public Class DrReport1
         Me.SANKASHA_ID = New DataDynamics.ActiveReports.TextBox
         Me.DR_CD = New DataDynamics.ActiveReports.TextBox
         Me.DR_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.DR_KANA = New DataDynamics.ActiveReports.TextBox
         Me.DR_SHISETSU_CD = New DataDynamics.ActiveReports.TextBox
         Me.DR_SHISETSU_NAME = New DataDynamics.ActiveReports.TextBox
@@ -148,7 +148,6 @@ Partial Public Class DrReport1
         Me.REQ_F_BIN_1 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_F_SEAT_1 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_F_SEAT_KIBOU1 = New DataDynamics.ActiveReports.TextBox
-        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.Line3 = New DataDynamics.ActiveReports.Line
@@ -199,6 +198,7 @@ Partial Public Class DrReport1
         Me.Line48 = New DataDynamics.ActiveReports.Line
         Me.Line49 = New DataDynamics.ActiveReports.Line
         Me.Line50 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -414,6 +414,15 @@ Partial Public Class DrReport1
         Me.Detail.Height = 9.8!
         Me.Detail.Name = "Detail"
         '
+        'Shape2
+        '
+        Me.Shape2.Height = 9.6!
+        Me.Shape2.Left = 0.0!
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 9.999999!
+        Me.Shape2.Top = 0.2!
+        Me.Shape2.Width = 7.165355!
+        '
         'Label5
         '
         Me.Label5.Height = 0.2!
@@ -427,6 +436,7 @@ Partial Public Class DrReport1
         '
         'KOUENKAI_NAME
         '
+        Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Height = 0.2!
         Me.KOUENKAI_NAME.Left = 0.8437008!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
@@ -1086,6 +1096,7 @@ Partial Public Class DrReport1
         '
         'KOUENKAI_NO
         '
+        Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Height = 0.2!
         Me.KOUENKAI_NO.Left = 1.771654!
         Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
@@ -1095,6 +1106,7 @@ Partial Public Class DrReport1
         '
         'REQ_STATUS_TEHAI
         '
+        Me.REQ_STATUS_TEHAI.DataField = "REQ_STATUS_TEHAI"
         Me.REQ_STATUS_TEHAI.Height = 0.2!
         Me.REQ_STATUS_TEHAI.Left = 1.771654!
         Me.REQ_STATUS_TEHAI.Name = "REQ_STATUS_TEHAI"
@@ -1104,6 +1116,7 @@ Partial Public Class DrReport1
         '
         'TIME_STAMP_BYL
         '
+        Me.TIME_STAMP_BYL.DataField = "TIME_STAMP_BYL"
         Me.TIME_STAMP_BYL.Height = 0.2!
         Me.TIME_STAMP_BYL.Left = 1.771654!
         Me.TIME_STAMP_BYL.Name = "TIME_STAMP_BYL"
@@ -1113,6 +1126,7 @@ Partial Public Class DrReport1
         '
         'SANKASHA_ID
         '
+        Me.SANKASHA_ID.DataField = "SANKASHA_ID"
         Me.SANKASHA_ID.Height = 0.2!
         Me.SANKASHA_ID.Left = 1.771654!
         Me.SANKASHA_ID.Name = "SANKASHA_ID"
@@ -1122,6 +1136,7 @@ Partial Public Class DrReport1
         '
         'DR_CD
         '
+        Me.DR_CD.DataField = "DR_CD"
         Me.DR_CD.Height = 0.2!
         Me.DR_CD.Left = 1.771654!
         Me.DR_CD.Name = "DR_CD"
@@ -1131,6 +1146,7 @@ Partial Public Class DrReport1
         '
         'DR_NAME
         '
+        Me.DR_NAME.DataField = "DR_NAME"
         Me.DR_NAME.Height = 0.2!
         Me.DR_NAME.Left = 1.771654!
         Me.DR_NAME.Name = "DR_NAME"
@@ -1138,13 +1154,9 @@ Partial Public Class DrReport1
         Me.DR_NAME.Top = 1.2!
         Me.DR_NAME.Width = 5.393702!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'DR_KANA
         '
+        Me.DR_KANA.DataField = "DR_KANA"
         Me.DR_KANA.Height = 0.2!
         Me.DR_KANA.Left = 1.771654!
         Me.DR_KANA.Name = "DR_KANA"
@@ -1154,6 +1166,7 @@ Partial Public Class DrReport1
         '
         'DR_SHISETSU_CD
         '
+        Me.DR_SHISETSU_CD.DataField = "DR_SHISETSU_CD"
         Me.DR_SHISETSU_CD.Height = 0.2!
         Me.DR_SHISETSU_CD.Left = 1.771654!
         Me.DR_SHISETSU_CD.Name = "DR_SHISETSU_CD"
@@ -1163,6 +1176,7 @@ Partial Public Class DrReport1
         '
         'DR_SHISETSU_NAME
         '
+        Me.DR_SHISETSU_NAME.DataField = "DR_SHISETSU_NAME"
         Me.DR_SHISETSU_NAME.Height = 0.2!
         Me.DR_SHISETSU_NAME.Left = 1.771654!
         Me.DR_SHISETSU_NAME.Name = "DR_SHISETSU_NAME"
@@ -1172,6 +1186,7 @@ Partial Public Class DrReport1
         '
         'DR_SHISETSU_ADDRESS
         '
+        Me.DR_SHISETSU_ADDRESS.DataField = "DR_SHISETSU_ADDRESS"
         Me.DR_SHISETSU_ADDRESS.Height = 0.2!
         Me.DR_SHISETSU_ADDRESS.Left = 1.771654!
         Me.DR_SHISETSU_ADDRESS.Name = "DR_SHISETSU_ADDRESS"
@@ -1181,6 +1196,7 @@ Partial Public Class DrReport1
         '
         'DR_YAKUWARI
         '
+        Me.DR_YAKUWARI.DataField = "DR_YAKUWARI"
         Me.DR_YAKUWARI.Height = 0.2!
         Me.DR_YAKUWARI.Left = 1.771654!
         Me.DR_YAKUWARI.Name = "DR_YAKUWARI"
@@ -1190,6 +1206,7 @@ Partial Public Class DrReport1
         '
         'DR_SEX
         '
+        Me.DR_SEX.DataField = "DR_SEX"
         Me.DR_SEX.Height = 0.2!
         Me.DR_SEX.Left = 1.771654!
         Me.DR_SEX.Name = "DR_SEX"
@@ -1199,6 +1216,7 @@ Partial Public Class DrReport1
         '
         'DR_AGE
         '
+        Me.DR_AGE.DataField = "DR_AGE"
         Me.DR_AGE.Height = 0.2!
         Me.DR_AGE.Left = 1.771654!
         Me.DR_AGE.Name = "DR_AGE"
@@ -1208,6 +1226,7 @@ Partial Public Class DrReport1
         '
         'SHITEIGAI_RIYU
         '
+        Me.SHITEIGAI_RIYU.DataField = "SEITEIGAI_RIYU"
         Me.SHITEIGAI_RIYU.Height = 0.2!
         Me.SHITEIGAI_RIYU.Left = 1.771654!
         Me.SHITEIGAI_RIYU.Name = "SHITEIGAI_RIYU"
@@ -1217,6 +1236,7 @@ Partial Public Class DrReport1
         '
         'MR_AREA
         '
+        Me.MR_AREA.DataField = "MR_AREA"
         Me.MR_AREA.Height = 0.2!
         Me.MR_AREA.Left = 1.771654!
         Me.MR_AREA.Name = "MR_AREA"
@@ -1226,6 +1246,7 @@ Partial Public Class DrReport1
         '
         'MR_EIGYOSHO
         '
+        Me.MR_EIGYOSHO.DataField = "MR_EIGYOSHO"
         Me.MR_EIGYOSHO.Height = 0.2!
         Me.MR_EIGYOSHO.Left = 1.771654!
         Me.MR_EIGYOSHO.Name = "MR_EIGYOSHO"
@@ -1235,6 +1256,7 @@ Partial Public Class DrReport1
         '
         'MR_NAME
         '
+        Me.MR_NAME.DataField = "MR_NAME"
         Me.MR_NAME.Height = 0.2!
         Me.MR_NAME.Left = 1.771654!
         Me.MR_NAME.Name = "MR_NAME"
@@ -1244,6 +1266,7 @@ Partial Public Class DrReport1
         '
         'MR_ROMA
         '
+        Me.MR_ROMA.DataField = "MR_ROMA"
         Me.MR_ROMA.Height = 0.2!
         Me.MR_ROMA.Left = 1.771654!
         Me.MR_ROMA.Name = "MR_ROMA"
@@ -1253,6 +1276,7 @@ Partial Public Class DrReport1
         '
         'MR_KANA
         '
+        Me.MR_KANA.DataField = "MR_KANA"
         Me.MR_KANA.Height = 0.2!
         Me.MR_KANA.Left = 1.771654!
         Me.MR_KANA.Name = "MR_KANA"
@@ -1262,6 +1286,7 @@ Partial Public Class DrReport1
         '
         'MR_EMAIL_PC
         '
+        Me.MR_EMAIL_PC.DataField = "MR_EMAIL_PC"
         Me.MR_EMAIL_PC.Height = 0.2!
         Me.MR_EMAIL_PC.Left = 1.771654!
         Me.MR_EMAIL_PC.Name = "MR_EMAIL_PC"
@@ -1271,6 +1296,7 @@ Partial Public Class DrReport1
         '
         'MR_EMAIL_KEITAI
         '
+        Me.MR_EMAIL_KEITAI.DataField = "MR_EMAIL_KEITAI"
         Me.MR_EMAIL_KEITAI.Height = 0.2!
         Me.MR_EMAIL_KEITAI.Left = 1.771654!
         Me.MR_EMAIL_KEITAI.Name = "MR_EMAIL_KEITAI"
@@ -1280,6 +1306,7 @@ Partial Public Class DrReport1
         '
         'MR_KEITAI
         '
+        Me.MR_KEITAI.DataField = "MR_KEITAI"
         Me.MR_KEITAI.Height = 0.2!
         Me.MR_KEITAI.Left = 1.771654!
         Me.MR_KEITAI.Name = "MR_KEITAI"
@@ -1289,6 +1316,7 @@ Partial Public Class DrReport1
         '
         'MR_TEL
         '
+        Me.MR_TEL.DataField = "MR_TEL"
         Me.MR_TEL.Height = 0.2!
         Me.MR_TEL.Left = 1.771654!
         Me.MR_TEL.Name = "MR_TEL"
@@ -1298,6 +1326,7 @@ Partial Public Class DrReport1
         '
         'MR_SEND_SAKI_FS
         '
+        Me.MR_SEND_SAKI_FS.DataField = "MR_SEND_SAKI_FS"
         Me.MR_SEND_SAKI_FS.Height = 0.2!
         Me.MR_SEND_SAKI_FS.Left = 1.771654!
         Me.MR_SEND_SAKI_FS.Name = "MR_SEND_SAKI_FS"
@@ -1307,6 +1336,7 @@ Partial Public Class DrReport1
         '
         'MR_SEND_SAKI_OTHER
         '
+        Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
         Me.MR_SEND_SAKI_OTHER.Height = 0.2!
         Me.MR_SEND_SAKI_OTHER.Left = 1.771654!
         Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
@@ -1316,6 +1346,7 @@ Partial Public Class DrReport1
         '
         'ACCOUNT_CD
         '
+        Me.ACCOUNT_CD.DataField = "ACCOUNT_CD"
         Me.ACCOUNT_CD.Height = 0.2!
         Me.ACCOUNT_CD.Left = 1.771654!
         Me.ACCOUNT_CD.Name = "ACCOUNT_CD"
@@ -1325,6 +1356,7 @@ Partial Public Class DrReport1
         '
         'COST_CENTER
         '
+        Me.COST_CENTER.DataField = "CONST_CENTER"
         Me.COST_CENTER.Height = 0.2!
         Me.COST_CENTER.Left = 1.771654!
         Me.COST_CENTER.Name = "COST_CENTER"
@@ -1334,6 +1366,7 @@ Partial Public Class DrReport1
         '
         'INTERNAL_ORDER
         '
+        Me.INTERNAL_ORDER.DataField = "INTERNAL_ORDER"
         Me.INTERNAL_ORDER.Height = 0.2!
         Me.INTERNAL_ORDER.Left = 1.771654!
         Me.INTERNAL_ORDER.Name = "INTERNAL_ORDER"
@@ -1343,6 +1376,7 @@ Partial Public Class DrReport1
         '
         'ZETIA_CD
         '
+        Me.ZETIA_CD.DataField = "ZETIA_CD"
         Me.ZETIA_CD.Height = 0.2!
         Me.ZETIA_CD.Left = 1.771654!
         Me.ZETIA_CD.Name = "ZETIA_CD"
@@ -1352,6 +1386,7 @@ Partial Public Class DrReport1
         '
         'SHONIN_NAME
         '
+        Me.SHONIN_NAME.DataField = "SHONIN_NAME"
         Me.SHONIN_NAME.Height = 0.2!
         Me.SHONIN_NAME.Left = 1.771654!
         Me.SHONIN_NAME.Name = "SHONIN_NAME"
@@ -1361,6 +1396,7 @@ Partial Public Class DrReport1
         '
         'SHONIN_DATE
         '
+        Me.SHONIN_DATE.DataField = "SHONIN_DATE"
         Me.SHONIN_DATE.Height = 0.2!
         Me.SHONIN_DATE.Left = 1.771654!
         Me.SHONIN_DATE.Name = "SHONIN_DATE"
@@ -1370,6 +1406,7 @@ Partial Public Class DrReport1
         '
         'TEHAI_HOTEL
         '
+        Me.TEHAI_HOTEL.DataField = "TEHAI_HOTEL"
         Me.TEHAI_HOTEL.Height = 0.2!
         Me.TEHAI_HOTEL.Left = 1.771654!
         Me.TEHAI_HOTEL.Name = "TEHAI_HOTEL"
@@ -1379,6 +1416,7 @@ Partial Public Class DrReport1
         '
         'HOTEL_IRAINAIYOU
         '
+        Me.HOTEL_IRAINAIYOU.DataField = "HOTEL_IRAINAIYOU"
         Me.HOTEL_IRAINAIYOU.Height = 0.2!
         Me.HOTEL_IRAINAIYOU.Left = 1.771654!
         Me.HOTEL_IRAINAIYOU.Name = "HOTEL_IRAINAIYOU"
@@ -1388,6 +1426,7 @@ Partial Public Class DrReport1
         '
         'REQ_HOTEL_DATE
         '
+        Me.REQ_HOTEL_DATE.DataField = "REQ_HOTEL_DATE"
         Me.REQ_HOTEL_DATE.Height = 0.2!
         Me.REQ_HOTEL_DATE.Left = 1.771654!
         Me.REQ_HOTEL_DATE.Name = "REQ_HOTEL_DATE"
@@ -1397,6 +1436,7 @@ Partial Public Class DrReport1
         '
         'REQ_HAKUSU
         '
+        Me.REQ_HAKUSU.DataField = "REQ_HAKUSU"
         Me.REQ_HAKUSU.Height = 0.2!
         Me.REQ_HAKUSU.Left = 1.771654!
         Me.REQ_HAKUSU.Name = "REQ_HAKUSU"
@@ -1406,6 +1446,7 @@ Partial Public Class DrReport1
         '
         'REQ_HOTEL_SMOKING
         '
+        Me.REQ_HOTEL_SMOKING.DataField = "REQ_HOTEL_SMOKING"
         Me.REQ_HOTEL_SMOKING.Height = 0.2!
         Me.REQ_HOTEL_SMOKING.Left = 1.771654!
         Me.REQ_HOTEL_SMOKING.Name = "REQ_HOTEL_SMOKING"
@@ -1415,6 +1456,7 @@ Partial Public Class DrReport1
         '
         'REQ_HOTEL_NOTE
         '
+        Me.REQ_HOTEL_NOTE.DataField = "REQ_HOTEL_NOTE"
         Me.REQ_HOTEL_NOTE.Height = 0.2!
         Me.REQ_HOTEL_NOTE.Left = 1.771654!
         Me.REQ_HOTEL_NOTE.Name = "REQ_HOTEL_NOTE"
@@ -1424,6 +1466,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_TEHAI_1
         '
+        Me.REQ_O_TEHAI_1.DataField = "REQ_O_TEHAI_1"
         Me.REQ_O_TEHAI_1.Height = 0.1999998!
         Me.REQ_O_TEHAI_1.Left = 1.771654!
         Me.REQ_O_TEHAI_1.Name = "REQ_O_TEHAI_1"
@@ -1433,6 +1476,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_IRAINAIYOU_1
         '
+        Me.REQ_O_IRAINAIYOU_1.DataField = "REQ_O_IRAINAIYOU_1"
         Me.REQ_O_IRAINAIYOU_1.Height = 0.1999998!
         Me.REQ_O_IRAINAIYOU_1.Left = 1.771654!
         Me.REQ_O_IRAINAIYOU_1.Name = "REQ_O_IRAINAIYOU_1"
@@ -1442,6 +1486,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_KOTSUKIKAN_1
         '
+        Me.REQ_O_KOTSUKIKAN_1.DataField = "REQ_O_KOTSUKIKAN_1"
         Me.REQ_O_KOTSUKIKAN_1.Height = 0.1999998!
         Me.REQ_O_KOTSUKIKAN_1.Left = 1.771654!
         Me.REQ_O_KOTSUKIKAN_1.Name = "REQ_O_KOTSUKIKAN_1"
@@ -1451,6 +1496,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_DATE_1
         '
+        Me.REQ_O_DATE_1.DataField = "REQ_O_DATE_1"
         Me.REQ_O_DATE_1.Height = 0.1999998!
         Me.REQ_O_DATE_1.Left = 1.771654!
         Me.REQ_O_DATE_1.Name = "REQ_O_DATE_1"
@@ -1460,6 +1506,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_AIRPORT1_1
         '
+        Me.REQ_O_AIRPORT1_1.DataField = "REQ_O_AIRPORT1_!"
         Me.REQ_O_AIRPORT1_1.Height = 0.1999998!
         Me.REQ_O_AIRPORT1_1.Left = 1.771654!
         Me.REQ_O_AIRPORT1_1.Name = "REQ_O_AIRPORT1_1"
@@ -1469,6 +1516,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_AIRPORT2_1
         '
+        Me.REQ_O_AIRPORT2_1.DataField = "REQ_O_AIRPORT2_1"
         Me.REQ_O_AIRPORT2_1.Height = 0.1999998!
         Me.REQ_O_AIRPORT2_1.Left = 1.771654!
         Me.REQ_O_AIRPORT2_1.Name = "REQ_O_AIRPORT2_1"
@@ -1478,6 +1526,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_TIME1_1
         '
+        Me.REQ_O_TIME1_1.DataField = "REQ_O_TIME1_1"
         Me.REQ_O_TIME1_1.Height = 0.1999998!
         Me.REQ_O_TIME1_1.Left = 1.771654!
         Me.REQ_O_TIME1_1.Name = "REQ_O_TIME1_1"
@@ -1487,6 +1536,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_TIME2_1
         '
+        Me.REQ_O_TIME2_1.DataField = "REQ_O_TIME2_1"
         Me.REQ_O_TIME2_1.Height = 0.1999998!
         Me.REQ_O_TIME2_1.Left = 1.771654!
         Me.REQ_O_TIME2_1.Name = "REQ_O_TIME2_1"
@@ -1496,6 +1546,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_BIN_1
         '
+        Me.REQ_O_BIN_1.DataField = "REQ_O_BIN_1"
         Me.REQ_O_BIN_1.Height = 0.1999998!
         Me.REQ_O_BIN_1.Left = 1.771654!
         Me.REQ_O_BIN_1.Name = "REQ_O_BIN_1"
@@ -1505,6 +1556,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_SEAT_1
         '
+        Me.REQ_O_SEAT_1.DataField = "REQ_O_SEAT_1"
         Me.REQ_O_SEAT_1.Height = 0.1999998!
         Me.REQ_O_SEAT_1.Left = 1.771654!
         Me.REQ_O_SEAT_1.Name = "REQ_O_SEAT_1"
@@ -1514,6 +1566,7 @@ Partial Public Class DrReport1
         '
         'REQ_O_SEAT_KIBOU1
         '
+        Me.REQ_O_SEAT_KIBOU1.DataField = "REQ_O_SEAT_KIBOU1"
         Me.REQ_O_SEAT_KIBOU1.Height = 0.1999998!
         Me.REQ_O_SEAT_KIBOU1.Left = 1.771654!
         Me.REQ_O_SEAT_KIBOU1.Name = "REQ_O_SEAT_KIBOU1"
@@ -1523,6 +1576,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_TEHAI_1
         '
+        Me.REQ_F_TEHAI_1.DataField = "REQ_F_TEHAI_1"
         Me.REQ_F_TEHAI_1.Height = 0.1999998!
         Me.REQ_F_TEHAI_1.Left = 5.354331!
         Me.REQ_F_TEHAI_1.Name = "REQ_F_TEHAI_1"
@@ -1532,6 +1586,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_IRAINAIYOU_1
         '
+        Me.REQ_F_IRAINAIYOU_1.DataField = "REQ_F_IRAINAIYOU_1"
         Me.REQ_F_IRAINAIYOU_1.Height = 0.1999998!
         Me.REQ_F_IRAINAIYOU_1.Left = 5.354331!
         Me.REQ_F_IRAINAIYOU_1.Name = "REQ_F_IRAINAIYOU_1"
@@ -1541,6 +1596,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_KOTSUKIKAN_1
         '
+        Me.REQ_F_KOTSUKIKAN_1.DataField = "REQ_F_KOTSUKIKAN_1"
         Me.REQ_F_KOTSUKIKAN_1.Height = 0.1999998!
         Me.REQ_F_KOTSUKIKAN_1.Left = 5.354331!
         Me.REQ_F_KOTSUKIKAN_1.Name = "REQ_F_KOTSUKIKAN_1"
@@ -1550,6 +1606,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_DATE_1
         '
+        Me.REQ_F_DATE_1.DataField = "REQ_F_DATE_1"
         Me.REQ_F_DATE_1.Height = 0.1999998!
         Me.REQ_F_DATE_1.Left = 5.354331!
         Me.REQ_F_DATE_1.Name = "REQ_F_DATE_1"
@@ -1559,6 +1616,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_AIRPORT1_1
         '
+        Me.REQ_F_AIRPORT1_1.DataField = "REQ_F_AIRPORT1_1"
         Me.REQ_F_AIRPORT1_1.Height = 0.1999998!
         Me.REQ_F_AIRPORT1_1.Left = 5.354331!
         Me.REQ_F_AIRPORT1_1.Name = "REQ_F_AIRPORT1_1"
@@ -1568,6 +1626,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_AIRPORT2_1
         '
+        Me.REQ_F_AIRPORT2_1.DataField = "REQ_F_AIRPORT2_1"
         Me.REQ_F_AIRPORT2_1.Height = 0.1999998!
         Me.REQ_F_AIRPORT2_1.Left = 5.354331!
         Me.REQ_F_AIRPORT2_1.Name = "REQ_F_AIRPORT2_1"
@@ -1577,6 +1636,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_TIME1_1
         '
+        Me.REQ_F_TIME1_1.DataField = "REQ_F_TIME1_1"
         Me.REQ_F_TIME1_1.Height = 0.1999998!
         Me.REQ_F_TIME1_1.Left = 5.354331!
         Me.REQ_F_TIME1_1.Name = "REQ_F_TIME1_1"
@@ -1586,6 +1646,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_TIME2_1
         '
+        Me.REQ_F_TIME2_1.DataField = "REQ_F_TIME2_1"
         Me.REQ_F_TIME2_1.Height = 0.1999998!
         Me.REQ_F_TIME2_1.Left = 5.354331!
         Me.REQ_F_TIME2_1.Name = "REQ_F_TIME2_1"
@@ -1595,6 +1656,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_BIN_1
         '
+        Me.REQ_F_BIN_1.DataField = "REQ_F_BIN_1"
         Me.REQ_F_BIN_1.Height = 0.1999998!
         Me.REQ_F_BIN_1.Left = 5.354331!
         Me.REQ_F_BIN_1.Name = "REQ_F_BIN_1"
@@ -1604,6 +1666,7 @@ Partial Public Class DrReport1
         '
         'REQ_F_SEAT_1
         '
+        Me.REQ_F_SEAT_1.DataField = "REQ_F_SEAT_1"
         Me.REQ_F_SEAT_1.Height = 0.1999998!
         Me.REQ_F_SEAT_1.Left = 5.354331!
         Me.REQ_F_SEAT_1.Name = "REQ_F_SEAT_1"
@@ -1613,21 +1676,13 @@ Partial Public Class DrReport1
         '
         'REQ_F_SEAT_KIBOU1
         '
+        Me.REQ_F_SEAT_KIBOU1.DataField = "REQ_F_KIBOU1"
         Me.REQ_F_SEAT_KIBOU1.Height = 0.1999998!
         Me.REQ_F_SEAT_KIBOU1.Left = 5.354331!
         Me.REQ_F_SEAT_KIBOU1.Name = "REQ_F_SEAT_KIBOU1"
         Me.REQ_F_SEAT_KIBOU1.Text = Nothing
         Me.REQ_F_SEAT_KIBOU1.Top = 9.6!
         Me.REQ_F_SEAT_KIBOU1.Width = 1.811024!
-        '
-        'Shape2
-        '
-        Me.Shape2.Height = 9.6!
-        Me.Shape2.Left = 0.0!
-        Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 10.0!
-        Me.Shape2.Top = 0.2!
-        Me.Shape2.Width = 7.165355!
         '
         'Line1
         '
@@ -2323,6 +2378,11 @@ Partial Public Class DrReport1
         Me.Line50.X2 = 5.354331!
         Me.Line50.Y1 = 7.6!
         Me.Line50.Y2 = 9.800001!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrReport1
         '

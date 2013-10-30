@@ -27,6 +27,7 @@ Partial Public Class DrReport3
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label4 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
@@ -94,6 +95,7 @@ Partial Public Class DrReport3
         Me.REQ_TAXI_DATE_5 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_TAXI_FROM_5 = New DataDynamics.ActiveReports.TextBox
         Me.TAXI_YOTEIKINGAKU_5 = New DataDynamics.ActiveReports.TextBox
+        Me.REQ_TAXI_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.REQ_MR_O_TEHAI = New DataDynamics.ActiveReports.TextBox
         Me.REQ_MR_F_TEHAI = New DataDynamics.ActiveReports.TextBox
         Me.MR_SEX = New DataDynamics.ActiveReports.TextBox
@@ -148,9 +150,6 @@ Partial Public Class DrReport3
         Me.REQ_TAXI_DATE_10 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_TAXI_FROM_10 = New DataDynamics.ActiveReports.TextBox
         Me.TAXI_YOTEIKINGAKU_10 = New DataDynamics.ActiveReports.TextBox
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.REQ_TAXI_NOTE = New DataDynamics.ActiveReports.TextBox
-        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.Line10 = New DataDynamics.ActiveReports.Line
         Me.Line11 = New DataDynamics.ActiveReports.Line
@@ -158,6 +157,7 @@ Partial Public Class DrReport3
         Me.TEHAI_TAXI = New DataDynamics.ActiveReports.TextBox
         Me.Line13 = New DataDynamics.ActiveReports.Line
         Me.Line18 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,6 +219,7 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_DATE_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_TAXI_FROM_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TAXI_YOTEIKINGAKU_5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_TAXI_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_MR_O_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MR_SEX, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -256,7 +257,6 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_DATE_10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_TAXI_FROM_10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TAXI_YOTEIKINGAKU_10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_TAXI_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -347,6 +347,15 @@ Partial Public Class DrReport3
         Me.Detail.Height = 8.8!
         Me.Detail.Name = "Detail"
         '
+        'Shape2
+        '
+        Me.Shape2.Height = 8.6!
+        Me.Shape2.Left = 0.0!
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 9.999999!
+        Me.Shape2.Top = 0.2!
+        Me.Shape2.Width = 7.165355!
+        '
         'Label5
         '
         Me.Label5.Height = 0.2!
@@ -360,6 +369,7 @@ Partial Public Class DrReport3
         '
         'KOUENKAI_NAME
         '
+        Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Height = 0.2!
         Me.KOUENKAI_NAME.Left = 0.8437006!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
@@ -513,6 +523,7 @@ Partial Public Class DrReport3
         '
         'KOUENKAI_NO
         '
+        Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Height = 0.2!
         Me.KOUENKAI_NO.Left = 1.771654!
         Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
@@ -522,6 +533,7 @@ Partial Public Class DrReport3
         '
         'REQ_STATUS_TEHAI
         '
+        Me.REQ_STATUS_TEHAI.DataField = "REQ_STATUS_TEHAI"
         Me.REQ_STATUS_TEHAI.Height = 0.2!
         Me.REQ_STATUS_TEHAI.Left = 1.771654!
         Me.REQ_STATUS_TEHAI.Name = "REQ_STATUS_TEHAI"
@@ -531,6 +543,7 @@ Partial Public Class DrReport3
         '
         'TIME_STAMP_BYL
         '
+        Me.TIME_STAMP_BYL.DataField = "TIME_STAMP_BYL"
         Me.TIME_STAMP_BYL.Height = 0.2!
         Me.TIME_STAMP_BYL.Left = 1.771654!
         Me.TIME_STAMP_BYL.Name = "TIME_STAMP_BYL"
@@ -540,6 +553,7 @@ Partial Public Class DrReport3
         '
         'SANKASHA_ID
         '
+        Me.SANKASHA_ID.DataField = "SANKASHA_ID"
         Me.SANKASHA_ID.Height = 0.2!
         Me.SANKASHA_ID.Left = 1.771654!
         Me.SANKASHA_ID.Name = "SANKASHA_ID"
@@ -549,6 +563,7 @@ Partial Public Class DrReport3
         '
         'DR_CD
         '
+        Me.DR_CD.DataField = "DR_CD"
         Me.DR_CD.Height = 0.2!
         Me.DR_CD.Left = 1.771654!
         Me.DR_CD.Name = "DR_CD"
@@ -558,6 +573,7 @@ Partial Public Class DrReport3
         '
         'DR_NAME
         '
+        Me.DR_NAME.DataField = "DR_NAME"
         Me.DR_NAME.Height = 0.2!
         Me.DR_NAME.Left = 1.771654!
         Me.DR_NAME.Name = "DR_NAME"
@@ -567,6 +583,7 @@ Partial Public Class DrReport3
         '
         'DR_KANA
         '
+        Me.DR_KANA.DataField = "DR_KANA"
         Me.DR_KANA.Height = 0.2!
         Me.DR_KANA.Left = 1.771654!
         Me.DR_KANA.Name = "DR_KANA"
@@ -576,6 +593,7 @@ Partial Public Class DrReport3
         '
         'DR_SHISETSU_CD
         '
+        Me.DR_SHISETSU_CD.DataField = "DR_SHISETSU_CD"
         Me.DR_SHISETSU_CD.Height = 0.2!
         Me.DR_SHISETSU_CD.Left = 1.771654!
         Me.DR_SHISETSU_CD.Name = "DR_SHISETSU_CD"
@@ -585,14 +603,17 @@ Partial Public Class DrReport3
         '
         'REQ_KOTSU_BIKO
         '
+        Me.REQ_KOTSU_BIKO.DataField = "REQ_KOTSU_BIKO"
         Me.REQ_KOTSU_BIKO.Height = 1.0!
         Me.REQ_KOTSU_BIKO.Left = 1.771654!
         Me.REQ_KOTSU_BIKO.Name = "REQ_KOTSU_BIKO"
+        Me.REQ_KOTSU_BIKO.Text = Nothing
         Me.REQ_KOTSU_BIKO.Top = 1.8!
         Me.REQ_KOTSU_BIKO.Width = 5.393701!
         '
         'REQ_TAXI_DATE_1
         '
+        Me.REQ_TAXI_DATE_1.DataField = "REQ_TAXI_DATE_1"
         Me.REQ_TAXI_DATE_1.Height = 0.2!
         Me.REQ_TAXI_DATE_1.Left = 1.771654!
         Me.REQ_TAXI_DATE_1.Name = "REQ_TAXI_DATE_1"
@@ -602,6 +623,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_1
         '
+        Me.REQ_TAXI_FROM_1.DataField = "REQ_TAXI_FROM_1"
         Me.REQ_TAXI_FROM_1.Height = 0.2!
         Me.REQ_TAXI_FROM_1.Left = 1.771654!
         Me.REQ_TAXI_FROM_1.Name = "REQ_TAXI_FROM_1"
@@ -611,6 +633,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_1
         '
+        Me.TAXI_YOTEIKINGAKU_1.DataField = "TAXI_YOTEIKINGAKU_1"
         Me.TAXI_YOTEIKINGAKU_1.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_1.Left = 1.771654!
         Me.TAXI_YOTEIKINGAKU_1.Name = "TAXI_YOTEIKINGAKU_1"
@@ -972,6 +995,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_2
         '
+        Me.REQ_TAXI_DATE_2.DataField = "REQ_TAXI_DATE_2"
         Me.REQ_TAXI_DATE_2.Height = 0.2!
         Me.REQ_TAXI_DATE_2.Left = 1.771654!
         Me.REQ_TAXI_DATE_2.Name = "REQ_TAXI_DATE_2"
@@ -981,6 +1005,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_2
         '
+        Me.REQ_TAXI_FROM_2.DataField = "REQ_TAXI_FROM_2"
         Me.REQ_TAXI_FROM_2.Height = 0.2!
         Me.REQ_TAXI_FROM_2.Left = 1.771654!
         Me.REQ_TAXI_FROM_2.Name = "REQ_TAXI_FROM_2"
@@ -990,6 +1015,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_3
         '
+        Me.REQ_TAXI_DATE_3.DataField = "REQ_TAXI_DATE_3"
         Me.REQ_TAXI_DATE_3.Height = 0.2!
         Me.REQ_TAXI_DATE_3.Left = 1.771654!
         Me.REQ_TAXI_DATE_3.Name = "REQ_TAXI_DATE_3"
@@ -999,6 +1025,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_3
         '
+        Me.REQ_TAXI_FROM_3.DataField = "REQ_TAXI_FROM_3"
         Me.REQ_TAXI_FROM_3.Height = 0.2!
         Me.REQ_TAXI_FROM_3.Left = 1.771654!
         Me.REQ_TAXI_FROM_3.Name = "REQ_TAXI_FROM_3"
@@ -1008,6 +1035,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_3
         '
+        Me.TAXI_YOTEIKINGAKU_3.DataField = "TAXI_YOTEIKINGAKU_3"
         Me.TAXI_YOTEIKINGAKU_3.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_3.Left = 1.771654!
         Me.TAXI_YOTEIKINGAKU_3.Name = "TAXI_YOTEIKINGAKU_3"
@@ -1017,6 +1045,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_4
         '
+        Me.REQ_TAXI_DATE_4.DataField = "REQ_TAXI_DATE_4"
         Me.REQ_TAXI_DATE_4.Height = 0.2!
         Me.REQ_TAXI_DATE_4.Left = 1.771654!
         Me.REQ_TAXI_DATE_4.Name = "REQ_TAXI_DATE_4"
@@ -1026,6 +1055,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_4
         '
+        Me.REQ_TAXI_FROM_4.DataField = "REQ_TAXI_FROM_4"
         Me.REQ_TAXI_FROM_4.Height = 0.2!
         Me.REQ_TAXI_FROM_4.Left = 1.771654!
         Me.REQ_TAXI_FROM_4.Name = "REQ_TAXI_FROM_4"
@@ -1035,6 +1065,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_4
         '
+        Me.TAXI_YOTEIKINGAKU_4.DataField = "TAXI_YOTEIKINGAKU_4"
         Me.TAXI_YOTEIKINGAKU_4.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_4.Left = 1.771654!
         Me.TAXI_YOTEIKINGAKU_4.Name = "TAXI_YOTEIKINGAKU_4"
@@ -1044,6 +1075,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_5
         '
+        Me.REQ_TAXI_DATE_5.DataField = "REQ_TAXI_DATE_5"
         Me.REQ_TAXI_DATE_5.Height = 0.2!
         Me.REQ_TAXI_DATE_5.Left = 1.771654!
         Me.REQ_TAXI_DATE_5.Name = "REQ_TAXI_DATE_5"
@@ -1053,6 +1085,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_5
         '
+        Me.REQ_TAXI_FROM_5.DataField = "REQ_TAXI_FROM_5"
         Me.REQ_TAXI_FROM_5.Height = 0.2!
         Me.REQ_TAXI_FROM_5.Left = 1.771654!
         Me.REQ_TAXI_FROM_5.Name = "REQ_TAXI_FROM_5"
@@ -1062,6 +1095,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_5
         '
+        Me.TAXI_YOTEIKINGAKU_5.DataField = "TAXI_YOTEIKINGAKU_5"
         Me.TAXI_YOTEIKINGAKU_5.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_5.Left = 1.771654!
         Me.TAXI_YOTEIKINGAKU_5.Name = "TAXI_YOTEIKINGAKU_5"
@@ -1069,8 +1103,19 @@ Partial Public Class DrReport3
         Me.TAXI_YOTEIKINGAKU_5.Top = 5.800001!
         Me.TAXI_YOTEIKINGAKU_5.Width = 1.811024!
         '
+        'REQ_TAXI_NOTE
+        '
+        Me.REQ_TAXI_NOTE.DataField = "REQ_TAXI_NOTE"
+        Me.REQ_TAXI_NOTE.Height = 1.0!
+        Me.REQ_TAXI_NOTE.Left = 1.771654!
+        Me.REQ_TAXI_NOTE.Name = "REQ_TAXI_NOTE"
+        Me.REQ_TAXI_NOTE.Text = Nothing
+        Me.REQ_TAXI_NOTE.Top = 6.0!
+        Me.REQ_TAXI_NOTE.Width = 5.393701!
+        '
         'REQ_MR_O_TEHAI
         '
+        Me.REQ_MR_O_TEHAI.DataField = "REQ_MR_O_TEHAI"
         Me.REQ_MR_O_TEHAI.Height = 0.2!
         Me.REQ_MR_O_TEHAI.Left = 1.771654!
         Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
@@ -1080,6 +1125,7 @@ Partial Public Class DrReport3
         '
         'REQ_MR_F_TEHAI
         '
+        Me.REQ_MR_F_TEHAI.DataField = "REQ_MR_F_TEHAI"
         Me.REQ_MR_F_TEHAI.Height = 0.2!
         Me.REQ_MR_F_TEHAI.Left = 1.771654!
         Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
@@ -1089,6 +1135,7 @@ Partial Public Class DrReport3
         '
         'MR_SEX
         '
+        Me.MR_SEX.DataField = "MR_SEX"
         Me.MR_SEX.Height = 0.2!
         Me.MR_SEX.Left = 1.771654!
         Me.MR_SEX.Name = "MR_SEX"
@@ -1098,6 +1145,7 @@ Partial Public Class DrReport3
         '
         'MR_AGE
         '
+        Me.MR_AGE.DataField = "MR_AGE"
         Me.MR_AGE.Height = 0.2!
         Me.MR_AGE.Left = 1.771654!
         Me.MR_AGE.Name = "MR_AGE"
@@ -1107,6 +1155,7 @@ Partial Public Class DrReport3
         '
         'REQ_MR_HOTEL_NOTE
         '
+        Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
         Me.REQ_MR_HOTEL_NOTE.Height = 1.0!
         Me.REQ_MR_HOTEL_NOTE.Left = 1.771654!
         Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"
@@ -1297,15 +1346,15 @@ Partial Public Class DrReport3
         '
         'Line40
         '
-        Me.Line40.Height = 8.400001!
+        Me.Line40.Height = 8.6!
         Me.Line40.Left = 1.771654!
         Me.Line40.LineWeight = 1.0!
         Me.Line40.Name = "Line40"
-        Me.Line40.Top = 0.4!
+        Me.Line40.Top = 0.2!
         Me.Line40.Width = 0.0000003576279!
         Me.Line40.X1 = 1.771654!
         Me.Line40.X2 = 1.771654!
-        Me.Line40.Y1 = 0.4!
+        Me.Line40.Y1 = 0.2!
         Me.Line40.Y2 = 8.8!
         '
         'Line51
@@ -1512,6 +1561,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_2
         '
+        Me.TAXI_YOTEIKINGAKU_2.DataField = "TAXI_YOTEIKINGAKU_2"
         Me.TAXI_YOTEIKINGAKU_2.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_2.Left = 1.771654!
         Me.TAXI_YOTEIKINGAKU_2.Name = "TAXI_YOTEIKINGAKU_2"
@@ -1535,6 +1585,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_6
         '
+        Me.REQ_TAXI_DATE_6.DataField = "REQ_TAXI_DATE_6"
         Me.REQ_TAXI_DATE_6.Height = 0.2!
         Me.REQ_TAXI_DATE_6.Left = 5.354331!
         Me.REQ_TAXI_DATE_6.Name = "REQ_TAXI_DATE_6"
@@ -1544,6 +1595,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_6
         '
+        Me.REQ_TAXI_FROM_6.DataField = "REQ_TAXI_FROM_6"
         Me.REQ_TAXI_FROM_6.Height = 0.2!
         Me.REQ_TAXI_FROM_6.Left = 5.354331!
         Me.REQ_TAXI_FROM_6.Name = "REQ_TAXI_FROM_6"
@@ -1553,6 +1605,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_6
         '
+        Me.TAXI_YOTEIKINGAKU_6.DataField = "TAXI_YOTEIKINGAKU_6"
         Me.TAXI_YOTEIKINGAKU_6.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_6.Left = 5.354331!
         Me.TAXI_YOTEIKINGAKU_6.Name = "TAXI_YOTEIKINGAKU_6"
@@ -1562,6 +1615,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_7
         '
+        Me.REQ_TAXI_DATE_7.DataField = "REQ_TAXI_DATE_7"
         Me.REQ_TAXI_DATE_7.Height = 0.2!
         Me.REQ_TAXI_DATE_7.Left = 5.354331!
         Me.REQ_TAXI_DATE_7.Name = "REQ_TAXI_DATE_7"
@@ -1571,6 +1625,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_7
         '
+        Me.REQ_TAXI_FROM_7.DataField = "REQ_TAXI_FROM_7"
         Me.REQ_TAXI_FROM_7.Height = 0.2!
         Me.REQ_TAXI_FROM_7.Left = 5.354331!
         Me.REQ_TAXI_FROM_7.Name = "REQ_TAXI_FROM_7"
@@ -1580,6 +1635,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_7
         '
+        Me.TAXI_YOTEIKINGAKU_7.DataField = "TAXI_YOTEIKINGAKU_7"
         Me.TAXI_YOTEIKINGAKU_7.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_7.Left = 5.354331!
         Me.TAXI_YOTEIKINGAKU_7.Name = "TAXI_YOTEIKINGAKU_7"
@@ -1589,6 +1645,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_8
         '
+        Me.REQ_TAXI_DATE_8.DataField = "REQ_TAXI_DATE_8"
         Me.REQ_TAXI_DATE_8.Height = 0.2!
         Me.REQ_TAXI_DATE_8.Left = 5.354331!
         Me.REQ_TAXI_DATE_8.Name = "REQ_TAXI_DATE_8"
@@ -1598,6 +1655,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_8
         '
+        Me.REQ_TAXI_FROM_8.DataField = "REQ_TAXI_FROM_8"
         Me.REQ_TAXI_FROM_8.Height = 0.2!
         Me.REQ_TAXI_FROM_8.Left = 5.354331!
         Me.REQ_TAXI_FROM_8.Name = "REQ_TAXI_FROM_8"
@@ -1607,6 +1665,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_8
         '
+        Me.TAXI_YOTEIKINGAKU_8.DataField = "TAXI_YOTEIKINGAKU_8"
         Me.TAXI_YOTEIKINGAKU_8.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_8.Left = 5.354331!
         Me.TAXI_YOTEIKINGAKU_8.Name = "TAXI_YOTEIKINGAKU_8"
@@ -1616,6 +1675,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_9
         '
+        Me.REQ_TAXI_DATE_9.DataField = "REQ_TAXI_DATE_9"
         Me.REQ_TAXI_DATE_9.Height = 0.2!
         Me.REQ_TAXI_DATE_9.Left = 5.354331!
         Me.REQ_TAXI_DATE_9.Name = "REQ_TAXI_DATE_9"
@@ -1625,6 +1685,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_9
         '
+        Me.REQ_TAXI_FROM_9.DataField = "REQ_TAXI_FROM_9"
         Me.REQ_TAXI_FROM_9.Height = 0.2!
         Me.REQ_TAXI_FROM_9.Left = 5.354331!
         Me.REQ_TAXI_FROM_9.Name = "REQ_TAXI_FROM_9"
@@ -1634,6 +1695,7 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_9
         '
+        Me.TAXI_YOTEIKINGAKU_9.DataField = "TAXI_YOTEIKINGAKU_9"
         Me.TAXI_YOTEIKINGAKU_9.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_9.Left = 5.354331!
         Me.TAXI_YOTEIKINGAKU_9.Name = "TAXI_YOTEIKINGAKU_9"
@@ -1643,6 +1705,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_DATE_10
         '
+        Me.REQ_TAXI_DATE_10.DataField = "REQ_TAXI_DATE_10"
         Me.REQ_TAXI_DATE_10.Height = 0.2!
         Me.REQ_TAXI_DATE_10.Left = 5.354331!
         Me.REQ_TAXI_DATE_10.Name = "REQ_TAXI_DATE_10"
@@ -1652,6 +1715,7 @@ Partial Public Class DrReport3
         '
         'REQ_TAXI_FROM_10
         '
+        Me.REQ_TAXI_FROM_10.DataField = "REQ_TAXI_FROM_10"
         Me.REQ_TAXI_FROM_10.Height = 0.2!
         Me.REQ_TAXI_FROM_10.Left = 5.354331!
         Me.REQ_TAXI_FROM_10.Name = "REQ_TAXI_FROM_10"
@@ -1661,35 +1725,13 @@ Partial Public Class DrReport3
         '
         'TAXI_YOTEIKINGAKU_10
         '
+        Me.TAXI_YOTEIKINGAKU_10.DataField = "TAXI_YOTEIKINGAKU_10"
         Me.TAXI_YOTEIKINGAKU_10.Height = 0.2!
         Me.TAXI_YOTEIKINGAKU_10.Left = 5.354331!
         Me.TAXI_YOTEIKINGAKU_10.Name = "TAXI_YOTEIKINGAKU_10"
         Me.TAXI_YOTEIKINGAKU_10.Text = Nothing
         Me.TAXI_YOTEIKINGAKU_10.Top = 5.8!
         Me.TAXI_YOTEIKINGAKU_10.Width = 1.811024!
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'REQ_TAXI_NOTE
-        '
-        Me.REQ_TAXI_NOTE.Height = 1.0!
-        Me.REQ_TAXI_NOTE.Left = 1.771654!
-        Me.REQ_TAXI_NOTE.Name = "REQ_TAXI_NOTE"
-        Me.REQ_TAXI_NOTE.Text = Nothing
-        Me.REQ_TAXI_NOTE.Top = 6.0!
-        Me.REQ_TAXI_NOTE.Width = 5.393701!
-        '
-        'Shape2
-        '
-        Me.Shape2.Height = 8.6!
-        Me.Shape2.Left = 0.0!
-        Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 10.0!
-        Me.Shape2.Top = 0.2!
-        Me.Shape2.Width = 7.165355!
         '
         'Line2
         '
@@ -1749,6 +1791,7 @@ Partial Public Class DrReport3
         '
         'TEHAI_TAXI
         '
+        Me.TEHAI_TAXI.DataField = "TEHAI_TAXI"
         Me.TEHAI_TAXI.Height = 0.2!
         Me.TEHAI_TAXI.Left = 1.771654!
         Me.TEHAI_TAXI.Name = "TEHAI_TAXI"
@@ -1781,6 +1824,11 @@ Partial Public Class DrReport3
         Me.Line18.X2 = 5.354331!
         Me.Line18.Y1 = 3.0!
         Me.Line18.Y2 = 6.000001!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrReport3
         '
@@ -1857,6 +1905,7 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_DATE_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_TAXI_FROM_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TAXI_YOTEIKINGAKU_5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_TAXI_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_MR_O_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MR_SEX, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1894,7 +1943,6 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_DATE_10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_TAXI_FROM_10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TAXI_YOTEIKINGAKU_10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_TAXI_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 

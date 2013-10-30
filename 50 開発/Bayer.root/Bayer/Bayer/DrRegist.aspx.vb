@@ -2503,5 +2503,6 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
     End Sub
 End Class

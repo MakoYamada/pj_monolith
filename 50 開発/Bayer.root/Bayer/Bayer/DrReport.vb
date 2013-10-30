@@ -3,32 +3,21 @@ Imports DataDynamics.ActiveReports.Document
 
 Public Class DrReport
 
-    Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
-        'Me.lblPrintDate.Text = Now.ToString("yyyy/MM/dd HH:mm:ss")
-    End Sub
-    
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
-
-        Dim rpt As New DrReport2()
-
-        Dim subDS As New DataDynamics.ActiveReports.DataSources.SqlDBDataSource
+        Dim rpt1 As New DrReport1
+        Dim rpt2 As New DrReport2
+        Dim rpt3 As New DrReport3
+        Dim subDS As New DataDynamics.ActiveReports.DataSources.OleDBDataSource
 
         ' サブレポートのデータソースの接続文字列・SQL文を設定します。
-        subDS.ConnectionString = WebConfig.Db.ConnectionString
-
-        '仮
-        'subDS.SQL = "SELECT *" _
-        '       & " FROM TBL_KOTSUHOTEL TKH" _
-        '       & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-        '       & " ON TKH.KOUENKAI_NO = TKE.KOUENKAI_NO" _
-        '       & " WHERE TKH.kouenkai_no = '" & Me.txtKouenkaiNo.Text & "'" _
-        '       & " and TKH.dr_mpid = '" & Me.txtDrMpid.Text & "'"
-
-        rpt.DataSource = subDS
+        subDS = Me.DataSource
+        rpt1.DataSource = subDS
+        rpt2.DataSource = subDS
+        rpt3.DataSource = subDS
 
         ' サブレポートコントロールにサブレポートオブジェクトをセットします。
-        Me.SubReport1.Report = rpt
-
+        Me.SubReport1.Report = rpt1
+        Me.SubReport2.Report = rpt2
+        Me.SubReport3.Report = rpt3
     End Sub
-
 End Class
