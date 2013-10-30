@@ -780,6 +780,29 @@ Public Class AppModule
     End Function
 #End Region
 
+#Region "費用テーブル"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_COST As TableDef.TBL_COST.DataStruct) As TableDef.TBL_COST.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.SEIKYU_NO.ToUpper Then TBL_COST.SEIKYU_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.SEIKYU_YM.ToUpper Then TBL_COST.SEIKYU_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.COSTCENTER_CD.ToUpper Then TBL_COST.COSTCENTER_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.KOTSUHI.ToUpper Then TBL_COST.KOTSUHI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.HOTELHI.ToUpper Then TBL_COST.HOTELHI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.TAXI_T.ToUpper Then TBL_COST.TAXI_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.TAXI_SEISAN_T.ToUpper Then TBL_COST.TAXI_SEISAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.SAP_FLAG.ToUpper Then TBL_COST.SAP_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.INPUT_DATE.ToUpper Then TBL_COST.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.INPUT_USER.ToUpper Then TBL_COST.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.UPDATE_DATE.ToUpper Then TBL_COST.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_COST.Column.UPDATE_USER.ToUpper Then TBL_COST.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_COST
+    End Function
+#End Region
+
 #Region "施設マスタ"
     Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_SHISETSU As TableDef.MS_SHISETSU.DataStruct) As TableDef.MS_SHISETSU.DataStruct
         Dim wCnt As Integer = 0
@@ -824,6 +847,24 @@ Public Class AppModule
         Next wCnt
 
         Return MS_USER
+    End Function
+#End Region
+
+#Region "コストセンターマスタ"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_COSTCENTER As TableDef.MS_COSTCENTER.DataStruct) As TableDef.MS_COSTCENTER.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.COSTCENTER_CD.ToUpper Then MS_COSTCENTER.COSTCENTER_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.COSTCENTER_NAME.ToUpper Then MS_COSTCENTER.COSTCENTER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.STOP_FLG.ToUpper Then MS_COSTCENTER.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.INPUT_DATE.ToUpper Then MS_COSTCENTER.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.INPUT_USER.ToUpper Then MS_COSTCENTER.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.UPDATE_DATE.ToUpper Then MS_COSTCENTER.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_COSTCENTER.Column.UPDATE_USER.ToUpper Then MS_COSTCENTER.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return MS_COSTCENTER
     End Function
 #End Region
 
