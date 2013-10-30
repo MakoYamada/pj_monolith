@@ -98,8 +98,7 @@ Partial Public Class Preview
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
-        strSQL &= " DESC"
+        strSQL = SQL.TBL_KOTSUHOTEL.DrReport(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
