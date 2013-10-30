@@ -966,7 +966,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function DrReport(ByVal Joken As TableDef.Joken.DataStruct) As String
+        Public Shared Function DrReport(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
 
@@ -997,7 +997,9 @@ Public Class SQL
             strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
             strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
             strSQL &= " AND"
-            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & Joken.SANKASHA_ID & "'"
+            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & KOUENKAI_NO & "'"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & SANKASHA_ID & "'"
 
             Return strSQL
         End Function
