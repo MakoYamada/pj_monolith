@@ -3175,6 +3175,15 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function bySTOP_FLG(ByVal STOP_FLG As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_COSTCENTER.STOP_FLG=N'" & CmnDb.SqlString(STOP_FLG) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function byCOSTCENTER_CD(ByVal COSTCENTER_CD As String) As String
             Dim strSQL As String = SQL_SELECT
 
