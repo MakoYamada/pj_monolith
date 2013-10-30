@@ -64,15 +64,12 @@ Partial Public Class DrRegist
                 BtnRireki.Visible = True
                 BtnSubmit.Visible = True
                 BtnNozomi.Visible = True
-            End If
 
-            '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
-            If ChkNewData() Then
-                BtnNozomi.Enabled = True
-                BtnSubmit.Visible = True
-            Else
-                BtnNozomi.Enabled = False
-                BtnSubmit.Visible = False
+                '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
+                If Not ChkNewData() Then
+                    BtnNozomi.Enabled = False
+                    BtnSubmit.Visible = False
+                End If
             End If
 
         Else
@@ -2502,6 +2499,7 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.SEQ) = SEQ
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
     End Sub

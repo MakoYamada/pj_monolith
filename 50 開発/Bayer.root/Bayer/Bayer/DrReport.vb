@@ -7,9 +7,10 @@ Public Class DrReport
         Dim rpt1 As New DrReport1
         Dim rpt2 As New DrReport2
         Dim rpt3 As New DrReport3
-        Dim subDS As New DataDynamics.ActiveReports.DataSources.OleDBDataSource
+        Dim subDS As New DataTable
 
         ' サブレポートのデータソースの接続文字列・SQL文を設定します。
+
         subDS = Me.DataSource
         rpt1.DataSource = subDS
         rpt2.DataSource = subDS
