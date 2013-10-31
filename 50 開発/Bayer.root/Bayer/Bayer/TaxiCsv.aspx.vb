@@ -25,7 +25,6 @@ Partial Public Class TaxiCsv
 
         'マステーページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
             .PageTitle = "タクシー管理システム用CSVファイル作成"
         End With
 

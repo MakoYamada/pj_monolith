@@ -59,6 +59,11 @@ Partial Public Class Base
         Me.TdHeader1.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
         Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
 
+        If Trim(Session.Item(SessionDef.LoginID)) = "" Then
+            pHideLogout = True
+            pHideLoginUser = True
+        End If
+
         '[メニューへ]
         If pHideMenu = True Then
             Me.SpnMenu.Visible = False
@@ -67,7 +72,6 @@ Partial Public Class Base
         End If
 
         '[ログアウト]
-        'If pHideLogout = True OrElse Trim(Session.Item(SessionDef.LoginID)) = "" Then
         If pHideLogout = True Then
             pHideLogout = True
             Me.SpnLogout.Visible = False
@@ -75,14 +79,19 @@ Partial Public Class Base
             Me.SpnLogout.Visible = True
         End If
 
-        If Trim(Session.Item(SessionDef.LoginID)) = "" Then
-            pHideLoginUser = True
-        End If
-
+        'ログインユーザ名
         If pHideLoginUser = True Then
             Me.TblLoginUser.Visible = False
         Else
+            Dim MS_USER As TableDef.MS_USER.DataStruct
+            Try
+                MS_USER = Session.Item(SessionDef.LoginUser)
+            Catch ex As Exception
+                Response.Redirect(URL.TimeOut)
+            End Try
+
             Me.TblLoginUser.Visible = True
+            Me.LabelLoginUser.Text = MS_USER.LOGIN_ID & "：" & MS_USER.USER_NAME & " 様"
         End If
 
         'ページタイトル

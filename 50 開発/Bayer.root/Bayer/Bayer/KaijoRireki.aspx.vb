@@ -43,7 +43,6 @@ Partial Public Class KaijoRireki
         End If
 
         'マスターページ設定        With Me.Master
-            .HideLoginUser = True 'qqq
             .PageTitle = "会場手配履歴"
         End With
     End Sub

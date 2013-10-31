@@ -45,7 +45,6 @@ Partial Public Class MstShisetsu
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
             .PageTitle = "施設マスタメンテナンス"
         End With
 

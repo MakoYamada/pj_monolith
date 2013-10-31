@@ -224,21 +224,6 @@ Public Class CmnCheck
         Return IsHanKatakana(TextBox.Text)
     End Function
 
-    'アルファベットとカタカナがあったらエラー
-    Public Shared Function IsNoAlphabetKana(ByVal str As String) As Boolean
-        'QQQ
-        ''アルファベットがあればFalse
-        'If str Like "*[a-z,A-Z,ａ-ｚ,Ａ-Ｚ]*" Then
-        '    Return False
-        'End If
-        ''カタカナがあればFalse
-        ''半角にしてチェック
-        'If System.Text.RegularExpressions.Regex.IsMatch(StrConv(str, VbStrConv.Narrow), "[\uFF61-\uFF9F]") Then
-        '    Return False
-        'End If
-        Return True
-    End Function
-
     'メールアドレスチェック
     Public Shared Function IsValidMailAddress(ByVal str As String) As Boolean
         '前半部分

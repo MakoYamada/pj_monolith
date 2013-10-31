@@ -41,7 +41,6 @@ Partial Public Class LogFile
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
             .PageTitle = "送受信ログ照会"
         End With
 

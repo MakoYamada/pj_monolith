@@ -41,7 +41,6 @@ Partial Public Class LogSousa
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
             .PageTitle = "操作ログ照会"
         End With
 

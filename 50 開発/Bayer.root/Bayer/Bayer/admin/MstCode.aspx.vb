@@ -35,7 +35,6 @@ Partial Public Class MstCode
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
             .PageTitle = "コードマスタメンテナンス"
         End With
 
