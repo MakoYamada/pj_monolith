@@ -25,9 +25,9 @@ Partial Public Class DrReport
         Me.SubReport2 = New DataDynamics.ActiveReports.SubReport
         Me.PageBreak2 = New DataDynamics.ActiveReports.PageBreak
         Me.SubReport3 = New DataDynamics.ActiveReports.SubReport
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.PageBreak3 = New DataDynamics.ActiveReports.PageBreak
         Me.SubReport4 = New DataDynamics.ActiveReports.SubReport
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -58,9 +58,9 @@ Partial Public Class DrReport
         Me.PageBreak1.Height = 0.01!
         Me.PageBreak1.Left = 0.0!
         Me.PageBreak1.Name = "PageBreak1"
-        Me.PageBreak1.Size = New System.Drawing.SizeF(7.707088!, 0.01!)
+        Me.PageBreak1.Size = New System.Drawing.SizeF(6.5!, 0.01!)
         Me.PageBreak1.Top = 0.3610237!
-        Me.PageBreak1.Width = 7.707088!
+        Me.PageBreak1.Width = 6.5!
         '
         'SubReport2
         '
@@ -78,9 +78,9 @@ Partial Public Class DrReport
         Me.PageBreak2.Height = 0.01!
         Me.PageBreak2.Left = 0.0!
         Me.PageBreak2.Name = "PageBreak2"
-        Me.PageBreak2.Size = New System.Drawing.SizeF(7.707088!, 0.01!)
+        Me.PageBreak2.Size = New System.Drawing.SizeF(6.5!, 0.01!)
         Me.PageBreak2.Top = 0.840945!
-        Me.PageBreak2.Width = 7.707088!
+        Me.PageBreak2.Width = 6.5!
         '
         'SubReport3
         '
@@ -93,19 +93,14 @@ Partial Public Class DrReport
         Me.SubReport3.Top = 0.9338584!
         Me.SubReport3.Width = 7.165355!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'PageBreak3
         '
         Me.PageBreak3.Height = 0.01!
         Me.PageBreak3.Left = 0.0!
         Me.PageBreak3.Name = "PageBreak3"
-        Me.PageBreak3.Size = New System.Drawing.SizeF(7.707088!, 0.01!)
+        Me.PageBreak3.Size = New System.Drawing.SizeF(6.5!, 0.01!)
         Me.PageBreak3.Top = 1.279921!
-        Me.PageBreak3.Width = 7.707088!
+        Me.PageBreak3.Width = 6.5!
         '
         'SubReport4
         '
@@ -117,6 +112,11 @@ Partial Public Class DrReport
         Me.SubReport4.ReportName = "SubReport4"
         Me.SubReport4.Top = 1.374803!
         Me.SubReport4.Width = 7.165354!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrReport
         '

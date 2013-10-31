@@ -73,8 +73,9 @@ Partial Public Class DrReport4
         Me.Line31 = New DataDynamics.ActiveReports.Line
         Me.Line32 = New DataDynamics.ActiveReports.Line
         Me.Line33 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Line1 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Line13 = New DataDynamics.ActiveReports.Line
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -193,7 +194,7 @@ Partial Public Class DrReport4
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_SHISETSU_CD, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.REQ_MR_HOTEL_NOTE, Me.Line40, Me.Line2, Me.Line10, Me.Line11, Me.Line12, Me.Shape1, Me.Label3, Me.Label1, Me.PRINT_DATE, Me.Label2, Me.USER_NAME, Me.Label4, Me.Line23, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line1})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_SHISETSU_CD, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.REQ_MR_HOTEL_NOTE, Me.Line40, Me.Line2, Me.Line10, Me.Line11, Me.Line12, Me.Shape1, Me.Label3, Me.Label1, Me.PRINT_DATE, Me.Label2, Me.USER_NAME, Me.Label4, Me.Line23, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line1, Me.Line13})
         Me.Detail.Height = 4.623084!
         Me.Detail.Name = "Detail"
         '
@@ -702,7 +703,7 @@ Partial Public Class DrReport4
         Me.Line31.LineWeight = 1.0!
         Me.Line31.Name = "Line31"
         Me.Line31.Top = 1.189764!
-        Me.Line31.Width = 0.0000004768372!
+        Me.Line31.Width = 0.0!
         Me.Line31.X1 = 7.165355!
         Me.Line31.X2 = 7.165355!
         Me.Line31.Y1 = 1.189764!
@@ -734,11 +735,6 @@ Partial Public Class DrReport4
         Me.Line33.Y1 = 2.789764!
         Me.Line33.Y2 = 2.789764!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'Line1
         '
         Me.Line1.Height = 3.4!
@@ -751,6 +747,24 @@ Partial Public Class DrReport4
         Me.Line1.X2 = 7.165355!
         Me.Line1.Y1 = 1.189764!
         Me.Line1.Y2 = 4.589764!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'Line13
+        '
+        Me.Line13.Height = 3.4!
+        Me.Line13.Left = 7.165355!
+        Me.Line13.LineWeight = 1.0!
+        Me.Line13.Name = "Line13"
+        Me.Line13.Top = 1.189764!
+        Me.Line13.Width = 0.0!
+        Me.Line13.X1 = 7.165355!
+        Me.Line13.X2 = 7.165355!
+        Me.Line13.Y1 = 1.189764!
+        Me.Line13.Y2 = 4.589764!
         '
         'DrReport4
         '
@@ -857,4 +871,5 @@ Partial Public Class DrReport4
     Private WithEvents Line33 As DataDynamics.ActiveReports.Line
     Private WithEvents Shape2 As DataDynamics.ActiveReports.Shape
     Private WithEvents Line1 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line13 As DataDynamics.ActiveReports.Line
 End Class
