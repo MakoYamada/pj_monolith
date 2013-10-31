@@ -33,5 +33,6 @@ Public Class URL
     Public Shared TaxiCsv As String = WebConfig.Site.URL & "TaxiCsv.aspx"
     Public Shared SeisanList As String = WebConfig.Site.URL & "SeisanList.aspx"
     Public Shared SeisanRegist As String = WebConfig.Site.URL & "SeisanRegist.aspx"
+    Public Shared CostRegist As String = WebConfig.Site.URL & "CostRegist.aspx"
 
 End Class
