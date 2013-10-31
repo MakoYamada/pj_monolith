@@ -20,12 +20,14 @@ Partial Public Class DrReport
         Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
         Me.Detail = New DataDynamics.ActiveReports.Detail
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.SubReport1 = New DataDynamics.ActiveReports.SubReport
         Me.PageBreak1 = New DataDynamics.ActiveReports.PageBreak
         Me.SubReport2 = New DataDynamics.ActiveReports.SubReport
         Me.PageBreak2 = New DataDynamics.ActiveReports.PageBreak
         Me.SubReport3 = New DataDynamics.ActiveReports.SubReport
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.PageBreak3 = New DataDynamics.ActiveReports.PageBreak
+        Me.SubReport4 = New DataDynamics.ActiveReports.SubReport
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -36,19 +38,14 @@ Partial Public Class DrReport
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.SubReport1, Me.PageBreak1, Me.SubReport2, Me.PageBreak2, Me.SubReport3})
-        Me.Detail.Height = 32.37008!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.SubReport1, Me.PageBreak1, Me.SubReport2, Me.PageBreak2, Me.SubReport3, Me.PageBreak3, Me.SubReport4})
+        Me.Detail.Height = 1.744163!
         Me.Detail.Name = "Detail"
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
         '
         'SubReport1
         '
         Me.SubReport1.CloseBorder = False
-        Me.SubReport1.Height = 10.71496!
+        Me.SubReport1.Height = 0.2771654!
         Me.SubReport1.Left = 0.0!
         Me.SubReport1.Name = "SubReport1"
         Me.SubReport1.Report = Nothing
@@ -58,50 +55,75 @@ Partial Public Class DrReport
         '
         'PageBreak1
         '
-        Me.PageBreak1.Height = 0.2!
+        Me.PageBreak1.Height = 0.01!
         Me.PageBreak1.Left = 0.0!
         Me.PageBreak1.Name = "PageBreak1"
-        Me.PageBreak1.Size = New System.Drawing.SizeF(7.165355!, 0.2!)
-        Me.PageBreak1.Top = 10.71496!
-        Me.PageBreak1.Width = 7.165355!
+        Me.PageBreak1.Size = New System.Drawing.SizeF(7.707088!, 0.01!)
+        Me.PageBreak1.Top = 0.3610237!
+        Me.PageBreak1.Width = 7.707088!
         '
         'SubReport2
         '
         Me.SubReport2.CloseBorder = False
-        Me.SubReport2.Height = 11.92717!
+        Me.SubReport2.Height = 0.2397637!
         Me.SubReport2.Left = 0.0!
         Me.SubReport2.Name = "SubReport2"
         Me.SubReport2.Report = Nothing
         Me.SubReport2.ReportName = "SubReport2"
-        Me.SubReport2.Top = 10.71496!
+        Me.SubReport2.Top = 0.4653543!
         Me.SubReport2.Width = 7.165355!
         '
         'PageBreak2
         '
-        Me.PageBreak2.Height = 0.2!
+        Me.PageBreak2.Height = 0.01!
         Me.PageBreak2.Left = 0.0!
         Me.PageBreak2.Name = "PageBreak2"
-        Me.PageBreak2.Size = New System.Drawing.SizeF(7.165355!, 0.2!)
-        Me.PageBreak2.Top = 22.64213!
-        Me.PageBreak2.Width = 7.165355!
+        Me.PageBreak2.Size = New System.Drawing.SizeF(7.707088!, 0.01!)
+        Me.PageBreak2.Top = 0.840945!
+        Me.PageBreak2.Width = 7.707088!
         '
         'SubReport3
         '
         Me.SubReport3.CloseBorder = False
-        Me.SubReport3.Height = 9.727166!
+        Me.SubReport3.Height = 0.2397638!
         Me.SubReport3.Left = 0.0!
         Me.SubReport3.Name = "SubReport3"
         Me.SubReport3.Report = Nothing
         Me.SubReport3.ReportName = "SubReport3"
-        Me.SubReport3.Top = 22.64213!
+        Me.SubReport3.Top = 0.9338584!
         Me.SubReport3.Width = 7.165355!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'PageBreak3
+        '
+        Me.PageBreak3.Height = 0.01!
+        Me.PageBreak3.Left = 0.0!
+        Me.PageBreak3.Name = "PageBreak3"
+        Me.PageBreak3.Size = New System.Drawing.SizeF(7.707088!, 0.01!)
+        Me.PageBreak3.Top = 1.279921!
+        Me.PageBreak3.Width = 7.707088!
+        '
+        'SubReport4
+        '
+        Me.SubReport4.CloseBorder = False
+        Me.SubReport4.Height = 0.2397638!
+        Me.SubReport4.Left = 0.0!
+        Me.SubReport4.Name = "SubReport4"
+        Me.SubReport4.Report = Nothing
+        Me.SubReport4.ReportName = "SubReport4"
+        Me.SubReport4.Top = 1.374803!
+        Me.SubReport4.Width = 7.165354!
         '
         'DrReport
         '
         Me.MasterReport = False
         Me.PageSettings.PaperHeight = 11.0!
         Me.PageSettings.PaperWidth = 8.5!
-        Me.PrintWidth = 7.165355!
+        Me.PrintWidth = 7.707088!
         Me.Sections.Add(Me.PageHeader)
         Me.Sections.Add(Me.Detail)
         Me.Sections.Add(Me.PageFooter)
@@ -118,4 +140,6 @@ Partial Public Class DrReport
     Private WithEvents SubReport2 As DataDynamics.ActiveReports.SubReport
     Private WithEvents PageBreak2 As DataDynamics.ActiveReports.PageBreak
     Private WithEvents SubReport3 As DataDynamics.ActiveReports.SubReport
+    Private WithEvents PageBreak3 As DataDynamics.ActiveReports.PageBreak
+    Private WithEvents SubReport4 As DataDynamics.ActiveReports.SubReport
 End Class

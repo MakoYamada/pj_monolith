@@ -78,11 +78,6 @@ Partial Public Class DrReport3
         Me.Label32 = New DataDynamics.ActiveReports.Label
         Me.Label33 = New DataDynamics.ActiveReports.Label
         Me.Label34 = New DataDynamics.ActiveReports.Label
-        Me.Label39 = New DataDynamics.ActiveReports.Label
-        Me.Label40 = New DataDynamics.ActiveReports.Label
-        Me.Label41 = New DataDynamics.ActiveReports.Label
-        Me.Label42 = New DataDynamics.ActiveReports.Label
-        Me.Label43 = New DataDynamics.ActiveReports.Label
         Me.REQ_TAXI_DATE_2 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_TAXI_FROM_2 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_TAXI_DATE_3 = New DataDynamics.ActiveReports.TextBox
@@ -95,11 +90,6 @@ Partial Public Class DrReport3
         Me.REQ_TAXI_FROM_5 = New DataDynamics.ActiveReports.TextBox
         Me.TAXI_YOTEIKINGAKU_5 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_TAXI_NOTE = New DataDynamics.ActiveReports.TextBox
-        Me.REQ_MR_O_TEHAI = New DataDynamics.ActiveReports.TextBox
-        Me.REQ_MR_F_TEHAI = New DataDynamics.ActiveReports.TextBox
-        Me.MR_SEX = New DataDynamics.ActiveReports.TextBox
-        Me.MR_AGE = New DataDynamics.ActiveReports.TextBox
-        Me.REQ_MR_HOTEL_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.Line19 = New DataDynamics.ActiveReports.Line
         Me.Line20 = New DataDynamics.ActiveReports.Line
         Me.Line21 = New DataDynamics.ActiveReports.Line
@@ -145,10 +135,6 @@ Partial Public Class DrReport3
         Me.REQ_TAXI_DATE_10 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_TAXI_FROM_10 = New DataDynamics.ActiveReports.TextBox
         Me.TAXI_YOTEIKINGAKU_10 = New DataDynamics.ActiveReports.TextBox
-        Me.Line2 = New DataDynamics.ActiveReports.Line
-        Me.Line10 = New DataDynamics.ActiveReports.Line
-        Me.Line11 = New DataDynamics.ActiveReports.Line
-        Me.Line12 = New DataDynamics.ActiveReports.Line
         Me.TEHAI_TAXI = New DataDynamics.ActiveReports.TextBox
         Me.Line13 = New DataDynamics.ActiveReports.Line
         Me.Line18 = New DataDynamics.ActiveReports.Line
@@ -267,11 +253,6 @@ Partial Public Class DrReport3
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label39, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label40, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label41, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label42, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label43, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_TAXI_DATE_2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_TAXI_FROM_2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_TAXI_DATE_3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -284,11 +265,6 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_FROM_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TAXI_YOTEIKINGAKU_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_TAXI_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_MR_O_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MR_SEX, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MR_AGE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label73, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label74, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label75, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -443,15 +419,15 @@ Partial Public Class DrReport3
         Me.Label4.Left = 6.446457!
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "text-align: right"
-        Me.Label4.Text = "(3/3ページ)"
+        Me.Label4.Text = "(3/4ページ)"
         Me.Label4.Top = 0.4409449!
         Me.Label4.Width = 0.7188979!
         '
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape4, Me.Shape3, Me.Shape2, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_SHISETSU_CD, Me.REQ_KOTSU_BIKO, Me.REQ_TAXI_DATE_1, Me.REQ_TAXI_FROM_1, Me.TAXI_YOTEIKINGAKU_1, Me.Line1, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Label20, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.TAXI_YOTEIKINGAKU_5, Me.REQ_TAXI_NOTE, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.REQ_MR_HOTEL_NOTE, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line34, Me.Line39, Me.Line40, Me.Line52, Me.Label73, Me.Label74, Me.Label75, Me.Label76, Me.Label77, Me.Label78, Me.Label79, Me.Label80, Me.Label81, Me.Label82, Me.Label83, Me.Label84, Me.Label85, Me.Label86, Me.Label98, Me.Label99, Me.TAXI_YOTEIKINGAKU_2, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Line2, Me.Line10, Me.Line11, Me.Line12, Me.TEHAI_TAXI, Me.Line13, Me.Line18, Me.REQ_O_TEHAI_5, Me.Label45, Me.Label46, Me.Label47, Me.Label48, Me.Label49, Me.Label50, Me.Label51, Me.Label52, Me.Label53, Me.Label54, Me.REQ_F_SEAT_KIBOU5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_DATE_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_TIME1_5, Me.REQ_O_TIME2_5, Me.REQ_O_BIN_5, Me.REQ_O_SEAT_5, Me.REQ_F_TEHAI_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_DATE_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_TIME1_5, Me.REQ_F_TIME2_5, Me.REQ_F_BIN_5, Me.REQ_F_SEAT_5, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line54, Me.Label55, Me.Label57, Me.Label58, Me.Label59, Me.Label60, Me.Label61, Me.Label62, Me.Label63, Me.Label64, Me.Label65, Me.Label66, Me.Label97, Me.REQ_O_SEAT_KIBOU5, Me.Shape1, Me.Label3, Me.Label1, Me.PRINT_DATE, Me.Label2, Me.USER_NAME, Me.Label4, Me.Line23, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line29, Me.Line35, Me.Line36, Me.Line37, Me.Line38, Me.Line41, Me.Line51})
-        Me.Detail.Height = 12.0085!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape4, Me.Shape3, Me.Shape2, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_SHISETSU_CD, Me.REQ_KOTSU_BIKO, Me.REQ_TAXI_DATE_1, Me.REQ_TAXI_FROM_1, Me.TAXI_YOTEIKINGAKU_1, Me.Line1, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Label20, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.TAXI_YOTEIKINGAKU_5, Me.REQ_TAXI_NOTE, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line34, Me.Line39, Me.Line40, Me.Line52, Me.Label73, Me.Label74, Me.Label75, Me.Label76, Me.Label77, Me.Label78, Me.Label79, Me.Label80, Me.Label81, Me.Label82, Me.Label83, Me.Label84, Me.Label85, Me.Label86, Me.Label98, Me.Label99, Me.TAXI_YOTEIKINGAKU_2, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.TEHAI_TAXI, Me.Line13, Me.Line18, Me.REQ_O_TEHAI_5, Me.Label45, Me.Label46, Me.Label47, Me.Label48, Me.Label49, Me.Label50, Me.Label51, Me.Label52, Me.Label53, Me.Label54, Me.REQ_F_SEAT_KIBOU5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_DATE_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_TIME1_5, Me.REQ_O_TIME2_5, Me.REQ_O_BIN_5, Me.REQ_O_SEAT_5, Me.REQ_F_TEHAI_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_DATE_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_TIME1_5, Me.REQ_F_TIME2_5, Me.REQ_F_BIN_5, Me.REQ_F_SEAT_5, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line54, Me.Label55, Me.Label57, Me.Label58, Me.Label59, Me.Label60, Me.Label61, Me.Label62, Me.Label63, Me.Label64, Me.Label65, Me.Label66, Me.Label97, Me.REQ_O_SEAT_KIBOU5, Me.Shape1, Me.Label3, Me.Label1, Me.PRINT_DATE, Me.Label2, Me.USER_NAME, Me.Label4, Me.Line23, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line29, Me.Line35, Me.Line36, Me.Line37, Me.Line38, Me.Line41, Me.Line51})
+        Me.Detail.Height = 10.18558!
         Me.Detail.Name = "Detail"
         '
         'Label5
@@ -1036,61 +1012,6 @@ Partial Public Class DrReport3
         Me.Label34.Top = 9.189765!
         Me.Label34.Width = 1.771653!
         '
-        'Label39
-        '
-        Me.Label39.Height = 0.2!
-        Me.Label39.HyperLink = Nothing
-        Me.Label39.Left = 0.0!
-        Me.Label39.Name = "Label39"
-        Me.Label39.Style = "white-space: nowrap"
-        Me.Label39.Text = "社員用往路臨席希望 (依頼)"
-        Me.Label39.Top = 10.18977!
-        Me.Label39.Width = 1.771653!
-        '
-        'Label40
-        '
-        Me.Label40.Height = 0.2!
-        Me.Label40.HyperLink = Nothing
-        Me.Label40.Left = 0.0!
-        Me.Label40.Name = "Label40"
-        Me.Label40.Style = "white-space: nowrap"
-        Me.Label40.Text = "社員用復路臨席希望 (依頼)"
-        Me.Label40.Top = 10.38977!
-        Me.Label40.Width = 1.771653!
-        '
-        'Label41
-        '
-        Me.Label41.Height = 0.2!
-        Me.Label41.HyperLink = Nothing
-        Me.Label41.Left = 0.0!
-        Me.Label41.Name = "Label41"
-        Me.Label41.Style = "white-space: nowrap"
-        Me.Label41.Text = "MR性別 (航空券の場合)"
-        Me.Label41.Top = 10.58976!
-        Me.Label41.Width = 1.771653!
-        '
-        'Label42
-        '
-        Me.Label42.Height = 0.2!
-        Me.Label42.HyperLink = Nothing
-        Me.Label42.Left = 0.0!
-        Me.Label42.Name = "Label42"
-        Me.Label42.Style = "white-space: nowrap"
-        Me.Label42.Text = "MR年齢 (航空券の場合)"
-        Me.Label42.Top = 10.78977!
-        Me.Label42.Width = 1.771653!
-        '
-        'Label43
-        '
-        Me.Label43.Height = 0.2!
-        Me.Label43.HyperLink = Nothing
-        Me.Label43.Left = 0.0!
-        Me.Label43.Name = "Label43"
-        Me.Label43.Style = "white-space: nowrap"
-        Me.Label43.Text = "社員用交通・宿泊備考"
-        Me.Label43.Top = 10.98977!
-        Me.Label43.Width = 1.771653!
-        '
         'REQ_TAXI_DATE_2
         '
         Me.REQ_TAXI_DATE_2.DataField = "REQ_TAXI_DATE_2"
@@ -1210,56 +1131,6 @@ Partial Public Class DrReport3
         Me.REQ_TAXI_NOTE.Text = Nothing
         Me.REQ_TAXI_NOTE.Top = 9.189765!
         Me.REQ_TAXI_NOTE.Width = 5.393701!
-        '
-        'REQ_MR_O_TEHAI
-        '
-        Me.REQ_MR_O_TEHAI.DataField = "REQ_MR_O_TEHAI"
-        Me.REQ_MR_O_TEHAI.Height = 0.2!
-        Me.REQ_MR_O_TEHAI.Left = 1.771654!
-        Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
-        Me.REQ_MR_O_TEHAI.Text = Nothing
-        Me.REQ_MR_O_TEHAI.Top = 10.18976!
-        Me.REQ_MR_O_TEHAI.Width = 5.393701!
-        '
-        'REQ_MR_F_TEHAI
-        '
-        Me.REQ_MR_F_TEHAI.DataField = "REQ_MR_F_TEHAI"
-        Me.REQ_MR_F_TEHAI.Height = 0.2!
-        Me.REQ_MR_F_TEHAI.Left = 1.771654!
-        Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
-        Me.REQ_MR_F_TEHAI.Text = Nothing
-        Me.REQ_MR_F_TEHAI.Top = 10.38977!
-        Me.REQ_MR_F_TEHAI.Width = 5.393701!
-        '
-        'MR_SEX
-        '
-        Me.MR_SEX.DataField = "MR_SEX"
-        Me.MR_SEX.Height = 0.2!
-        Me.MR_SEX.Left = 1.771654!
-        Me.MR_SEX.Name = "MR_SEX"
-        Me.MR_SEX.Text = Nothing
-        Me.MR_SEX.Top = 10.58976!
-        Me.MR_SEX.Width = 5.393701!
-        '
-        'MR_AGE
-        '
-        Me.MR_AGE.DataField = "MR_AGE"
-        Me.MR_AGE.Height = 0.2!
-        Me.MR_AGE.Left = 1.771654!
-        Me.MR_AGE.Name = "MR_AGE"
-        Me.MR_AGE.Text = Nothing
-        Me.MR_AGE.Top = 10.78977!
-        Me.MR_AGE.Width = 5.393701!
-        '
-        'REQ_MR_HOTEL_NOTE
-        '
-        Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
-        Me.REQ_MR_HOTEL_NOTE.Height = 1.0!
-        Me.REQ_MR_HOTEL_NOTE.Left = 1.771654!
-        Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"
-        Me.REQ_MR_HOTEL_NOTE.Text = Nothing
-        Me.REQ_MR_HOTEL_NOTE.Top = 10.98977!
-        Me.REQ_MR_HOTEL_NOTE.Width = 5.393701!
         '
         'Line19
         '
@@ -1416,7 +1287,7 @@ Partial Public Class DrReport3
         '
         'Line40
         '
-        Me.Line40.Height = 10.8!
+        Me.Line40.Height = 9.0!
         Me.Line40.Left = 1.771654!
         Me.Line40.LineWeight = 1.0!
         Me.Line40.Name = "Line40"
@@ -1425,7 +1296,7 @@ Partial Public Class DrReport3
         Me.Line40.X1 = 1.771654!
         Me.Line40.X2 = 1.771654!
         Me.Line40.Y1 = 1.189764!
-        Me.Line40.Y2 = 11.98976!
+        Me.Line40.Y2 = 10.18976!
         '
         'Line52
         '
@@ -1775,62 +1646,6 @@ Partial Public Class DrReport3
         Me.TAXI_YOTEIKINGAKU_10.Text = Nothing
         Me.TAXI_YOTEIKINGAKU_10.Top = 8.989764!
         Me.TAXI_YOTEIKINGAKU_10.Width = 1.811024!
-        '
-        'Line2
-        '
-        Me.Line2.Height = 0.0!
-        Me.Line2.Left = 0.0!
-        Me.Line2.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line2.LineWeight = 1.0!
-        Me.Line2.Name = "Line2"
-        Me.Line2.Top = 10.38976!
-        Me.Line2.Width = 7.165354!
-        Me.Line2.X1 = 0.0!
-        Me.Line2.X2 = 7.165354!
-        Me.Line2.Y1 = 10.38976!
-        Me.Line2.Y2 = 10.38976!
-        '
-        'Line10
-        '
-        Me.Line10.Height = 0.0!
-        Me.Line10.Left = 0.0!
-        Me.Line10.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line10.LineWeight = 1.0!
-        Me.Line10.Name = "Line10"
-        Me.Line10.Top = 10.58976!
-        Me.Line10.Width = 7.165354!
-        Me.Line10.X1 = 0.0!
-        Me.Line10.X2 = 7.165354!
-        Me.Line10.Y1 = 10.58976!
-        Me.Line10.Y2 = 10.58976!
-        '
-        'Line11
-        '
-        Me.Line11.Height = 0.0!
-        Me.Line11.Left = 0.0!
-        Me.Line11.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line11.LineWeight = 1.0!
-        Me.Line11.Name = "Line11"
-        Me.Line11.Top = 10.78977!
-        Me.Line11.Width = 7.165354!
-        Me.Line11.X1 = 0.0!
-        Me.Line11.X2 = 7.165354!
-        Me.Line11.Y1 = 10.78977!
-        Me.Line11.Y2 = 10.78977!
-        '
-        'Line12
-        '
-        Me.Line12.Height = 0.0!
-        Me.Line12.Left = 0.0!
-        Me.Line12.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line12.LineWeight = 1.0!
-        Me.Line12.Name = "Line12"
-        Me.Line12.Top = 10.98976!
-        Me.Line12.Width = 7.165354!
-        Me.Line12.X1 = 0.0!
-        Me.Line12.X2 = 7.165354!
-        Me.Line12.Y1 = 10.98976!
-        Me.Line12.Y2 = 10.98976!
         '
         'TEHAI_TAXI
         '
@@ -2477,7 +2292,7 @@ Partial Public Class DrReport3
         '
         'Line23
         '
-        Me.Line23.Height = 10.8!
+        Me.Line23.Height = 9.0!
         Me.Line23.Left = 0.0!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
@@ -2486,7 +2301,7 @@ Partial Public Class DrReport3
         Me.Line23.X1 = 0.0!
         Me.Line23.X2 = 0.0!
         Me.Line23.Y1 = 1.189764!
-        Me.Line23.Y2 = 11.98976!
+        Me.Line23.Y2 = 10.18976!
         '
         'Line30
         '
@@ -2494,16 +2309,16 @@ Partial Public Class DrReport3
         Me.Line30.Left = 0.0!
         Me.Line30.LineWeight = 1.0!
         Me.Line30.Name = "Line30"
-        Me.Line30.Top = 11.98976!
+        Me.Line30.Top = 10.18976!
         Me.Line30.Width = 7.165354!
         Me.Line30.X1 = 0.0!
         Me.Line30.X2 = 7.165354!
-        Me.Line30.Y1 = 11.98976!
-        Me.Line30.Y2 = 11.98976!
+        Me.Line30.Y1 = 10.18976!
+        Me.Line30.Y2 = 10.18976!
         '
         'Line31
         '
-        Me.Line31.Height = 10.8!
+        Me.Line31.Height = 9.0!
         Me.Line31.Left = 7.165355!
         Me.Line31.LineWeight = 1.0!
         Me.Line31.Name = "Line31"
@@ -2512,7 +2327,7 @@ Partial Public Class DrReport3
         Me.Line31.X1 = 7.165355!
         Me.Line31.X2 = 7.165355!
         Me.Line31.Y1 = 1.189764!
-        Me.Line31.Y2 = 11.98976!
+        Me.Line31.Y2 = 10.18976!
         '
         'Line32
         '
@@ -2556,7 +2371,7 @@ Partial Public Class DrReport3
         'Shape2
         '
         Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Shape2.Height = 10.8!
+        Me.Shape2.Height = 9.0!
         Me.Shape2.Left = 0.0!
         Me.Shape2.Name = "Shape2"
         Me.Shape2.RoundingRadius = 9.999999!
@@ -2723,11 +2538,6 @@ Partial Public Class DrReport3
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label39, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label40, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label41, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label42, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label43, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_TAXI_DATE_2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_TAXI_FROM_2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_TAXI_DATE_3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2740,11 +2550,6 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_FROM_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TAXI_YOTEIKINGAKU_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_TAXI_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_MR_O_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MR_SEX, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MR_AGE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label73, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label74, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label75, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2883,11 +2688,6 @@ Partial Public Class DrReport3
     Private WithEvents Label32 As DataDynamics.ActiveReports.Label
     Private WithEvents Label33 As DataDynamics.ActiveReports.Label
     Private WithEvents Label34 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label39 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label40 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label41 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label42 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label43 As DataDynamics.ActiveReports.Label
     Private WithEvents REQ_TAXI_DATE_2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents REQ_TAXI_FROM_2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents REQ_TAXI_DATE_3 As DataDynamics.ActiveReports.TextBox
@@ -2899,11 +2699,6 @@ Partial Public Class DrReport3
     Private WithEvents REQ_TAXI_DATE_5 As DataDynamics.ActiveReports.TextBox
     Private WithEvents REQ_TAXI_FROM_5 As DataDynamics.ActiveReports.TextBox
     Private WithEvents TAXI_YOTEIKINGAKU_5 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents REQ_MR_O_TEHAI As DataDynamics.ActiveReports.TextBox
-    Private WithEvents REQ_MR_F_TEHAI As DataDynamics.ActiveReports.TextBox
-    Private WithEvents MR_SEX As DataDynamics.ActiveReports.TextBox
-    Private WithEvents MR_AGE As DataDynamics.ActiveReports.TextBox
-    Private WithEvents REQ_MR_HOTEL_NOTE As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line19 As DataDynamics.ActiveReports.Line
     Private WithEvents Line20 As DataDynamics.ActiveReports.Line
     Private WithEvents Line21 As DataDynamics.ActiveReports.Line
@@ -2950,10 +2745,6 @@ Partial Public Class DrReport3
     Private WithEvents REQ_TAXI_FROM_10 As DataDynamics.ActiveReports.TextBox
     Private WithEvents TAXI_YOTEIKINGAKU_10 As DataDynamics.ActiveReports.TextBox
     Private WithEvents REQ_TAXI_NOTE As DataDynamics.ActiveReports.TextBox
-    Private WithEvents Line2 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line10 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line11 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line12 As DataDynamics.ActiveReports.Line
     Private WithEvents TEHAI_TAXI As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line13 As DataDynamics.ActiveReports.Line
     Private WithEvents Line18 As DataDynamics.ActiveReports.Line
