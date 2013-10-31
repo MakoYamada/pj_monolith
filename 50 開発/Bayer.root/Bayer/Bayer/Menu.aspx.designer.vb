@@ -115,6 +115,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnMstCode As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnMstCostcenter コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnMstCostcenter As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnLogFile コントロール。
     '''</summary>
     '''<remarks>
@@ -142,6 +151,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnSeisan As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnCost コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCost As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnSap コントロール。
     '''</summary>
     '''<remarks>
@@ -160,15 +178,6 @@ Partial Public Class Menu1
     Protected WithEvents BtnKouenkaiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnSankashaCsv コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnSankashaCsv As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''BtnTaxiCsv コントロール。
     '''</summary>
     '''<remarks>
@@ -176,6 +185,15 @@ Partial Public Class Menu1
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnSankashaCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSankashaCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

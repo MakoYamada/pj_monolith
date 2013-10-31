@@ -246,4 +246,15 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.SEQ)
         Response.Redirect(URL.SeisanList)
     End Sub
+
+    '[コストセンター別費用入力]
+    Protected Sub BtnCost_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCost.Click
+        Session.Remove(SessionDef.Joken)
+        Session.Remove(SessionDef.TBL_COST)
+        Session.Remove(SessionDef.CostRegist_Search)
+        Session.Remove(SessionDef.CostRegist_Update)
+        Session.Remove(SessionDef.PageIndex)
+        Session.Remove(SessionDef.SEQ)
+        'Response.Redirect(URL.CostRegist)
+    End Sub
 End Class
