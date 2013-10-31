@@ -89,9 +89,9 @@
 							&nbsp;
 						</td>
 						<td align="left" class="TdItem">
-							<asp:RadioButton ID="Admin" runat="server" Text="管理者" GroupName="KENGEN"></asp:RadioButton>
+							<asp:RadioButton ID="KENGEN_Admin" runat="server" Text="管理者" GroupName="KENGEN"></asp:RadioButton>
 							&nbsp;&nbsp;
-							<asp:RadioButton ID="User" runat="server" Text="一般ユーザー" GroupName="KENGEN"></asp:RadioButton>
+							<asp:RadioButton ID="KENGEN_User" runat="server" Text="一般ユーザー" GroupName="KENGEN"></asp:RadioButton>
 						</td>
 					</tr>
 					<tr>

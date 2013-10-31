@@ -311,7 +311,7 @@ Partial Public Class MstUser
             AppModule.SetForm_LOGIN_ID(MS_USER(SEQ).LOGIN_ID, Me.LOGIN_ID)
             AppModule.SetForm_PASSWORD(MS_USER(SEQ).PASSWORD, Me.PASSWORD)
             AppModule.SetForm_USER_NAME(MS_USER(SEQ).USER_NAME, Me.USER_NAME)
-            AppModule.SetForm_KENGEN(MS_USER(SEQ).KENGEN, Me.Admin, Me.User)
+            AppModule.SetForm_KENGEN(MS_USER(SEQ).KENGEN, Me.KENGEN_Admin, Me.KENGEN_User)
             AppModule.SetForm_STOP_FLG(MS_USER(SEQ).STOP_FLG, Me.STOP_FLG)
             Me.SYSTEM_ID.Value = MS_USER(SEQ).SYSTEM_ID
         Else
@@ -387,7 +387,7 @@ Partial Public Class MstUser
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.Admin, Me.User) Then
+        If Not CmnCheck.IsInput(Me.KENGEN_Admin, Me.KENGEN_User) Then
             CmnModule.AlertMessage(MessageDef.Error.MustSelect(TableDef.MS_USER.Name.KENGEN), Me)
             Return False
         End If
@@ -402,7 +402,7 @@ Partial Public Class MstUser
         End If
         MS_USER(SEQ).PASSWORD = AppModule.GetValue_PASSWORD(Me.PASSWORD)
         MS_USER(SEQ).USER_NAME = AppModule.GetValue_USER_NAME(Me.USER_NAME)
-        MS_USER(SEQ).KENGEN = AppModule.GetValue_KENGEN(Me.Admin, Me.User)
+        MS_USER(SEQ).KENGEN = AppModule.GetValue_KENGEN(Me.KENGEN_Admin, Me.KENGEN_User)
         MS_USER(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
     End Sub
 

@@ -151,22 +151,22 @@ Partial Public Class MstUser
     Protected WithEvents USER_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Admin コントロール。
+    '''KENGEN_Admin コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Admin As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents KENGEN_Admin As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''User コントロール。
+    '''KENGEN_User コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents User As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents KENGEN_User As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
     '''STOP_FLG コントロール。
