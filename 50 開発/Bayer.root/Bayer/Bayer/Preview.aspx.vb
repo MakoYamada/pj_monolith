@@ -90,7 +90,6 @@ Partial Public Class Preview
         'Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
-        Me.WebViewer1.ReportName = rpt1.Name
 
     End Sub
 
