@@ -87,7 +87,7 @@ Partial Public Class Preview
 
         'レポートを作成
         rpt1.Run()
-        'Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
 

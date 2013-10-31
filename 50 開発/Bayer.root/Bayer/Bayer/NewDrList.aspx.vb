@@ -322,7 +322,12 @@ Partial Public Class NewDrList
                 End If
 
                 '手配書印刷
-                'TODO:条件かデータを渡す
+                Session.Item(SessionDef.SEQ) = seq
+                Session.Item(SessionDef.DrRireki_SEQ) = seq
+                Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+                'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+                Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+                Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
                 Response.Redirect(URL.Preview)
             End If
             seq += 1
