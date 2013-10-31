@@ -161,6 +161,9 @@
       <DependentUpon>DrRireki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="KaijoList.aspx.designer.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
     </Compile>
@@ -405,6 +408,7 @@
     <Content Include="Close.html" />
     <Content Include="CostRegist.aspx" />
     <Content Include="DrRireki.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Images\backlist.gif" />
     <Content Include="Images\bgall.png" />
     <Content Include="Images\bgheader.png" />
