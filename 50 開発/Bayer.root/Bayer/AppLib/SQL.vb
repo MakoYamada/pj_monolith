@@ -2870,6 +2870,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_COST.UPDATE_USER) & "'"
+            strSQL &= ")"
 
             Return strSQL
         End Function
