@@ -13,9 +13,4 @@
         Public Shared ConnectionString As String = System.Configuration.ConfigurationManager.AppSettings("ConnectionString")
     End Class
 
-    Public Class Path
-        'フォルダ
-        Public Shared Doc As String = System.Configuration.ConfigurationManager.AppSettings("DocPath")
-    End Class
-
 End Class
