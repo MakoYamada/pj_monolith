@@ -27,6 +27,8 @@ Partial Public Class DrReport1
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.Label4 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.Shape3 = New DataDynamics.ActiveReports.Shape
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
@@ -197,13 +199,11 @@ Partial Public Class DrReport1
         Me.Line48 = New DataDynamics.ActiveReports.Line
         Me.Line49 = New DataDynamics.ActiveReports.Line
         Me.Line50 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Line51 = New DataDynamics.ActiveReports.Line
         Me.Line52 = New DataDynamics.ActiveReports.Line
         Me.Line53 = New DataDynamics.ActiveReports.Line
         Me.Line54 = New DataDynamics.ActiveReports.Line
-        Me.Shape2 = New DataDynamics.ActiveReports.Shape
-        Me.Shape3 = New DataDynamics.ActiveReports.Shape
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -407,7 +407,7 @@ Partial Public Class DrReport1
         Me.Label4.Left = 6.446457!
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "text-align: right"
-        Me.Label4.Text = "(1/3ページ)"
+        Me.Label4.Text = "(1/4ページ)"
         Me.Label4.Top = 0.4409447!
         Me.Label4.Width = 0.7188978!
         '
@@ -417,6 +417,26 @@ Partial Public Class DrReport1
         Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape3, Me.Shape2, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label45, Me.Label46, Me.Label47, Me.Label48, Me.Label49, Me.Label50, Me.Label51, Me.Label52, Me.Label53, Me.Label54, Me.Label56, Me.Label57, Me.Label58, Me.Label59, Me.Label60, Me.Label61, Me.Label62, Me.Label63, Me.Label64, Me.Label65, Me.Label66, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_SHISETSU_CD, Me.DR_SHISETSU_NAME, Me.DR_SHISETSU_ADDRESS, Me.DR_YAKUWARI, Me.DR_SEX, Me.DR_AGE, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_KANA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.ACCOUNT_CD, Me.COST_CENTER, Me.INTERNAL_ORDER, Me.ZETIA_CD, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.REQ_O_TEHAI_1, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_DATE_1, Me.REQ_O_AIRPORT1_1, Me.REQ_O_AIRPORT2_1, Me.REQ_O_TIME1_1, Me.REQ_O_TIME2_1, Me.REQ_O_BIN_1, Me.REQ_O_SEAT_1, Me.REQ_O_SEAT_KIBOU1, Me.REQ_F_TEHAI_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_DATE_1, Me.REQ_F_AIRPORT1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_TIME1_1, Me.REQ_F_TIME2_1, Me.REQ_F_BIN_1, Me.REQ_F_SEAT_1, Me.REQ_F_SEAT_KIBOU1, Me.Line1, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line34, Me.Line35, Me.Line36, Me.Line37, Me.Line38, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line51, Me.Line52, Me.Line53, Me.Line54, Me.Label2, Me.Label1, Me.PRINT_DATE, Me.Shape1, Me.USER_NAME, Me.Label3, Me.Label4})
         Me.Detail.Height = 10.79181!
         Me.Detail.Name = "Detail"
+        '
+        'Shape3
+        '
+        Me.Shape3.BackColor = System.Drawing.Color.Silver
+        Me.Shape3.Height = 2.200001!
+        Me.Shape3.Left = 3.582677!
+        Me.Shape3.Name = "Shape3"
+        Me.Shape3.RoundingRadius = 9.999999!
+        Me.Shape3.Top = 8.608662!
+        Me.Shape3.Width = 1.771654!
+        '
+        'Shape2
+        '
+        Me.Shape2.BackColor = System.Drawing.Color.Silver
+        Me.Shape2.Height = 9.583071!
+        Me.Shape2.Left = 0.0!
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 9.999999!
+        Me.Shape2.Top = 1.208662!
+        Me.Shape2.Width = 1.771654!
         '
         'Label5
         '
@@ -1687,7 +1707,7 @@ Partial Public Class DrReport1
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
         Me.Line1.Top = 2.808661!
-        Me.Line1.Width = 7.165355!
+        Me.Line1.Width = 7.165356!
         Me.Line1.X1 = 0.0000004768372!
         Me.Line1.X2 = 7.165356!
         Me.Line1.Y1 = 2.808661!
@@ -1695,7 +1715,7 @@ Partial Public Class DrReport1
         '
         'Line2
         '
-        Me.Line2.Height = 9.600001!
+        Me.Line2.Height = 9.599998!
         Me.Line2.Left = 1.771654!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
@@ -1714,7 +1734,7 @@ Partial Public Class DrReport1
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
         Me.Line3.Top = 1.408661!
-        Me.Line3.Width = 7.165354!
+        Me.Line3.Width = 7.165353!
         Me.Line3.X1 = 0.0000004768372!
         Me.Line3.X2 = 7.165354!
         Me.Line3.Y1 = 1.408661!
@@ -1728,7 +1748,7 @@ Partial Public Class DrReport1
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
         Me.Line4.Top = 1.608661!
-        Me.Line4.Width = 7.165354!
+        Me.Line4.Width = 7.165353!
         Me.Line4.X1 = 0.0000004768372!
         Me.Line4.X2 = 7.165354!
         Me.Line4.Y1 = 1.608661!
@@ -1742,7 +1762,7 @@ Partial Public Class DrReport1
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
         Me.Line5.Top = 1.808661!
-        Me.Line5.Width = 7.165354!
+        Me.Line5.Width = 7.165353!
         Me.Line5.X1 = 0.0000004768372!
         Me.Line5.X2 = 7.165354!
         Me.Line5.Y1 = 1.808661!
@@ -1756,7 +1776,7 @@ Partial Public Class DrReport1
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
         Me.Line6.Top = 2.008661!
-        Me.Line6.Width = 7.165354!
+        Me.Line6.Width = 7.165353!
         Me.Line6.X1 = 0.0000004768372!
         Me.Line6.X2 = 7.165354!
         Me.Line6.Y1 = 2.008661!
@@ -1770,7 +1790,7 @@ Partial Public Class DrReport1
         Me.Line7.LineWeight = 1.0!
         Me.Line7.Name = "Line7"
         Me.Line7.Top = 2.208661!
-        Me.Line7.Width = 7.165354!
+        Me.Line7.Width = 7.165353!
         Me.Line7.X1 = 0.0000004768372!
         Me.Line7.X2 = 7.165354!
         Me.Line7.Y1 = 2.208661!
@@ -1784,7 +1804,7 @@ Partial Public Class DrReport1
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
         Me.Line8.Top = 2.408661!
-        Me.Line8.Width = 7.165354!
+        Me.Line8.Width = 7.165353!
         Me.Line8.X1 = 0.0000004768372!
         Me.Line8.X2 = 7.165354!
         Me.Line8.Y1 = 2.408661!
@@ -1798,7 +1818,7 @@ Partial Public Class DrReport1
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
         Me.Line9.Top = 2.608661!
-        Me.Line9.Width = 7.165354!
+        Me.Line9.Width = 7.165353!
         Me.Line9.X1 = 0.0000004768372!
         Me.Line9.X2 = 7.165354!
         Me.Line9.Y1 = 2.608661!
@@ -1812,7 +1832,7 @@ Partial Public Class DrReport1
         Me.Line10.LineWeight = 1.0!
         Me.Line10.Name = "Line10"
         Me.Line10.Top = 3.008661!
-        Me.Line10.Width = 7.165354!
+        Me.Line10.Width = 7.165353!
         Me.Line10.X1 = 0.0000004768372!
         Me.Line10.X2 = 7.165354!
         Me.Line10.Y1 = 3.008661!
@@ -1826,7 +1846,7 @@ Partial Public Class DrReport1
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
         Me.Line11.Top = 3.208661!
-        Me.Line11.Width = 7.165354!
+        Me.Line11.Width = 7.165353!
         Me.Line11.X1 = 0.0000004768372!
         Me.Line11.X2 = 7.165354!
         Me.Line11.Y1 = 3.208661!
@@ -1840,7 +1860,7 @@ Partial Public Class DrReport1
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
         Me.Line12.Top = 3.408661!
-        Me.Line12.Width = 7.165354!
+        Me.Line12.Width = 7.165353!
         Me.Line12.X1 = 0.0000004768372!
         Me.Line12.X2 = 7.165354!
         Me.Line12.Y1 = 3.408661!
@@ -1854,7 +1874,7 @@ Partial Public Class DrReport1
         Me.Line13.LineWeight = 1.0!
         Me.Line13.Name = "Line13"
         Me.Line13.Top = 3.60866!
-        Me.Line13.Width = 7.165354!
+        Me.Line13.Width = 7.165353!
         Me.Line13.X1 = 0.0000004768372!
         Me.Line13.X2 = 7.165354!
         Me.Line13.Y1 = 3.60866!
@@ -1868,7 +1888,7 @@ Partial Public Class DrReport1
         Me.Line14.LineWeight = 1.0!
         Me.Line14.Name = "Line14"
         Me.Line14.Top = 3.80866!
-        Me.Line14.Width = 7.165354!
+        Me.Line14.Width = 7.165353!
         Me.Line14.X1 = 0.0000004768372!
         Me.Line14.X2 = 7.165354!
         Me.Line14.Y1 = 3.80866!
@@ -1882,7 +1902,7 @@ Partial Public Class DrReport1
         Me.Line15.LineWeight = 1.0!
         Me.Line15.Name = "Line15"
         Me.Line15.Top = 4.008661!
-        Me.Line15.Width = 7.165354!
+        Me.Line15.Width = 7.165353!
         Me.Line15.X1 = 0.0000004768372!
         Me.Line15.X2 = 7.165354!
         Me.Line15.Y1 = 4.008661!
@@ -1896,7 +1916,7 @@ Partial Public Class DrReport1
         Me.Line16.LineWeight = 1.0!
         Me.Line16.Name = "Line16"
         Me.Line16.Top = 4.208661!
-        Me.Line16.Width = 7.165354!
+        Me.Line16.Width = 7.165353!
         Me.Line16.X1 = 0.0000004768372!
         Me.Line16.X2 = 7.165354!
         Me.Line16.Y1 = 4.208661!
@@ -1910,7 +1930,7 @@ Partial Public Class DrReport1
         Me.Line17.LineWeight = 1.0!
         Me.Line17.Name = "Line17"
         Me.Line17.Top = 4.408661!
-        Me.Line17.Width = 7.165354!
+        Me.Line17.Width = 7.165353!
         Me.Line17.X1 = 0.0000004768372!
         Me.Line17.X2 = 7.165354!
         Me.Line17.Y1 = 4.408661!
@@ -1924,7 +1944,7 @@ Partial Public Class DrReport1
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
         Me.Line18.Top = 4.608661!
-        Me.Line18.Width = 7.165354!
+        Me.Line18.Width = 7.165353!
         Me.Line18.X1 = 0.0000004768372!
         Me.Line18.X2 = 7.165354!
         Me.Line18.Y1 = 4.608661!
@@ -1938,7 +1958,7 @@ Partial Public Class DrReport1
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
         Me.Line19.Top = 4.808661!
-        Me.Line19.Width = 7.165354!
+        Me.Line19.Width = 7.165353!
         Me.Line19.X1 = 0.0000004768372!
         Me.Line19.X2 = 7.165354!
         Me.Line19.Y1 = 4.808661!
@@ -1952,7 +1972,7 @@ Partial Public Class DrReport1
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
         Me.Line20.Top = 5.008661!
-        Me.Line20.Width = 7.165354!
+        Me.Line20.Width = 7.165353!
         Me.Line20.X1 = 0.0000004768372!
         Me.Line20.X2 = 7.165354!
         Me.Line20.Y1 = 5.008661!
@@ -1966,7 +1986,7 @@ Partial Public Class DrReport1
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
         Me.Line21.Top = 5.208661!
-        Me.Line21.Width = 7.165354!
+        Me.Line21.Width = 7.165353!
         Me.Line21.X1 = 0.0000004768372!
         Me.Line21.X2 = 7.165354!
         Me.Line21.Y1 = 5.208661!
@@ -1980,7 +2000,7 @@ Partial Public Class DrReport1
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
         Me.Line22.Top = 5.408661!
-        Me.Line22.Width = 7.165354!
+        Me.Line22.Width = 7.165353!
         Me.Line22.X1 = 0.0000004768372!
         Me.Line22.X2 = 7.165354!
         Me.Line22.Y1 = 5.408661!
@@ -1994,7 +2014,7 @@ Partial Public Class DrReport1
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
         Me.Line23.Top = 5.608661!
-        Me.Line23.Width = 7.165354!
+        Me.Line23.Width = 7.165353!
         Me.Line23.X1 = 0.0000004768372!
         Me.Line23.X2 = 7.165354!
         Me.Line23.Y1 = 5.608661!
@@ -2008,7 +2028,7 @@ Partial Public Class DrReport1
         Me.Line24.LineWeight = 1.0!
         Me.Line24.Name = "Line24"
         Me.Line24.Top = 5.808661!
-        Me.Line24.Width = 7.165354!
+        Me.Line24.Width = 7.165353!
         Me.Line24.X1 = 0.0000004768372!
         Me.Line24.X2 = 7.165354!
         Me.Line24.Y1 = 5.808661!
@@ -2022,7 +2042,7 @@ Partial Public Class DrReport1
         Me.Line25.LineWeight = 1.0!
         Me.Line25.Name = "Line25"
         Me.Line25.Top = 6.008661!
-        Me.Line25.Width = 7.165354!
+        Me.Line25.Width = 7.165353!
         Me.Line25.X1 = 0.0000004768372!
         Me.Line25.X2 = 7.165354!
         Me.Line25.Y1 = 6.008661!
@@ -2036,7 +2056,7 @@ Partial Public Class DrReport1
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
         Me.Line26.Top = 6.20866!
-        Me.Line26.Width = 7.165354!
+        Me.Line26.Width = 7.165353!
         Me.Line26.X1 = 0.0000004768372!
         Me.Line26.X2 = 7.165354!
         Me.Line26.Y1 = 6.20866!
@@ -2050,7 +2070,7 @@ Partial Public Class DrReport1
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
         Me.Line27.Top = 6.40866!
-        Me.Line27.Width = 7.165354!
+        Me.Line27.Width = 7.165353!
         Me.Line27.X1 = 0.0000004768372!
         Me.Line27.X2 = 7.165354!
         Me.Line27.Y1 = 6.40866!
@@ -2064,7 +2084,7 @@ Partial Public Class DrReport1
         Me.Line28.LineWeight = 1.0!
         Me.Line28.Name = "Line28"
         Me.Line28.Top = 6.60866!
-        Me.Line28.Width = 7.165354!
+        Me.Line28.Width = 7.165353!
         Me.Line28.X1 = 0.0000004768372!
         Me.Line28.X2 = 7.165354!
         Me.Line28.Y1 = 6.60866!
@@ -2078,7 +2098,7 @@ Partial Public Class DrReport1
         Me.Line29.LineWeight = 1.0!
         Me.Line29.Name = "Line29"
         Me.Line29.Top = 6.808661!
-        Me.Line29.Width = 7.165354!
+        Me.Line29.Width = 7.165353!
         Me.Line29.X1 = 0.0000004768372!
         Me.Line29.X2 = 7.165354!
         Me.Line29.Y1 = 6.808661!
@@ -2092,7 +2112,7 @@ Partial Public Class DrReport1
         Me.Line30.LineWeight = 1.0!
         Me.Line30.Name = "Line30"
         Me.Line30.Top = 7.00866!
-        Me.Line30.Width = 7.165354!
+        Me.Line30.Width = 7.165353!
         Me.Line30.X1 = 0.0000004768372!
         Me.Line30.X2 = 7.165354!
         Me.Line30.Y1 = 7.00866!
@@ -2106,7 +2126,7 @@ Partial Public Class DrReport1
         Me.Line31.LineWeight = 1.0!
         Me.Line31.Name = "Line31"
         Me.Line31.Top = 7.208662!
-        Me.Line31.Width = 7.165354!
+        Me.Line31.Width = 7.165353!
         Me.Line31.X1 = 0.0000004768372!
         Me.Line31.X2 = 7.165354!
         Me.Line31.Y1 = 7.208662!
@@ -2120,7 +2140,7 @@ Partial Public Class DrReport1
         Me.Line32.LineWeight = 1.0!
         Me.Line32.Name = "Line32"
         Me.Line32.Top = 7.408661!
-        Me.Line32.Width = 7.165354!
+        Me.Line32.Width = 7.165353!
         Me.Line32.X1 = 0.0000004768372!
         Me.Line32.X2 = 7.165354!
         Me.Line32.Y1 = 7.408661!
@@ -2134,7 +2154,7 @@ Partial Public Class DrReport1
         Me.Line33.LineWeight = 1.0!
         Me.Line33.Name = "Line33"
         Me.Line33.Top = 7.608662!
-        Me.Line33.Width = 7.165354!
+        Me.Line33.Width = 7.165353!
         Me.Line33.X1 = 0.0000004768372!
         Me.Line33.X2 = 7.165354!
         Me.Line33.Y1 = 7.608662!
@@ -2148,7 +2168,7 @@ Partial Public Class DrReport1
         Me.Line34.LineWeight = 1.0!
         Me.Line34.Name = "Line34"
         Me.Line34.Top = 7.808661!
-        Me.Line34.Width = 7.165354!
+        Me.Line34.Width = 7.165353!
         Me.Line34.X1 = 0.0000004768372!
         Me.Line34.X2 = 7.165354!
         Me.Line34.Y1 = 7.808661!
@@ -2162,7 +2182,7 @@ Partial Public Class DrReport1
         Me.Line35.LineWeight = 1.0!
         Me.Line35.Name = "Line35"
         Me.Line35.Top = 8.008661!
-        Me.Line35.Width = 7.165354!
+        Me.Line35.Width = 7.165353!
         Me.Line35.X1 = 0.0000004768372!
         Me.Line35.X2 = 7.165354!
         Me.Line35.Y1 = 8.008661!
@@ -2176,7 +2196,7 @@ Partial Public Class DrReport1
         Me.Line36.LineWeight = 1.0!
         Me.Line36.Name = "Line36"
         Me.Line36.Top = 8.20866!
-        Me.Line36.Width = 7.165354!
+        Me.Line36.Width = 7.165353!
         Me.Line36.X1 = 0.0000004768372!
         Me.Line36.X2 = 7.165354!
         Me.Line36.Y1 = 8.20866!
@@ -2190,7 +2210,7 @@ Partial Public Class DrReport1
         Me.Line37.LineWeight = 1.0!
         Me.Line37.Name = "Line37"
         Me.Line37.Top = 8.408661!
-        Me.Line37.Width = 7.165354!
+        Me.Line37.Width = 7.165353!
         Me.Line37.X1 = 0.0000004768372!
         Me.Line37.X2 = 7.165354!
         Me.Line37.Y1 = 8.408661!
@@ -2203,7 +2223,7 @@ Partial Public Class DrReport1
         Me.Line38.LineWeight = 1.0!
         Me.Line38.Name = "Line38"
         Me.Line38.Top = 8.60866!
-        Me.Line38.Width = 7.165354!
+        Me.Line38.Width = 7.165353!
         Me.Line38.X1 = 0.0000004768372!
         Me.Line38.X2 = 7.165354!
         Me.Line38.Y1 = 8.60866!
@@ -2217,7 +2237,7 @@ Partial Public Class DrReport1
         Me.Line39.LineWeight = 1.0!
         Me.Line39.Name = "Line39"
         Me.Line39.Top = 8.808661!
-        Me.Line39.Width = 7.165354!
+        Me.Line39.Width = 7.165353!
         Me.Line39.X1 = 0.0000004768372!
         Me.Line39.X2 = 7.165354!
         Me.Line39.Y1 = 8.808661!
@@ -2231,7 +2251,7 @@ Partial Public Class DrReport1
         Me.Line40.LineWeight = 1.0!
         Me.Line40.Name = "Line40"
         Me.Line40.Top = 9.008659!
-        Me.Line40.Width = 7.165354!
+        Me.Line40.Width = 7.165353!
         Me.Line40.X1 = 0.0000004768372!
         Me.Line40.X2 = 7.165354!
         Me.Line40.Y1 = 9.008659!
@@ -2245,7 +2265,7 @@ Partial Public Class DrReport1
         Me.Line41.LineWeight = 1.0!
         Me.Line41.Name = "Line41"
         Me.Line41.Top = 9.208658!
-        Me.Line41.Width = 7.165354!
+        Me.Line41.Width = 7.165353!
         Me.Line41.X1 = 0.0000004768372!
         Me.Line41.X2 = 7.165354!
         Me.Line41.Y1 = 9.208658!
@@ -2259,7 +2279,7 @@ Partial Public Class DrReport1
         Me.Line42.LineWeight = 1.0!
         Me.Line42.Name = "Line42"
         Me.Line42.Top = 9.408659!
-        Me.Line42.Width = 7.165354!
+        Me.Line42.Width = 7.165353!
         Me.Line42.X1 = 0.0000004768372!
         Me.Line42.X2 = 7.165354!
         Me.Line42.Y1 = 9.408659!
@@ -2273,7 +2293,7 @@ Partial Public Class DrReport1
         Me.Line43.LineWeight = 1.0!
         Me.Line43.Name = "Line43"
         Me.Line43.Top = 9.608658!
-        Me.Line43.Width = 7.165354!
+        Me.Line43.Width = 7.165353!
         Me.Line43.X1 = 0.0000004768372!
         Me.Line43.X2 = 7.165354!
         Me.Line43.Y1 = 9.608658!
@@ -2287,7 +2307,7 @@ Partial Public Class DrReport1
         Me.Line44.LineWeight = 1.0!
         Me.Line44.Name = "Line44"
         Me.Line44.Top = 9.808659!
-        Me.Line44.Width = 7.165354!
+        Me.Line44.Width = 7.165353!
         Me.Line44.X1 = 0.0000004768372!
         Me.Line44.X2 = 7.165354!
         Me.Line44.Y1 = 9.808659!
@@ -2301,7 +2321,7 @@ Partial Public Class DrReport1
         Me.Line45.LineWeight = 1.0!
         Me.Line45.Name = "Line45"
         Me.Line45.Top = 10.00866!
-        Me.Line45.Width = 7.165354!
+        Me.Line45.Width = 7.165353!
         Me.Line45.X1 = 0.0000004768372!
         Me.Line45.X2 = 7.165354!
         Me.Line45.Y1 = 10.00866!
@@ -2315,7 +2335,7 @@ Partial Public Class DrReport1
         Me.Line46.LineWeight = 1.0!
         Me.Line46.Name = "Line46"
         Me.Line46.Top = 10.20866!
-        Me.Line46.Width = 7.165354!
+        Me.Line46.Width = 7.165353!
         Me.Line46.X1 = 0.0000004768372!
         Me.Line46.X2 = 7.165354!
         Me.Line46.Y1 = 10.20866!
@@ -2329,7 +2349,7 @@ Partial Public Class DrReport1
         Me.Line47.LineWeight = 1.0!
         Me.Line47.Name = "Line47"
         Me.Line47.Top = 10.40866!
-        Me.Line47.Width = 7.165354!
+        Me.Line47.Width = 7.165353!
         Me.Line47.X1 = 0.0000004768372!
         Me.Line47.X2 = 7.165354!
         Me.Line47.Y1 = 10.40866!
@@ -2343,7 +2363,7 @@ Partial Public Class DrReport1
         Me.Line48.LineWeight = 1.0!
         Me.Line48.Name = "Line48"
         Me.Line48.Top = 10.60866!
-        Me.Line48.Width = 7.165354!
+        Me.Line48.Width = 7.165353!
         Me.Line48.X1 = 0.0000004768372!
         Me.Line48.X2 = 7.165354!
         Me.Line48.Y1 = 10.60866!
@@ -2351,7 +2371,7 @@ Partial Public Class DrReport1
         '
         'Line49
         '
-        Me.Line49.Height = 2.199999!
+        Me.Line49.Height = 2.199996!
         Me.Line49.Left = 3.582677!
         Me.Line49.LineWeight = 1.0!
         Me.Line49.Name = "Line49"
@@ -2364,7 +2384,7 @@ Partial Public Class DrReport1
         '
         'Line50
         '
-        Me.Line50.Height = 2.199999!
+        Me.Line50.Height = 2.199996!
         Me.Line50.Left = 5.354331!
         Me.Line50.LineWeight = 1.0!
         Me.Line50.Name = "Line50"
@@ -2375,11 +2395,6 @@ Partial Public Class DrReport1
         Me.Line50.Y1 = 8.608664!
         Me.Line50.Y2 = 10.80866!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'Line51
         '
         Me.Line51.Height = 0.0!
@@ -2387,7 +2402,7 @@ Partial Public Class DrReport1
         Me.Line51.LineWeight = 1.0!
         Me.Line51.Name = "Line51"
         Me.Line51.Top = 1.208661!
-        Me.Line51.Width = 7.165354!
+        Me.Line51.Width = 7.165355!
         Me.Line51.X1 = 0.0000004768372!
         Me.Line51.X2 = 7.165355!
         Me.Line51.Y1 = 1.208661!
@@ -2395,7 +2410,7 @@ Partial Public Class DrReport1
         '
         'Line52
         '
-        Me.Line52.Height = 9.600001!
+        Me.Line52.Height = 9.599998!
         Me.Line52.Left = 0.0000004768372!
         Me.Line52.LineWeight = 1.0!
         Me.Line52.Name = "Line52"
@@ -2413,7 +2428,7 @@ Partial Public Class DrReport1
         Me.Line53.LineWeight = 1.0!
         Me.Line53.Name = "Line53"
         Me.Line53.Top = 10.80866!
-        Me.Line53.Width = 7.165354!
+        Me.Line53.Width = 7.165355!
         Me.Line53.X1 = 0.0000004768372!
         Me.Line53.X2 = 7.165355!
         Me.Line53.Y1 = 10.80866!
@@ -2421,7 +2436,7 @@ Partial Public Class DrReport1
         '
         'Line54
         '
-        Me.Line54.Height = 9.600001!
+        Me.Line54.Height = 9.599998!
         Me.Line54.Left = 7.165355!
         Me.Line54.LineWeight = 1.0!
         Me.Line54.Name = "Line54"
@@ -2432,25 +2447,10 @@ Partial Public Class DrReport1
         Me.Line54.Y1 = 1.208661!
         Me.Line54.Y2 = 10.80866!
         '
-        'Shape2
+        'PageFooter
         '
-        Me.Shape2.BackColor = System.Drawing.Color.Silver
-        Me.Shape2.Height = 9.583071!
-        Me.Shape2.Left = 0.0!
-        Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 10.0!
-        Me.Shape2.Top = 1.208662!
-        Me.Shape2.Width = 1.771654!
-        '
-        'Shape3
-        '
-        Me.Shape3.BackColor = System.Drawing.Color.Silver
-        Me.Shape3.Height = 2.200001!
-        Me.Shape3.Left = 3.582677!
-        Me.Shape3.Name = "Shape3"
-        Me.Shape3.RoundingRadius = 10.0!
-        Me.Shape3.Top = 8.608662!
-        Me.Shape3.Width = 1.771654!
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrReport1
         '
