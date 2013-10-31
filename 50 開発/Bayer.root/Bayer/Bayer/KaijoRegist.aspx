@@ -618,7 +618,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
-							■ 宿泊・交通
+							■ 宿泊・交通・その他
 						</td>
 					</tr>
 					<tr>
@@ -653,6 +653,14 @@
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 100px;">
 										<asp:Label ID="REQ_TAXI_CNT" runat="server" Text="12,345"></asp:Label>
 										名
+									</td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
+										その他備考欄
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
+										<asp:TextBox ID="OTHER_NOTE" runat="server" TextMode="MultiLine" Width="600px" Text="◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎" ReadOnly="true" TabIndex="-1" CssClass="DispMultiLine"></asp:TextBox>
 									</td>
 								</tr>
 							</table>

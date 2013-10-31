@@ -31,8 +31,8 @@ Partial Public Class Preview
             '帳票出力            If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 '呼び元画面が交通・宿泊手配回答登録画面の場合
                 PrintDrReport()
-            ElseIf URL.KaijoRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
-                '呼び元画面会場手配回答登録画面の場合
+            ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
+                '呼び元画面が新着会場手配一覧または会場手配回答登録画面の場合
                 PrintKaijoReport()
             End If
         End If
@@ -55,12 +55,15 @@ Partial Public Class Preview
             Catch ex As Exception
                 Return False
             End Try
-        ElseIf URL.KaijoRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
-        End If
-        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
-            Return False
-        Else
-            SEQ = Session.Item(SessionDef.DrRireki_SEQ)
+            If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+                Return False
+            Else
+                SEQ = Session.Item(SessionDef.DrRireki_SEQ)
+            End If
+        ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
+            If Trim(Session.Item(SessionDef.KaijoPrint_SQL)) = "" Then
+                Return False
+            End If
         End If
         Return True
     End Function
@@ -72,7 +75,7 @@ Partial Public Class Preview
 
         'データ設定
         rpt1.DataSource = GetDrData()
-
+        
         rpt1.Document.Printer.PrinterName = ""
 
         'A4縦
@@ -122,7 +125,6 @@ Partial Public Class Preview
 
         'データ設定
         rpt1.DataSource = GetKaijoData()
-
         rpt1.Document.Printer.PrinterName = ""
 
         'A4縦
@@ -138,6 +140,7 @@ Partial Public Class Preview
         'レポートを作成
         rpt1.Run()
 
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
 
@@ -162,5 +165,10 @@ Partial Public Class Preview
         Return dtView.Table
 
     End Function
+
+    '[前の画面に戻る]
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnBack.Click
+        Response.Redirect(Session.Item(SessionDef.BackURL_Print))
+    End Sub
 
 End Class

@@ -2231,6 +2231,113 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function NewListPrint(ByVal KOUENKAI_NO() As String) As String
+            Dim strSQL As String = ""
+            Dim strSQL_WHERE_KAIJO As String = ""
+            Dim strSQL_WHERE_KOUENKAI As String = ""
+            Dim wCnt As Integer = 0
+            Dim wStr As String = ""
+
+            'WHERE
+            '会場手配テーブル
+            strSQL_WHERE_KAIJO &= " WHERE 1=1"
+            strSQL_WHERE_KAIJO &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,N'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
+
+            '講演会テーブル
+            strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
+            strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO IN("
+            For wCnt = LBound(KOUENKAI_NO) To UBound(KOUENKAI_NO)
+                If wCnt > 0 Then wStr &= ","
+                wStr &= "N'" & KOUENKAI_NO(wCnt) & "'"
+            Next wCnt
+            strSQL_WHERE_KOUENKAI &= wStr
+            strSQL_WHERE_KOUENKAI &= ")"
+
+            strSQL &= "SELECT"
+            strSQL &= " DISTINCT"
+            strSQL &= " TBL_KAIJO.*"
+            strSQL &= ",TBL_KOUENKAI.TIME_STAMP"
+            strSQL &= ",TBL_KOUENKAI.TORIKESHI_FLG"
+            strSQL &= ",TBL_KOUENKAI.KIDOKU_FLG"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_TITLE"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",TBL_KOUENKAI.TAXI_PRT_NAME"
+            strSQL &= ",TBL_KOUENKAI.FROM_DATE"
+            strSQL &= ",TBL_KOUENKAI.TO_DATE"
+            strSQL &= ",TBL_KOUENKAI.KAIJO_NAME"
+            strSQL &= ",TBL_KOUENKAI.SEIHIN_NAME"
+            strSQL &= ",TBL_KOUENKAI.INTERNAL_ORDER_T"
+            strSQL &= ",TBL_KOUENKAI.INTERNAL_ORDER_TF"
+            strSQL &= ",TBL_KOUENKAI.ACCOUNT_CD_T"
+            strSQL &= ",TBL_KOUENKAI.ACCOUNT_CD_TF"
+            strSQL &= ",TBL_KOUENKAI.ZETIA_CD"
+            strSQL &= ",TBL_KOUENKAI.SANKA_YOTEI_CNT_NMBR"
+            strSQL &= ",TBL_KOUENKAI.SANKA_YOTEI_CNT_MBR"
+            strSQL &= ",TBL_KOUENKAI.SRM_HACYU_KBN"
+            strSQL &= ",TBL_KOUENKAI.BU"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_NAME"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_ROMA"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EMAIL_PC"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_KEITAI"
+            strSQL &= ",TBL_KOUENKAI.KIKAKU_TANTO_TEL"
+            strSQL &= ",TBL_KOUENKAI.COST_CENTER"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_EIGYOSHO"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_NAME"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_EMAIL_PC"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_EMAIL_KEITAI"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_KEITAI"
+            strSQL &= ",TBL_KOUENKAI.TEHAI_TANTO_TEL"
+            strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
+            strSQL &= ",TBL_KOUENKAI.YOSAN_T"
+            strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
+            strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
+            strSQL &= ",MS_USER.USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= "("
+            strSQL &= " SELECT TBL_KOUENKAI_1.* FROM "
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= ") AS TBL_KOUENKAI_1"
+            strSQL &= "  ,"
+            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
+            strSQL &= ") AS TBL_KOUENKAI"
+            strSQL &= ","
+            strSQL &= "("
+            strSQL &= " SELECT TBL_KAIJO_1.* FROM "
+            strSQL &= " (SELECT * FROM TBL_KAIJO"
+            strSQL &= strSQL_WHERE_KAIJO
+            strSQL &= ") AS TBL_KAIJO_1"
+            strSQL &= "  ,"
+            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
+            strSQL &= "  WHERE TBL_KAIJO_1.UPDATE_DATE=TBL_KAIJO_2.UPDATE_DATE"
+            strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
+            strSQL &= ") AS TBL_KAIJO"
+            strSQL &= ","
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+
+            strSQL &= " ORDER BY"
+            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Rireki(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -3233,209 +3340,209 @@ Public Class SQL
         End Function
     End Class
 
-    Public Class MS_JIGYOSHO
+    'Public Class MS_JIGYOSHO
 
-        Private Const SQL_SELECT As String _
-        = "SELECT" _
-        & " MS_JIGYOSHO.*" _
-        & " FROM MS_JIGYOSHO"
+    '    Private Const SQL_SELECT As String _
+    '    = "SELECT" _
+    '    & " MS_JIGYOSHO.*" _
+    '    & " FROM MS_JIGYOSHO"
 
-        Private Const SQL_ORDERBY As String _
-        = " ORDER BY" _
-        & " MS_JIGYOSHO.SYSTEM_ID"
+    '    Private Const SQL_ORDERBY As String _
+    '    = " ORDER BY" _
+    '    & " MS_JIGYOSHO.SYSTEM_ID"
 
-        Public Shared Function AllData() As String
-            Dim strSQL As String = SQL_SELECT
+    '    Public Shared Function AllData() As String
+    '        Dim strSQL As String = SQL_SELECT
 
-            strSQL &= SQL_ORDERBY
+    '        strSQL &= SQL_ORDERBY
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
-            Dim strSQL As String = SQL_SELECT
+    '    Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
+    '        Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE MS_JIGYOSHO.SYSTEM_ID=N'" & CmnDb.SqlString(SYSTEM_ID) & "'"
-            strSQL &= SQL_ORDERBY
+    '        strSQL &= " WHERE MS_JIGYOSHO.SYSTEM_ID=N'" & CmnDb.SqlString(SYSTEM_ID) & "'"
+    '        strSQL &= SQL_ORDERBY
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function Insert(ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As String
-            Dim strSQL As String = ""
+    '    Public Shared Function Insert(ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As String
+    '        Dim strSQL As String = ""
 
-            strSQL = "INSERT INTO MS_JIGYOSHO"
-            strSQL &= "(" & TableDef.MS_JIGYOSHO.Column.SYSTEM_ID
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.未定
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.STOP_FLG
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.INPUT_DATE
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.INPUT_USER
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_DATE
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_USER
-            strSQL &= ")"
-            strSQL &= " VALUES"
-            strSQL &= "(N'" & CmnDb.SqlString(MS_JIGYOSHO.SYSTEM_ID) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.未定) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.STOP_FLG) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.INPUT_USER) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.UPDATE_USER) & "'"
-            strSQL &= ")"
+    '        strSQL = "INSERT INTO MS_JIGYOSHO"
+    '        strSQL &= "(" & TableDef.MS_JIGYOSHO.Column.SYSTEM_ID
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.未定
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.STOP_FLG
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.INPUT_DATE
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.INPUT_USER
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_DATE
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_USER
+    '        strSQL &= ")"
+    '        strSQL &= " VALUES"
+    '        strSQL &= "(N'" & CmnDb.SqlString(MS_JIGYOSHO.SYSTEM_ID) & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.未定) & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.STOP_FLG) & "'"
+    '        strSQL &= ",N'" & GetValue.DATE() & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.INPUT_USER) & "'"
+    '        strSQL &= ",N'" & GetValue.DATE() & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_JIGYOSHO.UPDATE_USER) & "'"
+    '        strSQL &= ")"
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function Update(ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As String
-            Dim strSQL As String = ""
+    '    Public Shared Function Update(ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As String
+    '        Dim strSQL As String = ""
 
-            strSQL = "UPDATE MS_JIGYOSHO SET"
-            strSQL &= " " & TableDef.MS_JIGYOSHO.Column.未定 & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.未定) & "'"
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.STOP_FLG) & "'"
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.UPDATE_USER) & "'"
-            strSQL &= " WHERE " & TableDef.MS_JIGYOSHO.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.SYSTEM_ID) & "'"
+    '        strSQL = "UPDATE MS_JIGYOSHO SET"
+    '        strSQL &= " " & TableDef.MS_JIGYOSHO.Column.未定 & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.未定) & "'"
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.STOP_FLG) & "'"
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+    '        strSQL &= "," & TableDef.MS_JIGYOSHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.UPDATE_USER) & "'"
+    '        strSQL &= " WHERE " & TableDef.MS_JIGYOSHO.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_JIGYOSHO.SYSTEM_ID) & "'"
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-    End Class
+    'End Class
 
-    Public Class MS_AREA
+    'Public Class MS_AREA
 
-        Private Const SQL_SELECT As String _
-        = "SELECT" _
-        & " MS_AREA.*" _
-        & " FROM MS_AREA"
+    '    Private Const SQL_SELECT As String _
+    '    = "SELECT" _
+    '    & " MS_AREA.*" _
+    '    & " FROM MS_AREA"
 
-        Private Const SQL_ORDERBY As String _
-        = " ORDER BY" _
-        & " MS_AREA.SYSTEM_ID"
+    '    Private Const SQL_ORDERBY As String _
+    '    = " ORDER BY" _
+    '    & " MS_AREA.SYSTEM_ID"
 
-        Public Shared Function AllData() As String
-            Dim strSQL As String = SQL_SELECT
+    '    Public Shared Function AllData() As String
+    '        Dim strSQL As String = SQL_SELECT
 
-            strSQL &= SQL_ORDERBY
+    '        strSQL &= SQL_ORDERBY
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
-            Dim strSQL As String = SQL_SELECT
+    '    Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
+    '        Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE MS_AREA.SYSTEM_ID=N'" & CmnDb.SqlString(SYSTEM_ID) & "'"
-            strSQL &= SQL_ORDERBY
+    '        strSQL &= " WHERE MS_AREA.SYSTEM_ID=N'" & CmnDb.SqlString(SYSTEM_ID) & "'"
+    '        strSQL &= SQL_ORDERBY
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function Insert(ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As String
-            Dim strSQL As String = ""
+    '    Public Shared Function Insert(ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As String
+    '        Dim strSQL As String = ""
 
-            strSQL = "INSERT INTO MS_AREA"
-            strSQL &= "(" & TableDef.MS_AREA.Column.SYSTEM_ID
-            strSQL &= "," & TableDef.MS_AREA.Column.未定
-            strSQL &= "," & TableDef.MS_AREA.Column.STOP_FLG
-            strSQL &= "," & TableDef.MS_AREA.Column.INPUT_DATE
-            strSQL &= "," & TableDef.MS_AREA.Column.INPUT_USER
-            strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_DATE
-            strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_USER
-            strSQL &= ")"
-            strSQL &= " VALUES"
-            strSQL &= "(N'" & CmnDb.SqlString(MS_AREA.SYSTEM_ID) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.未定) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.STOP_FLG) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.INPUT_USER) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.UPDATE_USER) & "'"
-            strSQL &= ")"
+    '        strSQL = "INSERT INTO MS_AREA"
+    '        strSQL &= "(" & TableDef.MS_AREA.Column.SYSTEM_ID
+    '        strSQL &= "," & TableDef.MS_AREA.Column.未定
+    '        strSQL &= "," & TableDef.MS_AREA.Column.STOP_FLG
+    '        strSQL &= "," & TableDef.MS_AREA.Column.INPUT_DATE
+    '        strSQL &= "," & TableDef.MS_AREA.Column.INPUT_USER
+    '        strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_DATE
+    '        strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_USER
+    '        strSQL &= ")"
+    '        strSQL &= " VALUES"
+    '        strSQL &= "(N'" & CmnDb.SqlString(MS_AREA.SYSTEM_ID) & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.未定) & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.STOP_FLG) & "'"
+    '        strSQL &= ",N'" & GetValue.DATE() & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.INPUT_USER) & "'"
+    '        strSQL &= ",N'" & GetValue.DATE() & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_AREA.UPDATE_USER) & "'"
+    '        strSQL &= ")"
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function Update(ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As String
-            Dim strSQL As String = ""
+    '    Public Shared Function Update(ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As String
+    '        Dim strSQL As String = ""
 
-            strSQL = "UPDATE MS_AREA SET"
-            strSQL &= " " & TableDef.MS_AREA.Column.未定 & "=N'" & CmnDb.SqlString(MS_AREA.未定) & "'"
-            strSQL &= "," & TableDef.MS_AREA.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_AREA.STOP_FLG) & "'"
-            strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_AREA.UPDATE_USER) & "'"
-            strSQL &= " WHERE " & TableDef.MS_AREA.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_AREA.SYSTEM_ID) & "'"
+    '        strSQL = "UPDATE MS_AREA SET"
+    '        strSQL &= " " & TableDef.MS_AREA.Column.未定 & "=N'" & CmnDb.SqlString(MS_AREA.未定) & "'"
+    '        strSQL &= "," & TableDef.MS_AREA.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_AREA.STOP_FLG) & "'"
+    '        strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+    '        strSQL &= "," & TableDef.MS_AREA.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_AREA.UPDATE_USER) & "'"
+    '        strSQL &= " WHERE " & TableDef.MS_AREA.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_AREA.SYSTEM_ID) & "'"
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-    End Class
+    'End Class
 
-    Public Class MS_EIGYOSHO
+    'Public Class MS_EIGYOSHO
 
-        Private Const SQL_SELECT As String _
-        = "SELECT" _
-        & " MS_EIGYOSHO.*" _
-        & " FROM MS_EIGYOSHO"
+    '    Private Const SQL_SELECT As String _
+    '    = "SELECT" _
+    '    & " MS_EIGYOSHO.*" _
+    '    & " FROM MS_EIGYOSHO"
 
-        Private Const SQL_ORDERBY As String _
-        = " ORDER BY" _
-        & " MS_EIGYOSHO.SYSTEM_ID"
+    '    Private Const SQL_ORDERBY As String _
+    '    = " ORDER BY" _
+    '    & " MS_EIGYOSHO.SYSTEM_ID"
 
-        Public Shared Function AllData() As String
-            Dim strSQL As String = SQL_SELECT
+    '    Public Shared Function AllData() As String
+    '        Dim strSQL As String = SQL_SELECT
 
-            strSQL &= SQL_ORDERBY
+    '        strSQL &= SQL_ORDERBY
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
-            Dim strSQL As String = SQL_SELECT
+    '    Public Shared Function bySYSTEM_ID(ByVal SYSTEM_ID As String) As String
+    '        Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE MS_EIGYOSHO.SYSTEM_ID=N'" & CmnDb.SqlString(SYSTEM_ID) & "'"
-            strSQL &= SQL_ORDERBY
+    '        strSQL &= " WHERE MS_EIGYOSHO.SYSTEM_ID=N'" & CmnDb.SqlString(SYSTEM_ID) & "'"
+    '        strSQL &= SQL_ORDERBY
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function Insert(ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As String
-            Dim strSQL As String = ""
+    '    Public Shared Function Insert(ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As String
+    '        Dim strSQL As String = ""
 
-            strSQL = "INSERT INTO MS_EIGYOSHO"
-            strSQL &= "(" & TableDef.MS_EIGYOSHO.Column.SYSTEM_ID
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.未定
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.STOP_FLG
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.INPUT_DATE
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.INPUT_USER
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_DATE
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER
-            strSQL &= ")"
-            strSQL &= " VALUES"
-            strSQL &= "(N'" & CmnDb.SqlString(MS_EIGYOSHO.SYSTEM_ID) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.未定) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.STOP_FLG) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.INPUT_USER) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
-            strSQL &= ")"
+    '        strSQL = "INSERT INTO MS_EIGYOSHO"
+    '        strSQL &= "(" & TableDef.MS_EIGYOSHO.Column.SYSTEM_ID
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.未定
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.STOP_FLG
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.INPUT_DATE
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.INPUT_USER
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_DATE
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER
+    '        strSQL &= ")"
+    '        strSQL &= " VALUES"
+    '        strSQL &= "(N'" & CmnDb.SqlString(MS_EIGYOSHO.SYSTEM_ID) & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.未定) & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.STOP_FLG) & "'"
+    '        strSQL &= ",N'" & GetValue.DATE() & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.INPUT_USER) & "'"
+    '        strSQL &= ",N'" & GetValue.DATE() & "'"
+    '        strSQL &= ",N'" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
+    '        strSQL &= ")"
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-        Public Shared Function Update(ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As String
-            Dim strSQL As String = ""
+    '    Public Shared Function Update(ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As String
+    '        Dim strSQL As String = ""
 
-            strSQL = "UPDATE MS_EIGYOSHO SET"
-            strSQL &= " " & TableDef.MS_EIGYOSHO.Column.未定 & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.未定) & "'"
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.STOP_FLG) & "'"
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
-            strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
-            strSQL &= " WHERE " & TableDef.MS_EIGYOSHO.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.SYSTEM_ID) & "'"
+    '        strSQL = "UPDATE MS_EIGYOSHO SET"
+    '        strSQL &= " " & TableDef.MS_EIGYOSHO.Column.未定 & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.未定) & "'"
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.STOP_FLG & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.STOP_FLG) & "'"
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+    '        strSQL &= "," & TableDef.MS_EIGYOSHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.UPDATE_USER) & "'"
+    '        strSQL &= " WHERE " & TableDef.MS_EIGYOSHO.Column.SYSTEM_ID & "=N'" & CmnDb.SqlString(MS_EIGYOSHO.SYSTEM_ID) & "'"
 
-            Return strSQL
-        End Function
+    '        Return strSQL
+    '    End Function
 
-    End Class
+    'End Class
 
     Public Class MS_CODE
 

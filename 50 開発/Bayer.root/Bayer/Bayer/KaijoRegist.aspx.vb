@@ -49,12 +49,12 @@ Partial Public Class KaijoRegist
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True   'QQQ
             .PageTitle = "講演会場　手配・見積依頼"
             If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
                 .PageTitle &= " ：履歴照会"
                 .HideMenu = True
                 .HideLogout = True
+                .HideLoginUser = True
             End If
         End With
     End Sub
@@ -243,6 +243,7 @@ Partial Public Class KaijoRegist
         Me.REQ_STAY_DATE.Text = AppModule.GetName_REQ_STAY_DATE(TBL_KAIJO(SEQ).REQ_STAY_DATE)
         Me.REQ_KOTSU_CNT.Text = AppModule.GetName_REQ_KOTSU_CNT(TBL_KAIJO(SEQ).REQ_KOTSU_CNT)
         Me.REQ_TAXI_CNT.Text = AppModule.GetName_REQ_TAXI_CNT(TBL_KAIJO(SEQ).REQ_TAXI_CNT)
+        Me.OTHER_NOTE.Text = AppModule.GetName_OTHER_NOTE(TBL_KAIJO(SEQ).OTHER_NOTE)
 
         '回答
         AppModule.SetForm_ANS_STATUS_TEHAI(TBL_KAIJO(SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)
@@ -660,7 +661,7 @@ Partial Public Class KaijoRegist
     'データ更新
     Private Function UpdateData() As Boolean
         Dim strSQL As String
- 
+
         MyBase.BeginTransaction()
         Try
             'データ更新
@@ -788,7 +789,15 @@ Partial Public Class KaijoRegist
 
     '[手配書印刷]
     Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
-        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Dim Joken As TableDef.Joken.DataStruct = Nothing
+        Dim strSQL As String = ""
+
+        Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
+        strSQL = SQL.TBL_KAIJO.Search(Joken, False)
+
+        Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
     End Sub
 
 End Class

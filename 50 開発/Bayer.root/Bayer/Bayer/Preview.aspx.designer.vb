@@ -16,6 +16,15 @@ Option Explicit On
 Partial Public Class Preview
 
     '''<summary>
+    '''BtnBack コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''WebViewer1 コントロール。
     '''</summary>
     '''<remarks>

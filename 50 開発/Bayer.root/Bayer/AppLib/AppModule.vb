@@ -868,59 +868,59 @@ Public Class AppModule
     End Function
 #End Region
 
-#Region "事業所マスタ"
-    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As TableDef.MS_JIGYOSHO.DataStruct
-        Dim wCnt As Integer = 0
+    '#Region "事業所マスタ"
+    '    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As TableDef.MS_JIGYOSHO.DataStruct
+    '        Dim wCnt As Integer = 0
 
-        For wCnt = 0 To RsData.FieldCount - 1
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.SYSTEM_ID.ToUpper Then MS_JIGYOSHO.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.未定.ToUpper Then MS_JIGYOSHO.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.STOP_FLG.ToUpper Then MS_JIGYOSHO.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.INPUT_DATE.ToUpper Then MS_JIGYOSHO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.INPUT_USER.ToUpper Then MS_JIGYOSHO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.UPDATE_DATE.ToUpper Then MS_JIGYOSHO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.UPDATE_USER.ToUpper Then MS_JIGYOSHO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-        Next wCnt
+    '        For wCnt = 0 To RsData.FieldCount - 1
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.SYSTEM_ID.ToUpper Then MS_JIGYOSHO.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.未定.ToUpper Then MS_JIGYOSHO.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.STOP_FLG.ToUpper Then MS_JIGYOSHO.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.INPUT_DATE.ToUpper Then MS_JIGYOSHO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.INPUT_USER.ToUpper Then MS_JIGYOSHO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.UPDATE_DATE.ToUpper Then MS_JIGYOSHO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.UPDATE_USER.ToUpper Then MS_JIGYOSHO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '        Next wCnt
 
-        Return MS_JIGYOSHO
-    End Function
-#End Region
+    '        Return MS_JIGYOSHO
+    '    End Function
+    '#End Region
 
-#Region "エリアマスタ"
-    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As TableDef.MS_AREA.DataStruct
-        Dim wCnt As Integer = 0
+    '#Region "エリアマスタ"
+    '    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As TableDef.MS_AREA.DataStruct
+    '        Dim wCnt As Integer = 0
 
-        For wCnt = 0 To RsData.FieldCount - 1
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.SYSTEM_ID.ToUpper Then MS_AREA.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.未定.ToUpper Then MS_AREA.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.STOP_FLG.ToUpper Then MS_AREA.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_DATE.ToUpper Then MS_AREA.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_USER.ToUpper Then MS_AREA.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_DATE.ToUpper Then MS_AREA.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_USER.ToUpper Then MS_AREA.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-        Next wCnt
+    '        For wCnt = 0 To RsData.FieldCount - 1
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.SYSTEM_ID.ToUpper Then MS_AREA.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.未定.ToUpper Then MS_AREA.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.STOP_FLG.ToUpper Then MS_AREA.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_DATE.ToUpper Then MS_AREA.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_USER.ToUpper Then MS_AREA.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_DATE.ToUpper Then MS_AREA.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_USER.ToUpper Then MS_AREA.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '        Next wCnt
 
-        Return MS_AREA
-    End Function
-#End Region
+    '        Return MS_AREA
+    '    End Function
+    '#End Region
 
-#Region "営業所マスタ"
-    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As TableDef.MS_EIGYOSHO.DataStruct
-        Dim wCnt As Integer = 0
+    '#Region "営業所マスタ"
+    '    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As TableDef.MS_EIGYOSHO.DataStruct
+    '        Dim wCnt As Integer = 0
 
-        For wCnt = 0 To RsData.FieldCount - 1
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.SYSTEM_ID.ToUpper Then MS_EIGYOSHO.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.未定.ToUpper Then MS_EIGYOSHO.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.STOP_FLG.ToUpper Then MS_EIGYOSHO.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.INPUT_DATE.ToUpper Then MS_EIGYOSHO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.INPUT_USER.ToUpper Then MS_EIGYOSHO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.UPDATE_DATE.ToUpper Then MS_EIGYOSHO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.UPDATE_USER.ToUpper Then MS_EIGYOSHO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-        Next wCnt
+    '        For wCnt = 0 To RsData.FieldCount - 1
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.SYSTEM_ID.ToUpper Then MS_EIGYOSHO.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.未定.ToUpper Then MS_EIGYOSHO.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.STOP_FLG.ToUpper Then MS_EIGYOSHO.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.INPUT_DATE.ToUpper Then MS_EIGYOSHO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.INPUT_USER.ToUpper Then MS_EIGYOSHO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.UPDATE_DATE.ToUpper Then MS_EIGYOSHO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_EIGYOSHO.Column.UPDATE_USER.ToUpper Then MS_EIGYOSHO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+    '        Next wCnt
 
-        Return MS_EIGYOSHO
-    End Function
-#End Region
+    '        Return MS_EIGYOSHO
+    '    End Function
+    '#End Region
 
 #Region "コードマスタ"
     Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_CODE As TableDef.MS_CODE.DataStruct) As TableDef.MS_CODE.DataStruct
@@ -1036,30 +1036,30 @@ Public Class AppModule
                 End If
                 RsData.Close()
                 Return MS_COSTCENTER
-            Case AppModule.TableType.MS_JIGYOSHO
-                Dim MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct = Nothing
-                RsData = CmnDb.Read(SQL, DbConn)
-                If RsData.Read() Then
-                    MS_JIGYOSHO = SetRsData(RsData, MS_JIGYOSHO)
-                End If
-                RsData.Close()
-                Return MS_JIGYOSHO
-            Case AppModule.TableType.MS_AREA
-                Dim MS_AREA As TableDef.MS_AREA.DataStruct = Nothing
-                RsData = CmnDb.Read(SQL, DbConn)
-                If RsData.Read() Then
-                    MS_AREA = SetRsData(RsData, MS_AREA)
-                End If
-                RsData.Close()
-                Return MS_AREA
-            Case AppModule.TableType.MS_EIGYOSHO
-                Dim MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct = Nothing
-                RsData = CmnDb.Read(SQL, DbConn)
-                If RsData.Read() Then
-                    MS_EIGYOSHO = SetRsData(RsData, MS_EIGYOSHO)
-                End If
-                RsData.Close()
-                Return MS_EIGYOSHO
+                'Case AppModule.TableType.MS_JIGYOSHO
+                '    Dim MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct = Nothing
+                '    RsData = CmnDb.Read(SQL, DbConn)
+                '    If RsData.Read() Then
+                '        MS_JIGYOSHO = SetRsData(RsData, MS_JIGYOSHO)
+                '    End If
+                '    RsData.Close()
+                '    Return MS_JIGYOSHO
+                'Case AppModule.TableType.MS_AREA
+                '    Dim MS_AREA As TableDef.MS_AREA.DataStruct = Nothing
+                '    RsData = CmnDb.Read(SQL, DbConn)
+                '    If RsData.Read() Then
+                '        MS_AREA = SetRsData(RsData, MS_AREA)
+                '    End If
+                '    RsData.Close()
+                '    Return MS_AREA
+                'Case AppModule.TableType.MS_EIGYOSHO
+                '    Dim MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct = Nothing
+                '    RsData = CmnDb.Read(SQL, DbConn)
+                '    If RsData.Read() Then
+                '        MS_EIGYOSHO = SetRsData(RsData, MS_EIGYOSHO)
+                '    End If
+                '    RsData.Close()
+                '    Return MS_EIGYOSHO
             Case AppModule.TableType.MS_CODE
                 Dim MS_CODE As TableDef.MS_CODE.DataStruct = Nothing
                 RsData = CmnDb.Read(SQL, DbConn)
@@ -1169,10 +1169,10 @@ Public Class AppModule
             Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
-            wStr = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
+            wStr = CmnModule.Format_DateJP(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
                  & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD), True)
-            wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
             wStr = Replace(wStr, "月0", "月")
+            wStr = Replace(wStr, "日0", "日")
             If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
             Return wStr
         End If
@@ -1184,10 +1184,10 @@ Public Class AppModule
             Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
-            wStr = CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
+            wStr = CmnModule.Format_DateJP(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
                  & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD), True)
-            wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
             wStr = Replace(wStr, "月0", "月")
+            wStr = Replace(wStr, "日0", "日")
             If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
             Return wStr
         End If
@@ -1204,24 +1204,24 @@ Public Class AppModule
             End If
         Else
             If Trim(FROM_DATE) = Trim(TO_DATE) OrElse Trim(TO_DATE) = "" Then
-                wStr = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
+                wStr = CmnModule.Format_DateJP(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
                      & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD), True)
-                wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
                 wStr = Replace(wStr, "月0", "月")
+                wStr = Replace(wStr, "日0", "日")
                 If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
             Else
                 Dim wFROM_DATE As String = ""
                 Dim wTO_DATE As String = ""
-                wFROM_DATE = CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
+                wFROM_DATE = CmnModule.Format_DateJP(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD) _
                      & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(FROM_DATE), CmnModule.DateFormatType.YYYYMD), True)
-                wFROM_DATE = Replace(Replace(wFROM_DATE, "/", "月"), "(", "日(")
-                wFROM_DATE = Replace(wFROM_DATE, "月0", "月")
+                wStr = Replace(wStr, "月0", "月")
+                wStr = Replace(wStr, "日0", "日")
                 If Mid(wFROM_DATE, 1, 1) = "0" Then wFROM_DATE = Mid(wFROM_DATE, 2, 10)
 
-                wTO_DATE = CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
+                wTO_DATE = CmnModule.Format_DateJP(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD) _
                      & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(TO_DATE), CmnModule.DateFormatType.YYYYMD), True)
-                wTO_DATE = Replace(Replace(wTO_DATE, "/", "月"), "(", "日(")
-                wTO_DATE = Replace(wTO_DATE, "月0", "月")
+                wStr = Replace(wStr, "月0", "月")
+                wStr = Replace(wStr, "日0", "日")
                 If Mid(wTO_DATE, 1, 1) = "0" Then wTO_DATE = Mid(wTO_DATE, 2, 10)
 
                 wStr = wFROM_DATE & "～" & wTO_DATE
@@ -1879,10 +1879,10 @@ Public Class AppModule
             Return CmnModule.Format_Date(REQ_STAY_DATE, CmnModule.DateFormatType.YYYYMD)
         Else
             Dim wStr As String = ""
-            wStr = CmnModule.Format_Date(Trim(REQ_STAY_DATE), CmnModule.DateFormatType.YYYYMD) _
+            wStr = CmnModule.Format_DateJP(Trim(REQ_STAY_DATE), CmnModule.DateFormatType.YYYYMD) _
                  & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_STAY_DATE), CmnModule.DateFormatType.YYYYMD), True)
-            wStr = Replace(Replace(wStr, "/", "月"), "(", "日(")
             wStr = Replace(wStr, "月0", "月")
+            wStr = Replace(wStr, "日0", "日")
             If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
             Return wStr
         End If
@@ -6300,41 +6300,41 @@ Public Class AppModule
 
 
 #Region "== プルダウン設定 =="
-#Region "事業部"
-    Public Shared Sub SetDropDownList_JIGYOSHO(ByRef JIGYOSHO As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
-        With JIGYOSHO
-            .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
+    '#Region "事業部"
+    '    Public Shared Sub SetDropDownList_JIGYOSHO(ByRef JIGYOSHO As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+    '        With JIGYOSHO
+    '            .Items.Clear()
+    '            .Items.Add(New ListItem("---", "0"))
 
-            Dim strSQL As String
-            Dim RsData As System.Data.SqlClient.SqlDataReader
-            strSQL = SQL.MS_JIGYOSHO.AllData()
-            RsData = CmnDb.Read(strSQL, DbConn)
-            While RsData.Read()
-                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData), CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData)))
-            End While
-            RsData.Close()
-        End With
-    End Sub
-#End Region
+    '            Dim strSQL As String
+    '            Dim RsData As System.Data.SqlClient.SqlDataReader
+    '            strSQL = SQL.MS_JIGYOSHO.AllData()
+    '            RsData = CmnDb.Read(strSQL, DbConn)
+    '            While RsData.Read()
+    '                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData), CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData)))
+    '            End While
+    '            RsData.Close()
+    '        End With
+    '    End Sub
+    '#End Region
 
-#Region "エリア"
-    Public Shared Sub SetDropDownList_AREA(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
-        With AREA
-            .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
+    '#Region "エリア"
+    '    Public Shared Sub SetDropDownList_AREA(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+    '        With AREA
+    '            .Items.Clear()
+    '            .Items.Add(New ListItem("---", "0"))
 
-            Dim strSQL As String
-            Dim RsData As System.Data.SqlClient.SqlDataReader
-            strSQL = SQL.MS_AREA.AllData()
-            RsData = CmnDb.Read(strSQL, DbConn)
-            While RsData.Read()
-                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData), CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData)))
-            End While
-            RsData.Close()
-        End With
-    End Sub
-#End Region
+    '            Dim strSQL As String
+    '            Dim RsData As System.Data.SqlClient.SqlDataReader
+    '            strSQL = SQL.MS_AREA.AllData()
+    '            RsData = CmnDb.Read(strSQL, DbConn)
+    '            While RsData.Read()
+    '                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData), CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData)))
+    '            End While
+    '            RsData.Close()
+    '        End With
+    '    End Sub
+    '#End Region
 
 #Region "手配ステータス"
     Public Shared Sub SetDropDownList_STATUS_TEHAI(ByRef STATUS_TEHAI As DropDownList, Optional ByVal KAIJO As Boolean = False)
@@ -8133,11 +8133,11 @@ Public Class AppModule
         [MS_SHISETSU]
         [MS_USER]
         [MS_COSTCENTER]
-        [MS_JIGYOSHO]
-        [MS_AREA]
-        [MS_EIGYOSHO]
         [MS_CODE]
         [TBL_LOG]
+        '[MS_JIGYOSHO]
+        '[MS_AREA]
+        '[MS_EIGYOSHO]
     End Enum
 
 End Class

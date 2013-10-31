@@ -646,6 +646,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents REQ_TAXI_CNT As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''OTHER_NOTE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents OTHER_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ANS_SENTEI_RIYU コントロール。
     '''</summary>
     '''<remarks>

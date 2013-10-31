@@ -211,18 +211,26 @@ Partial Public Class NewKaijoList
     '[印刷]
     Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
         Dim wFlag As Boolean = False
-        Dim SEQ As Integer = 0
+        Dim wCnt As Integer = 0
+        Dim KOUENKAI_NO() As String
+        Dim strSQL As String = ""
 
         'チェック
+        ReDim KOUENKAI_NO(wCnt)
         For Each wRow As GridViewRow In Me.GrvList.Rows
-            If CType(wRow.Cells(CellIndex.Template1).FindControl("Check"), CheckBox).Checked = True Then
+            If CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = True Then
                 wFlag = True
-                'QQQ 印刷用の何かを行う
-
+                ReDim Preserve KOUENKAI_NO(wCnt)
+                KOUENKAI_NO(wCnt) = wRow.Cells(CellIndex.KOUENKAI_NO).Text
+                wCnt += 1
             End If
         Next
+
         If wFlag = True Then
-            'QQQ 印刷プレビューへ
+            strSQL = SQL.TBL_KAIJO.NewListPrint(KOUENKAI_NO)
+            Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
+            Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+            Response.Redirect(URL.Preview)
         Else
             CmnModule.AlertMessage("印刷対象がありません。1件以上チェックしてください。", Me)
             Exit Sub
