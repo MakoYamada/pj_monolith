@@ -31,7 +31,7 @@ Partial Public Class Preview
             '帳票出力            If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 '呼び元画面が交通・宿泊手配回答登録画面の場合
                 PrintDrReport()
-            Else
+            ElseIf URL.KaijoRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 '呼び元画面会場手配回答登録画面の場合
                 PrintKaijoReport()
             End If
@@ -46,14 +46,17 @@ Partial Public Class Preview
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
-        Try
-            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
-            TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
-            DSP_KOTSUHOTEL = Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL)
-            If IsNothing(DSP_KOTSUHOTEL) Then Return False
-        Catch ex As Exception
-            Return False
-        End Try
+        If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            Try
+                TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+                TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+                DSP_KOTSUHOTEL = Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL)
+                If IsNothing(DSP_KOTSUHOTEL) Then Return False
+            Catch ex As Exception
+                Return False
+            End Try
+        ElseIf URL.KaijoRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+        End If
         If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
             Return False
         Else
@@ -140,24 +143,17 @@ Partial Public Class Preview
 
     End Sub
 
-    '仮
+    '会場手配データ取得
     Private Function GetKaijoData() As DataTable
 
-        Dim strSQL As String
+        Dim strSQL As String = Session.Item(SessionDef.KaijoPrint_SQL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        'strSQL = SQL.TBL_DR.byMR_ID(Session.Item(SessionDef.LoginID), PLACE)
-        strSQL = "SELECT *" _
-               & " FROM TBL_KAIJO TKJ" _
-               & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-               & " ON TKJ.KOUENKAI_NO = TKE.KOUENKAI_NO"
-
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
         Dim arguments As New DataSourceSelectArguments()
-        'select 
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -166,4 +162,5 @@ Partial Public Class Preview
         Return dtView.Table
 
     End Function
+
 End Class
