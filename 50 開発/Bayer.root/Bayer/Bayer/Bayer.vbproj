@@ -154,6 +154,12 @@
     <Compile Include="DrReport1.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DrReport4.Designer.vb">
+      <DependentUpon>DrReport4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport4.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DrRireki.aspx.designer.vb">
       <DependentUpon>DrRireki.aspx</DependentUpon>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrReport2.resx">
       <DependentUpon>DrReport2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrReport4.resx">
+      <DependentUpon>DrReport4.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KaijoReport.resx">
       <DependentUpon>KaijoReport.vb</DependentUpon>
