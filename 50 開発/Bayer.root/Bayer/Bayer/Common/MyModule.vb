@@ -147,6 +147,15 @@ Public Class MyModule
         Return wDATA_ID.ToString.PadLeft(2, "0"c)
     End Function
 
+    'コストセンター名
+    Public Shared Function GetCostCenterName(ByVal COSTCENTER_CD As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+
+        Dim strSQL As String = SQL.MS_COSTCENTER.byCOSTCENTER_CD(COSTCENTER_CD)
+        Dim MS_COSTCENTER As TableDef.MS_COSTCENTER.DataStruct = AppModule.GetOneRecord(AppModule.TableType.MS_COSTCENTER, strSQL, DbConn)
+
+        Return MS_COSTCENTER.COSTCENTER_NAME
+    End Function
+
     'ログテーブル
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct, _
