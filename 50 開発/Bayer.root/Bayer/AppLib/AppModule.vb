@@ -1153,6 +1153,11 @@ Public Class AppModule
         End Select
     End Function
 
+    '会合手配ID
+    Public Shared Function GetName_TEHAI_ID(ByVal TEHAI_ID As String) As String
+        Return TEHAI_ID
+    End Function
+
     '講演会名
     Public Shared Function GetName_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String) As String
         Return KOUENKAI_NAME
@@ -1899,6 +1904,11 @@ Public Class AppModule
         Else
             Return REQ_TAXI_CNT
         End If
+    End Function
+
+    'その他備考欄
+    Public Shared Function GetName_OTHER_NOTE(ByVal OTHER_NOTE As String) As String
+        Return OTHER_NOTE
     End Function
 
     '見積額（非課税）
