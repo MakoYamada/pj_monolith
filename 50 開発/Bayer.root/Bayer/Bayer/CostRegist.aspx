@@ -50,7 +50,7 @@
 							<asp:Label ID="DispSEIKYU_NO" runat="server"></asp:Label>
 						</td>
 						<td align="right">
-							<asp:Button ID="BtnSubmit" runat="server" Text="登録" Width="150px" CssClass="Button" />
+   						    <asp:Button ID="BtnCalc" runat="server" Text="再計算" Width="150px" CssClass="Button" />
 						</td>
 					</tr>
 					<tr>
@@ -62,7 +62,9 @@
 							<asp:TextBox ID="SEIKYU_YM" runat="server" Width="80px" MaxLength="6"></asp:TextBox>
 							<asp:Label ID="DispSEIKYU_YM" runat="server"></asp:Label>
 						</td>
-						<td></td>
+						<td align="right">
+							<asp:Button ID="BtnSubmit" runat="server" Text="登録" Width="150px" CssClass="Button" />
+						</td>
 					</tr>
 					<tr>
 					    <td>
@@ -77,8 +79,7 @@
 					            <tr>
 					                <td>
                                         <asp:GridView ID="GrvUpdate" runat="server" CellPadding="2" 
-                                            AutoGenerateColumns="False"
-                                            AllowPaging="True" PageSize="20" Width="885px">
+                                            AutoGenerateColumns="False" PageSize="1" Width="995px" ShowFooter="True">
                                             <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
                                             <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                                             <RowStyle Wrap="false" BackColor="#ffffff" />
@@ -86,15 +87,20 @@
 					                        <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="コストセンター">
+                                                    <FooterStyle BackColor="#D8D8D8" />
                                                     <HeaderStyle HorizontalAlign="Left" />
-                                                    <ItemStyle Width="300px" />
+                                                    <ItemStyle Width="410px" HorizontalAlign="Left" VerticalAlign="Top" />
                                                     <ItemTemplate>
                                                         <asp:DropDownList ID="ddlCostCenter" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCostCenter_SelectedIndexChanged">
                                                         </asp:DropDownList>
-                                                        <asp:Label ID="COSTCENTER_NAME" runat="server" Text=""></asp:Label>
+                                                        <asp:Label ID="COSTCENTER_NAME1" runat="server" Text=""></asp:Label>
+                                                        <asp:TextBox ID="COSTCENTER_NAME" runat="server" MaxLength="100" ReadOnly="True" 
+                                                        TextMode="MultiLine" Height="18px" Width="260px"
+                                                        BorderStyle="None"></asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="交通費">
+                                                    <FooterStyle BackColor="#D8D8D8" Font-Bold="False" HorizontalAlign="Right" />
                                                     <HeaderStyle HorizontalAlign="Left" />
                                                     <ItemStyle Width="105px" />
                                                     <ItemTemplate>
@@ -103,6 +109,7 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="宿泊費">
+                                                    <FooterStyle BackColor="#D8D8D8" Font-Bold="False" HorizontalAlign="Right" />
                                                     <HeaderStyle HorizontalAlign="Left" />
                                                     <ItemStyle Width="105px" />
                                                     <ItemTemplate>
@@ -110,6 +117,7 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="タクチケ<br />実車料金(課税)">
+                                                    <FooterStyle BackColor="#D8D8D8" Font-Bold="False" HorizontalAlign="Right" />
                                                     <HeaderStyle HorizontalAlign="Left" />
                                                     <ItemStyle Width="105px" />
                                                     <ItemTemplate>
@@ -117,6 +125,7 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="タクチケ<br />精算料金(課税)">
+                                                    <FooterStyle BackColor="#D8D8D8" Font-Bold="False" HorizontalAlign="Right" />
                                                     <HeaderStyle HorizontalAlign="Left" />
                                                     <ItemStyle Width="105px" />
                                                     <ItemTemplate>
@@ -124,11 +133,16 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="コストセンター計">
+                                                    <FooterStyle BackColor="#D8D8D8" Font-Bold="False" HorizontalAlign="Right" />
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="KEI" runat="server" Text=""></asp:Label>
+                                                    </ItemTemplate>
                                                     <HeaderStyle HorizontalAlign="Left" />
-                                                    <ItemStyle Width="115px" />
+                                                    <ItemStyle Width="115px" HorizontalAlign="Right" />
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="削除">
-                                                    <ItemStyle Width="40px" />
+                                                    <FooterStyle BackColor="#D8D8D8" Font-Bold="False" HorizontalAlign="Right" />
+                                                    <ItemStyle Width="40px" HorizontalAlign="Center" />
                                                     <ItemTemplate>
                                                         <asp:CheckBox ID="chkDelete" runat="server" />
                                                     </ItemTemplate>

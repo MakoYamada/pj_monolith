@@ -97,13 +97,13 @@ Partial Public Class CostRegist
     Protected WithEvents DispSEIKYU_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnSubmit コントロール。
+    '''BtnCalc コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnCalc As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''SEIKYU_YM コントロール。
@@ -122,6 +122,15 @@ Partial Public Class CostRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents DispSEIKYU_YM As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnSubmit コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''btnAdd コントロール。
