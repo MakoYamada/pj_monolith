@@ -1,0 +1,11 @@
+① ASP.NETの再登録
+C:\Windows\Microsoft.NET\Framework\v2.0.50727\aspnet_regiis.exe /i
+
+② binフォルダに以下のdllをコピー
+ActiveReports.Document.dll
+ActiveReports.HtmlExport.dll
+ActiveReports.PdfExport.dll
+ActiveReports.Viewer6.dll
+ActiveReports.Web.Design.dll
+ActiveReports.Web.dll
+ActiveReports6.dll
