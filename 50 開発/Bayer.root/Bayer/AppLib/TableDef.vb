@@ -2133,6 +2133,8 @@
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
 
+            Public DEL_FLAG As String
+
             'プロパティ
             Public ReadOnly Property pCOSTCENTER_CD() As String
                 Get
@@ -2173,6 +2175,8 @@
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
+
+            Public Const DEL_FLAG As String = "DEL_FLAG"
         End Class
         Public Class Name
             Public Const SEIKYU_NO As String = "請求番号"
