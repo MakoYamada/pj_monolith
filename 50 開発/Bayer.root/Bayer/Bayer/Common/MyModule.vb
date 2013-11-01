@@ -212,6 +212,22 @@ Public Class MyModule
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TBL_COST As TableDef.TBL_COST.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "請求番号：" & TBL_COST.SEIKYU_NO _
+                     & "／" _
+                     & "請求年月：" & TBL_COST.SEIKYU_YM _
+                     & "／" _
+                     & "コストセンターコード：" & TBL_COST.COSTCENTER_CD
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal MS_USER As TableDef.MS_USER.DataStruct, _
                                          ByVal STATUS_OK As Boolean, _
                                          ByVal Message As String, _
@@ -235,6 +251,18 @@ Public Class MyModule
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
         TBL_LOG.NOTE = "施設名：" & MS_SHISETSU.SHISETSU_NAME
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                     ByVal MS_COSTCENTER As TableDef.MS_COSTCENTER.DataStruct, _
+                                     ByVal STATUS_OK As Boolean, _
+                                     ByVal Message As String, _
+                                     ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "コストセンターコード：" & MS_COSTCENTER.COSTCENTER_CD
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -317,12 +345,16 @@ Public Class MyModule
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.CostRegist
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCostcenter
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCostcenter
             Case Else
                 TBL_LOG.SYORI_NAME = "画面名 エラー"
         End Select
@@ -337,12 +369,16 @@ Public Class MyModule
                 TBL_LOG.TABLE_NAME = "TBL_KAIJO"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist
                 TBL_LOG.TABLE_NAME = "TBL_SEIKYU"
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist
+                TBL_LOG.TABLE_NAME = "TBL_COST"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu
                 TBL_LOG.TABLE_NAME = "MS_SHISETSU"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser
                 TBL_LOG.TABLE_NAME = "MS_USER"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode
                 TBL_LOG.TABLE_NAME = "MS_CODE"
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCostcenter
+                TBL_LOG.TABLE_NAME = "MS_COSTCENTER"
             Case Else
                 TBL_LOG.TABLE_NAME = ""
         End Select
