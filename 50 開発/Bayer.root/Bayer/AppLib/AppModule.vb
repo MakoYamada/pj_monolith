@@ -6917,14 +6917,14 @@ Public Class AppModule
 #End Region
 
 #Region "コストセンターコード"
-    Public Shared Sub SetDropDownList_COSTCENTER(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
-        With AREA
+    Public Shared Sub SetDropDownList_COSTCENTER(ByRef COSTCENTER As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With COSTCENTER
             .Items.Clear()
             .Items.Add(New ListItem("---", "0"))
 
             Dim strSQL As String
             Dim RsData As System.Data.SqlClient.SqlDataReader
-            strSQL = SQL.MS_COSTCENTER.AllData()
+            strSQL = SQL.MS_COSTCENTER.bySTOP_FLG(CmnConst.Flag.Off)
             RsData = CmnDb.Read(strSQL, DbConn)
             While RsData.Read()
                 .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_COSTCENTER.Column.COSTCENTER_CD, RsData), CmnDb.DbData(TableDef.MS_COSTCENTER.Column.COSTCENTER_CD, RsData)))
