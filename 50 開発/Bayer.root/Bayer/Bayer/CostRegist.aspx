@@ -14,12 +14,12 @@
 							&nbsp;&nbsp;&nbsp;
 							請求年月
 							<asp:TextBox ID="JokenSEIKYU_YM" runat="server" Width="80px" MaxLength="6"></asp:TextBox>
-						</td>
-						<td align="left">
-							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
-						</td>
-						<td align="right">
 							&nbsp;&nbsp;&nbsp;
+						</td>
+						<td>
+							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="150px" CssClass="Button" />
+						</td>
+						<td>
 							<asp:Button ID="BtnRegist" runat="server" Text="新規登録" Width="150px" CssClass="Button" />
 						</td>
 			        </tr>
@@ -49,9 +49,6 @@
 							<asp:TextBox ID="SEIKYU_NO" runat="server" Width="100px" MaxLength="14"></asp:TextBox>
 							<asp:Label ID="DispSEIKYU_NO" runat="server"></asp:Label>
 						</td>
-						<td align="right">
-   						    <asp:Button ID="BtnCalc" runat="server" Text="再計算" Width="150px" CssClass="Button" />
-						</td>
 					</tr>
 					<tr>
 						<td align="left" style="background-color: #87CEEB; color: #555555; font-weight: bold;">
@@ -62,13 +59,15 @@
 							<asp:TextBox ID="SEIKYU_YM" runat="server" Width="80px" MaxLength="6"></asp:TextBox>
 							<asp:Label ID="DispSEIKYU_YM" runat="server"></asp:Label>
 						</td>
-						<td align="right">
-							<asp:Button ID="BtnSubmit" runat="server" Text="登録" Width="150px" CssClass="Button" />
-						</td>
 					</tr>
 					<tr>
 					    <td>
 					        <asp:Button ID="btnAdd" runat="server" Text="行追加" Width="100px" CssClass="Button" />
+					    </td>
+					    <td align="right">
+					        <asp:Button ID="BtnCalc" runat="server" Text="再計算" Width="150px" CssClass="Button" />
+					        &nbsp;&nbsp;&nbsp;
+					        <asp:Button ID="BtnSubmit" runat="server" Text="登録" Width="150px" CssClass="Button" />
 					    </td>
 					</tr>
 				</table>

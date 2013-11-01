@@ -31,6 +31,18 @@ Partial Public Class CostRegist
         COSTCENTER_CD
     End Enum
 
+    'テンプレートフィールド上のコントロール名
+    Private Class CellItem_Update
+        Public Const DDL_COSTCENTER As String = "ddlCostCenter"
+        Public Const TXT_COSTCENTER_NAME As String = "COSTCENTER_NAME"
+        Public Const TXT_KOTSUHI As String = "KOTSUHI"
+        Public Const TXT_HOTELHI As String = "HOTELHI"
+        Public Const TXT_TAXI_T As String = "TAXI_T"
+        Public Const TXT_TAXI_SEISAN_T As String = "TAXI_SEISAN_T"
+        Public Const LBL_KEI As String = "KEI"
+        Public Const CHK_DELETE As String = "CHK_DELETE"
+    End Class
+
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.CostRegist_Search) = TBL_COST_Search
         Session.Item(SessionDef.CostRegist_Update) = TBL_COST_Update
@@ -60,9 +72,8 @@ Partial Public Class CostRegist
             End If
         End If
 
-        'マスターページ設定
+        'マスターページ設定
         With Me.Master
-            .HideLoginUser = True
             .PageTitle = "コストセンター別費用入力"
         End With
     End Sub
@@ -136,7 +147,7 @@ Partial Public Class CostRegist
         'AppModule.SetForm_KENGEN(Joken.KENGEN, Me.JokenKENGEN_Admin, Me.JokenKENGEN_User)
         'AppModule.SetForm_STOP_FLG(Joken.STOP_FLG, Me.JokenSTOP_FLG)
 
-        'データ取得        If Not GetData() Then
+        'データ取得        If Not GetDataSearch() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
         Else
@@ -149,7 +160,7 @@ Partial Public Class CostRegist
     End Sub
 
     'データ取得
-    Private Function GetData() As Boolean
+    Private Function GetDataSearch() As Boolean
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
@@ -170,6 +181,28 @@ Partial Public Class CostRegist
 
         Return wFlag
     End Function
+
+    Private Function GetDataUpdate(ByVal SEIKYU_NO As String, ByVal SEIKYU_YM As String) As Boolean
+        Dim wFlag As Boolean = False
+        Dim wCnt As Integer = 0
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        ReDim TBL_COST_Update(wCnt)
+        Dim strSQL As String = SQL.TBL_COST.bySEIKYU_NO_SEIKYU_YM(SEIKYU_NO, SEIKYU_YM)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+
+            ReDim Preserve TBL_COST_Update(wCnt)
+            TBL_COST_Update(wCnt) = AppModule.SetRsData(RsData, TBL_COST_Update(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
 
     'データソース設定
     Private Sub SetGridViewSearch()
@@ -193,42 +226,16 @@ Partial Public Class CostRegist
 
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
-        ''入力チェック(条件)
-        'If Not Check_Joken() Then Exit Sub
+        '入力チェック(条件)
+        If Not Check_Joken() Then Exit Sub
 
         Joken = Nothing
         Joken.SEIKYU_NO = Trim(Me.JokenSEIKYU_NO.Text)
         Joken.SEIKYU_YM = Trim(Me.JokenSEIKYU_YM.Text)
-        'If CmnCheck.IsInput(Me.JokenKENGEN_Admin) OrElse CmnCheck.IsInput(Me.JokenKENGEN_User) Then
-        '    If CmnCheck.IsInput(Me.JokenKENGEN_Admin) AndAlso Not CmnCheck.IsInput(Me.JokenKENGEN_User) Then
-        '        Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin
-        '    End If
-        '    If Not CmnCheck.IsInput(Me.JokenKENGEN_Admin) AndAlso CmnCheck.IsInput(Me.JokenKENGEN_User) Then
-        '        Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.User
-        '    End If
-        'End If
         Session.Item(SessionDef.Joken) = Joken
 
         '画面項目表示
         SetForm()
-    End Sub
-
-    '[行追加]
-    Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAdd.Click
-
-        GetUpdateValue()
-        Dim indexMax As Integer = TBL_COST_Update.Length
-        '表示している値の配列の最大値に""をセット
-        ReDim Preserve TBL_COST_Update(indexMax)
-        TBL_COST_Update(indexMax).KOTSUHI = ""
-        TBL_COST_Update(indexMax).HOTELHI = ""
-        TBL_COST_Update(indexMax).TAXI_T = ""
-        TBL_COST_Update(indexMax).TAXI_SEISAN_T = ""
-        '再バインド
-        Me.GrvUpdate.DataSource = TBL_COST_Update
-        Me.GrvUpdate.DataBind()
-        '今画面に表示している値をセッションへ
-        Session.Item(SessionDef.CostRegist_Search) = TBL_COST_Search
     End Sub
 
     '[新規登録]
@@ -240,6 +247,22 @@ Partial Public Class CostRegist
 
         '登録枠
         SetForm_Regist()
+    End Sub
+
+    '[行追加]
+    Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAdd.Click
+
+        GetUpdateValue()
+        Dim indexMax As Integer = TBL_COST_Update.Length
+        ReDim Preserve TBL_COST_Update(indexMax)
+        TBL_COST_Update(indexMax).KOTSUHI = ""
+        TBL_COST_Update(indexMax).HOTELHI = ""
+        TBL_COST_Update(indexMax).TAXI_T = ""
+        TBL_COST_Update(indexMax).TAXI_SEISAN_T = ""
+
+        '再バインド
+        Me.GrvUpdate.DataSource = TBL_COST_Update
+        Me.GrvUpdate.DataBind()
     End Sub
 
     '登録枠
@@ -276,23 +299,14 @@ Partial Public Class CostRegist
     'データソース設定
     Private Sub SetGridViewUpdate(ByVal SEIKYU_NO As String, ByVal SEIKYU_YM As String)
         Dim wFlag As Boolean = False
-        Dim wCnt As Integer = 0
-        Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        ReDim TBL_COST_Update(wCnt)
-        Dim strSQL As String = SQL.TBL_COST.bySEIKYU_NO_SEIKYU_YM(SEIKYU_NO, SEIKYU_YM)
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        While RsData.Read()
-            wFlag = True
+        If SEIKYU_NO <> "" OrElse SEIKYU_YM <> "" Then
+            wFlag = GetDataUpdate(SEIKYU_NO, SEIKYU_YM)
+        End If
 
-            ReDim Preserve TBL_COST_Update(wCnt)
-            TBL_COST_Update(wCnt) = AppModule.SetRsData(RsData, TBL_COST_Update(wCnt))
-
-            wCnt += 1
-        End While
-        RsData.Close()
-
+        '1件もデータがないとき、空レコードを作成
         If Not wFlag Then
+            ReDim TBL_COST_Update(0)
             TBL_COST_Update(0).KOTSUHI = ""
             TBL_COST_Update(0).HOTELHI = ""
             TBL_COST_Update(0).TAXI_T = ""
@@ -301,21 +315,6 @@ Partial Public Class CostRegist
 
         Me.GrvUpdate.DataSource = TBL_COST_Update
         Me.GrvUpdate.DataBind()
-
-
-        'With Me.GrvList
-        '    Try
-        '        .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
-        '        .DataBind()
-        '    Catch ex As Exception
-        '        Session.Item(SessionDef.PageIndex) = 0
-        '        .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
-        '        .DataBind()
-        '    End Try
-        '    .Attributes(CmnConst.Html.Attributes.BorderColor) = CmnConst.Html.Color.Border
-        'End With
-
-
 
     End Sub
 
@@ -375,30 +374,27 @@ Partial Public Class CostRegist
 
         If e.Row.RowType = DataControlRowType.DataRow Then
             'プルダウン設定
-            AppModule.SetDropDownList_COSTCENTER(DirectCast(e.Row.FindControl("ddlCostCenter"), DropDownList), MyBase.DbConnection)
-            DirectCast(e.Row.FindControl("ddlCostCenter"), DropDownList).SelectedValue = e.Row.Cells(CellIndex_Update.COSTCENTER_CD).Text
-            'DirectCast(e.Row.FindControl("COSTCENTER_NAME"), Label).Text = GetCostCenterName(e.Row.Cells(CellIndex_Update.COSTCENTER_CD).Text)
-
-
-            'TODO:変更後⇒再計算ボタン押下⇒隠しフィールドのコードから名称取得で本当に問題ないのか？
-            DirectCast(e.Row.FindControl("COSTCENTER_NAME"), TextBox).Text = MyModule.GetCostCenterName(e.Row.Cells(CellIndex_Update.COSTCENTER_CD).Text, MyBase.DbConnection)
-
+            AppModule.SetDropDownList_COSTCENTER(DirectCast(e.Row.FindControl(CellItem_Update.DDL_COSTCENTER), DropDownList), MyBase.DbConnection)
+            'コストセンターコード
+            DirectCast(e.Row.FindControl(CellItem_Update.DDL_COSTCENTER), DropDownList).SelectedValue = e.Row.Cells(CellIndex_Update.COSTCENTER_CD).Text
+            'コストセンター名
+            DirectCast(e.Row.FindControl(CellItem_Update.TXT_COSTCENTER_NAME), TextBox).Text = _
+            MyModule.GetCostCenterName(e.Row.Cells(CellIndex_Update.COSTCENTER_CD).Text, MyBase.DbConnection)
 
             'コストセンター計算出
             Dim lngKei As Long = _
-            CmnModule.DbVal(DirectCast(e.Row.FindControl("KOTSUHI"), TextBox).Text.Trim) + _
-            CmnModule.DbVal(DirectCast(e.Row.FindControl("HOTELHI"), TextBox).Text.Trim) + _
-            CmnModule.DbVal(DirectCast(e.Row.FindControl("TAXI_T"), TextBox).Text.Trim) + _
-            CmnModule.DbVal(DirectCast(e.Row.FindControl("TAXI_SEISAN_T"), TextBox).Text.Trim)
+            CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_KOTSUHI), TextBox).Text.Trim) + _
+            CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_HOTELHI), TextBox).Text.Trim) + _
+            CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_TAXI_T), TextBox).Text.Trim) + _
+            CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_TAXI_SEISAN_T), TextBox).Text.Trim)
 
-            DirectCast(e.Row.FindControl("KEI"), Label).Text = CmnModule.EditComma(lngKei.ToString)
-
+            DirectCast(e.Row.FindControl(CellItem_Update.LBL_KEI), Label).Text = CmnModule.EditComma(lngKei.ToString)
 
             '請求額合計算出
-            lngKotsuhiKei += CmnModule.DbVal(DirectCast(e.Row.FindControl("KOTSUHI"), TextBox).Text)
-            lngHotelhiKei += CmnModule.DbVal(DirectCast(e.Row.FindControl("HOTELHI"), TextBox).Text)
-            lngTaxiKei += CmnModule.DbVal(DirectCast(e.Row.FindControl("TAXI_T"), TextBox).Text)
-            lngTaxiSeisanKei += CmnModule.DbVal(DirectCast(e.Row.FindControl("TAXI_SEISAN_T"), TextBox).Text)
+            lngKotsuhiKei += CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_KOTSUHI), TextBox).Text)
+            lngHotelhiKei += CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_HOTELHI), TextBox).Text)
+            lngTaxiKei += CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_TAXI_T), TextBox).Text)
+            lngTaxiSeisanKei += CmnModule.DbVal(DirectCast(e.Row.FindControl(CellItem_Update.TXT_TAXI_SEISAN_T), TextBox).Text)
 
         ElseIf e.Row.RowType = DataControlRowType.Footer Then
             e.Row.Cells(CellIndex_Update.COSTCENTER).Text = "請求額合計"
@@ -415,44 +411,19 @@ Partial Public Class CostRegist
         Dim ddlist As DropDownList = sender
         Dim name As String = MyModule.GetCostCenterName(ddlist.SelectedValue, MyBase.DbConnection)
 
-        Dim index As Integer
-        'index = DirectCast(ddlist.Parent.Parent, GridViewRow).RowIndex
-        'DirectCast(DirectCast(ddlist.Parent.Parent, GridViewRow).FindControl("COSTCENTER_NAME"), Label).Text = name
-
-        Dim nowGvRow As GridViewRow = GetGridViewRow(ddlist)
+        Dim nowGvRow As GridViewRow = AppModule.GetGridViewRow(ddlist)
 
         If Not nowGvRow Is Nothing Then
-            index = nowGvRow.RowIndex
-            'DirectCast(nowGvRow.FindControl("COSTCENTER_NAME"), Label).Text = name
-            DirectCast(nowGvRow.FindControl("COSTCENTER_NAME"), TextBox).Text = name
+            DirectCast(nowGvRow.FindControl(CellItem_Update.TXT_COSTCENTER_NAME), TextBox).Text = name
         End If
 
     End Sub
 
-    'GridViewのItemTemplateに配置したコントロールがある行(GridViewRow)を取得する
-    Private Function GetGridViewRow(ByVal ctl As Control) As GridViewRow
-
-        Dim item As GridViewRow
-
-        While (Not ctl Is Nothing)
-            Try
-                item = DirectCast(ctl, GridViewRow)
-                If (Not item Is Nothing) Then
-                    Return item
-                End If
-            Catch ex As Exception
-            End Try
-
-            ctl = ctl.Parent '一階層上のコントロールを取得する
-        End While
-
-        Return Nothing
-    End Function
-
     '[再計算]
     Protected Sub BtnCalc_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc.Click
 
-        'TODO:入力チェック
+        '入力チェック
+        If Not Check_Regist() Then Exit Sub
 
         '画面の値を取得
         GetUpdateValue()
@@ -498,6 +469,16 @@ Partial Public Class CostRegist
         End If
     End Sub
 
+    '入力チェック(条件)
+    Private Function Check_Joken() As Boolean
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+        Return True
+    End Function
+
     '入力チェック(登録/変更)
     Private Function Check_Regist() As Boolean
 
@@ -514,10 +495,71 @@ Partial Public Class CostRegist
             End If
         End If
 
+        Dim wCnt As Integer
+        For Each gvRow As GridViewRow In Me.GrvUpdate.Rows
+
+            Dim value As String = ""
+
+            If DirectCast(gvRow.FindControl(CellItem_Update.DDL_COSTCENTER), DropDownList).SelectedIndex > 0 Then
+                'コストセンターが選択されているとき
+                '必須入力
+                value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_KOTSUHI), TextBox).Text.Trim
+                If Not CmnCheck.IsInput(value) Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_COST.Name.KOTSUHI), Me)
+                    Return False
+                End If
+
+                value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_HOTELHI), TextBox).Text.Trim
+                If Not CmnCheck.IsInput(value) Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_COST.Name.HOTELHI), Me)
+                    Return False
+                End If
+
+                value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_TAXI_T), TextBox).Text.Trim
+                If Not CmnCheck.IsInput(value) Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_COST.Name.TAXI_T), Me)
+                    Return False
+                End If
+
+                value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_TAXI_SEISAN_T), TextBox).Text.Trim
+                If Not CmnCheck.IsInput(value) Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_COST.Name.TAXI_SEISAN_T), Me)
+                    Return False
+                End If
+
+            End If
+
+            '数値チェック
+            value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_KOTSUHI), TextBox).Text.Trim
+            If Not CmnCheck.IsNumberOnly(value) Then
+                CmnModule.AlertMessage(MessageDef.Error.NumberOnly(wCnt & "行目の" & TableDef.TBL_COST.Name.KOTSUHI), Me)
+                Return False
+            End If
+
+            value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_HOTELHI), TextBox).Text.Trim
+            If Not CmnCheck.IsNumberOnly(value) Then
+                CmnModule.AlertMessage(MessageDef.Error.NumberOnly(wCnt & "行目の" & TableDef.TBL_COST.Name.HOTELHI), Me)
+                Return False
+            End If
+
+            value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_TAXI_T), TextBox).Text.Trim
+            If Not CmnCheck.IsNumberOnly(value) Then
+                CmnModule.AlertMessage(MessageDef.Error.NumberOnly(wCnt & "行目の" & TableDef.TBL_COST.Name.TAXI_T), Me)
+                Return False
+            End If
+
+            value = DirectCast(gvRow.FindControl(CellItem_Update.TXT_TAXI_SEISAN_T), TextBox).Text.Trim
+            If Not CmnCheck.IsNumberOnly(value) Then
+                CmnModule.AlertMessage(MessageDef.Error.NumberOnly(wCnt & "行目の" & TableDef.TBL_COST.Name.TAXI_SEISAN_T), Me)
+                Return False
+            End If
+
+            'TODO:現在の画面上にコストセンターコードが同じレコードがないかチェックすること
+
+            wCnt += 1
+        Next
 
         'TODO:Insesrt のときはここで、キー重複データ存在チェックする？
-
-        'TODO:現在の画面上にコストセンターコードが同じレコードがないかチェックすること
 
         Return True
     End Function
@@ -539,11 +581,16 @@ Partial Public Class CostRegist
                 TBL_COST_Update(wCnt).SEIKYU_YM = Me.DispSEIKYU_YM.Text
             End If
 
-            TBL_COST_Update(wCnt).COSTCENTER_CD = DirectCast(gvRow.FindControl("ddlCostCenter"), DropDownList).SelectedItem.Value
-            TBL_COST_Update(wCnt).KOTSUHI = DirectCast(gvRow.FindControl("KOTSUHI"), TextBox).Text.Trim
-            TBL_COST_Update(wCnt).HOTELHI = DirectCast(gvRow.FindControl("HOTELHI"), TextBox).Text.Trim
-            TBL_COST_Update(wCnt).TAXI_T = DirectCast(gvRow.FindControl("TAXI_T"), TextBox).Text.Trim
-            TBL_COST_Update(wCnt).TAXI_SEISAN_T = DirectCast(gvRow.FindControl("TAXI_SEISAN_T"), TextBox).Text.Trim
+            TBL_COST_Update(wCnt).COSTCENTER_CD = DirectCast(gvRow.FindControl(CellItem_Update.DDL_COSTCENTER), DropDownList).SelectedItem.Value
+            TBL_COST_Update(wCnt).KOTSUHI = DirectCast(gvRow.FindControl(CellItem_Update.TXT_KOTSUHI), TextBox).Text.Trim
+            TBL_COST_Update(wCnt).HOTELHI = DirectCast(gvRow.FindControl(CellItem_Update.TXT_HOTELHI), TextBox).Text.Trim
+            TBL_COST_Update(wCnt).TAXI_T = DirectCast(gvRow.FindControl(CellItem_Update.TXT_TAXI_T), TextBox).Text.Trim
+            TBL_COST_Update(wCnt).TAXI_SEISAN_T = DirectCast(gvRow.FindControl(CellItem_Update.TXT_TAXI_SEISAN_T), TextBox).Text.Trim
+            If DirectCast(gvRow.FindControl(CellItem_Update.CHK_DELETE), CheckBox).Checked Then
+                TBL_COST_Update(wCnt).DEL_FLAG = CmnConst.Flag.On
+            Else
+                TBL_COST_Update(wCnt).DEL_FLAG = CmnConst.Flag.Off
+            End If
 
             wCnt += 1
         Next
@@ -561,77 +608,31 @@ Partial Public Class CostRegist
     'データ登録
     Private Function InsertData() As Boolean
         Dim strSQL As String
+        Dim idx As Integer
 
         MyBase.BeginTransaction()
         Try
-            For idx As Integer = 0 To TBL_COST_Update.Length - 1
+            For idx = 0 To TBL_COST_Update.Length - 1
 
-                ''コストセンターコードが入力されていてかつDEL_FLAGのチェックがついていないレコードをINS
-                'If TBL_COST_Update(idx).COSTCENTER_CD <> CmnConst.Flag.off AndAlso _
-                '   TBL_COST_Update(idx).DEL_FLAG = CmnConst.Flag.On Then
-
-                'End If
-
-                TBL_COST_Update(idx).SAP_FLAG = AppConst.COST.SAP_FLAG.Code.Mi
-                TBL_COST_Update(idx).INPUT_USER = Session.Item(SessionDef.LoginID)
-                TBL_COST_Update(idx).UPDATE_USER = Session.Item(SessionDef.LoginID)
-
-                'データ登録
-                strSQL = SQL.TBL_COST.Insert(TBL_COST_Update(idx))
-                CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                'コストセンターコードが選択されていてかつDEL_FLAGのチェックがついていないレコードをINS
+                If TBL_COST_Update(idx).COSTCENTER_CD <> CmnConst.Flag.Off AndAlso _
+                   TBL_COST_Update(idx).DEL_FLAG = CmnConst.Flag.Off Then
 
 
-                ''ログ登録
-                'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MSTUSER, TBL_COST(idx), True, "", MyBase.DbConnection)
-            Next idx
 
-            MyBase.Commit()
+                    TBL_COST_Update(idx).SAP_FLAG = AppConst.COST.SAP_FLAG.Code.Mi
+                    TBL_COST_Update(idx).INPUT_USER = Session.Item(SessionDef.LoginID)
+                    TBL_COST_Update(idx).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
-            Return True
-        Catch ex As Exception
-            MyBase.Rollback()
+                    'データ登録
+                    strSQL = SQL.TBL_COST.Insert(TBL_COST_Update(idx))
+                    CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-            ''ログ登録
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MSTUSER, TBL_COST(idx), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
-            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
 
-            Return False
-        End Try
+                    'ログ登録
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), True, "", MyBase.DbConnection)
 
-    End Function
-
-    'データ更新
-    Private Function UpdateData() As Boolean
-        Dim strSQL As String
-
-        MyBase.BeginTransaction()
-        Try
-
-            ''一括削除
-            'strSQL = SQL.TBL_COST.Delete(TBL_COST_Update(0))
-            'CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
-            For idx As Integer = 0 To TBL_COST_Update.Length - 1
-
-                ''コストセンターコードが入力されていてかつDEL_FLAGのチェックがついていないレコードをUPD
-                'If TBL_COST_Update(idx).COSTCENTER_CD <> CmnConst.Flag.off AndAlso _
-                '   TBL_COST_Update(idx).DEL_FLAG = CmnConst.Flag.On Then
-
-                'End If
-
-                TBL_COST_Update(idx).SAP_FLAG = AppConst.COST.SAP_FLAG.Code.Mi
-                TBL_COST_Update(idx).UPDATE_USER = Session.Item(SessionDef.LoginID)
-
-                'データ更新
-                strSQL = SQL.TBL_COST.Update(TBL_COST_Update(idx))
-                Dim updCnt As Integer = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
-                If updCnt = 0 Then
-                    'UPDで0件のデータをINS
                 End If
-
-                'ログ登録
-                'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser, TBL_COST(idx), True, "", MyBase.DbConnection)
             Next idx
 
             MyBase.Commit()
@@ -641,10 +642,60 @@ Partial Public Class CostRegist
             MyBase.Rollback()
 
             'ログ登録
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser, TBL_COST(idx), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
             Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
 
-            Return False
+        End Try
+
+    End Function
+
+    'データ更新
+    Private Function UpdateData() As Boolean
+        Dim strSQL As String
+        Dim idx As Integer
+
+        MyBase.BeginTransaction()
+        Try
+
+            ''一括削除
+            'strSQL = SQL.TBL_COST.Delete(TBL_COST_Update(0))
+            'CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+            For idx = 0 To TBL_COST_Update.Length - 1
+
+                'コストセンターコードが選択されていてかつDEL_FLAGのチェックがついていないレコードをUPD
+                If TBL_COST_Update(idx).COSTCENTER_CD <> CmnConst.Flag.Off AndAlso _
+                   TBL_COST_Update(idx).DEL_FLAG = CmnConst.Flag.Off Then
+
+
+
+                    TBL_COST_Update(idx).SAP_FLAG = AppConst.COST.SAP_FLAG.Code.Mi
+                    TBL_COST_Update(idx).UPDATE_USER = Session.Item(SessionDef.LoginID)
+
+                    'データ更新
+                    strSQL = SQL.TBL_COST.Update(TBL_COST_Update(idx))
+                    Dim updCnt As Integer = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+                    If updCnt = 0 Then
+                        'UPDで0件のデータをINS
+                    End If
+
+                    'ログ登録
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), True, "", MyBase.DbConnection)
+                End If
+
+            Next idx
+
+            MyBase.Commit()
+
+            Return True
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
         End Try
 
     End Function
