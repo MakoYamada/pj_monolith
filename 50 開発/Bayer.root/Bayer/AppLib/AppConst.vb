@@ -558,9 +558,11 @@ Public Class AppConst
                     Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
                     Public Const KaijoRegist As String = "講演会場 手配・見積依頼"
                     Public Const SeisanRegist As String = "精算金額入力"
+                    Public Const CostRegist As String = "コストセンター別費用入力"
                     Public Const MstShisetsu As String = "施設マスタメンテナンス"
                     Public Const MstUser As String = "ユーザマスタメンテナンス"
                     Public Const MstCode As String = "コードマスタメンテナンス"
+                    Public Const MstCostcenter As String = "コストセンターマスタメンテナンス"
                 End Class
                 Public Enum GamenType
                     KouenkaiRegist
@@ -568,9 +570,11 @@ Public Class AppConst
                     DrRegist
                     KaijoRegist
                     SeisanRegist
+                    CostRegist
                     MstShisetsu
                     MstUser
                     MstCode
+                    MstCostcenter
                 End Enum
             End Class
         End Class
