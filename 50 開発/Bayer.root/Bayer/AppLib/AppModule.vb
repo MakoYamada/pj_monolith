@@ -7985,6 +7985,29 @@ Public Class AppModule
 
 #End Region
 
+#Region "== コントロールからコントロールを返す =="
+
+    'GridViewのItemTemplateに配置したコントロールがある行(GridViewRow)を取得する
+    Public Shared Function GetGridViewRow(ByVal ctl As System.Web.UI.Control) As GridViewRow
+
+        Dim item As GridViewRow
+
+        While (Not ctl Is Nothing)
+            Try
+                item = DirectCast(ctl, GridViewRow)
+                If (Not item Is Nothing) Then
+                    Return item
+                End If
+            Catch ex As Exception
+            End Try
+
+            ctl = ctl.Parent '一階層上のコントロールを取得する
+        End While
+
+        Return Nothing
+    End Function
+
+#End Region
 
     '==
     '宿泊手配依頼ありはTrueを返す
