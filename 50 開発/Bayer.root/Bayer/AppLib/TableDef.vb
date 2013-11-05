@@ -2161,6 +2161,16 @@
                     Return TAXI_SEISAN_T
                 End Get
             End Property
+            Public ReadOnly Property pINPUT_DATE() As String
+                Get
+                    Return INPUT_DATE
+                End Get
+            End Property
+            Public ReadOnly Property pINPUT_USER() As String
+                Get
+                    Return INPUT_USER
+                End Get
+            End Property
         End Structure
         Public Class Column
             Public Const SEIKYU_NO As String = "SEIKYU_NO"
