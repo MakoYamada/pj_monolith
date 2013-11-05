@@ -2999,6 +2999,17 @@ Public Class SQL
 
             Return strSQL
         End Function
+
+        Public Shared Function Delete(ByVal TBL_COST As TableDef.TBL_COST.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE TBL_COST"
+            strSQL &= " WHERE " & TableDef.TBL_COST.Column.SEIKYU_NO & "=N'" & CmnDb.SqlString(TBL_COST.SEIKYU_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_COST.Column.SEIKYU_YM & "=N'" & CmnDb.SqlString(TBL_COST.SEIKYU_YM) & "'"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class MS_SHISETSU
