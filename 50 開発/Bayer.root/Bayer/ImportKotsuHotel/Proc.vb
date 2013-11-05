@@ -404,6 +404,12 @@ Public Class Proc
         If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
         If Not Directory.Exists(My.Settings.PATH_RECEIVE_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_RECEIVE_BKUP)
 
+        '作業フォルダを空にする'2013/11/05Add
+        Dim workFiles() As String = Directory.GetFiles(My.Settings.PATH_WORK)
+        For Each workFile As String In workFiles
+            File.Delete(workFile)
+        Next
+
         '受信フォルダ→作業フォルダへコピー
         '受信フォルダからファイルを削除
         For Each motofile As String In receiveFiles
@@ -413,7 +419,7 @@ Public Class Proc
             End If
         Next
 
-        Dim workFiles() As String = Directory.GetFiles(My.Settings.PATH_WORK)
+        workFiles = Directory.GetFiles(My.Settings.PATH_WORK)
         If workFiles.Length = 0 Then
             InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "処理対象ファイルがありません。")
             Exit Sub
@@ -429,7 +435,13 @@ Public Class Proc
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
         For Each filePath As String In workFiles
-            File.Copy(filePath, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileName(filePath))
+            Try
+                File.Copy(filePath, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileName(filePath))
+            Catch ex As Exception
+                File.Copy(filePath, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileNameWithoutExtension(filePath) _
+                                                                        & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
+            End Try
+
             File.Delete(filePath)
         Next
 
