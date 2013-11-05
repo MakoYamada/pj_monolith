@@ -46,7 +46,7 @@
 							請求番号
 						</td>
 						<td align="left" class="TdItem">
-							<asp:TextBox ID="SEIKYU_NO" runat="server" Width="100px" MaxLength="14"></asp:TextBox>
+							<asp:TextBox ID="SEIKYU_NO" runat="server" Width="130px" MaxLength="14"></asp:TextBox>
 							<asp:Label ID="DispSEIKYU_NO" runat="server"></asp:Label>
 						</td>
 					</tr>
@@ -92,9 +92,8 @@
                                                     <ItemTemplate>
                                                         <asp:DropDownList ID="ddlCostCenter" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCostCenter_SelectedIndexChanged">
                                                         </asp:DropDownList>
-                                                        <asp:Label ID="COSTCENTER_NAME1" runat="server" Text=""></asp:Label>
                                                         <asp:TextBox ID="COSTCENTER_NAME" runat="server" MaxLength="100" ReadOnly="True" 
-                                                        TextMode="MultiLine" Height="18px" Width="260px"
+                                                        TextMode="MultiLine" Height="18px" Width="260px" TabIndex="-1"
                                                         BorderStyle="None"></asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
@@ -148,6 +147,8 @@
                                                     <HeaderStyle HorizontalAlign="Center" />
                                                 </asp:TemplateField>
                                                 <asp:BoundField HeaderText="コストセンターコード" DataField="pCOSTCENTER_CD" />
+                                                <asp:BoundField HeaderText="登録日時" DataField="pINPUT_DATE" />
+                                                <asp:BoundField HeaderText="登録者" DataField="pINPUT_USER" />
                                             </Columns>
                                         </asp:GridView>
 					                </td>
