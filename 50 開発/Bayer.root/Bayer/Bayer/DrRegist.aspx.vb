@@ -118,29 +118,51 @@ Partial Public Class DrRegist
         'クリア
         CmnModule.ClearAllControl(Me)
 
-        BtnKOTSU_O_1.ImageUrl = IMG_OPEN
-        BtnKOTSU_O_2.ImageUrl = IMG_OPEN
-        BtnKOTSU_O_3.ImageUrl = IMG_OPEN
-        BtnKOTSU_O_4.ImageUrl = IMG_OPEN
-        BtnKOTSU_O_5.ImageUrl = IMG_OPEN
-        BtnKOTSU_F_1.ImageUrl = IMG_OPEN
-        BtnKOTSU_F_2.ImageUrl = IMG_OPEN
-        BtnKOTSU_F_3.ImageUrl = IMG_OPEN
-        BtnKOTSU_F_4.ImageUrl = IMG_OPEN
-        BtnKOTSU_F_5.ImageUrl = IMG_OPEN
-        TB_KOTSU_O_1.Visible = False
-        TB_KOTSU_O_2.Visible = False
-        TB_KOTSU_O_3.Visible = False
-        TB_KOTSU_O_4.Visible = False
-        TB_KOTSU_O_5.Visible = False
-        TB_KOTSU_F_1.Visible = False
-        TB_KOTSU_F_2.Visible = False
-        TB_KOTSU_F_3.Visible = False
-        TB_KOTSU_F_4.Visible = False
-        TB_KOTSU_F_5.Visible = False
+        'BtnKOTSU_O_1.ImageUrl = IMG_OPEN
+        'BtnKOTSU_O_2.ImageUrl = IMG_OPEN
+        'BtnKOTSU_O_3.ImageUrl = IMG_OPEN
+        'BtnKOTSU_O_4.ImageUrl = IMG_OPEN
+        'BtnKOTSU_O_5.ImageUrl = IMG_OPEN
+        'BtnKOTSU_F_1.ImageUrl = IMG_OPEN
+        'BtnKOTSU_F_2.ImageUrl = IMG_OPEN
+        'BtnKOTSU_F_3.ImageUrl = IMG_OPEN
+        'BtnKOTSU_F_4.ImageUrl = IMG_OPEN
+        'BtnKOTSU_F_5.ImageUrl = IMG_OPEN
+        'TB_KOTSU_O_1.Visible = False
+        'TB_KOTSU_O_2.Visible = False
+        'TB_KOTSU_O_3.Visible = False
+        'TB_KOTSU_O_4.Visible = False
+        'TB_KOTSU_O_5.Visible = False
+        'TB_KOTSU_F_1.Visible = False
+        'TB_KOTSU_F_2.Visible = False
+        'TB_KOTSU_F_3.Visible = False
+        'TB_KOTSU_F_4.Visible = False
+        'TB_KOTSU_F_5.Visible = False
+        BtnKOTSU_O_1.Visible = False
+        BtnKOTSU_O_2.Visible = False
+        BtnKOTSU_O_3.Visible = False
+        BtnKOTSU_O_4.Visible = False
+        BtnKOTSU_O_5.Visible = False
+        BtnKOTSU_F_1.Visible = False
+        BtnKOTSU_F_2.Visible = False
+        BtnKOTSU_F_3.Visible = False
+        BtnKOTSU_F_4.Visible = False
+        BtnKOTSU_F_5.Visible = False
+        TB_KOTSU_O_1.Visible = True
+        TB_KOTSU_O_2.Visible = True
+        TB_KOTSU_O_3.Visible = True
+        TB_KOTSU_O_4.Visible = True
+        TB_KOTSU_O_5.Visible = True
+        TB_KOTSU_F_1.Visible = True
+        TB_KOTSU_F_2.Visible = True
+        TB_KOTSU_F_3.Visible = True
+        TB_KOTSU_F_4.Visible = True
+        TB_KOTSU_F_5.Visible = True
 
-        BtnTAXI_1.ImageUrl = IMG_OPEN
-        TB_TAXI_1.Visible = False
+        'BtnTAXI_1.ImageUrl = IMG_OPEN
+        'TB_TAXI_1.Visible = False
+        BtnTAXI_1.Visible = False
+        TB_TAXI_1.Visible = True
 
         'プルダウン設定
         AppModule.SetDropDownList_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
