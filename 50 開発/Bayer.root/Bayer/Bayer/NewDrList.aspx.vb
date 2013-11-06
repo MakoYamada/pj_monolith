@@ -42,7 +42,6 @@ Partial Public Class NewDrList
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         '共通チェック
-        Session.Item(SessionDef.LoginID) = "QQQ"
         MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納        If Not SetSession() Then

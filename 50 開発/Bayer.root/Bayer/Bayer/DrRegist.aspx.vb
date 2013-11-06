@@ -19,8 +19,6 @@ Partial Public Class DrRegist
     End Sub
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
-        'QQQ
-        Session.Item(SessionDef.LoginID) = "QQQ"
 
         '共通チェック
         If Not Session.Item(SessionDef.DrRireki) Then
