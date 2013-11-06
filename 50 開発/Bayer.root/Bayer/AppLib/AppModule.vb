@@ -4644,7 +4644,7 @@ Public Class AppModule
 
     '往路：利用日（依頼）
     Public Shared Sub SetForm_REQ_O_DATE(ByVal REQ_O_DATE As String, ByRef control As Label)
-        control.Text = CommonLib.CmnModule.Format_Date(REQ_O_DATE, CmnModule.DateFormatType.YYYYMD)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_O_DATE, CmnModule.DateFormatType.YYYYMMDD)
     End Sub
     Public Shared Sub SetForm_REQ_O_DATE_1(ByVal REQ_O_DATE_1 As String, ByRef control As Label)
         SetForm_REQ_O_DATE(REQ_O_DATE_1, control)
@@ -4863,7 +4863,7 @@ Public Class AppModule
 
     '復路：利用日（依頼）
     Public Shared Sub SetForm_REQ_F_DATE(ByVal REQ_F_DATE As String, ByRef control As Label)
-        control.Text = CommonLib.CmnModule.Format_Date(REQ_F_DATE, CmnModule.DateFormatType.YYYYMD)
+        control.Text = CommonLib.CmnModule.Format_Date(REQ_F_DATE, CmnModule.DateFormatType.YYYYMMDD)
     End Sub
     Public Shared Sub SetForm_REQ_F_DATE_1(ByVal REQ_F_DATE_1 As String, ByRef control As Label)
         SetForm_REQ_F_DATE(REQ_F_DATE_1, control)
