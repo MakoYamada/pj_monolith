@@ -228,6 +228,23 @@ Public Class MyModule
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TBL_COST As TableDef.TBL_COST.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection, _
+                                         ByVal DbTran As System.Data.SqlClient.SqlTransaction) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "請求番号：" & TBL_COST.SEIKYU_NO _
+                     & "／" _
+                     & "請求年月：" & TBL_COST.SEIKYU_YM _
+                     & "／" _
+                     & "コストセンターコード：" & TBL_COST.COSTCENTER_CD
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn, DbTran)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal MS_USER As TableDef.MS_USER.DataStruct, _
                                          ByVal STATUS_OK As Boolean, _
                                          ByVal Message As String, _
@@ -319,6 +336,25 @@ Public Class MyModule
         Try
             strSQL = SQL.TBL_LOG.Insert(TBL_LOG)
             CmnDb.Execute(strSQL, DbConn)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TBL_LOG As TableDef.TBL_LOG.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection, _
+                                         ByVal DbTran As System.Data.SqlClient.SqlTransaction) As Boolean
+
+        TBL_LOG = GetValue_TBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message)
+
+        Dim strSQL As String
+
+        Try
+            strSQL = SQL.TBL_LOG.Insert(TBL_LOG)
+            CmnDb.Execute(strSQL, DbConn, DbTran)
             Return True
         Catch ex As Exception
             Return False

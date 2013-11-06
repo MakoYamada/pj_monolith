@@ -109,7 +109,7 @@ Partial Public Class CostRegist
     '画面項目 初期化    Private Sub InitControls()
 
         'IME設定        CmnModule.SetIme(Me.JokenSEIKYU_NO, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenSEIKYU_YM, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.JokenSEIKYU_YM, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -649,7 +649,7 @@ Partial Public Class CostRegist
 
 
                     'ログ登録
-                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), True, "", MyBase.DbConnection)
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), True, "", MyBase.DbConnection, MyBase.DbTransaction)
 
                 End If
             Next idx
@@ -679,6 +679,8 @@ Partial Public Class CostRegist
             '一括削除
             strSQL = Sql.TBL_COST.Delete(TBL_COST_Update(0))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(0), True, "", MyBase.DbConnection, MyBase.DbTransaction)
 
             For idx = 0 To TBL_COST_Update.Length - 1
 
@@ -705,7 +707,7 @@ Partial Public Class CostRegist
                     CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                     'ログ登録
-                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), True, "", MyBase.DbConnection)
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist, TBL_COST_Update(idx), True, "", MyBase.DbConnection, MyBase.DbTransaction)
                 End If
 
             Next idx
