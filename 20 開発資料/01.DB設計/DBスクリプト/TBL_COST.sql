@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[TBL_COST](
 	[HOTELHI] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[TAXI_SEISAN_T] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
-	[SAP_FLAG] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
+	[SAP_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
 	[UPDATE_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
