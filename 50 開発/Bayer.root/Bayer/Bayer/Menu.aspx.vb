@@ -265,6 +265,6 @@ Partial Public Class Menu1
         Session.Remove(SessionDef.CostRegist_Update)
         Session.Remove(SessionDef.PageIndex)
         Session.Remove(SessionDef.SEQ)
-        'Response.Redirect(URL.CostRegist)
+        Response.Redirect(URL.CostRegist)
     End Sub
 End Class
