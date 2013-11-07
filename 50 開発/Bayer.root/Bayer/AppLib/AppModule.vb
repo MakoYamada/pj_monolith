@@ -1846,15 +1846,15 @@ Public Class AppModule
             Return CmnModule.DbVal(ANS_MITSUMORI_TOTAL).ToString
         End If
     End Function
-    Public Shared Function GetName_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As String, ByVal ANS_MITSUMORI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Dim wTOTAL As Long = 0
-        wTOTAL = CmnModule.DbVal(ANS_MITSUMORI_T) + CmnModule.DbVal(ANS_MITSUMORI_TF)
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(wTOTAL)
-        Else
-            Return wTOTAL.ToString
-        End If
-    End Function
+    'Public Shared Function GetName_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As String, ByVal ANS_MITSUMORI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
+    '    Dim wTOTAL As Long = 0
+    '    wTOTAL = CmnModule.DbVal(ANS_MITSUMORI_T) + CmnModule.DbVal(ANS_MITSUMORI_TF)
+    '    If ShortFormat = False Then
+    '        Return CmnModule.EditComma(wTOTAL)
+    '    Else
+    '        Return wTOTAL.ToString
+    '    End If
+    'End Function
 
     '見積額合計関連
     Public Shared Function GetName_ANS_991330401_TF(ByVal ANS_KAIJOUHI_TF As String, ByVal ANS_KIZAIHI_TF As String, ByVal ANS_INSHOKUHI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
@@ -7687,10 +7687,16 @@ Public Class AppModule
     Public Shared Function GetValue_ANS_MITSUMORI_TF(ByVal ANS_MITSUMORI_TF As TextBox) As String
         Return Trim(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow))
     End Function
+    Public Shared Function GetValue_ANS_MITSUMORI_TF(ByVal ANS_TOTAL_TF As String) As String
+        Return ANS_TOTAL_TF
+    End Function
 
     '見積額（課税）
     Public Shared Function GetValue_ANS_MITSUMORI_T(ByVal ANS_MITSUMORI_T As TextBox) As String
         Return Trim(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow))
+    End Function
+    Public Shared Function GetValue_ANS_MITSUMORI_T(ByVal ANS_TOTAL_T As String) As String
+        Return ANS_TOTAL_T
     End Function
 
     '見積額（合計）
@@ -7699,6 +7705,10 @@ Public Class AppModule
     End Function
     Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As TextBox, ByVal ANS_MITSUMORI_TF As TextBox) As String
         Return CmnModule.DbVal(StrConv(ANS_MITSUMORI_T.Text, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_MITSUMORI_TF.Text, VbStrConv.Narrow)).ToString
+    End Function
+
+    Public Shared Function GetValue_ANS_MITSUMORI_TOTAL(ByVal ANS_MITSUMORI_T As String, ByVal ANS_MITSUMORI_TF As String) As String
+        Return CmnModule.DbVal(StrConv(ANS_MITSUMORI_T, VbStrConv.Narrow)) + CmnModule.DbVal(StrConv(ANS_MITSUMORI_TF, VbStrConv.Narrow)).ToString
     End Function
 
     '見積書保存場所URL
@@ -7815,6 +7825,14 @@ Public Class AppModule
         Dim wANS_KANRIHI_T As String = Replace(Trim(StrConv(ANS_KANRIHI_T.Text, VbStrConv.Narrow)), ",", "")
 
         Return CmnModule.DbVal(wANS_JINKENHI_T) + CmnModule.DbVal(wANS_OTHER_T) + CmnModule.DbVal(wANS_KANRIHI_T).ToString
+    End Function
+
+    Public Shared Function GetValue_ANS_TOTAL_TF(ByVal ANS_991330401_TF As String, ByVal ANS_41120200_TF As String) As String
+        Return (CmnModule.DbVal(ANS_991330401_TF) + CmnModule.DbVal(ANS_41120200_TF)).ToString
+    End Function
+
+    Public Shared Function GetValue_ANS_TOTAL_T(ByVal ANS_991330401_T As String, ByVal ANS_41120200_T As String) As String
+        Return (CmnModule.DbVal(ANS_991330401_T) + CmnModule.DbVal(ANS_41120200_T)).ToString
     End Function
 
     'マスタ全般

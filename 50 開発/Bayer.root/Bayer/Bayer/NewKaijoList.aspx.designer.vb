@@ -61,6 +61,33 @@ Partial Public Class NewKaijoList
     Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''SpnCheckPrint コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SpnCheckPrint As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''LnkCheckALL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LnkCheckALL As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''LnkCheckClear コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LnkCheckClear As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''GrvList コントロール。
     '''</summary>
     '''<remarks>

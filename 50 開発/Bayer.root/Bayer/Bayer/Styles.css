@@ -362,29 +362,25 @@ a.menulink:active
 	color: #c60000;
 	text-decoration: underline;
 }
-a.toplink:link 
+a.link:link 
 {
 	cursor: pointer;
-	font-weight: bold;
-	color: #ffffff;
-	text-decoration: none;
-}
-a.toplink:visited 
-{
-	font-weight: bold;
-	color: #ffffff;
-	text-decoration: none;
-}
-a.toplink:hover 
-{
-	font-weight: bold;
-	color: #dff2df;
+	color: #339933;
 	text-decoration: underline;
 }
-a.toplink:active 
+a.link:visited 
 {
-	font-weight: bold;
-	color: #dff2df;
+	color: #339933;
+	text-decoration: underline;
+}
+a.link:hover 
+{
+	color: #263d52;
+	text-decoration: underline;
+}
+a.link:active 
+{
+	color: #263d52;
 	text-decoration: underline;
 }
 .pagerlink a

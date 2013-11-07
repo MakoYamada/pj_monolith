@@ -32,6 +32,12 @@
 			<td align="left">
 				<div class="FontSize1" style="height: 4px;"></div>
 				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
+				<span id="SpnCheckPrint" runat="server">
+					<asp:LinkButton ID="LnkCheckALL" runat="server" CssClass="link">全てにチェック</asp:LinkButton>
+					&nbsp;&nbsp;
+					<asp:LinkButton ID="LnkCheckClear" runat="server" CssClass="link">全てのチェックを解除</asp:LinkButton>
+				</span>
+                <div class="FontSize1" style="height:2px;"></div>
 				<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" CellSpacing="0" 
 				 AutoGenerateColumns="false" ShowHeader="true" ShowFooter="false" 
 				 AllowPaging="true" PageSize="13"

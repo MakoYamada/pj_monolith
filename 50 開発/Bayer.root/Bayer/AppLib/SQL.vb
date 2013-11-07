@@ -2095,11 +2095,11 @@ Public Class SQL
             '講演会テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             If Trim(Joken.BU) <> "" Then
-                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.BU LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.BU=N'" & CmnDb.SqlString(Joken.BU) & "'"
             End If
 
             If Trim(Joken.AREA) <> "" Then
-                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_AREA=N'" & CmnDb.SqlString(Joken.AREA) & "'"
             End If
 
             If Trim(Joken.EIGYOSHO) <> "" Then
@@ -2127,7 +2127,7 @@ Public Class SQL
             End If
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
-                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.SEIHIN_NAME LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.SEIHIN_NAME=N'" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then

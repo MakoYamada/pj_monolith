@@ -9,10 +9,10 @@
 				<table cellpadding="2" cellspacing="0" border="0">
 					<tr>
 						<td align="left" colspan="2">
-							企画担当者
+							BYL企画担当者
 							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
-							手配担当者
+							BYL手配担当者
 							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							製品名
@@ -81,7 +81,7 @@
 						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="USER_NAME" HeaderText="トップ担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />

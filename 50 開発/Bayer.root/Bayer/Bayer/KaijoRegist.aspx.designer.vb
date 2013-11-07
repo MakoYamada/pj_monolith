@@ -241,15 +241,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents KIKAKU_TANTO_TEL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_EMAIL_PC コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL_PC As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''KIKAKU_TANTO_EMAIL_KEITAI コントロール。
     '''</summary>
     '''<remarks>
@@ -257,6 +248,15 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KIKAKU_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KIKAKU_TANTO_EMAIL_PC コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_EMAIL_PC As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TEHAI_TANTO_BU コントロール。
@@ -322,15 +322,6 @@ Partial Public Class KaijoRegist
     Protected WithEvents TEHAI_TANTO_TEL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TEHAI_TANTO_EMAIL_PC コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TEHAI_TANTO_EMAIL_PC As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''TEHAI_TANTO_EMAIL_KEITAI コントロール。
     '''</summary>
     '''<remarks>
@@ -338,6 +329,15 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents TEHAI_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TEHAI_TANTO_EMAIL_PC コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TEHAI_TANTO_EMAIL_PC As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''SANKA_YOTEI_CNT_NMBR コントロール。
@@ -817,58 +817,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_KAISAI_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_MITSUMORI_TF コントロール。
+    '''Image2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_MITSUMORI_TF As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MITSUMORI_T コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MITSUMORI_T As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MITSUMORI_TOTAL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MITSUMORI_TOTAL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''BtnCalc_ANS_MITSUMORI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnCalc_ANS_MITSUMORI As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''ANS_MITSUMORI_URL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MITSUMORI_URL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
     '''ANS_KAIJOUHI_TF コントロール。
@@ -1103,6 +1058,51 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnCalc_ANS_TOTAL_T As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_MITSUMORI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MITSUMORI_TF As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_MITSUMORI_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MITSUMORI_T As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_MITSUMORI_TOTAL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MITSUMORI_TOTAL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BtnCalc_ANS_MITSUMORI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCalc_ANS_MITSUMORI As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ANS_MITSUMORI_URL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MITSUMORI_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnRireki コントロール。

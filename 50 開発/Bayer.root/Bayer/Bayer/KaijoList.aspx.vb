@@ -246,24 +246,6 @@ Partial Public Class KaijoList
             Return False
         End If
 
-        'If Not CmnCheck.IsInput(me.JokenKIKAKU_TANTO_ROMA) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenTEHAI_TANTO_ROMA) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenSEIHIN_NAME) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenKOUENKAI_NO) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenKOUENKAI_NAME) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenFROM_DATE_YYYY) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenFROM_DATE_MM) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenFROM_DATE_DD) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenTO_DATE_YYYY) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenTO_DATE_MM) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenTO_DATE_DD) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenBU) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenKIKAKU_TANTO_AREA) AndAlso _
-        '   Not CmnCheck.IsInput(me.JokenTTANTO_ID) Thens
-        '    CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
-        '    Return False
-        'End If
-
         If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
             Return False

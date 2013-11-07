@@ -85,10 +85,12 @@ Partial Public Class NewKaijoList
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
+            Me.SpnCheckPrint.Visible = False
             Me.GrvList.Visible = False
             CmnModule.SetEnabled(Me.BtnPrint, False)
         Else
             Me.LabelNoData.Visible = False
+            Me.SpnCheckPrint.Visible = True
             Me.GrvList.Visible = True
             CmnModule.SetEnabled(Me.BtnPrint, True)
 
@@ -107,8 +109,6 @@ Partial Public Class NewKaijoList
         Joken = Nothing
         Joken.BU = Trim(Me.JokenBU.Text)
         Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
-        'Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        'Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
         Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.JokenREQ_STATUS_TEHAI)
 
         ReDim TBL_KAIJO(wCnt)
@@ -239,6 +239,20 @@ Partial Public Class NewKaijoList
             CmnModule.AlertMessage("印刷対象がありません。1件以上チェックしてください。", Me)
             Exit Sub
         End If
+    End Sub
+
+    '[全てにチェック]
+    Protected Sub LnkCheckALL_Click(ByVal sender As Object, ByVal e As EventArgs) Handles LnkCheckALL.Click
+        For Each wRow As GridViewRow In Me.GrvList.Rows
+            CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = True
+        Next
+    End Sub
+
+    '[全てのチェックを解除]
+    Protected Sub LnkCheckClear_Click(ByVal sender As Object, ByVal e As EventArgs) Handles LnkCheckClear.Click
+        For Each wRow As GridViewRow In Me.GrvList.Rows
+            CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = False
+        Next
     End Sub
 
 End Class
