@@ -345,7 +345,7 @@ Partial Public Class DrReport1
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 9.999999!
         Me.Shape1.Top = 0.6409445!
-        Me.Shape1.Width = 7.165355!
+        Me.Shape1.Width = 7.151969!
         '
         'Label1
         '
@@ -385,6 +385,7 @@ Partial Public Class DrReport1
         Me.USER_NAME.Left = 5.946457!
         Me.USER_NAME.Name = "USER_NAME"
         Me.USER_NAME.Style = "white-space: nowrap"
+        Me.USER_NAME.Text = Nothing
         Me.USER_NAME.Top = 0.1999998!
         Me.USER_NAME.Width = 1.218898!
         '

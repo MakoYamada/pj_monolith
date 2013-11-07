@@ -368,7 +368,7 @@ Partial Public Class DrReport3
         Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center"
         Me.Label3.Text = "交通宿泊手配依頼"
         Me.Label3.Top = 0.6740159!
-        Me.Label3.Width = 7.165354!
+        Me.Label3.Width = 7.151969!
         '
         'Label1
         '
@@ -408,7 +408,6 @@ Partial Public Class DrReport3
         Me.USER_NAME.Left = 5.946457!
         Me.USER_NAME.Name = "USER_NAME"
         Me.USER_NAME.Style = "white-space: nowrap"
-        Me.USER_NAME.Text = "1234/56/78 12:34:56"
         Me.USER_NAME.Top = 0.2!
         Me.USER_NAME.Width = 1.218898!
         '
