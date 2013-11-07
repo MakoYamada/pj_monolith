@@ -27,6 +27,9 @@ Partial Public Class DrReport3
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label4 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.Shape4 = New DataDynamics.ActiveReports.Shape
+        Me.Shape3 = New DataDynamics.ActiveReports.Shape
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
@@ -138,7 +141,7 @@ Partial Public Class DrReport3
         Me.TEHAI_TAXI = New DataDynamics.ActiveReports.TextBox
         Me.Line13 = New DataDynamics.ActiveReports.Line
         Me.Line18 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.REQ_O_TEHAI_5 = New DataDynamics.ActiveReports.TextBox
         Me.Label45 = New DataDynamics.ActiveReports.Label
         Me.Label46 = New DataDynamics.ActiveReports.Label
         Me.Label47 = New DataDynamics.ActiveReports.Label
@@ -149,7 +152,7 @@ Partial Public Class DrReport3
         Me.Label52 = New DataDynamics.ActiveReports.Label
         Me.Label53 = New DataDynamics.ActiveReports.Label
         Me.Label54 = New DataDynamics.ActiveReports.Label
-        Me.REQ_O_TEHAI_5 = New DataDynamics.ActiveReports.TextBox
+        Me.REQ_F_SEAT_KIBOU5 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_O_IRAINAIYOU_5 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_O_KOTSUKIKAN_5 = New DataDynamics.ActiveReports.TextBox
         Me.REQ_O_DATE_5 = New DataDynamics.ActiveReports.TextBox
@@ -192,22 +195,19 @@ Partial Public Class DrReport3
         Me.Label66 = New DataDynamics.ActiveReports.Label
         Me.Label97 = New DataDynamics.ActiveReports.Label
         Me.REQ_O_SEAT_KIBOU5 = New DataDynamics.ActiveReports.TextBox
-        Me.REQ_F_SEAT_KIBOU5 = New DataDynamics.ActiveReports.TextBox
         Me.Line23 = New DataDynamics.ActiveReports.Line
         Me.Line30 = New DataDynamics.ActiveReports.Line
         Me.Line31 = New DataDynamics.ActiveReports.Line
         Me.Line32 = New DataDynamics.ActiveReports.Line
         Me.Line33 = New DataDynamics.ActiveReports.Line
         Me.Line29 = New DataDynamics.ActiveReports.Line
-        Me.Shape2 = New DataDynamics.ActiveReports.Shape
-        Me.Shape3 = New DataDynamics.ActiveReports.Shape
         Me.Line35 = New DataDynamics.ActiveReports.Line
         Me.Line36 = New DataDynamics.ActiveReports.Line
-        Me.Shape4 = New DataDynamics.ActiveReports.Shape
         Me.Line37 = New DataDynamics.ActiveReports.Line
         Me.Line38 = New DataDynamics.ActiveReports.Line
         Me.Line41 = New DataDynamics.ActiveReports.Line
         Me.Line51 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,6 +298,7 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_FROM_10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TAXI_YOTEIKINGAKU_10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_O_TEHAI_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label45, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label46, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label47, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -308,7 +309,7 @@ Partial Public Class DrReport3
         CType(Me.Label52, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label54, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_O_TEHAI_5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_F_SEAT_KIBOU5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_O_IRAINAIYOU_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_O_KOTSUKIKAN_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_O_DATE_5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -341,7 +342,6 @@ Partial Public Class DrReport3
         CType(Me.Label66, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label97, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_O_SEAT_KIBOU5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_F_SEAT_KIBOU5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -357,7 +357,7 @@ Partial Public Class DrReport3
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 9.999999!
         Me.Shape1.Top = 0.6409448!
-        Me.Shape1.Width = 7.165354!
+        Me.Shape1.Width = 7.151969!
         '
         'Label3
         '
@@ -429,6 +429,36 @@ Partial Public Class DrReport3
         Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape4, Me.Shape3, Me.Shape2, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_SHISETSU_CD, Me.REQ_KOTSU_BIKO, Me.REQ_TAXI_DATE_1, Me.REQ_TAXI_FROM_1, Me.TAXI_YOTEIKINGAKU_1, Me.Line1, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Label20, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.TAXI_YOTEIKINGAKU_5, Me.REQ_TAXI_NOTE, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line34, Me.Line39, Me.Line40, Me.Line52, Me.Label73, Me.Label74, Me.Label75, Me.Label76, Me.Label77, Me.Label78, Me.Label79, Me.Label80, Me.Label81, Me.Label82, Me.Label83, Me.Label84, Me.Label85, Me.Label86, Me.Label98, Me.Label99, Me.TAXI_YOTEIKINGAKU_2, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.TEHAI_TAXI, Me.Line13, Me.Line18, Me.REQ_O_TEHAI_5, Me.Label45, Me.Label46, Me.Label47, Me.Label48, Me.Label49, Me.Label50, Me.Label51, Me.Label52, Me.Label53, Me.Label54, Me.REQ_F_SEAT_KIBOU5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_DATE_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_TIME1_5, Me.REQ_O_TIME2_5, Me.REQ_O_BIN_5, Me.REQ_O_SEAT_5, Me.REQ_F_TEHAI_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_DATE_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_TIME1_5, Me.REQ_F_TIME2_5, Me.REQ_F_BIN_5, Me.REQ_F_SEAT_5, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line54, Me.Label55, Me.Label57, Me.Label58, Me.Label59, Me.Label60, Me.Label61, Me.Label62, Me.Label63, Me.Label64, Me.Label65, Me.Label66, Me.Label97, Me.REQ_O_SEAT_KIBOU5, Me.Shape1, Me.Label3, Me.Label1, Me.PRINT_DATE, Me.Label2, Me.USER_NAME, Me.Label4, Me.Line23, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line29, Me.Line35, Me.Line36, Me.Line37, Me.Line38, Me.Line41, Me.Line51})
         Me.Detail.Height = 10.18558!
         Me.Detail.Name = "Detail"
+        '
+        'Shape4
+        '
+        Me.Shape4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Shape4.Height = 3.0!
+        Me.Shape4.Left = 3.582677!
+        Me.Shape4.Name = "Shape4"
+        Me.Shape4.RoundingRadius = 9.999999!
+        Me.Shape4.Top = 6.189764!
+        Me.Shape4.Width = 1.771654!
+        '
+        'Shape3
+        '
+        Me.Shape3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Shape3.Height = 2.2!
+        Me.Shape3.Left = 3.582677!
+        Me.Shape3.Name = "Shape3"
+        Me.Shape3.RoundingRadius = 9.999999!
+        Me.Shape3.Top = 2.789764!
+        Me.Shape3.Width = 1.771654!
+        '
+        'Shape2
+        '
+        Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Shape2.Height = 9.0!
+        Me.Shape2.Left = 0.0!
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 9.999999!
+        Me.Shape2.Top = 1.189764!
+        Me.Shape2.Width = 1.771654!
         '
         'Label5
         '
@@ -1287,7 +1317,7 @@ Partial Public Class DrReport3
         '
         'Line40
         '
-        Me.Line40.Height = 9.0!
+        Me.Line40.Height = 8.999996!
         Me.Line40.Left = 1.771654!
         Me.Line40.LineWeight = 1.0!
         Me.Line40.Name = "Line40"
@@ -1683,10 +1713,15 @@ Partial Public Class DrReport3
         Me.Line18.Y1 = 2.789764!
         Me.Line18.Y2 = 4.989764!
         '
-        'PageFooter
+        'REQ_O_TEHAI_5
         '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
+        Me.REQ_O_TEHAI_5.DataField = "REQ_O_TEHAI_5"
+        Me.REQ_O_TEHAI_5.Height = 0.1999998!
+        Me.REQ_O_TEHAI_5.Left = 1.771654!
+        Me.REQ_O_TEHAI_5.Name = "REQ_O_TEHAI_5"
+        Me.REQ_O_TEHAI_5.Text = Nothing
+        Me.REQ_O_TEHAI_5.Top = 2.789764!
+        Me.REQ_O_TEHAI_5.Width = 1.811024!
         '
         'Label45
         '
@@ -1798,15 +1833,15 @@ Partial Public Class DrReport3
         Me.Label54.Top = 4.589764!
         Me.Label54.Width = 1.771653!
         '
-        'REQ_O_TEHAI_5
+        'REQ_F_SEAT_KIBOU5
         '
-        Me.REQ_O_TEHAI_5.DataField = "REQ_O_TEHAI_5"
-        Me.REQ_O_TEHAI_5.Height = 0.1999998!
-        Me.REQ_O_TEHAI_5.Left = 1.771654!
-        Me.REQ_O_TEHAI_5.Name = "REQ_O_TEHAI_5"
-        Me.REQ_O_TEHAI_5.Text = Nothing
-        Me.REQ_O_TEHAI_5.Top = 2.789764!
-        Me.REQ_O_TEHAI_5.Width = 1.811024!
+        Me.REQ_F_SEAT_KIBOU5.DataField = "REQ_F_SEAT_KIBOU5"
+        Me.REQ_F_SEAT_KIBOU5.Height = 0.1999998!
+        Me.REQ_F_SEAT_KIBOU5.Left = 5.354331!
+        Me.REQ_F_SEAT_KIBOU5.Name = "REQ_F_SEAT_KIBOU5"
+        Me.REQ_F_SEAT_KIBOU5.Text = Nothing
+        Me.REQ_F_SEAT_KIBOU5.Top = 4.789757!
+        Me.REQ_F_SEAT_KIBOU5.Width = 1.811024!
         '
         'REQ_O_IRAINAIYOU_5
         '
@@ -2006,7 +2041,7 @@ Partial Public Class DrReport3
         Me.Line42.LineWeight = 1.0!
         Me.Line42.Name = "Line42"
         Me.Line42.Top = 2.989764!
-        Me.Line42.Width = 7.165354!
+        Me.Line42.Width = 7.165353!
         Me.Line42.X1 = 0.0000002384186!
         Me.Line42.X2 = 7.165354!
         Me.Line42.Y1 = 2.989764!
@@ -2020,7 +2055,7 @@ Partial Public Class DrReport3
         Me.Line43.LineWeight = 1.0!
         Me.Line43.Name = "Line43"
         Me.Line43.Top = 3.189757!
-        Me.Line43.Width = 7.165354!
+        Me.Line43.Width = 7.165353!
         Me.Line43.X1 = 0.0000002384186!
         Me.Line43.X2 = 7.165354!
         Me.Line43.Y1 = 3.189757!
@@ -2034,7 +2069,7 @@ Partial Public Class DrReport3
         Me.Line44.LineWeight = 1.0!
         Me.Line44.Name = "Line44"
         Me.Line44.Top = 3.389758!
-        Me.Line44.Width = 7.165354!
+        Me.Line44.Width = 7.165353!
         Me.Line44.X1 = 0.0000002384186!
         Me.Line44.X2 = 7.165354!
         Me.Line44.Y1 = 3.389758!
@@ -2048,7 +2083,7 @@ Partial Public Class DrReport3
         Me.Line45.LineWeight = 1.0!
         Me.Line45.Name = "Line45"
         Me.Line45.Top = 3.589757!
-        Me.Line45.Width = 7.165354!
+        Me.Line45.Width = 7.165353!
         Me.Line45.X1 = 0.0000002384186!
         Me.Line45.X2 = 7.165354!
         Me.Line45.Y1 = 3.589757!
@@ -2062,7 +2097,7 @@ Partial Public Class DrReport3
         Me.Line46.LineWeight = 1.0!
         Me.Line46.Name = "Line46"
         Me.Line46.Top = 3.789757!
-        Me.Line46.Width = 7.165354!
+        Me.Line46.Width = 7.165353!
         Me.Line46.X1 = 0.0000002384186!
         Me.Line46.X2 = 7.165354!
         Me.Line46.Y1 = 3.789757!
@@ -2076,7 +2111,7 @@ Partial Public Class DrReport3
         Me.Line47.LineWeight = 1.0!
         Me.Line47.Name = "Line47"
         Me.Line47.Top = 3.98975!
-        Me.Line47.Width = 7.165354!
+        Me.Line47.Width = 7.165353!
         Me.Line47.X1 = 0.0000002384186!
         Me.Line47.X2 = 7.165354!
         Me.Line47.Y1 = 3.98975!
@@ -2090,7 +2125,7 @@ Partial Public Class DrReport3
         Me.Line48.LineWeight = 1.0!
         Me.Line48.Name = "Line48"
         Me.Line48.Top = 4.18975!
-        Me.Line48.Width = 7.165354!
+        Me.Line48.Width = 7.165353!
         Me.Line48.X1 = 0.0000002384186!
         Me.Line48.X2 = 7.165354!
         Me.Line48.Y1 = 4.18975!
@@ -2104,7 +2139,7 @@ Partial Public Class DrReport3
         Me.Line49.LineWeight = 1.0!
         Me.Line49.Name = "Line49"
         Me.Line49.Top = 4.389751!
-        Me.Line49.Width = 7.165354!
+        Me.Line49.Width = 7.165353!
         Me.Line49.X1 = 0.0000002384186!
         Me.Line49.X2 = 7.165354!
         Me.Line49.Y1 = 4.389751!
@@ -2118,7 +2153,7 @@ Partial Public Class DrReport3
         Me.Line50.LineWeight = 1.0!
         Me.Line50.Name = "Line50"
         Me.Line50.Top = 4.589751!
-        Me.Line50.Width = 7.165354!
+        Me.Line50.Width = 7.165353!
         Me.Line50.X1 = 0.0000002384186!
         Me.Line50.X2 = 7.165354!
         Me.Line50.Y1 = 4.589751!
@@ -2132,7 +2167,7 @@ Partial Public Class DrReport3
         Me.Line54.LineWeight = 1.0!
         Me.Line54.Name = "Line54"
         Me.Line54.Top = 4.789751!
-        Me.Line54.Width = 7.165354!
+        Me.Line54.Width = 7.165353!
         Me.Line54.X1 = 0.0000002384186!
         Me.Line54.X2 = 7.165354!
         Me.Line54.Y1 = 4.789751!
@@ -2280,19 +2315,9 @@ Partial Public Class DrReport3
         Me.REQ_O_SEAT_KIBOU5.Top = 4.789757!
         Me.REQ_O_SEAT_KIBOU5.Width = 1.811024!
         '
-        'REQ_F_SEAT_KIBOU5
-        '
-        Me.REQ_F_SEAT_KIBOU5.DataField = "REQ_F_SEAT_KIBOU5"
-        Me.REQ_F_SEAT_KIBOU5.Height = 0.1999998!
-        Me.REQ_F_SEAT_KIBOU5.Left = 5.354331!
-        Me.REQ_F_SEAT_KIBOU5.Name = "REQ_F_SEAT_KIBOU5"
-        Me.REQ_F_SEAT_KIBOU5.Text = Nothing
-        Me.REQ_F_SEAT_KIBOU5.Top = 4.789757!
-        Me.REQ_F_SEAT_KIBOU5.Width = 1.811024!
-        '
         'Line23
         '
-        Me.Line23.Height = 9.0!
+        Me.Line23.Height = 8.999996!
         Me.Line23.Left = 0.0!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
@@ -2318,14 +2343,14 @@ Partial Public Class DrReport3
         '
         'Line31
         '
-        Me.Line31.Height = 9.0!
-        Me.Line31.Left = 7.165355!
+        Me.Line31.Height = 8.999996!
+        Me.Line31.Left = 7.151969!
         Me.Line31.LineWeight = 1.0!
         Me.Line31.Name = "Line31"
         Me.Line31.Top = 1.189764!
         Me.Line31.Width = 0.0!
-        Me.Line31.X1 = 7.165355!
-        Me.Line31.X2 = 7.165355!
+        Me.Line31.X1 = 7.151969!
+        Me.Line31.X2 = 7.151969!
         Me.Line31.Y1 = 1.189764!
         Me.Line31.Y2 = 10.18976!
         '
@@ -2368,26 +2393,6 @@ Partial Public Class DrReport3
         Me.Line29.Y1 = 9.189764!
         Me.Line29.Y2 = 9.189764!
         '
-        'Shape2
-        '
-        Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Shape2.Height = 9.0!
-        Me.Shape2.Left = 0.0!
-        Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 9.999999!
-        Me.Shape2.Top = 1.189764!
-        Me.Shape2.Width = 1.771654!
-        '
-        'Shape3
-        '
-        Me.Shape3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Shape3.Height = 2.2!
-        Me.Shape3.Left = 3.582677!
-        Me.Shape3.Name = "Shape3"
-        Me.Shape3.RoundingRadius = 9.999999!
-        Me.Shape3.Top = 2.789764!
-        Me.Shape3.Width = 1.771654!
-        '
         'Line35
         '
         Me.Line35.Height = 0.0!
@@ -2413,16 +2418,6 @@ Partial Public Class DrReport3
         Me.Line36.X2 = 7.165354!
         Me.Line36.Y1 = 5.989764!
         Me.Line36.Y2 = 5.989764!
-        '
-        'Shape4
-        '
-        Me.Shape4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Shape4.Height = 3.0!
-        Me.Shape4.Left = 3.582677!
-        Me.Shape4.Name = "Shape4"
-        Me.Shape4.RoundingRadius = 9.999999!
-        Me.Shape4.Top = 6.189764!
-        Me.Shape4.Width = 1.771654!
         '
         'Line37
         '
@@ -2478,6 +2473,11 @@ Partial Public Class DrReport3
         Me.Line51.X2 = 7.165354!
         Me.Line51.Y1 = 7.989764!
         Me.Line51.Y2 = 7.989764!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrReport3
         '
@@ -2583,6 +2583,7 @@ Partial Public Class DrReport3
         CType(Me.REQ_TAXI_FROM_10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TAXI_YOTEIKINGAKU_10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_O_TEHAI_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label45, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label46, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label47, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2593,7 +2594,7 @@ Partial Public Class DrReport3
         CType(Me.Label52, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label53, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label54, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_O_TEHAI_5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_F_SEAT_KIBOU5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_O_IRAINAIYOU_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_O_KOTSUKIKAN_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_O_DATE_5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2626,7 +2627,6 @@ Partial Public Class DrReport3
         CType(Me.Label66, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label97, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_O_SEAT_KIBOU5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_F_SEAT_KIBOU5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

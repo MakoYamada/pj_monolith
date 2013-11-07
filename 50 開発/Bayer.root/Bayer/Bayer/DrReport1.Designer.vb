@@ -385,7 +385,6 @@ Partial Public Class DrReport1
         Me.USER_NAME.Left = 5.946457!
         Me.USER_NAME.Name = "USER_NAME"
         Me.USER_NAME.Style = "white-space: nowrap"
-        Me.USER_NAME.Text = "1234/56/78 12:34:56"
         Me.USER_NAME.Top = 0.1999998!
         Me.USER_NAME.Width = 1.218898!
         '
@@ -398,7 +397,7 @@ Partial Public Class DrReport1
         Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center"
         Me.Label3.Text = "交通宿泊手配依頼"
         Me.Label3.Top = 0.6740155!
-        Me.Label3.Width = 7.165355!
+        Me.Label3.Width = 7.151969!
         '
         'Label4
         '
@@ -2437,13 +2436,13 @@ Partial Public Class DrReport1
         'Line54
         '
         Me.Line54.Height = 9.599998!
-        Me.Line54.Left = 7.165355!
+        Me.Line54.Left = 7.151969!
         Me.Line54.LineWeight = 1.0!
         Me.Line54.Name = "Line54"
         Me.Line54.Top = 1.208661!
         Me.Line54.Width = 0.0!
-        Me.Line54.X1 = 7.165355!
-        Me.Line54.X2 = 7.165355!
+        Me.Line54.X1 = 7.151969!
+        Me.Line54.X2 = 7.151969!
         Me.Line54.Y1 = 1.208661!
         Me.Line54.Y2 = 10.80866!
         '

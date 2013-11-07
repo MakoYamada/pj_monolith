@@ -74,8 +74,8 @@ Partial Public Class DrReport4
         Me.Line32 = New DataDynamics.ActiveReports.Line
         Me.Line33 = New DataDynamics.ActiveReports.Line
         Me.Line1 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Line13 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,7 +136,7 @@ Partial Public Class DrReport4
         Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center"
         Me.Label3.Text = "交通宿泊手配依頼"
         Me.Label3.Top = 0.6740159!
-        Me.Label3.Width = 7.165354!
+        Me.Label3.Width = 7.151969!
         '
         'Label1
         '
@@ -748,23 +748,23 @@ Partial Public Class DrReport4
         Me.Line1.Y1 = 1.189764!
         Me.Line1.Y2 = 4.589764!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'Line13
         '
         Me.Line13.Height = 3.4!
-        Me.Line13.Left = 7.165355!
+        Me.Line13.Left = 7.151969!
         Me.Line13.LineWeight = 1.0!
         Me.Line13.Name = "Line13"
         Me.Line13.Top = 1.189764!
         Me.Line13.Width = 0.0!
-        Me.Line13.X1 = 7.165355!
-        Me.Line13.X2 = 7.165355!
+        Me.Line13.X1 = 7.151969!
+        Me.Line13.X2 = 7.151969!
         Me.Line13.Y1 = 1.189764!
         Me.Line13.Y2 = 4.589764!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrReport4
         '
