@@ -151,6 +151,11 @@ Public Class MessageDef
                 Return ItemName & " 変更時にエラーが発生しました"
             End If
         End Function
+
+        '上書き不可
+        Public Shared Function Copy() As String
+            Return "回答欄に入力済みのため、依頼内容をコピーできません"
+        End Function
     End Class
 
     Public Class Confirm
@@ -158,7 +163,6 @@ Public Class MessageDef
         Public Const DataUpdate As String = "更新します。よろしいですか？"
         Public Const DataCancel As String = "キャンセルします。よろしいですか？"
         Public Const DataDelete As String = "削除します。よろしいですか？"
-        Public Const Copy As String = "依頼内容を回答欄に上書きコピーします。よろしいですか？"
     End Class
 
     Public Class Message

@@ -1950,9 +1950,8 @@ Partial Public Class DrRegist
             ANS_O_SEAT_1.SelectedIndex >= 1 OrElse _
             ANS_O_SEAT_KIBOU1.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2006,9 +2005,8 @@ Partial Public Class DrRegist
             ANS_O_SEAT_2.SelectedIndex >= 1 OrElse _
             ANS_O_SEAT_kibou2.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2062,9 +2060,8 @@ Partial Public Class DrRegist
             ANS_O_SEAT_3.SelectedIndex >= 1 OrElse _
             ANS_O_SEAT_kibou3.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2118,9 +2115,8 @@ Partial Public Class DrRegist
             ANS_O_SEAT_4.SelectedIndex >= 1 OrElse _
             ANS_O_SEAT_kibou4.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2174,9 +2170,8 @@ Partial Public Class DrRegist
             ANS_O_SEAT_5.SelectedIndex >= 1 OrElse _
             ANS_O_SEAT_kibou4.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2218,6 +2213,8 @@ Partial Public Class DrRegist
     End Sub
     '交通往路１コピーボタン
     Protected Sub BtnCopy_F_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_1.Click
+        Dim wStr As String
+
         '何れかの項目が入力済みの場合、確認メッセージ表示
         If ANS_F_KOTSUKIKAN_1.SelectedIndex >= 1 OrElse _
             ANS_F_DATE_1.Text.Trim <> String.Empty OrElse _
@@ -2229,9 +2226,8 @@ Partial Public Class DrRegist
             ANS_F_SEAT_1.SelectedIndex >= 1 OrElse _
             ANS_F_SEAT_KIBOU1.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2285,9 +2281,8 @@ Partial Public Class DrRegist
             ANS_F_SEAT_2.SelectedIndex >= 1 OrElse _
             ANS_F_SEAT_kibou2.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2341,9 +2336,8 @@ Partial Public Class DrRegist
             ANS_F_SEAT_3.SelectedIndex >= 1 OrElse _
             ANS_F_SEAT_kibou3.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2397,9 +2391,8 @@ Partial Public Class DrRegist
             ANS_F_SEAT_4.SelectedIndex >= 1 OrElse _
             ANS_F_SEAT_kibou4.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
@@ -2453,9 +2446,8 @@ Partial Public Class DrRegist
             ANS_F_SEAT_5.SelectedIndex >= 1 OrElse _
             ANS_F_SEAT_kibou4.SelectedIndex >= 1 Then
 
-            If MsgBox(MessageDef.Confirm.Copy, MsgBoxStyle.Question, Me.Title) = vbNo Then
-                Exit Sub
-            End If
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
         End If
 
         '交通機関
