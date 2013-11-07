@@ -19,7 +19,7 @@ Public Class DrReport3
         REQ_O_SEAT_5.Text = AppModule.GetName_REQ_O_SEAT(REQ_O_SEAT_5.Text)
         REQ_O_SEAT_KIBOU5.Text = AppModule.GetName_REQ_O_SEAT_KIBOU(REQ_O_SEAT_KIBOU5.Text)
         REQ_F_TEHAI_5.Text = AppModule.GetName_REQ_F_TEHAI(REQ_F_TEHAI_5.Text)
-        REQ_F_TEHAI_5.Text = AppModule.GetName_REQ_F_TEHAI(REQ_F_TEHAI_5.Text)
+        REQ_F_IRAINAIYOU_5.Text = AppModule.GetName_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_5.Text)
         REQ_F_KOTSUKIKAN_5.Text = AppModule.GetName_REQ_F_KOTSUKIKAN(REQ_F_KOTSUKIKAN_5.Text)
         REQ_F_DATE_5.Text = CmnModule.Format_Date(REQ_F_DATE_5.Text, CmnModule.DateFormatType.YYYYMD)
         REQ_F_TIME1_5.Text = CmnModule.Format_Date(REQ_F_TIME1_5.Text, CmnModule.DateFormatType.HHMM)
