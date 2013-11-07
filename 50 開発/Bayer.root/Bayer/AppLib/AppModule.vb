@@ -1621,32 +1621,14 @@ Public Class AppModule
     End Function
 
     '意見交換会場　要・不要
-    Public Shared Function GetName_IKENKOUKAN_KAIJO_TEHAI(ByVal IKENKOUKAN_KAIJO_TEHAI As String) As String
-        Select Case IKENKOUKAN_KAIJO_TEHAI
-            Case AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Name.Yes
-                Return AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Name.Yes
-            Case AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Code.No, AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Name.No
-                Return AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Name.No
-
-            Case Else
-                Return ""
-        End Select
+    Public Shared Function GetName_IKENKOUKAN_KAIJO_TEHAI(ByVal IKENKOUKAN_KAIJO_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_KOUSHI_ROOM_TEHAI(IKENKOUKAN_KAIJO_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_IKENKOUKAN_KAIJO_TEHAI_Yes(ByVal IKENKOUKAN_KAIJO_TEHAI As String) As String
-        Select Case IKENKOUKAN_KAIJO_TEHAI
-            Case AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Name.Yes
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_Yes(IKENKOUKAN_KAIJO_TEHAI)
     End Function
     Public Shared Function GetName_IKENKOUKAN_KAIJO_TEHAI_No(ByVal IKENKOUKAN_KAIJO_TEHAI As String) As String
-        Select Case IKENKOUKAN_KAIJO_TEHAI
-            Case AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Code.No, AppConst.KAIJO.IKENKOUKAN_KAIJO_TEHAI.Name.No
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_No(IKENKOUKAN_KAIJO_TEHAI)
     End Function
 
     '意見交換会　開始時間
@@ -1660,32 +1642,14 @@ Public Class AppModule
     End Function
 
     '講師控室　要・不要
-    Public Shared Function GetName_KOUSHI_ROOM_TEHAI(ByVal KOUSHI_ROOM_TEHAI As String) As String
-        Select Case KOUSHI_ROOM_TEHAI
-            Case AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Code.Yes, AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Name.Yes
-                Return AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Name.Yes
-            Case AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Code.No, AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Name.No
-                Return AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Name.No
-
-            Case Else
-                Return ""
-        End Select
+    Public Shared Function GetName_KOUSHI_ROOM_TEHAI(ByVal KOUSHI_ROOM_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_KOUSHI_ROOM_TEHAI(KOUSHI_ROOM_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_KOUSHI_ROOM_TEHAI_Yes(ByVal KOUSHI_ROOM_TEHAI As String) As String
-        Select Case KOUSHI_ROOM_TEHAI
-            Case AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Code.Yes, AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Name.Yes
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_Yes(KOUSHI_ROOM_TEHAI)
     End Function
     Public Shared Function GetName_KOUSHI_ROOM_TEHAI_No(ByVal KOUSHI_ROOM_TEHAI As String) As String
-        Select Case KOUSHI_ROOM_TEHAI
-            Case AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Code.No, AppConst.KAIJO.KOUSHI_ROOM_TEHAI.Name.No
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_No(KOUSHI_ROOM_TEHAI)
     End Function
 
     '講師控室　開始時間
@@ -1706,34 +1670,15 @@ Public Class AppModule
         Return KOUSHI_ROOM_CNT
     End Function
 
-
     '社員控室　要・不要
-    Public Shared Function GetName_SHAIN_ROOM_TEHAI(ByVal SHAIN_ROOM_TEHAI As String) As String
-        Select Case SHAIN_ROOM_TEHAI
-            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.Yes, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.Yes
-                Return AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.Yes
-            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.No, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.No
-                Return AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.No
-
-            Case Else
-                Return ""
-        End Select
+    Public Shared Function GetName_SHAIN_ROOM_TEHAI(ByVal SHAIN_ROOM_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_KOUSHI_ROOM_TEHAI(SHAIN_ROOM_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_SHAIN_ROOM_TEHAI_Yes(ByVal SHAIN_ROOM_TEHAI As String) As String
-        Select Case SHAIN_ROOM_TEHAI
-            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.Yes, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.Yes
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_Yes(SHAIN_ROOM_TEHAI)
     End Function
     Public Shared Function GetName_SHAIN_ROOM_TEHAI_No(ByVal SHAIN_ROOM_TEHAI As String) As String
-        Select Case SHAIN_ROOM_TEHAI
-            Case AppConst.KAIJO.SHAIN_ROOM_TEHAI.Code.No, AppConst.KAIJO.SHAIN_ROOM_TEHAI.Name.No
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_No(SHAIN_ROOM_TEHAI)
     End Function
 
     '社員控室 人数
@@ -1746,32 +1691,14 @@ Public Class AppModule
     End Function
 
     '世話人会場　要・不要
-    Public Shared Function GetName_MANAGER_KAIJO_TEHAI(ByVal MANAGER_KAIJO_TEHAI As String) As String
-        Select Case MANAGER_KAIJO_TEHAI
-            Case AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Name.Yes
-                Return AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Name.Yes
-            Case AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Code.No, AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Name.No
-                Return AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Name.No
-
-            Case Else
-                Return ""
-        End Select
+    Public Shared Function GetName_MANAGER_KAIJO_TEHAI(ByVal MANAGER_KAIJO_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_KOUSHI_ROOM_TEHAI(MANAGER_KAIJO_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_MANAGER_KAIJO_TEHAI_Yes(ByVal MANAGER_KAIJO_TEHAI As String) As String
-        Select Case MANAGER_KAIJO_TEHAI
-            Case AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Name.Yes
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_Yes(MANAGER_KAIJO_TEHAI)
     End Function
     Public Shared Function GetName_MANAGER_KAIJO_TEHAI_No(ByVal MANAGER_KAIJO_TEHAI As String) As String
-        Select Case MANAGER_KAIJO_TEHAI
-            Case AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Code.No, AppConst.KAIJO.MANAGER_KAIJO_TEHAI.Name.No
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_No(MANAGER_KAIJO_TEHAI)
     End Function
 
     '世話人会場　開始時間
@@ -1799,32 +1726,14 @@ Public Class AppModule
     End Function
 
     '慰労会会場　要・不要
-    Public Shared Function GetName_IROUKAI_KAIJO_TEHAI(ByVal IROUKAI_KAIJO_TEHAI As String) As String
-        Select Case IROUKAI_KAIJO_TEHAI
-            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.Yes
-                Return AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.Yes
-            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.No, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.No
-                Return AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.No
-
-            Case Else
-                Return ""
-        End Select
+    Public Shared Function GetName_IROUKAI_KAIJO_TEHAI(ByVal IROUKAI_KAIJO_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_KOUSHI_ROOM_TEHAI(IROUKAI_KAIJO_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_IROUKAI_KAIJO_TEHAI_Yes(ByVal IROUKAI_KAIJO_TEHAI As String) As String
-        Select Case IROUKAI_KAIJO_TEHAI
-            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.Yes
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_Yes(IROUKAI_KAIJO_TEHAI)
     End Function
     Public Shared Function GetName_IROUKAI_KAIJO_TEHAI_No(ByVal IROUKAI_KAIJO_TEHAI As String) As String
-        Select Case IROUKAI_KAIJO_TEHAI
-            Case AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Code.No, AppConst.KAIJO.IROUKAI_KAIJO_TEHAI.Name.No
-                Return "●"
-            Case Else
-                Return "○"
-        End Select
+        Return GetName_KOUEN_KAIJO_TEHAI_No(IROUKAI_KAIJO_TEHAI)
     End Function
 
     '慰労会参加予定者数

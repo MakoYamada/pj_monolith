@@ -349,68 +349,38 @@ Public Class AppConst
             Public Class Name
                 Public Const Yes As String = "要"
                 Public Const No As String = "不要"
+                Public Class ShortFormat
+                    Public Const Yes As String = "要"
+                    Public Const No As String = "不"
+                End Class
             End Class
         End Class
 
         Public Class SHAIN_ROOM_TEHAI
             '社員控室　要・不要
-            Public Class Code
-                Public Const Yes As String = "1"
-                Public Const No As String = "2"
-            End Class
-            Public Class Name
-                Public Const Yes As String = "要"
-                Public Const No As String = "不要"
-            End Class
-        End Class
+            Inherits KOUEN_KAIJO_TEHAI
+         End Class
 
         Public Class IKENKOUKAN_KAIJO_TEHAI
             '意見交換会場　要・不要
-            Public Class Code
-                Public Const Yes As String = "1"
-                Public Const No As String = "2"
-            End Class
-            Public Class Name
-                Public Const Yes As String = "要"
-                Public Const No As String = "不要"
-            End Class
+            Inherits KOUEN_KAIJO_TEHAI
         End Class
 
         Public Class IROUKAI_KAIJO_TEHAI
             '慰労会会場　要・不要
-            Public Class Code
-                Public Const Yes As String = "1"
-                Public Const No As String = "2"
-            End Class
-            Public Class Name
-                Public Const Yes As String = "要"
-                Public Const No As String = "不要"
-            End Class
+            Inherits KOUEN_KAIJO_TEHAI
         End Class
 
         Public Class KOUSHI_ROOM_TEHAI
             '講師控室　要・不要
-            Public Class Code
-                Public Const Yes As String = "1"
-                Public Const No As String = "2"
-            End Class
-            Public Class Name
-                Public Const Yes As String = "要"
-                Public Const No As String = "不要"
-            End Class
+            Inherits KOUEN_KAIJO_TEHAI
         End Class
 
         Public Class MANAGER_KAIJO_TEHAI
             '世話人会場　要・不要
-            Public Class Code
-                Public Const Yes As String = "1"
-                Public Const No As String = "2"
-            End Class
-            Public Class Name
-                Public Const Yes As String = "要"
-                Public Const No As String = "不要"
-            End Class
+            Inherits KOUEN_KAIJO_TEHAI
         End Class
+
     End Class
 
     Public Class KOUENKAI
@@ -552,7 +522,7 @@ Public Class AppConst
                 End Class
             End Class
             Public Class GAMEN
-                 Public Class Name
+                Public Class Name
                     Public Const KouenkaiRegist As String = "講演会基本情報"
                     Public Const NewDrList As String = "新着 宿泊・交通一覧"
                     Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
