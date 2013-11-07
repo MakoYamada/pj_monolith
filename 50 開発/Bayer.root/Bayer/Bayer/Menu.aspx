@@ -1,22 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="Menu.aspx.vb" Inherits="Bayer.Menu1" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table border="0" cellpadding="2" cellspacing="0" style="width: 100%;">
-		<tr valign="top">
-			<td align="center">
-				<table border="0" cellpadding="2" cellspacing="0">
-					<tr valign="top">
-						<td align="center">
-							&nbsp;</td>
-						<td style="width: 10px;"></td>
-						<td align="center">
-							&nbsp;</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="2" cellspacing="0" class="style1">
+	<table border="0" cellpadding="2" cellspacing="0" class="style1" style="margin-top: 10px;">
 		<tr>
 			<td align="center">
 				<table cellpadding="3" cellspacing="2" border="0">

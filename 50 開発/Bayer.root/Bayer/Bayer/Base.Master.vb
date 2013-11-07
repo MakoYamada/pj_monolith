@@ -57,7 +57,7 @@ Partial Public Class Base
 
         Me.ImgSiteName.ImageUrl = "~/Images/logo.png"
         'Me.TdHeader1.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgheader.png") & "')"
-        'Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
+        Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
 
         If Trim(Session.Item(SessionDef.LoginID)) = "" Then
             pHideLogout = True
