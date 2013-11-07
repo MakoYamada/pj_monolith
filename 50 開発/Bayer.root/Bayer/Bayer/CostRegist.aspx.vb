@@ -472,6 +472,12 @@ Partial Public Class CostRegist
     '入力チェック(登録/変更)
     Private Function Check_Regist() As Boolean
 
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
         '必須入力
         If Me.SEIKYU_NO.Visible = True Then
             If Not CmnCheck.IsInput(Me.SEIKYU_NO) Then
@@ -479,8 +485,18 @@ Partial Public Class CostRegist
                 Return False
             End If
 
+            If Not CmnCheck.IsAlphanumericHyphen(Me.SEIKYU_NO) Then
+                CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly(TableDef.TBL_COST.Name.SEIKYU_NO), Me)
+                Return False
+            End If
+
             If Not CmnCheck.IsInput(Me.SEIKYU_YM) Then
                 CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_COST.Name.SEIKYU_YM), Me)
+                Return False
+            End If
+
+            If Not CmnCheck.IsNumberOnly(Me.SEIKYU_YM) Then
+                CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_COST.Name.SEIKYU_YM), Me)
                 Return False
             End If
         End If
