@@ -2538,7 +2538,6 @@ Public Class AppModule
                 Return AppConst.KOTSUHOTEL.REQ_F_TEHAI.Mark.Yes
             Case AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.No, AppConst.KOTSUHOTEL.REQ_F_TEHAI.Name.No
                 Return AppConst.KOTSUHOTEL.REQ_F_TEHAI.Mark.No
-
             Case Else
                 Return ""
         End Select
@@ -2968,7 +2967,6 @@ Public Class AppModule
                 Return AppConst.KOTSUHOTEL.REQ_F_IRAINAIYOU.Name.Change
             Case AppConst.KOTSUHOTEL.REQ_F_IRAINAIYOU.Code.Cancel, AppConst.KOTSUHOTEL.REQ_F_IRAINAIYOU.Name.Cancel
                 Return AppConst.KOTSUHOTEL.REQ_F_IRAINAIYOU.Name.Cancel
-
             Case Else
                 Return ""
         End Select
@@ -4513,7 +4511,7 @@ Public Class AppModule
 
     '往路：依頼内容（依頼）
     Public Shared Sub SetForm_REQ_O_IRAINAIYOU(ByVal REQ_O_IRAINAIYOU As String, ByRef control As Label)
-        control.Text = REQ_O_IRAINAIYOU
+        control.Text = GetName_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU)
     End Sub
     Public Shared Sub SetForm_REQ_O_IRAINAIYOU_1(ByVal REQ_O_IRAINAIYOU_1 As String, ByRef control As Label)
         SetForm_REQ_O_IRAINAIYOU(REQ_O_IRAINAIYOU_1, control)
@@ -4732,7 +4730,7 @@ Public Class AppModule
 
     '復路：依頼内容（依頼）
     Public Shared Sub SetForm_REQ_F_IRAINAIYOU(ByVal REQ_F_IRAINAIYOU As String, ByRef control As Label)
-        control.Text = REQ_F_IRAINAIYOU
+        control.Text = GetName_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU)
     End Sub
     Public Shared Sub SetForm_REQ_F_IRAINAIYOU_1(ByVal REQ_F_IRAINAIYOU_1 As String, ByRef control As Label)
         SetForm_REQ_F_IRAINAIYOU(REQ_F_IRAINAIYOU_1, control)
