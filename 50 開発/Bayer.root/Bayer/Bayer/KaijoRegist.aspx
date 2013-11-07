@@ -7,7 +7,7 @@
 				<table cellspacing="2" border="0" style="border: 3px double #339933; width: 100%; background-color: #eaf8ff; margin-bottom: 5px;">
 					<tr>
 						<td align="center" style="padding: 3px; color: #0099cc; font-weight: bold;">
-							ダブルクォーテーション・改行(Enterキー)は<br />
+							ダブルクォーテーション「”」・改行(Enterキー)は<br />
 							入力できません。
 						</td>
 					</tr>
@@ -16,9 +16,8 @@
 		</tr>
 		<tr>
 			<td nowrap="nowrap" align="right">
-				<table cellspacing="0" border="0" style="width: 940px;">
+				<table cellspacing="0" border="0">
 					<tr>
-						<td>&nbsp;</td>
 						<td nowrap="nowrap" align="center" class="TdTitleKaijo" style="width: 90px;">
 							&nbsp;
 							ステータス
@@ -26,6 +25,9 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 200px;">
 							<asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="200px"></asp:DropDownList>
+						</td>
+						<td nowrap="nowrap" align="left">
+							<asp:Image runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/help.png" /><a href="#" class="linkpwr" onclick="window.open('KaijoStatus.html','help','width=500,height=400,menubar=no,stausbar=no,toolbar=no,location=no,resizable=no,scrollbars=no')">ステータスについて</a>
 						</td>
 					</tr>
 				</table>

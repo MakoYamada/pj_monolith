@@ -75,9 +75,7 @@ Partial Public Class NewKaijoList
         'IME設定
         CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenKIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.JokenTTANTO_ID, CmnModule.ImeType.Disabled)
-
+        
         'クリア
         CmnModule.ClearAllControl(Me)
     End Sub
@@ -109,8 +107,8 @@ Partial Public Class NewKaijoList
         Joken = Nothing
         Joken.BU = Trim(Me.JokenBU.Text)
         Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
-        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
+        'Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        'Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
         Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.JokenREQ_STATUS_TEHAI)
 
         ReDim TBL_KAIJO(wCnt)
@@ -189,6 +187,12 @@ Partial Public Class NewKaijoList
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Regist"
+                Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
+                Session.Remove(SessionDef.KaijoRireki_SEQ)
+                Session.Remove(SessionDef.KaijoRireki_PageIndex)
+                Session.Remove(SessionDef.KaijoRireki)
+                Session.Remove(SessionDef.ShisetsuKensaku_Back)
+
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex

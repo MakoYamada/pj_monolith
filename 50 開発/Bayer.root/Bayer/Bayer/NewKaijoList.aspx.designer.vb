@@ -34,24 +34,6 @@ Partial Public Class NewKaijoList
     Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenKOUENKAI_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTTANTO_ID コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTTANTO_ID As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''JokenREQ_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>

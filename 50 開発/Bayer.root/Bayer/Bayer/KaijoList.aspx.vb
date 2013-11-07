@@ -203,6 +203,12 @@ Partial Public Class KaijoList
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Regist"
+                Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
+                Session.Remove(SessionDef.KaijoRireki_SEQ)
+                Session.Remove(SessionDef.KaijoRireki_PageIndex)
+                Session.Remove(SessionDef.KaijoRireki)
+                Session.Remove(SessionDef.ShisetsuKensaku_Back)
+
                 Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KAIJO) = TBL_KAIJO
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex

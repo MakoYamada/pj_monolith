@@ -336,7 +336,7 @@ Public Class AppConst
             End Class
             Public Class Name
                 Public Const Yes As String = "SRMî≠íç"
-                Public Const No As String = "SRMî≠íçà»äO"
+                Public Const No As String = "SAPê∏éZ"
             End Class
         End Class
 

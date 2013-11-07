@@ -464,6 +464,7 @@
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRegist.aspx" />
     <Content Include="KaijoRireki.aspx" />
+    <Content Include="KaijoStatus.html" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
