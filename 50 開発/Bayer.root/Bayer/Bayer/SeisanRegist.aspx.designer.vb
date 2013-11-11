@@ -25,6 +25,15 @@ Partial Public Class SeisanRegist
     Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''SEISAN_YM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEISAN_YM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''SEIKYU_NO_TOPTOUR コントロール。
     '''</summary>
     '''<remarks>
@@ -133,24 +142,6 @@ Partial Public Class SeisanRegist
     Protected WithEvents OTHER_TRAFFIC_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TAXI_TF コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TAXI_TF As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''HOTEL_COMMISSION_TF コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents HOTEL_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''TAXI_COMMISSION_TF コントロール。
     '''</summary>
     '''<remarks>
@@ -160,13 +151,13 @@ Partial Public Class SeisanRegist
     Protected WithEvents TAXI_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TAXI_SEISAN_TF コントロール。
+    '''HOTEL_COMMISSION_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TAXI_SEISAN_TF As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents HOTEL_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''JINKENHI_TF コントロール。
@@ -194,6 +185,24 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KANRIHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TAXI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TAXI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TAXI_SEISAN_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TAXI_SEISAN_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''KEI_41120200_TF コントロール。
@@ -295,13 +304,31 @@ Partial Public Class SeisanRegist
     Protected WithEvents KEI_T As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''SEISAN_YM コントロール。
+    '''MR_HOTEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SEISAN_YM As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents MR_HOTEL As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''MR_JR コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_JR As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SEISANSHO_URL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEISANSHO_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TAXI_T コントロール。
@@ -322,15 +349,6 @@ Partial Public Class SeisanRegist
     Protected WithEvents TAXI_SEISAN_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SEISANSHO_URL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEISANSHO_URL As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''TAXI_TICKET_URL コントロール。
     '''</summary>
     '''<remarks>
@@ -346,25 +364,7 @@ Partial Public Class SeisanRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SEISAN_KANRYO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MR_JR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_JR As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MR_HOTEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_HOTEL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SEISAN_KANRYO As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''BtnCalc コントロール。

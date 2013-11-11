@@ -83,7 +83,6 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.TAXI_SEISAN_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.SEISANSHO_URL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TAXI_TICKET_URL, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.SEISAN_KANRYO, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.MR_JR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL, CmnModule.ImeType.Disabled)
 
@@ -140,7 +139,7 @@ Partial Public Class SeisanRegist
         Me.TAXI_SEISAN_T.Text = TBL_SEIKYU(SEQ).TAXI_SEISAN_T
         Me.SEISANSHO_URL.Text = TBL_SEIKYU(SEQ).SEISANSHO_URL
         Me.TAXI_TICKET_URL.Text = TBL_SEIKYU(SEQ).TAXI_TICKET_URL
-        Me.SEISAN_KANRYO.Text = TBL_SEIKYU(SEQ).SEISAN_KANRYO
+        AppModule.SetForm_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO, Me.SEISAN_KANRYO)
         Me.MR_JR.Text = TBL_SEIKYU(SEQ).MR_JR
         Me.MR_HOTEL.Text = TBL_SEIKYU(SEQ).MR_HOTEL
     End Sub
@@ -252,12 +251,6 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsNumberOnly(Me.TAXI_SEISAN_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_T), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, _
-                                                             Me.SEISAN_KANRYO.MaxLength, True), Me)
             Return False
         End If
 
@@ -420,7 +413,7 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).TAXI_SEISAN_T = Me.TAXI_SEISAN_T.Text
         TBL_SEIKYU(SEQ).SEISANSHO_URL = Me.SEISANSHO_URL.Text
         TBL_SEIKYU(SEQ).TAXI_TICKET_URL = Me.TAXI_TICKET_URL.Text
-        TBL_SEIKYU(SEQ).SEISAN_KANRYO = Me.SEISAN_KANRYO.Text
+        TBL_SEIKYU(SEQ).SEISAN_KANRYO = AppModule.GetValue_SEISAN_KANRYO(Me.SEISAN_KANRYO)
         TBL_SEIKYU(SEQ).MR_JR = Me.MR_JR.Text
         TBL_SEIKYU(SEQ).MR_HOTEL = Me.MR_HOTEL.Text
 
