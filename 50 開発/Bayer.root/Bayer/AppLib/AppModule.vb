@@ -6205,6 +6205,17 @@ Public Class AppModule
     End Sub
 #End Region
 
+#Region "精算入力画面　画面項目表示"
+
+    Public Shared Sub SetForm_SEISAN_KANRYO(ByVal SEISAN_KANRYO As String, ByRef control As CheckBox)
+        If SEISAN_KANRYO = CmnConst.flag.on Then
+            control.Checked = True
+        Else
+            control.Checked = False
+        End If
+    End Sub
+
+#End Region
 
 #Region "== プルダウン設定 =="
     '#Region "事業部"
@@ -7833,6 +7844,14 @@ Public Class AppModule
 
     Public Shared Function GetValue_ANS_TOTAL_T(ByVal ANS_991330401_T As String, ByVal ANS_41120200_T As String) As String
         Return (CmnModule.DbVal(ANS_991330401_T) + CmnModule.DbVal(ANS_41120200_T)).ToString
+    End Function
+
+    Public Shared Function GetValue_SEISAN_KANRYO(ByVal SEISAN_KANRYO As CheckBox) As String
+        If SEISAN_KANRYO.Checked = True Then
+            Return CmnConst.flag.on
+        Else
+            Return CmnConst.flag.off
+        End If
     End Function
 
     'マスタ全般
