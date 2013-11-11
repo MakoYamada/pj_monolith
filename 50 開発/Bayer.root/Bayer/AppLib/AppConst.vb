@@ -231,10 +231,10 @@ Public Class AppConst
                 Public Const No = "9"
             End Class
             Public Class Name
-                Public Const Side As String = "ドクターの隣席"
-                Public Const DifferntSeat As String = "ドクターと同便別席"
-                Public Const DifferntTraffic As String = "ドクターと別便"
-                Public Const No = "不要"
+                Public Const Side As String = "隣席にて手配済"
+                Public Const DifferntSeat As String = "別席"
+                Public Const DifferntTraffic As String = "別便"
+                Public Const No = "手配無し"
             End Class
         End Class
 
@@ -247,10 +247,10 @@ Public Class AppConst
                 Public Const No = "9"
             End Class
             Public Class Name
-                Public Const Side As String = "ドクターの隣席"
-                Public Const DifferntSeat As String = "ドクターと同便別席"
-                Public Const DifferntTraffic As String = "ドクターと別便"
-                Public Const No = "不要"
+                Public Const Side As String = "隣席にて手配済"
+                Public Const DifferntSeat As String = "別席"
+                Public Const DifferntTraffic As String = "別便"
+                Public Const No = "手配無し"
             End Class
         End Class
 
@@ -449,6 +449,7 @@ Public Class AppConst
         Public Const MR_TEHAI As String = "09"              '社員臨席希望
         Public Const MR_HOTEL_SMOKING As String = "10"      '社員ホテル禁煙
         Public Const ROOM_TYPE As String = "11"             '宿泊部屋タイプ
+
     End Class
 
     Public Class STOP_FLG
@@ -466,6 +467,38 @@ Public Class AppConst
             Public Class Code
                 Public Const Admin As String = "1"
                 Public Const User As String = "2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             End Class
             Public Class Name
                 Public Const Admin As String = "管理者"
