@@ -29,7 +29,6 @@ Partial Public Class NewKouenkaiList
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         '共通チェック
-        Session.Item(SessionDef.LoginID) = "QQQ"
         MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納        If Not SetSession() Then
@@ -68,11 +67,9 @@ Partial Public Class NewKouenkaiList
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        'AppModule.SetDropDownList_BU(Me.JOKEN_BU)
+        'AppModule.SetDropDownList_AREA(Me.JOKEN_AREA)
         AppModule.SetDropDownList_KUBUN(Me.KUBUN)
-
-        'IME設定        CmnModule.SetIme(Me.BU, CmnModule.ImeType.InActive)
-        CmnModule.SetIme(Me.KIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.KOUENKAI_NAME, CmnModule.ImeType.Active)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -81,9 +78,8 @@ Partial Public Class NewKouenkaiList
     '画面項目 表示
     Private Sub SetForm()
 
-        If Joken.BU <> "" Then Me.BU.Text = Joken.BU
-        If Joken.KIKAKU_TANTO_ROMA <> "" Then Me.KIKAKU_TANTO_AREA.Text = Joken.KIKAKU_TANTO_ROMA
-        If Joken.KOUENKAI_NAME <> "" Then Me.KOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
+        If Joken.BU <> "" Then Me.JOKEN_BU.SelectedValue = Joken.BU
+        If Joken.AREA <> "" Then Me.JOKEN_AREA.SelectedValue = Joken.AREA
         If Joken.KUBUN <> "" Then Me.KUBUN.SelectedValue = Joken.KUBUN
 
         'データ取得
@@ -107,9 +103,8 @@ Partial Public Class NewKouenkaiList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.BU = Trim(Me.BU.Text)
-        Joken.AREA = Trim(Me.KIKAKU_TANTO_AREA.Text)
-        Joken.KOUENKAI_NAME = Trim(Me.KOUENKAI_NAME.Text)
+        Joken.BU = Trim(Me.JOKEN_BU.SelectedValue)
+        Joken.AREA = Trim(Me.JOKEN_AREA.SelectedValue)
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.KUBUN)
 
         ReDim TBL_KOUENKAI(wCnt)
@@ -246,8 +241,35 @@ Partial Public Class NewKouenkaiList
 
     End Sub
 
+    '[印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+        Dim strSQL As String = ""
+
+        Joken = Nothing
+        Joken.BU = Trim(Me.JOKEN_BU.SelectedValue)
+        Joken.AREA = Trim(Me.JOKEN_AREA.SelectedValue)
+        Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.KUBUN)
+
+        strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
+        Joken.BU = "BUパラメータテスト"
+        Session.Item(SessionDef.NewKouenkaiPrint_SQL) = Joken
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.Joken) = Joken
+        Response.Redirect(URL.Preview)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        Response.Redirect(URL.Preview)
+    End Sub
+
     '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
+        Response.Redirect(URL.Menu)
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
         Response.Redirect(URL.Menu)
     End Sub
 
@@ -256,11 +278,6 @@ Partial Public Class NewKouenkaiList
         'セキュリティチェック
         If Not CmnCheck.IsSecurityOK(Me) Then
             CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsAlphabetOnly(Me.BU) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者BU"), Me)
             Return False
         End If
 

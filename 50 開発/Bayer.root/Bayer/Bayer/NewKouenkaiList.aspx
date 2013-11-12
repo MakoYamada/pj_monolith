@@ -7,52 +7,53 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table cellspacing="0" cellpadding="2" border="0">
         <tr>
-            <td align="left">
+            <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
-                        <td align="left">
-                            <table cellpadding="2" cellspacing="0" border="0">
-                                <tr>
-                                    <td align="right">
-                                        BU
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="BU" runat="server" Width="333px"
-                                            MaxLength="40" TabIndex="1">1234567890123456789012345678901234567890</asp:TextBox>
-                                    </td>
-                                    <td align="right">
-                                        エリア
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="KIKAKU_TANTO_AREA" runat="server" Width="333px"
-                                            MaxLength="40" TabIndex="2">1234567890123456789012345678901234567890</asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right">
-                                        区分
-                                    </td>
-                                    <td colspan="3">
-                                        <asp:DropDownList ID="KUBUN" runat="server" TabIndex="3">
-                                        </asp:DropDownList>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right">
-                                        講演会名
-                                    </td>
-                                    <td colspan="3">
-                                        <asp:TextBox ID="KOUENKAI_NAME" runat="server" Width="651px"
-                                            MaxLength="80" TabIndex="4">12345678901234567890123456789012345678901234567890123456789012345678901234567890</asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr style="width:900px">
-                                    <td align="right" valign="bottom" colspan="4" style="width:100%">
-                                        <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
-                                            CssClass="Button" TabIndex="5" />
-                                    </td>
-                                </tr>
-                            </table>
+                        <td style="width:50%">
+                            <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
+                                CssClass="Button" TabIndex="7" />
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="7" />
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table cellpadding="2" cellspacing="0" border="0">
+                    <tr style="width:900px">
+                        <td style="width:10%">
+                            BU 
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="JOKEN_BU" runat="server" TabIndex="3">
+                            </asp:DropDownList>
+                        </td>
+                        <td style="width:10%">
+                            エリア
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="JOKEN_AREA" runat="server" TabIndex="3">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td align="right">
+                            区分
+                        </td>
+                        <td colspan="3">
+                            <asp:DropDownList ID="KUBUN" runat="server" TabIndex="3">
+                            </asp:DropDownList>
+                        </td>
+                    </tr> -->
+                    <tr style="width:900px">
+                        <td align="right" valign="bottom" colspan="4" style="width:100%">
+                            <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
+                                CssClass="Button" TabIndex="5" />
                         </td>
                     </tr>
                 </table>
@@ -125,10 +126,20 @@
                 </asp:GridView>
             </td>
         </tr>
-        <tr align="center">
+        <tr>
             <td>
-                <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" 
-                    CssClass="Button" TabIndex="7" />
+                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                    <tr>
+                        <td style="width:50%">
+                            <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
+                                CssClass="Button" TabIndex="7" />
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="7" />
+                        </td>
+                    </tr>
+                </table> 
             </td>
         </tr>
     </table>

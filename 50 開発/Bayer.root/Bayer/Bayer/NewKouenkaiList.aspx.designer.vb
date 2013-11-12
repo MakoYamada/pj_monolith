@@ -16,22 +16,40 @@ Option Explicit On
 Partial Public Class NewKouenkaiList
 
     '''<summary>
-    '''BU コントロール。
+    '''BtnPrint1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BU As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents BtnPrint1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''KIKAKU_TANTO_AREA コントロール。
+    '''BtnBack1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''JOKEN_BU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JOKEN_BU As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''JOKEN_AREA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JOKEN_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''KUBUN コントロール。
@@ -41,15 +59,6 @@ Partial Public Class NewKouenkaiList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KUBUN As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''KOUENKAI_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''BtnSearch コントロール。
@@ -88,13 +97,22 @@ Partial Public Class NewKouenkaiList
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''BtnBack コントロール。
+    '''BtnPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnPrint2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。
