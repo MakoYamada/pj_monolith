@@ -12,12 +12,13 @@ CREATE TABLE [dbo].[MS_USER](
 	[LOGIN_ID] [nvarchar](20) COLLATE Japanese_CI_AS NOT NULL,
 	[PASSWORD] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
 	[KENGEN] [nvarchar](1) COLLATE Japanese_CI_AS NULL,
+	[KENGEN_SEISAN] [nvarchar](1) COLLATE Japanese_CI_AS NULL,
 	[USER_NAME] [nvarchar](100) COLLATE Japanese_CI_AS NULL,
 	[STOP_FLG] [nvarchar](1) COLLATE Japanese_CI_AS NULL,
 	[INPUT_DATE] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
-	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
+	[INPUT_USER] [nvarchar](10) COLLATE Japanese_CI_AS NULL,
 	[UPDATE_DATE] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
-	[UPDATE_USER] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
+	[UPDATE_USER] [nvarchar](10) COLLATE Japanese_CI_AS NULL,
  CONSTRAINT [PK_MS_USER] PRIMARY KEY CLUSTERED 
 (
 	[LOGIN_ID] ASC
