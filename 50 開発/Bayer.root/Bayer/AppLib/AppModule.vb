@@ -8109,6 +8109,69 @@ Public Class AppModule
     '    End Select
     'End Function
 
+#Region "消費税関連の処理"
+
+    'TODO:要確認
+    Public Shared Function GetZeiRate(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+
+        Dim strZeiRate As String = "0"
+        Dim MS_ZEI() As TableDef.MS_ZEI.DataStruct = AppModule.GetZeiData(KIJUN_DATE, DbConn)
+
+        If Not MS_ZEI Is Nothing Then
+            For Each record As TableDef.MS_ZEI.DataStruct In MS_ZEI
+                If record.START_DATE <= KIJUN_DATE AndAlso KIJUN_DATE <= record.END_DATE Then
+                    strZeiRate = record.ZEI_RATE
+                    Exit For
+                End If
+            Next
+        End If
+
+        Return strZeiRate
+
+    End Function
+
+    '消費税データ取得
+    Public Shared Function GetZeiData(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As TableDef.MS_ZEI.DataStruct()
+
+        Dim wCnt As Integer = 0
+
+        Dim MS_ZEI(wCnt) As TableDef.MS_ZEI.DataStruct
+        Dim wFlag As Boolean = False
+
+        Dim strSQL As String = SQL.MS_ZEI.AllData
+        Dim RsData As System.Data.SqlClient.SqlDataReader = CmnDb.Read(strSQL, DbConn)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve MS_ZEI(wCnt)
+
+            MS_ZEI(wCnt) = AppModule.SetRsData(RsData, MS_ZEI(wCnt))
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        If wFlag Then
+            Return MS_ZEI
+        Else
+            Return Nothing
+        End If
+
+    End Function
+
+    '税抜き額の取得(税込額-内税額で算出)
+    Public Shared Function GetZeinukiGaku(ByVal strZeikomiGaku As String, ByVal strZeiritu As String) As String
+        Dim dblUchiZei As Double = CDbl(GetUchiZei(strZeikomiGaku, strZeiritu))
+        Dim dblZeinukiGaku As Double = CDbl(strZeikomiGaku) - dblUchiZei
+
+        Return dblZeinukiGaku.ToString
+    End Function
+
+    '内税額の取得
+    Public Shared Function GetUchiZei(ByVal strZeikomiGaku As String, ByVal strZeiritu As String) As String
+        Dim dblUchiZei As Double = CmnModule.ToRoundDown(CmnModule.ToRoundDown(CDbl(strZeikomiGaku) / (CDbl(strZeiritu) + 1), 0) * CDbl(strZeiritu), 0)
+        Return dblUchiZei.ToString
+    End Function
+
+#End Region
 
     '== 列挙型 ==
     'テーブル
