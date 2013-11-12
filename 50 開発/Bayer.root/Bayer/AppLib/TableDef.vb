@@ -45,6 +45,8 @@
             Public YOSAN_T As String
             Public IROUKAI_YOSAN_T As String
             Public IKENKOUKAN_YOSAN_T As String
+            Public DANTAI_CODE As String
+            Public TTEHAI_TANTO As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -140,6 +142,8 @@
             Public Const YOSAN_T As String = "YOSAN_T"
             Public Const IROUKAI_YOSAN_T As String = "IROUKAI_YOSAN_T"
             Public Const IKENKOUKAN_YOSAN_T As String = "IKENKOUKAN_YOSAN_T"
+            Public Const DANTAI_CODE As String = "DANTAI_CODE"
+            Public Const TTEHAI_TANTO As String = "TTEHAI_TANTO"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -235,8 +239,10 @@
             Public Const YOSAN_T As String = "予算額_課税"
             Public Const IROUKAI_YOSAN_T As String = "慰労会予算_課税"
             Public Const IKENKOUKAN_YOSAN_T As String = "意見交換会予算_課税"
+            Public Const DANTAI_CODE As String = "団体コード"
+            Public Const TTEHAI_TANTO As String = "トップツアー担当者ID"
             Public Const SEND_FLAG As String = "送信フラグ"
-            Public Const TTANTO_ID As String = "トップツアー担当者ID"
+            Public Const TTANTO_ID As String = "トップツアー更新担当者ID"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
