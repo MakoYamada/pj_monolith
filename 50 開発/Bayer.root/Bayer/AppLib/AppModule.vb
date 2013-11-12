@@ -8111,7 +8111,6 @@ Public Class AppModule
 
 #Region "Á”ïÅŠÖ˜A‚Ìˆ—"
 
-    'TODO:—vŠm”F
     Public Shared Function GetZeiRate(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, Optional ByVal DbTrans As SqlClient.SqlTransaction = Nothing) As String
 
         Dim strZeiRate As String = "0"
@@ -8134,7 +8133,6 @@ Public Class AppModule
     Public Shared Function GetZeiData(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, Optional ByVal DbTrans As SqlClient.SqlTransaction = Nothing) As TableDef.MS_ZEI.DataStruct()
 
         Dim wCnt As Integer = 0
-
         Dim MS_ZEI(wCnt) As TableDef.MS_ZEI.DataStruct
         Dim wFlag As Boolean = False
 
@@ -8164,18 +8162,10 @@ Public Class AppModule
 
     End Function
 
-    'Å”²‚«Šz‚Ìæ“¾(ÅŠz-“àÅŠz‚ÅZo)
+    'Å”²‚«Šz‚Ìæ“¾
     Public Shared Function GetZeinukiGaku(ByVal strZeikomiGaku As String, ByVal strZeiritu As String) As String
-        Dim dblUchiZei As Double = CDbl(GetUchiZei(strZeikomiGaku, strZeiritu))
-        Dim dblZeinukiGaku As Double = CDbl(strZeikomiGaku) - dblUchiZei
-
+        Dim dblZeinukiGaku As Double = CmnModule.ToRoundDown(CDbl(strZeikomiGaku) / (CDbl(strZeiritu) + 1))
         Return dblZeinukiGaku.ToString
-    End Function
-
-    '“àÅŠz‚Ìæ“¾
-    Public Shared Function GetUchiZei(ByVal strZeikomiGaku As String, ByVal strZeiritu As String) As String
-        Dim dblUchiZei As Double = CmnModule.ToRoundDown(CmnModule.ToRoundDown(CDbl(strZeikomiGaku) / (CDbl(strZeiritu) + 1), 0) * CDbl(strZeiritu), 0)
-        Return dblUchiZei.ToString
     End Function
 
 #End Region

@@ -146,6 +146,11 @@ Partial Public Class SeisanRegist
 
     Private Sub CalculateKingaku()
 
+        'test---
+        Dim strZeiRate As String = AppModule.GetZeiRate("20131112", MyBase.DbConnection)
+        Dim kaijohi_tf As String = AppModule.GetZeinukiGaku(Me.KAIJOHI_TF.Text.Trim, strZeiRate)
+        'test---
+
         Dim wTOTAL_TF1 As Long = 0
         Dim wTOTAL_TF2 As Long = 0
         Dim wTOTAL_T1 As Long = 0
