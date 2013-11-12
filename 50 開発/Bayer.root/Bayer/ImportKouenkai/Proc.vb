@@ -285,7 +285,7 @@ Public Class Proc
         TBL_KOUENKAI_Ins.KOUENKAI_NO = fileData(COL_NO.Field1)
         TBL_KOUENKAI_Ins.TIME_STAMP = fileData(COL_NO.Field2)
         TBL_KOUENKAI_Ins.TORIKESHI_FLG = fileData(COL_NO.Field3)
-        TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
+
         TBL_KOUENKAI_Ins.KOUENKAI_TITLE = fileData(COL_NO.Field4)
         TBL_KOUENKAI_Ins.KOUENKAI_NAME = fileData(COL_NO.Field4)
         TBL_KOUENKAI_Ins.TAXI_PRT_NAME = fileData(COL_NO.Field5)
@@ -331,9 +331,16 @@ Public Class Proc
 
         '同一キーのデータを検索
         Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct = GetData(fileData(COL_NO.Field1))
-        If Not TBL_KOUENKAI Is Nothing Then
-            '該当データがあるとき
+        If TBL_KOUENKAI Is Nothing Then
+            '新規データ
+            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.On
+        Else
+            '変更データ
+            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
+
             Dim idx As Integer = GetLastData(TBL_KOUENKAI)
+            TBL_KOUENKAI_Ins.DANTAI_CODE = TBL_KOUENKAI(idx).DANTAI_CODE
+            TBL_KOUENKAI_Ins.TTEHAI_TANTO = TBL_KOUENKAI(idx).TTEHAI_TANTO
             TBL_KOUENKAI_Ins.TTANTO_ID = TBL_KOUENKAI(idx).TTANTO_ID
         End If
 
@@ -374,9 +381,7 @@ Public Class Proc
         Dim wCnt As Integer = 0
 
         For Each record As TableDef.TBL_KOUENKAI.DataStruct In TBL_KOUENKAI
-            If record.KIDOKU_FLG = CmnConst.Flag.On Then
-                rowNo = wCnt
-            End If
+            rowNo = wCnt
             wCnt += 1
         Next
 
