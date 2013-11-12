@@ -156,6 +156,24 @@ Public Class MyModule
         Return MS_COSTCENTER.COSTCENTER_NAME
     End Function
 
+    '精算番号自動採番
+    Public Shared Function GetMaxSEISAN_NO(ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+        Dim wSEISAN_NO As Long = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_SEIKYU.MaxSEISAN_NO()
+
+        RsData = CmnDb.Read(strSQL, DbConn)
+        If RsData.Read() Then
+            wSEISAN_NO = CmnModule.DbVal(CmnDb.DbData(TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR, RsData))
+        End If
+        RsData.Close()
+        wSEISAN_NO += 1
+
+        Return wSEISAN_NO.ToString.PadLeft(14, "0"c)
+    End Function
+
     'ログテーブル
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct, _
