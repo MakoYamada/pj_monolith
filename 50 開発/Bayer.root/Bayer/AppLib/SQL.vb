@@ -3561,6 +3561,27 @@ Public Class SQL
 
     'End Class
 
+    Public Class MS_ZEI
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " MS_ZEI.*" _
+        & " FROM MS_ZEI"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " MS_ZEI.ZEI_CD"
+
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+    End Class
+
     Public Class MS_CODE
 
         Private Const SQL_SELECT As String _
