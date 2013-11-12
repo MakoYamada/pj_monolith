@@ -13,6 +13,7 @@ Partial Public Class MstUser
         LOGIN_ID
         KENGEN
         USER_NAME
+        KENGEN_SEISAN
         STOP_FLG
         SYSTEM_ID
     End Enum
@@ -45,9 +46,8 @@ Partial Public Class MstUser
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "ユーザマスタメンテナンス"
+            .PageTitle = "TOP担当者マスタ メンテナンス"
         End With
-
     End Sub
 
     'セッションを変数に格納
@@ -111,8 +111,9 @@ Partial Public Class MstUser
 
         AppModule.SetForm_LOGIN_ID(Joken.LOGIN_ID, Me.JokenLOGIN_ID)
         AppModule.SetForm_USER_NAME(Joken.USER_NAME, Me.JokenUSER_NAME)
-        AppModule.SetForm_KENGEN(Joken.KENGEN, Me.JokenKENGEN_Admin, Me.JokenKENGEN_User)
         AppModule.SetForm_STOP_FLG(Joken.STOP_FLG, Me.JokenSTOP_FLG)
+        AppModule.SetForm_KENGEN(Joken.KENGEN, Me.JokenKENGEN_Admin, Me.JokenKENGEN_User)
+        AppModule.SetForm_KENGEN_SEISAN(Joken.KENGEN_SEISAN, Me.JokenKENGEN_SEISAN)
 
         'データ取得
         If Not GetData() Then
@@ -174,6 +175,7 @@ Partial Public Class MstUser
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.KENGEN).Text = AppModule.GetName_KENGEN(e.Row.Cells(CellIndex.KENGEN).Text)
+            e.Row.Cells(CellIndex.KENGEN_SEISAN).Text = AppModule.GetName_KENGEN_SEISAN(e.Row.Cells(CellIndex.KENGEN_SEISAN).Text, True)
             e.Row.Cells(CellIndex.STOP_FLG).Text = AppModule.GetName_STOP_FLG(e.Row.Cells(CellIndex.STOP_FLG).Text)
         End If
     End Sub
@@ -236,6 +238,9 @@ Partial Public Class MstUser
                 Joken.KENGEN = AppConst.MS_USER.KENGEN.Code.User
             End If
         End If
+        If CmnCheck.IsInput(Me.JokenKENGEN_SEISAN) Then
+            Joken.KENGEN_SEISAN = AppConst.MS_USER.KENGEN_SEISAN.Code.Yes
+        End If
         If CmnCheck.IsInput(Me.JokenSTOP_FLG) Then
             Joken.STOP_FLG = AppConst.STOP_FLG.Code.Stop
         End If
@@ -254,8 +259,9 @@ Partial Public Class MstUser
         CmnModule.ClearControl(Me.JokenUSER_NAME)
         CmnModule.ClearControl(Me.JokenKENGEN_Admin)
         CmnModule.ClearControl(Me.JokenKENGEN_User)
+        CmnModule.ClearControl(Me.JokenKENGEN_SEISAN)
         CmnModule.ClearControl(Me.JokenSTOP_FLG)
-
+        
         '画面項目表示
         SetForm()
     End Sub
@@ -272,7 +278,8 @@ Partial Public Class MstUser
            Not CmnCheck.IsInput(Me.JokenUSER_NAME) AndAlso _
            Not CmnCheck.IsInput(Me.JokenKENGEN_Admin) AndAlso _
            Not CmnCheck.IsInput(Me.JokenKENGEN_User) AndAlso _
-           Not CmnCheck.IsInput(Me.JokenSTOP_FLG) Then
+           Not CmnCheck.IsInput(Me.JokenSTOP_FLG) AndAlso _
+           Not CmnCheck.IsInput(Me.JokenKENGEN_SEISAN) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput_Joken, Me)
             Return False
         End If
@@ -311,6 +318,7 @@ Partial Public Class MstUser
             AppModule.SetForm_PASSWORD(MS_USER(SEQ).PASSWORD, Me.PASSWORD)
             AppModule.SetForm_USER_NAME(MS_USER(SEQ).USER_NAME, Me.USER_NAME)
             AppModule.SetForm_KENGEN(MS_USER(SEQ).KENGEN, Me.KENGEN_Admin, Me.KENGEN_User)
+            AppModule.SetForm_KENGEN_SEISAN(MS_USER(SEQ).KENGEN_SEISAN, Me.KENGEN_SEISAN)
             AppModule.SetForm_STOP_FLG(MS_USER(SEQ).STOP_FLG, Me.STOP_FLG)
             Me.SYSTEM_ID.Value = MS_USER(SEQ).SYSTEM_ID
         Else
@@ -351,6 +359,11 @@ Partial Public Class MstUser
                 End If
                 wCnt += 1
             End While
+
+            'ログイン中の担当者
+            If MS_USER(SEQ).LOGIN_ID = Session.Item(SessionDef.LoginID) Then
+                Session.Item(SessionDef.LoginUser) = MS_USER(SEQ)
+            End If
 
             Response.Redirect(URL.MstUser & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
@@ -402,6 +415,7 @@ Partial Public Class MstUser
         MS_USER(SEQ).PASSWORD = AppModule.GetValue_PASSWORD(Me.PASSWORD)
         MS_USER(SEQ).USER_NAME = AppModule.GetValue_USER_NAME(Me.USER_NAME)
         MS_USER(SEQ).KENGEN = AppModule.GetValue_KENGEN(Me.KENGEN_Admin, Me.KENGEN_User)
+        MS_USER(SEQ).KENGEN_SEISAN = AppModule.GetValue_KENGEN_SEISAN(Me.KENGEN_SEISAN)
         MS_USER(SEQ).STOP_FLG = AppModule.GetValue_STOP_FLG(Me.STOP_FLG)
     End Sub
 

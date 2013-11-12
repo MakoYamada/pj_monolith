@@ -22,7 +22,7 @@ Partial Public Class NewKaijoList
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenKIKAKU_TANTO_AREA コントロール。
@@ -31,7 +31,7 @@ Partial Public Class NewKaijoList
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenREQ_STATUS_TEHAI コントロール。

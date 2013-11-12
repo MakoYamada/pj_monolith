@@ -59,6 +59,17 @@ Partial Public Class Menu1
             CmnModule.SetEnabled(Me.BtnLogFile, False)
             CmnModule.SetEnabled(Me.BtnLogSousa, False)
         End If
+        If MS_USER.KENGEN_SEISAN = AppConst.MS_USER.KENGEN_SEISAN.Code.Yes Then
+            CmnModule.SetEnabled(Me.BtnSeisan, True)
+            CmnModule.SetEnabled(Me.BtnCost, True)
+            CmnModule.SetEnabled(Me.BtnSap, True)
+            CmnModule.SetEnabled(Me.BtnKouenkaiCsv, True)
+        Else
+            CmnModule.SetEnabled(Me.BtnSeisan, False)
+            CmnModule.SetEnabled(Me.BtnCost, False)
+            CmnModule.SetEnabled(Me.BtnSap, False)
+            CmnModule.SetEnabled(Me.BtnKouenkaiCsv, False)
+        End If
     End Sub
 
     ''[参加者一覧]
@@ -134,7 +145,7 @@ Partial Public Class Menu1
         Response.Redirect(URL.KaijoList)
     End Sub
 
-    '[ユーザマスタ]
+    '[TOP担当者マスタ]
     Protected Sub BtnMstUser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstUser.Click
         Session.Remove(SessionDef.Joken)
         Session.Remove(SessionDef.MS_USER)

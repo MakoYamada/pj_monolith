@@ -45,9 +45,8 @@ Partial Public Class MstShisetsu
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "施設マスタメンテナンス"
+            .PageTitle = "施設マスタ メンテナンス"
         End With
-
     End Sub
 
     'セッションを変数に格納

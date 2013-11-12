@@ -704,6 +704,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.TTANTO_ID.ToUpper Then TBL_KAIJO.TTANTO_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.IROUKAI_YOSAN_T.ToUpper Then TBL_KAIJO.IROUKAI_YOSAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.IKENKOUKAN_YOSAN_T.ToUpper Then TBL_KAIJO.IKENKOUKAN_YOSAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KAIJO.Column.USER_NAME.ToUpper Then TBL_KAIJO.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KAIJO
@@ -840,6 +841,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.LOGIN_ID.ToUpper Then MS_USER.LOGIN_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.PASSWORD.ToUpper Then MS_USER.PASSWORD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.KENGEN.ToUpper Then MS_USER.KENGEN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.KENGEN_SEISAN.ToUpper Then MS_USER.KENGEN_SEISAN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.USER_NAME.ToUpper Then MS_USER.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.STOP_FLG.ToUpper Then MS_USER.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_USER.Column.INPUT_DATE.ToUpper Then MS_USER.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -870,41 +872,59 @@ Public Class AppModule
     End Function
 #End Region
 
-    '#Region "事業所マスタ"
-    '    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_JIGYOSHO As TableDef.MS_JIGYOSHO.DataStruct) As TableDef.MS_JIGYOSHO.DataStruct
-    '        Dim wCnt As Integer = 0
+#Region "BUマスタ"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_BU As TableDef.MS_BU.DataStruct) As TableDef.MS_BU.DataStruct
+        Dim wCnt As Integer = 0
 
-    '        For wCnt = 0 To RsData.FieldCount - 1
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.SYSTEM_ID.ToUpper Then MS_JIGYOSHO.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.未定.ToUpper Then MS_JIGYOSHO.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.STOP_FLG.ToUpper Then MS_JIGYOSHO.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.INPUT_DATE.ToUpper Then MS_JIGYOSHO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.INPUT_USER.ToUpper Then MS_JIGYOSHO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.UPDATE_DATE.ToUpper Then MS_JIGYOSHO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_JIGYOSHO.Column.UPDATE_USER.ToUpper Then MS_JIGYOSHO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '        Next wCnt
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.SYSTEM_ID.ToUpper Then MS_BU.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.BU.ToUpper Then MS_BU.BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.STOP_FLG.ToUpper Then MS_BU.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.INPUT_DATE.ToUpper Then MS_BU.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.INPUT_USER.ToUpper Then MS_BU.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.UPDATE_DATE.ToUpper Then MS_BU.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_BU.Column.UPDATE_USER.ToUpper Then MS_BU.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
 
-    '        Return MS_JIGYOSHO
-    '    End Function
-    '#End Region
+        Return MS_BU
+    End Function
+#End Region
 
-    '#Region "エリアマスタ"
-    '    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As TableDef.MS_AREA.DataStruct
-    '        Dim wCnt As Integer = 0
+#Region "エリアマスタ"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_AREA As TableDef.MS_AREA.DataStruct) As TableDef.MS_AREA.DataStruct
+        Dim wCnt As Integer = 0
 
-    '        For wCnt = 0 To RsData.FieldCount - 1
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.SYSTEM_ID.ToUpper Then MS_AREA.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.未定.ToUpper Then MS_AREA.未定 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.STOP_FLG.ToUpper Then MS_AREA.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_DATE.ToUpper Then MS_AREA.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_USER.ToUpper Then MS_AREA.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_DATE.ToUpper Then MS_AREA.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_USER.ToUpper Then MS_AREA.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-    '        Next wCnt
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.SYSTEM_ID.ToUpper Then MS_AREA.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.area.ToUpper Then MS_AREA.area = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.STOP_FLG.ToUpper Then MS_AREA.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_DATE.ToUpper Then MS_AREA.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.INPUT_USER.ToUpper Then MS_AREA.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_DATE.ToUpper Then MS_AREA.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_AREA.Column.UPDATE_USER.ToUpper Then MS_AREA.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
 
-    '        Return MS_AREA
-    '    End Function
-    '#End Region
+        Return MS_AREA
+    End Function
+#End Region
+
+#Region "製品マスタ"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_SEIHIN As TableDef.MS_SEIHIN.DataStruct) As TableDef.MS_SEIHIN.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.SYSTEM_ID.ToUpper Then MS_SEIHIN.SYSTEM_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.SEIHIN.ToUpper Then MS_SEIHIN.SEIHIN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.STOP_FLG.ToUpper Then MS_SEIHIN.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.INPUT_DATE.ToUpper Then MS_SEIHIN.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.INPUT_USER.ToUpper Then MS_SEIHIN.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.UPDATE_DATE.ToUpper Then MS_SEIHIN.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SEIHIN.Column.UPDATE_USER.ToUpper Then MS_SEIHIN.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return MS_SEIHIN
+    End Function
+#End Region
 
     '#Region "営業所マスタ"
     '    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_EIGYOSHO As TableDef.MS_EIGYOSHO.DataStruct) As TableDef.MS_EIGYOSHO.DataStruct
@@ -1147,6 +1167,33 @@ Public Class AppModule
         Return PASSWORD
     End Function
 
+    'NOZOMI送信フラグ
+    Public Shared Function GetName_SEND_FLAG(ByVal SEND_FLAG As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Select Case SEND_FLAG
+            Case AppConst.SEND_FLAG.Code.Mi, AppConst.SEND_FLAG.Name.Mi, AppConst.SEND_FLAG.Name.ShortFormat.Mi
+                If ShortFormat = False Then
+                    Return AppConst.SEND_FLAG.Name.Mi
+                Else
+                    Return AppConst.SEND_FLAG.Name.ShortFormat.Mi
+                End If
+            Case AppConst.SEND_FLAG.Code.Taisho, AppConst.SEND_FLAG.Name.Taisho, AppConst.SEND_FLAG.Name.ShortFormat.Taisho
+                If ShortFormat = False Then
+                    Return AppConst.SEND_FLAG.Name.Taisho
+                Else
+                    Return AppConst.SEND_FLAG.Name.ShortFormat.Taisho
+                End If
+            Case AppConst.SEND_FLAG.Code.Sumi, AppConst.SEND_FLAG.Name.Sumi, AppConst.SEND_FLAG.Name.ShortFormat.Sumi
+                If ShortFormat = False Then
+                    Return AppConst.SEND_FLAG.Name.Sumi
+                Else
+                    Return AppConst.SEND_FLAG.Name.ShortFormat.Sumi
+                End If
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
 #Region "講演会情報"
     '講演会番号
     Public Shared Function GetName_KOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
@@ -1333,6 +1380,14 @@ Public Class AppModule
     '承認者備考
     Public Shared Function GetName_SHONIN_NOTE(ByVal SHONIN_NOTE As String) As String
         Return SHONIN_NOTE
+    End Function
+
+    'TOP担当者
+    Public Shared Function GetName_TTANTO_ID(ByVal TTANTO_ID As String) As String
+        Return TTANTO_ID
+    End Function
+    Public Shared Function GetName_USER_NAME(ByVal USER_NAME As String) As String
+        Return USER_NAME
     End Function
 
     '所属事業部
@@ -4137,6 +4192,27 @@ Public Class AppModule
         End Select
     End Function
 
+    'ユーザマスタ：精算入力
+    Public Shared Function GetName_KENGEN_SEISAN(ByVal KENGEN_SEISAN As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Select Case KENGEN_SEISAN
+            Case AppConst.MS_USER.KENGEN_SEISAN.Code.Yes, AppConst.MS_USER.KENGEN_SEISAN.Name.Yes, AppConst.MS_USER.KENGEN_SEISAN.Name.ShortFormat.Yes
+                If ShortFormat = False Then
+                    Return AppConst.MS_USER.KENGEN_SEISAN.Name.Yes
+                Else
+                    Return AppConst.MS_USER.KENGEN_SEISAN.Name.ShortFormat.Yes
+                End If
+            Case AppConst.MS_USER.KENGEN_SEISAN.Code.No, AppConst.MS_USER.KENGEN_SEISAN.Name.No, AppConst.MS_USER.KENGEN_SEISAN.Name.ShortFormat.No
+                If ShortFormat = False Then
+                    Return AppConst.MS_USER.KENGEN_SEISAN.Name.No
+                Else
+                    Return AppConst.MS_USER.KENGEN_SEISAN.Name.ShortFormat.No
+                End If
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
     'ユーザマスタ：利用停止フラグ
     Public Shared Function GetName_STOP_FLG(ByVal STOP_FLG As String) As String
         Select Case STOP_FLG
@@ -6181,6 +6257,15 @@ Public Class AppModule
         End If
     End Sub
 
+    'ユーザマスタ：精算入力
+    Public Shared Sub SetForm_KENGEN_SEISAN(ByVal KENGEN_SEISAN As String, ByRef control As CheckBox)
+        If KENGEN_SEISAN = AppConst.MS_USER.KENGEN_SEISAN.Code.YES Then
+            control.Checked = True
+        Else
+            control.Checked = False
+        End If
+    End Sub
+
     '施設マスタ：チェックイン時間
     Public Shared Sub SetForm_CHECKIN_TIME(ByVal CHECKIN_TIME As String, ByRef control As TextBox)
         control.Text = CHECKIN_TIME
@@ -6220,8 +6305,8 @@ Public Class AppModule
     End Sub
 
     '利用停止フラグ
-    Public Shared Sub SetForm_STOP_FLG(ByVal [Stop] As String, ByRef control As CheckBox)
-        If [Stop] = AppConst.STOP_FLG.Code.Stop Then
+    Public Shared Sub SetForm_STOP_FLG(ByVal STOP_FLG As String, ByRef control As CheckBox)
+        If STOP_FLG = AppConst.STOP_FLG.Code.Stop Then
             control.Checked = True
         Else
             control.Checked = False
@@ -6242,41 +6327,77 @@ Public Class AppModule
 #End Region
 
 #Region "== プルダウン設定 =="
-    '#Region "事業部"
-    '    Public Shared Sub SetDropDownList_JIGYOSHO(ByRef JIGYOSHO As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
-    '        With JIGYOSHO
-    '            .Items.Clear()
-    '            .Items.Add(New ListItem("---", "0"))
+#Region "BU"
+    Public Shared Sub SetDropDownList_BU(ByRef BU As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With BU
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
 
-    '            Dim strSQL As String
-    '            Dim RsData As System.Data.SqlClient.SqlDataReader
-    '            strSQL = SQL.MS_JIGYOSHO.AllData()
-    '            RsData = CmnDb.Read(strSQL, DbConn)
-    '            While RsData.Read()
-    '                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData), CmnDb.DbData(TableDef.MS_JIGYOSHO.Column.未定, RsData)))
-    '            End While
-    '            RsData.Close()
-    '        End With
-    '    End Sub
-    '#End Region
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_BU.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_BU.Column.BU, RsData), CmnDb.DbData(TableDef.MS_BU.Column.BU, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+#End Region
 
-    '#Region "エリア"
-    '    Public Shared Sub SetDropDownList_AREA(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
-    '        With AREA
-    '            .Items.Clear()
-    '            .Items.Add(New ListItem("---", "0"))
+#Region "エリア"
+    Public Shared Sub SetDropDownList_AREA(ByRef AREA As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With AREA
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
 
-    '            Dim strSQL As String
-    '            Dim RsData As System.Data.SqlClient.SqlDataReader
-    '            strSQL = SQL.MS_AREA.AllData()
-    '            RsData = CmnDb.Read(strSQL, DbConn)
-    '            While RsData.Read()
-    '                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData), CmnDb.DbData(TableDef.MS_AREA.Column.未定, RsData)))
-    '            End While
-    '            RsData.Close()
-    '        End With
-    '    End Sub
-    '#End Region
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_AREA.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_AREA.Column.AREA, RsData), CmnDb.DbData(TableDef.MS_AREA.Column.AREA, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+#End Region
+
+#Region "製品"
+    Public Shared Sub SetDropDownList_SEIHIN(ByRef SEIHIN As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With SEIHIN
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_SEIHIN.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_SEIHIN.Column.SEIHIN, RsData), CmnDb.DbData(TableDef.MS_SEIHIN.Column.SEIHIN, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+#End Region
+
+#Region "TOP担当者"
+    Public Shared Sub SetDropDownList_USER_NAME(ByRef USER_NAME As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
+        With USER_NAME
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim strSQL As String
+            Dim RsData As System.Data.SqlClient.SqlDataReader
+            strSQL = SQL.MS_USER.AllData()
+            RsData = CmnDb.Read(strSQL, DbConn)
+            While RsData.Read()
+                .Items.Add(New ListItem(CmnDb.DbData(TableDef.MS_USER.Column.USER_NAME, RsData), CmnDb.DbData(TableDef.MS_USER.Column.LOGIN_ID, RsData)))
+            End While
+            RsData.Close()
+        End With
+    End Sub
+#End Region
 
 #Region "手配ステータス"
     Public Shared Sub SetDropDownList_STATUS_TEHAI(ByRef STATUS_TEHAI As DropDownList, Optional ByVal KAIJO As Boolean = False)
@@ -7941,13 +8062,20 @@ Public Class AppModule
     End Function
 
     'ユーザマスタ関連
-    Public Shared Function GetValue_KENGEN(ByVal KENGEN_Admin As CheckBox, ByVal KENGEN_User As CheckBox) As String
+    Public Shared Function GetValue_KENGEN(ByVal KENGEN_Admin As RadioButton, ByVal KENGEN_User As RadioButton) As String
         If KENGEN_Admin.Checked = True Then
             Return AppConst.MS_USER.KENGEN.Code.Admin
         ElseIf KENGEN_User.Checked = True Then
             Return AppConst.MS_USER.KENGEN.Code.User
         Else
             Return ""
+        End If
+    End Function
+    Public Shared Function GetValue_KENGEN_SEISAN(ByVal KENGEN_SEISAN As CheckBox) As String
+        If KENGEN_SEISAN.Checked = True Then
+            Return AppConst.MS_USER.KENGEN_SEISAN.Code.Yes
+        Else
+            Return AppConst.MS_USER.KENGEN_SEISAN.Code.No
         End If
     End Function
 

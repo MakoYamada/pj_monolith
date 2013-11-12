@@ -59,7 +59,7 @@
 							<asp:Button ID="BtnMstShisetsu" runat="server" Text="施設マスタ" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnMstUser" runat="server" Text="ユーザマスタ" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnMstUser" runat="server" Text="TOP担当者マスタ" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnMstCode" runat="server" Text="コードマスタ" Width="200px" CssClass="Button" />

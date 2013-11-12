@@ -25,6 +25,11 @@ Public Class AppConst
             Public Const Mi As String = "未送信"
             Public Const Taisho As String = "送信対象"
             Public Const Sumi As String = "送信済"
+            Public Class ShortFormat
+                Public Const Mi As String = "未"
+                Public Const Taisho As String = "対象"
+                Public Const Sumi As String = "済"
+            End Class
         End Class
     End Class
 
@@ -359,7 +364,7 @@ Public Class AppConst
         Public Class SHAIN_ROOM_TEHAI
             '社員控室　要・不要
             Inherits KOUEN_KAIJO_TEHAI
-         End Class
+        End Class
 
         Public Class IKENKOUKAN_KAIJO_TEHAI
             '意見交換会場　要・不要
@@ -467,42 +472,25 @@ Public Class AppConst
             Public Class Code
                 Public Const Admin As String = "1"
                 Public Const User As String = "2"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             End Class
             Public Class Name
                 Public Const Admin As String = "管理者"
                 Public Const User As String = "一般ユーザー"
+            End Class
+        End Class
+        Public Class KENGEN_SEISAN
+            '精算入力
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "0"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "使用可能"
+                Public Const No As String = "使用不可"
+                Public Class ShortFormat
+                    Public Const Yes As String = "○"
+                    Public Const No As String = "×"
+                End Class
             End Class
         End Class
     End Class

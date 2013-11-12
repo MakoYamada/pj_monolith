@@ -132,13 +132,12 @@ Partial Public Class KaijoRegist
         CmnModule.ClearAllControl(Me)
 
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
-            '履歴からの場合、キャンセル以外のボタンを非表示にする
+            '履歴からの場合、キャンセル、印刷以外のボタンを非表示にする
             Me.BtnShisetsuKensaku.Visible = False
             Me.BtnCalc_ANS_MITSUMORI.Visible = False
             Me.BtnCalc_ANS_TOTAL_TF.Visible = False
             Me.BtnCalc_ANS_TOTAL_T.Visible = False
             Me.BtnRireki.Visible = False
-            Me.BtnPrint.Visible = False
             Me.BtnNozomi.Visible = False
             Me.BtnSubmit.Visible = False
             Me.TrComment.Visible = False
@@ -148,7 +147,6 @@ Partial Public Class KaijoRegist
             Me.BtnCalc_ANS_TOTAL_TF.Visible = True
             Me.BtnCalc_ANS_TOTAL_T.Visible = True
             Me.BtnRireki.Visible = True
-            Me.BtnPrint.Visible = True
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
             Me.TrComment.Visible = True
@@ -175,6 +173,7 @@ Partial Public Class KaijoRegist
         '依頼(表示)
         Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KAIJO(SEQ).KOUENKAI_NO)
         Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(TBL_KAIJO(SEQ).REQ_STATUS_TEHAI, True)
+        Me.USER_NAME.Text = AppModule.GetName_USER_NAME(TBL_KAIJO(SEQ).USER_NAME)
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Me.SHONIN_NAME.Text = AppModule.GetName_SHONIN_NAME(TBL_KAIJO(SEQ).SHONIN_NAME)
         Me.SHONIN_DATE.Text = AppModule.GetName_SHONIN_DATE(TBL_KAIJO(SEQ).SHONIN_DATE)

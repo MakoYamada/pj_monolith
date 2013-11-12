@@ -16,7 +16,7 @@
 							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							製品名
-							<asp:TextBox ID="JokenSEIHIN_NAME" runat="server" Width="200px"></asp:TextBox>
+							<asp:DropDownList ID="JokenSEIHIN" runat="server" Width="200px"></asp:DropDownList>
 						</td>
 					</tr>
 					<tr>
@@ -40,16 +40,16 @@
 							<asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
 							&nbsp;&nbsp;&nbsp;
 							BU
-							<asp:TextBox ID="JokenBU" runat="server" Width="150px" MaxLength="40"></asp:TextBox>
+							<asp:DropDownList ID="JokenBU" runat="server" Width="120px"></asp:DropDownList>
 							&nbsp;&nbsp;&nbsp;
 							エリア
-							<asp:TextBox ID="JokenKIKAKU_TANTO_AREA" runat="server" Width="200px" MaxLength="80"></asp:TextBox>
+							<asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" Width="200px"></asp:DropDownList>
 						</td>
 					</tr>
 					<tr>
 						<td align="left">
-							トップツアー担当者
-							<asp:TextBox ID="JokenTTANTO_ID" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
+							TOP担当者
+							<asp:DropDownList ID="JoKenTTANTO_ID" runat="server" Width="200px"></asp:DropDownList>
 						</td>
 						<td align="right">
 							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
@@ -81,7 +81,8 @@
 						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="USER_NAME" HeaderText="トップ担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />

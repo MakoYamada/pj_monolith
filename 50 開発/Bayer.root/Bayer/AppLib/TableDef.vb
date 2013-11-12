@@ -1721,6 +1721,7 @@
             Public TTANTO_ID As String
             Public IROUKAI_YOSAN_T As String
             Public IKENKOUKAN_YOSAN_T As String
+            Public USER_NAME As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1847,6 +1848,7 @@
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const IROUKAI_YOSAN_T As String = "IROUKAI_YOSAN_T"
             Public Const IKENKOUKAN_YOSAN_T As String = "IKENKOUKAN_YOSAN_T"
+            Public Const USER_NAME As String = "USER_NAME"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
@@ -1929,6 +1931,7 @@
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
+            Public Const USER_NAME As String = "TOP担当者"
         End Class
     End Class
 
@@ -2576,6 +2579,7 @@
             Public USER_NAME As String
             Public STOP_FLG As String
             Public KENGEN As String
+            Public KENGEN_SEISAN As String
             Public DR_SANKA As String
             Public MR_ROMA As String
             Public DR_KANA As String

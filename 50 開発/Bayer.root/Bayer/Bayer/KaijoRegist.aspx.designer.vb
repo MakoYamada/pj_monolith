@@ -25,6 +25,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents TrComment As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
+    '''USER_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents USER_NAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>

@@ -20,6 +20,8 @@
 							&nbsp;&nbsp;
 							<asp:RadioButton ID="JokenKENGEN_User" runat="server" Text="一般ユーザー" GroupName="KENGEN" />
 							&nbsp;&nbsp;&nbsp;
+							<asp:CheckBox ID="JokenKENGEN_SEISAN" runat="server" Text="精算入力 使用可能" />
+							&nbsp;&nbsp;&nbsp;
 							<asp:CheckBox ID="JokenSTOP_FLG" runat="server" Text="利用停止" />
 						</td>
 					</tr>
@@ -97,6 +99,16 @@
 					<tr>
 						<td align="left" style="background-color: #e9f7e3; color: #555555; font-weight: bold;">
 							&nbsp;
+							精算入力
+							&nbsp;
+						</td>
+						<td align="left" class="TdItem">
+							<asp:CheckBox ID="KENGEN_SEISAN" runat="server" Text="使用可能" />
+						</td>
+					</tr>
+					<tr>
+						<td align="left" style="background-color: #e9f7e3; color: #555555; font-weight: bold;">
+							&nbsp;
 							利用停止
 							&nbsp;
 						</td>
@@ -132,6 +144,7 @@
 						<asp:BoundField DataField="LOGIN_ID" HeaderText="ログインID" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KENGEN" HeaderText="権限" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KENGEN_SEISAN" HeaderText="精算入力" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="STOP_FLG" HeaderText="使用停止" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SYSTEM_ID" />
 					</Columns>

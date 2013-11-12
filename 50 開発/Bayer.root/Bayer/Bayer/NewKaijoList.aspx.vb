@@ -70,18 +70,21 @@ Partial Public Class NewKaijoList
     '画面項目 初期化
     Private Sub InitControls()
         'プルダウン設定
+        AppModule.SetDropDownList_BU(Me.JokenBU, MyBase.DbConnection)
+        AppModule.SetDropDownList_AREA(Me.JokenKIKAKU_TANTO_AREA, MyBase.DbConnection)
         AppModule.SetDropDownList_REQ_STATUS_TEHAI(Me.JokenREQ_STATUS_TEHAI, True)
 
-        'IME設定
-        CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
-        
         'クリア
         CmnModule.ClearAllControl(Me)
     End Sub
 
     '画面項目 表示
     Private Sub SetForm()
+        '条件表示
+        Me.JokenBU.SelectedIndex = CmnModule.GetSelectedIndex(Joken.BU, Me.JokenBU)
+        Me.JokenKIKAKU_TANTO_AREA.SelectedIndex = CmnModule.GetSelectedIndex(Joken.AREA, Me.JokenKIKAKU_TANTO_AREA)
+        Me.JokenREQ_STATUS_TEHAI.SelectedIndex = CmnModule.GetSelectedIndex(Joken.REQ_STATUS_TEHAI, Me.JokenREQ_STATUS_TEHAI)
+
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
@@ -106,13 +109,7 @@ Partial Public Class NewKaijoList
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        Joken = Nothing
-        Joken.BU = Trim(Me.JokenBU.Text)
-        Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
-        Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.JokenREQ_STATUS_TEHAI)
-
         ReDim TBL_KAIJO(wCnt)
-
         strSQL = SQL.TBL_KAIJO.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
@@ -203,9 +200,22 @@ Partial Public Class NewKaijoList
 
     '[検索]
     Protected Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
+
+        Joken = Nothing
+        Joken.BU = CmnModule.GetSelectedItemValue(Me.JokenBU)
+        Joken.AREA = CmnModule.GetSelectedItemValue(Me.JokenKIKAKU_TANTO_AREA)
+        Joken.REQ_STATUS_TEHAI = CmnModule.GetSelectedItemValue(Me.JokenREQ_STATUS_TEHAI)
+
         '画面項目表示
         SetForm()
     End Sub
+
+    '入力チェック
+    Private Function Check() As Boolean
+        Return True
+    End Function
 
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click

@@ -15,6 +15,7 @@ Partial Public Class KaijoRireki
         KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
         USER_NAME
+        SEND_FLAG
         Button1
         KOUENKAI_NO
         TO_DATE
@@ -112,17 +113,7 @@ Partial Public Class KaijoRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定
-        ''仮
-        'Dim strSQL As String = "SELECT * " _
-        '        & ",'担当者AAA' AS TANTO_NAME" _
-        '        & " FROM TBL_KAIJO TKJ" _
-        '        & " LEFT OUTER JOIN TBL_KOUENKAI TKE" _
-        '        & " ON TKJ.KOUENKAI_NO = TKE.KOUENKAI_NO" _
-        '        & " WHERE TKJ.KOUENKAI_NO = '0000000001'" _
-        '        & " ORDER BY TKJ.TIME_STAMP_BYL DESC"
-
-        Dim strSQL As String = SQL.TBL_KAIJO.Rireki(Joken)
+        'データソース設定        Dim strSQL As String = SQL.TBL_KAIJO.Rireki(Joken)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -145,6 +136,7 @@ Partial Public Class KaijoRireki
             e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text = AppModule.GetName_TIME_STAMP_BYL(e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text)
             e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_DATE_FROM_TO(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text)
+            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
     End Sub
 

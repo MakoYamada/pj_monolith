@@ -10,15 +10,16 @@
 					<tr>
 						<td align="left" colspan="2">
 							BU
-							<asp:TextBox ID="JokenBU" runat="server" Width="110px" MaxLength="40"></asp:TextBox>
+							<asp:DropDownList ID="JokenBU" runat="server" Width="120px"></asp:DropDownList>
 							&nbsp;&nbsp;&nbsp;
 							エリア
-							<asp:TextBox ID="JokenKIKAKU_TANTO_AREA" runat="server" Width="110px" MaxLength="80"></asp:TextBox>
+							<asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" Width="200px"></asp:DropDownList>
 							&nbsp;&nbsp;&nbsp;
 							区分
 							<asp:DropDownList ID="JokenREQ_STATUS_TEHAI" runat="server" Width="140px"></asp:DropDownList>
 						</td>
 						<td align="right">
+							&nbsp;&nbsp;&nbsp;
 							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
 						</td>
 					</tr>
@@ -60,7 +61,7 @@
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" ItemStyle-HorizontalAlign="Left" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="REQ_STATUS_TEHAI" HeaderText="区分" ItemStyle-Wrap="false" ItemStyle-HorizontalAlign="Left" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="USER_NAME" HeaderText="トップ担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="44px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />

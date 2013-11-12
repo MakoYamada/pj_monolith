@@ -35,9 +35,8 @@ Partial Public Class MstCode
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "コードマスタメンテナンス"
+            .PageTitle = "コードマスタ メンテナンス"
         End With
-
     End Sub
 
     'セッションを変数に格納

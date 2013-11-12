@@ -58,7 +58,7 @@ Partial Public Class Login
             Return False
         End If
 
-        'ユーザマスタ
+        'TOP担当者マスタ
         Dim strSQL As String = SQL.MS_USER.Login(Trim(Me.LOGIN_ID.Text), Trim(Me.PASSWORD.Text))
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False

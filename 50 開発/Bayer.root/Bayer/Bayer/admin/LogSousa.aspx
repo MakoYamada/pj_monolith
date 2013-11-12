@@ -18,7 +18,7 @@
 					</tr>
 					<tr>
 						<td align="left">
-							処理日
+							操作日
 							<asp:TextBox ID="JokenINPUT_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
 							<asp:TextBox ID="JokenINPUT_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
 							<asp:TextBox ID="JokenINPUT_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日

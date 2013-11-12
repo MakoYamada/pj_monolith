@@ -52,6 +52,15 @@ Partial Public Class MstUser
     Protected WithEvents JokenKENGEN_User As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
+    '''JokenKENGEN_SEISAN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKENGEN_SEISAN As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''JokenSTOP_FLG コントロール。
     '''</summary>
     '''<remarks>
@@ -167,6 +176,15 @@ Partial Public Class MstUser
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KENGEN_User As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''KENGEN_SEISAN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KENGEN_SEISAN As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''STOP_FLG コントロール。
