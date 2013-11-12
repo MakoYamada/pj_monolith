@@ -8112,10 +8112,10 @@ Public Class AppModule
 #Region "消費税関連の処理"
 
     'TODO:要確認
-    Public Shared Function GetZeiRate(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+    Public Shared Function GetZeiRate(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, Optional ByVal DbTrans As SqlClient.SqlTransaction = Nothing) As String
 
         Dim strZeiRate As String = "0"
-        Dim MS_ZEI() As TableDef.MS_ZEI.DataStruct = AppModule.GetZeiData(KIJUN_DATE, DbConn)
+        Dim MS_ZEI() As TableDef.MS_ZEI.DataStruct = AppModule.GetZeiData(KIJUN_DATE, DbConn, DbTrans)
 
         If Not MS_ZEI Is Nothing Then
             For Each record As TableDef.MS_ZEI.DataStruct In MS_ZEI
@@ -8131,7 +8131,7 @@ Public Class AppModule
     End Function
 
     '消費税データ取得
-    Public Shared Function GetZeiData(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As TableDef.MS_ZEI.DataStruct()
+    Public Shared Function GetZeiData(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, Optional ByVal DbTrans As SqlClient.SqlTransaction = Nothing) As TableDef.MS_ZEI.DataStruct()
 
         Dim wCnt As Integer = 0
 
@@ -8139,7 +8139,14 @@ Public Class AppModule
         Dim wFlag As Boolean = False
 
         Dim strSQL As String = SQL.MS_ZEI.AllData
-        Dim RsData As System.Data.SqlClient.SqlDataReader = CmnDb.Read(strSQL, DbConn)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        If DbTrans Is Nothing Then
+            RsData = CmnDb.Read(strSQL, DbConn)
+        Else
+            RsData = CmnDbBatch.Read(strSQL, DbConn, DbTrans)
+        End If
+
         While RsData.Read()
             wFlag = True
             ReDim Preserve MS_ZEI(wCnt)
