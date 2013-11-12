@@ -2271,6 +2271,7 @@
             Public LOGIN_ID As String
             Public PASSWORD As String
             Public KENGEN As String
+            Public KENGEN_SEISAN As String
             Public USER_NAME As String
             Public STOP_FLG As String
             Public INPUT_DATE As String
@@ -2283,6 +2284,7 @@
             Public Const LOGIN_ID As String = "LOGIN_ID"
             Public Const PASSWORD As String = "PASSWORD"
             Public Const KENGEN As String = "KENGEN"
+            Public Const KENGEN_SEISAN As String = "KENGEN_SEISAN"
             Public Const USER_NAME As String = "USER_NAME"
             Public Const STOP_FLG As String = "STOP_FLG"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -2295,6 +2297,7 @@
             Public Const LOGIN_ID As String = "ログインID"
             Public Const PASSWORD As String = "パスワード"
             Public Const KENGEN As String = "権限"
+            Public Const KENGEN_SEISAN As String = "精算入力権限"
             Public Const USER_NAME As String = "氏名"
             Public Const STOP_FLG As String = "利用停止フラグ"
             Public Const INPUT_DATE As String = "登録日時"
@@ -2334,65 +2337,95 @@
         End Class
     End Class
 
-    'Public Class MS_JIGYOSHO
-    '    <Serializable()> Public Structure DataStruct
-    '        Public SYSTEM_ID As String
-    '        Public 未定 As String
-    '        Public STOP_FLG As String
-    '        Public INPUT_DATE As String
-    '        Public INPUT_USER As String
-    '        Public UPDATE_DATE As String
-    '        Public UPDATE_USER As String
-    '    End Structure
-    '    Public Class Column
-    '        Public Const SYSTEM_ID As String = "SYSTEM_ID"
-    '        Public Const 未定 As String = "未定"
-    '        Public Const STOP_FLG As String = "STOP_FLG"
-    '        Public Const INPUT_DATE As String = "INPUT_DATE"
-    '        Public Const INPUT_USER As String = "INPUT_USER"
-    '        Public Const UPDATE_DATE As String = "UPDATE_DATE"
-    '        Public Const UPDATE_USER As String = "UPDATE_USER"
-    '    End Class
-    '    Public Class Name
-    '        Public Const SYSTEM_ID As String = "システムID"
-    '        Public Const 未定 As String = "未定"
-    '        Public Const STOP_FLG As String = "利用停止フラグ"
-    '        Public Const INPUT_DATE As String = "登録日時"
-    '        Public Const INPUT_USER As String = "登録者"
-    '        Public Const UPDATE_DATE As String = "更新日時"
-    '        Public Const UPDATE_USER As String = "更新者"
-    '    End Class
-    'End Class
+    Public Class MS_BU
+        <Serializable()> Public Structure DataStruct
+            Public SYSTEM_ID As String
+            Public BU As String
+            Public STOP_FLG As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const SYSTEM_ID As String = "SYSTEM_ID"
+            Public Const BU As String = "BU"
+            Public Const STOP_FLG As String = "STOP_FLG"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const SYSTEM_ID As String = "システムID"
+            Public Const BU As String = "BU"
+            Public Const STOP_FLG As String = "利用停止フラグ"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
 
-    'Public Class MS_AREA
-    '    <Serializable()> Public Structure DataStruct
-    '        Public SYSTEM_ID As String
-    '        Public 未定 As String
-    '        Public STOP_FLG As String
-    '        Public INPUT_DATE As String
-    '        Public INPUT_USER As String
-    '        Public UPDATE_DATE As String
-    '        Public UPDATE_USER As String
-    '    End Structure
-    '    Public Class Column
-    '        Public Const SYSTEM_ID As String = "SYSTEM_ID"
-    '        Public Const 未定 As String = "未定"
-    '        Public Const STOP_FLG As String = "STOP_FLG"
-    '        Public Const INPUT_DATE As String = "INPUT_DATE"
-    '        Public Const INPUT_USER As String = "INPUT_USER"
-    '        Public Const UPDATE_DATE As String = "UPDATE_DATE"
-    '        Public Const UPDATE_USER As String = "UPDATE_USER"
-    '    End Class
-    '    Public Class Name
-    '        Public Const SYSTEM_ID As String = "システムID"
-    '        Public Const 未定 As String = "未定"
-    '        Public Const STOP_FLG As String = "利用停止フラグ"
-    '        Public Const INPUT_DATE As String = "登録日時"
-    '        Public Const INPUT_USER As String = "登録者"
-    '        Public Const UPDATE_DATE As String = "更新日時"
-    '        Public Const UPDATE_USER As String = "更新者"
-    '    End Class
-    'End Class
+    Public Class MS_AREA
+        <Serializable()> Public Structure DataStruct
+            Public SYSTEM_ID As String
+            Public AREA As String
+            Public STOP_FLG As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const SYSTEM_ID As String = "SYSTEM_ID"
+            Public Const AREA As String = "AREA"
+            Public Const STOP_FLG As String = "STOP_FLG"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const SYSTEM_ID As String = "システムID"
+            Public Const AREA As String = "エリア"
+            Public Const STOP_FLG As String = "利用停止フラグ"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
+    Public Class MS_SEIHIN
+        <Serializable()> Public Structure DataStruct
+            Public SYSTEM_ID As String
+            Public SEIHIN As String
+            Public STOP_FLG As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const SYSTEM_ID As String = "SYSTEM_ID"
+            Public Const SEIHIN As String = "SEIHIN"
+            Public Const STOP_FLG As String = "STOP_FLG"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const SYSTEM_ID As String = "システムID"
+            Public Const SEIHIN As String = "製品"
+            Public Const STOP_FLG As String = "利用停止フラグ"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
 
     'Public Class MS_EIGYOSHO
     '    <Serializable()> Public Structure DataStruct
