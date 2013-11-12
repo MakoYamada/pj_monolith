@@ -922,6 +922,28 @@ Public Class AppModule
     '    End Function
     '#End Region
 
+#Region "消費税マスタ"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_ZEI As TableDef.MS_ZEI.DataStruct) As TableDef.MS_ZEI.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.ZEI_CD.ToUpper Then MS_ZEI.ZEI_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.ZEI_NAME.ToUpper Then MS_ZEI.ZEI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.ZEI_RATE.ToUpper Then MS_ZEI.ZEI_RATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.START_DATE.ToUpper Then MS_ZEI.START_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.END_DATE.ToUpper Then MS_ZEI.END_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.STOP_FLG.ToUpper Then MS_ZEI.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.INPUT_DATE.ToUpper Then MS_ZEI.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.INPUT_USER.ToUpper Then MS_ZEI.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.UPDATE_DATE.ToUpper Then MS_ZEI.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.UPDATE_USER.ToUpper Then MS_ZEI.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+        Next wCnt
+
+        Return MS_ZEI
+    End Function
+#End Region
+
 #Region "コードマスタ"
     Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_CODE As TableDef.MS_CODE.DataStruct) As TableDef.MS_CODE.DataStruct
         Dim wCnt As Integer = 0
