@@ -11,10 +11,10 @@ CREATE TABLE [dbo].[MS_AREA](
 	[SYSTEM_ID] [nvarchar](10) COLLATE Japanese_CI_AS NULL,
 	[AREA] [nvarchar](80) COLLATE Japanese_CI_AS NOT NULL,
 	[STOP_FLG] [nvarchar](1) COLLATE Japanese_CI_AS NULL,
-	[INPUT_DATE] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
-	[INPUT_USER] [nvarchar](10) COLLATE Japanese_CI_AS NULL,
-	[UPDATE_DATE] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
-	[UPDATE_USER] [nvarchar](10) COLLATE Japanese_CI_AS NULL,
+	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS NULL,
+	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
+	[UPDATE_DATE] [nvarchar](14) COLLATE Japanese_CI_AS NULL,
+	[UPDATE_USER] [nvarchar](20) COLLATE Japanese_CI_AS NULL,
  CONSTRAINT [PK_MS_AREA] PRIMARY KEY CLUSTERED 
 (
 	[AREA] ASC
