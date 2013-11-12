@@ -634,15 +634,26 @@ Public Class SQL
         End Function
 
         Public Shared Function bySEND_FLAG(ByVal SEND_FLAG As String) As String
-            Dim strSQL As String = "SELECT" _
-                                & " TBL_KOTSUHOTEL.*" _
-                                & ",(SELECT TOP 1 TBL_KOUENKAI.KOUENKAI_NAME FROM TBL_KOUENKAI" _
-                                & " WHERE TBL_KOUENKAI.KOUENKAI_NO = TBL_KOTSUHOTEL.KOUENKAI_NO" _
-                                & " ORDER BY TBL_KOUENKAI.TIME_STAMP DESC" _
-                                & ") AS KOUENKAI_NAME" _
-                                & " FROM TBL_KOTSUHOTEL"
-
-            strSQL &= " WHERE TBL_KOTSUHOTEL.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
+            Dim strSQL As String = ""
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK_KOUENKAI.FROM_DATE"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
