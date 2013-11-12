@@ -51,6 +51,8 @@ CREATE TABLE [dbo].[TBL_KOUENKAI](
 	[YOSAN_T] [nvarchar](18) COLLATE Japanese_CI_AS  NULL,
 	[IROUKAI_YOSAN_T] [nvarchar](18) COLLATE Japanese_CI_AS  NULL,
 	[IKENKOUKAN_YOSAN_T] [nvarchar](18) COLLATE Japanese_CI_AS  NULL,
+	[DANTAI_CODE] [nvarchar](6) COLLATE Japanese_CI_AS  NULL,
+	[TTEHAI_TANTO] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[SEND_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[TTANTO_ID] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
