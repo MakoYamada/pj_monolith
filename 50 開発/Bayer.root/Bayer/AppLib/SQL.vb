@@ -654,7 +654,9 @@ Public Class SQL
             strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
             strSQL &= " AND"
             strSQL &= " WK_KOTSUHOTEL.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
-            strSQL &= SQL_ORDERBY
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO,"
+            strSQL &= " WK_KOTSUHOTEL.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
