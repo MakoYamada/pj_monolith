@@ -401,6 +401,12 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function MaxSEISAN_NO() As String
+            Dim strSQL As String = ""
+            strSQL &= "SELECT MAX(CONVERT(BIGINT,SEIKYU_NO_TOPTOUR)) AS SEIKYU_NO_TOPTOUR FROM TBL_SEIKYU"
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
