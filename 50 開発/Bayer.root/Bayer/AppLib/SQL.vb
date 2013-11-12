@@ -211,6 +211,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IROUKAI_YOSAN_T
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IKENKOUKAN_YOSAN_T
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.DANTAI_CODE
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.INPUT_DATE
@@ -262,6 +264,8 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.IROUKAI_YOSAN_T) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.IKENKOUKAN_YOSAN_T) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.DANTAI_CODE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TTEHAI_TANTO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
@@ -318,6 +322,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.YOSAN_T) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IROUKAI_YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.IROUKAI_YOSAN_T) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.IKENKOUKAN_YOSAN_T & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.IKENKOUKAN_YOSAN_T) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.DANTAI_CODE & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.DANTAI_CODE) & "'"
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TTEHAI_TANTO) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
