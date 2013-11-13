@@ -297,6 +297,8 @@
             Public INPUT_USER As String
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
+
+            Public FROM_DATE As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -344,6 +346,8 @@
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
+
+            Public Const FROM_DATE As String = "FROM_DATE"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -391,6 +395,8 @@
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
+
+            Public Const FROM_DATE As String = "開催日FROM"
         End Class
     End Class
 
