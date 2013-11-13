@@ -99,6 +99,7 @@ Partial Public Class Preview
         ElseIf URL.KouenkaiRireki.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
             Try
                 TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+                SEQ = Session.Item(SessionDef.SEQ)
                 If IsNothing(TBL_KOUENKAI) Then Return False
             Catch ex As Exception
                 Return False
@@ -365,7 +366,9 @@ Partial Public Class Preview
 
         '講演会№・講演会名を渡す
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NO"),  _
-            DataDynamics.ActiveReports.TextBox).Text = AppModule.GetName_KOUENKAI_DATE(Joken.FROM_DATE, Joken.TO_DATE, True)
+            DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NO
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NAME"),  _
+            DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NAME
 
         'レポートを作成
         rpt1.Run()
