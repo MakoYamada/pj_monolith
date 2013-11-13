@@ -457,6 +457,7 @@
             Public ANS_HOTEL_SMOKING As String
             Public ANS_HOTEL_NOTE As String
             Public ANS_HOTELHI As String
+            Public ANS_HOTELHI_TOZEI As String
             Public ANS_HOTELHI_CANCEL As String
             Public REQ_O_TEHAI_1 As String
             Public REQ_O_IRAINAIYOU_1 As String
@@ -782,6 +783,7 @@
             Public ANS_MR_HOTEL_NOTE As String
             Public ANS_MR_KOTSUHI As String
             Public ANS_MR_HOTELHI As String
+            Public ANS_MR_HOTELHI_TOZEI As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -857,6 +859,7 @@
             Public Const ANS_HOTEL_SMOKING As String = "ANS_HOTEL_SMOKING"
             Public Const ANS_HOTEL_NOTE As String = "ANS_HOTEL_NOTE"
             Public Const ANS_HOTELHI As String = "ANS_HOTELHI"
+            Public Const ANS_HOTELHI_TOZEI As String = "ANS_HOTELHI_TOZEI"
             Public Const ANS_HOTELHI_CANCEL As String = "ANS_HOTELHI_CANCEL"
             Public Const REQ_O_TEHAI_1 As String = "REQ_O_TEHAI_1"
             Public Const REQ_O_IRAINAIYOU_1 As String = "REQ_O_IRAINAIYOU_1"
@@ -1182,6 +1185,7 @@
             Public Const ANS_MR_HOTEL_NOTE As String = "ANS_MR_HOTEL_NOTE"
             Public Const ANS_MR_KOTSUHI As String = "ANS_MR_KOTSUHI"
             Public Const ANS_MR_HOTELHI As String = "ANS_MR_HOTELHI"
+            Public Const ANS_MR_HOTELHI_TOZEI As String = "ANS_MR_HOTELHI_TOZEI"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -1257,6 +1261,7 @@
             Public Const ANS_HOTEL_SMOKING As String = "宿泊ホテル喫煙(回答)"
             Public Const ANS_HOTEL_NOTE As String = "宿泊備考(回答)"
             Public Const ANS_HOTELHI As String = "宿泊費(回答)"
+            Public Const ANS_HOTELHI_TOZEI As String = "宿泊都税(回答)"
             Public Const ANS_HOTELHI_CANCEL As String = "宿泊取消料(回答)"
             Public Const REQ_O_TEHAI_1 As String = "往路1:希望する(依頼)"
             Public Const REQ_O_IRAINAIYOU_1 As String = "往路1:依頼内容(依頼)"
@@ -1582,6 +1587,7 @@
             Public Const ANS_MR_HOTEL_NOTE As String = "社員用交通・宿泊備考(回答)"
             Public Const ANS_MR_KOTSUHI As String = "【回答】MR 交通費"
             Public Const ANS_MR_HOTELHI As String = "【回答】MR 宿泊費"
+            Public Const ANS_MR_HOTELHI_TOZEI As String = "【回答】MR 宿泊都税"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"
