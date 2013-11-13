@@ -370,7 +370,6 @@ Public Class SQL
             Dim strSQL As String = ""
             strSQL &= "SELECT DISTINCT"
             strSQL &= " WK_SEIKYU.*"
-            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
             strSQL &= ",WK_KOUENKAI.FROM_DATE"
             strSQL &= " FROM"
             strSQL &= " TBL_SEIKYU AS WK_SEIKYU"
