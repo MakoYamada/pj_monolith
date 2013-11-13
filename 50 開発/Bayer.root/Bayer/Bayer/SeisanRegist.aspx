@@ -25,7 +25,8 @@
                                         精算番号
                                     </td>
                                     <td nowrap="nowrap" align="left" style="width:130px;">
-							            <asp:TextBox ID="SEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" Width="125px" MaxLength="14"></asp:TextBox>
+							            <asp:TextBox ID="SEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" BorderStyle="None" 
+                                            Width="125px" MaxLength="14" ReadOnly="True" TabIndex="-1"></asp:TextBox>
 						            </td>
                                 </tr>
                                 <tr>

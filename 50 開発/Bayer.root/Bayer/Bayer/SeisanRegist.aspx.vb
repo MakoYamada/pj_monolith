@@ -90,10 +90,8 @@ Partial Public Class SeisanRegist
             '新規登録
             'キー項目入力可
             Me.KOUENKAI_NO.Enabled = True
-            Me.SEIKYU_NO_TOPTOUR.Enabled = True
         Else
             Me.KOUENKAI_NO.Enabled = False
-            Me.SEIKYU_NO_TOPTOUR.Enabled = False
         End If
 
         'クリア
@@ -513,6 +511,11 @@ Partial Public Class SeisanRegist
         If Not CheckCalcItem() Then Exit Sub
         CalculateKingaku()
 
+        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+            '自動採番
+            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+        End If
+
         '入力チェック
         If Not Check() Then Exit Sub
 
@@ -532,6 +535,11 @@ Partial Public Class SeisanRegist
         '再計算
         If Not CheckCalcItem() Then Exit Sub
         CalculateKingaku()
+
+        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+            '自動採番
+            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+        End If
 
         '入力チェック
         If Not Check() Then Exit Sub
