@@ -1137,6 +1137,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTEL_SMOKING
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTEL_NOTE
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTELHI
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTELHI_TOZEI
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTELHI_CANCEL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.REQ_O_TEHAI_1
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.REQ_O_IRAINAIYOU_1
@@ -1462,6 +1463,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTEL_NOTE
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_KOTSUHI
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI_TOZEI
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.INPUT_DATE
@@ -1526,6 +1528,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTEL_SMOKING) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTEL_NOTE) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTELHI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTELHI_TOZEI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTELHI_CANCEL) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.REQ_O_TEHAI_1) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.REQ_O_IRAINAIYOU_1) & "'"
@@ -1851,6 +1854,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTEL_NOTE) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_KOTSUHI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI_TOZEI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
@@ -1881,6 +1885,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTEL_SMOKING & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTEL_SMOKING) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTEL_NOTE & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTEL_NOTE) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTELHI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTELHI) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTELHI_TOZEI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTELHI_TOZEI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_HOTELHI_CANCEL & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_HOTELHI_CANCEL) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_O_STATUS_1 & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_O_STATUS_1) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_O_KOTSUKIKAN_1 & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_O_KOTSUKIKAN_1) & "'"
@@ -2058,6 +2063,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTEL_NOTE & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTEL_NOTE) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_KOTSUHI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_KOTSUHI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_MR_HOTELHI_TOZEI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_MR_HOTELHI_TOZEI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID & "=N'" & GetValue.USER() & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
