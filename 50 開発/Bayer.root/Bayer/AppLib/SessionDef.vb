@@ -33,6 +33,7 @@
     Public Const KouenkaiRireki_TBL_KOUENKAI As String = "KouenkaiRireki_TBL_KOUENKAI"
     Public Const KouenkaiRireki_SEQ As String = "KouenkaiRireki_SEQ"
     Public Const KouenkaiRireki_PageIndex As String = "KouenkaiRireki_PageIndex"
+    Public Const KouenkaiPrint_SQL As String = "KouenkaiPrint_SQL"
     Public Const NewKouenkaiPrint_SQL As String = "NewKouenkaiPrint_SQL"
     Public Const KaijoRireki As String = "KaijoRireki"
     Public Const KaijoRireki_TBL_KAIJO As String = "KaijoRireki_TBL_KAIJO"
