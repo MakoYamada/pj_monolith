@@ -239,7 +239,7 @@ Partial Public Class Preview
         Dim rpt1 As New KouenkaiReport()
 
         'データ設定
-        rpt1.DataSource = GetNewKouenkaiData()
+        rpt1.DataSource = GetKouenkaiData()
         rpt1.Document.Printer.PrinterName = ""
 
         'A4縦
