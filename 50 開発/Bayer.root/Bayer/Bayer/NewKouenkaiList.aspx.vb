@@ -251,16 +251,19 @@ Partial Public Class NewKouenkaiList
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.KUBUN)
 
         strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
-        Joken.BU = "BUパラメータテスト"
-        Session.Item(SessionDef.NewKouenkaiPrint_SQL) = Joken
+        If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
+        If Joken.AREA.Trim = "" Then Joken.AREA = "指定なし"
+
+        Session.Item(SessionDef.NewKouenkaiPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.Joken) = Joken
         Response.Redirect(URL.Preview)
     End Sub
 
     '[印刷]
     Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
-        Response.Redirect(URL.Preview)
+        BtnPrint1_Click(sender, e)
     End Sub
 
     '[戻る]
@@ -270,7 +273,7 @@ Partial Public Class NewKouenkaiList
 
     '[戻る]
     Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
-        Response.Redirect(URL.Menu)
+        BtnBack1_Click(sender, e)
     End Sub
 
     '入力チェック

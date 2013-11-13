@@ -201,6 +201,8 @@ Partial Public Class Preview
         '抽出条件を渡す
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_BU"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.BU
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
 
         'レポートを作成
         rpt1.Run()

@@ -19,90 +19,80 @@ Partial Public Class NewKouenkaiReport
     Private Sub InitializeComponent()
         Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(NewKouenkaiReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
-        Me.Detail = New DataDynamics.ActiveReports.Detail
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.Label2 = New DataDynamics.ActiveReports.Label
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.Label4 = New DataDynamics.ActiveReports.Label
-        Me.BU = New DataDynamics.ActiveReports.TextBox
-        Me.KIKAKU_TANTO_AREA = New DataDynamics.ActiveReports.TextBox
-        Me.KIKAKU_TANTO_EIGYOSHO = New DataDynamics.ActiveReports.TextBox
         Me.Label5 = New DataDynamics.ActiveReports.Label
-        Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
-        Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label7 = New DataDynamics.ActiveReports.Label
-        Me.TIME_STAMP = New DataDynamics.ActiveReports.TextBox
         Me.Label8 = New DataDynamics.ActiveReports.Label
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.Label9 = New DataDynamics.ActiveReports.Label
-        Me.Page = New DataDynamics.ActiveReports.TextBox
         Me.Label10 = New DataDynamics.ActiveReports.Label
         Me.Label11 = New DataDynamics.ActiveReports.Label
         Me.JOKEN_BU = New DataDynamics.ActiveReports.TextBox
         Me.Label12 = New DataDynamics.ActiveReports.Label
         Me.JOKEN_AREA = New DataDynamics.ActiveReports.TextBox
+        Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.BU = New DataDynamics.ActiveReports.TextBox
+        Me.KIKAKU_TANTO_AREA = New DataDynamics.ActiveReports.TextBox
+        Me.KIKAKU_TANTO_EIGYOSHO = New DataDynamics.ActiveReports.TextBox
+        Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.TIME_STAMP = New DataDynamics.ActiveReports.TextBox
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.ReportInfo1 = New DataDynamics.ActiveReports.ReportInfo
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BU, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TIME_STAMP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Page, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JOKEN_BU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JOKEN_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TIME_STAMP, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReportInfo1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label1, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.Page, Me.Label10, Me.Label11, Me.JOKEN_BU, Me.Label12, Me.JOKEN_AREA})
-        Me.PageHeader.Height = 1.508487!
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label1, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.Label10, Me.Label11, Me.JOKEN_BU, Me.Label12, Me.JOKEN_AREA, Me.ReportInfo1})
+        Me.PageHeader.Height = 1.550154!
         Me.PageHeader.Name = "PageHeader"
-        '
-        'Detail
-        '
-        Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.TIME_STAMP})
-        Me.Detail.Height = 0.2145834!
-        Me.Detail.Name = "Detail"
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
         '
         'Label1
         '
-        Me.Label1.Height = 0.2!
+        Me.Label1.Height = 0.2728347!
         Me.Label1.HyperLink = Nothing
         Me.Label1.Left = 0.0!
         Me.Label1.Name = "Label1"
-        Me.Label1.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold"
+        Me.Label1.Style = "font-family: ＭＳ ゴシック; font-size: 16pt; font-weight: bold"
         Me.Label1.Text = "新着　講演会一覧"
-        Me.Label1.Top = 0.2!
-        Me.Label1.Width = 1.427165!
+        Me.Label1.Top = 0.0!
+        Me.Label1.Width = 3.781496!
         '
         'Label2
         '
         Me.Label2.Height = 0.2!
         Me.Label2.HyperLink = Nothing
-        Me.Label2.Left = 9.852757!
+        Me.Label2.Left = 10.03701!
         Me.Label2.Name = "Label2"
         Me.Label2.Style = ""
         Me.Label2.Text = "出力日："
@@ -112,7 +102,7 @@ Partial Public Class NewKouenkaiReport
         'PRINT_DATE
         '
         Me.PRINT_DATE.Height = 0.2!
-        Me.PRINT_DATE.Left = 10.43622!
+        Me.PRINT_DATE.Left = 10.62047!
         Me.PRINT_DATE.Name = "PRINT_DATE"
         Me.PRINT_DATE.Style = "white-space: nowrap"
         Me.PRINT_DATE.Text = "1234/56/78 12:34:56"
@@ -141,36 +131,6 @@ Partial Public Class NewKouenkaiReport
         Me.Label4.Top = 1.277953!
         Me.Label4.Width = 0.5102363!
         '
-        'BU
-        '
-        Me.BU.CanGrow = False
-        Me.BU.Height = 0.2!
-        Me.BU.Left = 0.0!
-        Me.BU.Name = "BU"
-        Me.BU.Style = "white-space: nowrap"
-        Me.BU.Top = 0.0!
-        Me.BU.Width = 1.479134!
-        '
-        'KIKAKU_TANTO_AREA
-        '
-        Me.KIKAKU_TANTO_AREA.CanGrow = False
-        Me.KIKAKU_TANTO_AREA.Height = 0.2!
-        Me.KIKAKU_TANTO_AREA.Left = 1.551969!
-        Me.KIKAKU_TANTO_AREA.Name = "KIKAKU_TANTO_AREA"
-        Me.KIKAKU_TANTO_AREA.Style = "white-space: nowrap"
-        Me.KIKAKU_TANTO_AREA.Top = 0.0!
-        Me.KIKAKU_TANTO_AREA.Width = 1.479134!
-        '
-        'KIKAKU_TANTO_EIGYOSHO
-        '
-        Me.KIKAKU_TANTO_EIGYOSHO.CanGrow = False
-        Me.KIKAKU_TANTO_EIGYOSHO.Height = 0.2!
-        Me.KIKAKU_TANTO_EIGYOSHO.Left = 3.093701!
-        Me.KIKAKU_TANTO_EIGYOSHO.Name = "KIKAKU_TANTO_EIGYOSHO"
-        Me.KIKAKU_TANTO_EIGYOSHO.Style = "white-space: nowrap"
-        Me.KIKAKU_TANTO_EIGYOSHO.Top = 0.0!
-        Me.KIKAKU_TANTO_EIGYOSHO.Width = 1.479134!
-        '
         'Label5
         '
         Me.Label5.Height = 0.2!
@@ -181,16 +141,6 @@ Partial Public Class NewKouenkaiReport
         Me.Label5.Text = "営業所"
         Me.Label5.Top = 1.277953!
         Me.Label5.Width = 0.5102362!
-        '
-        'FROM_DATE
-        '
-        Me.FROM_DATE.CanGrow = False
-        Me.FROM_DATE.Height = 0.2!
-        Me.FROM_DATE.Left = 4.645669!
-        Me.FROM_DATE.Name = "FROM_DATE"
-        Me.FROM_DATE.Style = "white-space: nowrap"
-        Me.FROM_DATE.Top = 0.0!
-        Me.FROM_DATE.Width = 1.614567!
         '
         'Label6
         '
@@ -203,42 +153,22 @@ Partial Public Class NewKouenkaiReport
         Me.Label6.Top = 1.277953!
         Me.Label6.Width = 0.5102362!
         '
-        'KOUENKAI_NAME
-        '
-        Me.KOUENKAI_NAME.CanGrow = False
-        Me.KOUENKAI_NAME.Height = 0.2!
-        Me.KOUENKAI_NAME.Left = 6.343701!
-        Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
-        Me.KOUENKAI_NAME.Style = "white-space: nowrap"
-        Me.KOUENKAI_NAME.Top = 0.0!
-        Me.KOUENKAI_NAME.Width = 4.041733!
-        '
         'Label7
         '
         Me.Label7.Height = 0.2!
         Me.Label7.HyperLink = Nothing
-        Me.Label7.Left = 6.343701!
+        Me.Label7.Left = 6.446064!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
         Me.Label7.Text = "講演会名"
         Me.Label7.Top = 1.277953!
         Me.Label7.Width = 1.051969!
         '
-        'TIME_STAMP
-        '
-        Me.TIME_STAMP.CanGrow = False
-        Me.TIME_STAMP.Height = 0.2!
-        Me.TIME_STAMP.Left = 10.43622!
-        Me.TIME_STAMP.Name = "TIME_STAMP"
-        Me.TIME_STAMP.Style = "white-space: nowrap"
-        Me.TIME_STAMP.Top = 0.0!
-        Me.TIME_STAMP.Width = 1.312598!
-        '
         'Label8
         '
         Me.Label8.Height = 0.2!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 10.43622!
+        Me.Label8.Left = 10.53859!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = "font-family: ＭＳ ゴシック"
         Me.Label8.Text = "TimeStamp(BYL)"
@@ -252,9 +182,9 @@ Partial Public Class NewKouenkaiReport
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
         Me.Line1.Top = 1.237008!
-        Me.Line1.Width = 11.77165!
+        Me.Line1.Width = 12.16535!
         Me.Line1.X1 = 0.0!
-        Me.Line1.X2 = 11.77165!
+        Me.Line1.X2 = 12.16535!
         Me.Line1.Y1 = 1.237008!
         Me.Line1.Y2 = 1.237008!
         '
@@ -265,9 +195,9 @@ Partial Public Class NewKouenkaiReport
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
         Me.Line2.Top = 1.518899!
-        Me.Line2.Width = 11.77165!
+        Me.Line2.Width = 12.16535!
         Me.Line2.X1 = 0.0!
-        Me.Line2.X2 = 11.77165!
+        Me.Line2.X2 = 12.16535!
         Me.Line2.Y1 = 1.518899!
         Me.Line2.Y2 = 1.518899!
         '
@@ -275,21 +205,12 @@ Partial Public Class NewKouenkaiReport
         '
         Me.Label9.Height = 0.2!
         Me.Label9.HyperLink = Nothing
-        Me.Label9.Left = 9.852757!
+        Me.Label9.Left = 10.03701!
         Me.Label9.Name = "Label9"
         Me.Label9.Style = ""
         Me.Label9.Text = "ページ："
         Me.Label9.Top = 0.2!
         Me.Label9.Width = 0.5834652!
-        '
-        'Page
-        '
-        Me.Page.Height = 0.2!
-        Me.Page.Left = 10.43622!
-        Me.Page.Name = "Page"
-        Me.Page.Style = "white-space: nowrap"
-        Me.Page.Top = 0.2!
-        Me.Page.Width = 1.364567!
         '
         'Label10
         '
@@ -320,6 +241,7 @@ Partial Public Class NewKouenkaiReport
         Me.JOKEN_BU.Left = 0.6559055!
         Me.JOKEN_BU.Name = "JOKEN_BU"
         Me.JOKEN_BU.Style = "white-space: nowrap"
+        Me.JOKEN_BU.Text = Nothing
         Me.JOKEN_BU.Top = 0.7228347!
         Me.JOKEN_BU.Width = 1.479134!
         '
@@ -341,15 +263,123 @@ Partial Public Class NewKouenkaiReport
         Me.JOKEN_AREA.Left = 0.6559055!
         Me.JOKEN_AREA.Name = "JOKEN_AREA"
         Me.JOKEN_AREA.Style = "white-space: nowrap"
+        Me.JOKEN_AREA.Text = Nothing
         Me.JOKEN_AREA.Top = 0.933071!
         Me.JOKEN_AREA.Width = 1.479134!
+        '
+        'Detail
+        '
+        Me.Detail.ColumnSpacing = 0.0!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TO_DATE, Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.TIME_STAMP})
+        Me.Detail.Height = 0.225!
+        Me.Detail.Name = "Detail"
+        '
+        'TO_DATE
+        '
+        Me.TO_DATE.CanGrow = False
+        Me.TO_DATE.DataField = "TO_DATE"
+        Me.TO_DATE.Height = 0.2!
+        Me.TO_DATE.Left = 4.645669!
+        Me.TO_DATE.Name = "TO_DATE"
+        Me.TO_DATE.Style = "white-space: nowrap"
+        Me.TO_DATE.Text = Nothing
+        Me.TO_DATE.Top = 0.0!
+        Me.TO_DATE.Visible = False
+        Me.TO_DATE.Width = 1.614567!
+        '
+        'BU
+        '
+        Me.BU.CanGrow = False
+        Me.BU.DataField = "BU"
+        Me.BU.Height = 0.2!
+        Me.BU.Left = 0.0!
+        Me.BU.Name = "BU"
+        Me.BU.Style = "white-space: nowrap"
+        Me.BU.Text = Nothing
+        Me.BU.Top = 0.0!
+        Me.BU.Width = 1.479134!
+        '
+        'KIKAKU_TANTO_AREA
+        '
+        Me.KIKAKU_TANTO_AREA.CanGrow = False
+        Me.KIKAKU_TANTO_AREA.DataField = "KIKAKU_TANTO_AREA"
+        Me.KIKAKU_TANTO_AREA.Height = 0.2!
+        Me.KIKAKU_TANTO_AREA.Left = 1.551969!
+        Me.KIKAKU_TANTO_AREA.Name = "KIKAKU_TANTO_AREA"
+        Me.KIKAKU_TANTO_AREA.Style = "white-space: nowrap"
+        Me.KIKAKU_TANTO_AREA.Text = Nothing
+        Me.KIKAKU_TANTO_AREA.Top = 0.0!
+        Me.KIKAKU_TANTO_AREA.Width = 1.479134!
+        '
+        'KIKAKU_TANTO_EIGYOSHO
+        '
+        Me.KIKAKU_TANTO_EIGYOSHO.CanGrow = False
+        Me.KIKAKU_TANTO_EIGYOSHO.DataField = "KIKAKU_TANTO_EIGYOSHO"
+        Me.KIKAKU_TANTO_EIGYOSHO.Height = 0.2!
+        Me.KIKAKU_TANTO_EIGYOSHO.Left = 3.093701!
+        Me.KIKAKU_TANTO_EIGYOSHO.Name = "KIKAKU_TANTO_EIGYOSHO"
+        Me.KIKAKU_TANTO_EIGYOSHO.Style = "white-space: nowrap"
+        Me.KIKAKU_TANTO_EIGYOSHO.Text = Nothing
+        Me.KIKAKU_TANTO_EIGYOSHO.Top = 0.0!
+        Me.KIKAKU_TANTO_EIGYOSHO.Width = 1.479134!
+        '
+        'FROM_DATE
+        '
+        Me.FROM_DATE.CanGrow = False
+        Me.FROM_DATE.DataField = "FROM_DATE"
+        Me.FROM_DATE.Height = 0.2!
+        Me.FROM_DATE.Left = 4.645669!
+        Me.FROM_DATE.Name = "FROM_DATE"
+        Me.FROM_DATE.Style = "white-space: nowrap"
+        Me.FROM_DATE.Text = Nothing
+        Me.FROM_DATE.Top = 0.0!
+        Me.FROM_DATE.Width = 1.614567!
+        '
+        'KOUENKAI_NAME
+        '
+        Me.KOUENKAI_NAME.CanGrow = False
+        Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
+        Me.KOUENKAI_NAME.Height = 0.2!
+        Me.KOUENKAI_NAME.Left = 6.446064!
+        Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
+        Me.KOUENKAI_NAME.Style = "white-space: nowrap"
+        Me.KOUENKAI_NAME.Text = Nothing
+        Me.KOUENKAI_NAME.Top = 0.0!
+        Me.KOUENKAI_NAME.Width = 4.041733!
+        '
+        'TIME_STAMP
+        '
+        Me.TIME_STAMP.CanGrow = False
+        Me.TIME_STAMP.DataField = "TIME_STAMP"
+        Me.TIME_STAMP.Height = 0.2!
+        Me.TIME_STAMP.Left = 10.53859!
+        Me.TIME_STAMP.Name = "TIME_STAMP"
+        Me.TIME_STAMP.Style = "white-space: nowrap"
+        Me.TIME_STAMP.Text = Nothing
+        Me.TIME_STAMP.Top = 0.0!
+        Me.TIME_STAMP.Width = 1.312598!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'ReportInfo1
+        '
+        Me.ReportInfo1.FormatString = "{PageNumber} / {PageCount}"
+        Me.ReportInfo1.Height = 0.2!
+        Me.ReportInfo1.Left = 10.62047!
+        Me.ReportInfo1.Name = "ReportInfo1"
+        Me.ReportInfo1.Style = ""
+        Me.ReportInfo1.Top = 0.2!
+        Me.ReportInfo1.Width = 1.364567!
         '
         'NewKouenkaiReport
         '
         Me.MasterReport = False
         Me.PageSettings.PaperHeight = 11.0!
         Me.PageSettings.PaperWidth = 8.5!
-        Me.PrintWidth = 11.81102!
+        Me.PrintWidth = 12.20472!
         Me.Sections.Add(Me.PageHeader)
         Me.Sections.Add(Me.Detail)
         Me.Sections.Add(Me.PageFooter)
@@ -363,23 +393,24 @@ Partial Public Class NewKouenkaiReport
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BU, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TIME_STAMP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Page, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JOKEN_BU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JOKEN_AREA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TIME_STAMP, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReportInfo1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -401,10 +432,11 @@ Partial Public Class NewKouenkaiReport
     Private WithEvents Line1 As DataDynamics.ActiveReports.Line
     Private WithEvents Line2 As DataDynamics.ActiveReports.Line
     Private WithEvents Label9 As DataDynamics.ActiveReports.Label
-    Private WithEvents Page As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label10 As DataDynamics.ActiveReports.Label
     Private WithEvents Label11 As DataDynamics.ActiveReports.Label
     Private WithEvents JOKEN_BU As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label12 As DataDynamics.ActiveReports.Label
     Private WithEvents JOKEN_AREA As DataDynamics.ActiveReports.TextBox
+    Private WithEvents TO_DATE As DataDynamics.ActiveReports.TextBox
+    Private WithEvents ReportInfo1 As DataDynamics.ActiveReports.ReportInfo
 End Class
