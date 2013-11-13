@@ -367,10 +367,29 @@ Public Class SQL
         End Function
 
         Public Shared Function bySEND_FLAG(ByVal SEND_FLAG As String) As String
-            Dim strSQL As String = SQL_SELECT
-
-            strSQL &= " WHERE TBL_SEIKYU.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
-            strSQL &= SQL_ORDERBY
+            Dim strSQL As String = ""
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_SEIKYU.*"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK_KOUENKAI.FROM_DATE"
+            strSQL &= " FROM"
+            strSQL &= " TBL_SEIKYU AS WK_SEIKYU"
+            strSQL &= ",TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU.SEND_FLAG=N'" & CmnDb.SqlString(SEND_FLAG) & "'"
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_SEIKYU.KOUENKAI_NO,"
+            strSQL &= " WK_SEIKYU.SEIKYU_NO_TOPTOUR DESC"
 
             Return strSQL
         End Function
