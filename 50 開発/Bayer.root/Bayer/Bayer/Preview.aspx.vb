@@ -35,6 +35,9 @@ Partial Public Class Preview
             ElseIf URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 '呼び元画面が新着講演会一覧の場合
                 PrintNewKouenkaiList()
+            ElseIf URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+                '呼び元画面が検索講演会一覧の場合
+                PrintKouenkaiList()
             ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
                 '呼び元画面が新着会場手配一覧または会場手配回答登録画面の場合
                 PrintKaijoReport()
@@ -215,6 +218,57 @@ Partial Public Class Preview
     'データ取得
     Private Function GetNewKouenkaiData() As DataTable
         Dim strSQL As String = Session.Item(SessionDef.NewKouenkaiPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+    End Function
+
+    '検索講演会一覧印刷
+    Private Sub PrintKouenkaiList()
+
+        Dim rpt1 As New KouenkaiReport()
+
+        'データ設定
+        rpt1.DataSource = GetNewKouenkaiData()
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        '抽出条件を渡す
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_BU"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.BU
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
+
+        'レポートを作成
+        rpt1.Run()
+
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+    End Sub
+
+    'データ取得
+    Private Function GetKouenkaiData() As DataTable
+        Dim strSQL As String = Session.Item(SessionDef.KouenkaiPrint_SQL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
