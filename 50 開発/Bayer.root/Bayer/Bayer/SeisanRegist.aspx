@@ -342,7 +342,7 @@
                                         社員の国内旅費(宿泊)
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdItem">
-							            <asp:TextBox ID="MR_HOTEL" runat="server" Text="123456789012" Width="120px" MaxLength="12"></asp:TextBox>円
+							            <asp:TextBox ID="MR_HOTEL" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
 						            </td>
                                 </tr>
                                 <tr>
@@ -350,7 +350,7 @@
                                         社員の国内旅費(JR/航空券)
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdItem">
-							            <asp:TextBox ID="MR_JR" runat="server" Text="123456789012" Width="120px" MaxLength="12"></asp:TextBox>円
+							            <asp:TextBox ID="MR_JR" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
 						            </td>
                                 </tr>
                                 <tr>
