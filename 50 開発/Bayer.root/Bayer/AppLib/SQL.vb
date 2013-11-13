@@ -79,7 +79,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE"
-            strSQL &= " ISNULL(WK_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
 
             If NewData = True Then
                 '新着
