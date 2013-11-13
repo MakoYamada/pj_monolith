@@ -1965,9 +1965,18 @@ Public Class AppModule
             Return wTOTAL.ToString
         End If
     End Function
-    Public Shared Function GetName_ANS_41120200_T(ByVal ANS_JINKENHI_T As String, ByVal ANS_OTHER_T As String, ByVal ANS_KAIJOUHI_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+    Public Shared Function GetName_ANS_41120200_TF(ByVal ANS_HOTELHI_TF As String, ByVal ANS_KOTSUHI_JR_TF As String, ByVal ANS_KOTSUHI_AIR_TF As String, ByVal ANS_KOTSUHI_OTHER_TF As String, ByVal ANS_TAXI_TF As String, ByVal ANS_TEHAI_TESURYO_TF As String, ByVal ANS_TAXI_HAKKEN_TESURYO_TF As String, ByVal ANS_TAXI_SEISAN_TESURYO_TF As String, ByVal ANS_JINKENHI_TF As String, ByVal ANS_OTHER_TF As String, ByVal ANS_KANRIHI_TF As String, Optional ByVal ShortFormat As Boolean = False) As String
         Dim wTOTAL As Long = 0
-        wTOTAL = CmnModule.DbVal(ANS_JINKENHI_T) + CmnModule.DbVal(ANS_OTHER_T) + CmnModule.DbVal(ANS_KAIJOUHI_T)
+        wTOTAL = CmnModule.DbVal(ANS_HOTELHI_TF) + CmnModule.DbVal(ANS_KOTSUHI_JR_TF) + CmnModule.DbVal(ANS_KOTSUHI_AIR_TF) + CmnModule.DbVal(ANS_KOTSUHI_OTHER_TF) + CmnModule.DbVal(ANS_TAXI_TF) + CmnModule.DbVal(ANS_TEHAI_TESURYO_TF) + CmnModule.DbVal(ANS_TAXI_HAKKEN_TESURYO_TF) + CmnModule.DbVal(ANS_TAXI_SEISAN_TESURYO_TF) + CmnModule.DbVal(ANS_JINKENHI_TF) + CmnModule.DbVal(ANS_OTHER_TF) + CmnModule.DbVal(ANS_KANRIHI_TF)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wTOTAL)
+        Else
+            Return wTOTAL.ToString
+        End If
+    End Function
+    Public Shared Function GetName_ANS_41120200_T(ByVal ANS_JINKENHI_T As String, ByVal ANS_OTHER_T As String, ByVal ANS_KANRIHI_T As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wTOTAL As Long = 0
+        wTOTAL = CmnModule.DbVal(ANS_JINKENHI_T) + CmnModule.DbVal(ANS_OTHER_T) + CmnModule.DbVal(ANS_KANRIHI_T)
         If ShortFormat = False Then
             Return CmnModule.EditComma(wTOTAL)
         Else
@@ -1995,6 +2004,15 @@ Public Class AppModule
             Return wANS_TOTAL_TF.ToString
         End If
     End Function
+    Public Shared Function GetName_ANS_TOTAL_TF(ByVal ANS_991330401_TF As String, ByVal ANS_41120200_TF As String,Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wANS_TOTAL_TF As Long = 0
+        wANS_TOTAL_TF = CmnModule.DbVal(ANS_991330401_TF) + CmnModule.DbVal(ANS_41120200_TF)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wANS_TOTAL_TF)
+        Else
+            Return wANS_TOTAL_TF.ToString
+        End If
+    End Function
     Public Shared Function GetName_ANS_TOTAL_T(ByVal ANS_KAIJOUHI_T As String, _
                                                 ByVal ANS_KIZAIHI_T As String, _
                                                 ByVal ANS_INSHOKUHI_T As String, _
@@ -2004,6 +2022,15 @@ Public Class AppModule
                                                 Optional ByVal ShortFormat As Boolean = False) As String
         Dim wANS_TOTAL_T As Long = 0
         wANS_TOTAL_T = CmnModule.DbVal(ANS_KAIJOUHI_T) + CmnModule.DbVal(ANS_KIZAIHI_T) + CmnModule.DbVal(ANS_INSHOKUHI_T) + CmnModule.DbVal(ANS_JINKENHI_T) + CmnModule.DbVal(ANS_OTHER_T) + CmnModule.DbVal(ANS_KANRIHI_T)
+        If ShortFormat = False Then
+            Return CmnModule.EditComma(wANS_TOTAL_T)
+        Else
+            Return wANS_TOTAL_T.ToString
+        End If
+    End Function
+    Public Shared Function GetName_ANS_TOTAL_T(ByVal ANS_991330401_T As String, ByVal ANS_41120200_T As String,  Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wANS_TOTAL_T As Long = 0
+        wANS_TOTAL_T = CmnModule.DbVal(ANS_991330401_T) + CmnModule.DbVal(ANS_41120200_T)
         If ShortFormat = False Then
             Return CmnModule.EditComma(wANS_TOTAL_T)
         Else
