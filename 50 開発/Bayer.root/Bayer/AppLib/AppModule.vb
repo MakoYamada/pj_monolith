@@ -8323,7 +8323,7 @@ Public Class AppModule
 
     'Å”²‚«Šz‚Ìæ“¾
     Public Shared Function GetZeinukiGaku(ByVal strZeikomiGaku As String, ByVal strZeiritu As String) As String
-        Dim dblZeinukiGaku As Double = CmnModule.ToRoundDown(CDbl(CmnModule.DbVal(strZeikomiGaku)) / (CDbl(CmnModule.DbVal(strZeiritu)) + 1))
+        Dim dblZeinukiGaku As Double = CmnModule.ToRoundDown(CDbl(CDec(CmnModule.DbVal(strZeikomiGaku)) / CDec(CmnModule.DbVal(strZeiritu) + 1)))
         Return dblZeinukiGaku.ToString
     End Function
 
