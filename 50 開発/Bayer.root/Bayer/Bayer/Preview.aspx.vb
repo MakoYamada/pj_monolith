@@ -76,6 +76,14 @@ Partial Public Class Preview
             Catch ex As Exception
                 Return False
             End Try
+        ElseIf URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            Try
+                TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+                Joken = Session.Item(SessionDef.Joken)
+                If IsNothing(TBL_KOUENKAI) Then Return False
+            Catch ex As Exception
+                Return False
+            End Try
         ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
             If Trim(Session.Item(SessionDef.KaijoPrint_SQL)) = "" Then
                 Return False
@@ -253,10 +261,41 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         '抽出条件を渡す
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KIKAKU_TANTO_ROMA"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.KIKAKU_TANTO_ROMA
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TEHAI_TANTO_ROMA"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.TEHAI_TANTO_ROMA
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_SEIHIN_NAME"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.SEIHIN_NAME
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NO"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.KOUENKAI_NO
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NAME"),  _
+             DataDynamics.ActiveReports.TextBox).Text = Joken.KOUENKAI_NAME
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_BU"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.BU
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
+
+        If Joken.TTANTO_ID.Trim <> "指定なし" Then
+            Dim MS_USER As TableDef.MS_USER.DataStruct
+            Dim strSQL As String = "SELECT * FROM MS_USER" _
+                & " WHERE" _
+                & TableDef.MS_USER.Column.LOGIN_ID & "='" & Joken.TTANTO_ID & "'"
+            MS_USER = AppModule.GetOneRecord(AppModule.TableType.MS_USER, strSQL, DbConnection)
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_USER_NAME"),  _
+                 DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
+        Else
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_USER_NAME"),  _
+                 DataDynamics.ActiveReports.TextBox).Text = Joken.TTANTO_ID
+        End If
+
+        If Joken.FROM_DATE.Trim <> "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_JISSIBI"),  _
+                DataDynamics.ActiveReports.TextBox).Text = AppModule.GetName_KOUENKAI_DATE(Joken.FROM_DATE, Joken.TO_DATE, True)
+        Else
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_JISSIBI"),  _
+                 DataDynamics.ActiveReports.TextBox).Text = Joken.FROM_DATE
+        End If
 
         'レポートを作成
         rpt1.Run()

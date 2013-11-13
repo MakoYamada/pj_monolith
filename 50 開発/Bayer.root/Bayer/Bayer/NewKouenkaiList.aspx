@@ -12,11 +12,11 @@
                     <tr>
                         <td style="width:50%">
                             <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" />
                         </td>
                         <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" TabIndex="2" />
                         </td>
                     </tr>
                 </table> 
@@ -37,7 +37,7 @@
                             エリア
                         </td>
                         <td>
-                            <asp:DropDownList ID="JOKEN_AREA" runat="server" TabIndex="3">
+                            <asp:DropDownList ID="JOKEN_AREA" runat="server" TabIndex="4">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -69,7 +69,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="6" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="7" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />

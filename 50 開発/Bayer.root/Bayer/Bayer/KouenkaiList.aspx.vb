@@ -27,7 +27,6 @@ Partial Public Class KouenkaiList
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '共通チェック
-        Session.Item(SessionDef.LoginID) = "QQQ"
         MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
 
         'セッションを変数に格納
@@ -40,7 +39,9 @@ Partial Public Class KouenkaiList
             InitControls()
 
             If UBound(TBL_KOUENKAI) = 0 And TBL_KOUENKAI(0).KOUENKAI_NO Is Nothing Then
+                LabelNoData.Visible = False
             Else
+                SetJoken()
                 SetForm()
             End If
         End If
@@ -69,12 +70,15 @@ Partial Public Class KouenkaiList
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        'ドロップダウンリスト設定
+        AppModule.SetDropDownList_BU(Me.JokenBU, DbConnection)
+        AppModule.SetDropDownList_AREA(Me.JokenKIKAKU_TANTO_AREA, DbConnection)
+        AppModule.SetDropDownList_SEIHIN(Me.JokenSEIHIN_NAME, DbConnection)
+        AppModule.SetDropDownList_USER_NAME(Me.JokenTTEHAI_TANTO, DbConnection)
+
         'IME設定
-        CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_AREA, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKIKAKU_TANTO_ROMA, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenTEHAI_TANTO_ROMA, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenSEIHIN_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenFROM_DATE_YYYY, CmnModule.ImeType.Disabled)
@@ -83,7 +87,6 @@ Partial Public Class KouenkaiList
         CmnModule.SetIme(Me.JokenTO_DATE_YYYY, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenTO_DATE_MM, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenTO_DATE_DD, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.JokenTTANTO_ID, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -92,30 +95,28 @@ Partial Public Class KouenkaiList
     '抽出条件表示
     Private Sub SetJoken()
 
-        If Joken.KIKAKU_TANTO_ROMA <> "" Then Me.JokenKIKAKU_TANTO_ROMA.Text = Joken.KIKAKU_TANTO_ROMA
-        If Joken.TEHAI_TANTO_ROMA <> "" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.TEHAI_TANTO_ROMA
-        If Joken.SEIHIN_NAME <> "" Then Me.JokenSEIHIN_NAME.Text = Joken.SEIHIN_NAME
-        If Joken.KOUENKAI_NO <> "" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
-        If Joken.KOUENKAI_NAME <> "" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
-        If Joken.FROM_DATE <> "" Then
+        If Joken.KIKAKU_TANTO_ROMA <> "" AndAlso Joken.KIKAKU_TANTO_ROMA <> "指定なし" Then Me.JokenKIKAKU_TANTO_ROMA.Text = Joken.KIKAKU_TANTO_ROMA
+        If Joken.TEHAI_TANTO_ROMA <> "" AndAlso Joken.TEHAI_TANTO_ROMA <> "指定なし" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.TEHAI_TANTO_ROMA
+        If Joken.SEIHIN_NAME <> "" AndAlso Joken.SEIHIN_NAME <> "指定なし" Then Me.JokenSEIHIN_NAME.Text = Joken.SEIHIN_NAME
+        If Joken.KOUENKAI_NO <> "" AndAlso Joken.KOUENKAI_NO <> "指定なし" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
+        If Joken.KOUENKAI_NAME <> "" AndAlso Joken.KOUENKAI_NAME <> "指定なし" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
+        If Joken.FROM_DATE <> "" AndAlso Joken.FROM_DATE <> "指定なし" Then
             Me.JokenFROM_DATE_YYYY.Text = Joken.FROM_DATE.Substring(0, 4)
             Me.JokenFROM_DATE_MM.Text = Joken.FROM_DATE.Substring(4, 2)
             Me.JokenFROM_DATE_DD.Text = Joken.FROM_DATE.Substring(6, 2)
         End If
-        If Joken.TO_DATE <> "" Then
+        If Joken.TO_DATE <> "" AndAlso Joken.TO_DATE <> "指定なし" Then
             Me.JokenTO_DATE_YYYY.Text = Joken.TO_DATE.Substring(0, 4)
             Me.JokenTO_DATE_MM.Text = Joken.TO_DATE.Substring(4, 2)
             Me.JokenTO_DATE_DD.Text = Joken.TO_DATE.Substring(6, 2)
         End If
-        If Joken.BU <> "" Then Me.JokenBU.Text = Joken.BU
-        If Joken.AREA <> "" Then Me.JokenKIKAKU_TANTO_AREA.Text = Joken.AREA
-        If Joken.TTANTO_ID <> "" Then Me.JokenTTANTO_ID.Text = Joken.TTANTO_ID
+        If Joken.BU <> "" AndAlso Joken.BU <> "指定なし" Then Me.JokenBU.SelectedValue = Joken.BU
+        If Joken.AREA <> "" AndAlso Joken.AREA <> "指定なし" Then Me.JokenKIKAKU_TANTO_AREA.SelectedValue = Joken.AREA
+        If Joken.TTANTO_ID <> "" AndAlso Joken.TTANTO_ID <> "指定なし" Then Me.JokenTTEHAI_TANTO.SelectedValue = Joken.TTANTO_ID
     End Sub
 
     '画面項目 表示
     Private Sub SetForm()
-
-        Call SetJoken()
 
         'データ取得
         If Not GetData() Then
@@ -140,15 +141,14 @@ Partial Public Class KouenkaiList
         Joken = Nothing
         Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
-        Joken.SEIHIN_NAME = Trim(Me.JokenSEIHIN_NAME.Text)
+        If Me.JokenSEIHIN_NAME.SelectedIndex <> 0 Then Joken.SEIHIN_NAME = Me.JokenSEIHIN_NAME.SelectedItem.ToString
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        Joken.BU = Trim(Me.JokenBU.Text)
+        If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.ToString
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
-        Joken.AREA = Trim(Me.JokenKIKAKU_TANTO_AREA.Text)
-        Joken.TTANTO_ID = Trim(Me.JokenTTANTO_ID.Text)
-
+        If Me.JokenKIKAKU_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JokenKIKAKU_TANTO_AREA.SelectedItem.ToString
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
         ReDim TBL_KOUENKAI(wCnt)
         strSQL = SQL.TBL_KOUENKAI.Search(Joken, False)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
@@ -275,12 +275,12 @@ Partial Public Class KouenkaiList
         End If
 
         If Not CmnCheck.IsAlphabetOnly(Me.JokenKIKAKU_TANTO_ROMA) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者(ローマ字)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("BYL企画担当者(ローマ字)"), Me)
             Return False
         End If
 
         If Not CmnCheck.IsAlphabetOnly(Me.JokenTEHAI_TANTO_ROMA) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者(ローマ字)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("BYL手配担当者(ローマ字)"), Me)
             Return False
         End If
 
@@ -335,21 +335,73 @@ Partial Public Class KouenkaiList
             End If
         End If
 
-        If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("企画担当者BU"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsAlphanumeric(Me.JokenTTANTO_ID) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("トップツアー担当者"), Me)
-            Return False
-        End If
-
         Return True
     End Function
 
     '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Response.Redirect(URL.Menu)
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+        Dim strSQL As String = ""
+
+        Joken = Nothing
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
+        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+        If Me.JokenSEIHIN_NAME.SelectedIndex <> 0 Then
+            Joken.SEIHIN_NAME = Me.JokenSEIHIN_NAME.SelectedItem.ToString
+        Else
+            Joken.SEIHIN_NAME = ""
+        End If
+        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        If Me.JokenBU.SelectedIndex <> 0 Then
+            Joken.BU = Me.JokenBU.SelectedItem.ToString
+        Else
+            Joken.BU = ""
+        End If
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        If Me.JokenKIKAKU_TANTO_AREA.SelectedIndex <> 0 Then
+            Joken.AREA = Me.JokenKIKAKU_TANTO_AREA.SelectedItem.ToString
+        Else
+            Joken.AREA = ""
+        End If
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then
+            Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+        Else
+            Joken.TTANTO_ID = ""
+        End If
+
+        strSQL = SQL.TBL_KOUENKAI.Search(Joken, False)
+
+        'ページヘッダに出力する抽出条件セット
+        If Joken.KIKAKU_TANTO_ROMA.Trim = "" Then Joken.KIKAKU_TANTO_ROMA = "指定なし"
+        If Joken.TEHAI_TANTO_ROMA.Trim = "" Then Joken.TEHAI_TANTO_ROMA = "指定なし"
+        If Joken.SEIHIN_NAME.Trim = "" Then Joken.SEIHIN_NAME = "指定なし"
+        If Joken.KOUENKAI_NO.Trim = "" Then Joken.KOUENKAI_NO = "指定なし"
+        If Joken.KOUENKAI_NAME.Trim = "" Then Joken.KOUENKAI_NAME = "指定なし"
+        If Joken.FROM_DATE.Trim = "" And Joken.TO_DATE.Trim = "" Then Joken.FROM_DATE = "指定なし"
+        If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
+        If Joken.AREA.Trim = "" Then Joken.AREA = "指定なし"
+        If Joken.TTANTO_ID.Trim = "" Then Joken.TTANTO_ID = "指定なし"
+
+        Session.Item(SessionDef.KouenkaiPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.Joken) = Joken
+        Response.Redirect(URL.Preview)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        BtnPrint1_Click(sender, e)
     End Sub
 End Class

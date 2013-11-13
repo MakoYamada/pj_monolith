@@ -127,7 +127,7 @@ Public Class SQL
             If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
                 strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
                 strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
