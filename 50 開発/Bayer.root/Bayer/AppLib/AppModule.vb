@@ -163,6 +163,8 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.INPUT_USER.ToUpper Then TBL_SEIKYU.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.UPDATE_DATE.ToUpper Then TBL_SEIKYU.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.UPDATE_USER.ToUpper Then TBL_SEIKYU.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.FROM_DATE.ToUpper Then TBL_SEIKYU.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_SEIKYU
