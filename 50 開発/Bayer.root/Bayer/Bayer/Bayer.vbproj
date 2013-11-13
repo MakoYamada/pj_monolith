@@ -376,6 +376,12 @@
     <Compile Include="KouenkaiReport.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="KouenkaiRirekiReport.Designer.vb">
+      <DependentUpon>KouenkaiRirekiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiRirekiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -417,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KouenkaiReport.resx">
       <DependentUpon>KouenkaiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KouenkaiRirekiReport.resx">
+      <DependentUpon>KouenkaiRirekiReport.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
