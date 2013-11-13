@@ -164,6 +164,39 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Rireki(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT *"
+            strSQL &= ", USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT *,"
+            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= " ) CNT"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI)"
+            strSQL &= " WK_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " =N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= " DESC"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As String
             Dim strSQL As String = ""
 
