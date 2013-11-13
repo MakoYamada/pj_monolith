@@ -33,6 +33,17 @@
 			<td align="left">
 				<div class="FontSize1" style="height: 4px;"></div>
 				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
+				<table cellspacing="0" cellpadding="2" border="0">
+					<tr align="center" style="height: 40px;">
+						<td>
+							<asp:Button ID="BtnKaijoPrint1" runat="server" Text="手配書印刷" Width="130px" CssClass="Button" />
+							&nbsp;
+							<asp:Button ID="BtnKaijoListPrint1" runat="server" Text="会場手配一覧印刷" Width="130px" CssClass="Button" />
+							&nbsp;
+							<asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+						</td>
+					</tr>
+				</table>
 				<span id="SpnCheckPrint" runat="server">
 					<asp:LinkButton ID="LnkCheckALL" runat="server" CssClass="link">全てにチェック</asp:LinkButton>
 					&nbsp;&nbsp;
@@ -49,7 +60,7 @@
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-						<asp:TemplateField HeaderText="印刷" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="35px">
+						<asp:TemplateField HeaderText="手配書印刷" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="75px">
 							<ItemTemplate>
 								<asp:CheckBox ID="ChkPrint" runat="server" />
 							</ItemTemplate>
@@ -74,9 +85,11 @@
 	<table cellspacing="0" cellpadding="2" border="0">
         <tr align="center" style="height: 40px;">
             <td>
-				<asp:Button ID="BtnPrint" runat="server" Text="印刷" Width="130px" CssClass="Button" />
+				<asp:Button ID="BtnKaijoPrint2" runat="server" Text="手配書印刷" Width="130px" CssClass="Button" />
 				&nbsp;
-                <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+                <asp:Button ID="BtnKaijoListPrint2" runat="server" Text="会場手配一覧印刷" Width="130px" CssClass="Button" />
+				&nbsp;
+				<asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
             </td>
         </tr>
     </table>

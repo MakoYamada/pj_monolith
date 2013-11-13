@@ -7,6 +7,8 @@ Public Class KaijoReport
 
     Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
         Me.PrintDate.Text = CmnModule.Format_Date(Now(), CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        Me.LOGIN_USER_NAME.Text = "ログイン者名"
+        ''''''CType(System.Web.HttpContext.Current.Session.Item("LoginUser"), 頓挫中
     End Sub
 
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format

@@ -19,15 +19,15 @@ Partial Public Class KaijoReport
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(KaijoReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
-        Me.Shape1 = New DataDynamics.ActiveReports.Shape
-        Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.LOGIN_USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.Label2 = New DataDynamics.ActiveReports.Label
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.Label4 = New DataDynamics.ActiveReports.Label
         Me.PrintDate = New DataDynamics.ActiveReports.TextBox
-        Me.PageCount = New DataDynamics.ActiveReports.TextBox
+        Me.Shape1 = New DataDynamics.ActiveReports.Shape
         Me.PageTotal = New DataDynamics.ActiveReports.TextBox
+        Me.PageCount = New DataDynamics.ActiveReports.TextBox
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.Label6 = New DataDynamics.ActiveReports.Label
         Me.Label7 = New DataDynamics.ActiveReports.Label
@@ -35,6 +35,7 @@ Partial Public Class KaijoReport
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.Label9 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label10 = New DataDynamics.ActiveReports.Label
         Me.Label11 = New DataDynamics.ActiveReports.Label
         Me.Label12 = New DataDynamics.ActiveReports.Label
@@ -119,8 +120,6 @@ Partial Public Class KaijoReport
         Me.Line29 = New DataDynamics.ActiveReports.Line
         Me.Line30 = New DataDynamics.ActiveReports.Line
         Me.Line31 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Line7 = New DataDynamics.ActiveReports.Line
         Me.Line8 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
@@ -131,14 +130,15 @@ Partial Public Class KaijoReport
         Me.Line36 = New DataDynamics.ActiveReports.Line
         Me.Line35 = New DataDynamics.ActiveReports.Line
         Me.Line37 = New DataDynamics.ActiveReports.Line
-        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintDate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PageCount, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PageTotal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PageCount, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,31 +205,21 @@ Partial Public Class KaijoReport
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label5, Me.Label6, Me.Label7, Me.Label8})
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label5, Me.Label6, Me.Label7, Me.Label8})
         Me.PageHeader.Height = 0.9852036!
         Me.PageHeader.Name = "PageHeader"
         '
-        'Shape1
+        'LOGIN_USER_NAME
         '
-        Me.Shape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Shape1.Height = 0.3149607!
-        Me.Shape1.Left = 0.0!
-        Me.Shape1.Name = "Shape1"
-        Me.Shape1.RoundingRadius = 9.999999!
-        Me.Shape1.Top = 0.6413386!
-        Me.Shape1.Width = 7.141732!
-        '
-        'USER_NAME
-        '
-        Me.USER_NAME.CanGrow = False
-        Me.USER_NAME.DataField = "USER_NAME"
-        Me.USER_NAME.Height = 0.1771653!
-        Me.USER_NAME.Left = 5.77126!
-        Me.USER_NAME.Name = "USER_NAME"
-        Me.USER_NAME.Style = "font-family: ＭＳ ゴシック"
-        Me.USER_NAME.Text = Nothing
-        Me.USER_NAME.Top = 0.1771654!
-        Me.USER_NAME.Width = 1.354331!
+        Me.LOGIN_USER_NAME.CanGrow = False
+        Me.LOGIN_USER_NAME.DataField = "USER_NAME"
+        Me.LOGIN_USER_NAME.Height = 0.1771653!
+        Me.LOGIN_USER_NAME.Left = 5.77126!
+        Me.LOGIN_USER_NAME.Name = "LOGIN_USER_NAME"
+        Me.LOGIN_USER_NAME.Style = "font-family: ＭＳ ゴシック"
+        Me.LOGIN_USER_NAME.Text = Nothing
+        Me.LOGIN_USER_NAME.Top = 0.1771654!
+        Me.LOGIN_USER_NAME.Width = 1.354331!
         '
         'Label1
         '
@@ -285,17 +275,15 @@ Partial Public Class KaijoReport
         Me.PrintDate.Top = 0.0001311153!
         Me.PrintDate.Width = 1.354331!
         '
-        'PageCount
+        'Shape1
         '
-        Me.PageCount.Height = 0.1692913!
-        Me.PageCount.Left = 5.964173!
-        Me.PageCount.Name = "PageCount"
-        Me.PageCount.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.PageCount.SummaryRunning = DataDynamics.ActiveReports.SummaryRunning.All
-        Me.PageCount.SummaryType = DataDynamics.ActiveReports.SummaryType.PageCount
-        Me.PageCount.Text = "000"
-        Me.PageCount.Top = 0.4515749!
-        Me.PageCount.Width = 0.2755905!
+        Me.Shape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Shape1.Height = 0.3149607!
+        Me.Shape1.Left = 0.0!
+        Me.Shape1.Name = "Shape1"
+        Me.Shape1.RoundingRadius = 9.999999!
+        Me.Shape1.Top = 0.6413386!
+        Me.Shape1.Width = 7.141732!
         '
         'PageTotal
         '
@@ -307,6 +295,18 @@ Partial Public Class KaijoReport
         Me.PageTotal.Text = "000"
         Me.PageTotal.Top = 0.4515749!
         Me.PageTotal.Width = 0.2755905!
+        '
+        'PageCount
+        '
+        Me.PageCount.Height = 0.1692913!
+        Me.PageCount.Left = 5.964173!
+        Me.PageCount.Name = "PageCount"
+        Me.PageCount.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.PageCount.SummaryRunning = DataDynamics.ActiveReports.SummaryRunning.All
+        Me.PageCount.SummaryType = DataDynamics.ActiveReports.SummaryType.PageCount
+        Me.PageCount.Text = "000"
+        Me.PageCount.Top = 0.4515749!
+        Me.PageCount.Width = 0.2755905!
         '
         'Label5
         '
@@ -381,6 +381,16 @@ Partial Public Class KaijoReport
         Me.KOUENKAI_NAME.Text = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Top = 0.07165354!
         Me.KOUENKAI_NAME.Width = 6.13504!
+        '
+        'Shape2
+        '
+        Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Shape2.Height = 7.665354!
+        Me.Shape2.Left = 0.03031572!
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 9.999999!
+        Me.Shape2.Top = 0.2693765!
+        Me.Shape2.Width = 2.015354!
         '
         'Label10
         '
@@ -696,7 +706,7 @@ Partial Public Class KaijoReport
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
         Me.Line1.Top = 0.4882741!
-        Me.Line1.Width = 7.125986!
+        Me.Line1.Width = 7.125985!
         Me.Line1.X1 = 0.03031572!
         Me.Line1.X2 = 7.156301!
         Me.Line1.Y1 = 0.4882741!
@@ -1056,7 +1066,7 @@ Partial Public Class KaijoReport
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
         Me.Line2.Top = 0.7140615!
-        Me.Line2.Width = 7.125987!
+        Me.Line2.Width = 7.125986!
         Me.Line2.X1 = 0.03031572!
         Me.Line2.X2 = 7.156302!
         Me.Line2.Y1 = 0.7140615!
@@ -1069,7 +1079,7 @@ Partial Public Class KaijoReport
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
         Me.Line3.Top = 0.9398489!
-        Me.Line3.Width = 7.125987!
+        Me.Line3.Width = 7.125986!
         Me.Line3.X1 = 0.03031572!
         Me.Line3.X2 = 7.156302!
         Me.Line3.Y1 = 0.9398489!
@@ -1082,7 +1092,7 @@ Partial Public Class KaijoReport
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
         Me.Line4.Top = 1.165636!
-        Me.Line4.Width = 7.125987!
+        Me.Line4.Width = 7.125986!
         Me.Line4.X1 = 0.03031572!
         Me.Line4.X2 = 7.156302!
         Me.Line4.Y1 = 1.165636!
@@ -1095,7 +1105,7 @@ Partial Public Class KaijoReport
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
         Me.Line5.Top = 1.391424!
-        Me.Line5.Width = 7.125987!
+        Me.Line5.Width = 7.125986!
         Me.Line5.X1 = 0.03031572!
         Me.Line5.X2 = 7.156302!
         Me.Line5.Y1 = 1.391424!
@@ -1108,7 +1118,7 @@ Partial Public Class KaijoReport
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
         Me.Line6.Top = 1.617211!
-        Me.Line6.Width = 7.125987!
+        Me.Line6.Width = 7.125986!
         Me.Line6.X1 = 0.03031572!
         Me.Line6.X2 = 7.156302!
         Me.Line6.Y1 = 1.617211!
@@ -1121,7 +1131,7 @@ Partial Public Class KaijoReport
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
         Me.Line9.Top = 2.294574!
-        Me.Line9.Width = 7.125987!
+        Me.Line9.Width = 7.125986!
         Me.Line9.X1 = 0.03031572!
         Me.Line9.X2 = 7.156302!
         Me.Line9.Y1 = 2.294574!
@@ -1134,7 +1144,7 @@ Partial Public Class KaijoReport
         Me.Line10.LineWeight = 1.0!
         Me.Line10.Name = "Line10"
         Me.Line10.Top = 2.520361!
-        Me.Line10.Width = 7.125987!
+        Me.Line10.Width = 7.125986!
         Me.Line10.X1 = 0.03031572!
         Me.Line10.X2 = 7.156302!
         Me.Line10.Y1 = 2.520361!
@@ -1147,7 +1157,7 @@ Partial Public Class KaijoReport
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
         Me.Line11.Top = 2.746148!
-        Me.Line11.Width = 7.125987!
+        Me.Line11.Width = 7.125986!
         Me.Line11.X1 = 0.03031572!
         Me.Line11.X2 = 7.156302!
         Me.Line11.Y1 = 2.746148!
@@ -1160,7 +1170,7 @@ Partial Public Class KaijoReport
         Me.Line14.LineWeight = 1.0!
         Me.Line14.Name = "Line14"
         Me.Line14.Top = 3.42351!
-        Me.Line14.Width = 7.125987!
+        Me.Line14.Width = 7.125986!
         Me.Line14.X1 = 0.03031572!
         Me.Line14.X2 = 7.156302!
         Me.Line14.Y1 = 3.42351!
@@ -1173,7 +1183,7 @@ Partial Public Class KaijoReport
         Me.Line15.LineWeight = 1.0!
         Me.Line15.Name = "Line15"
         Me.Line15.Top = 3.649297!
-        Me.Line15.Width = 7.125987!
+        Me.Line15.Width = 7.125986!
         Me.Line15.X1 = 0.03031572!
         Me.Line15.X2 = 7.156302!
         Me.Line15.Y1 = 3.649297!
@@ -1186,7 +1196,7 @@ Partial Public Class KaijoReport
         Me.Line16.LineWeight = 1.0!
         Me.Line16.Name = "Line16"
         Me.Line16.Top = 3.875085!
-        Me.Line16.Width = 7.125987!
+        Me.Line16.Width = 7.125986!
         Me.Line16.X1 = 0.03031572!
         Me.Line16.X2 = 7.156302!
         Me.Line16.Y1 = 3.875085!
@@ -1199,7 +1209,7 @@ Partial Public Class KaijoReport
         Me.Line17.LineWeight = 1.0!
         Me.Line17.Name = "Line17"
         Me.Line17.Top = 4.100873!
-        Me.Line17.Width = 7.125987!
+        Me.Line17.Width = 7.125986!
         Me.Line17.X1 = 0.03031572!
         Me.Line17.X2 = 7.156302!
         Me.Line17.Y1 = 4.100873!
@@ -1212,7 +1222,7 @@ Partial Public Class KaijoReport
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
         Me.Line18.Top = 4.326661!
-        Me.Line18.Width = 7.125987!
+        Me.Line18.Width = 7.125986!
         Me.Line18.X1 = 0.03031572!
         Me.Line18.X2 = 7.156302!
         Me.Line18.Y1 = 4.326661!
@@ -1225,7 +1235,7 @@ Partial Public Class KaijoReport
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
         Me.Line19.Top = 4.552449!
-        Me.Line19.Width = 7.125987!
+        Me.Line19.Width = 7.125986!
         Me.Line19.X1 = 0.03031572!
         Me.Line19.X2 = 7.156302!
         Me.Line19.Y1 = 4.552449!
@@ -1238,7 +1248,7 @@ Partial Public Class KaijoReport
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
         Me.Line20.Top = 4.778236!
-        Me.Line20.Width = 7.125987!
+        Me.Line20.Width = 7.125986!
         Me.Line20.X1 = 0.03031572!
         Me.Line20.X2 = 7.156302!
         Me.Line20.Y1 = 4.778236!
@@ -1251,7 +1261,7 @@ Partial Public Class KaijoReport
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
         Me.Line21.Top = 5.004024!
-        Me.Line21.Width = 7.125987!
+        Me.Line21.Width = 7.125986!
         Me.Line21.X1 = 0.03031572!
         Me.Line21.X2 = 7.156302!
         Me.Line21.Y1 = 5.004024!
@@ -1264,7 +1274,7 @@ Partial Public Class KaijoReport
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
         Me.Line22.Top = 5.229811!
-        Me.Line22.Width = 7.125987!
+        Me.Line22.Width = 7.125986!
         Me.Line22.X1 = 0.03031572!
         Me.Line22.X2 = 7.156302!
         Me.Line22.Y1 = 5.229811!
@@ -1277,7 +1287,7 @@ Partial Public Class KaijoReport
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
         Me.Line23.Top = 5.455599!
-        Me.Line23.Width = 7.125987!
+        Me.Line23.Width = 7.125986!
         Me.Line23.X1 = 0.03031572!
         Me.Line23.X2 = 7.156302!
         Me.Line23.Y1 = 5.455599!
@@ -1290,7 +1300,7 @@ Partial Public Class KaijoReport
         Me.Line24.LineWeight = 1.0!
         Me.Line24.Name = "Line24"
         Me.Line24.Top = 5.681386!
-        Me.Line24.Width = 7.125987!
+        Me.Line24.Width = 7.125986!
         Me.Line24.X1 = 0.03031572!
         Me.Line24.X2 = 7.156302!
         Me.Line24.Y1 = 5.681386!
@@ -1303,7 +1313,7 @@ Partial Public Class KaijoReport
         Me.Line25.LineWeight = 1.0!
         Me.Line25.Name = "Line25"
         Me.Line25.Top = 5.907175!
-        Me.Line25.Width = 7.125987!
+        Me.Line25.Width = 7.125986!
         Me.Line25.X1 = 0.03031572!
         Me.Line25.X2 = 7.156302!
         Me.Line25.Y1 = 5.907175!
@@ -1316,7 +1326,7 @@ Partial Public Class KaijoReport
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
         Me.Line26.Top = 6.132962!
-        Me.Line26.Width = 7.125987!
+        Me.Line26.Width = 7.125986!
         Me.Line26.X1 = 0.03031572!
         Me.Line26.X2 = 7.156302!
         Me.Line26.Y1 = 6.132962!
@@ -1329,7 +1339,7 @@ Partial Public Class KaijoReport
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
         Me.Line27.Top = 6.35875!
-        Me.Line27.Width = 7.125987!
+        Me.Line27.Width = 7.125986!
         Me.Line27.X1 = 0.03031572!
         Me.Line27.X2 = 7.156302!
         Me.Line27.Y1 = 6.35875!
@@ -1342,7 +1352,7 @@ Partial Public Class KaijoReport
         Me.Line28.LineWeight = 1.0!
         Me.Line28.Name = "Line28"
         Me.Line28.Top = 6.584537!
-        Me.Line28.Width = 7.125987!
+        Me.Line28.Width = 7.125986!
         Me.Line28.X1 = 0.03031572!
         Me.Line28.X2 = 7.156302!
         Me.Line28.Y1 = 6.584537!
@@ -1355,7 +1365,7 @@ Partial Public Class KaijoReport
         Me.Line29.LineWeight = 1.0!
         Me.Line29.Name = "Line29"
         Me.Line29.Top = 6.810325!
-        Me.Line29.Width = 7.125987!
+        Me.Line29.Width = 7.125986!
         Me.Line29.X1 = 0.03031572!
         Me.Line29.X2 = 7.156302!
         Me.Line29.Y1 = 6.810325!
@@ -1368,7 +1378,7 @@ Partial Public Class KaijoReport
         Me.Line30.LineWeight = 1.0!
         Me.Line30.Name = "Line30"
         Me.Line30.Top = 7.036112!
-        Me.Line30.Width = 7.125987!
+        Me.Line30.Width = 7.125986!
         Me.Line30.X1 = 0.03031572!
         Me.Line30.X2 = 7.156302!
         Me.Line30.Y1 = 7.036112!
@@ -1381,26 +1391,11 @@ Partial Public Class KaijoReport
         Me.Line31.LineWeight = 1.0!
         Me.Line31.Name = "Line31"
         Me.Line31.Top = 7.261898!
-        Me.Line31.Width = 7.125987!
+        Me.Line31.Width = 7.125986!
         Me.Line31.X1 = 0.03031572!
         Me.Line31.X2 = 7.156302!
         Me.Line31.Y1 = 7.261898!
         Me.Line31.Y2 = 7.261898!
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'Shape2
-        '
-        Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Shape2.Height = 7.665354!
-        Me.Shape2.Left = 0.03031572!
-        Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 9.999999!
-        Me.Shape2.Top = 0.2693765!
-        Me.Shape2.Width = 2.015354!
         '
         'Line7
         '
@@ -1532,6 +1527,11 @@ Partial Public Class KaijoReport
         Me.Line37.Y1 = 0.2692914!
         Me.Line37.Y2 = 7.922834!
         '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
+        '
         'KaijoReport
         '
         Me.MasterReport = False
@@ -1546,14 +1546,14 @@ Partial Public Class KaijoReport
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 16pt; font-weight: bold", "Heading1", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 14pt; font-weight: bold", "Heading2", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 13pt; font-weight: bold", "Heading3", "Normal"))
-        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintDate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PageCount, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PageTotal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PageCount, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1624,7 +1624,7 @@ Partial Public Class KaijoReport
     Private WithEvents Label3 As DataDynamics.ActiveReports.Label
     Private WithEvents Label4 As DataDynamics.ActiveReports.Label
     Private WithEvents PrintDate As DataDynamics.ActiveReports.TextBox
-    Private WithEvents USER_NAME As DataDynamics.ActiveReports.TextBox
+    Private WithEvents LOGIN_USER_NAME As DataDynamics.ActiveReports.TextBox
     Private WithEvents PageCount As DataDynamics.ActiveReports.TextBox
     Private WithEvents PageTotal As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label5 As DataDynamics.ActiveReports.Label

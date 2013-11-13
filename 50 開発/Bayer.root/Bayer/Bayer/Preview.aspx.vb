@@ -42,8 +42,17 @@ Partial Public Class Preview
                 '呼び元画面が講演会基本情報履歴一覧の場合
                 PrintKouenkaiRireki()
             ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
-                '呼び元画面が新着会場手配一覧または会場手配回答登録画面の場合
-                PrintKaijoReport()
+                Select Case Session.Item(SessionDef.PrintPreview)
+                    Case "NewKaijoList"
+                        '新着会場手配一覧
+                        PrintNewKaijoListReport()
+                    Case "KaijoList"
+                        '検索会場手配一覧
+                        PrintKaijoListReport()
+                    Case "KaijoRegist"
+                        '会場手配回答登録画面
+                        PrintKaijoReport()
+                End Select
             End If
         End If
 
@@ -109,7 +118,7 @@ Partial Public Class Preview
 
         'データ設定
         rpt1.DataSource = GetDrData()
-        
+
         rpt1.Document.Printer.PrinterName = ""
 
         'A4縦
@@ -174,7 +183,8 @@ Partial Public Class Preview
         'レポートを作成
         rpt1.Run()
 
-        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        'QQQ Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
 
@@ -231,6 +241,7 @@ Partial Public Class Preview
         Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
+
     End Sub
 
     'データ取得
@@ -380,6 +391,103 @@ Partial Public Class Preview
         Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
 
         Return dtView.Table
+    End Function
+
+    '新着会場手配一覧印刷
+    Private Sub PrintNewKaijoListReport()
+
+        Dim rpt1 As New NewKaijoListReport()
+
+        'データ設定
+        rpt1.DataSource = GetNewKaijoListData()
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        'レポートを作成
+        rpt1.Run()
+
+        'QQQ Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+    End Sub
+
+    '新着会場手配一覧データ取得
+    Private Function GetNewKaijoListData() As DataTable
+
+        Dim strSQL As String = Session.Item(SessionDef.KaijoPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+
+    End Function
+
+    '検索会場手配一覧印刷
+    Private Sub PrintKaijoListReport()
+
+        Dim rpt1 As New KaijoListReport()
+
+        'データ設定
+        rpt1.DataSource = GetKaijoListData()
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        'レポートを作成
+        rpt1.Run()
+
+        'QQQ Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+
+    End Sub
+
+    '検索会場手配一覧データ取得
+    Private Function GetKaijoListData() As DataTable
+
+        Dim strSQL As String = Session.Item(SessionDef.KaijoPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+
     End Function
 
     '[前の画面に戻る]

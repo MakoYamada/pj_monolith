@@ -65,4 +65,5 @@
     Public Const ShisetsuKensaku_Back As String = "ShisetsuKensaku_Back"
     Public Const CostRegist_Search As String = "CostRegist_Search"
     Public Const CostRegist_Update As String = "CostRegist_Update"
+    Public Const PrintPreview As String = "PrintPreview"
 End Class

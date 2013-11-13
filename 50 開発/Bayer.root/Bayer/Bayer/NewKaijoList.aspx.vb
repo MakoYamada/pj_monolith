@@ -90,12 +90,18 @@ Partial Public Class NewKaijoList
             Me.LabelNoData.Visible = True
             Me.SpnCheckPrint.Visible = False
             Me.GrvList.Visible = False
-            CmnModule.SetEnabled(Me.BtnPrint, False)
+            CmnModule.SetEnabled(Me.BtnKaijoPrint1, False)
+            CmnModule.SetEnabled(Me.BtnKaijoPrint2, False)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, False)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.SpnCheckPrint.Visible = True
             Me.GrvList.Visible = True
-            CmnModule.SetEnabled(Me.BtnPrint, True)
+            CmnModule.SetEnabled(Me.BtnKaijoPrint1, True)
+            CmnModule.SetEnabled(Me.BtnKaijoPrint2, True)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, True)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, True)
 
             'グリッドビュー表示
             SetGridView()
@@ -110,7 +116,7 @@ Partial Public Class NewKaijoList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         ReDim TBL_KAIJO(wCnt)
-        strSQL = SQL.TBL_KAIJO.Search(Joken, True)
+        strSQL = Sql.TBL_KAIJO.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -128,7 +134,7 @@ Partial Public Class NewKaijoList
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
+        Dim strSQL As String = Sql.TBL_KAIJO.Search(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -218,12 +224,12 @@ Partial Public Class NewKaijoList
     End Function
 
     '[戻る]
-    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Response.Redirect(URL.Menu)
     End Sub
 
-    '[印刷]
-    Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
+    '[手配書印刷]
+    Protected Sub BtnKaijoPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoPrint1.Click, BtnKaijoPrint2.Click
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
         Dim KOUENKAI_NO() As String
@@ -241,14 +247,24 @@ Partial Public Class NewKaijoList
         Next
 
         If wFlag = True Then
-            strSQL = SQL.TBL_KAIJO.NewListPrint(KOUENKAI_NO)
+            strSQL = Sql.TBL_KAIJO.NewListPrint(KOUENKAI_NO)
             Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
             Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+            Session.Item(SessionDef.PrintPreview) = "KaijoRegist"
             Response.Redirect(URL.Preview)
         Else
             CmnModule.AlertMessage("印刷対象がありません。1件以上チェックしてください。", Me)
             Exit Sub
         End If
+    End Sub
+
+    '[会場手配一覧印刷]
+    Protected Sub BtnKaijoListPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoListPrint1.Click, BtnKaijoListPrint2.Click
+        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
+        Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.PrintPreview) = "NewKaijoList"
+        Response.Redirect(URL.Preview)
     End Sub
 
     '[全てにチェック]
