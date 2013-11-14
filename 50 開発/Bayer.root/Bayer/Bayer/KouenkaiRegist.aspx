@@ -2,6 +2,20 @@
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table border="0" cellpadding="4" cellspacing="0" width="1100px">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                    <tr>
+                        <td style="width:50%">
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="1" />
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+        </tr>
 		<tr>
 			<td nowrap="nowrap" align="left">
 				<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="1100px">
@@ -16,7 +30,7 @@
 							新着ステータス
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
-							<asp:DropDownList ID="KIDOKU_FLG" runat="server" Width="100px"></asp:DropDownList>
+							<asp:DropDownList ID="KIDOKU_FLG" runat="server" Width="100px" TabIndex="2"></asp:DropDownList>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
 							ステータス
@@ -119,6 +133,15 @@
 						</td>
 						<td nowrap="nowrap" align="left" colspan="3">
 							<asp:Label ID="SANKA_YOTEI_CNT_NMBR" runat="server" Text=""></asp:Label>
+						</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+							TOP担当者
+						</td>
+						<td nowrap="nowrap" align="left" colspan="7">
+                            <asp:DropDownList ID="TTEHAI_TANTO" runat="server" TabIndex="3">
+                            </asp:DropDownList>
 						</td>
 					</tr>
 				</table>
@@ -279,14 +302,14 @@
 		        <table cellspacing="0" cellpadding="0" border="0" style="width:1100px;">
 			        <tr style="height: 36px; width:100%">
 				        <td align="left" style="width:30%">
-				            <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" />
+				            <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" TabIndex="4" />
 				        </td>
 				        <td align="right" style="width:70%">
 				            <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" 
-                                CssClass="Button" />
+                                CssClass="Button" TabIndex="5" />
 				            <!-- <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" 
                                 CssClass="Button" /> -->
-					        <asp:Button ID="BtnCancel" runat="server" Width="150px" Text="戻る" CssClass="Button" />
+					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="戻る" CssClass="Button" TabIndex="6" />
 				        </td>
 			        </tr>
 		        </table>

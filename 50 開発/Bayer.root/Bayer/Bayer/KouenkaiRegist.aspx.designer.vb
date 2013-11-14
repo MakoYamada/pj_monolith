@@ -16,6 +16,15 @@ Option Explicit On
 Partial Public Class KouenkaiRegist
 
     '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''KOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
@@ -167,6 +176,15 @@ Partial Public Class KouenkaiRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SANKA_YOTEI_CNT_NMBR As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TTEHAI_TANTO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TTEHAI_TANTO As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''KIKAKU_TANTO_JIGYOUBU コントロール。
@@ -331,13 +349,13 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnCancel コントロール。
+    '''BtnBack2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

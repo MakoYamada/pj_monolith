@@ -110,8 +110,9 @@ Partial Public Class KouenkaiRegist
 
     '画面項目 初期化
     Private Sub InitControls()
-        'プルダウン設定
+        'プルダウン設定
         AppModule.SetDropDownList_KIDOKU(Me.KIDOKU_FLG)
+        AppModule.SetDropDownList_USER_NAME(Me.TTEHAI_TANTO, DbConnection)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -144,6 +145,9 @@ Partial Public Class KouenkaiRegist
         Me.ZETIA_CD.Text = AppModule.GetName_ZETIA_CD(DSP_KOUENKAI(DSP_SEQ).ZETIA_CD)
         Me.SANKA_YOTEI_CNT_NMBR.Text = AppModule.GetName_SANKA_YOTEI_CNT_NMBR(DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_NMBR)
         Me.SANKA_YOTEI_CNT_MBR.Text = AppModule.GetName_SANKA_YOTEI_CNT_MBR(DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_MBR)
+        Dim strSQL As String = "SELECT * FROM MS_USER WHERE " & TableDef.MS_USER.Column.LOGIN_ID & "=N'" & DSP_KOUENKAI(DSP_SEQ).TTEHAI_TANTO & "'"
+        Dim MS_USER As TableDef.MS_USER.DataStruct = AppModule.GetOneRecord(AppModule.TableType.MS_USER, strSQL, DbConnection)
+        Me.TTEHAI_TANTO.SelectedValue = MS_USER.LOGIN_ID
         Me.BU.Text = AppModule.GetName_BU(DSP_KOUENKAI(DSP_SEQ).BU)
         Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_AREA)
         Me.KIKAKU_TANTO_EIGYOSHO.Text = AppModule.GetName_KIKAKU_TANTO_EIGYOSHO(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EIGYOSHO)
@@ -174,6 +178,9 @@ Partial Public Class KouenkaiRegist
     Private Sub GetValue(ByVal SEND_FLAG As String)
         DSP_KOUENKAI(SEQ).KIDOKU_FLG = Me.KIDOKU_FLG.SelectedValue
         DSP_KOUENKAI(SEQ).SEND_FLAG = SEND_FLAG
+        If Me.TTEHAI_TANTO.SelectedIndex <> 0 Then
+            DSP_KOUENKAI(SEQ).TTEHAI_TANTO = Me.TTEHAI_TANTO.SelectedValue
+        End If
     End Sub
 
     'データ更新
@@ -230,7 +237,7 @@ Partial Public Class KouenkaiRegist
     End Function
 
     '[戻る]
-    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
         Session.Remove(SessionDef.KouenkaiRireki_SEQ)
 
@@ -245,6 +252,11 @@ Partial Public Class KouenkaiRegist
         Else
             Response.Redirect(Session.Item(SessionDef.BackURL2))
         End If
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
     End Sub
 
     '[登録]
