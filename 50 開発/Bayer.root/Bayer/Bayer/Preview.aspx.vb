@@ -611,7 +611,7 @@ Partial Public Class Preview
         'ログイン者名
         rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
         '抽出条件
-        rpt1.Joken = Session.Item(SessionDef.Joken)
+        rpt1.Joken = Session.Item(SessionDef.KaijoRireki_Joken)
 
         'レポートを作成
         rpt1.Run()
