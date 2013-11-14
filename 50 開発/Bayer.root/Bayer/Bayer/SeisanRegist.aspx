@@ -7,6 +7,23 @@
                 <table  border="0" cellpadding="2" cellspacing="0" width="100%">
                     <tr>
                         <td>
+                            <table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse; margin-bottom: 5px;" width="100%">
+                                <tr>
+                                    <td colspan="4">
+                                        <div ID="DivMessage" runat="server">
+		                                    <asp:Label ID="LabelMessage" runat="server" Font-Bold="true">
+			                                    精算データを登録しました。
+		                                    </asp:Label>
+	                                    </div>
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdTitleSeisan1" style="width:100px;">
+                                        送信状況
+                                    </td>
+                                    <td nowrap="nowrap" align="left" style="width:110px;">
+                                        <asp:DropDownList ID="SEND_FLAG" runat="server" Width="100px" Enabled="False"></asp:DropDownList>
+                                    </td>
+                                </tr>
+                            </table>
                             <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="100%">
                                 <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:130px;">

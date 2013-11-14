@@ -16,6 +16,33 @@ Option Explicit On
 Partial Public Class SeisanRegist
 
     '''<summary>
+    '''DivMessage コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DivMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''LabelMessage コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelMessage As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SEND_FLAG コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEND_FLAG As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''KOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>

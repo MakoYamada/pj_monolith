@@ -6,6 +6,10 @@ Partial Public Class SeisanRegist
     Private TBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
     Private SEQ As Integer
 
+    Private Sub SeisanRegist_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+        Session.Item(SessionDef.TBL_SEIKYU) = TBL_SEIKYU
+    End Sub
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
@@ -17,9 +21,13 @@ Partial Public Class SeisanRegist
         If Not Page.IsPostBack Then
             '画面項目 初期化            InitControls()
 
-            If Not MyModule.IsInsertMode() Then
-                '画面項目表示
-                SetForm()
+            If Trim(Request.QueryString(RequestDef.DbInsertEnd)) = CmnConst.Flag.On Then
+                SetForm(True)
+            Else
+                If Not MyModule.IsInsertMode() Then
+                    '画面項目表示
+                    SetForm()
+                End If
             End If
         End If
 
@@ -86,6 +94,9 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.MR_JR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL, CmnModule.ImeType.Disabled)
 
+        AppModule.SetDropDownList_SEND_FLAG(Me.SEND_FLAG)
+        CmnModule.SetEnabled(Me.SEND_FLAG, False)
+
         If MyModule.IsInsertMode() Then
             '新規登録
             'キー項目入力可
@@ -99,8 +110,19 @@ Partial Public Class SeisanRegist
     End Sub
 
     '画面項目 表示
-    Private Sub SetForm()
+    Private Sub SetForm(Optional ByVal DispMessage As Boolean = False)
 
+        If DispMessage = False Then
+            Me.DivMessage.Visible = False
+        Else
+            Dim recordKbn As String = Session.Item(SessionDef.RECORD_KUBUN)
+            Dim wStr As String = "精算データを" & AppModule.GetName_RECORD_KUBUN(recordKbn) & "しました。"
+            Me.LabelMessage.Text = wStr
+
+            Me.DivMessage.Visible = True
+        End If
+
+        Me.SEND_FLAG.SelectedValue = TBL_SEIKYU(SEQ).SEND_FLAG
         Me.KOUENKAI_NO.Text = TBL_SEIKYU(SEQ).KOUENKAI_NO
         Me.SEIKYU_NO_TOPTOUR.Text = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
         Me.SHIHARAI_NO.Text = TBL_SEIKYU(SEQ).SHIHARAI_NO
@@ -524,7 +546,7 @@ Partial Public Class SeisanRegist
 
         'データ更新
         If ExecuteTransaction() Then
-            CmnModule.AlertMessage(MessageDef.Message.DbCommited("精算データ", MyModule.IsInsertMode()), Me)
+            Response.Redirect(URL.SeisanRegist & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
 
     End Sub
@@ -549,7 +571,7 @@ Partial Public Class SeisanRegist
 
         'データ更新
         If ExecuteTransaction() Then
-            CmnModule.AlertMessage(MessageDef.Message.DbCommited("精算データ", MyModule.IsInsertMode()), Me)
+            Response.Redirect(URL.SeisanRegist & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
     End Sub
 
