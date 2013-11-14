@@ -29,6 +29,7 @@
     Public Const DrRireki_TBL_KOUENKAI As String = "DrRireki_TBL_KOUENKAI"
     Public Const DrRireki_SEQ As String = "DrRireki_SEQ"
     Public Const DrRireki_PageIndex As String = "DrRireki_PageIndex"
+    Public Const NewDrPrint_SQL As String = "NewDrPrint_SQL"
     Public Const KouenkaiRireki As String = "KouenkaiRireki"
     Public Const KouenkaiRireki_TBL_KOUENKAI As String = "KouenkaiRireki_TBL_KOUENKAI"
     Public Const KouenkaiRireki_SEQ As String = "KouenkaiRireki_SEQ"
