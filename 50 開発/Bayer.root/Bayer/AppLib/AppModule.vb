@@ -7010,6 +7010,17 @@ Public Class AppModule
     End Class
 #End Region
 
+#Region "送信フラグ"
+    Public Shared Sub SetDropDownList_SEND_FLAG(ByRef SEND_FLAG As DropDownList)
+        With SEND_FLAG
+            .Items.Clear()
+            .Items.Add(New ListItem(AppConst.SEND_FLAG.Name.Mi, AppConst.SEND_FLAG.Code.Mi))
+            .Items.Add(New ListItem(AppConst.SEND_FLAG.Name.Taisho, AppConst.SEND_FLAG.Code.Taisho))
+            .Items.Add(New ListItem(AppConst.SEND_FLAG.Name.Sumi, AppConst.SEND_FLAG.Code.Sumi))
+        End With
+    End Sub
+#End Region
+
 #Region "コストセンターコード"
     Public Shared Sub SetDropDownList_COSTCENTER(ByRef COSTCENTER As DropDownList, ByVal DbConn As System.Data.SqlClient.SqlConnection)
         With COSTCENTER
