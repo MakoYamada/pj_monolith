@@ -458,6 +458,85 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function SearchGroupByKouenkai(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " WK_SEIKYU.*"
+            strSQL &= ",WK_KOUENKAI.*"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT KOUENKAI_NO FROM TBL_SEIKYU GROUP BY KOUENKAI_NO) WK_SEIKYU"
+            strSQL &= ",(SELECT * FROM TBL_KOUENKAI WK1"
+            strSQL &= "   WHERE  WK1.TIME_STAMP = "
+            strSQL &= "   (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "    WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
+            strSQL &= " )WK_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.BU
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.SEIHIN_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTANTO_ID
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.UPDATE_DATE
+            strSQL &= " DESC"
+
+            Return strSQL
+        End Function
+
         Public Shared Function MaxSEISAN_NO() As String
             Dim strSQL As String = ""
             strSQL &= "SELECT MAX(CONVERT(BIGINT,SEIKYU_NO_TOPTOUR)) AS SEIKYU_NO_TOPTOUR FROM TBL_SEIKYU"
