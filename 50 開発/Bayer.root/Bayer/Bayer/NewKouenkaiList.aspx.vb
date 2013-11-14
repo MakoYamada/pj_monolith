@@ -103,9 +103,9 @@ Partial Public Class NewKouenkaiList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.BU = Trim(Me.JOKEN_BU.SelectedValue)
-        Joken.AREA = Trim(Me.JOKEN_AREA.SelectedValue)
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.KUBUN)
+        If Me.JOKEN_BU.SelectedIndex <> 0 Then Joken.BU = Me.JOKEN_BU.SelectedItem.ToString
+        If Me.JOKEN_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JOKEN_AREA.SelectedItem.ToString
 
         ReDim TBL_KOUENKAI(wCnt)
 
@@ -246,9 +246,17 @@ Partial Public Class NewKouenkaiList
         Dim strSQL As String = ""
 
         Joken = Nothing
-        Joken.BU = Trim(Me.JOKEN_BU.SelectedValue)
-        Joken.AREA = Trim(Me.JOKEN_AREA.SelectedValue)
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.KUBUN)
+        If Me.JOKEN_BU.SelectedIndex <> 0 Then
+            Joken.BU = Me.JOKEN_BU.SelectedItem.ToString
+        Else
+            Joken.BU = ""
+        End If
+        If Me.JOKEN_AREA.SelectedIndex <> 0 Then
+            Joken.AREA = Me.JOKEN_AREA.SelectedItem.ToString
+        Else
+            Joken.AREA = ""
+        End If
 
         strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
         If Joken.BU.Trim = "" Then Joken.BU = "指定なし"

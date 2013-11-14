@@ -19,8 +19,6 @@ Partial Public Class NewKaijoListReport
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewKaijoListReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
-        Me.Detail = New DataDynamics.ActiveReports.Detail
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.LOGIN_USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.Label2 = New DataDynamics.ActiveReports.Label
@@ -53,6 +51,7 @@ Partial Public Class NewKaijoListReport
         Me.Line10 = New DataDynamics.ActiveReports.Line
         Me.Line11 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
+        Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line7 = New DataDynamics.ActiveReports.Line
         Me.Line13 = New DataDynamics.ActiveReports.Line
@@ -70,9 +69,10 @@ Partial Public Class NewKaijoListReport
         Me.REQ_STATUS_TEHAI = New DataDynamics.ActiveReports.TextBox
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Line19 = New DataDynamics.ActiveReports.Line
-        Me.Line20 = New DataDynamics.ActiveReports.Line
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.KOUENKAI_NO = New DataDynamics.ActiveReports.TextBox
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Line20 = New DataDynamics.ActiveReports.Line
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,20 +110,6 @@ Partial Public Class NewKaijoListReport
         Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Shape2, Me.Label12, Me.Label9, Me.Label10, Me.Label11, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12})
         Me.PageHeader.Height = 1.30315!
         Me.PageHeader.Name = "PageHeader"
-        '
-        'Detail
-        '
-        Me.Detail.CanGrow = False
-        Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line1, Me.Line7, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.TIME_STAMP_BYL, Me.REQ_STATUS_TEHAI, Me.USER_NAME, Me.Line19, Me.TO_DATE, Me.KOUENKAI_NO})
-        Me.Detail.Height = 0.215748!
-        Me.Detail.Name = "Detail"
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line20})
-        Me.PageFooter.Height = 0.07874016!
-        Me.PageFooter.Name = "PageFooter"
         '
         'LOGIN_USER_NAME
         '
@@ -274,7 +260,7 @@ Partial Public Class NewKaijoListReport
         Me.Shape2.Height = 0.2362205!
         Me.Shape2.Left = 0.0!
         Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 10.0!
+        Me.Shape2.RoundingRadius = 9.999999!
         Me.Shape2.Top = 1.065354!
         Me.Shape2.Width = 11.02362!
         '
@@ -368,12 +354,12 @@ Partial Public Class NewKaijoListReport
         '
         'Line2
         '
-        Me.Line2.Height = 0.2362205!
+        Me.Line2.Height = 0.236221!
         Me.Line2.Left = 0.4244095!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
         Me.Line2.Top = 1.065354!
-        Me.Line2.Width = 0.0000002384186!
+        Me.Line2.Width = 0.0000001788139!
         Me.Line2.X1 = 0.4244095!
         Me.Line2.X2 = 0.4244097!
         Me.Line2.Y1 = 1.065354!
@@ -381,7 +367,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line3
         '
-        Me.Line3.Height = 0.2362208!
+        Me.Line3.Height = 0.236221!
         Me.Line3.Left = 1.408661!
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
@@ -394,7 +380,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line4
         '
-        Me.Line4.Height = 0.2362208!
+        Me.Line4.Height = 0.236221!
         Me.Line4.Left = 2.983465!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
@@ -407,7 +393,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line5
         '
-        Me.Line5.Height = 0.2362208!
+        Me.Line5.Height = 0.236221!
         Me.Line5.Left = 4.558268!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
@@ -420,7 +406,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line6
         '
-        Me.Line6.Height = 0.2362208!
+        Me.Line6.Height = 0.236221!
         Me.Line6.Left = 7.489371!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
@@ -433,7 +419,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line8
         '
-        Me.Line8.Height = 0.2362208!
+        Me.Line8.Height = 0.236221!
         Me.Line8.Left = 8.906693!
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
@@ -446,7 +432,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line9
         '
-        Me.Line9.Height = 0.2362208!
+        Me.Line9.Height = 0.236221!
         Me.Line9.Left = 9.579922!
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
@@ -472,7 +458,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line11
         '
-        Me.Line11.Height = 0.2362208!
+        Me.Line11.Height = 0.236221!
         Me.Line11.Left = 0.0!
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
@@ -485,7 +471,7 @@ Partial Public Class NewKaijoListReport
         '
         'Line12
         '
-        Me.Line12.Height = 0.2362208!
+        Me.Line12.Height = 0.236221!
         Me.Line12.Left = 11.02362!
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
@@ -496,6 +482,14 @@ Partial Public Class NewKaijoListReport
         Me.Line12.Y1 = 1.065354!
         Me.Line12.Y2 = 1.301575!
         '
+        'Detail
+        '
+        Me.Detail.CanGrow = False
+        Me.Detail.ColumnSpacing = 0.0!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line1, Me.Line7, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.TIME_STAMP_BYL, Me.REQ_STATUS_TEHAI, Me.USER_NAME, Me.Line19, Me.TO_DATE, Me.KOUENKAI_NO})
+        Me.Detail.Height = 0.215748!
+        Me.Detail.Name = "Detail"
+        '
         'Line1
         '
         Me.Line1.Height = 0.2165354!
@@ -503,7 +497,7 @@ Partial Public Class NewKaijoListReport
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
         Me.Line1.Top = 0.0!
-        Me.Line1.Width = 0.0000002086163!
+        Me.Line1.Width = 0.0000001788139!
         Me.Line1.X1 = 0.4244095!
         Me.Line1.X2 = 0.4244097!
         Me.Line1.Y1 = 0.0!
@@ -717,19 +711,6 @@ Partial Public Class NewKaijoListReport
         Me.Line19.Y1 = 0.0!
         Me.Line19.Y2 = 0.2165354!
         '
-        'Line20
-        '
-        Me.Line20.Height = 0.0!
-        Me.Line20.Left = 0.0!
-        Me.Line20.LineWeight = 1.0!
-        Me.Line20.Name = "Line20"
-        Me.Line20.Top = 0.0!
-        Me.Line20.Width = 11.02362!
-        Me.Line20.X1 = 0.0!
-        Me.Line20.X2 = 11.02362!
-        Me.Line20.Y1 = 0.0!
-        Me.Line20.Y2 = 0.0!
-        '
         'TO_DATE
         '
         Me.TO_DATE.CanGrow = False
@@ -757,6 +738,25 @@ Partial Public Class NewKaijoListReport
         Me.KOUENKAI_NO.Top = 0.6377953!
         Me.KOUENKAI_NO.Visible = False
         Me.KOUENKAI_NO.Width = 1.181102!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line20})
+        Me.PageFooter.Height = 0.07874016!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'Line20
+        '
+        Me.Line20.Height = 0.0!
+        Me.Line20.Left = 0.0!
+        Me.Line20.LineWeight = 1.0!
+        Me.Line20.Name = "Line20"
+        Me.Line20.Top = 0.0!
+        Me.Line20.Width = 11.02362!
+        Me.Line20.X1 = 0.0!
+        Me.Line20.X2 = 11.02362!
+        Me.Line20.Y1 = 0.0!
+        Me.Line20.Y2 = 0.0!
         '
         'NewKaijoListReport
         '
