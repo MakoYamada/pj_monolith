@@ -1661,12 +1661,19 @@ Public Class AppModule
     End Function
 
     '講演会場　要・不要
-    Public Shared Function GetName_KOUEN_KAIJO_TEHAI(ByVal KOUEN_KAIJO_TEHAI As String) As String
+    Public Shared Function GetName_KOUEN_KAIJO_TEHAI(ByVal KOUEN_KAIJO_TEHAI As String, Optional ByVal ShortFomat As Boolean = False) As String
         Select Case KOUEN_KAIJO_TEHAI
-            Case AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.Yes
-                Return AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.Yes
-            Case AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Code.No, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.No
-                Return AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.No
+            Case AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.ShortFormat.Yes
+                If ShortFomat = False Then
+                    Return AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.Yes
+                Else
+                    Return AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.ShortFormat.Yes
+                End If
+                If ShortFomat = False Then
+                    Return AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.No
+                Else
+                    Return AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.ShortFormat.No
+                End If
 
             Case Else
                 Return ""
@@ -1705,7 +1712,7 @@ Public Class AppModule
 
     '意見交換会場　要・不要
     Public Shared Function GetName_IKENKOUKAN_KAIJO_TEHAI(ByVal IKENKOUKAN_KAIJO_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_KOUSHI_ROOM_TEHAI(IKENKOUKAN_KAIJO_TEHAI, ShortFormat)
+        Return GetName_KOUEN_KAIJO_TEHAI(IKENKOUKAN_KAIJO_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_IKENKOUKAN_KAIJO_TEHAI_Yes(ByVal IKENKOUKAN_KAIJO_TEHAI As String) As String
         Return GetName_KOUEN_KAIJO_TEHAI_Yes(IKENKOUKAN_KAIJO_TEHAI)
@@ -1726,7 +1733,7 @@ Public Class AppModule
 
     '講師控室　要・不要
     Public Shared Function GetName_KOUSHI_ROOM_TEHAI(ByVal KOUSHI_ROOM_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_KOUSHI_ROOM_TEHAI(KOUSHI_ROOM_TEHAI, ShortFormat)
+        Return GetName_KOUEN_KAIJO_TEHAI(KOUSHI_ROOM_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_KOUSHI_ROOM_TEHAI_Yes(ByVal KOUSHI_ROOM_TEHAI As String) As String
         Return GetName_KOUEN_KAIJO_TEHAI_Yes(KOUSHI_ROOM_TEHAI)
@@ -1755,7 +1762,7 @@ Public Class AppModule
 
     '社員控室　要・不要
     Public Shared Function GetName_SHAIN_ROOM_TEHAI(ByVal SHAIN_ROOM_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_KOUSHI_ROOM_TEHAI(SHAIN_ROOM_TEHAI, ShortFormat)
+        Return GetName_KOUEN_KAIJO_TEHAI(SHAIN_ROOM_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_SHAIN_ROOM_TEHAI_Yes(ByVal SHAIN_ROOM_TEHAI As String) As String
         Return GetName_KOUEN_KAIJO_TEHAI_Yes(SHAIN_ROOM_TEHAI)
@@ -1775,7 +1782,7 @@ Public Class AppModule
 
     '世話人会場　要・不要
     Public Shared Function GetName_MANAGER_KAIJO_TEHAI(ByVal MANAGER_KAIJO_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_KOUSHI_ROOM_TEHAI(MANAGER_KAIJO_TEHAI, ShortFormat)
+        Return GetName_KOUEN_KAIJO_TEHAI(MANAGER_KAIJO_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_MANAGER_KAIJO_TEHAI_Yes(ByVal MANAGER_KAIJO_TEHAI As String) As String
         Return GetName_KOUEN_KAIJO_TEHAI_Yes(MANAGER_KAIJO_TEHAI)
@@ -1810,7 +1817,7 @@ Public Class AppModule
 
     '慰労会会場　要・不要
     Public Shared Function GetName_IROUKAI_KAIJO_TEHAI(ByVal IROUKAI_KAIJO_TEHAI As String, Optional ByVal ShortFormat As Boolean = False) As String
-        Return GetName_KOUSHI_ROOM_TEHAI(IROUKAI_KAIJO_TEHAI, ShortFormat)
+        Return GetName_KOUEN_KAIJO_TEHAI(IROUKAI_KAIJO_TEHAI, ShortFormat)
     End Function
     Public Shared Function GetName_IROUKAI_KAIJO_TEHAI_Yes(ByVal IROUKAI_KAIJO_TEHAI As String) As String
         Return GetName_KOUEN_KAIJO_TEHAI_Yes(IROUKAI_KAIJO_TEHAI)
