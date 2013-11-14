@@ -35,7 +35,7 @@
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="350px" 
-                                            MaxLength="300"></asp:TextBox>                                        
+                                            MaxLength="300" TabIndex="3"></asp:TextBox>                                        
                                     </td>
                                     <td align="right">
                                         BYL手配担当者<br />
@@ -43,7 +43,7 @@
                                     </td>
                                     <td colspan="3">
                                         <asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="350px" MaxLength="300" 
-                                            TabIndex="1"></asp:TextBox>                                        
+                                            TabIndex="4"></asp:TextBox>                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -51,7 +51,7 @@
                                         製品名
                                     </td>
                                     <td colspan="5">
-                                        <asp:DropDownList ID="JokenSEIHIN_NAME" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenSEIHIN_NAME" runat="server" TabIndex="5">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -61,10 +61,10 @@
                                     </td>
                                     <td colspan="5">
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
-                                            TabIndex="3"></asp:TextBox>&nbsp;&nbsp;&nbsp;
+                                            TabIndex="6"></asp:TextBox>&nbsp;&nbsp;&nbsp;
                                         講演会名&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="714px" MaxLength="160" 
-                                            TabIndex="4"></asp:TextBox>
+                                            TabIndex="7"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -73,21 +73,21 @@
                                     </td>
                                     <td colspan="5">
 							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="5"></asp:TextBox>年
+                                            TabIndex="8"></asp:TextBox>年
 							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="6"></asp:TextBox>月
+                                            TabIndex="9"></asp:TextBox>月
 
 							            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="7"></asp:TextBox>日
+                                            TabIndex="10"></asp:TextBox>日
 							            ～
 
 							            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="8"></asp:TextBox>年
+                                            TabIndex="11"></asp:TextBox>年
 							            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="9"></asp:TextBox>月
+                                            TabIndex="12"></asp:TextBox>月
 
 							            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="10"></asp:TextBox>日
+                                            TabIndex="13"></asp:TextBox>日
                                     </td>
                                 </tr>
                                 <tr>
@@ -95,7 +95,7 @@
                                         BYL企画担当者BU
                                     </td>
                                     <td colspan="5">
-                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="14">
                                         </asp:DropDownList>
                                     </td>
                                 </tr> 
@@ -104,7 +104,7 @@
                                         BYL企画担当者エリア
                                     </td>
                                     <td colspan="5">
-                                        <asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" TabIndex="15">
                                         </asp:DropDownList>
                                     </td>
                                 </tr> 
@@ -113,14 +113,14 @@
                                         TOP担当者
                                     </td>
                                     <td colspan="5">
-                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="16">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" valign="bottom" colspan="6">
                                         <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
-                                            CssClass="Button" TabIndex="14" />
+                                            CssClass="Button" TabIndex="17" />
                                     </td>
                                 </tr>
                             </table>
@@ -139,7 +139,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="18" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -201,11 +201,11 @@
                     <tr>
                         <td style="width:50%">
                             <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" TabIndex="19" />
                         </td>
                         <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" TabIndex="20" />
                         </td>
                     </tr>
                 </table> 

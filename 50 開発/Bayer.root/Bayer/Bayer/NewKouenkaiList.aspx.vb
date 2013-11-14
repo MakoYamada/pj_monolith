@@ -78,9 +78,9 @@ Partial Public Class NewKouenkaiList
     '画面項目 表示
     Private Sub SetForm()
 
-        If Joken.BU <> "" Then Me.JOKEN_BU.SelectedValue = Joken.BU
-        If Joken.AREA <> "" Then Me.JOKEN_AREA.SelectedValue = Joken.AREA
-        If Joken.KUBUN <> "" Then Me.KUBUN.SelectedValue = Joken.KUBUN
+        If Joken.BU <> "" AndAlso Joken.BU <> "指定なし" Then Me.JOKEN_BU.SelectedValue = Joken.BU
+        If Joken.AREA <> "" AndAlso Joken.AREA <> "指定なし" Then Me.JOKEN_AREA.SelectedValue = Joken.AREA
+        If Joken.KUBUN <> "" AndAlso Joken.KUBUN <> "指定なし" Then Me.KUBUN.SelectedValue = Joken.KUBUN
 
         'データ取得
         If Not GetData() Then

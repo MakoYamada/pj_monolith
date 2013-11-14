@@ -16,13 +16,40 @@ Option Explicit On
 Partial Public Class NewDrList
 
     '''<summary>
+    '''BtnIchiranPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnIchiranPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''JokenBU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenTEHAI_TANTO_AREA コントロール。
@@ -31,7 +58,7 @@ Partial Public Class NewDrList
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenTEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenKUBUN コントロール。
@@ -59,6 +86,15 @@ Partial Public Class NewDrList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenKIKAKU_TANTO_ROMA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''JokenTEHAI_TANTO_ROMA コントロール。
@@ -124,22 +160,31 @@ Partial Public Class NewDrList
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''BtnPrint コントロール。
+    '''BtnIchiranPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnPrint As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnIchiranPrint2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnBack コントロール。
+    '''BtnPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnPrint2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

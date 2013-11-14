@@ -29,25 +29,43 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table cellspacing="0" cellpadding="2" border="0">
         <tr>
+            <td>
+                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                    <tr>
+                        <td style="width:50%">
+                            <asp:Button ID="BtnIchiranPrint1" runat="server" Text="新着一覧印刷" Width="130px" 
+                                CssClass="Button" tabindex="1"/>
+                            <asp:Button ID="BtnPrint1" runat="server" Text="手配書一括印刷" Width="130px" 
+                                CssClass="Button" tabindex="2" />
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="3" />
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+        </tr>
+        <tr>
             <td align="left">
                 <table cellpadding="2" cellspacing="0" border="0">
                     <tr>
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
-                                    <td align="right" style="width:70px">
-                                        手配担当者<br />BU
+                                    <td align="right" style="width:90px">
+                                        BYL手配担当者<br />BU
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="JokenBU" runat="server" Width="333px"
-                                            MaxLength="40" TabIndex="1"></asp:TextBox>
+                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="4">
+                                        </asp:DropDownList>
                                     </td>
-                                    <td align="right" style="width:70px">
-                                        手配担当者<br />エリア
+                                    <td align="right" style="width:90px">
+                                        BYL手配担当者<br />エリア
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="JokenTEHAI_TANTO_AREA" runat="server" Width="333px"
-                                            MaxLength="80" TabIndex="2"></asp:TextBox>
+                                        <asp:DropDownList ID="JokenTEHAI_TANTO_AREA" runat="server" TabIndex="5">
+                                        </asp:DropDownList>
                                     </td>
                                 </tr>
                                 <tr>
@@ -55,7 +73,7 @@
                                         区分
                                     </td>
                                     <td colspan="3">
-                                        <asp:DropDownList ID="JokenKUBUN" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenKUBUN" runat="server" TabIndex="6">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -65,26 +83,36 @@
                                     </td>
                                     <td colspan="5">
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
-                                            TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
+                                            TabIndex="7"></asp:TextBox>&nbsp;&nbsp;&nbsp;
                                         講演会名&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
-                                            TabIndex="5"></asp:TextBox>
+                                            TabIndex="8"></asp:TextBox>
                                     </td>
                                 </tr>
                                <tr>
                                     <td align="right">
-                                        手配担当者<br />
+                                        BYL企画担当者<br />
+                                        (ローマ字)
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="350px" MaxLength="300" 
+                                            TabIndex="9"></asp:TextBox>                                        
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <td align="right">
+                                        BYL手配担当者<br />
                                         (ローマ字)
                                     </td>
                                     <td colspan="3">
                                         <asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="350px" MaxLength="300" 
-                                            TabIndex="6"></asp:TextBox>                                        
+                                            TabIndex="10"></asp:TextBox>                                        
                                     </td>
                                 </tr>
                                 <tr style="width:900px">
                                     <td align="right" valign="bottom" colspan="4" style="width:100%">
                                         <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
-                                            CssClass="Button" TabIndex="7" />
+                                            CssClass="Button" TabIndex="11" />
                                     </td>
                                 </tr>
                             </table>
@@ -105,7 +133,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="8" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="12" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -141,7 +169,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
@@ -196,14 +224,14 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="BtnPrint" runat="server" Text="手配書一括印刷" Width="130px" 
-                    CssClass="Button" TabIndex="9" />
+                <asp:Button ID="BtnIchiranPrint2" runat="server" Text="新着一覧印刷" Width="130px" 
+                    CssClass="Button" TabIndex="13" />
+                <asp:Button ID="BtnPrint2" runat="server" Text="手配書一括印刷" Width="130px" 
+                    CssClass="Button" TabIndex="14" />
             </td>
-        </tr>
-        <tr align="center">
-            <td>
-                <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" 
-                    CssClass="Button" TabIndex="10" />
+            <td style="width:50%" align="right">
+                <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
+                    CssClass="Button" TabIndex="15" />
             </td>
         </tr>
     </table>

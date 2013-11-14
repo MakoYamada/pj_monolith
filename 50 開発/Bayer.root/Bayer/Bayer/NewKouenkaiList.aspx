@@ -12,7 +12,7 @@
                     <tr>
                         <td style="width:50%">
                             <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
-                                CssClass="Button" />
+                                CssClass="Button"  TabIndex="1"/>
                         </td>
                         <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
@@ -27,14 +27,14 @@
                 <table cellpadding="2" cellspacing="0" border="0">
                     <tr style="width:900px">
                         <td style="width:10%">
-                            BU 
+                            BYL企画担当者BU 
                         </td>
                         <td>
                             <asp:DropDownList ID="JOKEN_BU" runat="server" TabIndex="3">
                             </asp:DropDownList>
                         </td>
                         <td style="width:10%">
-                            エリア
+                            BYL企画担当者エリア
                         </td>
                         <td>
                             <asp:DropDownList ID="JOKEN_AREA" runat="server" TabIndex="4">
@@ -79,15 +79,15 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="BU" HeaderText="BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="BU" HeaderText="BYL企画担当BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="BYL企画担当エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="BYL企画担当営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
@@ -132,11 +132,11 @@
                     <tr>
                         <td style="width:50%">
                             <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" TabIndex="8" />
                         </td>
                         <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" TabIndex="9" />
                         </td>
                     </tr>
                 </table> 

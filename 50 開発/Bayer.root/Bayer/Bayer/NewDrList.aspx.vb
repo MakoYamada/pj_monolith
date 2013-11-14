@@ -80,11 +80,14 @@ Partial Public Class NewDrList
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        'ドロップダウンリスト設定
+        AppModule.SetDropDownList_BU(Me.JokenBU, DbConnection)
+        AppModule.SetDropDownList_AREA(Me.JokenTEHAI_TANTO_AREA, DbConnection)
 
-        'IME設定        CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.InActive)
-        CmnModule.SetIme(Me.JokenTEHAI_TANTO_AREA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.InActive)
+        'IME設定        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_ROMA, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.JokenTEHAI_TANTO_ROMA, CmnModule.ImeType.InActive)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -94,12 +97,12 @@ Partial Public Class NewDrList
     '画面項目 表示
     Private Sub SetForm()
 
-        If Joken.BU <> "" Then Me.JokenBU.Text = Joken.BU
-        If Joken.KIKAKU_TANTO_ROMA <> "" Then Me.JokenTEHAI_TANTO_AREA.Text = Joken.KIKAKU_TANTO_ROMA
-        If Joken.KOUENKAI_NO <> "" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
-        If Joken.KOUENKAI_NAME <> "" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
-        If Joken.KIKAKU_TANTO_ROMA <> "" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.KOUENKAI_NAME
-        If Joken.KUBUN <> "" Then Me.JokenKUBUN.SelectedValue = Joken.KUBUN
+        If Joken.BU <> "" AndAlso Joken.BU <> "指定なし" Then Me.JokenBU.Text = Joken.BU
+        If Joken.KIKAKU_TANTO_ROMA <> "" AndAlso Joken.KIKAKU_TANTO_ROMA <> "指定なし" Then Me.JokenTEHAI_TANTO_AREA.Text = Joken.KIKAKU_TANTO_ROMA
+        If Joken.KOUENKAI_NO <> "" AndAlso Joken.KOUENKAI_NO <> "指定なし" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
+        If Joken.KOUENKAI_NAME <> "" AndAlso Joken.KOUENKAI_NAME <> "指定なし" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
+        If Joken.TEHAI_TANTO_ROMA <> "" AndAlso Joken.TEHAI_TANTO_ROMA <> "指定なし" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.KOUENKAI_NAME
+        If Joken.KUBUN <> "" AndAlso Joken.KUBUN <> "指定なし" Then Me.JokenKUBUN.SelectedValue = Joken.KUBUN
 
         'データ取得
         If Not GetData() Then
@@ -122,10 +125,11 @@ Partial Public Class NewDrList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.BU = Trim(Me.JokenBU.Text)
-        Joken.AREA = Trim(Me.JokenTEHAI_TANTO_AREA.Text)
+        If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.ToString
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = JokenTEHAI_TANTO_AREA.SelectedItem.ToString
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.JokenKUBUN)
 
@@ -152,16 +156,23 @@ Partial Public Class NewDrList
         'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
-            Me.BtnPrint.Visible = False
+            Me.BtnPrint1.Visible = False
+            Me.BtnPrint2.Visible = False
+            Me.BtnIchiranPrint1.Visible = False
+            Me.BtnIchiranPrint2.Visible = False
             Me.lnkCheck.Visible = False
             Me.lnkNoCheck.Visible = False
 
-            CmnModule.SetEnabled(Me.BtnPrint, False)
+            CmnModule.SetEnabled(Me.BtnPrint1, False)
+            CmnModule.SetEnabled(Me.BtnPrint2, False)
 
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
-            Me.BtnPrint.Visible = True
+            Me.BtnPrint1.Visible = True
+            Me.BtnPrint2.Visible = True
+            Me.BtnIchiranPrint1.Visible = True
+            Me.BtnIchiranPrint2.Visible = True
             Me.lnkCheck.Visible = True
             Me.lnkNoCheck.Visible = True
 
@@ -307,8 +318,8 @@ Partial Public Class NewDrList
 
     End Sub
 
-    '[NOZOMIへ・印刷]
-    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
+    '[手配書一括印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
         Dim UPD_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
         Dim seq As Integer = 0
 
@@ -333,9 +344,19 @@ Partial Public Class NewDrList
         Next
     End Sub
 
+    '[手配書一括印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        BtnPrint1_Click(sender, e)
+    End Sub
+
     '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Response.Redirect(URL.Menu)
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
     End Sub
 
     '入力チェック
@@ -346,18 +367,13 @@ Partial Public Class NewDrList
             Return False
         End If
 
-        If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者BU"), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
             CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
             Return False
         End If
 
         If Not CmnCheck.IsAlphabetOnly(Me.JokenTEHAI_TANTO_ROMA) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者(ローマ字)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("BYL手配担当者(ローマ字)"), Me)
             Return False
         End If
 
@@ -392,4 +408,41 @@ Partial Public Class NewDrList
 
         Return True
     End Function
+
+    '[新着一覧印刷]
+    Private Sub BtnIchiranPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnIchiranPrint1.Click
+        Dim strSQL As String = ""
+
+        Joken = Nothing
+        If Me.JokenBU.SelectedIndex <> 0 Then
+            Joken.BU = Me.JokenBU.SelectedItem.ToString
+        Else
+            Joken.BU = ""
+        End If
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then
+            Joken.AREA = JokenTEHAI_TANTO_AREA.SelectedItem.ToString
+        Else
+            Joken.AREA = ""
+        End If
+        Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.JokenKUBUN)
+        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
+        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+
+        strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
+        If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
+        If Joken.AREA.Trim = "" Then Joken.AREA = "指定なし"
+        If Joken.KUBUN.Trim = "" Then Joken.KUBUN = "指定なし"
+        If Joken.KOUENKAI_NO.Trim = "" Then Joken.KOUENKAI_NO = "指定なし"
+        If Joken.KOUENKAI_NAME.Trim = "" Then Joken.KOUENKAI_NAME = "指定なし"
+        If Joken.KIKAKU_TANTO_ROMA.Trim = "" Then Joken.KIKAKU_TANTO_ROMA = "指定なし"
+        If Joken.TEHAI_TANTO_ROMA.Trim = "" Then Joken.TEHAI_TANTO_ROMA = "指定なし"
+
+        Session.Item(SessionDef.NewDrPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.Joken) = Joken
+        Response.Redirect(URL.Preview)
+    End Sub
 End Class

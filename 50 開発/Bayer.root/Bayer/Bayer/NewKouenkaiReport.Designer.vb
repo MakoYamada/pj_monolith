@@ -140,9 +140,9 @@ Partial Public Class NewKouenkaiReport
         Me.Label3.Left = 0.02047244!
         Me.Label3.Name = "Label3"
         Me.Label3.Style = "font-family: ＭＳ ゴシック"
-        Me.Label3.Text = "BU"
+        Me.Label3.Text = "BYL企画担当者BU"
         Me.Label3.Top = 1.777953!
-        Me.Label3.Width = 0.2082677!
+        Me.Label3.Width = 1.458662!
         '
         'Label4
         '
@@ -151,9 +151,9 @@ Partial Public Class NewKouenkaiReport
         Me.Label4.Left = 1.55315!
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "font-family: ＭＳ ゴシック"
-        Me.Label4.Text = "エリア"
+        Me.Label4.Text = "BYL企画担当者エリア"
         Me.Label4.Top = 1.777953!
-        Me.Label4.Width = 0.5102363!
+        Me.Label4.Width = 1.477952!
         '
         'Label5
         '
@@ -162,9 +162,9 @@ Partial Public Class NewKouenkaiReport
         Me.Label5.Left = 3.093701!
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ ゴシック"
-        Me.Label5.Text = "営業所"
+        Me.Label5.Text = "BYL企画担当者営業所"
         Me.Label5.Top = 1.777953!
-        Me.Label5.Width = 0.5102362!
+        Me.Label5.Width = 1.479134!
         '
         'Label6
         '
@@ -253,16 +253,16 @@ Partial Public Class NewKouenkaiReport
         Me.Label11.HyperLink = Nothing
         Me.Label11.Left = 0.0!
         Me.Label11.Name = "Label11"
-        Me.Label11.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label11.Text = "BU："
+        Me.Label11.Style = "font-family: ＭＳ ゴシック; text-align: right; text-justify: auto"
+        Me.Label11.Text = "BYL企画担当者BU："
         Me.Label11.Top = 1.222835!
-        Me.Label11.Width = 0.603937!
+        Me.Label11.Width = 1.604331!
         '
         'JOKEN_BU
         '
         Me.JOKEN_BU.CanGrow = False
         Me.JOKEN_BU.Height = 0.2!
-        Me.JOKEN_BU.Left = 0.6559055!
+        Me.JOKEN_BU.Left = 1.614567!
         Me.JOKEN_BU.Name = "JOKEN_BU"
         Me.JOKEN_BU.Style = "white-space: nowrap"
         Me.JOKEN_BU.Text = Nothing
@@ -276,19 +276,19 @@ Partial Public Class NewKouenkaiReport
         Me.Label12.Left = 0.0!
         Me.Label12.Name = "Label12"
         Me.Label12.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label12.Text = "エリア："
+        Me.Label12.Text = "BYL企画担当者エリア："
         Me.Label12.Top = 1.433071!
-        Me.Label12.Width = 0.603937!
+        Me.Label12.Width = 1.604331!
         '
         'JOKEN_AREA
         '
         Me.JOKEN_AREA.CanGrow = False
         Me.JOKEN_AREA.Height = 0.2!
-        Me.JOKEN_AREA.Left = 0.6559055!
+        Me.JOKEN_AREA.Left = 1.614567!
         Me.JOKEN_AREA.Name = "JOKEN_AREA"
         Me.JOKEN_AREA.Style = "white-space: nowrap"
         Me.JOKEN_AREA.Text = Nothing
-        Me.JOKEN_AREA.Top = 1.433071!
+        Me.JOKEN_AREA.Top = 1.422835!
         Me.JOKEN_AREA.Width = 1.479134!
         '
         'ReportInfo1
