@@ -401,6 +401,12 @@
     <Compile Include="KouenkaiRirekiReport.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NewDrListReport.Designer.vb">
+      <DependentUpon>NewDrListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewDrListReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -451,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KouenkaiRirekiReport.resx">
       <DependentUpon>KouenkaiRirekiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDrListReport.resx">
+      <DependentUpon>NewDrListReport.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
