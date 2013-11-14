@@ -184,8 +184,7 @@ Partial Public Class Preview
         'レポートを作成
         rpt1.Run()
 
-        'QQQ Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
-        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
 
@@ -426,8 +425,7 @@ Partial Public Class Preview
         'レポートを作成
         rpt1.Run()
 
-        'QQQ Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
-        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
     End Sub
@@ -461,7 +459,7 @@ Partial Public Class Preview
         rpt1.DataSource = GetKaijoListData()
         rpt1.Document.Printer.PrinterName = ""
 
-        'A4縦
+        'A4横
         rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
         rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
 
@@ -474,8 +472,7 @@ Partial Public Class Preview
         'レポートを作成
         rpt1.Run()
 
-        'QQQ Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
-        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.HtmlViewer
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
         Me.WebViewer1.ClearCachedReport()
         Me.WebViewer1.Report = rpt1
 
