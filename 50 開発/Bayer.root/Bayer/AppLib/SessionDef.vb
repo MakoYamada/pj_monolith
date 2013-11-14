@@ -64,6 +64,7 @@
     Public Const ShisetsuKensaku_TEL As String = "ShisetsuKensaku_TEL"
     Public Const ShisetsuKensaku_URL As String = "ShisetsuKensaku_URL"
     Public Const ShisetsuKensaku_Back As String = "ShisetsuKensaku_Back"
+    Public Const SeisanKensaku_SEQ As String = "SeisanKensaku_SEQ"
     Public Const CostRegist_Search As String = "CostRegist_Search"
     Public Const CostRegist_Update As String = "CostRegist_Update"
     Public Const PrintPreview As String = "PrintPreview"
