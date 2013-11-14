@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table cellspacing="0" cellpadding="2" border="0" style="width: 100%; height: 500px;">
+	<table cellspacing="0" cellpadding="2" border="0" style="width: 100%;">
 		<tr>
 			<td align="left">
 				<asp:Button ID="BtnBack" runat="server" Text="‘O‚Ì‰æ–Ê‚É–ß‚é" Width="130px" CssClass="Button" />
@@ -13,7 +13,7 @@
 		</tr>
 		<tr>
 			<td align="left">
-				<ActiveReportsWeb:WebViewer ID="WebViewer1" runat="server" Height="430px" Width="100%" ViewerType="FlashViewer">
+				<ActiveReportsWeb:WebViewer ID="WebViewer1" runat="server" Height="450px" Width="100%" ViewerType="FlashViewer">
 					<FlashViewerOptions MultiPageViewColumns="1" MultiPageViewRows="1"></FlashViewerOptions>
 				</ActiveReportsWeb:WebViewer>
 				<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
