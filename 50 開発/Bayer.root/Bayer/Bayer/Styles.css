@@ -190,6 +190,7 @@ img
 {
 	background-image: url('Images/btn01.png');
 	background-repeat: repeat-x;
+	height: 28px;
 	color: #262626;
 	border: 1px #707070 solid;
 	font-weight: bold;
@@ -210,6 +211,7 @@ img
 {
 	background-image: url('Images/btn01.png');
 	background-repeat: repeat-x;
+	height: 28px;
 	color: #ac0529;
 	height: 28px;
 	border: 1px #707070 solid;
