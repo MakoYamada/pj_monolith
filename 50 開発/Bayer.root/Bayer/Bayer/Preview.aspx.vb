@@ -235,6 +235,9 @@ Partial Public Class Preview
              DataDynamics.ActiveReports.TextBox).Text = Joken.BU
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
+            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         'レポートを作成
         rpt1.Run()
@@ -297,9 +300,11 @@ Partial Public Class Preview
              DataDynamics.ActiveReports.TextBox).Text = Joken.BU
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
+            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         If Joken.TTANTO_ID.Trim <> "指定なし" Then
-            Dim MS_USER As TableDef.MS_USER.DataStruct
             Dim strSQL As String = "SELECT * FROM MS_USER" _
                 & " WHERE" _
                 & TableDef.MS_USER.Column.LOGIN_ID & "='" & Joken.TTANTO_ID & "'"
@@ -369,6 +374,9 @@ Partial Public Class Preview
             DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NO
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NAME"),  _
             DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NAME
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
+            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         'レポートを作成
         rpt1.Run()
