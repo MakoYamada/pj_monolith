@@ -91,12 +91,12 @@
 					</tr>
 					<tr valign="middle">
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-							■精算処理
+							■精算関連業務
 						</td>
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnSeisan" runat="server" Text="精算金額入力" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnSeisan" runat="server" Text="精算処理" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnCost" runat="server" Text="コストセンター別費用入力" Width="200px" CssClass="Button" />

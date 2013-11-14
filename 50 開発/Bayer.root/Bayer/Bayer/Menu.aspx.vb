@@ -259,13 +259,16 @@ Partial Public Class Menu1
         Response.Redirect(URL.DrList)
     End Sub
 
-    '[精算金額入力]
+    '[精算処理]
     Protected Sub BtnSeisan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisan.Click
+        Session.Remove(SessionDef.SeisanKensaku_Joken)
+        Session.Remove(SessionDef.SeisanKensaku_SEQ)
+        Session.Remove(SessionDef.TBL_KOUENKAI)
         Session.Remove(SessionDef.Joken)
         Session.Remove(SessionDef.TBL_SEIKYU)
         Session.Remove(SessionDef.PageIndex)
         Session.Remove(SessionDef.SEQ)
-        Response.Redirect(URL.SeisanList)
+        Response.Redirect(URL.SeisanKensaku)
     End Sub
 
     '[コストセンター別費用入力]
