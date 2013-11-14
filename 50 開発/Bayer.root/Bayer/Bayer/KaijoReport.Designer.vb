@@ -221,7 +221,7 @@ Partial Public Class KaijoReport
         Me.Label1.HyperLink = Nothing
         Me.Label1.Left = 5.020473!
         Me.Label1.Name = "Label1"
-        Me.Label1.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label1.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label1.Text = "出力日"
         Me.Label1.Top = 0.0!
         Me.Label1.Width = 0.6251969!
@@ -232,7 +232,7 @@ Partial Public Class KaijoReport
         Me.Label2.HyperLink = Nothing
         Me.Label2.Left = 5.020473!
         Me.Label2.Name = "Label2"
-        Me.Label2.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label2.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label2.Text = "出力担当"
         Me.Label2.Top = 0.1976379!
         Me.Label2.Width = 0.6251969!
@@ -243,7 +243,7 @@ Partial Public Class KaijoReport
         Me.Label3.HyperLink = Nothing
         Me.Label3.Left = 5.614602!
         Me.Label3.Name = "Label3"
-        Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label3.Text = "："
         Me.Label3.Top = 0.197769!
         Me.Label3.Width = 0.1669291!
@@ -254,7 +254,7 @@ Partial Public Class KaijoReport
         Me.Label4.HyperLink = Nothing
         Me.Label4.Left = 5.614601!
         Me.Label4.Name = "Label4"
-        Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label4.Text = "："
         Me.Label4.Top = 0.0001311153!
         Me.Label4.Width = 0.1669291!
@@ -321,7 +321,7 @@ Partial Public Class KaijoReport
         Me.LabelPage.HyperLink = Nothing
         Me.LabelPage.Left = 5.566929!
         Me.LabelPage.Name = "LabelPage"
-        Me.LabelPage.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt; text-align: right"
+        Me.LabelPage.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: right"
         Me.LabelPage.Text = "(999 / 999 ページ)"
         Me.LabelPage.Top = 0.4370079!
         Me.LabelPage.Width = 1.574803!
@@ -374,7 +374,7 @@ Partial Public Class KaijoReport
         Me.Label10.HyperLink = Nothing
         Me.Label10.Left = 0.08149607!
         Me.Label10.Name = "Label10"
-        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label10.Text = "会合手配Id"
         Me.Label10.Top = 0.2897638!
         Me.Label10.Width = 1.753543!
@@ -385,7 +385,7 @@ Partial Public Class KaijoReport
         Me.Label11.HyperLink = Nothing
         Me.Label11.Left = 0.08149607!
         Me.Label11.Name = "Label11"
-        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label11.Text = "交通手配予定人数 (JR/AIR)"
         Me.Label11.Top = 6.869258!
         Me.Label11.Width = 1.753543!
@@ -396,7 +396,7 @@ Partial Public Class KaijoReport
         Me.Label12.HyperLink = Nothing
         Me.Label12.Left = 0.08149607!
         Me.Label12.Name = "Label12"
-        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label12.Text = "手配ステータス (依頼)"
         Me.Label12.Top = 0.743522!
         Me.Label12.Width = 1.753543!
@@ -407,7 +407,7 @@ Partial Public Class KaijoReport
         Me.Label13.HyperLink = Nothing
         Me.Label13.Left = 0.08149607!
         Me.Label13.Name = "Label13"
-        Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label13.Text = "最終承認者 (氏名)"
         Me.Label13.Top = 1.19728!
         Me.Label13.Width = 1.753543!
@@ -418,7 +418,7 @@ Partial Public Class KaijoReport
         Me.Label14.HyperLink = Nothing
         Me.Label14.Left = 0.08149607!
         Me.Label14.Name = "Label14"
-        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label14.Text = "開催希望地 (都道府県)"
         Me.Label14.Top = 2.331676!
         Me.Label14.Width = 1.753543!
@@ -429,7 +429,7 @@ Partial Public Class KaijoReport
         Me.Label15.HyperLink = Nothing
         Me.Label15.Left = 0.08149607!
         Me.Label15.Name = "Label15"
-        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label15.Text = "開催希望地 (フリーテキスト)"
         Me.Label15.Top = 2.785434!
         Me.Label15.Width = 1.953937!
@@ -440,7 +440,7 @@ Partial Public Class KaijoReport
         Me.Label16.HyperLink = Nothing
         Me.Label16.Left = 0.08149607!
         Me.Label16.Name = "Label16"
-        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label16.Text = "講演会番号"
         Me.Label16.Top = 0.5166429!
         Me.Label16.Width = 1.753543!
@@ -451,7 +451,7 @@ Partial Public Class KaijoReport
         Me.Label17.HyperLink = Nothing
         Me.Label17.Left = 0.08149607!
         Me.Label17.Name = "Label17"
-        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label17.Text = "Timestamp (BYL)"
         Me.Label17.Top = 0.9704011!
         Me.Label17.Width = 1.753543!
@@ -462,7 +462,7 @@ Partial Public Class KaijoReport
         Me.Label18.HyperLink = Nothing
         Me.Label18.Left = 0.08149607!
         Me.Label18.Name = "Label18"
-        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label18.Text = "開催日備考欄"
         Me.Label18.Top = 1.651038!
         Me.Label18.Width = 1.753543!
@@ -473,7 +473,7 @@ Partial Public Class KaijoReport
         Me.Label19.HyperLink = Nothing
         Me.Label19.Left = 0.08149607!
         Me.Label19.Name = "Label19"
-        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label19.Text = "開催希望地 (市町村)"
         Me.Label19.Top = 2.558555!
         Me.Label19.Width = 1.753543!
@@ -484,7 +484,7 @@ Partial Public Class KaijoReport
         Me.Label20.HyperLink = Nothing
         Me.Label20.Left = 0.08149607!
         Me.Label20.Name = "Label20"
-        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label20.Text = "講演会場 レイアウト"
         Me.Label20.Top = 3.91983!
         Me.Label20.Width = 1.753543!
@@ -495,7 +495,7 @@ Partial Public Class KaijoReport
         Me.Label21.HyperLink = Nothing
         Me.Label21.Left = 0.08149607!
         Me.Label21.Name = "Label21"
-        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label21.Text = "講演会 終了時間"
         Me.Label21.Top = 3.69295!
         Me.Label21.Width = 1.753543!
@@ -506,7 +506,7 @@ Partial Public Class KaijoReport
         Me.Label22.HyperLink = Nothing
         Me.Label22.Left = 0.08149607!
         Me.Label22.Name = "Label22"
-        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label22.Text = "講演会 開始時間"
         Me.Label22.Top = 3.466071!
         Me.Label22.Width = 1.753543!
@@ -517,7 +517,7 @@ Partial Public Class KaijoReport
         Me.Label23.HyperLink = Nothing
         Me.Label23.Left = 0.08149607!
         Me.Label23.Name = "Label23"
-        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label23.Text = "慰労会会場 (要・不要)"
         Me.Label23.Top = 4.373588!
         Me.Label23.Width = 1.753543!
@@ -528,7 +528,7 @@ Partial Public Class KaijoReport
         Me.Label24.HyperLink = Nothing
         Me.Label24.Left = 0.08149607!
         Me.Label24.Name = "Label24"
-        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label24.Text = "意見交換会場 (要・不要)"
         Me.Label24.Top = 4.146708!
         Me.Label24.Width = 1.753543!
@@ -539,7 +539,7 @@ Partial Public Class KaijoReport
         Me.Label26.HyperLink = Nothing
         Me.Label26.Left = 0.08149607!
         Me.Label26.Name = "Label26"
-        Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label26.Text = "講師控室 (時間 From)"
         Me.Label26.Top = 5.054225!
         Me.Label26.Width = 1.753543!
@@ -550,7 +550,7 @@ Partial Public Class KaijoReport
         Me.Label27.HyperLink = Nothing
         Me.Label27.Left = 0.08149607!
         Me.Label27.Name = "Label27"
-        Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label27.Text = "講師控室 (要・不要)"
         Me.Label27.Top = 4.827346!
         Me.Label27.Width = 1.753543!
@@ -561,7 +561,7 @@ Partial Public Class KaijoReport
         Me.Label28.HyperLink = Nothing
         Me.Label28.Left = 0.08149607!
         Me.Label28.Name = "Label28"
-        Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label28.Text = "慰労会参加予定者数"
         Me.Label28.Top = 4.600467!
         Me.Label28.Width = 1.753543!
@@ -572,7 +572,7 @@ Partial Public Class KaijoReport
         Me.Label29.HyperLink = Nothing
         Me.Label29.Left = 0.08149607!
         Me.Label29.Name = "Label29"
-        Me.Label29.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label29.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label29.Text = "講師控室 (人数)"
         Me.Label29.Top = 5.281104!
         Me.Label29.Width = 1.753543!
@@ -583,7 +583,7 @@ Partial Public Class KaijoReport
         Me.Label30.HyperLink = Nothing
         Me.Label30.Left = 0.08149607!
         Me.Label30.Name = "Label30"
-        Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label30.Text = "世話人控室 (時間 From)"
         Me.Label30.Top = 5.961741!
         Me.Label30.Width = 1.753543!
@@ -594,7 +594,7 @@ Partial Public Class KaijoReport
         Me.Label31.HyperLink = Nothing
         Me.Label31.Left = 0.08149607!
         Me.Label31.Name = "Label31"
-        Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label31.Text = "世話人会会場 (要・不要)"
         Me.Label31.Top = 5.734862!
         Me.Label31.Width = 1.753543!
@@ -605,7 +605,7 @@ Partial Public Class KaijoReport
         Me.Label32.HyperLink = Nothing
         Me.Label32.Left = 0.08149607!
         Me.Label32.Name = "Label32"
-        Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label32.Text = "社員控室 (要・不要)"
         Me.Label32.Top = 5.507983!
         Me.Label32.Width = 1.753543!
@@ -616,7 +616,7 @@ Partial Public Class KaijoReport
         Me.Label33.HyperLink = Nothing
         Me.Label33.Left = 0.08149607!
         Me.Label33.Name = "Label33"
-        Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label33.Text = "宿泊希望日"
         Me.Label33.Top = 6.642379!
         Me.Label33.Width = 1.753543!
@@ -627,7 +627,7 @@ Partial Public Class KaijoReport
         Me.Label34.HyperLink = Nothing
         Me.Label34.Left = 0.08149607!
         Me.Label34.Name = "Label34"
-        Me.Label34.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label34.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label34.Text = "宿泊希望室数"
         Me.Label34.Top = 6.4155!
         Me.Label34.Width = 1.753543!
@@ -638,7 +638,7 @@ Partial Public Class KaijoReport
         Me.Label35.HyperLink = Nothing
         Me.Label35.Left = 0.08149607!
         Me.Label35.Name = "Label35"
-        Me.Label35.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label35.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label35.Text = "世話人控室 (人数)"
         Me.Label35.Top = 6.188621!
         Me.Label35.Width = 1.753543!
@@ -649,7 +649,7 @@ Partial Public Class KaijoReport
         Me.Label36.HyperLink = Nothing
         Me.Label36.Left = 0.08149607!
         Me.Label36.Name = "Label36"
-        Me.Label36.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label36.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label36.Text = "その他備考欄"
         Me.Label36.Top = 7.323016!
         Me.Label36.Width = 1.753543!
@@ -660,7 +660,7 @@ Partial Public Class KaijoReport
         Me.Label38.HyperLink = Nothing
         Me.Label38.Left = 0.08149607!
         Me.Label38.Name = "Label38"
-        Me.Label38.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label38.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label38.Text = "タクシー手配予定人数"
         Me.Label38.Top = 7.096137!
         Me.Label38.Width = 1.753543!
@@ -756,7 +756,7 @@ Partial Public Class KaijoReport
         Me.Label41.HyperLink = Nothing
         Me.Label41.Left = 0.08149607!
         Me.Label41.Name = "Label41"
-        Me.Label41.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt"
+        Me.Label41.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label41.Text = "最終承認日"
         Me.Label41.Top = 1.424159!
         Me.Label41.Width = 1.753543!

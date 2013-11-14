@@ -23,6 +23,15 @@ Public Class KaijoListReport
         Me.PrintDate.Text = CmnModule.Format_Date(Now(), CmnModule.DateFormatType.YYYYMMDDHHMMSS)
         Me.LOGIN_USER_NAME.Text = pLoginUser.USER_NAME
         '条件
+        Me.JokenKIKAKU_TANTO_ROMA.Text = pJoken.KIKAKU_TANTO_ROMA
+        Me.JokenTEHAI_TANTO_ROMA.Text = pJoken.TEHAI_TANTO_ROMA
+        Me.JokenSEIHIN.Text = pJoken.SEIHIN_NAME
+        Me.JokenKOUENKAI_NO.Text = pJoken.KOUENKAI_NO
+        Me.JokenKOUENKAI_NAME.Text = pJoken.KOUENKAI_NAME
+        Me.JokenFROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(pJoken.FROM_DATE, pJoken.TO_DATE, True)
+        Me.JokenBU.Text = pJoken.BU
+        Me.JokenKIKAKU_TANTO_AREA.Text = pJoken.AREA
+        Me.JoKenTTANTO_ID.Text = pJoken.USER_NAME
     End Sub
 
     Private Sub PageHeader_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.BeforePrint
@@ -36,7 +45,7 @@ Public Class KaijoListReport
         Me.FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(Me.FROM_DATE.Text, Me.TO_DATE.Text, True)
         Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(Me.KOUENKAI_NAME.Text)
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(Me.TIME_STAMP_BYL.Text)
-        Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI.Text)
+        Me.SEND_FLAG.Text = AppModule.GetName_SEND_FLAG(Me.SEND_FLAG.Text)
         Me.USER_NAME.Text = AppModule.GetName_USER_NAME(Me.USER_NAME.Text)
     End Sub
 

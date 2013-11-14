@@ -14,8 +14,8 @@ Partial Public Class KaijoList
         FROM_DATE
         KOUENKAI_NAME
         TIME_STAMP_BYL
-        USER_NAME
         SEND_FLAG
+        USER_NAME
         Button1
         KOUENKAI_NO
         TO_DATE
@@ -45,7 +45,7 @@ Partial Public Class KaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "【検索】会場見積依頼"
+            .PageTitle = "【検索】会場手配依頼一覧"
         End With
 
     End Sub
@@ -116,9 +116,15 @@ Partial Public Class KaijoList
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            Me.TblButton1.Visible = False
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, False)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.TblButton1.Visible = True
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, True)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, True)
 
             'グリッドビュー表示
             SetGridView()
@@ -237,6 +243,7 @@ Partial Public Class KaijoList
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
         Joken.TTANTO_ID = CmnModule.GetSelectedItemValue(Me.JoKenTTANTO_ID)
+        Joken.USER_NAME = CmnModule.GetSelectedItemText(Me.JoKenTTANTO_ID)
 
         '画面項目表示
         SetForm()
@@ -299,8 +306,17 @@ Partial Public Class KaijoList
         Return True
     End Function
 
+    '[会場手配一覧印刷]
+    Protected Sub BtnKaijoListPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoListPrint1.Click, BtnKaijoListPrint2.Click
+        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, False)
+        Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.PrintPreview) = "KaijoList"
+        Response.Redirect(URL.Preview)
+    End Sub
+
     '[戻る]
-    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Response.Redirect(URL.Menu)
     End Sub
 

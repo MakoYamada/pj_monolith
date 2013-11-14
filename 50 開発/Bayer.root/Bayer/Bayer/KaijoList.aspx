@@ -10,13 +10,13 @@
 					<tr>
 						<td align="left" colspan="2">
 							BYL企画担当者
-							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
+							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							BYL手配担当者
-							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="230px"></asp:TextBox>
+							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							製品名
-							<asp:DropDownList ID="JokenSEIHIN" runat="server" Width="200px"></asp:DropDownList>
+							<asp:DropDownList ID="JokenSEIHIN" runat="server" Width="240px"></asp:DropDownList>
 						</td>
 					</tr>
 					<tr>
@@ -65,6 +65,15 @@
 			<td align="left">
 				<div class="FontSize1" style="height: 4px;"></div>
 				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
+				<table cellspacing="0" cellpadding="2" border="0" id="TblButton1" runat="server">
+					<tr align="center" style="height: 40px;">
+						<td>
+							<asp:Button ID="BtnKaijoListPrint1" runat="server" Text="会場手配一覧印刷" Width="130px" CssClass="Button" />
+							&nbsp;
+							<asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+						</td>
+					</tr>
+				</table>
 				<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" CellSpacing="0" 
 				 AutoGenerateColumns="false" ShowHeader="true" ShowFooter="false" 
 				 AllowPaging="true" PageSize="13"
@@ -81,8 +90,8 @@
 						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
+						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />
@@ -93,10 +102,12 @@
 		</tr>
 	</table>
 	<table cellspacing="0" cellpadding="2" border="0">
-        <tr align="center" style="height: 40px;">
-            <td>
-                <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" CssClass="Button" />
-            </td>
-        </tr>
-    </table>
+		<tr align="center" style="height: 40px;">
+			<td>
+				<asp:Button ID="BtnKaijoListPrint2" runat="server" Text="会場手配一覧印刷" Width="130px" CssClass="Button" />
+				&nbsp;
+				<asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+			</td>
+		</tr>
+	</table>
 </asp:Content>

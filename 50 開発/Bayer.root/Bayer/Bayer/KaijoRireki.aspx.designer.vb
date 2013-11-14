@@ -52,6 +52,33 @@ Partial Public Class KaijoRireki
     Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''TblButton1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblButton1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''BtnKaijoRirekiPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnKaijoRirekiPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''GrvList コントロール。
     '''</summary>
     '''<remarks>
@@ -70,13 +97,22 @@ Partial Public Class KaijoRireki
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
-    '''BtnBack コントロール。
+    '''BtnKaijoRirekiPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnKaijoRirekiPrint2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

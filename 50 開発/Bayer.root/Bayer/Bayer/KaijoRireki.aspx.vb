@@ -75,10 +75,16 @@ Partial Public Class KaijoRireki
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
             Me.TrKOUENKAI_NAME.Visible = False
+            Me.TblButton1.Visible = False
+            CmnModule.SetEnabled(Me.BtnKaijoRirekiPrint1, False)
+            CmnModule.SetEnabled(Me.BtnKaijoRirekiPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
             Me.TrKOUENKAI_NAME.Visible = True
+            Me.TblButton1.Visible = True
+            CmnModule.SetEnabled(Me.BtnKaijoRirekiPrint1, True)
+            CmnModule.SetEnabled(Me.BtnKaijoRirekiPrint2, True)
 
             Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KAIJO(0).KOUENKAI_NO)
             Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KAIJO(0).KOUENKAI_NAME)
@@ -183,8 +189,17 @@ Partial Public Class KaijoRireki
         End Select
     End Sub
 
+    '[履歴一覧印刷]
+    Protected Sub BtnKaijoRirekiPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoRirekiPrint1.Click, BtnKaijoRirekiPrint2.Click
+        Dim strSQL As String = SQL.TBL_KAIJO.Rireki(Joken)
+        Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.PrintPreview) = "KaijoRireki"
+        Response.Redirect(URL.Preview)
+    End Sub
+
     '[戻る]
-    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
         Session.Remove(SessionDef.KaijoRireki_SEQ)
         Session.Remove(SessionDef.KaijoRireki_PageIndex)

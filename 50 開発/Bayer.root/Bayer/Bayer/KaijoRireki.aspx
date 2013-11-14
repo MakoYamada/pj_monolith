@@ -14,6 +14,15 @@
 		<tr>
 		    <td>
 		        <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
+				<table cellspacing="0" cellpadding="2" border="0" id="TblButton1" runat="server">
+					<tr align="center" style="height: 40px;">
+						<td>
+							<asp:Button ID="BtnKaijoRirekiPrint1" runat="server" Text="履歴一覧印刷" Width="130px" CssClass="Button" />
+							&nbsp;
+							<asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+						</td>
+					</tr>
+				</table>
 		    	<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" 
 				 AutoGenerateColumns="False" 
 				 AllowPaging="True" PageSize="13"
@@ -41,11 +50,13 @@
 		    </td>
 		</tr>
 	</table>
-    <table cellspacing="0" cellpadding="2" border="0">
-        <tr align="center">
-            <td>
-				<asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" CssClass="Button" />
-            </td>
-        </tr>
-    </table>
+	<table cellspacing="0" cellpadding="2" border="0">
+		<tr align="center" style="height: 40px;">
+			<td>
+				<asp:Button ID="BtnKaijoRirekiPrint2" runat="server" Text="履歴一覧印刷" Width="130px" CssClass="Button" />
+				&nbsp;
+				<asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+			</td>
+		</tr>
+	</table>
 </asp:Content>

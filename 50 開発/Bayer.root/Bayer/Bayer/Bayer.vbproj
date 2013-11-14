@@ -221,6 +221,12 @@
       <DependentUpon>KaijoRireki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="KaijoRirekiReport.Designer.vb">
+      <DependentUpon>KaijoRirekiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoRirekiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
     </Compile>
@@ -347,7 +353,7 @@
     </Compile>
     <Compile Include="SeisanKensaku.aspx.vb">
       <DependentUpon>SeisanKensaku.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SeisanList.aspx.designer.vb">
       <DependentUpon>SeisanList.aspx</DependentUpon>

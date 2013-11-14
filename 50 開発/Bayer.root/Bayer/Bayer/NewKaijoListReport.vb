@@ -23,6 +23,9 @@ Public Class NewKaijoListReport
         Me.PrintDate.Text = CmnModule.Format_Date(Now(), CmnModule.DateFormatType.YYYYMMDDHHMMSS)
         Me.LOGIN_USER_NAME.Text = pLoginUser.USER_NAME
         '条件
+        Me.JokenBU.Text = pJoken.BU
+        Me.JokenKIKAKU_TANTO_AREA.Text = pJoken.AREA
+        Me.JokenREQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(pJoken.REQ_STATUS_TEHAI)
     End Sub
 
     Private Sub PageHeader_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.BeforePrint

@@ -55,6 +55,9 @@ Partial Public Class Preview
                     Case "KaijoRegist"
                         '会場手配回答登録画面
                         PrintKaijoReport()
+                    Case "KaijoRireki"
+                        '会場手配履歴一覧
+                        PrintKaijoRirekiReport()
                 End Select
             End If
         End If
@@ -568,6 +571,59 @@ Partial Public Class Preview
 
     '検索会場手配一覧データ取得
     Private Function GetKaijoListData() As DataTable
+
+        Dim strSQL As String = Session.Item(SessionDef.KaijoPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+
+    End Function
+
+    '会場手配履歴一覧印刷
+    Private Sub PrintKaijoRirekiReport()
+
+        Dim rpt1 As New KaijoRirekiReport()
+
+        'データ設定
+        rpt1.DataSource = GetKaijoRirekiData()
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4横
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        'ログイン者名
+        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        '抽出条件
+        rpt1.Joken = Session.Item(SessionDef.Joken)
+
+        'レポートを作成
+        rpt1.Run()
+
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+
+    End Sub
+
+    '検索会場手配一覧データ取得
+    Private Function GetKaijoRirekiData() As DataTable
 
         Dim strSQL As String = Session.Item(SessionDef.KaijoPrint_SQL)
         Dim RsData As System.Data.SqlClient.SqlDataReader

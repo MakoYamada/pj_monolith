@@ -61,6 +61,15 @@ Partial Public Class NewKaijoList
     Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''TblButton1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblButton1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
     '''BtnKaijoPrint1 コントロール。
     '''</summary>
     '''<remarks>
@@ -70,13 +79,13 @@ Partial Public Class NewKaijoList
     Protected WithEvents BtnKaijoPrint1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnKaijoListPrint1 コントロール。
+    '''BtnNewKaijoListPrint1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnKaijoListPrint1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnNewKaijoListPrint1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack1 コントロール。
@@ -142,13 +151,13 @@ Partial Public Class NewKaijoList
     Protected WithEvents BtnKaijoPrint2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnKaijoListPrint2 コントロール。
+    '''BtnNewKaijoListPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnKaijoListPrint2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnNewKaijoListPrint2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack2 コントロール。

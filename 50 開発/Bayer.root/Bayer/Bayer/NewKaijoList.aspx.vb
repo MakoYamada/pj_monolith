@@ -46,7 +46,7 @@ Partial Public Class NewKaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "【新着】会場見積依頼"
+            .PageTitle = "【新着】会場手配依頼一覧"
         End With
 
     End Sub
@@ -90,18 +90,20 @@ Partial Public Class NewKaijoList
             Me.LabelNoData.Visible = True
             Me.SpnCheckPrint.Visible = False
             Me.GrvList.Visible = False
+            Me.TblButton1.Visible = False
             CmnModule.SetEnabled(Me.BtnKaijoPrint1, False)
             CmnModule.SetEnabled(Me.BtnKaijoPrint2, False)
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, False)
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, False)
+            CmnModule.SetEnabled(Me.BtnNewKaijoListPrint1, False)
+            CmnModule.SetEnabled(Me.BtnNewKaijoListPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.SpnCheckPrint.Visible = True
             Me.GrvList.Visible = True
+            Me.TblButton1.Visible = True
             CmnModule.SetEnabled(Me.BtnKaijoPrint1, True)
             CmnModule.SetEnabled(Me.BtnKaijoPrint2, True)
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, True)
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, True)
+            CmnModule.SetEnabled(Me.BtnNewKaijoListPrint1, True)
+            CmnModule.SetEnabled(Me.BtnNewKaijoListPrint2, True)
 
             'グリッドビュー表示
             SetGridView()
@@ -116,7 +118,7 @@ Partial Public Class NewKaijoList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         ReDim TBL_KAIJO(wCnt)
-        strSQL = Sql.TBL_KAIJO.Search(Joken, True)
+        strSQL = SQL.TBL_KAIJO.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -134,7 +136,7 @@ Partial Public Class NewKaijoList
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = Sql.TBL_KAIJO.Search(Joken, True)
+        Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -223,11 +225,6 @@ Partial Public Class NewKaijoList
         Return True
     End Function
 
-    '[戻る]
-    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
-        Response.Redirect(URL.Menu)
-    End Sub
-
     '[手配書印刷]
     Protected Sub BtnKaijoPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoPrint1.Click, BtnKaijoPrint2.Click
         Dim wFlag As Boolean = False
@@ -247,7 +244,7 @@ Partial Public Class NewKaijoList
         Next
 
         If wFlag = True Then
-            strSQL = Sql.TBL_KAIJO.NewListPrint(KOUENKAI_NO)
+            strSQL = SQL.TBL_KAIJO.NewListPrint(KOUENKAI_NO)
             Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
             Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
             Session.Item(SessionDef.PrintPreview) = "KaijoRegist"
@@ -259,7 +256,7 @@ Partial Public Class NewKaijoList
     End Sub
 
     '[会場手配一覧印刷]
-    Protected Sub BtnKaijoListPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoListPrint1.Click, BtnKaijoListPrint2.Click
+    Protected Sub BtnNewKaijoListPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKaijoListPrint1.Click, BtnNewKaijoListPrint2.Click
         Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
@@ -279,6 +276,11 @@ Partial Public Class NewKaijoList
         For Each wRow As GridViewRow In Me.GrvList.Rows
             CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = False
         Next
+    End Sub
+
+    '[戻る]
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
+        Response.Redirect(URL.Menu)
     End Sub
 
 End Class
