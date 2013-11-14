@@ -45,8 +45,9 @@
 					</tr>
 				</table>
 				<span id="SpnCheckPrint" runat="server">
+					手配書印刷：
 					<asp:LinkButton ID="LnkCheckALL" runat="server" CssClass="link">全てにチェック</asp:LinkButton>
-					&nbsp;&nbsp;
+					&nbsp;
 					<asp:LinkButton ID="LnkCheckClear" runat="server" CssClass="link">全てのチェックを解除</asp:LinkButton>
 				</span>
                 <div class="FontSize1" style="height:2px;"></div>

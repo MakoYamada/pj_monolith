@@ -1,14 +1,24 @@
-﻿Imports DataDynamics.ActiveReports 
-Imports DataDynamics.ActiveReports.Document 
+﻿Imports DataDynamics.ActiveReports
+Imports DataDynamics.ActiveReports.Document
 Imports AppLib
 Imports CommonLib
 
-Public Class KaijoReport 
+Public Class KaijoReport
+
+    Private pLoginUser As TableDef.MS_USER.DataStruct
+    Public WriteOnly Property LoginUser() As TableDef.MS_USER.DataStruct
+        Set(ByVal value As TableDef.MS_USER.DataStruct)
+            pLoginUser = value
+        End Set
+    End Property
 
     Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
         Me.PrintDate.Text = CmnModule.Format_Date(Now(), CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-        Me.LOGIN_USER_NAME.Text = "ログイン者名"
-        ''''''CType(System.Web.HttpContext.Current.Session.Item("LoginUser"), 頓挫中
+        Me.LOGIN_USER_NAME.Text = pLoginUser.USER_NAME
+    End Sub
+
+    Private Sub PageHeader_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.BeforePrint
+        Me.LabelPage.Text = "(" & Me.PageCount.Text & "/" & Me.PageTotal.Text & "ページ)"
     End Sub
 
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
