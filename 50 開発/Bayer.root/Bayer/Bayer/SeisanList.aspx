@@ -18,7 +18,7 @@
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
                                     </td>
                                     <td>
-                                        トップツアー請求番号
+                                        精算番号
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenSEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
@@ -29,6 +29,10 @@
                                     </td>
                                     <td>
                                         <asp:Button ID="BtnInsert" runat="server" Width="150px" Text="新規登録" CssClass="Button" />
+                                    </td>
+                                    <td></td>
+                                    <td style="width:270px;" align="right">
+                                        <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
                                     </td>
                                 </tr>
                             </table>
@@ -46,7 +50,7 @@
                         <td>
                             <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                                 AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
-                                DataSourceID="SqlDataSource1" Width="922px">
+                                DataSourceID="SqlDataSource1" Width="1012px">
                                 <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                                 <RowStyle Wrap="false" BackColor="#ffffff" />
                                 <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -62,13 +66,17 @@
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>                                    
-                                    <asp:BoundField DataField="SEIKYU_NO_TOPTOUR" HeaderText="トップツアー請求番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                                    <asp:BoundField DataField="SEIKYU_NO_TOPTOUR" HeaderText="精算番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="140px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="SEISAN_YM" HeaderText="トップツアー精算年月" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="130px" HorizontalAlign="Center"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="SHOUNIN_KUBUN" HeaderText="承認区分" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                                        <HeaderStyle Wrap="False"></HeaderStyle>
+                                        <ItemStyle Wrap="False" Width="90px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="KEI_TF" HeaderText="非課税金額合計" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                                         ItemStyle-HorizontalAlign="Right">
@@ -92,10 +100,9 @@
                             </asp:GridView>
                         </td>
                     </tr>
-                    <tr align="center">
+                    <tr align="right">
                         <td>
-                            <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" />
+                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
                         </td>
                     </tr>
                 </table>

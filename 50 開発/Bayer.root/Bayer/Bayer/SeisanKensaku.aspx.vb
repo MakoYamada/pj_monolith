@@ -23,10 +23,11 @@ Partial Public Class SeisanKensaku
 
     Private Sub SeisanKensaku_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-        Session.Item(SessionDef.Joken) = Joken
+        Session.Item(SessionDef.SeisanKensaku_Joken) = Joken
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
@@ -56,7 +57,7 @@ Partial Public Class SeisanKensaku
     'セッションを変数に格納
     Private Function SetSession() As Boolean
         Try
-            Joken = Session.Item(SessionDef.Joken)
+            Joken = Session.Item(SessionDef.SeisanKensaku_Joken)
         Catch ex As Exception
             Joken = Nothing
         End Try
@@ -152,8 +153,7 @@ Partial Public Class SeisanKensaku
 
         ReDim TBL_KOUENKAI(wCnt)
 
-        'TODO:請求データに紐づく講演会データを検索
-        strSQL = SQL.TBL_KOUENKAI.Search(Joken, False)
+        strSQL = SQL.TBL_SEIKYU.SearchGroupByKouenkai(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -186,7 +186,7 @@ Partial Public Class SeisanKensaku
     'データソース設定
     Private Sub SetGridView()
 
-        'データソース設定        'TODO:請求データに紐づく講演会データ        Dim strSQL As String = SQL.TBL_KOUENKAI.Search(Joken, False)
+        'データソース設定        Dim strSQL As String = SQL.TBL_SEIKYU.SearchGroupByKouenkai(Joken)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -244,8 +244,9 @@ Partial Public Class SeisanKensaku
 
             Case "Seisan"
                 '選択レコード情報をセッション変数にセット
-                Session.Item(SessionDef.SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
+                Session.Item(SessionDef.SeisanKensaku_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+                Session.Item(SessionDef.SeisanKensaku_Joken) = Joken
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
                 Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath

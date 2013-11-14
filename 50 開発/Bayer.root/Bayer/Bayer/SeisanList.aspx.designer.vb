@@ -52,6 +52,15 @@ Partial Public Class SeisanList
     Protected WithEvents BtnInsert As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''LabelNoData コントロール。
     '''</summary>
     '''<remarks>
@@ -79,13 +88,13 @@ Partial Public Class SeisanList
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''BtnBack コントロール。
+    '''BtnBack2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

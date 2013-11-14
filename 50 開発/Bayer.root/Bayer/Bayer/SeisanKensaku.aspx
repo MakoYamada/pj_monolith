@@ -4,15 +4,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table cellspacing="0" cellpadding="2" border="0">
-        <tr>
+        <tr align="right">
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
                         <td style="width:50%">
-                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="2" />
                         </td>
                         <td style="width:50%" align="right">
+                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="2" />
                         </td>
                     </tr>
                 </table> 
@@ -167,7 +167,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="TTEHAI_TANTO" HeaderText="TOP担当者" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
@@ -202,15 +202,15 @@
                 </asp:GridView>
             </td>
         </tr>
-        <tr>
+        <tr align="right">
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
                         <td style="width:50%">
-                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
                         </td>
                         <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="7" />
                         </td>
                     </tr>
                 </table> 

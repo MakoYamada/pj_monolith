@@ -4,6 +4,7 @@ Imports AppLib
 Partial Public Class SeisanList
     Inherits WebBase
 
+    Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private TBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
     Private Joken As TableDef.Joken.DataStruct
 
@@ -12,6 +13,7 @@ Partial Public Class SeisanList
         KOUENKAI_NAME
         SEIKYU_NO_TOPTOUR
         SEISAN_YM
+        SHOUNIN_KUBUN
         KEI_TF
         KEI_T
         Button1
@@ -60,12 +62,20 @@ Partial Public Class SeisanList
         Catch ex As Exception
             ReDim TBL_SEIKYU(0)
         End Try
+        Try
+            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+            If TBL_KOUENKAI Is Nothing Then ReDim TBL_KOUENKAI(0)
+        Catch ex As Exception
+            ReDim TBL_KOUENKAI(0)
+        End Try
         Return True
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
         'IME設定        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
+
+        Joken.KOUENKAI_NO = TBL_KOUENKAI(Session.Item(SessionDef.SeisanKensaku_SEQ)).KOUENKAI_NO
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -146,6 +156,7 @@ Partial Public Class SeisanList
     Private Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.SEISAN_YM).Text = Mid(CmnModule.Format_DateJP(e.Row.Cells(CellIndex.SEISAN_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
+            e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
             e.Row.Cells(CellIndex.KEI_TF).Text = CmnModule.EditComma(e.Row.Cells(CellIndex.KEI_TF).Text)
             e.Row.Cells(CellIndex.KEI_T).Text = CmnModule.EditComma(e.Row.Cells(CellIndex.KEI_T).Text)
         End If
@@ -204,8 +215,8 @@ Partial Public Class SeisanList
     End Function
 
     '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
-        Response.Redirect(URL.Menu)
+    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
+        Response.Redirect(URL.SeisanKensaku)
     End Sub
 
     '[新規登録]
