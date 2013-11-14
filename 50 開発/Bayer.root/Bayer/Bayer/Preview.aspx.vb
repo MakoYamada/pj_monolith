@@ -61,7 +61,6 @@ Partial Public Class Preview
             .PageTitle = "プレビュー"
         End With
 
-        Me.WebViewer1.Style("height") = "auto"
     End Sub
 
     'セッションを変数に格納
@@ -182,6 +181,9 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
+        'ログイン者名
+        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+ 
         'レポートを作成
         rpt1.Run()
 
@@ -424,9 +426,9 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
-        DirectCast(rpt1.Sections("PageHeader").Controls("LOGIN_USER_NAME"),  _
-            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
+        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        '抽出条件
+        rpt1.Joken = Session.Item(SessionDef.Joken)
 
         'レポートを作成
         rpt1.Run()
@@ -476,9 +478,9 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
-        DirectCast(rpt1.Sections("PageHeader").Controls("LOGIN_USER_NAME"),  _
-            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
+        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        '抽出条件
+        rpt1.Joken = Session.Item(SessionDef.Joken)
 
         'レポートを作成
         rpt1.Run()
