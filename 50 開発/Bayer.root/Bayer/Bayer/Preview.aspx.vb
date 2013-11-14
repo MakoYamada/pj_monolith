@@ -32,10 +32,10 @@ Partial Public Class Preview
             '帳票出力            If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
                 '呼び元画面が交通・宿泊手配回答登録画面の場合
                 PrintDrReport()
-            ElseIf URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            ElseIf URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が新着講演会一覧の場合
                 PrintNewKouenkaiList()
-            ElseIf URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            ElseIf URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が検索講演会一覧の場合
                 PrintKouenkaiList()
             ElseIf URL.KouenkaiRireki.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then

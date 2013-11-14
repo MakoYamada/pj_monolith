@@ -97,8 +97,7 @@ Partial Public Class KouenkaiRireki
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
-        strSQL &= " DESC"
+        strSQL = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         ReDim RRK_KOUENKAI(wCnt)
@@ -118,7 +117,7 @@ Partial Public Class KouenkaiRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO) & " DESC"
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -186,9 +185,28 @@ Partial Public Class KouenkaiRireki
     End Sub
 
     '[戻る]
-    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Protected Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Session.Item(SessionDef.KouenkaiRireki) = False
         Response.Redirect(Session.Item(SessionDef.BackURL))
     End Sub
 
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+        Dim strSQL As String = ""
+
+        strSQL = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+        Session.Item(SessionDef.KouenkaiRirekiPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        BtnPrint1_Click(sender, e)
+    End Sub
 End Class

@@ -67,8 +67,8 @@ Partial Public Class NewKouenkaiList
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
-        'AppModule.SetDropDownList_BU(Me.JOKEN_BU)
-        'AppModule.SetDropDownList_AREA(Me.JOKEN_AREA)
+        AppModule.SetDropDownList_BU(Me.JOKEN_BU, DbConnection)
+        AppModule.SetDropDownList_AREA(Me.JOKEN_AREA, DbConnection)
         AppModule.SetDropDownList_KUBUN(Me.KUBUN)
 
         'クリア
