@@ -7050,8 +7050,8 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_SHOUNIN_KUBUN(ByRef SHOUNIN_KUBUN As DropDownList)
         With SHOUNIN_KUBUN
             .Items.Clear()
-            .Items.Add(New ListItem("---", "9"))
-            .Items.Add(New ListItem("(‰ñ“š‚È‚µ)", ""))
+            .Items.Add(New ListItem("---", ""))
+            .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.Mi, AppConst.SEISAN.SHOUNIN_KUBUN.Code.Mi))
             .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.SHOUNIN, AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN))
             .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.HININ, AppConst.SEISAN.SHOUNIN_KUBUN.Code.HININ))
         End With
