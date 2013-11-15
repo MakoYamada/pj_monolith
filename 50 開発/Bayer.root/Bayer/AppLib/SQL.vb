@@ -1035,6 +1035,37 @@ Public Class SQL
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
+            If Not TEHAISHO_JOKEN Is Nothing Then
+                Dim i As Integer = 0
+                For i = 0 To UBound(TEHAISHO_JOKEN)
+                    If i = 0 Then
+                        strSQL &= " AND ("
+                    Else
+                        strSQL &= " OR"
+                    End If
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).KOUENKAI_NO & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).SANKASHA_ID & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).TIME_STAMP_BYL & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).SALEFORCE_ID & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_MPID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).DR_MPID & "'"
+                Next i
+                strSQL &= ")"
+            End If
+
             strSQL &= " ORDER BY WK_KOTSUHOTEL."
             If NewData Then
                 '新着
