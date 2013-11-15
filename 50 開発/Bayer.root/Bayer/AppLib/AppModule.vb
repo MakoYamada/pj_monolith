@@ -7046,6 +7046,18 @@ Public Class AppModule
     End Sub
 #End Region
 
+#Region "承認区分"
+    Public Shared Sub SetDropDownList_SHOUNIN_KUBUN(ByRef SHOUNIN_KUBUN As DropDownList)
+        With SHOUNIN_KUBUN
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "9"))
+            .Items.Add(New ListItem("(回答なし)", ""))
+            .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.SHOUNIN, AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN))
+            .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.HININ, AppConst.SEISAN.SHOUNIN_KUBUN.Code.HININ))
+        End With
+    End Sub
+#End Region
+
 #End Region
 
 #Region "== コントロールからDB用の値を返す =="
