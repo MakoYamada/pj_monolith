@@ -468,7 +468,7 @@ Public Class SQL
                 If Joken.SHOUNIN_KUBUN = AppConst.SEISAN.SHOUNIN_KUBUN.Code.Mi Then
                     strSQL &= " =N''"
                 Else
-                    strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+                    strSQL &= " =N'" & CmnDb.SqlString(Joken.SHOUNIN_KUBUN) & "'"
                 End If
             End If
 
