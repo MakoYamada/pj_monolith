@@ -900,7 +900,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
+        Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean, Optional ByVal ReportJoken() As String = Nothing) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
 
