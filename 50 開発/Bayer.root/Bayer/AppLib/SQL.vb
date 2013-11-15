@@ -461,6 +461,12 @@ Public Class SQL
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
             End If
 
+            If Trim(Joken.SEISAN_YM) <> "" Then
+                strSQL &= " AND WK_SEIKYU."
+                strSQL &= TableDef.TBL_SEIKYU.Column.SEISAN_YM
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.SEISAN_YM) & "'"
+            End If
+
             If Trim(Joken.SHOUNIN_KUBUN) <> "" Then
                 strSQL &= " AND WK_SEIKYU."
                 strSQL &= TableDef.TBL_SEIKYU.Column.SHOUNIN_KUBUN

@@ -344,6 +344,13 @@ Public Class CmnModule
         If Val(wStr) = 0 Then wStr = ""
         Return wStr
     End Function
+    Public Shared Function Format_DateToString(ByVal inYYYY As String, ByVal inMM As String) As String
+        Dim wStr As String = ""
+        wStr &= Trim(StrConv(inYYYY, VbStrConv.Narrow))
+        wStr &= Trim(StrConv(inMM, VbStrConv.Narrow)).PadLeft(2, "0c")
+        If Val(wStr) = 0 Then wStr = ""
+        Return wStr
+    End Function
 
     '--------------------------------------------------------------
     ' •¶š—ñ‚ğyyyy/mm/dd‚Ü‚½‚Íyy/mm/dd‚ÌŒ`®‚É•ÒW‚µ‚Ä•Ô‚·

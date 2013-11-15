@@ -2607,6 +2607,7 @@
             Public SANKASHA_ID As String
             Public SEIKYU_NO As String
             Public SEIKYU_YM As String
+            Public SEISAN_YM As String
             Public SHOUNIN_KUBUN As String
         End Structure
         Public Class Name
@@ -2648,6 +2649,7 @@
             Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
             Public Const SEIKYU_NO As String = "請求番号"
             Public Const SEIKYU_YM As String = "請求年月"
+            Public Const SEISAN_YM As String = "トップツアー精算年月"
             Public Const SHOUNIN_KUBUN As String = "承認区分"
         End Class
     End Class
