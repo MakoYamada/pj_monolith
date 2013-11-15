@@ -429,31 +429,75 @@ Public Class SQL
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
 
-            strSQL &= " SELECT TBL_SEIKYU.*"
-            strSQL &= ",(SELECT TOP 1 TBL_KOUENKAI.KOUENKAI_NAME FROM TBL_KOUENKAI"
-            strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO = TBL_SEIKYU.KOUENKAI_NO"
-            strSQL &= " ORDER BY TBL_KOUENKAI.TIME_STAMP DESC"
-            strSQL &= ") AS KOUENKAI_NAME"
+            strSQL &= "SELECT"
+            strSQL &= " WK_SEIKYU.*"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK_KOUENKAI.BU"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_NAME"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_ROMA"
+            strSQL &= ",WK_KOUENKAI.FROM_DATE"
+            strSQL &= ",WK_KOUENKAI.TO_DATE"
             strSQL &= " FROM"
-            strSQL &= " TBL_SEIKYU "
-            strSQL &= " WHERE 1=1"
+            strSQL &= " (SELECT * FROM TBL_SEIKYU) WK_SEIKYU"
+            strSQL &= ",(SELECT * FROM TBL_KOUENKAI WK1"
+            strSQL &= "   WHERE  WK1.TIME_STAMP = "
+            strSQL &= "   (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "    WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
+            strSQL &= " )WK_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND "
+                strSQL &= " AND WK_SEIKYU."
                 strSQL &= TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
             If Trim(Joken.SEIKYU_NO_TOPTOUR) <> "" Then
-                strSQL &= " AND "
+                strSQL &= " AND WK_SEIKYU."
                 strSQL &= TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
             End If
 
-            strSQL &= " ORDER BY "
-            strSQL &= TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_YM & " DESC"
-            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR & " DESC"
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.BU
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_KOUENKAI.FROM_DATE"
+            strSQL &= ",WK_SEIKYU.KOUENKAI_NO"
+            strSQL &= ",WK_SEIKYU.SEISAN_YM"
+            strSQL &= ",WK_SEIKYU.SEIKYU_NO_TOPTOUR"
 
             Return strSQL
         End Function
