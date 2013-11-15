@@ -27,6 +27,7 @@ Public Class KaijoReport
         Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(Me.KOUENKAI_NO.Text)
         Me.REQ_STATUS_TEHAI.Text = Me.REQ_STATUS_TEHAI.Text & ": " & AppModule.GetName_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI.Text)
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(Me.TIME_STAMP_BYL.Text)
+        Me.USER_NAME.Text = AppModule.GetName_USER_NAME(Me.USER_NAME.Text)
         Me.SHONIN_NAME.Text = AppModule.GetName_SHONIN_NAME(Me.SHONIN_NAME.Text)
         Me.SHONIN_DATE.Text = AppModule.GetName_SHONIN_DATE(Me.SHONIN_DATE.Text)
         Me.KAISAI_DATE_NOTE.Text = AppModule.GetName_KAISAI_DATE_NOTE(Me.KAISAI_DATE_NOTE.Text)

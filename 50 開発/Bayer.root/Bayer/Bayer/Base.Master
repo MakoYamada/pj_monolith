@@ -17,67 +17,72 @@
 	<body id="body1" runat="server">
 		<form id="Form1" onkeydown="if(event.keyCode==13){if(window.event.srcElement.type=='text' || window.event.srcElement.type=='password'){return false;}}" method="post" runat="server">
 			<input type="submit" style="position: absolute; top: -100px; left: -100px;" onclick="return false;" />
-			<table style="width: 100%;" cellpadding="0" cellspacing="0">
-				<tr valign="top">
-					<td>
-						<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" id="TblHeader1" runat="server">
-							<tr style="height: 42px;">
-								<td align="left" style="background-position: top left; background-repeat: no-repeat; background-color: #ffffff;" id="TdHeader1" runat="server">
-									<asp:Image ID="ImgSiteName" runat="server" ImageAlign="AbsMiddle" />
-								</td>
-								<td align="right" style="background-color: #ffffff; color: #08359c;" id="TdHeader2" runat="server">
-									<table border="0" cellpadding="1" cellspacing="0">
-										<tr>
-											<td align="left">
-												<asp:Label ID="HeaderComment1" runat="server"></asp:Label>&nbsp;
-												<br />
-												<asp:Label ID="HeaderComment2" runat="server"></asp:Label>&nbsp;
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" id="TblHeader2" runat="server">
-							<tr style="background-position: top left; background-repeat: repeat-x; background-color: #dfe2e4; height: 22px;" id="TrPageTitle" runat="server">
-								<td align="left" style="font-weight: bold; color: #2a2a2a;">
-									&nbsp;
-									<asp:Label ID="LabelPageTitle" runat="server"></asp:Label>
-								</td>
-								<td align="right" style="font-weight: bold; color: #1c75bc;">
-									<span id="SpnMenu" runat="server">
-										▲
-										<asp:LinkButton ID="LnkBMenu" runat="server" CssClass="baselink">メニューへ</asp:LinkButton>
-									</span>
-									&nbsp;&nbsp;
-									<span id="SpnLogout" runat="server">
-										×
-										<asp:HyperLink ID="LnkBLogout" runat="server" Text="ログアウト" CssClass="baselink" NavigateUrl="~/Login.aspx"></asp:HyperLink>
-									</span>
-									&nbsp;
-								</td>
-							</tr>
-						</table>
-						<table id="TblLoginUser" runat="server" cellpadding="2" cellspacing="0" border="0" style="width: 100%; border-bottom: 1px solid #c8cbce;">
-							<tr style="background-color: #f3f3f3;">
-								<td align="left" style="font-weight: bold; color: #4b4b4b;">
-									&nbsp;&nbsp;&nbsp;
-									<asp:Label ID="LabelLoginUser" runat="server"></asp:Label>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			<table border="0" cellpadding="2" cellspacing="0" style="width: 100%; height: 100%;">
-				<tr valign="top">
-					<td align="left">
-						<div class="FontSize1" style="height: 5px;"></div>
-						<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-						</asp:ContentPlaceHolder>
-					</td>
-				</tr>
-			</table>
+			<div id="container">
+				<div id="header">
+					<table style="width: 100%;" cellpadding="0" cellspacing="0">
+						<tr valign="top">
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" id="TblHeader1" runat="server">
+									<tr style="height: 42px;">
+										<td align="left" style="background-position: top left; background-repeat: no-repeat; background-color: #ffffff;" id="TdHeader1" runat="server">
+											<asp:Image ID="ImgSiteName" runat="server" ImageAlign="AbsMiddle" />
+										</td>
+										<td align="right" style="background-color: #ffffff; color: #08359c;" id="TdHeader2" runat="server">
+											<table border="0" cellpadding="1" cellspacing="0">
+												<tr>
+													<td align="left">
+														<asp:Label ID="HeaderComment1" runat="server"></asp:Label>&nbsp;
+														<br />
+														<asp:Label ID="HeaderComment2" runat="server"></asp:Label>&nbsp;
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+								<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" id="TblHeader2" runat="server">
+									<tr style="background-position: top left; background-repeat: repeat-x; background-color: #dfe2e4; height: 22px;" id="TrPageTitle" runat="server">
+										<td align="left" style="font-weight: bold; color: #2a2a2a;">
+											&nbsp;
+											<asp:Label ID="LabelPageTitle" runat="server"></asp:Label>
+										</td>
+										<td align="right" style="font-weight: bold; color: #1c75bc;">
+											<span id="SpnMenu" runat="server">
+												▲
+												<asp:LinkButton ID="LnkBMenu" runat="server" CssClass="baselink">メニューへ</asp:LinkButton>
+											</span>
+											&nbsp;&nbsp;
+											<span id="SpnLogout" runat="server">
+												×
+												<asp:HyperLink ID="LnkBLogout" runat="server" Text="ログアウト" CssClass="baselink" NavigateUrl="~/Login.aspx"></asp:HyperLink>
+											</span>
+											&nbsp;
+										</td>
+									</tr>
+								</table>
+								<table id="TblLoginUser" runat="server" cellpadding="2" cellspacing="0" border="0" style="width: 100%; border-bottom: 1px solid #c8cbce;">
+									<tr style="background-color: #f3f3f3;">
+										<td align="left" style="font-weight: bold; color: #4b4b4b;">
+											&nbsp;&nbsp;&nbsp;
+											<asp:Label ID="LabelLoginUser" runat="server"></asp:Label>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="content">
+					<table border="0" cellpadding="2" cellspacing="0" style="width: 100%; margin-top: 4px;" id="TblContent">
+						<tr valign="top">
+							<td align="left">
+								<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+								</asp:ContentPlaceHolder>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</form>
 	</body>
 </html>

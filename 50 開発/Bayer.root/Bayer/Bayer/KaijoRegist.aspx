@@ -1,8 +1,8 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="KaijoRegist.aspx.vb" Inherits="Bayer.KaijoRegist" MaintainScrollPositionOnPostback="true" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table cellspacing="2" border="0">
-		<tr id="TrComment" runat="server">
+	<table cellspacing="2" border="0" id="TblComment" runat="server" style="width: 940px;">
+		<tr>
 			<td nowrap="nowrap" align="left">
 				<table cellspacing="2" border="0" style="border: 3px double #339933; width: 100%; background-color: #eaf8ff; margin-bottom: 5px;">
 					<tr>
@@ -14,25 +14,39 @@
 				</table>
 			</td>
 		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="0" border="0" style="width: 940px; margin-bottom: 10px;">
+		<tr>
+			<td>&nbsp;</td>
+			<td nowrap="nowrap"align="right">
+				<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" CssClass="Button" />
+				<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="キャンセル" CssClass="Button" />
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="2" border="0" style="width: 940px;">
 		<tr>
 			<td nowrap="nowrap" align="right">
 				<table cellspacing="0" border="0">
 					<tr>
-						<td nowrap="nowrap" align="center" class="TdTitle" style="width: 90px;">
+						<td nowrap="nowrap" align="center" class="TdTitle" style="width: 90px;" id="TdUPDATE_DATE_1" runat="server">
+							TOP更新日時
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" id="TdUPDATE_DATE_2" runat="server">
+							<asp:Label ID="UPDATE_DATE" runat="server" Text="2013/12/31 12:34:56"></asp:Label>
 							&nbsp;
+							&nbsp;
+						</td>
+						<td nowrap="nowrap" align="center" class="TdTitle" style="width: 80px;">
 							TOP担当者
-							&nbsp;
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
 							<asp:Label ID="USER_NAME" runat="server"></asp:Label>
 							&nbsp;
 							&nbsp;
-							&nbsp;
 						</td>
-						<td nowrap="nowrap" align="center" class="TdTitleKaijo" style="width: 90px;">
-							&nbsp;
+						<td nowrap="nowrap" align="center" class="TdTitleKaijo" style="width: 80px;">
 							ステータス
-							&nbsp;
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 200px;">
 							<asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="200px"></asp:DropDownList>
@@ -1166,17 +1180,17 @@
 		</tr>
 		<tr>
 			<td nowrap="nowrap" align="left">
-				<div class="FontSize1" style="height: 10px;"></div>
-				<table cellspacing="0" cellpadding="0" border="0" style="width: 940px;">
+				<table cellspacing="0" cellpadding="2" border="0" style="width: 940px;">
 					<tr style="height: 36px;">
-						<td nowrap="nowrap" align="left">
+						<td nowrap="nowrap"align="left">
 							<asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" />
-							<asp:Button ID="BtnPrint" runat="server" Width="150px" Text="手配書印刷" CssClass="Button" />
+							<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="手配書印刷" CssClass="Button" />
 						</td>
-						<td nowrap="nowrap" align="right">
+						<td>&nbsp;</td>
+						<td nowrap="nowrap"align="right">
 							<asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" CssClass="Button" />
 							<asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" CssClass="Button" />
-							<asp:Button ID="BtnCancel" runat="server" Width="150px" Text="キャンセル" CssClass="Button" />
+							<asp:Button ID="BtnBack2" runat="server" Width="150px" Text="キャンセル" CssClass="Button" />
 						</td>
 					</tr>
 				</table>

@@ -140,7 +140,7 @@ Partial Public Class KaijoRegist
             Me.BtnRireki.Visible = False
             Me.BtnNozomi.Visible = False
             Me.BtnSubmit.Visible = False
-            Me.TrComment.Visible = False
+            Me.TblComment.Visible = False
         Else
             Me.BtnShisetsuKensaku.Visible = True
             Me.BtnCalc_ANS_MITSUMORI.Visible = True
@@ -149,7 +149,7 @@ Partial Public Class KaijoRegist
             Me.BtnRireki.Visible = True
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
-            Me.TrComment.Visible = True
+            Me.TblComment.Visible = True
             ''タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
             'If IsExistLaterData() Then
             '    CmnModule.SetEnabled(Me.BtnSubmit, False)
@@ -174,6 +174,7 @@ Partial Public Class KaijoRegist
         Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KAIJO(SEQ).KOUENKAI_NO)
         Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(TBL_KAIJO(SEQ).REQ_STATUS_TEHAI, True)
         Me.USER_NAME.Text = AppModule.GetName_USER_NAME(TBL_KAIJO(SEQ).USER_NAME)
+        If Trim(TBL_KAIJO(SEQ).USER_NAME) = "" Then Me.USER_NAME.Text = StrDup(6, "　").ToString
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Me.SHONIN_NAME.Text = AppModule.GetName_SHONIN_NAME(TBL_KAIJO(SEQ).SHONIN_NAME)
         Me.SHONIN_DATE.Text = AppModule.GetName_SHONIN_DATE(TBL_KAIJO(SEQ).SHONIN_DATE)
@@ -289,6 +290,16 @@ Partial Public Class KaijoRegist
         Me.ANS_MITSUMORI_TF.Text = AppModule.GetName_ANS_MITSUMORI_TF(TBL_KAIJO(SEQ).ANS_MITSUMORI_TF) & "円"
         Me.ANS_MITSUMORI_T.Text = AppModule.GetName_ANS_MITSUMORI_T(TBL_KAIJO(SEQ).ANS_MITSUMORI_T) & "円"
         Me.ANS_MITSUMORI_TOTAL.Text = AppModule.GetName_ANS_MITSUMORI_TOTAL(TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL) & "円"
+
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            '履歴の場合は、更新日時を表示
+            Me.UPDATE_DATE.Text = AppModule.GetName_UPDATE_DATE(TBL_KAIJO(SEQ).UPDATE_DATE)
+            Me.TdUPDATE_DATE_1.Visible = True
+            Me.TdUPDATE_DATE_2.Visible = True
+        Else
+            Me.TdUPDATE_DATE_1.Visible = False
+            Me.TdUPDATE_DATE_2.Visible = False
+        End If
     End Sub
 
     '入力チェック
@@ -771,7 +782,7 @@ Partial Public Class KaijoRegist
     End Sub
 
     '[キャンセル]
-    Protected Sub BtnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCancel.Click
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
             Dim scriptStr As String
             scriptStr = "<script language='javascript' type='text/javascript'>" & vbNewLine
@@ -787,6 +798,7 @@ Partial Public Class KaijoRegist
     Protected Sub BtnRireki_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnRireki.Click
         Dim KaijoRireki_Joken As TableDef.Joken.DataStruct = Nothing
         KaijoRireki_Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
+        KaijoRireki_Joken.KOUENKAI_NAME = TBL_KAIJO(SEQ).KOUENKAI_NAME
         Session.Item(SessionDef.KaijoRireki_Joken) = KaijoRireki_Joken
 
         Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
@@ -798,7 +810,7 @@ Partial Public Class KaijoRegist
     End Sub
 
     '[手配書印刷]
-    Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
+    Protected Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
         Dim Joken As TableDef.Joken.DataStruct = Nothing
         Dim strSQL As String = ""
 
@@ -807,6 +819,7 @@ Partial Public Class KaijoRegist
 
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.PrintPreview) = "KaijoRegist"
         Response.Redirect(URL.Preview)
     End Sub
 

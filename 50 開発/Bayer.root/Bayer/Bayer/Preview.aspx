@@ -4,7 +4,7 @@
 <%@ MasterType VirtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<style type="text/css">
-	html, body, form, #ctl00_ContentPlaceHolder1_WebViewer1_fvo, #ctl00_ContentPlaceHolder1_WebViewer1_controlDiv
+	html, body, #ctl00_ContentPlaceHolder1_WebViewer1_fvo, #ctl00_ContentPlaceHolder1_WebViewer1_controlDiv
 	{
 		width: 100%;
 		height: 100%;
@@ -15,11 +15,14 @@
 	window.onload = function() {
 		var ch = document.documentElement.clientHeight;
 		var ctr = document.getElementById("ctl00_ContentPlaceHolder1_TrWebViewer");
-		ctr.style.height = ch - 140 - 30 + "px";
-		var cwvfvo = document.getElementById("ctl00_ContentPlaceHolder1_WebViewer1_fvo");
-		cwvfvo.style.height = ch - 140 - 30 + "px";
-		var cwvdiv = document.getElementById("ctl00_ContentPlaceHolder1_WebViewer1_controlDiv");
-		cwvdiv.style.height = ch - 14- 30 + "px";
+		if (window.opera) {
+			document.getElementById("content").setAttribute("height", ch - 110);
+			document.getElementById("TblContent").setAttribute("height", ch - 110);
+			ctr.setAttribute("height", ch - 110 - 30);
+		}
+		else {
+			ctr.style.height = ch - 110 - 30 + "px";
+		}
 	}
 </script>
 </asp:Content>
@@ -27,13 +30,13 @@
 	<table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%">
 		<tr valign="top">
 			<td align="left">
-				<table cellspacing="0" cellpadding="2" border="0" style="width: 100%;" id="TblWebViewer" runat="server">
+				<table cellspacing="0" cellpadding="2" border="0" style="width: 100%; height: 100%;" id="TblWebViewer" runat="server">
 					<tr style="height: 30px;">
 						<td align="left">
 							<asp:Button ID="BtnBack" runat="server" Text="‘O‚Ì‰æ–Ê‚É–ß‚é" Width="130px" CssClass="Button" />
 						</td>
 					</tr>
-					<tr valign="top" id="TrWebViewer" runat="server">
+					<tr valign="top" id="TrWebViewer" runat="server" style="height: 100%;">
 						<td align="left">
 							<ActiveReportsWeb:WebViewer ID="WebViewer1" runat="server" Width="100%" Height="100%" ViewerType="FlashViewer">
 								<FlashViewerOptions MultiPageViewColumns="1" MultiPageViewRows="1"></FlashViewerOptions>

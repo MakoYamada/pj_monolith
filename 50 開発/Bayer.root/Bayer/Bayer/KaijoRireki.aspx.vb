@@ -14,8 +14,8 @@ Partial Public Class KaijoRireki
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
         FROM_DATE
-        USER_NAME
         SEND_FLAG
+        USER_NAME
         Button1
         KOUENKAI_NO
         TO_DATE

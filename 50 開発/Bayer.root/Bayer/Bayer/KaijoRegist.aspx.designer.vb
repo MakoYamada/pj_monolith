@@ -16,13 +16,58 @@ Option Explicit On
 Partial Public Class KaijoRegist
 
     '''<summary>
-    '''TrComment コントロール。
+    '''TblComment コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrComment As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents TblComment As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''BtnPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TdUPDATE_DATE_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TdUPDATE_DATE_1 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+
+    '''<summary>
+    '''TdUPDATE_DATE_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TdUPDATE_DATE_2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+
+    '''<summary>
+    '''UPDATE_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents UPDATE_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''USER_NAME コントロール。
@@ -1123,13 +1168,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents BtnRireki As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnPrint コントロール。
+    '''BtnPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnPrint As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnPrint2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnNozomi コントロール。
@@ -1150,13 +1195,13 @@ Partial Public Class KaijoRegist
     Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnCancel コントロール。
+    '''BtnBack2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。
