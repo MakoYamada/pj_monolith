@@ -420,10 +420,12 @@ Public Class AppConst
             Public Class Code
                 Public Const SHOUNIN As String = "0"
                 Public Const HININ As String = "1"
+                Public Const Mi As String = "9"          '内部的に使用
             End Class
             Public Class Name
                 Public Const SHOUNIN As String = "承認"
                 Public Const HININ As String = "否認"
+                Public Const Mi As String = "(回答なし)" '内部的に使用
             End Class
         End Class
     End Class
