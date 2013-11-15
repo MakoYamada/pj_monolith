@@ -525,15 +525,24 @@ Public Class SQL
             strSQL &= "SELECT"
             strSQL &= " WK_SEIKYU.*"
             strSQL &= ",WK_KOUENKAI.*"
+            strSQL &= ",WK_USER.USER_NAME"
             strSQL &= " FROM"
             strSQL &= " (SELECT KOUENKAI_NO FROM TBL_SEIKYU GROUP BY KOUENKAI_NO) WK_SEIKYU"
-            strSQL &= ",(SELECT * FROM TBL_KOUENKAI WK1"
+            strSQL &= " INNER JOIN "
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK1"
             strSQL &= "   WHERE  WK1.TIME_STAMP = "
             strSQL &= "   (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
             strSQL &= "    WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
             strSQL &= " )WK_KOUENKAI"
-            strSQL &= " WHERE"
+            strSQL &= " ON"
             strSQL &= " WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " LEFT JOIN "
+            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= "   UNION ALL "
+            strSQL &= "  SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= " ) AS WK_USER"
+            strSQL &= " ON ISNULL(WK_KOUENKAI.TTANTO_ID,N'')=WK_USER.LOGIN_ID"
+            strSQL &= " WHERE 1= 1"
 
             If Trim(Joken.BU) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
@@ -591,8 +600,8 @@ Public Class SQL
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
-            strSQL &= " ORDER BY "
-            strSQL &= TableDef.TBL_KOUENKAI.Column.UPDATE_DATE
+            strSQL &= " ORDER BY WK_KOUENKAI."
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
             strSQL &= " DESC"
 
             Return strSQL
