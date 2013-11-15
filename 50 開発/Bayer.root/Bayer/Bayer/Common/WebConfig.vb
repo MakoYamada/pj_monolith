@@ -6,7 +6,11 @@
 
         'メンテナンス
         Public Shared Maintenance As String = System.Configuration.ConfigurationManager.AppSettings("Maintenance")
-     End Class
+
+        'ヘッダ部文言
+        Public Shared HeaderComment1 As String = System.Configuration.ConfigurationManager.AppSettings("HeaderComment1")
+        Public Shared HeaderComment2 As String = System.Configuration.ConfigurationManager.AppSettings("HeaderComment2")
+    End Class
 
     Public Class Db
         'DB
