@@ -224,14 +224,20 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="BtnIchiranPrint2" runat="server" Text="新着一覧印刷" Width="130px" 
-                    CssClass="Button" TabIndex="13" />
-                <asp:Button ID="BtnPrint2" runat="server" Text="手配書一括印刷" Width="130px" 
-                    CssClass="Button" TabIndex="14" />
-            </td>
-            <td style="width:50%" align="right">
-                <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                    CssClass="Button" TabIndex="15" />
+                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                    <tr>
+                        <td style="width:50%">
+                            <asp:Button ID="BtnIchiranPrint2" runat="server" Text="新着一覧印刷" Width="130px" 
+                                CssClass="Button" tabindex="13"/>
+                            <asp:Button ID="BtnPrint2" runat="server" Text="手配書一括印刷" Width="130px" 
+                                CssClass="Button" tabindex="14" />
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="15" />
+                        </td>
+                    </tr>
+                </table> 
             </td>
         </tr>
     </table>

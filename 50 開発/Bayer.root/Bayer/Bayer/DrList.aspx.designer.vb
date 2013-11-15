@@ -16,6 +16,24 @@ Option Explicit On
 Partial Public Class DrList
 
     '''<summary>
+    '''BtnPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''JokenMR_ROMA コントロール。
     '''</summary>
     '''<remarks>
@@ -121,7 +139,7 @@ Partial Public Class DrList
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenTEHAI_TANTO_AREA コントロール。
@@ -130,16 +148,16 @@ Partial Public Class DrList
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenTEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTEHAI_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''JokenTTANTO_ID コントロール。
+    '''JokenTTEHAI_TANTO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenTTANTO_ID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTTEHAI_TANTO As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenUPDATE_DATE_YYYY コントロール。
@@ -205,13 +223,22 @@ Partial Public Class DrList
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''BtnBack コントロール。
+    '''BtnPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnPrint2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

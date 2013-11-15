@@ -161,13 +161,10 @@ Partial Public Class Preview
 
     '交通・宿泊データ取得
     Private Function GetDrData() As DataTable
-
-        Dim strSQL As String
+        Dim strSQL As String = Session.Item(SessionDef.TehaishoPrint_SQL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
-
-        strSQL = SQL.TBL_KOTSUHOTEL.DrReport(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 

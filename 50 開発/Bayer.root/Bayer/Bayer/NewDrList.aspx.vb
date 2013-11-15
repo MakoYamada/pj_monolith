@@ -321,7 +321,9 @@ Partial Public Class NewDrList
     '[手配書一括印刷]
     Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
         Dim UPD_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
-        Dim seq As Integer = 0
+        Dim seq As Integer
+        Dim PrintSeq As Integer = 0
+        Dim TEHAISHO_JOKEN() As TableDef.TehaishoJoken.DataStruct
 
         '送信フラグ→送信対象
         For Each row As GridViewRow In Me.GrvList.Rows
@@ -330,18 +332,45 @@ Partial Public Class NewDrList
                 If Not ExecuteTransaction(seq) Then
                     Exit Sub
                 End If
-
-                '手配書印刷
-                Session.Item(SessionDef.SEQ) = seq
-                Session.Item(SessionDef.DrRireki_SEQ) = seq
-                Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
-                'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-                Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
-                Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-                Response.Redirect(URL.Preview)
+                ReDim Preserve TEHAISHO_JOKEN(PrintSeq)
+                TEHAISHO_JOKEN(PrintSeq).KOUENKAI_NO = TBL_KOTSUHOTEL(seq).KOUENKAI_NO
+                TEHAISHO_JOKEN(PrintSeq).SANKASHA_ID = TBL_KOTSUHOTEL(seq).SANKASHA_ID
+                TEHAISHO_JOKEN(PrintSeq).SALEFORCE_ID = TBL_KOTSUHOTEL(seq).SALEFORCE_ID
+                TEHAISHO_JOKEN(PrintSeq).TIME_STAMP_BYL = TBL_KOTSUHOTEL(seq).TIME_STAMP_BYL
+                TEHAISHO_JOKEN(PrintSeq).DR_MPID = TBL_KOTSUHOTEL(seq).DR_MPID
+                PrintSeq += 1
             End If
             seq += 1
         Next
+
+        Dim strSQL As String = ""
+
+        Joken = Nothing
+        If Me.JokenBU.SelectedIndex <> 0 Then
+            Joken.BU = Me.JokenBU.SelectedItem.ToString
+        Else
+            Joken.BU = ""
+        End If
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then
+            Joken.AREA = JokenTEHAI_TANTO_AREA.SelectedItem.ToString
+        Else
+            Joken.AREA = ""
+        End If
+        Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.JokenKUBUN)
+        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
+        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+
+        strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False, TEHAISHO_JOKEN)
+
+        '手配書印刷
+        Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.Joken) = Joken
+        Session.Item(SessionDef.PrintPreview) = "TehaishoPrint"
+        Response.Redirect(URL.Preview)
     End Sub
 
     '[手配書一括印刷]
@@ -430,7 +459,7 @@ Partial Public Class NewDrList
         Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
 
-        strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
+        strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, True)
         If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
         If Joken.AREA.Trim = "" Then Joken.AREA = "指定なし"
         If Joken.KUBUN.Trim = "" Then Joken.KUBUN = "指定なし"
@@ -443,6 +472,11 @@ Partial Public Class NewDrList
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.Joken) = Joken
+        Session.Item(SessionDef.PrintPreview) = "NewDrPrint"
         Response.Redirect(URL.Preview)
+    End Sub
+
+    Private Sub BtnIchiranPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnIchiranPrint2.Click
+        BtnIchiranPrint1_Click(sender, e)
     End Sub
 End Class

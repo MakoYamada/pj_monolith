@@ -11,7 +11,7 @@ Public Class NewDrListReport
         If Len(DR_NAME.Text) > 20 Then DR_NAME.Text = Left(DR_NAME.Text, 20)
 
         '宿泊
-        REQ_HOTEL.Text = AppModule.GetMark_TEHAI_HOTEL(REQ_HOTEL.Text)
+        TEHAI_HOTEL.Text = AppModule.GetMark_TEHAI_HOTEL(TEHAI_HOTEL.Text)
         '交通
         If REQ_O_TEHAI_1.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
             REQ_O_TEHAI_2.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _

@@ -17,6 +17,7 @@ Partial Public Class DrList
         TEHAI_HOTEL
         TEHAI_KOTSU
         TEHAI_TAXI
+        SEND_FLAG
         Button1
         KOUENKAI_NO
         SALESFORCE_ID
@@ -53,6 +54,7 @@ Partial Public Class DrList
 
             If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
             Else
+                SetJoken()
                 SetForm()
             End If
         End If
@@ -81,6 +83,11 @@ Partial Public Class DrList
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        'ドロップダウンリスト設定
+        AppModule.SetDropDownList_BU(Me.JokenBU, DbConnection)
+        AppModule.SetDropDownList_AREA(Me.JokenTEHAI_TANTO_AREA, DbConnection)
+        AppModule.SetDropDownList_USER_NAME(Me.JokenTTEHAI_TANTO, DbConnection)
+        AppModule.SetDropDownList_DR_SANKA(Me.JokenDR_SANKA)
 
         'IME設定            CmnModule.SetIme(Me.JokenMR_ROMA, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenDR_KANA, CmnModule.ImeType.Active)
@@ -92,23 +99,16 @@ Partial Public Class DrList
         CmnModule.SetIme(Me.JokenTO_DATE_YYYY, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenTO_DATE_MM, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenTO_DATE_DD, CmnModule.ImeType.InActive)
-        CmnModule.SetIme(Me.JokenBU, CmnModule.ImeType.InActive)
-        CmnModule.SetIme(Me.JokenTEHAI_TANTO_AREA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.JokenTTANTO_ID, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenUPDATE_DATE_YYYY, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenUPDATE_DATE_MM, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenUPDATE_DATE_DD, CmnModule.ImeType.InActive)
 
         'クリア
         CmnModule.ClearAllControl(Me)
-        AppModule.SetDropDownList_DR_SANKA(Me.JokenDR_SANKA)
     End Sub
 
     '画面項目 表示
     Private Sub SetForm()
-        '抽出条件表示
-        Call SetJoken()
-
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
@@ -124,25 +124,25 @@ Partial Public Class DrList
 
     '抽出条件表示
     Private Sub SetJoken()
-        If Joken.MR_ROMA <> "" Then Me.JokenMR_ROMA.Text = Joken.MR_ROMA
-        If Joken.DR_KANA <> "" Then Me.JokenDR_KANA.Text = Joken.DR_KANA
-        If Joken.DR_SANKA <> "" Then Me.JokenDR_SANKA.SelectedValue = Joken.DR_SANKA
-        If Joken.KOUENKAI_NO <> "" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
-        If Joken.KOUENKAI_NAME <> "" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
-        If Joken.FROM_DATE <> "" Then
+        If Joken.MR_ROMA <> "" AndAlso Joken.MR_ROMA <> "指定なし" Then Me.JokenMR_ROMA.Text = Joken.MR_ROMA
+        If Joken.DR_KANA <> "" AndAlso Joken.DR_KANA <> "指定なし" Then Me.JokenDR_KANA.Text = Joken.DR_KANA
+        If Joken.DR_SANKA <> "" AndAlso Joken.DR_SANKA <> "指定なし" Then Me.JokenDR_SANKA.SelectedValue = Joken.DR_SANKA
+        If Joken.KOUENKAI_NO <> "" AndAlso Joken.KOUENKAI_NO <> "指定なし" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
+        If Joken.KOUENKAI_NAME <> "" AndAlso Joken.KOUENKAI_NAME <> "指定なし" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
+        If Joken.FROM_DATE <> "" AndAlso Joken.FROM_DATE <> "指定なし" Then
             Me.JokenFROM_DATE_YYYY.Text = Joken.FROM_DATE.Substring(0, 4)
             Me.JokenFROM_DATE_MM.Text = Joken.FROM_DATE.Substring(4, 2)
             Me.JokenFROM_DATE_DD.Text = Joken.FROM_DATE.Substring(6, 2)
         End If
-        If Joken.TO_DATE <> "" Then
+        If Joken.TO_DATE <> "" AndAlso Joken.TO_DATE <> "指定なし" Then
             Me.JokenTO_DATE_YYYY.Text = Joken.TO_DATE.Substring(0, 4)
             Me.JokenTO_DATE_MM.Text = Joken.TO_DATE.Substring(4, 2)
             Me.JokenTO_DATE_DD.Text = Joken.TO_DATE.Substring(6, 2)
         End If
-        If Joken.BU <> "" Then Me.JokenBU.Text = Joken.BU
-        If Joken.AREA <> "" Then Me.JokenTEHAI_TANTO_AREA.Text = Joken.AREA
-        If Joken.TTANTO_ID <> "" Then Me.JokenTTANTO_ID.Text = Joken.TTANTO_ID
-        If Joken.UPDATE_DATE <> "" Then
+        If Joken.BU <> "" AndAlso Joken.BU <> "指定なし" Then Me.JokenBU.SelectedValue = Joken.BU
+        If Joken.AREA <> "" AndAlso Joken.AREA <> "指定なし" Then Me.JokenTEHAI_TANTO_AREA.SelectedValue = Joken.AREA
+        If Joken.TTANTO_ID <> "" AndAlso Joken.TTANTO_ID <> "指定なし" Then Me.JokenTTEHAI_TANTO.SelectedValue = Joken.TTANTO_ID
+        If Joken.UPDATE_DATE <> "" AndAlso Joken.UPDATE_DATE <> "指定なし" Then
             Me.JokenUPDATE_DATE_YYYY.Text = Joken.UPDATE_DATE.Substring(0, 4)
             Me.JokenUPDATE_DATE_MM.Text = Joken.UPDATE_DATE.Substring(4, 2)
             Me.JokenUPDATE_DATE_DD.Text = Joken.UPDATE_DATE.Substring(6, 2)
@@ -164,9 +164,9 @@ Partial Public Class DrList
         Joken.KOUENKAI_NAME = Me.JokenKOUENKAI_NAME.Text.Trim
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
-        Joken.BU = Me.JokenBU.Text.Trim
-        Joken.AREA = Trim(Me.JokenTEHAI_TANTO_AREA.Text)
-        Joken.TTANTO_ID = Me.JokenTTANTO_ID.Text.Trim
+        If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.ToString
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JokenTEHAI_TANTO_AREA.SelectedItem.ToString
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
         Joken.UPDATE_DATE = CmnModule.Format_DateToString(Me.JokenUPDATE_DATE_YYYY.Text, Me.JokenUPDATE_DATE_MM.Text, Me.JokenUPDATE_DATE_DD.Text)
 
         ReDim TBL_KOTSUHOTEL(wCnt)
@@ -231,6 +231,8 @@ Partial Public Class DrList
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
             'TimeStamp
             e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            '更新日
+            e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
             '宿泊
             e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetMark_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
             '交通
@@ -251,6 +253,8 @@ Partial Public Class DrList
             End If
             'タクチケ
             e.Row.Cells(CellIndex.TEHAI_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
+            'NOZOMI送信ステータス
+            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
     End Sub
 
@@ -335,10 +339,10 @@ Partial Public Class DrList
             Return False
         End If
 
-        If Not CmnCheck.IsHanKatakana(Me.JokenDR_KANA) Then
-            CmnModule.AlertMessage(MessageDef.Error.HanKatakanaOnly("DR名(カナ)"), Me)
-            Return False
-        End If
+        'If Not CmnCheck.IsHanKatakana(Me.JokenDR_KANA) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.HanKatakanaOnly("DR名(カナ)"), Me)
+        '    Return False
+        'End If
 
         If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
             CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
@@ -391,16 +395,6 @@ Partial Public Class DrList
             End If
         End If
 
-        If Not CmnCheck.IsAlphabetOnly(Me.JokenBU) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphabetOnly("手配担当者BU"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsAlphanumeric(Me.JokenTTANTO_ID) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("トップツアー担当者"), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsNumberOnly(Me.JokenUPDATE_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("更新日(年)"), Me)
             Return False
@@ -428,7 +422,48 @@ Partial Public Class DrList
     End Function
 
     '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Response.Redirect(URL.Menu)
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+        Dim strSQL As String = ""
+
+        Joken.MR_ROMA = Me.JokenMR_ROMA.Text.Trim
+        Joken.DR_KANA = Me.JokenDR_KANA.Text.Trim
+        Joken.DR_SANKA = Me.JokenDR_SANKA.SelectedValue
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
+        Joken.KOUENKAI_NAME = Me.JokenKOUENKAI_NAME.Text.Trim
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.ToString
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JokenTEHAI_TANTO_AREA.SelectedItem.ToString
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+        Joken.UPDATE_DATE = CmnModule.Format_DateToString(Me.JokenUPDATE_DATE_YYYY.Text, Me.JokenUPDATE_DATE_MM.Text, Me.JokenUPDATE_DATE_DD.Text)
+
+        strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False)
+        If Joken.MR_ROMA.Trim = "" Then Joken.MR_ROMA = "指定なし"
+        If Joken.DR_KANA.Trim = "" Then Joken.DR_KANA = "指定なし"
+        If Joken.DR_SANKA.Trim = "" Then Joken.DR_SANKA = "指定なし"
+        If Joken.KOUENKAI_NO.Trim = "" Then Joken.KOUENKAI_NO = "指定なし"
+        If Joken.KOUENKAI_NAME.Trim = "" Then Joken.KOUENKAI_NAME = "指定なし"
+        If Joken.FROM_DATE.Trim = "" Then Joken.FROM_DATE = "指定なし"
+        If Joken.TO_DATE.Trim = "" Then Joken.TO_DATE = "指定なし"
+        If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
+        If Joken.AREA.Trim = "" Then Joken.AREA = "指定なし"
+        If Joken.TTANTO_ID.Trim = "" Then Joken.TTANTO_ID = "指定なし"
+        If Joken.UPDATE_DATE.Trim = "" Then Joken.UPDATE_DATE = "指定なし"
+
+        Session.Item(SessionDef.DrPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.Joken) = Joken
+        Response.Redirect(URL.Preview)
     End Sub
 End Class
