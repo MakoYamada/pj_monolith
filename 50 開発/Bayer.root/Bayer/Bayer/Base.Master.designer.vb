@@ -88,6 +88,33 @@ Partial Public Class Base
     Protected WithEvents ImgSiteName As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
+    '''TdHeader2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TdHeader2 As Global.System.Web.UI.HtmlControls.HtmlTableCell
+
+    '''<summary>
+    '''HeaderComment1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents HeaderComment1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''HeaderComment2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents HeaderComment2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''TblHeader2 コントロール。
     '''</summary>
     '''<remarks>
