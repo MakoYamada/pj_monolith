@@ -16,6 +16,15 @@ Option Explicit On
 Partial Public Class Preview
 
     '''<summary>
+    '''TblWebViewer コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblWebViewer As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
     '''BtnBack コントロール。
     '''</summary>
     '''<remarks>
@@ -23,6 +32,15 @@ Partial Public Class Preview
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TrWebViewer コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrWebViewer As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
     '''WebViewer1 コントロール。

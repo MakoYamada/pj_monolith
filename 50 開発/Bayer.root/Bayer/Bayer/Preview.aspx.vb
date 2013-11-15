@@ -18,7 +18,6 @@ Partial Public Class Preview
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
         '呼び元が履歴一覧・手配画面の場合
         MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
         Popup = True
@@ -72,7 +71,7 @@ Partial Public Class Preview
         With Me.Master
             .PageTitle = "プレビュー"
         End With
-
+         
     End Sub
 
     'セッションを変数に格納
