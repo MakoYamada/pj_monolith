@@ -2650,4 +2650,21 @@
         End Class
     End Class
 
+    Public Class TehaishoJoken
+        <Serializable()> Public Structure DataStruct
+            Public SALEFORCE_ID As String
+            Public SANKASHA_ID As String
+            Public KOUENKAI_NO As String
+            Public TIME_STAMP_BYL As String
+            Public DR_MPID As String
+        End Structure
+        Public Class Column
+            Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
+            Public Const SANKASHA_ID As String = "SANKASHA_ID"
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const TIME_STAMP_BYL As String = "TIME_STAMP_BYL"
+            Public Const DR_MPID As String = "DR_MPID"
+        End Class
+    End Class
+
 End Class
