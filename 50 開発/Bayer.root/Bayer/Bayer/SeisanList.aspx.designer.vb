@@ -16,6 +16,15 @@ Option Explicit On
 Partial Public Class SeisanList
 
     '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
@@ -34,6 +43,114 @@ Partial Public Class SeisanList
     Protected WithEvents JokenSEIKYU_NO_TOPTOUR As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''JokenSEISAN_Y コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSEISAN_Y As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenSEISAN_M コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSEISAN_M As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenSHOUNIN_KUBUN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSHOUNIN_KUBUN As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''JokenFROM_DATE_YYYY コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenFROM_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenFROM_DATE_MM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenFROM_DATE_MM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenFROM_DATE_DD コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenFROM_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenTO_DATE_YYYY コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenTO_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenTO_DATE_MM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenTO_DATE_MM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenTO_DATE_DD コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenKIKAKU_TANTO_ROMA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenBU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''JokenKIKAKU_TANTO_AREA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''BtnSearch コントロール。
     '''</summary>
     '''<remarks>
@@ -50,15 +167,6 @@ Partial Public Class SeisanList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnInsert As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnBack1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''LabelNoData コントロール。

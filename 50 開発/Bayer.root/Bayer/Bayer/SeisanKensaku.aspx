@@ -3,19 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table cellspacing="0" cellpadding="2" border="0">
+    <table cellspacing="0" cellpadding="2" border="0" width="1025px">
         <tr align="right">
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
-                    <tr>
-                        <td style="width:50%">
-                        </td>
-                        <td style="width:50%" align="right">
-                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="2" />
-                        </td>
-                    </tr>
-                </table> 
+                <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button"/>
             </td>
         </tr>
         <tr>
@@ -56,10 +47,10 @@
                                         講演会番号
                                     </td>
                                     <td colspan="5">
-                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="130px" MaxLength="14" 
                                             TabIndex="3"></asp:TextBox>&nbsp;&nbsp;&nbsp;
                                         講演会名&nbsp;&nbsp;&nbsp;
-                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="714px" MaxLength="160" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="580px" MaxLength="160" 
                                             TabIndex="4"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -112,22 +103,21 @@
                                         <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="3">
                                         </asp:DropDownList>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td align="right" valign="bottom" colspan="6">
-                                        <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
-                                            CssClass="Button" TabIndex="14" />
-                                    </td>
-                                </tr>
+                                </tr>                                
                             </table>
                         </td>
                     </tr>
                 </table>
-                <hr style="width:100%" />
             </td>
-        </tr>        
+        </tr>
+        <tr align="right">
+            <td valign="bottom" colspan="6">
+                <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
+            </td>
+        </tr>
         <tr>
             <td align="left">
+                <hr style="width:100%" />
                 <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
                 <br />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
@@ -137,7 +127,7 @@
             <td>
                 <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
-                    DataSourceID="SqlDataSource1" Width="1006px">
+                    DataSourceID="SqlDataSource1" Width="1020px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                     <RowStyle Wrap="false" BackColor="#ffffff" />
                     <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -167,31 +157,34 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="TTEHAI_TANTO" HeaderText="TOP担当者" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="126px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:ButtonField ButtonType="Button" Text="参加者一覧" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:ButtonField ButtonType="Button" Text="CSV" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="DrCSV" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="70px" ItemStyle-Width="76px" ItemStyle-BackColor="#e4e9d1">
+                            ControlStyle-Width="70px" ItemStyle-Width="76px" 
+                            ItemStyle-BackColor="#e4e9d1" HeaderText="参加者一覧">
                             <ControlStyle CssClass="ButtonList" Width="70px"></ControlStyle>
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:ButtonField ButtonType="Button" Text="MR一覧" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:ButtonField ButtonType="Button" Text="CSV" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="MrCSV" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="56px" ItemStyle-Width="62px" ItemStyle-BackColor="#e4e9d1">
-                            <ControlStyle CssClass="ButtonList" Width="56px"></ControlStyle>
+                            ControlStyle-Width="70px" ItemStyle-Width="76px" 
+                            ItemStyle-BackColor="#e4e9d1" HeaderText="MR一覧">
+                            <ControlStyle CssClass="ButtonList" Width="70px"></ControlStyle>
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:ButtonField ButtonType="Button" Text="精算" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:ButtonField ButtonType="Button" Text="検索" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="Seisan" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
-                            <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
+                            ControlStyle-Width="70px" ItemStyle-Width="76px" 
+                            ItemStyle-BackColor="#e4e9d1" HeaderText="精算一覧">
+                            <ControlStyle CssClass="ButtonList" Width="70px"></ControlStyle>
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
@@ -203,17 +196,8 @@
             </td>
         </tr>
         <tr align="right">
-            <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
-                    <tr>
-                        <td style="width:50%">
-                        </td>
-                        <td style="width:50%" align="right">
-                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="7" />
-                        </td>
-                    </tr>
-                </table> 
+            <td>                
+                <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
             </td>
         </tr>
     </table>

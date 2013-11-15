@@ -9,14 +9,19 @@ Partial Public Class SeisanList
     Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
+        BU
+        AREA
+        EIGYOSHO
+        TANTO_NAME
+        FROM_DATE
         KOUENKAI_NO
         KOUENKAI_NAME
         SEIKYU_NO_TOPTOUR
         SEISAN_YM
         SHOUNIN_KUBUN
-        KEI_TF
-        KEI_T
+        SEND_FLAG
         Button1
+        TO_DATE
     End Enum
 
     Private Sub SeisanList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -72,10 +77,26 @@ Partial Public Class SeisanList
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        'ドロップダウンリスト設定
+        AppModule.SetDropDownList_SHOUNIN_KUBUN(Me.JokenSHOUNIN_KUBUN)
+        AppModule.SetDropDownList_BU(Me.JokenBU, DbConnection)
+        AppModule.SetDropDownList_AREA(Me.JokenKIKAKU_TANTO_AREA, DbConnection)
+
         'IME設定        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenSEISAN_Y, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenSEISAN_M, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenFROM_DATE_YYYY, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenFROM_DATE_MM, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenFROM_DATE_DD, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenTO_DATE_YYYY, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenTO_DATE_MM, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenTO_DATE_DD, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_ROMA, CmnModule.ImeType.Disabled)
 
-        Joken.KOUENKAI_NO = TBL_KOUENKAI(Session.Item(SessionDef.SeisanKensaku_SEQ)).KOUENKAI_NO
+        If URL.SeisanKensaku.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+            Joken.KOUENKAI_NO = TBL_KOUENKAI(Session.Item(SessionDef.SeisanKensaku_SEQ)).KOUENKAI_NO
+        End If
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -85,6 +106,25 @@ Partial Public Class SeisanList
     Private Sub SetJoken()
         If Joken.KOUENKAI_NO <> "" Then Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
         If Joken.SEIKYU_NO_TOPTOUR <> "" Then Me.JokenSEIKYU_NO_TOPTOUR.Text = Joken.SEIKYU_NO_TOPTOUR
+        If Joken.SEISAN_YM <> "" Then
+            Me.JokenSEISAN_Y.Text = Mid(Joken.SEISAN_YM, 1, 4)
+            Me.JokenSEISAN_M.Text = Mid(Joken.SEISAN_YM, 5, 2)
+        End If
+
+        If Joken.SHOUNIN_KUBUN <> "" Then Me.JokenSHOUNIN_KUBUN.SelectedItem.Value = Joken.SHOUNIN_KUBUN
+
+        If Joken.FROM_DATE <> "" AndAlso Joken.FROM_DATE <> "指定なし" Then
+            Me.JokenFROM_DATE_YYYY.Text = Joken.FROM_DATE.Substring(0, 4)
+            Me.JokenFROM_DATE_MM.Text = Joken.FROM_DATE.Substring(4, 2)
+            Me.JokenFROM_DATE_DD.Text = Joken.FROM_DATE.Substring(6, 2)
+        End If
+        If Joken.TO_DATE <> "" AndAlso Joken.TO_DATE <> "指定なし" Then
+            Me.JokenTO_DATE_YYYY.Text = Joken.TO_DATE.Substring(0, 4)
+            Me.JokenTO_DATE_MM.Text = Joken.TO_DATE.Substring(4, 2)
+            Me.JokenTO_DATE_DD.Text = Joken.TO_DATE.Substring(6, 2)
+        End If
+        If Joken.BU <> "" AndAlso Joken.BU <> "指定なし" Then Me.JokenBU.SelectedValue = Joken.BU
+        If Joken.AREA <> "" AndAlso Joken.AREA <> "指定なし" Then Me.JokenKIKAKU_TANTO_AREA.SelectedValue = Joken.AREA
     End Sub
 
     '画面項目 表示
@@ -111,8 +151,15 @@ Partial Public Class SeisanList
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
         Joken = Nothing
-        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
-        Joken.SEIKYU_NO_TOPTOUR = Trim(Me.JokenSEIKYU_NO_TOPTOUR.Text)
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
+        Joken.SEIKYU_NO_TOPTOUR = Me.JokenSEIKYU_NO_TOPTOUR.Text.Trim
+        If Me.JokenSHOUNIN_KUBUN.SelectedIndex <> 0 Then Joken.SHOUNIN_KUBUN = Me.JokenSHOUNIN_KUBUN.SelectedItem.Value
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.SEISAN_YM = CmnModule.Format_DateToString(Me.JokenSEISAN_Y.Text, Me.JokenSEISAN_M.Text)
+        Joken.KIKAKU_TANTO_ROMA = Me.JokenKIKAKU_TANTO_ROMA.Text.Trim
+        If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.Value
+        If Me.JokenKIKAKU_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JokenKIKAKU_TANTO_AREA.SelectedItem.Value
 
         ReDim TBL_SEIKYU(wCnt)
         strSQL = SQL.TBL_SEIKYU.Search(Joken)
@@ -155,16 +202,18 @@ Partial Public Class SeisanList
     'グリッドビュー内書式設定
     Private Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
             e.Row.Cells(CellIndex.SEISAN_YM).Text = Mid(CmnModule.Format_DateJP(e.Row.Cells(CellIndex.SEISAN_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
             e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
-            e.Row.Cells(CellIndex.KEI_TF).Text = CmnModule.EditComma(e.Row.Cells(CellIndex.KEI_TF).Text)
-            e.Row.Cells(CellIndex.KEI_T).Text = CmnModule.EditComma(e.Row.Cells(CellIndex.KEI_T).Text)
+            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text)
         End If
     End Sub
 
     'グリッドビュー列の表示設定
     Private Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
-
+        If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(CellIndex.TO_DATE).Visible = False
+        End If
     End Sub
 
     'グリッドビュー ページ移動時
@@ -174,7 +223,6 @@ Partial Public Class SeisanList
             .SelectedIndex = -1
             'カレントページを変更
             Session.Item(SessionDef.PageIndex) = .PageIndex
-
             'グリッドビュー表示
             SetGridView()
         End With
@@ -189,6 +237,7 @@ Partial Public Class SeisanList
                 Session.Item(SessionDef.TBL_SEIKYU) = TBL_SEIKYU
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
+                Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
 
                 Response.Redirect(URL.SeisanRegist)
         End Select
@@ -211,19 +260,81 @@ Partial Public Class SeisanList
             Return False
         End If
 
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenSEISAN_Y) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.SEISAN_YM & "(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenSEISAN_M) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.SEISAN_YM & "(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_MM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_DD) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(日)"), Me)
+            Return False
+        End If
+
+        If CmnCheck.IsInput(Me.JokenFROM_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenFROM_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenFROM_DATE_DD) Then
+            Dim wStr As String = StrConv(Trim(Me.JokenFROM_DATE_YYYY.Text) & "/" & Trim(Me.JokenFROM_DATE_MM.Text) & "/" & Trim(Me.JokenFROM_DATE_DD.Text), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日From"), Me)
+                Return False
+            End If
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_YYYY) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_MM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_DD) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(日)"), Me)
+            Return False
+        End If
+
+        If CmnCheck.IsInput(Me.JokenTO_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenTO_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenTO_DATE_DD) Then
+            Dim wStr As String = StrConv(Trim(Me.JokenTO_DATE_YYYY.Text) & "/" & Trim(Me.JokenTO_DATE_MM.Text) & "/" & Trim(Me.JokenTO_DATE_DD.Text), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日To"), Me)
+                Return False
+            End If
+        End If
+
         Return True
     End Function
 
     '[戻る]
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
+        Joken = Nothing
         Response.Redirect(URL.SeisanKensaku)
     End Sub
 
     '[新規登録]
     Private Sub BtnInsert_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnInsert.Click
         TBL_SEIKYU = Nothing
-        Joken = Nothing
         Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Response.Redirect(URL.SeisanRegist)
     End Sub
 End Class

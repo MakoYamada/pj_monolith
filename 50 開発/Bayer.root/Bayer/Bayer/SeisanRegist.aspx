@@ -10,7 +10,7 @@
                             <table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse; margin-bottom: 5px;" width="100%">
                                 <tr>
                                     <td colspan="4">
-                                        <div ID="DivMessage" runat="server">
+                                        <div ID="DivMessage" runat="server" visible="false">
 		                                    <asp:Label ID="LabelMessage" runat="server" Font-Bold="true">
 			                                    精算データを登録しました。
 		                                    </asp:Label>
