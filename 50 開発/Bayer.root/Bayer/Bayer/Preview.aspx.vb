@@ -43,7 +43,13 @@ Partial Public Class Preview
                 PrintKouenkaiRireki()
             ElseIf URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が新着交通・宿泊一覧の場合
-                PrintNewDrList()
+                If Session.Item(SessionDef.PrintPreview) = "NewDrPrint" Then
+                    '新着交通・宿泊一覧
+                    PrintNewDrList()
+                ElseIf Session.Item(SessionDef.PrintPreview) = "TehaishoPrint" Then
+                    '手配書一括印刷
+                    PrintDrReport()
+                End If
             ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
                 Select Case Session.Item(SessionDef.PrintPreview)
                     Case "NewKaijoList"
