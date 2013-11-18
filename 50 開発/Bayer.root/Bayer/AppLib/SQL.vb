@@ -613,6 +613,42 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function DrCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT "
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK2.DR_NAME"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_HOTELHI,'') AS BIGINT) + CAST(ISNULL(ANS_HOTELHI_CANCEL,'') AS BIGINT) AS HOTELHI_TF"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_HOTELHI_TOZEI,'') AS BIGINT) AS HOTELHI_TOZEI_TF"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_RAIL_FARE,'') AS BIGINT) + CAST(ISNULL(WK2.ANS_RAIL_CANCELLATION,'') AS BIGINT) AS JR_TF"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_AIR_FARE,'') AS BIGINT) + CAST(ISNULL(WK2.ANS_AIR_CANCELLATION,'') AS BIGINT) AS AIR_TF"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_OTHER_FARE,'') AS BIGINT) + CAST(ISNULL(WK2.ANS_OTHER_CANCELLATION,'') AS BIGINT) AS OTHER_TRAFFIC_TF"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_TAXI_TESURYO,'') AS BIGINT) AS TAXI_COMMISSION_TF"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_KOTSUHOTEL_TESURYO,'') AS BIGINT) AS HOTEL_COMMISSION_TF"
+            strSQL &= ",'' AS TAXI_TF"
+            strSQL &= ",'' AS TAXI_SEISAN_TF"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT TBL_KOTSUHOTEL.KOUENKAI_NO,TBL_KOTSUHOTEL.SANKASHA_ID,MAX(TBL_KOTSUHOTEL.TIME_STAMP_BYL) AS TIME_STAMP_BYL FROM TBL_KOTSUHOTEL"
+            strSQL &= "  GROUP BY TBL_KOTSUHOTEL.KOUENKAI_NO,TBL_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= "  ) WK1"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL)WK2"
+            strSQL &= " ON (WK1.KOUENKAI_NO = WK2.KOUENKAI_NO) AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID) AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK3"
+            strSQL &= "  WHERE  WK3.TIME_STAMP = "
+            strSQL &= "  (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "   WHERE TBL_KOUENKAI.KOUENKAI_NO = WK3.KOUENKAI_NO)"
+            strSQL &= "  )WK_KOUENKAI"
+            strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " WHERE"
+            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " ORDER BY WK1.KOUENKAI_NO,WK1.SANKASHA_ID"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
