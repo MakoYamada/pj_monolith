@@ -486,7 +486,7 @@ Partial Public Class Preview
         Return dtView.Table
     End Function
 
-    '新着会場手配一覧印刷
+    '新着会場手配依頼一覧印刷
     Private Sub PrintNewKaijoListReport()
 
         Dim rpt1 As New NewKaijoListReport()
@@ -538,7 +538,7 @@ Partial Public Class Preview
 
     End Function
 
-    '検索会場手配一覧印刷
+    '検索会場手配依頼一覧印刷
     Private Sub PrintKaijoListReport()
 
         Dim rpt1 As New KaijoListReport()
@@ -591,7 +591,7 @@ Partial Public Class Preview
 
     End Function
 
-    '会場手配履歴一覧印刷
+    '会場手配依頼 履歴一覧印刷
     Private Sub PrintKaijoRirekiReport()
 
         Dim rpt1 As New KaijoRirekiReport()
