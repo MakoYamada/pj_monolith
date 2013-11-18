@@ -24,8 +24,8 @@ Partial Public Class Menu1
         End If
 
         'マスターページ設定        With Me.Master
-            .PageTitle = "メインメニュー"
             .HideMenu = True
+            .PageTitle = "メインメニュー"
         End With
     End Sub
 

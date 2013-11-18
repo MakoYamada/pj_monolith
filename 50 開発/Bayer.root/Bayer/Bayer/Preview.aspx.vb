@@ -76,7 +76,11 @@ Partial Public Class Preview
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
-        If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
+        If InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
+            If Trim(Session.Item(SessionDef.KaijoPrint_SQL)) = "" Then
+                Return False
+            End If
+        ElseIf URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL)) > 0 Then
             Try
                 TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
                 TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
@@ -123,10 +127,6 @@ Partial Public Class Preview
             Catch ex As Exception
                 Return False
             End Try
-        ElseIf InStr(Session.Item(SessionDef.BackURL_Print).ToString.ToLower, "kaijo") > 0 Then
-            If Trim(Session.Item(SessionDef.KaijoPrint_SQL)) = "" Then
-                Return False
-            End If
         End If
         Return True
     End Function

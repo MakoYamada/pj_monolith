@@ -11,7 +11,7 @@ Partial Public Class Login
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            Session.Abandon()
+            Session.Contents.RemoveAll()
 
             '画面項目 初期化            InitControls()
 
