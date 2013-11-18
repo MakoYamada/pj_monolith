@@ -151,7 +151,7 @@
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="50px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="SEND_FLAG" HeaderText="‘—M<br/>ó‹µ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                                    <asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI<br/>‘—M" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="80px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>                

@@ -17,7 +17,7 @@
 	                                    </div>
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdTitleSeisan1" style="width:100px;">
-                                        送信状況
+                                        NOZOMI送信
                                     </td>
                                     <td nowrap="nowrap" align="left" style="width:110px;">
                                         <asp:DropDownList ID="SEND_FLAG" runat="server" Width="100px" Enabled="False"></asp:DropDownList>
