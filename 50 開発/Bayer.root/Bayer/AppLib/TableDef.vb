@@ -262,6 +262,7 @@
             Public INSHOKUHI_TF As String
             Public KEI_991330401_TF As String
             Public HOTELHI_TF As String
+            Public HOTELHI_TOZEI As String
             Public JR_TF As String
             Public AIR_TF As String
             Public OTHER_TRAFFIC_TF As String
@@ -291,6 +292,7 @@
             Public SEISAN_KANRYO As String
             Public MR_JR As String
             Public MR_HOTEL As String
+            Public MR_HOTEL_TOZEI As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public INPUT_DATE As String
@@ -298,7 +300,11 @@
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
 
+            Public KOUENKAI_NAME As String
             Public FROM_DATE As String
+            Public DR_NAME As String
+            Public MR_NAME As String
+            Public COST_CENTER As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -311,6 +317,7 @@
             Public Const INSHOKUHI_TF As String = "INSHOKUHI_TF"
             Public Const KEI_991330401_TF As String = "KEI_991330401_TF"
             Public Const HOTELHI_TF As String = "HOTELHI_TF"
+            Public Const HOTELHI_TOZEI As String = "HOTELHI_TOZEI"
             Public Const JR_TF As String = "JR_TF"
             Public Const AIR_TF As String = "AIR_TF"
             Public Const OTHER_TRAFFIC_TF As String = "OTHER_TRAFFIC_TF"
@@ -340,6 +347,7 @@
             Public Const SEISAN_KANRYO As String = "SEISAN_KANRYO"
             Public Const MR_JR As String = "MR_JR"
             Public Const MR_HOTEL As String = "MR_HOTEL"
+            Public Const MR_HOTEL_TOZEI As String = "MR_HOTEL_TOZEI"
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const INPUT_DATE As String = "INPUT_DATE"
@@ -347,7 +355,11 @@
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
 
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
             Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const DR_NAME As String = "DR_NAME"
+            Public Const MR_NAME As String = "MR_NAME"
+            Public Const COST_CENTER As String = "COST_CENTER"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -360,6 +372,7 @@
             Public Const INSHOKUHI_TF As String = "飲食費(非課税)991330401"
             Public Const KEI_991330401_TF As String = "991330401(非課税)小計"
             Public Const HOTELHI_TF As String = "宿泊費(非課税)41120200"
+            Public Const HOTELHI_TOZEI As String = "宿泊費都税（非課税） 41120200"
             Public Const JR_TF As String = "JR代(非課税)41120200"
             Public Const AIR_TF As String = "航空券代(非課税)41120200"
             Public Const OTHER_TRAFFIC_TF As String = "その他鉄道等費用(非課税)41120200"
@@ -389,6 +402,7 @@
             Public Const SEISAN_KANRYO As String = "精算完了"
             Public Const MR_JR As String = "社員の国内旅費(JR/航空券)"
             Public Const MR_HOTEL As String = "社員の国内旅費(宿泊)"
+            Public Const MR_HOTEL_TOZEI As String = "社員の国内旅費(宿泊都税)"
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const INPUT_DATE As String = "登録日時"
@@ -396,7 +410,11 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
 
+            Public Const KOUENKAI_NAME As String = "講演会名"
             Public Const FROM_DATE As String = "開催日FROM"
+            Public Const DR_NAME As String = "DR氏名"
+            Public Const MR_NAME As String = "担当者(担当MR)名"
+            Public Const COST_CENTER As String = "Cost Center"
         End Class
     End Class
 
