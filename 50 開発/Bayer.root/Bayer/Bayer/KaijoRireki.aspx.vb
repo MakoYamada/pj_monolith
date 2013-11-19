@@ -36,14 +36,16 @@ Partial Public Class KaijoRireki
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
-            InitControls()
+            '画面項目 初期化            InitControls()
 
             '画面項目表示
             SetForm()
         End If
 
-        'マスターページ設定        With Me.Master
+        Session.Remove(SessionDef.KaijoPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+        Session.Remove(SessionDef.PrintPreview)
+        'マスターページ設定        With Me.Master
             .PageTitle = "会場手配履歴"
         End With
     End Sub
@@ -201,10 +203,13 @@ Partial Public Class KaijoRireki
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
+        Session.Remove(SessionDef.KaijoRireki_Joken)
         Session.Remove(SessionDef.KaijoRireki_SEQ)
         Session.Remove(SessionDef.KaijoRireki_PageIndex)
-        Session.Remove(SessionDef.KaijoRireki_Joken)
         Session.Remove(SessionDef.KaijoRireki)
+        Session.Remove(SessionDef.KaijoPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+        Session.Remove(SessionDef.PrintPreview)
 
         Response.Redirect(URL.KaijoRegist)
     End Sub

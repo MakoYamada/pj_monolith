@@ -57,6 +57,19 @@ Partial Public Class KaijoListReport
         Me.Label7 = New DataDynamics.ActiveReports.Label
         Me.Label17 = New DataDynamics.ActiveReports.Label
         Me.JokenSEIHIN = New DataDynamics.ActiveReports.Label
+        Me.Label18 = New DataDynamics.ActiveReports.Label
+        Me.Label20 = New DataDynamics.ActiveReports.Label
+        Me.JokenTEHAI_TANTO_ROMA = New DataDynamics.ActiveReports.Label
+        Me.JokenKIKAKU_TANTO_ROMA = New DataDynamics.ActiveReports.Label
+        Me.Label19 = New DataDynamics.ActiveReports.Label
+        Me.JokenKOUENKAI_NO = New DataDynamics.ActiveReports.Label
+        Me.Label21 = New DataDynamics.ActiveReports.Label
+        Me.JokenKOUENKAI_NAME = New DataDynamics.ActiveReports.Label
+        Me.Label22 = New DataDynamics.ActiveReports.Label
+        Me.JokenFROM_DATE = New DataDynamics.ActiveReports.Label
+        Me.JokenTO_DATE = New DataDynamics.ActiveReports.Label
+        Me.Label23 = New DataDynamics.ActiveReports.Label
+        Me.JoKenTTANTO_ID = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line7 = New DataDynamics.ActiveReports.Line
@@ -79,19 +92,6 @@ Partial Public Class KaijoListReport
         Me.KOUENKAI_NO = New DataDynamics.ActiveReports.TextBox
         Me.Line21 = New DataDynamics.ActiveReports.Line
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Label18 = New DataDynamics.ActiveReports.Label
-        Me.Label20 = New DataDynamics.ActiveReports.Label
-        Me.JokenTEHAI_TANTO_ROMA = New DataDynamics.ActiveReports.Label
-        Me.JokenKIKAKU_TANTO_ROMA = New DataDynamics.ActiveReports.Label
-        Me.Label19 = New DataDynamics.ActiveReports.Label
-        Me.JokenKOUENKAI_NO = New DataDynamics.ActiveReports.Label
-        Me.Label21 = New DataDynamics.ActiveReports.Label
-        Me.JokenKOUENKAI_NAME = New DataDynamics.ActiveReports.Label
-        Me.Label22 = New DataDynamics.ActiveReports.Label
-        Me.JokenFROM_DATE = New DataDynamics.ActiveReports.Label
-        Me.JokenTO_DATE = New DataDynamics.ActiveReports.Label
-        Me.Label23 = New DataDynamics.ActiveReports.Label
-        Me.JoKenTTANTO_ID = New DataDynamics.ActiveReports.Label
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,16 +117,6 @@ Partial Public Class KaijoListReport
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JokenSEIHIN, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BU, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JokenTEHAI_TANTO_ROMA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,13 +130,24 @@ Partial Public Class KaijoListReport
         CType(Me.JokenTO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JoKenTTANTO_ID, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
         Me.PageHeader.CanGrow = False
+        Me.PageHeader.CanShrink = True
         Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label8, Me.Shape2, Me.Label12, Me.Label9, Me.Label10, Me.Label11, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line20, Me.LabelPage, Me.Label5, Me.Label6, Me.JokenBU, Me.JokenKIKAKU_TANTO_AREA, Me.Label7, Me.Label17, Me.JokenSEIHIN, Me.Label18, Me.Label20, Me.JokenTEHAI_TANTO_ROMA, Me.JokenKIKAKU_TANTO_ROMA, Me.Label19, Me.JokenKOUENKAI_NO, Me.Label21, Me.JokenKOUENKAI_NAME, Me.Label22, Me.JokenFROM_DATE, Me.JokenTO_DATE, Me.Label23, Me.JoKenTTANTO_ID})
-        Me.PageHeader.Height = 2.152756!
+        Me.PageHeader.Height = 2.151575!
         Me.PageHeader.Name = "PageHeader"
         '
         'LOGIN_USER_NAME
@@ -363,7 +364,7 @@ Partial Public Class KaijoListReport
         '
         'Line2
         '
-        Me.Line2.Height = 0.2362214!
+        Me.Line2.Height = 0.236221!
         Me.Line2.Left = 0.3937008!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
@@ -376,7 +377,7 @@ Partial Public Class KaijoListReport
         '
         'Line3
         '
-        Me.Line3.Height = 0.2362214!
+        Me.Line3.Height = 0.236221!
         Me.Line3.Left = 1.299213!
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
@@ -389,7 +390,7 @@ Partial Public Class KaijoListReport
         '
         'Line4
         '
-        Me.Line4.Height = 0.2362214!
+        Me.Line4.Height = 0.236221!
         Me.Line4.Left = 2.795276!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
@@ -402,7 +403,7 @@ Partial Public Class KaijoListReport
         '
         'Line5
         '
-        Me.Line5.Height = 0.2362214!
+        Me.Line5.Height = 0.236221!
         Me.Line5.Left = 4.370079!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
@@ -415,7 +416,7 @@ Partial Public Class KaijoListReport
         '
         'Line6
         '
-        Me.Line6.Height = 0.2362217!
+        Me.Line6.Height = 0.236221!
         Me.Line6.Left = 7.630315!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
@@ -441,7 +442,7 @@ Partial Public Class KaijoListReport
         '
         'Line9
         '
-        Me.Line9.Height = 0.2362214!
+        Me.Line9.Height = 0.236221!
         Me.Line9.Left = 9.790552!
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
@@ -467,7 +468,7 @@ Partial Public Class KaijoListReport
         '
         'Line11
         '
-        Me.Line11.Height = 0.2362212!
+        Me.Line11.Height = 0.236221!
         Me.Line11.Left = 0.0!
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
@@ -480,7 +481,7 @@ Partial Public Class KaijoListReport
         '
         'Line12
         '
-        Me.Line12.Height = 0.2362214!
+        Me.Line12.Height = 0.236221!
         Me.Line12.Left = 11.02362!
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
@@ -592,13 +593,157 @@ Partial Public Class KaijoListReport
         Me.JokenSEIHIN.Top = 1.201575!
         Me.JokenSEIHIN.Width = 3.937008!
         '
+        'Label18
+        '
+        Me.Label18.Height = 0.1968504!
+        Me.Label18.HyperLink = Nothing
+        Me.Label18.Left = 0.1330713!
+        Me.Label18.Name = "Label18"
+        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
+        Me.Label18.Text = "BYL企画担当者："
+        Me.Label18.Top = 1.201575!
+        Me.Label18.Width = 1.181102!
+        '
+        'Label20
+        '
+        Me.Label20.Height = 0.1968504!
+        Me.Label20.HyperLink = Nothing
+        Me.Label20.Left = 3.022048!
+        Me.Label20.Name = "Label20"
+        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
+        Me.Label20.Text = "BYL手配担当者："
+        Me.Label20.Top = 1.201575!
+        Me.Label20.Width = 1.181102!
+        '
+        'JokenTEHAI_TANTO_ROMA
+        '
+        Me.JokenTEHAI_TANTO_ROMA.Height = 0.1968504!
+        Me.JokenTEHAI_TANTO_ROMA.HyperLink = Nothing
+        Me.JokenTEHAI_TANTO_ROMA.Left = 4.20315!
+        Me.JokenTEHAI_TANTO_ROMA.Name = "JokenTEHAI_TANTO_ROMA"
+        Me.JokenTEHAI_TANTO_ROMA.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JokenTEHAI_TANTO_ROMA.Text = ""
+        Me.JokenTEHAI_TANTO_ROMA.Top = 1.201575!
+        Me.JokenTEHAI_TANTO_ROMA.Width = 1.574803!
+        '
+        'JokenKIKAKU_TANTO_ROMA
+        '
+        Me.JokenKIKAKU_TANTO_ROMA.Height = 0.1968504!
+        Me.JokenKIKAKU_TANTO_ROMA.HyperLink = Nothing
+        Me.JokenKIKAKU_TANTO_ROMA.Left = 1.314174!
+        Me.JokenKIKAKU_TANTO_ROMA.Name = "JokenKIKAKU_TANTO_ROMA"
+        Me.JokenKIKAKU_TANTO_ROMA.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JokenKIKAKU_TANTO_ROMA.Text = ""
+        Me.JokenKIKAKU_TANTO_ROMA.Top = 1.201575!
+        Me.JokenKIKAKU_TANTO_ROMA.Width = 1.574803!
+        '
+        'Label19
+        '
+        Me.Label19.Height = 0.1968504!
+        Me.Label19.HyperLink = Nothing
+        Me.Label19.Left = 0.1330709!
+        Me.Label19.Name = "Label19"
+        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
+        Me.Label19.Text = "講演会番号："
+        Me.Label19.Top = 1.416929!
+        Me.Label19.Width = 1.181102!
+        '
+        'JokenKOUENKAI_NO
+        '
+        Me.JokenKOUENKAI_NO.Height = 0.1968504!
+        Me.JokenKOUENKAI_NO.HyperLink = Nothing
+        Me.JokenKOUENKAI_NO.Left = 1.314173!
+        Me.JokenKOUENKAI_NO.Name = "JokenKOUENKAI_NO"
+        Me.JokenKOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JokenKOUENKAI_NO.Text = ""
+        Me.JokenKOUENKAI_NO.Top = 1.416929!
+        Me.JokenKOUENKAI_NO.Width = 1.574803!
+        '
+        'Label21
+        '
+        Me.Label21.Height = 0.1968504!
+        Me.Label21.HyperLink = Nothing
+        Me.Label21.Left = 3.022048!
+        Me.Label21.Name = "Label21"
+        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
+        Me.Label21.Text = "講演会名："
+        Me.Label21.Top = 1.416929!
+        Me.Label21.Width = 1.181102!
+        '
+        'JokenKOUENKAI_NAME
+        '
+        Me.JokenKOUENKAI_NAME.Height = 0.1968504!
+        Me.JokenKOUENKAI_NAME.HyperLink = Nothing
+        Me.JokenKOUENKAI_NAME.Left = 4.20315!
+        Me.JokenKOUENKAI_NAME.Name = "JokenKOUENKAI_NAME"
+        Me.JokenKOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JokenKOUENKAI_NAME.Text = ""
+        Me.JokenKOUENKAI_NAME.Top = 1.416929!
+        Me.JokenKOUENKAI_NAME.Width = 3.937008!
+        '
+        'Label22
+        '
+        Me.Label22.Height = 0.1968504!
+        Me.Label22.HyperLink = Nothing
+        Me.Label22.Left = 0.1330709!
+        Me.Label22.Name = "Label22"
+        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
+        Me.Label22.Text = "実施日："
+        Me.Label22.Top = 1.636221!
+        Me.Label22.Width = 1.181102!
+        '
+        'JokenFROM_DATE
+        '
+        Me.JokenFROM_DATE.Height = 0.1968504!
+        Me.JokenFROM_DATE.HyperLink = Nothing
+        Me.JokenFROM_DATE.Left = 1.314173!
+        Me.JokenFROM_DATE.Name = "JokenFROM_DATE"
+        Me.JokenFROM_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JokenFROM_DATE.Text = ""
+        Me.JokenFROM_DATE.Top = 1.636221!
+        Me.JokenFROM_DATE.Width = 1.574803!
+        '
+        'JokenTO_DATE
+        '
+        Me.JokenTO_DATE.Height = 0.1968504!
+        Me.JokenTO_DATE.HyperLink = Nothing
+        Me.JokenTO_DATE.Left = 1.314173!
+        Me.JokenTO_DATE.Name = "JokenTO_DATE"
+        Me.JokenTO_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JokenTO_DATE.Text = ""
+        Me.JokenTO_DATE.Top = 0.988189!
+        Me.JokenTO_DATE.Visible = False
+        Me.JokenTO_DATE.Width = 0.7874016!
+        '
+        'Label23
+        '
+        Me.Label23.Height = 0.1968504!
+        Me.Label23.HyperLink = Nothing
+        Me.Label23.Left = 7.630315!
+        Me.Label23.Name = "Label23"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
+        Me.Label23.Text = "TOP担当者："
+        Me.Label23.Top = 1.636221!
+        Me.Label23.Width = 0.8759837!
+        '
+        'JoKenTTANTO_ID
+        '
+        Me.JoKenTTANTO_ID.Height = 0.1968504!
+        Me.JoKenTTANTO_ID.HyperLink = Nothing
+        Me.JoKenTTANTO_ID.Left = 8.5063!
+        Me.JoKenTTANTO_ID.Name = "JoKenTTANTO_ID"
+        Me.JoKenTTANTO_ID.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
+        Me.JoKenTTANTO_ID.Text = ""
+        Me.JoKenTTANTO_ID.Top = 1.636221!
+        Me.JoKenTTANTO_ID.Width = 1.574803!
+        '
         'Detail
         '
         Me.Detail.CanGrow = False
         Me.Detail.CanShrink = True
         Me.Detail.ColumnSpacing = 0.0!
         Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line1, Me.Line7, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.TIME_STAMP_BYL, Me.SEND_FLAG, Me.USER_NAME, Me.Line19, Me.TO_DATE, Me.KOUENKAI_NO, Me.Line21})
-        Me.Detail.Height = 0.234252!
+        Me.Detail.Height = 0.2338583!
         Me.Detail.Name = "Detail"
         '
         'Line1
@@ -811,7 +956,7 @@ Partial Public Class KaijoListReport
         '
         'Line19
         '
-        Me.Line19.Height = 0.2283465!
+        Me.Line19.Height = 0.2322835!
         Me.Line19.Left = 0.0!
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
@@ -820,7 +965,7 @@ Partial Public Class KaijoListReport
         Me.Line19.X1 = 0.0!
         Me.Line19.X2 = 0.0000002086163!
         Me.Line19.Y1 = 0.0!
-        Me.Line19.Y2 = 0.2283465!
+        Me.Line19.Y2 = 0.2322835!
         '
         'TO_DATE
         '
@@ -868,150 +1013,6 @@ Partial Public Class KaijoListReport
         Me.PageFooter.Height = 0.0!
         Me.PageFooter.Name = "PageFooter"
         '
-        'Label18
-        '
-        Me.Label18.Height = 0.1968504!
-        Me.Label18.HyperLink = Nothing
-        Me.Label18.Left = 0.1330713!
-        Me.Label18.Name = "Label18"
-        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label18.Text = "BYL企画担当者："
-        Me.Label18.Top = 1.201575!
-        Me.Label18.Width = 1.181102!
-        '
-        'Label20
-        '
-        Me.Label20.Height = 0.1968504!
-        Me.Label20.HyperLink = Nothing
-        Me.Label20.Left = 3.022048!
-        Me.Label20.Name = "Label20"
-        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label20.Text = "BYL手配担当者："
-        Me.Label20.Top = 1.201575!
-        Me.Label20.Width = 1.181102!
-        '
-        'JokenTEHAI_TANTO_ROMA
-        '
-        Me.JokenTEHAI_TANTO_ROMA.Height = 0.1968504!
-        Me.JokenTEHAI_TANTO_ROMA.HyperLink = Nothing
-        Me.JokenTEHAI_TANTO_ROMA.Left = 4.20315!
-        Me.JokenTEHAI_TANTO_ROMA.Name = "JokenTEHAI_TANTO_ROMA"
-        Me.JokenTEHAI_TANTO_ROMA.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JokenTEHAI_TANTO_ROMA.Text = ""
-        Me.JokenTEHAI_TANTO_ROMA.Top = 1.201575!
-        Me.JokenTEHAI_TANTO_ROMA.Width = 1.574803!
-        '
-        'JokenKIKAKU_TANTO_ROMA
-        '
-        Me.JokenKIKAKU_TANTO_ROMA.Height = 0.1968504!
-        Me.JokenKIKAKU_TANTO_ROMA.HyperLink = Nothing
-        Me.JokenKIKAKU_TANTO_ROMA.Left = 1.314174!
-        Me.JokenKIKAKU_TANTO_ROMA.Name = "JokenKIKAKU_TANTO_ROMA"
-        Me.JokenKIKAKU_TANTO_ROMA.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JokenKIKAKU_TANTO_ROMA.Text = ""
-        Me.JokenKIKAKU_TANTO_ROMA.Top = 1.201575!
-        Me.JokenKIKAKU_TANTO_ROMA.Width = 1.574803!
-        '
-        'Label19
-        '
-        Me.Label19.Height = 0.1968504!
-        Me.Label19.HyperLink = Nothing
-        Me.Label19.Left = 0.1330709!
-        Me.Label19.Name = "Label19"
-        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label19.Text = "講演会番号："
-        Me.Label19.Top = 1.416929!
-        Me.Label19.Width = 1.181102!
-        '
-        'JokenKOUENKAI_NO
-        '
-        Me.JokenKOUENKAI_NO.Height = 0.1968504!
-        Me.JokenKOUENKAI_NO.HyperLink = Nothing
-        Me.JokenKOUENKAI_NO.Left = 1.314173!
-        Me.JokenKOUENKAI_NO.Name = "JokenKOUENKAI_NO"
-        Me.JokenKOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JokenKOUENKAI_NO.Text = ""
-        Me.JokenKOUENKAI_NO.Top = 1.416929!
-        Me.JokenKOUENKAI_NO.Width = 1.574803!
-        '
-        'Label21
-        '
-        Me.Label21.Height = 0.1968504!
-        Me.Label21.HyperLink = Nothing
-        Me.Label21.Left = 3.022048!
-        Me.Label21.Name = "Label21"
-        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label21.Text = "講演会名："
-        Me.Label21.Top = 1.416929!
-        Me.Label21.Width = 1.181102!
-        '
-        'JokenKOUENKAI_NAME
-        '
-        Me.JokenKOUENKAI_NAME.Height = 0.1968504!
-        Me.JokenKOUENKAI_NAME.HyperLink = Nothing
-        Me.JokenKOUENKAI_NAME.Left = 4.20315!
-        Me.JokenKOUENKAI_NAME.Name = "JokenKOUENKAI_NAME"
-        Me.JokenKOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JokenKOUENKAI_NAME.Text = ""
-        Me.JokenKOUENKAI_NAME.Top = 1.416929!
-        Me.JokenKOUENKAI_NAME.Width = 3.937008!
-        '
-        'Label22
-        '
-        Me.Label22.Height = 0.1968504!
-        Me.Label22.HyperLink = Nothing
-        Me.Label22.Left = 0.1330709!
-        Me.Label22.Name = "Label22"
-        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label22.Text = "実施日："
-        Me.Label22.Top = 1.636221!
-        Me.Label22.Width = 1.181102!
-        '
-        'JokenFROM_DATE
-        '
-        Me.JokenFROM_DATE.Height = 0.1968504!
-        Me.JokenFROM_DATE.HyperLink = Nothing
-        Me.JokenFROM_DATE.Left = 1.314173!
-        Me.JokenFROM_DATE.Name = "JokenFROM_DATE"
-        Me.JokenFROM_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JokenFROM_DATE.Text = ""
-        Me.JokenFROM_DATE.Top = 1.636221!
-        Me.JokenFROM_DATE.Width = 1.574803!
-        '
-        'JokenTO_DATE
-        '
-        Me.JokenTO_DATE.Height = 0.1968504!
-        Me.JokenTO_DATE.HyperLink = Nothing
-        Me.JokenTO_DATE.Left = 1.314173!
-        Me.JokenTO_DATE.Name = "JokenTO_DATE"
-        Me.JokenTO_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JokenTO_DATE.Text = ""
-        Me.JokenTO_DATE.Top = 0.988189!
-        Me.JokenTO_DATE.Visible = False
-        Me.JokenTO_DATE.Width = 0.7874016!
-        '
-        'Label23
-        '
-        Me.Label23.Height = 0.1968504!
-        Me.Label23.HyperLink = Nothing
-        Me.Label23.Left = 7.630315!
-        Me.Label23.Name = "Label23"
-        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label23.Text = "TOP担当者："
-        Me.Label23.Top = 1.636221!
-        Me.Label23.Width = 0.8759837!
-        '
-        'JoKenTTANTO_ID
-        '
-        Me.JoKenTTANTO_ID.Height = 0.1968504!
-        Me.JoKenTTANTO_ID.HyperLink = Nothing
-        Me.JoKenTTANTO_ID.Left = 8.5063!
-        Me.JoKenTTANTO_ID.Name = "JoKenTTANTO_ID"
-        Me.JoKenTTANTO_ID.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
-        Me.JoKenTTANTO_ID.Text = ""
-        Me.JoKenTTANTO_ID.Top = 1.636221!
-        Me.JoKenTTANTO_ID.Width = 1.574803!
-        '
         'KaijoListReport
         '
         Me.MasterReport = False
@@ -1051,16 +1052,6 @@ Partial Public Class KaijoListReport
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JokenSEIHIN, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BU, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JokenTEHAI_TANTO_ROMA, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1074,6 +1065,16 @@ Partial Public Class KaijoListReport
         CType(Me.JokenTO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JoKenTTANTO_ID, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KIKAKU_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

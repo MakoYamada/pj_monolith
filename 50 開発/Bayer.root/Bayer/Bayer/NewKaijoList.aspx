@@ -38,7 +38,7 @@
 						<td>
 							<asp:Button ID="BtnKaijoPrint1" runat="server" Text="手配書印刷" Width="130px" CssClass="Button" />
 							&nbsp;
-							<asp:Button ID="BtnNewKaijoListPrint1" runat="server" Text="会場手配一覧印刷" Width="130px" CssClass="Button" />
+							<asp:Button ID="BtnNewKaijoListPrint1" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
 							&nbsp;
 							<asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
 						</td>
@@ -88,7 +88,7 @@
             <td>
 				<asp:Button ID="BtnKaijoPrint2" runat="server" Text="手配書印刷" Width="130px" CssClass="Button" />
 				&nbsp;
-                <asp:Button ID="BtnNewKaijoListPrint2" runat="server" Text="会場手配一覧印刷" Width="130px" CssClass="Button" />
+                <asp:Button ID="BtnNewKaijoListPrint2" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
 				&nbsp;
 				<asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
             </td>

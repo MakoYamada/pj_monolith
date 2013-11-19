@@ -44,6 +44,10 @@ Partial Public Class NewKaijoList
             SetForm()
         End If
 
+        Session.Remove(SessionDef.KaijoPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+        Session.Remove(SessionDef.PrintPreview)
+
         'マスターページ設定
         With Me.Master
             .PageTitle = "【新着】会場手配依頼一覧"
@@ -193,6 +197,7 @@ Partial Public Class NewKaijoList
         Select Case e.CommandName
             Case "Regist"
                 Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
+                Session.Remove(SessionDef.KaijoRireki_Joken)
                 Session.Remove(SessionDef.KaijoRireki_SEQ)
                 Session.Remove(SessionDef.KaijoRireki_PageIndex)
                 Session.Remove(SessionDef.KaijoRireki)
@@ -255,7 +260,7 @@ Partial Public Class NewKaijoList
         End If
     End Sub
 
-    '[会場手配一覧印刷]
+    '[手配依頼一覧印刷]
     Protected Sub BtnNewKaijoListPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKaijoListPrint1.Click, BtnNewKaijoListPrint2.Click
         Dim strSQL As String = SQL.TBL_KAIJO.Search(Joken, True)
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
@@ -280,6 +285,11 @@ Partial Public Class NewKaijoList
 
     '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
+        Session.Remove(SessionDef.TBL_KAIJO)
+        Session.Remove(SessionDef.KaijoPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+        Session.Remove(SessionDef.PrintPreview)
+
         Response.Redirect(URL.Menu)
     End Sub
 

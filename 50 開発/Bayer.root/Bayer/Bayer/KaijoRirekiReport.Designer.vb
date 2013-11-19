@@ -51,6 +51,7 @@ Partial Public Class KaijoRirekiReport
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.Line22 = New DataDynamics.ActiveReports.Line
+        Me.Line9 = New DataDynamics.ActiveReports.Line
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line7 = New DataDynamics.ActiveReports.Line
@@ -73,7 +74,6 @@ Partial Public Class KaijoRirekiReport
         Me.KOUENKAI_NO = New DataDynamics.ActiveReports.TextBox
         Me.Line21 = New DataDynamics.ActiveReports.Line
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Line9 = New DataDynamics.ActiveReports.Line
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +109,7 @@ Partial Public Class KaijoRirekiReport
         'PageHeader
         '
         Me.PageHeader.CanGrow = False
+        Me.PageHeader.CanShrink = True
         Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label8, Me.Shape2, Me.Label12, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.Label15, Me.Label16, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line8, Me.Line10, Me.Line11, Me.Line12, Me.LabelPage, Me.JokenKOUENKAI_NO, Me.KOUENKAI_NAME, Me.Label5, Me.Line2, Me.Line22, Me.Line9})
         Me.PageHeader.Height = 1.446457!
         Me.PageHeader.Name = "PageHeader"
@@ -316,7 +317,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line3
         '
-        Me.Line3.Height = 0.2362211!
+        Me.Line3.Height = 0.236221!
         Me.Line3.Left = 1.409449!
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
@@ -329,7 +330,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line4
         '
-        Me.Line4.Height = 0.2362211!
+        Me.Line4.Height = 0.236221!
         Me.Line4.Left = 2.818898!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
@@ -342,7 +343,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line5
         '
-        Me.Line5.Height = 0.2362211!
+        Me.Line5.Height = 0.236221!
         Me.Line5.Left = 3.311024!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
@@ -355,7 +356,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line6
         '
-        Me.Line6.Height = 0.2362211!
+        Me.Line6.Height = 0.236221!
         Me.Line6.Left = 4.295276!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
@@ -368,7 +369,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line8
         '
-        Me.Line8.Height = 0.236222!
+        Me.Line8.Height = 0.2362219!
         Me.Line8.Left = 5.822835!
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
@@ -407,7 +408,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line12
         '
-        Me.Line12.Height = 0.2362211!
+        Me.Line12.Height = 0.236221!
         Me.Line12.Left = 9.590552!
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
@@ -464,7 +465,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line2
         '
-        Me.Line2.Height = 0.2362211!
+        Me.Line2.Height = 0.236221!
         Me.Line2.Left = 7.444882!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
@@ -477,7 +478,7 @@ Partial Public Class KaijoRirekiReport
         '
         'Line22
         '
-        Me.Line22.Height = 0.2362211!
+        Me.Line22.Height = 0.236221!
         Me.Line22.Left = 8.251969!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
@@ -487,6 +488,19 @@ Partial Public Class KaijoRirekiReport
         Me.Line22.X2 = 8.251969!
         Me.Line22.Y1 = 1.208662!
         Me.Line22.Y2 = 1.444883!
+        '
+        'Line9
+        '
+        Me.Line9.Height = 0.0!
+        Me.Line9.Left = 0.0!
+        Me.Line9.LineWeight = 1.0!
+        Me.Line9.Name = "Line9"
+        Me.Line9.Top = 1.444882!
+        Me.Line9.Width = 9.590551!
+        Me.Line9.X1 = 0.0!
+        Me.Line9.X2 = 9.590551!
+        Me.Line9.Y1 = 1.444882!
+        Me.Line9.Y2 = 1.444882!
         '
         'Detail
         '
@@ -763,19 +777,6 @@ Partial Public Class KaijoRirekiReport
         '
         Me.PageFooter.Height = 0.0!
         Me.PageFooter.Name = "PageFooter"
-        '
-        'Line9
-        '
-        Me.Line9.Height = 0.0!
-        Me.Line9.Left = 0.0!
-        Me.Line9.LineWeight = 1.0!
-        Me.Line9.Name = "Line9"
-        Me.Line9.Top = 1.444882!
-        Me.Line9.Width = 9.590551!
-        Me.Line9.X1 = 0.0!
-        Me.Line9.X2 = 9.590551!
-        Me.Line9.Y1 = 1.444882!
-        Me.Line9.Y2 = 1.444882!
         '
         'KaijoRirekiReport
         '

@@ -47,6 +47,10 @@ Partial Public Class KaijoRegist
         End If
         Session.Remove(SessionDef.ShisetsuKensaku_Back)
 
+        Session.Remove(SessionDef.KaijoPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+        Session.Remove(SessionDef.PrintPreview)
+
         'マスターページ設定
         With Me.Master
             .PageTitle = "講演会場　手配・見積依頼"
@@ -790,6 +794,11 @@ Partial Public Class KaijoRegist
             scriptStr &= "</script>" & vbNewLine
             ClientScript.RegisterStartupScript(Me.GetType(), "RirekiClose", scriptStr)
         Else
+            Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
+            Session.Remove(SessionDef.KaijoRireki_Joken)
+            Session.Remove(SessionDef.KaijoPrint_SQL)
+            Session.Remove(SessionDef.BackURL_Print)
+            Session.Remove(SessionDef.PrintPreview)
             Response.Redirect(Session.Item(SessionDef.BackURL))
         End If
     End Sub
