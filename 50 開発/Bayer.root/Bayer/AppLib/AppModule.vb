@@ -2128,16 +2128,30 @@ Public Class AppModule
 
 #Region "交通・宿泊手配画面"
     '手配ステータス
-    Public Shared Function GetName_STATUS_TEHAI(ByVal STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False) As String
+    Public Shared Function GetName_STATUS_TEHAI(ByVal STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False, Optional ByVal ShortName As Boolean = False) As String
         If KAIJO = False Then
             '宿泊・交通
             Select Case STATUS_TEHAI
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.Tehai
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Tehai
+                    End If
+
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.Change
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Change
+                    End If
+
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.Cancel
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
+                    End If
 
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Uketsuke, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Uketsuke
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Uketsuke

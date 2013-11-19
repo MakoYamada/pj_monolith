@@ -135,6 +135,7 @@ Partial Public Class Preview
     Private Sub PrintDrReport()
 
         Dim rpt1 As New DrReport()
+        Dim rpt_sub1 As New DrReport1()
 
         'データ設定
         rpt1.DataSource = GetDrData()
@@ -150,6 +151,10 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        DirectCast(rpt_sub1.Sections("Detail").Controls("PRINT_USER"),  _
+            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         'レポートを作成
         rpt1.Run()
