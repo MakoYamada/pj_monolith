@@ -670,6 +670,74 @@ Public Class MyModule
             Return sb.ToString
         End Function
 
+        Public Shared Function DrCsv(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct) As String
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            Dim HOTELHI_TF As Long = 0
+            Dim HOTELHI_TOZEI As Long = 0
+            Dim JR_TF As Long = 0
+            Dim AIR_TF As Long = 0
+            Dim OTHER_TRAFFIC_TF As Long = 0
+            Dim TAXI_COMMISSION_TF As Long = 0
+            Dim HOTEL_COMMISSION_TF As Long = 0
+            Dim TAXI_TF As Long = 0
+            Dim TAXI_SEISAN_TF As Long = 0
+
+            'ヘッダ列
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ドクター氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費都税")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JR代")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("航空券代")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道等費用")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ発券手数料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録手数料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ実車料金")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ精算手数料")))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TOZEI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JR_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).AIR_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TRAFFIC_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_COMMISSION_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTEL_COMMISSION_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_SEISAN_TF)))
+                sb.Append(vbNewLine)
+
+                HOTELHI_TF += CmnModule.DbVal(CsvData(wCnt).HOTELHI_TF)
+                HOTELHI_TOZEI += CmnModule.DbVal(CsvData(wCnt).HOTELHI_TOZEI)
+                JR_TF += CmnModule.DbVal(CsvData(wCnt).JR_TF)
+                AIR_TF += CmnModule.DbVal(CsvData(wCnt).AIR_TF)
+                OTHER_TRAFFIC_TF += CmnModule.DbVal(CsvData(wCnt).OTHER_TRAFFIC_TF)
+                TAXI_COMMISSION_TF += CmnModule.DbVal(CsvData(wCnt).TAXI_COMMISSION_TF)
+                HOTEL_COMMISSION_TF += CmnModule.DbVal(CsvData(wCnt).HOTEL_COMMISSION_TF)
+                TAXI_TF += CmnModule.DbVal(CsvData(wCnt).TAXI_TF)
+                TAXI_SEISAN_TF += CmnModule.DbVal(CsvData(wCnt).TAXI_SEISAN_TF)
+            Next wCnt
+
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TOZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(JR_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AIR_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(OTHER_TRAFFIC_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_COMMISSION_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTEL_COMMISSION_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_SEISAN_TF)))
+            sb.Append(vbNewLine)
+
+            Return sb.ToString
+        End Function
     End Class
 
 End Class
