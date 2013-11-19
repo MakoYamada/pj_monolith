@@ -153,7 +153,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
-        DirectCast(rpt_sub1.Sections("Detail").Controls("PRINT_USER"),  _
+        DirectCast(rpt_sub1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         'レポートを作成
