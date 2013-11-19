@@ -168,6 +168,8 @@ Public Class AppModule
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KOUENKAI_NAME.ToUpper Then TBL_SEIKYU.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.FROM_DATE.ToUpper Then TBL_SEIKYU.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SANKASHA_ID.ToUpper Then TBL_SEIKYU.SANKASHA_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.DR_CD.ToUpper Then TBL_SEIKYU.DR_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.DR_NAME.ToUpper Then TBL_SEIKYU.DR_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.MR_NAME.ToUpper Then TBL_SEIKYU.MR_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.COST_CENTER.ToUpper Then TBL_SEIKYU.COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)

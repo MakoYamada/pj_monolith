@@ -619,6 +619,7 @@ Public Class SQL
             strSQL &= "SELECT "
             strSQL &= " WK1.KOUENKAI_NO"
             strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK1.SANKASHA_ID"
             strSQL &= ",WK2.DR_NAME"
             strSQL &= ",CAST(ISNULL(WK2.ANS_HOTELHI,'') AS BIGINT) + CAST(ISNULL(ANS_HOTELHI_CANCEL,'') AS BIGINT) AS HOTELHI_TF"
             strSQL &= ",CAST(ISNULL(WK2.ANS_HOTELHI_TOZEI,'') AS BIGINT) AS HOTELHI_TOZEI"
@@ -646,6 +647,38 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " ORDER BY WK1.KOUENKAI_NO,WK1.SANKASHA_ID"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function MrCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT "
+            strSQL &= " WK1.KOUENKAI_NO"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK2.COST_CENTER"
+            strSQL &= ",WK2.MR_NAME"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_MR_HOTELHI,'') AS BIGINT) AS MR_HOTEL"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_MR_HOTELHI_TOZEI,'') AS BIGINT) AS MR_HOTEL_TOZEI"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_MR_KOTSUHI,'') AS BIGINT) AS MR_JR"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT TBL_KOTSUHOTEL.KOUENKAI_NO,TBL_KOTSUHOTEL.SANKASHA_ID,MAX(TBL_KOTSUHOTEL.TIME_STAMP_BYL) AS TIME_STAMP_BYL FROM TBL_KOTSUHOTEL"
+            strSQL &= "  GROUP BY TBL_KOTSUHOTEL.KOUENKAI_NO,TBL_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= "  ) WK1"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL)WK2"
+            strSQL &= " ON (WK1.KOUENKAI_NO = WK2.KOUENKAI_NO) AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID) AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK3"
+            strSQL &= "  WHERE  WK3.TIME_STAMP = "
+            strSQL &= "  (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "   WHERE TBL_KOUENKAI.KOUENKAI_NO = WK3.KOUENKAI_NO)"
+            strSQL &= "  )WK_KOUENKAI"
+            strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " WHERE"
+            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " ORDER BY WK1.KOUENKAI_NO,WK2.COST_CENTER,WK1.SANKASHA_ID"
 
             Return strSQL
         End Function

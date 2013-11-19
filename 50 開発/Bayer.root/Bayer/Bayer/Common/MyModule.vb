@@ -758,6 +758,7 @@ Public Class MyModule
             Dim KEI_MR_JR As Long = 0
 
             'ヘッダ列
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員氏名")))
@@ -772,6 +773,7 @@ Public Class MyModule
                    strCostCenter <> CsvData(wCnt).COST_CENTER Then
 
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL)))
@@ -785,6 +787,7 @@ Public Class MyModule
                     MR_JR = 0
                 End If
 
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
@@ -807,7 +810,8 @@ Public Class MyModule
             Next wCnt
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL_TOZEI)))
@@ -815,6 +819,7 @@ Public Class MyModule
             sb.Append(vbNewLine)
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_HOTEL)))
