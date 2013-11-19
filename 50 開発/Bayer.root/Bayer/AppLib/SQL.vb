@@ -654,7 +654,8 @@ Public Class SQL
         Public Shared Function MrCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
 
-            strSQL &= "SELECT "
+            strSQL &= "SELECT WK4.* FROM"
+            strSQL &= " (SELECT "
             strSQL &= " WK1.KOUENKAI_NO"
             strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
             strSQL &= ",WK2.COST_CENTER"
@@ -677,8 +678,9 @@ Public Class SQL
             strSQL &= "  )WK_KOUENKAI"
             strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
             strSQL &= " WHERE"
-            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " ORDER BY WK1.KOUENKAI_NO,WK2.COST_CENTER,WK1.SANKASHA_ID"
+            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "') WK4"
+            strSQL &= " WHERE ((WK4.MR_HOTEL <> 0) OR (WK4.MR_HOTEL_TOZEI <> 0) OR (WK4.MR_JR <> 0))"
+            strSQL &= " ORDER BY WK4.KOUENKAI_NO,WK4.COST_CENTER"
 
             Return strSQL
         End Function
