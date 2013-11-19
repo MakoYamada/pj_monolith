@@ -64,6 +64,8 @@ Partial Public Class Preview
                         '会場手配履歴一覧
                         PrintKaijoRirekiReport()
                 End Select
+            ElseIf URL.SeisanRegist.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
+                PrintSeisanRegistReport()
             End If
         End If
 
@@ -633,6 +635,57 @@ Partial Public Class Preview
     Private Function GetKaijoRirekiData() As DataTable
 
         Dim strSQL As String = Session.Item(SessionDef.KaijoPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+
+    End Function
+
+    '精算金額印刷
+    Private Sub PrintSeisanRegistReport()
+
+        Dim rpt As New SeisanRegistReport
+
+        'データ設定
+        rpt.DataSource = GetSeisanRegistData()
+        rpt.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+
+        '必要に応じマージン設定
+        rpt.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        'ログイン者名
+        rpt.LoginUser = Session.Item(SessionDef.LoginUser)
+
+        'レポートを作成
+        rpt.Run()
+
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt
+
+    End Sub
+
+    '精算金額取得
+    Private Function GetSeisanRegistData() As DataTable
+
+        Dim strSQL As String = Session.Item(SessionDef.SeisanRegistReport_SQL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
