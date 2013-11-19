@@ -617,7 +617,8 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL &= "SELECT "
-            strSQL &= " WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " WK1.KOUENKAI_NO"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
             strSQL &= ",WK2.DR_NAME"
             strSQL &= ",CAST(ISNULL(WK2.ANS_HOTELHI,'') AS BIGINT) + CAST(ISNULL(ANS_HOTELHI_CANCEL,'') AS BIGINT) AS HOTELHI_TF"
             strSQL &= ",CAST(ISNULL(WK2.ANS_HOTELHI_TOZEI,'') AS BIGINT) AS HOTELHI_TOZEI"
