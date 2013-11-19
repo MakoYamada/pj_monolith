@@ -241,7 +241,7 @@ Partial Public Class SeisanKensaku
         Select Case e.CommandName
             Case "DrCSV"
                 Joken.KOUENKAI_NO = TBL_KOUENKAI((Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)).KOUENKAI_NO
-                'OutputDrCsv()
+                OutputDrCsv()
             Case "MrCSV"
 
             Case "Seisan"
@@ -354,7 +354,7 @@ Partial Public Class SeisanKensaku
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "SankashaIchiran.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
 
-            'Response.Write(MyModule.Csv.DrCsv(CsvData))
+            Response.Write(MyModule.Csv.DrCsv(CsvData))
             Response.End()
         End If
     End Sub
@@ -368,7 +368,6 @@ Partial Public Class SeisanKensaku
 
         ReDim CsvData(wCnt)
 
-        'TODO:
         strSQL = SQL.TBL_SEIKYU.DrCsv(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()

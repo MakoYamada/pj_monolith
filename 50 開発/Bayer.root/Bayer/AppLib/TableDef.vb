@@ -302,6 +302,8 @@
 
             Public KOUENKAI_NAME As String
             Public FROM_DATE As String
+            Public SANKASHA_ID As String
+            Public DR_CD As String
             Public DR_NAME As String
             Public MR_NAME As String
             Public COST_CENTER As String
@@ -357,6 +359,8 @@
 
             Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
             Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const SANKASHA_ID As String = "SANKASHA_ID"
+            Public Const DR_CD As String = "DR_CD"
             Public Const DR_NAME As String = "DR_NAME"
             Public Const MR_NAME As String = "MR_NAME"
             Public Const COST_CENTER As String = "COST_CENTER"
@@ -412,6 +416,8 @@
 
             Public Const KOUENKAI_NAME As String = "講演会名"
             Public Const FROM_DATE As String = "開催日FROM"
+            Public Const SANKASHA_ID As String = "参加者ID"
+            Public Const DR_CD As String = "DRコード"
             Public Const DR_NAME As String = "DR氏名"
             Public Const MR_NAME As String = "担当者(担当MR)名"
             Public Const COST_CENTER As String = "Cost Center"
