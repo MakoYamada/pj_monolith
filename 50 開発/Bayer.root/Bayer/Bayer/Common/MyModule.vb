@@ -685,7 +685,9 @@ Public Class MyModule
             Dim TAXI_SEISAN_TF As Long = 0
 
             'ヘッダ列
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ドクター氏名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費都税")))
@@ -699,7 +701,9 @@ Public Class MyModule
             sb.Append(vbNewLine)
 
             For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TOZEI)))
@@ -725,6 +729,8 @@ Public Class MyModule
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TF)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TOZEI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(JR_TF)))
@@ -734,6 +740,86 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTEL_COMMISSION_TF)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_TF)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_SEISAN_TF)))
+            sb.Append(vbNewLine)
+
+            Return sb.ToString
+        End Function
+
+        Public Shared Function MrCsv(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct) As String
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            Dim strCostCenter As String = ""
+            Dim MR_HOTEL As Long = 0
+            Dim MR_HOTEL_TOZEI As Long = 0
+            Dim MR_JR As Long = 0
+            Dim KEI_MR_HOTEL As Long = 0
+            Dim KEI_MR_HOTEL_TOZEI As Long = 0
+            Dim KEI_MR_JR As Long = 0
+
+            'ヘッダ列
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員宿泊費(非課税)")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員宿泊費都税(非課税)")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員交通費(非課税)")))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+
+                If strCostCenter <> "" AndAlso _
+                   strCostCenter <> CsvData(wCnt).COST_CENTER Then
+
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL_TOZEI)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_JR)))
+                    sb.Append(vbNewLine)
+
+                    '初期化
+                    MR_HOTEL = 0
+                    MR_HOTEL_TOZEI = 0
+                    MR_JR = 0
+                End If
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_HOTEL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_HOTEL_TOZEI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_JR)))
+                sb.Append(vbNewLine)
+
+                strCostCenter = CsvData(wCnt).COST_CENTER
+
+                'コストセンター計　加算
+                MR_HOTEL += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL)
+                MR_HOTEL_TOZEI += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL_TOZEI)
+                MR_JR += CmnModule.DbVal(CsvData(wCnt).MR_JR)
+
+                '合計　加算
+                KEI_MR_HOTEL += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL)
+                KEI_MR_HOTEL_TOZEI += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL_TOZEI)
+                KEI_MR_JR += CmnModule.DbVal(CsvData(wCnt).MR_JR)
+            Next wCnt
+
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_HOTEL_TOZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MR_JR)))
+            sb.Append(vbNewLine)
+
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_HOTEL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_HOTEL_TOZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_JR)))
             sb.Append(vbNewLine)
 
             Return sb.ToString
