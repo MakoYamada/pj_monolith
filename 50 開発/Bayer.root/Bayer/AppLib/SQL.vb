@@ -663,6 +663,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INSHOKUHI_TF
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.KEI_991330401_TF
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.HOTELHI_TF
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.HOTELHI_TOZEI
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.JR_TF
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.AIR_TF
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.OTHER_TRAFFIC_TF
@@ -692,6 +693,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.MR_JR
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.MR_HOTEL
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.MR_HOTEL_TOZEI
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_DATE
@@ -710,6 +712,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.INSHOKUHI_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.KEI_991330401_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.HOTELHI_TF) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.HOTELHI_TOZEI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.JR_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.AIR_TF) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.OTHER_TRAFFIC_TF) & "'"
@@ -739,6 +742,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_KANRYO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.MR_JR) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.MR_HOTEL) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.MR_HOTEL_TOZEI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
@@ -760,6 +764,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INSHOKUHI_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.INSHOKUHI_TF) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.KEI_991330401_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.KEI_991330401_TF) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.HOTELHI_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.HOTELHI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.HOTELHI_TOZEI & "=N'" & CmnDb.SqlString(TBL_SEIKYU.HOTELHI_TOZEI) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.JR_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.JR_TF) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.AIR_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.AIR_TF) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.OTHER_TRAFFIC_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.OTHER_TRAFFIC_TF) & "'"
@@ -788,6 +793,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_KANRYO) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.MR_JR & "=N'" & CmnDb.SqlString(TBL_SEIKYU.MR_JR) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.MR_HOTEL & "=N'" & CmnDb.SqlString(TBL_SEIKYU.MR_HOTEL) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.MR_HOTEL_TOZEI & "=N'" & CmnDb.SqlString(TBL_SEIKYU.MR_HOTEL_TOZEI) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
