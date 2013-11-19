@@ -587,11 +587,14 @@ Partial Public Class SeisanRegist
 
     '[印刷]
     Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
+
+        '入力チェック?
+
         Dim Joken As TableDef.Joken.DataStruct
         Joken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
         Joken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
         Dim strSQL As String = SQL.TBL_SEIKYU.Search(Joken)
-        'Session.Item(SessionDef.SQL) = strSQL 'TODO:SQL渡すためのセッション定数を宣言する
+        Session.Item(SessionDef.SeisanRegistReport_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.PrintPreview) = "SeisanRegist"
         Response.Redirect(URL.Preview)
