@@ -112,7 +112,7 @@ Partial Public Class Base
 
         'ログイン以外のセッションを破棄
         ReDim SessionItemNames(wCnt)
-        For Each ItemName In Session.Contents
+        For Each ItemName As String In Session.Contents
             Select Case Trim(ItemName).ToLower
                 Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.LoginUser.ToLower)
                 Case Else
