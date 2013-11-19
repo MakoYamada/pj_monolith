@@ -101,7 +101,7 @@
                         <td>
                             <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                                 AllowPaging="True" PageSize="10" DataKeyNames="KOUENKAI_NO"
-                                DataSourceID="SqlDataSource1" Width="1282px">
+                                DataSourceID="SqlDataSource1" Width="1262px">
                                 <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                                 <RowStyle Wrap="false" BackColor="#ffffff" />
                                 <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -153,7 +153,7 @@
                                     </asp:BoundField>
                                     <asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI<br/>‘—M" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
-                                        <ItemStyle Wrap="False" Width="80px" HorizontalAlign="Center"></ItemStyle>
+                                        <ItemStyle Wrap="False" Width="60px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>                
                                     <asp:ButtonField ButtonType="Button" Text="Ú×" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                                         ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"

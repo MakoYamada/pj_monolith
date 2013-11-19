@@ -16,6 +16,33 @@ Option Explicit On
 Partial Public Class SeisanRegist
 
     '''<summary>
+    '''BtnPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnCancel1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCancel1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''SEND_FLAG コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEND_FLAG As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''DivMessage コントロール。
     '''</summary>
     '''<remarks>
@@ -32,15 +59,6 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents LabelMessage As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''SEND_FLAG コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEND_FLAG As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''KOUENKAI_NO コントロール。
@@ -140,6 +158,15 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents HOTELHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''HOTELHI_TOZEI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''JR_TF コントロール。
@@ -340,6 +367,15 @@ Partial Public Class SeisanRegist
     Protected WithEvents MR_HOTEL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''MR_HOTEL_TOZEI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_HOTEL_TOZEI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''MR_JR コントロール。
     '''</summary>
     '''<remarks>
@@ -421,13 +457,22 @@ Partial Public Class SeisanRegist
     Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnCancel コントロール。
+    '''BtnPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnPrint2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnCancel2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCancel2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

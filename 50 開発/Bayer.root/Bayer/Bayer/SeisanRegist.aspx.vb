@@ -70,6 +70,7 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.KIZAIHI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.INSHOKUHI_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.HOTELHI_TF, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.HOTELHI_TOZEI, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JR_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.AIR_TF, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.OTHER_TRAFFIC_TF, CmnModule.ImeType.Disabled)
@@ -93,6 +94,7 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.TAXI_TICKET_URL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_JR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.MR_HOTEL_TOZEI, CmnModule.ImeType.Disabled)
 
         AppModule.SetDropDownList_SEND_FLAG(Me.SEND_FLAG)
         CmnModule.SetEnabled(Me.SEND_FLAG, False)
@@ -133,6 +135,7 @@ Partial Public Class SeisanRegist
         Me.INSHOKUHI_TF.Text = TBL_SEIKYU(SEQ).INSHOKUHI_TF
         Me.KEI_991330401_TF.Text = CmnModule.EditComma(TBL_SEIKYU(SEQ).KEI_991330401_TF)
         Me.HOTELHI_TF.Text = TBL_SEIKYU(SEQ).HOTELHI_TF
+        Me.HOTELHI_TOZEI.Text = TBL_SEIKYU(SEQ).HOTELHI_TOZEI
         Me.JR_TF.Text = TBL_SEIKYU(SEQ).JR_TF
         Me.AIR_TF.Text = TBL_SEIKYU(SEQ).AIR_TF
         Me.OTHER_TRAFFIC_TF.Text = TBL_SEIKYU(SEQ).OTHER_TRAFFIC_TF
@@ -162,6 +165,7 @@ Partial Public Class SeisanRegist
         AppModule.SetForm_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO, Me.SEISAN_KANRYO)
         Me.MR_JR.Text = TBL_SEIKYU(SEQ).MR_JR
         Me.MR_HOTEL.Text = TBL_SEIKYU(SEQ).MR_HOTEL
+        Me.MR_HOTEL_TOZEI.Text = TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI
     End Sub
 
     Private Sub CalculateKingaku()
@@ -178,32 +182,26 @@ Partial Public Class SeisanRegist
 
         Try
             '991330401
-            wTOTAL_TF1 = CmnModule.DbVal(Me.KAIJOHI_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.KIZAIHI_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.INSHOKUHI_TF.Text.Trim)
+            wTOTAL_TF1 = CLng(AppModule.GetName_ANS_991330401_TF(Me.KAIJOHI_TF.Text.Trim, Me.KIZAIHI_TF.Text.Trim, Me.INSHOKUHI_TF.Text.Trim, True))
 
             '41120200
-            wTOTAL_TF2 = CmnModule.DbVal(Me.HOTELHI_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.JR_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.AIR_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.OTHER_TRAFFIC_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.TAXI_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.HOTEL_COMMISSION_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.TAXI_COMMISSION_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.TAXI_SEISAN_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.JINKENHI_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.OTHER_TF.Text.Trim) + _
-                         CmnModule.DbVal(Me.KANRIHI_TF.Text.Trim)
+            wTOTAL_TF2 = CLng(AppModule.GetName_ANS_41120200_TF(CStr(CmnModule.DbVal(Me.HOTELHI_TF.Text.Trim) + CmnModule.DbVal(Me.HOTELHI_TOZEI.Text.Trim)), _
+                                                                Me.JR_TF.Text.Trim, _
+                                                                Me.AIR_TF.Text.Trim, _
+                                                                Me.OTHER_TRAFFIC_TF.Text.Trim, _
+                                                                Me.TAXI_TF.Text.Trim, _
+                                                                Me.HOTEL_COMMISSION_TF.Text.Trim, _
+                                                                Me.TAXI_COMMISSION_TF.Text.Trim, _
+                                                                Me.TAXI_SEISAN_TF.Text.Trim, _
+                                                                Me.JINKENHI_TF.Text.Trim, _
+                                                                Me.OTHER_TF.Text.Trim, _
+                                                                Me.KANRIHI_TF.Text.Trim, True))
 
             '991330401
-            wTOTAL_T1 = CmnModule.DbVal(Me.KAIJOUHI_T.Text.Trim) + _
-                         CmnModule.DbVal(Me.KIZAIHI_T.Text.Trim) + _
-                         CmnModule.DbVal(Me.INSHOKUHI_T.Text.Trim)
+            wTOTAL_T1 = CLng(AppModule.GetName_ANS_991330401_T(Me.KAIJOUHI_T.Text.Trim, Me.KIZAIHI_T.Text.Trim, Me.INSHOKUHI_T.Text.Trim, True))
 
             '41120200
-            wTOTAL_T2 = CmnModule.DbVal(Me.JINKENHI_T.Text.Trim) + _
-                         CmnModule.DbVal(Me.OTHER_T.Text.Trim) + _
-                         CmnModule.DbVal(Me.KANRIHI_T.Text.Trim)
+            wTOTAL_T2 = CLng(AppModule.GetName_ANS_41120200_T(Me.JINKENHI_T.Text.Trim, Me.OTHER_T.Text.Trim, Me.KANRIHI_T.Text.Trim, True))
 
         Catch ex As Exception
         End Try
@@ -289,6 +287,11 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
+        If Not CmnCheck.IsNumberOnly(Me.MR_HOTEL_TOZEI) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL_TOZEI), Me)
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -312,6 +315,11 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsNumberOnly(Me.HOTELHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.HOTELHI_TF), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.HOTELHI_TOZEI) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.HOTELHI_TOZEI), Me)
             Return False
         End If
 
@@ -409,6 +417,7 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).KEI_991330401_TF = Me.KEI_991330401_TF.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).HOTELHI_TF = Me.HOTELHI_TF.Text
+        TBL_SEIKYU(SEQ).HOTELHI_TOZEI = Me.HOTELHI_TOZEI.Text
         TBL_SEIKYU(SEQ).JR_TF = Me.JR_TF.Text
         TBL_SEIKYU(SEQ).AIR_TF = Me.AIR_TF.Text
         TBL_SEIKYU(SEQ).OTHER_TRAFFIC_TF = Me.OTHER_TRAFFIC_TF.Text
@@ -441,6 +450,7 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).SEISAN_KANRYO = AppModule.GetValue_SEISAN_KANRYO(Me.SEISAN_KANRYO)
         TBL_SEIKYU(SEQ).MR_JR = Me.MR_JR.Text
         TBL_SEIKYU(SEQ).MR_HOTEL = Me.MR_HOTEL.Text
+        TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI = Me.MR_HOTEL_TOZEI.Text
 
         TBL_SEIKYU(SEQ).SEND_FLAG = SEND_FLAG
         TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
@@ -575,8 +585,21 @@ Partial Public Class SeisanRegist
         End If
     End Sub
 
+    '[印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
+        Dim Joken As TableDef.Joken.DataStruct
+        Joken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+        Joken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        Dim strSQL As String = SQL.TBL_SEIKYU.Search(Joken)
+        'Session.Item(SessionDef.SQL) = strSQL 'TODO:SQL渡すためのセッション定数を宣言する
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.PrintPreview) = "SeisanRegist"
+        Response.Redirect(URL.Preview)
+    End Sub
+
     '[戻る]
-    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
+    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel1.Click, BtnCancel2.Click
         Response.Redirect(URL.SeisanList)
     End Sub
+
 End Class

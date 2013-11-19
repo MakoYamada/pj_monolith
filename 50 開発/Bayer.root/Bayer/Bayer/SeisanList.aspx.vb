@@ -205,7 +205,7 @@ Partial Public Class SeisanList
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
             e.Row.Cells(CellIndex.SEISAN_YM).Text = Mid(CmnModule.Format_DateJP(e.Row.Cells(CellIndex.SEISAN_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
             e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
-            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text)
+            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
     End Sub
 

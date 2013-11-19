@@ -230,7 +230,6 @@ Partial Public Class SeisanKensaku
             .SelectedIndex = -1
             'カレントページを変更
             Session.Item(SessionDef.PageIndex) = .PageIndex
-
             'グリッドビュー表示
             SetGridView()
         End With
@@ -243,7 +242,8 @@ Partial Public Class SeisanKensaku
                 Joken.KOUENKAI_NO = TBL_KOUENKAI((Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)).KOUENKAI_NO
                 OutputDrCsv()
             Case "MrCSV"
-
+                Joken.KOUENKAI_NO = TBL_KOUENKAI((Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)).KOUENKAI_NO
+                OutputMrCsv()
             Case "Seisan"
                 '選択レコード情報をセッション変数にセット
                 Session.Item(SessionDef.SeisanKensaku_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
@@ -392,20 +392,20 @@ Partial Public Class SeisanKensaku
 
         Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
         If GetMrCsvData(CsvData) Then
-            'CSV出力
+            'CSV出力
             Response.Clear()
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "MRIchiran.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
 
-            'Response.Write(MyModule.Csv.MrCsv(CsvData))
+            Response.Write(MyModule.Csv.MrCsv(CsvData))
             Response.End()
         End If
     End Sub
 
     'MR一覧CSV用データ取得
-    Private Function GetMRCsvData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
+    Private Function GetMrCsvData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
@@ -413,8 +413,7 @@ Partial Public Class SeisanKensaku
 
         ReDim CsvData(wCnt)
 
-        'TODO:
-        'strSQL = SQL.TBL_SEIKYU.MrCsv(Joken)
+        strSQL = SQL.TBL_SEIKYU.MrCsv(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
