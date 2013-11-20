@@ -3,7 +3,7 @@ Imports DataDynamics.ActiveReports.Document
 Imports AppLib
 Imports CommonLib
 
-Public Class DrReport1 
+Public Class DrReport
 
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '項目の編集

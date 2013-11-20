@@ -142,16 +142,10 @@
     <Compile Include="CostRegist.aspx.vb">
       <DependentUpon>CostRegist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DrReport1.Designer.vb">
-      <DependentUpon>DrReport1.vb</DependentUpon>
+    <Compile Include="DrReport.Designer.vb">
+      <DependentUpon>DrReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="DrReport1.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DrReport4.Designer.vb">
-      <DependentUpon>DrReport4.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DrReport4.vb">
+    <Compile Include="DrReport.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DrRireki.aspx.designer.vb">
@@ -228,18 +222,6 @@
     </Compile>
     <Compile Include="DrRegist.aspx.vb">
       <DependentUpon>DrRegist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DrReport.Designer.vb">
-      <DependentUpon>DrReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DrReport.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DrReport2.Designer.vb">
-      <DependentUpon>DrReport2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DrReport2.vb">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="HotelKensaku.aspx.designer.vb">
       <DependentUpon>HotelKensaku.aspx</DependentUpon>
@@ -362,12 +344,6 @@
     <Compile Include="TaxiCsv.aspx.vb">
       <DependentUpon>TaxiCsv.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DrReport3.Designer.vb">
-      <DependentUpon>DrReport3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DrReport3.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="NewKouenkaiReport.Designer.vb">
       <DependentUpon>NewKouenkaiReport.vb</DependentUpon>
     </Compile>
@@ -397,15 +373,6 @@
     <EmbeddedResource Include="DrReport.resx">
       <DependentUpon>DrReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DrReport1.resx">
-      <DependentUpon>DrReport1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DrReport2.resx">
-      <DependentUpon>DrReport2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DrReport4.resx">
-      <DependentUpon>DrReport4.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KaijoListReport.resx">
       <DependentUpon>KaijoListReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -430,9 +397,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DrReport3.resx">
-      <DependentUpon>DrReport3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewKaijoListReport.resx">
       <DependentUpon>NewKaijoListReport.vb</DependentUpon>

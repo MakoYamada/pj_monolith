@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Public Class DrReport1 
+Partial Public Class DrReport
     Inherits DataDynamics.ActiveReports.ActiveReport
 
     'ActiveReport がコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
@@ -17,7 +17,7 @@ Partial Public Class DrReport1
     Private WithEvents PageFooter As DataDynamics.ActiveReports.PageFooter
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport1))
+        Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport))
 Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.Label1 = New DataDynamics.ActiveReports.Label
