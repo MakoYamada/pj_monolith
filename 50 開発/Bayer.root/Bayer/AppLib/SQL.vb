@@ -2808,7 +2808,7 @@ Public Class SQL
             strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
 
             If Trim(Joken.KOUENKAI_NO) = "" Then
-                strSQL = "TBL_KAIJO.Rireki: JOKEN.KOUTENKAI_NO ERROR!!"
+                strSQL = "TBL_KAIJO.Rireki: JOKEN.KOUTENKAI_NO ERROR!!" & vbNewLine & strSQL
             End If
 
             Return strSQL
@@ -2982,6 +2982,10 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
             strSQL &= ")"
 
+            If Trim(TBL_KAIJO.SALEFORCE_ID) = "" OrElse Trim(TBL_KAIJO.TEHAI_ID) = "" OrElse Trim(TBL_KAIJO.KOUENKAI_NO) = "" OrElse Trim(TBL_KAIJO.TIME_STAMP_BYL) = "" Then
+                strSQL = "TBL_KAIJO.Insert: ERROR!!" & vbNewLine & strSQL
+            End If
+
             Return strSQL
         End Function
 
@@ -3039,6 +3043,10 @@ Public Class SQL
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TIME_STAMP_BYL) & "'"
 
+            If Trim(TBL_KAIJO.SALEFORCE_ID) = "" OrElse Trim(TBL_KAIJO.TEHAI_ID) = "" OrElse Trim(TBL_KAIJO.KOUENKAI_NO) = "" OrElse Trim(TBL_KAIJO.TIME_STAMP_BYL) = "" Then
+                strSQL = "TBL_KAIJO.Update: ERROR!!" & vbNewLine & strSQL
+            End If
+
             Return strSQL
         End Function
 
@@ -3053,6 +3061,10 @@ Public Class SQL
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TEHAI_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KAIJO.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KAIJO.TIME_STAMP_BYL) & "'"
+
+            If Trim(TBL_KAIJO.SALEFORCE_ID) = "" OrElse Trim(TBL_KAIJO.TEHAI_ID) = "" OrElse Trim(TBL_KAIJO.KOUENKAI_NO) = "" OrElse Trim(TBL_KAIJO.TIME_STAMP_BYL) = "" Then
+                strSQL = "TBL_KAIJO.Update_SEND_FLAG: ERROR!!" & vbNewLine & strSQL
+            End If
 
             Return strSQL
         End Function
