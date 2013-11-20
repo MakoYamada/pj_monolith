@@ -3,10 +3,26 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    24S<table cellspacing="0" cellpadding="2" border="0">
+    <table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td align="left">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                    <tr>
+                        <td style="width:50%">
+                            <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
+                                CssClass="Button"  TabIndex="1"/>
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="2" />
+                        </td>
+                    </tr>
+                </table> 
             </td>
         </tr>
         <tr>
@@ -41,7 +57,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="200px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="USER_NAME" HeaderText="担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
@@ -61,6 +77,9 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="30px" HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
+                        <asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI送信">
+                        <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
                         <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
                             ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
@@ -77,14 +96,29 @@
                         <asp:BoundField DataField="REQ_O_TEHAI_3" HeaderText="REQ_O_TEHAI_3" />
                         <asp:BoundField DataField="REQ_O_TEHAI_4" HeaderText="REQ_O_TEHAI_4" />
                         <asp:BoundField DataField="REQ_O_TEHAI_5" HeaderText="REQ_O_TEHAI_5" />
-                        <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALESFORCE ID" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_1" HeaderText="REQ_F_TEHAI_1" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_2" HeaderText="REQ_F_TEHAI_2" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_3" HeaderText="REQ_F_TEHAI_3" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_4" HeaderText="REQ_F_TEHAI_4" />
+                        <asp:BoundField DataField="REQ_F_TEHAI_5" HeaderText="REQ_F_TEHAI_5" />
                     </Columns>
                 </asp:GridView>
             </td>
         </tr>
-        <tr align="center">
+        <tr>
             <td>
-                <asp:Button ID="BtnBack" runat="server" Text="戻る" Width="130px" CssClass="Button" />
+                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                    <tr>
+                        <td style="width:50%">
+                            <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
+                                CssClass="Button"  TabIndex="22"/>
+                        </td>
+                        <td style="width:50%" align="right">
+                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="23" />
+                        </td>
+                    </tr>
+                </table> 
             </td>
         </tr>
     </table>

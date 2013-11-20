@@ -17,6 +17,7 @@ Partial Public Class DrRireki
         TEHAI_HOTEL
         TEHAI_KOTSU
         TEHAI_TAXI
+        SEND_FLAG
         Button1
         KOUENKAI_NO
         SALESFORCE_ID
@@ -56,7 +57,7 @@ Partial Public Class DrRireki
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "宿泊・交通・タクシーチケット手配履歴"
+            .PageTitle = "交通・宿泊手配履歴"
         End With
 
     End Sub
@@ -107,7 +108,7 @@ Partial Public Class DrRireki
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOTSUHOTEL.bySALESFORCE_ID(TBL_KOTSUHOTEL(SEQ).SALEFORCE_ID)
+        strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         ReDim RRK_KOTSUHOTEL(wCnt)
@@ -127,7 +128,7 @@ Partial Public Class DrRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.bySALESFORCE_ID(TBL_KOTSUHOTEL(SEQ).SALEFORCE_ID)
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -172,6 +173,8 @@ Partial Public Class DrRireki
             End If
             'タクチケ
             e.Row.Cells(CellIndex.TEHAI_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
+            'NOZOMI送信ステータス
+            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
     End Sub
 
@@ -186,11 +189,11 @@ Partial Public Class DrRireki
             e.Row.Cells(CellIndex.REQ_O_TEHAI_3).Visible = False
             e.Row.Cells(CellIndex.REQ_O_TEHAI_4).Visible = False
             e.Row.Cells(CellIndex.REQ_O_TEHAI_5).Visible = False
-            'e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Visible = False
-            'e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Visible = False
-            'e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
-            'e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
-            'e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
+            e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Visible = False
+            e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Visible = False
+            e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
+            e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
+            e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
@@ -228,8 +231,13 @@ Partial Public Class DrRireki
     End Sub
 
     '[戻る]
-    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Session.Item(SessionDef.DrRireki) = False
         Response.Redirect(Session.Item(SessionDef.BackURL))
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
     End Sub
 End Class
