@@ -61,7 +61,7 @@ Partial Public Class DrList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "検索　宿泊・交通・タクシーチケット手配依頼"
+            .PageTitle = "検索　交通・宿泊手配依頼"
         End With
 
     End Sub
