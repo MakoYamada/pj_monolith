@@ -205,6 +205,15 @@ Partial Public Class KaijoList
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
+    '''SpnBtnKaijoListPrint2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SpnBtnKaijoListPrint2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''BtnKaijoListPrint2 コントロール。
     '''</summary>
     '''<remarks>

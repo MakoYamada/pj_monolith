@@ -50,7 +50,7 @@ Partial Public Class NewKaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "【新着】会場手配依頼一覧"
+            .PageTitle = "新着　会場手配依頼一覧"
         End With
 
     End Sub

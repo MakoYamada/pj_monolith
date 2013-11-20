@@ -90,7 +90,7 @@
 						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
+						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI<br />送信" HtmlEncode="false" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
@@ -104,8 +104,9 @@
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr align="center" style="height: 40px;">
 			<td>
+				<span id="SpnBtnKaijoListPrint2" runat="server">
 				<asp:Button ID="BtnKaijoListPrint2" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
-				&nbsp;
+				&nbsp;</span>
 				<asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
 			</td>
 		</tr>

@@ -49,7 +49,7 @@ Partial Public Class KaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "【検索】会場手配依頼一覧"
+            .PageTitle = "検索　会場手配依頼一覧"
         End With
 
     End Sub
@@ -96,42 +96,52 @@ Partial Public Class KaijoList
 
     '画面項目 表示
     Private Sub SetForm()
-        '条件表示
-        Me.JokenKIKAKU_TANTO_ROMA.Text = Trim(Joken.KIKAKU_TANTO_ROMA)
-        Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
-        Me.JokenKOUENKAI_NO.Text = Trim(Joken.KOUENKAI_NO)
-        Me.JokenKOUENKAI_NAME.Text = Trim(Joken.KOUENKAI_NAME)
-        If Trim(Joken.FROM_DATE) <> "" Then
-            Me.JokenFROM_DATE_YYYY.Text = Mid(Joken.FROM_DATE, 1, 4)
-            Me.JokenFROM_DATE_MM.Text = Mid(Joken.FROM_DATE, 5, 2)
-            Me.JokenFROM_DATE_DD.Text = Mid(Joken.FROM_DATE, 7, 2)
-        End If
-        If Trim(Joken.TO_DATE) <> "" Then
-            Me.JokenTO_DATE_YYYY.Text = Mid(Joken.TO_DATE, 1, 4)
-            Me.JokenTO_DATE_MM.Text = Mid(Joken.TO_DATE, 5, 2)
-            Me.JokenTO_DATE_DD.Text = Mid(Joken.TO_DATE, 7, 2)
-        End If
-        Me.JokenSEIHIN.SelectedIndex = CmnModule.GetSelectedIndex(Joken.SEIHIN_NAME, Me.JokenSEIHIN)
-        Me.JokenBU.SelectedIndex = CmnModule.GetSelectedIndex(Joken.BU, Me.JokenBU)
-        Me.JokenKIKAKU_TANTO_AREA.SelectedIndex = CmnModule.GetSelectedIndex(Joken.AREA, Me.JokenKIKAKU_TANTO_AREA)
-        Me.JoKenTTANTO_ID.SelectedIndex = CmnModule.GetSelectedIndex(Joken.TTANTO_ID, Me.JoKenTTANTO_ID)
-
-        'データ取得
-        If Not GetData() Then
-            Me.LabelNoData.Visible = True
+        If InStr(Request.UrlReferrer.AbsolutePath.ToLower, "/menu.aspx") > 0 Then
+            'メニューからの遷移時
+            Me.LabelNoData.Visible = False
             Me.GrvList.Visible = False
             Me.TblButton1.Visible = False
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, False)
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, False)
+            Me.SpnBtnKaijoListPrint2.Visible = False
         Else
-            Me.LabelNoData.Visible = False
-            Me.GrvList.Visible = True
-            Me.TblButton1.Visible = True
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, True)
-            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, True)
+            '条件表示
+            Me.JokenKIKAKU_TANTO_ROMA.Text = Trim(Joken.KIKAKU_TANTO_ROMA)
+            Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
+            Me.JokenKOUENKAI_NO.Text = Trim(Joken.KOUENKAI_NO)
+            Me.JokenKOUENKAI_NAME.Text = Trim(Joken.KOUENKAI_NAME)
+            If Trim(Joken.FROM_DATE) <> "" Then
+                Me.JokenFROM_DATE_YYYY.Text = Mid(Joken.FROM_DATE, 1, 4)
+                Me.JokenFROM_DATE_MM.Text = Mid(Joken.FROM_DATE, 5, 2)
+                Me.JokenFROM_DATE_DD.Text = Mid(Joken.FROM_DATE, 7, 2)
+            End If
+            If Trim(Joken.TO_DATE) <> "" Then
+                Me.JokenTO_DATE_YYYY.Text = Mid(Joken.TO_DATE, 1, 4)
+                Me.JokenTO_DATE_MM.Text = Mid(Joken.TO_DATE, 5, 2)
+                Me.JokenTO_DATE_DD.Text = Mid(Joken.TO_DATE, 7, 2)
+            End If
+            Me.JokenSEIHIN.SelectedIndex = CmnModule.GetSelectedIndex(Joken.SEIHIN_NAME, Me.JokenSEIHIN)
+            Me.JokenBU.SelectedIndex = CmnModule.GetSelectedIndex(Joken.BU, Me.JokenBU)
+            Me.JokenKIKAKU_TANTO_AREA.SelectedIndex = CmnModule.GetSelectedIndex(Joken.AREA, Me.JokenKIKAKU_TANTO_AREA)
+            Me.JoKenTTANTO_ID.SelectedIndex = CmnModule.GetSelectedIndex(Joken.TTANTO_ID, Me.JoKenTTANTO_ID)
 
-            'グリッドビュー表示
-            SetGridView()
+            'データ取得
+            If Not GetData() Then
+                Me.LabelNoData.Visible = True
+                Me.GrvList.Visible = False
+                Me.TblButton1.Visible = False
+                Me.SpnBtnKaijoListPrint2.Visible = True
+                CmnModule.SetEnabled(Me.BtnKaijoListPrint1, False)
+                CmnModule.SetEnabled(Me.BtnKaijoListPrint2, False)
+            Else
+                Me.LabelNoData.Visible = False
+                Me.GrvList.Visible = True
+                Me.TblButton1.Visible = True
+                Me.SpnBtnKaijoListPrint2.Visible = True
+                CmnModule.SetEnabled(Me.BtnKaijoListPrint1, True)
+                CmnModule.SetEnabled(Me.BtnKaijoListPrint2, True)
+
+                'グリッドビュー表示
+                SetGridView()
+            End If
         End If
     End Sub
 

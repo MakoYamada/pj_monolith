@@ -56,10 +56,15 @@ Partial Public Class Base
         End If
 
         Me.ImgSiteName.ImageUrl = "~/Images/logo.png"
-        Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/  ") & "')"
+        Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
 
-        Me.HeaderComment1.Text = WebConfig.Site.HeaderComment1
-        Me.HeaderComment2.Text = WebConfig.Site.HeaderComment2
+        If Trim(WebConfig.Site.HeaderComment1) <> "" AndAlso Trim(WebConfig.Site.HeaderComment2) <> "" Then
+            Me.HeaderComment1.Text = WebConfig.Site.HeaderComment1
+            Me.HeaderComment2.Text = WebConfig.Site.HeaderComment2
+            Me.TdHeader2.Visible = True
+        Else
+            Me.TdHeader2.Visible = False
+        End If
 
         If Trim(Session.Item(SessionDef.LoginID)) = "" Then
             pHideLogout = True
@@ -71,6 +76,8 @@ Partial Public Class Base
             Me.SpnMenu.Visible = False
         Else
             Me.SpnMenu.Visible = True
+            Me.Image1.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
+            Me.LnkBMenu.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
         End If
 
         '[ログアウト]
@@ -79,6 +86,8 @@ Partial Public Class Base
             Me.SpnLogout.Visible = False
         Else
             Me.SpnLogout.Visible = True
+            Me.Image2.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
+            Me.LnkBLogout.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
         End If
 
         'ログインユーザ名
@@ -127,7 +136,6 @@ Partial Public Class Base
         If wFlag = True Then
             For wCnt = LBound(SessionItemNames) To UBound(SessionItemNames)
                 Session.Remove(SessionItemNames(wCnt))
-                Debug.Print("qqq " & SessionItemNames(wCnt))
             Next wCnt
         End If
         Response.Redirect(URL.Menu)
