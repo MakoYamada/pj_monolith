@@ -17,7 +17,7 @@ Partial Public Class DrReport
     Private WithEvents PageFooter As DataDynamics.ActiveReports.PageFooter
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport))
+Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport))
 Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.Label1 = New DataDynamics.ActiveReports.Label
@@ -613,8 +613,8 @@ Me.Line189 = New DataDynamics.ActiveReports.Line
 Me.Line190 = New DataDynamics.ActiveReports.Line
 Me.Line191 = New DataDynamics.ActiveReports.Line
 Me.Line52 = New DataDynamics.ActiveReports.Line
-Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox2 = New DataDynamics.ActiveReports.TextBox
+Me.DR_SHISETSU_ADDRESS2 = New DataDynamics.ActiveReports.TextBox
+Me.DR_SHISETSU_NAME2 = New DataDynamics.ActiveReports.TextBox
 Me.Label206 = New DataDynamics.ActiveReports.Label
 Me.TextBox3 = New DataDynamics.ActiveReports.TextBox
 Me.Label207 = New DataDynamics.ActiveReports.Label
@@ -628,19 +628,19 @@ Me.Label214 = New DataDynamics.ActiveReports.Label
 Me.Label215 = New DataDynamics.ActiveReports.Label
 Me.Label216 = New DataDynamics.ActiveReports.Label
 Me.Label217 = New DataDynamics.ActiveReports.Label
-Me.TextBox4 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox5 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox6 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox7 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox8 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox9 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox10 = New DataDynamics.ActiveReports.TextBox
-Me.TextBox11 = New DataDynamics.ActiveReports.TextBox
+Me.KOUENKAI_NO2 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_STATUS_TEHAI2 = New DataDynamics.ActiveReports.TextBox
+Me.TIME_STAMP_BYL2 = New DataDynamics.ActiveReports.TextBox
+Me.SANKASHA_ID2 = New DataDynamics.ActiveReports.TextBox
+Me.DR_CD2 = New DataDynamics.ActiveReports.TextBox
+Me.DR_NAME2 = New DataDynamics.ActiveReports.TextBox
+Me.DR_KANA2 = New DataDynamics.ActiveReports.TextBox
+Me.DR_AGE2 = New DataDynamics.ActiveReports.TextBox
 Me.Line67 = New DataDynamics.ActiveReports.Line
 Me.Line192 = New DataDynamics.ActiveReports.Line
 Me.Line193 = New DataDynamics.ActiveReports.Line
 Me.Line194 = New DataDynamics.ActiveReports.Line
-Me.TextBox12 = New DataDynamics.ActiveReports.TextBox
+Me.DR_SEX2 = New DataDynamics.ActiveReports.TextBox
 Me.Line195 = New DataDynamics.ActiveReports.Line
 Me.Line196 = New DataDynamics.ActiveReports.Line
 Me.Line197 = New DataDynamics.ActiveReports.Line
@@ -652,8 +652,8 @@ Me.Line201 = New DataDynamics.ActiveReports.Line
 Me.Line202 = New DataDynamics.ActiveReports.Line
 Me.Line68 = New DataDynamics.ActiveReports.Line
 Me.Line203 = New DataDynamics.ActiveReports.Line
-Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 Me.Line204 = New DataDynamics.ActiveReports.Line
+Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1056,8 +1056,8 @@ CType(Me.Label203,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label204,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label205,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.OURO3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_SHISETSU_ADDRESS2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_SHISETSU_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label206,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TextBox3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label207,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1071,15 +1071,15 @@ CType(Me.Label214,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label215,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label216,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label217,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TextBox12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.KOUENKAI_NO2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_STATUS_TEHAI2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.TIME_STAMP_BYL2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.SANKASHA_ID2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_CD2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_KANA2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_AGE2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_SEX2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
 '
 'PageHeader
@@ -1611,7 +1611,7 @@ Me.Line7.Y2 = 1.474015!
 'Detail
 '
 Me.Detail.ColumnSpacing = 0!
-Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label93, Me.Label87, Me.Label92, Me.Label91, Me.Label90, Me.Label89, Me.REQ_TAXI_DATE_10, Me.Label88, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.Label85, Me.REQ_TAXI_DATE_9, Me.Label84, Me.REQ_TAXI_FROM_9, Me.Label83, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.Label81, Me.REQ_TAXI_DATE_8, Me.Label80, Me.REQ_TAXI_FROM_8, Me.Label79, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.Label77, Me.REQ_TAXI_DATE_7, Me.Label76, Me.REQ_TAXI_FROM_7, Me.Label66, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.Label64, Me.REQ_TAXI_DATE_6, Me.Label63, Me.REQ_TAXI_FROM_6, Me.Label62, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.Label59, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.Label54, Me.REQ_TAXI_FROM_4, Me.Label53, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.Label50, Me.REQ_TAXI_FROM_3, Me.Label49, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.Label46, Me.REQ_TAXI_FROM_2, Me.Label45, Me.TAXI_YOTEIKINGAKU_2, Me.Label44, Me.Label72, Me.REQ_TAXI_DATE_1, Me.Label73, Me.REQ_TAXI_FROM_1, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label75, Me.Label71, Me.TEHAI_TAXI, Me.ANS_HOTEL_NAME, Me.ANS_ROOM_TYPE, Me.ANS_HOTELHI, Me.ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_CANCEL, Me.Label70, Me.Label69, Me.Label35, Me.Label34, Me.Label32, Me.REQ_MR_HOTEL_NOTE, Me.Label68, Me.Label67, Me.Label55, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_AGE, Me.MR_SEX, Me.MR_KANA, Me.Label13, Me.Label25, Me.Label20, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label33, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.COST_CENTER, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.Line1, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line23, Me.Line26, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line37, Me.Line38, Me.Line2, Me.Line55, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line27, Me.Line34, Me.Line35, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line53, Me.Line56, Me.Line57, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line66, Me.PageBreak1, Me.Shape1, Me.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_NAME, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_YAKUWARI, Me.DR_AGE, Me.Line3, Me.Line4, Me.Line5, Me.Line51, Me.DR_SEX, Me.Label3, Me.Label4, Me.Line36, Me.Line62, Me.Line63, Me.Line64, Me.Line65, Me.Line6, Me.Line7, Me.Shape2, Me.Label94, Me.Label95, Me.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_5, Me.REQ_F_BIN_5, Me.REQ_F_TIME2_5, Me.REQ_F_TIME1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_DATE_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_TEHAI_5, Me.REQ_F_SEAT_KIBOU4, Me.REQ_F_SEAT_4, Me.REQ_F_BIN_4, Me.REQ_F_TIME2_4, Me.REQ_F_TIME1_4, Me.REQ_F_AIRPORT2_4, Me.REQ_F_AIRPORT1_4, Me.REQ_F_DATE_4, Me.REQ_F_KOTSUKIKAN_4, Me.REQ_F_IRAINAIYOU_4, Me.REQ_F_TEHAI_4, Me.REQ_O_SEAT_KIBOU5, Me.REQ_O_SEAT_5, Me.REQ_O_BIN_5, Me.REQ_O_TIME2_5, Me.REQ_O_TIME1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_DATE_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_TEHAI_5, Me.REQ_F_SEAT_KIBOU2, Me.REQ_F_SEAT_2, Me.REQ_F_BIN_2, Me.REQ_F_TIME2_2, Me.REQ_F_TIME1_2, Me.REQ_F_AIRPORT2_2, Me.REQ_F_AIRPORT1_2, Me.REQ_F_DATE_2, Me.REQ_F_KOTSUKIKAN_2, Me.REQ_F_IRAINAIYOU_2, Me.REQ_O_SEAT_KIBOU2, Me.REQ_O_SEAT_2, Me.REQ_O_BIN_2, Me.REQ_O_TIME2_2, Me.REQ_O_TIME1_2, Me.REQ_O_AIRPORT2_2, Me.REQ_O_AIRPORT1_2, Me.REQ_O_DATE_2, Me.REQ_O_KOTSUKIKAN_2, Me.REQ_O_IRAINAIYOU_2, Me.REQ_F_TEHAI_2, Me.REQ_O_TEHAI_2, Me.Line54, Me.Label108, Me.Label107, Me.Label106, Me.Label105, Me.Label104, Me.Label103, Me.Label102, Me.Label101, Me.Label100, Me.Label99, Me.Label98, Me.FUKURO5, Me.Line69, Me.Label96, Me.Label97, Me.Label109, Me.Label110, Me.Label111, Me.Label112, Me.Label113, Me.Label114, Me.Label115, Me.Label116, Me.Label117, Me.OURO5, Me.Line70, Me.Label118, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Label123, Me.Label124, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.FUKURO2, Me.Line71, Me.Label129, Me.Label130, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label136, Me.Label137, Me.Label138, Me.Label139, Me.OURO2, Me.REQ_O_SEAT_KIBOU4, Me.REQ_O_SEAT_4, Me.REQ_O_BIN_4, Me.REQ_O_TIME2_4, Me.REQ_O_TIME1_4, Me.REQ_O_AIRPORT2_4, Me.REQ_O_AIRPORT1_4, Me.REQ_F_SEAT_KIBOU1, Me.REQ_F_SEAT_1, Me.REQ_F_BIN_1, Me.REQ_F_TIME2_1, Me.REQ_F_TIME1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_AIRPORT1_1, Me.REQ_O_SEAT_KIBOU1, Me.REQ_O_SEAT_1, Me.REQ_O_BIN_1, Me.REQ_O_TIME2_1, Me.REQ_O_TIME1_1, Me.REQ_O_AIRPORT2_1, Me.REQ_O_AIRPORT1_1, Me.Line72, Me.Label140, Me.Label141, Me.Label142, Me.Label143, Me.Label144, Me.Label145, Me.Label146, Me.FUKURO4, Me.Line73, Me.Label147, Me.Label148, Me.Label149, Me.Label150, Me.Label151, Me.Label152, Me.Label153, Me.OURO4, Me.Line74, Me.Label154, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Label159, Me.Label160, Me.FUKURO1, Me.Line75, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Label166, Me.Label167, Me.OURO1, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label172, Me.Label173, Me.Label174, Me.Label175, Me.Label176, Me.Label177, Me.Label178, Me.Label179, Me.Label180, Me.Label181, Me.Label182, Me.Label183, Me.REQ_O_TEHAI_1, Me.REQ_F_TEHAI_1, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_DATE_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_DATE_1, Me.REQ_O_TEHAI_4, Me.REQ_O_IRAINAIYOU_4, Me.REQ_O_KOTSUKIKAN_4, Me.REQ_O_DATE_4, Me.Line76, Me.REQ_F_SEAT_KIBOU3, Me.REQ_F_SEAT_3, Me.REQ_F_BIN_3, Me.REQ_F_TIME2_3, Me.REQ_F_TIME1_3, Me.REQ_F_AIRPORT2_3, Me.REQ_F_AIRPORT1_3, Me.REQ_F_DATE_3, Me.REQ_F_KOTSUKIKAN_3, Me.REQ_F_IRAINAIYOU_3, Me.REQ_O_SEAT_KIBOU3, Me.REQ_O_SEAT_3, Me.REQ_O_BIN_3, Me.REQ_O_TIME2_3, Me.REQ_O_TIME1_3, Me.REQ_O_AIRPORT2_3, Me.REQ_O_AIRPORT1_3, Me.REQ_O_DATE_3, Me.REQ_O_KOTSUKIKAN_3, Me.REQ_O_IRAINAIYOU_3, Me.REQ_F_TEHAI_3, Me.REQ_O_TEHAI_3, Me.Line77, Me.Label184, Me.Label185, Me.Label186, Me.Label187, Me.Label188, Me.Label189, Me.Label190, Me.Label191, Me.Label192, Me.Label193, Me.Label194, Me.FUKURO3, Me.Line78, Me.Label195, Me.Label196, Me.Label197, Me.Label198, Me.Label199, Me.Label200, Me.Label201, Me.Label202, Me.Label203, Me.Label204, Me.Label205, Me.OURO3, Me.Line80, Me.Line81, Me.Line82, Me.Line83, Me.Line84, Me.Line85, Me.Line86, Me.Line87, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line97, Me.Line98, Me.Line99, Me.Line100, Me.Line101, Me.Line102, Me.Line103, Me.Line104, Me.Line105, Me.Line106, Me.Line107, Me.Line108, Me.Line109, Me.Line110, Me.Line111, Me.Line112, Me.Line113, Me.Line114, Me.Line115, Me.Line116, Me.Line117, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line122, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line128, Me.Line129, Me.Line130, Me.Line131, Me.Line132, Me.Line133, Me.Line134, Me.Line135, Me.Line136, Me.Line137, Me.Line138, Me.Line139, Me.Line140, Me.Line141, Me.Line142, Me.Line143, Me.Line144, Me.Line145, Me.Line146, Me.Line147, Me.Line148, Me.Line149, Me.Line150, Me.Line151, Me.Line152, Me.Line153, Me.Line154, Me.Line155, Me.Line156, Me.Line157, Me.Line158, Me.Line159, Me.Line160, Me.Line161, Me.Line162, Me.Line163, Me.Line164, Me.Line165, Me.Line166, Me.Line167, Me.Line168, Me.Line169, Me.Line170, Me.Line171, Me.Line172, Me.Line173, Me.Line174, Me.Line175, Me.Line176, Me.Line177, Me.Line178, Me.Line179, Me.Line180, Me.Line181, Me.Line182, Me.Line183, Me.Line184, Me.Line185, Me.Line186, Me.Line187, Me.Line188, Me.Line189, Me.Line190, Me.Line191, Me.Line52, Me.TextBox1, Me.TextBox2, Me.Label206, Me.TextBox3, Me.Label207, Me.Label208, Me.Label209, Me.Label210, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label217, Me.TextBox4, Me.TextBox5, Me.TextBox6, Me.TextBox7, Me.TextBox8, Me.TextBox9, Me.TextBox10, Me.TextBox11, Me.Line67, Me.Line192, Me.Line193, Me.Line194, Me.TextBox12, Me.Line195, Me.Line196, Me.Line197, Me.Line198, Me.Line199, Me.Line200, Me.Line79, Me.Line201, Me.Line202, Me.Line68, Me.Line203, Me.Line204})
+Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label93, Me.Label87, Me.Label92, Me.Label91, Me.Label90, Me.Label89, Me.REQ_TAXI_DATE_10, Me.Label88, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.Label85, Me.REQ_TAXI_DATE_9, Me.Label84, Me.REQ_TAXI_FROM_9, Me.Label83, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.Label81, Me.REQ_TAXI_DATE_8, Me.Label80, Me.REQ_TAXI_FROM_8, Me.Label79, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.Label77, Me.REQ_TAXI_DATE_7, Me.Label76, Me.REQ_TAXI_FROM_7, Me.Label66, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.Label64, Me.REQ_TAXI_DATE_6, Me.Label63, Me.REQ_TAXI_FROM_6, Me.Label62, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.Label59, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.Label54, Me.REQ_TAXI_FROM_4, Me.Label53, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.Label50, Me.REQ_TAXI_FROM_3, Me.Label49, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.Label46, Me.REQ_TAXI_FROM_2, Me.Label45, Me.TAXI_YOTEIKINGAKU_2, Me.Label44, Me.Label72, Me.REQ_TAXI_DATE_1, Me.Label73, Me.REQ_TAXI_FROM_1, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label75, Me.Label71, Me.TEHAI_TAXI, Me.ANS_HOTEL_NAME, Me.ANS_ROOM_TYPE, Me.ANS_HOTELHI, Me.ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_CANCEL, Me.Label70, Me.Label69, Me.Label35, Me.Label34, Me.Label32, Me.REQ_MR_HOTEL_NOTE, Me.Label68, Me.Label67, Me.Label55, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_AGE, Me.MR_SEX, Me.MR_KANA, Me.Label13, Me.Label25, Me.Label20, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label33, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.COST_CENTER, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.Line1, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line23, Me.Line26, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line37, Me.Line38, Me.Line2, Me.Line55, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line27, Me.Line34, Me.Line35, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line53, Me.Line56, Me.Line57, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line66, Me.PageBreak1, Me.Shape1, Me.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_NAME, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.DR_KANA, Me.DR_YAKUWARI, Me.DR_AGE, Me.Line3, Me.Line4, Me.Line5, Me.Line51, Me.DR_SEX, Me.Label3, Me.Label4, Me.Line36, Me.Line62, Me.Line63, Me.Line64, Me.Line65, Me.Line6, Me.Line7, Me.Shape2, Me.Label94, Me.Label95, Me.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_5, Me.REQ_F_BIN_5, Me.REQ_F_TIME2_5, Me.REQ_F_TIME1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_DATE_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_TEHAI_5, Me.REQ_F_SEAT_KIBOU4, Me.REQ_F_SEAT_4, Me.REQ_F_BIN_4, Me.REQ_F_TIME2_4, Me.REQ_F_TIME1_4, Me.REQ_F_AIRPORT2_4, Me.REQ_F_AIRPORT1_4, Me.REQ_F_DATE_4, Me.REQ_F_KOTSUKIKAN_4, Me.REQ_F_IRAINAIYOU_4, Me.REQ_F_TEHAI_4, Me.REQ_O_SEAT_KIBOU5, Me.REQ_O_SEAT_5, Me.REQ_O_BIN_5, Me.REQ_O_TIME2_5, Me.REQ_O_TIME1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_DATE_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_TEHAI_5, Me.REQ_F_SEAT_KIBOU2, Me.REQ_F_SEAT_2, Me.REQ_F_BIN_2, Me.REQ_F_TIME2_2, Me.REQ_F_TIME1_2, Me.REQ_F_AIRPORT2_2, Me.REQ_F_AIRPORT1_2, Me.REQ_F_DATE_2, Me.REQ_F_KOTSUKIKAN_2, Me.REQ_F_IRAINAIYOU_2, Me.REQ_O_SEAT_KIBOU2, Me.REQ_O_SEAT_2, Me.REQ_O_BIN_2, Me.REQ_O_TIME2_2, Me.REQ_O_TIME1_2, Me.REQ_O_AIRPORT2_2, Me.REQ_O_AIRPORT1_2, Me.REQ_O_DATE_2, Me.REQ_O_KOTSUKIKAN_2, Me.REQ_O_IRAINAIYOU_2, Me.REQ_F_TEHAI_2, Me.REQ_O_TEHAI_2, Me.Line54, Me.Label108, Me.Label107, Me.Label106, Me.Label105, Me.Label104, Me.Label103, Me.Label102, Me.Label101, Me.Label100, Me.Label99, Me.Label98, Me.FUKURO5, Me.Line69, Me.Label96, Me.Label97, Me.Label109, Me.Label110, Me.Label111, Me.Label112, Me.Label113, Me.Label114, Me.Label115, Me.Label116, Me.Label117, Me.OURO5, Me.Line70, Me.Label118, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Label123, Me.Label124, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.FUKURO2, Me.Line71, Me.Label129, Me.Label130, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label136, Me.Label137, Me.Label138, Me.Label139, Me.OURO2, Me.REQ_O_SEAT_KIBOU4, Me.REQ_O_SEAT_4, Me.REQ_O_BIN_4, Me.REQ_O_TIME2_4, Me.REQ_O_TIME1_4, Me.REQ_O_AIRPORT2_4, Me.REQ_O_AIRPORT1_4, Me.REQ_F_SEAT_KIBOU1, Me.REQ_F_SEAT_1, Me.REQ_F_BIN_1, Me.REQ_F_TIME2_1, Me.REQ_F_TIME1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_AIRPORT1_1, Me.REQ_O_SEAT_KIBOU1, Me.REQ_O_SEAT_1, Me.REQ_O_BIN_1, Me.REQ_O_TIME2_1, Me.REQ_O_TIME1_1, Me.REQ_O_AIRPORT2_1, Me.REQ_O_AIRPORT1_1, Me.Line72, Me.Label140, Me.Label141, Me.Label142, Me.Label143, Me.Label144, Me.Label145, Me.Label146, Me.FUKURO4, Me.Line73, Me.Label147, Me.Label148, Me.Label149, Me.Label150, Me.Label151, Me.Label152, Me.Label153, Me.OURO4, Me.Line74, Me.Label154, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Label159, Me.Label160, Me.FUKURO1, Me.Line75, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Label166, Me.Label167, Me.OURO1, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label172, Me.Label173, Me.Label174, Me.Label175, Me.Label176, Me.Label177, Me.Label178, Me.Label179, Me.Label180, Me.Label181, Me.Label182, Me.Label183, Me.REQ_O_TEHAI_1, Me.REQ_F_TEHAI_1, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_DATE_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_DATE_1, Me.REQ_O_TEHAI_4, Me.REQ_O_IRAINAIYOU_4, Me.REQ_O_KOTSUKIKAN_4, Me.REQ_O_DATE_4, Me.Line76, Me.REQ_F_SEAT_KIBOU3, Me.REQ_F_SEAT_3, Me.REQ_F_BIN_3, Me.REQ_F_TIME2_3, Me.REQ_F_TIME1_3, Me.REQ_F_AIRPORT2_3, Me.REQ_F_AIRPORT1_3, Me.REQ_F_DATE_3, Me.REQ_F_KOTSUKIKAN_3, Me.REQ_F_IRAINAIYOU_3, Me.REQ_O_SEAT_KIBOU3, Me.REQ_O_SEAT_3, Me.REQ_O_BIN_3, Me.REQ_O_TIME2_3, Me.REQ_O_TIME1_3, Me.REQ_O_AIRPORT2_3, Me.REQ_O_AIRPORT1_3, Me.REQ_O_DATE_3, Me.REQ_O_KOTSUKIKAN_3, Me.REQ_O_IRAINAIYOU_3, Me.REQ_F_TEHAI_3, Me.REQ_O_TEHAI_3, Me.Line77, Me.Label184, Me.Label185, Me.Label186, Me.Label187, Me.Label188, Me.Label189, Me.Label190, Me.Label191, Me.Label192, Me.Label193, Me.Label194, Me.FUKURO3, Me.Line78, Me.Label195, Me.Label196, Me.Label197, Me.Label198, Me.Label199, Me.Label200, Me.Label201, Me.Label202, Me.Label203, Me.Label204, Me.Label205, Me.OURO3, Me.Line80, Me.Line81, Me.Line82, Me.Line83, Me.Line84, Me.Line85, Me.Line86, Me.Line87, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line97, Me.Line98, Me.Line99, Me.Line100, Me.Line101, Me.Line102, Me.Line103, Me.Line104, Me.Line105, Me.Line106, Me.Line107, Me.Line108, Me.Line109, Me.Line110, Me.Line111, Me.Line112, Me.Line113, Me.Line114, Me.Line115, Me.Line116, Me.Line117, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line122, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line128, Me.Line129, Me.Line130, Me.Line131, Me.Line132, Me.Line133, Me.Line134, Me.Line135, Me.Line136, Me.Line137, Me.Line138, Me.Line139, Me.Line140, Me.Line141, Me.Line142, Me.Line143, Me.Line144, Me.Line145, Me.Line146, Me.Line147, Me.Line148, Me.Line149, Me.Line150, Me.Line151, Me.Line152, Me.Line153, Me.Line154, Me.Line155, Me.Line156, Me.Line157, Me.Line158, Me.Line159, Me.Line160, Me.Line161, Me.Line162, Me.Line163, Me.Line164, Me.Line165, Me.Line166, Me.Line167, Me.Line168, Me.Line169, Me.Line170, Me.Line171, Me.Line172, Me.Line173, Me.Line174, Me.Line175, Me.Line176, Me.Line177, Me.Line178, Me.Line179, Me.Line180, Me.Line181, Me.Line182, Me.Line183, Me.Line184, Me.Line185, Me.Line186, Me.Line187, Me.Line188, Me.Line189, Me.Line190, Me.Line191, Me.Line52, Me.DR_SHISETSU_ADDRESS2, Me.DR_SHISETSU_NAME2, Me.Label206, Me.TextBox3, Me.Label207, Me.Label208, Me.Label209, Me.Label210, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label217, Me.KOUENKAI_NO2, Me.REQ_STATUS_TEHAI2, Me.TIME_STAMP_BYL2, Me.SANKASHA_ID2, Me.DR_CD2, Me.DR_NAME2, Me.DR_KANA2, Me.DR_AGE2, Me.Line67, Me.Line192, Me.Line193, Me.Line194, Me.DR_SEX2, Me.Line195, Me.Line196, Me.Line197, Me.Line198, Me.Line199, Me.Line200, Me.Line79, Me.Line201, Me.Line202, Me.Line68, Me.Line203, Me.Line204})
 Me.Detail.Height = 18.5456!
 Me.Detail.KeepTogether = true
 Me.Detail.Name = "Detail"
@@ -5390,6 +5390,7 @@ Me.REQ_O_AIRPORT1_1.Height = 0.2!
 Me.REQ_O_AIRPORT1_1.Left = 0.9165359!
 Me.REQ_O_AIRPORT1_1.Name = "REQ_O_AIRPORT1_1"
 Me.REQ_O_AIRPORT1_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_AIRPORT1_1.Text = Nothing
 Me.REQ_O_AIRPORT1_1.Top = 12.69685!
 Me.REQ_O_AIRPORT1_1.Width = 0.8748035!
 '
@@ -8297,27 +8298,27 @@ Me.Line52.X2 = 0!
 Me.Line52.Y1 = 0.4740157!
 Me.Line52.Y2 = 10.30709!
 '
-'TextBox1
+'DR_SHISETSU_ADDRESS2
 '
-Me.TextBox1.DataField = "DR_SHISETSU_ADDRESS"
-Me.TextBox1.Height = 0.1999999!
-Me.TextBox1.Left = 4.507481!
-Me.TextBox1.Name = "TextBox1"
-Me.TextBox1.Style = "vertical-align: middle"
-Me.TextBox1.Text = Nothing
-Me.TextBox1.Top = 11.49685!
-Me.TextBox1.Width = 2.644488!
+Me.DR_SHISETSU_ADDRESS2.DataField = "DR_SHISETSU_ADDRESS"
+Me.DR_SHISETSU_ADDRESS2.Height = 0.1999999!
+Me.DR_SHISETSU_ADDRESS2.Left = 4.507481!
+Me.DR_SHISETSU_ADDRESS2.Name = "DR_SHISETSU_ADDRESS2"
+Me.DR_SHISETSU_ADDRESS2.Style = "vertical-align: middle"
+Me.DR_SHISETSU_ADDRESS2.Text = Nothing
+Me.DR_SHISETSU_ADDRESS2.Top = 11.49685!
+Me.DR_SHISETSU_ADDRESS2.Width = 2.644488!
 '
-'TextBox2
+'DR_SHISETSU_NAME2
 '
-Me.TextBox2.DataField = "DR_SHISETSU_NAME"
-Me.TextBox2.Height = 0.2!
-Me.TextBox2.Left = 4.507481!
-Me.TextBox2.Name = "TextBox2"
-Me.TextBox2.Style = "vertical-align: middle"
-Me.TextBox2.Text = Nothing
-Me.TextBox2.Top = 11.29685!
-Me.TextBox2.Width = 2.657874!
+Me.DR_SHISETSU_NAME2.DataField = "DR_SHISETSU_NAME"
+Me.DR_SHISETSU_NAME2.Height = 0.2!
+Me.DR_SHISETSU_NAME2.Left = 4.507481!
+Me.DR_SHISETSU_NAME2.Name = "DR_SHISETSU_NAME2"
+Me.DR_SHISETSU_NAME2.Style = "vertical-align: middle"
+Me.DR_SHISETSU_NAME2.Text = Nothing
+Me.DR_SHISETSU_NAME2.Top = 11.29685!
+Me.DR_SHISETSU_NAME2.Width = 2.657874!
 '
 'Label206
 '
@@ -8473,93 +8474,93 @@ Me.Label217.Text = "航空搭乗者年齢(年齢)"
 Me.Label217.Top = 11.69685!
 Me.Label217.Width = 1.323622!
 '
-'TextBox4
+'KOUENKAI_NO2
 '
-Me.TextBox4.DataField = "KOUENKAI_NO"
-Me.TextBox4.Height = 0.2!
-Me.TextBox4.Left = 1.323622!
-Me.TextBox4.Name = "TextBox4"
-Me.TextBox4.Style = "vertical-align: middle"
-Me.TextBox4.Text = Nothing
-Me.TextBox4.Top = 10.89685!
-Me.TextBox4.Width = 2.23504!
+Me.KOUENKAI_NO2.DataField = "KOUENKAI_NO"
+Me.KOUENKAI_NO2.Height = 0.2!
+Me.KOUENKAI_NO2.Left = 1.323622!
+Me.KOUENKAI_NO2.Name = "KOUENKAI_NO2"
+Me.KOUENKAI_NO2.Style = "vertical-align: middle"
+Me.KOUENKAI_NO2.Text = Nothing
+Me.KOUENKAI_NO2.Top = 10.89685!
+Me.KOUENKAI_NO2.Width = 2.23504!
 '
-'TextBox5
+'REQ_STATUS_TEHAI2
 '
-Me.TextBox5.DataField = "REQ_STATUS_TEHAI"
-Me.TextBox5.Height = 0.2!
-Me.TextBox5.Left = 4.507481!
-Me.TextBox5.Name = "TextBox5"
-Me.TextBox5.Style = "text-align: center; vertical-align: middle"
-Me.TextBox5.Text = Nothing
-Me.TextBox5.Top = 10.89685!
-Me.TextBox5.Width = 0.3208661!
+Me.REQ_STATUS_TEHAI2.DataField = "REQ_STATUS_TEHAI"
+Me.REQ_STATUS_TEHAI2.Height = 0.2!
+Me.REQ_STATUS_TEHAI2.Left = 4.507481!
+Me.REQ_STATUS_TEHAI2.Name = "REQ_STATUS_TEHAI2"
+Me.REQ_STATUS_TEHAI2.Style = "text-align: center; vertical-align: middle"
+Me.REQ_STATUS_TEHAI2.Text = Nothing
+Me.REQ_STATUS_TEHAI2.Top = 10.89685!
+Me.REQ_STATUS_TEHAI2.Width = 0.3208661!
 '
-'TextBox6
+'TIME_STAMP_BYL2
 '
-Me.TextBox6.DataField = "TIME_STAMP_BYL"
-Me.TextBox6.Height = 0.2!
-Me.TextBox6.Left = 5.787402!
-Me.TextBox6.Name = "TextBox6"
-Me.TextBox6.Style = "vertical-align: middle"
-Me.TextBox6.Text = Nothing
-Me.TextBox6.Top = 10.89685!
-Me.TextBox6.Width = 1.364567!
+Me.TIME_STAMP_BYL2.DataField = "TIME_STAMP_BYL"
+Me.TIME_STAMP_BYL2.Height = 0.2!
+Me.TIME_STAMP_BYL2.Left = 5.787402!
+Me.TIME_STAMP_BYL2.Name = "TIME_STAMP_BYL2"
+Me.TIME_STAMP_BYL2.Style = "vertical-align: middle"
+Me.TIME_STAMP_BYL2.Text = Nothing
+Me.TIME_STAMP_BYL2.Top = 10.89685!
+Me.TIME_STAMP_BYL2.Width = 1.364567!
 '
-'TextBox7
+'SANKASHA_ID2
 '
-Me.TextBox7.DataField = "SANKASHA_ID"
-Me.TextBox7.Height = 0.2!
-Me.TextBox7.Left = 1.323622!
-Me.TextBox7.Name = "TextBox7"
-Me.TextBox7.Style = "vertical-align: middle"
-Me.TextBox7.Text = Nothing
-Me.TextBox7.Top = 11.09685!
-Me.TextBox7.Width = 2.23504!
+Me.SANKASHA_ID2.DataField = "SANKASHA_ID"
+Me.SANKASHA_ID2.Height = 0.2!
+Me.SANKASHA_ID2.Left = 1.323622!
+Me.SANKASHA_ID2.Name = "SANKASHA_ID2"
+Me.SANKASHA_ID2.Style = "vertical-align: middle"
+Me.SANKASHA_ID2.Text = Nothing
+Me.SANKASHA_ID2.Top = 11.09685!
+Me.SANKASHA_ID2.Width = 2.23504!
 '
-'TextBox8
+'DR_CD2
 '
-Me.TextBox8.DataField = "DR_CD"
-Me.TextBox8.Height = 0.2!
-Me.TextBox8.Left = 4.507481!
-Me.TextBox8.Name = "TextBox8"
-Me.TextBox8.Style = "vertical-align: middle"
-Me.TextBox8.Text = Nothing
-Me.TextBox8.Top = 11.09685!
-Me.TextBox8.Width = 2.644488!
+Me.DR_CD2.DataField = "DR_CD"
+Me.DR_CD2.Height = 0.2!
+Me.DR_CD2.Left = 4.507481!
+Me.DR_CD2.Name = "DR_CD2"
+Me.DR_CD2.Style = "vertical-align: middle"
+Me.DR_CD2.Text = Nothing
+Me.DR_CD2.Top = 11.09685!
+Me.DR_CD2.Width = 2.644488!
 '
-'TextBox9
+'DR_NAME2
 '
-Me.TextBox9.DataField = "DR_NAME"
-Me.TextBox9.Height = 0.2!
-Me.TextBox9.Left = 1.323622!
-Me.TextBox9.Name = "TextBox9"
-Me.TextBox9.Style = "vertical-align: middle"
-Me.TextBox9.Text = Nothing
-Me.TextBox9.Top = 11.29685!
-Me.TextBox9.Width = 2.23504!
+Me.DR_NAME2.DataField = "DR_NAME"
+Me.DR_NAME2.Height = 0.2!
+Me.DR_NAME2.Left = 1.323622!
+Me.DR_NAME2.Name = "DR_NAME2"
+Me.DR_NAME2.Style = "vertical-align: middle"
+Me.DR_NAME2.Text = Nothing
+Me.DR_NAME2.Top = 11.29685!
+Me.DR_NAME2.Width = 2.23504!
 '
-'TextBox10
+'DR_KANA2
 '
-Me.TextBox10.DataField = "DR_KANA"
-Me.TextBox10.Height = 0.2!
-Me.TextBox10.Left = 1.323622!
-Me.TextBox10.Name = "TextBox10"
-Me.TextBox10.Style = "vertical-align: middle"
-Me.TextBox10.Text = Nothing
-Me.TextBox10.Top = 11.49685!
-Me.TextBox10.Width = 2.23504!
+Me.DR_KANA2.DataField = "DR_KANA"
+Me.DR_KANA2.Height = 0.2!
+Me.DR_KANA2.Left = 1.323622!
+Me.DR_KANA2.Name = "DR_KANA2"
+Me.DR_KANA2.Style = "vertical-align: middle"
+Me.DR_KANA2.Text = Nothing
+Me.DR_KANA2.Top = 11.49685!
+Me.DR_KANA2.Width = 2.23504!
 '
-'TextBox11
+'DR_AGE2
 '
-Me.TextBox11.DataField = "DR_AGE"
-Me.TextBox11.Height = 0.2!
-Me.TextBox11.Left = 1.323622!
-Me.TextBox11.Name = "TextBox11"
-Me.TextBox11.Style = "vertical-align: middle"
-Me.TextBox11.Text = Nothing
-Me.TextBox11.Top = 11.69685!
-Me.TextBox11.Width = 2.23504!
+Me.DR_AGE2.DataField = "DR_AGE"
+Me.DR_AGE2.Height = 0.2!
+Me.DR_AGE2.Left = 1.323622!
+Me.DR_AGE2.Name = "DR_AGE2"
+Me.DR_AGE2.Style = "vertical-align: middle"
+Me.DR_AGE2.Text = Nothing
+Me.DR_AGE2.Top = 11.69685!
+Me.DR_AGE2.Width = 2.23504!
 '
 'Line67
 '
@@ -8616,16 +8617,16 @@ Me.Line194.X2 = 7.165354!
 Me.Line194.Y1 = 10.89685!
 Me.Line194.Y2 = 10.89685!
 '
-'TextBox12
+'DR_SEX2
 '
-Me.TextBox12.DataField = "DR_SEX"
-Me.TextBox12.Height = 0.2!
-Me.TextBox12.Left = 4.507481!
-Me.TextBox12.Name = "TextBox12"
-Me.TextBox12.Style = "vertical-align: middle"
-Me.TextBox12.Text = Nothing
-Me.TextBox12.Top = 11.69685!
-Me.TextBox12.Width = 2.644488!
+Me.DR_SEX2.DataField = "DR_SEX"
+Me.DR_SEX2.Height = 0.2!
+Me.DR_SEX2.Left = 4.507481!
+Me.DR_SEX2.Name = "DR_SEX2"
+Me.DR_SEX2.Style = "vertical-align: middle"
+Me.DR_SEX2.Text = Nothing
+Me.DR_SEX2.Top = 11.69685!
+Me.DR_SEX2.Width = 2.644488!
 '
 'Line195
 '
@@ -8771,11 +8772,6 @@ Me.Line203.X2 = 1.323622!
 Me.Line203.Y1 = 10.89685!
 Me.Line203.Y2 = 11.89685!
 '
-'PageFooter
-'
-Me.PageFooter.Height = 0!
-Me.PageFooter.Name = "PageFooter"
-'
 'Line204
 '
 Me.Line204.Height = 5.400001!
@@ -8789,7 +8785,12 @@ Me.Line204.X2 = 7.161417!
 Me.Line204.Y1 = 10.89685!
 Me.Line204.Y2 = 16.29685!
 '
-'DrReport1
+'PageFooter
+'
+Me.PageFooter.Height = 0!
+Me.PageFooter.Name = "PageFooter"
+'
+'DrReport
 '
 Me.MasterReport = false
 Me.PageSettings.PaperHeight = 11!
@@ -9205,8 +9206,8 @@ CType(Me.Label203,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label204,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label205,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.OURO3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_SHISETSU_ADDRESS2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_SHISETSU_NAME2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label206,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TextBox3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label207,System.ComponentModel.ISupportInitialize).EndInit
@@ -9220,15 +9221,15 @@ CType(Me.Label214,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label215,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label216,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label217,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TextBox12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.KOUENKAI_NO2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_STATUS_TEHAI2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.TIME_STAMP_BYL2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.SANKASHA_ID2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_CD2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_NAME2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_KANA2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_AGE2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_SEX2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me,System.ComponentModel.ISupportInitialize).EndInit
 
 End Sub
@@ -9827,8 +9828,8 @@ End Sub
     Private WithEvents Line189 As DataDynamics.ActiveReports.Line
     Private WithEvents Line190 As DataDynamics.ActiveReports.Line
     Private WithEvents Line191 As DataDynamics.ActiveReports.Line
-    Private WithEvents TextBox1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_SHISETSU_ADDRESS2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_SHISETSU_NAME2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label206 As DataDynamics.ActiveReports.Label
     Private WithEvents TextBox3 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label207 As DataDynamics.ActiveReports.Label
@@ -9842,19 +9843,19 @@ End Sub
     Private WithEvents Label215 As DataDynamics.ActiveReports.Label
     Private WithEvents Label216 As DataDynamics.ActiveReports.Label
     Private WithEvents Label217 As DataDynamics.ActiveReports.Label
-    Private WithEvents TextBox4 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox5 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox6 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox7 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox8 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox9 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox10 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents TextBox11 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents KOUENKAI_NO2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents REQ_STATUS_TEHAI2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents TIME_STAMP_BYL2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents SANKASHA_ID2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_CD2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_NAME2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_KANA2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_AGE2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line67 As DataDynamics.ActiveReports.Line
     Private WithEvents Line192 As DataDynamics.ActiveReports.Line
     Private WithEvents Line193 As DataDynamics.ActiveReports.Line
     Private WithEvents Line194 As DataDynamics.ActiveReports.Line
-    Private WithEvents TextBox12 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents DR_SEX2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line195 As DataDynamics.ActiveReports.Line
     Private WithEvents Line196 As DataDynamics.ActiveReports.Line
     Private WithEvents Line197 As DataDynamics.ActiveReports.Line
