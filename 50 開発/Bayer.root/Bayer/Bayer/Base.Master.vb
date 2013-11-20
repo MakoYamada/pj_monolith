@@ -55,9 +55,6 @@ Partial Public Class Base
             Response.Redirect(URL.TimeOut)
         End If
 
-        Me.ImgSiteName.ImageUrl = "~/Images/logo.png"
-        Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
-
         If Trim(WebConfig.Site.HeaderComment1) <> "" AndAlso Trim(WebConfig.Site.HeaderComment2) <> "" Then
             Me.HeaderComment1.Text = WebConfig.Site.HeaderComment1
             Me.HeaderComment2.Text = WebConfig.Site.HeaderComment2

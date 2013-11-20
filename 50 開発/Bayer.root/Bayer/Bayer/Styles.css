@@ -94,6 +94,13 @@ img
 {
 	border: 1px solid #f8f8f8;
 }
+.TrPageTitle
+{
+	background-image: url('Images/bgtitle.png');
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-color: #dfe2e4;
+}
 .TdTitle 
 {
 	background-color: #b8c3c8;
