@@ -3,7 +3,6 @@ Imports AppLib
 Partial Public Class SeisanKensaku
     Inherits WebBase
 
-    'TODO:確認
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private Joken As TableDef.Joken.DataStruct
 
@@ -40,12 +39,8 @@ Partial Public Class SeisanKensaku
             '画面項目 初期化
             InitControls()
 
-            If UBound(TBL_KOUENKAI) = 0 And TBL_KOUENKAI(0).KOUENKAI_NO Is Nothing Then
-                LabelNoData.Visible = False
-            Else
-                SetJoken()
-                SetForm()
-            End If
+            SetJoken()
+            SetForm()
         End If
 
         'マスターページ設定

@@ -134,9 +134,13 @@ Partial Public Class SeisanList
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            Me.TblButton1.Visible = False
+            CmnModule.SetEnabled(Me.BtnSeisanListPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.TblButton1.Visible = True
+            CmnModule.SetEnabled(Me.BtnSeisanListPrint2, True)
 
             'グリッドビュー表示
             SetGridView()
@@ -336,5 +340,14 @@ Partial Public Class SeisanList
         Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Response.Redirect(URL.SeisanRegist)
+    End Sub
+
+    '[精算データ一覧印刷]
+    Protected Sub BtnSeisanListPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisanListPrint1.Click, BtnSeisanListPrint2.Click
+        Dim strSQL As String = SQL.TBL_SEIKYU.Search(Joken)
+        Session.Item(SessionDef.SeisanListPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        'Session.Item(SessionDef.PrintPreview) = "KaijoList"
+        Response.Redirect(URL.Preview)
     End Sub
 End Class

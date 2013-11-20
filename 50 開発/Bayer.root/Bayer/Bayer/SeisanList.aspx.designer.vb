@@ -16,15 +16,6 @@ Option Explicit On
 Partial Public Class SeisanList
 
     '''<summary>
-    '''BtnBack1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
@@ -32,42 +23,6 @@ Partial Public Class SeisanList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSEIKYU_NO_TOPTOUR コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSEIKYU_NO_TOPTOUR As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSEISAN_Y コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSEISAN_Y As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSEISAN_M コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSEISAN_M As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSHOUNIN_KUBUN コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSHOUNIN_KUBUN As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenFROM_DATE_YYYY コントロール。
@@ -151,6 +106,42 @@ Partial Public Class SeisanList
     Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''JokenSEIKYU_NO_TOPTOUR コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSEIKYU_NO_TOPTOUR As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenSEISAN_Y コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSEISAN_Y As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenSEISAN_M コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSEISAN_M As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenSHOUNIN_KUBUN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSHOUNIN_KUBUN As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''BtnSearch コントロール。
     '''</summary>
     '''<remarks>
@@ -187,6 +178,33 @@ Partial Public Class SeisanList
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
+    '''TblButton1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblButton1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''BtnSeisanListPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSeisanListPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''GrvList コントロール。
     '''</summary>
     '''<remarks>
@@ -194,6 +212,15 @@ Partial Public Class SeisanList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''BtnSeisanListPrint2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSeisanListPrint2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack2 コントロール。

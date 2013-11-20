@@ -16,15 +16,6 @@ Option Explicit On
 Partial Public Class SeisanKensaku
 
     '''<summary>
-    '''BtnBack1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''JokenKIKAKU_TANTO_ROMA コントロール。
     '''</summary>
     '''<remarks>
@@ -32,6 +23,24 @@ Partial Public Class SeisanKensaku
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenBU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''JokenKIKAKU_TANTO_AREA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''JokenTEHAI_TANTO_ROMA コントロール。
@@ -124,24 +133,6 @@ Partial Public Class SeisanKensaku
     Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenBU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenBU As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''JokenKIKAKU_TANTO_AREA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''JokenTTEHAI_TANTO コントロール。
     '''</summary>
     '''<remarks>
@@ -176,6 +167,15 @@ Partial Public Class SeisanKensaku
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''GrvList コントロール。

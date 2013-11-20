@@ -69,6 +69,7 @@
     Public Const ShisetsuKensaku_Back As String = "ShisetsuKensaku_Back"
     Public Const SeisanKensaku_SEQ As String = "SeisanKensaku_SEQ"
     Public Const SeisanKensaku_Joken As String = "SeisanKensaku_Joken"
+    Public Const SeisanListPrint_SQL As String = "SeisanListPrint_SQL"
     Public Const SeisanRegistReport_SQL As String = "SeisanRegistReport_SQL"
     Public Const CostRegist_Search As String = "CostRegist_Search"
     Public Const CostRegist_Update As String = "CostRegist_Update"
