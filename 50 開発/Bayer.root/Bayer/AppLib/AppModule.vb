@@ -7743,67 +7743,67 @@ Public Class AppModule
     End Function
 
     'タクシーチケット：券種（回答）
-    Public Shared Function GetValue_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As TextBox) As String
-        Return Trim(ANS_TAXI_KENSHU.Text)
+    Public Shared Function GetValue_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_TAXI_KENSHU)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_1)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_2(ByVal ANS_TAXI_KENSHU_2 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_2(ByVal ANS_TAXI_KENSHU_2 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_2)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_3(ByVal ANS_TAXI_KENSHU_3 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_3(ByVal ANS_TAXI_KENSHU_3 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_3)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_4(ByVal ANS_TAXI_KENSHU_4 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_4(ByVal ANS_TAXI_KENSHU_4 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_4)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_5(ByVal ANS_TAXI_KENSHU_5 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_5(ByVal ANS_TAXI_KENSHU_5 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_5)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_6(ByVal ANS_TAXI_KENSHU_6 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_6(ByVal ANS_TAXI_KENSHU_6 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_6)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_7(ByVal ANS_TAXI_KENSHU_7 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_7(ByVal ANS_TAXI_KENSHU_7 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_7)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_8(ByVal ANS_TAXI_KENSHU_8 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_8(ByVal ANS_TAXI_KENSHU_8 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_8)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_9(ByVal ANS_TAXI_KENSHU_9 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_9(ByVal ANS_TAXI_KENSHU_9 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_9)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_10)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_11)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_12)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_13)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_14)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_15)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_16)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_17)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_18)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_19)
     End Function
-    Public Shared Function GetValue_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_20)
     End Function
 
