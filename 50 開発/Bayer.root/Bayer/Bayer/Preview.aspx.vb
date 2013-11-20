@@ -49,6 +49,9 @@ Partial Public Class Preview
                     '手配書一括印刷
                     PrintDrReport()
                 End If
+            ElseIf URL.DrList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
+                '呼び元画面が交通・宿泊履歴一覧の場合
+                PrintDrList()
             ElseIf URL.DrRireki.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が交通・宿泊履歴一覧の場合
                 PrintDrRireki()
@@ -116,6 +119,14 @@ Partial Public Class Preview
                 Return False
             End Try
         ElseIf URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
+            Try
+                TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+                Joken = Session.Item(SessionDef.Joken)
+                If IsNothing(TBL_KOTSUHOTEL) Then Return False
+            Catch ex As Exception
+                Return False
+            End Try
+        ElseIf URL.DrList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
             Try
                 TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
                 Joken = Session.Item(SessionDef.Joken)
@@ -478,6 +489,96 @@ Partial Public Class Preview
     'データ取得
     Private Function GetNewDrData() As DataTable
         Dim strSQL As String = Session.Item(SessionDef.NewDrPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
+        Dim arguments As New DataSourceSelectArguments()
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+    End Function
+    '検索交通・宿泊一覧印刷
+    Private Sub PrintDrList()    
+        Dim rpt1 As New DrListReport()
+
+        'データ設定
+        rpt1.DataSource = GetDrList()
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        '抽出条件を渡す
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_MR_ROMA"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.MR_ROMA
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_DR_KANA"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.DR_KANA
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_DR_SANKA"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.DR_SANKA
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NO"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.KOUENKAI_NO
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NAME"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.KOUENKAI_NAME
+
+        If Joken.FROM_DATE <> "指定なし" AndAlso Joken.TO_DATE <> "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_JISSIBI"),  _
+                DataDynamics.ActiveReports.TextBox).Text = CmnModule.Format_Date(Joken.FROM_DATE, CmnModule.DateFormatType.YYYYMMDD) _
+                    & "～" _
+                    & CmnModule.Format_Date(Joken.TO_DATE, CmnModule.DateFormatType.YYYYMMDD)
+        ElseIf Joken.FROM_DATE <> "指定なし" AndAlso Joken.TO_DATE = "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_JISSIBI"),  _
+                DataDynamics.ActiveReports.TextBox).Text = CmnModule.Format_Date(Joken.FROM_DATE, CmnModule.DateFormatType.YYYYMMDD)
+        ElseIf Joken.FROM_DATE = "指定なし" AndAlso Joken.TO_DATE <> "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_JISSIBI"),  _
+                DataDynamics.ActiveReports.TextBox).Text = CmnModule.Format_Date(Joken.TO_DATE, CmnModule.DateFormatType.YYYYMMDD)
+        ElseIf Joken.FROM_DATE = "指定なし" AndAlso Joken.TO_DATE = "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_JISSIBI"),  _
+                DataDynamics.ActiveReports.TextBox).Text = "指定なし"
+        End If
+
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TEHAI_BU"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.BU
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TEHAI_AREA"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTANTO"),  _
+            DataDynamics.ActiveReports.TextBox).Text = Joken.TTANTO_ID
+
+        If Joken.UPDATE_DATE <> "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_UPD_DATE"),  _
+                DataDynamics.ActiveReports.TextBox).Text = CmnModule.Format_Date(Joken.UPDATE_DATE, CmnModule.DateFormatType.YYYYMMDD)
+        Else
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_UPD_DATE"),  _
+                DataDynamics.ActiveReports.TextBox).Text = Joken.UPDATE_DATE
+        End If
+
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
+            DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
+
+        'レポートを作成
+        rpt1.Run()
+
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+    End Sub
+
+    'データ取得
+    Private Function GetDrList() As DataTable
+        Dim strSQL As String = Session.Item(SessionDef.DrPrint_SQL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False

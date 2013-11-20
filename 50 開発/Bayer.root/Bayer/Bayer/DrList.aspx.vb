@@ -442,9 +442,21 @@ Partial Public Class DrList
         Joken.KOUENKAI_NAME = Me.JokenKOUENKAI_NAME.Text.Trim
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
-        If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.ToString
-        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JokenTEHAI_TANTO_AREA.SelectedItem.ToString
-        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+        If Me.JokenBU.SelectedIndex <> 0 Then
+            Joken.BU = Me.JokenBU.SelectedItem.ToString
+        Else
+            Joken.BU = ""
+        End If
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then
+            Joken.AREA = Me.JokenTEHAI_TANTO_AREA.SelectedItem.ToString
+        Else
+            Joken.AREA = ""
+        End If
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then
+            Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+        Else
+            Joken.TTANTO_ID = ""
+        End If
         Joken.UPDATE_DATE = CmnModule.Format_DateToString(Me.JokenUPDATE_DATE_YYYY.Text, Me.JokenUPDATE_DATE_MM.Text, Me.JokenUPDATE_DATE_DD.Text)
 
         strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False)
@@ -453,8 +465,8 @@ Partial Public Class DrList
         If Joken.DR_SANKA.Trim = "" Then Joken.DR_SANKA = "指定なし"
         If Joken.KOUENKAI_NO.Trim = "" Then Joken.KOUENKAI_NO = "指定なし"
         If Joken.KOUENKAI_NAME.Trim = "" Then Joken.KOUENKAI_NAME = "指定なし"
-        If Joken.FROM_DATE.Trim = "" Then Joken.FROM_DATE = "指定なし"
-        If Joken.TO_DATE.Trim = "" Then Joken.TO_DATE = "指定なし"
+        If Joken.FROM_DATE.Trim = "" OrElse Joken.FROM_DATE Is Nothing Then Joken.FROM_DATE = "指定なし"
+        If Joken.TO_DATE.Trim = "" OrElse Joken.TO_DATE Is Nothing Then Joken.TO_DATE = "指定なし"
         If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
         If Joken.AREA.Trim = "" Then Joken.AREA = "指定なし"
         If Joken.TTANTO_ID.Trim = "" Then Joken.TTANTO_ID = "指定なし"
@@ -465,5 +477,10 @@ Partial Public Class DrList
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.Joken) = Joken
         Response.Redirect(URL.Preview)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        BtnPrint1_Click(sender, e)
     End Sub
 End Class
