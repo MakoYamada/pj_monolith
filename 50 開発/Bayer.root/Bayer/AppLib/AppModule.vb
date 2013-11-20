@@ -4222,6 +4222,18 @@ Public Class AppModule
         End Select
     End Function
 
+    'ê∏éZäÆóπ
+    Public Shared Function GetName_SEISAN_KANRYO(ByVal SEISAN_KANRYO As String) As String
+        Select Case SEISAN_KANRYO
+            Case AppConst.SEISAN.SEISAN_KANRYO.Code.Mi
+                Return AppConst.SEISAN.SEISAN_KANRYO.Name.Mi
+            Case AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo
+                Return AppConst.SEISAN.SEISAN_KANRYO.Name.Kanryo
+            Case Else
+                Return String.Empty
+        End Select
+    End Function
+
 #End Region
 
     'î≠ëóì˙
