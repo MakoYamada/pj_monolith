@@ -32,11 +32,8 @@ Partial Public Class SeisanRegistReport
         Me.PageTotal = New DataDynamics.ActiveReports.TextBox
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.Shape2 = New DataDynamics.ActiveReports.Shape
-        Me.Line7 = New DataDynamics.ActiveReports.Line
         Me.lblKOUENKAI_NO = New DataDynamics.ActiveReports.Label
-        Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.lblSHIHARAI_NO = New DataDynamics.ActiveReports.Label
-        Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.Shape3 = New DataDynamics.ActiveReports.Shape
         Me.Shape4 = New DataDynamics.ActiveReports.Shape
         Me.lblSEISAN_YM = New DataDynamics.ActiveReports.Label
@@ -49,7 +46,6 @@ Partial Public Class SeisanRegistReport
         Me.lblSHOUNIN_DATE = New DataDynamics.ActiveReports.Label
         Me.SEIKYU_NO_TOPTOUR = New DataDynamics.ActiveReports.TextBox
         Me.SHOUNIN_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.Line3 = New DataDynamics.ActiveReports.Line
         Me.Shape5 = New DataDynamics.ActiveReports.Shape
         Me.lblTF = New DataDynamics.ActiveReports.Label
         Me.lbl991330401_TF = New DataDynamics.ActiveReports.Label
@@ -159,13 +155,59 @@ Partial Public Class SeisanRegistReport
         Me.lblKEI_T = New DataDynamics.ActiveReports.Label
         Me.KEI_T = New DataDynamics.ActiveReports.TextBox
         Me.Label13 = New DataDynamics.ActiveReports.Label
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Line1 = New DataDynamics.ActiveReports.Line
+        Me.Line7 = New DataDynamics.ActiveReports.Line
+        Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.Line4 = New DataDynamics.ActiveReports.Line
         Me.Line5 = New DataDynamics.ActiveReports.Line
+        Me.Line3 = New DataDynamics.ActiveReports.Line
         Me.Line6 = New DataDynamics.ActiveReports.Line
         Me.Line8 = New DataDynamics.ActiveReports.Line
         Me.Line9 = New DataDynamics.ActiveReports.Line
         Me.Line10 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Line37 = New DataDynamics.ActiveReports.Line
+        Me.Line11 = New DataDynamics.ActiveReports.Line
+        Me.Line12 = New DataDynamics.ActiveReports.Line
+        Me.Line13 = New DataDynamics.ActiveReports.Line
+        Me.Line14 = New DataDynamics.ActiveReports.Line
+        Me.Line15 = New DataDynamics.ActiveReports.Line
+        Me.Line16 = New DataDynamics.ActiveReports.Line
+        Me.Line17 = New DataDynamics.ActiveReports.Line
+        Me.Line18 = New DataDynamics.ActiveReports.Line
+        Me.Line19 = New DataDynamics.ActiveReports.Line
+        Me.Line20 = New DataDynamics.ActiveReports.Line
+        Me.Line21 = New DataDynamics.ActiveReports.Line
+        Me.Line22 = New DataDynamics.ActiveReports.Line
+        Me.Line23 = New DataDynamics.ActiveReports.Line
+        Me.Line24 = New DataDynamics.ActiveReports.Line
+        Me.Line25 = New DataDynamics.ActiveReports.Line
+        Me.Line26 = New DataDynamics.ActiveReports.Line
+        Me.Line27 = New DataDynamics.ActiveReports.Line
+        Me.Line28 = New DataDynamics.ActiveReports.Line
+        Me.Line29 = New DataDynamics.ActiveReports.Line
+        Me.Line30 = New DataDynamics.ActiveReports.Line
+        Me.Line31 = New DataDynamics.ActiveReports.Line
+        Me.Line32 = New DataDynamics.ActiveReports.Line
+        Me.Line33 = New DataDynamics.ActiveReports.Line
+        Me.Line34 = New DataDynamics.ActiveReports.Line
+        Me.Line35 = New DataDynamics.ActiveReports.Line
+        Me.Line36 = New DataDynamics.ActiveReports.Line
+        Me.Line38 = New DataDynamics.ActiveReports.Line
+        Me.Line39 = New DataDynamics.ActiveReports.Line
+        Me.Line40 = New DataDynamics.ActiveReports.Line
+        Me.Line41 = New DataDynamics.ActiveReports.Line
+        Me.Line42 = New DataDynamics.ActiveReports.Line
+        Me.Line43 = New DataDynamics.ActiveReports.Line
+        Me.Line44 = New DataDynamics.ActiveReports.Line
+        Me.Line45 = New DataDynamics.ActiveReports.Line
+        Me.Line46 = New DataDynamics.ActiveReports.Line
+        Me.Line47 = New DataDynamics.ActiveReports.Line
+        Me.Line48 = New DataDynamics.ActiveReports.Line
+        Me.Line49 = New DataDynamics.ActiveReports.Line
+        Me.Line50 = New DataDynamics.ActiveReports.Line
+        Me.Line51 = New DataDynamics.ActiveReports.Line
+        Me.Line52 = New DataDynamics.ActiveReports.Line
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintDate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -308,17 +350,17 @@ Partial Public Class SeisanRegistReport
         '
         Me.Shape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.Shape1.Height = 0.3149607!
-        Me.Shape1.Left = 0.007480315!
+        Me.Shape1.Left = 0.0!
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 9.999999!
         Me.Shape1.Top = 0.5933071!
-        Me.Shape1.Width = 7.529923!
+        Me.Shape1.Width = 7.490945!
         '
         'Label8
         '
         Me.Label8.Height = 0.2688977!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 2.879921!
+        Me.Label8.Left = 2.883466!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = resources.GetString("Label8.Style")
         Me.Label8.Text = "精算金額入力"
@@ -329,7 +371,7 @@ Partial Public Class SeisanRegistReport
         '
         Me.Label4.Height = 0.1968504!
         Me.Label4.HyperLink = Nothing
-        Me.Label4.Left = 6.002757!
+        Me.Label4.Left = 5.971295!
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label4.Text = "："
@@ -339,7 +381,7 @@ Partial Public Class SeisanRegistReport
         'PrintDate
         '
         Me.PrintDate.Height = 0.1968504!
-        Me.PrintDate.Left = 6.159449!
+        Me.PrintDate.Left = 6.127987!
         Me.PrintDate.Name = "PrintDate"
         Me.PrintDate.Style = "font-family: ＭＳ ゴシック"
         Me.PrintDate.Text = "2013/12/12 00:00:00"
@@ -350,7 +392,7 @@ Partial Public Class SeisanRegistReport
         '
         Me.Label1.Height = 0.1968504!
         Me.Label1.HyperLink = Nothing
-        Me.Label1.Left = 5.408628!
+        Me.Label1.Left = 5.377166!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label1.Text = "出力日"
@@ -361,7 +403,7 @@ Partial Public Class SeisanRegistReport
         '
         Me.Label3.Height = 0.1968504!
         Me.Label3.HyperLink = Nothing
-        Me.Label3.Left = 6.002758!
+        Me.Label3.Left = 5.971296!
         Me.Label3.Name = "Label3"
         Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label3.Text = "："
@@ -373,7 +415,7 @@ Partial Public Class SeisanRegistReport
         Me.LOGIN_USER_NAME.CanGrow = False
         Me.LOGIN_USER_NAME.DataField = "USER_NAME"
         Me.LOGIN_USER_NAME.Height = 0.1968504!
-        Me.LOGIN_USER_NAME.Left = 6.159415!
+        Me.LOGIN_USER_NAME.Left = 6.127953!
         Me.LOGIN_USER_NAME.Name = "LOGIN_USER_NAME"
         Me.LOGIN_USER_NAME.Style = "font-family: ＭＳ ゴシック"
         Me.LOGIN_USER_NAME.Text = Nothing
@@ -384,7 +426,7 @@ Partial Public Class SeisanRegistReport
         '
         Me.Label2.Height = 0.1968504!
         Me.Label2.HyperLink = Nothing
-        Me.Label2.Left = 5.408628!
+        Me.Label2.Left = 5.377166!
         Me.Label2.Name = "Label2"
         Me.Label2.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label2.Text = "出力担当"
@@ -395,7 +437,7 @@ Partial Public Class SeisanRegistReport
         '
         Me.LabelPage.Height = 0.1968504!
         Me.LabelPage.HyperLink = Nothing
-        Me.LabelPage.Left = 5.955085!
+        Me.LabelPage.Left = 5.923623!
         Me.LabelPage.Name = "LabelPage"
         Me.LabelPage.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: right"
         Me.LabelPage.Text = "(999 / 999 ページ)"
@@ -405,7 +447,7 @@ Partial Public Class SeisanRegistReport
         'PageCount
         '
         Me.PageCount.Height = 0.1692913!
-        Me.PageCount.Left = 4.510991!
+        Me.PageCount.Left = 4.479529!
         Me.PageCount.Name = "PageCount"
         Me.PageCount.Style = "font-family: ＭＳ ゴシック; text-align: right"
         Me.PageCount.SummaryRunning = DataDynamics.ActiveReports.SummaryRunning.All
@@ -418,7 +460,7 @@ Partial Public Class SeisanRegistReport
         'PageTotal
         '
         Me.PageTotal.Height = 0.1692913!
-        Me.PageTotal.Left = 4.865322!
+        Me.PageTotal.Left = 4.83386!
         Me.PageTotal.Name = "PageTotal"
         Me.PageTotal.Style = "font-family: ＭＳ ゴシック; text-align: right"
         Me.PageTotal.SummaryType = DataDynamics.ActiveReports.SummaryType.PageCount
@@ -430,7 +472,7 @@ Partial Public Class SeisanRegistReport
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.lblKOUENKAI_NO, Me.lblSHIHARAI_NO, Me.Shape3, Me.Shape4, Me.lblSEISAN_YM, Me.lblSHOUNIN_KUBUN, Me.KOUENKAI_NO, Me.SHIHARAI_NO, Me.SEISAN_YM, Me.SHOUNIN_KUBUN, Me.lblSEIKYU_NO_TOPTOUR, Me.lblSHOUNIN_DATE, Me.SEIKYU_NO_TOPTOUR, Me.SHOUNIN_DATE, Me.Shape5, Me.lblTF, Me.lbl991330401_TF, Me.lblKAIJOHI_TF, Me.lblINSHOKUHI_TF, Me.lblHOTELHI_TF, Me.lblHOTEL_COMMISSION_TF, Me.lblOTHER_TRAFFIC_TF, Me.lblJR_TF, Me.lblKIZAIHI_TF, Me.lblHOTELHI_TOZEI, Me.lblKANRIHI_TF, Me.lblAIR_TF, Me.lblTAXI_COMMISSION_TF, Me.lblJINKENHI_TF, Me.lblOTHER_TF, Me.lblTAXI_TF, Me.lblTAXI_SEISAN_TF, Me.KAIJOHI_TF, Me.Label23, Me.KIZAIHI_TF, Me.Label24, Me.lblKEI_991330401_TF, Me.KEI_991330401_TF, Me.Label26, Me.lblKEI_41120200_TF, Me.KEI_41120200_TF, Me.Label28, Me.lblKEI_TF, Me.KEI_TF, Me.Label30, Me.lblT, Me.lbl41120200_TF, Me.lbl991330401_T, Me.lblKAIJOUHI_T, Me.lblINSHOKUHI_T, Me.lblKIZAIHI_T, Me.lblJINKENHI_T, Me.lbl41120200_T, Me.lblOTHER_T, Me.lblKANRIHI_T, Me.lblMR_HOTEL, Me.lblMR_JR, Me.lblMR_HOTEL_TOZEI, Me.lblSEISANSHO_URL, Me.lblTAXI_T, Me.lblTAXI_SEISAN_T, Me.lblTAXI_TICKET_URL, Me.lblSEISAN_KANRYO, Me.INSHOKUHI_TF, Me.Label5, Me.HOTELHI_TF, Me.Label6, Me.JR_TF, Me.Label31, Me.OTHER_TRAFFIC_TF, Me.Label32, Me.HOTEL_COMMISSION_TF, Me.Label33, Me.OTHER_TF, Me.Label38, Me.TAXI_TF, Me.Label49, Me.KAIJOUHI_T, Me.Label50, Me.INSHOKUHI_T, Me.Label51, Me.JINKENHI_T, Me.Label52, Me.KANRIHI_T, Me.Label53, Me.HOTELHI_TOZEI, Me.Label54, Me.AIR_TF, Me.Label55, Me.TAXI_COMMISSION_TF, Me.Label56, Me.JINKENHI_TF, Me.Label57, Me.KANRIHI_TF, Me.Label58, Me.TAXI_SEISAN_TF, Me.Label59, Me.KIZAIHI_T, Me.Label60, Me.OTHER_T, Me.Label61, Me.MR_HOTEL, Me.Label62, Me.MR_HOTEL_TOZEI, Me.Label63, Me.MR_JR, Me.Label64, Me.TAXI_T, Me.Label65, Me.TAXI_SEISAN_T, Me.Label66, Me.SEISANSHO_URL, Me.TAXI_TICKET_URL, Me.SEISAN_KANRYO, Me.lblKEI_991330401_T, Me.KEI_991330401_T, Me.Label9, Me.lblKEI_41120200_T, Me.KEI_41120200_T, Me.Label11, Me.lblKEI_T, Me.KEI_T, Me.Label13, Me.Line1, Me.Line7, Me.Line2, Me.Line4, Me.Line5, Me.Line3, Me.Line6, Me.Line8, Me.Line9, Me.Line10})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.lblKOUENKAI_NO, Me.lblSHIHARAI_NO, Me.Shape3, Me.Shape4, Me.lblSEISAN_YM, Me.lblSHOUNIN_KUBUN, Me.KOUENKAI_NO, Me.SHIHARAI_NO, Me.SEISAN_YM, Me.SHOUNIN_KUBUN, Me.lblSEIKYU_NO_TOPTOUR, Me.lblSHOUNIN_DATE, Me.SEIKYU_NO_TOPTOUR, Me.SHOUNIN_DATE, Me.Shape5, Me.lblTF, Me.lbl991330401_TF, Me.lblKAIJOHI_TF, Me.lblINSHOKUHI_TF, Me.lblHOTELHI_TF, Me.lblHOTEL_COMMISSION_TF, Me.lblOTHER_TRAFFIC_TF, Me.lblJR_TF, Me.lblKIZAIHI_TF, Me.lblHOTELHI_TOZEI, Me.lblKANRIHI_TF, Me.lblAIR_TF, Me.lblTAXI_COMMISSION_TF, Me.lblJINKENHI_TF, Me.lblOTHER_TF, Me.lblTAXI_TF, Me.lblTAXI_SEISAN_TF, Me.KAIJOHI_TF, Me.Label23, Me.KIZAIHI_TF, Me.Label24, Me.lblKEI_991330401_TF, Me.KEI_991330401_TF, Me.Label26, Me.lblKEI_41120200_TF, Me.KEI_41120200_TF, Me.Label28, Me.lblKEI_TF, Me.KEI_TF, Me.Label30, Me.lblT, Me.lbl41120200_TF, Me.lbl991330401_T, Me.lblKAIJOUHI_T, Me.lblINSHOKUHI_T, Me.lblKIZAIHI_T, Me.lblJINKENHI_T, Me.lbl41120200_T, Me.lblOTHER_T, Me.lblKANRIHI_T, Me.lblMR_HOTEL, Me.lblMR_JR, Me.lblMR_HOTEL_TOZEI, Me.lblSEISANSHO_URL, Me.lblTAXI_T, Me.lblTAXI_SEISAN_T, Me.lblTAXI_TICKET_URL, Me.lblSEISAN_KANRYO, Me.INSHOKUHI_TF, Me.Label5, Me.HOTELHI_TF, Me.Label6, Me.JR_TF, Me.Label31, Me.OTHER_TRAFFIC_TF, Me.Label32, Me.HOTEL_COMMISSION_TF, Me.Label33, Me.OTHER_TF, Me.Label38, Me.TAXI_TF, Me.Label49, Me.KAIJOUHI_T, Me.Label50, Me.INSHOKUHI_T, Me.Label51, Me.JINKENHI_T, Me.Label52, Me.KANRIHI_T, Me.Label53, Me.HOTELHI_TOZEI, Me.Label54, Me.AIR_TF, Me.Label55, Me.TAXI_COMMISSION_TF, Me.Label56, Me.JINKENHI_TF, Me.Label57, Me.KANRIHI_TF, Me.Label58, Me.TAXI_SEISAN_TF, Me.Label59, Me.KIZAIHI_T, Me.Label60, Me.OTHER_T, Me.Label61, Me.MR_HOTEL, Me.Label62, Me.MR_HOTEL_TOZEI, Me.Label63, Me.MR_JR, Me.Label64, Me.TAXI_T, Me.Label65, Me.TAXI_SEISAN_T, Me.Label66, Me.SEISANSHO_URL, Me.TAXI_TICKET_URL, Me.SEISAN_KANRYO, Me.lblKEI_991330401_T, Me.KEI_991330401_T, Me.Label9, Me.lblKEI_41120200_T, Me.KEI_41120200_T, Me.Label11, Me.lblKEI_T, Me.KEI_T, Me.Label13, Me.Line1, Me.Line7, Me.Line2, Me.Line4, Me.Line5, Me.Line3, Me.Line6, Me.Line8, Me.Line9, Me.Line10, Me.Line37, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line34, Me.Line35, Me.Line36, Me.Line38, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line51, Me.Line52})
         Me.Detail.Height = 9.581957!
         Me.Detail.Name = "Detail"
         '
@@ -446,19 +488,6 @@ Partial Public Class SeisanRegistReport
         Me.Shape2.Top = 0.1874016!
         Me.Shape2.Width = 0.8547245!
         '
-        'Line7
-        '
-        Me.Line7.Height = 0.0!
-        Me.Line7.Left = 0.0!
-        Me.Line7.LineWeight = 1.0!
-        Me.Line7.Name = "Line7"
-        Me.Line7.Top = 0.1874016!
-        Me.Line7.Width = 7.490942!
-        Me.Line7.X1 = 0.0!
-        Me.Line7.X2 = 7.490942!
-        Me.Line7.Y1 = 0.1874016!
-        Me.Line7.Y2 = 0.1874016!
-        '
         'lblKOUENKAI_NO
         '
         Me.lblKOUENKAI_NO.Height = 0.1968504!
@@ -470,19 +499,6 @@ Partial Public Class SeisanRegistReport
         Me.lblKOUENKAI_NO.Top = 0.1874016!
         Me.lblKOUENKAI_NO.Width = 0.8547245!
         '
-        'Line1
-        '
-        Me.Line1.Height = 0.0!
-        Me.Line1.Left = 0.0!
-        Me.Line1.LineWeight = 1.0!
-        Me.Line1.Name = "Line1"
-        Me.Line1.Top = 0.384252!
-        Me.Line1.Width = 7.490944!
-        Me.Line1.X1 = 0.0!
-        Me.Line1.X2 = 7.490944!
-        Me.Line1.Y1 = 0.384252!
-        Me.Line1.Y2 = 0.384252!
-        '
         'lblSHIHARAI_NO
         '
         Me.lblSHIHARAI_NO.Height = 0.1968504!
@@ -493,19 +509,6 @@ Partial Public Class SeisanRegistReport
         Me.lblSHIHARAI_NO.Text = "支払番号"
         Me.lblSHIHARAI_NO.Top = 0.384252!
         Me.lblSHIHARAI_NO.Width = 0.8622048!
-        '
-        'Line2
-        '
-        Me.Line2.Height = 0.0!
-        Me.Line2.Left = 0.0!
-        Me.Line2.LineWeight = 1.0!
-        Me.Line2.Name = "Line2"
-        Me.Line2.Top = 0.584252!
-        Me.Line2.Width = 7.490944!
-        Me.Line2.X1 = 0.0!
-        Me.Line2.X2 = 7.490944!
-        Me.Line2.Y1 = 0.584252!
-        Me.Line2.Y2 = 0.584252!
         '
         'Shape3
         '
@@ -535,22 +538,22 @@ Partial Public Class SeisanRegistReport
         '
         Me.lblSEISAN_YM.Height = 0.1968504!
         Me.lblSEISAN_YM.HyperLink = Nothing
-        Me.lblSEISAN_YM.Left = 2.35315!
+        Me.lblSEISAN_YM.Left = 2.291733!
         Me.lblSEISAN_YM.Name = "lblSEISAN_YM"
         Me.lblSEISAN_YM.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblSEISAN_YM.Text = "トップツアー精算年月"
-        Me.lblSEISAN_YM.Top = 0.1905512!
+        Me.lblSEISAN_YM.Top = 0.1874016!
         Me.lblSEISAN_YM.Width = 1.500787!
         '
         'lblSHOUNIN_KUBUN
         '
         Me.lblSHOUNIN_KUBUN.Height = 0.1968504!
         Me.lblSHOUNIN_KUBUN.HyperLink = Nothing
-        Me.lblSHOUNIN_KUBUN.Left = 2.35315!
+        Me.lblSHOUNIN_KUBUN.Left = 2.291733!
         Me.lblSHOUNIN_KUBUN.Name = "lblSHOUNIN_KUBUN"
         Me.lblSHOUNIN_KUBUN.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblSHOUNIN_KUBUN.Text = "承認区分"
-        Me.lblSHOUNIN_KUBUN.Top = 0.3874016!
+        Me.lblSHOUNIN_KUBUN.Top = 0.384252!
         Me.lblSHOUNIN_KUBUN.Width = 1.500787!
         '
         'KOUENKAI_NO
@@ -647,23 +650,10 @@ Partial Public Class SeisanRegistReport
         Me.SHOUNIN_DATE.Top = 0.384252!
         Me.SHOUNIN_DATE.Width = 1.291339!
         '
-        'Line3
-        '
-        Me.Line3.Height = 0.0!
-        Me.Line3.Left = 0.007480315!
-        Me.Line3.LineWeight = 1.0!
-        Me.Line3.Name = "Line3"
-        Me.Line3.Top = 0.7799213!
-        Me.Line3.Width = 7.490944!
-        Me.Line3.X1 = 0.007480315!
-        Me.Line3.X2 = 7.498424!
-        Me.Line3.Y1 = 0.7799213!
-        Me.Line3.Y2 = 0.7799213!
-        '
         'Shape5
         '
         Me.Shape5.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Shape5.Height = 5.988584!
+        Me.Shape5.Height = 5.834646!
         Me.Shape5.Left = 0.007480315!
         Me.Shape5.LineColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.Shape5.LineWeight = 0.0!
@@ -676,11 +666,11 @@ Partial Public Class SeisanRegistReport
         '
         Me.lblTF.Height = 0.1968504!
         Me.lblTF.HyperLink = Nothing
-        Me.lblTF.Left = 0.0!
+        Me.lblTF.Left = 0.007480316!
         Me.lblTF.Name = "lblTF"
-        Me.lblTF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
+        Me.lblTF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
         Me.lblTF.Text = "非課税"
-        Me.lblTF.Top = 1.760236!
+        Me.lblTF.Top = 2.465354!
         Me.lblTF.Width = 0.5212598!
         '
         'lbl991330401_TF
@@ -691,7 +681,7 @@ Partial Public Class SeisanRegistReport
         Me.lbl991330401_TF.Name = "lbl991330401_TF"
         Me.lbl991330401_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lbl991330401_TF.Text = "991330401"
-        Me.lbl991330401_TF.Top = 0.937008!
+        Me.lbl991330401_TF.Top = 0.8433071!
         Me.lbl991330401_TF.Width = 1.396457!
         '
         'lblKAIJOHI_TF
@@ -702,7 +692,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKAIJOHI_TF.Name = "lblKAIJOHI_TF"
         Me.lblKAIJOHI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKAIJOHI_TF.Text = "会場費"
-        Me.lblKAIJOHI_TF.Top = 1.238364!
+        Me.lblKAIJOHI_TF.Top = 1.167717!
         Me.lblKAIJOHI_TF.Width = 1.396457!
         '
         'lblINSHOKUHI_TF
@@ -713,7 +703,7 @@ Partial Public Class SeisanRegistReport
         Me.lblINSHOKUHI_TF.Name = "lblINSHOKUHI_TF"
         Me.lblINSHOKUHI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblINSHOKUHI_TF.Text = "飲食費"
-        Me.lblINSHOKUHI_TF.Top = 1.53972!
+        Me.lblINSHOKUHI_TF.Top = 1.492126!
         Me.lblINSHOKUHI_TF.Width = 1.396457!
         '
         'lblHOTELHI_TF
@@ -724,7 +714,7 @@ Partial Public Class SeisanRegistReport
         Me.lblHOTELHI_TF.Name = "lblHOTELHI_TF"
         Me.lblHOTELHI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblHOTELHI_TF.Text = "宿泊費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblHOTELHI_TF.Top = 2.224322!
+        Me.lblHOTELHI_TF.Top = 2.140945!
         Me.lblHOTELHI_TF.Width = 1.396457!
         '
         'lblHOTEL_COMMISSION_TF
@@ -735,7 +725,7 @@ Partial Public Class SeisanRegistReport
         Me.lblHOTEL_COMMISSION_TF.Name = "lblHOTEL_COMMISSION_TF"
         Me.lblHOTEL_COMMISSION_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblHOTEL_COMMISSION_TF.Text = "登録手数料"
-        Me.lblHOTEL_COMMISSION_TF.Top = 3.12839!
+        Me.lblHOTEL_COMMISSION_TF.Top = 3.114173!
         Me.lblHOTEL_COMMISSION_TF.Width = 1.396457!
         '
         'lblOTHER_TRAFFIC_TF
@@ -746,7 +736,7 @@ Partial Public Class SeisanRegistReport
         Me.lblOTHER_TRAFFIC_TF.Name = "lblOTHER_TRAFFIC_TF"
         Me.lblOTHER_TRAFFIC_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblOTHER_TRAFFIC_TF.Text = "その他鉄道等費用"
-        Me.lblOTHER_TRAFFIC_TF.Top = 2.827034!
+        Me.lblOTHER_TRAFFIC_TF.Top = 2.789764!
         Me.lblOTHER_TRAFFIC_TF.Width = 1.396457!
         '
         'lblJR_TF
@@ -757,73 +747,73 @@ Partial Public Class SeisanRegistReport
         Me.lblJR_TF.Name = "lblJR_TF"
         Me.lblJR_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblJR_TF.Text = "JR代"
-        Me.lblJR_TF.Top = 2.525678!
+        Me.lblJR_TF.Top = 2.465354!
         Me.lblJR_TF.Width = 1.396457!
         '
         'lblKIZAIHI_TF
         '
         Me.lblKIZAIHI_TF.Height = 0.1968504!
         Me.lblKIZAIHI_TF.HyperLink = Nothing
-        Me.lblKIZAIHI_TF.Left = 3.246457!
+        Me.lblKIZAIHI_TF.Left = 3.200788!
         Me.lblKIZAIHI_TF.Name = "lblKIZAIHI_TF"
         Me.lblKIZAIHI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKIZAIHI_TF.Text = "機材費"
-        Me.lblKIZAIHI_TF.Top = 1.238364!
+        Me.lblKIZAIHI_TF.Top = 1.167717!
         Me.lblKIZAIHI_TF.Width = 1.396457!
         '
         'lblHOTELHI_TOZEI
         '
         Me.lblHOTELHI_TOZEI.Height = 0.1968504!
         Me.lblHOTELHI_TOZEI.HyperLink = Nothing
-        Me.lblHOTELHI_TOZEI.Left = 3.253937!
+        Me.lblHOTELHI_TOZEI.Left = 3.200788!
         Me.lblHOTELHI_TOZEI.Name = "lblHOTELHI_TOZEI"
         Me.lblHOTELHI_TOZEI.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblHOTELHI_TOZEI.Text = "宿泊費都税"
-        Me.lblHOTELHI_TOZEI.Top = 2.224322!
+        Me.lblHOTELHI_TOZEI.Top = 2.140945!
         Me.lblHOTELHI_TOZEI.Width = 1.396457!
         '
         'lblKANRIHI_TF
         '
         Me.lblKANRIHI_TF.Height = 0.1968504!
         Me.lblKANRIHI_TF.HyperLink = Nothing
-        Me.lblKANRIHI_TF.Left = 3.253937!
+        Me.lblKANRIHI_TF.Left = 3.200788!
         Me.lblKANRIHI_TF.Name = "lblKANRIHI_TF"
         Me.lblKANRIHI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKANRIHI_TF.Text = "管理費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblKANRIHI_TF.Top = 3.429746!
+        Me.lblKANRIHI_TF.Top = 3.438583!
         Me.lblKANRIHI_TF.Width = 1.396457!
         '
         'lblAIR_TF
         '
         Me.lblAIR_TF.Height = 0.1968504!
         Me.lblAIR_TF.HyperLink = Nothing
-        Me.lblAIR_TF.Left = 3.253937!
+        Me.lblAIR_TF.Left = 3.200788!
         Me.lblAIR_TF.Name = "lblAIR_TF"
         Me.lblAIR_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblAIR_TF.Text = "航空券代"
-        Me.lblAIR_TF.Top = 2.525678!
+        Me.lblAIR_TF.Top = 2.465354!
         Me.lblAIR_TF.Width = 1.396457!
         '
         'lblTAXI_COMMISSION_TF
         '
         Me.lblTAXI_COMMISSION_TF.Height = 0.1968504!
         Me.lblTAXI_COMMISSION_TF.HyperLink = Nothing
-        Me.lblTAXI_COMMISSION_TF.Left = 3.253937!
+        Me.lblTAXI_COMMISSION_TF.Left = 3.200788!
         Me.lblTAXI_COMMISSION_TF.Name = "lblTAXI_COMMISSION_TF"
         Me.lblTAXI_COMMISSION_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblTAXI_COMMISSION_TF.Text = "タクチケ発券手数料"
-        Me.lblTAXI_COMMISSION_TF.Top = 2.827034!
+        Me.lblTAXI_COMMISSION_TF.Top = 2.789764!
         Me.lblTAXI_COMMISSION_TF.Width = 1.396457!
         '
         'lblJINKENHI_TF
         '
         Me.lblJINKENHI_TF.Height = 0.1968504!
         Me.lblJINKENHI_TF.HyperLink = Nothing
-        Me.lblJINKENHI_TF.Left = 3.253937!
+        Me.lblJINKENHI_TF.Left = 3.200788!
         Me.lblJINKENHI_TF.Name = "lblJINKENHI_TF"
         Me.lblJINKENHI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblJINKENHI_TF.Text = "人件費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblJINKENHI_TF.Top = 3.12839!
+        Me.lblJINKENHI_TF.Top = 3.114173!
         Me.lblJINKENHI_TF.Width = 1.396457!
         '
         'lblOTHER_TF
@@ -834,7 +824,7 @@ Partial Public Class SeisanRegistReport
         Me.lblOTHER_TF.Name = "lblOTHER_TF"
         Me.lblOTHER_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblOTHER_TF.Text = "その他費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblOTHER_TF.Top = 3.429746!
+        Me.lblOTHER_TF.Top = 3.438583!
         Me.lblOTHER_TF.Width = 1.396457!
         '
         'lblTAXI_TF
@@ -845,18 +835,18 @@ Partial Public Class SeisanRegistReport
         Me.lblTAXI_TF.Name = "lblTAXI_TF"
         Me.lblTAXI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblTAXI_TF.Text = "タクチケ実車料金"
-        Me.lblTAXI_TF.Top = 3.731103!
+        Me.lblTAXI_TF.Top = 3.762992!
         Me.lblTAXI_TF.Width = 1.396457!
         '
         'lblTAXI_SEISAN_TF
         '
         Me.lblTAXI_SEISAN_TF.Height = 0.1968504!
         Me.lblTAXI_SEISAN_TF.HyperLink = Nothing
-        Me.lblTAXI_SEISAN_TF.Left = 3.253937!
+        Me.lblTAXI_SEISAN_TF.Left = 3.200788!
         Me.lblTAXI_SEISAN_TF.Name = "lblTAXI_SEISAN_TF"
         Me.lblTAXI_SEISAN_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblTAXI_SEISAN_TF.Text = "タクチケ精算手数料"
-        Me.lblTAXI_SEISAN_TF.Top = 3.731103!
+        Me.lblTAXI_SEISAN_TF.Top = 3.762992!
         Me.lblTAXI_SEISAN_TF.Width = 1.396457!
         '
         'KAIJOHI_TF
@@ -868,7 +858,7 @@ Partial Public Class SeisanRegistReport
         Me.KAIJOHI_TF.Name = "KAIJOHI_TF"
         Me.KAIJOHI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KAIJOHI_TF.Text = "1,234,567,890"
-        Me.KAIJOHI_TF.Top = 1.238364!
+        Me.KAIJOHI_TF.Top = 1.167717!
         Me.KAIJOHI_TF.Width = 0.9681104!
         '
         'Label23
@@ -879,7 +869,7 @@ Partial Public Class SeisanRegistReport
         Me.Label23.Name = "Label23"
         Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label23.Text = "円"
-        Me.Label23.Top = 1.238364!
+        Me.Label23.Top = 1.167717!
         Me.Label23.Width = 0.2015748!
         '
         'KIZAIHI_TF
@@ -887,22 +877,22 @@ Partial Public Class SeisanRegistReport
         Me.KIZAIHI_TF.CanGrow = False
         Me.KIZAIHI_TF.DataField = "KIZAIHI_TF"
         Me.KIZAIHI_TF.Height = 0.1968504!
-        Me.KIZAIHI_TF.Left = 4.642914!
+        Me.KIZAIHI_TF.Left = 4.597244!
         Me.KIZAIHI_TF.Name = "KIZAIHI_TF"
         Me.KIZAIHI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KIZAIHI_TF.Text = "1,234,567,890"
-        Me.KIZAIHI_TF.Top = 1.238364!
+        Me.KIZAIHI_TF.Top = 1.167717!
         Me.KIZAIHI_TF.Width = 0.9681104!
         '
         'Label24
         '
         Me.Label24.Height = 0.1968504!
         Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 5.611024!
+        Me.Label24.Left = 5.565355!
         Me.Label24.Name = "Label24"
         Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label24.Text = "円"
-        Me.Label24.Top = 1.238364!
+        Me.Label24.Top = 1.167717!
         Me.Label24.Width = 0.2015748!
         '
         'lblKEI_991330401_TF
@@ -913,7 +903,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKEI_991330401_TF.Name = "lblKEI_991330401_TF"
         Me.lblKEI_991330401_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKEI_991330401_TF.Text = "小計"
-        Me.lblKEI_991330401_TF.Top = 1.53972!
+        Me.lblKEI_991330401_TF.Top = 1.492126!
         Me.lblKEI_991330401_TF.Width = 0.427559!
         '
         'KEI_991330401_TF
@@ -925,7 +915,7 @@ Partial Public Class SeisanRegistReport
         Me.KEI_991330401_TF.Name = "KEI_991330401_TF"
         Me.KEI_991330401_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KEI_991330401_TF.Text = "1,234,567,890"
-        Me.KEI_991330401_TF.Top = 1.53972!
+        Me.KEI_991330401_TF.Top = 1.492126!
         Me.KEI_991330401_TF.Width = 0.9681104!
         '
         'Label26
@@ -936,7 +926,7 @@ Partial Public Class SeisanRegistReport
         Me.Label26.Name = "Label26"
         Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label26.Text = "円"
-        Me.Label26.Top = 1.53972!
+        Me.Label26.Top = 1.492126!
         Me.Label26.Width = 0.2015748!
         '
         'lblKEI_41120200_TF
@@ -947,7 +937,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKEI_41120200_TF.Name = "lblKEI_41120200_TF"
         Me.lblKEI_41120200_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKEI_41120200_TF.Text = "小計"
-        Me.lblKEI_41120200_TF.Top = 3.731103!
+        Me.lblKEI_41120200_TF.Top = 3.762992!
         Me.lblKEI_41120200_TF.Width = 0.4275589!
         '
         'KEI_41120200_TF
@@ -959,7 +949,7 @@ Partial Public Class SeisanRegistReport
         Me.KEI_41120200_TF.Name = "KEI_41120200_TF"
         Me.KEI_41120200_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KEI_41120200_TF.Text = "1,234,567,890"
-        Me.KEI_41120200_TF.Top = 3.731103!
+        Me.KEI_41120200_TF.Top = 3.762992!
         Me.KEI_41120200_TF.Width = 0.9681104!
         '
         'Label28
@@ -970,19 +960,19 @@ Partial Public Class SeisanRegistReport
         Me.Label28.Name = "Label28"
         Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label28.Text = "円"
-        Me.Label28.Top = 3.731103!
+        Me.Label28.Top = 3.762992!
         Me.Label28.Width = 0.2015748!
         '
         'lblKEI_TF
         '
-        Me.lblKEI_TF.Height = 0.1968505!
+        Me.lblKEI_TF.Height = 0.1968503!
         Me.lblKEI_TF.HyperLink = Nothing
-        Me.lblKEI_TF.Left = 5.267323!
+        Me.lblKEI_TF.Left = 5.172048!
         Me.lblKEI_TF.Name = "lblKEI_TF"
         Me.lblKEI_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
-        Me.lblKEI_TF.Text = "非課税金額計"
-        Me.lblKEI_TF.Top = 4.083465!
-        Me.lblKEI_TF.Width = 1.011024!
+        Me.lblKEI_TF.Text = "非課税金額合計"
+        Me.lblKEI_TF.Top = 4.087401!
+        Me.lblKEI_TF.Width = 1.106299!
         '
         'KEI_TF
         '
@@ -993,7 +983,7 @@ Partial Public Class SeisanRegistReport
         Me.KEI_TF.Name = "KEI_TF"
         Me.KEI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KEI_TF.Text = "1,234,567,890"
-        Me.KEI_TF.Top = 4.083465!
+        Me.KEI_TF.Top = 4.087401!
         Me.KEI_TF.Width = 0.9681104!
         '
         'Label30
@@ -1004,18 +994,18 @@ Partial Public Class SeisanRegistReport
         Me.Label30.Name = "Label30"
         Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label30.Text = "円"
-        Me.Label30.Top = 4.083465!
+        Me.Label30.Top = 4.087401!
         Me.Label30.Width = 0.2015748!
         '
         'lblT
         '
         Me.lblT.Height = 0.1968504!
         Me.lblT.HyperLink = Nothing
-        Me.lblT.Left = 0.007480323!
+        Me.lblT.Left = 0.0!
         Me.lblT.Name = "lblT"
-        Me.lblT.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
+        Me.lblT.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
         Me.lblT.Text = "課税"
-        Me.lblT.Top = 4.446851!
+        Me.lblT.Top = 5.38504!
         Me.lblT.Width = 0.5212598!
         '
         'lbl41120200_TF
@@ -1026,7 +1016,7 @@ Partial Public Class SeisanRegistReport
         Me.lbl41120200_TF.Name = "lbl41120200_TF"
         Me.lbl41120200_TF.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lbl41120200_TF.Text = "41120200"
-        Me.lbl41120200_TF.Top = 1.922966!
+        Me.lbl41120200_TF.Top = 1.816535!
         Me.lbl41120200_TF.Width = 1.396457!
         '
         'lbl991330401_T
@@ -1037,7 +1027,7 @@ Partial Public Class SeisanRegistReport
         Me.lbl991330401_T.Name = "lbl991330401_T"
         Me.lbl991330401_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lbl991330401_T.Text = "991330401"
-        Me.lbl991330401_T.Top = 4.446851!
+        Me.lbl991330401_T.Top = 4.411811!
         Me.lbl991330401_T.Width = 1.396457!
         '
         'lblKAIJOUHI_T
@@ -1048,7 +1038,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKAIJOUHI_T.Name = "lblKAIJOUHI_T"
         Me.lblKAIJOUHI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKAIJOUHI_T.Text = "会場費"
-        Me.lblKAIJOUHI_T.Top = 4.748032!
+        Me.lblKAIJOUHI_T.Top = 4.73622!
         Me.lblKAIJOUHI_T.Width = 1.396457!
         '
         'lblINSHOKUHI_T
@@ -1059,7 +1049,7 @@ Partial Public Class SeisanRegistReport
         Me.lblINSHOKUHI_T.Name = "lblINSHOKUHI_T"
         Me.lblINSHOKUHI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblINSHOKUHI_T.Text = "飲食費"
-        Me.lblINSHOKUHI_T.Top = 5.049212!
+        Me.lblINSHOKUHI_T.Top = 5.06063!
         Me.lblINSHOKUHI_T.Width = 1.396457!
         '
         'lblKIZAIHI_T
@@ -1070,7 +1060,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKIZAIHI_T.Name = "lblKIZAIHI_T"
         Me.lblKIZAIHI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKIZAIHI_T.Text = "機材費"
-        Me.lblKIZAIHI_T.Top = 4.748032!
+        Me.lblKIZAIHI_T.Top = 4.73622!
         Me.lblKIZAIHI_T.Width = 1.396457!
         '
         'lblJINKENHI_T
@@ -1081,7 +1071,7 @@ Partial Public Class SeisanRegistReport
         Me.lblJINKENHI_T.Name = "lblJINKENHI_T"
         Me.lblJINKENHI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblJINKENHI_T.Text = "人件費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblJINKENHI_T.Top = 5.753937!
+        Me.lblJINKENHI_T.Top = 5.709449!
         Me.lblJINKENHI_T.Width = 1.396457!
         '
         'lbl41120200_T
@@ -1092,7 +1082,7 @@ Partial Public Class SeisanRegistReport
         Me.lbl41120200_T.Name = "lbl41120200_T"
         Me.lbl41120200_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lbl41120200_T.Text = "41120200"
-        Me.lbl41120200_T.Top = 5.452756!
+        Me.lbl41120200_T.Top = 5.38504!
         Me.lbl41120200_T.Width = 1.396457!
         '
         'lblOTHER_T
@@ -1103,7 +1093,7 @@ Partial Public Class SeisanRegistReport
         Me.lblOTHER_T.Name = "lblOTHER_T"
         Me.lblOTHER_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblOTHER_T.Text = "その他費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblOTHER_T.Top = 5.753937!
+        Me.lblOTHER_T.Top = 5.709449!
         Me.lblOTHER_T.Width = 1.396457!
         '
         'lblKANRIHI_T
@@ -1114,7 +1104,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKANRIHI_T.Name = "lblKANRIHI_T"
         Me.lblKANRIHI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKANRIHI_T.Text = "管理費" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lblKANRIHI_T.Top = 6.055119!
+        Me.lblKANRIHI_T.Top = 6.033858!
         Me.lblKANRIHI_T.Width = 1.396457!
         '
         'lblMR_HOTEL
@@ -1125,7 +1115,7 @@ Partial Public Class SeisanRegistReport
         Me.lblMR_HOTEL.Name = "lblMR_HOTEL"
         Me.lblMR_HOTEL.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblMR_HOTEL.Text = "社員の国内旅費（宿泊）"
-        Me.lblMR_HOTEL.Top = 7.134253!
+        Me.lblMR_HOTEL.Top = 6.969291!
         Me.lblMR_HOTEL.Width = 1.925197!
         '
         'lblMR_JR
@@ -1136,7 +1126,7 @@ Partial Public Class SeisanRegistReport
         Me.lblMR_JR.Name = "lblMR_JR"
         Me.lblMR_JR.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblMR_JR.Text = "社員の国内旅費（JR/航空券）"
-        Me.lblMR_JR.Top = 7.655905!
+        Me.lblMR_JR.Top = 7.618111!
         Me.lblMR_JR.Width = 1.925197!
         '
         'lblMR_HOTEL_TOZEI
@@ -1147,7 +1137,7 @@ Partial Public Class SeisanRegistReport
         Me.lblMR_HOTEL_TOZEI.Name = "lblMR_HOTEL_TOZEI"
         Me.lblMR_HOTEL_TOZEI.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblMR_HOTEL_TOZEI.Text = "社員の国内旅費（宿泊都税）"
-        Me.lblMR_HOTEL_TOZEI.Top = 7.407086!
+        Me.lblMR_HOTEL_TOZEI.Top = 7.293701!
         Me.lblMR_HOTEL_TOZEI.Width = 1.925197!
         '
         'lblSEISANSHO_URL
@@ -1158,7 +1148,7 @@ Partial Public Class SeisanRegistReport
         Me.lblSEISANSHO_URL.Name = "lblSEISANSHO_URL"
         Me.lblSEISANSHO_URL.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblSEISANSHO_URL.Text = "精算書保存場所URL"
-        Me.lblSEISANSHO_URL.Top = 7.93819!
+        Me.lblSEISANSHO_URL.Top = 7.94252!
         Me.lblSEISANSHO_URL.Width = 1.925197!
         '
         'lblTAXI_T
@@ -1169,29 +1159,29 @@ Partial Public Class SeisanRegistReport
         Me.lblTAXI_T.Name = "lblTAXI_T"
         Me.lblTAXI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblTAXI_T.Text = "タクチケ実車料金（課税）"
-        Me.lblTAXI_T.Top = 8.335051!
+        Me.lblTAXI_T.Top = 8.266929!
         Me.lblTAXI_T.Width = 1.925197!
         '
         'lblTAXI_SEISAN_T
         '
         Me.lblTAXI_SEISAN_T.Height = 0.1968504!
         Me.lblTAXI_SEISAN_T.HyperLink = Nothing
-        Me.lblTAXI_SEISAN_T.Left = 0.00000001862645!
+        Me.lblTAXI_SEISAN_T.Left = 0.007480334!
         Me.lblTAXI_SEISAN_T.Name = "lblTAXI_SEISAN_T"
         Me.lblTAXI_SEISAN_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblTAXI_SEISAN_T.Text = "タクチケ精算手数料（課税）"
-        Me.lblTAXI_SEISAN_T.Top = 8.586241!
+        Me.lblTAXI_SEISAN_T.Top = 8.591339!
         Me.lblTAXI_SEISAN_T.Width = 1.925197!
         '
         'lblTAXI_TICKET_URL
         '
         Me.lblTAXI_TICKET_URL.Height = 0.1968504!
         Me.lblTAXI_TICKET_URL.HyperLink = Nothing
-        Me.lblTAXI_TICKET_URL.Left = 0.00000001862645!
+        Me.lblTAXI_TICKET_URL.Left = 0.0!
         Me.lblTAXI_TICKET_URL.Name = "lblTAXI_TICKET_URL"
         Me.lblTAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblTAXI_TICKET_URL.Text = "タクチケ管理表保存場所URL"
-        Me.lblTAXI_TICKET_URL.Top = 8.857903!
+        Me.lblTAXI_TICKET_URL.Top = 8.915749!
         Me.lblTAXI_TICKET_URL.Width = 1.925197!
         '
         'lblSEISAN_KANRYO
@@ -1202,7 +1192,7 @@ Partial Public Class SeisanRegistReport
         Me.lblSEISAN_KANRYO.Name = "lblSEISAN_KANRYO"
         Me.lblSEISAN_KANRYO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblSEISAN_KANRYO.Text = "精算完了"
-        Me.lblSEISAN_KANRYO.Top = 9.254753!
+        Me.lblSEISAN_KANRYO.Top = 9.240157!
         Me.lblSEISAN_KANRYO.Width = 1.925197!
         '
         'INSHOKUHI_TF
@@ -1214,7 +1204,7 @@ Partial Public Class SeisanRegistReport
         Me.INSHOKUHI_TF.Name = "INSHOKUHI_TF"
         Me.INSHOKUHI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.INSHOKUHI_TF.Text = "1,234,567,890"
-        Me.INSHOKUHI_TF.Top = 1.53972!
+        Me.INSHOKUHI_TF.Top = 1.492126!
         Me.INSHOKUHI_TF.Width = 0.9681104!
         '
         'Label5
@@ -1225,7 +1215,7 @@ Partial Public Class SeisanRegistReport
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label5.Text = "円"
-        Me.Label5.Top = 1.53972!
+        Me.Label5.Top = 1.492126!
         Me.Label5.Width = 0.2015748!
         '
         'HOTELHI_TF
@@ -1237,7 +1227,7 @@ Partial Public Class SeisanRegistReport
         Me.HOTELHI_TF.Name = "HOTELHI_TF"
         Me.HOTELHI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.HOTELHI_TF.Text = "1,234,567,890"
-        Me.HOTELHI_TF.Top = 2.224322!
+        Me.HOTELHI_TF.Top = 2.140945!
         Me.HOTELHI_TF.Width = 0.9681104!
         '
         'Label6
@@ -1248,7 +1238,7 @@ Partial Public Class SeisanRegistReport
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label6.Text = "円"
-        Me.Label6.Top = 2.224322!
+        Me.Label6.Top = 2.140945!
         Me.Label6.Width = 0.2015748!
         '
         'JR_TF
@@ -1260,7 +1250,7 @@ Partial Public Class SeisanRegistReport
         Me.JR_TF.Name = "JR_TF"
         Me.JR_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.JR_TF.Text = "1,234,567,890"
-        Me.JR_TF.Top = 2.525678!
+        Me.JR_TF.Top = 2.465354!
         Me.JR_TF.Width = 0.9681104!
         '
         'Label31
@@ -1271,7 +1261,7 @@ Partial Public Class SeisanRegistReport
         Me.Label31.Name = "Label31"
         Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label31.Text = "円"
-        Me.Label31.Top = 2.525678!
+        Me.Label31.Top = 2.465354!
         Me.Label31.Width = 0.2015748!
         '
         'OTHER_TRAFFIC_TF
@@ -1283,7 +1273,7 @@ Partial Public Class SeisanRegistReport
         Me.OTHER_TRAFFIC_TF.Name = "OTHER_TRAFFIC_TF"
         Me.OTHER_TRAFFIC_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.OTHER_TRAFFIC_TF.Text = "1,234,567,890"
-        Me.OTHER_TRAFFIC_TF.Top = 2.827034!
+        Me.OTHER_TRAFFIC_TF.Top = 2.789764!
         Me.OTHER_TRAFFIC_TF.Width = 0.9681104!
         '
         'Label32
@@ -1294,7 +1284,7 @@ Partial Public Class SeisanRegistReport
         Me.Label32.Name = "Label32"
         Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label32.Text = "円"
-        Me.Label32.Top = 2.827034!
+        Me.Label32.Top = 2.789764!
         Me.Label32.Width = 0.2015748!
         '
         'HOTEL_COMMISSION_TF
@@ -1306,7 +1296,7 @@ Partial Public Class SeisanRegistReport
         Me.HOTEL_COMMISSION_TF.Name = "HOTEL_COMMISSION_TF"
         Me.HOTEL_COMMISSION_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.HOTEL_COMMISSION_TF.Text = "1,234,567,890"
-        Me.HOTEL_COMMISSION_TF.Top = 3.12839!
+        Me.HOTEL_COMMISSION_TF.Top = 3.114173!
         Me.HOTEL_COMMISSION_TF.Width = 0.9681104!
         '
         'Label33
@@ -1317,7 +1307,7 @@ Partial Public Class SeisanRegistReport
         Me.Label33.Name = "Label33"
         Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label33.Text = "円"
-        Me.Label33.Top = 3.12839!
+        Me.Label33.Top = 3.114173!
         Me.Label33.Width = 0.2015748!
         '
         'OTHER_TF
@@ -1329,7 +1319,7 @@ Partial Public Class SeisanRegistReport
         Me.OTHER_TF.Name = "OTHER_TF"
         Me.OTHER_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.OTHER_TF.Text = "1,234,567,890"
-        Me.OTHER_TF.Top = 3.429746!
+        Me.OTHER_TF.Top = 3.438583!
         Me.OTHER_TF.Width = 0.9681104!
         '
         'Label38
@@ -1340,7 +1330,7 @@ Partial Public Class SeisanRegistReport
         Me.Label38.Name = "Label38"
         Me.Label38.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label38.Text = "円"
-        Me.Label38.Top = 3.429746!
+        Me.Label38.Top = 3.438583!
         Me.Label38.Width = 0.2015748!
         '
         'TAXI_TF
@@ -1352,7 +1342,7 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_TF.Name = "TAXI_TF"
         Me.TAXI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.TAXI_TF.Text = "1,234,567,890"
-        Me.TAXI_TF.Top = 3.731103!
+        Me.TAXI_TF.Top = 3.762992!
         Me.TAXI_TF.Width = 0.9681104!
         '
         'Label49
@@ -1363,7 +1353,7 @@ Partial Public Class SeisanRegistReport
         Me.Label49.Name = "Label49"
         Me.Label49.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label49.Text = "円"
-        Me.Label49.Top = 3.731103!
+        Me.Label49.Top = 3.762992!
         Me.Label49.Width = 0.2015748!
         '
         'KAIJOUHI_T
@@ -1375,7 +1365,7 @@ Partial Public Class SeisanRegistReport
         Me.KAIJOUHI_T.Name = "KAIJOUHI_T"
         Me.KAIJOUHI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KAIJOUHI_T.Text = "1,234,567,890"
-        Me.KAIJOUHI_T.Top = 4.748032!
+        Me.KAIJOUHI_T.Top = 4.73622!
         Me.KAIJOUHI_T.Width = 0.9681104!
         '
         'Label50
@@ -1386,7 +1376,7 @@ Partial Public Class SeisanRegistReport
         Me.Label50.Name = "Label50"
         Me.Label50.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label50.Text = "円"
-        Me.Label50.Top = 4.748032!
+        Me.Label50.Top = 4.73622!
         Me.Label50.Width = 0.2015748!
         '
         'INSHOKUHI_T
@@ -1398,7 +1388,7 @@ Partial Public Class SeisanRegistReport
         Me.INSHOKUHI_T.Name = "INSHOKUHI_T"
         Me.INSHOKUHI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.INSHOKUHI_T.Text = "1,234,567,890"
-        Me.INSHOKUHI_T.Top = 5.049212!
+        Me.INSHOKUHI_T.Top = 5.06063!
         Me.INSHOKUHI_T.Width = 0.9681104!
         '
         'Label51
@@ -1409,7 +1399,7 @@ Partial Public Class SeisanRegistReport
         Me.Label51.Name = "Label51"
         Me.Label51.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label51.Text = "円"
-        Me.Label51.Top = 5.049212!
+        Me.Label51.Top = 5.06063!
         Me.Label51.Width = 0.2015748!
         '
         'JINKENHI_T
@@ -1421,7 +1411,7 @@ Partial Public Class SeisanRegistReport
         Me.JINKENHI_T.Name = "JINKENHI_T"
         Me.JINKENHI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.JINKENHI_T.Text = "1,234,567,890"
-        Me.JINKENHI_T.Top = 5.753937!
+        Me.JINKENHI_T.Top = 5.709449!
         Me.JINKENHI_T.Width = 0.9681104!
         '
         'Label52
@@ -1432,7 +1422,7 @@ Partial Public Class SeisanRegistReport
         Me.Label52.Name = "Label52"
         Me.Label52.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label52.Text = "円"
-        Me.Label52.Top = 5.753937!
+        Me.Label52.Top = 5.709449!
         Me.Label52.Width = 0.2015748!
         '
         'KANRIHI_T
@@ -1444,7 +1434,7 @@ Partial Public Class SeisanRegistReport
         Me.KANRIHI_T.Name = "KANRIHI_T"
         Me.KANRIHI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KANRIHI_T.Text = "1,234,567,890"
-        Me.KANRIHI_T.Top = 6.055119!
+        Me.KANRIHI_T.Top = 6.033858!
         Me.KANRIHI_T.Width = 0.9681104!
         '
         'Label53
@@ -1455,7 +1445,7 @@ Partial Public Class SeisanRegistReport
         Me.Label53.Name = "Label53"
         Me.Label53.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label53.Text = "円"
-        Me.Label53.Top = 6.055119!
+        Me.Label53.Top = 6.033858!
         Me.Label53.Width = 0.2015748!
         '
         'HOTELHI_TOZEI
@@ -1463,22 +1453,22 @@ Partial Public Class SeisanRegistReport
         Me.HOTELHI_TOZEI.CanGrow = False
         Me.HOTELHI_TOZEI.DataField = "HOTELHI_TOZEI"
         Me.HOTELHI_TOZEI.Height = 0.1968504!
-        Me.HOTELHI_TOZEI.Left = 4.642914!
+        Me.HOTELHI_TOZEI.Left = 4.597244!
         Me.HOTELHI_TOZEI.Name = "HOTELHI_TOZEI"
         Me.HOTELHI_TOZEI.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.HOTELHI_TOZEI.Text = "1,234,567,890"
-        Me.HOTELHI_TOZEI.Top = 2.224322!
+        Me.HOTELHI_TOZEI.Top = 2.140945!
         Me.HOTELHI_TOZEI.Width = 0.9681104!
         '
         'Label54
         '
         Me.Label54.Height = 0.1968504!
         Me.Label54.HyperLink = Nothing
-        Me.Label54.Left = 5.611024!
+        Me.Label54.Left = 5.565355!
         Me.Label54.Name = "Label54"
         Me.Label54.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label54.Text = "円"
-        Me.Label54.Top = 2.224322!
+        Me.Label54.Top = 2.140945!
         Me.Label54.Width = 0.2015748!
         '
         'AIR_TF
@@ -1486,22 +1476,22 @@ Partial Public Class SeisanRegistReport
         Me.AIR_TF.CanGrow = False
         Me.AIR_TF.DataField = "AIR_TF"
         Me.AIR_TF.Height = 0.1968504!
-        Me.AIR_TF.Left = 4.642914!
+        Me.AIR_TF.Left = 4.597244!
         Me.AIR_TF.Name = "AIR_TF"
         Me.AIR_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.AIR_TF.Text = "1,234,567,890"
-        Me.AIR_TF.Top = 2.525678!
+        Me.AIR_TF.Top = 2.465354!
         Me.AIR_TF.Width = 0.9681104!
         '
         'Label55
         '
         Me.Label55.Height = 0.1968504!
         Me.Label55.HyperLink = Nothing
-        Me.Label55.Left = 5.611024!
+        Me.Label55.Left = 5.565355!
         Me.Label55.Name = "Label55"
         Me.Label55.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label55.Text = "円"
-        Me.Label55.Top = 2.525678!
+        Me.Label55.Top = 2.465354!
         Me.Label55.Width = 0.2015748!
         '
         'TAXI_COMMISSION_TF
@@ -1509,22 +1499,22 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_COMMISSION_TF.CanGrow = False
         Me.TAXI_COMMISSION_TF.DataField = "TAXI_COMMISSION_TF"
         Me.TAXI_COMMISSION_TF.Height = 0.1968504!
-        Me.TAXI_COMMISSION_TF.Left = 4.642914!
+        Me.TAXI_COMMISSION_TF.Left = 4.597244!
         Me.TAXI_COMMISSION_TF.Name = "TAXI_COMMISSION_TF"
         Me.TAXI_COMMISSION_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.TAXI_COMMISSION_TF.Text = "1,234,567,890"
-        Me.TAXI_COMMISSION_TF.Top = 2.827034!
+        Me.TAXI_COMMISSION_TF.Top = 2.789764!
         Me.TAXI_COMMISSION_TF.Width = 0.9681104!
         '
         'Label56
         '
         Me.Label56.Height = 0.1968504!
         Me.Label56.HyperLink = Nothing
-        Me.Label56.Left = 5.611024!
+        Me.Label56.Left = 5.565355!
         Me.Label56.Name = "Label56"
         Me.Label56.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label56.Text = "円"
-        Me.Label56.Top = 2.827034!
+        Me.Label56.Top = 2.789764!
         Me.Label56.Width = 0.2015748!
         '
         'JINKENHI_TF
@@ -1532,22 +1522,22 @@ Partial Public Class SeisanRegistReport
         Me.JINKENHI_TF.CanGrow = False
         Me.JINKENHI_TF.DataField = "JINKENHI_TF"
         Me.JINKENHI_TF.Height = 0.1968504!
-        Me.JINKENHI_TF.Left = 4.642914!
+        Me.JINKENHI_TF.Left = 4.597244!
         Me.JINKENHI_TF.Name = "JINKENHI_TF"
         Me.JINKENHI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.JINKENHI_TF.Text = "1,234,567,890"
-        Me.JINKENHI_TF.Top = 3.12839!
+        Me.JINKENHI_TF.Top = 3.114173!
         Me.JINKENHI_TF.Width = 0.9681104!
         '
         'Label57
         '
         Me.Label57.Height = 0.1968504!
         Me.Label57.HyperLink = Nothing
-        Me.Label57.Left = 5.611024!
+        Me.Label57.Left = 5.565355!
         Me.Label57.Name = "Label57"
         Me.Label57.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label57.Text = "円"
-        Me.Label57.Top = 3.12839!
+        Me.Label57.Top = 3.114173!
         Me.Label57.Width = 0.2015748!
         '
         'KANRIHI_TF
@@ -1555,22 +1545,22 @@ Partial Public Class SeisanRegistReport
         Me.KANRIHI_TF.CanGrow = False
         Me.KANRIHI_TF.DataField = "KANRIHI_TF"
         Me.KANRIHI_TF.Height = 0.1968504!
-        Me.KANRIHI_TF.Left = 4.642914!
+        Me.KANRIHI_TF.Left = 4.597244!
         Me.KANRIHI_TF.Name = "KANRIHI_TF"
         Me.KANRIHI_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KANRIHI_TF.Text = "1,234,567,890"
-        Me.KANRIHI_TF.Top = 3.429746!
+        Me.KANRIHI_TF.Top = 3.438583!
         Me.KANRIHI_TF.Width = 0.9681104!
         '
         'Label58
         '
         Me.Label58.Height = 0.1968504!
         Me.Label58.HyperLink = Nothing
-        Me.Label58.Left = 5.611024!
+        Me.Label58.Left = 5.565355!
         Me.Label58.Name = "Label58"
         Me.Label58.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label58.Text = "円"
-        Me.Label58.Top = 3.429746!
+        Me.Label58.Top = 3.438583!
         Me.Label58.Width = 0.2015748!
         '
         'TAXI_SEISAN_TF
@@ -1578,22 +1568,22 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_SEISAN_TF.CanGrow = False
         Me.TAXI_SEISAN_TF.DataField = "TAXI_SEISAN_TF"
         Me.TAXI_SEISAN_TF.Height = 0.1968504!
-        Me.TAXI_SEISAN_TF.Left = 4.642914!
+        Me.TAXI_SEISAN_TF.Left = 4.597244!
         Me.TAXI_SEISAN_TF.Name = "TAXI_SEISAN_TF"
         Me.TAXI_SEISAN_TF.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.TAXI_SEISAN_TF.Text = "1,234,567,890"
-        Me.TAXI_SEISAN_TF.Top = 3.731103!
+        Me.TAXI_SEISAN_TF.Top = 3.762992!
         Me.TAXI_SEISAN_TF.Width = 0.9681104!
         '
         'Label59
         '
         Me.Label59.Height = 0.1968504!
         Me.Label59.HyperLink = Nothing
-        Me.Label59.Left = 5.611024!
+        Me.Label59.Left = 5.565355!
         Me.Label59.Name = "Label59"
         Me.Label59.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label59.Text = "円"
-        Me.Label59.Top = 3.731103!
+        Me.Label59.Top = 3.762992!
         Me.Label59.Width = 0.2015748!
         '
         'KIZAIHI_T
@@ -1605,7 +1595,7 @@ Partial Public Class SeisanRegistReport
         Me.KIZAIHI_T.Name = "KIZAIHI_T"
         Me.KIZAIHI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KIZAIHI_T.Text = "1,234,567,890"
-        Me.KIZAIHI_T.Top = 4.748032!
+        Me.KIZAIHI_T.Top = 4.73622!
         Me.KIZAIHI_T.Width = 0.9681104!
         '
         'Label60
@@ -1616,7 +1606,7 @@ Partial Public Class SeisanRegistReport
         Me.Label60.Name = "Label60"
         Me.Label60.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label60.Text = "円"
-        Me.Label60.Top = 4.748032!
+        Me.Label60.Top = 4.73622!
         Me.Label60.Width = 0.2015748!
         '
         'OTHER_T
@@ -1628,7 +1618,7 @@ Partial Public Class SeisanRegistReport
         Me.OTHER_T.Name = "OTHER_T"
         Me.OTHER_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.OTHER_T.Text = "1,234,567,890"
-        Me.OTHER_T.Top = 5.753937!
+        Me.OTHER_T.Top = 5.709449!
         Me.OTHER_T.Width = 0.9681104!
         '
         'Label61
@@ -1639,7 +1629,7 @@ Partial Public Class SeisanRegistReport
         Me.Label61.Name = "Label61"
         Me.Label61.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label61.Text = "円"
-        Me.Label61.Top = 5.753937!
+        Me.Label61.Top = 5.709449!
         Me.Label61.Width = 0.2015748!
         '
         'MR_HOTEL
@@ -1651,7 +1641,7 @@ Partial Public Class SeisanRegistReport
         Me.MR_HOTEL.Name = "MR_HOTEL"
         Me.MR_HOTEL.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.MR_HOTEL.Text = "1,234,567,890"
-        Me.MR_HOTEL.Top = 7.135039!
+        Me.MR_HOTEL.Top = 6.969291!
         Me.MR_HOTEL.Width = 0.9681104!
         '
         'Label62
@@ -1662,7 +1652,7 @@ Partial Public Class SeisanRegistReport
         Me.Label62.Name = "Label62"
         Me.Label62.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label62.Text = "円"
-        Me.Label62.Top = 7.134645!
+        Me.Label62.Top = 6.969291!
         Me.Label62.Width = 0.2015748!
         '
         'MR_HOTEL_TOZEI
@@ -1674,7 +1664,7 @@ Partial Public Class SeisanRegistReport
         Me.MR_HOTEL_TOZEI.Name = "MR_HOTEL_TOZEI"
         Me.MR_HOTEL_TOZEI.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.MR_HOTEL_TOZEI.Text = "1,234,567,890"
-        Me.MR_HOTEL_TOZEI.Top = 7.40748!
+        Me.MR_HOTEL_TOZEI.Top = 7.293701!
         Me.MR_HOTEL_TOZEI.Width = 0.9681104!
         '
         'Label63
@@ -1685,7 +1675,7 @@ Partial Public Class SeisanRegistReport
         Me.Label63.Name = "Label63"
         Me.Label63.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label63.Text = "円"
-        Me.Label63.Top = 7.407085!
+        Me.Label63.Top = 7.293701!
         Me.Label63.Width = 0.2015748!
         '
         'MR_JR
@@ -1697,7 +1687,7 @@ Partial Public Class SeisanRegistReport
         Me.MR_JR.Name = "MR_JR"
         Me.MR_JR.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.MR_JR.Text = "1,234,567,890"
-        Me.MR_JR.Top = 7.655905!
+        Me.MR_JR.Top = 7.618111!
         Me.MR_JR.Width = 0.9681104!
         '
         'Label64
@@ -1708,7 +1698,7 @@ Partial Public Class SeisanRegistReport
         Me.Label64.Name = "Label64"
         Me.Label64.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label64.Text = "円"
-        Me.Label64.Top = 7.655904!
+        Me.Label64.Top = 7.618111!
         Me.Label64.Width = 0.2015748!
         '
         'TAXI_T
@@ -1720,7 +1710,7 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_T.Name = "TAXI_T"
         Me.TAXI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.TAXI_T.Text = "1,234,567,890"
-        Me.TAXI_T.Top = 8.335051!
+        Me.TAXI_T.Top = 8.266929!
         Me.TAXI_T.Width = 0.9681104!
         '
         'Label65
@@ -1731,7 +1721,7 @@ Partial Public Class SeisanRegistReport
         Me.Label65.Name = "Label65"
         Me.Label65.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label65.Text = "円"
-        Me.Label65.Top = 8.334656!
+        Me.Label65.Top = 8.266929!
         Me.Label65.Width = 0.2015748!
         '
         'TAXI_SEISAN_T
@@ -1743,7 +1733,7 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_SEISAN_T.Name = "TAXI_SEISAN_T"
         Me.TAXI_SEISAN_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.TAXI_SEISAN_T.Text = "1,234,567,890"
-        Me.TAXI_SEISAN_T.Top = 8.586634!
+        Me.TAXI_SEISAN_T.Top = 8.591339!
         Me.TAXI_SEISAN_T.Width = 0.9681104!
         '
         'Label66
@@ -1754,7 +1744,7 @@ Partial Public Class SeisanRegistReport
         Me.Label66.Name = "Label66"
         Me.Label66.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label66.Text = "円"
-        Me.Label66.Top = 8.586239!
+        Me.Label66.Top = 8.591339!
         Me.Label66.Width = 0.2015748!
         '
         'SEISANSHO_URL
@@ -1766,7 +1756,7 @@ Partial Public Class SeisanRegistReport
         Me.SEISANSHO_URL.Name = "SEISANSHO_URL"
         Me.SEISANSHO_URL.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
         Me.SEISANSHO_URL.Text = Nothing
-        Me.SEISANSHO_URL.Top = 7.93819!
+        Me.SEISANSHO_URL.Top = 7.94252!
         Me.SEISANSHO_URL.Width = 5.395277!
         '
         'TAXI_TICKET_URL
@@ -1778,7 +1768,7 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_TICKET_URL.Name = "TAXI_TICKET_URL"
         Me.TAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
         Me.TAXI_TICKET_URL.Text = Nothing
-        Me.TAXI_TICKET_URL.Top = 8.857903!
+        Me.TAXI_TICKET_URL.Top = 8.915749!
         Me.TAXI_TICKET_URL.Width = 5.395277!
         '
         'SEISAN_KANRYO
@@ -1790,7 +1780,7 @@ Partial Public Class SeisanRegistReport
         Me.SEISAN_KANRYO.Name = "SEISAN_KANRYO"
         Me.SEISAN_KANRYO.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
         Me.SEISAN_KANRYO.Text = Nothing
-        Me.SEISAN_KANRYO.Top = 9.254753!
+        Me.SEISAN_KANRYO.Top = 9.240157!
         Me.SEISAN_KANRYO.Width = 5.395277!
         '
         'lblKEI_991330401_T
@@ -1801,7 +1791,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKEI_991330401_T.Name = "lblKEI_991330401_T"
         Me.lblKEI_991330401_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKEI_991330401_T.Text = "小計"
-        Me.lblKEI_991330401_T.Top = 5.049212!
+        Me.lblKEI_991330401_T.Top = 5.06063!
         Me.lblKEI_991330401_T.Width = 0.4275589!
         '
         'KEI_991330401_T
@@ -1813,7 +1803,7 @@ Partial Public Class SeisanRegistReport
         Me.KEI_991330401_T.Name = "KEI_991330401_T"
         Me.KEI_991330401_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KEI_991330401_T.Text = "1,234,567,890"
-        Me.KEI_991330401_T.Top = 5.049212!
+        Me.KEI_991330401_T.Top = 5.06063!
         Me.KEI_991330401_T.Width = 0.9681104!
         '
         'Label9
@@ -1824,7 +1814,7 @@ Partial Public Class SeisanRegistReport
         Me.Label9.Name = "Label9"
         Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label9.Text = "円"
-        Me.Label9.Top = 5.049212!
+        Me.Label9.Top = 5.06063!
         Me.Label9.Width = 0.2015748!
         '
         'lblKEI_41120200_T
@@ -1835,7 +1825,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKEI_41120200_T.Name = "lblKEI_41120200_T"
         Me.lblKEI_41120200_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.lblKEI_41120200_T.Text = "小計"
-        Me.lblKEI_41120200_T.Top = 6.055119!
+        Me.lblKEI_41120200_T.Top = 6.033858!
         Me.lblKEI_41120200_T.Width = 0.4275589!
         '
         'KEI_41120200_T
@@ -1847,7 +1837,7 @@ Partial Public Class SeisanRegistReport
         Me.KEI_41120200_T.Name = "KEI_41120200_T"
         Me.KEI_41120200_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KEI_41120200_T.Text = "1,234,567,890"
-        Me.KEI_41120200_T.Top = 6.055119!
+        Me.KEI_41120200_T.Top = 6.033858!
         Me.KEI_41120200_T.Width = 0.9681104!
         '
         'Label11
@@ -1858,19 +1848,19 @@ Partial Public Class SeisanRegistReport
         Me.Label11.Name = "Label11"
         Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label11.Text = "円"
-        Me.Label11.Top = 6.055119!
+        Me.Label11.Top = 6.033858!
         Me.Label11.Width = 0.2015748!
         '
         'lblKEI_T
         '
         Me.lblKEI_T.Height = 0.1968508!
         Me.lblKEI_T.HyperLink = Nothing
-        Me.lblKEI_T.Left = 5.469686!
+        Me.lblKEI_T.Left = 5.304331!
         Me.lblKEI_T.Name = "lblKEI_T"
         Me.lblKEI_T.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
-        Me.lblKEI_T.Text = "課税金額計"
-        Me.lblKEI_T.Top = 6.491733!
-        Me.lblKEI_T.Width = 0.8086634!
+        Me.lblKEI_T.Text = "課税金額合計"
+        Me.lblKEI_T.Top = 6.358268!
+        Me.lblKEI_T.Width = 0.9740176!
         '
         'KEI_T
         '
@@ -1881,7 +1871,7 @@ Partial Public Class SeisanRegistReport
         Me.KEI_T.Name = "KEI_T"
         Me.KEI_T.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
         Me.KEI_T.Text = "1,234,567,890"
-        Me.KEI_T.Top = 6.491733!
+        Me.KEI_T.Top = 6.358268!
         Me.KEI_T.Width = 0.9681104!
         '
         'Label13
@@ -1892,13 +1882,47 @@ Partial Public Class SeisanRegistReport
         Me.Label13.Name = "Label13"
         Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label13.Text = "円"
-        Me.Label13.Top = 6.491733!
+        Me.Label13.Top = 6.358268!
         Me.Label13.Width = 0.2015748!
         '
-        'PageFooter
+        'Line1
         '
-        Me.PageFooter.Height = 0.01041667!
-        Me.PageFooter.Name = "PageFooter"
+        Me.Line1.Height = 0.0!
+        Me.Line1.Left = 0.0!
+        Me.Line1.LineWeight = 1.0!
+        Me.Line1.Name = "Line1"
+        Me.Line1.Top = 0.384252!
+        Me.Line1.Width = 7.490944!
+        Me.Line1.X1 = 0.0!
+        Me.Line1.X2 = 7.490944!
+        Me.Line1.Y1 = 0.384252!
+        Me.Line1.Y2 = 0.384252!
+        '
+        'Line7
+        '
+        Me.Line7.Height = 0.0!
+        Me.Line7.Left = 0.0!
+        Me.Line7.LineWeight = 1.0!
+        Me.Line7.Name = "Line7"
+        Me.Line7.Top = 0.1874016!
+        Me.Line7.Width = 7.490942!
+        Me.Line7.X1 = 0.0!
+        Me.Line7.X2 = 7.490942!
+        Me.Line7.Y1 = 0.1874016!
+        Me.Line7.Y2 = 0.1874016!
+        '
+        'Line2
+        '
+        Me.Line2.Height = 0.0!
+        Me.Line2.Left = 0.0!
+        Me.Line2.LineWeight = 1.0!
+        Me.Line2.Name = "Line2"
+        Me.Line2.Top = 0.584252!
+        Me.Line2.Width = 7.490944!
+        Me.Line2.X1 = 0.0!
+        Me.Line2.X2 = 7.490944!
+        Me.Line2.Y1 = 0.584252!
+        Me.Line2.Y2 = 0.584252!
         '
         'Line4
         '
@@ -1906,25 +1930,38 @@ Partial Public Class SeisanRegistReport
         Me.Line4.Left = 0.0!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
-        Me.Line4.Top = 4.354331!
+        Me.Line4.Top = 4.348032!
         Me.Line4.Width = 7.490944!
         Me.Line4.X1 = 0.0!
         Me.Line4.X2 = 7.490944!
-        Me.Line4.Y1 = 4.354331!
-        Me.Line4.Y2 = 4.354331!
+        Me.Line4.Y1 = 4.348032!
+        Me.Line4.Y2 = 4.348032!
         '
         'Line5
         '
         Me.Line5.Height = 0.0!
-        Me.Line5.Left = 0.5511811!
+        Me.Line5.Left = 0.5287402!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
-        Me.Line5.Top = 1.850394!
-        Me.Line5.Width = 6.939763!
-        Me.Line5.X1 = 0.5511811!
+        Me.Line5.Top = 1.752756!
+        Me.Line5.Width = 6.962204!
+        Me.Line5.X1 = 0.5287402!
         Me.Line5.X2 = 7.490944!
-        Me.Line5.Y1 = 1.850394!
-        Me.Line5.Y2 = 1.850394!
+        Me.Line5.Y1 = 1.752756!
+        Me.Line5.Y2 = 1.752756!
+        '
+        'Line3
+        '
+        Me.Line3.Height = 0.0!
+        Me.Line3.Left = 0.0!
+        Me.Line3.LineWeight = 1.0!
+        Me.Line3.Name = "Line3"
+        Me.Line3.Top = 0.7795276!
+        Me.Line3.Width = 7.490944!
+        Me.Line3.X1 = 0.0!
+        Me.Line3.X2 = 7.490944!
+        Me.Line3.Y1 = 0.7795276!
+        Me.Line3.Y2 = 0.7795276!
         '
         'Line6
         '
@@ -1932,12 +1969,12 @@ Partial Public Class SeisanRegistReport
         Me.Line6.Left = 0.0!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
-        Me.Line6.Top = 6.768505!
+        Me.Line6.Top = 6.618898!
         Me.Line6.Width = 7.490944!
         Me.Line6.X1 = 0.0!
         Me.Line6.X2 = 7.490944!
-        Me.Line6.Y1 = 6.768505!
-        Me.Line6.Y2 = 6.768505!
+        Me.Line6.Y1 = 6.618898!
+        Me.Line6.Y2 = 6.618898!
         '
         'Line8
         '
@@ -1945,12 +1982,12 @@ Partial Public Class SeisanRegistReport
         Me.Line8.Left = 0.5287402!
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
-        Me.Line8.Top = 5.348425!
+        Me.Line8.Top = 5.32126!
         Me.Line8.Width = 6.939763!
         Me.Line8.X1 = 0.5287402!
         Me.Line8.X2 = 7.468503!
-        Me.Line8.Y1 = 5.348425!
-        Me.Line8.Y2 = 5.348425!
+        Me.Line8.Y1 = 5.32126!
+        Me.Line8.Y2 = 5.32126!
         '
         'Line9
         '
@@ -1958,12 +1995,12 @@ Partial Public Class SeisanRegistReport
         Me.Line9.Left = 0.5287402!
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
-        Me.Line9.Top = 4.009056!
+        Me.Line9.Top = 4.023622!
         Me.Line9.Width = 6.939763!
         Me.Line9.X1 = 0.5287402!
         Me.Line9.X2 = 7.468503!
-        Me.Line9.Y1 = 4.009056!
-        Me.Line9.Y2 = 4.009056!
+        Me.Line9.Y1 = 4.023622!
+        Me.Line9.Y2 = 4.023622!
         '
         'Line10
         '
@@ -1971,12 +2008,571 @@ Partial Public Class SeisanRegistReport
         Me.Line10.Left = 0.5287402!
         Me.Line10.LineWeight = 1.0!
         Me.Line10.Name = "Line10"
-        Me.Line10.Top = 6.3563!
+        Me.Line10.Top = 6.294488!
         Me.Line10.Width = 6.939759!
         Me.Line10.X1 = 0.5287402!
         Me.Line10.X2 = 7.468499!
-        Me.Line10.Y1 = 6.3563!
-        Me.Line10.Y2 = 6.3563!
+        Me.Line10.Y1 = 6.294488!
+        Me.Line10.Y2 = 6.294488!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.01041667!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'Line37
+        '
+        Me.Line37.Height = 0.6511811!
+        Me.Line37.Left = 3.180315!
+        Me.Line37.LineWeight = 1.0!
+        Me.Line37.Name = "Line37"
+        Me.Line37.Top = 1.101575!
+        Me.Line37.Width = 0.0!
+        Me.Line37.X1 = 3.180315!
+        Me.Line37.X2 = 3.180315!
+        Me.Line37.Y1 = 1.101575!
+        Me.Line37.Y2 = 1.752756!
+        '
+        'Line11
+        '
+        Me.Line11.Height = 0.6511811!
+        Me.Line11.Left = 5.830709!
+        Me.Line11.LineWeight = 1.0!
+        Me.Line11.Name = "Line11"
+        Me.Line11.Top = 1.101575!
+        Me.Line11.Width = 0.0!
+        Me.Line11.X1 = 5.830709!
+        Me.Line11.X2 = 5.830709!
+        Me.Line11.Y1 = 1.101575!
+        Me.Line11.Y2 = 1.752756!
+        '
+        'Line12
+        '
+        Me.Line12.Height = 0.0!
+        Me.Line12.Left = 0.5287402!
+        Me.Line12.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line12.LineWeight = 1.0!
+        Me.Line12.Name = "Line12"
+        Me.Line12.Top = 1.428347!
+        Me.Line12.Width = 5.298032!
+        Me.Line12.X1 = 0.5287402!
+        Me.Line12.X2 = 5.826772!
+        Me.Line12.Y1 = 1.428347!
+        Me.Line12.Y2 = 1.428347!
+        '
+        'Line13
+        '
+        Me.Line13.Height = 0.0!
+        Me.Line13.Left = 0.5287402!
+        Me.Line13.LineWeight = 1.0!
+        Me.Line13.Name = "Line13"
+        Me.Line13.Top = 1.103937!
+        Me.Line13.Width = 6.962208!
+        Me.Line13.X1 = 0.5287402!
+        Me.Line13.X2 = 7.490948!
+        Me.Line13.Y1 = 1.103937!
+        Me.Line13.Y2 = 1.103937!
+        '
+        'Line14
+        '
+        Me.Line14.Height = 0.0!
+        Me.Line14.Left = 0.5287402!
+        Me.Line14.LineWeight = 1.0!
+        Me.Line14.Name = "Line14"
+        Me.Line14.Top = 2.077165!
+        Me.Line14.Width = 6.962208!
+        Me.Line14.X1 = 0.5287402!
+        Me.Line14.X2 = 7.490948!
+        Me.Line14.Y1 = 2.077165!
+        Me.Line14.Y2 = 2.077165!
+        '
+        'Line15
+        '
+        Me.Line15.Height = 0.0!
+        Me.Line15.Left = 0.5287402!
+        Me.Line15.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line15.LineWeight = 1.0!
+        Me.Line15.Name = "Line15"
+        Me.Line15.Top = 2.401575!
+        Me.Line15.Width = 5.298032!
+        Me.Line15.X1 = 0.5287402!
+        Me.Line15.X2 = 5.826772!
+        Me.Line15.Y1 = 2.401575!
+        Me.Line15.Y2 = 2.401575!
+        '
+        'Line16
+        '
+        Me.Line16.Height = 0.0!
+        Me.Line16.Left = 0.5287402!
+        Me.Line16.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line16.LineWeight = 1.0!
+        Me.Line16.Name = "Line16"
+        Me.Line16.Top = 2.725984!
+        Me.Line16.Width = 5.298032!
+        Me.Line16.X1 = 0.5287402!
+        Me.Line16.X2 = 5.826772!
+        Me.Line16.Y1 = 2.725984!
+        Me.Line16.Y2 = 2.725984!
+        '
+        'Line17
+        '
+        Me.Line17.Height = 0.0!
+        Me.Line17.Left = 0.5287402!
+        Me.Line17.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line17.LineWeight = 1.0!
+        Me.Line17.Name = "Line17"
+        Me.Line17.Top = 3.050394!
+        Me.Line17.Width = 5.298032!
+        Me.Line17.X1 = 0.5287402!
+        Me.Line17.X2 = 5.826772!
+        Me.Line17.Y1 = 3.050394!
+        Me.Line17.Y2 = 3.050394!
+        '
+        'Line18
+        '
+        Me.Line18.Height = 0.0!
+        Me.Line18.Left = 0.5287402!
+        Me.Line18.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line18.LineWeight = 1.0!
+        Me.Line18.Name = "Line18"
+        Me.Line18.Top = 3.374803!
+        Me.Line18.Width = 5.298032!
+        Me.Line18.X1 = 0.5287402!
+        Me.Line18.X2 = 5.826772!
+        Me.Line18.Y1 = 3.374803!
+        Me.Line18.Y2 = 3.374803!
+        '
+        'Line19
+        '
+        Me.Line19.Height = 0.0!
+        Me.Line19.Left = 0.5287402!
+        Me.Line19.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line19.LineWeight = 1.0!
+        Me.Line19.Name = "Line19"
+        Me.Line19.Top = 3.699213!
+        Me.Line19.Width = 5.298032!
+        Me.Line19.X1 = 0.5287402!
+        Me.Line19.X2 = 5.826772!
+        Me.Line19.Y1 = 3.699213!
+        Me.Line19.Y2 = 3.699213!
+        '
+        'Line20
+        '
+        Me.Line20.Height = 1.952756!
+        Me.Line20.Left = 3.180315!
+        Me.Line20.LineWeight = 1.0!
+        Me.Line20.Name = "Line20"
+        Me.Line20.Top = 2.070866!
+        Me.Line20.Width = 0.0!
+        Me.Line20.X1 = 3.180315!
+        Me.Line20.X2 = 3.180315!
+        Me.Line20.Y1 = 2.070866!
+        Me.Line20.Y2 = 4.023622!
+        '
+        'Line21
+        '
+        Me.Line21.Height = 1.952756!
+        Me.Line21.Left = 5.830709!
+        Me.Line21.LineWeight = 1.0!
+        Me.Line21.Name = "Line21"
+        Me.Line21.Top = 2.070866!
+        Me.Line21.Width = 0.0!
+        Me.Line21.X1 = 5.830709!
+        Me.Line21.X2 = 5.830709!
+        Me.Line21.Y1 = 2.070866!
+        Me.Line21.Y2 = 4.023622!
+        '
+        'Line22
+        '
+        Me.Line22.Height = 0.0!
+        Me.Line22.Left = 0.5287402!
+        Me.Line22.LineWeight = 1.0!
+        Me.Line22.Name = "Line22"
+        Me.Line22.Top = 4.672441!
+        Me.Line22.Width = 6.939759!
+        Me.Line22.X1 = 0.5287402!
+        Me.Line22.X2 = 7.468499!
+        Me.Line22.Y1 = 4.672441!
+        Me.Line22.Y2 = 4.672441!
+        '
+        'Line23
+        '
+        Me.Line23.Height = 0.0!
+        Me.Line23.Left = 0.5287402!
+        Me.Line23.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line23.LineWeight = 1.0!
+        Me.Line23.Name = "Line23"
+        Me.Line23.Top = 4.99685!
+        Me.Line23.Width = 5.298032!
+        Me.Line23.X1 = 0.5287402!
+        Me.Line23.X2 = 5.826772!
+        Me.Line23.Y1 = 4.99685!
+        Me.Line23.Y2 = 4.99685!
+        '
+        'Line24
+        '
+        Me.Line24.Height = 0.0!
+        Me.Line24.Left = 0.5287402!
+        Me.Line24.LineWeight = 1.0!
+        Me.Line24.Name = "Line24"
+        Me.Line24.Top = 5.645669!
+        Me.Line24.Width = 6.939759!
+        Me.Line24.X1 = 0.5287402!
+        Me.Line24.X2 = 7.4685!
+        Me.Line24.Y1 = 5.645669!
+        Me.Line24.Y2 = 5.645669!
+        '
+        'Line25
+        '
+        Me.Line25.Height = 0.0!
+        Me.Line25.Left = 0.5287402!
+        Me.Line25.LineStyle = DataDynamics.ActiveReports.LineStyle.Dash
+        Me.Line25.LineWeight = 1.0!
+        Me.Line25.Name = "Line25"
+        Me.Line25.Top = 5.970078!
+        Me.Line25.Width = 5.298032!
+        Me.Line25.X1 = 0.5287402!
+        Me.Line25.X2 = 5.826772!
+        Me.Line25.Y1 = 5.970078!
+        Me.Line25.Y2 = 5.970078!
+        '
+        'Line26
+        '
+        Me.Line26.Height = 0.648819!
+        Me.Line26.Left = 3.180315!
+        Me.Line26.LineWeight = 1.0!
+        Me.Line26.Name = "Line26"
+        Me.Line26.Top = 4.672441!
+        Me.Line26.Width = 0.0!
+        Me.Line26.X1 = 3.180315!
+        Me.Line26.X2 = 3.180315!
+        Me.Line26.Y1 = 4.672441!
+        Me.Line26.Y2 = 5.32126!
+        '
+        'Line27
+        '
+        Me.Line27.Height = 0.3929135!
+        Me.Line27.Left = 2.291733!
+        Me.Line27.LineWeight = 1.0!
+        Me.Line27.Name = "Line27"
+        Me.Line27.Top = 0.1944882!
+        Me.Line27.Width = 0.0!
+        Me.Line27.X1 = 2.291733!
+        Me.Line27.X2 = 2.291733!
+        Me.Line27.Y1 = 0.1944882!
+        Me.Line27.Y2 = 0.5874016!
+        '
+        'Line28
+        '
+        Me.Line28.Height = 0.6488185!
+        Me.Line28.Left = 5.826772!
+        Me.Line28.LineWeight = 1.0!
+        Me.Line28.Name = "Line28"
+        Me.Line28.Top = 4.672441!
+        Me.Line28.Width = 0.0!
+        Me.Line28.X1 = 5.826772!
+        Me.Line28.X2 = 5.826772!
+        Me.Line28.Y1 = 4.672441!
+        Me.Line28.Y2 = 5.32126!
+        '
+        'Line29
+        '
+        Me.Line29.Height = 0.648819!
+        Me.Line29.Left = 5.830709!
+        Me.Line29.LineWeight = 1.0!
+        Me.Line29.Name = "Line29"
+        Me.Line29.Top = 5.645669!
+        Me.Line29.Width = 0.0!
+        Me.Line29.X1 = 5.830709!
+        Me.Line29.X2 = 5.830709!
+        Me.Line29.Y1 = 5.645669!
+        Me.Line29.Y2 = 6.294488!
+        '
+        'Line30
+        '
+        Me.Line30.Height = 0.6370082!
+        Me.Line30.Left = 3.180315!
+        Me.Line30.LineWeight = 1.0!
+        Me.Line30.Name = "Line30"
+        Me.Line30.Top = 5.645669!
+        Me.Line30.Width = 0.0!
+        Me.Line30.X1 = 3.180315!
+        Me.Line30.X2 = 3.180315!
+        Me.Line30.Y1 = 5.645669!
+        Me.Line30.Y2 = 6.282678!
+        '
+        'Line31
+        '
+        Me.Line31.Height = 0.3929134!
+        Me.Line31.Left = 4.944095!
+        Me.Line31.LineWeight = 1.0!
+        Me.Line31.Name = "Line31"
+        Me.Line31.Top = 0.1944882!
+        Me.Line31.Width = 0.0!
+        Me.Line31.X1 = 4.944095!
+        Me.Line31.X2 = 4.944095!
+        Me.Line31.Y1 = 0.1944882!
+        Me.Line31.Y2 = 0.5874016!
+        '
+        'Line32
+        '
+        Me.Line32.Height = 0.0!
+        Me.Line32.Left = 0.0!
+        Me.Line32.LineWeight = 1.0!
+        Me.Line32.Name = "Line32"
+        Me.Line32.Top = 6.905512!
+        Me.Line32.Width = 7.490944!
+        Me.Line32.X1 = 0.0!
+        Me.Line32.X2 = 7.490944!
+        Me.Line32.Y1 = 6.905512!
+        Me.Line32.Y2 = 6.905512!
+        '
+        'Line33
+        '
+        Me.Line33.Height = 0.0!
+        Me.Line33.Left = 0.0!
+        Me.Line33.LineWeight = 1.0!
+        Me.Line33.Name = "Line33"
+        Me.Line33.Top = 7.229921!
+        Me.Line33.Width = 7.490944!
+        Me.Line33.X1 = 0.0!
+        Me.Line33.X2 = 7.490944!
+        Me.Line33.Y1 = 7.229921!
+        Me.Line33.Y2 = 7.229921!
+        '
+        'Line34
+        '
+        Me.Line34.Height = 0.0!
+        Me.Line34.Left = 0.0!
+        Me.Line34.LineWeight = 1.0!
+        Me.Line34.Name = "Line34"
+        Me.Line34.Top = 7.554331!
+        Me.Line34.Width = 7.490944!
+        Me.Line34.X1 = 0.0!
+        Me.Line34.X2 = 7.490944!
+        Me.Line34.Y1 = 7.554331!
+        Me.Line34.Y2 = 7.554331!
+        '
+        'Line35
+        '
+        Me.Line35.Height = 0.0!
+        Me.Line35.Left = 0.0!
+        Me.Line35.LineWeight = 1.0!
+        Me.Line35.Name = "Line35"
+        Me.Line35.Top = 7.87874!
+        Me.Line35.Width = 7.490944!
+        Me.Line35.X1 = 0.0!
+        Me.Line35.X2 = 7.490944!
+        Me.Line35.Y1 = 7.87874!
+        Me.Line35.Y2 = 7.87874!
+        '
+        'Line36
+        '
+        Me.Line36.Height = 0.0!
+        Me.Line36.Left = 0.0!
+        Me.Line36.LineWeight = 1.0!
+        Me.Line36.Name = "Line36"
+        Me.Line36.Top = 8.20315!
+        Me.Line36.Width = 7.490944!
+        Me.Line36.X1 = 0.0!
+        Me.Line36.X2 = 7.490944!
+        Me.Line36.Y1 = 8.20315!
+        Me.Line36.Y2 = 8.20315!
+        '
+        'Line38
+        '
+        Me.Line38.Height = 0.0!
+        Me.Line38.Left = 0.0!
+        Me.Line38.LineWeight = 1.0!
+        Me.Line38.Name = "Line38"
+        Me.Line38.Top = 8.527559!
+        Me.Line38.Width = 7.490944!
+        Me.Line38.X1 = 0.0!
+        Me.Line38.X2 = 7.490944!
+        Me.Line38.Y1 = 8.527559!
+        Me.Line38.Y2 = 8.527559!
+        '
+        'Line39
+        '
+        Me.Line39.Height = 0.0!
+        Me.Line39.Left = 0.0!
+        Me.Line39.LineWeight = 1.0!
+        Me.Line39.Name = "Line39"
+        Me.Line39.Top = 8.851969!
+        Me.Line39.Width = 7.490944!
+        Me.Line39.X1 = 0.0!
+        Me.Line39.X2 = 7.490944!
+        Me.Line39.Y1 = 8.851969!
+        Me.Line39.Y2 = 8.851969!
+        '
+        'Line40
+        '
+        Me.Line40.Height = 0.0!
+        Me.Line40.Left = 0.0!
+        Me.Line40.LineWeight = 1.0!
+        Me.Line40.Name = "Line40"
+        Me.Line40.Top = 9.176378!
+        Me.Line40.Width = 7.490944!
+        Me.Line40.X1 = 0.0!
+        Me.Line40.X2 = 7.490944!
+        Me.Line40.Y1 = 9.176378!
+        Me.Line40.Y2 = 9.176378!
+        '
+        'Line41
+        '
+        Me.Line41.Height = 0.0!
+        Me.Line41.Left = 0.0!
+        Me.Line41.LineWeight = 1.0!
+        Me.Line41.Name = "Line41"
+        Me.Line41.Top = 9.500788!
+        Me.Line41.Width = 7.490944!
+        Me.Line41.X1 = 0.0!
+        Me.Line41.X2 = 7.490944!
+        Me.Line41.Y1 = 9.500788!
+        Me.Line41.Y2 = 9.500788!
+        '
+        'Line42
+        '
+        Me.Line42.Height = 2.595275!
+        Me.Line42.Left = 1.951969!
+        Me.Line42.LineWeight = 1.0!
+        Me.Line42.Name = "Line42"
+        Me.Line42.Top = 6.905512!
+        Me.Line42.Width = 0.0!
+        Me.Line42.X1 = 1.951969!
+        Me.Line42.X2 = 1.951969!
+        Me.Line42.Y1 = 6.905512!
+        Me.Line42.Y2 = 9.500788!
+        '
+        'Line43
+        '
+        Me.Line43.Height = 2.595272!
+        Me.Line43.Left = 7.498425!
+        Me.Line43.LineWeight = 1.0!
+        Me.Line43.Name = "Line43"
+        Me.Line43.Top = 6.905512!
+        Me.Line43.Width = 0.0!
+        Me.Line43.X1 = 7.498425!
+        Me.Line43.X2 = 7.498425!
+        Me.Line43.Y1 = 6.905512!
+        Me.Line43.Y2 = 9.500784!
+        '
+        'Line44
+        '
+        Me.Line44.Height = 2.595272!
+        Me.Line44.Left = 0.0!
+        Me.Line44.LineWeight = 1.0!
+        Me.Line44.Name = "Line44"
+        Me.Line44.Top = 6.905512!
+        Me.Line44.Width = 0.0!
+        Me.Line44.X1 = 0.0!
+        Me.Line44.X2 = 0.0!
+        Me.Line44.Y1 = 6.905512!
+        Me.Line44.Y2 = 9.500784!
+        '
+        'Line45
+        '
+        Me.Line45.Height = 0.3929134!
+        Me.Line45.Left = 0.0!
+        Me.Line45.LineWeight = 1.0!
+        Me.Line45.Name = "Line45"
+        Me.Line45.Top = 0.1874016!
+        Me.Line45.Width = 0.0!
+        Me.Line45.X1 = 0.0!
+        Me.Line45.X2 = 0.0!
+        Me.Line45.Y1 = 0.1874016!
+        Me.Line45.Y2 = 0.580315!
+        '
+        'Line46
+        '
+        Me.Line46.Height = 0.3929134!
+        Me.Line46.Left = 7.490945!
+        Me.Line46.LineWeight = 1.0!
+        Me.Line46.Name = "Line46"
+        Me.Line46.Top = 0.1944882!
+        Me.Line46.Width = 0.0!
+        Me.Line46.X1 = 7.490945!
+        Me.Line46.X2 = 7.490945!
+        Me.Line46.Y1 = 0.1944882!
+        Me.Line46.Y2 = 0.5874016!
+        '
+        'Line47
+        '
+        Me.Line47.Height = 5.83937!
+        Me.Line47.Left = 7.490945!
+        Me.Line47.LineWeight = 1.0!
+        Me.Line47.Name = "Line47"
+        Me.Line47.Top = 0.7795276!
+        Me.Line47.Width = 0.0!
+        Me.Line47.X1 = 7.490945!
+        Me.Line47.X2 = 7.490945!
+        Me.Line47.Y1 = 0.7795276!
+        Me.Line47.Y2 = 6.618898!
+        '
+        'Line48
+        '
+        Me.Line48.Height = 5.83937!
+        Me.Line48.Left = 0.0!
+        Me.Line48.LineWeight = 1.0!
+        Me.Line48.Name = "Line48"
+        Me.Line48.Top = 0.7795276!
+        Me.Line48.Width = 0.0!
+        Me.Line48.X1 = 0.0!
+        Me.Line48.X2 = 0.0!
+        Me.Line48.Y1 = 0.7795276!
+        Me.Line48.Y2 = 6.618898!
+        '
+        'Line49
+        '
+        Me.Line49.Height = 0.3929134!
+        Me.Line49.Left = 0.8622048!
+        Me.Line49.LineWeight = 1.0!
+        Me.Line49.Name = "Line49"
+        Me.Line49.Top = 0.1944882!
+        Me.Line49.Width = 0.0!
+        Me.Line49.X1 = 0.8622048!
+        Me.Line49.X2 = 0.8622048!
+        Me.Line49.Y1 = 0.1944882!
+        Me.Line49.Y2 = 0.5874016!
+        '
+        'Line50
+        '
+        Me.Line50.Height = 0.3929134!
+        Me.Line50.Left = 5.861418!
+        Me.Line50.LineWeight = 1.0!
+        Me.Line50.Name = "Line50"
+        Me.Line50.Top = 0.1874016!
+        Me.Line50.Width = 0.0!
+        Me.Line50.X1 = 5.861418!
+        Me.Line50.X2 = 5.861418!
+        Me.Line50.Y1 = 0.1874016!
+        Me.Line50.Y2 = 0.580315!
+        '
+        'Line51
+        '
+        Me.Line51.Height = 5.83937!
+        Me.Line51.Left = 0.5287402!
+        Me.Line51.LineWeight = 1.0!
+        Me.Line51.Name = "Line51"
+        Me.Line51.Top = 0.7795276!
+        Me.Line51.Width = 0.0!
+        Me.Line51.X1 = 0.5287402!
+        Me.Line51.X2 = 0.5287402!
+        Me.Line51.Y1 = 0.7795276!
+        Me.Line51.Y2 = 6.618898!
+        '
+        'Line52
+        '
+        Me.Line52.Height = 0.3929134!
+        Me.Line52.Left = 3.79252!
+        Me.Line52.LineWeight = 1.0!
+        Me.Line52.Name = "Line52"
+        Me.Line52.Top = 0.1944882!
+        Me.Line52.Width = 0.0!
+        Me.Line52.X1 = 3.79252!
+        Me.Line52.X2 = 3.79252!
+        Me.Line52.Y1 = 0.1944882!
+        Me.Line52.Y2 = 0.5874016!
         '
         'SeisanRegistReport
         '
@@ -2270,4 +2866,46 @@ Partial Public Class SeisanRegistReport
     Private WithEvents Line8 As DataDynamics.ActiveReports.Line
     Private WithEvents Line9 As DataDynamics.ActiveReports.Line
     Private WithEvents Line10 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line37 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line11 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line12 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line13 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line14 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line15 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line16 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line17 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line18 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line19 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line20 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line21 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line22 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line23 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line24 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line25 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line26 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line27 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line28 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line29 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line30 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line31 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line32 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line33 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line34 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line35 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line36 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line38 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line39 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line40 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line41 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line42 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line43 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line44 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line45 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line46 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line47 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line48 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line49 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line50 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line51 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line52 As DataDynamics.ActiveReports.Line
 End Class 

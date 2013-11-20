@@ -23,7 +23,7 @@ Public Class SeisanRegistReport
 
     Private Sub Detail_Format(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Detail.Format
 
-        'Me.SEISAN_YM.Text =Me.SEISAN_YM.Text 
+        Me.SEISAN_YM.Text = Mid(CmnModule.Format_DateJP(Me.SEISAN_YM.Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
         Me.SHOUNIN_KUBUN.Text = AppModule.GetName_SHOUNIN_KUBUN(Me.SHOUNIN_KUBUN.Text)
         Me.SHOUNIN_DATE.Text = CmnModule.Format_Date(Me.SHOUNIN_DATE.Text, CmnModule.DateFormatType.YYYYMMDD)
 
@@ -66,7 +66,7 @@ Public Class SeisanRegistReport
         Me.TAXI_T.Text = CmnModule.EditComma(Me.TAXI_T.Text)
         Me.TAXI_SEISAN_T.Text = CmnModule.EditComma(Me.TAXI_SEISAN_T.Text)
 
-        'Me.SEISAN_KANRYO.Text = Me.SEISAN_KANRYO.Text
+        Me.SEISAN_KANRYO.Text = AppModule.GetName_SEISAN_KANRYO(Me.SEISAN_KANRYO.Text)
 
     End Sub
 End Class

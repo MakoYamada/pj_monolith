@@ -586,17 +586,17 @@ Partial Public Class SeisanRegist
     End Sub
 
     '[印刷]
-    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
+    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
 
-        '入力チェック?
+        If Not CmnCheck.IsInput(Me.SEIKYU_NO_TOPTOUR) Then
+            '精算番号が自動採番されていないとき(=DBへ登録されていない)
+            CmnModule.AlertMessage("印刷対象となるデータが登録されていません。", Me)
+            Exit Sub
+        End If
 
-        Dim Joken As TableDef.Joken.DataStruct
-        Joken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
-        Joken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
-        Dim strSQL As String = SQL.TBL_SEIKYU.Search(Joken)
+        Dim strSQL As String = SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text)
         Session.Item(SessionDef.SeisanRegistReport_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
-        Session.Item(SessionDef.PrintPreview) = "SeisanRegist"
         Response.Redirect(URL.Preview)
     End Sub
 
