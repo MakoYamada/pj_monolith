@@ -547,19 +547,17 @@ Public Class AppConst
             Public Class GAMEN
                 Public Class Name
                     Public Const KouenkaiRegist As String = "講演会基本情報"
-                    Public Const NewDrList As String = "新着 宿泊・交通一覧"
                     Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
                     Public Const KaijoRegist As String = "講演会場 手配・見積依頼"
                     Public Const SeisanRegist As String = "精算金額入力"
                     Public Const CostRegist As String = "コストセンター別費用入力"
                     Public Const MstShisetsu As String = "施設マスタメンテナンス"
-                    Public Const MstUser As String = "ユーザマスタメンテナンス"
+                    Public Const MstUser As String = "TOP担当者マスタメンテナンス"
                     Public Const MstCode As String = "コードマスタメンテナンス"
                     Public Const MstCostcenter As String = "コストセンターマスタメンテナンス"
                 End Class
                 Public Enum GamenType
                     KouenkaiRegist
-                    NewDrList
                     DrRegist
                     KaijoRegist
                     SeisanRegist

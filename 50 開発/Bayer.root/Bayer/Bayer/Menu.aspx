@@ -21,7 +21,7 @@
 							<asp:Button ID="BtnNewKotsuList" runat="server" Text="宿泊・交通" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnNewBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnNewBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" Enabled="false" />
 						</td>
 					</tr>
 					<tr>
@@ -43,7 +43,7 @@
 							<asp:Button ID="BtnKotsuList" runat="server" Text="宿泊・交通" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" Enabled="false" />
 						</td>
 					</tr>
 					<tr>

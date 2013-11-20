@@ -391,8 +391,6 @@ Public Class MyModule
         Select Case GamenType
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KouenkaiRegist
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.NewDrList
-                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.DrRegist
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist
@@ -417,8 +415,6 @@ Public Class MyModule
         Select Case GamenType
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist
                 TBL_LOG.TABLE_NAME = "TBL_KOUENKAI"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.NewDrList, AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.DrRegist
-                TBL_LOG.TABLE_NAME = "TBL_KOTSUHOTEL"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist
                 TBL_LOG.TABLE_NAME = "TBL_KAIJO"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist

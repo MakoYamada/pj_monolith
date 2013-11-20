@@ -6995,7 +6995,6 @@ Public Class AppModule
                 .Items.Clear()
                 .Items.Add(New ListItem("---", ""))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KouenkaiRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KouenkaiRegist))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.NewDrList))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist))
