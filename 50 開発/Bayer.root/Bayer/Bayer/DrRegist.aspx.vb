@@ -118,52 +118,6 @@ Partial Public Class DrRegist
         'クリア
         CmnModule.ClearAllControl(Me)
 
-        'BtnKOTSU_O_1.ImageUrl = IMG_OPEN
-        'BtnKOTSU_O_2.ImageUrl = IMG_OPEN
-        'BtnKOTSU_O_3.ImageUrl = IMG_OPEN
-        'BtnKOTSU_O_4.ImageUrl = IMG_OPEN
-        'BtnKOTSU_O_5.ImageUrl = IMG_OPEN
-        'BtnKOTSU_F_1.ImageUrl = IMG_OPEN
-        'BtnKOTSU_F_2.ImageUrl = IMG_OPEN
-        'BtnKOTSU_F_3.ImageUrl = IMG_OPEN
-        'BtnKOTSU_F_4.ImageUrl = IMG_OPEN
-        'BtnKOTSU_F_5.ImageUrl = IMG_OPEN
-        'TB_KOTSU_O_1.Visible = False
-        'TB_KOTSU_O_2.Visible = False
-        'TB_KOTSU_O_3.Visible = False
-        'TB_KOTSU_O_4.Visible = False
-        'TB_KOTSU_O_5.Visible = False
-        'TB_KOTSU_F_1.Visible = False
-        'TB_KOTSU_F_2.Visible = False
-        'TB_KOTSU_F_3.Visible = False
-        'TB_KOTSU_F_4.Visible = False
-        'TB_KOTSU_F_5.Visible = False
-        BtnKOTSU_O_1.Visible = False
-        BtnKOTSU_O_2.Visible = False
-        BtnKOTSU_O_3.Visible = False
-        BtnKOTSU_O_4.Visible = False
-        BtnKOTSU_O_5.Visible = False
-        BtnKOTSU_F_1.Visible = False
-        BtnKOTSU_F_2.Visible = False
-        BtnKOTSU_F_3.Visible = False
-        BtnKOTSU_F_4.Visible = False
-        BtnKOTSU_F_5.Visible = False
-        TB_KOTSU_O_1.Visible = True
-        TB_KOTSU_O_2.Visible = True
-        TB_KOTSU_O_3.Visible = True
-        TB_KOTSU_O_4.Visible = True
-        TB_KOTSU_O_5.Visible = True
-        TB_KOTSU_F_1.Visible = True
-        TB_KOTSU_F_2.Visible = True
-        TB_KOTSU_F_3.Visible = True
-        TB_KOTSU_F_4.Visible = True
-        TB_KOTSU_F_5.Visible = True
-
-        'BtnTAXI_1.ImageUrl = IMG_OPEN
-        'TB_TAXI_1.Visible = False
-        BtnTAXI_1.Visible = False
-        TB_TAXI_1.Visible = True
-
         'プルダウン設定
         AppModule.SetDropDownList_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
         AppModule.SetDropDownList_ANS_STATUS_HOTEL(Me.ANS_STATUS_HOTEL)
@@ -303,26 +257,6 @@ Partial Public Class DrRegist
         CmnModule.SetIme(Me.ANS_TAXI_DATE_18, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.ANS_TAXI_DATE_19, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.ANS_TAXI_DATE_20, CmnModule.ImeType.InActive)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_1, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_2, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_3, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_4, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_5, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_6, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_7, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_8, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_9, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_10, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_11, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_12, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_13, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_14, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_15, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_16, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_17, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_18, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_19, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_TAXI_KENSHU_20, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_TAXI_NO_1, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_TAXI_NO_2, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_TAXI_NO_3, CmnModule.ImeType.Disabled)
@@ -399,7 +333,8 @@ Partial Public Class DrRegist
         'DR情報
         AppModule.SetForm_REQ_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_STATUS_TEHAI, Me.REQ_STATUS_TEHAI)
         AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_STATUS_TEHAI, Me.ANS_STATUS_TEHAI)
-        AppModule.setform_ANS_TICKET_SEND_DAY(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TICKET_SEND_DAY, Me.ANS_TICKET_SEND_DAY)
+        AppModule.SetForm_ANS_TICKET_SEND_DAY(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TICKET_SEND_DAY, Me.ANS_TICKET_SEND_DAY)
+        AppModule.SetForm_SEND_FLAG(DSP_KOTSUHOTEL(DSP_SEQ).SEND_FLAG, Me.SEND_FLAG)
         AppModule.SetForm_SANKASHA_ID(DSP_KOTSUHOTEL(DSP_SEQ).SANKASHA_ID, Me.SANKASHA_ID)
         AppModule.SetForm_DR_CD(DSP_KOTSUHOTEL(DSP_SEQ).DR_CD, Me.DR_CD)
         AppModule.SetForm_TIME_STAMP_BYL(DSP_KOTSUHOTEL(DSP_SEQ).TIME_STAMP_BYL, Me.TIME_STAMP_BYL)
@@ -842,117 +777,6 @@ Partial Public Class DrRegist
 
         Return wFlag
     End Function
-
-    Private Sub BtnKOTSU_O_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_1.Click
-        If BtnKOTSU_O_1.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_O_1.ImageUrl = IMG_OPEN
-            TB_KOTSU_O_1.Visible = False
-        Else
-            BtnKOTSU_O_1.ImageUrl = IMG_CLOSE
-            TB_KOTSU_O_1.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_O_2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_2.Click
-        If BtnKOTSU_O_2.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_O_2.ImageUrl = IMG_OPEN
-            TB_KOTSU_O_2.Visible = False
-        Else
-            BtnKOTSU_O_2.ImageUrl = IMG_CLOSE
-            TB_KOTSU_O_2.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_O_3_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_3.Click
-        If BtnKOTSU_O_3.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_O_3.ImageUrl = IMG_OPEN
-            TB_KOTSU_O_3.Visible = False
-        Else
-            BtnKOTSU_O_3.ImageUrl = IMG_CLOSE
-            TB_KOTSU_O_3.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_O_4_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_4.Click
-        If BtnKOTSU_O_4.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_O_4.ImageUrl = IMG_OPEN
-            TB_KOTSU_O_4.Visible = False
-        Else
-            BtnKOTSU_O_4.ImageUrl = IMG_CLOSE
-            TB_KOTSU_O_4.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_O_5_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_O_5.Click
-        If BtnKOTSU_O_5.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_O_5.ImageUrl = IMG_OPEN
-            TB_KOTSU_O_5.Visible = False
-        Else
-            BtnKOTSU_O_5.ImageUrl = IMG_CLOSE
-            TB_KOTSU_O_5.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_F_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_1.Click
-        If BtnKOTSU_F_1.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_F_1.ImageUrl = IMG_OPEN
-            TB_KOTSU_F_1.Visible = False
-        Else
-            BtnKOTSU_F_1.ImageUrl = IMG_CLOSE
-            TB_KOTSU_F_1.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_F_2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_2.Click
-        If BtnKOTSU_F_2.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_F_2.ImageUrl = IMG_OPEN
-            TB_KOTSU_F_2.Visible = False
-        Else
-            BtnKOTSU_F_2.ImageUrl = IMG_CLOSE
-            TB_KOTSU_F_2.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_F_3_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_3.Click
-        If BtnKOTSU_F_3.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_F_3.ImageUrl = IMG_OPEN
-            TB_KOTSU_F_3.Visible = False
-        Else
-            BtnKOTSU_F_3.ImageUrl = IMG_CLOSE
-            TB_KOTSU_F_3.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_F_4_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_4.Click
-        If BtnKOTSU_F_4.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_F_4.ImageUrl = IMG_OPEN
-            TB_KOTSU_F_4.Visible = False
-        Else
-            BtnKOTSU_F_4.ImageUrl = IMG_CLOSE
-            TB_KOTSU_F_4.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnKOTSU_F_5_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnKOTSU_F_5.Click
-        If BtnKOTSU_F_5.ImageUrl = IMG_CLOSE Then
-            BtnKOTSU_F_5.ImageUrl = IMG_OPEN
-            TB_KOTSU_F_5.Visible = False
-        Else
-            BtnKOTSU_F_5.ImageUrl = IMG_CLOSE
-            TB_KOTSU_F_5.Visible = True
-        End If
-    End Sub
-
-    Private Sub BtnTAXI_1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnTAXI_1.Click
-        If BtnTAXI_1.ImageUrl = IMG_CLOSE Then
-            BtnTAXI_1.ImageUrl = IMG_OPEN
-            TB_TAXI_1.Visible = False
-        Else
-            BtnTAXI_1.ImageUrl = IMG_CLOSE
-            TB_TAXI_1.Visible = True
-        End If
-    End Sub
-
 
     ''' <summary>
     ''' 施設検索ボタン
@@ -1803,83 +1627,83 @@ Partial Public Class DrRegist
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NOTE = AppModule.GetValue_ANS_TAXI_NOTE(Me.ANS_TAXI_NOTE)
         'タクチケ１
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_1 = AppModule.GetValue_ANS_TAXI_DATE_1(Me.ANS_TAXI_DATE_1)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_1 = AppModule.GetValue_ANS_TAXI_KENSHU_1(Me.ANS_TAXI_KENSHU_1)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_1 = AppModule.GetValue_ANS_TAXI_KENSHU_1(Me.ANS_TAXI_KENSHU_1)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_1 = AppModule.GetValue_ANS_TAXI_NO_1(Me.ANS_TAXI_NO_1)
         'タクチケ２
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_2 = AppModule.GetValue_ANS_TAXI_DATE_2(Me.ANS_TAXI_DATE_2)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_2 = AppModule.GetValue_ANS_TAXI_KENSHU_2(Me.ANS_TAXI_KENSHU_2)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_2 = AppModule.GetValue_ANS_TAXI_KENSHU_2(Me.ANS_TAXI_KENSHU_2)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_2 = AppModule.GetValue_ANS_TAXI_NO_2(Me.ANS_TAXI_NO_2)
         'タクチケ３
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_3 = AppModule.GetValue_ANS_TAXI_DATE_3(Me.ANS_TAXI_DATE_3)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_3 = AppModule.GetValue_ANS_TAXI_KENSHU_3(Me.ANS_TAXI_KENSHU_3)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_3 = AppModule.GetValue_ANS_TAXI_KENSHU_3(Me.ANS_TAXI_KENSHU_3)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_3 = AppModule.GetValue_ANS_TAXI_NO_3(Me.ANS_TAXI_NO_3)
         'タクチケ４
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_4 = AppModule.GetValue_ANS_TAXI_DATE_4(Me.ANS_TAXI_DATE_4)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_4 = AppModule.GetValue_ANS_TAXI_KENSHU_4(Me.ANS_TAXI_KENSHU_4)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_4 = AppModule.GetValue_ANS_TAXI_KENSHU_4(Me.ANS_TAXI_KENSHU_4)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_4 = AppModule.GetValue_ANS_TAXI_NO_4(Me.ANS_TAXI_NO_4)
         'タクチケ５
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_5 = AppModule.GetValue_ANS_TAXI_DATE_5(Me.ANS_TAXI_DATE_5)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_5 = AppModule.GetValue_ANS_TAXI_KENSHU_5(Me.ANS_TAXI_KENSHU_5)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_5 = AppModule.GetValue_ANS_TAXI_KENSHU_5(Me.ANS_TAXI_KENSHU_5)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_5 = AppModule.GetValue_ANS_TAXI_NO_5(Me.ANS_TAXI_NO_5)
         'タクチケ６
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_6 = AppModule.GetValue_ANS_TAXI_DATE_6(Me.ANS_TAXI_DATE_6)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_6 = AppModule.GetValue_ANS_TAXI_KENSHU_6(Me.ANS_TAXI_KENSHU_6)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_6 = AppModule.GetValue_ANS_TAXI_KENSHU_6(Me.ANS_TAXI_KENSHU_6)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_6 = AppModule.GetValue_ANS_TAXI_NO_6(Me.ANS_TAXI_NO_6)
         'タクチケ７
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_7 = AppModule.GetValue_ANS_TAXI_DATE_7(Me.ANS_TAXI_DATE_7)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_7 = AppModule.GetValue_ANS_TAXI_KENSHU_7(Me.ANS_TAXI_KENSHU_7)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_7 = AppModule.GetValue_ANS_TAXI_KENSHU_7(Me.ANS_TAXI_KENSHU_7)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_7 = AppModule.GetValue_ANS_TAXI_NO_7(Me.ANS_TAXI_NO_7)
         'タクチケ８
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_8 = AppModule.GetValue_ANS_TAXI_DATE_8(Me.ANS_TAXI_DATE_8)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_8 = AppModule.GetValue_ANS_TAXI_KENSHU_8(Me.ANS_TAXI_KENSHU_8)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_8 = AppModule.GetValue_ANS_TAXI_KENSHU_8(Me.ANS_TAXI_KENSHU_8)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_8 = AppModule.GetValue_ANS_TAXI_NO_8(Me.ANS_TAXI_NO_8)
         'タクチケ９
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_9 = AppModule.GetValue_ANS_TAXI_DATE_9(Me.ANS_TAXI_DATE_9)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_9 = AppModule.GetValue_ANS_TAXI_KENSHU_9(Me.ANS_TAXI_KENSHU_9)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_9 = AppModule.GetValue_ANS_TAXI_KENSHU_9(Me.ANS_TAXI_KENSHU_9)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_9 = AppModule.GetValue_ANS_TAXI_NO_9(Me.ANS_TAXI_NO_9)
         'タクチケ１０
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_10 = AppModule.GetValue_ANS_TAXI_DATE_10(Me.ANS_TAXI_DATE_10)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_10 = AppModule.GetValue_ANS_TAXI_KENSHU_10(Me.ANS_TAXI_KENSHU_10)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_10 = AppModule.GetValue_ANS_TAXI_KENSHU_10(Me.ANS_TAXI_KENSHU_10)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_10 = AppModule.GetValue_ANS_TAXI_NO_10(Me.ANS_TAXI_NO_10)
         'タクチケ１１
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_11 = AppModule.GetValue_ANS_TAXI_DATE_11(Me.ANS_TAXI_DATE_11)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_11 = AppModule.GetValue_ANS_TAXI_KENSHU_11(Me.ANS_TAXI_KENSHU_11)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_11 = AppModule.GetValue_ANS_TAXI_KENSHU_11(Me.ANS_TAXI_KENSHU_11)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_11 = AppModule.GetValue_ANS_TAXI_NO_11(Me.ANS_TAXI_NO_11)
         'タクチケ１２
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_12 = AppModule.GetValue_ANS_TAXI_DATE_12(Me.ANS_TAXI_DATE_12)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_12 = AppModule.GetValue_ANS_TAXI_KENSHU_12(Me.ANS_TAXI_KENSHU_12)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_12 = AppModule.GetValue_ANS_TAXI_KENSHU_12(Me.ANS_TAXI_KENSHU_12)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_12 = AppModule.GetValue_ANS_TAXI_NO_12(Me.ANS_TAXI_NO_12)
         'タクチケ１３
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_13 = AppModule.GetValue_ANS_TAXI_DATE_13(Me.ANS_TAXI_DATE_13)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_13 = AppModule.GetValue_ANS_TAXI_KENSHU_13(Me.ANS_TAXI_KENSHU_13)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_13 = AppModule.GetValue_ANS_TAXI_KENSHU_13(Me.ANS_TAXI_KENSHU_13)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_13 = AppModule.GetValue_ANS_TAXI_NO_13(Me.ANS_TAXI_NO_13)
         'タクチケ１４
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_14 = AppModule.GetValue_ANS_TAXI_DATE_14(Me.ANS_TAXI_DATE_14)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_14 = AppModule.GetValue_ANS_TAXI_KENSHU_14(Me.ANS_TAXI_KENSHU_14)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_14 = AppModule.GetValue_ANS_TAXI_KENSHU_14(Me.ANS_TAXI_KENSHU_14)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_14 = AppModule.GetValue_ANS_TAXI_NO_14(Me.ANS_TAXI_NO_14)
         'タクチケ１５
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_15 = AppModule.GetValue_ANS_TAXI_DATE_15(Me.ANS_TAXI_DATE_15)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_15 = AppModule.GetValue_ANS_TAXI_KENSHU_15(Me.ANS_TAXI_KENSHU_15)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_15 = AppModule.GetValue_ANS_TAXI_KENSHU_15(Me.ANS_TAXI_KENSHU_15)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_15 = AppModule.GetValue_ANS_TAXI_NO_15(Me.ANS_TAXI_NO_15)
         'タクチケ１６
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_16 = AppModule.GetValue_ANS_TAXI_DATE_16(Me.ANS_TAXI_DATE_16)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_16 = AppModule.GetValue_ANS_TAXI_KENSHU_16(Me.ANS_TAXI_KENSHU_16)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_16 = AppModule.GetValue_ANS_TAXI_KENSHU_16(Me.ANS_TAXI_KENSHU_16)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_16 = AppModule.GetValue_ANS_TAXI_NO_16(Me.ANS_TAXI_NO_16)
         'タクチケ１７
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_17 = AppModule.GetValue_ANS_TAXI_DATE_17(Me.ANS_TAXI_DATE_17)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_17 = AppModule.GetValue_ANS_TAXI_KENSHU_17(Me.ANS_TAXI_KENSHU_17)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_17 = AppModule.GetValue_ANS_TAXI_KENSHU_17(Me.ANS_TAXI_KENSHU_17)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_17 = AppModule.GetValue_ANS_TAXI_NO_17(Me.ANS_TAXI_NO_17)
         'タクチケ１８
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_18 = AppModule.GetValue_ANS_TAXI_DATE_18(Me.ANS_TAXI_DATE_18)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_18 = AppModule.GetValue_ANS_TAXI_KENSHU_18(Me.ANS_TAXI_KENSHU_18)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_18 = AppModule.GetValue_ANS_TAXI_KENSHU_18(Me.ANS_TAXI_KENSHU_18)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_18 = AppModule.GetValue_ANS_TAXI_NO_18(Me.ANS_TAXI_NO_18)
         'タクチケ１９
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_19 = AppModule.GetValue_ANS_TAXI_DATE_19(Me.ANS_TAXI_DATE_19)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_19 = AppModule.GetValue_ANS_TAXI_KENSHU_19(Me.ANS_TAXI_KENSHU_19)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_19 = AppModule.GetValue_ANS_TAXI_KENSHU_19(Me.ANS_TAXI_KENSHU_19)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_19 = AppModule.GetValue_ANS_TAXI_NO_19(Me.ANS_TAXI_NO_19)
         'タクチケ２０
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_20 = AppModule.GetValue_ANS_TAXI_DATE_20(Me.ANS_TAXI_DATE_20)
-        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_20 = AppModule.GetValue_ANS_TAXI_KENSHU_20(Me.ANS_TAXI_KENSHU_20)
+        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_20 = AppModule.GetValue_ANS_TAXI_KENSHU_20(Me.ANS_TAXI_KENSHU_20)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_20 = AppModule.GetValue_ANS_TAXI_NO_20(Me.ANS_TAXI_NO_20)
 
         'MR手配
@@ -2489,7 +2313,7 @@ Partial Public Class DrRegist
     End Sub
 
     '[戻る]
-    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
+    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
         Session.Remove(SessionDef.DrRireki_PageIndex)
         Session.Remove(SessionDef.DrRireki_SEQ)
 
@@ -2506,8 +2330,13 @@ Partial Public Class DrRegist
         End If
     End Sub
 
+    '[戻る]
+    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
+        BtnBack1_Click(sender, e)
+    End Sub
+
     '[手配書印刷]
-    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
         Dim strSQL As String = ""
         strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
@@ -2515,5 +2344,10 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
+    End Sub
+
+    '[手配書印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        BtnPrint1_Click(sender, e)
     End Sub
 End Class

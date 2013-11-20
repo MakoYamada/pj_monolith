@@ -16,6 +16,24 @@ Option Explicit On
 Partial Public Class DrRegist
 
     '''<summary>
+    '''BtnPrint1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnPrint1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnKihon コントロール。
     '''</summary>
     '''<remarks>
@@ -239,6 +257,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TICKET_SEND_DAY As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SEND_FLAG コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEND_FLAG As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''SANKASHA_ID コントロール。
@@ -556,15 +583,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnKOTSU_O_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_O_1 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''REQ_O_TEHAI_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -770,15 +788,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_O_SEAT_KIBOU1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''BtnKOTSU_O_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_O_2 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''REQ_O_TEHAI_2 コントロール。
@@ -988,15 +997,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_O_SEAT_KIBOU2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''BtnKOTSU_O_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_O_3 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''REQ_O_TEHAI_3 コントロール。
     '''</summary>
     '''<remarks>
@@ -1202,15 +1202,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_O_SEAT_KIBOU3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''BtnKOTSU_O_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_O_4 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''REQ_O_TEHAI_4 コントロール。
@@ -1420,15 +1411,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_O_SEAT_KIBOU4 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''BtnKOTSU_O_5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_O_5 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''REQ_O_TEHAI_5 コントロール。
     '''</summary>
     '''<remarks>
@@ -1634,15 +1616,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_O_SEAT_KIBOU5 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''BtnKOTSU_F_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_F_1 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''REQ_F_TEHAI_1 コントロール。
@@ -1852,15 +1825,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_F_SEAT_KIBOU1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''BtnKOTSU_F_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_F_2 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''REQ_F_TEHAI_2 コントロール。
     '''</summary>
     '''<remarks>
@@ -2066,15 +2030,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_F_SEAT_KIBOU2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''BtnKOTSU_F_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_F_3 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''REQ_F_TEHAI_3 コントロール。
@@ -2284,15 +2239,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_F_SEAT_KIBOU3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''BtnKOTSU_F_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_F_4 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''REQ_F_TEHAI_4 コントロール。
     '''</summary>
     '''<remarks>
@@ -2498,15 +2444,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_F_SEAT_KIBOU4 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''BtnKOTSU_F_5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnKOTSU_F_5 As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
     '''REQ_F_TEHAI_5 コントロール。
@@ -2734,15 +2671,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_KOTSU_BIKO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTAXI_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnTAXI_1 As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''TB_TAXI_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -2812,7 +2740,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_1 コントロール。
@@ -2866,7 +2794,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_2 コントロール。
@@ -2920,7 +2848,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_3 コントロール。
@@ -2974,7 +2902,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_4 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_4 コントロール。
@@ -3028,7 +2956,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_5 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_5 コントロール。
@@ -3082,7 +3010,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_6 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_6 コントロール。
@@ -3136,7 +3064,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_7 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_7 コントロール。
@@ -3190,7 +3118,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_8 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_8 コントロール。
@@ -3244,7 +3172,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_9 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_9 コントロール。
@@ -3298,7 +3226,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_10 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TAXI_YOTEIKINGAKU_10 コントロール。
@@ -3334,7 +3262,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_11 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_11 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_11 コントロール。
@@ -3361,7 +3289,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_12 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_12 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_12 コントロール。
@@ -3388,7 +3316,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_13 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_13 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_13 コントロール。
@@ -3415,7 +3343,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_14 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_14 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_14 コントロール。
@@ -3442,7 +3370,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_15 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_15 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_15 コントロール。
@@ -3469,7 +3397,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_16 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_16 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_16 コントロール。
@@ -3496,7 +3424,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_17 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_17 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_17 コントロール。
@@ -3523,7 +3451,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_18 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_18 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_18 コントロール。
@@ -3550,7 +3478,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_19 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_19 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_19 コントロール。
@@ -3577,7 +3505,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_KENSHU_20 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_KENSHU_20 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ANS_TAXI_NO_20 コントロール。
@@ -3760,13 +3688,13 @@ Partial Public Class DrRegist
     Protected WithEvents BtnRireki As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnPrint コントロール。
+    '''BtnPrint2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnPrint As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnPrint2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnTaxiCsv コントロール。
@@ -3796,13 +3724,13 @@ Partial Public Class DrRegist
     Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnCancel コントロール。
+    '''BtnBack2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

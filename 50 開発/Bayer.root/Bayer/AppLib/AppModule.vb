@@ -4475,6 +4475,11 @@ Public Class AppModule
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_STATUS_TEHAI, control, True)
     End Sub
 
+    'NOZOMI送信ステータス
+    Public Shared Sub SetForm_SEND_FLAG(ByVal SEND_FLAG As String, ByRef control As Label)
+        control.Text = AppModule.GetName_SEND_FLAG(SEND_FLAG)
+    End Sub
+
     '参加者ID
     Public Shared Sub SetForm_SANKASHA_ID(ByVal SANKASHA_ID As String, ByRef control As Label)
         control.Text = SANKASHA_ID
@@ -5741,67 +5746,67 @@ Public Class AppModule
     End Sub
 
     'タクシーチケット：券種（回答）
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String, ByRef control As TextBox)
-        control.Text = ANS_TAXI_KENSHU
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String, ByRef control As DropDownList)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_TAXI_KENSHU, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_1, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_2(ByVal ANS_TAXI_KENSHU_2 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_2(ByVal ANS_TAXI_KENSHU_2 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_2, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_3(ByVal ANS_TAXI_KENSHU_3 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_3(ByVal ANS_TAXI_KENSHU_3 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_3, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_4(ByVal ANS_TAXI_KENSHU_4 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_4(ByVal ANS_TAXI_KENSHU_4 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_4, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_5(ByVal ANS_TAXI_KENSHU_5 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_5(ByVal ANS_TAXI_KENSHU_5 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_5, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_6(ByVal ANS_TAXI_KENSHU_6 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_6(ByVal ANS_TAXI_KENSHU_6 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_6, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_7(ByVal ANS_TAXI_KENSHU_7 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_7(ByVal ANS_TAXI_KENSHU_7 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_7, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_8(ByVal ANS_TAXI_KENSHU_8 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_8(ByVal ANS_TAXI_KENSHU_8 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_8, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_9(ByVal ANS_TAXI_KENSHU_9 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_9(ByVal ANS_TAXI_KENSHU_9 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_9, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_10, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_11, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_12, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_13, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_14, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_15, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_16, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_17, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_18, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_19, control)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_20, control)
     End Sub
 
