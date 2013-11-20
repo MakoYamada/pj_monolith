@@ -428,11 +428,23 @@ Public Class AppConst
                 Public Const Mi As String = "(回答なし)" '内部的に使用
             End Class
         End Class
+
+        Public Class SEISAN_KANRYO
+            '精算完了
+            Public Class Code
+                Public Const Mi As String = "0"
+                Public Const Kanryo As String = "1"
+            End Class
+            Public Class Name
+                Public Const Mi As String = ""
+                Public Const Kanryo As String = "完了"
+            End Class
+        End Class
     End Class
 
     Public Class COST
         Public Class SAP_FLAG
-            '承認区分
+            'SAPフラグ
             Public Class Code
                 Public Const Mi As String = "0"
                 Public Const Sumi As String = "1"
