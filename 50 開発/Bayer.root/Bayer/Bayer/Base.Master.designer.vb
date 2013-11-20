@@ -151,6 +151,15 @@ Partial Public Class Base
     Protected WithEvents SpnMenu As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''Image1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
     '''LnkBMenu コントロール。
     '''</summary>
     '''<remarks>
@@ -167,6 +176,15 @@ Partial Public Class Base
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SpnLogout As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Image2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
     '''LnkBLogout コントロール。

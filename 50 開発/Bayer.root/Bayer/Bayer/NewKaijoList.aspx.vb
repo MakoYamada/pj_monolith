@@ -274,6 +274,7 @@ Partial Public Class NewKaijoList
         For Each wRow As GridViewRow In Me.GrvList.Rows
             CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = True
         Next
+        SetFocus(Me.LnkCheckALL)
     End Sub
 
     '[全てのチェックを解除]
@@ -281,6 +282,7 @@ Partial Public Class NewKaijoList
         For Each wRow As GridViewRow In Me.GrvList.Rows
             CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = False
         Next
+        SetFocus(Me.LnkCheckClear)
     End Sub
 
     '[戻る]

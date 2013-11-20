@@ -12,18 +12,24 @@ Partial Public Class Menu1
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
-        'セッションを変数に格納        If Not SetSession() Then
+        'セッションを変数に格納
+        If Not SetSession() Then
             Response.Redirect(URL.TimeOut)
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化            InitControls()
+            '不要なセッションを破棄
+            ClearSession()
+
+            '画面項目 初期化
+            InitControls()
 
             '画面項目表示
             SetForm()
         End If
 
-        'マスターページ設定        With Me.Master
+        'マスターページ設定
+        With Me.Master
             .HideMenu = True
             .PageTitle = "メインメニュー"
         End With
@@ -32,7 +38,8 @@ Partial Public Class Menu1
         CmnModule.SetEnabled(Me.BtnBentoList, False)
     End Sub
 
-    'セッションを変数に格納    Private Function SetSession() As Boolean
+    'セッションを変数に格納
+    Private Function SetSession() As Boolean
         Try
             MS_USER = Session.Item(SessionDef.LoginUser)
             If IsNothing(MS_USER) Then Return False
@@ -42,7 +49,8 @@ Partial Public Class Menu1
         Return True
     End Function
 
-    '画面項目 初期化
+    '画面項目 初期化
+
     Private Sub InitControls()
 
         'クリア
@@ -75,147 +83,38 @@ Partial Public Class Menu1
         End If
     End Sub
 
-    ''[参加者一覧]
-    'Protected Sub BtnDrList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnDrList.Click
-    '    Session.Remove(SessionDef.Joken)
-    '    Session.Remove(SessionDef.SEQ)
-    '    Session.Remove(SessionDef.PageIndex)
-    '    Session.Remove(SessionDef.RECORD_KUBUN)
-
-    '    Response.Redirect(URL.)
-    'End Sub
-
-    ''[手配管理]
-    'Protected Sub BtnDrTehaiList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnDrTehaiList.Click
-    '    Session.Remove(SessionDef.TBL_DR)
-    '    Session.Remove(SessionDef.OldTBL_DR)
-    '    Session.Remove(SessionDef.MS_MEMBER)
-    '    Session.Remove(SessionDef.MS_DR)
-    '    Session.Remove(SessionDef.Search)
-    '    Session.Remove(SessionDef.Joken)
-    '    Session.Remove(SessionDef.TehaiListJoken)
-    '    Session.Remove(SessionDef.TehaiListTicketJoken)
-    '    Session.Remove(SessionDef.SEQ)
-    '    Session.Remove(SessionDef.PageIndex)
-    '    Session.Remove(SessionDef.RECORD_KUBUN)
-    '    Session.Item(SessionDef.TehaiListJoken) = ""
-    '    Session.Item(SessionDef.TehaiListTicketJoken) = ""
-
-    '    Response.Redirect(URL.Admin.DrTehaiList)
-    'End Sub
-
     '[新着：会場手配]
     Protected Sub BtnNewKaijoList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKaijoList.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_KOUENKAI)
-        Session.Remove(SessionDef.TBL_KAIJO)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
-        Session.Remove(SessionDef.KaijoRireki_Joken)
-        Session.Remove(SessionDef.KaijoRireki_SEQ)
-        Session.Remove(SessionDef.KaijoRireki_PageIndex)
-        Session.Remove(SessionDef.KaijoRireki)
-        Session.Remove(SessionDef.KaijoPrint_SQL)
-        Session.Remove(SessionDef.BackURL_Print)
-        Session.Remove(SessionDef.PrintPreview)
-        Session.Remove(SessionDef.ShisetsuKensaku_Back)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS1)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS2)
-        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
-        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_KANA)
-        Session.Remove(SessionDef.ShisetsuKensaku_ZIP)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS)
-        Session.Remove(SessionDef.ShisetsuKensaku_TEL)
-        Session.Remove(SessionDef.ShisetsuKensaku_URL)
         Response.Redirect(URL.NewKaijoList)
     End Sub
 
     '[検索：会場手配]
     Protected Sub BtnKaijoList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoList.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_KOUENKAI)
-        Session.Remove(SessionDef.TBL_KAIJO)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.KaijoRireki_TBL_KAIJO)
-        Session.Remove(SessionDef.KaijoRireki_Joken)
-        Session.Remove(SessionDef.KaijoRireki_SEQ)
-        Session.Remove(SessionDef.KaijoRireki_PageIndex)
-        Session.Remove(SessionDef.KaijoRireki)
-        Session.Remove(SessionDef.KaijoPrint_SQL)
-        Session.Remove(SessionDef.BackURL_Print)
-        Session.Remove(SessionDef.PrintPreview)
-        Session.Remove(SessionDef.ShisetsuKensaku_Back)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS1)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS2)
-        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
-        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_KANA)
-        Session.Remove(SessionDef.ShisetsuKensaku_ZIP)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS)
-        Session.Remove(SessionDef.ShisetsuKensaku_TEL)
-        Session.Remove(SessionDef.ShisetsuKensaku_URL)
         Response.Redirect(URL.KaijoList)
     End Sub
 
     '[TOP担当者マスタ]
     Protected Sub BtnMstUser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstUser.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.MS_USER)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.SYSTEM_ID)
         Response.Redirect(URL.MstUser)
     End Sub
-     
+
     '[施設マスタ]
     Protected Sub BtnMstShisetsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstShisetsu.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.MS_SHISETSU)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.SYSTEM_ID)
         Response.Redirect(URL.MstShisetsu)
     End Sub
 
     '[コードマスタ]
     Protected Sub BtnMstCode_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMstCode.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.MS_Code)
         Response.Redirect(URL.MstCode)
     End Sub
 
     '[新着 講演会基本情報一覧]
     Private Sub BtnNewKoenkaiList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNewKoenkaiList.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_KOUENKAI)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.SYSTEM_ID)
-        Session.Remove(SessionDef.KouenkaiRireki)
-        Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
-        Session.Remove(SessionDef.KouenkaiRireki_SEQ)
-        Session.Remove(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
         Response.Redirect(URL.NewKouenkaiList)
     End Sub
 
     '[検索 講演会基本情報一覧]
     Private Sub BtnKoenkaiList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKoenkaiList.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_KOUENKAI)
-        Session.Remove(SessionDef.TBL_KAIJO)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.HotelKensaku_ADDRESS)
-        Session.Remove(SessionDef.HotelKensaku_ADDRESS1)
-        Session.Remove(SessionDef.HotelKensaku_ADDRESS2)
-        Session.Remove(SessionDef.HotelKensaku_Back)
-        Session.Remove(SessionDef.KouenkaiRireki)
-        Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
-        Session.Remove(SessionDef.KouenkaiRireki_SEQ)
-        Session.Remove(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS1)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS2)
-        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_NAME)
-        Session.Remove(SessionDef.ShisetsuKensaku_SHISETSU_KANA)
-        Session.Remove(SessionDef.ShisetsuKensaku_ZIP)
-        Session.Remove(SessionDef.ShisetsuKensaku_ADDRESS)
-        Session.Remove(SessionDef.ShisetsuKensaku_TEL)
-        Session.Remove(SessionDef.ShisetsuKensaku_URL)
         Response.Redirect(URL.KouenkaiList)
     End Sub
 
@@ -224,7 +123,6 @@ Partial Public Class Menu1
         Dim Joken As TableDef.Joken.DataStruct = Nothing
         Joken.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
         Session.Item(SessionDef.Joken) = Joken
-        Session.Remove(SessionDef.TBL_LOG)
         Response.Redirect(URL.LogFile)
     End Sub
 
@@ -233,63 +131,58 @@ Partial Public Class Menu1
         Dim Joken As TableDef.Joken.DataStruct = Nothing
         Joken.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.GAMEN
         Session.Item(SessionDef.Joken) = Joken
-        Session.Remove(SessionDef.TBL_LOG)
         Response.Redirect(URL.LogSousa)
     End Sub
 
     '[CSVファイル作成]
     Protected Sub BtnTaxiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsv.Click
-        Session.Remove(SessionDef.TBL_KOTSUHOTEL)
-        Session.Remove(SessionDef.Joken)
         Response.Redirect(URL.TaxiCsv)
     End Sub
 
     '[新着 交通・宿泊]
     Protected Sub BtnNewKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKotsuList.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_KOTSUHOTEL)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.SYSTEM_ID)
-        Session.Remove(SessionDef.DrRireki)
-        Session.Remove(SessionDef.DrRireki_PageIndex)
-        Session.Remove(SessionDef.DrRireki_SEQ)
-        Session.Remove(SessionDef.DrRireki_TBL_KOUENKAI)
         Response.Redirect(URL.NewDrList)
     End Sub
 
     '[検索 交通・宿泊]
     Protected Sub BtnKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKotsuList.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_KOTSUHOTEL)
-        Session.Remove(SessionDef.SEQ)
-        Session.Remove(SessionDef.SYSTEM_ID)
-        Session.Remove(SessionDef.DrRireki)
-        Session.Remove(SessionDef.DrRireki_PageIndex)
-        Session.Remove(SessionDef.DrRireki_SEQ)
-        Session.Remove(SessionDef.DrRireki_TBL_KOUENKAI)
         Response.Redirect(URL.DrList)
     End Sub
 
     '[精算処理]
     Protected Sub BtnSeisan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisan.Click
-        Session.Remove(SessionDef.SeisanKensaku_Joken)
-        Session.Remove(SessionDef.SeisanKensaku_SEQ)
-        Session.Remove(SessionDef.TBL_KOUENKAI)
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_SEIKYU)
-        Session.Remove(SessionDef.PageIndex)
-        Session.Remove(SessionDef.SEQ)
         Response.Redirect(URL.SeisanKensaku)
     End Sub
 
     '[コストセンター別費用入力]
     Protected Sub BtnCost_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCost.Click
-        Session.Remove(SessionDef.Joken)
-        Session.Remove(SessionDef.TBL_COST)
-        Session.Remove(SessionDef.CostRegist_Search)
-        Session.Remove(SessionDef.CostRegist_Update)
-        Session.Remove(SessionDef.PageIndex)
-        Session.Remove(SessionDef.SEQ)
         Response.Redirect(URL.CostRegist)
     End Sub
+
+    Private Sub ClearSession()
+        Dim SessionItemNames() As String
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        'ログイン以外のセッションを破棄
+        ReDim SessionItemNames(wCnt)
+        For Each ItemName As String In Session.Contents
+            Select Case Trim(ItemName).ToLower
+                Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.LoginUser.ToLower)
+                Case Else
+                    If Trim(ItemName) <> "" Then
+                        ReDim Preserve SessionItemNames(wCnt)
+                        SessionItemNames(wCnt) = ItemName
+                        wFlag = True
+                        wCnt += 1
+                    End If
+            End Select
+        Next
+        If wFlag = True Then
+            For wCnt = LBound(SessionItemNames) To UBound(SessionItemNames)
+                Session.Remove(SessionItemNames(wCnt))
+            Next wCnt
+        End If
+    End Sub
+
 End Class

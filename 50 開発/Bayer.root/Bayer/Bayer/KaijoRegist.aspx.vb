@@ -42,6 +42,7 @@ Partial Public Class KaijoRegist
                     Me.ANS_SHISETSU_ADDRESS.Text = Session.Item(SessionDef.ShisetsuKensaku_ADDRESS)
                     Me.ANS_SHISETSU_TEL.Text = Session.Item(SessionDef.ShisetsuKensaku_TEL)
                     Me.ANS_SHISETSU_URL.Text = Session.Item(SessionDef.ShisetsuKensaku_URL)
+                    SetFocus(Me.BtnShisetsuKensaku)
                 End If
             End If
         End If
@@ -681,6 +682,7 @@ Partial Public Class KaijoRegist
     Protected Sub BtnCalc_ANS_TOTAL_TF_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_ANS_TOTAL_TF.Click
         Calc_ANS_TOTAL_TF()
         Calc_ANS_MITSUMORI_TOTAL()
+        SetFocus(Me.BtnCalc_ANS_TOTAL_TF)
     End Sub
     Private Sub Calc_ANS_TOTAL_TF()
         Dim wANS_TOTAL_TF As Long = 0
@@ -729,6 +731,7 @@ Partial Public Class KaijoRegist
     Protected Sub BtnCalc_ANS_TOTAL_T_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_ANS_TOTAL_T.Click
         Calc_ANS_TOTAL_T()
         Calc_ANS_MITSUMORI_TOTAL()
+        SetFocus(Me.BtnCalc_ANS_TOTAL_T)
     End Sub
     Private Sub Calc_ANS_TOTAL_T()
         Dim wANS_TOTAL_T As Long = 0
@@ -766,6 +769,7 @@ Partial Public Class KaijoRegist
         Calc_ANS_TOTAL_TF()
         Calc_ANS_TOTAL_T()
         Calc_ANS_MITSUMORI_TOTAL()
+        SetFocus(Me.BtnCalc_ANS_MITSUMORI)
        End Sub
     Private Sub Calc_ANS_MITSUMORI_TOTAL()
         '概算見積合計(非課税)

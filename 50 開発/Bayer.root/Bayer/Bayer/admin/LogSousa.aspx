@@ -35,15 +35,14 @@
 			</td>
 		</tr>
 	</table>
-	<hr style="width: 100%;" />
+	<hr noshade="noshade" size="1" style="width: 100%;" />
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr>
 			<td align="left">
-				<div class="FontSize1" style="height: 4px;"></div>
 				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
 				<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" CellSpacing="0" 
 				 AutoGenerateColumns="false" ShowHeader="true" ShowFooter="false" 
-				 AllowPaging="true" PageSize="15"
+				 AllowPaging="true" PageSize="9"
 				 DataKeyNames="INPUT_DATE,INPUT_USER,SYORI_NAME" DataSourceID="SqlDataSource1">
 					<HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
 					<AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />

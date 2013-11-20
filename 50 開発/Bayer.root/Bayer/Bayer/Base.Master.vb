@@ -56,7 +56,7 @@ Partial Public Class Base
         End If
 
         Me.ImgSiteName.ImageUrl = "~/Images/logo.png"
-        Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/bgtitle.png") & "')"
+        Me.TrPageTitle.Style(CmnConst.Html.Style.BackgroundImage) = "url('" & VirtualPathUtility.ToAbsolute("~/Images/  ") & "')"
 
         Me.HeaderComment1.Text = WebConfig.Site.HeaderComment1
         Me.HeaderComment2.Text = WebConfig.Site.HeaderComment2
@@ -127,6 +127,7 @@ Partial Public Class Base
         If wFlag = True Then
             For wCnt = LBound(SessionItemNames) To UBound(SessionItemNames)
                 Session.Remove(SessionItemNames(wCnt))
+                Debug.Print("qqq " & SessionItemNames(wCnt))
             Next wCnt
         End If
         Response.Redirect(URL.Menu)

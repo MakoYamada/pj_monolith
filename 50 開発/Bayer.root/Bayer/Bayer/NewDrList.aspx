@@ -3,7 +3,7 @@
 
 <%@ MasterType VirtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
+	<style type="text/css">
         .style1
         {
             width: 327px;
@@ -27,7 +27,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table cellspacing="0" cellpadding="2" border="0">
+	<table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">

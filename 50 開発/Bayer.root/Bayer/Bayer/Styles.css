@@ -276,28 +276,27 @@ img
 }
 .baselink
 {
-	cursor: pointer;
-	color: #1c75bc;
+	color: #276af1;
 	font-weight: bold;
 }
 a.baselink:link 
 {
-	color: #1c75bc;
+	color: #276af1;
 	text-decoration: none;
 }
 a.baselink:visited 
 {
-	color: #1c75bc;
+	color: #276af1;
 	text-decoration: none;
 }
 a.baselink:hover 
 {
-	color: #2b3338;
+	color: #469a0e;
 	text-decoration: underline;
 }
 a.baselink:active 
 {
-	color: #2b3338;
+	color: #469a0e;
 	text-decoration: underline;
 }
 .FontSize1 
