@@ -6952,6 +6952,24 @@ Public Class AppModule
     End Sub
 #End Region
 
+#Region "タクチケ券種（回答）"
+    Public Shared Sub SetDropDownList_ANS_TAXI_KENSHU(ByRef ANS_TAXI_KENSHU As DropDownList)
+        With ANS_TAXI_KENSHU
+            .Items.Clear()
+            .Items.Add(New ListItem("---", "0"))
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_KENSHU Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+#End Region
+
 #Region "新着一覧　区分"
     Public Shared Sub SetDropDownList_KUBUN(ByRef KUBUN As DropDownList, Optional ByVal KOTSUHOTEL As Boolean = False)
         With KUBUN
@@ -7028,8 +7046,8 @@ Public Class AppModule
         With EXPORTIMPORT
             .Items.Clear()
             .Items.Add(New ListItem("---", ""))
-            .Items.Add(New ListItem(AppConst.TBL_LOG.EXPORTIMPORT.Name.IMPORT, AppConst.TBL_LOG.EXPORTIMPORT.CODE.IMPORT))
-            .Items.Add(New ListItem(AppConst.TBL_LOG.EXPORTIMPORT.Name.EXPORT, AppConst.TBL_LOG.EXPORTIMPORT.CODE.EXPORT))
+            .Items.Add(New ListItem(AppConst.TBL_LOG.EXPORTIMPORT.Name.IMPORT, AppConst.TBL_LOG.EXPORTIMPORT.Code.IMPORT))
+            .Items.Add(New ListItem(AppConst.TBL_LOG.EXPORTIMPORT.Name.EXPORT, AppConst.TBL_LOG.EXPORTIMPORT.Code.EXPORT))
         End With
     End Sub
 #End Region
@@ -7040,16 +7058,16 @@ Public Class AppModule
             With STATUS
                 .Items.Clear()
                 .Items.Add(New ListItem("---", ""))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.OK, AppConst.TBL_LOG.STATUS.CODE.OK))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.NG, AppConst.TBL_LOG.STATUS.CODE.NG))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.OK, AppConst.TBL_LOG.STATUS.Code.OK))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.NG, AppConst.TBL_LOG.STATUS.Code.NG))
             End With
         End Sub
         Public Shared Sub LogSousa(ByRef STATUS As DropDownList)
             With STATUS
                 .Items.Clear()
                 .Items.Add(New ListItem("---", ""))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.OK, AppConst.TBL_LOG.STATUS.CODE.OK))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.NG, AppConst.TBL_LOG.STATUS.CODE.NG))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.OK, AppConst.TBL_LOG.STATUS.Code.OK))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.STATUS.Name.NG, AppConst.TBL_LOG.STATUS.Code.NG))
             End With
         End Sub
     End Class
