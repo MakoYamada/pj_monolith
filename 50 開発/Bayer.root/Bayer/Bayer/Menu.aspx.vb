@@ -27,6 +27,9 @@ Partial Public Class Menu1
             .HideMenu = True
             .PageTitle = "メインメニュー"
         End With
+
+        CmnModule.SetEnabled(Me.BtnNewBentoList, False)
+        CmnModule.SetEnabled(Me.BtnBentoList, False)
     End Sub
 
     'セッションを変数に格納    Private Function SetSession() As Boolean
