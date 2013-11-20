@@ -30,6 +30,8 @@ Public Class DrRirekiReport
         End If
         'タクチケ
         TEHAI_TAXI.Text = AppModule.GetMark_TEHAI_TAXI(TEHAI_TAXI.Text)
+        'NOZOMI送信ステータス
+        SEND_FLAG.Text = AppModule.GetName_SEND_FLAG(SEND_FLAG.Text, True)
 
         '区分
         REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(REQ_STATUS_TEHAI.Text, False, True)

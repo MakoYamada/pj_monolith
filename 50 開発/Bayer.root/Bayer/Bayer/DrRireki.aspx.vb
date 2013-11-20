@@ -242,4 +242,20 @@ Partial Public Class DrRireki
     Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
         BtnBack1_Click(sender, e)
     End Sub
+
+    '[印刷]
+    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+        Dim strSQL As String = ""
+
+        strSQL = SQL.TBL_KOTSUHOTEL.DrRireki(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
+
+        Session.Item(SessionDef.DrRirekiPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
+    End Sub
+
+    '[印刷]
+    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
+        BtnPrint1_Click(sender, e)
+    End Sub
 End Class

@@ -2508,12 +2508,12 @@ Partial Public Class DrRegist
 
     '[手配書印刷]
     Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint.Click
-        Session.Item(SessionDef.SEQ) = SEQ
-        Session.Item(SessionDef.DrRireki_SEQ) = SEQ
-        Session.Item(SessionDef.TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
+        Dim strSQL As String = ""
+        strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-        Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL) = DSP_KOTSUHOTEL
-        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+        Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
     End Sub
 End Class
