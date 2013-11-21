@@ -506,14 +506,14 @@
                             チェックイン
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_CHECKIN_TIME" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_CHECKIN_TIME" runat="server" MaxLength="5" 
                                 Height="18px" Width="47px" TabIndex="10"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             チェックアウト
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_CHECKOUT_TIME" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_CHECKOUT_TIME" runat="server" MaxLength="5" 
                                 Height="18px" Width="47px" TabIndex="11"></asp:TextBox>
                         </td>
                     </tr>
@@ -588,7 +588,7 @@
                                 CssClass="ButtonList" TabIndex="16" />
             				<asp:Button ID="BtnClear_O_TEHAI_1" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="16" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -678,14 +678,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME1_1" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME1_1" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="21"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME2_1" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME2_1" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="22"></asp:TextBox>
                         </td>
                     </tr>
@@ -777,7 +777,7 @@
                                 CssClass="ButtonList" TabIndex="27" />
             				<asp:Button ID="BtnClear_O_TEHAI_2" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="28" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -867,14 +867,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME1_2" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME1_2" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="33"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME2_2" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME2_2" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="34"></asp:TextBox>
                         </td>
                     </tr>
@@ -966,7 +966,7 @@
                                 CssClass="ButtonList" TabIndex="39" />
             				<asp:Button ID="BtnClear_O_TEHAI_3" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="40" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -1056,14 +1056,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME1_3" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME1_3" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="45"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME2_3" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME2_3" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="46"></asp:TextBox>
                         </td>
                     </tr>
@@ -1155,7 +1155,7 @@
                                 CssClass="ButtonList" TabIndex="51" />
             				<asp:Button ID="BtnClear_O_TEHAI_4" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="52" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -1245,14 +1245,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME1_4" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME1_4" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="57"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME2_4" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME2_4" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="58"></asp:TextBox>
                         </td>
                     </tr>
@@ -1344,7 +1344,7 @@
                                 CssClass="ButtonList" TabIndex="63" />
             				<asp:Button ID="BtnClear_O_TEHAI_5" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="64" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -1434,14 +1434,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME1_5" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME1_5" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="69"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_TIME2_5" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_O_TIME2_5" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="70"></asp:TextBox>
                         </td>
                     </tr>
@@ -1533,7 +1533,7 @@
                                 CssClass="ButtonList" TabIndex="75" />
             				<asp:Button ID="BtnClear_F_TEHAI_1" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="76" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -1623,14 +1623,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME1_1" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME1_1" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="81"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME2_1" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME2_1" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="82"></asp:TextBox>
                         </td>
                     </tr>
@@ -1722,7 +1722,7 @@
                                 CssClass="ButtonList" TabIndex="87" />
             				<asp:Button ID="BtnClear_F_TEHAI_2" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="88" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -1812,14 +1812,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME1_2" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME1_2" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="93"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME2_2" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME2_2" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="94"></asp:TextBox>
                         </td>
                     </tr>
@@ -1911,7 +1911,7 @@
                                 CssClass="ButtonList" TabIndex="99" />
             				<asp:Button ID="BtnClear_F_TEHAI_3" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="100" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -2001,14 +2001,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME1_3" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME1_3" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="105"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME2_3" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME2_3" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="106"></asp:TextBox>
                         </td>
                     </tr>
@@ -2100,7 +2100,7 @@
                                 CssClass="ButtonList" TabIndex="111" />
             				<asp:Button ID="BtnClear_F_TEHAI_4" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="112" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -2190,14 +2190,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME1_4" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME1_4" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="117"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME2_4" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME2_4" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="118"></asp:TextBox>
                         </td>
                     </tr>
@@ -2289,7 +2289,7 @@
                                 CssClass="ButtonList" TabIndex="123" />
             				<asp:Button ID="BtnClear_F_TEHAI_5" runat="server" Width="55px" Text="クリア" 
                                 CssClass="ButtonList" TabIndex="124" />
-                            <a style="color: #FF0000; font-weight: bold">※回答欄に入力済の場合はコピーできません</a>
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
                     <tr>
@@ -2379,14 +2379,14 @@
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME1_5" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME1_5" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="129"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_TIME2_5" runat="server" MaxLength="4" 
+                            <asp:TextBox ID="ANS_F_TIME2_5" runat="server" MaxLength="5" 
                                 Height="18px" Width="148px" TabIndex="130"></asp:TextBox>
                         </td>
                     </tr>

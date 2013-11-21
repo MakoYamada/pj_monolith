@@ -71,12 +71,24 @@ Partial Public Class DrRegist
             End If
 
         Else
-            Me.ANS_HOTEL_NAME.Text = Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME)
-            Me.ANS_HOTEL_ADDRESS.Text = Session.Item(SessionDef.HotelKensaku_ADDRESS2)
-            Me.ANS_HOTEL_TEL.Text = Session.Item(SessionDef.HotelKensaku_TEL)
-            Me.ANS_CHECKIN_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKIN_TIME)
-            Me.ANS_CHECKOUT_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKOUT_TIME)
+            If Trim(Session.Item(SessionDef.DrRireki)) = Session.SessionID Then
+            Else
+                If Trim(Session.Item(SessionDef.HotelKensaku_Back)) = CmnConst.Flag.On Then
+                    '検索画面戻り
+                    Me.ANS_HOTEL_NAME.Text = Session.Item(SessionDef.HotelKensaku_SHISETSU_NAME)
+                    Me.ANS_HOTEL_ADDRESS.Text = Session.Item(SessionDef.HotelKensaku_ADDRESS2)
+                    Me.ANS_HOTEL_TEL.Text = Session.Item(SessionDef.HotelKensaku_TEL)
+                    Me.ANS_CHECKIN_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKIN_TIME)
+                    Me.ANS_CHECKOUT_TIME.Text = Session.Item(SessionDef.HotelKensaku_CHECKOUT_TIME)
+                    SetFocus(Me.BtnHotelKensaku)
+                End If
+            End If
+
         End If
+        Session.Remove(SessionDef.HotelKensaku_Back)
+        Session.Remove(SessionDef.KaijoPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+        Session.Remove(SessionDef.PrintPreview)
 
         'マスターページ設定
         With Me.Master
@@ -771,7 +783,7 @@ Partial Public Class DrRegist
         '各種代金
         AppModule.SetForm_ANS_HOTELHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI, Me.ANS_HOTELHI)
         AppModule.SetForm_ANS_HOTELHI_TOZEI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_TOZEI)
-        AppModule.SetForm_ANS_RAIL_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_FARE, Me.ANS_MR_KOTSUHI)
+        AppModule.SetForm_ANS_RAIL_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_FARE, Me.ANS_RAIL_FARE)
         AppModule.SetForm_ANS_RAIL_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_CANCELLATION, Me.ANS_RAIL_CANCELLATION)
         AppModule.SetForm_ANS_OTHER_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_FARE, Me.ANS_OTHER_FARE)
         AppModule.SetForm_ANS_OTHER_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_CANCELLATION, Me.ANS_OTHER_CANCELLATION)
@@ -780,12 +792,14 @@ Partial Public Class DrRegist
         AppModule.SetForm_ANS_MR_HOTELHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI, Me.ANS_MR_HOTELHI)
         AppModule.SetForm_ANS_MR_HOTELHI_TOZEI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI, Me.ANS_MR_HOTELHI_TOZEI)
         AppModule.SetForm_ANS_MR_KOTSUHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_KOTSUHI, Me.ANS_MR_KOTSUHI)
+        AppModule.SetForm_ANS_TAXI_TESURYO(DSP_KOTSUHOTEL(SEQ).ANS_TAXI_TESURYO, Me.ANS_TAXI_TESURYO)
+        AppModule.SetForm_ANS_KOTSUHOTEL_TESURYO(DSP_KOTSUHOTEL(SEQ).ANS_KOTSUHOTEL_TESURYO, Me.ANS_KOTSUHOTEL_TESURYO)
 
         '宿泊費税抜金額表示
         Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(DSP_SEQ).FROM_DATE, MyBase.DbConnection)
-        Dim strZeikomiGaku As String = CStr(CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI) - CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI))
+        Dim strZeikomiGaku As String = CStr(CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI)) - CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI)))
         Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
-        Dim strMrZeikomiGaku As String = CStr(CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI) - CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI))
+        Dim strMrZeikomiGaku As String = CStr(CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI)) - CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI)))
         Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strMrZeikomiGaku, strZeiRate))
     End Sub
 
@@ -952,17 +966,25 @@ Partial Public Class DrRegist
         End If
 
         'チェックイン
-        If Me.ANS_CHECKIN_TIME.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_CHECKIN_TIME) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("チェックイン"), Me)
-            Return False
+        If Me.ANS_CHECKIN_TIME.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_CHECKIN_TIME) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("チェックイン"), Me)
+                Return False
+            Else
+                Me.ANS_CHECKIN_TIME.Text = Replace(Replace(Me.ANS_CHECKIN_TIME.Text, ":", ""), "：", "")
+                Me.ANS_CHECKIN_TIME.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_CHECKIN_TIME.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         'チェックアウト
-        If Me.ANS_CHECKOUT_TIME.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_CHECKOUT_TIME) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("チェックアウト"), Me)
-            Return False
+        If Me.ANS_CHECKOUT_TIME.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_CHECKOUT_TIME) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("チェックアウト"), Me)
+                Return False
+            Else
+                Me.ANS_CHECKOUT_TIME.Text = Replace(Replace(Me.ANS_CHECKOUT_TIME.Text, ":", ""), "：", "")
+                Me.ANS_CHECKOUT_TIME.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_CHECKOUT_TIME.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '往路
@@ -974,17 +996,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻1
-        If Me.ANS_O_TIME1_1.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_1) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME1_1.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME1_1) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME1_1.Text = Replace(Replace(Me.ANS_O_TIME1_1.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME1_1.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME1_1.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻1
-        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME2_1.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_1) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME2_1.Text = Replace(Replace(Me.ANS_O_TIME2_1.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME2_1.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_1.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日2
@@ -995,17 +1025,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻2
-        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME2_1.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_1) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME2_1.Text = Replace(Replace(Me.ANS_O_TIME2_1.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME2_1.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_1.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻2
-        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME2_2.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME2_2.Text = Replace(Replace(Me.ANS_O_TIME2_2.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME2_2.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_2.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日3
@@ -1016,17 +1054,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻3
-        If Me.ANS_O_TIME1_3.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_3) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME1_3.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME1_3) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME1_3.Text = Replace(Replace(Me.ANS_O_TIME1_3.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME1_3.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME1_3.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻3
-        If Me.ANS_O_TIME1_3.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_3) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME2_3.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_3) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME2_3.Text = Replace(Replace(Me.ANS_O_TIME2_3.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME2_3.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_3.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日4
@@ -1037,17 +1083,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻4
-        If Me.ANS_O_TIME1_4.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_4) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME1_4.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME1_4) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME1_4.Text = Replace(Replace(Me.ANS_O_TIME1_4.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME1_4.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME1_4.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻4
-        If Me.ANS_O_TIME1_4.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_4) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME2_4.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_4) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME2_4.Text = Replace(Replace(Me.ANS_O_TIME2_4.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME2_4.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_4.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日5
@@ -1058,17 +1112,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻5
-        If Me.ANS_O_TIME1_5.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_5) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME1_5.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME1_5) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME1_5.Text = Replace(Replace(Me.ANS_O_TIME1_5.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME1_5.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME1_5.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻5
-        If Me.ANS_O_TIME1_5.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_O_TIME1_5) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_O_TIME2_5.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_5) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_O_TIME2_5.Text = Replace(Replace(Me.ANS_O_TIME2_5.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME2_5.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_5.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '復路
@@ -1080,17 +1142,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻1
-        If Me.ANS_F_TIME1_1.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_1) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME1_1.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME1_1) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME1_1.Text = Replace(Replace(Me.ANS_F_TIME1_1.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME1_1.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME1_1.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻1
-        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME1_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME1_2.Text = Replace(Replace(Me.ANS_F_TIME1_2.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME1_2.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME1_2.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日2
@@ -1101,17 +1171,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻2
-        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME1_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME1_2.Text = Replace(Replace(Me.ANS_F_TIME1_2.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME1_2.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME1_2.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻2
-        If Me.ANS_F_TIME1_2.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME2_2.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME2_2) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME2_2.Text = Replace(Replace(Me.ANS_F_TIME2_2.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME2_2.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME2_2.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日3
@@ -1122,17 +1200,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻3
-        If Me.ANS_F_TIME1_3.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_3) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME1_3.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME1_3) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME1_3.Text = Replace(Replace(Me.ANS_F_TIME1_3.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME1_3.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME1_3.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻3
-        If Me.ANS_F_TIME1_3.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_3) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME2_3.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME2_3) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME2_3.Text = Replace(Replace(Me.ANS_F_TIME2_3.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME2_3.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME2_3.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日4
@@ -1143,17 +1229,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻4
-        If Me.ANS_F_TIME1_4.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_4) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME1_4.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME1_4) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME1_4.Text = Replace(Replace(Me.ANS_F_TIME1_4.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME1_4.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME1_4.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻4
-        If Me.ANS_F_TIME1_4.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_4) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME2_4.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME2_4) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME2_4.Text = Replace(Replace(Me.ANS_F_TIME2_4.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME2_4.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME2_4.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '利用日5
@@ -1164,17 +1258,25 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻5
-        If Me.ANS_F_TIME1_5.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_5) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME1_5.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME1_5) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME1_5.Text = Replace(Replace(Me.ANS_F_TIME1_5.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME1_5.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME1_5.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         '到着時刻5
-        If Me.ANS_F_TIME1_5.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isvalidtime(Me.ANS_F_TIME1_5) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
-            Return False
+        If Me.ANS_F_TIME2_5.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_F_TIME2_5) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("到着時刻"), Me)
+                Return False
+            Else
+                Me.ANS_F_TIME2_5.Text = Replace(Replace(Me.ANS_F_TIME2_5.Text, ":", ""), "：", "")
+                Me.ANS_F_TIME2_5.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_F_TIME2_5.Text & "00", CmnModule.DateFormatType.HHMM)
+            End If
         End If
 
         'タクチケ
@@ -1187,7 +1289,7 @@ Partial Public Class DrRegist
 
         '番号1
         If Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.ishankaku(Me.ANS_TAXI_NO_1) Then
+            Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_1) Then
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号"), Me)
             Return False
         End If
@@ -1870,6 +1972,8 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+
+        SetFocus(Me.ANS_O_KOTSUKIKAN_1)
     End Sub
 
     '交通往路２コピーボタン
@@ -1925,6 +2029,8 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+
+        SetFocus(Me.ANS_O_KOTSUKIKAN_2)
     End Sub
 
     '交通往路３コピーボタン
@@ -1980,6 +2086,8 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+
+        SetFocus(Me.ANS_O_KOTSUKIKAN_3)
     End Sub
 
     '交通往路４コピーボタン
@@ -2030,11 +2138,13 @@ Partial Public Class DrRegist
 
         '座席希望
         For i As Integer = 0 To ANS_O_SEAT_kibou4.Items.Count - 1
-            If REQ_O_SEAT_kibou4.Text = ANS_O_SEAT_kibou4.Items(i).Text Then
-                ANS_O_SEAT_kibou4.SelectedIndex = i
+            If REQ_O_SEAT_KIBOU4.Text = ANS_O_SEAT_KIBOU4.Items(i).Text Then
+                ANS_O_SEAT_KIBOU4.SelectedIndex = i
                 Exit For
             End If
         Next
+
+        SetFocus(Me.ANS_O_KOTSUKIKAN_4)
     End Sub
 
     '交通往路５コピーボタン
@@ -2084,12 +2194,14 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_O_SEAT_kibou4.Items.Count - 1
-            If REQ_O_SEAT_kibou4.Text = ANS_O_SEAT_kibou4.Items(i).Text Then
-                ANS_O_SEAT_kibou4.SelectedIndex = i
+        For i As Integer = 0 To ANS_O_SEAT_KIBOU5.Items.Count - 1
+            If REQ_O_SEAT_KIBOU5.Text = ANS_O_SEAT_KIBOU5.Items(i).Text Then
+                ANS_O_SEAT_KIBOU5.SelectedIndex = i
                 Exit For
             End If
         Next
+
+        SetFocus(Me.ANS_O_KOTSUKIKAN_5)
     End Sub
     '交通往路１コピーボタン
     Protected Sub BtnCopy_F_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_1.Click
@@ -2146,6 +2258,8 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+
+        SetFocus(Me.ANS_F_KOTSUKIKAN_1)
     End Sub
 
     '交通往路２コピーボタン
@@ -2201,6 +2315,7 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+        SetFocus(Me.ANS_F_KOTSUKIKAN_2)
     End Sub
 
     '交通往路３コピーボタン
@@ -2256,6 +2371,7 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+        SetFocus(Me.ANS_F_KOTSUKIKAN_3)
     End Sub
 
     '交通往路４コピーボタン
@@ -2311,6 +2427,7 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+        SetFocus(Me.ANS_F_KOTSUKIKAN_4)
     End Sub
 
     '交通往路５コピーボタン
@@ -2324,7 +2441,7 @@ Partial Public Class DrRegist
             ANS_F_TIME2_5.Text.Trim <> String.Empty OrElse _
             ANS_F_BIN_5.Text.Trim <> String.Empty OrElse _
             ANS_F_SEAT_5.SelectedIndex >= 1 OrElse _
-            ANS_F_SEAT_kibou4.SelectedIndex >= 1 Then
+            ANS_F_SEAT_KIBOU5.SelectedIndex >= 1 Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -2366,6 +2483,7 @@ Partial Public Class DrRegist
                 Exit For
             End If
         Next
+        SetFocus(Me.ANS_F_KOTSUKIKAN_5)
     End Sub
 
     '[戻る]
@@ -2425,8 +2543,9 @@ Partial Public Class DrRegist
         End If
 
         Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
-        Dim strZeikomiGaku As String = CStr(CLng(Me.ANS_HOTELHI.Text.Trim) - CLng(Me.ANS_HOTELHI_TOZEI.Text.Trim))
+        Dim strZeikomiGaku As String = CStr(CLng(Val(Me.ANS_HOTELHI.Text.Trim)) - CLng(Val(Me.ANS_HOTELHI_TOZEI.Text.Trim)))
         Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
+        SetFocus(ANS_HOTELHI_TOZEI)
     End Sub
 
     Private Sub ANS_HOTELHI_TOZEI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_HOTELHI_TOZEI.TextChanged
@@ -2451,11 +2570,153 @@ Partial Public Class DrRegist
         End If
 
         Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
-        Dim strZeikomiGaku As String = CStr(CLng(Me.ANS_MR_HOTELHI.Text.Trim) - CLng(Me.ANS_MR_HOTELHI_TOZEI.Text.Trim))
+        Dim strZeikomiGaku As String = CStr(CLng(Val(Me.ANS_MR_HOTELHI.Text.Trim)) - CLng(Val(Me.ANS_MR_HOTELHI_TOZEI.Text.Trim)))
         Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
+        SetFocus(ANS_MR_HOTELHI_TOZEI)
     End Sub
 
     Private Sub ANS_MR_HOTELHI_TOZEI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_MR_HOTELHI_TOZEI.TextChanged
         ANS_MR_HOTELHI_TextChanged(sender, e)
     End Sub
+
+    '交通(往路)手配1クリアボタン
+    Protected Sub BtnClear_O_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_1.Click
+        Me.ANS_O_KOTSUKIKAN_1.SelectedIndex = 0
+        Me.ANS_O_DATE_1.Text = ""
+        Me.ANS_O_AIRPORT1_1.Text = ""
+        Me.ANS_O_AIRPORT2_1.Text = ""
+        Me.ANS_O_TIME1_1.Text = ""
+        Me.ANS_O_TIME2_1.Text = ""
+        Me.ANS_O_BIN_1.Text = ""
+        Me.ANS_O_SEAT_1.SelectedIndex = 0
+        Me.ANS_O_SEAT_KIBOU1.SelectedIndex = 0
+        SetFocus(Me.ANS_O_KOTSUKIKAN_1)
+    End Sub
+
+    '交通(往路)手配2クリアボタン
+    Protected Sub BtnClear_O_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_2.Click
+        Me.ANS_O_KOTSUKIKAN_2.SelectedIndex = 0
+        Me.ANS_O_DATE_2.Text = ""
+        Me.ANS_O_AIRPORT1_2.Text = ""
+        Me.ANS_O_AIRPORT2_2.Text = ""
+        Me.ANS_O_TIME1_2.Text = ""
+        Me.ANS_O_TIME2_2.Text = ""
+        Me.ANS_O_BIN_2.Text = ""
+        Me.ANS_O_SEAT_2.SelectedIndex = 0
+        Me.ANS_O_SEAT_KIBOU2.SelectedIndex = 0
+        SetFocus(Me.ANS_O_KOTSUKIKAN_2)
+    End Sub
+
+    '交通(往路)手配3クリアボタン
+    Protected Sub BtnClear_O_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_3.Click
+        Me.ANS_O_KOTSUKIKAN_3.SelectedIndex = 0
+        Me.ANS_O_DATE_3.Text = ""
+        Me.ANS_O_AIRPORT1_3.Text = ""
+        Me.ANS_O_AIRPORT2_3.Text = ""
+        Me.ANS_O_TIME1_3.Text = ""
+        Me.ANS_O_TIME2_3.Text = ""
+        Me.ANS_O_BIN_3.Text = ""
+        Me.ANS_O_SEAT_3.SelectedIndex = 0
+        Me.ANS_O_SEAT_KIBOU3.SelectedIndex = 0
+        SetFocus(Me.ANS_O_KOTSUKIKAN_3)
+    End Sub
+
+    '交通(往路)手配4クリアボタン
+    Protected Sub BtnClear_O_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_4.Click
+        Me.ANS_O_KOTSUKIKAN_4.SelectedIndex = 0
+        Me.ANS_O_DATE_4.Text = ""
+        Me.ANS_O_AIRPORT1_4.Text = ""
+        Me.ANS_O_AIRPORT2_4.Text = ""
+        Me.ANS_O_TIME1_4.Text = ""
+        Me.ANS_O_TIME2_4.Text = ""
+        Me.ANS_O_BIN_4.Text = ""
+        Me.ANS_O_SEAT_4.SelectedIndex = 0
+        Me.ANS_O_SEAT_KIBOU4.SelectedIndex = 0
+        SetFocus(Me.ANS_O_KOTSUKIKAN_4)
+    End Sub
+
+    '交通(往路)手配5クリアボタン
+    Protected Sub BtnClear_O_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_5.Click
+        Me.ANS_O_KOTSUKIKAN_5.SelectedIndex = 0
+        Me.ANS_O_DATE_5.Text = ""
+        Me.ANS_O_AIRPORT1_5.Text = ""
+        Me.ANS_O_AIRPORT2_5.Text = ""
+        Me.ANS_O_TIME1_5.Text = ""
+        Me.ANS_O_TIME2_5.Text = ""
+        Me.ANS_O_BIN_5.Text = ""
+        Me.ANS_O_SEAT_5.SelectedIndex = 0
+        Me.ANS_O_SEAT_KIBOU5.SelectedIndex = 0
+        SetFocus(Me.ANS_O_KOTSUKIKAN_5)
+    End Sub
+
+    '交通(復路)手配1クリアボタン
+    Protected Sub BtnClear_F_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_1.Click
+        Me.ANS_F_KOTSUKIKAN_1.SelectedIndex = 0
+        Me.ANS_F_DATE_1.Text = ""
+        Me.ANS_F_AIRPORT1_1.Text = ""
+        Me.ANS_F_AIRPORT2_1.Text = ""
+        Me.ANS_F_TIME1_1.Text = ""
+        Me.ANS_F_TIME2_1.Text = ""
+        Me.ANS_F_BIN_1.Text = ""
+        Me.ANS_F_SEAT_1.SelectedIndex = 0
+        Me.ANS_F_SEAT_KIBOU1.SelectedIndex = 0
+        SetFocus(Me.ANS_F_KOTSUKIKAN_1)
+    End Sub
+
+    '交通(復路)手配2クリアボタン
+    Protected Sub BtnClear_F_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_2.Click
+        Me.ANS_F_KOTSUKIKAN_2.SelectedIndex = 0
+        Me.ANS_F_DATE_2.Text = ""
+        Me.ANS_F_AIRPORT1_2.Text = ""
+        Me.ANS_F_AIRPORT2_2.Text = ""
+        Me.ANS_F_TIME1_2.Text = ""
+        Me.ANS_F_TIME2_2.Text = ""
+        Me.ANS_F_BIN_2.Text = ""
+        Me.ANS_F_SEAT_2.SelectedIndex = 0
+        Me.ANS_F_SEAT_KIBOU2.SelectedIndex = 0
+        SetFocus(Me.ANS_F_KOTSUKIKAN_2)
+    End Sub
+
+    '交通(復路)手配3クリアボタン
+    Protected Sub BtnClear_F_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_3.Click
+        Me.ANS_F_KOTSUKIKAN_3.SelectedIndex = 0
+        Me.ANS_F_DATE_3.Text = ""
+        Me.ANS_F_AIRPORT1_3.Text = ""
+        Me.ANS_F_AIRPORT2_3.Text = ""
+        Me.ANS_F_TIME1_3.Text = ""
+        Me.ANS_F_TIME2_3.Text = ""
+        Me.ANS_F_BIN_3.Text = ""
+        Me.ANS_F_SEAT_3.SelectedIndex = 0
+        Me.ANS_F_SEAT_KIBOU3.SelectedIndex = 0
+        SetFocus(Me.ANS_F_KOTSUKIKAN_3)
+    End Sub
+
+    '交通(復路)手配4クリアボタン
+    Protected Sub BtnClear_F_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_4.Click
+        Me.ANS_F_KOTSUKIKAN_4.SelectedIndex = 0
+        Me.ANS_F_DATE_4.Text = ""
+        Me.ANS_F_AIRPORT1_4.Text = ""
+        Me.ANS_F_AIRPORT2_4.Text = ""
+        Me.ANS_F_TIME1_4.Text = ""
+        Me.ANS_F_TIME2_4.Text = ""
+        Me.ANS_F_BIN_4.Text = ""
+        Me.ANS_F_SEAT_4.SelectedIndex = 0
+        Me.ANS_F_SEAT_KIBOU4.SelectedIndex = 0
+        SetFocus(Me.ANS_F_KOTSUKIKAN_4)
+    End Sub
+
+    '交通(復路)手配5クリアボタン
+    Protected Sub BtnClear_F_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_5.Click
+        Me.ANS_F_KOTSUKIKAN_5.SelectedIndex = 0
+        Me.ANS_F_DATE_5.Text = ""
+        Me.ANS_F_AIRPORT1_5.Text = ""
+        Me.ANS_F_AIRPORT2_5.Text = ""
+        Me.ANS_F_TIME1_5.Text = ""
+        Me.ANS_F_TIME2_5.Text = ""
+        Me.ANS_F_BIN_5.Text = ""
+        Me.ANS_F_SEAT_5.SelectedIndex = 0
+        Me.ANS_F_SEAT_KIBOU5.SelectedIndex = 0
+        SetFocus(Me.ANS_F_KOTSUKIKAN_5)
+    End Sub
+
 End Class
