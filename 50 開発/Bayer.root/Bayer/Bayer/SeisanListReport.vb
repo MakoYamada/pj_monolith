@@ -40,7 +40,6 @@ Public Class SeisanListReport
         Me.LabelPage.Text = "(" & Me.PageCount.Text & "/" & Me.PageTotal.Text & "ページ)"
     End Sub
 
-
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         Me.BU.Text = AppModule.GetName_BU(Me.BU.Text)
         Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(Me.KIKAKU_TANTO_AREA.Text)
@@ -51,12 +50,5 @@ Public Class SeisanListReport
         Me.SHOUNIN_KUBUN.Text = AppModule.GetName_SHOUNIN_KUBUN(Me.SHOUNIN_KUBUN.Text)
         Me.SEND_FLAG.Text = AppModule.GetName_SEND_FLAG(Me.SEND_FLAG.Text, True)
 
-    End Sub
-
-
-    Private Sub Detail_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.BeforePrint
-        Dim h As Single = Me.KOUENKAI_NAME.Height
-        Me.Line3.Y1 = h
-        Me.Line3.Y2 = h
     End Sub
 End Class
