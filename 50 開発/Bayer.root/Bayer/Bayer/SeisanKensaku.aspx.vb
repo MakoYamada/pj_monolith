@@ -187,11 +187,11 @@ Partial Public Class SeisanKensaku
 
         With Me.GrvList
             Try
-                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
+                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.SeisanKensaku_PageIndex))
                 .DataBind()
             Catch ex As Exception
-                Session.Item(SessionDef.PageIndex) = 0
-                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
+                Session.Item(SessionDef.SeisanKensaku_PageIndex) = 0
+                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.SeisanKensaku_PageIndex))
                 .DataBind()
             End Try
             .Attributes(CmnConst.Html.Attributes.BorderColor) = CmnConst.Html.Color.Border
@@ -224,7 +224,7 @@ Partial Public Class SeisanKensaku
             '選択行をキャンセル
             .SelectedIndex = -1
             'カレントページを変更
-            Session.Item(SessionDef.PageIndex) = .PageIndex
+            Session.Item(SessionDef.SeisanKensaku_PageIndex) = .PageIndex
             'グリッドビュー表示
             SetGridView()
         End With
@@ -244,9 +244,8 @@ Partial Public Class SeisanKensaku
                 Session.Item(SessionDef.SeisanKensaku_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
                 Session.Item(SessionDef.SeisanKensaku_Joken) = Joken
-                Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
+                Session.Item(SessionDef.SeisanKensaku_PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-                'Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
                 Response.Redirect(URL.SeisanList)
         End Select
     End Sub

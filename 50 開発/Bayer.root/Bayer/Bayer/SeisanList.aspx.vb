@@ -49,7 +49,6 @@ Partial Public Class SeisanList
 
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True
             .PageTitle = "【検索】精算データ"
         End With
     End Sub
@@ -217,6 +216,11 @@ Partial Public Class SeisanList
     Private Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
+        ElseIf e.Row.RowType = DataControlRowType.Pager Then
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 2
+            Me.GrvList.BorderStyle = BorderStyle.None
+            Dim PagerTableCell As TableCell = e.Row.Cells(0)
+            PagerTableCell.BorderStyle = BorderStyle.None
         End If
     End Sub
 
@@ -330,7 +334,9 @@ Partial Public Class SeisanList
 
     '[戻る]
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
-        Joken = Nothing
+        Session.Remove(SessionDef.SeisanListPrint_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+
         Response.Redirect(URL.SeisanKensaku)
     End Sub
 

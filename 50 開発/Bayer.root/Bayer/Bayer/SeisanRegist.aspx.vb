@@ -227,10 +227,13 @@ Partial Public Class SeisanRegist
         End If
 
         '必須入力
-        If Not CmnCheck.IsInput(Me.KOUENKAI_NO) OrElse _
-           Not CmnCheck.IsInput(Me.SEIKYU_NO_TOPTOUR) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO & "、" & _
-                                                              TableDef.TBL_SEIKYU.Name.SEIKYU_NO_TOPTOUR), Me)
+        If Not CmnCheck.IsInput(Me.KOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEISAN_YM) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
             Return False
         End If
 
@@ -534,22 +537,22 @@ Partial Public Class SeisanRegist
     Private Sub BtnCalc_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCalc.Click
         If Not CheckCalcItem() Then Exit Sub
         CalculateKingaku()
+        Me.DivMessage.Visible = False
     End Sub
 
     '[登録]
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
 
         '再計算
-        If Not CheckCalcItem() Then Exit Sub
-        CalculateKingaku()
+        BtnCalc_Click(Nothing, Nothing)
+
+        '入力チェック
+        If Not Check() Then Exit Sub
 
         If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
             '自動採番
             Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
         End If
-
-        '入力チェック
-        If Not Check() Then Exit Sub
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Mi)
@@ -558,23 +561,21 @@ Partial Public Class SeisanRegist
         If ExecuteTransaction() Then
             Response.Redirect(URL.SeisanRegist & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
-
     End Sub
 
     '[NOZOMIへ]
     Private Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNozomi.Click
 
         '再計算
-        If Not CheckCalcItem() Then Exit Sub
-        CalculateKingaku()
+        BtnCalc_Click(Nothing, Nothing)
+
+        '入力チェック
+        If Not Check() Then Exit Sub
 
         If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
             '自動採番
             Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
         End If
-
-        '入力チェック
-        If Not Check() Then Exit Sub
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Taisho)
@@ -602,6 +603,9 @@ Partial Public Class SeisanRegist
 
     '[戻る]
     Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel1.Click, BtnCancel2.Click
+        Session.Remove(SessionDef.SeisanRegistReport_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+
         Response.Redirect(URL.SeisanList)
     End Sub
 

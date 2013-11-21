@@ -21,14 +21,14 @@
                                         BYL企画担当者<br />BU
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenBU" runat="server">
                                         </asp:DropDownList>
                                     </td>
                                     <td align="right">
                                         BYL企画担当者<br />エリア
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -62,22 +62,13 @@
                                         実施日
                                     </td>
                                     <td colspan="3">
-							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="5"></asp:TextBox>年
-							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="6"></asp:TextBox>月
-
-							            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="7"></asp:TextBox>日
+							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+							            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
 							            ～
-
-							            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="8"></asp:TextBox>年
-							            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="9"></asp:TextBox>月
-
-							            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="10"></asp:TextBox>日
+							            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+							            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
                                     </td>
                                     <td align="right">
                                         TOP担当者
@@ -87,16 +78,13 @@
                                         </asp:DropDownList>
                                     </td>
                                     <td>
-                            <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
-                        </td>
+                                        <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
+                                    </td>
                                 </tr>                                
                             </table>
                         </td>
                     </tr>
-                    <tr align="right">
-                        
-                    </tr>
-                </table>
+                    </table>
             </td>
         </tr>
         <tr>
@@ -115,8 +103,8 @@
 
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
-                    AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO"
+                <asp:GridView ID="GrvList" runat="server" CellPadding="2" AutoGenerateColumns="False"
+                    AllowPaging="True" PageSize="10" DataKeyNames="KOUENKAI_NO"
                     DataSourceID="SqlDataSource1" Width="988px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                     <RowStyle Wrap="false" BackColor="#ffffff" />
