@@ -469,6 +469,7 @@ Public Class AppConst
         Public Const MR_HOTEL_SMOKING As String = "10"      '社員ホテル禁煙
         Public Const ROOM_TYPE As String = "11"             '宿泊部屋タイプ
         Public Const TAXI_KENSHU As String = "12"           'タクチケ券種
+        Public Const TAXI_TESURYO As String = "13"          'タクチケ発券手数料単価
     End Class
 
     Public Class STOP_FLG
