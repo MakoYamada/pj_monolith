@@ -379,20 +379,20 @@ Public Class CmnModule
         '指定の形式に編集
         Select Case in_Type
             Case DateFormatType.YYYYMMDD
-                'yyyy/mm/dd
+                'yyyy/MM/dd
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6桁の→西暦2桁と判断
                 'If Len(wStr) = 4 Then wStr &= "2013" & wStr '4桁→年なしと判断
 
                 wStr = Mid(wStr, 1, 4) & "/" & Mid(wStr, 5, 2) & "/" & Mid(wStr, 7, 2)
             Case DateFormatType.YYMMDD
-                'yy/mm/dd
+                'yy/MM/dd
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) > 6 Then wStr = Right(wStr, 6) '6桁以上→年2桁+月日を切り取る
 
                 wStr = Mid(wStr, 1, 2) & "/" & Mid(wStr, 3, 2) & "/" & Mid(wStr, 5, 2)
             Case DateFormatType.MMDD, CmnModule.DateFormatType.MD
-                'mm/dd
+                'MM/dd
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) > 4 Then wStr = Right(wStr, 4) '4桁以上→月日を切り取る
 
@@ -403,7 +403,7 @@ Public Class CmnModule
                     wStr = Replace(wStr, "/0", "/")
                 End If
             Case DateFormatType.YYYYMMDDHHMMSS
-                'yyyy/mm/dd hh:mm:ss
+                'yyyy/MM/dd hh:mm:ss
                 '14桁以外は×
                 If Len(wStr) <> 14 Then Return in_Str
 
@@ -423,7 +423,7 @@ Public Class CmnModule
 
                 wStr = Mid(wStr, 9, 2) & ":" & Mid(wStr, 11, 2)
             Case DateFormatType.YYYYMD, DateFormatType.YYMD
-                'yyyy/m/d
+                'yyyy/M/d
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6桁の→西暦2桁と判断
                 'If Len(wStr) = 4 Then wStr &= "2013" & wStr '4桁→年なしと判断
@@ -469,20 +469,20 @@ Public Class CmnModule
         '指定の形式に編集
         Select Case in_Type
             Case DateFormatType.YYYYMMDD
-                'yyyy年mm月dd日
+                'yyyy年MM月dd日
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6桁の→西暦2桁と判断
                 If Len(wStr) = 4 Then wStr &= "2013" & wStr '4桁→年なしと判断
 
                 wStr = Mid(wStr, 1, 4) & "年" & Mid(wStr, 5, 2) & "月" & Mid(wStr, 7, 2) & "日"
             Case DateFormatType.YYMMDD
-                'yy年mm月dd日
+                'yy年MM月dd日
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) > 6 Then wStr = Right(wStr, 6) '6桁以上→年2桁+月日を切り取る
 
                 wStr = Mid(wStr, 1, 2) & "年" & Mid(wStr, 3, 2) & "月" & Mid(wStr, 5, 2) & "日"
             Case DateFormatType.MMDD, CmnModule.DateFormatType.MD
-                'mm月dd
+                'MM月dd日
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) > 4 Then wStr = Right(wStr, 4) '4桁以上→月日を切り取る
 
@@ -493,7 +493,7 @@ Public Class CmnModule
                     wStr = Replace(wStr, "月0", "月")
                 End If
             Case DateFormatType.YYYYMMDDHHMMSS
-                'yyyy年mm月dd日 hh時mm分ss秒
+                'yyyy年MM月dd日 hh時mm分ss秒
                 '14桁以外は×
                 If Len(wStr) <> 14 Then Return in_Str
 
@@ -513,7 +513,7 @@ Public Class CmnModule
 
                 wStr = Mid(wStr, 9, 2) & "時" & Mid(wStr, 11, 2) & "分"
             Case DateFormatType.YYYYMD
-                'yyyy年m月d日
+                'yyyy年M月d日
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
                 If Len(wStr) = 6 Then wStr &= "20" & wStr '6桁の→西暦2桁と判断
                 If Len(wStr) = 4 Then wStr &= "2013" & wStr '4桁→年なしと判断
