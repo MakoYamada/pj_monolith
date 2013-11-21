@@ -4122,6 +4122,20 @@ Public Class AppModule
         Return GetName_ANS_TAXI_NO(ANS_TAXI_NO_20)
     End Function
 
+    'タクチケ発券手数料単価
+    Public Shared Function GetName_TAXI_TESURYO() As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_TESURYO Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
     'MR随行有無(MR入力）
     Public Shared Function GetName_TEHAI_MR(ByVal TEHAI_MR As String) As String
         Return TEHAI_MR
