@@ -828,6 +828,10 @@ Partial Public Class KaijoRegist
         Dim strSQL As String = ""
 
         Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            '履歴の場合
+            Joken.UPDATE_DATE = TBL_KAIJO(SEQ).UPDATE_DATE
+        End If
         strSQL = SQL.TBL_KAIJO.Search(Joken, False)
 
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL

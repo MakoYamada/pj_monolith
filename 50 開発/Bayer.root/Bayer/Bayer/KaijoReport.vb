@@ -23,11 +23,13 @@ Public Class KaijoReport
 
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(Me.KOUENKAI_NAME.Text)
+        Me.SEND_FLAG.Text = "NOZOMI送信：" & AppModule.GetName_SEND_FLAG(Me.SEND_FLAG.Text)
         Me.TEHAI_ID.Text = AppModule.GetName_TEHAI_ID(Me.TEHAI_ID.Text)
         Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(Me.KOUENKAI_NO.Text)
         Me.REQ_STATUS_TEHAI.Text = Me.REQ_STATUS_TEHAI.Text & ": " & AppModule.GetName_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI.Text)
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(Me.TIME_STAMP_BYL.Text)
         Me.USER_NAME.Text = AppModule.GetName_USER_NAME(Me.USER_NAME.Text)
+        Me.UPDATE_DATE.Text = AppModule.GetName_UPDATE_DATE(Me.UPDATE_DATE.Text)
         Me.SHONIN_NAME.Text = AppModule.GetName_SHONIN_NAME(Me.SHONIN_NAME.Text)
         Me.SHONIN_DATE.Text = AppModule.GetName_SHONIN_DATE(Me.SHONIN_DATE.Text)
         Me.KAISAI_DATE_NOTE.Text = AppModule.GetName_KAISAI_DATE_NOTE(Me.KAISAI_DATE_NOTE.Text)

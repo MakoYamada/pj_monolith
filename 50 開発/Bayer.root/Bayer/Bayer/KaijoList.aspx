@@ -76,12 +76,12 @@
 				</table>
 				<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" CellSpacing="0" 
 				 AutoGenerateColumns="false" ShowHeader="true" ShowFooter="false" 
-				 AllowPaging="true" PageSize="13"
+				 AllowPaging="true" PageSize="40"
 				 DataKeyNames="KOUENKAI_NO" DataSourceID="SqlDataSource1">
 					<HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
 					<AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
 					<RowStyle Wrap="false" BackColor="#ffffff" />
-					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
+					<PagerSettings Mode="NumericFirstLast" Position="TopAndBottom" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
 						<asp:BoundField DataField="BU" HeaderText="BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
@@ -92,7 +92,7 @@
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI<br />送信" HtmlEncode="false" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" />
+						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" ItemStyle-BackColor="#e4e9d1" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />
 					</Columns>

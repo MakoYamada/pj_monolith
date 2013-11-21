@@ -34,6 +34,15 @@ Partial Public Class MstCode
     Protected WithEvents BtnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''TblRegist1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblRegist1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
     '''TblInsert コントロール。
     '''</summary>
     '''<remarks>
@@ -43,31 +52,31 @@ Partial Public Class MstCode
     Protected WithEvents TblInsert As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
-    '''BtnInsert コントロール。
+    '''DISP_VALUE1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnInsert As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents DISP_VALUE1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DISP_VALUE コントロール。
+    '''DISP_TEXT1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DISP_VALUE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DISP_TEXT1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DISP_TEXT コントロール。
+    '''BtnInsert1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents DISP_TEXT As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents BtnInsert1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''TblUpdate コントロール。
@@ -79,13 +88,13 @@ Partial Public Class MstCode
     Protected WithEvents TblUpdate As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
-    '''GrvList コントロール。
+    '''GrvList1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents GrvList1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''SqlDataSource1 コントロール。
@@ -97,13 +106,121 @@ Partial Public Class MstCode
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
-    '''BtnUpdate コントロール。
+    '''BtnUpdate1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnUpdate As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnUpdate1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TblRegist2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblRegist2 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''Table1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Table1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''DISP_TEXT2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DISP_TEXT2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnInsert2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnInsert2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TblUpdate2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblUpdate2 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''GrvList2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents GrvList2 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''SqlDataSource2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''BtnUpdate2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnUpdate2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TblRegist3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblRegist3 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''TblUpdate3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TblUpdate3 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''DISP_TEXT3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DISP_TEXT3 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnUpdate3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnUpdate3 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''CODE コントロール。
