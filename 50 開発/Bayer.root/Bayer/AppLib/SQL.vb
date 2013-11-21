@@ -536,7 +536,7 @@ Public Class SQL
             strSQL &= "   UNION ALL "
             strSQL &= "  SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= " ) AS WK_USER"
-            strSQL &= " ON ISNULL(WK_KOUENKAI.TTANTO_ID,N'')=WK_USER.LOGIN_ID"
+            strSQL &= " ON ISNULL(WK_KOUENKAI.TTEHAI_TANTO,N'')=WK_USER.LOGIN_ID"
             strSQL &= " WHERE 1= 1"
 
             If Trim(Joken.BU) <> "" Then
@@ -597,7 +597,7 @@ Public Class SQL
 
             If Trim(Joken.TTANTO_ID) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
-                strSQL &= TableDef.TBL_KOUENKAI.Column.TTANTO_ID
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
