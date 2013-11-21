@@ -166,6 +166,26 @@ Partial Public Class DrRegist
         AppModule.SetDropDownList_ANS_F_SEAT_KIBOU_5(Me.ANS_F_SEAT_KIBOU5)
         AppModule.SetDropDownList_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
         AppModule.SetDropDownList_ANS_MR_f_TEHAI(Me.ANS_MR_F_TEHAI)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_1)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_2)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_3)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_4)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_5)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_6)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_7)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_8)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_9)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_10)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_11)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_12)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_13)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_14)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_15)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_16)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_17)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_18)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_19)
+        AppModule.SetDropDownList_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_20)
 
         'IME設定        CmnModule.SetIme(Me.ANS_HOTEL_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_HOTEL_ADDRESS, CmnModule.ImeType.Active)
@@ -278,8 +298,8 @@ Partial Public Class DrRegist
         CmnModule.SetIme(Me.ANS_TAXI_NO_19, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_TAXI_NO_20, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_MR_HOTEL_NOTE, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ANS_MR_KOTSUHI, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ANS_MR_HOTELHI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HOTELHI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HOTELHI_TOZEI, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_RAIL_FARE, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_RAIL_CANCELLATION, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_OTHER_FARE, CmnModule.ImeType.Disabled)
@@ -288,6 +308,9 @@ Partial Public Class DrRegist
         CmnModule.SetIme(Me.ANS_AIR_CANCELLATION, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_KOTSUHOTEL_TESURYO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_TAXI_TESURYO, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_HOTELHI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_HOTELHI_TOZEI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_MR_KOTSUHI, CmnModule.ImeType.Disabled)
     End Sub
 
     '画面項目 表示
@@ -746,14 +769,24 @@ Partial Public Class DrRegist
         AppModule.SetForm_ANS_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTEL_NOTE, Me.ANS_MR_HOTEL_NOTE)
 
         '各種代金
+        AppModule.SetForm_ANS_HOTELHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI, Me.ANS_HOTELHI)
+        AppModule.SetForm_ANS_HOTELHI_TOZEI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_TOZEI)
         AppModule.SetForm_ANS_RAIL_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_FARE, Me.ANS_MR_KOTSUHI)
         AppModule.SetForm_ANS_RAIL_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_CANCELLATION, Me.ANS_RAIL_CANCELLATION)
         AppModule.SetForm_ANS_OTHER_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_FARE, Me.ANS_OTHER_FARE)
         AppModule.SetForm_ANS_OTHER_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_CANCELLATION, Me.ANS_OTHER_CANCELLATION)
         AppModule.setform_ANS_AIR_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_AIR_FARE, Me.ANS_AIR_FARE)
         AppModule.SetForm_ANS_AIR_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_AIR_CANCELLATION, Me.ANS_AIR_CANCELLATION)
-        AppModule.SetForm_ANS_MR_KOTSUHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_KOTSUHI, Me.ANS_MR_KOTSUHI)
         AppModule.SetForm_ANS_MR_HOTELHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI, Me.ANS_MR_HOTELHI)
+        AppModule.SetForm_ANS_MR_HOTELHI_TOZEI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI, Me.ANS_MR_HOTELHI_TOZEI)
+        AppModule.SetForm_ANS_MR_KOTSUHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_KOTSUHI, Me.ANS_MR_KOTSUHI)
+
+        '宿泊費税抜金額表示
+        Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(DSP_SEQ).FROM_DATE, MyBase.DbConnection)
+        Dim strZeikomiGaku As String = CStr(CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI) - CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI))
+        Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
+        Dim strMrZeikomiGaku As String = CStr(CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI) - CLng(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI))
+        Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strMrZeikomiGaku, strZeiRate))
     End Sub
 
     '講演会最新情報取得
@@ -1425,6 +1458,20 @@ Partial Public Class DrRegist
             Return False
         End If
 
+        '宿泊費（税込)
+        If Me.ANS_HOTELHI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費"), Me)
+            Return False
+        End If
+
+        '宿泊費都税
+        If Me.ANS_HOTELHI_TOZEI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI_TOZEI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費都税"), Me)
+            Return False
+        End If
+
         'JR券代
         If Me.ANS_RAIL_FARE.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidKingaku(Me.ANS_RAIL_FARE) Then
@@ -1488,10 +1535,17 @@ Partial Public Class DrRegist
             Return False
         End If
 
-        'MR宿泊費
+        'MR宿泊費（税込)
         If Me.ANS_MR_HOTELHI.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費"), Me)
+            Return False
+        End If
+
+        'MR宿泊費都税
+        If Me.ANS_MR_HOTELHI_TOZEI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI_TOZEI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費都税"), Me)
             Return False
         End If
 
@@ -1627,91 +1681,92 @@ Partial Public Class DrRegist
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NOTE = AppModule.GetValue_ANS_TAXI_NOTE(Me.ANS_TAXI_NOTE)
         'タクチケ１
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_1 = AppModule.GetValue_ANS_TAXI_DATE_1(Me.ANS_TAXI_DATE_1)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_1 = AppModule.GetValue_ANS_TAXI_KENSHU_1(Me.ANS_TAXI_KENSHU_1)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_1 = AppModule.GetValue_ANS_TAXI_KENSHU_1(Me.ANS_TAXI_KENSHU_1)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_1 = AppModule.GetValue_ANS_TAXI_NO_1(Me.ANS_TAXI_NO_1)
         'タクチケ２
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_2 = AppModule.GetValue_ANS_TAXI_DATE_2(Me.ANS_TAXI_DATE_2)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_2 = AppModule.GetValue_ANS_TAXI_KENSHU_2(Me.ANS_TAXI_KENSHU_2)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_2 = AppModule.GetValue_ANS_TAXI_KENSHU_2(Me.ANS_TAXI_KENSHU_2)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_2 = AppModule.GetValue_ANS_TAXI_NO_2(Me.ANS_TAXI_NO_2)
         'タクチケ３
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_3 = AppModule.GetValue_ANS_TAXI_DATE_3(Me.ANS_TAXI_DATE_3)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_3 = AppModule.GetValue_ANS_TAXI_KENSHU_3(Me.ANS_TAXI_KENSHU_3)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_3 = AppModule.GetValue_ANS_TAXI_KENSHU_3(Me.ANS_TAXI_KENSHU_3)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_3 = AppModule.GetValue_ANS_TAXI_NO_3(Me.ANS_TAXI_NO_3)
         'タクチケ４
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_4 = AppModule.GetValue_ANS_TAXI_DATE_4(Me.ANS_TAXI_DATE_4)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_4 = AppModule.GetValue_ANS_TAXI_KENSHU_4(Me.ANS_TAXI_KENSHU_4)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_4 = AppModule.GetValue_ANS_TAXI_KENSHU_4(Me.ANS_TAXI_KENSHU_4)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_4 = AppModule.GetValue_ANS_TAXI_NO_4(Me.ANS_TAXI_NO_4)
         'タクチケ５
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_5 = AppModule.GetValue_ANS_TAXI_DATE_5(Me.ANS_TAXI_DATE_5)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_5 = AppModule.GetValue_ANS_TAXI_KENSHU_5(Me.ANS_TAXI_KENSHU_5)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_5 = AppModule.GetValue_ANS_TAXI_KENSHU_5(Me.ANS_TAXI_KENSHU_5)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_5 = AppModule.GetValue_ANS_TAXI_NO_5(Me.ANS_TAXI_NO_5)
         'タクチケ６
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_6 = AppModule.GetValue_ANS_TAXI_DATE_6(Me.ANS_TAXI_DATE_6)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_6 = AppModule.GetValue_ANS_TAXI_KENSHU_6(Me.ANS_TAXI_KENSHU_6)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_6 = AppModule.GetValue_ANS_TAXI_KENSHU_6(Me.ANS_TAXI_KENSHU_6)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_6 = AppModule.GetValue_ANS_TAXI_NO_6(Me.ANS_TAXI_NO_6)
         'タクチケ７
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_7 = AppModule.GetValue_ANS_TAXI_DATE_7(Me.ANS_TAXI_DATE_7)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_7 = AppModule.GetValue_ANS_TAXI_KENSHU_7(Me.ANS_TAXI_KENSHU_7)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_7 = AppModule.GetValue_ANS_TAXI_KENSHU_7(Me.ANS_TAXI_KENSHU_7)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_7 = AppModule.GetValue_ANS_TAXI_NO_7(Me.ANS_TAXI_NO_7)
         'タクチケ８
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_8 = AppModule.GetValue_ANS_TAXI_DATE_8(Me.ANS_TAXI_DATE_8)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_8 = AppModule.GetValue_ANS_TAXI_KENSHU_8(Me.ANS_TAXI_KENSHU_8)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_8 = AppModule.GetValue_ANS_TAXI_KENSHU_8(Me.ANS_TAXI_KENSHU_8)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_8 = AppModule.GetValue_ANS_TAXI_NO_8(Me.ANS_TAXI_NO_8)
         'タクチケ９
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_9 = AppModule.GetValue_ANS_TAXI_DATE_9(Me.ANS_TAXI_DATE_9)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_9 = AppModule.GetValue_ANS_TAXI_KENSHU_9(Me.ANS_TAXI_KENSHU_9)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_9 = AppModule.GetValue_ANS_TAXI_KENSHU_9(Me.ANS_TAXI_KENSHU_9)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_9 = AppModule.GetValue_ANS_TAXI_NO_9(Me.ANS_TAXI_NO_9)
         'タクチケ１０
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_10 = AppModule.GetValue_ANS_TAXI_DATE_10(Me.ANS_TAXI_DATE_10)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_10 = AppModule.GetValue_ANS_TAXI_KENSHU_10(Me.ANS_TAXI_KENSHU_10)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_10 = AppModule.GetValue_ANS_TAXI_KENSHU_10(Me.ANS_TAXI_KENSHU_10)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_10 = AppModule.GetValue_ANS_TAXI_NO_10(Me.ANS_TAXI_NO_10)
         'タクチケ１１
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_11 = AppModule.GetValue_ANS_TAXI_DATE_11(Me.ANS_TAXI_DATE_11)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_11 = AppModule.GetValue_ANS_TAXI_KENSHU_11(Me.ANS_TAXI_KENSHU_11)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_11 = AppModule.GetValue_ANS_TAXI_KENSHU_11(Me.ANS_TAXI_KENSHU_11)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_11 = AppModule.GetValue_ANS_TAXI_NO_11(Me.ANS_TAXI_NO_11)
         'タクチケ１２
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_12 = AppModule.GetValue_ANS_TAXI_DATE_12(Me.ANS_TAXI_DATE_12)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_12 = AppModule.GetValue_ANS_TAXI_KENSHU_12(Me.ANS_TAXI_KENSHU_12)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_12 = AppModule.GetValue_ANS_TAXI_KENSHU_12(Me.ANS_TAXI_KENSHU_12)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_12 = AppModule.GetValue_ANS_TAXI_NO_12(Me.ANS_TAXI_NO_12)
         'タクチケ１３
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_13 = AppModule.GetValue_ANS_TAXI_DATE_13(Me.ANS_TAXI_DATE_13)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_13 = AppModule.GetValue_ANS_TAXI_KENSHU_13(Me.ANS_TAXI_KENSHU_13)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_13 = AppModule.GetValue_ANS_TAXI_KENSHU_13(Me.ANS_TAXI_KENSHU_13)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_13 = AppModule.GetValue_ANS_TAXI_NO_13(Me.ANS_TAXI_NO_13)
         'タクチケ１４
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_14 = AppModule.GetValue_ANS_TAXI_DATE_14(Me.ANS_TAXI_DATE_14)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_14 = AppModule.GetValue_ANS_TAXI_KENSHU_14(Me.ANS_TAXI_KENSHU_14)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_14 = AppModule.GetValue_ANS_TAXI_KENSHU_14(Me.ANS_TAXI_KENSHU_14)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_14 = AppModule.GetValue_ANS_TAXI_NO_14(Me.ANS_TAXI_NO_14)
         'タクチケ１５
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_15 = AppModule.GetValue_ANS_TAXI_DATE_15(Me.ANS_TAXI_DATE_15)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_15 = AppModule.GetValue_ANS_TAXI_KENSHU_15(Me.ANS_TAXI_KENSHU_15)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_15 = AppModule.GetValue_ANS_TAXI_KENSHU_15(Me.ANS_TAXI_KENSHU_15)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_15 = AppModule.GetValue_ANS_TAXI_NO_15(Me.ANS_TAXI_NO_15)
         'タクチケ１６
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_16 = AppModule.GetValue_ANS_TAXI_DATE_16(Me.ANS_TAXI_DATE_16)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_16 = AppModule.GetValue_ANS_TAXI_KENSHU_16(Me.ANS_TAXI_KENSHU_16)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_16 = AppModule.GetValue_ANS_TAXI_KENSHU_16(Me.ANS_TAXI_KENSHU_16)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_16 = AppModule.GetValue_ANS_TAXI_NO_16(Me.ANS_TAXI_NO_16)
         'タクチケ１７
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_17 = AppModule.GetValue_ANS_TAXI_DATE_17(Me.ANS_TAXI_DATE_17)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_17 = AppModule.GetValue_ANS_TAXI_KENSHU_17(Me.ANS_TAXI_KENSHU_17)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_17 = AppModule.GetValue_ANS_TAXI_KENSHU_17(Me.ANS_TAXI_KENSHU_17)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_17 = AppModule.GetValue_ANS_TAXI_NO_17(Me.ANS_TAXI_NO_17)
         'タクチケ１８
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_18 = AppModule.GetValue_ANS_TAXI_DATE_18(Me.ANS_TAXI_DATE_18)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_18 = AppModule.GetValue_ANS_TAXI_KENSHU_18(Me.ANS_TAXI_KENSHU_18)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_18 = AppModule.GetValue_ANS_TAXI_KENSHU_18(Me.ANS_TAXI_KENSHU_18)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_18 = AppModule.GetValue_ANS_TAXI_NO_18(Me.ANS_TAXI_NO_18)
         'タクチケ１９
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_19 = AppModule.GetValue_ANS_TAXI_DATE_19(Me.ANS_TAXI_DATE_19)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_19 = AppModule.GetValue_ANS_TAXI_KENSHU_19(Me.ANS_TAXI_KENSHU_19)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_19 = AppModule.GetValue_ANS_TAXI_KENSHU_19(Me.ANS_TAXI_KENSHU_19)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_19 = AppModule.GetValue_ANS_TAXI_NO_19(Me.ANS_TAXI_NO_19)
         'タクチケ２０
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_DATE_20 = AppModule.GetValue_ANS_TAXI_DATE_20(Me.ANS_TAXI_DATE_20)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_20 = AppModule.GetValue_ANS_TAXI_KENSHU_20(Me.ANS_TAXI_KENSHU_20)
+        DSP_KOTSUHOTEL(SEQ).ANS_TAXI_KENSHU_20 = AppModule.GetValue_ANS_TAXI_KENSHU_20(Me.ANS_TAXI_KENSHU_20)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_NO_20 = AppModule.GetValue_ANS_TAXI_NO_20(Me.ANS_TAXI_NO_20)
 
         'MR手配
         DSP_KOTSUHOTEL(SEQ).ANS_MR_O_TEHAI = AppModule.getvalue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_F_TEHAI = AppModule.GetValue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
-        '''DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTEL_NOTE = AppModule.getvalue_ans_mr_hotel_note(Me.ANS_MR_HOTEL_NOTE)
 
         '各種代金
+        DSP_KOTSUHOTEL(SEQ).ANS_HOTELHI = AppModule.GetValue_ANS_HOTELHI(Me.ANS_HOTELHI)
+        DSP_KOTSUHOTEL(SEQ).ANS_HOTELHI_TOZEI = AppModule.GetValue_ANS_HOTELHI_TOZEI(Me.ANS_HOTELHI_TOZEI)
         DSP_KOTSUHOTEL(SEQ).ANS_RAIL_FARE = AppModule.GetValue_ANS_RAIL_FARE(Me.ANS_RAIL_FARE)
         DSP_KOTSUHOTEL(SEQ).ANS_RAIL_CANCELLATION = AppModule.GetValue_ANS_RAIL_CANCELLATION(Me.ANS_RAIL_CANCELLATION)
         DSP_KOTSUHOTEL(SEQ).ANS_OTHER_FARE = AppModule.GetValue_ANS_OTHER_FARE(Me.ANS_OTHER_FARE)
@@ -1722,6 +1777,7 @@ Partial Public Class DrRegist
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_TESURYO = AppModule.GetValue_ANS_TAXI_TESURYO(Me.ANS_TAXI_TESURYO)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_KOTSUHI = AppModule.GetValue_ANS_MR_KOTSUHI(Me.ANS_MR_KOTSUHI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTELHI = AppModule.GetValue_ANS_MR_HOTELHI(Me.ANS_MR_HOTELHI)
+        DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTELHI_TOZEI = AppModule.GetValue_ANS_MR_HOTELHI_TOZEI(Me.ANS_MR_HOTELHI_TOZEI)
 
         DSP_KOTSUHOTEL(SEQ).SEND_FLAG = SEND_FLAG
 
@@ -2349,5 +2405,57 @@ Partial Public Class DrRegist
     '[手配書印刷]
     Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
         BtnPrint1_Click(sender, e)
+    End Sub
+
+    '宿泊費消費税抜金額表示
+    Private Sub ANS_HOTELHI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_HOTELHI.TextChanged
+
+        '宿泊費（税込)
+        If Me.ANS_HOTELHI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費"), Me)
+            Exit Sub
+        End If
+
+        '宿泊費都税
+        If Me.ANS_HOTELHI_TOZEI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI_TOZEI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費都税"), Me)
+            Exit Sub
+        End If
+
+        Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
+        Dim strZeikomiGaku As String = CStr(CLng(Me.ANS_HOTELHI.Text.Trim) - CLng(Me.ANS_HOTELHI_TOZEI.Text.Trim))
+        Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
+    End Sub
+
+    Private Sub ANS_HOTELHI_TOZEI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_HOTELHI_TOZEI.TextChanged
+        ANS_HOTELHI_TextChanged(sender, e)
+    End Sub
+
+    'MR宿泊費消費税抜金額表示
+    Private Sub ANS_MR_HOTELHI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_MR_HOTELHI.TextChanged
+
+        'MR宿泊費（税込)
+        If Me.ANS_MR_HOTELHI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費"), Me)
+            Exit Sub
+        End If
+
+        'MR宿泊費都税
+        If Me.ANS_MR_HOTELHI_TOZEI.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI_TOZEI) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費都税"), Me)
+            Exit Sub
+        End If
+
+        Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
+        Dim strZeikomiGaku As String = CStr(CLng(Me.ANS_MR_HOTELHI.Text.Trim) - CLng(Me.ANS_MR_HOTELHI_TOZEI.Text.Trim))
+        Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
+    End Sub
+
+    Private Sub ANS_MR_HOTELHI_TOZEI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_MR_HOTELHI_TOZEI.TextChanged
+        ANS_MR_HOTELHI_TextChanged(sender, e)
     End Sub
 End Class

@@ -412,15 +412,6 @@ Partial Public Class DrRegist
     Protected WithEvents SHONIN_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TblMust コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblMust As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
     '''TEHAI_HOTEL コントロール。
     '''</summary>
     '''<remarks>
@@ -617,6 +608,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnCopy_O_TEHAI_1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnClear_O_TEHAI_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_O_TEHAI_1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''REQ_O_IRAINAIYOU_1 コントロール。
@@ -826,6 +826,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnCopy_O_TEHAI_2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnClear_O_TEHAI_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_O_TEHAI_2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''REQ_O_IRAINAIYOU_2 コントロール。
     '''</summary>
     '''<remarks>
@@ -1031,6 +1040,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnCopy_O_TEHAI_3 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnClear_O_TEHAI_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_O_TEHAI_3 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''REQ_O_IRAINAIYOU_3 コントロール。
@@ -1240,6 +1258,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnCopy_O_TEHAI_4 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnClear_O_TEHAI_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_O_TEHAI_4 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''REQ_O_IRAINAIYOU_4 コントロール。
     '''</summary>
     '''<remarks>
@@ -1445,6 +1472,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnCopy_O_TEHAI_5 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnClear_O_TEHAI_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_O_TEHAI_5 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''REQ_O_IRAINAIYOU_5 コントロール。
@@ -1654,6 +1690,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnCopy_F_TEHAI_1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnClear_F_TEHAI_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_F_TEHAI_1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''REQ_F_IRAINAIYOU_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -1859,6 +1904,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnCopy_F_TEHAI_2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnClear_F_TEHAI_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_F_TEHAI_2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''REQ_F_IRAINAIYOU_2 コントロール。
@@ -2068,6 +2122,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnCopy_F_TEHAI_3 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnClear_F_TEHAI_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_F_TEHAI_3 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''REQ_F_IRAINAIYOU_3 コントロール。
     '''</summary>
     '''<remarks>
@@ -2275,6 +2338,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnCopy_F_TEHAI_4 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnClear_F_TEHAI_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_F_TEHAI_4 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''REQ_F_IRAINAIYOU_4 コントロール。
     '''</summary>
     '''<remarks>
@@ -2480,6 +2552,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnCopy_F_TEHAI_5 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnClear_F_TEHAI_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnClear_F_TEHAI_5 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''REQ_F_IRAINAIYOU_5 コントロール。
@@ -3589,6 +3670,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_HOTELHI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTELHI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ANS_RAIL_FARE コントロール。
     '''</summary>
     '''<remarks>
@@ -3596,6 +3686,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_HOTELHI_TOZEI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_RAIL_CANCELLATION コントロール。
@@ -3607,6 +3706,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_HOTELHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTELHI_TF As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_OTHER_FARE コントロール。
     '''</summary>
     '''<remarks>
@@ -3616,15 +3724,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_OTHER_CANCELLATION コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''ANS_AIR_FARE コントロール。
     '''</summary>
     '''<remarks>
@@ -3632,6 +3731,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_OTHER_CANCELLATION コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_AIR_CANCELLATION コントロール。
@@ -3661,6 +3769,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_MR_HOTELHI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MR_HOTELHI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ANS_MR_KOTSUHI コントロール。
     '''</summary>
     '''<remarks>
@@ -3670,13 +3787,22 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_MR_KOTSUHI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_MR_HOTELHI コントロール。
+    '''ANS_MR_HOTELHI_TOZEI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_MR_HOTELHI As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_MR_HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_MR_HOTELHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MR_HOTELHI_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnRireki コントロール。

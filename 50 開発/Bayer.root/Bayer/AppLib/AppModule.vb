@@ -5915,6 +5915,16 @@ Public Class AppModule
         control.Text = MR_AGE
     End Sub
 
+    'h”‘”ï(Å)
+    Public Shared Sub SetForm_ANS_HOTELHI(ByVal ANS_HOTLHI As String, ByRef control As TextBox)
+        control.Text = ANS_HOTLHI
+    End Sub
+
+    'h”‘”ï“sÅ
+    Public Shared Sub SetForm_ANS_HOTELHI_TOZEI(ByVal ANS_HOTLHI_TOZEI As String, ByRef control As TextBox)
+        control.Text = ANS_HOTLHI_TOZEI
+    End Sub
+
     'Ğˆõ—pŒğ’ÊEh”‘”õliˆË—Šj
     Public Shared Sub SetForm_REQ_MR_HOTEL_NOTE(ByVal REQ_MR_HOTEL_NOTE As String, ByRef control As TextBox)
         control.Text = REQ_MR_HOTEL_NOTE
@@ -5960,9 +5970,14 @@ Public Class AppModule
         control.Text = ANS_MR_KOTSUHI
     End Sub
 
-    'MRh”‘”ïi‰ñ“šj
+    'MRh”‘”ïiÅji‰ñ“šj
     Public Shared Sub SetForm_ANS_MR_HOTELHI(ByVal ANS_MR_HOTELHI As String, ByRef control As TextBox)
         control.Text = ANS_MR_HOTELHI
+    End Sub
+
+    'MRh”‘”ï“sÅi‰ñ“šj
+    Public Shared Sub SetForm_ANS_MR_HOTELHI_TOZEI(ByVal ANS_MR_HOTELHI_TOZEI As String, ByRef control As TextBox)
+        control.Text = ANS_MR_HOTELHI_TOZEI
     End Sub
 #End Region
 
@@ -7607,6 +7622,16 @@ Public Class AppModule
         Return Trim(ANS_F_NOTE_1.Text)
     End Function
 
+    'h”‘”ïiÅj
+    Public Shared Function GetValue_ANS_HOTELHI(ByVal ANS_HOTELHI As TextBox) As String
+        Return Trim(StrConv(ANS_HOTELHI.Text, VbStrConv.Narrow))
+    End Function
+
+    'h”‘”ï“sÅ
+    Public Shared Function GetValue_ANS_HOTELHI_TOZEI(ByVal ANS_HOTELHI_TOZEI As TextBox) As String
+        Return Trim(StrConv(ANS_HOTELHI_TOZEI.Text, VbStrConv.Narrow))
+    End Function
+
     'yŠm’èzJRE“S“¹‘ã‹à
     Public Shared Function GetValue_ANS_RAIL_FARE(ByVal ANS_RAIL_FARE As TextBox) As String
         Return Trim(StrConv(ANS_RAIL_FARE.Text, VbStrConv.Narrow))
@@ -7655,6 +7680,11 @@ Public Class AppModule
     'y‰ñ“šzMR@h”‘”ï
     Public Shared Function GetValue_ANS_MR_HOTELHI(ByVal ANS_MR_HOTELHI As TextBox) As String
         Return Trim(StrConv(ANS_MR_HOTELHI.Text, VbStrConv.Narrow))
+    End Function
+
+    'y‰ñ“šzMR@h”‘”ï“sÅ
+    Public Shared Function GetValue_ANS_MR_HOTELHI_TOZEI(ByVal ANS_MR_HOTELHI_TOZEI As TextBox) As String
+        Return Trim(StrConv(ANS_MR_HOTELHI_TOZEI.Text, VbStrConv.Narrow))
     End Function
 
     '“o˜^ŠÇ—è”—¿
