@@ -4646,12 +4646,12 @@ Public Class AppModule
 
     '宿泊先チェックイン時間（回答）
     Public Shared Sub SetForm_ANS_CHECKIN_TIME(ByVal ANS_CHECKIN_TIME As String, ByRef control As TextBox)
-        control.Text = Replace(Replace(ANS_CHECKIN_TIME, ":", ""), "：", "")
+        control.Text = ANS_CHECKIN_TIME
     End Sub
 
     '宿泊先チェックアウト時間（回答）
     Public Shared Sub SetForm_ANS_CHECKOUT_TIME(ByVal ANS_CHECKOUT_TIME As String, ByRef control As TextBox)
-        control.Text = Replace(Replace(ANS_CHECKOUT_TIME, ":", ""), "：", "")
+        control.Text = ANS_CHECKOUT_TIME
     End Sub
 
     '宿泊部屋タイプ（回答）
@@ -5212,7 +5212,7 @@ Public Class AppModule
 
     '往路：出発時間（回答）
     Public Shared Sub SetForm_ANS_O_TIME1(ByVal ANS_O_TIME1 As String, ByRef control As TextBox)
-        control.Text = Replace(Replace(ANS_O_TIME1, ":", ""), "：", "")
+        control.Text = ANS_O_TIME1
     End Sub
     Public Shared Sub SetForm_ANS_O_TIME1_1(ByVal ANS_O_TIME1_1 As String, ByRef control As TextBox)
         SetForm_ANS_O_TIME1(ANS_O_TIME1_1, control)
@@ -5232,7 +5232,7 @@ Public Class AppModule
 
     '往路：到着時間（回答）
     Public Shared Sub SetForm_ANS_O_TIME2(ByVal ANS_O_TIME2 As String, ByRef control As TextBox)
-        control.Text = Replace(Replace(ANS_O_TIME2, ":", ""), "：", "")
+        control.Text = ANS_O_TIME2
     End Sub
     Public Shared Sub SetForm_ANS_O_TIME2_1(ByVal ANS_O_TIME2_1 As String, ByRef control As TextBox)
         SetForm_ANS_O_TIME2(ANS_O_TIME2_1, control)
@@ -5412,7 +5412,7 @@ Public Class AppModule
 
     '復路：出発時間（回答）
     Public Shared Sub SetForm_ANS_F_TIME1(ByVal ANS_F_TIME1 As String, ByRef control As TextBox)
-        control.Text = Replace(Replace(ANS_F_TIME1, ":", ""), "：", "")
+        control.Text = ANS_F_TIME1
     End Sub
     Public Shared Sub SetForm_ANS_F_TIME1_1(ByVal ANS_F_TIME1_1 As String, ByRef control As TextBox)
         SetForm_ANS_F_TIME1(ANS_F_TIME1_1, control)
