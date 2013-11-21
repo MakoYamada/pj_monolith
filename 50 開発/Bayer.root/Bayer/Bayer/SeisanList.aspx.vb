@@ -347,7 +347,7 @@ Partial Public Class SeisanList
         Dim strSQL As String = SQL.TBL_SEIKYU.Search(Joken)
         Session.Item(SessionDef.SeisanListPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
-        'Session.Item(SessionDef.PrintPreview) = "KaijoList"
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
     End Sub
 End Class

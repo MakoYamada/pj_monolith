@@ -4210,6 +4210,11 @@ Public Class AppModule
 
 #Region "精算情報"
 
+    'トップツアー精算年月
+    Public Shared Function GetName_SEISAN_YM(ByVal SEISAN_YM As String) As String
+        Return Mid(CmnModule.Format_DateJP(SEISAN_YM & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
+    End Function
+
     '承認区分
     Public Shared Function GetName_SHOUNIN_KUBUN(ByVal SHOUNIN_KUBUN As String) As String
         Select Case SHOUNIN_KUBUN
