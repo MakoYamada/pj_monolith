@@ -46,7 +46,7 @@ Public Class CmnModule
                 If CmnCheck.IsNumberOnly(in_Str) = False Then
                     Return 0
                 Else
-                    Return Integer.Parse(in_Str)
+                    Return Long.Parse(in_Str)
                 End If
             Else
                 'è¨êîì_
@@ -65,7 +65,7 @@ Public Class CmnModule
             If CmnCheck.IsValidKingaku(in_Str) = False Then
                 Return 0
             Else
-                Return Integer.Parse(in_Str)
+                Return Long.Parse(in_Str)
             End If
         End If
     End Function

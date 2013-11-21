@@ -166,7 +166,7 @@ Public Class MyModule
 
         RsData = CmnDb.Read(strSQL, DbConn)
         If RsData.Read() Then
-            wSEISAN_NO = Long.Parse(CmnDb.DbData(TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR, RsData))
+            wSEISAN_NO = CmnModule.DbVal(CmnDb.DbData(TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR, RsData))
         End If
         RsData.Close()
         wSEISAN_NO += 1
