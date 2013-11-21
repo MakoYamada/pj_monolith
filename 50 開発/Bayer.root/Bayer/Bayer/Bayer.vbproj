@@ -413,6 +413,12 @@
     <Compile Include="DrListReport.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DrReport2.Designer.vb">
+      <DependentUpon>DrReport2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport2.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -469,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrListReport.resx">
       <DependentUpon>DrListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrReport2.resx">
+      <DependentUpon>DrReport2.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
