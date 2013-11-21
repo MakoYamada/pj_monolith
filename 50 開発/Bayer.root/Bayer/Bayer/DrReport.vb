@@ -80,6 +80,7 @@ Public Class DrReport
         If REQ_TAXI_FROM_8.Text.Length > 11 Then REQ_TAXI_FROM_8.Text = Left(REQ_TAXI_FROM_8.Text, 11)
         If REQ_TAXI_FROM_9.Text.Length > 11 Then REQ_TAXI_FROM_9.Text = Left(REQ_TAXI_FROM_9.Text, 11)
         If REQ_TAXI_FROM_10.Text.Length > 11 Then REQ_TAXI_FROM_10.Text = Left(REQ_TAXI_FROM_10.Text, 11)
+        TAXI_TESURYO.Text = AppModule.GetName_TAXI_TESURYO()
 
         OURO1.Text = "往" & "路" & "１"
         OURO2.Text = "往" & "路" & "２"
