@@ -2478,6 +2478,9 @@ Public Class SQL
             If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
             End If
+            If Trim(Joken.UPDATE_DATE) <> "" Then
+                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.UPDATE_DATE=N'" & CmnDb.SqlString(Joken.UPDATE_DATE) & "'"
+            End If
 
             '講演会テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
@@ -2600,6 +2603,7 @@ Public Class SQL
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
             strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= strSQL_WHERE_KAIJO
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
             strSQL &= "  WHERE TBL_KAIJO_1.UPDATE_DATE=TBL_KAIJO_2.UPDATE_DATE"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
