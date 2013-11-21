@@ -104,9 +104,7 @@
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnSap" runat="server" Text="SAPデータ作成" Width="200px" CssClass="Button" />
 						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnKouenkaiCsv" runat="server" Text="講演会・コストセンター別集計" Width="200px" CssClass="Button" />
-						</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td colspan="4"></td>
@@ -119,22 +117,6 @@
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiCsv" runat="server" Text="CSVファイル作成" Width="200px" CssClass="Button" />
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td colspan="4"></td>
-					</tr>
-					<tr valign="middle">
-						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-							■参加者管理
-						</td>
-					</tr>
-					<tr valign="top">
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnSankashaCsv" runat="server" Text="参加者一覧" Width="200px" CssClass="Button" />
 						</td>
 						<td></td>
 						<td></td>

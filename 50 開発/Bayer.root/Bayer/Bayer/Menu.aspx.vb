@@ -74,12 +74,10 @@ Partial Public Class Menu1
             CmnModule.SetEnabled(Me.BtnSeisan, True)
             CmnModule.SetEnabled(Me.BtnCost, True)
             CmnModule.SetEnabled(Me.BtnSap, True)
-            CmnModule.SetEnabled(Me.BtnKouenkaiCsv, True)
         Else
             CmnModule.SetEnabled(Me.BtnSeisan, False)
             CmnModule.SetEnabled(Me.BtnCost, False)
             CmnModule.SetEnabled(Me.BtnSap, False)
-            CmnModule.SetEnabled(Me.BtnKouenkaiCsv, False)
         End If
     End Sub
 
