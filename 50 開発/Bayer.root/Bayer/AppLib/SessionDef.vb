@@ -76,4 +76,5 @@
     Public Const CostRegist_Update As String = "CostRegist_Update"
     Public Const PrintPreview As String = "PrintPreview"
     Public Const MstCode As String = "MstCode"
+    Public Const MstUser As String = "MstUser"
 End Class

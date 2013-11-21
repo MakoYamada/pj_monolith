@@ -140,7 +140,7 @@
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-						<asp:ButtonField ButtonType="Button" Text="変更" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="68px" />
+						<asp:ButtonField ButtonType="Button" Text="変更" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="44px" ItemStyle-Width="56px" ItemStyle-BackColor="#e4e9d1" />
 						<asp:BoundField DataField="LOGIN_ID" HeaderText="ログインID" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KENGEN" HeaderText="権限" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />

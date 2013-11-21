@@ -19,7 +19,7 @@ Partial Public Class Menu1
 
         If Not Page.IsPostBack Then
             '不要なセッションを破棄
-            ClearSession()
+            MyModule.ClearSession()
 
             '画面項目 初期化
             InitControls()
@@ -155,32 +155,6 @@ Partial Public Class Menu1
     '[コストセンター別費用入力]
     Protected Sub BtnCost_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCost.Click
         Response.Redirect(URL.CostRegist)
-    End Sub
-
-    Private Sub ClearSession()
-        Dim SessionItemNames() As String
-        Dim wCnt As Integer = 0
-        Dim wFlag As Boolean = False
-
-        'ログイン以外のセッションを破棄
-        ReDim SessionItemNames(wCnt)
-        For Each ItemName As String In Session.Contents
-            Select Case Trim(ItemName).ToLower
-                Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.LoginUser.ToLower)
-                Case Else
-                    If Trim(ItemName) <> "" Then
-                        ReDim Preserve SessionItemNames(wCnt)
-                        SessionItemNames(wCnt) = ItemName
-                        wFlag = True
-                        wCnt += 1
-                    End If
-            End Select
-        Next
-        If wFlag = True Then
-            For wCnt = LBound(SessionItemNames) To UBound(SessionItemNames)
-                Session.Remove(SessionItemNames(wCnt))
-            Next wCnt
-        End If
     End Sub
 
 End Class

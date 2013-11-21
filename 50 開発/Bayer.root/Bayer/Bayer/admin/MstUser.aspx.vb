@@ -19,7 +19,7 @@ Partial Public Class MstUser
     End Enum
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        Session.Item(SessionDef.MS_USER) = MS_USER
+        Session.Item(SessionDef.MstUser) = MS_USER
         Session.Item(SessionDef.Joken) = Joken
     End Sub
 
@@ -58,7 +58,7 @@ Partial Public Class MstUser
             Joken = Nothing
         End Try
         Try
-            MS_USER = Session.Item(SessionDef.MS_USER)
+            MS_USER = Session.Item(SessionDef.MstUser)
             If MS_USER Is Nothing Then ReDim MS_USER(0)
         Catch ex As Exception
             ReDim MS_USER(0)

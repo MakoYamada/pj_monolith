@@ -23,7 +23,7 @@ Public Class MyModule
         Dim wFlag As Boolean = False
         Try
             MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
-            If IsNothing(MS_CODE) Then wFlag = True
+            If MS_CODE Is Nothing Then wFlag = True
         Catch ex As Exception
             wFlag = False
         End Try
@@ -450,6 +450,33 @@ Public Class MyModule
 
         Return TBL_LOG
     End Function
+
+    '不要なセッションを破棄
+    Public Shared Sub ClearSession()
+        Dim SessionItemNames() As String
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        'ログイン以外のセッションを破棄
+        ReDim SessionItemNames(wCnt)
+        For Each ItemName As String In System.Web.HttpContext.Current.Session.Contents
+            Select Case Trim(ItemName).ToLower
+                Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.LoginUser.ToLower), Trim(SessionDef.MS_CODE.ToLower)
+                Case Else
+                    If Trim(ItemName) <> "" Then
+                        ReDim Preserve SessionItemNames(wCnt)
+                        SessionItemNames(wCnt) = ItemName
+                        wFlag = True
+                        wCnt += 1
+                    End If
+            End Select
+        Next
+        If wFlag = True Then
+            For wCnt = LBound(SessionItemNames) To UBound(SessionItemNames)
+                System.Web.HttpContext.Current.Session.Remove(SessionItemNames(wCnt))
+            Next wCnt
+        End If
+    End Sub
 
 
     '== CSV ==

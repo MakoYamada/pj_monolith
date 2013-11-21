@@ -112,29 +112,9 @@ Partial Public Class Base
 
     '[メニューへ]
     Protected Sub LnkBMenu_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBMenu.Click
-        Dim SessionItemNames() As String
-        Dim wCnt As Integer = 0
-        Dim wFlag As Boolean = False
+        '不要なセッションを破棄
+        MyModule.ClearSession()
 
-        'ログイン以外のセッションを破棄
-        ReDim SessionItemNames(wCnt)
-        For Each ItemName As String In Session.Contents
-            Select Case Trim(ItemName).ToLower
-                Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.LoginUser.ToLower)
-                Case Else
-                    If Trim(ItemName) <> "" Then
-                        ReDim Preserve SessionItemNames(wCnt)
-                        SessionItemNames(wCnt) = ItemName
-                        wFlag = True
-                        wCnt += 1
-                    End If
-            End Select
-        Next
-        If wFlag = True Then
-            For wCnt = LBound(SessionItemNames) To UBound(SessionItemNames)
-                Session.Remove(SessionItemNames(wCnt))
-            Next wCnt
-        End If
         Response.Redirect(URL.Menu)
     End Sub
 
