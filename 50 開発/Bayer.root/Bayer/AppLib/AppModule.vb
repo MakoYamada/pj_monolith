@@ -3777,7 +3777,7 @@ Public Class AppModule
 
     'タクシーチケット：利用日（依頼）
     Public Shared Function GetName_REQ_TAXI_DATE(ByVal REQ_TAXI_DATE As String) As String
-        Return CmnModule.Format_Date(REQ_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        Return CmnModule.Format_Date(REQ_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD)
     End Function
     Public Shared Function GetName_REQ_TAXI_DATE_1(ByVal REQ_TAXI_DATE_1 As String) As String
         Return GetName_REQ_TAXI_DATE(REQ_TAXI_DATE_1)
