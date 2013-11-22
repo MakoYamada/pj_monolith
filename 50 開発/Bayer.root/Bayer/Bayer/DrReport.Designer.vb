@@ -17,7 +17,7 @@ Partial Public Class DrReport
     Private WithEvents PageFooter As DataDynamics.ActiveReports.PageFooter
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DrReport))
+Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport))
 Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.Label1 = New DataDynamics.ActiveReports.Label
@@ -64,6 +64,37 @@ Me.Line65 = New DataDynamics.ActiveReports.Line
 Me.Line6 = New DataDynamics.ActiveReports.Line
 Me.Line7 = New DataDynamics.ActiveReports.Line
 Me.Detail = New DataDynamics.ActiveReports.Detail
+Me.FUKURO4 = New DataDynamics.ActiveReports.Label
+Me.FUKURO3 = New DataDynamics.ActiveReports.Label
+Me.FUKURO1 = New DataDynamics.ActiveReports.Label
+Me.Line117 = New DataDynamics.ActiveReports.Line
+Me.Line116 = New DataDynamics.ActiveReports.Line
+Me.Line115 = New DataDynamics.ActiveReports.Line
+Me.Line114 = New DataDynamics.ActiveReports.Line
+Me.Line113 = New DataDynamics.ActiveReports.Line
+Me.Line112 = New DataDynamics.ActiveReports.Line
+Me.REQ_F_DATE_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_KOTSUKIKAN_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_IRAINAIYOU_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TEHAI_1 = New DataDynamics.ActiveReports.TextBox
+Me.Label175 = New DataDynamics.ActiveReports.Label
+Me.Label174 = New DataDynamics.ActiveReports.Label
+Me.Label173 = New DataDynamics.ActiveReports.Label
+Me.Label172 = New DataDynamics.ActiveReports.Label
+Me.Label160 = New DataDynamics.ActiveReports.Label
+Me.Label159 = New DataDynamics.ActiveReports.Label
+Me.Label158 = New DataDynamics.ActiveReports.Label
+Me.Label157 = New DataDynamics.ActiveReports.Label
+Me.Label156 = New DataDynamics.ActiveReports.Label
+Me.Label155 = New DataDynamics.ActiveReports.Label
+Me.Label154 = New DataDynamics.ActiveReports.Label
+Me.REQ_F_AIRPORT1_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_AIRPORT2_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TIME1_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TIME2_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_BIN_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_SEAT_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_SEAT_KIBOU1 = New DataDynamics.ActiveReports.TextBox
 Me.TAXI_TESURYO = New DataDynamics.ActiveReports.TextBox
 Me.Label93 = New DataDynamics.ActiveReports.Label
 Me.Label87 = New DataDynamics.ActiveReports.Label
@@ -260,6 +291,17 @@ Me.PageBreak1 = New DataDynamics.ActiveReports.PageBreak
 Me.Shape2 = New DataDynamics.ActiveReports.Shape
 Me.Label94 = New DataDynamics.ActiveReports.Label
 Me.Label95 = New DataDynamics.ActiveReports.Label
+Me.REQ_F_SEAT_KIBOU5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_SEAT_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_BIN_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TIME2_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TIME1_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_AIRPORT2_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_AIRPORT1_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_DATE_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_KOTSUKIKAN_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_IRAINAIYOU_5 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TEHAI_5 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_SEAT_KIBOU4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_SEAT_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_BIN_4 = New DataDynamics.ActiveReports.TextBox
@@ -360,13 +402,6 @@ Me.REQ_O_TIME2_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_TIME1_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_AIRPORT2_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_AIRPORT1_4 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_SEAT_KIBOU1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_SEAT_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_BIN_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TIME2_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TIME1_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_AIRPORT2_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_AIRPORT1_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_SEAT_KIBOU1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_SEAT_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_BIN_1 = New DataDynamics.ActiveReports.TextBox
@@ -381,8 +416,6 @@ Me.Label143 = New DataDynamics.ActiveReports.Label
 Me.Label144 = New DataDynamics.ActiveReports.Label
 Me.Label145 = New DataDynamics.ActiveReports.Label
 Me.Label146 = New DataDynamics.ActiveReports.Label
-Me.FUKURO4 = New DataDynamics.ActiveReports.Label
-Me.Line73 = New DataDynamics.ActiveReports.Line
 Me.Label147 = New DataDynamics.ActiveReports.Label
 Me.Label148 = New DataDynamics.ActiveReports.Label
 Me.Label149 = New DataDynamics.ActiveReports.Label
@@ -391,13 +424,6 @@ Me.Label151 = New DataDynamics.ActiveReports.Label
 Me.Label152 = New DataDynamics.ActiveReports.Label
 Me.Label153 = New DataDynamics.ActiveReports.Label
 Me.OURO4 = New DataDynamics.ActiveReports.Label
-Me.Label154 = New DataDynamics.ActiveReports.Label
-Me.Label155 = New DataDynamics.ActiveReports.Label
-Me.Label156 = New DataDynamics.ActiveReports.Label
-Me.Label157 = New DataDynamics.ActiveReports.Label
-Me.Label158 = New DataDynamics.ActiveReports.Label
-Me.Label159 = New DataDynamics.ActiveReports.Label
-Me.Label160 = New DataDynamics.ActiveReports.Label
 Me.Line75 = New DataDynamics.ActiveReports.Line
 Me.Label161 = New DataDynamics.ActiveReports.Label
 Me.Label162 = New DataDynamics.ActiveReports.Label
@@ -411,26 +437,17 @@ Me.Label168 = New DataDynamics.ActiveReports.Label
 Me.Label169 = New DataDynamics.ActiveReports.Label
 Me.Label170 = New DataDynamics.ActiveReports.Label
 Me.Label171 = New DataDynamics.ActiveReports.Label
-Me.Label172 = New DataDynamics.ActiveReports.Label
-Me.Label173 = New DataDynamics.ActiveReports.Label
-Me.Label174 = New DataDynamics.ActiveReports.Label
-Me.Label175 = New DataDynamics.ActiveReports.Label
 Me.Label176 = New DataDynamics.ActiveReports.Label
 Me.Label177 = New DataDynamics.ActiveReports.Label
 Me.Label178 = New DataDynamics.ActiveReports.Label
 Me.Label179 = New DataDynamics.ActiveReports.Label
-Me.Label180 = New DataDynamics.ActiveReports.Label
 Me.Label181 = New DataDynamics.ActiveReports.Label
 Me.Label182 = New DataDynamics.ActiveReports.Label
 Me.Label183 = New DataDynamics.ActiveReports.Label
 Me.REQ_O_TEHAI_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TEHAI_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_IRAINAIYOU_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_KOTSUKIKAN_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_DATE_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_IRAINAIYOU_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_KOTSUKIKAN_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_DATE_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_TEHAI_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_IRAINAIYOU_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_KOTSUKIKAN_4 = New DataDynamics.ActiveReports.TextBox
@@ -469,7 +486,6 @@ Me.Label191 = New DataDynamics.ActiveReports.Label
 Me.Label192 = New DataDynamics.ActiveReports.Label
 Me.Label193 = New DataDynamics.ActiveReports.Label
 Me.Label194 = New DataDynamics.ActiveReports.Label
-Me.FUKURO3 = New DataDynamics.ActiveReports.Label
 Me.Line78 = New DataDynamics.ActiveReports.Line
 Me.Label195 = New DataDynamics.ActiveReports.Label
 Me.Label196 = New DataDynamics.ActiveReports.Label
@@ -495,21 +511,10 @@ Me.Line94 = New DataDynamics.ActiveReports.Line
 Me.Line95 = New DataDynamics.ActiveReports.Line
 Me.Line96 = New DataDynamics.ActiveReports.Line
 Me.Line101 = New DataDynamics.ActiveReports.Line
-Me.Line112 = New DataDynamics.ActiveReports.Line
-Me.Line113 = New DataDynamics.ActiveReports.Line
-Me.Line114 = New DataDynamics.ActiveReports.Line
-Me.Line115 = New DataDynamics.ActiveReports.Line
-Me.Line116 = New DataDynamics.ActiveReports.Line
-Me.Line117 = New DataDynamics.ActiveReports.Line
 Me.Line118 = New DataDynamics.ActiveReports.Line
 Me.Line119 = New DataDynamics.ActiveReports.Line
 Me.Line120 = New DataDynamics.ActiveReports.Line
 Me.Line121 = New DataDynamics.ActiveReports.Line
-Me.Line123 = New DataDynamics.ActiveReports.Line
-Me.Line124 = New DataDynamics.ActiveReports.Line
-Me.Line125 = New DataDynamics.ActiveReports.Line
-Me.Line126 = New DataDynamics.ActiveReports.Line
-Me.Line127 = New DataDynamics.ActiveReports.Line
 Me.Line152 = New DataDynamics.ActiveReports.Line
 Me.Line173 = New DataDynamics.ActiveReports.Line
 Me.Line52 = New DataDynamics.ActiveReports.Line
@@ -559,9 +564,7 @@ Me.Line99 = New DataDynamics.ActiveReports.Line
 Me.Line100 = New DataDynamics.ActiveReports.Line
 Me.Line102 = New DataDynamics.ActiveReports.Line
 Me.Line103 = New DataDynamics.ActiveReports.Line
-Me.Line104 = New DataDynamics.ActiveReports.Line
 Me.Line77 = New DataDynamics.ActiveReports.Line
-Me.Line83 = New DataDynamics.ActiveReports.Line
 Me.Line98 = New DataDynamics.ActiveReports.Line
 Me.Line105 = New DataDynamics.ActiveReports.Line
 Me.Line106 = New DataDynamics.ActiveReports.Line
@@ -581,27 +584,23 @@ Me.Line139 = New DataDynamics.ActiveReports.Line
 Me.Line140 = New DataDynamics.ActiveReports.Line
 Me.Line141 = New DataDynamics.ActiveReports.Line
 Me.Line153 = New DataDynamics.ActiveReports.Line
-Me.FUKURO1 = New DataDynamics.ActiveReports.Label
-Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 Me.Line84 = New DataDynamics.ActiveReports.Line
 Me.Line69 = New DataDynamics.ActiveReports.Line
+Me.Label180 = New DataDynamics.ActiveReports.Label
+Me.Line123 = New DataDynamics.ActiveReports.Line
+Me.Line124 = New DataDynamics.ActiveReports.Line
+Me.Line125 = New DataDynamics.ActiveReports.Line
+Me.Line126 = New DataDynamics.ActiveReports.Line
+Me.Line127 = New DataDynamics.ActiveReports.Line
+Me.Line73 = New DataDynamics.ActiveReports.Line
 Me.Line122 = New DataDynamics.ActiveReports.Line
 Me.Line85 = New DataDynamics.ActiveReports.Line
 Me.Line86 = New DataDynamics.ActiveReports.Line
 Me.Line154 = New DataDynamics.ActiveReports.Line
 Me.Line155 = New DataDynamics.ActiveReports.Line
 Me.Line156 = New DataDynamics.ActiveReports.Line
-Me.REQ_F_TEHAI_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_IRAINAIYOU_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_KOTSUKIKAN_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_DATE_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_AIRPORT1_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_AIRPORT2_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TIME1_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TIME2_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_BIN_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_SEAT_5 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_SEAT_KIBOU5 = New DataDynamics.ActiveReports.TextBox
+Me.Line83 = New DataDynamics.ActiveReports.Line
+Me.Line104 = New DataDynamics.ActiveReports.Line
 Me.Line72 = New DataDynamics.ActiveReports.Line
 Me.Line128 = New DataDynamics.ActiveReports.Line
 Me.Line129 = New DataDynamics.ActiveReports.Line
@@ -624,6 +623,7 @@ Me.Line159 = New DataDynamics.ActiveReports.Line
 Me.Line160 = New DataDynamics.ActiveReports.Line
 Me.Line161 = New DataDynamics.ActiveReports.Line
 Me.Line162 = New DataDynamics.ActiveReports.Line
+Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).BeginInit
@@ -656,6 +656,31 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FUKURO4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_DATE_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TEHAI_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label175,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label174,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label173,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label172,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label160,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label159,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label158,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label157,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label156,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label155,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label154,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_AIRPORT1_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_AIRPORT2_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TIME1_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TIME2_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_BIN_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_SEAT_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TAXI_TESURYO,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label93,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label87,System.ComponentModel.ISupportInitialize).BeginInit
@@ -797,6 +822,17 @@ CType(Me.REQ_HOTEL_SMOKING,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_HOTEL_NOTE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label94,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label95,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_SEAT_KIBOU5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_SEAT_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_BIN_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TIME2_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TIME1_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_AIRPORT2_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_AIRPORT1_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_DATE_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_KOTSUKIKAN_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_IRAINAIYOU_5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TEHAI_5,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_KIBOU4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_BIN_4,System.ComponentModel.ISupportInitialize).BeginInit
@@ -896,13 +932,6 @@ CType(Me.REQ_O_TIME2_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_TIME1_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_AIRPORT2_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_AIRPORT1_4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_SEAT_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_BIN_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TIME2_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TIME1_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_AIRPORT2_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_AIRPORT1_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_SEAT_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_BIN_1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -917,7 +946,6 @@ CType(Me.Label143,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label144,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label145,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label146,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FUKURO4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label147,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label148,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label149,System.ComponentModel.ISupportInitialize).BeginInit
@@ -926,13 +954,6 @@ CType(Me.Label151,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label152,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label153,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.OURO4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label154,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label155,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label156,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label157,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label158,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label159,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label160,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label161,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label162,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label163,System.ComponentModel.ISupportInitialize).BeginInit
@@ -945,26 +966,17 @@ CType(Me.Label168,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label169,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label170,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label171,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label172,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label173,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label174,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label175,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label176,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label177,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label178,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label179,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label180,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label181,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label182,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label183,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_TEHAI_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TEHAI_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_DATE_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_DATE_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_TEHAI_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_IRAINAIYOU_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_KOTSUKIKAN_4,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1002,7 +1014,6 @@ CType(Me.Label191,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label192,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label193,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label194,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label195,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label196,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label197,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1039,18 +1050,7 @@ CType(Me.DR_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_KANA2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_AGE2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SEX2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TEHAI_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_IRAINAIYOU_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_KOTSUKIKAN_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_DATE_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_AIRPORT1_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_AIRPORT2_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TIME1_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TIME2_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_BIN_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_SEAT_5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_SEAT_KIBOU5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label180,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
 '
 'PageHeader
@@ -1586,6 +1586,382 @@ Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.FUKUR
 Me.Detail.Height = 17.91339!
 Me.Detail.KeepTogether = true
 Me.Detail.Name = "Detail"
+'
+'FUKURO4
+'
+Me.FUKURO4.Height = 1.2!
+Me.FUKURO4.HyperLink = Nothing
+Me.FUKURO4.Left = 3.558662!
+Me.FUKURO4.Name = "FUKURO4"
+Me.FUKURO4.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
+    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
+    "ical: true"
+Me.FUKURO4.Text = ""
+Me.FUKURO4.Top = 15.49685!
+Me.FUKURO4.Width = 0.2051181!
+'
+'FUKURO3
+'
+Me.FUKURO3.Height = 1.200001!
+Me.FUKURO3.HyperLink = Nothing
+Me.FUKURO3.Left = 3.558662!
+Me.FUKURO3.Name = "FUKURO3"
+Me.FUKURO3.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
+    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
+    "ical: true"
+Me.FUKURO3.Text = ""
+Me.FUKURO3.Top = 14.29685!
+Me.FUKURO3.Width = 0.2051181!
+'
+'FUKURO1
+'
+Me.FUKURO1.Height = 1.2!
+Me.FUKURO1.HyperLink = Nothing
+Me.FUKURO1.Left = 3.558662!
+Me.FUKURO1.Name = "FUKURO1"
+Me.FUKURO1.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
+    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
+    "ical: true"
+Me.FUKURO1.Text = ""
+Me.FUKURO1.Top = 11.89685!
+Me.FUKURO1.Width = 0.2291338!
+'
+'Line117
+'
+Me.Line117.Height = 0!
+Me.Line117.Left = 3.787796!
+Me.Line117.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line117.LineWeight = 1!
+Me.Line117.Name = "Line117"
+Me.Line117.Top = 13.09685!
+Me.Line117.Width = 1.586221!
+Me.Line117.X1 = 3.787796!
+Me.Line117.X2 = 5.374017!
+Me.Line117.Y1 = 13.09685!
+Me.Line117.Y2 = 13.09685!
+'
+'Line116
+'
+Me.Line116.Height = 0!
+Me.Line116.Left = 3.787796!
+Me.Line116.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line116.LineWeight = 1!
+Me.Line116.Name = "Line116"
+Me.Line116.Top = 12.89685!
+Me.Line116.Width = 1.586221!
+Me.Line116.X1 = 3.787796!
+Me.Line116.X2 = 5.374017!
+Me.Line116.Y1 = 12.89685!
+Me.Line116.Y2 = 12.89685!
+'
+'Line115
+'
+Me.Line115.Height = 0!
+Me.Line115.Left = 3.787796!
+Me.Line115.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line115.LineWeight = 1!
+Me.Line115.Name = "Line115"
+Me.Line115.Top = 12.69685!
+Me.Line115.Width = 1.586221!
+Me.Line115.X1 = 3.787796!
+Me.Line115.X2 = 5.374017!
+Me.Line115.Y1 = 12.69685!
+Me.Line115.Y2 = 12.69685!
+'
+'Line114
+'
+Me.Line114.Height = 0!
+Me.Line114.Left = 3.787796!
+Me.Line114.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line114.LineWeight = 1!
+Me.Line114.Name = "Line114"
+Me.Line114.Top = 12.49685!
+Me.Line114.Width = 1.586221!
+Me.Line114.X1 = 3.787796!
+Me.Line114.X2 = 5.374017!
+Me.Line114.Y1 = 12.49685!
+Me.Line114.Y2 = 12.49685!
+'
+'Line113
+'
+Me.Line113.Height = 0!
+Me.Line113.Left = 3.787796!
+Me.Line113.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line113.LineWeight = 1!
+Me.Line113.Name = "Line113"
+Me.Line113.Top = 12.29685!
+Me.Line113.Width = 1.586221!
+Me.Line113.X1 = 3.787796!
+Me.Line113.X2 = 5.374017!
+Me.Line113.Y1 = 12.29685!
+Me.Line113.Y2 = 12.29685!
+'
+'Line112
+'
+Me.Line112.Height = 0!
+Me.Line112.Left = 3.787796!
+Me.Line112.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line112.LineWeight = 1!
+Me.Line112.Name = "Line112"
+Me.Line112.Top = 12.09685!
+Me.Line112.Width = 1.586221!
+Me.Line112.X1 = 3.787796!
+Me.Line112.X2 = 5.374017!
+Me.Line112.Y1 = 12.09685!
+Me.Line112.Y2 = 12.09685!
+'
+'REQ_F_DATE_1
+'
+Me.REQ_F_DATE_1.DataField = "REQ_F_DATE_1"
+Me.REQ_F_DATE_1.Height = 0.2!
+Me.REQ_F_DATE_1.Left = 4.507481!
+Me.REQ_F_DATE_1.Name = "REQ_F_DATE_1"
+Me.REQ_F_DATE_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_DATE_1.Text = Nothing
+Me.REQ_F_DATE_1.Top = 12.09685!
+Me.REQ_F_DATE_1.Width = 0.9779529!
+'
+'REQ_F_KOTSUKIKAN_1
+'
+Me.REQ_F_KOTSUKIKAN_1.DataField = "REQ_F_KOTSUKIKAN_1"
+Me.REQ_F_KOTSUKIKAN_1.Height = 0.2!
+Me.REQ_F_KOTSUKIKAN_1.Left = 6.172835!
+Me.REQ_F_KOTSUKIKAN_1.Name = "REQ_F_KOTSUKIKAN_1"
+Me.REQ_F_KOTSUKIKAN_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_KOTSUKIKAN_1.Text = Nothing
+Me.REQ_F_KOTSUKIKAN_1.Top = 12.09685!
+Me.REQ_F_KOTSUKIKAN_1.Width = 0.988583!
+'
+'REQ_F_IRAINAIYOU_1
+'
+Me.REQ_F_IRAINAIYOU_1.DataField = "REQ_F_IRAINAIYOU_1"
+Me.REQ_F_IRAINAIYOU_1.Height = 0.1999998!
+Me.REQ_F_IRAINAIYOU_1.Left = 6.172835!
+Me.REQ_F_IRAINAIYOU_1.Name = "REQ_F_IRAINAIYOU_1"
+Me.REQ_F_IRAINAIYOU_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_IRAINAIYOU_1.Text = Nothing
+Me.REQ_F_IRAINAIYOU_1.Top = 11.89685!
+Me.REQ_F_IRAINAIYOU_1.Width = 0.9791338!
+'
+'REQ_F_TEHAI_1
+'
+Me.REQ_F_TEHAI_1.DataField = "REQ_F_TEHAI_1"
+Me.REQ_F_TEHAI_1.Height = 0.1999998!
+Me.REQ_F_TEHAI_1.Left = 4.507481!
+Me.REQ_F_TEHAI_1.Name = "REQ_F_TEHAI_1"
+Me.REQ_F_TEHAI_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TEHAI_1.Text = Nothing
+Me.REQ_F_TEHAI_1.Top = 11.89685!
+Me.REQ_F_TEHAI_1.Width = 0.977953!
+'
+'Label175
+'
+Me.Label175.Height = 0.2!
+Me.Label175.HyperLink = Nothing
+Me.Label175.Left = 3.787795!
+Me.Label175.Name = "Label175"
+Me.Label175.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label175.Text = "利用日"
+Me.Label175.Top = 12.09685!
+Me.Label175.Width = 0.7196856!
+'
+'Label174
+'
+Me.Label174.Height = 0.2!
+Me.Label174.HyperLink = Nothing
+Me.Label174.Left = 5.485433!
+Me.Label174.Name = "Label174"
+Me.Label174.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label174.Text = "交通機関"
+Me.Label174.Top = 12.09685!
+Me.Label174.Width = 0.6874018!
+'
+'Label173
+'
+Me.Label173.Height = 0.2!
+Me.Label173.HyperLink = Nothing
+Me.Label173.Left = 5.485434!
+Me.Label173.Name = "Label173"
+Me.Label173.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label173.Text = "依頼内容"
+Me.Label173.Top = 11.89685!
+Me.Label173.Width = 0.6874018!
+'
+'Label172
+'
+Me.Label172.Height = 0.1999999!
+Me.Label172.HyperLink = Nothing
+Me.Label172.Left = 3.787795!
+Me.Label172.Name = "Label172"
+Me.Label172.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label172.Text = "希望する"
+Me.Label172.Top = 11.89685!
+Me.Label172.Width = 0.7196856!
+'
+'Label160
+'
+Me.Label160.Height = 0.2!
+Me.Label160.HyperLink = Nothing
+Me.Label160.Left = 3.787796!
+Me.Label160.Name = "Label160"
+Me.Label160.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label160.Text = "出発地"
+Me.Label160.Top = 12.49685!
+Me.Label160.Width = 0.7196851!
+'
+'Label159
+'
+Me.Label159.Height = 0.2!
+Me.Label159.HyperLink = Nothing
+Me.Label159.Left = 5.485433!
+Me.Label159.Name = "Label159"
+Me.Label159.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label159.Text = "到着地"
+Me.Label159.Top = 12.49685!
+Me.Label159.Width = 0.6874022!
+'
+'Label158
+'
+Me.Label158.Height = 0.2!
+Me.Label158.HyperLink = Nothing
+Me.Label158.Left = 3.787795!
+Me.Label158.Name = "Label158"
+Me.Label158.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label158.Text = "出発時間"
+Me.Label158.Top = 12.69685!
+Me.Label158.Width = 0.7196856!
+'
+'Label157
+'
+Me.Label157.Height = 0.2!
+Me.Label157.HyperLink = Nothing
+Me.Label157.Left = 5.485433!
+Me.Label157.Name = "Label157"
+Me.Label157.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label157.Text = "到着時間"
+Me.Label157.Top = 12.69685!
+Me.Label157.Width = 0.6874022!
+'
+'Label156
+'
+Me.Label156.Height = 0.2!
+Me.Label156.HyperLink = Nothing
+Me.Label156.Left = 3.787795!
+Me.Label156.Name = "Label156"
+Me.Label156.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label156.Text = "列車・便名"
+Me.Label156.Top = 12.29685!
+Me.Label156.Width = 0.7196854!
+'
+'Label155
+'
+Me.Label155.Height = 0.2!
+Me.Label155.HyperLink = Nothing
+Me.Label155.Left = 3.787795!
+Me.Label155.Name = "Label155"
+Me.Label155.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label155.Text = "座席区分"
+Me.Label155.Top = 12.89685!
+Me.Label155.Width = 0.7196856!
+'
+'Label154
+'
+Me.Label154.Height = 0.2!
+Me.Label154.HyperLink = Nothing
+Me.Label154.Left = 5.485433!
+Me.Label154.Name = "Label154"
+Me.Label154.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label154.Text = "座席希望"
+Me.Label154.Top = 12.89685!
+Me.Label154.Width = 0.6874018!
+'
+'REQ_F_AIRPORT1_1
+'
+Me.REQ_F_AIRPORT1_1.DataField = "REQ_F_AIRPORT1_1"
+Me.REQ_F_AIRPORT1_1.Height = 0.2!
+Me.REQ_F_AIRPORT1_1.Left = 4.507481!
+Me.REQ_F_AIRPORT1_1.Name = "REQ_F_AIRPORT1_1"
+Me.REQ_F_AIRPORT1_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_AIRPORT1_1.Text = Nothing
+Me.REQ_F_AIRPORT1_1.Top = 12.49685!
+Me.REQ_F_AIRPORT1_1.Width = 0.9779529!
+'
+'REQ_F_AIRPORT2_1
+'
+Me.REQ_F_AIRPORT2_1.DataField = "REQ_F_AIRPORT2_1"
+Me.REQ_F_AIRPORT2_1.Height = 0.2!
+Me.REQ_F_AIRPORT2_1.Left = 6.172835!
+Me.REQ_F_AIRPORT2_1.Name = "REQ_F_AIRPORT2_1"
+Me.REQ_F_AIRPORT2_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_AIRPORT2_1.Text = Nothing
+Me.REQ_F_AIRPORT2_1.Top = 12.49685!
+Me.REQ_F_AIRPORT2_1.Width = 0.979134!
+'
+'REQ_F_TIME1_1
+'
+Me.REQ_F_TIME1_1.DataField = "REQ_F_TIME1_1"
+Me.REQ_F_TIME1_1.Height = 0.2!
+Me.REQ_F_TIME1_1.Left = 4.507481!
+Me.REQ_F_TIME1_1.Name = "REQ_F_TIME1_1"
+Me.REQ_F_TIME1_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TIME1_1.Text = Nothing
+Me.REQ_F_TIME1_1.Top = 12.69685!
+Me.REQ_F_TIME1_1.Width = 0.9779529!
+'
+'REQ_F_TIME2_1
+'
+Me.REQ_F_TIME2_1.DataField = "REQ_F_TIME2_1"
+Me.REQ_F_TIME2_1.Height = 0.2!
+Me.REQ_F_TIME2_1.Left = 6.172835!
+Me.REQ_F_TIME2_1.Name = "REQ_F_TIME2_1"
+Me.REQ_F_TIME2_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TIME2_1.Text = Nothing
+Me.REQ_F_TIME2_1.Top = 12.69685!
+Me.REQ_F_TIME2_1.Width = 0.979134!
+'
+'REQ_F_BIN_1
+'
+Me.REQ_F_BIN_1.DataField = "REQ_F_BIN_1"
+Me.REQ_F_BIN_1.Height = 0.2!
+Me.REQ_F_BIN_1.Left = 4.507481!
+Me.REQ_F_BIN_1.Name = "REQ_F_BIN_1"
+Me.REQ_F_BIN_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_BIN_1.Text = Nothing
+Me.REQ_F_BIN_1.Top = 12.29685!
+Me.REQ_F_BIN_1.Width = 2.644488!
+'
+'REQ_F_SEAT_1
+'
+Me.REQ_F_SEAT_1.DataField = "REQ_F_SEAT_1"
+Me.REQ_F_SEAT_1.Height = 0.2!
+Me.REQ_F_SEAT_1.Left = 4.507481!
+Me.REQ_F_SEAT_1.Name = "REQ_F_SEAT_1"
+Me.REQ_F_SEAT_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_SEAT_1.Text = Nothing
+Me.REQ_F_SEAT_1.Top = 12.89685!
+Me.REQ_F_SEAT_1.Width = 0.9779529!
+'
+'REQ_F_SEAT_KIBOU1
+'
+Me.REQ_F_SEAT_KIBOU1.DataField = "REQ_F_SEAT_KIBOU1"
+Me.REQ_F_SEAT_KIBOU1.Height = 0.2!
+Me.REQ_F_SEAT_KIBOU1.Left = 6.172835!
+Me.REQ_F_SEAT_KIBOU1.Name = "REQ_F_SEAT_KIBOU1"
+Me.REQ_F_SEAT_KIBOU1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_SEAT_KIBOU1.Text = Nothing
+Me.REQ_F_SEAT_KIBOU1.Top = 12.89685!
+Me.REQ_F_SEAT_KIBOU1.Width = 0.979134!
 '
 'TAXI_TESURYO
 '
@@ -2567,7 +2943,6 @@ Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
 Me.REQ_MR_HOTEL_NOTE.Height = 0.8854332!
 Me.REQ_MR_HOTEL_NOTE.Left = 1.677953!
 Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"
-Me.REQ_MR_HOTEL_NOTE.Text = resources.GetString("REQ_MR_HOTEL_NOTE.Text")
 Me.REQ_MR_HOTEL_NOTE.Top = 4.203152!
 Me.REQ_MR_HOTEL_NOTE.Width = 5.474016!
 '
@@ -3048,7 +3423,6 @@ Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
 Me.MR_SEND_SAKI_OTHER.Height = 0.8854331!
 Me.MR_SEND_SAKI_OTHER.Left = 1.677953!
 Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
-Me.MR_SEND_SAKI_OTHER.Text = resources.GetString("MR_SEND_SAKI_OTHER.Text")
 Me.MR_SEND_SAKI_OTHER.Top = 5.292521!
 Me.MR_SEND_SAKI_OTHER.Width = 5.474016!
 '
@@ -3146,7 +3520,6 @@ Me.REQ_HOTEL_NOTE.DataField = "REQ_HOTEL_NOTE"
 Me.REQ_HOTEL_NOTE.Height = 0.7291338!
 Me.REQ_HOTEL_NOTE.Left = 1.323622!
 Me.REQ_HOTEL_NOTE.Name = "REQ_HOTEL_NOTE"
-Me.REQ_HOTEL_NOTE.Text = resources.GetString("REQ_HOTEL_NOTE.Text")
 Me.REQ_HOTEL_NOTE.Top = 7.177953!
 Me.REQ_HOTEL_NOTE.Width = 5.828347!
 '
@@ -3906,6 +4279,127 @@ Me.Label95.Style = "text-align: right"
 Me.Label95.Text = "(2/2ページ)"
 Me.Label95.Top = 10.45591!
 Me.Label95.Width = 0.7188979!
+'
+'REQ_F_SEAT_KIBOU5
+'
+Me.REQ_F_SEAT_KIBOU5.DataField = "REQ_F_SEAT_KIBOU5"
+Me.REQ_F_SEAT_KIBOU5.Height = 0.2!
+Me.REQ_F_SEAT_KIBOU5.Left = 6.172835!
+Me.REQ_F_SEAT_KIBOU5.Name = "REQ_F_SEAT_KIBOU5"
+Me.REQ_F_SEAT_KIBOU5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_SEAT_KIBOU5.Text = Nothing
+Me.REQ_F_SEAT_KIBOU5.Top = 17.69685!
+Me.REQ_F_SEAT_KIBOU5.Width = 0.979134!
+'
+'REQ_F_SEAT_5
+'
+Me.REQ_F_SEAT_5.DataField = "REQ_F_SEAT_5"
+Me.REQ_F_SEAT_5.Height = 0.2!
+Me.REQ_F_SEAT_5.Left = 4.507481!
+Me.REQ_F_SEAT_5.Name = "REQ_F_SEAT_5"
+Me.REQ_F_SEAT_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_SEAT_5.Text = Nothing
+Me.REQ_F_SEAT_5.Top = 17.69685!
+Me.REQ_F_SEAT_5.Width = 0.9779529!
+'
+'REQ_F_BIN_5
+'
+Me.REQ_F_BIN_5.DataField = "REQ_F_BIN_5"
+Me.REQ_F_BIN_5.Height = 0.2!
+Me.REQ_F_BIN_5.Left = 4.507481!
+Me.REQ_F_BIN_5.Name = "REQ_F_BIN_5"
+Me.REQ_F_BIN_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_BIN_5.Text = Nothing
+Me.REQ_F_BIN_5.Top = 17.09685!
+Me.REQ_F_BIN_5.Width = 2.644488!
+'
+'REQ_F_TIME2_5
+'
+Me.REQ_F_TIME2_5.DataField = "REQ_F_TIME2_5"
+Me.REQ_F_TIME2_5.Height = 0.2!
+Me.REQ_F_TIME2_5.Left = 6.172835!
+Me.REQ_F_TIME2_5.Name = "REQ_F_TIME2_5"
+Me.REQ_F_TIME2_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TIME2_5.Text = Nothing
+Me.REQ_F_TIME2_5.Top = 17.49685!
+Me.REQ_F_TIME2_5.Width = 0.979134!
+'
+'REQ_F_TIME1_5
+'
+Me.REQ_F_TIME1_5.DataField = "REQ_F_TIME1_5"
+Me.REQ_F_TIME1_5.Height = 0.2!
+Me.REQ_F_TIME1_5.Left = 4.507481!
+Me.REQ_F_TIME1_5.Name = "REQ_F_TIME1_5"
+Me.REQ_F_TIME1_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TIME1_5.Text = Nothing
+Me.REQ_F_TIME1_5.Top = 17.49685!
+Me.REQ_F_TIME1_5.Width = 0.9779529!
+'
+'REQ_F_AIRPORT2_5
+'
+Me.REQ_F_AIRPORT2_5.DataField = "REQ_F_AIRPORT2_5"
+Me.REQ_F_AIRPORT2_5.Height = 0.2!
+Me.REQ_F_AIRPORT2_5.Left = 6.172833!
+Me.REQ_F_AIRPORT2_5.Name = "REQ_F_AIRPORT2_5"
+Me.REQ_F_AIRPORT2_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_AIRPORT2_5.Text = Nothing
+Me.REQ_F_AIRPORT2_5.Top = 17.29685!
+Me.REQ_F_AIRPORT2_5.Width = 0.979134!
+'
+'REQ_F_AIRPORT1_5
+'
+Me.REQ_F_AIRPORT1_5.DataField = "REQ_F_AIRPORT1_5"
+Me.REQ_F_AIRPORT1_5.Height = 0.2!
+Me.REQ_F_AIRPORT1_5.Left = 4.507479!
+Me.REQ_F_AIRPORT1_5.Name = "REQ_F_AIRPORT1_5"
+Me.REQ_F_AIRPORT1_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_AIRPORT1_5.Text = Nothing
+Me.REQ_F_AIRPORT1_5.Top = 17.29685!
+Me.REQ_F_AIRPORT1_5.Width = 0.9779529!
+'
+'REQ_F_DATE_5
+'
+Me.REQ_F_DATE_5.DataField = "REQ_F_DATE_5"
+Me.REQ_F_DATE_5.Height = 0.2!
+Me.REQ_F_DATE_5.Left = 4.507481!
+Me.REQ_F_DATE_5.Name = "REQ_F_DATE_5"
+Me.REQ_F_DATE_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_DATE_5.Text = Nothing
+Me.REQ_F_DATE_5.Top = 16.89685!
+Me.REQ_F_DATE_5.Width = 0.9779529!
+'
+'REQ_F_KOTSUKIKAN_5
+'
+Me.REQ_F_KOTSUKIKAN_5.DataField = "REQ_F_KOTSUKIKAN_5"
+Me.REQ_F_KOTSUKIKAN_5.Height = 0.2!
+Me.REQ_F_KOTSUKIKAN_5.Left = 6.172835!
+Me.REQ_F_KOTSUKIKAN_5.Name = "REQ_F_KOTSUKIKAN_5"
+Me.REQ_F_KOTSUKIKAN_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_KOTSUKIKAN_5.Text = Nothing
+Me.REQ_F_KOTSUKIKAN_5.Top = 16.89685!
+Me.REQ_F_KOTSUKIKAN_5.Width = 0.979134!
+'
+'REQ_F_IRAINAIYOU_5
+'
+Me.REQ_F_IRAINAIYOU_5.DataField = "REQ_F_IRAINAIYOU_5"
+Me.REQ_F_IRAINAIYOU_5.Height = 0.2!
+Me.REQ_F_IRAINAIYOU_5.Left = 6.186221!
+Me.REQ_F_IRAINAIYOU_5.Name = "REQ_F_IRAINAIYOU_5"
+Me.REQ_F_IRAINAIYOU_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_IRAINAIYOU_5.Text = Nothing
+Me.REQ_F_IRAINAIYOU_5.Top = 16.69685!
+Me.REQ_F_IRAINAIYOU_5.Width = 0.9657478!
+'
+'REQ_F_TEHAI_5
+'
+Me.REQ_F_TEHAI_5.DataField = "REQ_F_TEHAI_5"
+Me.REQ_F_TEHAI_5.Height = 0.2!
+Me.REQ_F_TEHAI_5.Left = 4.507481!
+Me.REQ_F_TEHAI_5.Name = "REQ_F_TEHAI_5"
+Me.REQ_F_TEHAI_5.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TEHAI_5.Text = Nothing
+Me.REQ_F_TEHAI_5.Top = 16.69685!
+Me.REQ_F_TEHAI_5.Width = 0.9779529!
 '
 'REQ_F_SEAT_KIBOU4
 '
@@ -5061,83 +5555,6 @@ Me.REQ_O_AIRPORT1_4.Text = Nothing
 Me.REQ_O_AIRPORT1_4.Top = 16.09685!
 Me.REQ_O_AIRPORT1_4.Width = 0.9755906!
 '
-'REQ_F_SEAT_KIBOU1
-'
-Me.REQ_F_SEAT_KIBOU1.DataField = "REQ_F_SEAT_KIBOU1"
-Me.REQ_F_SEAT_KIBOU1.Height = 0.2!
-Me.REQ_F_SEAT_KIBOU1.Left = 6.172835!
-Me.REQ_F_SEAT_KIBOU1.Name = "REQ_F_SEAT_KIBOU1"
-Me.REQ_F_SEAT_KIBOU1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_SEAT_KIBOU1.Text = Nothing
-Me.REQ_F_SEAT_KIBOU1.Top = 12.89685!
-Me.REQ_F_SEAT_KIBOU1.Width = 0.979134!
-'
-'REQ_F_SEAT_1
-'
-Me.REQ_F_SEAT_1.DataField = "REQ_F_SEAT_1"
-Me.REQ_F_SEAT_1.Height = 0.2!
-Me.REQ_F_SEAT_1.Left = 4.507481!
-Me.REQ_F_SEAT_1.Name = "REQ_F_SEAT_1"
-Me.REQ_F_SEAT_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_SEAT_1.Text = Nothing
-Me.REQ_F_SEAT_1.Top = 12.89685!
-Me.REQ_F_SEAT_1.Width = 0.9779529!
-'
-'REQ_F_BIN_1
-'
-Me.REQ_F_BIN_1.DataField = "REQ_F_BIN_1"
-Me.REQ_F_BIN_1.Height = 0.2!
-Me.REQ_F_BIN_1.Left = 4.507481!
-Me.REQ_F_BIN_1.Name = "REQ_F_BIN_1"
-Me.REQ_F_BIN_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_BIN_1.Text = Nothing
-Me.REQ_F_BIN_1.Top = 12.29685!
-Me.REQ_F_BIN_1.Width = 2.644488!
-'
-'REQ_F_TIME2_1
-'
-Me.REQ_F_TIME2_1.DataField = "REQ_F_TIME2_1"
-Me.REQ_F_TIME2_1.Height = 0.2!
-Me.REQ_F_TIME2_1.Left = 6.172835!
-Me.REQ_F_TIME2_1.Name = "REQ_F_TIME2_1"
-Me.REQ_F_TIME2_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TIME2_1.Text = Nothing
-Me.REQ_F_TIME2_1.Top = 12.69685!
-Me.REQ_F_TIME2_1.Width = 0.979134!
-'
-'REQ_F_TIME1_1
-'
-Me.REQ_F_TIME1_1.DataField = "REQ_F_TIME1_1"
-Me.REQ_F_TIME1_1.Height = 0.2!
-Me.REQ_F_TIME1_1.Left = 4.507481!
-Me.REQ_F_TIME1_1.Name = "REQ_F_TIME1_1"
-Me.REQ_F_TIME1_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TIME1_1.Text = Nothing
-Me.REQ_F_TIME1_1.Top = 12.69685!
-Me.REQ_F_TIME1_1.Width = 0.9779529!
-'
-'REQ_F_AIRPORT2_1
-'
-Me.REQ_F_AIRPORT2_1.DataField = "REQ_F_AIRPORT2_1"
-Me.REQ_F_AIRPORT2_1.Height = 0.2!
-Me.REQ_F_AIRPORT2_1.Left = 6.172835!
-Me.REQ_F_AIRPORT2_1.Name = "REQ_F_AIRPORT2_1"
-Me.REQ_F_AIRPORT2_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_AIRPORT2_1.Text = Nothing
-Me.REQ_F_AIRPORT2_1.Top = 12.49685!
-Me.REQ_F_AIRPORT2_1.Width = 0.979134!
-'
-'REQ_F_AIRPORT1_1
-'
-Me.REQ_F_AIRPORT1_1.DataField = "REQ_F_AIRPORT1_1"
-Me.REQ_F_AIRPORT1_1.Height = 0.2!
-Me.REQ_F_AIRPORT1_1.Left = 4.507481!
-Me.REQ_F_AIRPORT1_1.Name = "REQ_F_AIRPORT1_1"
-Me.REQ_F_AIRPORT1_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_AIRPORT1_1.Text = Nothing
-Me.REQ_F_AIRPORT1_1.Top = 12.49685!
-Me.REQ_F_AIRPORT1_1.Width = 0.9779529!
-'
 'REQ_O_SEAT_KIBOU1
 '
 Me.REQ_O_SEAT_KIBOU1.DataField = "REQ_O_SEAT_KIBOU1"
@@ -5299,32 +5716,6 @@ Me.Label146.Text = "出発地"
 Me.Label146.Top = 16.09685!
 Me.Label146.Width = 0.7436993!
 '
-'FUKURO4
-'
-Me.FUKURO4.Height = 1.2!
-Me.FUKURO4.HyperLink = Nothing
-Me.FUKURO4.Left = 3.558662!
-Me.FUKURO4.Name = "FUKURO4"
-Me.FUKURO4.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
-Me.FUKURO4.Text = ""
-Me.FUKURO4.Top = 15.49685!
-Me.FUKURO4.Width = 0.2051181!
-'
-'Line73
-'
-Me.Line73.Height = 6.000003!
-Me.Line73.Left = 3.76378!
-Me.Line73.LineWeight = 1!
-Me.Line73.Name = "Line73"
-Me.Line73.Top = 11.89685!
-Me.Line73.Width = 2.384186E-07!
-Me.Line73.X1 = 3.76378!
-Me.Line73.X2 = 3.76378!
-Me.Line73.Y1 = 11.89685!
-Me.Line73.Y2 = 17.89685!
-'
 'Label147
 '
 Me.Label147.Height = 0.2!
@@ -5421,90 +5812,6 @@ Me.OURO4.Style = "background-color: Silver; font-family: ＭＳ ゴシック; fo
 Me.OURO4.Text = ""
 Me.OURO4.Top = 15.49685!
 Me.OURO4.Width = 0.2291338!
-'
-'Label154
-'
-Me.Label154.Height = 0.2!
-Me.Label154.HyperLink = Nothing
-Me.Label154.Left = 5.485433!
-Me.Label154.Name = "Label154"
-Me.Label154.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label154.Text = "座席希望"
-Me.Label154.Top = 12.89685!
-Me.Label154.Width = 0.6874018!
-'
-'Label155
-'
-Me.Label155.Height = 0.2!
-Me.Label155.HyperLink = Nothing
-Me.Label155.Left = 3.787795!
-Me.Label155.Name = "Label155"
-Me.Label155.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label155.Text = "座席区分"
-Me.Label155.Top = 12.89685!
-Me.Label155.Width = 0.7196856!
-'
-'Label156
-'
-Me.Label156.Height = 0.2!
-Me.Label156.HyperLink = Nothing
-Me.Label156.Left = 3.787795!
-Me.Label156.Name = "Label156"
-Me.Label156.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label156.Text = "列車・便名"
-Me.Label156.Top = 12.29685!
-Me.Label156.Width = 0.7196854!
-'
-'Label157
-'
-Me.Label157.Height = 0.2!
-Me.Label157.HyperLink = Nothing
-Me.Label157.Left = 5.485433!
-Me.Label157.Name = "Label157"
-Me.Label157.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label157.Text = "到着時間"
-Me.Label157.Top = 12.69685!
-Me.Label157.Width = 0.6874022!
-'
-'Label158
-'
-Me.Label158.Height = 0.2!
-Me.Label158.HyperLink = Nothing
-Me.Label158.Left = 3.787795!
-Me.Label158.Name = "Label158"
-Me.Label158.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label158.Text = "出発時間"
-Me.Label158.Top = 12.69685!
-Me.Label158.Width = 0.7196856!
-'
-'Label159
-'
-Me.Label159.Height = 0.2!
-Me.Label159.HyperLink = Nothing
-Me.Label159.Left = 5.485433!
-Me.Label159.Name = "Label159"
-Me.Label159.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label159.Text = "到着地"
-Me.Label159.Top = 12.49685!
-Me.Label159.Width = 0.6874022!
-'
-'Label160
-'
-Me.Label160.Height = 0.2!
-Me.Label160.HyperLink = Nothing
-Me.Label160.Left = 3.787796!
-Me.Label160.Name = "Label160"
-Me.Label160.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label160.Text = "出発地"
-Me.Label160.Top = 12.49685!
-Me.Label160.Width = 0.7196851!
 '
 'Line75
 '
@@ -5664,54 +5971,6 @@ Me.Label171.Text = "利用日"
 Me.Label171.Top = 12.09685!
 Me.Label171.Width = 0.6874015!
 '
-'Label172
-'
-Me.Label172.Height = 0.1999999!
-Me.Label172.HyperLink = Nothing
-Me.Label172.Left = 3.787795!
-Me.Label172.Name = "Label172"
-Me.Label172.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label172.Text = "希望する"
-Me.Label172.Top = 11.89685!
-Me.Label172.Width = 0.7196856!
-'
-'Label173
-'
-Me.Label173.Height = 0.2!
-Me.Label173.HyperLink = Nothing
-Me.Label173.Left = 5.485434!
-Me.Label173.Name = "Label173"
-Me.Label173.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label173.Text = "依頼内容"
-Me.Label173.Top = 11.89685!
-Me.Label173.Width = 0.6874018!
-'
-'Label174
-'
-Me.Label174.Height = 0.2!
-Me.Label174.HyperLink = Nothing
-Me.Label174.Left = 5.485433!
-Me.Label174.Name = "Label174"
-Me.Label174.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label174.Text = "交通機関"
-Me.Label174.Top = 12.09685!
-Me.Label174.Width = 0.6874018!
-'
-'Label175
-'
-Me.Label175.Height = 0.2!
-Me.Label175.HyperLink = Nothing
-Me.Label175.Left = 3.787795!
-Me.Label175.Name = "Label175"
-Me.Label175.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label175.Text = "利用日"
-Me.Label175.Top = 12.09685!
-Me.Label175.Width = 0.7196856!
-'
 'Label176
 '
 Me.Label176.Height = 0.1999999!
@@ -5760,18 +6019,6 @@ Me.Label179.Text = "利用日"
 Me.Label179.Top = 15.69685!
 Me.Label179.Width = 0.6874025!
 '
-'Label180
-'
-Me.Label180.Height = 0.1999999!
-Me.Label180.HyperLink = Nothing
-Me.Label180.Left = 3.76378!
-Me.Label180.Name = "Label180"
-Me.Label180.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
-    "iddle; white-space: nowrap"
-Me.Label180.Text = "希望する"
-Me.Label180.Top = 15.49685!
-Me.Label180.Width = 0.7437003!
-'
 'Label181
 '
 Me.Label181.Height = 0.2!
@@ -5819,17 +6066,6 @@ Me.REQ_O_TEHAI_1.Text = Nothing
 Me.REQ_O_TEHAI_1.Top = 11.89685!
 Me.REQ_O_TEHAI_1.Width = 0.9858268!
 '
-'REQ_F_TEHAI_1
-'
-Me.REQ_F_TEHAI_1.DataField = "REQ_F_TEHAI_1"
-Me.REQ_F_TEHAI_1.Height = 0.1999998!
-Me.REQ_F_TEHAI_1.Left = 4.507481!
-Me.REQ_F_TEHAI_1.Name = "REQ_F_TEHAI_1"
-Me.REQ_F_TEHAI_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TEHAI_1.Text = Nothing
-Me.REQ_F_TEHAI_1.Top = 11.89685!
-Me.REQ_F_TEHAI_1.Width = 0.977953!
-'
 'REQ_O_IRAINAIYOU_1
 '
 Me.REQ_O_IRAINAIYOU_1.DataField = "REQ_O_IRAINAIYOU_1"
@@ -5862,39 +6098,6 @@ Me.REQ_O_DATE_1.Style = "text-align: left; vertical-align: middle"
 Me.REQ_O_DATE_1.Text = Nothing
 Me.REQ_O_DATE_1.Top = 12.09685!
 Me.REQ_O_DATE_1.Width = 0.9858268!
-'
-'REQ_F_IRAINAIYOU_1
-'
-Me.REQ_F_IRAINAIYOU_1.DataField = "REQ_F_IRAINAIYOU_1"
-Me.REQ_F_IRAINAIYOU_1.Height = 0.1999998!
-Me.REQ_F_IRAINAIYOU_1.Left = 6.172835!
-Me.REQ_F_IRAINAIYOU_1.Name = "REQ_F_IRAINAIYOU_1"
-Me.REQ_F_IRAINAIYOU_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_IRAINAIYOU_1.Text = Nothing
-Me.REQ_F_IRAINAIYOU_1.Top = 11.89685!
-Me.REQ_F_IRAINAIYOU_1.Width = 0.9791338!
-'
-'REQ_F_KOTSUKIKAN_1
-'
-Me.REQ_F_KOTSUKIKAN_1.DataField = "REQ_F_KOTSUKIKAN_1"
-Me.REQ_F_KOTSUKIKAN_1.Height = 0.2!
-Me.REQ_F_KOTSUKIKAN_1.Left = 6.172835!
-Me.REQ_F_KOTSUKIKAN_1.Name = "REQ_F_KOTSUKIKAN_1"
-Me.REQ_F_KOTSUKIKAN_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_KOTSUKIKAN_1.Text = Nothing
-Me.REQ_F_KOTSUKIKAN_1.Top = 12.09685!
-Me.REQ_F_KOTSUKIKAN_1.Width = 0.988583!
-'
-'REQ_F_DATE_1
-'
-Me.REQ_F_DATE_1.DataField = "REQ_F_DATE_1"
-Me.REQ_F_DATE_1.Height = 0.2!
-Me.REQ_F_DATE_1.Left = 4.507481!
-Me.REQ_F_DATE_1.Name = "REQ_F_DATE_1"
-Me.REQ_F_DATE_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_DATE_1.Text = Nothing
-Me.REQ_F_DATE_1.Top = 12.09685!
-Me.REQ_F_DATE_1.Width = 0.9779529!
 '
 'REQ_O_TEHAI_4
 '
@@ -6327,19 +6530,6 @@ Me.Label194.Text = "希望する"
 Me.Label194.Top = 14.29685!
 Me.Label194.Width = 0.743701!
 '
-'FUKURO3
-'
-Me.FUKURO3.Height = 1.200001!
-Me.FUKURO3.HyperLink = Nothing
-Me.FUKURO3.Left = 3.558662!
-Me.FUKURO3.Name = "FUKURO3"
-Me.FUKURO3.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
-Me.FUKURO3.Text = ""
-Me.FUKURO3.Top = 14.29685!
-Me.FUKURO3.Width = 0.2051181!
-'
 'Line78
 '
 Me.Line78.Height = 1.6!
@@ -6583,7 +6773,7 @@ Me.Line91.Y2 = 12.89685!
 '
 'Line92
 '
-Me.Line92.Height = 9.536743E-07!
+Me.Line92.Height = 0!
 Me.Line92.Left = 0!
 Me.Line92.LineWeight = 1!
 Me.Line92.Name = "Line92"
@@ -6652,7 +6842,7 @@ Me.Line96.Y2 = 13.89685!
 '
 'Line101
 '
-Me.Line101.Height = 1.907349E-06!
+Me.Line101.Height = 0!
 Me.Line101.Left = 0!
 Me.Line101.LineWeight = 1!
 Me.Line101.Name = "Line101"
@@ -6662,90 +6852,6 @@ Me.Line101.X1 = 0!
 Me.Line101.X2 = 7.151969!
 Me.Line101.Y1 = 17.89685!
 Me.Line101.Y2 = 17.89685!
-'
-'Line112
-'
-Me.Line112.Height = 0!
-Me.Line112.Left = 3.787796!
-Me.Line112.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line112.LineWeight = 1!
-Me.Line112.Name = "Line112"
-Me.Line112.Top = 12.09685!
-Me.Line112.Width = 1.586221!
-Me.Line112.X1 = 3.787796!
-Me.Line112.X2 = 5.374017!
-Me.Line112.Y1 = 12.09685!
-Me.Line112.Y2 = 12.09685!
-'
-'Line113
-'
-Me.Line113.Height = 0!
-Me.Line113.Left = 3.787796!
-Me.Line113.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line113.LineWeight = 1!
-Me.Line113.Name = "Line113"
-Me.Line113.Top = 12.29685!
-Me.Line113.Width = 1.586221!
-Me.Line113.X1 = 3.787796!
-Me.Line113.X2 = 5.374017!
-Me.Line113.Y1 = 12.29685!
-Me.Line113.Y2 = 12.29685!
-'
-'Line114
-'
-Me.Line114.Height = 0!
-Me.Line114.Left = 3.787796!
-Me.Line114.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line114.LineWeight = 1!
-Me.Line114.Name = "Line114"
-Me.Line114.Top = 12.49685!
-Me.Line114.Width = 1.586221!
-Me.Line114.X1 = 3.787796!
-Me.Line114.X2 = 5.374017!
-Me.Line114.Y1 = 12.49685!
-Me.Line114.Y2 = 12.49685!
-'
-'Line115
-'
-Me.Line115.Height = 0!
-Me.Line115.Left = 3.787796!
-Me.Line115.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line115.LineWeight = 1!
-Me.Line115.Name = "Line115"
-Me.Line115.Top = 12.69685!
-Me.Line115.Width = 1.586221!
-Me.Line115.X1 = 3.787796!
-Me.Line115.X2 = 5.374017!
-Me.Line115.Y1 = 12.69685!
-Me.Line115.Y2 = 12.69685!
-'
-'Line116
-'
-Me.Line116.Height = 0!
-Me.Line116.Left = 3.787796!
-Me.Line116.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line116.LineWeight = 1!
-Me.Line116.Name = "Line116"
-Me.Line116.Top = 12.89685!
-Me.Line116.Width = 1.586221!
-Me.Line116.X1 = 3.787796!
-Me.Line116.X2 = 5.374017!
-Me.Line116.Y1 = 12.89685!
-Me.Line116.Y2 = 12.89685!
-'
-'Line117
-'
-Me.Line117.Height = 0!
-Me.Line117.Left = 3.787796!
-Me.Line117.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line117.LineWeight = 1!
-Me.Line117.Name = "Line117"
-Me.Line117.Top = 13.09685!
-Me.Line117.Width = 1.586221!
-Me.Line117.X1 = 3.787796!
-Me.Line117.X2 = 5.374017!
-Me.Line117.Y1 = 13.09685!
-Me.Line117.Y2 = 13.09685!
 '
 'Line118
 '
@@ -6803,79 +6909,9 @@ Me.Line121.X2 = 7.161418!
 Me.Line121.Y1 = 13.89685!
 Me.Line121.Y2 = 13.89685!
 '
-'Line123
-'
-Me.Line123.Height = 9.536743E-07!
-Me.Line123.Left = 3.787796!
-Me.Line123.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line123.LineWeight = 1!
-Me.Line123.Name = "Line123"
-Me.Line123.Top = 14.49685!
-Me.Line123.Width = 3.364173!
-Me.Line123.X1 = 3.787796!
-Me.Line123.X2 = 7.151969!
-Me.Line123.Y1 = 14.49685!
-Me.Line123.Y2 = 14.49685!
-'
-'Line124
-'
-Me.Line124.Height = 1.907349E-06!
-Me.Line124.Left = 3.787796!
-Me.Line124.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line124.LineWeight = 1!
-Me.Line124.Name = "Line124"
-Me.Line124.Top = 14.69685!
-Me.Line124.Width = 3.364173!
-Me.Line124.X1 = 3.787796!
-Me.Line124.X2 = 7.151969!
-Me.Line124.Y1 = 14.69685!
-Me.Line124.Y2 = 14.69685!
-'
-'Line125
-'
-Me.Line125.Height = 1.907349E-06!
-Me.Line125.Left = 3.787796!
-Me.Line125.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line125.LineWeight = 1!
-Me.Line125.Name = "Line125"
-Me.Line125.Top = 14.89685!
-Me.Line125.Width = 3.364173!
-Me.Line125.X1 = 3.787796!
-Me.Line125.X2 = 7.151969!
-Me.Line125.Y1 = 14.89685!
-Me.Line125.Y2 = 14.89685!
-'
-'Line126
-'
-Me.Line126.Height = 9.536743E-07!
-Me.Line126.Left = 3.787796!
-Me.Line126.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line126.LineWeight = 1!
-Me.Line126.Name = "Line126"
-Me.Line126.Top = 15.09685!
-Me.Line126.Width = 3.364173!
-Me.Line126.X1 = 3.787796!
-Me.Line126.X2 = 7.151969!
-Me.Line126.Y1 = 15.09685!
-Me.Line126.Y2 = 15.09685!
-'
-'Line127
-'
-Me.Line127.Height = 0!
-Me.Line127.Left = 3.76378!
-Me.Line127.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line127.LineWeight = 1!
-Me.Line127.Name = "Line127"
-Me.Line127.Top = 15.29685!
-Me.Line127.Width = 3.397638!
-Me.Line127.X1 = 3.76378!
-Me.Line127.X2 = 7.161418!
-Me.Line127.Y1 = 15.29685!
-Me.Line127.Y2 = 15.29685!
-'
 'Line152
 '
-Me.Line152.Height = 9.536743E-07!
+Me.Line152.Height = 0!
 Me.Line152.Left = 0!
 Me.Line152.LineWeight = 1!
 Me.Line152.Name = "Line152"
@@ -7271,12 +7307,12 @@ Me.Line196.Y2 = 11.09685!
 '
 'Line198
 '
-Me.Line198.Height = 7.000003!
+Me.Line198.Height = 7.000001!
 Me.Line198.Left = 4.507481!
 Me.Line198.LineWeight = 1!
 Me.Line198.Name = "Line198"
 Me.Line198.Top = 10.89685!
-Me.Line198.Width = 4.768372E-07!
+Me.Line198.Width = 0!
 Me.Line198.X1 = 4.507481!
 Me.Line198.X2 = 4.507481!
 Me.Line198.Y1 = 10.89685!
@@ -7324,7 +7360,7 @@ Me.Line79.Y2 = 17.89685!
 '
 'Line201
 '
-Me.Line201.Height = 6.999999!
+Me.Line201.Height = 7.000001!
 Me.Line201.Left = 7.151969!
 Me.Line201.LineWeight = 1!
 Me.Line201.Name = "Line201"
@@ -7363,7 +7399,7 @@ Me.Line203.Y2 = 11.89685!
 '
 'Line70
 '
-Me.Line70.Height = 0.3999987!
+Me.Line70.Height = 0.4000006!
 Me.Line70.Left = 1.892126!
 Me.Line70.LineWeight = 1!
 Me.Line70.Name = "Line70"
@@ -7484,19 +7520,6 @@ Me.Line103.X2 = 3.558662!
 Me.Line103.Y1 = 15.29685!
 Me.Line103.Y2 = 15.29685!
 '
-'Line104
-'
-Me.Line104.Height = 1.907349E-06!
-Me.Line104.Left = 0!
-Me.Line104.LineWeight = 1!
-Me.Line104.Name = "Line104"
-Me.Line104.Top = 15.49685!
-Me.Line104.Width = 7.151969!
-Me.Line104.X1 = 0!
-Me.Line104.X2 = 7.151969!
-Me.Line104.Y1 = 15.49685!
-Me.Line104.Y2 = 15.49685!
-'
 'Line77
 '
 Me.Line77.Height = 1!
@@ -7509,19 +7532,6 @@ Me.Line77.X1 = 1.892126!
 Me.Line77.X2 = 1.892126!
 Me.Line77.Y1 = 14.89685!
 Me.Line77.Y2 = 15.89685!
-'
-'Line83
-'
-Me.Line83.Height = 1.907349E-06!
-Me.Line83.Left = 0!
-Me.Line83.LineWeight = 1!
-Me.Line83.Name = "Line83"
-Me.Line83.Top = 16.69685!
-Me.Line83.Width = 7.161418!
-Me.Line83.X1 = 0!
-Me.Line83.X2 = 7.161418!
-Me.Line83.Y1 = 16.69685!
-Me.Line83.Y2 = 16.69685!
 '
 'Line98
 '
@@ -7704,12 +7714,12 @@ Me.Line136.Y2 = 17.89686!
 '
 'Line137
 '
-Me.Line137.Height = 0.3999987!
+Me.Line137.Height = 0.4000006!
 Me.Line137.Left = 2.589764!
 Me.Line137.LineWeight = 1!
 Me.Line137.Name = "Line137"
 Me.Line137.Top = 11.89685!
-Me.Line137.Width = 2.384186E-07!
+Me.Line137.Width = 0!
 Me.Line137.X1 = 2.589764!
 Me.Line137.X2 = 2.589764!
 Me.Line137.Y1 = 11.89685!
@@ -7780,24 +7790,6 @@ Me.Line153.X2 = 2.589764!
 Me.Line153.Y1 = 17.29685!
 Me.Line153.Y2 = 17.89685!
 '
-'FUKURO1
-'
-Me.FUKURO1.Height = 1.2!
-Me.FUKURO1.HyperLink = Nothing
-Me.FUKURO1.Left = 3.558662!
-Me.FUKURO1.Name = "FUKURO1"
-Me.FUKURO1.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
-Me.FUKURO1.Text = ""
-Me.FUKURO1.Top = 11.89685!
-Me.FUKURO1.Width = 0.2291338!
-'
-'PageFooter
-'
-Me.PageFooter.Height = 0!
-Me.PageFooter.Name = "PageFooter"
-'
 'Line84
 '
 Me.Line84.Height = 0!
@@ -7819,11 +7811,106 @@ Me.Line69.Left = 3.558661!
 Me.Line69.LineWeight = 1!
 Me.Line69.Name = "Line69"
 Me.Line69.Top = 10.89685!
-Me.Line69.Width = 4.768372E-07!
+Me.Line69.Width = 9.536743E-07!
 Me.Line69.X1 = 3.558661!
 Me.Line69.X2 = 3.558662!
 Me.Line69.Y1 = 10.89685!
 Me.Line69.Y2 = 17.89685!
+'
+'Label180
+'
+Me.Label180.Height = 0.1999999!
+Me.Label180.HyperLink = Nothing
+Me.Label180.Left = 3.76378!
+Me.Label180.Name = "Label180"
+Me.Label180.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: m"& _ 
+    "iddle; white-space: nowrap"
+Me.Label180.Text = "希望する"
+Me.Label180.Top = 15.49685!
+Me.Label180.Width = 0.7437003!
+'
+'Line123
+'
+Me.Line123.Height = 0!
+Me.Line123.Left = 3.787796!
+Me.Line123.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line123.LineWeight = 1!
+Me.Line123.Name = "Line123"
+Me.Line123.Top = 14.49685!
+Me.Line123.Width = 3.364173!
+Me.Line123.X1 = 3.787796!
+Me.Line123.X2 = 7.151969!
+Me.Line123.Y1 = 14.49685!
+Me.Line123.Y2 = 14.49685!
+'
+'Line124
+'
+Me.Line124.Height = 0!
+Me.Line124.Left = 3.787796!
+Me.Line124.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line124.LineWeight = 1!
+Me.Line124.Name = "Line124"
+Me.Line124.Top = 14.69685!
+Me.Line124.Width = 3.364173!
+Me.Line124.X1 = 3.787796!
+Me.Line124.X2 = 7.151969!
+Me.Line124.Y1 = 14.69685!
+Me.Line124.Y2 = 14.69685!
+'
+'Line125
+'
+Me.Line125.Height = 0!
+Me.Line125.Left = 3.787796!
+Me.Line125.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line125.LineWeight = 1!
+Me.Line125.Name = "Line125"
+Me.Line125.Top = 14.89685!
+Me.Line125.Width = 3.364173!
+Me.Line125.X1 = 3.787796!
+Me.Line125.X2 = 7.151969!
+Me.Line125.Y1 = 14.89685!
+Me.Line125.Y2 = 14.89685!
+'
+'Line126
+'
+Me.Line126.Height = 0!
+Me.Line126.Left = 3.787796!
+Me.Line126.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line126.LineWeight = 1!
+Me.Line126.Name = "Line126"
+Me.Line126.Top = 15.09685!
+Me.Line126.Width = 3.364173!
+Me.Line126.X1 = 3.787796!
+Me.Line126.X2 = 7.151969!
+Me.Line126.Y1 = 15.09685!
+Me.Line126.Y2 = 15.09685!
+'
+'Line127
+'
+Me.Line127.Height = 0!
+Me.Line127.Left = 3.76378!
+Me.Line127.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line127.LineWeight = 1!
+Me.Line127.Name = "Line127"
+Me.Line127.Top = 15.29685!
+Me.Line127.Width = 3.397638!
+Me.Line127.X1 = 3.76378!
+Me.Line127.X2 = 7.161418!
+Me.Line127.Y1 = 15.29685!
+Me.Line127.Y2 = 15.29685!
+'
+'Line73
+'
+Me.Line73.Height = 6.000001!
+Me.Line73.Left = 3.76378!
+Me.Line73.LineWeight = 1!
+Me.Line73.Name = "Line73"
+Me.Line73.Top = 11.89685!
+Me.Line73.Width = 0!
+Me.Line73.X1 = 3.76378!
+Me.Line73.X2 = 3.76378!
+Me.Line73.Y1 = 11.89685!
+Me.Line73.Y2 = 17.89685!
 '
 'Line122
 '
@@ -7909,126 +7996,31 @@ Me.Line156.X2 = 7.161417!
 Me.Line156.Y1 = 12.89685!
 Me.Line156.Y2 = 12.89685!
 '
-'REQ_F_TEHAI_5
+'Line83
 '
-Me.REQ_F_TEHAI_5.DataField = "REQ_F_TEHAI_5"
-Me.REQ_F_TEHAI_5.Height = 0.2!
-Me.REQ_F_TEHAI_5.Left = 4.507481!
-Me.REQ_F_TEHAI_5.Name = "REQ_F_TEHAI_5"
-Me.REQ_F_TEHAI_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TEHAI_5.Text = Nothing
-Me.REQ_F_TEHAI_5.Top = 16.69685!
-Me.REQ_F_TEHAI_5.Width = 0.9779529!
+Me.Line83.Height = 0!
+Me.Line83.Left = 0!
+Me.Line83.LineWeight = 1!
+Me.Line83.Name = "Line83"
+Me.Line83.Top = 16.69685!
+Me.Line83.Width = 7.161418!
+Me.Line83.X1 = 0!
+Me.Line83.X2 = 7.161418!
+Me.Line83.Y1 = 16.69685!
+Me.Line83.Y2 = 16.69685!
 '
-'REQ_F_IRAINAIYOU_5
+'Line104
 '
-Me.REQ_F_IRAINAIYOU_5.DataField = "REQ_F_IRAINAIYOU_5"
-Me.REQ_F_IRAINAIYOU_5.Height = 0.2!
-Me.REQ_F_IRAINAIYOU_5.Left = 6.186221!
-Me.REQ_F_IRAINAIYOU_5.Name = "REQ_F_IRAINAIYOU_5"
-Me.REQ_F_IRAINAIYOU_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_IRAINAIYOU_5.Text = Nothing
-Me.REQ_F_IRAINAIYOU_5.Top = 16.69685!
-Me.REQ_F_IRAINAIYOU_5.Width = 0.9657478!
-'
-'REQ_F_KOTSUKIKAN_5
-'
-Me.REQ_F_KOTSUKIKAN_5.DataField = "REQ_F_KOTSUKIKAN_5"
-Me.REQ_F_KOTSUKIKAN_5.Height = 0.2!
-Me.REQ_F_KOTSUKIKAN_5.Left = 6.172835!
-Me.REQ_F_KOTSUKIKAN_5.Name = "REQ_F_KOTSUKIKAN_5"
-Me.REQ_F_KOTSUKIKAN_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_KOTSUKIKAN_5.Text = Nothing
-Me.REQ_F_KOTSUKIKAN_5.Top = 16.89685!
-Me.REQ_F_KOTSUKIKAN_5.Width = 0.979134!
-'
-'REQ_F_DATE_5
-'
-Me.REQ_F_DATE_5.DataField = "REQ_F_DATE_5"
-Me.REQ_F_DATE_5.Height = 0.2!
-Me.REQ_F_DATE_5.Left = 4.507481!
-Me.REQ_F_DATE_5.Name = "REQ_F_DATE_5"
-Me.REQ_F_DATE_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_DATE_5.Text = Nothing
-Me.REQ_F_DATE_5.Top = 16.89685!
-Me.REQ_F_DATE_5.Width = 0.9779529!
-'
-'REQ_F_AIRPORT1_5
-'
-Me.REQ_F_AIRPORT1_5.DataField = "REQ_F_AIRPORT1_5"
-Me.REQ_F_AIRPORT1_5.Height = 0.2!
-Me.REQ_F_AIRPORT1_5.Left = 4.507479!
-Me.REQ_F_AIRPORT1_5.Name = "REQ_F_AIRPORT1_5"
-Me.REQ_F_AIRPORT1_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_AIRPORT1_5.Text = Nothing
-Me.REQ_F_AIRPORT1_5.Top = 17.29685!
-Me.REQ_F_AIRPORT1_5.Width = 0.9779529!
-'
-'REQ_F_AIRPORT2_5
-'
-Me.REQ_F_AIRPORT2_5.DataField = "REQ_F_AIRPORT2_5"
-Me.REQ_F_AIRPORT2_5.Height = 0.2!
-Me.REQ_F_AIRPORT2_5.Left = 6.172833!
-Me.REQ_F_AIRPORT2_5.Name = "REQ_F_AIRPORT2_5"
-Me.REQ_F_AIRPORT2_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_AIRPORT2_5.Text = Nothing
-Me.REQ_F_AIRPORT2_5.Top = 17.29685!
-Me.REQ_F_AIRPORT2_5.Width = 0.979134!
-'
-'REQ_F_TIME1_5
-'
-Me.REQ_F_TIME1_5.DataField = "REQ_F_TIME1_5"
-Me.REQ_F_TIME1_5.Height = 0.2!
-Me.REQ_F_TIME1_5.Left = 4.507481!
-Me.REQ_F_TIME1_5.Name = "REQ_F_TIME1_5"
-Me.REQ_F_TIME1_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TIME1_5.Text = Nothing
-Me.REQ_F_TIME1_5.Top = 17.49685!
-Me.REQ_F_TIME1_5.Width = 0.9779529!
-'
-'REQ_F_TIME2_5
-'
-Me.REQ_F_TIME2_5.DataField = "REQ_F_TIME2_5"
-Me.REQ_F_TIME2_5.Height = 0.2!
-Me.REQ_F_TIME2_5.Left = 6.172835!
-Me.REQ_F_TIME2_5.Name = "REQ_F_TIME2_5"
-Me.REQ_F_TIME2_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TIME2_5.Text = Nothing
-Me.REQ_F_TIME2_5.Top = 17.49685!
-Me.REQ_F_TIME2_5.Width = 0.979134!
-'
-'REQ_F_BIN_5
-'
-Me.REQ_F_BIN_5.DataField = "REQ_F_BIN_5"
-Me.REQ_F_BIN_5.Height = 0.2!
-Me.REQ_F_BIN_5.Left = 4.507481!
-Me.REQ_F_BIN_5.Name = "REQ_F_BIN_5"
-Me.REQ_F_BIN_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_BIN_5.Text = Nothing
-Me.REQ_F_BIN_5.Top = 17.09685!
-Me.REQ_F_BIN_5.Width = 2.644488!
-'
-'REQ_F_SEAT_5
-'
-Me.REQ_F_SEAT_5.DataField = "REQ_F_SEAT_5"
-Me.REQ_F_SEAT_5.Height = 0.2!
-Me.REQ_F_SEAT_5.Left = 4.507481!
-Me.REQ_F_SEAT_5.Name = "REQ_F_SEAT_5"
-Me.REQ_F_SEAT_5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_SEAT_5.Text = Nothing
-Me.REQ_F_SEAT_5.Top = 17.69685!
-Me.REQ_F_SEAT_5.Width = 0.9779529!
-'
-'REQ_F_SEAT_KIBOU5
-'
-Me.REQ_F_SEAT_KIBOU5.DataField = "REQ_F_SEAT_KIBOU5"
-Me.REQ_F_SEAT_KIBOU5.Height = 0.2!
-Me.REQ_F_SEAT_KIBOU5.Left = 6.172835!
-Me.REQ_F_SEAT_KIBOU5.Name = "REQ_F_SEAT_KIBOU5"
-Me.REQ_F_SEAT_KIBOU5.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_SEAT_KIBOU5.Text = Nothing
-Me.REQ_F_SEAT_KIBOU5.Top = 17.69685!
-Me.REQ_F_SEAT_KIBOU5.Width = 0.979134!
+Me.Line104.Height = 0!
+Me.Line104.Left = 0!
+Me.Line104.LineWeight = 1!
+Me.Line104.Name = "Line104"
+Me.Line104.Top = 15.49685!
+Me.Line104.Width = 7.151969!
+Me.Line104.X1 = 0!
+Me.Line104.X2 = 7.151969!
+Me.Line104.Y1 = 15.49685!
+Me.Line104.Y2 = 15.49685!
 '
 'Line72
 '
@@ -8102,7 +8094,7 @@ Me.Line131.Y2 = 16.49685!
 '
 'Line54
 '
-Me.Line54.Height = 0.3999939!
+Me.Line54.Height = 0.4000006!
 Me.Line54.Left = 5.485434!
 Me.Line54.LineWeight = 1!
 Me.Line54.Name = "Line54"
@@ -8115,7 +8107,7 @@ Me.Line54.Y2 = 12.29685!
 '
 'Line142
 '
-Me.Line142.Height = 0.3999939!
+Me.Line142.Height = 0.4000006!
 Me.Line142.Left = 6.186221!
 Me.Line142.LineWeight = 1!
 Me.Line142.Name = "Line142"
@@ -8326,6 +8318,11 @@ Me.Line162.X2 = 7.161417!
 Me.Line162.Y1 = 17.69686!
 Me.Line162.Y2 = 17.69686!
 '
+'PageFooter
+'
+Me.PageFooter.Height = 0!
+Me.PageFooter.Name = "PageFooter"
+'
 'DrReport
 '
 Me.MasterReport = false
@@ -8372,6 +8369,31 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FUKURO4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_DATE_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TEHAI_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label175,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label174,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label173,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label172,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label160,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label159,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label158,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label157,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label156,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label155,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label154,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_AIRPORT1_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_AIRPORT2_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TIME1_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TIME2_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_BIN_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_SEAT_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TAXI_TESURYO,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label93,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label87,System.ComponentModel.ISupportInitialize).EndInit
@@ -8513,6 +8535,17 @@ CType(Me.REQ_HOTEL_SMOKING,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_HOTEL_NOTE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label94,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label95,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_SEAT_KIBOU5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_SEAT_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_BIN_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TIME2_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TIME1_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_AIRPORT2_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_AIRPORT1_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_DATE_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_KOTSUKIKAN_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_IRAINAIYOU_5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TEHAI_5,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_KIBOU4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_BIN_4,System.ComponentModel.ISupportInitialize).EndInit
@@ -8612,13 +8645,6 @@ CType(Me.REQ_O_TIME2_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_TIME1_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_AIRPORT2_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_AIRPORT1_4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_SEAT_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_BIN_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TIME2_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TIME1_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_AIRPORT2_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_AIRPORT1_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_SEAT_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_BIN_1,System.ComponentModel.ISupportInitialize).EndInit
@@ -8633,7 +8659,6 @@ CType(Me.Label143,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label144,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label145,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label146,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FUKURO4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label147,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label148,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label149,System.ComponentModel.ISupportInitialize).EndInit
@@ -8642,13 +8667,6 @@ CType(Me.Label151,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label152,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label153,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.OURO4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label154,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label155,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label156,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label157,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label158,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label159,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label160,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label161,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label162,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label163,System.ComponentModel.ISupportInitialize).EndInit
@@ -8661,26 +8679,17 @@ CType(Me.Label168,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label169,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label170,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label171,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label172,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label173,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label174,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label175,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label176,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label177,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label178,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label179,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label180,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label181,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label182,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label183,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_TEHAI_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TEHAI_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_DATE_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_DATE_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_TEHAI_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_IRAINAIYOU_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_KOTSUKIKAN_4,System.ComponentModel.ISupportInitialize).EndInit
@@ -8718,7 +8727,6 @@ CType(Me.Label191,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label192,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label193,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label194,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label195,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label196,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label197,System.ComponentModel.ISupportInitialize).EndInit
@@ -8755,18 +8763,7 @@ CType(Me.DR_NAME2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_KANA2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_AGE2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_SEX2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TEHAI_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_IRAINAIYOU_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_KOTSUKIKAN_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_DATE_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_AIRPORT1_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_AIRPORT2_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TIME1_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TIME2_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_BIN_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_SEAT_5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_SEAT_KIBOU5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label180,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me,System.ComponentModel.ISupportInitialize).EndInit
 
 End Sub
