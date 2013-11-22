@@ -99,7 +99,7 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).REQ_STATUS_TEHAI)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_STATUS_TEHAI)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TIME_STAMP_BYL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TIME_STAMP_BYL)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHONIN_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHONIN_DATE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAISAI_DATE_NOTE)))
