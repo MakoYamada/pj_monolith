@@ -508,7 +508,7 @@ Public Class SQL
             ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-                strSQL &= " FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             End If
 
             strSQL &= " ORDER BY"
