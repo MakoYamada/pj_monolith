@@ -4230,12 +4230,18 @@ Public Class AppModule
     End Function
 
     'è≥îFãÊï™
-    Public Shared Function GetName_SHOUNIN_KUBUN(ByVal SHOUNIN_KUBUN As String) As String
+    Public Shared Function GetName_SHOUNIN_KUBUN(ByVal SHOUNIN_KUBUN As String, Optional ByVal IsJoken As Boolean = False) As String
         Select Case SHOUNIN_KUBUN
             Case AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN
                 Return AppConst.SEISAN.SHOUNIN_KUBUN.Name.SHOUNIN
             Case AppConst.SEISAN.SHOUNIN_KUBUN.Code.HININ
                 Return AppConst.SEISAN.SHOUNIN_KUBUN.Name.HININ
+            Case AppConst.SEISAN.SHOUNIN_KUBUN.Code.Mi
+                If IsJoken Then
+                    Return AppConst.SEISAN.SHOUNIN_KUBUN.Name.Mi
+                Else
+                    Return String.Empty
+                End If
             Case Else
                 Return String.Empty
         End Select
