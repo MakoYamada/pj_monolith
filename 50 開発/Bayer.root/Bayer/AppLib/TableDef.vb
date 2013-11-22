@@ -2670,7 +2670,7 @@
             Public Const SYORI_NAME As String = "処理名"
             Public Const STATUS As String = "処理結果"
             Public Const CODE As String = "コード区分"
-            Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
+            Public Const SEIKYU_NO_TOPTOUR As String = "精算番号"
             Public Const SEIKYU_NO As String = "請求番号"
             Public Const SEIKYU_YM As String = "請求年月"
             Public Const SEISAN_YM As String = "トップツアー精算年月"
