@@ -84,6 +84,7 @@ Public Class SQL
             If NewData = True Then
                 '新着
                 strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
+                strSQL &= " AND CNT > 1"
             End If
 
             If Trim(Joken.KUBUN) = "A" Then
