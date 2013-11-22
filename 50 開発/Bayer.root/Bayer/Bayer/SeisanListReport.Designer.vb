@@ -89,7 +89,6 @@ Partial Public Class SeisanListReport
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Line3 = New DataDynamics.ActiveReports.Line
         Me.Line17 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Line16 = New DataDynamics.ActiveReports.Line
         Me.Line18 = New DataDynamics.ActiveReports.Line
         Me.Line19 = New DataDynamics.ActiveReports.Line
@@ -101,6 +100,7 @@ Partial Public Class SeisanListReport
         Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Line26 = New DataDynamics.ActiveReports.Line
         Me.Line27 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -492,7 +492,7 @@ Partial Public Class SeisanListReport
         Me.JokenSHOUNIN_KUBUN.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: left"
         Me.JokenSHOUNIN_KUBUN.Text = ""
         Me.JokenSHOUNIN_KUBUN.Top = 1.56378!
-        Me.JokenSHOUNIN_KUBUN.Width = 0.6645669!
+        Me.JokenSHOUNIN_KUBUN.Width = 1.574803!
         '
         'Label15
         '
@@ -656,7 +656,7 @@ Partial Public Class SeisanListReport
         '
         'Line5
         '
-        Me.Line5.Height = 0.2511818!
+        Me.Line5.Height = 0.2511821!
         Me.Line5.Left = 0.6822835!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
@@ -682,7 +682,7 @@ Partial Public Class SeisanListReport
         '
         'Line7
         '
-        Me.Line7.Height = 0.251182!
+        Me.Line7.Height = 0.2511821!
         Me.Line7.Left = 2.422047!
         Me.Line7.LineWeight = 1.0!
         Me.Line7.Name = "Line7"
@@ -695,7 +695,7 @@ Partial Public Class SeisanListReport
         '
         'Line8
         '
-        Me.Line8.Height = 0.251182!
+        Me.Line8.Height = 0.2511821!
         Me.Line8.Left = 3.475985!
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
@@ -734,7 +734,7 @@ Partial Public Class SeisanListReport
         '
         'Line11
         '
-        Me.Line11.Height = 0.251182!
+        Me.Line11.Height = 0.2511821!
         Me.Line11.Left = 8.349214!
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
@@ -773,7 +773,7 @@ Partial Public Class SeisanListReport
         '
         'Line14
         '
-        Me.Line14.Height = 0.251182!
+        Me.Line14.Height = 0.2511821!
         Me.Line14.Left = 10.75!
         Me.Line14.LineWeight = 1.0!
         Me.Line14.Name = "Line14"
@@ -991,11 +991,6 @@ Partial Public Class SeisanListReport
         Me.Line17.Y1 = 0.0!
         Me.Line17.Y2 = 0.2165354!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'Line16
         '
         Me.Line16.Height = 0.2165354!
@@ -1016,7 +1011,7 @@ Partial Public Class SeisanListReport
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
         Me.Line18.Top = 0.0!
-        Me.Line18.Width = 0.0000002384186!
+        Me.Line18.Width = 0.0!
         Me.Line18.X1 = 1.58189!
         Me.Line18.X2 = 1.58189!
         Me.Line18.Y1 = 0.0!
@@ -1029,7 +1024,7 @@ Partial Public Class SeisanListReport
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
         Me.Line19.Top = 0.0!
-        Me.Line19.Width = 0.0000002384186!
+        Me.Line19.Width = 0.000001192093!
         Me.Line19.X1 = 2.422047!
         Me.Line19.X2 = 2.422048!
         Me.Line19.Y1 = 0.0!
@@ -1042,7 +1037,7 @@ Partial Public Class SeisanListReport
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
         Me.Line20.Top = 0.0!
-        Me.Line20.Width = 0.0000002384186!
+        Me.Line20.Width = 0.0!
         Me.Line20.X1 = 3.475985!
         Me.Line20.X2 = 3.475985!
         Me.Line20.Y1 = 0.0!
@@ -1055,7 +1050,7 @@ Partial Public Class SeisanListReport
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
         Me.Line21.Top = 0.0!
-        Me.Line21.Width = 0.0000004768372!
+        Me.Line21.Width = 0.0000009536743!
         Me.Line21.X1 = 5.093701!
         Me.Line21.X2 = 5.093702!
         Me.Line21.Y1 = 0.0!
@@ -1068,7 +1063,7 @@ Partial Public Class SeisanListReport
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
         Me.Line22.Top = 0.0!
-        Me.Line22.Width = 0.0000004768372!
+        Me.Line22.Width = 0.0!
         Me.Line22.X1 = 6.159056!
         Me.Line22.X2 = 6.159056!
         Me.Line22.Y1 = 0.0!
@@ -1138,6 +1133,11 @@ Partial Public Class SeisanListReport
         Me.Line27.X2 = 11.41732!
         Me.Line27.Y1 = 0.0!
         Me.Line27.Y2 = 0.2165354!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'SeisanListReport
         '

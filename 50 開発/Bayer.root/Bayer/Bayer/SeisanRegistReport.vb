@@ -23,7 +23,7 @@ Public Class SeisanRegistReport
 
     Private Sub Detail_Format(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Detail.Format
 
-        Me.SEISAN_YM.Text = Mid(CmnModule.Format_DateJP(Me.SEISAN_YM.Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
+        Me.SEISAN_YM.Text = AppModule.GetName_SEISAN_YM(Me.SEISAN_YM.Text)
         Me.SHOUNIN_KUBUN.Text = AppModule.GetName_SHOUNIN_KUBUN(Me.SHOUNIN_KUBUN.Text)
         Me.SHOUNIN_DATE.Text = CmnModule.Format_Date(Me.SHOUNIN_DATE.Text, CmnModule.DateFormatType.YYYYMMDD)
 

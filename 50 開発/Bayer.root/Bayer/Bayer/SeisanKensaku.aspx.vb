@@ -255,6 +255,7 @@ Partial Public Class SeisanKensaku
         '入力チェック
         If Not Check() Then Exit Sub
 
+        Session.Item(SessionDef.SeisanKensaku_PageIndex) = 0
         '一覧 表示
         SetForm()
     End Sub

@@ -31,9 +31,11 @@ Partial Public Class SeisanRegist
             End If
         End If
 
+        Session.Remove(SessionDef.SeisanRegistReport_SQL)
+        Session.Remove(SessionDef.BackURL_Print)
+
         'マスターページ設定
         With Me.Master
-            .HideLoginUser = True
             .PageTitle = "精算金額入力"
         End With
 
@@ -170,11 +172,6 @@ Partial Public Class SeisanRegist
 
     Private Sub CalculateKingaku()
 
-        'test---
-        Dim strZeiRate As String = AppModule.GetZeiRate("20131112", MyBase.DbConnection)
-        Dim kaijohi_tf As String = AppModule.GetZeinukiGaku(Me.KAIJOHI_TF.Text.Trim, strZeiRate)
-        'test---
-
         Dim wTOTAL_TF1 As Long = 0
         Dim wTOTAL_TF2 As Long = 0
         Dim wTOTAL_T1 As Long = 0
@@ -234,6 +231,21 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsInput(Me.SEISAN_YM) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEISAN_YM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.SEISAN_YM, Me.SEISAN_YM.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ(TableDef.TBL_SEIKYU.Name.SEISAN_YM, Me.SEISAN_YM.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsValidDateYMD(Me.SEISAN_YM.Text & "01") Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
             Return False
         End If
 
@@ -538,6 +550,7 @@ Partial Public Class SeisanRegist
         If Not CheckCalcItem() Then Exit Sub
         CalculateKingaku()
         Me.DivMessage.Visible = False
+        SetFocus(Me.BtnCalc)
     End Sub
 
     '[登録]

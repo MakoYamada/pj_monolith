@@ -33,7 +33,7 @@ Public Class SeisanListReport
 
         Me.JokenSEIKYU_NO_TOPTOUR.Text = pJoken.SEIKYU_NO_TOPTOUR
         Me.JokenSEISAN_YM.Text = pJoken.SEISAN_YM
-        Me.JokenSHOUNIN_KUBUN.Text = pJoken.SHOUNIN_KUBUN
+        Me.JokenSHOUNIN_KUBUN.Text = AppModule.GetName_SHOUNIN_KUBUN(pJoken.SHOUNIN_KUBUN, True)
     End Sub
 
     Private Sub PageHeader_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.BeforePrint

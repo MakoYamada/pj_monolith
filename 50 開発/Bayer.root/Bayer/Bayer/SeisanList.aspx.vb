@@ -110,7 +110,7 @@ Partial Public Class SeisanList
             Me.JokenSEISAN_M.Text = Mid(Joken.SEISAN_YM, 5, 2)
         End If
 
-        If Joken.SHOUNIN_KUBUN <> "" Then Me.JokenSHOUNIN_KUBUN.SelectedItem.Value = Joken.SHOUNIN_KUBUN
+        If Joken.SHOUNIN_KUBUN <> "" Then Me.JokenSHOUNIN_KUBUN.SelectedValue = Joken.SHOUNIN_KUBUN
 
         If Joken.FROM_DATE <> "" AndAlso Joken.FROM_DATE <> "指定なし" Then
             Me.JokenFROM_DATE_YYYY.Text = Joken.FROM_DATE.Substring(0, 4)
@@ -122,6 +122,7 @@ Partial Public Class SeisanList
             Me.JokenTO_DATE_MM.Text = Joken.TO_DATE.Substring(4, 2)
             Me.JokenTO_DATE_DD.Text = Joken.TO_DATE.Substring(6, 2)
         End If
+        If Joken.KIKAKU_TANTO_ROMA <> "" AndAlso Joken.KIKAKU_TANTO_ROMA <> "指定なし" Then Me.JokenKIKAKU_TANTO_ROMA.Text = Joken.KIKAKU_TANTO_ROMA
         If Joken.BU <> "" AndAlso Joken.BU <> "指定なし" Then Me.JokenBU.SelectedValue = Joken.BU
         If Joken.AREA <> "" AndAlso Joken.AREA <> "指定なし" Then Me.JokenKIKAKU_TANTO_AREA.SelectedValue = Joken.AREA
     End Sub
@@ -206,7 +207,7 @@ Partial Public Class SeisanList
     Private Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
-            e.Row.Cells(CellIndex.SEISAN_YM).Text = Mid(CmnModule.Format_DateJP(e.Row.Cells(CellIndex.SEISAN_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD), 1, 8)
+            e.Row.Cells(CellIndex.SEISAN_YM).Text = AppModule.GetName_SEISAN_YM(e.Row.Cells(CellIndex.SEISAN_YM).Text)
             e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
             e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
@@ -256,6 +257,7 @@ Partial Public Class SeisanList
         '入力チェック
         If Not Check() Then Exit Sub
 
+        Session.Item(SessionDef.PageIndex) = 0
         '画面項目表示
         SetForm()
     End Sub
@@ -336,6 +338,7 @@ Partial Public Class SeisanList
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Session.Remove(SessionDef.SeisanListPrint_SQL)
         Session.Remove(SessionDef.BackURL_Print)
+        Joken = Nothing
 
         Response.Redirect(URL.SeisanKensaku)
     End Sub
