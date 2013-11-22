@@ -362,7 +362,7 @@ Partial Public Class MstUser
 
             'ログイン中の担当者
             If MS_USER(SEQ).LOGIN_ID = Session.Item(SessionDef.LoginID) Then
-                Session.Item(SessionDef.LoginUser) = MS_USER(SEQ)
+                Session.Item(SessionDef.MS_USER) = MS_USER(SEQ)
             End If
 
             Response.Redirect(URL.MstUser & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)

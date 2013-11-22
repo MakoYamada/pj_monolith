@@ -93,7 +93,7 @@ Partial Public Class Base
         Else
             Dim MS_USER As TableDef.MS_USER.DataStruct
             Try
-                MS_USER = Session.Item(SessionDef.LoginUser)
+                MS_USER = Session.Item(SessionDef.MS_USER)
             Catch ex As Exception
                 Response.Redirect(URL.TimeOut)
             End Try

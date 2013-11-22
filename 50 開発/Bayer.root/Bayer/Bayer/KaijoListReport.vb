@@ -5,10 +5,10 @@ Imports CommonLib
 
 Public Class KaijoListReport
 
-    Private pLoginUser As TableDef.MS_USER.DataStruct
-    Public WriteOnly Property LoginUser() As TableDef.MS_USER.DataStruct
+    Private pMS_USER As TableDef.MS_USER.DataStruct
+    Public WriteOnly Property MS_USER() As TableDef.MS_USER.DataStruct
         Set(ByVal value As TableDef.MS_USER.DataStruct)
-            pLoginUser = value
+            pMS_USER = value
         End Set
     End Property
 
@@ -21,7 +21,7 @@ Public Class KaijoListReport
 
     Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
         Me.PrintDate.Text = CmnModule.Format_Date(Now(), CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-        Me.LOGIN_USER_NAME.Text = pLoginUser.USER_NAME
+        Me.LOGIN_USER_NAME.Text = pMS_USER.USER_NAME
         '条件
         Me.JokenKIKAKU_TANTO_ROMA.Text = pJoken.KIKAKU_TANTO_ROMA
         Me.JokenTEHAI_TANTO_ROMA.Text = pJoken.TEHAI_TANTO_ROMA

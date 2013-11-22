@@ -41,7 +41,7 @@ Partial Public Class Menu1
     'セッションを変数に格納
     Private Function SetSession() As Boolean
         Try
-            MS_USER = Session.Item(SessionDef.LoginUser)
+            MS_USER = Session.Item(SessionDef.MS_USER)
             If IsNothing(MS_USER) Then Return False
         Catch ex As Exception
             Return False

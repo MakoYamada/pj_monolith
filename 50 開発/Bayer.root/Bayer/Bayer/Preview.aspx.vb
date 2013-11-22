@@ -167,7 +167,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -218,7 +218,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        rpt1.MS_USER = Session.Item(SessionDef.MS_USER)
  
         'レポートを作成
         rpt1.Run()
@@ -273,7 +273,7 @@ Partial Public Class Preview
              DataDynamics.ActiveReports.TextBox).Text = Joken.BU
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -338,7 +338,7 @@ Partial Public Class Preview
              DataDynamics.ActiveReports.TextBox).Text = Joken.BU
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_AREA"),  _
              DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -412,7 +412,7 @@ Partial Public Class Preview
             DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NO
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NAME"),  _
             DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NAME
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -476,7 +476,7 @@ Partial Public Class Preview
             DataDynamics.ActiveReports.TextBox).Text = Joken.KIKAKU_TANTO_ROMA
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TEHAI_TANTO_ROMA"),  _
             DataDynamics.ActiveReports.TextBox).Text = Joken.TEHAI_TANTO_ROMA
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -566,7 +566,7 @@ Partial Public Class Preview
                 DataDynamics.ActiveReports.TextBox).Text = Joken.UPDATE_DATE
         End If
 
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -616,7 +616,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         '出力担当者情報を渡す
-        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.LoginUser)
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
@@ -666,7 +666,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        rpt1.MS_USER = Session.Item(SessionDef.MS_USER)
         '抽出条件
         rpt1.Joken = Session.Item(SessionDef.Joken)
 
@@ -718,7 +718,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        rpt1.MS_USER = Session.Item(SessionDef.MS_USER)
         '抽出条件
         rpt1.Joken = Session.Item(SessionDef.Joken)
 
@@ -771,7 +771,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        rpt1.LoginUser = Session.Item(SessionDef.LoginUser)
+        rpt1.MS_USER = Session.Item(SessionDef.MS_USER)
         '抽出条件
         rpt1.Joken = Session.Item(SessionDef.KaijoRireki_Joken)
 
@@ -824,7 +824,7 @@ Partial Public Class Preview
         rpt.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        rpt.LoginUser = Session.Item(SessionDef.LoginUser)
+        rpt.LoginUser = Session.Item(SessionDef.MS_USER)
         '抽出条件
         rpt.Joken = Session.Item(SessionDef.Joken)
 
@@ -877,7 +877,7 @@ Partial Public Class Preview
         rpt.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'ログイン者名
-        rpt.LoginUser = Session.Item(SessionDef.LoginUser)
+        rpt.LoginUser = Session.Item(SessionDef.MS_USER)
 
         'レポートを作成
         rpt.Run()

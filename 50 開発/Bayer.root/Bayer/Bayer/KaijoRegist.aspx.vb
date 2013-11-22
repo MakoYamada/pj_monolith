@@ -537,6 +537,10 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
+        If Not CmnCheck.IsValidUrl(Me.ANS_MITSUMORI_URL) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_URL), Me)
+            Return False
+        End If
         If Not CmnCheck.IsLengthLE(Me.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_MITSUMORI_URL, Me.ANS_MITSUMORI_URL.MaxLength), Me)
             Return False

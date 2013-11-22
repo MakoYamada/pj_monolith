@@ -136,7 +136,7 @@
 							&nbsp;
 						</td>
 						<td align="left" class="TdItem" colspan="4">
-							<asp:TextBox ID="SHISETSU_URL" runat="server" Width="400px" MaxLength="100"></asp:TextBox>
+							<asp:TextBox ID="SHISETSU_URL" runat="server" Width="500px" MaxLength="100"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>

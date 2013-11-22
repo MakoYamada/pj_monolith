@@ -441,6 +441,10 @@ Partial Public Class MstShisetsu
             CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.URL), Me)
             Return False
         End If
+        If Not CmnCheck.IsValidUrl(Me.SHISETSU_URL) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.URL), Me)
+            Return False
+        End If
 
         Return True
     End Function

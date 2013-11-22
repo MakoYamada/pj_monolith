@@ -461,7 +461,7 @@ Public Class MyModule
         ReDim SessionItemNames(wCnt)
         For Each ItemName As String In System.Web.HttpContext.Current.Session.Contents
             Select Case Trim(ItemName).ToLower
-                Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.LoginUser.ToLower), Trim(SessionDef.MS_CODE.ToLower)
+                Case Trim(SessionDef.LoginID.ToLower), Trim(SessionDef.MS_USER.ToLower), Trim(SessionDef.MS_CODE.ToLower)
                 Case Else
                     If Trim(ItemName) <> "" Then
                         ReDim Preserve SessionItemNames(wCnt)

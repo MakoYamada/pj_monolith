@@ -3,10 +3,7 @@ Imports AppLib
 Partial Public Class Login
     Inherits WebBase
 
-    Private MS_USER As TableDef.MS_USER.DataStruct
-
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        Session.Item(SessionDef.LoginUser) = MS_USER
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -19,7 +16,7 @@ Partial Public Class Login
             SetForm()
         End If
 
-        'マスターページ設定
+        'マスターページ設定
         With Me.Master
             .HideMenu = True
             .HideLoginUser = True
@@ -62,20 +59,24 @@ Partial Public Class Login
         Dim strSQL As String = SQL.MS_USER.Login(Trim(Me.LOGIN_ID.Text), Trim(Me.PASSWORD.Text))
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
-        MS_USER = Nothing
-
+        Dim MS_USER As TableDef.MS_USER.DataStruct = Nothing
+        
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
-            wFlag = True
-            MS_USER = AppModule.SetRsData(RsData, MS_USER)
+            '大文字・小文字チェック
+            If RsData(TableDef.MS_USER.Column.LOGIN_ID).ToString = Trim(Me.LOGIN_ID.Text) AndAlso _
+               RsData(TableDef.MS_USER.Column.PASSWORD).ToString = Trim(Me.PASSWORD.Text) Then
+                wFlag = True
+                MS_USER = AppModule.SetRsData(RsData, MS_USER)
+            End If
         End If
         RsData.Close()
-
+        Session.Item(SessionDef.MS_USER) = MS_USER
         Session.Item(SessionDef.LoginID) = MS_USER.LOGIN_ID
 
         '該当データがない場合はエラー
         If wFlag = False Then
-            'CmnModule.AlertMessage(MessageDef, Me)
+            CmnModule.AlertMessage(MessageDef.Error.Login, Me)
             Return False
         End If
 

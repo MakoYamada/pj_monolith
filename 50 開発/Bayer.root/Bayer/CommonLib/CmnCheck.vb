@@ -226,12 +226,9 @@ Public Class CmnCheck
 
     'メールアドレスチェック
     Public Shared Function IsValidMailAddress(ByVal str As String) As Boolean
-        '前半部分
-        Const HAN_ALPHANUMERIC1 As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-=+_/"
-        '後半部分
-        Const HAN_ALPHANUMERIC2 As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-"
-        '英字
-        Const HAN_ALPHANUMERIC3 As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        '前半部分        Const HAN_ALPHANUMERIC1 As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-=+_/"
+        '後半部分        Const HAN_ALPHANUMERIC2 As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-"
+        '英字        Const HAN_ALPHANUMERIC3 As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
         Dim wCnt As Integer = 0
         Dim buff As String
@@ -249,13 +246,11 @@ Public Class CmnCheck
             If InStr(str, "@") = 0 Then
                 Return False
             End If
-            '@が2つ以上は×
-            If Len(str) - Len(Replace(str, "@", "")) >= 2 Then
+            '@が2つ以上は×            If Len(str) - Len(Replace(str, "@", "")) >= 2 Then
                 Return False
             End If
 
-            '@の前後を分ける
-            Dim wSplit() As String
+            '@の前後を分ける            Dim wSplit() As String
             Dim wLocal As String    '@の前
             Dim wDomain As String   '@の後
             Try
@@ -282,19 +277,15 @@ Public Class CmnCheck
                 End If
             Next
 
-            '.必須
-            If InStr(wDomain, ".") = 0 Then
+            '.必須            If InStr(wDomain, ".") = 0 Then
                 Return False
             End If
 
-            '「..」は×
-            If InStr(wDomain, "..") > 0 Then
+            '「..」は×            If InStr(wDomain, "..") > 0 Then
                 Return False
             End If
 
-            '　・末尾2文字は必ず半角英文字である事
-            '2文字以上
-            If Len(wDomain) < 2 Then
+            '　・末尾2文字は必ず半角英文字である事            '2文字以上            If Len(wDomain) < 2 Then
                 Return False
             End If
 
@@ -311,6 +302,27 @@ Public Class CmnCheck
     End Function
     Public Shared Function IsValidMailAddress(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
         Return IsValidMailAddress(TextBox.Text)
+    End Function
+
+    'URLチェック
+    Public Shared Function IsValidUrl(ByVal str As String) As Boolean
+        Const URL As String = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_.!~*'();/?:@&=+$,#%"
+        Dim wCnt As Integer = 0
+        Dim buff As String
+        If str.Length = 0 Then
+            Return True
+        Else
+            For wCnt = 0 To str.Length() - 1
+                buff = str.Substring(wCnt, 1)
+                If URL.IndexOf(buff) = -1 Then
+                    Return False
+                End If
+            Next
+        End If
+        Return True
+    End Function
+    Public Shared Function IsValidUrl(ByVal TextBox As System.Web.UI.WebControls.TextBox) As Boolean
+        Return IsValidUrl(TextBox.Text)
     End Function
 
     '電話番号チェック

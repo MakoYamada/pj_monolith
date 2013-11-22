@@ -17,8 +17,7 @@
 					</tr>
 					<tr>
 						<td align="right" class="TdTitle">
-							パスワード
-							&nbsp;
+							パスワード							&nbsp;
 						</td>
 						<td align="center" class="TdItem">
 							<asp:TextBox ID="PASSWORD" runat="server" Width="150px" MaxLength="10" TextMode="Password"></asp:TextBox>
