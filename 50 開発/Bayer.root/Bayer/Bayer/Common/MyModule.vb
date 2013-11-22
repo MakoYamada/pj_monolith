@@ -225,7 +225,7 @@ Public Class MyModule
 
         TBL_LOG.NOTE = "講演会番号：" & TBL_SEIKYU.KOUENKAI_NO _
                      & "／" _
-                     & "トップツアー請求番号：" & TBL_SEIKYU.SEIKYU_NO_TOPTOUR
+                     & "精算番号：" & TBL_SEIKYU.SEIKYU_NO_TOPTOUR
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
