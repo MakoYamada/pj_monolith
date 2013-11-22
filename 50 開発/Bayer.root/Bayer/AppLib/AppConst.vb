@@ -127,9 +127,9 @@ Public Class AppConst
         Public Class HOTEL_IRAINAIYOU
             'h”‘ˆË—Š“à—e
             Public Class Code
-                Public Const Tehai As String = "01"
-                Public Const Change As String = "02"
-                Public Const Cancel As String = "03"
+                Public Const Tehai As String = "1"
+                Public Const Change As String = "2"
+                Public Const Cancel As String = "3"
             End Class
             Public Class Name
                 Public Const Tehai As String = "è”zˆË—Š"

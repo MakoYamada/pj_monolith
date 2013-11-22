@@ -4605,7 +4605,7 @@ Public Class AppModule
 
     '宿泊依頼内容（依頼）
     Public Shared Sub SetForm_HOTEL_IRAINAIYOU(ByVal HOTEL_IRAINAIYOU As String, ByRef control As Label)
-        control.Text = HOTEL_IRAINAIYOU
+        control.Text = GetName_HOTEL_IRAINAIYOU(HOTEL_IRAINAIYOU)
     End Sub
 
     '宿泊日（依頼）
