@@ -17,7 +17,7 @@ Partial Public Class DrReport
     Private WithEvents PageFooter As DataDynamics.ActiveReports.PageFooter
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(DrReport))
+Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DrReport))
 Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.Label1 = New DataDynamics.ActiveReports.Label
@@ -2567,7 +2567,7 @@ Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
 Me.REQ_MR_HOTEL_NOTE.Height = 0.8854332!
 Me.REQ_MR_HOTEL_NOTE.Left = 1.677953!
 Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"
-Me.REQ_MR_HOTEL_NOTE.Text = Nothing
+Me.REQ_MR_HOTEL_NOTE.Text = resources.GetString("REQ_MR_HOTEL_NOTE.Text")
 Me.REQ_MR_HOTEL_NOTE.Top = 4.203152!
 Me.REQ_MR_HOTEL_NOTE.Width = 5.474016!
 '
@@ -3048,7 +3048,7 @@ Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
 Me.MR_SEND_SAKI_OTHER.Height = 0.8854331!
 Me.MR_SEND_SAKI_OTHER.Left = 1.677953!
 Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
-Me.MR_SEND_SAKI_OTHER.Text = Nothing
+Me.MR_SEND_SAKI_OTHER.Text = resources.GetString("MR_SEND_SAKI_OTHER.Text")
 Me.MR_SEND_SAKI_OTHER.Top = 5.292521!
 Me.MR_SEND_SAKI_OTHER.Width = 5.474016!
 '
@@ -3146,7 +3146,7 @@ Me.REQ_HOTEL_NOTE.DataField = "REQ_HOTEL_NOTE"
 Me.REQ_HOTEL_NOTE.Height = 0.7291338!
 Me.REQ_HOTEL_NOTE.Left = 1.323622!
 Me.REQ_HOTEL_NOTE.Name = "REQ_HOTEL_NOTE"
-Me.REQ_HOTEL_NOTE.Text = Nothing
+Me.REQ_HOTEL_NOTE.Text = resources.GetString("REQ_HOTEL_NOTE.Text")
 Me.REQ_HOTEL_NOTE.Top = 7.177953!
 Me.REQ_HOTEL_NOTE.Width = 5.828347!
 '
