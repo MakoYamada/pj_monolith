@@ -235,7 +235,7 @@
                             </asp:DropDownList>						
 		                </td>
 		                <td align="left" valign="middle" class="TdTitle" style="width:100px">
-			                チケット類<br />発送日<br />（最新）
+			                チケット類<br />発送日（最新）
 		                </td>
 		                <td align="left" valign="middle">							
                             <asp:TextBox ID="ANS_TICKET_SEND_DAY" runat="server" MaxLength="8" 
@@ -256,8 +256,7 @@
 							<asp:Label ID="SANKASHA_ID" runat="server" Text=""></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                DRコード
-		                </td>
+			                DRコード</td>
 		                <td align="left" valign="middle">
 							<asp:Label ID="DR_CD" runat="server" Text=""></asp:Label>
 		                </td>

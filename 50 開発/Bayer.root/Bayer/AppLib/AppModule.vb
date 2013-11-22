@@ -4511,12 +4511,12 @@ Public Class AppModule
 
     'TIME STAMP BYL
     Public Shared Sub SetForm_TIME_STAMP_BYL(ByVal TIME_STAMP_BYL As String, ByRef control As Label)
-        control.Text = TIME_STAMP_BYL
+        control.Text = CmnModule.Format_Date(TIME_STAMP_BYL, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
     End Sub
 
     'TIME STAMP TOP
     Public Shared Sub SetForm_TIME_STAMP_TOP(ByVal TIME_STAMP_TOP As String, ByRef control As Label)
-        control.Text = TIME_STAMP_TOP
+        control.Text = CmnModule.Format_Date(TIME_STAMP_TOP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
     End Sub
 
     'DRéÅñº
