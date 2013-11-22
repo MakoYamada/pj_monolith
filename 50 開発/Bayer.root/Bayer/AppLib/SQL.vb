@@ -147,7 +147,7 @@ Public Class SQL
 
             If Trim(Joken.TTANTO_ID) <> "" Then
                 strSQL &= " AND "
-                strSQL &= TableDef.TBL_KOUENKAI.Column.TTANTO_ID
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
@@ -1138,8 +1138,8 @@ Public Class SQL
             End If
 
             If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL &= " AND WK_KOTSUHOTEL."
-                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
