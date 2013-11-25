@@ -136,7 +136,7 @@ Public Class SQL
             ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
                 strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-                strSQL &= " FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             End If
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
@@ -587,7 +587,7 @@ Public Class SQL
             ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-                strSQL &= " FROM_DATE=N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             End If
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
