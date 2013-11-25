@@ -381,7 +381,7 @@
             Public Const AIR_TF As String = "航空券代(非課税)41120200"
             Public Const OTHER_TRAFFIC_TF As String = "その他鉄道等費用(非課税)41120200"
             Public Const TAXI_TF As String = "タクチケ実車料金(非課税)41120200"
-            Public Const HOTEL_COMMISSION_TF As String = "宿泊・交通手数料(非課税)41120200"
+            Public Const HOTEL_COMMISSION_TF As String = "登録手数料(非課税)41120200"
             Public Const TAXI_COMMISSION_TF As String = "タクチケ発券手数料(非課税)41120200"
             Public Const TAXI_SEISAN_TF As String = "タクチケ精算手数料 (非課税)41120200"
             Public Const JINKENHI_TF As String = "人件費(非課税)41120200"
