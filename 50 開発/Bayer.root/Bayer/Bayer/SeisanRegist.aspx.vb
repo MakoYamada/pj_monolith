@@ -557,7 +557,9 @@ Partial Public Class SeisanRegist
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
 
         '再計算
-        BtnCalc_Click(Nothing, Nothing)
+        If Not CheckCalcItem() Then Exit Sub
+        CalculateKingaku()
+        Me.DivMessage.Visible = False
 
         '入力チェック
         If Not Check() Then Exit Sub
@@ -580,7 +582,9 @@ Partial Public Class SeisanRegist
     Private Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNozomi.Click
 
         '再計算
-        BtnCalc_Click(Nothing, Nothing)
+        If Not CheckCalcItem() Then Exit Sub
+        CalculateKingaku()
+        Me.DivMessage.Visible = False
 
         '入力チェック
         If Not Check() Then Exit Sub
