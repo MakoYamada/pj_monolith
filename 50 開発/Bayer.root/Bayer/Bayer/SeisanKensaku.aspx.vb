@@ -118,9 +118,11 @@ Partial Public Class SeisanKensaku
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            Me.BtnBack1.Visible = False
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.BtnBack1.Visible = True
 
             'グリッドビュー表示
             SetGridView()
