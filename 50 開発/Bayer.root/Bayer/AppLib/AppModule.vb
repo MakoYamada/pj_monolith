@@ -1565,6 +1565,11 @@ Public Class AppModule
         End If
     End Function
 
+    'ícëÃÉRÅ[Éh
+    Public Shared Function GetName_DANTAI_CODE(ByVal DANTAI_CODE As String) As String
+        Return DANTAI_CODE
+    End Function
+
     'SRMî≠íçãÊï™
     Public Shared Function GetName_SRM_HACYU_KBN(ByVal SRM_HACYU_KBN As String) As String
         Select Case SRM_HACYU_KBN

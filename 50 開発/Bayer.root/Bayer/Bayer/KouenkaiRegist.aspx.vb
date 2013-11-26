@@ -113,6 +113,7 @@ Partial Public Class KouenkaiRegist
         'プルダウン設定
         AppModule.SetDropDownList_KIDOKU(Me.KIDOKU_FLG)
         AppModule.SetDropDownList_USER_NAME(Me.TTEHAI_TANTO, DbConnection)
+        'IME設定        CmnModule.SetIme(Me.DANTAI_CODE, CmnModule.ImeType.InActive)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -148,6 +149,7 @@ Partial Public Class KouenkaiRegist
         Dim strSQL As String = "SELECT * FROM MS_USER WHERE " & TableDef.MS_USER.Column.LOGIN_ID & "=N'" & DSP_KOUENKAI(DSP_SEQ).TTEHAI_TANTO & "'"
         Dim MS_USER As TableDef.MS_USER.DataStruct = AppModule.GetOneRecord(AppModule.TableType.MS_USER, strSQL, DbConnection)
         Me.TTEHAI_TANTO.SelectedValue = MS_USER.LOGIN_ID
+        Me.DANTAI_CODE.Text = AppModule.GetName_DANTAI_CODE(DSP_KOUENKAI(DSP_SEQ).DANTAI_CODE)
         Me.BU.Text = AppModule.GetName_BU(DSP_KOUENKAI(DSP_SEQ).BU)
         Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_AREA)
         Me.KIKAKU_TANTO_EIGYOSHO.Text = AppModule.GetName_KIKAKU_TANTO_EIGYOSHO(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EIGYOSHO)
@@ -178,6 +180,7 @@ Partial Public Class KouenkaiRegist
     Private Sub GetValue(ByVal SEND_FLAG As String)
         DSP_KOUENKAI(SEQ).KIDOKU_FLG = Me.KIDOKU_FLG.SelectedValue
         DSP_KOUENKAI(SEQ).SEND_FLAG = SEND_FLAG
+        DSP_KOUENKAI(SEQ).DANTAI_CODE = Me.DANTAI_CODE.Text
         If Me.TTEHAI_TANTO.SelectedIndex <> 0 Then
             DSP_KOUENKAI(SEQ).TTEHAI_TANTO = Me.TTEHAI_TANTO.SelectedValue
         End If

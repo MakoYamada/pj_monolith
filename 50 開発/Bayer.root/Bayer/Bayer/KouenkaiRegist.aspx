@@ -139,9 +139,17 @@
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
 							TOPíSìñé“
 						</td>
-						<td nowrap="nowrap" align="left" colspan="7">
+						<td nowrap="nowrap" align="left">
                             <asp:DropDownList ID="TTEHAI_TANTO" runat="server" TabIndex="3">
                             </asp:DropDownList>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+							ícëÃÉRÅ[Éh
+						</td>
+						<td nowrap="nowrap" align="left" colspan="5">
+                            <asp:TextBox ID="DANTAI_CODE" runat="server" Width="62px" 
+                                MaxLength="6" TabIndex="4"></asp:TextBox>                                        
+
 						</td>
 					</tr>
 				</table>
@@ -302,14 +310,14 @@
 		        <table cellspacing="0" cellpadding="0" border="0" style="width:1100px;">
 			        <tr style="height: 36px; width:100%">
 				        <td align="left" style="width:30%">
-				            <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="óöóï\é¶" CssClass="Button" TabIndex="4" />
+				            <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="óöóï\é¶" CssClass="Button" TabIndex="5" />
 				        </td>
 				        <td align="right" style="width:70%">
 				            <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="ìoò^" 
-                                CssClass="Button" TabIndex="5" />
+                                CssClass="Button" TabIndex="6" />
 				            <!-- <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIÇ÷" 
                                 CssClass="Button" /> -->
-					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="ñﬂÇÈ" CssClass="Button" TabIndex="6" />
+					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="ñﬂÇÈ" CssClass="Button" TabIndex="7" />
 				        </td>
 			        </tr>
 		        </table>
