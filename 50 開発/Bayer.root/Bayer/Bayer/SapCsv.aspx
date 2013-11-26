@@ -3,4 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <table cellspacing="0" cellpadding="2" border="0">
+        <tr>
+            <td align="left">
+                <table cellpadding="2" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            承認年月
+                        </td>
+                        <td>
+                            <asp:TextBox ID="JokenSHOUNIN_Y" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							<asp:TextBox ID="JokenSHOUNIN_M" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+                        </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="BtnCSV" runat="server" Text="CSV出力" Width="130px" CssClass="Button" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </asp:Content>

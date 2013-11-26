@@ -16,6 +16,33 @@ Option Explicit On
 Partial Public Class SapCsv
 
     '''<summary>
+    '''JokenSHOUNIN_Y コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSHOUNIN_Y As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenSHOUNIN_M コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSHOUNIN_M As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnCSV コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnCSV As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>
