@@ -179,6 +179,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.ACCOUNT_CD_TF.ToUpper Then TBL_SEIKYU.ACCOUNT_CD_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.ZETIA_CD.ToUpper Then TBL_SEIKYU.ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SRM_HACYU_KBN.ToUpper Then TBL_SEIKYU.SRM_HACYU_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.ROW_NO.ToUpper Then TBL_SEIKYU.ROW_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_SEIKYU
