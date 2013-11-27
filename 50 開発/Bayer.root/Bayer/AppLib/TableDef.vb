@@ -2633,6 +2633,7 @@
             Public SEIKYU_YM As String
             Public SEISAN_YM As String
             Public SHOUNIN_KUBUN As String
+            Public SHOUNIN_YM As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"

@@ -157,4 +157,8 @@ Partial Public Class Menu1
         Response.Redirect(URL.CostRegist)
     End Sub
 
+    '[SAPデータ作成]
+    Protected Sub BtnSap_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSap.Click
+        Response.Redirect(URL.SapCsv)
+    End Sub
 End Class
