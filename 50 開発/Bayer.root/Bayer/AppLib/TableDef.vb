@@ -307,6 +307,12 @@
             Public DR_NAME As String
             Public MR_NAME As String
             Public COST_CENTER As String
+            Public INTERNAL_ORDER_T As String
+            Public INTERNAL_ORDER_TF As String
+            Public ACCOUNT_CD_T As String
+            Public ACCOUNT_CD_TF As String
+            Public ZETIA_CD As String
+            Public SRM_HACYU_KBN As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -364,6 +370,12 @@
             Public Const DR_NAME As String = "DR_NAME"
             Public Const MR_NAME As String = "MR_NAME"
             Public Const COST_CENTER As String = "COST_CENTER"
+            Public Const INTERNAL_ORDER_T As String = "INTERNAL_ORDER_T"
+            Public Const INTERNAL_ORDER_TF As String = "INTERNAL_ORDER_TF"
+            Public Const ACCOUNT_CD_T As String = "ACCOUNT_CD_T"
+            Public Const ACCOUNT_CD_TF As String = "ACCOUNT_CD_TF"
+            Public Const ZETIA_CD As String = "ZETIA_CD"
+            Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -421,6 +433,12 @@
             Public Const DR_NAME As String = "DR氏名"
             Public Const MR_NAME As String = "担当者(担当MR)名"
             Public Const COST_CENTER As String = "Cost Center"
+            Public Const INTERNAL_ORDER_T As String = "Internal order(課税)"
+            Public Const INTERNAL_ORDER_TF As String = "Internal order(非課税)"
+            Public Const ACCOUNT_CD_T As String = "アカウントコード(課税)"
+            Public Const ACCOUNT_CD_TF As String = "アカウントコード(非課税)"
+            Public Const ZETIA_CD As String = "zetia Code"
+            Public Const SRM_HACYU_KBN As String = "SRM発注区分"
         End Class
     End Class
 
