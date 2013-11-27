@@ -313,6 +313,7 @@
             Public ACCOUNT_CD_TF As String
             Public ZETIA_CD As String
             Public SRM_HACYU_KBN As String
+            Public ROW_NO As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -376,6 +377,7 @@
             Public Const ACCOUNT_CD_TF As String = "ACCOUNT_CD_TF"
             Public Const ZETIA_CD As String = "ZETIA_CD"
             Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
+            Public Const ROW_NO As String = "ROW_NO"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
