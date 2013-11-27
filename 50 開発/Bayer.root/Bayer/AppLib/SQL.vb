@@ -687,6 +687,44 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function SapCsvMain(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " WK_SEIKYU.*"
+            strSQL &= ",WK_SEIKYU_CNT.ROW_NO"
+            strSQL &= ",WK_KOUENKAI.*"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT * FROM TBL_SEIKYU"
+            strSQL &= "  WHERE LEFT(TBL_SEIKYU.SHOUNIN_DATE,6) = N'" & CmnDb.SqlString(Joken.SHOUNIN_YM) & "'"
+            strSQL &= "  AND TBL_SEIKYU.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+            strSQL &= " ) WK_SEIKYU"
+            strSQL &= " LEFT JOIN"
+            strSQL &= "  (SELECT KOUENKAI_NO,SEIKYU_NO_TOPTOUR"
+            strSQL &= "   ,ROW_NUMBER() OVER( PARTITION BY KOUENKAI_NO ORDER BY SEIKYU_NO_TOPTOUR) ROW_NO"
+            strSQL &= "   FROM TBL_SEIKYU) WK_SEIKYU_CNT"
+            strSQL &= " ON WK_SEIKYU.KOUENKAI_NO = WK_SEIKYU_CNT.KOUENKAI_NO"
+            strSQL &= " AND WK_SEIKYU.SEIKYU_NO_TOPTOUR = WK_SEIKYU_CNT.SEIKYU_NO_TOPTOUR"
+            strSQL &= " LEFT JOIN"
+            strSQL &= "  (SELECT "
+            strSQL &= "    WK1.KOUENKAI_NO"
+            strSQL &= "   ,WK1.COST_CENTER"
+            strSQL &= "   ,WK1.ACCOUNT_CD_T"
+            strSQL &= "   ,WK1.ACCOUNT_CD_TF"
+            strSQL &= "   ,WK1.INTERNAL_ORDER_T"
+            strSQL &= "   ,WK1.INTERNAL_ORDER_TF"
+            strSQL &= "   ,WK1.ZETIA_CD"
+            strSQL &= "   ,WK1.SRM_HACYU_KBN"
+            strSQL &= "    FROM TBL_KOUENKAI WK1"
+            strSQL &= "    WHERE  WK1.TIME_STAMP = "
+            strSQL &= "     (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "       WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
+            strSQL &= "      )WK_KOUENKAI"
+            strSQL &= " ON WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
