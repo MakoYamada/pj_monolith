@@ -726,6 +726,21 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function SapCsvMrRyohi(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " COST_CENTER"
+            strSQL &= ",SUM(CAST(ISNULL(ANS_MR_HOTELHI,'') AS BIGINT) + CAST(ISNULL(ANS_MR_HOTELHI_TOZEI,'') AS BIGINT) + CAST(ISNULL(ANS_MR_KOTSUHI,'') AS BIGINT))"
+            strSQL &= " AS ANS_MR_HOTELHI"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL"
+            strSQL &= " WHERE KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " GROUP BY COST_CENTER"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
