@@ -708,6 +708,7 @@ Public Class SQL
             strSQL &= " LEFT JOIN"
             strSQL &= "  (SELECT "
             strSQL &= "    WK1.KOUENKAI_NO"
+            strSQL &= "   ,WK1.FROM_DATE"
             strSQL &= "   ,WK1.COST_CENTER"
             strSQL &= "   ,WK1.ACCOUNT_CD_T"
             strSQL &= "   ,WK1.ACCOUNT_CD_TF"

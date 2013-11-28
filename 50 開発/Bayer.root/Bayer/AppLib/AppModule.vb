@@ -8425,6 +8425,7 @@ Public Class AppModule
 
 #Region "消費税関連の処理"
 
+    '税率取得
     Public Shared Function GetZeiRate(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, Optional ByVal DbTrans As SqlClient.SqlTransaction = Nothing) As String
 
         Dim strZeiRate As String = "0"
@@ -8440,6 +8441,25 @@ Public Class AppModule
         End If
 
         Return strZeiRate
+
+    End Function
+
+    'SAP用税コード取得
+    Public Shared Function GetSapZeiCd(ByVal KIJUN_DATE As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, Optional ByVal DbTrans As SqlClient.SqlTransaction = Nothing) As String
+
+        Dim strSapZeiCd As String = ""
+        Dim MS_ZEI() As TableDef.MS_ZEI.DataStruct = AppModule.GetZeiData(KIJUN_DATE, DbConn, DbTrans)
+
+        If Not MS_ZEI Is Nothing Then
+            For Each record As TableDef.MS_ZEI.DataStruct In MS_ZEI
+                If record.START_DATE <= KIJUN_DATE AndAlso KIJUN_DATE <= record.END_DATE Then
+                    strSapZeiCd = record.SAP_ZEI_CD
+                    Exit For
+                End If
+            Next
+        End If
+
+        Return strSapZeiCd
 
     End Function
 
