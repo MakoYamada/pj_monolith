@@ -852,6 +852,34 @@ Public Class MyModule
 
             Return sb.ToString
         End Function
+
+        Public Shared Function SapCsv(ByVal CsvData() As TableDef.SAP_CSV.DataStruct) As String
+
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KUBUN)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAISHA_CD)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYU_YMD)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DENPYO_TYPE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYUSHO_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DOC_HTEXT)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ACCOUNT)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KINGAKU)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ZEI_CD)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INTERNAL_ORDER)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAIGOU_MEI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).PAYMENT_BLOCK)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ZETIA_CD)))
+                sb.Append(CmnCsv.Quotes(CsvData(wCnt).BARCODE))
+                sb.Append(vbNewLine)
+            Next
+
+            Return sb.ToString
+
+        End Function
     End Class
 
 End Class
