@@ -559,6 +559,20 @@ Public Class CmnModule
         End If
     End Function
 
+    '月末の日付を返す
+    Public Shared Function GetLastDateOfMonth(ByVal strYYYY As String, ByVal strMM As String) As String
+
+        Dim wStr As String = CmnModule.Format_Date(strYYYY.PadLeft(4, "0"c) & strMM.PadLeft(2, "0"c) & "01", CmnModule.DateFormatType.YYYYMMDD)
+
+        If wStr <> "" Then
+            Dim wDate As Date = CDate(wStr)
+            wStr = wDate.AddMonths(1).AddDays(-1).ToString("yyyyMMdd")
+        End If
+
+        Return wStr
+
+    End Function
+
     '--------------------------------------------------------------
     ' 長い文字列をカットし、省略の場合は「...」を付与
     ' 引数: 文字列、長さ
