@@ -181,6 +181,8 @@ Partial Public Class KouenkaiRegist
         DSP_KOUENKAI(SEQ).KIDOKU_FLG = Me.KIDOKU_FLG.SelectedValue
         DSP_KOUENKAI(SEQ).SEND_FLAG = SEND_FLAG
         DSP_KOUENKAI(SEQ).DANTAI_CODE = Me.DANTAI_CODE.Text
+        DSP_KOUENKAI(SEQ).UPDATE_DATE = DSP_KOUENKAI(SEQ).TIME_STAMP_TOP
+        DSP_KOUENKAI(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
         If Me.TTEHAI_TANTO.SelectedIndex <> 0 Then
             DSP_KOUENKAI(SEQ).TTEHAI_TANTO = Me.TTEHAI_TANTO.SelectedValue
         End If
