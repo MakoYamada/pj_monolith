@@ -13,6 +13,7 @@ CREATE TABLE [dbo].[MS_ZEI](
 	[ZEI_RATE] [nvarchar](4) COLLATE Japanese_CI_AS  NULL,
 	[START_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
 	[END_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
+	[SAP_ZEI_CD] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[STOP_FLG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
