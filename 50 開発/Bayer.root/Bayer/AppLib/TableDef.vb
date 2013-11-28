@@ -2719,4 +2719,58 @@
         End Class
     End Class
 
+    Public Class SAP_CSV
+        <Serializable()> Public Structure DataStruct
+            Public KUBUN As String
+            Public KAISHA_CD As String
+            Public SEIKYU_YMD As String
+            Public DENPYO_TYPE As String
+            Public SEIKYUSHO_NO As String
+            Public DOC_HTEXT As String
+            Public ACCOUNT As String
+            Public KINGAKU As String
+            Public ZEI_CD As String
+            Public COST_CENTER As String
+            Public INTERNAL_ORDER As String
+            Public KAIGOU_MEI As String
+            Public PAYMENT_BLOCK As String
+            Public ZETIA_CD As String
+            Public BARCODE As String
+        End Structure
+        Public Class Column
+            Public Const KUBUN As String = "KUBUN"
+            Public Const KAISHA_CD As String = "KAISHA_CD"
+            Public Const SEIKYU_YMD As String = "SEIKYU_YMD"
+            Public Const DENPYO_TYPE As String = "DENPYO_TYPE"
+            Public Const SEIKYUSHO_NO As String = "SEIKYUSHO_NO"
+            Public Const DOC_HTEXT As String = "DOC_HTEXT"
+            Public Const ACCOUNT As String = "ACCOUNT"
+            Public Const KINGAKU As String = "KINGAKU"
+            Public Const ZEI_CD As String = "ZEI_CD"
+            Public Const COST_CENTER As String = "COST_CENTER"
+            Public Const INTERNAL_ORDER As String = "INTERNAL_ORDER"
+            Public Const KAIGOU_MEI As String = "KAIGOU_MEI"
+            Public Const PAYMENT_BLOCK As String = "PAYMENT_BLOCK"
+            Public Const ZETIA_CD As String = "ZETIA_CD"
+            Public Const BARCODE As String = "BARCODE"
+        End Class
+        Public Class Name
+            Public Const KUBUN As String = "区分"
+            Public Const KAISHA_CD As String = "会社コード"
+            Public Const SEIKYU_YMD As String = "請求年月日"
+            Public Const DENPYO_TYPE As String = "伝票タイプ"
+            Public Const SEIKYUSHO_NO As String = "請求書番号"
+            Public Const DOC_HTEXT As String = "ドキュメントヘッダーテキスト"
+            Public Const ACCOUNT As String = "ACCOUNT"
+            Public Const KINGAKU As String = "金額"
+            Public Const ZEI_CD As String = "消費税コード"
+            Public Const COST_CENTER As String = "COST_CENTER"
+            Public Const INTERNAL_ORDER As String = "INTERNAL_ORDER"
+            Public Const KAIGOU_MEI As String = "会合名"
+            Public Const PAYMENT_BLOCK As String = "PAYMENT_BLOCK"
+            Public Const ZETIA_CD As String = "ZETIA_CD"
+            Public Const BARCODE As String = "バーコード"
+        End Class
+    End Class
+
 End Class
