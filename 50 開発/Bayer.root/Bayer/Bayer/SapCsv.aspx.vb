@@ -3,9 +3,11 @@ Imports AppLib
 Partial Public Class SapCsv
     Inherits WebBase
 
+    
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ''共通チェック
-        'MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
+        '共通チェック
+        MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
         ''セッションを変数に格納
         'If Not SetSession() Then
@@ -33,6 +35,7 @@ Partial Public Class SapCsv
         'IME設定
         CmnModule.SetIme(Me.JokenSHOUNIN_Y, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSHOUNIN_M, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYUSHO_NO, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -44,11 +47,10 @@ Partial Public Class SapCsv
         '入力チェック
         If Not Check() Then Exit Sub
 
-        'test
-        Exit Sub
+        Dim SeikyuData() As TableDef.TBL_SEIKYU.DataStruct
+        If GetData(SeikyuData) Then
 
-        Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
-        If GetData(CsvData) Then
+            Dim CsvData() As TableDef.SAP_CSV.DataStruct = CreateCSVData(SeikyuData)
 
             'CSV出力            Response.Clear()
             Response.ContentType = CmnConst.Csv.ContentType
@@ -56,8 +58,7 @@ Partial Public Class SapCsv
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "Sap.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
 
-            Response.Write(SapCsv(CsvData)) 'test
-            'Response.Write(MyModule.Csv.SapCsv(CsvData))
+            Response.Write(MyModule.Csv.SapCsv(CsvData)) 
             Response.End()
         End If
 
@@ -80,6 +81,11 @@ Partial Public Class SapCsv
 
         If Not CmnCheck.IsInput(Me.JokenSHOUNIN_M) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput("承認年月(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEIKYUSHO_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書番号"), Me)
             Return False
         End If
 
@@ -137,195 +143,267 @@ Partial Public Class SapCsv
         Return True
     End Function
 
-    '仮
-    Public Shared Function SapCsv(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct) As String
+    'CSV出力用データの組立
+    Private Function CreateCSVData(ByVal SeikyuData() As TableDef.TBL_SEIKYU.DataStruct) As TableDef.SAP_CSV.DataStruct()
 
-        Dim wCnt As Integer = 0
-        Dim sbCsv As New System.Text.StringBuilder
-        Dim sbTitel As New System.Text.StringBuilder
-        Dim sbMeisai1 As New System.Text.StringBuilder
-        Dim sbMeisai2 As New System.Text.StringBuilder
+        Dim csvData As TableDef.SAP_CSV.DataStruct()
 
-        Dim strShouninDate As String = ""
-        Dim strCostCenter As String = ""
         Dim lngTotalKingaku As Long = 0
-        Dim MR_HOTEL_TOZEI As Long = 0
-        Dim MR_JR As Long = 0
-        Dim KEI_MR_HOTEL As Long = 0
-        Dim KEI_MR_HOTEL_TOZEI As Long = 0
-        Dim KEI_MR_JR As Long = 0
 
         'タイトル行
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("BKZ")))   '区分
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("BUKRS"))) '会社コード
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("BLDAT"))) '請求年月日
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("BLART"))) '伝票タイプ
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("XBLNR"))) '請求書番号
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("BKTXT"))) 'ドキュメントヘッダーテキスト
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("NEWKO"))) 'Account
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("WRBTR"))) '金額
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("MWSKZ"))) '消費税コード
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("KOSTL"))) 'Cost Center
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("AUFNR"))) 'Internal Order
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("SGTXT"))) '会合名
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("ZLSPR"))) 'Payment block
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("ZJP1")))  'Zetia Code
-        sbTitel.Append(CmnCsv.SetData(CmnCsv.Quotes("BARCD"))) 'バーコード
-        sbTitel.Append(vbNewLine)
+        Dim rowCnt As Integer = 0
+        ReDim csvData(rowCnt)
+        csvData(rowCnt).KUBUN = "BKZ"
+        csvData(rowCnt).KAISHA_CD = "BUKRS"
+        csvData(rowCnt).SEIKYU_YMD = "BLDAT"
+        csvData(rowCnt).DENPYO_TYPE = "BLART"
+        csvData(rowCnt).SEIKYUSHO_NO = "XBLNR"
+        csvData(rowCnt).DOC_HTEXT = "BKTXT"
+        csvData(rowCnt).ACCOUNT = "NEWKO"
+        csvData(rowCnt).KINGAKU = "WRBTR"
+        csvData(rowCnt).ZEI_CD = "MWSKZ"
+        csvData(rowCnt).COST_CENTER = "KOSTL"
+        csvData(rowCnt).INTERNAL_ORDER = "AUFNR"
+        csvData(rowCnt).KAIGOU_MEI = "SGTXT"
+        csvData(rowCnt).PAYMENT_BLOCK = "ZLSPR"
+        csvData(rowCnt).ZETIA_CD = "ZJP1"
+        csvData(rowCnt).BARCODE = "BARCD"
 
-        For wCnt = 0 To UBound(CsvData)
+        rowCnt += 1
+        ReDim Preserve csvData(rowCnt)
+        'csvData(1)には、2行目以降の金額を集計後、最後にデータをセットする。
 
-            'TODO:
-            '承認日はどこから取得するか？
-            strShouninDate = ""
+        '2行目以降のデータを先に作成
+        For wCnt As Integer = 0 To UBound(SeikyuData)
+
             '消費税コード取得
-            Dim strSapZeiCd As String = ""
+            Dim strSapZeiCd As String = AppModule.GetSapZeiCd(SeikyuData(wCnt).FROM_DATE, MyBase.DbConnection)
 
-            If CsvData(wCnt).ROW_NO = 1 Then
+            If SeikyuData(wCnt).ROW_NO = 1 Then
                 '講演会1回目の請求のとき
-                If CsvData(wCnt).SRM_HACYU_KBN = AppConst.KAIJO.SRM_HACYU_KBN.Code.No Then
+                If SeikyuData(wCnt).SRM_HACYU_KBN = AppConst.KAIJO.SRM_HACYU_KBN.Code.No Then
                     'SAP精算のとき
-
-                    '会場・機材費
-                    Set991330401Record(CsvData(wCnt), sbMeisai2, lngTotalKingaku, strSapZeiCd)
-
-                    '宿泊・交通
-                    Set41120200Record(CsvData(wCnt), sbMeisai2, lngTotalKingaku, strSapZeiCd)
+                    SetKaijoKotsuRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd)
                 End If
 
                 'MR旅費
-                'TODO:
-                '講演会に紐づくMR旅費を取得して、コストセンター分レコードを作成する
-                lngTotalKingaku += 0
+                SetMrRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
             End If
 
             'タクチケ
-            'TODO:
-            '講演会に紐づくタクチケ料金を取得して、コストセンター分レコードを作成する(ただし今回請求する分のみ)
-            lngTotalKingaku += 0
+            '講演会に紐づくタクチケ料金を取得して、コストセンター分レコードを作成する
+            SetTaxiRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
         Next
 
-
         '1行目
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))   '区分
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("0094"))) '会社コード
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes(strShouninDate))) '請求年月日
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("KR"))) '伝票タイプ
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求書番号
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("Top tour"))) 'ドキュメントヘッダーテキスト
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("7007466"))) 'Account
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes(lngTotalKingaku))) '金額
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("**"))) '消費税コード
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'Cost Center
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'Internal Order
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi 一括請求" & "月分"))) '会合名
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("E"))) 'Payment block
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes("")))  'Zetia Code
-        sbMeisai1.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'バーコード
-        sbMeisai1.Append(vbNewLine)
+        csvData(1).KUBUN = "X"
+        csvData(1).KAISHA_CD = "0094"
+        csvData(1).SEIKYU_YMD = AppModule.GetName_SAP_SEIKYU_YMD(CmnModule.GetLastDateOfMonth(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text))
+        csvData(1).DENPYO_TYPE = "KR"
+        csvData(1).SEIKYUSHO_NO = Me.SEIKYUSHO_NO.Text
+        csvData(1).DOC_HTEXT = "Top tour"
+        csvData(1).ACCOUNT = "7007466"
+        csvData(1).KINGAKU = lngTotalKingaku.ToString
+        csvData(1).ZEI_CD = "**"
+        csvData(1).COST_CENTER = ""
+        csvData(1).INTERNAL_ORDER = ""
+        csvData(1).KAIGOU_MEI = "Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text & "月分"
+        csvData(1).PAYMENT_BLOCK = "E"
+        csvData(1).ZETIA_CD = ""
+        csvData(1).BARCODE = ""
 
-
-        'CSVデータ組立
-        sbCsv.Append(sbTitel.ToString)
-        sbCsv.Append(sbMeisai1.ToString)
-        sbCsv.Append(sbMeisai2.ToString)
-        
-        Return sbCsv.ToString
-
+        Return csvData
     End Function
 
-
-    Public Shared Sub Set991330401Record(ByVal CsvData As TableDef.TBL_SEIKYU.DataStruct, _
-                                          ByRef sb As System.Text.StringBuilder, _
-                                          ByRef lngKingaku As Long, _
-                                          ByVal strSapZeiCd As String)
-
-        '非課税
-        Dim Kingaku_TF As Long = _
-        CLng(AppModule.GetName_ANS_991330401_TF(CsvData.KAIJOHI_TF, CsvData.KIZAIHI_TF, "0", True))
-
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))   '区分
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '会社コード
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求年月日
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '伝票タイプ
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求書番号
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'ドキュメントヘッダーテキスト
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.ACCOUNT_CD_TF))) 'Account
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku_TF))) '金額
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd))) '消費税コード
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.COST_CENTER))) 'Cost Center
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.INTERNAL_ORDER_TF))) 'Internal Order
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.SHIHARAI_NO))) '会合名
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'Payment block
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.ZETIA_CD)))  'Zetia Code
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'バーコード
-        sb.Append(vbNewLine)
+    '会場・機材と宿泊・交通のレコードを作成
+    Private Sub SetKaijoKotsuRecord(ByVal SeikyuData As TableDef.TBL_SEIKYU.DataStruct, _
+                                    ByRef csvData() As TableDef.SAP_CSV.DataStruct, _
+                                    ByRef rowCnt As Integer, _
+                                    ByRef lngTotalKingaku As Long, _
+                                    ByVal strSapZeiCd As String)
 
 
-        'TODO：以下必要か要確認
-        '課税
-        Dim Kingaku_T As Long = _
-        CLng(AppModule.GetName_ANS_991330401_T(CsvData.KAIJOUHI_T, CsvData.KIZAIHI_T, "0", True))
+        Dim Kingaku As Long = 0
 
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))   '区分
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '会社コード
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求年月日
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '伝票タイプ
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求書番号
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'ドキュメントヘッダーテキスト
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.ACCOUNT_CD_T))) 'Account
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku_T))) '金額
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd))) '消費税コード
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.COST_CENTER))) 'Cost Center
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.INTERNAL_ORDER_T))) 'Internal Order
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.SHIHARAI_NO))) '会合名
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'Payment block
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.ZETIA_CD)))  'Zetia Code
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'バーコード
-        sb.Append(vbNewLine)
+        '会場・機材(非課税)レコード
+        Kingaku = CLng(AppModule.GetName_ANS_991330401_TF(SeikyuData.KAIJOHI_TF, SeikyuData.KIZAIHI_TF, "0", True))
+        lngTotalKingaku += Kingaku '金額加算
 
-        lngKingaku += Kingaku_TF + Kingaku_T
+        rowCnt += 1
+        ReDim Preserve csvData(rowCnt)
+        csvData(rowCnt).KUBUN = ""
+        csvData(rowCnt).KAISHA_CD = ""
+        csvData(rowCnt).SEIKYU_YMD = ""
+        csvData(rowCnt).DENPYO_TYPE = ""
+        csvData(rowCnt).SEIKYUSHO_NO = ""
+        csvData(rowCnt).DOC_HTEXT = ""
+        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
+        csvData(rowCnt).KINGAKU = Kingaku
+        csvData(rowCnt).ZEI_CD = strSapZeiCd
+        csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
+        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
+        csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+        csvData(rowCnt).PAYMENT_BLOCK = ""
+        csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+        csvData(rowCnt).BARCODE = ""
 
-    End Sub
 
-    Public Shared Sub Set41120200Record(ByVal CsvData As TableDef.TBL_SEIKYU.DataStruct, _
-                                          ByRef sb As System.Text.StringBuilder, _
-                                          ByRef lngKingaku As Long, _
-                                          ByVal strSapZeiCd As String)
+        '会場・機材(課税)レコード
+        Kingaku = CLng(AppModule.GetName_ANS_991330401_T(SeikyuData.KAIJOUHI_T, SeikyuData.KIZAIHI_T, "0", True))
+        lngTotalKingaku += Kingaku '金額加算
 
-        '非課税
-        Dim Kingaku_TF As Long = CLng(AppModule.GetName_ANS_41120200_TF( _
-        CStr(CmnModule.DbVal(CsvData.HOTELHI_TF) + CmnModule.DbVal(CsvData.HOTELHI_TOZEI)), _
-                                                                CsvData.JR_TF, _
-                                                                CsvData.AIR_TF, _
-                                                                CsvData.OTHER_TRAFFIC_TF, _
-                                                                CsvData.TAXI_TF, _
-                                                                CsvData.HOTEL_COMMISSION_TF, _
-                                                                CsvData.TAXI_COMMISSION_TF, _
-                                                                CsvData.TAXI_SEISAN_TF, _
-                                                                CsvData.JINKENHI_TF, _
-                                                                CsvData.OTHER_TF, _
-                                                                CsvData.KANRIHI_TF, True))
+        rowCnt += 1
+        ReDim Preserve csvData(rowCnt)
+        csvData(rowCnt).KUBUN = ""
+        csvData(rowCnt).KAISHA_CD = ""
+        csvData(rowCnt).SEIKYU_YMD = ""
+        csvData(rowCnt).DENPYO_TYPE = ""
+        csvData(rowCnt).SEIKYUSHO_NO = ""
+        csvData(rowCnt).DOC_HTEXT = ""
+        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
+        csvData(rowCnt).KINGAKU = Kingaku
+        csvData(rowCnt).ZEI_CD = strSapZeiCd
+        csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
+        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
+        csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+        csvData(rowCnt).PAYMENT_BLOCK = ""
+        csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+        csvData(rowCnt).BARCODE = ""
 
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))   '区分
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '会社コード
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求年月日
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '伝票タイプ
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) '請求書番号
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'ドキュメントヘッダーテキスト
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.ACCOUNT_CD_TF))) 'Account
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku_TF))) '金額
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd))) '消費税コード
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.COST_CENTER))) 'Cost Center
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.INTERNAL_ORDER_TF))) 'Internal Order
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.SHIHARAI_NO))) '会合名
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'Payment block
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData.ZETIA_CD)))  'Zetia Code
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""))) 'バーコード
-        sb.Append(vbNewLine)
 
-        lngKingaku += Kingaku_TF
+        '宿泊・交通・タクチケ(非課税)レコード
+        Kingaku = CmnModule.DbVal(SeikyuData.KEI_41120200_TF)
+        lngTotalKingaku += Kingaku '金額加算
+
+        rowCnt += 1
+        ReDim Preserve csvData(rowCnt)
+        csvData(rowCnt).KUBUN = ""
+        csvData(rowCnt).KAISHA_CD = ""
+        csvData(rowCnt).SEIKYU_YMD = ""
+        csvData(rowCnt).DENPYO_TYPE = ""
+        csvData(rowCnt).SEIKYUSHO_NO = ""
+        csvData(rowCnt).DOC_HTEXT = ""
+        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
+        csvData(rowCnt).KINGAKU = Kingaku
+        csvData(rowCnt).ZEI_CD = strSapZeiCd
+        csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
+        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
+        csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+        csvData(rowCnt).PAYMENT_BLOCK = ""
+        csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+        csvData(rowCnt).BARCODE = ""
 
     End Sub
 
+    '講演会に紐づくMR旅費(課税)を取得して、コストセンター分レコードを作成する
+    Private Sub SetMrRecord(ByVal SeikyuData As TableDef.TBL_SEIKYU.DataStruct, _
+                                          ByRef csvData() As TableDef.SAP_CSV.DataStruct, _
+                                          ByRef rowCnt As Integer, _
+                                          ByRef lngTotalKingaku As Long, _
+                                          ByVal strSapZeiCd As String, _
+                                          ByVal DbConn As System.Data.SqlClient.SqlConnection)
+
+        Dim MrData() As TableDef.TBL_KOTSUHOTEL.DataStruct
+        If GetMrRyohiData(SeikyuData.KOUENKAI_NO, MrData, DbConn) Then
+
+            For wCnt As Integer = 0 To UBound(MrData)
+
+                Dim Kingaku As Long = CmnModule.DbVal(MrData(wCnt).ANS_MR_HOTELHI)
+                lngTotalKingaku += Kingaku
+
+                rowCnt += 1
+                ReDim Preserve csvData(rowCnt)
+                csvData(rowCnt).KUBUN = ""
+                csvData(rowCnt).KAISHA_CD = ""
+                csvData(rowCnt).SEIKYU_YMD = ""
+                csvData(rowCnt).DENPYO_TYPE = ""
+                csvData(rowCnt).SEIKYUSHO_NO = ""
+                csvData(rowCnt).DOC_HTEXT = ""
+                csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
+                csvData(rowCnt).KINGAKU = Kingaku
+                csvData(rowCnt).ZEI_CD = strSapZeiCd
+                csvData(rowCnt).COST_CENTER = MrData(wCnt).COST_CENTER
+                csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
+                csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+                csvData(rowCnt).PAYMENT_BLOCK = ""
+                csvData(rowCnt).ZETIA_CD = csvData(rowCnt).ZETIA_CD
+                csvData(rowCnt).BARCODE = ""
+            Next
+        End If
+
+    End Sub
+
+    'MR旅費用データ取得
+    Private Function GetMrRyohiData(ByVal strKouenkaiCd As String, _
+                                    ByRef MrRyohiData() As TableDef.TBL_KOTSUHOTEL.DataStruct, _
+                                    ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+
+        ReDim MrRyohiData(wCnt)
+
+        Dim Joken As TableDef.Joken.DataStruct
+        Joken.KOUENKAI_NO = strKouenkaiCd
+
+        strSQL = SQL.TBL_SEIKYU.SapCsvMrRyohi(Joken)
+        RsData = CmnDb.Read(strSQL, DbConn)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve MrRyohiData(wCnt)
+            MrRyohiData(wCnt) = AppModule.SetRsData(RsData, MrRyohiData(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
+    'TODO:
+    'タクチケシステムで使用するテーブルからコストセンターごとのSEIKYU_KINGAKU(仮)を取得しCSV出力する。
+    'SetMrRecord()と同様の処理
+    Private Sub SetTaxiRecord(ByVal SeikyuData As TableDef.TBL_SEIKYU.DataStruct, _
+                                          ByRef csvData() As TableDef.SAP_CSV.DataStruct, _
+                                          ByRef rowCnt As Integer, _
+                                          ByRef lngTotalKingaku As Long, _
+                                          ByVal strSapZeiCd As String, _
+                                          ByVal DbConn As System.Data.SqlClient.SqlConnection)
+
+        ''講演会番号と請求月をキーに課税対象(エンタ)のデータを抽出
+
+        ''SeikyuDataのタクチケ(課税)金額と一致する必要があるが、チェックは必要？
+
+        'Dim TaxiData() As TableDef.TBL_TAXI.DataStruct
+        'If GetTaxiData(csvData.KOUENKAI_NO, TaxiData, DbConn) Then
+
+        '    For wCnt As Integer = 0 To UBound(TaxiData)
+
+        '        Dim Kingaku As Long = CmnModule.DbVal(TaxiData(wCnt).SEIKYU_KINGAKU)
+        '        lngTotalKingaku += Kingaku
+
+        '        rowCnt += 1
+        '        ReDim Preserve csvData(rowCnt)
+        '        csvData(rowCnt).KUBUN = ""
+        '        csvData(rowCnt).KAISHA_CD = ""
+        '        csvData(rowCnt).SEIKYU_YMD = ""
+        '        csvData(rowCnt).DENPYO_TYPE = ""
+        '        csvData(rowCnt).SEIKYUSHO_NO = ""
+        '        csvData(rowCnt).DOC_HTEXT = ""
+        '        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
+        '        csvData(rowCnt).KINGAKU = Kingaku
+        '        csvData(rowCnt).ZEI_CD = strSapZeiCd
+        '        csvData(rowCnt).COST_CENTER = TaxiData(wCnt).COST_CENTER
+        '        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
+        '        csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+        '        csvData(rowCnt).PAYMENT_BLOCK = ""
+        '        csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+        '        csvData(rowCnt).BARCODE = ""
+        '    Next
+
+        'End If
+    End Sub
+    
 End Class
