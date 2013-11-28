@@ -4271,6 +4271,18 @@ Public Class AppModule
         End Select
     End Function
 
+    'SAPCSV‚Ì¿‹”NŒ“ú
+    Public Shared Function GetName_SAP_SEIKYU_YMD(ByVal strYMD As String) As String
+
+        Dim wStr As String = CmnModule.Format_Date(strYMD, CmnModule.DateFormatType.YYYYMMDD)
+
+        If IsDate(wStr) Then
+            wStr = CDate(wStr).ToString("dd.MM.yyyy")
+        End If
+
+        Return wStr
+    End Function
+
 #End Region
 
     '”­‘—“ú
