@@ -973,12 +973,12 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.ZEI_RATE.ToUpper Then MS_ZEI.ZEI_RATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.START_DATE.ToUpper Then MS_ZEI.START_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.END_DATE.ToUpper Then MS_ZEI.END_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.SAP_ZEI_CD.ToUpper Then MS_ZEI.SAP_ZEI_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.STOP_FLG.ToUpper Then MS_ZEI.STOP_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.INPUT_DATE.ToUpper Then MS_ZEI.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.INPUT_USER.ToUpper Then MS_ZEI.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.UPDATE_DATE.ToUpper Then MS_ZEI.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.MS_ZEI.Column.UPDATE_USER.ToUpper Then MS_ZEI.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
-
         Next wCnt
 
         Return MS_ZEI
