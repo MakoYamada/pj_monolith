@@ -2523,6 +2523,7 @@
             Public ZEI_RATE As String
             Public START_DATE As String
             Public END_DATE As String
+            Public SAP_ZEI_CD As String
             Public STOP_FLG As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
@@ -2535,6 +2536,7 @@
             Public Const ZEI_RATE As String = "ZEI_RATE"
             Public Const START_DATE As String = "START_DATE"
             Public Const END_DATE As String = "END_DATE"
+            Public Const SAP_ZEI_CD As String = "SAP_ZEI_CD"
             Public Const STOP_FLG As String = "STOP_FLG"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
@@ -2547,6 +2549,7 @@
             Public Const ZEI_RATE As String = "消費税率"
             Public Const START_DATE As String = "開始日"
             Public Const END_DATE As String = "終了日"
+            Public Const SAP_ZEI_CD As String = "SAP用税コード"
             Public Const STOP_FLG As String = "利用停止フラグ"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
