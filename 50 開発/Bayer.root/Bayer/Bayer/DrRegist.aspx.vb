@@ -65,7 +65,7 @@ Partial Public Class DrRegist
 
                 '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
                 If Not ChkNewData() Then
-                    BtnNozomi.Enabled = False
+                    BtnNozomi.Visible = False
                     BtnSubmit.Visible = False
                 End If
             End If
