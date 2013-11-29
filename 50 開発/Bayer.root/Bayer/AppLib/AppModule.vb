@@ -1533,43 +1533,32 @@ Public Class AppModule
 
     '参加予定数
     Public Shared Function GetName_SANKA_YOTEI_CNT(ByVal SANKA_YOTEI_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Dim wSANKA_YOTEI_CNT As String = Trim(SANKA_YOTEI_CNT)
+        If IsNumeric(wSANKA_YOTEI_CNT) Then
+            wSANKA_YOTEI_CNT = CInt(wSANKA_YOTEI_CNT).ToString
+        End If
+
         If ShortFormat = False Then
-            Return CmnModule.EditComma(SANKA_YOTEI_CNT)
+            Return CmnModule.EditComma(wSANKA_YOTEI_CNT)
         Else
-            Return SANKA_YOTEI_CNT
+            Return wSANKA_YOTEI_CNT
         End If
     End Function
     Public Shared Function GetName_SANKA_YOTEI_CNT_NMBR(ByVal SANKA_YOTEI_CNT_NMBR As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(SANKA_YOTEI_CNT_NMBR)
-        Else
-            Return SANKA_YOTEI_CNT_NMBR
-        End If
+        Return GetName_SANKA_YOTEI_CNT(SANKA_YOTEI_CNT_NMBR, ShortFormat)
     End Function
     Public Shared Function GetName_SANKA_YOTEI_CNT_MBR(ByVal SANKA_YOTEI_CNT_MBR As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(SANKA_YOTEI_CNT_MBR)
-        Else
-            Return SANKA_YOTEI_CNT_MBR
-        End If
+        Return GetName_SANKA_YOTEI_CNT(SANKA_YOTEI_CNT_MBR, ShortFormat)
     End Function
 
     '参加予定数　（医師・薬剤師）
     Public Shared Function GetName_SANKA_YOTEI_CNT_DR(ByVal SANKA_YOTEI_CNT_DR As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(SANKA_YOTEI_CNT_DR)
-        Else
-            Return SANKA_YOTEI_CNT_DR
-        End If
+        Return GetName_SANKA_YOTEI_CNT(SANKA_YOTEI_CNT_DR, ShortFormat)
     End Function
 
     '参加予定数　（その他）
     Public Shared Function GetName_SANKA_YOTEI_CNT_OTHER(ByVal SANKA_YOTEI_CNT_OTHER As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(SANKA_YOTEI_CNT_OTHER)
-        Else
-            Return SANKA_YOTEI_CNT_OTHER
-        End If
+        Return GetName_SANKA_YOTEI_CNT(SANKA_YOTEI_CNT_OTHER, ShortFormat)
     End Function
 
     '団体コード
@@ -1775,9 +1764,9 @@ Public Class AppModule
         Return KOUSHI_ROOM_TIME2
     End Function
 
-    '講師控室　室数
-    Public Shared Function GetName_KOUSHI_ROOM_CNT(ByVal KOUSHI_ROOM_CNT As String) As String
-        Return KOUSHI_ROOM_CNT
+    '講師控室　人数
+    Public Shared Function GetName_KOUSHI_ROOM_CNT(ByVal KOUSHI_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_SANKA_YOTEI_CNT(KOUSHI_ROOM_CNT, ShortFormat)
     End Function
 
     '社員控室　要・不要
@@ -1793,11 +1782,7 @@ Public Class AppModule
 
     '社員控室 人数
     Public Shared Function GetName_SHAIN_ROOM_CNT(ByVal SHAIN_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(SHAIN_ROOM_CNT)
-        Else
-            Return SHAIN_ROOM_CNT
-        End If
+        Return GetName_SANKA_YOTEI_CNT(SHAIN_ROOM_CNT, ShortFormat)
     End Function
 
     '世話人会場　要・不要
@@ -1818,11 +1803,7 @@ Public Class AppModule
 
     '世話人控室 人数
     Public Shared Function GetName_MANAGER_ROOM_CNT(ByVal MANAGER_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(MANAGER_ROOM_CNT)
-        Else
-            Return MANAGER_ROOM_CNT
-        End If
+        Return GetName_SANKA_YOTEI_CNT(MANAGER_ROOM_CNT, ShortFormat)
     End Function
 
     '世話人会場　開始時間
@@ -1848,11 +1829,7 @@ Public Class AppModule
 
     '慰労会参加予定者数
     Public Shared Function GetName_IROUKAI_SANKA_YOTEI_CNT(ByVal IROUKAI_SANKA_YOTEI_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(IROUKAI_SANKA_YOTEI_CNT)
-        Else
-            Return IROUKAI_SANKA_YOTEI_CNT
-        End If
+        Return GetName_SANKA_YOTEI_CNT(IROUKAI_SANKA_YOTEI_CNT, ShortFormat)
     End Function
 
     '利用額計
@@ -1885,11 +1862,7 @@ Public Class AppModule
 
     '(依頼)宿泊希望者数
     Public Shared Function GetName_REQ_ROOM_CNT(ByVal REQ_ROOM_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(REQ_ROOM_CNT)
-        Else
-            Return REQ_ROOM_CNT
-        End If
+        Return GetName_SANKA_YOTEI_CNT(REQ_ROOM_CNT)
     End Function
 
     '(依頼)宿泊希望日
@@ -1909,20 +1882,12 @@ Public Class AppModule
 
     '(依頼)交通手配予定人数(JR/AIR) 
     Public Shared Function GetName_REQ_KOTSU_CNT(ByVal REQ_KOTSU_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(REQ_KOTSU_CNT)
-        Else
-            Return REQ_KOTSU_CNT
-        End If
+        Return GetName_SANKA_YOTEI_CNT(REQ_KOTSU_CNT)
     End Function
 
     '(依頼)タクシー手配予定人数
     Public Shared Function GetName_REQ_TAXI_CNT(ByVal REQ_TAXI_CNT As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.EditComma(REQ_TAXI_CNT)
-        Else
-            Return REQ_TAXI_CNT
-        End If
+        Return GetName_SANKA_YOTEI_CNT(REQ_TAXI_CNT)
     End Function
 
     'その他備考欄
