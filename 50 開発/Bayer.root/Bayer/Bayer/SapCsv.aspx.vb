@@ -170,7 +170,7 @@ Partial Public Class SapCsv
             Dim strSapZeiCd As String = AppModule.GetSapZeiCd(SeikyuData(wCnt).FROM_DATE, MyBase.DbConnection)
 
             If SeikyuData(wCnt).ROW_NO = 1 Then
-                '講演会1回目の請求のとき
+                '1講演会に対して1回目の請求のとき
                 If SeikyuData(wCnt).SRM_HACYU_KBN = AppConst.KAIJO.SRM_HACYU_KBN.Code.No Then
                     'SAP精算のとき
                     SetKaijoKotsuRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd)
@@ -178,11 +178,11 @@ Partial Public Class SapCsv
 
                 'MR旅費
                 SetMrRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
+            Else
+                '1講演会に対して2回目以降の請求のとき
+                'タクチケ(課税)
+                SetTaxiRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
             End If
-
-            'タクチケ
-            '講演会に紐づくタクチケ料金を取得して、コストセンター分レコードを作成する
-            SetTaxiRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
         Next
 
         '1行目

@@ -731,14 +731,19 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL &= "SELECT"
-            strSQL &= " COST_CENTER"
-            strSQL &= ",SUM(CAST(ISNULL(ANS_MR_HOTELHI,'') AS BIGINT) + CAST(ISNULL(ANS_MR_HOTELHI_TOZEI,'') AS BIGINT) + CAST(ISNULL(ANS_MR_KOTSUHI,'') AS BIGINT))"
-            strSQL &= " AS ANS_MR_HOTELHI"
+            strSQL &= " WK2.COST_CENTER"
+            strSQL &= ",SUM(CAST(ISNULL(WK2.ANS_MR_HOTELHI,'') AS BIGINT) + CAST(ISNULL(WK2.ANS_MR_HOTELHI_TOZEI,'') AS BIGINT) + CAST(ISNULL(WK2.ANS_MR_KOTSUHI,'') AS BIGINT)) AS ANS_MR_HOTELHI"
             strSQL &= " FROM"
-            strSQL &= " TBL_KOTSUHOTEL"
-            strSQL &= " WHERE KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " GROUP BY COST_CENTER"
-            strSQL &= " ORDER BY COST_CENTER"
+            strSQL &= " (SELECT TBL_KOTSUHOTEL.KOUENKAI_NO,TBL_KOTSUHOTEL.SANKASHA_ID,MAX(TBL_KOTSUHOTEL.TIME_STAMP_BYL) AS TIME_STAMP_BYL FROM TBL_KOTSUHOTEL"
+            strSQL &= "  GROUP BY TBL_KOTSUHOTEL.KOUENKAI_NO,TBL_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= "  ) WK1"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL)WK2"
+            strSQL &= " ON (WK1.KOUENKAI_NO = WK2.KOUENKAI_NO) AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID) AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
+            strSQL &= " WHERE"
+            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " GROUP BY WK2.COST_CENTER"
+            strSQL &= " ORDER BY WK2.COST_CENTER"
 
             Return strSQL
         End Function
