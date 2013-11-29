@@ -722,6 +722,7 @@ Public Class SQL
             strSQL &= "       WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
             strSQL &= "      )WK_KOUENKAI"
             strSQL &= " ON WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ORDER BY WK_SEIKYU.KOUENKAI_NO,WK_SEIKYU.SEIKYU_NO_TOPTOUR"
 
             Return strSQL
         End Function
