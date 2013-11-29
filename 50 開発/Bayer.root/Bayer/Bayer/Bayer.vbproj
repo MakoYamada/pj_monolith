@@ -335,7 +335,7 @@
     </Compile>
     <Compile Include="SapCsv.aspx.vb">
       <DependentUpon>SapCsv.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SeisanKensaku.aspx.designer.vb">
       <DependentUpon>SeisanKensaku.aspx</DependentUpon>
@@ -420,6 +420,12 @@
     <Compile Include="DrListReport.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MishuHoukoku.Designer.vb">
+      <DependentUpon>MishuHoukoku.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MishuHoukoku.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -476,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrListReport.resx">
       <DependentUpon>DrListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MishuHoukoku.resx">
+      <DependentUpon>MishuHoukoku.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
