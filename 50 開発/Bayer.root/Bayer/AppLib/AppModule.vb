@@ -1235,9 +1235,9 @@ Public Class AppModule
     Public Shared Function GetName_KIDOKU_FLG(ByVal KIDOKU_FLG As String) As String
         Select Case KIDOKU_FLG
             Case AppConst.KOUENKAI.KIDOKU_FLG.Code.Yes
-                Return AppConst.KOUENKAI.KIDOKU_FLG.Name.Yes
+                Return AppConst.KOUENKAI.KIDOKU_FLG.Code.Yes
             Case AppConst.KOUENKAI.KIDOKU_FLG.Code.No
-                Return AppConst.KOUENKAI.KIDOKU_FLG.Name.No
+                Return AppConst.KOUENKAI.KIDOKU_FLG.Code.No
             Case Else
                 Return ""
         End Select
