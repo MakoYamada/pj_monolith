@@ -836,7 +836,8 @@ Partial Public Class KaijoRegist
             '履歴の場合
             Joken.UPDATE_DATE = TBL_KAIJO(SEQ).UPDATE_DATE
         End If
-        strSQL = SQL.TBL_KAIJO.Search(Joken, False)
+        'strSQL = SQL.TBL_KAIJO.Search(Joken, False)
+        strSQL = SQL.TBL_KAIJO.Print(TBL_KAIJO(SEQ).SALEFORCE_ID, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
 
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath

@@ -93,6 +93,8 @@
 						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI<br />送信" HtmlEncode="false" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" ItemStyle-Width="56px" ItemStyle-BackColor="#e4e9d1" />
+						<asp:BoundField DataField="SALEFORCE_ID" />
+						<asp:BoundField DataField="TEHAI_ID" />
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />
 					</Columns>

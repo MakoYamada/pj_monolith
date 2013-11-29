@@ -564,7 +564,7 @@
 												<td nowrap="nowrap" align="left">
 													<table border="0" cellpadding="2" cellspacing="0" style="margin-left: 5px;">
 														<tr>
-															<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp2" style="width: 92px;">
+															<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp2" style="width: 90px;">
 																ŽžŠÔ(From)
 															</td>
 															<td nowrap="nowrap" align="left" style="width: 60px;">

@@ -18,6 +18,8 @@ Partial Public Class NewKaijoList
         REQ_STATUS_TEHAI
         USER_NAME
         Button1
+        SALEFORCE_ID
+        TEHAI_ID
         KOUENKAI_NO
         TO_DATE
     End Enum
@@ -169,10 +171,12 @@ Partial Public Class NewKaijoList
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            e.Row.Cells(CellIndex.SALEFORCE_ID).Visible = False
+            e.Row.Cells(CellIndex.TEHAI_ID).Visible = False
             e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
+            e.Row.Cells(CellIndex.TO_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
-            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 2
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 4
             Me.GrvList.BorderStyle = BorderStyle.None
             Dim PagerTableCell As TableCell = e.Row.Cells(0)
             PagerTableCell.BorderStyle = BorderStyle.None
@@ -234,9 +238,9 @@ Partial Public Class NewKaijoList
     Protected Sub BtnKaijoPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaijoPrint1.Click, BtnKaijoPrint2.Click
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
-        Dim KOUENKAI_NO() As String
         Dim strSQL As String = ""
-
+        Dim KOUENKAI_NO() As String
+       
         'チェック
         ReDim KOUENKAI_NO(wCnt)
         For Each wRow As GridViewRow In Me.GrvList.Rows

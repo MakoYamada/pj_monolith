@@ -62,11 +62,13 @@ Partial Public Class Menu1
         If MS_USER.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
             CmnModule.SetEnabled(Me.BtnMstUser, True)
             CmnModule.SetEnabled(Me.BtnMstCode, True)
+            CmnModule.SetEnabled(Me.BtnMstCostcenter, True)
             CmnModule.SetEnabled(Me.BtnLogFile, True)
             CmnModule.SetEnabled(Me.BtnLogSousa, True)
         Else
             CmnModule.SetEnabled(Me.BtnMstUser, False)
             CmnModule.SetEnabled(Me.BtnMstCode, False)
+            CmnModule.SetEnabled(Me.BtnMstCostcenter, False)
             CmnModule.SetEnabled(Me.BtnLogFile, False)
             CmnModule.SetEnabled(Me.BtnLogSousa, False)
         End If
