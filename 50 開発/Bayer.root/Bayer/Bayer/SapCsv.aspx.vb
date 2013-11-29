@@ -3,29 +3,19 @@ Imports AppLib
 Partial Public Class SapCsv
     Inherits WebBase
 
-    
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
-
-        ''セッションを変数に格納
-        'If Not SetSession() Then
-        '    Response.Redirect(URL.TimeOut)
-        'End If
 
         If Not Page.IsPostBack Then
 
             '画面項目 初期化
             InitControls()
-
-            ''画面項目表示
-            'SetForm()
         End If
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "SAP用CSV出力"
+            .PageTitle = "SAP用CSVデータ作成"
         End With
     End Sub
 
@@ -238,7 +228,7 @@ Partial Public Class SapCsv
         csvData(rowCnt).SEIKYUSHO_NO = ""
         csvData(rowCnt).DOC_HTEXT = ""
         csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
-        csvData(rowCnt).KINGAKU = Kingaku
+        csvData(rowCnt).KINGAKU = Kingaku.ToString
         csvData(rowCnt).ZEI_CD = strSapZeiCd
         csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
         csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
@@ -261,7 +251,7 @@ Partial Public Class SapCsv
         csvData(rowCnt).SEIKYUSHO_NO = ""
         csvData(rowCnt).DOC_HTEXT = ""
         csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
-        csvData(rowCnt).KINGAKU = Kingaku
+        csvData(rowCnt).KINGAKU = Kingaku.ToString
         csvData(rowCnt).ZEI_CD = strSapZeiCd
         csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
         csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
@@ -284,7 +274,7 @@ Partial Public Class SapCsv
         csvData(rowCnt).SEIKYUSHO_NO = ""
         csvData(rowCnt).DOC_HTEXT = ""
         csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
-        csvData(rowCnt).KINGAKU = Kingaku
+        csvData(rowCnt).KINGAKU = Kingaku.ToString
         csvData(rowCnt).ZEI_CD = strSapZeiCd
         csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
         csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
@@ -320,13 +310,13 @@ Partial Public Class SapCsv
                 csvData(rowCnt).SEIKYUSHO_NO = ""
                 csvData(rowCnt).DOC_HTEXT = ""
                 csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
-                csvData(rowCnt).KINGAKU = Kingaku
+                csvData(rowCnt).KINGAKU = Kingaku.ToString
                 csvData(rowCnt).ZEI_CD = strSapZeiCd
                 csvData(rowCnt).COST_CENTER = MrData(wCnt).COST_CENTER
                 csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
                 csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
                 csvData(rowCnt).PAYMENT_BLOCK = ""
-                csvData(rowCnt).ZETIA_CD = csvData(rowCnt).ZETIA_CD
+                csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
                 csvData(rowCnt).BARCODE = ""
             Next
         End If
@@ -393,7 +383,7 @@ Partial Public Class SapCsv
         '        csvData(rowCnt).SEIKYUSHO_NO = ""
         '        csvData(rowCnt).DOC_HTEXT = ""
         '        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
-        '        csvData(rowCnt).KINGAKU = Kingaku
+        '        csvData(rowCnt).KINGAKU = Kingaku.ToString
         '        csvData(rowCnt).ZEI_CD = strSapZeiCd
         '        csvData(rowCnt).COST_CENTER = TaxiData(wCnt).COST_CENTER
         '        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
