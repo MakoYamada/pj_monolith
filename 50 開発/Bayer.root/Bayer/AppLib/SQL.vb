@@ -738,6 +738,7 @@ Public Class SQL
             strSQL &= " TBL_KOTSUHOTEL"
             strSQL &= " WHERE KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " GROUP BY COST_CENTER"
+            strSQL &= " ORDER BY COST_CENTER"
 
             Return strSQL
         End Function
