@@ -16,6 +16,11 @@ Public Class MessageDef
             Return ItemName & "を選択してください。"
         End Function
 
+        '入力不可
+        Public Shared Function MustNotInput(ByVal ItemName As String) As String
+            Return ItemName & "は入力しないでください。"
+        End Function
+
         '登録されていません
         Public Shared Function IsNotRegistered(ByVal ItemName As String) As String
             Return ItemName & "は登録されていません。"
