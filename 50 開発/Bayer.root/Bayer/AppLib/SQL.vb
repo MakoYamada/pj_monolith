@@ -400,6 +400,16 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byKOUENKAI_NO_LESS_THAN_SEIKYU_NO_TOPTOUR(ByVal KOUENKAI_NO As String, ByVal SEIKYU_NO_TOPTOUR As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_SEIKYU.KOUENKAI_NO = N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_SEIKYU.SEIKYU_NO_TOPTOUR < N'" & CmnDb.SqlString(SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function bySEND_FLAG(ByVal SEND_FLAG As String) As String
             Dim strSQL As String = ""
             strSQL &= "SELECT DISTINCT"
