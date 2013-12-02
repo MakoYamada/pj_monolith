@@ -1144,9 +1144,11 @@
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 90px;">
 													óòópäzçáåv
 												</td>
-												<td nowrap="nowrap" align="left" class="TdItemKaijo">
+												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 110px">
 													<asp:Label ID="ANS_MITSUMORI_TOTAL" runat="server" Text="1,234,567,890"></asp:Label>
 													&nbsp;&nbsp;&nbsp;
+												</td>
+												<td nowrap="nowrap" align="left" class="TdItemKaijo">
 													<asp:Button ID="BtnCalc_ANS_MITSUMORI" runat="server" Text="çƒåvéZ" Width="60px" CssClass="ButtonList" />
 												</td>
 											</tr>
