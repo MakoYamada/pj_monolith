@@ -168,6 +168,55 @@ Partial Public Class SeisanRegist
         Me.MR_JR.Text = TBL_SEIKYU(SEQ).MR_JR
         Me.MR_HOTEL.Text = TBL_SEIKYU(SEQ).MR_HOTEL
         Me.MR_HOTEL_TOZEI.Text = TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI
+
+        If CmnCheck.IsInput(Me.KOUENKAI_NO) AndAlso CmnCheck.IsInput(Me.SEIKYU_NO_TOPTOUR) Then
+            '登録済みのデータのとき
+
+            SetFormFirst(Not AppModule.IsExist( _
+                         SQL.TBL_SEIKYU.byKOUENKAI_NO_LESS_THAN_SEIKYU_NO_TOPTOUR( _
+                            TBL_SEIKYU(SEQ).KOUENKAI_NO, TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), MyBase.DbConnection))
+        End If
+
+    End Sub
+
+    '画面入力可/不可の制御
+    'isFirst:True  1講演会に対して1回目の精算データのとき
+    '       :False 1講演会に対して2回目以降の精算データのとき
+    Private Sub SetFormFirst(ByVal isFirst As Boolean)
+
+        CmnModule.SetEnabled(Me.KAIJOHI_TF, isFirst)
+        CmnModule.SetEnabled(Me.KIZAIHI_TF, isFirst)
+        CmnModule.SetEnabled(Me.INSHOKUHI_TF, isFirst)
+
+        CmnModule.SetEnabled(Me.HOTELHI_TF, isFirst)
+        CmnModule.SetEnabled(Me.HOTELHI_TOZEI, isFirst)
+        CmnModule.SetEnabled(Me.JR_TF, isFirst)
+        CmnModule.SetEnabled(Me.AIR_TF, isFirst)
+        CmnModule.SetEnabled(Me.OTHER_TRAFFIC_TF, isFirst)
+        CmnModule.SetEnabled(Me.TAXI_COMMISSION_TF, isFirst)
+        CmnModule.SetEnabled(Me.HOTEL_COMMISSION_TF, isFirst)
+        CmnModule.SetEnabled(Me.JINKENHI_TF, isFirst)
+        CmnModule.SetEnabled(Me.OTHER_TF, isFirst)
+        CmnModule.SetEnabled(Me.KANRIHI_TF, isFirst)
+        CmnModule.SetEnabled(Me.TAXI_TF, isFirst)
+        CmnModule.SetEnabled(Me.TAXI_SEISAN_TF, isFirst)
+
+        CmnModule.SetEnabled(Me.KAIJOUHI_T, isFirst)
+        CmnModule.SetEnabled(Me.KIZAIHI_T, isFirst)
+        CmnModule.SetEnabled(Me.INSHOKUHI_T, isFirst)
+
+        CmnModule.SetEnabled(Me.JINKENHI_T, isFirst)
+        CmnModule.SetEnabled(Me.OTHER_T, isFirst)
+        CmnModule.SetEnabled(Me.KANRIHI_T, isFirst)
+
+        CmnModule.SetEnabled(Me.MR_HOTEL, isFirst)
+        CmnModule.SetEnabled(Me.MR_HOTEL_TOZEI, isFirst)
+        CmnModule.SetEnabled(Me.MR_JR, isFirst)
+        CmnModule.SetEnabled(Me.SEISANSHO_URL, isFirst)
+
+        CmnModule.SetEnabled(Me.TAXI_T, Not isFirst)
+        CmnModule.SetEnabled(Me.TAXI_SEISAN_T, Not isFirst)
+        CmnModule.SetEnabled(Me.TAXI_TICKET_URL, Not isFirst)
     End Sub
 
     Private Sub CalculateKingaku()
@@ -421,6 +470,157 @@ Partial Public Class SeisanRegist
         Return True
     End Function
 
+
+    Private Function Check_First(ByVal isFirst As Boolean) As Boolean
+        If isFirst Then
+            '1講演会に対して1回目の精算データのときの入力チェック
+            '入力されていたらNG
+            If CmnCheck.IsInput(Me.TAXI_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.TAXI_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.TAXI_SEISAN_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.TAXI_TICKET_URL.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.TAXI_TICKET_URL), Me)
+                Return False
+            End If
+        Else
+            '1講演会に対して2回目以降の精算データのときの入力チェック
+            '入力されていたらNG
+            If CmnCheck.IsInput(Me.KAIJOHI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.KAIJOHI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.KIZAIHI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.KIZAIHI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.INSHOKUHI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.INSHOKUHI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.HOTELHI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.HOTELHI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.HOTELHI_TOZEI.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.HOTELHI_TOZEI), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.JR_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.JR_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.AIR_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.AIR_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.OTHER_TRAFFIC_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.OTHER_TRAFFIC_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.TAXI_COMMISSION_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.TAXI_COMMISSION_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.HOTEL_COMMISSION_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.HOTEL_COMMISSION_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.JINKENHI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.JINKENHI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.OTHER_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.OTHER_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.KANRIHI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.KANRIHI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.TAXI_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.TAXI_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.TAXI_SEISAN_TF.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_TF), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.KAIJOUHI_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.KAIJOUHI_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.KIZAIHI_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.KIZAIHI_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.INSHOKUHI_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.INSHOKUHI_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.JINKENHI_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.JINKENHI_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.OTHER_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.OTHER_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.KANRIHI_T.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.KANRIHI_T), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.MR_HOTEL.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.MR_HOTEL), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.MR_HOTEL_TOZEI.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.MR_HOTEL_TOZEI), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.MR_JR.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
+                Return False
+            End If
+
+            If CmnCheck.IsInput(Me.SEISANSHO_URL.Text) Then
+                CmnModule.AlertMessage(MessageDef.Error.MustNotInput(TableDef.TBL_SEIKYU.Name.SEISANSHO_URL), Me)
+                Return False
+            End If
+        End If
+
+        Return True
+    End Function
+
     '入力値を取得    Private Sub GetValue(ByVal SEND_FLAG As String)
 
         TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
@@ -477,9 +677,40 @@ Partial Public Class SeisanRegist
 
         If MyModule.IsInsertMode() Then
             '新規登録
+            If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                            MyBase.DbConnection) Then
+                CmnModule.AlertMessage(MessageDef.Error.IsRegistered(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO & ":" & TBL_SEIKYU(SEQ).KOUENKAI_NO & "\n" & _
+                                                                     TableDef.TBL_SEIKYU.Name.SEIKYU_NO_TOPTOUR & ":" & TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR & "\nのデータ"), Me)
+                Return False
+            End If
+            If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_LESS_THAN_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                            MyBase.DbConnection) Then
+                '1講演会に対して2回目以降の精算データのとき
+                If Not Check_First(False) Then
+                    Return False
+                End If
+            Else
+                '1講演会に対して1回目の精算データのとき
+                If Not Check_First(True) Then
+                    Return False
+                End If
+            End If
+
             Return InsertData()
         Else
             '更新
+            If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_LESS_THAN_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                            MyBase.DbConnection) Then
+                '1講演会に対して2回目以降の精算データのとき
+                If Not Check_First(False) Then
+                    Return False
+                End If
+            Else
+                '1講演会に対して1回目の精算データのとき
+                If Not Check_First(True) Then
+                    Return False
+                End If
+            End If
             Return UpdateData()
         End If
 
@@ -487,18 +718,8 @@ Partial Public Class SeisanRegist
 
     'データ新規登録
     Private Function InsertData() As Boolean
-
-        If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
-                                                                            TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
-                                                                            MyBase.DbConnection) Then
-            CmnModule.AlertMessage(MessageDef.Error.IsRegistered(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO & ":" & TBL_SEIKYU(SEQ).KOUENKAI_NO & "\n" & _
-                                                                 TableDef.TBL_SEIKYU.Name.SEIKYU_NO_TOPTOUR & ":" & TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR & "\nのデータ"), Me)
-            Return False
-        End If
-
         MyBase.BeginTransaction()
         Try
-
             'データ登録
             Dim strSQL As String = SQL.TBL_SEIKYU.Insert(TBL_SEIKYU(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
@@ -521,12 +742,10 @@ Partial Public Class SeisanRegist
 
     'データ更新
     Private Function UpdateData() As Boolean
-        Dim strSQL As String
-
         MyBase.BeginTransaction()
         Try
             'データ更新
-            strSQL = SQL.TBL_SEIKYU.Update(TBL_SEIKYU(SEQ))
+            Dim strSQL As String = SQL.TBL_SEIKYU.Update(TBL_SEIKYU(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
 
