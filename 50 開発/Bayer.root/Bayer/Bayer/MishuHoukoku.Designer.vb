@@ -20,25 +20,46 @@ Partial Public Class MishuHoukoku
         Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(MishuHoukoku))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
         Me.Detail = New DataDynamics.ActiveReports.Detail
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.Line42 = New DataDynamics.ActiveReports.Line
+        Me.Label40 = New DataDynamics.ActiveReports.Label
+        Me.Label39 = New DataDynamics.ActiveReports.Label
+        Me.Label38 = New DataDynamics.ActiveReports.Label
+        Me.Label41 = New DataDynamics.ActiveReports.Label
+        Me.MISHU_KINGAKU = New DataDynamics.ActiveReports.TextBox
+        Me.DANTAI_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.KAMOKU_CODE = New DataDynamics.ActiveReports.TextBox
+        Me.SEISAN_YM = New DataDynamics.ActiveReports.TextBox
+        Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.DANTAI_CODE = New DataDynamics.ActiveReports.TextBox
+        Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.KIKAKU_TANTO_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.Label36 = New DataDynamics.ActiveReports.Label
+        Me.Label32 = New DataDynamics.ActiveReports.Label
+        Me.Label33 = New DataDynamics.ActiveReports.Label
+        Me.Label34 = New DataDynamics.ActiveReports.Label
+        Me.Label35 = New DataDynamics.ActiveReports.Label
+        Me.Label24 = New DataDynamics.ActiveReports.Label
+        Me.Label21 = New DataDynamics.ActiveReports.Label
+        Me.Label20 = New DataDynamics.ActiveReports.Label
+        Me.Label6 = New DataDynamics.ActiveReports.Label
+        Me.Label7 = New DataDynamics.ActiveReports.Label
+        Me.Label8 = New DataDynamics.ActiveReports.Label
+        Me.Label9 = New DataDynamics.ActiveReports.Label
         Me.Label1 = New DataDynamics.ActiveReports.Label
+        Me.Label2 = New DataDynamics.ActiveReports.Label
+        Me.Label3 = New DataDynamics.ActiveReports.Label
+        Me.Label4 = New DataDynamics.ActiveReports.Label
+        Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.Line1 = New DataDynamics.ActiveReports.Line
         Me.Line2 = New DataDynamics.ActiveReports.Line
-        Me.Line3 = New DataDynamics.ActiveReports.Line
         Me.Line4 = New DataDynamics.ActiveReports.Line
         Me.Line5 = New DataDynamics.ActiveReports.Line
         Me.Line6 = New DataDynamics.ActiveReports.Line
         Me.Line7 = New DataDynamics.ActiveReports.Line
         Me.Line8 = New DataDynamics.ActiveReports.Line
         Me.Line9 = New DataDynamics.ActiveReports.Line
-        Me.Label2 = New DataDynamics.ActiveReports.Label
-        Me.Label3 = New DataDynamics.ActiveReports.Label
-        Me.Label4 = New DataDynamics.ActiveReports.Label
-        Me.Label5 = New DataDynamics.ActiveReports.Label
-        Me.Label6 = New DataDynamics.ActiveReports.Label
-        Me.Label7 = New DataDynamics.ActiveReports.Label
-        Me.Label8 = New DataDynamics.ActiveReports.Label
-        Me.Label9 = New DataDynamics.ActiveReports.Label
+        Me.Line3 = New DataDynamics.ActiveReports.Line
         Me.Label10 = New DataDynamics.ActiveReports.Label
         Me.Label11 = New DataDynamics.ActiveReports.Label
         Me.Label12 = New DataDynamics.ActiveReports.Label
@@ -48,8 +69,6 @@ Partial Public Class MishuHoukoku
         Me.Label18 = New DataDynamics.ActiveReports.Label
         Me.Label19 = New DataDynamics.ActiveReports.Label
         Me.Line19 = New DataDynamics.ActiveReports.Line
-        Me.Label20 = New DataDynamics.ActiveReports.Label
-        Me.Label21 = New DataDynamics.ActiveReports.Label
         Me.Line20 = New DataDynamics.ActiveReports.Line
         Me.Line21 = New DataDynamics.ActiveReports.Line
         Me.Line22 = New DataDynamics.ActiveReports.Line
@@ -59,8 +78,6 @@ Partial Public Class MishuHoukoku
         Me.Label23 = New DataDynamics.ActiveReports.Label
         Me.Line23 = New DataDynamics.ActiveReports.Line
         Me.Line24 = New DataDynamics.ActiveReports.Line
-        Me.Label24 = New DataDynamics.ActiveReports.Label
-        Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Line26 = New DataDynamics.ActiveReports.Line
         Me.Label25 = New DataDynamics.ActiveReports.Label
         Me.Label26 = New DataDynamics.ActiveReports.Label
@@ -69,10 +86,6 @@ Partial Public Class MishuHoukoku
         Me.Label29 = New DataDynamics.ActiveReports.Label
         Me.Label30 = New DataDynamics.ActiveReports.Label
         Me.Label31 = New DataDynamics.ActiveReports.Label
-        Me.Label32 = New DataDynamics.ActiveReports.Label
-        Me.Label33 = New DataDynamics.ActiveReports.Label
-        Me.Label34 = New DataDynamics.ActiveReports.Label
-        Me.Label35 = New DataDynamics.ActiveReports.Label
         Me.Line27 = New DataDynamics.ActiveReports.Line
         Me.Line28 = New DataDynamics.ActiveReports.Line
         Me.Line29 = New DataDynamics.ActiveReports.Line
@@ -82,27 +95,14 @@ Partial Public Class MishuHoukoku
         Me.Line33 = New DataDynamics.ActiveReports.Line
         Me.Line34 = New DataDynamics.ActiveReports.Line
         Me.Line35 = New DataDynamics.ActiveReports.Line
-        Me.Label36 = New DataDynamics.ActiveReports.Label
+        Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Line36 = New DataDynamics.ActiveReports.Line
         Me.Line37 = New DataDynamics.ActiveReports.Line
-        Me.DANTAI_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.KAMOKU_CODE = New DataDynamics.ActiveReports.TextBox
-        Me.MISHU_KINGAKU = New DataDynamics.ActiveReports.TextBox
-        Me.KIKAKU_TANTO_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.DANTAI_CODE = New DataDynamics.ActiveReports.TextBox
-        Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.SEISAN_YM = New DataDynamics.ActiveReports.TextBox
         Me.Label37 = New DataDynamics.ActiveReports.Label
         Me.Line38 = New DataDynamics.ActiveReports.Line
         Me.Line39 = New DataDynamics.ActiveReports.Line
         Me.Line40 = New DataDynamics.ActiveReports.Line
         Me.Line41 = New DataDynamics.ActiveReports.Line
-        Me.Line42 = New DataDynamics.ActiveReports.Line
-        Me.Label38 = New DataDynamics.ActiveReports.Label
-        Me.Label39 = New DataDynamics.ActiveReports.Label
-        Me.Label40 = New DataDynamics.ActiveReports.Label
-        Me.Label41 = New DataDynamics.ActiveReports.Label
         Me.Line43 = New DataDynamics.ActiveReports.Line
         Me.Line44 = New DataDynamics.ActiveReports.Line
         Me.Line45 = New DataDynamics.ActiveReports.Line
@@ -121,15 +121,47 @@ Partial Public Class MishuHoukoku
         Me.Line17 = New DataDynamics.ActiveReports.Line
         Me.Line18 = New DataDynamics.ActiveReports.Line
         Me.Line48 = New DataDynamics.ActiveReports.Line
+        Me.KEI_991330401_TF = New DataDynamics.ActiveReports.TextBox
+        Me.KEI_41120200_TF = New DataDynamics.ActiveReports.TextBox
+        Me.KEI_991330401_T = New DataDynamics.ActiveReports.TextBox
+        Me.KEI_41120200_T = New DataDynamics.ActiveReports.TextBox
+        Me.MR_HOTEL = New DataDynamics.ActiveReports.TextBox
+        Me.MR_HOTEL_TOZEI = New DataDynamics.ActiveReports.TextBox
+        Me.MR_JR = New DataDynamics.ActiveReports.TextBox
+        Me.TAXI_T = New DataDynamics.ActiveReports.TextBox
+        Me.TAXI_SEISAN_T = New DataDynamics.ActiveReports.TextBox
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.RIYU = New DataDynamics.ActiveReports.TextBox
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label40, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label41, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MISHU_KINGAKU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DANTAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KAMOKU_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SEISAN_YM, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DANTAI_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KIKAKU_TANTO_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label35, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,13 +169,10 @@ Partial Public Class MishuHoukoku
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label24, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label27, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -151,28 +180,21 @@ Partial Public Class MishuHoukoku
         CType(Me.Label29, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label30, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label31, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label35, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label36, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DANTAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KAMOKU_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MISHU_KINGAKU, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KIKAKU_TANTO_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DANTAI_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SEISAN_YM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label37, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label38, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label39, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label40, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KEI_991330401_TF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KEI_41120200_TF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KEI_991330401_T, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KEI_41120200_T, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MR_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MR_HOTEL_TOZEI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MR_JR, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TAXI_T, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TAXI_SEISAN_T, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RIYU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -183,15 +205,319 @@ Partial Public Class MishuHoukoku
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line42, Me.Label40, Me.Label39, Me.Label38, Me.Label41, Me.MISHU_KINGAKU, Me.DANTAI_NAME, Me.KAMOKU_CODE, Me.SEISAN_YM, Me.FROM_DATE, Me.DANTAI_CODE, Me.KOUENKAI_NAME, Me.KIKAKU_TANTO_NAME, Me.Label36, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label24, Me.Label21, Me.Label20, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.Label5, Me.Line1, Me.Line2, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line3, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Line15, Me.PRINT_DATE, Me.Label18, Me.Label19, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Label22, Me.JIGYOSHO, Me.USER_NAME, Me.Label23, Me.Line23, Me.Line24, Me.Line26, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Line27, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line34, Me.Line35, Me.Line25, Me.Line36, Me.Line37, Me.Label37, Me.Line38, Me.Line39, Me.Line40, Me.Line41, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line16, Me.Line17, Me.Line18, Me.Line48})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.RIYU, Me.TO_DATE, Me.Line42, Me.Label40, Me.Label39, Me.Label38, Me.Label41, Me.MISHU_KINGAKU, Me.DANTAI_NAME, Me.KAMOKU_CODE, Me.SEISAN_YM, Me.FROM_DATE, Me.DANTAI_CODE, Me.KOUENKAI_NAME, Me.KIKAKU_TANTO_NAME, Me.Label36, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label24, Me.Label21, Me.Label20, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.Label5, Me.Line1, Me.Line2, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line3, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Line15, Me.PRINT_DATE, Me.Label18, Me.Label19, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Label22, Me.JIGYOSHO, Me.USER_NAME, Me.Label23, Me.Line23, Me.Line24, Me.Line26, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Line27, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line34, Me.Line35, Me.Line25, Me.Line36, Me.Line37, Me.Label37, Me.Line38, Me.Line39, Me.Line40, Me.Line41, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line16, Me.Line17, Me.Line18, Me.Line48, Me.KEI_991330401_TF, Me.KEI_41120200_TF, Me.KEI_991330401_T, Me.KEI_41120200_T, Me.MR_HOTEL, Me.MR_HOTEL_TOZEI, Me.MR_JR, Me.TAXI_T, Me.TAXI_SEISAN_T})
         Me.Detail.Height = 9.684252!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
         '
-        'PageFooter
+        'TO_DATE
         '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
+        Me.TO_DATE.DataField = "TO_DATE"
+        Me.TO_DATE.Height = 0.2000002!
+        Me.TO_DATE.Left = 3.311024!
+        Me.TO_DATE.Name = "TO_DATE"
+        Me.TO_DATE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.TO_DATE.Text = "TO_DATE"
+        Me.TO_DATE.Top = 4.819292!
+        Me.TO_DATE.Visible = False
+        Me.TO_DATE.Width = 2.642127!
+        '
+        'Line42
+        '
+        Me.Line42.Height = 0.0!
+        Me.Line42.Left = 0.003937008!
+        Me.Line42.LineWeight = 3.0!
+        Me.Line42.Name = "Line42"
+        Me.Line42.Top = 8.982285!
+        Me.Line42.Width = 6.920472!
+        Me.Line42.X1 = 0.003937008!
+        Me.Line42.X2 = 6.924409!
+        Me.Line42.Y1 = 8.982285!
+        Me.Line42.Y2 = 8.982285!
+        '
+        'Label40
+        '
+        Me.Label40.Height = 0.1480315!
+        Me.Label40.HyperLink = Nothing
+        Me.Label40.Left = 0.003937008!
+        Me.Label40.Name = "Label40"
+        Me.Label40.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
+            "ical-align: middle; ddo-char-set: 1"
+        Me.Label40.Text = "　　　（この報告をしたが回収日が再度変更される場合もその都度この様式により報告すること。）"
+        Me.Label40.Top = 9.38071!
+        Me.Label40.Width = 6.924409!
+        '
+        'Label39
+        '
+        Me.Label39.Height = 0.1480315!
+        Me.Label39.HyperLink = Nothing
+        Me.Label39.Left = 0.003937008!
+        Me.Label39.Name = "Label39"
+        Me.Label39.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
+            "ical-align: middle; ddo-char-set: 1"
+        Me.Label39.Text = "　　＊回収日（確定入金日）が発生日より2ヶ月以上経過、又は確定入金日が２回以上変更する未収入金はこの様式により提出する。"
+        Me.Label39.Top = 9.232678!
+        Me.Label39.Width = 6.924409!
+        '
+        'Label38
+        '
+        Me.Label38.Height = 0.1480314!
+        Me.Label38.HyperLink = Nothing
+        Me.Label38.Left = 0.003937008!
+        Me.Label38.Name = "Label38"
+        Me.Label38.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
+            "ical-align: middle; ddo-char-set: 1"
+        Me.Label38.Text = "　　※当初約定日を経過した５００万円以上の未収入金はすべてこの様式により提出する。"
+        Me.Label38.Top = 9.084646!
+        Me.Label38.Width = 6.924409!
+        '
+        'Label41
+        '
+        Me.Label41.Height = 0.1480315!
+        Me.Label41.HyperLink = Nothing
+        Me.Label41.Left = 0.003937008!
+        Me.Label41.Name = "Label41"
+        Me.Label41.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
+            "ical-align: middle; ddo-char-set: 1"
+        Me.Label41.Text = "　　＊この様式には｢請求書コピー｣を必ず添付して提出を行なうこと。"
+        Me.Label41.Top = 9.528742!
+        Me.Label41.Width = 6.924409!
+        '
+        'MISHU_KINGAKU
+        '
+        Me.MISHU_KINGAKU.Height = 0.4000001!
+        Me.MISHU_KINGAKU.Left = 0.8700788!
+        Me.MISHU_KINGAKU.Name = "MISHU_KINGAKU"
+        Me.MISHU_KINGAKU.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.MISHU_KINGAKU.Text = "MISHU_KINGAKU"
+        Me.MISHU_KINGAKU.Top = 3.419291!
+        Me.MISHU_KINGAKU.Width = 2.592126!
+        '
+        'DANTAI_NAME
+        '
+        Me.DANTAI_NAME.DataField = "DANTAI_NAME"
+        Me.DANTAI_NAME.Height = 0.2000001!
+        Me.DANTAI_NAME.Left = 0.8700788!
+        Me.DANTAI_NAME.Name = "DANTAI_NAME"
+        Me.DANTAI_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.DANTAI_NAME.Text = "DANTAI_NAME"
+        Me.DANTAI_NAME.Top = 3.019292!
+        Me.DANTAI_NAME.Width = 2.592126!
+        '
+        'KAMOKU_CODE
+        '
+        Me.KAMOKU_CODE.Height = 0.2000001!
+        Me.KAMOKU_CODE.Left = 0.8700788!
+        Me.KAMOKU_CODE.Name = "KAMOKU_CODE"
+        Me.KAMOKU_CODE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KAMOKU_CODE.Text = "KAMOKU_CODE"
+        Me.KAMOKU_CODE.Top = 3.219291!
+        Me.KAMOKU_CODE.Width = 2.592126!
+        '
+        'SEISAN_YM
+        '
+        Me.SEISAN_YM.DataField = "SEISAN_YM"
+        Me.SEISAN_YM.Height = 0.2000001!
+        Me.SEISAN_YM.Left = 4.282284!
+        Me.SEISAN_YM.Name = "SEISAN_YM"
+        Me.SEISAN_YM.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.SEISAN_YM.Text = "SEISAN_YM"
+        Me.SEISAN_YM.Top = 3.807481!
+        Me.SEISAN_YM.Width = 2.642126!
+        '
+        'FROM_DATE
+        '
+        Me.FROM_DATE.DataField = "FROM_DATE"
+        Me.FROM_DATE.Height = 0.2000001!
+        Me.FROM_DATE.Left = 4.282284!
+        Me.FROM_DATE.Name = "FROM_DATE"
+        Me.FROM_DATE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.FROM_DATE.Text = "FROM_DATE"
+        Me.FROM_DATE.Top = 3.219291!
+        Me.FROM_DATE.Width = 2.642126!
+        '
+        'DANTAI_CODE
+        '
+        Me.DANTAI_CODE.DataField = "DANTAI_CODE"
+        Me.DANTAI_CODE.Height = 0.2000001!
+        Me.DANTAI_CODE.Left = 4.282284!
+        Me.DANTAI_CODE.Name = "DANTAI_CODE"
+        Me.DANTAI_CODE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.DANTAI_CODE.Top = 3.019292!
+        Me.DANTAI_CODE.Width = 2.646063!
+        '
+        'KOUENKAI_NAME
+        '
+        Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
+        Me.KOUENKAI_NAME.Height = 0.4000001!
+        Me.KOUENKAI_NAME.Left = 4.282284!
+        Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
+        Me.KOUENKAI_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KOUENKAI_NAME.Top = 3.419291!
+        Me.KOUENKAI_NAME.Width = 2.642126!
+        '
+        'KIKAKU_TANTO_NAME
+        '
+        Me.KIKAKU_TANTO_NAME.DataField = "KIKAKU_TANTO_NAME"
+        Me.KIKAKU_TANTO_NAME.Height = 0.2000001!
+        Me.KIKAKU_TANTO_NAME.Left = 0.8700788!
+        Me.KIKAKU_TANTO_NAME.Name = "KIKAKU_TANTO_NAME"
+        Me.KIKAKU_TANTO_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KIKAKU_TANTO_NAME.Top = 4.019291!
+        Me.KIKAKU_TANTO_NAME.Width = 6.054331!
+        '
+        'Label36
+        '
+        Me.Label36.Height = 0.2!
+        Me.Label36.HyperLink = Nothing
+        Me.Label36.Left = 0.03937008!
+        Me.Label36.Name = "Label36"
+        Me.Label36.Style = "font-family: ＭＳ 明朝; font-size: 10pt; text-align: center; text-justify: auto; vert" & _
+            "ical-align: middle; ddo-char-set: 1"
+        Me.Label36.Text = "滞　留　・　変　更　理　由"
+        Me.Label36.Top = 4.619292!
+        Me.Label36.Width = 6.88504!
+        '
+        'Label32
+        '
+        Me.Label32.Height = 0.2!
+        Me.Label32.HyperLink = Nothing
+        Me.Label32.Left = 3.462205!
+        Me.Label32.Name = "Label32"
+        Me.Label32.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
+            "-all-lines; vertical-align: middle; ddo-char-set: 1"
+        Me.Label32.Text = "旅客コード"
+        Me.Label32.Top = 3.019292!
+        Me.Label32.Width = 0.8200787!
+        '
+        'Label33
+        '
+        Me.Label33.Height = 0.2!
+        Me.Label33.HyperLink = Nothing
+        Me.Label33.Left = 3.462205!
+        Me.Label33.Name = "Label33"
+        Me.Label33.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
+            "-all-lines; vertical-align: middle; ddo-char-set: 1"
+        Me.Label33.Text = "旅行期日"
+        Me.Label33.Top = 3.219291!
+        Me.Label33.Width = 0.8200787!
+        '
+        'Label34
+        '
+        Me.Label34.Height = 0.4!
+        Me.Label34.HyperLink = Nothing
+        Me.Label34.Left = 3.462205!
+        Me.Label34.Name = "Label34"
+        Me.Label34.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
+            "-all-lines; vertical-align: middle; ddo-char-set: 1"
+        Me.Label34.Text = "行先"
+        Me.Label34.Top = 3.419291!
+        Me.Label34.Width = 0.8200787!
+        '
+        'Label35
+        '
+        Me.Label35.Height = 0.2!
+        Me.Label35.HyperLink = Nothing
+        Me.Label35.Left = 3.462205!
+        Me.Label35.Name = "Label35"
+        Me.Label35.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
+            "-all-lines; vertical-align: middle; ddo-char-set: 1"
+        Me.Label35.Text = "発生日(tops)"
+        Me.Label35.Top = 3.819292!
+        Me.Label35.Width = 0.820079!
+        '
+        'Label24
+        '
+        Me.Label24.Height = 0.2!
+        Me.Label24.HyperLink = Nothing
+        Me.Label24.Left = 6.677559!
+        Me.Label24.Name = "Label24"
+        Me.Label24.Style = "font-family: ＭＳ 明朝; font-size: 11pt; text-align: center; text-justify: auto; vert" & _
+            "ical-align: middle; ddo-char-set: 1"
+        Me.Label24.Text = "㊞"
+        Me.Label24.Top = 2.686221!
+        Me.Label24.Width = 0.250787!
+        '
+        'Label21
+        '
+        Me.Label21.Height = 0.2!
+        Me.Label21.HyperLink = Nothing
+        Me.Label21.Left = 0.6992127!
+        Me.Label21.Name = "Label21"
+        Me.Label21.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: center; text-justify: auto; verti" & _
+            "cal-align: middle; ddo-char-set: 1"
+        Me.Label21.Text = "500万円以上約定日超過　・2ヶ月以上　・変更2回以上　　"
+        Me.Label21.Top = 2.43504!
+        Me.Label21.Width = 3.144489!
+        '
+        'Label20
+        '
+        Me.Label20.Height = 0.2!
+        Me.Label20.HyperLink = Nothing
+        Me.Label20.Left = 0.003937008!
+        Me.Label20.Name = "Label20"
+        Me.Label20.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: center; text-justify: auto; verti" & _
+            "cal-align: middle; ddo-char-set: 1"
+        Me.Label20.Text = "報告種別"
+        Me.Label20.Top = 2.43504!
+        Me.Label20.Width = 0.6862205!
+        '
+        'Label6
+        '
+        Me.Label6.Height = 0.2228346!
+        Me.Label6.HyperLink = Nothing
+        Me.Label6.Left = 0.003937008!
+        Me.Label6.Name = "Label6"
+        Me.Label6.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
+            "do-char-set: 128"
+        Me.Label6.Text = "経営管理本部長"
+        Me.Label6.Top = 0.3937008!
+        Me.Label6.Width = 0.8267716!
+        '
+        'Label7
+        '
+        Me.Label7.Height = 0.2228346!
+        Me.Label7.HyperLink = Nothing
+        Me.Label7.Left = 0.8307086!
+        Me.Label7.Name = "Label7"
+        Me.Label7.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
+            "do-char-set: 128"
+        Me.Label7.Text = "財務部長"
+        Me.Label7.Top = 0.3937008!
+        Me.Label7.Width = 0.8267716!
+        '
+        'Label8
+        '
+        Me.Label8.Height = 0.2228346!
+        Me.Label8.HyperLink = Nothing
+        Me.Label8.Left = 1.65748!
+        Me.Label8.Name = "Label8"
+        Me.Label8.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
+            "do-char-set: 128"
+        Me.Label8.Text = "財務部担当"
+        Me.Label8.Top = 0.3937008!
+        Me.Label8.Width = 0.8267716!
+        '
+        'Label9
+        '
+        Me.Label9.Height = 0.2228346!
+        Me.Label9.HyperLink = Nothing
+        Me.Label9.Left = 2.484252!
+        Me.Label9.Name = "Label9"
+        Me.Label9.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
+            "do-char-set: 128"
+        Me.Label9.Text = "財務部担当"
+        Me.Label9.Top = 0.3937008!
+        Me.Label9.Width = 0.8267716!
         '
         'Label1
         '
@@ -203,6 +529,50 @@ Partial Public Class MishuHoukoku
         Me.Label1.Text = "様式-　第　8　号"
         Me.Label1.Top = 0.0!
         Me.Label1.Width = 1.135433!
+        '
+        'Label2
+        '
+        Me.Label2.Height = 0.2668142!
+        Me.Label2.HyperLink = Nothing
+        Me.Label2.Left = 0.003937008!
+        Me.Label2.Name = "Label2"
+        Me.Label2.Style = "text-align: center; vertical-align: middle"
+        Me.Label2.Text = "/"
+        Me.Label2.Top = 1.233071!
+        Me.Label2.Width = 0.8267716!
+        '
+        'Label3
+        '
+        Me.Label3.Height = 0.2668142!
+        Me.Label3.HyperLink = Nothing
+        Me.Label3.Left = 0.8307087!
+        Me.Label3.Name = "Label3"
+        Me.Label3.Style = "text-align: center; vertical-align: middle"
+        Me.Label3.Text = "/"
+        Me.Label3.Top = 1.233071!
+        Me.Label3.Width = 0.8267716!
+        '
+        'Label4
+        '
+        Me.Label4.Height = 0.2668142!
+        Me.Label4.HyperLink = Nothing
+        Me.Label4.Left = 1.65748!
+        Me.Label4.Name = "Label4"
+        Me.Label4.Style = "text-align: center; vertical-align: middle"
+        Me.Label4.Text = "/"
+        Me.Label4.Top = 1.233071!
+        Me.Label4.Width = 0.8267716!
+        '
+        'Label5
+        '
+        Me.Label5.Height = 0.2668142!
+        Me.Label5.HyperLink = Nothing
+        Me.Label5.Left = 2.484252!
+        Me.Label5.Name = "Label5"
+        Me.Label5.Style = "text-align: center; vertical-align: middle"
+        Me.Label5.Text = "/"
+        Me.Label5.Top = 1.233071!
+        Me.Label5.Width = 0.8267716!
         '
         'Line1
         '
@@ -229,19 +599,6 @@ Partial Public Class MishuHoukoku
         Me.Line2.X2 = 3.311024!
         Me.Line2.Y1 = 1.5!
         Me.Line2.Y2 = 1.5!
-        '
-        'Line3
-        '
-        Me.Line3.Height = 1.106299!
-        Me.Line3.Left = 0.003937008!
-        Me.Line3.LineWeight = 1.0!
-        Me.Line3.Name = "Line3"
-        Me.Line3.Top = 0.3937008!
-        Me.Line3.Width = 0.0!
-        Me.Line3.X1 = 0.003937008!
-        Me.Line3.X2 = 0.003937008!
-        Me.Line3.Y1 = 0.3937008!
-        Me.Line3.Y2 = 1.5!
         '
         'Line4
         '
@@ -321,97 +678,18 @@ Partial Public Class MishuHoukoku
         Me.Line9.Y1 = 1.233071!
         Me.Line9.Y2 = 1.233071!
         '
-        'Label2
+        'Line3
         '
-        Me.Label2.Height = 0.2668142!
-        Me.Label2.HyperLink = Nothing
-        Me.Label2.Left = 0.003937008!
-        Me.Label2.Name = "Label2"
-        Me.Label2.Style = "text-align: center; vertical-align: middle"
-        Me.Label2.Text = "/"
-        Me.Label2.Top = 1.233071!
-        Me.Label2.Width = 0.8267716!
-        '
-        'Label3
-        '
-        Me.Label3.Height = 0.2668142!
-        Me.Label3.HyperLink = Nothing
-        Me.Label3.Left = 0.8307087!
-        Me.Label3.Name = "Label3"
-        Me.Label3.Style = "text-align: center; vertical-align: middle"
-        Me.Label3.Text = "/"
-        Me.Label3.Top = 1.233071!
-        Me.Label3.Width = 0.8267716!
-        '
-        'Label4
-        '
-        Me.Label4.Height = 0.2668142!
-        Me.Label4.HyperLink = Nothing
-        Me.Label4.Left = 1.65748!
-        Me.Label4.Name = "Label4"
-        Me.Label4.Style = "text-align: center; vertical-align: middle"
-        Me.Label4.Text = "/"
-        Me.Label4.Top = 1.233071!
-        Me.Label4.Width = 0.8267716!
-        '
-        'Label5
-        '
-        Me.Label5.Height = 0.2668142!
-        Me.Label5.HyperLink = Nothing
-        Me.Label5.Left = 2.484252!
-        Me.Label5.Name = "Label5"
-        Me.Label5.Style = "text-align: center; vertical-align: middle"
-        Me.Label5.Text = "/"
-        Me.Label5.Top = 1.233071!
-        Me.Label5.Width = 0.8267716!
-        '
-        'Label6
-        '
-        Me.Label6.Height = 0.2228346!
-        Me.Label6.HyperLink = Nothing
-        Me.Label6.Left = 0.003937008!
-        Me.Label6.Name = "Label6"
-        Me.Label6.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
-            "do-char-set: 128"
-        Me.Label6.Text = "経営管理本部長"
-        Me.Label6.Top = 0.3937008!
-        Me.Label6.Width = 0.8267716!
-        '
-        'Label7
-        '
-        Me.Label7.Height = 0.2228346!
-        Me.Label7.HyperLink = Nothing
-        Me.Label7.Left = 0.8307086!
-        Me.Label7.Name = "Label7"
-        Me.Label7.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
-            "do-char-set: 128"
-        Me.Label7.Text = "財務部長"
-        Me.Label7.Top = 0.3937008!
-        Me.Label7.Width = 0.8267716!
-        '
-        'Label8
-        '
-        Me.Label8.Height = 0.2228346!
-        Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 1.65748!
-        Me.Label8.Name = "Label8"
-        Me.Label8.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
-            "do-char-set: 128"
-        Me.Label8.Text = "財務部担当"
-        Me.Label8.Top = 0.3937008!
-        Me.Label8.Width = 0.8267716!
-        '
-        'Label9
-        '
-        Me.Label9.Height = 0.2228346!
-        Me.Label9.HyperLink = Nothing
-        Me.Label9.Left = 2.484252!
-        Me.Label9.Name = "Label9"
-        Me.Label9.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: center; vertical-align: middle; d" & _
-            "do-char-set: 128"
-        Me.Label9.Text = "財務部担当"
-        Me.Label9.Top = 0.3937008!
-        Me.Label9.Width = 0.8267716!
+        Me.Line3.Height = 1.106299!
+        Me.Line3.Left = 0.003937008!
+        Me.Line3.LineWeight = 1.0!
+        Me.Line3.Name = "Line3"
+        Me.Line3.Top = 0.3937008!
+        Me.Line3.Width = 0.0!
+        Me.Line3.X1 = 0.003937008!
+        Me.Line3.X2 = 0.003937008!
+        Me.Line3.Y1 = 0.3937008!
+        Me.Line3.Y2 = 1.5!
         '
         'Label10
         '
@@ -520,30 +798,6 @@ Partial Public Class MishuHoukoku
         Me.Line19.Y1 = 2.414567!
         Me.Line19.Y2 = 2.414567!
         '
-        'Label20
-        '
-        Me.Label20.Height = 0.2!
-        Me.Label20.HyperLink = Nothing
-        Me.Label20.Left = 0.003937008!
-        Me.Label20.Name = "Label20"
-        Me.Label20.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: center; text-justify: auto; verti" & _
-            "cal-align: middle; ddo-char-set: 1"
-        Me.Label20.Text = "報告種別"
-        Me.Label20.Top = 2.43504!
-        Me.Label20.Width = 0.6862205!
-        '
-        'Label21
-        '
-        Me.Label21.Height = 0.2!
-        Me.Label21.HyperLink = Nothing
-        Me.Label21.Left = 0.6992127!
-        Me.Label21.Name = "Label21"
-        Me.Label21.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: center; text-justify: auto; verti" & _
-            "cal-align: middle; ddo-char-set: 1"
-        Me.Label21.Text = "500万円以上約定日超過　・2ヶ月以上　・変更2回以上　　"
-        Me.Label21.Top = 2.43504!
-        Me.Label21.Width = 3.144489!
-        '
         'Line20
         '
         Me.Line20.Height = 0.0!
@@ -559,7 +813,7 @@ Partial Public Class MishuHoukoku
         '
         'Line21
         '
-        Me.Line21.Height = 0.2204723!
+        Me.Line21.Height = 0.2204721!
         Me.Line21.Left = 0.003937008!
         Me.Line21.LineWeight = 3.0!
         Me.Line21.Name = "Line21"
@@ -607,12 +861,13 @@ Partial Public Class MishuHoukoku
         '
         'USER_NAME
         '
+        Me.USER_NAME.DataField = "USER_NAME"
+        Me.USER_NAME.DistinctField = "USER_NAME"
         Me.USER_NAME.Height = 0.2000001!
         Me.USER_NAME.Left = 4.516536!
         Me.USER_NAME.Name = "USER_NAME"
         Me.USER_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
             ""
-        Me.USER_NAME.Text = "USER_NAME"
         Me.USER_NAME.Top = 2.686221!
         Me.USER_NAME.Width = 2.161024!
         '
@@ -653,31 +908,6 @@ Partial Public Class MishuHoukoku
         Me.Line24.X2 = 6.928347!
         Me.Line24.Y1 = 2.886221!
         Me.Line24.Y2 = 2.886221!
-        '
-        'Label24
-        '
-        Me.Label24.Height = 0.2!
-        Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 6.677559!
-        Me.Label24.Name = "Label24"
-        Me.Label24.Style = "font-family: ＭＳ 明朝; font-size: 11pt; text-align: center; text-justify: auto; vert" & _
-            "ical-align: middle; ddo-char-set: 1"
-        Me.Label24.Text = "㊞"
-        Me.Label24.Top = 2.686221!
-        Me.Label24.Width = 0.250787!
-        '
-        'Line25
-        '
-        Me.Line25.Height = 0.0000002384186!
-        Me.Line25.Left = 0.003937008!
-        Me.Line25.LineWeight = 3.0!
-        Me.Line25.Name = "Line25"
-        Me.Line25.Top = 3.019291!
-        Me.Line25.Width = 6.920472!
-        Me.Line25.X1 = 0.003937008!
-        Me.Line25.X2 = 6.924409!
-        Me.Line25.Y1 = 3.019292!
-        Me.Line25.Y2 = 3.019291!
         '
         'Line26
         '
@@ -775,54 +1005,6 @@ Partial Public Class MishuHoukoku
         Me.Label31.Text = "添付書類"
         Me.Label31.Top = 4.419291!
         Me.Label31.Width = 0.8200787!
-        '
-        'Label32
-        '
-        Me.Label32.Height = 0.2!
-        Me.Label32.HyperLink = Nothing
-        Me.Label32.Left = 3.462205!
-        Me.Label32.Name = "Label32"
-        Me.Label32.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
-            "-all-lines; vertical-align: middle; ddo-char-set: 1"
-        Me.Label32.Text = "旅客コード"
-        Me.Label32.Top = 3.019292!
-        Me.Label32.Width = 0.8200787!
-        '
-        'Label33
-        '
-        Me.Label33.Height = 0.2!
-        Me.Label33.HyperLink = Nothing
-        Me.Label33.Left = 3.462205!
-        Me.Label33.Name = "Label33"
-        Me.Label33.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
-            "-all-lines; vertical-align: middle; ddo-char-set: 1"
-        Me.Label33.Text = "旅行期日"
-        Me.Label33.Top = 3.219291!
-        Me.Label33.Width = 0.8200787!
-        '
-        'Label34
-        '
-        Me.Label34.Height = 0.4!
-        Me.Label34.HyperLink = Nothing
-        Me.Label34.Left = 3.462205!
-        Me.Label34.Name = "Label34"
-        Me.Label34.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
-            "-all-lines; vertical-align: middle; ddo-char-set: 1"
-        Me.Label34.Text = "行先"
-        Me.Label34.Top = 3.419291!
-        Me.Label34.Width = 0.8200787!
-        '
-        'Label35
-        '
-        Me.Label35.Height = 0.2!
-        Me.Label35.HyperLink = Nothing
-        Me.Label35.Left = 3.462205!
-        Me.Label35.Name = "Label35"
-        Me.Label35.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-align: justify; text-justify: distribute" & _
-            "-all-lines; vertical-align: middle; ddo-char-set: 1"
-        Me.Label35.Text = "発生日(tops)"
-        Me.Label35.Top = 3.819292!
-        Me.Label35.Width = 0.820079!
         '
         'Line27
         '
@@ -935,23 +1117,24 @@ Partial Public Class MishuHoukoku
         Me.Line35.LineWeight = 1.0!
         Me.Line35.Name = "Line35"
         Me.Line35.Top = 3.019292!
-        Me.Line35.Width = 0.00000005960464!
+        Me.Line35.Width = 0.0000001192093!
         Me.Line35.X1 = 0.8700788!
         Me.Line35.X2 = 0.8700787!
         Me.Line35.Y1 = 3.019292!
         Me.Line35.Y2 = 4.619292!
         '
-        'Label36
+        'Line25
         '
-        Me.Label36.Height = 0.2!
-        Me.Label36.HyperLink = Nothing
-        Me.Label36.Left = 0.03937008!
-        Me.Label36.Name = "Label36"
-        Me.Label36.Style = "font-family: ＭＳ 明朝; font-size: 10pt; text-align: center; text-justify: auto; vert" & _
-            "ical-align: middle; ddo-char-set: 1"
-        Me.Label36.Text = "滞　留　・　変　更　理　由"
-        Me.Label36.Top = 4.619292!
-        Me.Label36.Width = 6.88504!
+        Me.Line25.Height = 0.000001192093!
+        Me.Line25.Left = 0.003937008!
+        Me.Line25.LineWeight = 3.0!
+        Me.Line25.Name = "Line25"
+        Me.Line25.Top = 3.019291!
+        Me.Line25.Width = 6.920472!
+        Me.Line25.X1 = 0.003937008!
+        Me.Line25.X2 = 6.924409!
+        Me.Line25.Y1 = 3.019292!
+        Me.Line25.Y2 = 3.019291!
         '
         'Line36
         '
@@ -968,7 +1151,7 @@ Partial Public Class MishuHoukoku
         '
         'Line37
         '
-        Me.Line37.Height = 0.2204714!
+        Me.Line37.Height = 0.2204709!
         Me.Line37.Left = 0.6992128!
         Me.Line37.LineWeight = 3.0!
         Me.Line37.Name = "Line37"
@@ -978,94 +1161,6 @@ Partial Public Class MishuHoukoku
         Me.Line37.X2 = 0.6992128!
         Me.Line37.Y1 = 2.414567!
         Me.Line37.Y2 = 2.635038!
-        '
-        'DANTAI_NAME
-        '
-        Me.DANTAI_NAME.Height = 0.2000001!
-        Me.DANTAI_NAME.Left = 0.8700788!
-        Me.DANTAI_NAME.Name = "DANTAI_NAME"
-        Me.DANTAI_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.DANTAI_NAME.Text = "DANTAI_NAME"
-        Me.DANTAI_NAME.Top = 3.019292!
-        Me.DANTAI_NAME.Width = 2.592126!
-        '
-        'KAMOKU_CODE
-        '
-        Me.KAMOKU_CODE.Height = 0.2000001!
-        Me.KAMOKU_CODE.Left = 0.8700788!
-        Me.KAMOKU_CODE.Name = "KAMOKU_CODE"
-        Me.KAMOKU_CODE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.KAMOKU_CODE.Text = "KAMOKU_CODE"
-        Me.KAMOKU_CODE.Top = 3.219291!
-        Me.KAMOKU_CODE.Width = 2.592126!
-        '
-        'MISHU_KINGAKU
-        '
-        Me.MISHU_KINGAKU.Height = 0.4000001!
-        Me.MISHU_KINGAKU.Left = 0.8700788!
-        Me.MISHU_KINGAKU.Name = "MISHU_KINGAKU"
-        Me.MISHU_KINGAKU.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.MISHU_KINGAKU.Text = "MISHU_KINGAKU"
-        Me.MISHU_KINGAKU.Top = 3.419291!
-        Me.MISHU_KINGAKU.Width = 2.592126!
-        '
-        'KIKAKU_TANTO_NAME
-        '
-        Me.KIKAKU_TANTO_NAME.Height = 0.2000001!
-        Me.KIKAKU_TANTO_NAME.Left = 0.8700788!
-        Me.KIKAKU_TANTO_NAME.Name = "KIKAKU_TANTO_NAME"
-        Me.KIKAKU_TANTO_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.KIKAKU_TANTO_NAME.Text = "KIKAKU_TANTO_NAME"
-        Me.KIKAKU_TANTO_NAME.Top = 4.019291!
-        Me.KIKAKU_TANTO_NAME.Width = 6.054331!
-        '
-        'DANTAI_CODE
-        '
-        Me.DANTAI_CODE.Height = 0.2000001!
-        Me.DANTAI_CODE.Left = 4.282284!
-        Me.DANTAI_CODE.Name = "DANTAI_CODE"
-        Me.DANTAI_CODE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.DANTAI_CODE.Text = "DANTAI_CODE"
-        Me.DANTAI_CODE.Top = 3.019292!
-        Me.DANTAI_CODE.Width = 2.646063!
-        '
-        'FROM_DATE
-        '
-        Me.FROM_DATE.Height = 0.2000001!
-        Me.FROM_DATE.Left = 4.282284!
-        Me.FROM_DATE.Name = "FROM_DATE"
-        Me.FROM_DATE.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.FROM_DATE.Text = "FROM_DATE"
-        Me.FROM_DATE.Top = 3.219291!
-        Me.FROM_DATE.Width = 2.642126!
-        '
-        'KOUENKAI_NAME
-        '
-        Me.KOUENKAI_NAME.Height = 0.4000001!
-        Me.KOUENKAI_NAME.Left = 4.282284!
-        Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
-        Me.KOUENKAI_NAME.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.KOUENKAI_NAME.Text = "KOUENKAI_NAME"
-        Me.KOUENKAI_NAME.Top = 3.419291!
-        Me.KOUENKAI_NAME.Width = 2.642126!
-        '
-        'SEISAN_YM
-        '
-        Me.SEISAN_YM.Height = 0.2000001!
-        Me.SEISAN_YM.Left = 4.282284!
-        Me.SEISAN_YM.Name = "SEISAN_YM"
-        Me.SEISAN_YM.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
-            ""
-        Me.SEISAN_YM.Text = "SEISAN_YM"
-        Me.SEISAN_YM.Top = 3.807481!
-        Me.SEISAN_YM.Width = 2.642126!
         '
         'Label37
         '
@@ -1131,70 +1226,9 @@ Partial Public Class MishuHoukoku
         Me.Line41.Y1 = 8.649214!
         Me.Line41.Y2 = 8.649214!
         '
-        'Line42
-        '
-        Me.Line42.Height = 0.0!
-        Me.Line42.Left = 0.003937008!
-        Me.Line42.LineWeight = 3.0!
-        Me.Line42.Name = "Line42"
-        Me.Line42.Top = 8.982285!
-        Me.Line42.Width = 6.920472!
-        Me.Line42.X1 = 0.003937008!
-        Me.Line42.X2 = 6.924409!
-        Me.Line42.Y1 = 8.982285!
-        Me.Line42.Y2 = 8.982285!
-        '
-        'Label38
-        '
-        Me.Label38.Height = 0.1480314!
-        Me.Label38.HyperLink = Nothing
-        Me.Label38.Left = 0.003937008!
-        Me.Label38.Name = "Label38"
-        Me.Label38.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
-            "ical-align: middle; ddo-char-set: 1"
-        Me.Label38.Text = "　　※当初約定日を経過した５００万円以上の未収入金はすべてこの様式により提出する。"
-        Me.Label38.Top = 9.084646!
-        Me.Label38.Width = 6.924409!
-        '
-        'Label39
-        '
-        Me.Label39.Height = 0.1480315!
-        Me.Label39.HyperLink = Nothing
-        Me.Label39.Left = 0.003937008!
-        Me.Label39.Name = "Label39"
-        Me.Label39.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
-            "ical-align: middle; ddo-char-set: 1"
-        Me.Label39.Text = "　　＊回収日（確定入金日）が発生日より2ヶ月以上経過、又は確定入金日が２回以上変更する未収入金はこの様式により提出する。"
-        Me.Label39.Top = 9.232678!
-        Me.Label39.Width = 6.924409!
-        '
-        'Label40
-        '
-        Me.Label40.Height = 0.1480315!
-        Me.Label40.HyperLink = Nothing
-        Me.Label40.Left = 0.003937008!
-        Me.Label40.Name = "Label40"
-        Me.Label40.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
-            "ical-align: middle; ddo-char-set: 1"
-        Me.Label40.Text = "　　　（この報告をしたが回収日が再度変更される場合もその都度この様式により報告すること。）"
-        Me.Label40.Top = 9.38071!
-        Me.Label40.Width = 6.924409!
-        '
-        'Label41
-        '
-        Me.Label41.Height = 0.1480315!
-        Me.Label41.HyperLink = Nothing
-        Me.Label41.Left = 0.003937008!
-        Me.Label41.Name = "Label41"
-        Me.Label41.Style = "font-family: ＭＳ 明朝; font-size: 8pt; text-align: justify; text-justify: auto; vert" & _
-            "ical-align: middle; ddo-char-set: 1"
-        Me.Label41.Text = "　　＊この様式には｢請求書コピー｣を必ず添付して提出を行なうこと。"
-        Me.Label41.Top = 9.528742!
-        Me.Label41.Width = 6.924409!
-        '
         'Line43
         '
-        Me.Line43.Height = 4.661418!
+        Me.Line43.Height = 4.661417!
         Me.Line43.Left = 0.003937008!
         Me.Line43.LineWeight = 3.0!
         Me.Line43.Name = "Line43"
@@ -1238,7 +1272,7 @@ Partial Public Class MishuHoukoku
         Me.Line46.LineWeight = 3.0!
         Me.Line46.Name = "Line46"
         Me.Line46.Top = 7.783072!
-        Me.Line46.Width = 4.656613E-10!
+        Me.Line46.Width = 0.0!
         Me.Line46.X1 = 0.003937008!
         Me.Line46.X2 = 0.003937008!
         Me.Line46.Y1 = 7.783072!
@@ -1246,7 +1280,7 @@ Partial Public Class MishuHoukoku
         '
         'Line47
         '
-        Me.Line47.Height = 1.199215!
+        Me.Line47.Height = 1.199214!
         Me.Line47.Left = 6.928347!
         Me.Line47.LineWeight = 3.0!
         Me.Line47.Name = "Line47"
@@ -1418,6 +1452,137 @@ Partial Public Class MishuHoukoku
         Me.Line48.Y1 = 0.3937008!
         Me.Line48.Y2 = 1.5!
         '
+        'KEI_991330401_TF
+        '
+        Me.KEI_991330401_TF.DataField = "KEI_991330401_TF"
+        Me.KEI_991330401_TF.Height = 0.2000002!
+        Me.KEI_991330401_TF.Left = 3.311024!
+        Me.KEI_991330401_TF.Name = "KEI_991330401_TF"
+        Me.KEI_991330401_TF.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KEI_991330401_TF.Text = "KEI_991330401_TF"
+        Me.KEI_991330401_TF.Top = 5.019292!
+        Me.KEI_991330401_TF.Visible = False
+        Me.KEI_991330401_TF.Width = 1.122441!
+        '
+        'KEI_41120200_TF
+        '
+        Me.KEI_41120200_TF.DataField = "KEI_41120200_TF"
+        Me.KEI_41120200_TF.Height = 0.2000002!
+        Me.KEI_41120200_TF.Left = 3.311024!
+        Me.KEI_41120200_TF.Name = "KEI_41120200_TF"
+        Me.KEI_41120200_TF.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KEI_41120200_TF.Text = "KEI_41120200_TF"
+        Me.KEI_41120200_TF.Top = 5.219292!
+        Me.KEI_41120200_TF.Visible = False
+        Me.KEI_41120200_TF.Width = 1.122441!
+        '
+        'KEI_991330401_T
+        '
+        Me.KEI_991330401_T.DataField = "KEI_991330401_T"
+        Me.KEI_991330401_T.Height = 0.2000002!
+        Me.KEI_991330401_T.Left = 3.311024!
+        Me.KEI_991330401_T.Name = "KEI_991330401_T"
+        Me.KEI_991330401_T.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KEI_991330401_T.Text = "KEI_991330401_T"
+        Me.KEI_991330401_T.Top = 5.419291!
+        Me.KEI_991330401_T.Visible = False
+        Me.KEI_991330401_T.Width = 1.122441!
+        '
+        'KEI_41120200_T
+        '
+        Me.KEI_41120200_T.DataField = "KEI_41120200_T"
+        Me.KEI_41120200_T.Height = 0.2000002!
+        Me.KEI_41120200_T.Left = 3.311024!
+        Me.KEI_41120200_T.Name = "KEI_41120200_T"
+        Me.KEI_41120200_T.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.KEI_41120200_T.Text = "KEI_41120200_T"
+        Me.KEI_41120200_T.Top = 5.619292!
+        Me.KEI_41120200_T.Visible = False
+        Me.KEI_41120200_T.Width = 1.122441!
+        '
+        'MR_HOTEL
+        '
+        Me.MR_HOTEL.DataField = "MR_HOTEL"
+        Me.MR_HOTEL.Height = 0.2000002!
+        Me.MR_HOTEL.Left = 3.311024!
+        Me.MR_HOTEL.Name = "MR_HOTEL"
+        Me.MR_HOTEL.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.MR_HOTEL.Text = "MR_HOTEL"
+        Me.MR_HOTEL.Top = 5.819292!
+        Me.MR_HOTEL.Visible = False
+        Me.MR_HOTEL.Width = 1.122441!
+        '
+        'MR_HOTEL_TOZEI
+        '
+        Me.MR_HOTEL_TOZEI.DataField = "MR_HOTEL_TOZEI"
+        Me.MR_HOTEL_TOZEI.Height = 0.2000002!
+        Me.MR_HOTEL_TOZEI.Left = 3.311024!
+        Me.MR_HOTEL_TOZEI.Name = "MR_HOTEL_TOZEI"
+        Me.MR_HOTEL_TOZEI.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.MR_HOTEL_TOZEI.Text = "MR_HOTEL_TOZEI"
+        Me.MR_HOTEL_TOZEI.Top = 6.019292!
+        Me.MR_HOTEL_TOZEI.Visible = False
+        Me.MR_HOTEL_TOZEI.Width = 1.122441!
+        '
+        'MR_JR
+        '
+        Me.MR_JR.DataField = "MR_JR"
+        Me.MR_JR.Height = 0.2000002!
+        Me.MR_JR.Left = 3.311024!
+        Me.MR_JR.Name = "MR_JR"
+        Me.MR_JR.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.MR_JR.Text = "MR_JR"
+        Me.MR_JR.Top = 6.219292!
+        Me.MR_JR.Visible = False
+        Me.MR_JR.Width = 1.122441!
+        '
+        'TAXI_T
+        '
+        Me.TAXI_T.DataField = "TAXI_T"
+        Me.TAXI_T.Height = 0.2000002!
+        Me.TAXI_T.Left = 3.311024!
+        Me.TAXI_T.Name = "TAXI_T"
+        Me.TAXI_T.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.TAXI_T.Text = "TAXI_T"
+        Me.TAXI_T.Top = 6.419292!
+        Me.TAXI_T.Visible = False
+        Me.TAXI_T.Width = 1.122441!
+        '
+        'TAXI_SEISAN_T
+        '
+        Me.TAXI_SEISAN_T.DataField = "TAXI_SEISAN_T"
+        Me.TAXI_SEISAN_T.Height = 0.2000002!
+        Me.TAXI_SEISAN_T.Left = 3.311024!
+        Me.TAXI_SEISAN_T.Name = "TAXI_SEISAN_T"
+        Me.TAXI_SEISAN_T.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: middle" & _
+            ""
+        Me.TAXI_SEISAN_T.Text = "TAXI_SEISAN_T"
+        Me.TAXI_SEISAN_T.Top = 6.619292!
+        Me.TAXI_SEISAN_T.Visible = False
+        Me.TAXI_SEISAN_T.Width = 1.122441!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'RIYU
+        '
+        Me.RIYU.Height = 2.861418!
+        Me.RIYU.Left = 0.0!
+        Me.RIYU.Name = "RIYU"
+        Me.RIYU.Style = "font-family: ＭＳ 明朝; font-size: 9pt; text-decoration: none; vertical-align: top"
+        Me.RIYU.Top = 4.819292!
+        Me.RIYU.Width = 6.928347!
+        '
         'MishuHoukoku
         '
         Me.MasterReport = False
@@ -1432,15 +1597,36 @@ Partial Public Class MishuHoukoku
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 16pt; font-weight: bold", "Heading1", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 14pt; font-weight: bold", "Heading2", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 13pt; font-weight: bold", "Heading3", "Normal"))
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label40, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MISHU_KINGAKU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DANTAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KAMOKU_CODE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SEISAN_YM, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DANTAI_CODE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KIKAKU_TANTO_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label35, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label12, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1448,13 +1634,10 @@ Partial Public Class MishuHoukoku
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label24, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label27, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1462,28 +1645,21 @@ Partial Public Class MishuHoukoku
         CType(Me.Label29, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label30, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label31, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label35, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label36, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DANTAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KAMOKU_CODE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MISHU_KINGAKU, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KIKAKU_TANTO_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DANTAI_CODE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SEISAN_YM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label37, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label38, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label39, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label40, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KEI_991330401_TF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KEI_41120200_TF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KEI_991330401_T, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KEI_41120200_T, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MR_HOTEL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MR_HOTEL_TOZEI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MR_JR, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TAXI_T, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TAXI_SEISAN_T, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RIYU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -1587,4 +1763,15 @@ Partial Public Class MishuHoukoku
     Private WithEvents Line17 As DataDynamics.ActiveReports.Line
     Private WithEvents Line18 As DataDynamics.ActiveReports.Line
     Private WithEvents Line48 As DataDynamics.ActiveReports.Line
+    Private WithEvents TO_DATE As DataDynamics.ActiveReports.TextBox
+    Private WithEvents KEI_991330401_TF As DataDynamics.ActiveReports.TextBox
+    Private WithEvents KEI_41120200_TF As DataDynamics.ActiveReports.TextBox
+    Private WithEvents KEI_991330401_T As DataDynamics.ActiveReports.TextBox
+    Private WithEvents KEI_41120200_T As DataDynamics.ActiveReports.TextBox
+    Private WithEvents MR_HOTEL As DataDynamics.ActiveReports.TextBox
+    Private WithEvents MR_HOTEL_TOZEI As DataDynamics.ActiveReports.TextBox
+    Private WithEvents MR_JR As DataDynamics.ActiveReports.TextBox
+    Private WithEvents TAXI_T As DataDynamics.ActiveReports.TextBox
+    Private WithEvents TAXI_SEISAN_T As DataDynamics.ActiveReports.TextBox
+    Private WithEvents RIYU As DataDynamics.ActiveReports.TextBox
 End Class

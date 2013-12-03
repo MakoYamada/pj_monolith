@@ -171,6 +171,7 @@
                     <tr align="left">
                         <td>
                             <asp:Button ID="BtnSeisanListPrint2" runat="server" Text="精算データ一覧印刷" Width="130px" CssClass="Button" />
+                            <asp:Button ID="BtnMishuHoukoku2" runat="server" Text="未収入金滞留理由報告書印刷" Width="200px" CssClass="Button" />
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
                         </td>
                     </tr>

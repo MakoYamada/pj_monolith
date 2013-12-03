@@ -86,9 +86,13 @@ Partial Public Class NewKouenkaiList
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            CmnModule.SetEnabled(Me.BtnPrint1, False)
+            CmnModule.SetEnabled(Me.BtnPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            CmnModule.SetEnabled(Me.BtnPrint1, True)
+            CmnModule.SetEnabled(Me.BtnPrint2, True)
 
             'グリッドビュー表示
             SetGridView()

@@ -15,6 +15,7 @@
         Public Shared JIGYOSHO As String = System.Configuration.ConfigurationManager.AppSettings("JIGYOSHO")
         Public Shared DANTAI_NAME As String = System.Configuration.ConfigurationManager.AppSettings("DANTAI_NAME")
         Public Shared KAMOKU_CODE As String = System.Configuration.ConfigurationManager.AppSettings("KAMOKU_CODE")
+        Public Shared RIYU As String = System.Configuration.ConfigurationManager.AppSettings("RIYU")
     End Class
 
     Public Class Db

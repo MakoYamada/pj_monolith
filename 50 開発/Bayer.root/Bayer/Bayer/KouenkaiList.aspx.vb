@@ -39,7 +39,7 @@ Partial Public Class KouenkaiList
             InitControls()
 
             If UBound(TBL_KOUENKAI) = 0 And TBL_KOUENKAI(0).KOUENKAI_NO Is Nothing Then
-                LabelNoData.Visible = False
+                SetForm()
             Else
                 SetJoken()
                 SetForm()
@@ -122,9 +122,13 @@ Partial Public Class KouenkaiList
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            CmnModule.SetEnabled(Me.BtnPrint1, False)
+            CmnModule.SetEnabled(Me.BtnPrint2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            CmnModule.SetEnabled(Me.BtnPrint1, True)
+            CmnModule.SetEnabled(Me.BtnPrint2, True)
 
             'グリッドビュー表示
             SetGridView()

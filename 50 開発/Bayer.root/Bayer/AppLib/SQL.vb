@@ -763,13 +763,15 @@ Public Class SQL
 
             strSQL &= "SELECT DISTINCT"
             strSQL &= " WK_SEIKYU.*"
-            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
-            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
-            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
-            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
-            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
-            strSQL &= " ,WK_KOUENKAI.TO_DATE"
-            strSQL &= " ,WK_KOUENKAI.DANTAI_CODE"
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.FROM_DATE
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TO_DATE
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.DANTAI_CODE
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_NAME
+
             strSQL &= " , USER_NAME"
             strSQL &= " FROM"
             strSQL &= " TBL_SEIKYU AS WK_SEIKYU"

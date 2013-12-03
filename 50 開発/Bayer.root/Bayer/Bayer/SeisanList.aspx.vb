@@ -136,11 +136,13 @@ Partial Public Class SeisanList
             Me.GrvList.Visible = False
             Me.TblButton1.Visible = False
             CmnModule.SetEnabled(Me.BtnSeisanListPrint2, False)
+            CmnModule.SetEnabled(Me.BtnMishuHoukoku2, False)
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
             Me.TblButton1.Visible = True
             CmnModule.SetEnabled(Me.BtnSeisanListPrint2, True)
+            CmnModule.SetEnabled(Me.BtnMishuHoukoku2, True)
 
             'グリッドビュー表示
             SetGridView()
@@ -357,6 +359,31 @@ Partial Public Class SeisanList
         Session.Item(SessionDef.SeisanListPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
+    End Sub
+
+    '[未収入金滞留理由報告書印刷]
+    Protected Sub BtnMishuHoukoku2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMishuHoukoku2.Click
+        Dim MISHU_JOKEN() As TableDef.MISHU_JOKEN.DataStruct
+        Dim seq As Integer = 0
+        Dim PrintSeq As Integer = 0
+
+        '承認済みデータのみ印刷対象とする
+        For Each row As GridViewRow In Me.GrvList.Rows
+            If TBL_SEIKYU(seq).SHOUNIN_KUBUN = AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN Then
+                ReDim Preserve MISHU_JOKEN(PrintSeq)
+                MISHU_JOKEN(PrintSeq).KOUENKAI_NO = TBL_SEIKYU(seq).KOUENKAI_NO
+                MISHU_JOKEN(PrintSeq).SEIKYU_NO_TOPTOUR = TBL_SEIKYU(seq).SEIKYU_NO_TOPTOUR
+                PrintSeq += 1
+            End If
+            seq += 1
+        Next
+
+        Dim strSQL As String = SQL.TBL_SEIKYU.MishuHoukoku(MISHU_JOKEN)
+        Session.Item(SessionDef.MishuHoukoku_SQL) = strSQL
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.PrintPreview) = "MishuHoukoku"
         Response.Redirect(URL.Preview)
     End Sub
 End Class

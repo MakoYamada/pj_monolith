@@ -44,10 +44,10 @@
                                         講演会番号
                                     </td>
                                     <td colspan="5">
-                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="121px" MaxLength="14" 
                                             TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
                                         講演会名&nbsp;&nbsp;&nbsp;
-                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="606px" MaxLength="160" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="544px" MaxLength="160" 
                                             TabIndex="5"></asp:TextBox>
                                     </td>
                                 </tr>
