@@ -47,6 +47,8 @@ Partial Public Class SeisanList
             SetForm()
         End If
 
+        Session.Item(SessionDef.PrintPreview) = Nothing
+
         'マスターページ設定
         With Me.Master
             .PageTitle = "【検索】精算データ"
