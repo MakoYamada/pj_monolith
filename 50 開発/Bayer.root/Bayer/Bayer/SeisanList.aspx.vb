@@ -363,7 +363,7 @@ Partial Public Class SeisanList
     End Sub
 
     '[未収入金滞留理由報告書印刷]
-    Protected Sub BtnMishuHoukoku2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMishuHoukoku2.Click
+    Protected Sub BtnMishuHoukoku_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMishuHoukoku1.Click, BtnMishuHoukoku2.Click
         Dim MISHU_JOKEN() As TableDef.MISHU_JOKEN.DataStruct
         Dim seq As Integer = 0
         Dim PrintSeq As Integer = 0
