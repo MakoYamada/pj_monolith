@@ -73,6 +73,7 @@
     Public Const SeisanRegistReport_SQL As String = "SeisanRegistReport_SQL"
     Public Const CostRegist_Search As String = "CostRegist_Search"
     Public Const CostRegist_Update As String = "CostRegist_Update"
+    Public Const MishuHoukoku_SQL As String = "MishuHoukoku_SQL"
     Public Const PrintPreview As String = "PrintPreview"
     Public Const MstCode As String = "MstCode"
     Public Const MstUser As String = "MstUser"
