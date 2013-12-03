@@ -758,6 +758,67 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function MishuHoukoku(ByVal MISHU_JOKEN() As TableDef.MISHU_JOKEN.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_SEIKYU.*"
+            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            strSQL &= " ,WK_KOUENKAI.DANTAI_CODE"
+            strSQL &= " , USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " TBL_SEIKYU AS WK_SEIKYU"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " ,"
+            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= " ) AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
+            If Not MISHU_JOKEN Is Nothing Then
+                Dim i As Integer = 0
+                For i = 0 To UBound(MISHU_JOKEN)
+                    If i = 0 Then
+                        strSQL &= " AND ("
+                    Else
+                        strSQL &= " OR"
+                    End If
+                    strSQL &= " WK_SEIKYU."
+                    strSQL &= TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
+                    strSQL &= "=N'" & MISHU_JOKEN(i).KOUENKAI_NO & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_SEIKYU."
+                    strSQL &= TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
+                    strSQL &= "=N'" & MISHU_JOKEN(i).SEIKYU_NO_TOPTOUR & "'"
+                Next i
+                strSQL &= ")"
+            End If
+
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU."
+            strSQL &= TableDef.TBL_SEIKYU.Column.SHOUNIN_KUBUN
+            strSQL &= "=N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 

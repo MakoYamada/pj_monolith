@@ -2773,4 +2773,15 @@
         End Class
     End Class
 
+    Public Class MISHU_JOKEN
+        <Serializable()> Public Structure DataStruct
+            Public KOUENKAI_NO As String
+            Public SEIKYU_NO_TOPTOUR As String
+        End Structure
+        Public Class Column
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
+        End Class
+    End Class
+
 End Class
