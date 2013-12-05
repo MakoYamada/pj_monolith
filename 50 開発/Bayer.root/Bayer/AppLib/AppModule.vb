@@ -7176,6 +7176,16 @@ Public Class AppModule
         Return CmnModule.GetSelectedItemValue(ANS_STATUS_TEHAI)
     End Function
 
+    '【回答】チケット類発送日
+    Public Shared Function GetValue_ANS_TICKET_SEND_DAY(ByVal ANS_TICKET_SEND_DAY As TextBox) As String
+        Return Trim(ANS_TICKET_SEND_DAY.Text)
+    End Function
+
+    '【回答】手配ステータス
+    Public Shared Function GetValue_ANS_STATUS_HOTEL(ByVal ANS_STATUS_HOTEL As DropDownList) As String
+        Return CmnModule.GetSelectedItemValue(ANS_STATUS_HOTEL)
+    End Function
+
     '宿泊先（回答）
     Public Shared Function GetValue_ANS_HOTEL_NAME(ByVal ANS_HOTEL_NAME As TextBox) As String
         Return Trim(ANS_HOTEL_NAME.Text)

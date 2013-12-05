@@ -1658,13 +1658,10 @@ Partial Public Class DrRegist
     Private Sub GetValue(ByVal SEND_FLAG As String)
         'DR手配
         DSP_KOTSUHOTEL(SEQ).ANS_STATUS_TEHAI = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
-        DSP_KOTSUHOTEL(SEQ).ANS_TICKET_SEND_DAY = Me.ANS_TICKET_SEND_DAY.Text
-
-        'TIMESTAMP(TOP)
-        'DSP_KOTSUHOTEL(SEQ).TIME_STAMP_TOP = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_TEHAI)
+        DSP_KOTSUHOTEL(SEQ).ANS_TICKET_SEND_DAY = AppModule.GetValue_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY)
 
         '宿泊手配
-        DSP_KOTSUHOTEL(SEQ).ANS_STATUS_HOTEL = AppModule.GetValue_ANS_STATUS_TEHAI(Me.ANS_STATUS_HOTEL)
+        DSP_KOTSUHOTEL(SEQ).ANS_STATUS_HOTEL = AppModule.GetValue_ANS_STATUS_HOTEL(Me.ANS_STATUS_HOTEL)
         DSP_KOTSUHOTEL(SEQ).ANS_HOTEL_NAME = AppModule.GetValue_ANS_HOTEL_NAME(Me.ANS_HOTEL_NAME)
         DSP_KOTSUHOTEL(SEQ).ANS_HOTEL_ADDRESS = AppModule.GetValue_ANS_HOTEL_ADDRESS(Me.ANS_HOTEL_ADDRESS)
         DSP_KOTSUHOTEL(SEQ).ANS_HOTEL_TEL = AppModule.GetValue_ANS_HOTEL_TEL(Me.ANS_HOTEL_TEL)
@@ -2172,7 +2169,7 @@ Partial Public Class DrRegist
             ANS_O_TIME2_5.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_5.Text.Trim <> String.Empty OrElse _
             ANS_O_SEAT_5.SelectedIndex >= 1 OrElse _
-            ANS_O_SEAT_kibou4.SelectedIndex >= 1 Then
+            ANS_O_SEAT_KIBOU5.SelectedIndex >= 1 Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
