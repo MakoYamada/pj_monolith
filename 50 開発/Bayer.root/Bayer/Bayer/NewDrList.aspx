@@ -64,7 +64,7 @@
                                         講演会番号
                                     </td>
                                     <td colspan="5">
-                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="126px" MaxLength="14" 
                                             TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
                                         講演会名&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
@@ -106,15 +106,13 @@
         </tr>        
         <tr>
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnIchiranPrint1" runat="server" Text="新着一覧印刷" Width="130px" 
                                 CssClass="Button" tabindex="9"/>
                             <asp:Button ID="BtnPrint1" runat="server" Text="手配書一括印刷" Width="130px" 
                                 CssClass="Button" tabindex="10" />
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="11" />
                         </td>
@@ -224,15 +222,13 @@
         </tr>
         <tr>
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnIchiranPrint2" runat="server" Text="新着一覧印刷" Width="130px" 
                                 CssClass="Button" tabindex="13"/>
                             <asp:Button ID="BtnPrint2" runat="server" Text="手配書一括印刷" Width="130px" 
                                 CssClass="Button" tabindex="14" />
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="15" />
                         </td>

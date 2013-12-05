@@ -65,10 +65,10 @@
                                         講演会番号
                                     </td>
                                     <td colspan="5">
-                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="91px" MaxLength="10" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="124px" MaxLength="14" 
                                             TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
                                         講演会名&nbsp;&nbsp;&nbsp;
-                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
+                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="536px" MaxLength="160" 
                                             TabIndex="5"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -149,11 +149,9 @@
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
                                 CssClass="Button"  TabIndex="19"/>
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="20" />
                         </td>
@@ -257,11 +255,9 @@
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
                                 CssClass="Button"  TabIndex="22"/>
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="23" />
                         </td>

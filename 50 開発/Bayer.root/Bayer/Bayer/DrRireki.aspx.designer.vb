@@ -16,6 +16,33 @@ Option Explicit On
 Partial Public Class DrRireki
 
     '''<summary>
+    '''TrKOUENKAI_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrKOUENKAI_NAME As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''KOUENKAI_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KOUENKAI_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''SqlDataSource1 コントロール。
     '''</summary>
     '''<remarks>

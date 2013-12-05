@@ -3,11 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
 			<tr style="height: 36px; width:100%">
-				<td align="left" style="width:50%">
+				<td align="left" style="width:100%">
 					<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="Žè”z‘ˆóü" 
                         CssClass="Button" TabIndex="1" />
-				</td>
-				<td align="right" style="width:50%">
 					<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="–ß‚é" 
                         CssClass="Button" TabIndex="2" />
 				</td>
@@ -3603,15 +3601,13 @@
 		<div class="FontSize1" style="height: 10px;"></div>
 		<table cellspacing="0" cellpadding="0" border="0" style="width:900px;">
 			<tr style="height: 36px; width:100%">
-				<td align="left" style="width:50%">
+				<td align="left" style="width:100%">
 				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="—š—ð•\Ž¦" 
                         CssClass="Button" TabIndex="216" />
 					<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="Žè”z‘ˆóü" 
                         CssClass="Button" TabIndex="217" />
 					<asp:Button ID="BtnTaxiCsv" runat="server" Width="150px" Text="TAXI CSV" 
                         CssClass="Button" TabIndex="218" />
-				</td>
-				<td align="right" style="width:50%">
 				    <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="“o˜^" 
                         CssClass="Button" TabIndex="219" />
 				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMI‚Ö" 

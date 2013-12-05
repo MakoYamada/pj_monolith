@@ -46,13 +46,11 @@
         </tr>        
         <tr>
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
                                 CssClass="Button"  TabIndex="4"/>
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="5" />
                         </td>
@@ -128,13 +126,11 @@
         </tr>
         <tr>
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
                                 CssClass="Button" TabIndex="7" />
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="8" />
                         </td>

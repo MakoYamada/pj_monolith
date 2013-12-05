@@ -488,4 +488,8 @@ Partial Public Class DrList
     Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
         BtnPrint1_Click(sender, e)
     End Sub
+
+    Protected Sub GrvList_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles GrvList.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -4,6 +4,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table cellspacing="0" cellpadding="2" border="0">
+		<tr id="TrKOUENKAI_NAME" runat="server">
+			<td align="left" style="font-weight: bold;">
+				<asp:Label ID="KOUENKAI_NO" runat="server"></asp:Label>
+				：
+				<asp:Label ID="KOUENKAI_NAME" runat="server"></asp:Label>
+			</td>
+		</tr>
         <tr>
             <td align="left">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
@@ -13,11 +20,9 @@
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnPrint1" runat="server" Text="印刷" Width="130px" 
                                 CssClass="Button"  TabIndex="1"/>
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="2" />
                         </td>
@@ -109,11 +114,9 @@
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">
                     <tr>
-                        <td style="width:50%">
+                        <td style="width:100%">
                             <asp:Button ID="BtnPrint2" runat="server" Text="印刷" Width="130px" 
                                 CssClass="Button"  TabIndex="22"/>
-                        </td>
-                        <td style="width:50%" align="right">
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="23" />
                         </td>

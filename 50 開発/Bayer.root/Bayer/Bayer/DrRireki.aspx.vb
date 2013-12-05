@@ -92,9 +92,13 @@ Partial Public Class DrRireki
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            Me.TrKOUENKAI_NAME.Visible = False
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.TrKOUENKAI_NAME.Visible = True
+            Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO)
+            Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NAME)
 
             'グリッドビュー表示
             SetGridView()

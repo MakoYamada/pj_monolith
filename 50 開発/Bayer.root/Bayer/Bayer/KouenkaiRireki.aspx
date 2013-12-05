@@ -4,6 +4,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table cellspacing="0" cellpadding="2" border="0">
+		<tr id="TrKOUENKAI_NAME" runat="server">
+			<td align="left" style="font-weight: bold;">
+				<asp:Label ID="KOUENKAI_NO" runat="server"></asp:Label>
+				：
+				<asp:Label ID="KOUENKAI_NAME" runat="server"></asp:Label>
+			</td>
+		</tr>
         <tr>
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="900px">

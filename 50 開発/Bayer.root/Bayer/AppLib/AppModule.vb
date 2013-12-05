@@ -7926,6 +7926,11 @@ Public Class AppModule
         Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI)
     End Function
 
+    '社員用手配備考（回答）
+    Public Shared Function GetValue_ANS_MR_HOTEL_NOTE(ByVal ANS_MR_HOTEL_NOTE As TextBox) As String
+        Return Trim(ANS_MR_HOTEL_NOTE.Text)
+    End Function
+
 
     '【回答】施設選定理由
     Public Shared Function GetValue_ANS_SENTEI_RIYU(ByVal ANS_SENTEI_RIYU As TextBox) As String
