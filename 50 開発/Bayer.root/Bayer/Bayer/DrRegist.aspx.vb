@@ -1025,13 +1025,13 @@ Partial Public Class DrRegist
         End If
 
         '出発時刻2
-        If Me.ANS_O_TIME2_1.Text.Trim <> String.Empty Then
-            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME2_1) Then
+        If Me.ANS_O_TIME1_2.Text.Trim <> String.Empty Then
+            If Not CmnCheck.IsValidTime(Me.ANS_O_TIME1_2) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("出発時刻"), Me)
                 Return False
             Else
-                Me.ANS_O_TIME2_1.Text = Replace(Replace(Me.ANS_O_TIME2_1.Text, ":", ""), "：", "")
-                Me.ANS_O_TIME2_1.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME2_1.Text & "00", CmnModule.DateFormatType.HHMM)
+                Me.ANS_O_TIME1_2.Text = Replace(Replace(Me.ANS_O_TIME1_2.Text, ":", ""), "：", "")
+                Me.ANS_O_TIME1_2.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_O_TIME1_2.Text & "00", CmnModule.DateFormatType.HHMM)
             End If
         End If
 
