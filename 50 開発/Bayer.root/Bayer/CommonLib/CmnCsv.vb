@@ -10,4 +10,15 @@
         Return str1 & CmnConst.Csv.Comma
     End Function
 
+    'ダブルクォーテーションが含まれている文字列のとき、ダブルクォーテーションでエスケープする
+    Public Shared Function EscapeQuotes(ByVal CsvData As String) As String
+
+        If CsvData.Contains(CmnConst.Csv.Delimiter) Then
+            CsvData = CsvData.Replace(CmnConst.Csv.Delimiter, CmnConst.Csv.Delimiter & CmnConst.Csv.Delimiter)
+        End If
+
+        Return CsvData
+
+    End Function
+
 End Class

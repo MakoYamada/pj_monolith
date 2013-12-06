@@ -138,10 +138,10 @@ Public Class Proc
 
 
                 'ファイル出力
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISAN_YM)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHOUNIN_KUBUN)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHOUNIN_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).KOUENKAI_NO))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SEISAN_YM))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SHOUNIN_KUBUN))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SHOUNIN_DATE))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(kaijohi_tf)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(kizaihi_tf)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(inshokuhi_tf)))
@@ -168,12 +168,12 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(kanrihi_t)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(kei_41120200_t)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(kei_t)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYU_NO_TOPTOUR)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SEIKYU_NO_TOPTOUR))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(taxi_t)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(taxi_seisan_t)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISANSHO_URL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TICKET_URL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISAN_KANRYO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SEISANSHO_URL))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).TAXI_TICKET_URL))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SEISAN_KANRYO))))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(mr_jr)))
                 sb.Append(CmnCsv.Quotes(mr_hotel))
