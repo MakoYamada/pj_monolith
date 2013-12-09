@@ -2736,6 +2736,12 @@
             Public PAYMENT_BLOCK As String
             Public ZETIA_CD As String
             Public BARCODE As String
+
+            Public DANTAI_CODE As String
+            Public FROM_DATE As String
+            Public KOUENKAI_NO As String
+            Public KOUENKAI_NAME As String
+            Public KIKAKU_TANTO_NAME As String
         End Structure
         Public Class Column
             Public Const KUBUN As String = "KUBUN"
@@ -2753,6 +2759,12 @@
             Public Const PAYMENT_BLOCK As String = "PAYMENT_BLOCK"
             Public Const ZETIA_CD As String = "ZETIA_CD"
             Public Const BARCODE As String = "BARCODE"
+
+            Public Const DANTAI_CODE As String = "DANTAI_CODE"
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"
         End Class
         Public Class Name
             Public Const KUBUN As String = "区分"
@@ -2770,6 +2782,12 @@
             Public Const PAYMENT_BLOCK As String = "Payment block"
             Public Const ZETIA_CD As String = "Zetia Code"
             Public Const BARCODE As String = "ﾊﾞｰｺｰﾄﾞ"
+
+            Public Const DANTAI_CODE As String = "団体コード"
+            Public Const FROM_DATE As String = "実施日"
+            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NAME As String = "講演会名"
+            Public Const KIKAKU_TANTO_NAME As String = "BYL企画担当者名"
         End Class
     End Class
 
