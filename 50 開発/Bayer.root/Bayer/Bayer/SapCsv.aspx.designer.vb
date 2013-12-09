@@ -43,13 +43,22 @@ Partial Public Class SapCsv
     Protected WithEvents SEIKYUSHO_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnCSV コントロール。
+    '''BtnSapCSV コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCSV As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSapCSV As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTopCSV コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTopCSV As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

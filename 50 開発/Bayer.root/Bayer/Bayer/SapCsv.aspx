@@ -21,11 +21,13 @@
                             請求書番号
                         </td>
                         <td>
-                            <asp:TextBox ID="SEIKYUSHO_NO" runat="server" Width="100px" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="SEIKYUSHO_NO" runat="server" Width="180px" MaxLength="20"></asp:TextBox>
                         </td>
                         <td>
                             &nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="BtnCSV" runat="server" Text="CSV出力" Width="130px" CssClass="Button" />
+                            <asp:Button ID="BtnSapCSV" runat="server" Text="SAP用CSV出力" Width="150px" CssClass="Button" />
+                            &nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="BtnTopCSV" runat="server" Text="TopTour用CSV出力" Width="150px" CssClass="Button" />
                         </td>
                     </tr>
                 </table>

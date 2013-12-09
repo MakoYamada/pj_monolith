@@ -31,8 +31,8 @@ Partial Public Class SapCsv
         CmnModule.ClearAllControl(Me)
     End Sub
 
-    '[CSV出力]
-    Protected Sub BtnCSV_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCSV.Click
+    '[SAP用CSV出力]
+    Protected Sub BtnSapCSV_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSapCSV.Click
 
         '入力チェック
         If Not Check() Then Exit Sub
@@ -48,7 +48,30 @@ Partial Public Class SapCsv
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "Sap.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
 
-            Response.Write(MyModule.Csv.SapCsv(CsvData)) 
+            Response.Write(MyModule.Csv.SapCsv(CsvData))
+            Response.End()
+        End If
+
+    End Sub
+
+    '[Toptour用CSV出力]
+    Protected Sub BtnTopCSV_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTopCSV.Click
+
+        '入力チェック
+        If Not Check() Then Exit Sub
+
+        Dim SeikyuData() As TableDef.TBL_SEIKYU.DataStruct
+        If GetData(SeikyuData) Then
+
+            Dim CsvData() As TableDef.SAP_CSV.DataStruct = CreateCSVData(SeikyuData, True)
+
+            'CSV出力            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("Sap_TopTour用.csv"))
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(MyModule.Csv.SapTopTourCsv(CsvData))
             Response.End()
         End If
 
@@ -134,15 +157,41 @@ Partial Public Class SapCsv
     End Function
 
     'CSV出力用データの組立
-    Private Function CreateCSVData(ByVal SeikyuData() As TableDef.TBL_SEIKYU.DataStruct) As TableDef.SAP_CSV.DataStruct()
+    Private Function CreateCSVData(ByVal SeikyuData() As TableDef.TBL_SEIKYU.DataStruct, Optional ByVal isTopTour As Boolean = False) As TableDef.SAP_CSV.DataStruct()
 
         Dim csvData As TableDef.SAP_CSV.DataStruct()
 
         Dim lngTotalKingaku As Long = 0
 
-        'タイトル行
+        'タイトル行1行目
         Dim rowCnt As Integer = 0
         ReDim csvData(rowCnt)
+        csvData(rowCnt).KUBUN = TableDef.SAP_CSV.Name.KUBUN
+        csvData(rowCnt).KAISHA_CD = TableDef.SAP_CSV.Name.KAISHA_CD
+        csvData(rowCnt).SEIKYU_YMD = TableDef.SAP_CSV.Name.SEIKYU_YMD
+        csvData(rowCnt).DENPYO_TYPE = TableDef.SAP_CSV.Name.DENPYO_TYPE
+        csvData(rowCnt).SEIKYUSHO_NO = TableDef.SAP_CSV.Name.SEIKYUSHO_NO
+        csvData(rowCnt).DOC_HTEXT = TableDef.SAP_CSV.Name.DOC_HTEXT
+        csvData(rowCnt).ACCOUNT = TableDef.SAP_CSV.Name.ACCOUNT
+        csvData(rowCnt).KINGAKU = TableDef.SAP_CSV.Name.KINGAKU
+        csvData(rowCnt).ZEI_CD = TableDef.SAP_CSV.Name.ZEI_CD
+        csvData(rowCnt).COST_CENTER = TableDef.SAP_CSV.Name.COST_CENTER
+        csvData(rowCnt).INTERNAL_ORDER = TableDef.SAP_CSV.Name.INTERNAL_ORDER
+        csvData(rowCnt).KAIGOU_MEI = TableDef.SAP_CSV.Name.KAIGOU_MEI
+        csvData(rowCnt).PAYMENT_BLOCK = TableDef.SAP_CSV.Name.PAYMENT_BLOCK
+        csvData(rowCnt).ZETIA_CD = TableDef.SAP_CSV.Name.ZETIA_CD
+        csvData(rowCnt).BARCODE = TableDef.SAP_CSV.Name.BARCODE
+        If isTopTour Then
+            csvData(rowCnt).DANTAI_CODE = TableDef.SAP_CSV.Name.DANTAI_CODE
+            csvData(rowCnt).FROM_DATE = TableDef.SAP_CSV.Name.FROM_DATE
+            csvData(rowCnt).KOUENKAI_NO = TableDef.SAP_CSV.Name.KOUENKAI_NO
+            csvData(rowCnt).KOUENKAI_NAME = TableDef.SAP_CSV.Name.KOUENKAI_NAME
+            csvData(rowCnt).KIKAKU_TANTO_NAME = TableDef.SAP_CSV.Name.KIKAKU_TANTO_NAME
+        End If
+
+        'タイトル行2行目
+        rowCnt += 1
+        ReDim Preserve csvData(rowCnt)
         csvData(rowCnt).KUBUN = "BKZ"
         csvData(rowCnt).KAISHA_CD = "BUKRS"
         csvData(rowCnt).SEIKYU_YMD = "BLDAT"
@@ -161,9 +210,9 @@ Partial Public Class SapCsv
 
         rowCnt += 1
         ReDim Preserve csvData(rowCnt)
-        'csvData(1)には、2行目以降の金額を集計後、最後にデータをセットする。
+        'このレコードには、明細行2行目以降の金額を集計後、最後にデータをセットする。
 
-        '2行目以降のデータを先に作成
+        '明細行2行目以降のデータを先に作成
         For wCnt As Integer = 0 To UBound(SeikyuData)
 
             '消費税コード取得
@@ -173,50 +222,51 @@ Partial Public Class SapCsv
                 '1講演会に対して1回目の請求のとき
                 If SeikyuData(wCnt).SRM_HACYU_KBN = AppConst.KAIJO.SRM_HACYU_KBN.Code.No Then
                     'SAP精算のとき
-                    SetKaijoKotsuRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd)
+                    SetKaijoKotsuRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, isTopTour)
                 End If
 
                 'MR旅費
-                SetMrRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
+                SetMrRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection, isTopTour)
             Else
                 '1講演会に対して2回目以降の請求のとき
                 'タクチケ(課税)
-                SetTaxiRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection)
+                SetTaxiRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection, isTopTour)
             End If
         Next
 
-        '1行目
-        csvData(1).KUBUN = "X"
-        csvData(1).KAISHA_CD = "0094"
-        csvData(1).SEIKYU_YMD = AppModule.GetName_SAP_SEIKYU_YMD(CmnModule.GetLastDateOfMonth(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text))
-        csvData(1).DENPYO_TYPE = "KR"
-        csvData(1).SEIKYUSHO_NO = Me.SEIKYUSHO_NO.Text
-        csvData(1).DOC_HTEXT = "Top tour"
-        csvData(1).ACCOUNT = "7007466"
-        csvData(1).KINGAKU = lngTotalKingaku.ToString
-        csvData(1).ZEI_CD = "**"
-        csvData(1).COST_CENTER = ""
-        csvData(1).INTERNAL_ORDER = ""
-        csvData(1).KAIGOU_MEI = "Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text & "月分"
-        csvData(1).PAYMENT_BLOCK = "E"
-        csvData(1).ZETIA_CD = ""
-        csvData(1).BARCODE = ""
+        '明細行1行目
+        rowCnt = 2
+        csvData(rowCnt).KUBUN = "X"
+        csvData(rowCnt).KAISHA_CD = "0094"
+        csvData(rowCnt).SEIKYU_YMD = AppModule.GetName_SAP_SEIKYU_YMD(CmnModule.GetLastDateOfMonth(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text))
+        csvData(rowCnt).DENPYO_TYPE = "KR"
+        csvData(rowCnt).SEIKYUSHO_NO = Me.SEIKYUSHO_NO.Text
+        csvData(rowCnt).DOC_HTEXT = "Top tour"
+        csvData(rowCnt).ACCOUNT = "7007466"
+        csvData(rowCnt).KINGAKU = lngTotalKingaku.ToString
+        csvData(rowCnt).ZEI_CD = "**"
+        csvData(rowCnt).COST_CENTER = ""
+        csvData(rowCnt).INTERNAL_ORDER = ""
+        csvData(rowCnt).KAIGOU_MEI = "Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text & "月分"
+        csvData(rowCnt).PAYMENT_BLOCK = "E"
+        csvData(rowCnt).ZETIA_CD = ""
+        csvData(rowCnt).BARCODE = ""
 
         Return csvData
     End Function
 
-    '会場・機材と宿泊・交通のレコードを作成
+    '非課税金額、課税金額のレコードを作成
     Private Sub SetKaijoKotsuRecord(ByVal SeikyuData As TableDef.TBL_SEIKYU.DataStruct, _
                                     ByRef csvData() As TableDef.SAP_CSV.DataStruct, _
                                     ByRef rowCnt As Integer, _
                                     ByRef lngTotalKingaku As Long, _
-                                    ByVal strSapZeiCd As String)
-
+                                    ByVal strSapZeiCd As String, _
+                                    ByVal isTopTour As Boolean)
 
         Dim Kingaku As Long = 0
 
-        '会場・機材(非課税)レコード
-        Kingaku = CLng(AppModule.GetName_ANS_991330401_TF(SeikyuData.KAIJOHI_TF, SeikyuData.KIZAIHI_TF, "0", True))
+        '非課税金額レコード
+        Kingaku = CmnModule.DbVal(SeikyuData.KEI_TF)
         lngTotalKingaku += Kingaku '金額加算
 
         rowCnt += 1
@@ -236,10 +286,17 @@ Partial Public Class SapCsv
         csvData(rowCnt).PAYMENT_BLOCK = ""
         csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
         csvData(rowCnt).BARCODE = ""
+        If isTopTour Then
+            csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+            csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+            csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+            csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+            csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+        End If
 
 
-        '会場・機材(課税)レコード
-        Kingaku = CLng(AppModule.GetName_ANS_991330401_T(SeikyuData.KAIJOUHI_T, SeikyuData.KIZAIHI_T, "0", True))
+        '課税金額レコード
+        Kingaku = CmnModule.DbVal(SeikyuData.KEI_T)
         lngTotalKingaku += Kingaku '金額加算
 
         rowCnt += 1
@@ -259,29 +316,13 @@ Partial Public Class SapCsv
         csvData(rowCnt).PAYMENT_BLOCK = ""
         csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
         csvData(rowCnt).BARCODE = ""
-
-
-        '宿泊・交通・タクチケ(非課税)レコード
-        Kingaku = CmnModule.DbVal(SeikyuData.KEI_41120200_TF)
-        lngTotalKingaku += Kingaku '金額加算
-
-        rowCnt += 1
-        ReDim Preserve csvData(rowCnt)
-        csvData(rowCnt).KUBUN = ""
-        csvData(rowCnt).KAISHA_CD = ""
-        csvData(rowCnt).SEIKYU_YMD = ""
-        csvData(rowCnt).DENPYO_TYPE = ""
-        csvData(rowCnt).SEIKYUSHO_NO = ""
-        csvData(rowCnt).DOC_HTEXT = ""
-        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
-        csvData(rowCnt).KINGAKU = Kingaku.ToString
-        csvData(rowCnt).ZEI_CD = strSapZeiCd
-        csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
-        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
-        csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
-        csvData(rowCnt).PAYMENT_BLOCK = ""
-        csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
-        csvData(rowCnt).BARCODE = ""
+        If isTopTour Then
+            csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+            csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+            csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+            csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+            csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+        End If
 
     End Sub
 
@@ -291,7 +332,8 @@ Partial Public Class SapCsv
                                           ByRef rowCnt As Integer, _
                                           ByRef lngTotalKingaku As Long, _
                                           ByVal strSapZeiCd As String, _
-                                          ByVal DbConn As System.Data.SqlClient.SqlConnection)
+                                          ByVal DbConn As System.Data.SqlClient.SqlConnection, _
+                                          ByVal isTopTour As Boolean)
 
         Dim MrData() As TableDef.TBL_KOTSUHOTEL.DataStruct
         If GetMrRyohiData(SeikyuData.KOUENKAI_NO, MrData, DbConn) Then
@@ -309,15 +351,23 @@ Partial Public Class SapCsv
                 csvData(rowCnt).DENPYO_TYPE = ""
                 csvData(rowCnt).SEIKYUSHO_NO = ""
                 csvData(rowCnt).DOC_HTEXT = ""
-                csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
+                csvData(rowCnt).ACCOUNT = MrData(wCnt).ACCOUNT_CD
                 csvData(rowCnt).KINGAKU = Kingaku.ToString
                 csvData(rowCnt).ZEI_CD = strSapZeiCd
                 csvData(rowCnt).COST_CENTER = MrData(wCnt).COST_CENTER
-                csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
+                csvData(rowCnt).INTERNAL_ORDER = MrData(wCnt).INTERNAL_ORDER
                 csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
                 csvData(rowCnt).PAYMENT_BLOCK = ""
-                csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+                csvData(rowCnt).ZETIA_CD = MrData(wCnt).ZETIA_CD
                 csvData(rowCnt).BARCODE = ""
+
+                If isTopTour Then
+                    csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+                    csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+                    csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+                    csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+                    csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+                End If
             Next
         End If
 
@@ -360,7 +410,8 @@ Partial Public Class SapCsv
                                           ByRef rowCnt As Integer, _
                                           ByRef lngTotalKingaku As Long, _
                                           ByVal strSapZeiCd As String, _
-                                          ByVal DbConn As System.Data.SqlClient.SqlConnection)
+                                          ByVal DbConn As System.Data.SqlClient.SqlConnection, _
+                                          ByVal isTopTour As Boolean)
 
         ''講演会番号と請求月をキーに課税対象(エンタ)のデータを抽出
 
@@ -382,18 +433,27 @@ Partial Public Class SapCsv
         '        csvData(rowCnt).DENPYO_TYPE = ""
         '        csvData(rowCnt).SEIKYUSHO_NO = ""
         '        csvData(rowCnt).DOC_HTEXT = ""
-        '        csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
+        '        csvData(rowCnt).ACCOUNT = TaxiData(wCnt).ACCOUNT_CD
         '        csvData(rowCnt).KINGAKU = Kingaku.ToString
         '        csvData(rowCnt).ZEI_CD = strSapZeiCd
         '        csvData(rowCnt).COST_CENTER = TaxiData(wCnt).COST_CENTER
-        '        csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_T
+        '        csvData(rowCnt).INTERNAL_ORDER = TaxiData(wCnt).INTERNAL_ORDER
         '        csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
         '        csvData(rowCnt).PAYMENT_BLOCK = ""
-        '        csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+        '        csvData(rowCnt).ZETIA_CD = TaxiData(wCnt).ZETIA_CD
         '        csvData(rowCnt).BARCODE = ""
+
+        'If isTopTour Then
+        '    csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+        '    csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+        '    csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+        '    csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+        '    csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+        'End If
+
         '    Next
 
         'End If
     End Sub
-    
+
 End Class
