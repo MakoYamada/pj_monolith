@@ -1129,7 +1129,6 @@ Me.DR_SHISETSU_NAME.Height = 0.2!
 Me.DR_SHISETSU_NAME.Left = 4.507481!
 Me.DR_SHISETSU_NAME.Name = "DR_SHISETSU_NAME"
 Me.DR_SHISETSU_NAME.Style = "vertical-align: middle"
-Me.DR_SHISETSU_NAME.Text = Nothing
 Me.DR_SHISETSU_NAME.Top = 0.874016!
 Me.DR_SHISETSU_NAME.Width = 2.657874!
 '
@@ -1151,7 +1150,6 @@ Me.KOUENKAI_NAME.Height = 0.2!
 Me.KOUENKAI_NAME.Left = 0.8437008!
 Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
 Me.KOUENKAI_NAME.Style = "font-weight: bold; white-space: nowrap"
-Me.KOUENKAI_NAME.Text = Nothing
 Me.KOUENKAI_NAME.Top = 0.2740158!
 Me.KOUENKAI_NAME.Width = 6.321654!
 '
@@ -1593,9 +1591,9 @@ Me.FUKURO4.Height = 1.2!
 Me.FUKURO4.HyperLink = Nothing
 Me.FUKURO4.Left = 3.558662!
 Me.FUKURO4.Name = "FUKURO4"
-Me.FUKURO4.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
+Me.FUKURO4.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold;"& _ 
+    " text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-verti"& _ 
+    "cal: true"
 Me.FUKURO4.Text = ""
 Me.FUKURO4.Top = 15.49685!
 Me.FUKURO4.Width = 0.2051181!
@@ -2943,6 +2941,7 @@ Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
 Me.REQ_MR_HOTEL_NOTE.Height = 0.8854332!
 Me.REQ_MR_HOTEL_NOTE.Left = 1.677953!
 Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"
+Me.REQ_MR_HOTEL_NOTE.Text = Nothing
 Me.REQ_MR_HOTEL_NOTE.Top = 4.203152!
 Me.REQ_MR_HOTEL_NOTE.Width = 5.474016!
 '
@@ -3423,6 +3422,7 @@ Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
 Me.MR_SEND_SAKI_OTHER.Height = 0.8854331!
 Me.MR_SEND_SAKI_OTHER.Left = 1.677953!
 Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
+Me.MR_SEND_SAKI_OTHER.Text = Nothing
 Me.MR_SEND_SAKI_OTHER.Top = 5.292521!
 Me.MR_SEND_SAKI_OTHER.Width = 5.474016!
 '
@@ -3520,6 +3520,7 @@ Me.REQ_HOTEL_NOTE.DataField = "REQ_HOTEL_NOTE"
 Me.REQ_HOTEL_NOTE.Height = 0.7291338!
 Me.REQ_HOTEL_NOTE.Left = 1.323622!
 Me.REQ_HOTEL_NOTE.Name = "REQ_HOTEL_NOTE"
+Me.REQ_HOTEL_NOTE.Text = Nothing
 Me.REQ_HOTEL_NOTE.Top = 7.177953!
 Me.REQ_HOTEL_NOTE.Width = 5.828347!
 '
@@ -5313,9 +5314,9 @@ Me.FUKURO2.Height = 1.2!
 Me.FUKURO2.HyperLink = Nothing
 Me.FUKURO2.Left = 3.558662!
 Me.FUKURO2.Name = "FUKURO2"
-Me.FUKURO2.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
+Me.FUKURO2.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold;"& _ 
+    " text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-verti"& _ 
+    "cal: true"
 Me.FUKURO2.Text = ""
 Me.FUKURO2.Top = 13.09685!
 Me.FUKURO2.Width = 0.2051181!
@@ -5471,9 +5472,9 @@ Me.OURO2.Height = 1.2!
 Me.OURO2.HyperLink = Nothing
 Me.OURO2.Left = 0!
 Me.OURO2.Name = "OURO2"
-Me.OURO2.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
+Me.OURO2.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold;"& _ 
+    " text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-verti"& _ 
+    "cal: true"
 Me.OURO2.Text = ""
 Me.OURO2.Top = 13.09685!
 Me.OURO2.Width = 0.2291338!
@@ -5806,9 +5807,9 @@ Me.OURO4.Height = 1.2!
 Me.OURO4.HyperLink = Nothing
 Me.OURO4.Left = 0!
 Me.OURO4.Name = "OURO4"
-Me.OURO4.Style = "background-color: Silver; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold"& _ 
-    "; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-vert"& _ 
-    "ical: true"
+Me.OURO4.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold;"& _ 
+    " text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-verti"& _ 
+    "cal: true"
 Me.OURO4.Text = ""
 Me.OURO4.Top = 15.49685!
 Me.OURO4.Width = 0.2291338!

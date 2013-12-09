@@ -6,8 +6,13 @@
 				<td align="left" style="width:100%">
 					<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="1" />
+					<asp:Button ID="BtnSoufujo1" runat="server" Width="150px" Text="送付状印刷" 
+                        CssClass="Button" TabIndex="1" />
+					<asp:Button ID="BtnTaxiKakunin1" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
+                        CssClass="Button" TabIndex="1" />
 					<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="戻る" 
                         CssClass="Button" TabIndex="2" />
+				    <a href="#TaxiTehaiLink">タクチケ手配へ</a>
 				</td>
 			</tr>
 		<tr>
@@ -2088,10 +2093,10 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="style1" colspan="4">
                             ◆依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                        <td align="left" valign="middle" class="style2" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_4" runat="server" Width="55px" Text="コピー" 
                                 CssClass="ButtonList" TabIndex="115" />
@@ -2479,6 +2484,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
 							<asp:Label ID="TEHAI_TAXI" runat="server"></asp:Label>
+							<a name="TaxiTehaiLink"></a>
                         </td>
 					</tr>
                     <tr>
@@ -3606,8 +3612,14 @@
                         CssClass="Button" TabIndex="216" />
 					<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="217" />
-					<asp:Button ID="BtnTaxiCsv" runat="server" Width="150px" Text="TAXI CSV" 
-                        CssClass="Button" TabIndex="218" />
+					<asp:Button ID="BtnSoufujo2" runat="server" Width="150px" Text="送付状印刷" 
+                        CssClass="Button" TabIndex="1" />
+					<asp:Button ID="BtnTaxiKakunin2" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
+                        CssClass="Button" TabIndex="1" />
+                </td>
+            </tr>
+            <tr align="right" style="width:100%">
+                <td>
 				    <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" 
                         CssClass="Button" TabIndex="219" />
 				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" 
@@ -3620,6 +3632,23 @@
 	</table>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+
+		<style type="text/css">
+            .style1
+            {
+                background-color: #738891;
+                color: #ffffff;
+                font-weight: bold;
+                height: 37px;
+            }
+            .style2
+            {
+                background-color: #b8c3c8;
+                color: #273034;
+                font-weight: bold;
+                height: 37px;
+            }
+        </style>
 
 		</asp:Content>
 

@@ -2730,4 +2730,7 @@ Partial Public Class DrRegist
         SetFocus(Me.ANS_F_KOTSUKIKAN_5)
     End Sub
 
+    Protected Sub REQ_TAXI_NOTE_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles REQ_TAXI_NOTE.TextChanged
+
+    End Sub
 End Class

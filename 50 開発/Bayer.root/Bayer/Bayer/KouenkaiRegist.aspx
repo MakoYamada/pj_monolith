@@ -103,13 +103,13 @@
 							<asp:Label ID="INTERNAL_ORDER_TF" runat="server" Text=""></asp:Label>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 120px;">
-							アカウントコード<br />(課税)
+							Account Code(課税)
 						</td>
 						<td nowrap="nowrap" align="left">
 							<asp:Label ID="ACCOUNT_CD_T" runat="server" Text=""></asp:Label>
 						</td>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 120px;">
-							アカウントコード<br />(非課税)
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 150px;">
+							Account Code(非課税)
 						</td>
 						<td nowrap="nowrap" align="left">
 							<asp:Label ID="ACCOUNT_CD_TF" runat="server" Text=""></asp:Label>
