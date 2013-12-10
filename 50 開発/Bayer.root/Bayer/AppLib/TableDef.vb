@@ -209,9 +209,9 @@
             Public Const SEIHIN_NAME As String = "製品名"
             Public Const INTERNAL_ORDER_T As String = "Internal order(課税)"
             Public Const INTERNAL_ORDER_TF As String = "Internal order(非課税)"
-            Public Const ACCOUNT_CD_T As String = "アカウントコード(課税)"
-            Public Const ACCOUNT_CD_TF As String = "アカウントコード(非課税)"
-            Public Const ZETIA_CD As String = "zetia Code"
+            Public Const ACCOUNT_CD_T As String = "Account Code(課税)"
+            Public Const ACCOUNT_CD_TF As String = "Account Code(非課税)"
+            Public Const ZETIA_CD As String = "Zetia Code"
             Public Const SANKA_YOTEI_CNT_NMBR As String = "参加予定数(従業員以外)"
             Public Const SANKA_YOTEI_CNT_MBR As String = "参加予定数(従業員)"
             Public Const SRM_HACYU_KBN As String = "SRM発注区分"
@@ -443,9 +443,9 @@
             Public Const COST_CENTER As String = "Cost Center"
             Public Const INTERNAL_ORDER_T As String = "Internal order(課税)"
             Public Const INTERNAL_ORDER_TF As String = "Internal order(非課税)"
-            Public Const ACCOUNT_CD_T As String = "アカウントコード(課税)"
-            Public Const ACCOUNT_CD_TF As String = "アカウントコード(非課税)"
-            Public Const ZETIA_CD As String = "zetia Code"
+            Public Const ACCOUNT_CD_T As String = "Account Code(課税)"
+            Public Const ACCOUNT_CD_TF As String = "Account Code(非課税)"
+            Public Const ZETIA_CD As String = "Zetia Code"
             Public Const SRM_HACYU_KBN As String = "SRM発注区分"
             Public Const TO_DATE As String = "講演会開催日To"
             Public Const DANTAI_CODE As String = "団体コード"
@@ -1293,7 +1293,7 @@
             Public Const ACCOUNT_CD As String = "Account Code"
             Public Const COST_CENTER As String = "Cost Center"
             Public Const INTERNAL_ORDER As String = "Internal Order"
-            Public Const ZETIA_CD As String = "zetia Code"
+            Public Const ZETIA_CD As String = "Zetia Code"
             Public Const SHONIN_NAME As String = "最終承認者(氏名)"
             Public Const SHONIN_DATE As String = "最終承認日時"
             Public Const TEHAI_HOTEL As String = "宿泊手配(希望する)"
@@ -2160,7 +2160,7 @@
             Public Const ACCOUNT_CODE As String = "Account Code"
             Public Const COST_CENTER As String = "Cost Center"
             Public Const INTERNAL_ORDER As String = "Internal Order"
-            Public Const ZETIA_CD As String = "zetia Code"
+            Public Const ZETIA_CD As String = "Zetia Code"
             Public Const STATUS_SHONIN As String = "承認ステータス"
             Public Const SHONIN_NAME As String = "承認者"
             Public Const SHONIN_TIME As String = "承認時間"
@@ -2276,7 +2276,7 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
         End Class
-        
+
     End Class
 
     Public Class MS_SHISETSU
