@@ -7,9 +7,9 @@
 					<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="1" />
 					<asp:Button ID="BtnSoufujo1" runat="server" Width="150px" Text="送付状印刷" 
-                        CssClass="Button" TabIndex="1" />
+                        CssClass="Button" TabIndex="1" Visible="False" />
 					<asp:Button ID="BtnTaxiKakunin1" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
-                        CssClass="Button" TabIndex="1" />
+                        CssClass="Button" TabIndex="1" Visible="False" />
 					<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="戻る" 
                         CssClass="Button" TabIndex="2" />
 				    <a href="#TaxiTehaiLink">タクチケ手配へ</a>
@@ -2485,6 +2485,11 @@
                         <td align="left" valign="middle" class="TdItem" colspan="7">
 							<asp:Label ID="TEHAI_TAXI" runat="server"></asp:Label>
 							<a name="TaxiTehaiLink"></a>
+            				<asp:Button ID="BtnTicketCopy" runat="server" Width="55px" Text="コピー" 
+                                CssClass="ButtonList" TabIndex="127" />
+            				<asp:Button ID="BtnTicketClear" runat="server" Width="55px" Text="クリア" 
+                                CssClass="ButtonList" TabIndex="128" />
+                            <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>							
                         </td>
 					</tr>
                     <tr>
@@ -3613,9 +3618,9 @@
 					<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="217" />
 					<asp:Button ID="BtnSoufujo2" runat="server" Width="150px" Text="送付状印刷" 
-                        CssClass="Button" TabIndex="1" />
+                        CssClass="Button" TabIndex="1" Visible="False" />
 					<asp:Button ID="BtnTaxiKakunin2" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
-                        CssClass="Button" TabIndex="1" />
+                        CssClass="Button" TabIndex="1" Visible="False" />
                 </td>
             </tr>
             <tr align="right" style="width:100%">

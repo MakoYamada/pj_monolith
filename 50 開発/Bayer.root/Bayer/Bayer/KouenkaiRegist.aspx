@@ -117,7 +117,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							zetia Code
+							Zetia Code
 						</td>
 						<td nowrap="nowrap" align="left">
 							<asp:Label ID="ZETIA_CD" runat="server" Text=""></asp:Label>

@@ -2788,6 +2788,24 @@ Partial Public Class DrRegist
     Protected WithEvents TEHAI_TAXI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''BtnTicketCopy コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTicketCopy As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTicketClear コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTicketClear As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''REQ_TAXI_NOTE コントロール。
     '''</summary>
     '''<remarks>

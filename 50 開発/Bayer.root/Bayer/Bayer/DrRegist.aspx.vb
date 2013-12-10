@@ -2730,7 +2730,150 @@ Partial Public Class DrRegist
         SetFocus(Me.ANS_F_KOTSUKIKAN_5)
     End Sub
 
-    Protected Sub REQ_TAXI_NOTE_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles REQ_TAXI_NOTE.TextChanged
+    'タクチケクリアボタン
+    Protected Sub BtnTicketClear_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTicketClear.Click
+        Me.ANS_TAXI_DATE_1.Text = ""
+        Me.ANS_TAXI_KENSHU_1.SelectedIndex = 0
+        Me.ANS_TAXI_NO_1.Text = ""
+        Me.ANS_TAXI_DATE_2.Text = ""
+        Me.ANS_TAXI_KENSHU_2.SelectedIndex = 0
+        Me.ANS_TAXI_NO_2.Text = ""
+        Me.ANS_TAXI_DATE_3.Text = ""
+        Me.ANS_TAXI_KENSHU_3.SelectedIndex = 0
+        Me.ANS_TAXI_NO_3.Text = ""
+        Me.ANS_TAXI_DATE_4.Text = ""
+        Me.ANS_TAXI_KENSHU_4.SelectedIndex = 0
+        Me.ANS_TAXI_NO_4.Text = ""
+        Me.ANS_TAXI_DATE_5.Text = ""
+        Me.ANS_TAXI_KENSHU_5.SelectedIndex = 0
+        Me.ANS_TAXI_NO_5.Text = ""
+        Me.ANS_TAXI_DATE_6.Text = ""
+        Me.ANS_TAXI_KENSHU_6.SelectedIndex = 0
+        Me.ANS_TAXI_NO_6.Text = ""
+        Me.ANS_TAXI_DATE_7.Text = ""
+        Me.ANS_TAXI_KENSHU_7.SelectedIndex = 0
+        Me.ANS_TAXI_NO_7.Text = ""
+        Me.ANS_TAXI_DATE_8.Text = ""
+        Me.ANS_TAXI_KENSHU_8.SelectedIndex = 0
+        Me.ANS_TAXI_NO_8.Text = ""
+        Me.ANS_TAXI_DATE_9.Text = ""
+        Me.ANS_TAXI_KENSHU_9.SelectedIndex = 0
+        Me.ANS_TAXI_NO_9.Text = ""
+        Me.ANS_TAXI_DATE_10.Text = ""
+        Me.ANS_TAXI_KENSHU_10.SelectedIndex = 0
+        Me.ANS_TAXI_NO_10.Text = ""
+        Me.ANS_TAXI_DATE_11.Text = ""
+        Me.ANS_TAXI_KENSHU_11.SelectedIndex = 0
+        Me.ANS_TAXI_NO_11.Text = ""
+        Me.ANS_TAXI_DATE_12.Text = ""
+        Me.ANS_TAXI_KENSHU_12.SelectedIndex = 0
+        Me.ANS_TAXI_NO_12.Text = ""
+        Me.ANS_TAXI_DATE_13.Text = ""
+        Me.ANS_TAXI_KENSHU_13.SelectedIndex = 0
+        Me.ANS_TAXI_NO_13.Text = ""
+        Me.ANS_TAXI_DATE_14.Text = ""
+        Me.ANS_TAXI_KENSHU_14.SelectedIndex = 0
+        Me.ANS_TAXI_NO_14.Text = ""
+        Me.ANS_TAXI_DATE_15.Text = ""
+        Me.ANS_TAXI_KENSHU_15.SelectedIndex = 0
+        Me.ANS_TAXI_NO_15.Text = ""
+        Me.ANS_TAXI_DATE_16.Text = ""
+        Me.ANS_TAXI_KENSHU_16.SelectedIndex = 0
+        Me.ANS_TAXI_NO_16.Text = ""
+        Me.ANS_TAXI_DATE_17.Text = ""
+        Me.ANS_TAXI_KENSHU_17.SelectedIndex = 0
+        Me.ANS_TAXI_NO_17.Text = ""
+        Me.ANS_TAXI_DATE_18.Text = ""
+        Me.ANS_TAXI_KENSHU_18.SelectedIndex = 0
+        Me.ANS_TAXI_NO_18.Text = ""
+        Me.ANS_TAXI_DATE_19.Text = ""
+        Me.ANS_TAXI_KENSHU_19.SelectedIndex = 0
+        Me.ANS_TAXI_NO_19.Text = ""
+        Me.ANS_TAXI_DATE_20.Text = ""
+        Me.ANS_TAXI_KENSHU_20.SelectedIndex = 0
+        Me.ANS_TAXI_NO_20.Text = ""
+        SetFocus(Me.ANS_TAXI_DATE_1)
+    End Sub
 
+    'タクチケコピーボタン
+    Protected Sub BtnTicketCopy_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTicketCopy.Click
+        '何れかの項目が入力済みの場合、確認メッセージ表示
+        If Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_1.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_2.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_3.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_4.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_5.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_6.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_7.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_8.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_9.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_10.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_11.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_12.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_13.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_14.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_15.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_16.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_17.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_18.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_19.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty OrElse _
+            Me.ANS_TAXI_KENSHU_20.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
+            Exit Sub
+        End If
+
+        '利用日
+        Me.ANS_TAXI_DATE_1.Text = Trim(Replace(Me.REQ_TAXI_DATE_1.Text, "/", ""))
+        Me.ANS_TAXI_DATE_2.Text = Trim(Replace(Me.REQ_TAXI_DATE_2.Text, "/", ""))
+        Me.ANS_TAXI_DATE_3.Text = Trim(Replace(Me.REQ_TAXI_DATE_3.Text, "/", ""))
+        Me.ANS_TAXI_DATE_4.Text = Trim(Replace(Me.REQ_TAXI_DATE_4.Text, "/", ""))
+        Me.ANS_TAXI_DATE_5.Text = Trim(Replace(Me.REQ_TAXI_DATE_5.Text, "/", ""))
+        Me.ANS_TAXI_DATE_6.Text = Trim(Replace(Me.REQ_TAXI_DATE_6.Text, "/", ""))
+        Me.ANS_TAXI_DATE_7.Text = Trim(Replace(Me.REQ_TAXI_DATE_7.Text, "/", ""))
+        Me.ANS_TAXI_DATE_8.Text = Trim(Replace(Me.REQ_TAXI_DATE_8.Text, "/", ""))
+        Me.ANS_TAXI_DATE_9.Text = Trim(Replace(Me.REQ_TAXI_DATE_9.Text, "/", ""))
+        Me.ANS_TAXI_DATE_10.Text = Trim(Replace(Me.REQ_TAXI_DATE_10.Text, "/", ""))
+        SetFocus(Me.ANS_TAXI_DATE_1)
     End Sub
 End Class
