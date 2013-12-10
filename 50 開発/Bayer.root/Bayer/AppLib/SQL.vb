@@ -58,6 +58,32 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byKOUENKAI_NO_UPDATE_DATE_DESC(ByVal KOUENKAI_NO As String, ByVal UPDATE_DATE As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT *"
+            strSQL &= ", USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO & "='" & KOUENKAI_NO & "'"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "<'" & UPDATE_DATE & "'"
+
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.UPDATE_DATE
+            strSQL &= " DESC"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
 
@@ -1143,6 +1169,53 @@ Public Class SQL
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(SALEFORCE_ID) & "'"
             strSQL &= " AND "
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ">N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byKOUENKAI_NO_UPDATE_DATE_DESC(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String, ByVal UPDATE_DATE As String) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            strSQL &= " , USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " ,"
+            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= " ) AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=N'" & KOUENKAI_NO & "'"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID=N'" & SANKASHA_ID & "'"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.UPDATE_DATE<N'" & UPDATE_DATE & "'"
+
+            strSQL &= " ORDER BY WK_KOTSUHOTEL."
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
+            strSQL &= " DESC"
 
             Return strSQL
         End Function

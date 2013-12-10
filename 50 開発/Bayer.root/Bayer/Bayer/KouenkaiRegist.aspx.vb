@@ -5,6 +5,7 @@ Partial Public Class KouenkaiRegist
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private DSP_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private OldTBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct
     Private SEQ As Integer
     Private Popup As Boolean = False
 
@@ -35,6 +36,9 @@ Partial Public Class KouenkaiRegist
         If Not Page.IsPostBack Then
             '画面項目 初期化
             InitControls()
+
+            '旧データ取得
+            GetData_Old()
 
             '画面項目表示
             SetForm()
@@ -164,7 +168,49 @@ Partial Public Class KouenkaiRegist
         Me.YOSAN_T.Text = AppModule.GetName_YOSAN_T(DSP_KOUENKAI(DSP_SEQ).YOSAN_T)
         Me.IROUKAI_YOSAN_T.Text = AppModule.GetName_IROUKAI_YOSAN_T(DSP_KOUENKAI(DSP_SEQ).IROUKAI_YOSAN_T)
         Me.IKENKOUKAN_YOSAN_T.Text = AppModule.GetName_IKENKOUKAN_YOSAN_T(DSP_KOUENKAI(DSP_SEQ).IKENKOUKAN_YOSAN_T)
+
+        If Not Popup Then
+            Me.TORIKESHI_FLG.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).TORIKESHI_FLG, OldTBL_KOUENKAI.TORIKESHI_FLG)
+            Me.KOUENKAI_NAME.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KOUENKAI_NAME, OldTBL_KOUENKAI.KOUENKAI_NAME)
+            Me.FROM_DATE.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).FROM_DATE, OldTBL_KOUENKAI.FROM_DATE)
+            Me.TO_DATE.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).TO_DATE, OldTBL_KOUENKAI.TO_DATE)
+            Me.KAIJO_NAME.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KAIJO_NAME, OldTBL_KOUENKAI.KAIJO_NAME)
+            Me.SEIHIN_NAME.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).SEIHIN_NAME, OldTBL_KOUENKAI.SEIHIN_NAME)
+            Me.INTERNAL_ORDER_T.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_T, OldTBL_KOUENKAI.INTERNAL_ORDER_T)
+            Me.INTERNAL_ORDER_TF.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_TF, OldTBL_KOUENKAI.INTERNAL_ORDER_TF)
+            Me.ACCOUNT_CD_T.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).ACCOUNT_CD_T, OldTBL_KOUENKAI.ACCOUNT_CD_T)
+            Me.ACCOUNT_CD_TF.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).ACCOUNT_CD_TF, OldTBL_KOUENKAI.ACCOUNT_CD_TF)
+            Me.ZETIA_CD.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).ZETIA_CD, OldTBL_KOUENKAI.ZETIA_CD)
+            Me.SANKA_YOTEI_CNT_MBR.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_MBR, OldTBL_KOUENKAI.SANKA_YOTEI_CNT_MBR)
+            Me.SANKA_YOTEI_CNT_NMBR.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_NMBR, OldTBL_KOUENKAI.SANKA_YOTEI_CNT_NMBR)
+            Me.TTEHAI_TANTO.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).TTEHAI_TANTO, OldTBL_KOUENKAI.TTEHAI_TANTO)
+            Me.DANTAI_CODE.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).DANTAI_CODE, OldTBL_KOUENKAI.DANTAI_CODE)
+            Me.KIKAKU_TANTO_JIGYOUBU.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_JIGYOUBU, OldTBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU)
+            Me.BU.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).BU, OldTBL_KOUENKAI.BU)
+            Me.KIKAKU_TANTO_AREA.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_AREA, OldTBL_KOUENKAI.KIKAKU_TANTO_AREA)
+            Me.KIKAKU_TANTO_EIGYOSHO.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EIGYOSHO, OldTBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO)
+            Me.COST_CENTER.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).COST_CENTER, OldTBL_KOUENKAI.COST_CENTER)
+            Me.KIKAKU_TANTO_NAME.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_NAME, OldTBL_KOUENKAI.KIKAKU_TANTO_NAME)
+            Me.KIKAKU_TANTO_ROMA.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_ROMA, OldTBL_KOUENKAI.KIKAKU_TANTO_ROMA)
+            Me.KIKAKU_TANTO_TEL.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_TEL, OldTBL_KOUENKAI.KIKAKU_TANTO_TEL)
+            Me.KIKAKU_TANTO_KEITAI.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_KEITAI, OldTBL_KOUENKAI.KIKAKU_TANTO_KEITAI)
+            Me.KIKAKU_TANTO_EMAIL.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EMAIL_PC, OldTBL_KOUENKAI.KIKAKU_TANTO_EMAIL_PC)
+            Me.KIKAKU_TANTO_EMAIL_KEITAI.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EMAIL_KEITAI, OldTBL_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI)
+            Me.YOSAN_TF.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).YOSAN_TF, OldTBL_KOUENKAI.YOSAN_TF)
+            Me.YOSAN_T.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).YOSAN_T, OldTBL_KOUENKAI.YOSAN_T)
+            Me.IROUKAI_YOSAN_T.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).IROUKAI_YOSAN_T, OldTBL_KOUENKAI.IROUKAI_YOSAN_T)
+            Me.IKENKOUKAN_YOSAN_T.ForeColor = SetChangedColor(DSP_KOUENKAI(DSP_SEQ).IKENKOUKAN_YOSAN_T, OldTBL_KOUENKAI.IKENKOUKAN_YOSAN_T)
+        End If
     End Sub
+
+    '差異
+    Private Function SetChangedColor(ByVal Data1 As String, ByVal Data2 As String) As System.Drawing.Color
+        If Trim(OldTBL_KOUENKAI.KOUENKAI_NO) <> "" AndAlso CmnModule.IsChanged(Data1, Data2) Then
+            Return Drawing.Color.OrangeRed
+        Else
+            Return Drawing.Color.FromArgb(10, 10, 10)
+        End If
+    End Function
 
     '入力チェック
     Private Function Check() As Boolean
@@ -176,7 +222,7 @@ Partial Public Class KouenkaiRegist
         Return True
     End Function
 
-    '入力値を取得
+    '入力値を取得
     Private Sub GetValue(ByVal SEND_FLAG As String)
         DSP_KOUENKAI(SEQ).KIDOKU_FLG = Me.KIDOKU_FLG.SelectedValue
         DSP_KOUENKAI(SEQ).SEND_FLAG = SEND_FLAG
@@ -240,6 +286,21 @@ Partial Public Class KouenkaiRegist
             Return False
         End If
     End Function
+
+    '旧データ取得
+    Private Sub GetData_Old()
+        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO_UPDATE_DATE_DESC(DSP_KOUENKAI(SEQ).KOUENKAI_NO, DSP_KOUENKAI(SEQ).UPDATE_DATE)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlAG As Boolean = False
+
+        OldTBL_KOUENKAI = Nothing
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlAG = True
+            OldTBL_KOUENKAI = AppModule.SetRsData(RsData, OldTBL_KOUENKAI)
+        End If
+        RsData.Close()
+    End Sub
 
     '[戻る]
     Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click

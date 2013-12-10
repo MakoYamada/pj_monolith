@@ -121,7 +121,7 @@
 				            <asp:Label ID="INTERNAL_ORDER" runat="server" Text=""></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-			                zetia Code
+			                Zetia Code
 		                </td>
 		                <td align="left" valign="middle">
 				            <asp:Label ID="ZETIA_CD" runat="server" Text=""></asp:Label>
