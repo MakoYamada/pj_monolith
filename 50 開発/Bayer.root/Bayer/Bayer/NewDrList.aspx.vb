@@ -140,6 +140,12 @@ Partial Public Class NewDrList
         Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.JokenKUBUN)
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+        If Me.ChkTTEHAI_TANTO.Checked Then
+            Joken.TTEHAI_MITOUROKU = "1"
+        Else
+            Joken.TTEHAI_MITOUROKU = "0"
+        End If
 
         ReDim TBL_KOTSUHOTEL(wCnt)
 

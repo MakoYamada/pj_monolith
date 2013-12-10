@@ -79,6 +79,24 @@ Partial Public Class NewDrList
     Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''JokenTTEHAI_TANTO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenTTEHAI_TANTO As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ChkTTEHAI_TANTO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ChkTTEHAI_TANTO As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''BtnSearch コントロール。
     '''</summary>
     '''<remarks>

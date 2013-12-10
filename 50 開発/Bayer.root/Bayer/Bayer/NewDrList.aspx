@@ -91,6 +91,16 @@
                                             TabIndex="7"></asp:TextBox>                                        
                                     </td>
                                 </tr>
+                               <tr>
+                                    <td align="right">
+                                        TOP担当者                                        
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="14">
+                                        </asp:DropDownList> &nbsp;&nbsp;
+                                        <asp:CheckBox ID="ChkTTEHAI_TANTO" runat="server" Text="TOP担当者未登録のみ" />
+                                    </td>
+                                </tr>
                                 <tr style="width:900px">
                                     <td align="right" valign="bottom" colspan="4" style="width:100%">
                                         <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
