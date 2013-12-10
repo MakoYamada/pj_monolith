@@ -954,8 +954,8 @@ Public Class CmnModule
 
     '”äŠr‚µ‚Äˆá‚Á‚Ä‚¢‚½‚çTrue‚ð•Ô‚·
     Public Shared Function IsChanged(ByVal Data1 As String, ByVal Data2 As String) As Boolean
-        Dim wData1 As String = Trim(StrConv(Data1, VbStrConv.Wide)).ToLower
-        Dim wData2 As String = Trim(StrConv(Data2, VbStrConv.Wide)).ToLower
+        Dim wData1 As String = Trim(Data1)
+        Dim wData2 As String = Trim(Data2)
         If wData1 <> wData2 Then
             Return True
         Else
