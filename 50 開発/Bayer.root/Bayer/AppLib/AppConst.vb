@@ -470,6 +470,7 @@ Public Class AppConst
         Public Const ROOM_TYPE As String = "11"             '宿泊部屋タイプ
         Public Const TAXI_KENSHU As String = "12"           'タクチケ券種
         Public Const TAXI_TESURYO As String = "13"          'タクチケ発券手数料単価
+        Public Const TAXI_SEISAN_TESURYO As String = "14"   'タクチケ精算手数料
     End Class
 
     Public Class STOP_FLG
