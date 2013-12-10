@@ -77,4 +77,5 @@
     Public Const PrintPreview As String = "PrintPreview"
     Public Const MstCode As String = "MstCode"
     Public Const MstUser As String = "MstUser"
+    Public Const OldTBL_KAIJO As String = "OldTBL_KAIJO"
 End Class
