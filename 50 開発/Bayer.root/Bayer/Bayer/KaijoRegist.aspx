@@ -163,13 +163,13 @@
 										<asp:Label ID="INTERNAL_ORDER_TF" runat="server" Text="123456789012"></asp:Label>
 									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
-										アカウントコード<br />(課税)
+										Account Code<br />(課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="ACCOUNT_CD_T" runat="server" Text="1234567"></asp:Label>
 									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
-										アカウントコード<br />(非課税)
+										Account Code<br />(非課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="ACCOUNT_CD_TF" runat="server" Text="1234567"></asp:Label>
@@ -177,7 +177,7 @@
 								</tr>
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
-										zetia Code
+										Zetia Code
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="ZETIA_CD" runat="server" Text="1234567890"></asp:Label>

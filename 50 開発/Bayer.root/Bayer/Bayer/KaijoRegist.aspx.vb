@@ -4,6 +4,7 @@ Partial Public Class KaijoRegist
     Inherits WebBase
 
     Private TBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct
+    Private OldTBL_KAIJO As TableDef.TBL_KAIJO.DataStruct
     Private SEQ As Integer
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -29,6 +30,9 @@ Partial Public Class KaijoRegist
         If Not Page.IsPostBack Then
             '画面項目 初期化
             InitControls()
+
+            '旧データ取得
+            GetData_Old()
 
             '画面項目表示
             SetForm()
@@ -85,6 +89,10 @@ Partial Public Class KaijoRegist
                 If IsNothing(TBL_KAIJO) Then Return False
             Catch ex As Exception
                 Return False
+            End Try
+            Try
+                OldTBL_KAIJO = Session.Item(SessionDef.OldTBL_KAIJO)
+            Catch ex As Exception
             End Try
             If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
                 Return False
@@ -155,11 +163,11 @@ Partial Public Class KaijoRegist
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
             Me.TblComment.Visible = True
-            ''タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
-            'If IsExistLaterData() Then
-            '    CmnModule.SetEnabled(Me.BtnSubmit, False)
-            '    CmnModule.SetEnabled(Me.BtnNozomi, False)
-            'End If
+            'タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
+            If IsExistLaterData() Then
+                CmnModule.SetEnabled(Me.BtnSubmit, False)
+                CmnModule.SetEnabled(Me.BtnNozomi, False)
+            End If
         End If
     End Sub
 
@@ -172,6 +180,21 @@ Partial Public Class KaijoRegist
             Return False
         End If
     End Function
+
+    '旧データ取得
+    Private Sub GetData_Old()
+        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_UPDATE_DATE_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).UPDATE_DATE)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlAG As Boolean = False
+
+        OldTBL_KAIJO = Nothing
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlAG = True
+            OldTBL_KAIJO = AppModule.SetRsData(RsData, OldTBL_KAIJO)
+        End If
+        RsData.Close()
+    End Sub
 
     '画面項目 表示
     Private Sub SetForm()
@@ -305,7 +328,87 @@ Partial Public Class KaijoRegist
             Me.TdUPDATE_DATE_1.Visible = False
             Me.TdUPDATE_DATE_2.Visible = False
         End If
+
+        If Trim(Session.Item(SessionDef.KaijoRireki)) <> Session.SessionID Then
+            '差異
+            Me.TIME_STAMP_BYL.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TIME_STAMP_BYL, OldTBL_KAIJO.TIME_STAMP_BYL)
+            Me.SHONIN_NAME.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SHONIN_NAME, OldTBL_KAIJO.SHONIN_NAME)
+            Me.SHONIN_DATE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SHONIN_DATE, OldTBL_KAIJO.SHONIN_DATE)
+            Me.KOUENKAI_NAME.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUENKAI_NAME, OldTBL_KAIJO.KOUENKAI_NAME)
+            Me.FROM_DATE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).FROM_DATE, OldTBL_KAIJO.FROM_DATE)
+            Me.TO_DATE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TO_DATE, OldTBL_KAIJO.TO_DATE)
+            Me.TAXI_PRT_NAME.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TAXI_PRT_NAME, OldTBL_KAIJO.TAXI_PRT_NAME)
+            Me.SEIHIN_NAME.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SEIHIN_NAME, OldTBL_KAIJO.SEIHIN_NAME)
+            Me.KAISAI_DATE_NOTE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KAISAI_DATE_NOTE, OldTBL_KAIJO.KAISAI_DATE_NOTE)
+            Me.INTERNAL_ORDER_T.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).INTERNAL_ORDER_T, OldTBL_KAIJO.INTERNAL_ORDER_T)
+            Me.INTERNAL_ORDER_TF.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).INTERNAL_ORDER_TF, OldTBL_KAIJO.INTERNAL_ORDER_TF)
+            Me.ACCOUNT_CD_T.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).ACCOUNT_CD_T, OldTBL_KAIJO.ACCOUNT_CD_T)
+            Me.ACCOUNT_CD_TF.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).ACCOUNT_CD_TF, OldTBL_KAIJO.ACCOUNT_CD_TF)
+            Me.ZETIA_CD.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).ZETIA_CD, OldTBL_KAIJO.ZETIA_CD)
+            Me.BU.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).BU, OldTBL_KAIJO.BU)
+            Me.KIKAKU_TANTO_AREA.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_AREA, OldTBL_KAIJO.KIKAKU_TANTO_AREA)
+            Me.KIKAKU_TANTO_EIGYOSHO.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_EIGYOSHO, OldTBL_KAIJO.KIKAKU_TANTO_EIGYOSHO)
+            Me.KIKAKU_TANTO_NAME.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_NAME, OldTBL_KAIJO.KIKAKU_TANTO_NAME)
+            Me.KIKAKU_TANTO_ROMA.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_ROMA, OldTBL_KAIJO.KIKAKU_TANTO_ROMA)
+            Me.KIKAKU_TANTO_KEITAI.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_KEITAI, OldTBL_KAIJO.KIKAKU_TANTO_KEITAI)
+            Me.KIKAKU_TANTO_TEL.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_TEL, OldTBL_KAIJO.KIKAKU_TANTO_TEL)
+            Me.KIKAKU_TANTO_EMAIL_PC.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_EMAIL_PC, OldTBL_KAIJO.KIKAKU_TANTO_EMAIL_PC)
+            Me.KIKAKU_TANTO_EMAIL_KEITAI.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KIKAKU_TANTO_EMAIL_KEITAI, OldTBL_KAIJO.KIKAKU_TANTO_EMAIL_KEITAI)
+            Me.TEHAI_TANTO_BU.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_BU, OldTBL_KAIJO.TEHAI_TANTO_BU)
+            Me.TEHAI_TANTO_AREA.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_AREA, OldTBL_KAIJO.TEHAI_TANTO_AREA)
+            Me.TEHAI_TANTO_EIGYOSHO.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_EIGYOSHO, OldTBL_KAIJO.TEHAI_TANTO_EIGYOSHO)
+            Me.TEHAI_TANTO_NAME.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_NAME, OldTBL_KAIJO.TEHAI_TANTO_NAME)
+            Me.TEHAI_TANTO_ROMA.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_ROMA, OldTBL_KAIJO.TEHAI_TANTO_ROMA)
+            Me.TEHAI_TANTO_KEITAI.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_KEITAI, OldTBL_KAIJO.TEHAI_TANTO_KEITAI)
+            Me.TEHAI_TANTO_TEL.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_TEL, OldTBL_KAIJO.TEHAI_TANTO_TEL)
+            Me.TEHAI_TANTO_EMAIL_PC.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_EMAIL_PC, OldTBL_KAIJO.TEHAI_TANTO_EMAIL_PC)
+            Me.TEHAI_TANTO_EMAIL_KEITAI.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).TEHAI_TANTO_EMAIL_KEITAI, OldTBL_KAIJO.TEHAI_TANTO_EMAIL_KEITAI)
+            Me.SANKA_YOTEI_CNT_NMBR.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SANKA_YOTEI_CNT_NMBR, OldTBL_KAIJO.SANKA_YOTEI_CNT_NMBR)
+            Me.SANKA_YOTEI_CNT_MBR.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SANKA_YOTEI_CNT_MBR, OldTBL_KAIJO.SANKA_YOTEI_CNT_MBR)
+            Me.SRM_HACYU_KBN.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SRM_HACYU_KBN, OldTBL_KAIJO.SRM_HACYU_KBN)
+            Me.YOSAN_T.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).YOSAN_T, OldTBL_KAIJO.YOSAN_T)
+            Me.YOSAN_TF.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).YOSAN_TF, OldTBL_KAIJO.YOSAN_TF)
+            Me.YOSAN_TOTAL.ForeColor = SetChangedColor(Val(TBL_KAIJO(SEQ).YOSAN_T) + Val(TBL_KAIJO(SEQ).YOSAN_TF).ToString, Val(OldTBL_KAIJO.YOSAN_T) + Val(OldTBL_KAIJO.YOSAN_TF).ToString)
+            Me.IROUKAI_YOSAN_T.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IROUKAI_YOSAN_T, OldTBL_KAIJO.IROUKAI_YOSAN_T)
+            Me.IKENKOUKAN_YOSAN_T.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IKENKOUKAN_YOSAN_T, OldTBL_KAIJO.IKENKOUKAN_YOSAN_T)
+            Me.KAISAI_KIBOU_ADDRESS1.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KAISAI_KIBOU_ADDRESS1, OldTBL_KAIJO.KAISAI_KIBOU_ADDRESS1)
+            Me.KAISAI_KIBOU_ADDRESS2.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KAISAI_KIBOU_ADDRESS2, OldTBL_KAIJO.KAISAI_KIBOU_ADDRESS2)
+            Me.KAISAI_KIBOU_NOTE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KAISAI_KIBOU_NOTE, OldTBL_KAIJO.KAISAI_KIBOU_NOTE)
+            Me.KOUEN_TIME1.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUEN_TIME1, OldTBL_KAIJO.KOUEN_TIME1)
+            Me.KOUEN_TIME2.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUEN_TIME2, OldTBL_KAIJO.KOUEN_TIME2)
+            Me.KOUEN_KAIJO_LAYOUT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUEN_KAIJO_LAYOUT, OldTBL_KAIJO.KOUEN_KAIJO_LAYOUT)
+            Me.IKENKOUKAN_KAIJO_TEHAI_Yes.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IKENKOUKAN_KAIJO_TEHAI, OldTBL_KAIJO.IKENKOUKAN_KAIJO_TEHAI)
+            Me.IKENKOUKAN_KAIJO_TEHAI_No.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IKENKOUKAN_KAIJO_TEHAI, OldTBL_KAIJO.IKENKOUKAN_KAIJO_TEHAI)
+            Me.IROUKAI_KAIJO_TEHAI_Yes.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IROUKAI_KAIJO_TEHAI, OldTBL_KAIJO.IROUKAI_KAIJO_TEHAI)
+            Me.IROUKAI_KAIJO_TEHAI_No.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IROUKAI_KAIJO_TEHAI, OldTBL_KAIJO.IROUKAI_KAIJO_TEHAI)
+            Me.IROUKAI_SANKA_YOTEI_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).IROUKAI_SANKA_YOTEI_CNT, OldTBL_KAIJO.IROUKAI_SANKA_YOTEI_CNT)
+            Me.KOUSHI_ROOM_TEHAI_Yes.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUSHI_ROOM_TEHAI, OldTBL_KAIJO.KOUSHI_ROOM_TEHAI)
+            Me.KOUSHI_ROOM_TEHAI_No.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUSHI_ROOM_TEHAI, OldTBL_KAIJO.KOUSHI_ROOM_TEHAI)
+            Me.KOUSHI_ROOM_FROM.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUSHI_ROOM_FROM, OldTBL_KAIJO.KOUSHI_ROOM_FROM)
+            Me.KOUSHI_ROOM_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).KOUSHI_ROOM_CNT, OldTBL_KAIJO.KOUSHI_ROOM_CNT)
+            Me.SHAIN_ROOM_TEHAI_Yes.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI, OldTBL_KAIJO.SHAIN_ROOM_TEHAI)
+            Me.SHAIN_ROOM_TEHAI_No.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SHAIN_ROOM_TEHAI, OldTBL_KAIJO.SHAIN_ROOM_TEHAI)
+            Me.SHAIN_ROOM_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).SHAIN_ROOM_CNT, OldTBL_KAIJO.SHAIN_ROOM_CNT)
+            Me.MANAGER_KAIJO_TEHAI_Yes.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).MANAGER_KAIJO_TEHAI, OldTBL_KAIJO.MANAGER_KAIJO_TEHAI)
+            Me.MANAGER_KAIJO_TEHAI_No.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).MANAGER_KAIJO_TEHAI, OldTBL_KAIJO.MANAGER_KAIJO_TEHAI)
+            Me.MANAGER_ROOM_FROM.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).MANAGER_ROOM_FROM, OldTBL_KAIJO.MANAGER_ROOM_FROM)
+            Me.MANAGER_ROOM_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).MANAGER_ROOM_CNT, OldTBL_KAIJO.MANAGER_ROOM_CNT)
+            Me.REQ_ROOM_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).REQ_ROOM_CNT, OldTBL_KAIJO.REQ_ROOM_CNT)
+            Me.REQ_STAY_DATE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).REQ_STAY_DATE, OldTBL_KAIJO.REQ_STAY_DATE)
+            Me.REQ_KOTSU_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).REQ_KOTSU_CNT, OldTBL_KAIJO.REQ_KOTSU_CNT)
+            Me.REQ_TAXI_CNT.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).REQ_TAXI_CNT, OldTBL_KAIJO.REQ_TAXI_CNT)
+            Me.OTHER_NOTE.ForeColor = SetChangedColor(TBL_KAIJO(SEQ).OTHER_NOTE, OldTBL_KAIJO.OTHER_NOTE)
+        End If
     End Sub
+
+    '差異
+    Private Function SetChangedColor(ByVal Data1 As String, ByVal Data2 As String) As System.Drawing.Color
+        If Trim(OldTBL_KAIJO.KOUENKAI_NO) <> "" AndAlso CmnModule.IsChanged(Data1, Data2) Then
+            Return Drawing.Color.OrangeRed
+        Else
+            Return Drawing.Color.FromArgb(10, 10, 10)
+        End If
+    End Function
 
     '入力チェック
     Private Function Check() As Boolean
