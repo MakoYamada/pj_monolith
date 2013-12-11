@@ -2197,6 +2197,8 @@ Public Class AppModule
             End Select
         Else
             Select Case REQ_STATUS_TEHAI
+                Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Mitsumori, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Mitsumori
+                    Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Mitsumori
                 Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.NewRequest, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
                     Return AppConst.KAIJO.REQ_STATUS_TEHAI.Name.NewRequest
                 Case AppConst.KAIJO.REQ_STATUS_TEHAI.Code.Change, AppConst.KAIJO.REQ_STATUS_TEHAI.Name.Change
