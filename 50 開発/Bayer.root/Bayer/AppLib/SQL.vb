@@ -1357,6 +1357,12 @@ Public Class SQL
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
+            If Joken.TTEHAI_MITOUROKU = CmnConst.Flag.On Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
+                strSQL &= "=N''"
+            End If
+
             If Not TEHAISHO_JOKEN Is Nothing Then
                 Dim i As Integer = 0
                 For i = 0 To UBound(TEHAISHO_JOKEN)

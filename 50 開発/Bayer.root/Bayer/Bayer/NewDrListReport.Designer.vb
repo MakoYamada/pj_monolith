@@ -19,6 +19,8 @@ Partial Public Class NewDrListReport
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewDrListReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
+        Me.JOKEN_TTEHAI_MITOUROKU = New DataDynamics.ActiveReports.TextBox
+        Me.Label23 = New DataDynamics.ActiveReports.Label
         Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label2 = New DataDynamics.ActiveReports.Label
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
@@ -68,6 +70,8 @@ Partial Public Class NewDrListReport
         Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Line26 = New DataDynamics.ActiveReports.Line
         Me.Line27 = New DataDynamics.ActiveReports.Line
+        Me.Label22 = New DataDynamics.ActiveReports.Label
+        Me.JOKEN_TTEHAI_TANTO = New DataDynamics.ActiveReports.TextBox
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
@@ -101,6 +105,8 @@ Partial Public Class NewDrListReport
         Me.Line11 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        CType(Me.JOKEN_TTEHAI_MITOUROKU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,6 +138,8 @@ Partial Public Class NewDrListReport
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JOKEN_TTEHAI_TANTO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,9 +164,31 @@ Partial Public Class NewDrListReport
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.Label10, Me.Label11, Me.JOKEN_BU, Me.Label12, Me.JOKEN_AREA, Me.ReportInfo1, Me.Shape1, Me.Label1, Me.Line3, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Label13, Me.PRINT_USER, Me.Label14, Me.JOKEN_KUBUN, Me.Label15, Me.JOKEN_KOUENKAI_NO, Me.Label16, Me.JOKEN_KOUENKAI_NAME, Me.Label17, Me.JOKEN_KIKAKU_TANTO_ROMA, Me.Label18, Me.JOKEN_TEHAI_TANTO_ROMA, Me.Label19, Me.Label20, Me.Label21, Me.Line13, Me.Line15, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27})
-        Me.PageHeader.Height = 2.766536!
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.JOKEN_TTEHAI_MITOUROKU, Me.Label23, Me.Shape2, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.Label10, Me.Label11, Me.JOKEN_BU, Me.Label12, Me.JOKEN_AREA, Me.ReportInfo1, Me.Shape1, Me.Label1, Me.Line3, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Label13, Me.PRINT_USER, Me.Label14, Me.JOKEN_KUBUN, Me.Label15, Me.JOKEN_KOUENKAI_NO, Me.Label16, Me.JOKEN_KOUENKAI_NAME, Me.Label17, Me.JOKEN_KIKAKU_TANTO_ROMA, Me.Label18, Me.JOKEN_TEHAI_TANTO_ROMA, Me.Label19, Me.Label20, Me.Label21, Me.Line13, Me.Line15, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Label22, Me.JOKEN_TTEHAI_TANTO})
+        Me.PageHeader.Height = 3.120703!
         Me.PageHeader.Name = "PageHeader"
+        '
+        'JOKEN_TTEHAI_MITOUROKU
+        '
+        Me.JOKEN_TTEHAI_MITOUROKU.CanGrow = False
+        Me.JOKEN_TTEHAI_MITOUROKU.Height = 0.2!
+        Me.JOKEN_TTEHAI_MITOUROKU.Left = 1.802756!
+        Me.JOKEN_TTEHAI_MITOUROKU.Name = "JOKEN_TTEHAI_MITOUROKU"
+        Me.JOKEN_TTEHAI_MITOUROKU.Style = "white-space: nowrap"
+        Me.JOKEN_TTEHAI_MITOUROKU.Text = Nothing
+        Me.JOKEN_TTEHAI_MITOUROKU.Top = 2.633071!
+        Me.JOKEN_TTEHAI_MITOUROKU.Width = 1.479134!
+        '
+        'Label23
+        '
+        Me.Label23.Height = 0.2!
+        Me.Label23.HyperLink = Nothing
+        Me.Label23.Left = 0.0!
+        Me.Label23.Name = "Label23"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.Label23.Text = "TOP担当者未登録のみ："
+        Me.Label23.Top = 2.633071!
+        Me.Label23.Width = 1.802756!
         '
         'Shape2
         '
@@ -167,7 +197,7 @@ Partial Public Class NewDrListReport
         Me.Shape2.Left = 0.0!
         Me.Shape2.Name = "Shape2"
         Me.Shape2.RoundingRadius = 9.999999!
-        Me.Shape2.Top = 2.484252!
+        Me.Shape2.Top = 2.833071!
         Me.Shape2.Width = 12.16535!
         '
         'Label2
@@ -199,7 +229,7 @@ Partial Public Class NewDrListReport
         Me.Label3.Name = "Label3"
         Me.Label3.Style = "font-family: ＭＳ ゴシック"
         Me.Label3.Text = "TOP担当者"
-        Me.Label3.Top = 2.525197!
+        Me.Label3.Top = 2.874016!
         Me.Label3.Width = 0.9271646!
         '
         'Label4
@@ -210,7 +240,7 @@ Partial Public Class NewDrListReport
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label4.Text = "区分"
-        Me.Label4.Top = 2.525197!
+        Me.Label4.Top = 2.874016!
         Me.Label4.Width = 0.3539367!
         '
         'Label5
@@ -221,7 +251,7 @@ Partial Public Class NewDrListReport
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label5.Text = "宿泊"
-        Me.Label5.Top = 2.525197!
+        Me.Label5.Top = 2.874016!
         Me.Label5.Width = 0.353937!
         '
         'Label6
@@ -232,7 +262,7 @@ Partial Public Class NewDrListReport
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "font-family: ＭＳ ゴシック"
         Me.Label6.Text = "実施日"
-        Me.Label6.Top = 2.525197!
+        Me.Label6.Top = 2.874016!
         Me.Label6.Width = 0.5102362!
         '
         'Label7
@@ -243,7 +273,7 @@ Partial Public Class NewDrListReport
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
         Me.Label7.Text = "講演会名"
-        Me.Label7.Top = 2.525197!
+        Me.Label7.Top = 2.874016!
         Me.Label7.Width = 1.051969!
         '
         'Label8
@@ -254,7 +284,7 @@ Partial Public Class NewDrListReport
         Me.Label8.Name = "Label8"
         Me.Label8.Style = "font-family: ＭＳ ゴシック"
         Me.Label8.Text = "TimeStamp(BYL)"
-        Me.Label8.Top = 2.525197!
+        Me.Label8.Top = 2.874016!
         Me.Label8.Width = 1.051969!
         '
         'Line1
@@ -263,12 +293,12 @@ Partial Public Class NewDrListReport
         Me.Line1.Left = 0.0!
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
-        Me.Line1.Top = 2.484252!
+        Me.Line1.Top = 2.833071!
         Me.Line1.Width = 12.16535!
         Me.Line1.X1 = 0.0!
         Me.Line1.X2 = 12.16535!
-        Me.Line1.Y1 = 2.484252!
-        Me.Line1.Y2 = 2.484252!
+        Me.Line1.Y1 = 2.833071!
+        Me.Line1.Y2 = 2.833071!
         '
         'Line2
         '
@@ -276,12 +306,12 @@ Partial Public Class NewDrListReport
         Me.Line2.Left = 0.0!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
-        Me.Line2.Top = 2.766142!
+        Me.Line2.Top = 3.114961!
         Me.Line2.Width = 12.16535!
         Me.Line2.X1 = 0.0!
         Me.Line2.X2 = 12.16535!
-        Me.Line2.Y1 = 2.766142!
-        Me.Line2.Y2 = 2.766142!
+        Me.Line2.Y1 = 3.114961!
+        Me.Line2.Y2 = 3.114961!
         '
         'Label9
         '
@@ -438,12 +468,12 @@ Partial Public Class NewDrListReport
         Me.Line19.Left = 12.16535!
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
-        Me.Line19.Top = 2.484252!
+        Me.Line19.Top = 2.833071!
         Me.Line19.Width = 0.0!
         Me.Line19.X1 = 12.16535!
         Me.Line19.X2 = 12.16535!
-        Me.Line19.Y1 = 2.484252!
-        Me.Line19.Y2 = 2.766142!
+        Me.Line19.Y1 = 2.833071!
+        Me.Line19.Y2 = 3.114961!
         '
         'Line20
         '
@@ -451,12 +481,12 @@ Partial Public Class NewDrListReport
         Me.Line20.Left = 0.0!
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
-        Me.Line20.Top = 2.484252!
+        Me.Line20.Top = 2.833071!
         Me.Line20.Width = 0.0!
         Me.Line20.X1 = 0.0!
         Me.Line20.X2 = 0.0!
-        Me.Line20.Y1 = 2.484252!
-        Me.Line20.Y2 = 2.766141!
+        Me.Line20.Y1 = 2.833071!
+        Me.Line20.Y2 = 3.11496!
         '
         'Label13
         '
@@ -597,7 +627,7 @@ Partial Public Class NewDrListReport
         Me.Label19.Name = "Label19"
         Me.Label19.Style = "font-family: ＭＳ ゴシック"
         Me.Label19.Text = "DR氏名"
-        Me.Label19.Top = 2.525197!
+        Me.Label19.Top = 2.874016!
         Me.Label19.Width = 1.051969!
         '
         'Label20
@@ -608,7 +638,7 @@ Partial Public Class NewDrListReport
         Me.Label20.Name = "Label20"
         Me.Label20.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label20.Text = "交通"
-        Me.Label20.Top = 2.525197!
+        Me.Label20.Top = 2.874016!
         Me.Label20.Width = 0.353937!
         '
         'Label21
@@ -619,7 +649,7 @@ Partial Public Class NewDrListReport
         Me.Label21.Name = "Label21"
         Me.Label21.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label21.Text = "タクチケ"
-        Me.Label21.Top = 2.525197!
+        Me.Label21.Top = 2.874016!
         Me.Label21.Width = 0.676771!
         '
         'Line13
@@ -628,12 +658,12 @@ Partial Public Class NewDrListReport
         Me.Line13.Left = 11.16732!
         Me.Line13.LineWeight = 1.0!
         Me.Line13.Name = "Line13"
-        Me.Line13.Top = 2.484252!
+        Me.Line13.Top = 2.833071!
         Me.Line13.Width = 0.0!
         Me.Line13.X1 = 11.16732!
         Me.Line13.X2 = 11.16732!
-        Me.Line13.Y1 = 2.484252!
-        Me.Line13.Y2 = 2.766143!
+        Me.Line13.Y1 = 2.833071!
+        Me.Line13.Y2 = 3.114962!
         '
         'Line15
         '
@@ -641,12 +671,12 @@ Partial Public Class NewDrListReport
         Me.Line15.Left = 10.71969!
         Me.Line15.LineWeight = 1.0!
         Me.Line15.Name = "Line15"
-        Me.Line15.Top = 2.484252!
+        Me.Line15.Top = 2.833071!
         Me.Line15.Width = 0.0!
         Me.Line15.X1 = 10.71969!
         Me.Line15.X2 = 10.71969!
-        Me.Line15.Y1 = 2.484252!
-        Me.Line15.Y2 = 2.766143!
+        Me.Line15.Y1 = 2.833071!
+        Me.Line15.Y2 = 3.114962!
         '
         'Line22
         '
@@ -654,12 +684,12 @@ Partial Public Class NewDrListReport
         Me.Line22.Left = 10.28189!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
-        Me.Line22.Top = 2.484252!
+        Me.Line22.Top = 2.833071!
         Me.Line22.Width = 0.0!
         Me.Line22.X1 = 10.28189!
         Me.Line22.X2 = 10.28189!
-        Me.Line22.Y1 = 2.484252!
-        Me.Line22.Y2 = 2.766143!
+        Me.Line22.Y1 = 2.833071!
+        Me.Line22.Y2 = 3.114962!
         '
         'Line23
         '
@@ -667,12 +697,12 @@ Partial Public Class NewDrListReport
         Me.Line23.Left = 9.83504!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
-        Me.Line23.Top = 2.484252!
+        Me.Line23.Top = 2.833071!
         Me.Line23.Width = 0.0!
         Me.Line23.X1 = 9.83504!
         Me.Line23.X2 = 9.83504!
-        Me.Line23.Y1 = 2.484252!
-        Me.Line23.Y2 = 2.766143!
+        Me.Line23.Y1 = 2.833071!
+        Me.Line23.Y2 = 3.114962!
         '
         'Line24
         '
@@ -680,12 +710,12 @@ Partial Public Class NewDrListReport
         Me.Line24.Left = 8.280315!
         Me.Line24.LineWeight = 1.0!
         Me.Line24.Name = "Line24"
-        Me.Line24.Top = 2.484252!
+        Me.Line24.Top = 2.833071!
         Me.Line24.Width = 0.0!
         Me.Line24.X1 = 8.280315!
         Me.Line24.X2 = 8.280315!
-        Me.Line24.Y1 = 2.484252!
-        Me.Line24.Y2 = 2.766143!
+        Me.Line24.Y1 = 2.833071!
+        Me.Line24.Y2 = 3.114962!
         '
         'Line25
         '
@@ -693,12 +723,12 @@ Partial Public Class NewDrListReport
         Me.Line25.Left = 6.563386!
         Me.Line25.LineWeight = 1.0!
         Me.Line25.Name = "Line25"
-        Me.Line25.Top = 2.484252!
+        Me.Line25.Top = 2.833071!
         Me.Line25.Width = 0.0!
         Me.Line25.X1 = 6.563386!
         Me.Line25.X2 = 6.563386!
-        Me.Line25.Y1 = 2.484252!
-        Me.Line25.Y2 = 2.766143!
+        Me.Line25.Y1 = 2.833071!
+        Me.Line25.Y2 = 3.114962!
         '
         'Line26
         '
@@ -706,12 +736,12 @@ Partial Public Class NewDrListReport
         Me.Line26.Left = 4.11378!
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
-        Me.Line26.Top = 2.484252!
+        Me.Line26.Top = 2.833071!
         Me.Line26.Width = 0.0!
         Me.Line26.X1 = 4.11378!
         Me.Line26.X2 = 4.11378!
-        Me.Line26.Y1 = 2.484252!
-        Me.Line26.Y2 = 2.766143!
+        Me.Line26.Y1 = 2.833071!
+        Me.Line26.Y2 = 3.114962!
         '
         'Line27
         '
@@ -719,12 +749,34 @@ Partial Public Class NewDrListReport
         Me.Line27.Left = 1.65315!
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
-        Me.Line27.Top = 2.484252!
+        Me.Line27.Top = 2.833071!
         Me.Line27.Width = 0.0!
         Me.Line27.X1 = 1.65315!
         Me.Line27.X2 = 1.65315!
-        Me.Line27.Y1 = 2.484252!
-        Me.Line27.Y2 = 2.766143!
+        Me.Line27.Y1 = 2.833071!
+        Me.Line27.Y2 = 3.114962!
+        '
+        'Label22
+        '
+        Me.Label22.Height = 0.2!
+        Me.Label22.HyperLink = Nothing
+        Me.Label22.Left = 0.0!
+        Me.Label22.Name = "Label22"
+        Me.Label22.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.Label22.Text = "TOP担当者："
+        Me.Label22.Top = 2.433071!
+        Me.Label22.Width = 1.802756!
+        '
+        'JOKEN_TTEHAI_TANTO
+        '
+        Me.JOKEN_TTEHAI_TANTO.CanGrow = False
+        Me.JOKEN_TTEHAI_TANTO.Height = 0.2!
+        Me.JOKEN_TTEHAI_TANTO.Left = 1.802756!
+        Me.JOKEN_TTEHAI_TANTO.Name = "JOKEN_TTEHAI_TANTO"
+        Me.JOKEN_TTEHAI_TANTO.Style = "white-space: nowrap"
+        Me.JOKEN_TTEHAI_TANTO.Text = Nothing
+        Me.JOKEN_TTEHAI_TANTO.Top = 2.433071!
+        Me.JOKEN_TTEHAI_TANTO.Width = 1.479134!
         '
         'Detail
         '
@@ -1146,6 +1198,8 @@ Partial Public Class NewDrListReport
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 16pt; font-weight: bold", "Heading1", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 14pt; font-weight: bold", "Heading2", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 13pt; font-weight: bold", "Heading3", "Normal"))
+        CType(Me.JOKEN_TTEHAI_MITOUROKU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1177,6 +1231,8 @@ Partial Public Class NewDrListReport
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JOKEN_TTEHAI_TANTO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1280,4 +1336,8 @@ Partial Public Class NewDrListReport
     Private WithEvents Line10 As DataDynamics.ActiveReports.Line
     Private WithEvents Line11 As DataDynamics.ActiveReports.Line
     Private WithEvents Line12 As DataDynamics.ActiveReports.Line
+    Private WithEvents Label22 As DataDynamics.ActiveReports.Label
+    Private WithEvents JOKEN_TTEHAI_TANTO As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Label23 As DataDynamics.ActiveReports.Label
+    Private WithEvents JOKEN_TTEHAI_MITOUROKU As DataDynamics.ActiveReports.TextBox
 End Class

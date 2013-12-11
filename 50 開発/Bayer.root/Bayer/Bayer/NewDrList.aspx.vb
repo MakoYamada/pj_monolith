@@ -83,6 +83,7 @@ Partial Public Class NewDrList
         'ドロップダウンリスト設定
         AppModule.SetDropDownList_BU(Me.JokenBU, DbConnection)
         AppModule.SetDropDownList_AREA(Me.JokenTEHAI_TANTO_AREA, DbConnection)
+        AppModule.SetDropDownList_USER_NAME(Me.JokenTTEHAI_TANTO, DbConnection)
 
         'IME設定        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
@@ -103,6 +104,8 @@ Partial Public Class NewDrList
         If Joken.KOUENKAI_NAME <> "" AndAlso Joken.KOUENKAI_NAME <> "指定なし" Then Me.JokenKOUENKAI_NAME.Text = Joken.KOUENKAI_NAME
         If Joken.TEHAI_TANTO_ROMA <> "" AndAlso Joken.TEHAI_TANTO_ROMA <> "指定なし" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.KOUENKAI_NAME
         If Joken.KUBUN <> "" AndAlso Joken.KUBUN <> "指定なし" Then Me.JokenKUBUN.SelectedValue = Joken.KUBUN
+        If Joken.TTANTO_ID <> "" AndAlso Joken.TTANTO_ID <> "指定なし" Then Me.JokenTTEHAI_TANTO.SelectedValue = Joken.TTANTO_ID
+        If Joken.TTEHAI_MITOUROKU <> "" AndAlso Joken.TTEHAI_MITOUROKU <> "指定なし" Then Me.ChkTTEHAI_TANTO.Checked = True
 
         'データ取得
         If Not GetData() Then
@@ -142,9 +145,9 @@ Partial Public Class NewDrList
         Joken.KUBUN = CmnModule.GetSelectedItemValue(Me.JokenKUBUN)
         If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
         If Me.ChkTTEHAI_TANTO.Checked Then
-            Joken.TTEHAI_MITOUROKU = "1"
+            Joken.TTEHAI_MITOUROKU = CmnConst.Flag.On
         Else
-            Joken.TTEHAI_MITOUROKU = "0"
+            Joken.TTEHAI_MITOUROKU = CmnConst.Flag.Off
         End If
 
         ReDim TBL_KOTSUHOTEL(wCnt)
@@ -176,9 +179,6 @@ Partial Public Class NewDrList
             Me.BtnIchiranPrint2.Visible = False
             Me.lnkCheck.Visible = False
             Me.lnkNoCheck.Visible = False
-
-            CmnModule.SetEnabled(Me.BtnPrint1, False)
-            CmnModule.SetEnabled(Me.BtnPrint2, False)
 
         Else
             Me.LabelNoData.Visible = False
@@ -333,7 +333,7 @@ Partial Public Class NewDrList
     End Sub
 
     '[手配書一括印刷]
-    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
         Dim UPD_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
         Dim seq As Integer
         Dim PrintSeq As Integer = 0
@@ -375,6 +375,16 @@ Partial Public Class NewDrList
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
         Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then
+            Joken.TTANTO_ID = JokenTTEHAI_TANTO.SelectedValue.ToString
+        Else
+            Joken.TTANTO_ID = ""
+        End If
+        If Me.ChkTTEHAI_TANTO.Checked Then
+            Joken.TTEHAI_MITOUROKU = CmnConst.Flag.On
+        Else
+            Joken.TTEHAI_MITOUROKU = CmnConst.Flag.Off
+        End If
 
         strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False, TEHAISHO_JOKEN)
 
@@ -387,19 +397,9 @@ Partial Public Class NewDrList
         Response.Redirect(URL.Preview)
     End Sub
 
-    '[手配書一括印刷]
-    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
-        BtnPrint1_Click(sender, e)
-    End Sub
-
     '[戻る]
-    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
+    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Response.Redirect(URL.Menu)
-    End Sub
-
-    '[戻る]
-    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
-        BtnBack1_Click(sender, e)
     End Sub
 
     '入力チェック
@@ -453,7 +453,7 @@ Partial Public Class NewDrList
     End Function
 
     '[新着一覧印刷]
-    Private Sub BtnIchiranPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnIchiranPrint1.Click
+    Private Sub BtnIchiranPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnIchiranPrint1.Click, BtnIchiranPrint2.Click
         Dim strSQL As String = ""
 
         Joken = Nothing
@@ -472,6 +472,16 @@ Partial Public Class NewDrList
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
         Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then
+            Joken.TTANTO_ID = JokenTTEHAI_TANTO.SelectedValue.ToString
+        Else
+            Joken.TTANTO_ID = ""
+        End If
+        If Me.ChkTTEHAI_TANTO.Checked Then
+            Joken.TTEHAI_MITOUROKU = CmnConst.Flag.On
+        Else
+            Joken.TTEHAI_MITOUROKU = CmnConst.Flag.Off
+        End If
 
         strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, True)
         If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
@@ -481,6 +491,12 @@ Partial Public Class NewDrList
         If Joken.KOUENKAI_NAME.Trim = "" Then Joken.KOUENKAI_NAME = "指定なし"
         If Joken.KIKAKU_TANTO_ROMA.Trim = "" Then Joken.KIKAKU_TANTO_ROMA = "指定なし"
         If Joken.TEHAI_TANTO_ROMA.Trim = "" Then Joken.TEHAI_TANTO_ROMA = "指定なし"
+        If Joken.TTANTO_ID.Trim = "" Then Joken.TTANTO_ID = "指定なし"
+        If Joken.TTEHAI_MITOUROKU = CmnConst.Flag.Off Then
+            Joken.TTEHAI_MITOUROKU = "指定なし"
+        Else
+            Joken.TTEHAI_MITOUROKU = "未登録者のみ"
+        End If
 
         Session.Item(SessionDef.NewDrPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
@@ -490,7 +506,15 @@ Partial Public Class NewDrList
         Response.Redirect(URL.Preview)
     End Sub
 
-    Private Sub BtnIchiranPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnIchiranPrint2.Click
-        BtnIchiranPrint1_Click(sender, e)
+    Protected Sub JokenTTEHAI_TANTO_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles JokenTTEHAI_TANTO.SelectedIndexChanged
+        If Me.JokenTTEHAI_TANTO.SelectedIndex > 0 Then
+            ChkTTEHAI_TANTO.Checked = False
+        End If
+    End Sub
+
+    Private Sub ChkTTEHAI_TANTO_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ChkTTEHAI_TANTO.CheckedChanged
+        If Me.ChkTTEHAI_TANTO.Checked Then
+            Me.JokenTTEHAI_TANTO.SelectedIndex = 0
+        End If
     End Sub
 End Class

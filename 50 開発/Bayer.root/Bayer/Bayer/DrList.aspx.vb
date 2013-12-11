@@ -197,10 +197,14 @@ Partial Public Class DrList
         'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
+            Me.BtnPrint1.Visible = False
+            Me.BtnPrint2.Visible = False
 
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.BtnPrint1.Visible = True
+            Me.BtnPrint2.Visible = True
 
             'グリッドビュー表示
             SetGridView()

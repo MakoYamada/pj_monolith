@@ -482,6 +482,16 @@ Partial Public Class Preview
             DataDynamics.ActiveReports.TextBox).Text = Joken.KIKAKU_TANTO_ROMA
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TEHAI_TANTO_ROMA"),  _
             DataDynamics.ActiveReports.TextBox).Text = Joken.TEHAI_TANTO_ROMA
+        If Joken.TTANTO_ID <> "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTEHAI_TANTO"),  _
+                DataDynamics.ActiveReports.TextBox).Text = GetTANTO_NAME(Joken.TTANTO_ID)
+        Else
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTEHAI_TANTO"),  _
+                DataDynamics.ActiveReports.TextBox).Text = Joken.TTANTO_ID
+        End If
+        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTEHAI_MITOUROKU"),  _
+                DataDynamics.ActiveReports.TextBox).Text = Joken.TTEHAI_MITOUROKU
+
         Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
@@ -497,11 +507,11 @@ Partial Public Class Preview
     'データ取得
     Private Function GetNewDrData() As DataTable
         Dim strSQL As String = Session.Item(SessionDef.NewDrPrint_SQL)
-        Dim RsData As System.Data.SqlClient.SqlDataReader
+        'Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
         Dim arguments As New DataSourceSelectArguments()
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
@@ -561,8 +571,14 @@ Partial Public Class Preview
             DataDynamics.ActiveReports.TextBox).Text = Joken.BU
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TEHAI_AREA"),  _
             DataDynamics.ActiveReports.TextBox).Text = Joken.AREA
-        DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTANTO"),  _
-            DataDynamics.ActiveReports.TextBox).Text = Joken.TTANTO_ID
+        If Joken.TTANTO_ID <> "指定なし" Then
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTANTO"),  _
+                    DataDynamics.ActiveReports.TextBox).Text = GetTANTO_NAME(Joken.TTANTO_ID)
+        Else
+            DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_TTANTO"),  _
+                    DataDynamics.ActiveReports.TextBox).Text = Joken.TTANTO_ID
+        End If
+
 
         If Joken.UPDATE_DATE <> "指定なし" Then
             DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_UPD_DATE"),  _
@@ -587,11 +603,11 @@ Partial Public Class Preview
     'データ取得
     Private Function GetDrList() As DataTable
         Dim strSQL As String = Session.Item(SessionDef.DrPrint_SQL)
-        Dim RsData As System.Data.SqlClient.SqlDataReader
+        'Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
         Dim arguments As New DataSourceSelectArguments()
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
@@ -637,11 +653,11 @@ Partial Public Class Preview
     'データ取得
     Private Function GetDrRireki() As DataTable
         Dim strSQL As String = Session.Item(SessionDef.DrRirekiPrint_SQL)
-        Dim RsData As System.Data.SqlClient.SqlDataReader
+        'Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
         Dim arguments As New DataSourceSelectArguments()
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
@@ -943,11 +959,11 @@ Partial Public Class Preview
     '未収入金滞留理由報告書データ取得
     Private Function GetMishuHoukokuData() As DataTable
         Dim strSQL As String = Session.Item(SessionDef.MishuHoukoku_SQL)
-        Dim RsData As System.Data.SqlClient.SqlDataReader
+        'Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
 
         Dim arguments As New DataSourceSelectArguments()
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
@@ -956,6 +972,23 @@ Partial Public Class Preview
         Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
 
         Return dtView.Table
+    End Function
+
+    'TOP担当者名取得
+    Private Function GetTANTO_NAME(ByVal LOGIN_ID As String) As String
+        Dim strSQL As String = SQL.MS_USER.byLOGIN_ID(LOGIN_ID)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlAG As Boolean = False
+        Dim MS_USER As TableDef.MS_USER.DataStruct
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            MS_USER = AppModule.SetRsData(RsData, MS_USER)
+            Return MS_USER.USER_NAME
+        Else
+            Return String.Empty
+        End If
+        RsData.Close()
     End Function
 
     '[前の画面に戻る]

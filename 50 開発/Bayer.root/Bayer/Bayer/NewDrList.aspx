@@ -96,15 +96,17 @@
                                         TOP担当者                                        
                                     </td>
                                     <td colspan="3">
-                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="14">
+                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="8" 
+                                            AutoPostBack="True">
                                         </asp:DropDownList> &nbsp;&nbsp;
-                                        <asp:CheckBox ID="ChkTTEHAI_TANTO" runat="server" Text="TOP担当者未登録のみ" />
+                                        <asp:CheckBox ID="ChkTTEHAI_TANTO" runat="server" Text="TOP担当者未登録のみ" 
+                                            AutoPostBack="True" TabIndex="9" />
                                     </td>
                                 </tr>
                                 <tr style="width:900px">
                                     <td align="right" valign="bottom" colspan="4" style="width:100%">
                                         <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
-                                            CssClass="Button" TabIndex="8" />
+                                            CssClass="Button" TabIndex="10" />
                                     </td>
                                 </tr>
                             </table>
@@ -120,11 +122,11 @@
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnIchiranPrint1" runat="server" Text="新着一覧印刷" Width="130px" 
-                                CssClass="Button" tabindex="9"/>
+                                CssClass="Button" tabindex="11"/>
                             <asp:Button ID="BtnPrint1" runat="server" Text="手配書一括印刷" Width="130px" 
-                                CssClass="Button" tabindex="10" />
+                                CssClass="Button" tabindex="12" />
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="11" />
+                                CssClass="Button" TabIndex="13" />
                         </td>
                     </tr>
                 </table> 
@@ -134,14 +136,14 @@
             <td align="left">
                 <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
                 <br />
-                <asp:LinkButton ID="lnkCheck" runat="server">全てにチェック</asp:LinkButton>&nbsp;&nbsp;
-                <asp:LinkButton ID="lnkNoCheck" runat="server">全てのチェックを解除</asp:LinkButton>
+                <asp:LinkButton ID="lnkCheck" runat="server" TabIndex="14">全てにチェック</asp:LinkButton>&nbsp;&nbsp;
+                <asp:LinkButton ID="lnkNoCheck" runat="server" TabIndex="15">全てのチェックを解除</asp:LinkButton>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="12" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="16" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -236,11 +238,11 @@
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnIchiranPrint2" runat="server" Text="新着一覧印刷" Width="130px" 
-                                CssClass="Button" tabindex="13"/>
+                                CssClass="Button" tabindex="17"/>
                             <asp:Button ID="BtnPrint2" runat="server" Text="手配書一括印刷" Width="130px" 
-                                CssClass="Button" tabindex="14" />
+                                CssClass="Button" tabindex="18" />
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="15" />
+                                CssClass="Button" TabIndex="19" />
                         </td>
                     </tr>
                 </table> 
