@@ -4621,4 +4621,121 @@ Public Class SQL
 
     End Class
 
+    Public Class TBL_TAXITICKET_HAKKO
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_TAXITICKET_HAKKO.*" _
+        & " FROM TBL_TAXITICKET_HAKKO"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " TBL_TAXITICKET_HAKKO.TKT_KAISHA" _
+        & ",TBL_TAXITICKET_HAKKO.TKT_NO"
+
+        Public Shared Function byTKT_MIKETSU() As String
+            Dim strSQL As String = String.Empty
+
+            strSQL &= "SELECT"
+            strSQL &= " TBL_TAXITICKET_HAKKO.*"
+            strSQL &= ",TBL_KOUENKAI.FROM_DATE"
+            strSQL &= " FROM"
+            strSQL &= " TBL_TAXITICKET"
+            strSQL &= ",TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "="
+            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " AND"
+            strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnConst.Flag.Off & "'"
+            strSQL &= " AND("
+            strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEIKYU_YM & "=N''"
+            strSQL &= " OR"
+            strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID & "=N'" & CmnConst.Flag.Off & "'"
+            strSQL &= " OR"
+            strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE & "=N''"
+            strSQL &= ")"
+            strSQL &= " ORDER BY"
+            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.FROM_DATE
+            strSQL &= ", TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA
+            strSQL &= ", TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_TAXITICKET_HAKKO"
+            strSQL &= "(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEISAN_FEE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_USED_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_USER) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_TAXITICKET_HAKKO SET"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_USED_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEISAN_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE) & "'"
+            strSQL &= " " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
+            strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Delete(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE TBL_TAXITICKET_HAKKO"
+            strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
+            strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+    End Class
+
 End Class
