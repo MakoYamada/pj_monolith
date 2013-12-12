@@ -16,6 +16,15 @@
         Public Shared DANTAI_NAME As String = System.Configuration.ConfigurationManager.AppSettings("DANTAI_NAME")
         Public Shared KAMOKU_CODE As String = System.Configuration.ConfigurationManager.AppSettings("KAMOKU_CODE")
         Public Shared RIYU As String = System.Configuration.ConfigurationManager.AppSettings("RIYU")
+
+        'タクチケ関連
+        Public Shared NOUHIN_CSV As String = System.Configuration.ConfigurationManager.AppSettings("NOUHIN_CSV")
+        Public Shared NOUHIN_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("NOUHIN_CSV_BK")
+        Public Shared JISSEKI_CSV As String = System.Configuration.ConfigurationManager.AppSettings("JISSEKI_CSV")
+        Public Shared JISSEKI_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("JISSEKI_CSV_BK")
+        Public Shared SCAN_CSV As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV")
+        Public Shared SCAN_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV_BK")
+
     End Class
 
     Public Class Db

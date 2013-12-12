@@ -36,5 +36,12 @@ Public Class URL
     Public Shared SeisanRegist As String = WebConfig.Site.URL & "SeisanRegist.aspx"
     Public Shared CostRegist As String = WebConfig.Site.URL & "CostRegist.aspx"
     Public Shared SapCsv As String = WebConfig.Site.URL & "SapCsv.aspx"
-
+    Public Shared TaxiNouhinTorikomi As String = WebConfig.Site.URL & "TaxiNouhinTorikomi.aspx"
+    Public Shared TaxiScan As String = WebConfig.Site.URL & "TaxiScan.aspx"
+    Public Shared TaxiMaintenance As String = WebConfig.Site.URL & "TaxiMaintenance.aspx"
+    Public Shared TaxiJisseki As String = WebConfig.Site.URL & "TaxiJisseki.aspx"
+    Public Shared TaxiMiketsu As String = WebConfig.Site.URL & "TaxiMiketsu.aspx"
+    Public Shared TaxiSeikyuMeisai As String = WebConfig.Site.URL & "TaxiSeikyuMeisai.aspx"
+    Public Shared TaxiSeikyuFuka As String = WebConfig.Site.URL & "TaxiSeikyuFuka.aspx"
+    Public Shared TaxiKouenkaiMeisai As String = WebConfig.Site.URL & "TaxiKouenkaiMeisai.aspx"
 End Class
