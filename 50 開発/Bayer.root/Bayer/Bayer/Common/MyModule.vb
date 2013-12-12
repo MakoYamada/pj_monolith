@@ -421,6 +421,24 @@ Public Class MyModule
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCostcenter
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCostcenter
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiNouhinTorikomi
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiCsv
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiCsv
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiScan
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiMaintenance
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMaintenance
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiJisseki
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiMiketsu
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMiketsu
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiSeikyuMeisai
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuMeisai
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiSeikyuFuka
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuFuka
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiKouenkaiMeisai
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiKouenkaiMeisai
             Case Else
                 TBL_LOG.SYORI_NAME = "画面名 エラー"
         End Select
@@ -449,6 +467,7 @@ Public Class MyModule
 
         If STATUS_OK = True Then
             TBL_LOG.STATUS = AppConst.TBL_LOG.STATUS.Code.OK
+            TBL_LOG.NOTE = Trim(Message)
         Else
             TBL_LOG.STATUS = AppConst.TBL_LOG.STATUS.Code.NG
             If Trim(TBL_LOG.NOTE) <> "" Then TBL_LOG.NOTE &= "　"

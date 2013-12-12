@@ -4,14 +4,18 @@ Imports System.IO
 Partial Public Class TaxiNouhinTorikomi
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 3 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 2 'ファイルの項目数
     Private Const pDelimiter As String = ","
 
     Private Enum COL_NO
         Field1 = 0
         Field2
-        Field3
     End Enum
+
+    Private Class COL_NAME
+        Public Const Field1 As String = "タクチケ番号"
+        Public Const Field2 As String = "券種"
+    End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '共通チェック
@@ -71,7 +75,7 @@ Partial Public Class TaxiNouhinTorikomi
             ImportData(filePath, insCnt)
         Next
 
-        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, True, insCnt.ToString & "件のデータを登録しました。", MyBase.DbConnection)
+        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, True, (insCnt * -1).ToString & "件のデータを登録しました。", MyBase.DbConnection)
 
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
@@ -114,7 +118,10 @@ Partial Public Class TaxiNouhinTorikomi
         While Not parser.EndOfData
             Dim fileData As String() = parser.ReadFields() ' 1行読み込み
             rowCnt += 1
-            insCnt += InsertTable(fileData)
+
+            If CheckInput(fileData, strFileName, rowCnt.ToString) Then
+                insCnt += InsertTable(fileData)
+            End If
 
         End While
 
@@ -132,6 +139,35 @@ Partial Public Class TaxiNouhinTorikomi
         Return True
     End Function
 
+    'CSVデータ内容チェック
+    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String) As Boolean
+
+        Try
+            '項目数チェック
+            If fileData.Count <> COL_COUNT Then
+                Throw New Exception("項目数が不正です。")
+            End If
+
+            '必須入力チェック
+            If fileData(COL_NO.Field1).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field1 & "がセットされていません。")
+            End If
+
+            If fileData(COL_NO.Field2).Trim.Equals(String.Empty) Then
+                Throw New Exception(COL_NAME.Field2 & "がセットされていません。")
+            End If
+
+        Catch ex As Exception
+            Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+            Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
+            Return False
+        End Try
+
+        Return True
+
+    End Function
+
     'データ登録
     Private Function InsertTable(ByVal fileData As String()) As Integer
 
@@ -142,11 +178,7 @@ Partial Public Class TaxiNouhinTorikomi
         TBL_TAXITICKET_HAKKO = SetInsData(fileData)
         Try
             strSQL = SQL.TBL_TAXITICKET_HAKKO.Insert(TBL_TAXITICKET_HAKKO)
-            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
-            'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_TAXITICKET_HAKKO, True, "", MyBase.DbConnection)
-
+            insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
             Return True
 
@@ -170,12 +202,14 @@ Partial Public Class TaxiNouhinTorikomi
     Private Function SetInsData(ByVal fileData As String()) As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
 
         Dim TBL_TAXITICKET_HAKKO_Ins As New TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+        Dim MS_USER As TableDef.MS_USER.DataStruct
+        MS_USER = Session.Item(SessionDef.MS_USER)
 
-        TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = fileData(COL_NO.Field1)
-        TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.Field2)
-        TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = fileData(COL_NO.Field3)
-        TBL_TAXITICKET_HAKKO_Ins.INPUT_USER = AppModule.GetValue_USER_NAME(Session.Item(SessionDef.MS_USER))
-        TBL_TAXITICKET_HAKKO_Ins.UPDATE_USER = AppModule.GetValue_USER_NAME(Session.Item(SessionDef.MS_USER))
+        TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = Me.RdoTaxi.SelectedValue
+        TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.Field1)
+        TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = fileData(COL_NO.Field2)
+        TBL_TAXITICKET_HAKKO_Ins.INPUT_USER = MS_USER.LOGIN_ID
+        TBL_TAXITICKET_HAKKO_Ins.UPDATE_USER = MS_USER.LOGIN_ID
 
         Return TBL_TAXITICKET_HAKKO_Ins
 
