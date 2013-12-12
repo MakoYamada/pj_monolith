@@ -4696,9 +4696,9 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_DATE) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_USER) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
             strSQL &= ")"
 

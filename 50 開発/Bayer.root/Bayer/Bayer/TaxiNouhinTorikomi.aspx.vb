@@ -70,24 +70,20 @@ Partial Public Class TaxiNouhinTorikomi
             Exit Sub
         End If
 
-        Dim insCnt As Integer = 0  '取込み件数カウント
-        For Each filePath As String In workFiles
-            ImportData(filePath, insCnt)
-        Next
+        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.NOUHIN_CSV) & FileUpload1.FileName
+        ImportData(filePath, insCnt)
 
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, True, (insCnt * -1).ToString & "件のデータを登録しました。", MyBase.DbConnection)
 
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
-        For Each filePath As String In workFiles
-            Try
-                File.Copy(filePath, Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK) & Path.GetFileName(filePath))
-            Catch ex As Exception
-                File.Copy(filePath, Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK) & Path.GetFileNameWithoutExtension(filePath) _
-                                                                        & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
-            End Try
-            File.Delete(filePath)
-        Next
+        Try
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK) & Path.GetFileName(filePath))
+        Catch ex As Exception
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK) & Path.GetFileNameWithoutExtension(filePath) _
+                                                                    & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
+        End Try
+        File.Delete(filePath)
     End Sub
 
     'ファイル読み込み
@@ -186,10 +182,7 @@ Partial Public Class TaxiNouhinTorikomi
             MyBase.Rollback()
 
             'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_TAXITICKET_HAKKO, False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
-            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
-
-            Throw New Exception(Session.Item(SessionDef.DbError) & vbNewLine & Trim(strSQL))
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_TAXITICKET_HAKKO, False, "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL, MyBase.DbConnection)
             Return False
         End Try
 
@@ -203,6 +196,7 @@ Partial Public Class TaxiNouhinTorikomi
 
         Dim TBL_TAXITICKET_HAKKO_Ins As New TableDef.TBL_TAXITICKET_HAKKO.DataStruct
         Dim MS_USER As TableDef.MS_USER.DataStruct
+
         MS_USER = Session.Item(SessionDef.MS_USER)
 
         TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = Me.RdoTaxi.SelectedValue
