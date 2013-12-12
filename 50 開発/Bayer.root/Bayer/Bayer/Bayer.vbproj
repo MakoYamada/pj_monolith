@@ -408,6 +408,13 @@
     <Compile Include="MishuHoukoku.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TaxiNouhinTorikomi.aspx.designer.vb">
+      <DependentUpon>TaxiNouhinTorikomi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiNouhinTorikomi.aspx.vb">
+      <DependentUpon>TaxiNouhinTorikomi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -519,6 +526,7 @@
     <Content Include="KouenkaiList.aspx" />
     <Content Include="KouenkaiRegist.aspx" />
     <Content Include="KouenkaiRireki.aspx" />
+    <Content Include="TaxiNouhinTorikomi.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -545,6 +553,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="JissekiCsv\Back\" />
+    <Folder Include="NouhinCsv\Back\" />
+    <Folder Include="ScanCsv\Back\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -164,4 +164,9 @@ Partial Public Class Menu1
     Protected Sub BtnSap_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSap.Click
         Response.Redirect(URL.SapCsv)
     End Sub
+
+    '[タクチケ納品データ取込]
+    Private Sub BtnNouhinTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNouhinTorikomi.Click
+        Response.Redirect(URL.TaxiNouhinTorikomi)
+    End Sub
 End Class

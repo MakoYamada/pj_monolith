@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="Menu.aspx.vb" Inherits="Bayer.Menu1" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table border="0" cellpadding="2" cellspacing="0" class="style1" style="margin-top: 10px;">
+    <table border="0" cellpadding="2" cellspacing="0" class="style1" style="margin-top: 10px;">
 		<tr>
 			<td align="center">
 				<table cellpadding="3" cellspacing="2" border="0">
@@ -116,10 +116,40 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiCsv" runat="server" Text="CSVファイル作成" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnNouhinTorikomi" runat="server" Text="タクチケ納品データ取込" 
+                                Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiCsv" runat="server" Text="タクチケ印刷データ作成" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnScan" runat="server" Text="スキャンデータ取込" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiMaintenance" runat="server" Text="タクチケメンテナンス" 
+                                Width="200px" CssClass="Button" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiJisseki" runat="server" Text="タクチケ実績データ取込" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnMiketsu" runat="server" Text="タクチケ未決処理" Width="200px" CssClass="Button" />
 						</td>
 						<td></td>
 						<td></td>
+					</tr>
+					<tr valign="top">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSeikyuMeisai" runat="server" Text="請求月・講演会別明細CSV" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSeikyuFuka" runat="server" Text="請求不可データCSV" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnKouenkaiMeisai" runat="server" Text="講演会別明細CSV" Width="200px" CssClass="Button" />
+						</td>
 						<td></td>
 					</tr>
 				</table>
@@ -128,7 +158,7 @@
 	</table>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
-	<style type="text/css">
+    <style type="text/css">
 		.style1
 		{
 			width: 100%;

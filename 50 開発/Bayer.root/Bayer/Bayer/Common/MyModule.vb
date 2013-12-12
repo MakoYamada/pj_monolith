@@ -378,6 +378,20 @@ Public Class MyModule
             Return False
         End Try
     End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "タクシー会社：" & TBL_TAXITICKET_HAKKO.TKT_KAISHA _
+                     & "／" _
+                     & "タクチケ番号：" & TBL_TAXITICKET_HAKKO.TKT_NO
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
+    End Function
     Public Shared Function GetValue_TBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                             ByVal TBL_LOG As TableDef.TBL_LOG.DataStruct, _
                                             ByVal STATUS_OK As Boolean, _
