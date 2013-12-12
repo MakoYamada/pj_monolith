@@ -135,9 +135,11 @@
 							<asp:Button ID="BtnTaxiJisseki" runat="server" Text="タクチケ実績データ取込" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnMiketsu" runat="server" Text="タクチケ未決処理" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnMiseisan" runat="server" Text="精算未完了リスト" Width="200px" CssClass="Button" />
 						</td>
-						<td></td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="Button1" runat="server" Text="タクチケ未決処理" Width="200px" CssClass="Button" />
+						</td>
 						<td></td>
 					</tr>
 					<tr valign="top">

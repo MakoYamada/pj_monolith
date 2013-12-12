@@ -40,6 +40,7 @@ Public Class URL
     Public Shared TaxiScan As String = WebConfig.Site.URL & "TaxiScan.aspx"
     Public Shared TaxiMaintenance As String = WebConfig.Site.URL & "TaxiMaintenance.aspx"
     Public Shared TaxiJisseki As String = WebConfig.Site.URL & "TaxiJisseki.aspx"
+    Public Shared TaxiSeisanMikanryou As String = WebConfig.Site.URL & "TaxiSeisanMikanryou.aspx"
     Public Shared TaxiMiketsu As String = WebConfig.Site.URL & "TaxiMiketsu.aspx"
     Public Shared TaxiSeikyuMeisai As String = WebConfig.Site.URL & "TaxiSeikyuMeisai.aspx"
     Public Shared TaxiSeikyuFuka As String = WebConfig.Site.URL & "TaxiSeikyuFuka.aspx"

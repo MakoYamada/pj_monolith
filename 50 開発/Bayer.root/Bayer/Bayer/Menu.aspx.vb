@@ -34,7 +34,6 @@ Partial Public Class Menu1
             .PageTitle = "メインメニュー"
         End With
 
-        CmnModule.SetEnabled(Me.BtnTaxiCsv, False)
         CmnModule.SetEnabled(Me.BtnNewBentoList, False)
         CmnModule.SetEnabled(Me.BtnBentoList, False)
     End Sub
