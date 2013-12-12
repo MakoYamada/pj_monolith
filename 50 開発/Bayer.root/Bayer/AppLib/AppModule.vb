@@ -7182,6 +7182,7 @@ Public Class AppModule
     End Sub
 #End Region
 #End Region
+
 #Region "== コントロールからDB用の値を返す =="
     'ログインID
     Public Shared Function GetValue_LOGIN_ID(ByVal LOGIN_ID As TextBox) As String
