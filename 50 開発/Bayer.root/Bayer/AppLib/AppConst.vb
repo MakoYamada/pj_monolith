@@ -570,6 +570,15 @@ Public Class AppConst
                     Public Const MstUser As String = "TOP担当者マスタメンテナンス"
                     Public Const MstCode As String = "コードマスタメンテナンス"
                     Public Const MstCostcenter As String = "コストセンターマスタメンテナンス"
+                    Public Const TaxiNouhinTorikomi As String = "タクチケ納品データ取込"
+                    Public Const TaxiCsv As String = "タクチケ印刷データ作成"
+                    Public Const TaxiScan As String = "スキャンデータ取込"
+                    Public Const TaxiMaintenance As String = "タクチケメンテナンス"
+                    Public Const TaxiJisseki As String = "タクチケ実績データ取込"
+                    Public Const TaxiMiketsu As String = "タクチケ未決登録"
+                    Public Const TaxiSeikyuMeisai As String = "請求月・講演会別明細CSV"
+                    Public Const TaxiSeikyuFuka As String = "請求不可データCSV"
+                    Public Const TaxiKouenkaiMeisai As String = "講演会別明細CSV"
                 End Class
                 Public Enum GamenType
                     KouenkaiRegist
@@ -581,6 +590,15 @@ Public Class AppConst
                     MstUser
                     MstCode
                     MstCostcenter
+                    TaxiNouhinTorikomi
+                    TaxiCsv
+                    TaxiScan
+                    TaxiMaintenance
+                    TaxiJisseki
+                    TaxiMiketsu
+                    TaxiSeikyuMeisai
+                    TaxiSeikyuFuka
+                    TaxiKouenkaiMeisai
                 End Enum
             End Class
         End Class
