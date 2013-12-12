@@ -2812,4 +2812,70 @@
         End Class
     End Class
 
+    Public Class TBL_TAXITICKET_HAKKO
+        <Serializable()> Public Structure DataStruct
+            Public TKT_KAISHA As String
+            Public TKT_NO As String
+            Public TKT_KENSHU As String
+            Public KOUENKAI_NO As String
+            Public SANKASHA_ID As String
+            Public TKT_LINE_NO As String
+            Public TKT_USED_DATE As String
+            Public TKT_URIAGE As String
+            Public TKT_SEISAN_FEE As String
+            Public TKT_HAKKO_FEE As String
+            Public TKT_ENTA As String
+            Public TKT_VOID As String
+            Public TKT_MIKETSU As String
+            Public TKT_IMPORT_DATE As String
+            Public TKT_SEIKYU_YM As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const TKT_KAISHA As String = "TKT_KAISHA"
+            Public Const TKT_NO As String = "TKT_NO"
+            Public Const TKT_KENSHU As String = "TKT_KENSHU"
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const SANKASHA_ID As String = "SANKASHA_ID"
+            Public Const TKT_LINE_NO As String = "TKT_LINE_NO"
+            Public Const TKT_USED_DATE As String = "TKT_USED_DATE"
+            Public Const TKT_URIAGE As String = "TKT_URIAGE"
+            Public Const TKT_SEISAN_FEE As String = "TKT_SEISAN_FEE"
+            Public Const TKT_HAKKO_FEE As String = "TKT_HAKKO_FEE"
+            Public Const TKT_ENTA As String = "TKT_ENTA"
+            Public Const TKT_VOID As String = "TKT_VOID"
+            Public Const TKT_MIKETSU As String = "TKT_MIKETSU"
+            Public Const TKT_IMPORT_DATE As String = "TKT_IMPORT_DATE"
+            Public Const TKT_SEIKYU_YM As String = "TKT_SEIKYU_YM"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const TKT_KAISHA As String = "タクシー会社"
+            Public Const TKT_NO As String = "タクシーチケット番号"
+            Public Const TKT_KENSHU As String = "券種"
+            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const SANKASHA_ID As String = "参加者ID"
+            Public Const TKT_LINE_NO As String = "交通手配タクチケ行番号"
+            Public Const TKT_USED_DATE As String = "利用日"
+            Public Const TKT_URIAGE As String = "売上金額"
+            Public Const TKT_SEISAN_FEE As String = "精算手数料"
+            Public Const TKT_HAKKO_FEE As String = "発行手数料"
+            Public Const TKT_ENTA As String = "エンタ"
+            Public Const TKT_VOID As String = "VOID"
+            Public Const TKT_MIKETSU As String = "未決フラグ"
+            Public Const TKT_IMPORT_DATE As String = "取込日"
+            Public Const TKT_SEIKYU_YM As String = "請求年月"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
 End Class

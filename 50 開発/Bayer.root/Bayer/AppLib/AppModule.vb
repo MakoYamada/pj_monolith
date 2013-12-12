@@ -7164,6 +7164,24 @@ Public Class AppModule
 
 #End Region
 
+#Region "== ラジオボタン設定 =="
+#Region "タクシー会社"
+    Public Shared Sub SetRadioButtonList_RDO_TAXI(ByRef RDO_TAXI As RadioButtonList)
+        With RDO_TAXI
+            .Items.Clear()
+
+            Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+            Dim wStr As String = ""
+            MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+            For wCnt As Integer = 0 To MS_CODE.Count - 1
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_KAISHA Then
+                    .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
+                End If
+            Next
+        End With
+    End Sub
+#End Region
+#End Region
 #Region "== コントロールからDB用の値を返す =="
     'ログインID
     Public Shared Function GetValue_LOGIN_ID(ByVal LOGIN_ID As TextBox) As String
