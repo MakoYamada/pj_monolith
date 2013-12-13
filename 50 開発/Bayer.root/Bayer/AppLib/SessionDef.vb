@@ -7,6 +7,7 @@
     Public Const TBL_BENTO As String = "TBL_BENTO"
     Public Const TBL_COST As String = "TBL_COST"
     Public Const TBL_LOG As String = "TBL_LOG"
+    Public Const TBL_TAXITICKET_HAKKO As String = "TBL_TAXITICKET_HAKKO"
     Public Const MS_USER As String = "MS_USER"
     Public Const MS_COSTCENTER As String = "MS_COSTCENTER"
     Public Const MS_SHISETSU As String = "MS_SHISETSU"
