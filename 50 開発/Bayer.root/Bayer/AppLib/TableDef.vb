@@ -2833,6 +2833,133 @@
             Public INPUT_USER As String
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
+
+            Public KOUENKAI_NAME As String
+            Public TAXI_PRT_NAME As String
+            Public FROM_DATE As String
+            Public TO_DATE As String
+            Public USER_NAME As String
+            Public DR_NAME As String
+            Public ANS_TAXI_DATE_1 As String
+            Public ANS_TAXI_KENSHU_1 As String
+            Public ANS_TAXI_NO_1 As String
+            Public ANS_TAXI_HAKKO_1 As String
+            Public ANS_TAXI_HAKKO_DATE_1 As String
+            Public ANS_TAXI_RMKS_1 As String
+            Public ANS_TAXI_DATE_2 As String
+            Public ANS_TAXI_KENSHU_2 As String
+            Public ANS_TAXI_NO_2 As String
+            Public ANS_TAXI_HAKKO_2 As String
+            Public ANS_TAXI_HAKKO_DATE_2 As String
+            Public ANS_TAXI_RMKS_2 As String
+            Public ANS_TAXI_DATE_3 As String
+            Public ANS_TAXI_KENSHU_3 As String
+            Public ANS_TAXI_NO_3 As String
+            Public ANS_TAXI_HAKKO_3 As String
+            Public ANS_TAXI_HAKKO_DATE_3 As String
+            Public ANS_TAXI_RMKS_3 As String
+            Public ANS_TAXI_DATE_4 As String
+            Public ANS_TAXI_KENSHU_4 As String
+            Public ANS_TAXI_NO_4 As String
+            Public ANS_TAXI_HAKKO_4 As String
+            Public ANS_TAXI_HAKKO_DATE_4 As String
+            Public ANS_TAXI_RMKS_4 As String
+            Public ANS_TAXI_DATE_5 As String
+            Public ANS_TAXI_KENSHU_5 As String
+            Public ANS_TAXI_NO_5 As String
+            Public ANS_TAXI_HAKKO_5 As String
+            Public ANS_TAXI_HAKKO_DATE_5 As String
+            Public ANS_TAXI_RMKS_5 As String
+            Public ANS_TAXI_DATE_6 As String
+            Public ANS_TAXI_KENSHU_6 As String
+            Public ANS_TAXI_NO_6 As String
+            Public ANS_TAXI_HAKKO_6 As String
+            Public ANS_TAXI_HAKKO_DATE_6 As String
+            Public ANS_TAXI_RMKS_6 As String
+            Public ANS_TAXI_DATE_7 As String
+            Public ANS_TAXI_KENSHU_7 As String
+            Public ANS_TAXI_NO_7 As String
+            Public ANS_TAXI_HAKKO_7 As String
+            Public ANS_TAXI_HAKKO_DATE_7 As String
+            Public ANS_TAXI_RMKS_7 As String
+            Public ANS_TAXI_DATE_8 As String
+            Public ANS_TAXI_KENSHU_8 As String
+            Public ANS_TAXI_NO_8 As String
+            Public ANS_TAXI_HAKKO_8 As String
+            Public ANS_TAXI_HAKKO_DATE_8 As String
+            Public ANS_TAXI_RMKS_8 As String
+            Public ANS_TAXI_DATE_9 As String
+            Public ANS_TAXI_KENSHU_9 As String
+            Public ANS_TAXI_NO_9 As String
+            Public ANS_TAXI_HAKKO_9 As String
+            Public ANS_TAXI_HAKKO_DATE_9 As String
+            Public ANS_TAXI_RMKS_9 As String
+            Public ANS_TAXI_DATE_10 As String
+            Public ANS_TAXI_KENSHU_10 As String
+            Public ANS_TAXI_NO_10 As String
+            Public ANS_TAXI_HAKKO_10 As String
+            Public ANS_TAXI_HAKKO_DATE_10 As String
+            Public ANS_TAXI_RMKS_10 As String
+            Public ANS_TAXI_DATE_11 As String
+            Public ANS_TAXI_KENSHU_11 As String
+            Public ANS_TAXI_NO_11 As String
+            Public ANS_TAXI_HAKKO_11 As String
+            Public ANS_TAXI_HAKKO_DATE_11 As String
+            Public ANS_TAXI_RMKS_11 As String
+            Public ANS_TAXI_DATE_12 As String
+            Public ANS_TAXI_KENSHU_12 As String
+            Public ANS_TAXI_NO_12 As String
+            Public ANS_TAXI_HAKKO_12 As String
+            Public ANS_TAXI_HAKKO_DATE_12 As String
+            Public ANS_TAXI_RMKS_12 As String
+            Public ANS_TAXI_DATE_13 As String
+            Public ANS_TAXI_KENSHU_13 As String
+            Public ANS_TAXI_NO_13 As String
+            Public ANS_TAXI_HAKKO_13 As String
+            Public ANS_TAXI_HAKKO_DATE_13 As String
+            Public ANS_TAXI_RMKS_13 As String
+            Public ANS_TAXI_DATE_14 As String
+            Public ANS_TAXI_KENSHU_14 As String
+            Public ANS_TAXI_NO_14 As String
+            Public ANS_TAXI_HAKKO_14 As String
+            Public ANS_TAXI_HAKKO_DATE_14 As String
+            Public ANS_TAXI_RMKS_14 As String
+            Public ANS_TAXI_DATE_15 As String
+            Public ANS_TAXI_KENSHU_15 As String
+            Public ANS_TAXI_NO_15 As String
+            Public ANS_TAXI_HAKKO_15 As String
+            Public ANS_TAXI_HAKKO_DATE_15 As String
+            Public ANS_TAXI_RMKS_15 As String
+            Public ANS_TAXI_DATE_16 As String
+            Public ANS_TAXI_KENSHU_16 As String
+            Public ANS_TAXI_NO_16 As String
+            Public ANS_TAXI_HAKKO_16 As String
+            Public ANS_TAXI_HAKKO_DATE_16 As String
+            Public ANS_TAXI_RMKS_16 As String
+            Public ANS_TAXI_DATE_17 As String
+            Public ANS_TAXI_KENSHU_17 As String
+            Public ANS_TAXI_NO_17 As String
+            Public ANS_TAXI_HAKKO_17 As String
+            Public ANS_TAXI_HAKKO_DATE_17 As String
+            Public ANS_TAXI_RMKS_17 As String
+            Public ANS_TAXI_DATE_18 As String
+            Public ANS_TAXI_KENSHU_18 As String
+            Public ANS_TAXI_NO_18 As String
+            Public ANS_TAXI_HAKKO_18 As String
+            Public ANS_TAXI_HAKKO_DATE_18 As String
+            Public ANS_TAXI_RMKS_18 As String
+            Public ANS_TAXI_DATE_19 As String
+            Public ANS_TAXI_KENSHU_19 As String
+            Public ANS_TAXI_NO_19 As String
+            Public ANS_TAXI_HAKKO_19 As String
+            Public ANS_TAXI_HAKKO_DATE_19 As String
+            Public ANS_TAXI_RMKS_19 As String
+            Public ANS_TAXI_DATE_20 As String
+            Public ANS_TAXI_KENSHU_20 As String
+            Public ANS_TAXI_NO_20 As String
+            Public ANS_TAXI_HAKKO_20 As String
+            Public ANS_TAXI_HAKKO_DATE_20 As String
+            Public ANS_TAXI_RMKS_20 As String
         End Structure
         Public Class Column
             Public Const TKT_KAISHA As String = "TKT_KAISHA"
@@ -2854,6 +2981,133 @@
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
+
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const TAXI_PRT_NAME As String = "TAXI_PRT_NAME"
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const TO_DATE As String = "TO_DATE"
+            Public Const USER_NAME As String = "USER_NAME"
+            Public Const DR_NAME As String = "DR_NAME"
+            Public Const ANS_TAXI_DATE_1 As String = "ANS_TAXI_DATE_1"
+            Public Const ANS_TAXI_KENSHU_1 As String = "ANS_TAXI_KENSHU_1"
+            Public Const ANS_TAXI_NO_1 As String = "ANS_TAXI_NO_1"
+            Public Const ANS_TAXI_HAKKO_1 As String = "ANS_TAXI_HAKKO_1"
+            Public Const ANS_TAXI_HAKKO_DATE_1 As String = "ANS_TAXI_HAKKO_DATE_1"
+            Public Const ANS_TAXI_RMKS_1 As String = "ANS_TAXI_RMKS_1"
+            Public Const ANS_TAXI_DATE_2 As String = "ANS_TAXI_DATE_2"
+            Public Const ANS_TAXI_KENSHU_2 As String = "ANS_TAXI_KENSHU_2"
+            Public Const ANS_TAXI_NO_2 As String = "ANS_TAXI_NO_2"
+            Public Const ANS_TAXI_HAKKO_2 As String = "ANS_TAXI_HAKKO_2"
+            Public Const ANS_TAXI_HAKKO_DATE_2 As String = "ANS_TAXI_HAKKO_DATE_2"
+            Public Const ANS_TAXI_RMKS_2 As String = "ANS_TAXI_RMKS_2"
+            Public Const ANS_TAXI_DATE_3 As String = "ANS_TAXI_DATE_3"
+            Public Const ANS_TAXI_KENSHU_3 As String = "ANS_TAXI_KENSHU_3"
+            Public Const ANS_TAXI_NO_3 As String = "ANS_TAXI_NO_3"
+            Public Const ANS_TAXI_HAKKO_3 As String = "ANS_TAXI_HAKKO_3"
+            Public Const ANS_TAXI_HAKKO_DATE_3 As String = "ANS_TAXI_HAKKO_DATE_3"
+            Public Const ANS_TAXI_RMKS_3 As String = "ANS_TAXI_RMKS_3"
+            Public Const ANS_TAXI_DATE_4 As String = "ANS_TAXI_DATE_4"
+            Public Const ANS_TAXI_KENSHU_4 As String = "ANS_TAXI_KENSHU_4"
+            Public Const ANS_TAXI_NO_4 As String = "ANS_TAXI_NO_4"
+            Public Const ANS_TAXI_HAKKO_4 As String = "ANS_TAXI_HAKKO_4"
+            Public Const ANS_TAXI_HAKKO_DATE_4 As String = "ANS_TAXI_HAKKO_DATE_4"
+            Public Const ANS_TAXI_RMKS_4 As String = "ANS_TAXI_RMKS_4"
+            Public Const ANS_TAXI_DATE_5 As String = "ANS_TAXI_DATE_5"
+            Public Const ANS_TAXI_KENSHU_5 As String = "ANS_TAXI_KENSHU_5"
+            Public Const ANS_TAXI_NO_5 As String = "ANS_TAXI_NO_5"
+            Public Const ANS_TAXI_HAKKO_5 As String = "ANS_TAXI_HAKKO_5"
+            Public Const ANS_TAXI_HAKKO_DATE_5 As String = "ANS_TAXI_HAKKO_DATE_5"
+            Public Const ANS_TAXI_RMKS_5 As String = "ANS_TAXI_RMKS_5"
+            Public Const ANS_TAXI_DATE_6 As String = "ANS_TAXI_DATE_6"
+            Public Const ANS_TAXI_KENSHU_6 As String = "ANS_TAXI_KENSHU_6"
+            Public Const ANS_TAXI_NO_6 As String = "ANS_TAXI_NO_6"
+            Public Const ANS_TAXI_HAKKO_6 As String = "ANS_TAXI_HAKKO_6"
+            Public Const ANS_TAXI_HAKKO_DATE_6 As String = "ANS_TAXI_HAKKO_DATE_6"
+            Public Const ANS_TAXI_RMKS_6 As String = "ANS_TAXI_RMKS_6"
+            Public Const ANS_TAXI_DATE_7 As String = "ANS_TAXI_DATE_7"
+            Public Const ANS_TAXI_KENSHU_7 As String = "ANS_TAXI_KENSHU_7"
+            Public Const ANS_TAXI_NO_7 As String = "ANS_TAXI_NO_7"
+            Public Const ANS_TAXI_HAKKO_7 As String = "ANS_TAXI_HAKKO_7"
+            Public Const ANS_TAXI_HAKKO_DATE_7 As String = "ANS_TAXI_HAKKO_DATE_7"
+            Public Const ANS_TAXI_RMKS_7 As String = "ANS_TAXI_RMKS_7"
+            Public Const ANS_TAXI_DATE_8 As String = "ANS_TAXI_DATE_8"
+            Public Const ANS_TAXI_KENSHU_8 As String = "ANS_TAXI_KENSHU_8"
+            Public Const ANS_TAXI_NO_8 As String = "ANS_TAXI_NO_8"
+            Public Const ANS_TAXI_HAKKO_8 As String = "ANS_TAXI_HAKKO_8"
+            Public Const ANS_TAXI_HAKKO_DATE_8 As String = "ANS_TAXI_HAKKO_DATE_8"
+            Public Const ANS_TAXI_RMKS_8 As String = "ANS_TAXI_RMKS_8"
+            Public Const ANS_TAXI_DATE_9 As String = "ANS_TAXI_DATE_9"
+            Public Const ANS_TAXI_KENSHU_9 As String = "ANS_TAXI_KENSHU_9"
+            Public Const ANS_TAXI_NO_9 As String = "ANS_TAXI_NO_9"
+            Public Const ANS_TAXI_HAKKO_9 As String = "ANS_TAXI_HAKKO_9"
+            Public Const ANS_TAXI_HAKKO_DATE_9 As String = "ANS_TAXI_HAKKO_DATE_9"
+            Public Const ANS_TAXI_RMKS_9 As String = "ANS_TAXI_RMKS_9"
+            Public Const ANS_TAXI_DATE_10 As String = "ANS_TAXI_DATE_10"
+            Public Const ANS_TAXI_KENSHU_10 As String = "ANS_TAXI_KENSHU_10"
+            Public Const ANS_TAXI_NO_10 As String = "ANS_TAXI_NO_10"
+            Public Const ANS_TAXI_HAKKO_10 As String = "ANS_TAXI_HAKKO_10"
+            Public Const ANS_TAXI_HAKKO_DATE_10 As String = "ANS_TAXI_HAKKO_DATE_10"
+            Public Const ANS_TAXI_RMKS_10 As String = "ANS_TAXI_RMKS_10"
+            Public Const ANS_TAXI_DATE_11 As String = "ANS_TAXI_DATE_11"
+            Public Const ANS_TAXI_KENSHU_11 As String = "ANS_TAXI_KENSHU_11"
+            Public Const ANS_TAXI_NO_11 As String = "ANS_TAXI_NO_11"
+            Public Const ANS_TAXI_HAKKO_11 As String = "ANS_TAXI_HAKKO_11"
+            Public Const ANS_TAXI_HAKKO_DATE_11 As String = "ANS_TAXI_HAKKO_DATE_11"
+            Public Const ANS_TAXI_RMKS_11 As String = "ANS_TAXI_RMKS_11"
+            Public Const ANS_TAXI_DATE_12 As String = "ANS_TAXI_DATE_12"
+            Public Const ANS_TAXI_KENSHU_12 As String = "ANS_TAXI_KENSHU_12"
+            Public Const ANS_TAXI_NO_12 As String = "ANS_TAXI_NO_12"
+            Public Const ANS_TAXI_HAKKO_12 As String = "ANS_TAXI_HAKKO_12"
+            Public Const ANS_TAXI_HAKKO_DATE_12 As String = "ANS_TAXI_HAKKO_DATE_12"
+            Public Const ANS_TAXI_RMKS_12 As String = "ANS_TAXI_RMKS_12"
+            Public Const ANS_TAXI_DATE_13 As String = "ANS_TAXI_DATE_13"
+            Public Const ANS_TAXI_KENSHU_13 As String = "ANS_TAXI_KENSHU_13"
+            Public Const ANS_TAXI_NO_13 As String = "ANS_TAXI_NO_13"
+            Public Const ANS_TAXI_HAKKO_13 As String = "ANS_TAXI_HAKKO_13"
+            Public Const ANS_TAXI_HAKKO_DATE_13 As String = "ANS_TAXI_HAKKO_DATE_13"
+            Public Const ANS_TAXI_RMKS_13 As String = "ANS_TAXI_RMKS_13"
+            Public Const ANS_TAXI_DATE_14 As String = "ANS_TAXI_DATE_14"
+            Public Const ANS_TAXI_KENSHU_14 As String = "ANS_TAXI_KENSHU_14"
+            Public Const ANS_TAXI_NO_14 As String = "ANS_TAXI_NO_14"
+            Public Const ANS_TAXI_HAKKO_14 As String = "ANS_TAXI_HAKKO_14"
+            Public Const ANS_TAXI_HAKKO_DATE_14 As String = "ANS_TAXI_HAKKO_DATE_14"
+            Public Const ANS_TAXI_RMKS_14 As String = "ANS_TAXI_RMKS_14"
+            Public Const ANS_TAXI_DATE_15 As String = "ANS_TAXI_DATE_15"
+            Public Const ANS_TAXI_KENSHU_15 As String = "ANS_TAXI_KENSHU_15"
+            Public Const ANS_TAXI_NO_15 As String = "ANS_TAXI_NO_15"
+            Public Const ANS_TAXI_HAKKO_15 As String = "ANS_TAXI_HAKKO_15"
+            Public Const ANS_TAXI_HAKKO_DATE_15 As String = "ANS_TAXI_HAKKO_DATE_15"
+            Public Const ANS_TAXI_RMKS_15 As String = "ANS_TAXI_RMKS_15"
+            Public Const ANS_TAXI_DATE_16 As String = "ANS_TAXI_DATE_16"
+            Public Const ANS_TAXI_KENSHU_16 As String = "ANS_TAXI_KENSHU_16"
+            Public Const ANS_TAXI_NO_16 As String = "ANS_TAXI_NO_16"
+            Public Const ANS_TAXI_HAKKO_16 As String = "ANS_TAXI_HAKKO_16"
+            Public Const ANS_TAXI_HAKKO_DATE_16 As String = "ANS_TAXI_HAKKO_DATE_16"
+            Public Const ANS_TAXI_RMKS_16 As String = "ANS_TAXI_RMKS_16"
+            Public Const ANS_TAXI_DATE_17 As String = "ANS_TAXI_DATE_17"
+            Public Const ANS_TAXI_KENSHU_17 As String = "ANS_TAXI_KENSHU_17"
+            Public Const ANS_TAXI_NO_17 As String = "ANS_TAXI_NO_17"
+            Public Const ANS_TAXI_HAKKO_17 As String = "ANS_TAXI_HAKKO_17"
+            Public Const ANS_TAXI_HAKKO_DATE_17 As String = "ANS_TAXI_HAKKO_DATE_17"
+            Public Const ANS_TAXI_RMKS_17 As String = "ANS_TAXI_RMKS_17"
+            Public Const ANS_TAXI_DATE_18 As String = "ANS_TAXI_DATE_18"
+            Public Const ANS_TAXI_KENSHU_18 As String = "ANS_TAXI_KENSHU_18"
+            Public Const ANS_TAXI_NO_18 As String = "ANS_TAXI_NO_18"
+            Public Const ANS_TAXI_HAKKO_18 As String = "ANS_TAXI_HAKKO_18"
+            Public Const ANS_TAXI_HAKKO_DATE_18 As String = "ANS_TAXI_HAKKO_DATE_18"
+            Public Const ANS_TAXI_RMKS_18 As String = "ANS_TAXI_RMKS_18"
+            Public Const ANS_TAXI_DATE_19 As String = "ANS_TAXI_DATE_19"
+            Public Const ANS_TAXI_KENSHU_19 As String = "ANS_TAXI_KENSHU_19"
+            Public Const ANS_TAXI_NO_19 As String = "ANS_TAXI_NO_19"
+            Public Const ANS_TAXI_HAKKO_19 As String = "ANS_TAXI_HAKKO_19"
+            Public Const ANS_TAXI_HAKKO_DATE_19 As String = "ANS_TAXI_HAKKO_DATE_19"
+            Public Const ANS_TAXI_RMKS_19 As String = "ANS_TAXI_RMKS_19"
+            Public Const ANS_TAXI_DATE_20 As String = "ANS_TAXI_DATE_20"
+            Public Const ANS_TAXI_KENSHU_20 As String = "ANS_TAXI_KENSHU_20"
+            Public Const ANS_TAXI_NO_20 As String = "ANS_TAXI_NO_20"
+            Public Const ANS_TAXI_HAKKO_20 As String = "ANS_TAXI_HAKKO_20"
+            Public Const ANS_TAXI_HAKKO_DATE_20 As String = "ANS_TAXI_HAKKO_DATE_20"
+            Public Const ANS_TAXI_RMKS_20 As String = "ANS_TAXI_RMKS_20"
         End Class
         Public Class Name
             Public Const TKT_KAISHA As String = "タクシー会社"

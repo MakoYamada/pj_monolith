@@ -168,4 +168,9 @@ Partial Public Class Menu1
     Private Sub BtnNouhinTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNouhinTorikomi.Click
         Response.Redirect(URL.TaxiNouhinTorikomi)
     End Sub
+
+    '[タクチケ未決処理]
+    Protected Sub BtnMiketsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMiketsu.Click
+        Response.Redirect(URL.TaxiMiketsu)
+    End Sub
 End Class

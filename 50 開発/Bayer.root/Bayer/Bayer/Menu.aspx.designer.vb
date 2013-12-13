@@ -223,13 +223,13 @@ Partial Public Class Menu1
     Protected WithEvents BtnMiseisan As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button1 コントロール。
+    '''BtnMiketsu コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnMiketsu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnSeikyuMeisai コントロール。
