@@ -15,8 +15,8 @@ Partial Public Class TaxiMiketsu
         TKT_NO
         TKT_KENSHU
         ANS_TAXI_DATE
-        ANS_TAXI_RMKS
         ANS_TAXI_HAKKO_DATE
+        ANS_TAXI_RMKS
         TKT_USED_DATE
         TKT_SEIKYU_YM
         VOID_DATE
@@ -246,7 +246,7 @@ Partial Public Class TaxiMiketsu
 
         ReDim TBL_TAXITICKET_HAKKO(wCnt)
 
-        strSQL = Sql.TBL_KOTSUHOTEL.Search(Joken, True)
+        strSQL = SQL.TBL_TAXITICKET_HAKKO.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -515,4 +515,26 @@ Partial Public Class TaxiMiketsu
 
         Return True
     End Function
+
+    Private Sub BtnCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCsv1.Click, BtnCsv2.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
+
+        Joken = Nothing
+        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+
+        If GetData() Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiMiketsu.csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
+
+            Response.Write(MyModule.Csv.TaxiMiketsu(TBL_TAXITICKET_HAKKO))
+            Response.End()
+        End If
+    End Sub
 End Class

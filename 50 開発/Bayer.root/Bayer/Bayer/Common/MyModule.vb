@@ -950,6 +950,130 @@ Public Class MyModule
             Return sb.ToString
 
         End Function
+        Public Shared Function TaxiMiketsu(ByVal CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            'ヘッダ列 必要?
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日From")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日To")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("発行日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("備考")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算年月")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID(日)")))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).FROM_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TO_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))
+                Select Case CsvData(wCnt).TKT_LINE_NO
+                    Case 1
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_1)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_1)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_1)))
+                    Case 2
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_2)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_2)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_2)))
+                    Case 3
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_3)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_3)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_3)))
+                    Case 4
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_4)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_4)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_4)))
+                    Case 5
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_5)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_5)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_5)))
+                    Case 6
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_6)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_6)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_6)))
+                    Case 7
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_7)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_7)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_7)))
+                    Case 8
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_8)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_8)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_8)))
+                    Case 9
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_9)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_9)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_9)))
+                    Case 10
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_10)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_10)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_10)))
+                    Case 11
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_11)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_11)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_11)))
+                    Case 12
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_12)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_12)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_12)))
+                    Case 13
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_13)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_13)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_13)))
+                    Case 14
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_14)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_14)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_14)))
+                    Case 15
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_15)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_15)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_15)))
+                    Case 16
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_16)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_16)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_16)))
+                    Case 17
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_17)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_17)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_17)))
+                    Case 18
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_18)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_18)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_18)))
+                    Case 19
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_19)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_19)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_19)))
+                    Case 20
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_20)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_20)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_20)))
+                End Select
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_USED_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_SEIKYU_YM)))
+                If CsvData(wCnt).TKT_VOID = CmnConst.Flag.On Then
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_DATE.Substring(0, 8))))
+                Else
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                End If
+                sb.Append(vbNewLine)
+            Next wCnt
+
+            Return sb.ToString
+        End Function
     End Class
 
 End Class
