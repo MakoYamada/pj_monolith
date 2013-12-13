@@ -846,6 +846,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_ENTA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_VOID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_MIKETSU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEIKYU_YM.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER.ToUpper Then TBL_TAXITICKET_HAKKO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
