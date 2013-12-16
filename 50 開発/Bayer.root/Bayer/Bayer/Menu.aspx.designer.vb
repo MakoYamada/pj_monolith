@@ -259,6 +259,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnKouenkaiMeisai As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnTaxiMenu コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiMenu As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>

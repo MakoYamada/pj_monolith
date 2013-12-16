@@ -1,7 +1,6 @@
 ﻿Imports CommonLib
 Imports AppLib
 Public Class URL
-
     Public Shared SorryPage As String = WebConfig.Site.URL & "Sorry.html"
     Public Shared MaintenancePage As String = WebConfig.Site.URL & "Maintenance.html"
     Public Shared ComingSoonPage As String = WebConfig.Site.URL & "ComingSoon.html"
@@ -30,13 +29,16 @@ Public Class URL
     Public Shared MstCode As String = WebConfig.Site.URL & "admin/MstCode.aspx"
     Public Shared LogFile As String = WebConfig.Site.URL & "admin/LogFile.aspx"
     Public Shared LogSousa As String = WebConfig.Site.URL & "admin/LogSousa.aspx"
-    Public Shared TaxiCsv As String = WebConfig.Site.URL & "TaxiCsv.aspx"
+
     Public Shared SeisanKensaku As String = WebConfig.Site.URL & "SeisanKensaku.aspx"
     Public Shared SeisanList As String = WebConfig.Site.URL & "SeisanList.aspx"
     Public Shared SeisanRegist As String = WebConfig.Site.URL & "SeisanRegist.aspx"
     Public Shared CostRegist As String = WebConfig.Site.URL & "CostRegist.aspx"
     Public Shared SapCsv As String = WebConfig.Site.URL & "SapCsv.aspx"
+
+    Public Shared TaxiMenu As String = WebConfig.Site.URL & "TaxiMenu.aspx"
     Public Shared TaxiNouhinTorikomi As String = WebConfig.Site.URL & "TaxiNouhinTorikomi.aspx"
+    Public Shared TaxiCsv As String = WebConfig.Site.URL & "TaxiCsv.aspx"
     Public Shared TaxiScan As String = WebConfig.Site.URL & "TaxiScan.aspx"
     Public Shared TaxiMaintenance As String = WebConfig.Site.URL & "TaxiMaintenance.aspx"
     Public Shared TaxiJisseki As String = WebConfig.Site.URL & "TaxiJisseki.aspx"

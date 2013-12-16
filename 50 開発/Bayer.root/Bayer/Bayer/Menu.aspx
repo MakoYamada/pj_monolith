@@ -153,7 +153,9 @@
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnKouenkaiMeisai" runat="server" Text="講演会別明細CSV" Width="200px" CssClass="Button" />
 						</td>
-						<td></td>
+						<td>
+							<asp:Button ID="BtnTaxiMenu" runat="server" Text="タクシーチケット管理へ" Width="200px" CssClass="Button" />
+						</td>
 					</tr>
 				</table>
 			</td>

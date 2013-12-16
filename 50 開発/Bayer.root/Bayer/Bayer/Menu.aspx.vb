@@ -173,4 +173,10 @@ Partial Public Class Menu1
     Protected Sub BtnMiketsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMiketsu.Click
         Response.Redirect(URL.TaxiMiketsu)
     End Sub
+
+    '[タクシーチケット管理へ]
+    Protected Sub BtnSeikyuMeisai0_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMenu.Click
+        Response.Redirect(URL.TaxiMenu)
+    End Sub
+
 End Class

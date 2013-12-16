@@ -32,4 +32,8 @@
         Public Shared ConnectionString As String = System.Configuration.ConfigurationManager.AppSettings("ConnectionString")
     End Class
 
+    Public Class Path
+        Public Shared TaxiPrintCsv As String = System.Configuration.ConfigurationManager.AppSettings("TaxiPrintCsv")
+    End Class
+
 End Class
