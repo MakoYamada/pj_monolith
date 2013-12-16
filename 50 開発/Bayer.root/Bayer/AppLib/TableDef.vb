@@ -2839,7 +2839,18 @@
             Public FROM_DATE As String
             Public TO_DATE As String
             Public USER_NAME As String
+            Public DR_MPID As String
+            Public DR_CD As String
             Public DR_NAME As String
+            Public DR_KANA As String
+            Public DR_SHISETSU_CD As String
+            Public DR_SHISETSU_NAME As String
+            Public DR_SHISETSU_ADDRESS As String
+            Public DR_YAKUWARI As String
+            Public DR_SEX As String
+            Public DR_AGE As String
+            Public SHITEIGAI_RIYU As String
+            Public DR_SANKA As String
             Public ANS_TAXI_DATE_1 As String
             Public ANS_TAXI_KENSHU_1 As String
             Public ANS_TAXI_NO_1 As String
@@ -2987,7 +2998,18 @@
             Public Const FROM_DATE As String = "FROM_DATE"
             Public Const TO_DATE As String = "TO_DATE"
             Public Const USER_NAME As String = "USER_NAME"
+            Public Const DR_MPID As String = "DR_MPID"
+            Public Const DR_CD As String = "DR_CD"
             Public Const DR_NAME As String = "DR_NAME"
+            Public Const DR_KANA As String = "DR_KANA"
+            Public Const DR_SHISETSU_CD As String = "DR_SHISETSU_CD"
+            Public Const DR_SHISETSU_NAME As String = "DR_SHISETSU_NAME"
+            Public Const DR_SHISETSU_ADDRESS As String = "DR_SHISETSU_ADDRESS"
+            Public Const DR_YAKUWARI As String = "DR_YAKUWARI"
+            Public Const DR_SEX As String = "DR_SEX"
+            Public Const DR_AGE As String = "DR_AGE"
+            Public Const SHITEIGAI_RIYU As String = "SHITEIGAI_RIYU"
+            Public Const DR_SANKA As String = "DR_SANKA"
             Public Const ANS_TAXI_DATE_1 As String = "ANS_TAXI_DATE_1"
             Public Const ANS_TAXI_KENSHU_1 As String = "ANS_TAXI_KENSHU_1"
             Public Const ANS_TAXI_NO_1 As String = "ANS_TAXI_NO_1"

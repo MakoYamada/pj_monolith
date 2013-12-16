@@ -1,14 +1,12 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="TaxiMiketsuRegist.aspx.vb" Inherits="Bayer.TaxiMiketsuRegist" MaintainScrollPositionOnPostback="true" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table border="0" cellpadding="4" cellspacing="0" width="1100px">
+	<table border="0" cellpadding="4" cellspacing="0" width="900px">
         <tr>
             <td>
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
-                        <td style="width:50%">
-                        </td>
-                        <td style="width:50%" align="right">
+                        <td align="left">
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
                                 CssClass="Button" TabIndex="1" />
                         </td>
@@ -18,7 +16,12 @@
         </tr>
 		<tr>
 			<td nowrap="nowrap" align="left">
-				<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="1100px">
+				<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="100%">
+					<tr>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" colspan="8">
+							■ 講演会情報
+						</td>
+					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
 							講演会番号
@@ -49,9 +52,7 @@
 							講演会開催日
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" >
-							<asp:Label ID="FROM_DATE" runat="server" Text=""></asp:Label>
-							&nbsp;&nbsp;～&nbsp;&nbsp;
-							<asp:Label ID="TO_DATE" runat="server" Text=""></asp:Label>
+							<asp:Label ID="KOUENKAI_DATE" runat="server" Text=""></asp:Label>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
 							TOP担当者
@@ -64,8 +65,111 @@
 			</td>
 		</tr>
 		<tr>
+		    <td align="left"  colspan="2">
+				<!-- DR情報 -->
+				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
+                    cellpadding="2" border="1" bordercolor="#4f5b61" style="width:100%">
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
+                            ■DR情報
+                        </td>
+                    </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                参加者ID
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+							<asp:Label ID="SANKASHA_ID" runat="server" Text=""></asp:Label>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                氏名
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+                            <asp:TextBox ID="DR_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="30px" Width="750px" TabIndex="1006" 
+                                BorderStyle="None"></asp:TextBox>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                氏名カナ
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+                            <asp:TextBox ID="DR_KANA" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="30px" Width="750px" TabIndex="1007" 
+                                BorderStyle="None"></asp:TextBox>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                性別
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_SEX" runat="server"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                年齢
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_AGE" runat="server"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                講演会への参加
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_SANKA" runat="server"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                参加者の役割
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_YAKUWARI" runat="server"></asp:Label>
+		                </td>
+		            </tr> 
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                DCF<br />施設ｺｰﾄﾞ
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_SHISETSU_CD" runat="server"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                施設名
+		                </td>
+		                <td align="left" valign="middle" colspan="5">
+                            <asp:TextBox ID="DR_SHISETSU_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="30px" Width="341px" TabIndex="1008" 
+                                BorderStyle="None"></asp:TextBox>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                施設住所
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+                            <asp:TextBox ID="DR_SHISETSU_ADDRESS" runat="server" MaxLength="128" ReadOnly="True" 
+                                TextMode="MultiLine" Height="30px" Width="750px" TabIndex="1009" 
+                                BorderStyle="None"></asp:TextBox>
+		                </td>
+		            </tr>
+	                <tr>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                指定外<br />申請理由			                
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+                            <asp:TextBox ID="SHITEIGAI_RIYU" runat="server" MaxLength="128" ReadOnly="True" 
+                                TextMode="MultiLine" Height="30px" Width="750px" TabIndex="1010" 
+                                BorderStyle="None"></asp:TextBox>
+		                </td>
+		            </tr>
+                </table> 		        
+		    </td>		    
+		</tr>
+		<tr>
 			<td nowrap="nowrap" align="left">
-				<table style="border-collapse: collapse; margin-top: 10px;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="1100px">
+				<table style="border-collapse: collapse; margin-bottom: 8px;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="100%">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" colspan="8">
 							■ タクチケ情報
@@ -73,114 +177,72 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
-							事業部
+							回答行番号
 						</td>
-						<td nowrap="nowrap" align="left" class="TdItem" colspan="7">
-							<asp:Label ID="KIKAKU_TANTO_JIGYOUBU" runat="server" Text=""></asp:Label>
+						<td nowrap="nowrap" align="left" class="TdItem">
+							<asp:Label ID="TKT_LINE_NO" runat="server" Text="20"></asp:Label>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							タクチケ番号
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem">
+							<asp:Label ID="TKT_NO" runat="server" Text="123456789"></asp:Label>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							タクシー会社
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem">
+							<asp:Label ID="TKT_KAISHA" runat="server" Text="京交信"></asp:Label>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							券種
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem">
+							<asp:Label ID="TKT_KENSHU" runat="server" Text="NG10000"></asp:Label>
 						</td>
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
-							BU
+							利用予定日
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
-							<asp:Label ID="BU" runat="server" Text=""></asp:Label>
+							<asp:Label ID="ANS_TAXI_DATE" runat="server" Text="1234/56/78"></asp:Label>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
-							エリア
-						</td>
-						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
-                            <asp:TextBox ID="KIKAKU_TANTO_AREA" runat="server" MaxLength="80" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="418px" TabIndex="250" 
-                                BorderStyle="None"></asp:TextBox>
-						</td>
-					</tr>
-					<tr>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 75px;">
-							営業所
+							発行日
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
-                            <asp:TextBox ID="KIKAKU_TANTO_EIGYOSHO" runat="server" MaxLength="80" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="418px" TabIndex="250" 
-                                BorderStyle="None"></asp:TextBox>
+							<asp:Label ID="ANS_TAXI_HAKKO_DATE" runat="server" Text="1234/56/78"></asp:Label>
 						</td>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							Cost Center
-						</td>
-						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
-							<asp:Label ID="COST_CENTER" runat="server" Text=""></asp:Label>
-						</td>
-					</tr>
-					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
-							氏名
+							実車日
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
-                            <asp:TextBox ID="KIKAKU_TANTO_NAME" runat="server" MaxLength="150" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="417px" TabIndex="250" 
-                                BorderStyle="None"></asp:TextBox>                            
+							<asp:Label ID="TKT_USED_DATE" runat="server" Text="1234/56/78"></asp:Label>
 						</td>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							氏名<br />(ローマ字)
-						</td>
-						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
-                            <asp:TextBox ID="KIKAKU_TANTO_ROMA" runat="server" MaxLength="150" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="417px" TabIndex="250" 
-                                BorderStyle="None"></asp:TextBox>                            
-						</td>
-					</tr>
-					<tr>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 75px;">
-							オフィスの電話番号
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							VOID(日)
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
-							<asp:Label ID="KIKAKU_TANTO_TEL" runat="server" Text=""></asp:Label>
-						</td>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 75px;">
-							携帯電話
-						</td>
-						<td nowrap="nowrap" align="left" class="TdItem">
-							<asp:Label ID="KIKAKU_TANTO_KEITAI" runat="server" Text=""></asp:Label>
-						</td>
-					</tr>
-					<tr>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 105px;">
-							メールアドレス
-						</td>
-						<td align="left" class="TdItem" colspan="5">
-                            <asp:TextBox ID="KIKAKU_TANTO_EMAIL" runat="server" MaxLength="128" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="903px" TabIndex="250" 
-                                BorderStyle="None"></asp:TextBox>                            
-						</td>
-					</tr>
-					<tr>
-						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 105px;">
-							携帯のメールアドレス
-						</td>
-						<td align="left" class="TdItem" colspan="5">
-                            <asp:TextBox ID="KIKAKU_TANTO_EMAIL_KEITAI" runat="server" MaxLength="128" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="903px" TabIndex="250" 
-                                BorderStyle="None"></asp:TextBox>                            
+							<asp:Label ID="TKT_VOID" runat="server" Text="1234/56/78"></asp:Label>
 						</td>
 					</tr>
 			</table>
 			</td>
 		</tr>
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<div class="FontSize1" style="height: 10px;"></div>
-		        <table cellspacing="0" cellpadding="0" border="0" style="width:1100px;">
-			        <tr style="height: 36px; width:100%">
-				        <td align="right" style="width:70%">
-				            <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" 
-                                CssClass="Button" TabIndex="6" />
-				            <!-- <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" 
-                                CssClass="Button" /> -->
-					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="戻る" CssClass="Button" TabIndex="7" />
-				        </td>
-			        </tr>
-		        </table>
-			</td>
-		</tr>
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="0" border="0" width="100%">
+                    <tr>
+                        <td style="width:100%">
+                            <asp:Button ID="BtnSubmit" runat="server" Text="未決登録" Width="130px" 
+                                CssClass="Button" tabindex="11"/>
+                            <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="19" />
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+        </tr>
 	</table>
 </asp:Content>

@@ -857,7 +857,18 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.FROM_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TO_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.TO_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.USER_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_MPID.ToUpper Then TBL_TAXITICKET_HAKKO.DR_MPID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_CD.ToUpper Then TBL_TAXITICKET_HAKKO.DR_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.DR_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_KANA.ToUpper Then TBL_TAXITICKET_HAKKO.DR_KANA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_SHISETSU_CD.ToUpper Then TBL_TAXITICKET_HAKKO.DR_SHISETSU_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_SHISETSU_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.DR_SHISETSU_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_SHISETSU_ADDRESS.ToUpper Then TBL_TAXITICKET_HAKKO.DR_SHISETSU_ADDRESS = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_YAKUWARI.ToUpper Then TBL_TAXITICKET_HAKKO.DR_YAKUWARI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_SEX.ToUpper Then TBL_TAXITICKET_HAKKO.DR_SEX = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_AGE.ToUpper Then TBL_TAXITICKET_HAKKO.DR_AGE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SHITEIGAI_RIYU.ToUpper Then TBL_TAXITICKET_HAKKO.SHITEIGAI_RIYU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.DR_SANKA.ToUpper Then TBL_TAXITICKET_HAKKO.DR_SANKA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_DATE_1.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_DATE_1 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_KENSHU_1.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_KENSHU_1 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_NO_1.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_NO_1 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -4524,6 +4535,21 @@ Public Class AppModule
         Return Trim(SALEFORCE_ID)
     End Function
 
+#Region "未決登録"
+    Public Shared Function GetName_TKT_KAISHA(ByVal TKT_KAISHA As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = TKT_KAISHA Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+#End Region
+
 #End Region
 
 
@@ -6540,7 +6566,7 @@ Public Class AppModule
 
     'ユーザマスタ：精算入力
     Public Shared Sub SetForm_KENGEN_SEISAN(ByVal KENGEN_SEISAN As String, ByRef control As CheckBox)
-        If KENGEN_SEISAN = AppConst.MS_USER.KENGEN_SEISAN.Code.YES Then
+        If KENGEN_SEISAN = AppConst.MS_USER.KENGEN_SEISAN.Code.Yes Then
             control.Checked = True
         Else
             control.Checked = False
@@ -6598,10 +6624,67 @@ Public Class AppModule
 #Region "精算入力画面　画面項目表示"
 
     Public Shared Sub SetForm_SEISAN_KANRYO(ByVal SEISAN_KANRYO As String, ByRef control As CheckBox)
-        If SEISAN_KANRYO = CmnConst.flag.on Then
+        If SEISAN_KANRYO = CmnConst.Flag.On Then
             control.Checked = True
         Else
             control.Checked = False
+        End If
+    End Sub
+
+#End Region
+
+#Region "未決登録画面　画面項目表示"
+    '講演会実施日(From～To)
+    Public Shared Sub SetForm_JISSI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, ByRef control As Label)
+        control.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE, TO_DATE, True)
+    End Sub
+
+    '氏名
+    Public Shared Sub SetForm_USER_NAME(ByVal USER_NAME As String, ByRef control As Label)
+        control.Text = USER_NAME
+    End Sub
+
+    '行番号
+    Public Shared Sub SetForm_TKT_LINE_NO(ByVal TKT_LINE_NO As String, ByRef control As Label)
+        control.Text = TKT_LINE_NO
+    End Sub
+
+    'タクチケ番号
+    Public Shared Sub SetForm_TKT_NO(ByVal TKT_NO As String, ByRef control As Label)
+        control.Text = TKT_NO
+    End Sub
+
+    'タクシー会社
+    Public Shared Sub SetForm_TKT_KAISHA(ByVal TKT_KAISHA As String, ByRef control As Label)
+        control.Text = GetName_TKT_KAISHA(TKT_KAISHA)
+    End Sub
+
+    '券種
+    Public Shared Sub SetForm_TKT_KENSHU(ByVal TKT_KENSHU As String, ByRef control As Label)
+        control.Text = TKT_KENSHU
+    End Sub
+
+    '利用予定日
+    Public Shared Sub SetForm_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD)
+    End Sub
+
+    '発行日
+    Public Shared Sub SetForm_ANS_TAXI_HAKKO_DATE(ByVal ANS_TAXI_HAKKO_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(ANS_TAXI_HAKKO_DATE, CmnModule.DateFormatType.YYYYMMDD)
+    End Sub
+
+    '実車日
+    Public Shared Sub SetForm_TKT_USED_DATE(ByVal TKT_USED_DATE As String, ByRef control As Label)
+        control.Text = CmnModule.Format_Date(TKT_USED_DATE, CmnModule.DateFormatType.YYYYMMDD)
+    End Sub
+
+    'VOID(日)
+    Public Shared Sub SetForm_TKT_VOID(ByVal TKT_VOID As String, ByVal UPDATE_DATE As String, ByRef control As Label)
+        If TKT_VOID = CmnConst.Flag.On Then
+            control.Text = CmnModule.Format_Date(UPDATE_DATE, CmnModule.DateFormatType.YYYYMMDD)
+        Else
+            control.Text = ""
         End If
     End Sub
 
@@ -8363,9 +8446,9 @@ Public Class AppModule
 
     Public Shared Function GetValue_SEISAN_KANRYO(ByVal SEISAN_KANRYO As CheckBox) As String
         If SEISAN_KANRYO.Checked = True Then
-            Return CmnConst.flag.on
+            Return CmnConst.Flag.On
         Else
-            Return CmnConst.flag.off
+            Return CmnConst.Flag.Off
         End If
     End Function
 

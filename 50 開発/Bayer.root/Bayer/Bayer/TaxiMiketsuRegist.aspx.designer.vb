@@ -52,22 +52,13 @@ Partial Public Class TaxiMiketsuRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''FROM_DATE コントロール。
+    '''KOUENKAI_DATE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TO_DATE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TO_DATE As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents KOUENKAI_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TTEHAI_TANTO コントロール。
@@ -79,103 +70,175 @@ Partial Public Class TaxiMiketsuRegist
     Protected WithEvents TTEHAI_TANTO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_JIGYOUBU コントロール。
+    '''SANKASHA_ID コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_JIGYOUBU As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SANKASHA_ID As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BU コントロール。
+    '''DR_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BU As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents DR_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_AREA コントロール。
+    '''DR_KANA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DR_KANA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_EIGYOSHO コントロール。
+    '''DR_SEX コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DR_SEX As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''COST_CENTER コントロール。
+    '''DR_AGE コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents COST_CENTER As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents DR_AGE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_NAME コントロール。
+    '''DR_SANKA コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DR_SANKA As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_ROMA コントロール。
+    '''DR_YAKUWARI コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DR_YAKUWARI As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_TEL コントロール。
+    '''DR_SHISETSU_CD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_TEL As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents DR_SHISETSU_CD As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''KIKAKU_TANTO_KEITAI コントロール。
+    '''DR_SHISETSU_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_KEITAI As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents DR_SHISETSU_NAME As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_EMAIL コントロール。
+    '''DR_SHISETSU_ADDRESS コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DR_SHISETSU_ADDRESS As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''KIKAKU_TANTO_EMAIL_KEITAI コントロール。
+    '''SHITEIGAI_RIYU コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EMAIL_KEITAI As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents SHITEIGAI_RIYU As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TKT_LINE_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_LINE_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TKT_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TKT_KAISHA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_KAISHA As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TKT_KENSHU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_KENSHU As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TKT_USED_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_USED_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TKT_VOID コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_VOID As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnSubmit コントロール。
@@ -185,15 +248,6 @@ Partial Public Class TaxiMiketsuRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnNozomi コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack2 コントロール。
