@@ -595,6 +595,7 @@ Public Class AppConst
                     TaxiCsv
                     TaxiScan
                     TaxiMaintenance
+                    TaxiMaintenanceRegist
                     TaxiJisseki
                     TaxiSeisanMikanryou
                     TaxiMiketsu
