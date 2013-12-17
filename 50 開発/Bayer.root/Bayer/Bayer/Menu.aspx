@@ -115,44 +115,6 @@
 						</td>
 					</tr>
 					<tr valign="top">
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnNouhinTorikomi" runat="server" Text="タクチケ納品データ取込" 
-                                Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiCsv" runat="server" Text="タクチケ印刷データ作成" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnScan" runat="server" Text="スキャンデータ取込" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiMaintenance" runat="server" Text="タクチケメンテナンス" 
-                                Width="200px" CssClass="Button" />
-						</td>
-					</tr>
-					<tr valign="top">
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiJisseki" runat="server" Text="タクチケ実績データ取込" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnMiseisan" runat="server" Text="精算未完了リスト" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnMiketsu" runat="server" Text="タクチケ未決処理" Width="200px" 
-                                CssClass="Button" />
-						</td>
-						<td></td>
-					</tr>
-					<tr valign="top">
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnSeikyuMeisai" runat="server" Text="請求月・講演会別明細CSV" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnSeikyuFuka" runat="server" Text="請求不可データCSV" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnKouenkaiMeisai" runat="server" Text="講演会別明細CSV" Width="200px" CssClass="Button" />
-						</td>
 						<td>
 							<asp:Button ID="BtnTaxiMenu" runat="server" Text="タクシーチケット管理へ" Width="200px" CssClass="Button" />
 						</td>

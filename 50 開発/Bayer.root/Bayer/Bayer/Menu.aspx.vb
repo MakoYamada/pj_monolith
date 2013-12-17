@@ -134,11 +134,6 @@ Partial Public Class Menu1
         Response.Redirect(URL.LogSousa)
     End Sub
 
-    '[CSVファイル作成]
-    Protected Sub BtnTaxiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsv.Click
-        Response.Redirect(URL.TaxiCsv)
-    End Sub
-
     '[新着 交通・宿泊]
     Protected Sub BtnNewKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKotsuList.Click
         Response.Redirect(URL.NewDrList)
@@ -162,16 +157,6 @@ Partial Public Class Menu1
     '[SAPデータ作成]
     Protected Sub BtnSap_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSap.Click
         Response.Redirect(URL.SapCsv)
-    End Sub
-
-    '[タクチケ納品データ取込]
-    Private Sub BtnNouhinTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNouhinTorikomi.Click
-        Response.Redirect(URL.TaxiNouhinTorikomi)
-    End Sub
-
-    '[タクチケ未決処理]
-    Protected Sub BtnMiketsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMiketsu.Click
-        Response.Redirect(URL.TaxiMiketsu)
     End Sub
 
     '[タクシーチケット管理へ]
