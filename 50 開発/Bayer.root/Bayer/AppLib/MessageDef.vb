@@ -161,6 +161,20 @@ Public Class MessageDef
         Public Shared Function Copy() As String
             Return "回答欄に入力済みのため、依頼内容をコピーできません"
         End Function
+
+        Public Class Csv
+            'CSVファイル関連
+            Public Const InvalidFile As String = "ファイルの指定が正しくありません。"
+            '内容
+            Public Shared Function Format(ByVal Line As Integer) As String
+                Return Line.ToString & "行目が正しくありません。"
+            End Function
+            '登録時
+            Public Shared Function Update(ByVal Line As Integer) As String
+                Return Line.ToString & "行目がエラーになりました。\nCSVファイルを確認してください。"
+            End Function
+        End Class
+        
     End Class
 
     Public Class Confirm
