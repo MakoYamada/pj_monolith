@@ -5073,7 +5073,7 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL = "UPDATE TBL_TAXITICKET_HAKKO SET"
-            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
+            strSQL &= " " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
@@ -5083,6 +5083,22 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
+            strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update_Scan(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_TAXITICKET_HAKKO SET"
+            strSQL &= " " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
