@@ -48,6 +48,10 @@ Partial Public Class TaxiNouhinTorikomi
         '入力チェック
         If Not Check() Then Exit Sub
 
+        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.NOUHIN_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK))
+
         '指定されたファイルをサーバに保存
         Try
             FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.NOUHIN_CSV) & FileUpload1.FileName)
@@ -57,10 +61,6 @@ Partial Public Class TaxiNouhinTorikomi
         End Try
 
         'CSVファイルをタクチケTBLへImport
-        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.NOUHIN_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK))
-
         Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
         workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
@@ -202,6 +202,7 @@ Partial Public Class TaxiNouhinTorikomi
         TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = Me.RdoTaxi.SelectedValue
         TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.Field1)
         TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = fileData(COL_NO.Field2)
+        TBL_TAXITICKET_HAKKO_Ins.TKT_MIKETSU = CmnConst.Flag.Off
         TBL_TAXITICKET_HAKKO_Ins.INPUT_USER = MS_USER.LOGIN_ID
         TBL_TAXITICKET_HAKKO_Ins.UPDATE_USER = MS_USER.LOGIN_ID
 

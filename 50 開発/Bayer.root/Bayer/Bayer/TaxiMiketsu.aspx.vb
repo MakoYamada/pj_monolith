@@ -462,11 +462,6 @@ Partial Public Class TaxiMiketsu
             Return False
         End If
 
-        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
             Return False
@@ -511,6 +506,11 @@ Partial Public Class TaxiMiketsu
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日To"), Me)
                 Return False
             End If
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            Return False
         End If
 
         Return True
