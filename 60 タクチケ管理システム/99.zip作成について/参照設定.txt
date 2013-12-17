@@ -1,0 +1,3 @@
+Webサイトのbinフォルダ内に
+Ionic.Zip.Reduced.dll
+をコピーし、参照設定で追加してください。
