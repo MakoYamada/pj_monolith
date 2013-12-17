@@ -11,7 +11,7 @@
                 <table cellpadding="2" cellspacing="0" border="0">
                     <tr>
                         <td align="left">
-                            <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                            <table cellpadding="2" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="right" style="width:90px">
                                         実施日
@@ -57,7 +57,7 @@
                                         </asp:DropDownList> &nbsp;&nbsp;
                                     </td>
                                 </tr>
-                                <tr style="width:900px">
+                                <tr style="width:100%">
                                     <td align="right" valign="bottom" colspan="4" style="width:100%">
                                         <asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" 
                                             CssClass="Button" TabIndex="10" />
@@ -106,21 +106,21 @@
                         <asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
+                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="DR_NAME" HeaderText="ＤＲ氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
+                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
+                            <ItemStyle HorizontalAlign="Left" Wrap="False"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TKT_NO" HeaderText="タクチケ番号" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
