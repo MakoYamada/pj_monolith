@@ -2971,6 +2971,7 @@
             Public ANS_TAXI_HAKKO_20 As String
             Public ANS_TAXI_HAKKO_DATE_20 As String
             Public ANS_TAXI_RMKS_20 As String
+            Public TAXI_HAKKO_DATE As String
         End Structure
         Public Class Column
             Public Const TKT_KAISHA As String = "TKT_KAISHA"
