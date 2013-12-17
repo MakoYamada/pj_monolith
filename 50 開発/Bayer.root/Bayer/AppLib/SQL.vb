@@ -4912,9 +4912,15 @@ Public Class SQL
             strSQL &= " )"
             strSQL &= " AND"
             strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+            strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
             strSQL &= " AND"
             strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "="
             strSQL &= " WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " AND"
+            strSQL &= " TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID & "="
+            strSQL &= " WK_KOUENKAI." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
 
             '未決一覧の場合
             If Miketsu Then
