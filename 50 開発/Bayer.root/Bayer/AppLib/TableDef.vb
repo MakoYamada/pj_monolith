@@ -3130,6 +3130,7 @@
             Public Const ANS_TAXI_HAKKO_20 As String = "ANS_TAXI_HAKKO_20"
             Public Const ANS_TAXI_HAKKO_DATE_20 As String = "ANS_TAXI_HAKKO_DATE_20"
             Public Const ANS_TAXI_RMKS_20 As String = "ANS_TAXI_RMKS_20"
+            Public Const TAXI_HAKKO_DATE As String = "TAXI_HAKKO_DATE"
         End Class
         Public Class Name
             Public Const TKT_KAISHA As String = "タクシー会社"
