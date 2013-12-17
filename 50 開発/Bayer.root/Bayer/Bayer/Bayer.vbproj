@@ -437,6 +437,13 @@
       <DependentUpon>TaxiMiketsuRegist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="TaxiScan.aspx.designer.vb">
+      <DependentUpon>TaxiScan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiScan.aspx.vb">
+      <DependentUpon>TaxiScan.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -543,6 +550,7 @@
     <Content Include="Styles.css" />
     <Content Include="TaxiCsv.aspx" />
     <Content Include="TaxiMenu.aspx" />
+    <Content Include="TaxiScan.aspx" />
     <Content Include="TimeOut.html" />
     <Content Include="DrList.aspx" />
     <Content Include="NewKouenkaiList.aspx" />
