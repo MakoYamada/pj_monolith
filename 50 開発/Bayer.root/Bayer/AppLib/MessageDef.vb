@@ -163,15 +163,19 @@ Public Class MessageDef
         End Function
 
         Public Class Csv
-            'CSVファイル関連
+            'Csvファイル関連
             Public Const InvalidFile As String = "ファイルの指定が正しくありません。"
+            'カンマなし
+            Public Shared Function NoComma(ByVal Line As Integer) As String
+                Return "(" & Line.ToString & "行目) " & "カンマがありません。"
+            End Function
             '内容
-            Public Shared Function Format(ByVal Line As Integer) As String
-                Return Line.ToString & "行目が正しくありません。"
+            Public Shared Function Invalid(ByVal Line As Integer, ByVal ItemName As String) As String
+                Return "(" & Line.ToString & "行目) " & ItemName & "が正しくありません。"
             End Function
             '登録時
             Public Shared Function Update(ByVal Line As Integer) As String
-                Return Line.ToString & "行目がエラーになりました。\nCSVファイルを確認してください。"
+                Return "(" & Line.ToString & "行目) " & "エラーが発生しました。\nCsvファイルを確認してください。"
             End Function
         End Class
         
