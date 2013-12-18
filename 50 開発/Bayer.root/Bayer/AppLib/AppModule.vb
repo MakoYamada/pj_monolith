@@ -4700,6 +4700,11 @@ Public Class AppModule
         control.Text = SANKASHA_ID
     End Sub
 
+    '参加者ID
+    Public Shared Sub SetForm_SANKASHA_ID(ByVal SANKASHA_ID As String, ByRef control As TextBox)
+        control.Text = SANKASHA_ID
+    End Sub
+
     'DRコード
     Public Shared Sub SetForm_DR_CD(ByVal DR_CD As String, ByRef control As Label)
         control.Text = DR_CD
@@ -6685,6 +6690,15 @@ Public Class AppModule
             control.Text = CmnModule.Format_Date(UPDATE_DATE, CmnModule.DateFormatType.YYYYMMDD)
         Else
             control.Text = ""
+        End If
+    End Sub
+
+    'VOID
+    Public Shared Sub SetForm_TKT_VOID(ByVal TKT_VOID As String, ByRef control As CheckBox)
+        If TKT_VOID = CmnConst.Flag.On Then
+            control.Checked = True
+        Else
+            control.Checked = False
         End If
     End Sub
 

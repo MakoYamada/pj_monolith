@@ -451,6 +451,13 @@
       <DependentUpon>TaxiMaintenance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="TaxiMaintenanceRegist.aspx.designer.vb">
+      <DependentUpon>TaxiMaintenanceRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMaintenanceRegist.aspx.vb">
+      <DependentUpon>TaxiMaintenanceRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -568,6 +575,7 @@
     <Content Include="TaxiMiketsu.aspx" />
     <Content Include="TaxiMiketsuRegist.aspx" />
     <Content Include="TaxiMaintenance.aspx" />
+    <Content Include="TaxiMaintenanceRegist.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
