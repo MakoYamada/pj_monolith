@@ -12,6 +12,7 @@ Partial Public Class TaxiMiketsu
         JISSHI_DATE
         KOUENKAI_NAME
         DR_NAME
+        USER_NAME
         TKT_NO
         TKT_KENSHU
         ANS_TAXI_DATE
@@ -21,12 +22,12 @@ Partial Public Class TaxiMiketsu
         TKT_SEIKYU_YM
         VOID_DATE
         TKT_LINE_NO
-        TKT_VOID
-        UPDATE_DATE
         KOUENKAI_NO
         SANKASHA_ID
         FROM_DATE
         TO_DATE
+        TKT_VOID
+        UPDATE_DATE
         ANS_TAXI_DATE_1
         ANS_TAXI_KENSHU_1
         ANS_TAXI_NO_1
@@ -242,6 +243,8 @@ Partial Public Class TaxiMiketsu
         Joken = Nothing
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
         If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
 
         ReDim TBL_TAXITICKET_HAKKO(wCnt)

@@ -16,6 +16,24 @@ Option Explicit On
 Partial Public Class TaxiMaintenance
 
     '''<summary>
+    '''JokenKOUENKAI_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenKOUENKAI_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''JokenFROM_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
@@ -70,22 +88,22 @@ Partial Public Class TaxiMaintenance
     Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenKOUENKAI_NO コントロール。
+    '''JokenTKT_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenTKT_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenKOUENKAI_NAME コントロール。
+    '''JokenSANKASHA_ID コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JokenSANKASHA_ID As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''JokenTTEHAI_TANTO コントロール。

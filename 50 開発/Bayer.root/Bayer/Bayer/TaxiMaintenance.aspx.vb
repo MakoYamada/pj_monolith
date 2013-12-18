@@ -11,142 +11,20 @@ Partial Public Class TaxiMaintenance
     'グリッド列    Private Enum CellIndex
         JISSHI_DATE
         KOUENKAI_NAME
+        SANKASHA_ID
         DR_NAME
+        USER_NAME
         TKT_NO
         TKT_KENSHU
-        ANS_TAXI_DATE
-        ANS_TAXI_HAKKO_DATE
-        ANS_TAXI_RMKS
         TKT_USED_DATE
         TKT_SEIKYU_YM
         VOID_DATE
         TKT_LINE_NO
         TKT_VOID
-        UPDATE_DATE
         KOUENKAI_NO
-        SANKASHA_ID
         FROM_DATE
         TO_DATE
-        ANS_TAXI_DATE_1
-        ANS_TAXI_KENSHU_1
-        ANS_TAXI_NO_1
-        ANS_TAXI_HAKKO_1
-        ANS_TAXI_HAKKO_DATE_1
-        ANS_TAXI_RMKS_1
-        ANS_TAXI_DATE_2
-        ANS_TAXI_KENSHU_2
-        ANS_TAXI_NO_2
-        ANS_TAXI_HAKKO_2
-        ANS_TAXI_HAKKO_DATE_2
-        ANS_TAXI_RMKS_2
-        ANS_TAXI_DATE_3
-        ANS_TAXI_KENSHU_3
-        ANS_TAXI_NO_3
-        ANS_TAXI_HAKKO_3
-        ANS_TAXI_HAKKO_DATE_3
-        ANS_TAXI_RMKS_3
-        ANS_TAXI_DATE_4
-        ANS_TAXI_KENSHU_4
-        ANS_TAXI_NO_4
-        ANS_TAXI_HAKKO_4
-        ANS_TAXI_HAKKO_DATE_4
-        ANS_TAXI_RMKS_4
-        ANS_TAXI_DATE_5
-        ANS_TAXI_KENSHU_5
-        ANS_TAXI_NO_5
-        ANS_TAXI_HAKKO_5
-        ANS_TAXI_HAKKO_DATE_5
-        ANS_TAXI_RMKS_5
-        ANS_TAXI_DATE_6
-        ANS_TAXI_KENSHU_6
-        ANS_TAXI_NO_6
-        ANS_TAXI_HAKKO_6
-        ANS_TAXI_HAKKO_DATE_6
-        ANS_TAXI_RMKS_6
-        ANS_TAXI_DATE_7
-        ANS_TAXI_KENSHU_7
-        ANS_TAXI_NO_7
-        ANS_TAXI_HAKKO_7
-        ANS_TAXI_HAKKO_DATE_7
-        ANS_TAXI_RMKS_7
-        ANS_TAXI_DATE_8
-        ANS_TAXI_KENSHU_8
-        ANS_TAXI_NO_8
-        ANS_TAXI_HAKKO_8
-        ANS_TAXI_HAKKO_DATE_8
-        ANS_TAXI_RMKS_8
-        ANS_TAXI_DATE_9
-        ANS_TAXI_KENSHU_9
-        ANS_TAXI_NO_9
-        ANS_TAXI_HAKKO_9
-        ANS_TAXI_HAKKO_DATE_9
-        ANS_TAXI_RMKS_9
-        ANS_TAXI_DATE_10
-        ANS_TAXI_KENSHU_10
-        ANS_TAXI_NO_10
-        ANS_TAXI_HAKKO_10
-        ANS_TAXI_HAKKO_DATE_10
-        ANS_TAXI_RMKS_10
-        ANS_TAXI_DATE_11
-        ANS_TAXI_KENSHU_11
-        ANS_TAXI_NO_11
-        ANS_TAXI_HAKKO_11
-        ANS_TAXI_HAKKO_DATE_11
-        ANS_TAXI_RMKS_11
-        ANS_TAXI_DATE_12
-        ANS_TAXI_KENSHU_12
-        ANS_TAXI_NO_12
-        ANS_TAXI_HAKKO_12
-        ANS_TAXI_HAKKO_DATE_12
-        ANS_TAXI_RMKS_12
-        ANS_TAXI_DATE_13
-        ANS_TAXI_KENSHU_13
-        ANS_TAXI_NO_13
-        ANS_TAXI_HAKKO_13
-        ANS_TAXI_HAKKO_DATE_13
-        ANS_TAXI_RMKS_13
-        ANS_TAXI_DATE_14
-        ANS_TAXI_KENSHU_14
-        ANS_TAXI_NO_14
-        ANS_TAXI_HAKKO_14
-        ANS_TAXI_HAKKO_DATE_14
-        ANS_TAXI_RMKS_14
-        ANS_TAXI_DATE_15
-        ANS_TAXI_KENSHU_15
-        ANS_TAXI_NO_15
-        ANS_TAXI_HAKKO_15
-        ANS_TAXI_HAKKO_DATE_15
-        ANS_TAXI_RMKS_15
-        ANS_TAXI_DATE_16
-        ANS_TAXI_KENSHU_16
-        ANS_TAXI_NO_16
-        ANS_TAXI_HAKKO_16
-        ANS_TAXI_HAKKO_DATE_16
-        ANS_TAXI_RMKS_16
-        ANS_TAXI_DATE_17
-        ANS_TAXI_KENSHU_17
-        ANS_TAXI_NO_17
-        ANS_TAXI_HAKKO_17
-        ANS_TAXI_HAKKO_DATE_17
-        ANS_TAXI_RMKS_17
-        ANS_TAXI_DATE_18
-        ANS_TAXI_KENSHU_18
-        ANS_TAXI_NO_18
-        ANS_TAXI_HAKKO_18
-        ANS_TAXI_HAKKO_DATE_18
-        ANS_TAXI_RMKS_18
-        ANS_TAXI_DATE_19
-        ANS_TAXI_KENSHU_19
-        ANS_TAXI_NO_19
-        ANS_TAXI_HAKKO_19
-        ANS_TAXI_HAKKO_DATE_19
-        ANS_TAXI_RMKS_19
-        ANS_TAXI_DATE_20
-        ANS_TAXI_KENSHU_20
-        ANS_TAXI_NO_20
-        ANS_TAXI_HAKKO_20
-        ANS_TAXI_HAKKO_DATE_20
-        ANS_TAXI_RMKS_20
+        UPDATE_DATE
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -164,7 +42,7 @@ Partial Public Class TaxiMaintenance
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
+            '画面項目 初期化
             InitControls()
 
             '画面項目表示
@@ -173,7 +51,7 @@ Partial Public Class TaxiMaintenance
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "未決一覧"
+            .PageTitle = "タクチケメンテナンス一覧"
         End With
 
     End Sub
@@ -204,6 +82,8 @@ Partial Public Class TaxiMaintenance
         CmnModule.SetIme(Me.JokenTO_DATE_YYYY, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenTO_DATE_MM, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenTO_DATE_DD, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.JokenTKT_NO, CmnModule.ImeType.InActive)
+        CmnModule.SetIme(Me.JokenSANKASHA_ID, CmnModule.ImeType.InActive)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -242,11 +122,15 @@ Partial Public Class TaxiMaintenance
         Joken = Nothing
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.SANKASHA_ID = Trim(Me.JokenSANKASHA_ID.Text)
+        Joken.TKT_NO = Trim(Me.JokenTKT_NO.Text)
         If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
 
         ReDim TBL_TAXITICKET_HAKKO(wCnt)
 
-        strSQL = SQL.TBL_TAXITICKET_HAKKO.Search(Joken, True)
+        strSQL = SQL.TBL_TAXITICKET_HAKKO.Search(Joken, False)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -307,88 +191,6 @@ Partial Public Class TaxiMaintenance
         If e.Row.RowType = DataControlRowType.DataRow Then
 
             e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
-            Select Case Val(e.Row.Cells(CellIndex.TKT_LINE_NO).Text)
-                Case 1
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_1).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_1).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_1).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 2
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_2).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_2).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_2).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 3
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_3).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_3).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_3).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 4
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_4).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_4).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_4).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 5
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_5).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_5).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_5).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 6
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_6).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_6).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_6).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 7
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_7).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_7).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_7).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 8
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_8).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_8).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_8).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 9
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_9).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_9).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_9).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 10
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_10).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_10).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_10).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 11
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_11).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_11).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_11).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 12
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_12).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_12).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_12).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 13
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_13).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_13).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_13).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 14
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_14).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_14).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_14).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 15
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_15).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_15).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_15).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 16
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_16).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_16).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_16).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 17
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_17).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_17).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_17).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 18
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_18).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_18).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_18).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 19
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_19).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_19).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_19).Text, CmnModule.DateFormatType.YYYYMMDD)
-                Case 20
-                    e.Row.Cells(CellIndex.ANS_TAXI_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_DATE_20).Text, CmnModule.DateFormatType.YYYYMMDD)
-                    e.Row.Cells(CellIndex.ANS_TAXI_RMKS).Text = e.Row.Cells(CellIndex.ANS_TAXI_RMKS_20).Text
-                    e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_20).Text, CmnModule.DateFormatType.YYYYMMDD)
-            End Select
             e.Row.Cells(CellIndex.TKT_USED_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_USED_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
             e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD).Substring(0, 7)
             If e.Row.Cells(CellIndex.TKT_VOID).Text = CmnConst.Flag.On Then

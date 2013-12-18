@@ -5051,6 +5051,18 @@ Public Class SQL
                 strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
             End If
 
+            If Trim(Joken.TKT_NO) <> "" Then
+                strSQL &= " AND TBL_TAXITICKET_HAKKO."
+                strSQL &= TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO
+                strSQL &= " = N'" & CmnDb.SqlString(Joken.TKT_NO) & "'"
+            End If
+
+            If Trim(Joken.SANKASHA_ID) <> "" Then
+                strSQL &= " AND TBL_TAXITICKET_HAKKO."
+                strSQL &= TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID
+                strSQL &= " = N'" & CmnDb.SqlString(Joken.SANKASHA_ID) & "'"
+            End If
+
             strSQL &= " ORDER BY"
             strSQL &= " WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.FROM_DATE
             strSQL &= ", TBL_TAXITICKET_HAKKO." & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA

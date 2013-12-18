@@ -136,16 +136,19 @@
                         </asp:BoundField>
                         <asp:BoundField HeaderText="利用予定日" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
-<HeaderStyle Wrap="False"></HeaderStyle>
-
-<ItemStyle Wrap="False" HorizontalAlign="Center"></ItemStyle>
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle Wrap="False" HorizontalAlign="Center"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="発行日" ItemStyle-Wrap="false"
+                            HeaderStyle-Wrap="false">
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle Wrap="False" HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField HeaderText="備考" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="30px" HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField HeaderText="発行日" />
                         <asp:BoundField DataField="TKT_USED_DATE" HeaderText="実車日" />
                         <asp:BoundField DataField="TKT_SEIKYU_YM" HeaderText="請求月" />
                         <asp:BoundField DataField="TKT_VOID" HeaderText="VOID(日)" />
@@ -160,7 +163,10 @@
                         </asp:ButtonField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
                         <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者ID" Visible="False" />
+                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日FROM" Visible="False" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" Visible="False" />
+                        <asp:BoundField DataField="VOID" HeaderText="VOID" Visible="False" />
+                        <asp:BoundField DataField="UPDATE_DATE" HeaderText="更新日" Visible="False" />
                         <asp:BoundField DataField="ANS_TAXI_DATE_1" HeaderText="利用日1" Visible="False" />
                         <asp:BoundField DataField="ANS_TAXI_KENSHU_1" HeaderText="券種1" Visible="False" />
                         <asp:BoundField DataField="ANS_TAXI_NO_1" HeaderText="ﾀｸﾁｹ番号1" Visible="False" />
