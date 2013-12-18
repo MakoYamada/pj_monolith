@@ -162,7 +162,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TKT_SEIKYU_YM"  HeaderText="請求年月" />
-                        <asp:BoundField DataField="TKT_VOID" HeaderText="VOID(日)" />
+                        <asp:BoundField DataField="VOID_DATE" HeaderText="VOID(日)" />
                         <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
                             ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
@@ -174,6 +174,7 @@
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
                         <asp:BoundField DataField="FROM_DATE" HeaderText="開催日FROM" Visible="False" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" Visible="False" />
+                        <asp:BoundField DataField="TKT_VOID" HeaderText="VOID" Visible="False" />
                         <asp:BoundField DataField="UPDATE_DATE" HeaderText="更新日" Visible="False" />
                     </Columns>
                 </asp:GridView>

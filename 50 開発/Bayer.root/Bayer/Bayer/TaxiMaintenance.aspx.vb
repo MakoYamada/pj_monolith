@@ -264,6 +264,11 @@ Partial Public Class TaxiMaintenance
             Return False
         End If
 
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            Return False
+        End If
+
         If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
             Return False
@@ -310,8 +315,13 @@ Partial Public Class TaxiMaintenance
             End If
         End If
 
-        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenSANKASHA_ID) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("参加者ID"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenTKT_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("タクチケ番号"), Me)
             Return False
         End If
 
@@ -321,11 +331,6 @@ Partial Public Class TaxiMaintenance
     Private Sub BtnCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCsv1.Click, BtnCsv2.Click
         '入力チェック
         If Not Check() Then Exit Sub
-
-        Joken = Nothing
-        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
-        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
 
         If GetData() Then
             'CSV出力
