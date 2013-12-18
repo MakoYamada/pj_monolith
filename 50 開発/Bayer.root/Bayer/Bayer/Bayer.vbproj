@@ -442,7 +442,14 @@
     </Compile>
     <Compile Include="TaxiScan.aspx.vb">
       <DependentUpon>TaxiScan.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMaintenance.aspx.designer.vb">
+      <DependentUpon>TaxiMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMaintenance.aspx.vb">
+      <DependentUpon>TaxiMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -560,6 +567,7 @@
     <Content Include="TaxiNouhinTorikomi.aspx" />
     <Content Include="TaxiMiketsu.aspx" />
     <Content Include="TaxiMiketsuRegist.aspx" />
+    <Content Include="TaxiMaintenance.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
