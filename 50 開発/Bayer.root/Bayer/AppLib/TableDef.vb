@@ -855,6 +855,27 @@
             Public USER_NAME As String
             Public SEIHIN_NAME As String
             Public TIME_STAMP As String
+
+            Public ANS_TKT_NO_1 As Integer
+            Public ANS_TKT_NO_2 As Integer
+            Public ANS_TKT_NO_3 As Integer
+            Public ANS_TKT_NO_4 As Integer
+            Public ANS_TKT_NO_5 As Integer
+            Public ANS_TKT_NO_6 As Integer
+            Public ANS_TKT_NO_7 As Integer
+            Public ANS_TKT_NO_8 As Integer
+            Public ANS_TKT_NO_9 As Integer
+            Public ANS_TKT_NO_10 As Integer
+            Public ANS_TKT_NO_11 As Integer
+            Public ANS_TKT_NO_12 As Integer
+            Public ANS_TKT_NO_13 As Integer
+            Public ANS_TKT_NO_14 As Integer
+            Public ANS_TKT_NO_15 As Integer
+            Public ANS_TKT_NO_16 As Integer
+            Public ANS_TKT_NO_17 As Integer
+            Public ANS_TKT_NO_18 As Integer
+            Public ANS_TKT_NO_19 As Integer
+            Public ANS_TKT_NO_20 As Integer
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
