@@ -75,4 +75,8 @@ Partial Public Class TaxiMenu
         Response.Redirect(URL.TaxiScan)
     End Sub
 
+    '[タクチケメンテナンス]
+    Protected Sub BtnTaxiMaintenance_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMaintenance.Click
+        Response.Redirect(URL.TaxiMaintenance)
+    End Sub
 End Class
