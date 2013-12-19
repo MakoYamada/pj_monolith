@@ -6,8 +6,12 @@
     End Function
 
     'カンマをつける
-    Public Shared Function SetData(ByVal str1 As String) As String
-        Return str1 & CmnConst.Csv.Comma
+    Public Shared Function SetData(ByVal str1 As String, Optional ByVal NoComma As Boolean = False) As String
+        If NoComma = False Then
+            Return str1 & CmnConst.Csv.Comma
+        Else
+            Return str1
+        End If
     End Function
 
     'ダブルクォーテーションが含まれている文字列のとき、ダブルクォーテーションでエスケープする
