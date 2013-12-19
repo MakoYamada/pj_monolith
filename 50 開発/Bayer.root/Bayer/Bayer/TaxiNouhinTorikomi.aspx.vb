@@ -95,7 +95,7 @@ Partial Public Class TaxiNouhinTorikomi
         'ファイルの有無チェック
         If File.Exists(strFilePath) Then
             'CSVファイルをTextFieldParserクラスを使用して読み込む
-            parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("UTF-8"))
+            parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("SHIFT-JIS"))
         Else
             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strFilePath & "が見つかりません。", MyBase.DbConnection)
             Exit Function
@@ -153,6 +153,20 @@ Partial Public Class TaxiNouhinTorikomi
                 Throw New Exception(COL_NAME.Field2 & "がセットされていません。")
             End If
 
+            'タクシー会社チェック
+            If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "10" AndAlso _
+                fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "20" AndAlso _
+                fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "30" AndAlso _
+                fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "50" Then
+                If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> Me.RdoTaxi.SelectedValue Then
+                    Throw New Exception(COL_NAME.Field2 & "がタクシー会社と一致しません。")
+                End If
+            Else
+                If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "DC" Then
+                    Throw New Exception(COL_NAME.Field2 & "がタクシー会社と一致しません。")
+                End If
+            End If
+
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
             Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
@@ -201,7 +215,11 @@ Partial Public Class TaxiNouhinTorikomi
 
         TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = Me.RdoTaxi.SelectedValue
         TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.Field1)
-        TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = fileData(COL_NO.Field2)
+        If Me.RdoTaxi.SelectedValue = "DC" Then
+            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(COL_NO.Field2)
+        Else
+            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = fileData(COL_NO.Field2)
+        End If
         TBL_TAXITICKET_HAKKO_Ins.TKT_MIKETSU = CmnConst.Flag.Off
         TBL_TAXITICKET_HAKKO_Ins.INPUT_USER = MS_USER.LOGIN_ID
         TBL_TAXITICKET_HAKKO_Ins.UPDATE_USER = MS_USER.LOGIN_ID
