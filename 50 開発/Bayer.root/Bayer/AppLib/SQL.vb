@@ -224,7 +224,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function TaxiCsv() As String
+        Public Shared Function TaxiPrinterCsv() As String
             Dim strSQL As String = ""
             Dim strSQL_WHERE_KOTSUHOTEL As String = ""
             Dim strSQL_WHERE_KOUENKAI As String = ""
@@ -1505,7 +1505,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function TaxiCsv(ByVal KOUENKAI_NO As String) As String
+        Public Shared Function TaxiPrinterCsv(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = ""
             Dim strSQL_WHERE_KOTSUHOTEL As String = ""
             Dim strSQL_WHERE_KOUENKAI As String = ""

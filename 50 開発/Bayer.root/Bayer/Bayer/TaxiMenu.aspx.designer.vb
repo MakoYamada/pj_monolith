@@ -25,13 +25,13 @@ Partial Public Class TaxiMenu
     Protected WithEvents BtnTaxiNouhinTorikomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTaxiCsv コントロール。
+    '''BtnTaxiPrinterCsv コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnTaxiPrinterCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnTaxiScan コントロール。

@@ -156,8 +156,6 @@ Partial Public Class TaxiScan
 
     'Csv読込 → DB展開
     Private Function UpdateData(ByVal CsvPath As String) As Boolean
-        Return True
-
         Dim CsvData As New System.IO.StreamReader(CsvPath, System.Text.Encoding.Default)
         Dim wSplit() As String
         Dim wLineCount As Integer = 0

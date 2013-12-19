@@ -6,7 +6,7 @@
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr>
 			<td align="left">
-				<asp:Button ID="BtnCsv" runat="server" Text="CSVファイル作成" Width="180px" CssClass="Button" />
+				<asp:Button ID="BtnCsv" runat="server" Text="印刷用CSVファイル作成" Width="180px" CssClass="Button" />
 			</td>
 		</tr>
 	</table>

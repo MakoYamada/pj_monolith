@@ -1,6 +1,6 @@
 ﻿Imports CommonLib
 Imports AppLib
-Partial Public Class TaxiCsv
+Partial Public Class TaxiPrinterCsv
     Inherits WebBase
 
     <Serializable()> Private Structure AnsTaxiStructure
@@ -62,7 +62,7 @@ Partial Public Class TaxiCsv
         wCnt = 0
         wFlag = False
         ReDim TBL_KOUENKAI(wCnt)
-        strSQL = SQL.TBL_KOUENKAI.TaxiCsv()
+        strSQL = SQL.TBL_KOUENKAI.TaxiPrinterCsv()
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -114,7 +114,7 @@ Partial Public Class TaxiCsv
         '交通宿泊テーブル→Csv出力
         For wCnt = LBound(TBL_KOUENKAI) To UBound(TBL_KOUENKAI)
             TBL_KOTSUHOTEL = Nothing
-            strSQL = SQL.TBL_KOTSUHOTEL.TaxiCsv(TBL_KOUENKAI(wCnt).KOUENKAI_NO)
+            strSQL = SQL.TBL_KOTSUHOTEL.TaxiPrinterCsv(TBL_KOUENKAI(wCnt).KOUENKAI_NO)
             RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
             While RsData.Read()
                 wFlag = True

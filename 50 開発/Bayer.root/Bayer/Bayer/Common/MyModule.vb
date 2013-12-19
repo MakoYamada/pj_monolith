@@ -518,218 +518,6 @@ Public Class MyModule
 
     '== CSV ==
     Public Class Csv
-        Public Shared Function TaxiCsv(ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
-            Dim wCnt As Integer = 0
-            Dim sb As New System.Text.StringBuilder
-
-            'ヘッダ列 必要?
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会基本情報：Timestamp(BYL)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("取消フラグ")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名(チケット印字用)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日From")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日To")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会会場名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("製品名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Salesforce Id")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配ステータス(依頼)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("交通宿泊手配：Timestamp(BYL)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTP ID(参加者ID)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DRコード")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名(半角カタカナ)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DCF施設コード")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設住所")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者役割")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("性別")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("航空搭乗者年齢")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("指定外申請理由(依頼)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("所属事業部(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("所属エリア(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("所属営業所(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当者(担当MR)名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当者名(担当MR)(ローマ字)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当者名(担当MR)(カナ)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Emailアドレス(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("携帯Emailアドレス(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("携帯電話番号(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("オフィスの電話番号(担当MR)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("チケット送付先FS")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("チケット送付先(その他)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("最終承認者(氏名)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("最終承認日時")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット(有・無)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット1:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット1:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット1:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット2:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット2:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット2:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット3:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット3:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット3:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット4:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット4:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット4:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット5:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット5:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット5:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット6:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット6:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット6:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット7:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット7:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット7:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット8:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット8:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット8:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット9:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット9:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット9:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット10:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット10:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット10:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット11:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット11:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット11:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット12:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット12:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット12:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット13:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット13:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット13:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット14:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット14:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット14:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット15:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット15:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット15:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット16:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット16:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット16:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット17:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット17:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット17:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット18:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット18:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット18:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット19:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット19:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット19:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット20:利用日(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット20:券種(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット20:番号(回答)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット:備考(回答)")))
-            sb.Append(vbNewLine)
-
-            For wCnt = 0 To UBound(CsvData)
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TIME_STAMP)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TORIKESHI_FLG)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_PRT_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).FROM_DATE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TO_DATE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAIJO_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIHIN_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SALEFORCE_ID)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).REQ_STATUS_TEHAI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TIME_STAMP_BYL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_MPID)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_CD)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_KANA)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_CD)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_ADDRESS)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_YAKUWARI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SEX)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_AGE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHITEIGAI_RIYU)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_BU)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_AREA)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EIGYOSHO)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_ROMA)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_KANA)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EMAIL_PC)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EMAIL_KEITAI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_KEITAI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_TEL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_SEND_SAKI_FS)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_SEND_SAKI_OTHER)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHONIN_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHONIN_DATE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TAXI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_1)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_1)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_1)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_2)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_2)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_2)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_3)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_3)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_3)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_4)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_4)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_4)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_5)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_5)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_5)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_6)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_6)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_6)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_7)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_7)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_7)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_8)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_8)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_8)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_9)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_9)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_9)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_10)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_10)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_10)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_11)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_11)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_11)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_12)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_12)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_12)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_13)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_13)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_13)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_14)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_14)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_14)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_15)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_15)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_15)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_16)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_16)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_16)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_17)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_17)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_17)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_18)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_18)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_18)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_19)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_19)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_19)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_DATE_20)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_KENSHU_20)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NO_20)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NOTE)))
-                sb.Append(vbNewLine)
-            Next wCnt
-
-            Return sb.ToString
-        End Function
-
         Public Shared Function DrCsv(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim wCnt As Integer = 0
             Dim sb As New System.Text.StringBuilder
@@ -1118,6 +906,32 @@ Public Class MyModule
 
             Return sb.ToString
         End Function
+
+        Public Class TaxiBarcode
+            Public Class Length
+                Public Const SALEFORCE_ID As Integer = 18
+                Public Const SANKASHA_ID As Integer = 14
+                Public Const KOUENKAI_NO As Integer = 14
+                Public Const TIME_STAMP_BYL As Integer = 14
+                Public Const DR_MPID As Integer = 16
+                Public Const ANS_TKT_NO As Integer = 2
+                Public Const ANS_TAXI_HAKKO_DATE As Integer = 8
+                Public Const TKT_KAISHA As Integer = 2
+                Public Const ANS_TAXI_KENSHU As Integer = 10
+            End Class
+        End Class
+        Public Class CsvIndex
+            Public Const SALEFORCE_ID As Integer = 0
+            Public Const SANKASHA_ID As Integer = 1
+            Public Const KOUENKAI_NO As Integer = 2
+            Public Const TIME_STAMP_BYL As Integer = 3
+            Public Const DR_MPID As Integer = 4
+            Public Const ANS_TKT_NO As Integer = 5
+            Public Const ANS_TAXI_HAKKO_DATE As Integer = 6
+            Public Const TKT_KAISHA As Integer = 7
+            Public Const ANS_TAXI_KENSHU As Integer = 8
+        End Class
+
     End Class
 
 End Class
