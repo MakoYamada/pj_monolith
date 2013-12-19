@@ -961,6 +961,7 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日To")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP担当者")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日")))
@@ -978,6 +979,7 @@ Public Class MyModule
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TO_DATE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).USER_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))
                 Select Case CsvData(wCnt).TKT_LINE_NO
@@ -1062,6 +1064,48 @@ Public Class MyModule
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_HAKKO_DATE_20)))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS_20)))
                 End Select
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_USED_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_SEIKYU_YM)))
+                If CsvData(wCnt).TKT_VOID = CmnConst.Flag.On Then
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_DATE.Substring(0, 8))))
+                Else
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                End If
+                sb.Append(vbNewLine)
+            Next wCnt
+
+            Return sb.ToString
+        End Function
+
+        Public Shared Function TaxiMaintenance(ByVal CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            'ヘッダ列 必要?
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日From")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日To")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP担当者")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算年月")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID(日)")))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).FROM_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TO_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).USER_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_USED_DATE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_SEIKYU_YM)))
                 If CsvData(wCnt).TKT_VOID = CmnConst.Flag.On Then

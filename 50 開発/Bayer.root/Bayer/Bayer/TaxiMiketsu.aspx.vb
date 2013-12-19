@@ -523,11 +523,6 @@ Partial Public Class TaxiMiketsu
         '入力チェック
         If Not Check() Then Exit Sub
 
-        Joken = Nothing
-        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
-        Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
-        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
-
         If GetData() Then
             'CSV出力
             Response.Clear()

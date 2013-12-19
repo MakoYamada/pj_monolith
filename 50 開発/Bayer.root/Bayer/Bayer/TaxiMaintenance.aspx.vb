@@ -337,10 +337,10 @@ Partial Public Class TaxiMaintenance
             Response.Clear()
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
-            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiMiketsu.csv")
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiMaintenance.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
 
-            Response.Write(MyModule.Csv.TaxiMiketsu(TBL_TAXITICKET_HAKKO))
+            Response.Write(MyModule.Csv.TaxiMaintenance(TBL_TAXITICKET_HAKKO))
             Response.End()
         End If
     End Sub
