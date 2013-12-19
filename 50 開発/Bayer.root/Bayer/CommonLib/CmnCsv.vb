@@ -2,7 +2,7 @@
 
     '引用符で囲む
     Public Shared Function Quotes(ByVal CsvData As String) As String
-        Return CmnConst.Csv.Delimiter & Trim(CsvData) & CmnConst.Csv.Delimiter
+        Return CmnConst.Csv.Delimiter & CsvData & CmnConst.Csv.Delimiter
     End Function
 
     'カンマをつける
@@ -12,13 +12,11 @@
 
     'ダブルクォーテーションが含まれている文字列のとき、ダブルクォーテーションでエスケープする
     Public Shared Function EscapeQuotes(ByVal CsvData As String) As String
-
         If CsvData.Contains(CmnConst.Csv.Delimiter) Then
             CsvData = CsvData.Replace(CmnConst.Csv.Delimiter, CmnConst.Csv.Delimiter & CmnConst.Csv.Delimiter)
         End If
 
         Return CsvData
-
     End Function
 
 End Class
