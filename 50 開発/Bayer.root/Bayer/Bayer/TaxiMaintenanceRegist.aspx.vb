@@ -105,7 +105,12 @@ Partial Public Class TaxiMaintenanceRegist
         MyBase.BeginTransaction()
         Try
             'データ更新
-            TBL_TAXITICKET_HAKKO(SEQ).TKT_MIKETSU = CmnConst.Flag.On
+            TBL_TAXITICKET_HAKKO(SEQ).SANKASHA_ID = Me.SANKASHA_ID.Text
+            If Me.TKT_VOID.Checked Then
+                TBL_TAXITICKET_HAKKO(SEQ).TKT_VOID = CmnConst.Flag.On
+            Else
+                TBL_TAXITICKET_HAKKO(SEQ).TKT_VOID = CmnConst.Flag.Off
+            End If
             strSQL = Sql.TBL_TAXITICKET_HAKKO.Update(TBL_TAXITICKET_HAKKO(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
@@ -126,15 +131,10 @@ Partial Public Class TaxiMaintenanceRegist
     End Function
 
     '[戻る]
-    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
+    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
         Session.Remove(SessionDef.KouenkaiRireki_SEQ)
         Response.Redirect(Session.Item(SessionDef.BackURL2))
-    End Sub
-
-    '[戻る]
-    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
-        BtnBack1_Click(sender, e)
     End Sub
 
     '[登録]
