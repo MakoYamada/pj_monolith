@@ -362,13 +362,6 @@
       <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TaxiCsv.aspx.designer.vb">
-      <DependentUpon>TaxiCsv.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TaxiCsv.aspx.vb">
-      <DependentUpon>TaxiCsv.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="NewKouenkaiReport.Designer.vb">
       <DependentUpon>NewKouenkaiReport.vb</DependentUpon>
     </Compile>
@@ -444,7 +437,7 @@
     </Compile>
     <Compile Include="TaxiPrinterCsv.aspx.vb">
       <DependentUpon>TaxiPrinterCsv.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TaxiScan.aspx.designer.vb">
       <DependentUpon>TaxiScan.aspx</DependentUpon>
@@ -578,7 +571,6 @@
     <Content Include="ShisetsuKensaku.aspx" />
     <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
-    <Content Include="TaxiCsv.aspx" />
     <Content Include="TaxiMenu.aspx" />
     <Content Include="TaxiPrinterCsv.aspx" />
     <Content Include="TaxiScan.aspx" />

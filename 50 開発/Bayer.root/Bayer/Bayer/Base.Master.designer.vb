@@ -142,6 +142,33 @@ Partial Public Class Base
     Protected WithEvents LabelPageTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''SpnTaxiMenu コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SpnTaxiMenu As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Image3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Image3 As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''LnkBTaxiMenu コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LnkBTaxiMenu As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''SpnMenu コントロール。
     '''</summary>
     '''<remarks>

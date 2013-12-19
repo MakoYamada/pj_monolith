@@ -5,6 +5,7 @@ Partial Public Class Base
 
     '変数定義
     Private pHideMenu As Boolean
+    Private pDispTaxiMenu As Boolean
     Private pHideLogout As Boolean
     Private pHideLoginUser As Boolean
     Private pPageTitle As String
@@ -16,6 +17,14 @@ Partial Public Class Base
         End Get
         Set(ByVal value As Boolean)
             pHideMenu = value
+        End Set
+    End Property
+    Public Property DispTaxiMenu() As Boolean
+        Get
+            Return pDispTaxiMenu
+        End Get
+        Set(ByVal value As Boolean)
+            pDispTaxiMenu = value
         End Set
     End Property
     Public Property HideLogout() As Boolean
@@ -77,6 +86,15 @@ Partial Public Class Base
             Me.LnkBMenu.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
         End If
 
+        '[タクシーチケット管理メニューへ]
+        If pDispTaxiMenu = False Then
+            Me.SpnTaxiMenu.Visible = False
+        Else
+            Me.SpnTaxiMenu.Visible = True
+            Me.Image1.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
+            Me.LnkBTaxiMenu.Style(CmnConst.Html.Style.VerticalAlign) = "middle"
+        End If
+
         '[ログアウト]
         If pHideLogout = True Then
             pHideLogout = True
@@ -116,6 +134,14 @@ Partial Public Class Base
         MyModule.ClearSession()
 
         Response.Redirect(URL.Menu)
+    End Sub
+
+    '[タクシーチケット管理メニューへ]
+    Protected Sub LnkBTaxiMenu_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBTaxiMenu.Click
+        '不要なセッションを破棄
+        MyModule.ClearSession()
+
+        Response.Redirect(URL.TaxiMenu)
     End Sub
 
 End Class

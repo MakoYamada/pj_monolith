@@ -5,11 +5,11 @@ Partial Public Class TaxiPrinterCsv
 
     <Serializable()> Private Structure AnsTaxiStructure
         Implements IComparable
-        Dim ANS_TAXI_DATE As String
-        Dim ANS_TAXI_KENSHU As String
-        Dim ANS_TKT_NO As Integer
+        Dim TAXI_DATE As String
+        Dim TAXI_KENSHU As String
+        Dim TKT_LINE_NO As Integer
         Public Function CompareTo(ByVal obj As Object) As Integer Implements IComparable.CompareTo
-            Return Me.ANS_TAXI_DATE.CompareTo(DirectCast(obj, AnsTaxiStructure).ANS_TAXI_DATE)
+            Return Me.TAXI_DATE.CompareTo(DirectCast(obj, AnsTaxiStructure).TAXI_DATE)
         End Function
     End Structure
 
@@ -32,6 +32,7 @@ Partial Public Class TaxiPrinterCsv
 
         'マステーページ設定
         With Me.Master
+            .DispTaxiMenu = True
             .PageTitle = "タクシーチケット印刷データ作成"
         End With
     End Sub
@@ -532,7 +533,7 @@ Partial Public Class TaxiPrinterCsv
     Private Function CsvData(ByVal LineNo As Integer, ByVal TAXI_HAKKO_DATE As String, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct, ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As System.Text.StringBuilder
         Dim ANS_TAXI_DATE As String = GetANS_TAXI_DATE(LineNo, TBL_KOTSUHOTEL)
         Dim ANS_TAXI_KENSHU As String = GetANS_TAXI_KENSHU(LineNo, TBL_KOTSUHOTEL)
-        Dim ANS_TKT_NO As String = GetANS_TKT_NO(LineNo, TBL_KOTSUHOTEL)
+        Dim TKT_LINE_NO As String = GetTKT_LINE_NO(LineNo, TBL_KOTSUHOTEL)
         Dim sb As New System.Text.StringBuilder
 
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE(ANS_TAXI_DATE))))
@@ -547,7 +548,7 @@ Partial Public Class TaxiPrinterCsv
                                                TBL_KOTSUHOTEL.KOUENKAI_NO, _
                                                TBL_KOTSUHOTEL.TIME_STAMP_BYL, _
                                                TBL_KOTSUHOTEL.DR_MPID, _
-                                               ANS_TKT_NO, _
+                                               TKT_LINE_NO, _
                                                TAXI_HAKKO_DATE, _
                                                ANS_TAXI_KENSHU)), True))
 
@@ -610,30 +611,30 @@ Partial Public Class TaxiPrinterCsv
 
         Return wStr
     End Function
-    Private Function GetANS_TKT_NO(ByVal LineNo As Integer, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
+    Private Function GetTKT_LINE_NO(ByVal LineNo As Integer, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
         Dim wStr As String = ""
 
         Select Case LineNo
-            Case 1 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_1
-            Case 2 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_2
-            Case 3 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_3
-            Case 4 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_4
-            Case 5 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_5
-            Case 6 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_6
-            Case 7 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_7
-            Case 8 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_8
-            Case 9 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_9
-            Case 10 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_10
-            Case 11 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_11
-            Case 12 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_12
-            Case 13 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_13
-            Case 14 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_14
-            Case 15 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_15
-            Case 16 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_16
-            Case 17 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_17
-            Case 18 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_18
-            Case 19 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_19
-            Case 20 : wStr = TBL_KOTSUHOTEL.ANS_TKT_NO_20
+            Case 1 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_1
+            Case 2 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_2
+            Case 3 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_3
+            Case 4 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_4
+            Case 5 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_5
+            Case 6 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_6
+            Case 7 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_7
+            Case 8 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_8
+            Case 9 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_9
+            Case 10 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_10
+            Case 11 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_11
+            Case 12 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_12
+            Case 13 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_13
+            Case 14 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_14
+            Case 15 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_15
+            Case 16 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_16
+            Case 17 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_17
+            Case 18 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_18
+            Case 19 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_19
+            Case 20 : wStr = TBL_KOTSUHOTEL.TKT_LINE_NO_20
         End Select
 
         Return wStr
@@ -684,63 +685,63 @@ Partial Public Class TaxiPrinterCsv
         Return Mid(TAXI_HAKKO_DATE, 1, 4) & "/" & CInt(Mid(TAXI_HAKKO_DATE, 5, 2)).ToString & "/" & CInt(Mid(TAXI_HAKKO_DATE, 7, 2)).ToString
     End Function
 
-    Private Function GetName_BARCODE(ByVal SALEFORCE_ID As String, ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String, ByVal DR_MPID As String, ByVal ANS_TKT_NO As String, ByVal ANS_TAXI_HAKKO_DATE As String, ByVal ANS_TAXI_KENSHU As String) As String
+    Private Function GetName_BARCODE(ByVal SALEFORCE_ID As String, ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String, ByVal DR_MPID As String, ByVal TKT_LINE_NO As String, ByVal TAXI_HAKKO_DATE As String, ByVal TAXI_KENSHU As String) As String
         Dim wBARCODE As String = ""
         Dim wStr As String = ""
 
         '固定長、右スペース埋め
 
-        'セールスフォースID
-        wBARCODE &= Trim(SALEFORCE_ID).PadRight(MyModule.Csv.TaxiBarcode.Length.SALEFORCE_ID, "*")
+        'SalesForceID
+        wBARCODE &= Trim(SALEFORCE_ID).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.SALEFORCE_ID, " ")
         '参加者ID
-        wBARCODE &= Trim(SANKASHA_ID).PadRight(MyModule.Csv.TaxiBarcode.Length.SANKASHA_ID, "*")
+        wBARCODE &= Trim(SANKASHA_ID).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.SANKASHA_ID, " ")
         '講演会番号
-        wBARCODE &= Trim(KOUENKAI_NO).PadRight(MyModule.Csv.TaxiBarcode.Length.KOUENKAI_NO, "*")
+        wBARCODE &= Trim(KOUENKAI_NO).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.KOUENKAI_NO, " ")
         'タイムスタンプBYL
-        wBARCODE &= Trim(TIME_STAMP_BYL).PadRight(MyModule.Csv.TaxiBarcode.Length.TIME_STAMP_BYL, "*")
+        wBARCODE &= Trim(TIME_STAMP_BYL).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TIME_STAMP_BYL, " ")
         'DR_MPID
-        wBARCODE &= Trim(DR_MPID).PadRight(MyModule.Csv.TaxiBarcode.Length.DR_MPID, "*")
+        wBARCODE &= Trim(DR_MPID).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.DR_MPID, " ")
         '行番号
-        wBARCODE &= Trim(ANS_TKT_NO).PadRight(MyModule.Csv.TaxiBarcode.Length.ANS_TKT_NO, "*")
+        wBARCODE &= Trim(TKT_LINE_NO).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TKT_LINE_NO, " ")
         '発行日
-        wBARCODE &= Trim(Mid(ANS_TAXI_HAKKO_DATE, 1, MyModule.Csv.TaxiBarcode.Length.ANS_TAXI_HAKKO_DATE)).PadRight(MyModule.Csv.TaxiBarcode.Length.ANS_TAXI_HAKKO_DATE, "*")
+        wBARCODE &= Trim(Mid(taXI_HAKKO_DATE, 1, MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TAXI_HAKKO_DATE)).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TAXI_HAKKO_DATE, " ")
         'タクシー会社
-        If Mid(ANS_TAXI_KENSHU, 1, 2).ToUpper = "TK" Then
+        If Mid(TAXI_KENSHU, 1, 2).ToUpper = "TK" Then
             wStr = "TK"
-        ElseIf Mid(ANS_TAXI_KENSHU, 1, 2).ToUpper = "NG" Then
+        ElseIf Mid(TAXI_KENSHU, 1, 2).ToUpper = "NG" Then
             wStr = "NG"
         Else
             wStr = "DC"
         End If
-        wBARCODE &= wStr.PadRight(MyModule.Csv.TaxiBarcode.Length.TKT_KAISHA, "*")
+        wBARCODE &= wStr.PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TKT_KAISHA, " ")
         '券種
-        wBARCODE &= Trim(ANS_TAXI_KENSHU).PadRight(MyModule.Csv.TaxiBarcode.Length.ANS_TAXI_KENSHU, "*")
+        wBARCODE &= Trim(TAXI_KENSHU).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TAXI_KENSHU, " ")
 
         Return wBARCODE
     End Function
 
-    Private Function GetName_ANS_TKT_NO(ByVal ANS_TKT_NO As Integer, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
-        Select Case ANS_TKT_NO
-            Case 1 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_1
-            Case 2 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_2
-            Case 3 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_3
-            Case 4 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_4
-            Case 5 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_5
-            Case 6 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_6
-            Case 7 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_7
-            Case 8 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_8
-            Case 9 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_9
-            Case 10 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_10
-            Case 11 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_11
-            Case 12 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_12
-            Case 13 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_13
-            Case 14 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_14
-            Case 15 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_15
-            Case 16 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_16
-            Case 17 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_17
-            Case 18 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_18
-            Case 19 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_19
-            Case 20 : Return TBL_KOTSUHOTEL.ANS_TKT_NO_20
+    Private Function GetName_TKT_LINE_NO(ByVal TKT_LINE_NO As Integer, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
+        Select Case TKT_LINE_NO
+            Case 1 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_1
+            Case 2 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_2
+            Case 3 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_3
+            Case 4 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_4
+            Case 5 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_5
+            Case 6 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_6
+            Case 7 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_7
+            Case 8 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_8
+            Case 9 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_9
+            Case 10 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_10
+            Case 11 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_11
+            Case 12 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_12
+            Case 13 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_13
+            Case 14 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_14
+            Case 15 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_15
+            Case 16 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_16
+            Case 17 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_17
+            Case 18 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_18
+            Case 19 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_19
+            Case 20 : Return TBL_KOTSUHOTEL.TKT_LINE_NO_20
             Case Else : Return ""
         End Select
     End Function
@@ -748,131 +749,131 @@ Partial Public Class TaxiPrinterCsv
     '利用日1～20の降順にソートして再設定
     Private Function SortAnsTaxi(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As TableDef.TBL_KOTSUHOTEL.DataStruct
         Dim AnsTaxiData(19) As AnsTaxiStructure
-        AnsTaxiData(0).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_1
-        AnsTaxiData(1).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_2
-        AnsTaxiData(2).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_3
-        AnsTaxiData(3).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_4
-        AnsTaxiData(4).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_5
-        AnsTaxiData(5).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_6
-        AnsTaxiData(6).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_7
-        AnsTaxiData(7).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_8
-        AnsTaxiData(8).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_9
-        AnsTaxiData(9).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_10
-        AnsTaxiData(10).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_11
-        AnsTaxiData(11).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_12
-        AnsTaxiData(12).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_13
-        AnsTaxiData(13).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_14
-        AnsTaxiData(14).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_15
-        AnsTaxiData(15).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_16
-        AnsTaxiData(16).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_17
-        AnsTaxiData(17).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_18
-        AnsTaxiData(18).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_19
-        AnsTaxiData(19).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_20
-        AnsTaxiData(0).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1
-        AnsTaxiData(1).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2
-        AnsTaxiData(2).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3
-        AnsTaxiData(3).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4
-        AnsTaxiData(4).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5
-        AnsTaxiData(5).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6
-        AnsTaxiData(6).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7
-        AnsTaxiData(7).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8
-        AnsTaxiData(8).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9
-        AnsTaxiData(9).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10
-        AnsTaxiData(10).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11
-        AnsTaxiData(11).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12
-        AnsTaxiData(12).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13
-        AnsTaxiData(13).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14
-        AnsTaxiData(14).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15
-        AnsTaxiData(15).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16
-        AnsTaxiData(16).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17
-        AnsTaxiData(17).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18
-        AnsTaxiData(18).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19
-        AnsTaxiData(19).ANS_TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20
-        AnsTaxiData(0).ANS_TKT_NO = 1
-        AnsTaxiData(1).ANS_TKT_NO = 2
-        AnsTaxiData(2).ANS_TKT_NO = 3
-        AnsTaxiData(3).ANS_TKT_NO = 4
-        AnsTaxiData(4).ANS_TKT_NO = 5
-        AnsTaxiData(5).ANS_TKT_NO = 6
-        AnsTaxiData(6).ANS_TKT_NO = 7
-        AnsTaxiData(7).ANS_TKT_NO = 8
-        AnsTaxiData(8).ANS_TKT_NO = 9
-        AnsTaxiData(9).ANS_TKT_NO = 10
-        AnsTaxiData(10).ANS_TKT_NO = 11
-        AnsTaxiData(11).ANS_TKT_NO = 12
-        AnsTaxiData(12).ANS_TKT_NO = 13
-        AnsTaxiData(13).ANS_TKT_NO = 14
-        AnsTaxiData(14).ANS_TKT_NO = 15
-        AnsTaxiData(15).ANS_TKT_NO = 16
-        AnsTaxiData(16).ANS_TKT_NO = 17
-        AnsTaxiData(17).ANS_TKT_NO = 18
-        AnsTaxiData(18).ANS_TKT_NO = 19
-        AnsTaxiData(19).ANS_TKT_NO = 20
+        AnsTaxiData(0).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_1
+        AnsTaxiData(1).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_2
+        AnsTaxiData(2).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_3
+        AnsTaxiData(3).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_4
+        AnsTaxiData(4).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_5
+        AnsTaxiData(5).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_6
+        AnsTaxiData(6).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_7
+        AnsTaxiData(7).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_8
+        AnsTaxiData(8).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_9
+        AnsTaxiData(9).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_10
+        AnsTaxiData(10).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_11
+        AnsTaxiData(11).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_12
+        AnsTaxiData(12).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_13
+        AnsTaxiData(13).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_14
+        AnsTaxiData(14).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_15
+        AnsTaxiData(15).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_16
+        AnsTaxiData(16).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_17
+        AnsTaxiData(17).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_18
+        AnsTaxiData(18).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_19
+        AnsTaxiData(19).TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_20
+        AnsTaxiData(0).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1
+        AnsTaxiData(1).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2
+        AnsTaxiData(2).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3
+        AnsTaxiData(3).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4
+        AnsTaxiData(4).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5
+        AnsTaxiData(5).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6
+        AnsTaxiData(6).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7
+        AnsTaxiData(7).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8
+        AnsTaxiData(8).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9
+        AnsTaxiData(9).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10
+        AnsTaxiData(10).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11
+        AnsTaxiData(11).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12
+        AnsTaxiData(12).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13
+        AnsTaxiData(13).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14
+        AnsTaxiData(14).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15
+        AnsTaxiData(15).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16
+        AnsTaxiData(16).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17
+        AnsTaxiData(17).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18
+        AnsTaxiData(18).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19
+        AnsTaxiData(19).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20
+        AnsTaxiData(0).TKT_LINE_NO = 1
+        AnsTaxiData(1).TKT_LINE_NO = 2
+        AnsTaxiData(2).TKT_LINE_NO = 3
+        AnsTaxiData(3).TKT_LINE_NO = 4
+        AnsTaxiData(4).TKT_LINE_NO = 5
+        AnsTaxiData(5).TKT_LINE_NO = 6
+        AnsTaxiData(6).TKT_LINE_NO = 7
+        AnsTaxiData(7).TKT_LINE_NO = 8
+        AnsTaxiData(8).TKT_LINE_NO = 9
+        AnsTaxiData(9).TKT_LINE_NO = 10
+        AnsTaxiData(10).TKT_LINE_NO = 11
+        AnsTaxiData(11).TKT_LINE_NO = 12
+        AnsTaxiData(12).TKT_LINE_NO = 13
+        AnsTaxiData(13).TKT_LINE_NO = 14
+        AnsTaxiData(14).TKT_LINE_NO = 15
+        AnsTaxiData(15).TKT_LINE_NO = 16
+        AnsTaxiData(16).TKT_LINE_NO = 17
+        AnsTaxiData(17).TKT_LINE_NO = 18
+        AnsTaxiData(18).TKT_LINE_NO = 19
+        AnsTaxiData(19).TKT_LINE_NO = 20
 
         '降順ソート
         Array.Reverse(AnsTaxiData)
 
         '構造体に戻す
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 = AnsTaxiData(0).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 = AnsTaxiData(1).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 = AnsTaxiData(2).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 = AnsTaxiData(3).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 = AnsTaxiData(4).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 = AnsTaxiData(5).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 = AnsTaxiData(6).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 = AnsTaxiData(7).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 = AnsTaxiData(8).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 = AnsTaxiData(9).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 = AnsTaxiData(10).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 = AnsTaxiData(11).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 = AnsTaxiData(12).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 = AnsTaxiData(13).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 = AnsTaxiData(14).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 = AnsTaxiData(15).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 = AnsTaxiData(16).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 = AnsTaxiData(17).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 = AnsTaxiData(18).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 = AnsTaxiData(19).ANS_TAXI_DATE
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1 = AnsTaxiData(0).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2 = AnsTaxiData(1).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3 = AnsTaxiData(2).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4 = AnsTaxiData(3).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5 = AnsTaxiData(4).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6 = AnsTaxiData(5).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7 = AnsTaxiData(6).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8 = AnsTaxiData(7).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9 = AnsTaxiData(8).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10 = AnsTaxiData(9).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11 = AnsTaxiData(10).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12 = AnsTaxiData(11).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13 = AnsTaxiData(12).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14 = AnsTaxiData(13).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15 = AnsTaxiData(14).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16 = AnsTaxiData(15).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17 = AnsTaxiData(16).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18 = AnsTaxiData(17).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19 = AnsTaxiData(18).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20 = AnsTaxiData(19).ANS_TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TKT_NO_1 = AnsTaxiData(0).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_2 = AnsTaxiData(1).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_3 = AnsTaxiData(2).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_4 = AnsTaxiData(3).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_5 = AnsTaxiData(4).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_6 = AnsTaxiData(5).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_7 = AnsTaxiData(6).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_8 = AnsTaxiData(7).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_9 = AnsTaxiData(8).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_10 = AnsTaxiData(9).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_11 = AnsTaxiData(10).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_12 = AnsTaxiData(11).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_13 = AnsTaxiData(12).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_14 = AnsTaxiData(13).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_15 = AnsTaxiData(14).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_16 = AnsTaxiData(15).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_17 = AnsTaxiData(16).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_18 = AnsTaxiData(17).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_19 = AnsTaxiData(18).ANS_TKT_NO
-        TBL_KOTSUHOTEL.ANS_TKT_NO_20 = AnsTaxiData(19).ANS_TKT_NO
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 = AnsTaxiData(0).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 = AnsTaxiData(1).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 = AnsTaxiData(2).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 = AnsTaxiData(3).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 = AnsTaxiData(4).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 = AnsTaxiData(5).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 = AnsTaxiData(6).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 = AnsTaxiData(7).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 = AnsTaxiData(8).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 = AnsTaxiData(9).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 = AnsTaxiData(10).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 = AnsTaxiData(11).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 = AnsTaxiData(12).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 = AnsTaxiData(13).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 = AnsTaxiData(14).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 = AnsTaxiData(15).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 = AnsTaxiData(16).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 = AnsTaxiData(17).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 = AnsTaxiData(18).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 = AnsTaxiData(19).TAXI_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1 = AnsTaxiData(0).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2 = AnsTaxiData(1).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3 = AnsTaxiData(2).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4 = AnsTaxiData(3).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5 = AnsTaxiData(4).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6 = AnsTaxiData(5).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7 = AnsTaxiData(6).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8 = AnsTaxiData(7).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9 = AnsTaxiData(8).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10 = AnsTaxiData(9).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11 = AnsTaxiData(10).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12 = AnsTaxiData(11).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13 = AnsTaxiData(12).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14 = AnsTaxiData(13).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15 = AnsTaxiData(14).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16 = AnsTaxiData(15).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17 = AnsTaxiData(16).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18 = AnsTaxiData(17).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19 = AnsTaxiData(18).TAXI_KENSHU
+        TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20 = AnsTaxiData(19).TAXI_KENSHU
+        TBL_KOTSUHOTEL.TKT_LINE_NO_1 = AnsTaxiData(0).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_2 = AnsTaxiData(1).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_3 = AnsTaxiData(2).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_4 = AnsTaxiData(3).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_5 = AnsTaxiData(4).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_6 = AnsTaxiData(5).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_7 = AnsTaxiData(6).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_8 = AnsTaxiData(7).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_9 = AnsTaxiData(8).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_10 = AnsTaxiData(9).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_11 = AnsTaxiData(10).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_12 = AnsTaxiData(11).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_13 = AnsTaxiData(12).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_14 = AnsTaxiData(13).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_15 = AnsTaxiData(14).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_16 = AnsTaxiData(15).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_17 = AnsTaxiData(16).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_18 = AnsTaxiData(17).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_19 = AnsTaxiData(18).TKT_LINE_NO
+        TBL_KOTSUHOTEL.TKT_LINE_NO_20 = AnsTaxiData(19).TKT_LINE_NO
 
         Return TBL_KOTSUHOTEL
     End Function
