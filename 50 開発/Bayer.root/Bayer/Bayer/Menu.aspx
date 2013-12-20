@@ -116,8 +116,7 @@
 					</tr>
 					<tr valign="top">
 						<td>
-							<asp:Button ID="BtnTaxiMenu" runat="server" Text="タクシーチケット管理へ" Width="200px" 
-                                CssClass="Button" Visible="False" />
+							<asp:Button ID="BtnTaxiMenu" runat="server" Text="タクシーチケット管理へ" Width="200px" CssClass="Button" />
 						</td>
 					</tr>
 				</table>
