@@ -316,6 +316,7 @@ Partial Public Class DrRegist
         CmnModule.SetIme(Me.ANS_MR_HOTEL_NOTE, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.ANS_HOTELHI, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_HOTELHI_TOZEI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ANS_HOTELHI_CANCEL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_RAIL_FARE, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_RAIL_CANCELLATION, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ANS_OTHER_FARE, CmnModule.ImeType.Disabled)
