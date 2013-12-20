@@ -5090,11 +5090,11 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function byKOUENKAI_NO_SANKASHA_ID(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
+        Public Shared Function byTKT_KAISHA_TKT_NO(ByVal TKT_KAISHA As String, ByVal TKT_NO As String) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
-            strSQL &= " AND TBL_TAXITICKET_HAKKO.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_KAISHA=N'" & CmnDb.SqlString(TKT_KAISHA) & "'"
+            strSQL &= " AND TBL_TAXITICKET_HAKKO.TKT_NO=N'" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
