@@ -3760,13 +3760,13 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ANS_AIR_FARE コントロール。
+    '''ANS_HOTELHI_CANCEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_HOTELHI_CANCEL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_OTHER_CANCELLATION コントロール。
@@ -3776,6 +3776,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_AIR_FARE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_AIR_CANCELLATION コントロール。

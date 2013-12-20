@@ -3497,7 +3497,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_RAIL_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="211"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="212"></asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>
@@ -3513,7 +3513,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_RAIL_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="212"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="213"></asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>
@@ -3528,15 +3528,15 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_OTHER_FARE" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="213"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="214"></asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitle">
-                            çqãÛåîë„
+                            DRèhîëéÊè¡óø
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_AIR_FARE" runat="server" MaxLength="10" 
+                            <asp:TextBox ID="ANS_HOTELHI_CANCEL" runat="server" MaxLength="10" 
                                 Height="18px" Width="85px" TabIndex="209"></asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
@@ -3544,7 +3544,16 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_OTHER_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="214"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="215"></asp:TextBox>â~                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitle">
+                            çqãÛåîë„
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+                            <asp:TextBox ID="ANS_AIR_FARE" runat="server" MaxLength="10" 
+                                Height="18px" Width="85px" TabIndex="210"></asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>
@@ -3553,7 +3562,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
                             <asp:TextBox ID="ANS_AIR_CANCELLATION" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="210"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="211"></asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>
@@ -3562,7 +3571,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_KOTSUHOTEL_TESURYO" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="215"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="216"></asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             É^ÉNÉ`ÉPî≠åîéËêîóø
@@ -3614,23 +3623,23 @@
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:100%">
 				    <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="óöóï\é¶" 
-                        CssClass="Button" TabIndex="220" />
+                        CssClass="Button" TabIndex="219" />
 					<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="éËîzèëàÛç¸" 
-                        CssClass="Button" TabIndex="221" />
+                        CssClass="Button" TabIndex="220" />
 					<asp:Button ID="BtnSoufujo2" runat="server" Width="150px" Text="ëóïtèÛàÛç¸" 
-                        CssClass="Button" TabIndex="222" Visible="False" />
+                        CssClass="Button" TabIndex="221" Visible="False" />
 					<asp:Button ID="BtnTaxiKakunin2" runat="server" Width="150px" Text="É^ÉNÉ`ÉPéËîzämîFï[àÛç¸" 
-                        CssClass="Button" TabIndex="223" Visible="False" />
+                        CssClass="Button" TabIndex="222" Visible="False" />
                 </td>
             </tr>
             <tr align="right" style="width:100%">
                 <td>
 				    <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="ìoò^" 
-                        CssClass="Button" TabIndex="224" />
+                        CssClass="Button" TabIndex="223" />
 				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIÇ÷" 
-                        CssClass="Button" TabIndex="225" />
+                        CssClass="Button" TabIndex="224" />
 					<asp:Button ID="BtnBack2" runat="server" Width="150px" Text="ñﬂÇÈ" 
-                        CssClass="Button" TabIndex="226" />
+                        CssClass="Button" TabIndex="225" />
 				</td>
 			</tr>
 		</table>

@@ -787,6 +787,7 @@ Partial Public Class DrRegist
         '各種代金
         AppModule.SetForm_ANS_HOTELHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI, Me.ANS_HOTELHI)
         AppModule.SetForm_ANS_HOTELHI_TOZEI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_TOZEI)
+        AppModule.SetForm_ANS_HOTELHI_CANCEL(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_CANCEL, Me.ANS_HOTELHI_CANCEL)
         AppModule.SetForm_ANS_RAIL_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_FARE, Me.ANS_RAIL_FARE)
         AppModule.SetForm_ANS_RAIL_CANCELLATION(DSP_KOTSUHOTEL(DSP_SEQ).ANS_RAIL_CANCELLATION, Me.ANS_RAIL_CANCELLATION)
         AppModule.SetForm_ANS_OTHER_FARE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_OTHER_FARE, Me.ANS_OTHER_FARE)
@@ -1980,6 +1981,13 @@ Partial Public Class DrRegist
             Return False
         End If
 
+        '宿泊取消料
+        If Me.ANS_HOTELHI_CANCEL.Text.Trim <> String.Empty AndAlso _
+            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI_CANCEL) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊取消料"), Me)
+            Return False
+        End If
+
         'JR券代
         If Me.ANS_RAIL_FARE.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidKingaku(Me.ANS_RAIL_FARE) Then
@@ -2284,6 +2292,7 @@ Partial Public Class DrRegist
         '各種代金
         DSP_KOTSUHOTEL(SEQ).ANS_HOTELHI = AppModule.GetValue_ANS_HOTELHI(Me.ANS_HOTELHI)
         DSP_KOTSUHOTEL(SEQ).ANS_HOTELHI_TOZEI = AppModule.GetValue_ANS_HOTELHI_TOZEI(Me.ANS_HOTELHI_TOZEI)
+        DSP_KOTSUHOTEL(SEQ).ANS_HOTELHI_CANCEL = AppModule.GetValue_ANS_HOTELHI_CANCEL(Me.ANS_HOTELHI_CANCEL)
         DSP_KOTSUHOTEL(SEQ).ANS_RAIL_FARE = AppModule.GetValue_ANS_RAIL_FARE(Me.ANS_RAIL_FARE)
         DSP_KOTSUHOTEL(SEQ).ANS_RAIL_CANCELLATION = AppModule.GetValue_ANS_RAIL_CANCELLATION(Me.ANS_RAIL_CANCELLATION)
         DSP_KOTSUHOTEL(SEQ).ANS_OTHER_FARE = AppModule.GetValue_ANS_OTHER_FARE(Me.ANS_OTHER_FARE)

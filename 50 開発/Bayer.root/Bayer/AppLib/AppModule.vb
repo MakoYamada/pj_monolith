@@ -6145,6 +6145,11 @@ Public Class AppModule
         control.Text = ANS_HOTLHI_TOZEI
     End Sub
 
+    'h”‘”ï“sÅ
+    Public Shared Sub SetForm_ANS_HOTELHI_CANCEL(ByVal ANS_HOTELHI_CANCEL As String, ByRef control As TextBox)
+        control.Text = ANS_HOTELHI_CANCEL
+    End Sub
+
     'Ğˆõ—pŒğ’ÊEh”‘”õliˆË—Šj
     Public Shared Sub SetForm_REQ_MR_HOTEL_NOTE(ByVal REQ_MR_HOTEL_NOTE As String, ByRef control As TextBox)
         control.Text = REQ_MR_HOTEL_NOTE
@@ -7945,6 +7950,11 @@ Public Class AppModule
     'h”‘”ï“sÅ
     Public Shared Function GetValue_ANS_HOTELHI_TOZEI(ByVal ANS_HOTELHI_TOZEI As TextBox) As String
         Return Trim(StrConv(ANS_HOTELHI_TOZEI.Text, VbStrConv.Narrow))
+    End Function
+
+    'h”‘”ïæÁ—¿
+    Public Shared Function GetValue_ANS_HOTELHI_CANCEL(ByVal ANS_HOTELHI_CANCEL As TextBox) As String
+        Return Trim(StrConv(ANS_HOTELHI_CANCEL.Text, VbStrConv.Narrow))
     End Function
 
     'yŠm’èzJRE“S“¹‘ã‹à
