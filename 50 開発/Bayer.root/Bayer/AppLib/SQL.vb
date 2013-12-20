@@ -1167,6 +1167,26 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byKOUENKAI_NO_SANKASHA_ID_NEW(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOTSUHOTEL.TIME_STAMP_BYL=("
+            strSQL &= " SELECT MAX(TIME_STAMP_BYL)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            strSQL &= " WHERE"
+            strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO=WK_KOTSUHOTEL.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOTSUHOTEL.SANKASHA_ID=WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= " )"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function byKOUENKAI_NO_DR_MPID(ByVal KOUENKAI_NO As String, ByVal DR_MPID As String) As String
             Dim strSQL As String = SQL_SELECT
 
