@@ -5070,6 +5070,16 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byKOUENKAI_NO_SANKASHA_ID(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE WK_TAXITICKET_HAKKO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND WK_TAXITICKET_HAKKO.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
             Dim strSQL As String = ""
 
