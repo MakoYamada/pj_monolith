@@ -57,16 +57,19 @@ Public Class AppConst
                     Public Const Tehai As String = "1"
                     Public Const Change As String = "2"
                     Public Const Cancel As String = "3"
+                    Public Const Jigo As String = "4"
                 End Class
                 Public Class Name
                     Public Const Tehai As String = "V‹Kè”zˆË—Š"
                     Public Const Change As String = "•ÏXˆË—Š"
                     Public Const Cancel As String = "æÁˆË—Š"
+                    Public Const After As String = "–Œã“o˜^"
                 End Class
                 Public Class ShortName
                     Public Const Tehai As String = "V‹K"
                     Public Const Change As String = "•ÏX"
                     Public Const Cancel As String = "æÁ"
+                    Public Const After As String = "–Œã"
                 End Class
             End Class
             Public Class Answer

@@ -2358,6 +2358,12 @@ Public Class AppModule
                     Else
                         Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.Cancel
                     End If
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Jigo, AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.After
+                    If ShortName Then
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.ShortName.After
+                    Else
+                        Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Name.After
+                    End If
 
                 Case Else
                     Return ""
