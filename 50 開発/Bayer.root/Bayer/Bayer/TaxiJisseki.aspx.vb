@@ -57,20 +57,20 @@ Partial Public Class TaxiJisseki
         If Not Check() Then Exit Sub
 
         'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.NOUHIN_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.JISSEKI_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.JISSEKI_CSV))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK))
 
         '指定されたファイルをサーバに保存
         Try
-            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.NOUHIN_CSV) & FileUpload1.FileName)
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.JISSEKI_CSV) & FileUpload1.FileName)
         Catch ex As Exception
             CmnModule.AlertMessage("実績データをアップロードできませんでした。", Me)
             Exit Sub
         End Try
 
         'CSVファイルをタクチケTBLへImport
-        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
-        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.NOUHIN_CSV))
+        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.JISSEKI_CSV))
+        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.JISSEKI_CSV))
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
         If workFiles.Length = 0 Then
             'ログ登録
@@ -78,7 +78,7 @@ Partial Public Class TaxiJisseki
             Exit Sub
         End If
 
-        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.NOUHIN_CSV) & FileUpload1.FileName
+        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.JISSEKI_CSV) & FileUpload1.FileName
         ImportData(filePath, insCnt)
 
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, True, (insCnt * -1).ToString & "件のデータを登録しました。", MyBase.DbConnection)
@@ -86,9 +86,9 @@ Partial Public Class TaxiJisseki
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
         Try
-            File.Copy(filePath, Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK) & Path.GetFileName(filePath))
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK) & Path.GetFileName(filePath))
         Catch ex As Exception
-            File.Copy(filePath, Server.MapPath(WebConfig.Site.NOUHIN_CSV_BK) & Path.GetFileNameWithoutExtension(filePath) _
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK) & Path.GetFileNameWithoutExtension(filePath) _
                                                                     & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
         End Try
         File.Delete(filePath)
@@ -198,7 +198,7 @@ Partial Public Class TaxiJisseki
 
         TBL_TAXITICKET_HAKKO = SetUpdateData(fileData, strFileName, rowCnt)
         Try
-            strSQL = SQL.TBL_TAXITICKET_HAKKO.Insert(TBL_TAXITICKET_HAKKO)
+            strSQL = SQL.TBL_TAXITICKET_HAKKO.Update(TBL_TAXITICKET_HAKKO)
             insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
             Return True
@@ -225,7 +225,7 @@ Partial Public Class TaxiJisseki
                 Call SetItem(fileData)
 
                 '交通宿泊テーブル最新レコード取得
-                If GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_KOTSUHOTEL.SANKASHA_ID) Then
+                If GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_TAXITICKET_HAKKO.SANKASHA_ID) Then
                     '実績CSVに利用日・金額が設定されているが、DRが不参加の場合エンタ="E"
                     If fileData(COL_NO.USED_DATE).Trim <> "" And _
                         Val(fileData(COL_NO.URIAGE).Trim) <> 0 And _
@@ -383,5 +383,7 @@ Partial Public Class TaxiJisseki
         TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.URIAGE)
         TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = HAKKO_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO
+        TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
+        TBL_TAXITICKET_HAKKO.TKT_MIKETSU = "0"
     End Sub
 End Class
