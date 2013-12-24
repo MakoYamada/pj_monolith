@@ -30,7 +30,15 @@ Partial Public Class Preview
         If Not Page.IsPostBack Then
             '帳票出力            If URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が交通・宿泊手配回答登録画面の場合
-                PrintDrReport()
+                Select Case Session.Item(SessionDef.PrintPreview)
+                    Case "Tehaisho"
+                        '手配書印刷
+                        PrintDrReport()
+                    Case "Soufujo"
+                        '送付状印刷
+                    Case "TaxiKakuninhyo"
+                        'タクチケ手配確認票
+                End Select
             ElseIf URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が新着講演会一覧の場合
                 PrintNewKouenkaiList()
