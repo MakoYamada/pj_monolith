@@ -90,39 +90,61 @@ Partial Public Class TaxiScan
         Dim cReader As New System.IO.StreamReader(CsvPath, System.Text.Encoding.Default)
         Dim wSplit() As String
         Dim wLineCount As Integer = 0
-        Dim wStr As String = ""
+        Dim ErrorMessage As String = ""
 
         '読み込みできる文字がなくなるまで繰り返す
         While (cReader.Peek() >= 0)
             'ファイルを1行ずつ読み込む
             Dim stBuffer As String = cReader.ReadLine()
-            stBuffer = Replace(stBuffer, """", "")  'ダブルクォーテーション除去
+            'stBuffer = Replace(stBuffer, """", "")  'ダブルクォーテーション除去
 
             wLineCount += 1
 
-            'カンマが1つ以上あるか
             If Trim(stBuffer) <> "" Then
-                If InStr(stBuffer, ",") <= 0 Then
-                    wStr &= MessageDef.Error.Csv.NoComma(wLineCount) & vbNewLine
-                End If
-                wSplit = Split(stBuffer, ",")
-                '& vbNewLine 列数 フォーマットが決まったら復活
-                'If UBound(wSplit) <> 1 Then
-                '    wStr &= MessageDef.Error.csv.Format(wLineCount) & vbNewLine
-                'End If
+                'チェック
+                Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
+                Dim wLength As Integer = 1
 
-                If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)) = "" Then
-                    wStr &= MessageDef.Error.Csv.Invalid(wLineCount, "タクシーチケット番号") & vbNewLine
+                ScanData.SALEFORCE_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
+                wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
+                If ScanData.SALEFORCE_ID = "" Then
+                    ErrorMessage = "SalesForceID"
                 End If
-                If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.BARCODE)) = "" Then
-                    wStr &= MessageDef.Error.Csv.Invalid(wLineCount, "バーコード") & vbNewLine
-                Else
-                    Dim wBarcode As MyModule.Csv.TaxiScan.Barcode.DataStruct
-                    Dim ErrorMessage As String = ""
-                    wBarcode = CheckBarcode(ErrorMessage, wSplit(MyModule.Csv.TaxiScan.CsvIndex.BARCODE))
-                    If ErrorMessage <> "" Then
-                        wStr &= "(" & wLineCount.ToString & ") " & "バーコードが正しく読み取れません。【" & ErrorMessage & "】" & vbNewLine
-                    End If
+
+                ScanData.SANKASHA_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
+                wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
+                If ScanData.SANKASHA_ID = "" Then
+                    ErrorMessage = "参加者ID"
+                End If
+
+                ScanData.KOUENKAI_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
+                wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
+                If ScanData.KOUENKAI_NO = "" Then
+                    ErrorMessage = "講演会番号"
+                End If
+
+                ScanData.TIME_STAMP_BYL = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
+                wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
+                If ScanData.TIME_STAMP_BYL = "" Then
+                    ErrorMessage = "Timestamp(BYL)"
+                End If
+
+                ScanData.DR_MPID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
+                wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
+                If ScanData.DR_MPID = "" Then
+                    ErrorMessage = "MPID"
+                End If
+
+                ScanData.TKT_LINE_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
+                wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
+                If ScanData.TKT_LINE_NO = "" Then
+                    ErrorMessage = "行番号"
+                End If
+
+                ScanData.TKT_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
+                wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
+                If ScanData.TKT_NO = "" Then
+                    ErrorMessage = "タクシーチケット番号"
                 End If
             End If
         End While
@@ -130,125 +152,105 @@ Partial Public Class TaxiScan
         'cReader を閉じる (正しくは オブジェクトの破棄を保証する を参照)
         cReader.Close()
 
-        If Trim(wStr) <> "" Then
+        If Trim(ErrorMessage) <> "" Then
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
-            Me.ErrorMessage.Text = wStr
+            Me.ErrorMessage.Text = ErrorMessage
             Return False
         Else
             Return True
         End If
     End Function
 
-    'バーコード内のデータをチェック
-    Private Function CheckBarcode(ByRef ErrorMessage As String, ByVal Barcode As String) As MyModule.Csv.TaxiScan.Barcode.DataStruct
-        Dim wBarcode As MyModule.Csv.TaxiScan.Barcode.DataStruct
+    'Csvデータをチェック
+    Private Function CheckCsvData(ByRef ErrorMessage As String, ByVal CsvData As String) As MyModule.Csv.TaxiScan.DataStruct
+        Dim wCsvData As MyModule.Csv.TaxiScan.DataStruct
         Dim wLength As Integer = 1
 
-        If Trim(Barcode) = "" Then
+        If Trim(CsvData) = "" Then
             ErrorMessage = "値なし"
             Return Nothing
         End If
 
-        wBarcode.SALEFORCE_ID = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.SALEFORCE_ID))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.SALEFORCE_ID
-        If wBarcode.SALEFORCE_ID = "" Then
+        wCsvData.SALEFORCE_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
+        wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
+        If wCsvData.SALEFORCE_ID = "" Then
             ErrorMessage = "SalesForceID"
             Return Nothing
         End If
 
-        wBarcode.SANKASHA_ID = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.SANKASHA_ID))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.SANKASHA_ID
-        If wBarcode.SANKASHA_ID = "" Then
+        wCsvData.SANKASHA_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
+        wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
+        If wCsvData.SANKASHA_ID = "" Then
             ErrorMessage = "参加者ID"
             Return Nothing
         End If
 
-        wBarcode.KOUENKAI_NO = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.KOUENKAI_NO))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.KOUENKAI_NO
-        If wBarcode.KOUENKAI_NO = "" Then
+        wCsvData.KOUENKAI_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
+        wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
+        If wCsvData.KOUENKAI_NO = "" Then
             ErrorMessage = "講演会番号"
             Return Nothing
         End If
 
-        wBarcode.TIME_STAMP_BYL = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TIME_STAMP_BYL))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TIME_STAMP_BYL
-        If wBarcode.TIME_STAMP_BYL = "" Then
+        wCsvData.TIME_STAMP_BYL = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
+        wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
+        If wCsvData.TIME_STAMP_BYL = "" Then
             ErrorMessage = "Timestamp(BYL)"
             Return Nothing
         End If
 
-        wBarcode.DR_MPID = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.DR_MPID))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.DR_MPID
-        If wBarcode.DR_MPID = "" Then
+        wCsvData.DR_MPID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
+        wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
+        If wCsvData.DR_MPID = "" Then
             ErrorMessage = "MPID"
             Return Nothing
         End If
 
-        wBarcode.TKT_LINE_NO = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TKT_LINE_NO))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TKT_LINE_NO
-        If wBarcode.TKT_LINE_NO = "" Then
+        wCsvData.TKT_LINE_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
+        wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
+        If wCsvData.TKT_LINE_NO = "" Then
             ErrorMessage = "行番号"
             Return Nothing
         End If
 
-        wBarcode.TAXI_HAKKO_DATE = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TAXI_HAKKO_DATE))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TAXI_HAKKO_DATE
-        If wBarcode.TAXI_HAKKO_DATE = "" Then
-            ErrorMessage = "発行日"
+        wCsvData.TKT_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
+        wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
+        If wCsvData.TKT_NO = "" Then
+            ErrorMessage = "タクシーチケット番号"
             Return Nothing
         End If
-
-        wBarcode.TKT_KAISHA = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TKT_KAISHA))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TKT_KAISHA
-        If wBarcode.TKT_KAISHA = "" Then
-            ErrorMessage = "タクシー会社"
-            Return Nothing
-        End If
-
-        wBarcode.TAXI_KENSHU = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TAXI_KENSHU))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TAXI_KENSHU
-        If wBarcode.TAXI_KENSHU = "" Then
-            ErrorMessage = "券種"
-            Return Nothing
-        End If
-
-        Return wBarcode
+ 
+        Return wCsvData
     End Function
 
-    'バーコード内のデータを構造体にセット
-    Private Function SetBarcode(ByVal Barcode As String) As MyModule.Csv.TaxiScan.Barcode.DataStruct
-        Dim wBarcode As MyModule.Csv.TaxiScan.Barcode.DataStruct
+    'Csvのデータを構造体にセット
+    Private Function SetScanData(ByVal CsvData As String) As MyModule.Csv.TaxiScan.DataStruct
+        Dim wCsvData As MyModule.Csv.TaxiScan.DataStruct
         Dim wLength As Integer = 1
 
-        wBarcode.SALEFORCE_ID = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.SALEFORCE_ID))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.SALEFORCE_ID
+        wCsvData.SALEFORCE_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
+        wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
 
-        wBarcode.SANKASHA_ID = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.SANKASHA_ID))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.SANKASHA_ID
+        wCsvData.SANKASHA_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
+        wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
 
-        wBarcode.KOUENKAI_NO = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.KOUENKAI_NO))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.KOUENKAI_NO
+        wCsvData.KOUENKAI_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
+        wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
 
-        wBarcode.TIME_STAMP_BYL = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TIME_STAMP_BYL))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TIME_STAMP_BYL
+        wCsvData.TIME_STAMP_BYL = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
+        wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
 
-        wBarcode.DR_MPID = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.DR_MPID))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.DR_MPID
+        wCsvData.DR_MPID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
+        wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
 
-        wBarcode.TKT_LINE_NO = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TKT_LINE_NO))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TKT_LINE_NO
+        wCsvData.TKT_LINE_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
+        wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
 
-        wBarcode.TAXI_HAKKO_DATE = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TAXI_HAKKO_DATE))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TAXI_HAKKO_DATE
+        wCsvData.TKT_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
+        wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
 
-        wBarcode.TKT_KAISHA = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TKT_KAISHA))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TKT_KAISHA
-
-        wBarcode.TAXI_KENSHU = Trim(Mid(Barcode, wLength, MyModule.Csv.TaxiScan.Barcode.Length.TAXI_KENSHU))
-        wLength += MyModule.Csv.TaxiScan.Barcode.Length.TAXI_KENSHU
-
-        Return wBarcode
+        Return wCsvData
     End Function
 
     'Csv読込 → DB展開
@@ -288,23 +290,19 @@ Partial Public Class TaxiScan
  
                 ReDim Preserve TBL_TAXITICKET_HAKKO(wCnt)
 
-                'タクチケ番号
-                TBL_TAXITICKET_HAKKO(wCnt).TKT_NO = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))
+                Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
+                ScanData = SetScanData(stBuffer)
 
-                'バーコード
-                Dim Barcode As MyModule.Csv.TaxiScan.Barcode.DataStruct
-                Barcode = SetBarcode(wSplit(MyModule.Csv.TaxiScan.CsvIndex.BARCODE))
+                TBL_TAXITICKET_HAKKO(wCnt).SALEFORCE_ID = Trim(ScanData.SALEFORCE_ID)
+                TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID = Trim(ScanData.SANKASHA_ID)
+                TBL_TAXITICKET_HAKKO(wCnt).KOUENKAI_NO = Trim(ScanData.KOUENKAI_NO)
+                TBL_TAXITICKET_HAKKO(wCnt).TIME_STAMP_BYL = Trim(ScanData.TIME_STAMP_BYL)
+                TBL_TAXITICKET_HAKKO(wCnt).DR_MPID = Trim(ScanData.DR_MPID)
+                TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO = Trim(ScanData.TKT_LINE_NO)
+                TBL_TAXITICKET_HAKKO(wCnt).TKT_NO = Trim(ScanData.TKT_NO)
 
-                TBL_TAXITICKET_HAKKO(wCnt).SALEFORCE_ID = Trim(Barcode.SALEFORCE_ID)
-                TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID = Trim(Barcode.SANKASHA_ID)
-                TBL_TAXITICKET_HAKKO(wCnt).KOUENKAI_NO = Trim(Barcode.KOUENKAI_NO)
-                TBL_TAXITICKET_HAKKO(wCnt).TIME_STAMP_BYL = Trim(Barcode.TIME_STAMP_BYL)
-                TBL_TAXITICKET_HAKKO(wCnt).DR_MPID = Trim(Barcode.DR_MPID)
-                TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO = Trim(Barcode.TKT_LINE_NO)
-                TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE = Trim(Barcode.TAXI_HAKKO_DATE)
-                TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = Trim(Barcode.TKT_KAISHA)
-                TBL_TAXITICKET_HAKKO(wCnt).TAXI_KENSHU = Trim(Barcode.TAXI_KENSHU)
-
+                '発行日
+                TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE = CmnModule.GetSysDate()
                 '発行手数料
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_HAKKO_FEE = TKT_HAKKO_FEE
 
@@ -312,6 +310,79 @@ Partial Public Class TaxiScan
             End If
         End While
         CsvData.Close()
+
+        '交通宿泊テーブル 読込
+        'タクシー会社、券種取得
+        ReDim TBL_KOTSUHOTEL(UBound(TBL_TAXITICKET_HAKKO))
+        For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
+            strSQL = SQL.TBL_KOTSUHOTEL.TaxiScanCsv(TBL_TAXITICKET_HAKKO(wCnt))
+            RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+            If RsData.Read() Then
+                Select Case Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
+                    Case 1
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1, RsData))
+                    Case 2
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2, RsData))
+                    Case 3
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3, RsData))
+                    Case 4
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4, RsData))
+                    Case 5
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5, RsData))
+                    Case 6
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6, RsData))
+                    Case 7
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7, RsData))
+                    Case 8
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8, RsData))
+                    Case 9
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9, RsData))
+                    Case 10
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10, RsData))
+                    Case 11
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11, RsData))
+                    Case 12
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12, RsData))
+                    Case 13
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13, RsData))
+                    Case 14
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14, RsData))
+                    Case 15
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15, RsData))
+                    Case 16
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16, RsData))
+                    Case 17
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17, RsData))
+                    Case 18
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18, RsData))
+                    Case 19
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19, RsData))
+                    Case 20
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20, RsData))
+                End Select
+            End If
+            RsData.Close()
+        Next wCnt
 
         '交通宿泊テーブル 更新用
         ReDim TBL_KOTSUHOTEL(UBound(TBL_TAXITICKET_HAKKO))
@@ -408,6 +479,21 @@ Partial Public Class TaxiScan
         'End Try
 
         Return True
+    End Function
+
+    Private Function GetName_TAXI_KENSHU(ByVal TAXI_KENSHU As String) As String
+        Return Trim(TAXI_KENSHU)
+    End Function
+
+    Private Function GetName_TKT_KAISHA(ByVal TAXI_KENSHU As String) As String
+        Dim wStr As String = TAXI_KENSHU.ToUpper
+        If InStr(wStr, "TK") > 0 Then
+            Return "TK"
+        ElseIf InStr(wStr, "NG") > 0 Then
+            Return "NG"
+        Else
+            Return "DC"
+        End If
     End Function
 
 End Class

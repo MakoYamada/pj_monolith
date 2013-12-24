@@ -82,35 +82,46 @@ Partial Public Class TaxiPrinterCsv
 
         '券種毎にCsv作成
         Dim TAXI_HAKKO_DATE As String = Now.ToString("yyyyMMddHHmm")
+        Dim KENSHU() As String
+
+        wCnt = 0
+        wFlag = False
+        ReDim KENSHU(wCnt)
+        strSQL = SQL.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_KENSHU)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve KENSHU(wCnt)
+            KENSHU(wCnt) = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
+            wCnt += 1
+        End While
+        RsData.Close()
+        Dim wKenshuCnt As Integer = UBound(KENSHU)
+
+        'コードマスタ無はエラー
+        If wFlag = False Then
+            CmnModule.AlertMessage("券種の設定が正しくありません。コードマスタを再確認してください。", Me)
+            Exit Sub
+        End If
 
         'ファイル作成
         Dim CsvPath() As String
-        ReDim CsvPath(5)
+        Dim sb() As System.Text.StringBuilder
+        Dim sw() As System.IO.StreamWriter
+        ReDim CsvPath(wKenshuCnt - 1)
+        ReDim sb(wKenshuCnt - 1)
+        ReDim sw(wKenshuCnt - 1)
 
-        CsvPath(0) = WebConfig.Path.TaxiPrintCsv & "DC3000_" & TAXI_HAKKO_DATE & ".csv"
-        Dim sb3000 As New System.Text.StringBuilder
-        Dim sw3000 As System.IO.StreamWriter
-        sw3000 = New System.IO.StreamWriter(CsvPath(0), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
-
-        CsvPath(1) = WebConfig.Path.TaxiPrintCsv & "DC5000_" & TAXI_HAKKO_DATE & ".csv"
-        Dim sb5000 As New System.Text.StringBuilder
-        Dim sw5000 As System.IO.StreamWriter
-        sw5000 = New System.IO.StreamWriter(CsvPath(1), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
-
-        CsvPath(2) = WebConfig.Path.TaxiPrintCsv & "DC10000_" & TAXI_HAKKO_DATE & ".csv"
-        Dim sb10000 As New System.Text.StringBuilder
-        Dim sw10000 As System.IO.StreamWriter
-        sw10000 = New System.IO.StreamWriter(CsvPath(2), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
-
-        CsvPath(3) = WebConfig.Path.TaxiPrintCsv & "TK10000_" & TAXI_HAKKO_DATE & ".csv"
-        Dim sbTK10000 As New System.Text.StringBuilder
-        Dim swTK10000 As System.IO.StreamWriter
-        swTK10000 = New System.IO.StreamWriter(CsvPath(3), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
-
-        CsvPath(4) = WebConfig.Path.TaxiPrintCsv & "NG5000_" & TAXI_HAKKO_DATE & ".csv"
-        Dim sbNG5000 As New System.Text.StringBuilder
-        Dim swNG5000 As System.IO.StreamWriter
-        swNG5000 = New System.IO.StreamWriter(CsvPath(4), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
+        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+            If CmnCheck.IsNumberOnly(KENSHU(wKenshuCnt)) Then
+                '数字のみ＝頭にDCをつける
+                CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & "DC" & KENSHU(wKenshuCnt) & "_" & TAXI_HAKKO_DATE & ".csv"
+            Else
+                CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & KENSHU(wKenshuCnt) & "_" & TAXI_HAKKO_DATE & ".csv"
+            End If
+            sb(wKenshuCnt) = New System.Text.StringBuilder
+            sw(wKenshuCnt) = New System.IO.StreamWriter(CsvPath(wKenshuCnt), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
+        Next wKenshuCnt
 
         '交通宿泊テーブル→Csv出力
         For wCnt = LBound(TBL_KOUENKAI) To UBound(TBL_KOUENKAI)
@@ -123,374 +134,106 @@ Partial Public Class TaxiPrinterCsv
 
                 '利用日1～20の降順にソートして再設定
                 TBL_KOTSUHOTEL = SortAnsTaxi(TBL_KOTSUHOTEL)
-
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1
-                    Case "3000"
-                        sb3000.Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2
-                    Case "3000"
-                        sb3000.Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3
-                    Case "3000"
-                        sb3000.Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4
-                    Case "3000"
-                        sb3000.Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5
-                    Case "3000"
-                        sb3000.Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6
-                    Case "3000"
-                        sb3000.Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7
-                    Case "3000"
-                        sb3000.Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8
-                    Case "3000"
-                        sb3000.Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9
-                    Case "3000"
-                        sb3000.Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10
-                    Case "3000"
-                        sb3000.Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11
-                    Case "3000"
-                        sb3000.Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12
-                    Case "3000"
-                        sb3000.Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13
-                    Case "3000"
-                        sb3000.Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14
-                    Case "3000"
-                        sb3000.Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15
-                    Case "3000"
-                        sb3000.Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16
-                    Case "3000"
-                        sb3000.Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17
-                    Case "3000"
-                        sb3000.Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18
-                    Case "3000"
-                        sb3000.Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19
-                    Case "3000"
-                        sb3000.Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
-                Select Case TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20
-                    Case "3000"
-                        sb3000.Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb3000.Append(vbNewLine)
-                    Case "5000"
-                        sb5000.Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb5000.Append(vbNewLine)
-                    Case "10000"
-                        sb10000.Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sb10000.Append(vbNewLine)
-                    Case "TK10000"
-                        sbTK10000.Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbTK10000.Append(vbNewLine)
-                    Case "NG5000"
-                        sbNG5000.Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                        sbNG5000.Append(vbNewLine)
-                End Select
+                For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                    If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
+                        sb(wKenshuCnt).Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(vbNewLine)
+                    End If
+                Next
             End While
             RsData.Close()
         Next wCnt
 
         '書き込み
-        sw3000.Write(sb3000)
-        sw3000.Close()
-        sw5000.Write(sb5000)
-        sw5000.Close()
-        sw10000.Write(sb10000)
-        sw10000.Close()
-        swTK10000.Write(sbTK10000)
-        swTK10000.Close()
-        swNG5000.Write(sbNG5000)
-        swNG5000.Close()
+        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+            sw(wKenshuCnt).Write(sb(wKenshuCnt))
+            sw(wKenshuCnt).Close()
+        Next wKenshuCnt
 
         'Zipファイル名
         Dim ZipFileName As String = "PrintData_" & TAXI_HAKKO_DATE & ".zip"
         Dim ZipPath As String = WebConfig.Path.TaxiPrintCsv & ZipFileName
         'Zip作成
         Using zip As New Ionic.Zip.ZipFile
-            zip.AddFile(CsvPath(0), "")
-            zip.AddFile(CsvPath(1), "")
-            zip.AddFile(CsvPath(2), "")
-            zip.AddFile(CsvPath(3), "")
-            zip.AddFile(CsvPath(4), "")
-
+            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+                zip.AddFile(CsvPath(wKenshuCnt), "")
+            Next wKenshuCnt
             zip.Save(ZipPath)
         End Using
 
@@ -499,11 +242,9 @@ Partial Public Class TaxiPrinterCsv
 
         'Csv削除
         Try
-            System.IO.File.Delete(CsvPath(0))
-            System.IO.File.Delete(CsvPath(1))
-            System.IO.File.Delete(CsvPath(2))
-            System.IO.File.Delete(CsvPath(3))
-            System.IO.File.Delete(CsvPath(4))
+            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+                System.IO.File.Delete(CsvPath(wKenshuCnt))
+            Next wKenshuCnt
         Catch ex As Exception
         End Try
 
@@ -703,19 +444,6 @@ Partial Public Class TaxiPrinterCsv
         wBARCODE &= Trim(DR_MPID).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.DR_MPID, " ")
         '行番号
         wBARCODE &= Trim(TKT_LINE_NO).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TKT_LINE_NO, " ")
-        '発行日
-        wBARCODE &= Trim(Mid(taXI_HAKKO_DATE, 1, MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TAXI_HAKKO_DATE)).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TAXI_HAKKO_DATE, " ")
-        'タクシー会社
-        If Mid(TAXI_KENSHU, 1, 2).ToUpper = "TK" Then
-            wStr = "TK"
-        ElseIf Mid(TAXI_KENSHU, 1, 2).ToUpper = "NG" Then
-            wStr = "NG"
-        Else
-            wStr = "DC"
-        End If
-        wBARCODE &= wStr.PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TKT_KAISHA, " ")
-        '券種
-        wBARCODE &= Trim(TAXI_KENSHU).PadRight(MyModule.Csv.TaxiPrinterCsv.Barcode.Length.TAXI_KENSHU, " ")
 
         Return wBARCODE
     End Function

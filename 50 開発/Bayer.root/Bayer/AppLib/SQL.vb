@@ -1672,6 +1672,21 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function TaxiScanCsv(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT * "
+            strSQL &= " FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE TBL_KOTSUHOTEL.SALEFORCE_ID=N'" & TBL_TAXITICKET_HAKKO.SALEFORCE_ID & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.TIME_STAMP_BYL=N'" & TBL_TAXITICKET_HAKKO.TIME_STAMP_BYL & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.DR_MPID=N'" & TBL_TAXITICKET_HAKKO.DR_MPID & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function DrReport(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False

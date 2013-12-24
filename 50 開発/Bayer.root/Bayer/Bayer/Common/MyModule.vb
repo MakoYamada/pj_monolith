@@ -929,9 +929,6 @@ Public Class MyModule
                     Public TIME_STAMP_BYL As String
                     Public DR_MPID As String
                     Public TKT_LINE_NO As String
-                    Public TAXI_HAKKO_DATE As String
-                    Public TKT_KAISHA As String
-                    Public TAXI_KENSHU As String
                 End Structure
                 Public Class Length
                     Public Const SALEFORCE_ID As Integer = 18
@@ -940,9 +937,6 @@ Public Class MyModule
                     Public Const TIME_STAMP_BYL As Integer = 14
                     Public Const DR_MPID As Integer = 16
                     Public Const TKT_LINE_NO As Integer = 2
-                    Public Const TAXI_HAKKO_DATE As Integer = 8
-                    Public Const TKT_KAISHA As Integer = 2
-                    Public Const TAXI_KENSHU As Integer = 10
                 End Class
                 Public Class CsvIndex
                     Public Const SALEFORCE_ID As Integer = 0
@@ -951,26 +945,41 @@ Public Class MyModule
                     Public Const TIME_STAMP_BYL As Integer = 3
                     Public Const DR_MPID As Integer = 4
                     Public Const TKT_LINE_NO As Integer = 5
-                    Public Const TAXI_HAKKO_DATE As Integer = 6
-                    Public Const TKT_KAISHA As Integer = 7
-                    Public Const TAXI_KENSHU As Integer = 8
                 End Class
             End Class
         End Class
 
         'スキャンデータ
         Public Class TaxiScan
-            Public Class CsvIndex
-                Public Const TKT_NO As Integer = 0
-                Public Const BARCODE As Integer = 1
+            <Serializable()> Public Structure DataStruct
+                Public SALEFORCE_ID As String
+                Public SANKASHA_ID As String
+                Public KOUENKAI_NO As String
+                Public TIME_STAMP_BYL As String
+                Public DR_MPID As String
+                Public TKT_LINE_NO As String
+                Public TKT_NO As String
+            End Structure
+            Public Class Length
+                Public Const SALEFORCE_ID As Integer = 18
+                Public Const SANKASHA_ID As Integer = 14
+                Public Const KOUENKAI_NO As Integer = 14
+                Public Const TIME_STAMP_BYL As Integer = 14
+                Public Const DR_MPID As Integer = 16
+                Public Const TKT_LINE_NO As Integer = 2
+                Public Const TKT_NO As Integer = 9
             End Class
-            'バーコード
-            Public Class Barcode
-                Inherits TaxiPrinterCsv.Barcode
+            Public Class CsvIndex
+                Public Const SALEFORCE_ID As Integer = 0
+                Public Const SANKASHA_ID As Integer = 1
+                Public Const KOUENKAI_NO As Integer = 2
+                Public Const TIME_STAMP_BYL As Integer = 3
+                Public Const DR_MPID As Integer = 4
+                Public Const TKT_LINE_NO As Integer = 5
+                Public Const TKT_NO As Integer = 6
             End Class
         End Class
 
     End Class
 
 End Class
- 
