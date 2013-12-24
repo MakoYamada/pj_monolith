@@ -2914,7 +2914,7 @@ Partial Public Class DrRegist
     End Sub
 
     '[戻る]
-    Private Sub BtnBack1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click
+    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Session.Remove(SessionDef.DrRireki_PageIndex)
         Session.Remove(SessionDef.DrRireki_SEQ)
 
@@ -2931,25 +2931,16 @@ Partial Public Class DrRegist
         End If
     End Sub
 
-    '[戻る]
-    Private Sub BtnBack2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack2.Click
-        BtnBack1_Click(sender, e)
-    End Sub
-
     '[手配書印刷]
-    Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
+    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
         Dim strSQL As String = ""
         strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
         Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
+        Session.Item(SessionDef.PrintPreview) = "Tehaisho"
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
-    End Sub
-
-    '[手配書印刷]
-    Private Sub BtnPrint2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint2.Click
-        BtnPrint1_Click(sender, e)
     End Sub
 
     '宿泊費消費税抜金額表示
@@ -3291,5 +3282,29 @@ Partial Public Class DrRegist
         Me.ANS_TAXI_DATE_9.Text = Trim(Replace(Me.REQ_TAXI_DATE_9.Text, "/", ""))
         Me.ANS_TAXI_DATE_10.Text = Trim(Replace(Me.REQ_TAXI_DATE_10.Text, "/", ""))
         SetFocus(Me.ANS_TAXI_DATE_1)
+    End Sub
+
+    '[送付状印刷]
+    Protected Sub BtnSoufujo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSoufujo1.Click, BtnSoufujo2.Click
+        Dim strSQL As String = ""
+        strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+        Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
+        Session.Item(SessionDef.PrintPreview) = "Soufujo"
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
+    End Sub
+
+    '[タクチケ手配確認票印刷]
+    Private Sub BtnTaxiKakunin_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTaxiKakunin1.Click, BtnTaxiKakunin2.Click
+        Dim strSQL As String = ""
+        strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
+        Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+        Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
+        Session.Item(SessionDef.PrintPreview) = "TaxiKakuninhyo"
+        Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
+        Response.Redirect(URL.Preview)
     End Sub
 End Class
