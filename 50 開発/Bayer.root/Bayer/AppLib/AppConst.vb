@@ -341,7 +341,8 @@ Public Class AppConst
             End Class
             Public Class Name
                 Public Const Yes As String = "SRM発注"
-                Public Const No As String = "SAP精算"
+                'Public Const No As String = "SAP精算"
+                Public Const No As String = "SRM発注以外"
             End Class
         End Class
 
@@ -349,7 +350,7 @@ Public Class AppConst
             '講演会場　要・不要
             Public Class Code
                 Public Const Yes As String = "1"
-                Public Const No As String = "2"
+                Public Const No As String = "0"
             End Class
             Public Class Name
                 Public Const Yes As String = "要"
