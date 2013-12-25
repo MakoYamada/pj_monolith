@@ -1694,6 +1694,7 @@ Public Class SQL
             strSQL &= "SELECT DISTINCT"
             strSQL &= " WK_KOTSUHOTEL.*"
             strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.KAIJO_NAME"
             strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
             strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
             strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
