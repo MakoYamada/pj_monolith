@@ -589,7 +589,7 @@ Public Class AppConst
                     Public Const MstCode As String = "コードマスタメンテナンス"
                     Public Const MstCostcenter As String = "コストセンターマスタメンテナンス"
                     Public Const TaxiNouhinTorikomi As String = "タクチケ納品データ取込"
-                    Public Const TaxiCsv As String = "タクチケ印刷データ作成"
+                    Public Const TaxiPrintCsv As String = "タクチケ印刷データ作成"
                     Public Const TaxiScan As String = "スキャンデータ取込"
                     Public Const TaxiMaintenance As String = "タクチケメンテナンス"
                     Public Const TaxiJisseki As String = "タクチケ実績データ取込"
@@ -610,7 +610,7 @@ Public Class AppConst
                     MstCode
                     MstCostcenter
                     TaxiNouhinTorikomi
-                    TaxiCsv
+                    TaxiPrintCsv
                     TaxiScan
                     TaxiMaintenance
                     TaxiMaintenanceRegist
