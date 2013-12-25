@@ -70,7 +70,7 @@ Partial Public Class TaxiMenu
         Response.Redirect(URL.TaxiMiketsu)
     End Sub
 
-    '[スキャンデータ取込]
+    '[タクチケスキャンデータ取込]
     Protected Sub BtnTaxiScan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiScan.Click
         Response.Redirect(URL.TaxiScan)
     End Sub

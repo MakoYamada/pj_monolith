@@ -342,6 +342,75 @@ Public Class MyModule
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                       ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
+                                       ByVal STATUS_OK As Boolean, _
+                                       ByVal Message As String, _
+                                       ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "タクシー会社：" & TBL_TAXITICKET_HAKKO.TKT_KAISHA _
+                     & "／" _
+                     & "タクチケ番号：" & TBL_TAXITICKET_HAKKO.TKT_NO
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TKT_KENSHU As String, _
+                                         ByVal KOUENKAI_NO As String, _
+                                         ByVal SANKASHA_ID As String, _
+                                         ByVal TKT_LINE_NO As String, _
+                                         ByVal SALEFORCE_ID As String, _
+                                         ByVal TIME_STAMP_BYL As String, _
+                                         ByVal DR_MPID As String, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "券種：" & TKT_KENSHU _
+                     & "／" _
+                     & "講演会番号：" & KOUENKAI_NO _
+                     & "／" _
+                     & "参加者ID：" & SANKASHA_ID _
+                     & "／" _
+                     & "行番号：" & TKT_LINE_NO _
+                     & "／" _
+                     & "SalesForceID：" & SALEFORCE_ID _
+                     & "／" _
+                     & "タイムスタンプBYL：" & TIME_STAMP_BYL _
+                     & "／" _
+                     & "MPID：" & DR_MPID
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, TBL_LOG.NOTE, DbConn)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
+                                         ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        TBL_LOG.NOTE = "タクシーチケット番号：" & TBL_TAXITICKET_HAKKO.TKT_NO _
+                     & "／" _
+                     & "講演会番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
+                     & "／" _
+                     & "参加者ID：" & TBL_TAXITICKET_HAKKO.SANKASHA_ID _
+                     & "／" _
+                     & "行番号：" & TBL_TAXITICKET_HAKKO.TKT_LINE_NO _
+                     & "／" _
+                     & "SalesForceID：" & TBL_TAXITICKET_HAKKO.SALEFORCE_ID _
+                     & "／" _
+                     & "タイムスタンプBYL：" & TBL_TAXITICKET_HAKKO.TIME_STAMP_BYL _
+                     & "／" _
+                     & "MPID：" & TBL_TAXITICKET_HAKKO.DR_MPID
+
+        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, TBL_LOG.NOTE, DbConn)
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal TBL_LOG As TableDef.TBL_LOG.DataStruct, _
                                          ByVal STATUS_OK As Boolean, _
                                          ByVal Message As String, _
@@ -379,18 +448,22 @@ Public Class MyModule
         End Try
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
-                                         ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
                                          ByVal STATUS_OK As Boolean, _
                                          ByVal Message As String, _
                                          ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+        TBL_LOG = GetValue_TBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message)
 
-        TBL_LOG.NOTE = "タクシー会社：" & TBL_TAXITICKET_HAKKO.TKT_KAISHA _
-                     & "／" _
-                     & "タクチケ番号：" & TBL_TAXITICKET_HAKKO.TKT_NO
+        Dim strSQL As String
 
-        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
+        Try
+            strSQL = SQL.TBL_LOG.Insert(TBL_LOG)
+            CmnDb.Execute(strSQL, DbConn)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
     End Function
     Public Shared Function GetValue_TBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                             ByVal TBL_LOG As TableDef.TBL_LOG.DataStruct, _
@@ -465,13 +538,17 @@ Public Class MyModule
                 TBL_LOG.TABLE_NAME = "MS_CODE"
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCostcenter
                 TBL_LOG.TABLE_NAME = "MS_COSTCENTER"
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan
+                TBL_LOG.TABLE_NAME = "TBL_TAXITICKET_HAKKO"
             Case Else
                 TBL_LOG.TABLE_NAME = ""
         End Select
 
         If STATUS_OK = True Then
             TBL_LOG.STATUS = AppConst.TBL_LOG.STATUS.Code.OK
-            TBL_LOG.NOTE = Trim(Message)
+            If Trim(Message) <> "" Then
+                TBL_LOG.NOTE = Trim(Message)
+            End If
         Else
             TBL_LOG.STATUS = AppConst.TBL_LOG.STATUS.Code.NG
             If Trim(TBL_LOG.NOTE) <> "" Then TBL_LOG.NOTE &= "　"
@@ -949,7 +1026,7 @@ Public Class MyModule
             End Class
         End Class
 
-        'スキャンデータ
+        'タクチケスキャンデータ
         Public Class TaxiScan
             <Serializable()> Public Structure DataStruct
                 Public SALEFORCE_ID As String

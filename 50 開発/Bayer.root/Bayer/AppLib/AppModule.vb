@@ -7368,9 +7368,21 @@ Public Class AppModule
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.DrRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.KaijoRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.SeisanRegist))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.CostRegist, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.CostRegist))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstShisetsu))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstUser))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCode))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCostcenter, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.MstCostcenter))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiNouhinTorikomi, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiNouhinTorikomi))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiPrintCsv, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiPrintCsv))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiScan, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiScan))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMaintenance, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMaintenance))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiJisseki, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiJisseki))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeisanMikanryou, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeisanMikanryou))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMiketsu, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMiketsu))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuMeisai, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuMeisai))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuFuka, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuFuka))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiKouenkaiMeisai, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiKouenkaiMeisai))
             End With
         End Sub
     End Class

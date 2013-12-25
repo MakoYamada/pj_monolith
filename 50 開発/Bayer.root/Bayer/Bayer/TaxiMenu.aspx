@@ -19,7 +19,7 @@
 							<asp:Button ID="BtnTaxiPrintCsv" runat="server" Text="タクチケ印刷データ作成" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiScan" runat="server" Text="スキャンデータ取込" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiScan" runat="server" Text="タクチケスキャンデータ取込" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiMaintenance" runat="server" Text="タクチケメンテナンス" 
