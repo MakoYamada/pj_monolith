@@ -8,7 +8,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[TBL_LOG](
-	[LOG_NO] [int] IDENTITY(1,1),
+	[LOG_NO] [int] IDENTITY(1,1) NOT NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
 	[SYORI_KBN] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
