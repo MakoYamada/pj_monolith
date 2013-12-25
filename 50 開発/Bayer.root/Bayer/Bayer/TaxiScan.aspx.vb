@@ -20,7 +20,7 @@ Partial Public Class TaxiScan
         'マステーページ設定
         With Me.Master
             .DispTaxiMenu = True
-            .PageTitle = "スキャンデータ取込"
+            .PageTitle = "タクチケスキャンデータ取込"
         End With
     End Sub
 
@@ -44,7 +44,7 @@ Partial Public Class TaxiScan
         If Not Check_File() Then Exit Sub
 
         '指定されたファイルをアップロードする
-        Dim CsvFileName As String = CmnModule.GetSysDateTime() & ".csv"
+        Dim CsvFileName As String = CmnModule.GetSysDateTime() & System.IO.Path.GetExtension(Me.FileUpload1.PostedFile.FileName)
         Dim CsvPath As String
         CsvPath = WebConfig.Site.SCAN_CSV & CsvFileName
         Me.FileUpload1.PostedFile.SaveAs(CsvPath)
@@ -52,8 +52,11 @@ Partial Public Class TaxiScan
         'ファイル内容チェック
         If Not Check_Csv(CsvPath) Then Exit Sub
 
+        'ログ登録
+        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "アップロードファイル：" & Me.FileUpload1.PostedFile.FileName, MyBase.DbConnection)
+
         'DB
-        If UpdateData(CsvPath) Then
+        If UpdateData(CsvPath, System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName)) Then
             Me.TrError.Visible = False
             Me.TrEnd.Visible = True
             'バックアップ作成
@@ -88,63 +91,78 @@ Partial Public Class TaxiScan
     'ファイル内容チェック
     Private Function Check_Csv(ByVal CsvPath As String) As Boolean
         Dim cReader As New System.IO.StreamReader(CsvPath, System.Text.Encoding.Default)
-        Dim wSplit() As String
-        Dim wLineCount As Integer = 0
+        Dim wLineCnt As Integer = 0
         Dim ErrorMessage As String = ""
+        Dim wLength As Integer
 
         '読み込みできる文字がなくなるまで繰り返す
         While (cReader.Peek() >= 0)
             'ファイルを1行ずつ読み込む
             Dim stBuffer As String = cReader.ReadLine()
-            'stBuffer = Replace(stBuffer, """", "")  'ダブルクォーテーション除去
 
-            wLineCount += 1
+            wLineCnt += 1
 
             If Trim(stBuffer) <> "" Then
-                'チェック
-                Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
-                Dim wLength As Integer = 1
+                '文字列数チェック
+                wLength = MyModule.Csv.TaxiScan.Length.SALEFORCE_ID _
+                        + MyModule.Csv.TaxiScan.Length.SANKASHA_ID _
+                        + MyModule.Csv.TaxiScan.Length.KOUENKAI_NO _
+                        + MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL _
+                        + MyModule.Csv.TaxiScan.Length.DR_MPID _
+                        + MyModule.Csv.TaxiScan.Length.TKT_LINE_NO _
+                        + MyModule.Csv.TaxiScan.Length.TKT_NO
+                If CmnModule.LenB(stBuffer) <> wLength Then
+                    ErrorMessage &= "【" & wLineCnt.ToString & "行目】文字数が正しくありません。 " & vbNewLine
+                Else
+                    '項目毎のチェック
+                    Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
+                    wLength = 1
 
-                ScanData.SALEFORCE_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
-                wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
-                If ScanData.SALEFORCE_ID = "" Then
-                    ErrorMessage = "SalesForceID"
-                End If
+                    ScanData.SALEFORCE_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
+                    wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
+                    If ScanData.SALEFORCE_ID = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】SalesForceIDが記載されていません。" & vbNewLine
+                    End If
 
-                ScanData.SANKASHA_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
-                wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
-                If ScanData.SANKASHA_ID = "" Then
-                    ErrorMessage = "参加者ID"
-                End If
+                    ScanData.SANKASHA_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
+                    wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
+                    If ScanData.SANKASHA_ID = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】参加者IDが記載されていません。" & vbNewLine
+                    End If
 
-                ScanData.KOUENKAI_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
-                wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
-                If ScanData.KOUENKAI_NO = "" Then
-                    ErrorMessage = "講演会番号"
-                End If
+                    ScanData.KOUENKAI_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
+                    wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
+                    If ScanData.KOUENKAI_NO = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】講演会番号が記載されていません。" & vbNewLine
+                    End If
 
-                ScanData.TIME_STAMP_BYL = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
-                wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
-                If ScanData.TIME_STAMP_BYL = "" Then
-                    ErrorMessage = "Timestamp(BYL)"
-                End If
+                    ScanData.TIME_STAMP_BYL = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
+                    wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
+                    If ScanData.TIME_STAMP_BYL = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】Timestamp(BYL)が記載されていません。" & vbNewLine
+                    End If
 
-                ScanData.DR_MPID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
-                wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
-                If ScanData.DR_MPID = "" Then
-                    ErrorMessage = "MPID"
-                End If
+                    ScanData.DR_MPID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
+                    wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
+                    If ScanData.DR_MPID = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】MPIDが記載されていません。" & vbNewLine
+                    End If
 
-                ScanData.TKT_LINE_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
-                wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
-                If ScanData.TKT_LINE_NO = "" Then
-                    ErrorMessage = "行番号"
-                End If
+                    ScanData.TKT_LINE_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
+                    wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
+                    If ScanData.TKT_LINE_NO = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】行番号が記載されていません。" & vbNewLine
+                    ElseIf Not CmnCheck.IsNumberOnly(ScanData.TKT_LINE_NO) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】行番号に数字以外の文字があります。" & vbNewLine
+                    ElseIf Val(ScanData.TKT_LINE_NO) < 1 OrElse Val(ScanData.TKT_LINE_NO) > 20 Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】行番号に1～20以外の数値が入っています。" & vbNewLine
+                    End If
 
-                ScanData.TKT_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
-                wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
-                If ScanData.TKT_NO = "" Then
-                    ErrorMessage = "タクシーチケット番号"
+                    ScanData.TKT_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
+                    wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
+                    If ScanData.TKT_NO = "" Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号が記載されていません。" & vbNewLine
+                    End If
                 End If
             End If
         End While
@@ -220,7 +238,7 @@ Partial Public Class TaxiScan
             ErrorMessage = "タクシーチケット番号"
             Return Nothing
         End If
- 
+
         Return wCsvData
     End Function
 
@@ -254,10 +272,9 @@ Partial Public Class TaxiScan
     End Function
 
     'Csv読込 → DB展開
-    Private Function UpdateData(ByVal CsvPath As String) As Boolean
+    Private Function UpdateData(ByVal CsvPath As String, ByVal CsvFileName As String) As Boolean
         Dim CsvData As New System.IO.StreamReader(CsvPath, System.Text.Encoding.Default)
-        Dim wSplit() As String
-        Dim wLineCount As Integer = 0
+        Dim wLineCnt As Integer = 0
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
@@ -266,28 +283,34 @@ Partial Public Class TaxiScan
         Dim wCnt As Integer = 0
         Dim wStr As String = ""
         Dim TKT_HAKKO_FEE As String = "0"
-
+        Dim wUpdateCntTAXI As Integer = 0
+        Dim wUpdateCntKOTSUHOTEL As Integer = 0
+         
         '発行手数料
+        wFlag = False
         strSQL = SQL.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_TESURYO)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
+            wFlag = True
             TKT_HAKKO_FEE = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
         End If
         RsData.Close()
 
+        If wFlag = False Then
+            CmnModule.AlertMessage("タクシーチケット発行手数料の設定が正しくありません。コードマスタを再確認してください。", Me)
+            Return False
+        End If
+
         '読み込みできる文字がなくなるまで繰り返す
+        wFlag = False
         While (CsvData.Peek() >= 0)
             'ファイルを1行ずつ読み込む
             Dim stBuffer As String = CsvData.ReadLine()
-            stBuffer = Replace(stBuffer, """", "")
 
-            wLineCount += 1
-
+            wLineCnt += 1
             If Trim(stBuffer) <> "" Then
-                wSplit = Split(stBuffer, ",")
-
                 wFlag = True
- 
+
                 ReDim Preserve TBL_TAXITICKET_HAKKO(wCnt)
 
                 Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
@@ -305,11 +328,16 @@ Partial Public Class TaxiScan
                 TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE = CmnModule.GetSysDate()
                 '発行手数料
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_HAKKO_FEE = TKT_HAKKO_FEE
+                '使用者
+                TBL_TAXITICKET_HAKKO(wCnt).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
                 wCnt += 1
             End If
         End While
         CsvData.Close()
+
+        'ログ登録
+        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, wLineCnt.ToString & "件のスキャンデータを読込みました。", MyBase.DbConnection)
 
         '交通宿泊テーブル 読込
         'タクシー会社、券種取得
@@ -320,64 +348,64 @@ Partial Public Class TaxiScan
             If RsData.Read() Then
                 Select Case Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
                     Case 1
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1, RsData))
                     Case 2
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_2, RsData))
                     Case 3
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_3, RsData))
                     Case 4
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_4, RsData))
                     Case 5
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_5, RsData))
                     Case 6
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_6, RsData))
                     Case 7
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_7, RsData))
                     Case 8
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_8, RsData))
                     Case 9
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_9, RsData))
                     Case 10
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_10, RsData))
                     Case 11
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_11, RsData))
                     Case 12
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_12, RsData))
                     Case 13
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_13, RsData))
                     Case 14
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_14, RsData))
                     Case 15
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_15, RsData))
                     Case 16
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_16, RsData))
                     Case 17
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_17, RsData))
                     Case 18
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_18, RsData))
                     Case 19
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_19, RsData))
                     Case 20
-                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TAXI_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20, RsData))
+                        TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20, RsData))
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA = GetName_TKT_KAISHA(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_20, RsData))
                 End Select
             End If
@@ -458,39 +486,77 @@ Partial Public Class TaxiScan
             End Select
         Next
 
-        ''データ更新
-        'MyBase.BeginTransaction()
-        'Try
-        '    For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
-        '        'タクチケテーブル
-        '        strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_Scan(TBL_TAXITICKET_HAKKO(wCnt))
-        '        CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        'データ更新
+        wStr = ""
+        Dim RtnTBL_TAXITICKET_HAKKO As Integer
+        Dim RtnTBL_KOTSUHOTEL As Integer
+        MyBase.BeginTransaction()
+        Try
+            For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
+                'タクチケテーブル
+                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_Scan(TBL_TAXITICKET_HAKKO(wCnt))
+                RtnTBL_TAXITICKET_HAKKO = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-        '        '交通宿泊手配テーブル
-        '        strSQL = SQL.TBL_KOTSUHOTEL.Update_ANS_TAXI_HAKKO_DATE(TBL_KOTSUHOTEL(wCnt))
-        '        CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        '    Next wCnt
+                If RtnTBL_TAXITICKET_HAKKO = 0 Then
+                    wStr &= CsvFileName & "【" & wCnt + 1.ToString & "行目】タクシーチケット発行テーブル 該当データなし" & vbNewLine
+                    'ログ登録
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】タクシーチケット発行テーブル 該当データなし", MyBase.DbConnection, MyBase.DbTransaction)
+                Else
+                    wUpdateCntTAXI += 1
+                    'ログ登録
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_TAXITICKET_HAKKO", MyBase.DbConnection, MyBase.DbTransaction)
+                End If
 
-        '    MyBase.Commit()
-        'Catch ex As Exception
-        '    MyBase.Rollback()
+                '交通宿泊手配テーブル
+                strSQL = SQL.TBL_KOTSUHOTEL.Update_ANS_TAXI_HAKKO_DATE(TBL_KOTSUHOTEL(wCnt))
+                RtnTBL_KOTSUHOTEL = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-        '    Return False
-        'End Try
+                If RtnTBL_KOTSUHOTEL = 0 Then
+                    wStr &= CsvFileName & "【" & wCnt + 1.ToString & "行目】交通宿泊手配テーブル 該当データなし" & vbNewLine
+                    'ログ登録
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】交通宿泊手配テーブル 該当データなし", MyBase.DbConnection, MyBase.DbTransaction)
+                Else
+                    wUpdateCntKOTSUHOTEL += 1
+                    'ログ登録
+                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_KOTSUHOTEL", MyBase.DbConnection, MyBase.DbTransaction)
+                End If
+            Next wCnt
 
-        Return True
+            MyBase.Commit()
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】" & Session.Item(SessionDef.DbError), MyBase.DbConnection)
+
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+
+            Return False
+        End Try
+
+        'ログ登録
+        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "タクシーチケット発行テーブル：" & wUpdateCntTAXI.ToString & "件、交通宿泊手配テーブル：" & wUpdateCntKOTSUHOTEL.ToString & "件を登録しました。", MyBase.DbConnection)
+
+        If TBL_TAXITICKET_HAKKO.Length <> wUpdateCntTAXI OrElse TBL_KOTSUHOTEL.Length <> wUpdateCntKOTSUHOTEL Then
+            Me.ErrorMessage.Text = wStr
+            Return False
+        Else
+            Return True
+        End If
     End Function
 
-    Private Function GetName_TAXI_KENSHU(ByVal TAXI_KENSHU As String) As String
-        Return Trim(TAXI_KENSHU)
+    Private Function GetName_TKT_KENSHU(ByVal TAXI_KENSHU As String) As String
+        If Not CmnCheck.IsNumberOnly(TAXI_KENSHU) Then
+            Return Trim(TAXI_KENSHU)
+        Else
+            Return "DC" & Trim(TAXI_KENSHU)
+        End If
     End Function
 
     Private Function GetName_TKT_KAISHA(ByVal TAXI_KENSHU As String) As String
         Dim wStr As String = TAXI_KENSHU.ToUpper
-        If InStr(wStr, "TK") > 0 Then
-            Return "TK"
-        ElseIf InStr(wStr, "NG") > 0 Then
-            Return "NG"
+        If Not CmnCheck.IsNumberOnly(TAXI_KENSHU) Then
+            Return Left(TAXI_KENSHU, 2)
         Else
             Return "DC"
         End If

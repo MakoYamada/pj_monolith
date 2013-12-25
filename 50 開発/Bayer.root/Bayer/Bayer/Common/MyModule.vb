@@ -342,10 +342,10 @@ Public Class MyModule
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
-                                       ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
-                                       ByVal STATUS_OK As Boolean, _
-                                       ByVal Message As String, _
-                                       ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+                                         ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
@@ -369,20 +369,28 @@ Public Class MyModule
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
+        'TBL_LOG.NOTE = "券種：" & TKT_KENSHU _
+        '             & "／" _
+        '             & "講演会番号：" & KOUENKAI_NO _
+        '             & "／" _
+        '             & "参加者ID：" & SANKASHA_ID _
+        '             & "／" _
+        '             & "行番号：" & TKT_LINE_NO _
+        '             & "／" _
+        '             & "SalesForceID：" & SALEFORCE_ID _
+        '             & "／" _
+        '             & "タイムスタンプBYL：" & TIME_STAMP_BYL _
+        '             & "／" _
+        '             & "MPID：" & DR_MPID
+
         TBL_LOG.NOTE = "券種：" & TKT_KENSHU _
                      & "／" _
                      & "講演会番号：" & KOUENKAI_NO _
                      & "／" _
                      & "参加者ID：" & SANKASHA_ID _
                      & "／" _
-                     & "行番号：" & TKT_LINE_NO _
-                     & "／" _
-                     & "SalesForceID：" & SALEFORCE_ID _
-                     & "／" _
-                     & "タイムスタンプBYL：" & TIME_STAMP_BYL _
-                     & "／" _
-                     & "MPID：" & DR_MPID
-
+                     & "行番号：" & TKT_LINE_NO
+ 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, TBL_LOG.NOTE, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
@@ -390,25 +398,46 @@ Public Class MyModule
                                          ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct, _
                                          ByVal STATUS_OK As Boolean, _
                                          ByVal Message As String, _
-                                         ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
+                                         ByVal TableName As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection, _
+                                         Optional ByVal DbTran As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
-        TBL_LOG.NOTE = "タクシーチケット番号：" & TBL_TAXITICKET_HAKKO.TKT_NO _
+        If STATUS_OK = False Then
+            TBL_LOG.NOTE = Message & "　" & vbNewLine
+        End If
+        'TBL_LOG.NOTE &= "タクシーチケット番号：" & TBL_TAXITICKET_HAKKO.TKT_NO _
+        '             & "／" _
+        '             & "講演会番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
+        '             & "／" _
+        '             & "参加者ID：" & TBL_TAXITICKET_HAKKO.SANKASHA_ID _
+        '             & "／" _
+        '             & "行番号：" & TBL_TAXITICKET_HAKKO.TKT_LINE_NO _
+        '             & "／" _
+        '             & "SalesForceID：" & TBL_TAXITICKET_HAKKO.SALEFORCE_ID _
+        '             & "／" _
+        '             & "タイムスタンプBYL：" & TBL_TAXITICKET_HAKKO.TIME_STAMP_BYL _
+        '             & "／" _
+        '             & "MPID：" & TBL_TAXITICKET_HAKKO.DR_MPID
+
+        TBL_LOG.NOTE &= "タクシーチケット番号：" & TBL_TAXITICKET_HAKKO.TKT_NO _
                      & "／" _
                      & "講演会番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
                      & "／" _
                      & "参加者ID：" & TBL_TAXITICKET_HAKKO.SANKASHA_ID _
                      & "／" _
-                     & "行番号：" & TBL_TAXITICKET_HAKKO.TKT_LINE_NO _
-                     & "／" _
-                     & "SalesForceID：" & TBL_TAXITICKET_HAKKO.SALEFORCE_ID _
-                     & "／" _
-                     & "タイムスタンプBYL：" & TBL_TAXITICKET_HAKKO.TIME_STAMP_BYL _
-                     & "／" _
-                     & "MPID：" & TBL_TAXITICKET_HAKKO.DR_MPID
+                     & "行番号：" & TBL_TAXITICKET_HAKKO.TKT_LINE_NO
+ 
+        If TableName <> "" Then
+            TBL_LOG.TABLE_NAME = TableName
+        End If
 
-        Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, TBL_LOG.NOTE, DbConn)
+        If DbTran Is Nothing Then
+            Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, "", DbConn)
+        Else
+            Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, "", DbConn, DbTran)
+        End If
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal TBL_LOG As TableDef.TBL_LOG.DataStruct, _
@@ -460,6 +489,25 @@ Public Class MyModule
         Try
             strSQL = SQL.TBL_LOG.Insert(TBL_LOG)
             CmnDb.Execute(strSQL, DbConn)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
+                                         ByVal STATUS_OK As Boolean, _
+                                         ByVal Message As String, _
+                                         ByVal DbConn As System.Data.SqlClient.SqlConnection, _
+                                         ByVal DbTran As System.Data.SqlClient.SqlTransaction) As Boolean
+
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+        TBL_LOG = GetValue_TBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message)
+
+        Dim strSQL As String
+
+        Try
+            strSQL = SQL.TBL_LOG.Insert(TBL_LOG)
+            CmnDb.Execute(strSQL, DbConn, DbTran)
             Return True
         Catch ex As Exception
             Return False
@@ -521,28 +569,30 @@ Public Class MyModule
         End Select
 
         'テーブル名
-        Select Case GamenType
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist
-                TBL_LOG.TABLE_NAME = "TBL_KOUENKAI"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist
-                TBL_LOG.TABLE_NAME = "TBL_KAIJO"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist
-                TBL_LOG.TABLE_NAME = "TBL_SEIKYU"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist
-                TBL_LOG.TABLE_NAME = "TBL_COST"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu
-                TBL_LOG.TABLE_NAME = "MS_SHISETSU"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser
-                TBL_LOG.TABLE_NAME = "MS_USER"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode
-                TBL_LOG.TABLE_NAME = "MS_CODE"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCostcenter
-                TBL_LOG.TABLE_NAME = "MS_COSTCENTER"
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan
-                TBL_LOG.TABLE_NAME = "TBL_TAXITICKET_HAKKO"
-            Case Else
-                TBL_LOG.TABLE_NAME = ""
-        End Select
+        If TBL_LOG.TABLE_NAME = "" Then
+            Select Case GamenType
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist
+                    TBL_LOG.TABLE_NAME = "TBL_KOUENKAI"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KaijoRegist
+                    TBL_LOG.TABLE_NAME = "TBL_KAIJO"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.DrRegist
+                    TBL_LOG.TABLE_NAME = "TBL_KOTSUHOTEL"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist
+                    TBL_LOG.TABLE_NAME = "TBL_SEIKYU"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.CostRegist
+                    TBL_LOG.TABLE_NAME = "TBL_COST"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstShisetsu
+                    TBL_LOG.TABLE_NAME = "MS_SHISETSU"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstUser
+                    TBL_LOG.TABLE_NAME = "MS_USER"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCode
+                    TBL_LOG.TABLE_NAME = "MS_CODE"
+                Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.MstCostcenter
+                    TBL_LOG.TABLE_NAME = "MS_COSTCENTER"
+                Case Else
+                    TBL_LOG.TABLE_NAME = ""
+            End Select
+        End If
 
         If STATUS_OK = True Then
             TBL_LOG.STATUS = AppConst.TBL_LOG.STATUS.Code.OK

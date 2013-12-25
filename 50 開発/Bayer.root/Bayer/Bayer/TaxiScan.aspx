@@ -9,7 +9,7 @@
 				ファイルを選択してください：
 			</td>
 			<td align="left">
-				<asp:FileUpload ID="FileUpload1" runat="server" Width="400px" />
+				<asp:FileUpload ID="FileUpload1" runat="server" Width="500px" />
 			</td>
 		</tr>
 		<tr style="height: 40px;">

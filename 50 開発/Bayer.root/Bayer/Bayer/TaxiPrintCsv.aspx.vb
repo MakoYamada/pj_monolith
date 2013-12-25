@@ -83,6 +83,7 @@ Partial Public Class TaxiPrintCsv
         '券種毎にCsv作成
         Dim TAXI_HAKKO_DATE As String = Now.ToString("yyyyMMddHHmm")
         Dim KENSHU() As String
+        Dim wKenshuCnt As Integer
 
         wCnt = 0
         wFlag = False
@@ -96,8 +97,7 @@ Partial Public Class TaxiPrintCsv
             wCnt += 1
         End While
         RsData.Close()
-        Dim wKenshuCnt As Integer = UBound(KENSHU)
-
+        
         'コードマスタ無はエラー
         If wFlag = False Then
             CmnModule.AlertMessage("券種の設定が正しくありません。コードマスタを再確認してください。", Me)
@@ -108,17 +108,12 @@ Partial Public Class TaxiPrintCsv
         Dim CsvPath() As String
         Dim sb() As System.Text.StringBuilder
         Dim sw() As System.IO.StreamWriter
-        ReDim CsvPath(wKenshuCnt - 1)
-        ReDim sb(wKenshuCnt - 1)
-        ReDim sw(wKenshuCnt - 1)
+        ReDim CsvPath(UBound(KENSHU))
+        ReDim sb(UBound(KENSHU))
+        ReDim sw(UBound(KENSHU))
 
-        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
-            If CmnCheck.IsNumberOnly(KENSHU(wKenshuCnt)) Then
-                '数字のみ＝頭にDCをつける
-                CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & "DC" & KENSHU(wKenshuCnt) & "_" & TAXI_HAKKO_DATE & ".csv"
-            Else
-                CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & KENSHU(wKenshuCnt) & "_" & TAXI_HAKKO_DATE & ".csv"
-            End If
+        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
+            CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "_" & TAXI_HAKKO_DATE & ".csv"
             sb(wKenshuCnt) = New System.Text.StringBuilder
             sw(wKenshuCnt) = New System.IO.StreamWriter(CsvPath(wKenshuCnt), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
         Next wKenshuCnt
@@ -134,85 +129,85 @@ Partial Public Class TaxiPrintCsv
 
                 '利用日1～20の降順にソートして再設定
                 TBL_KOTSUHOTEL = SortAnsTaxi(TBL_KOTSUHOTEL)
-                For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+                For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                     If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20.ToUpper = KENSHU(wKenshuCnt).ToUpper Then
-                        sb(wKenshuCnt).Append(CsvData(20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                        sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                         sb(wKenshuCnt).Append(vbNewLine)
                     End If
                 Next
@@ -221,9 +216,69 @@ Partial Public Class TaxiPrintCsv
         Next wCnt
 
         '書き込み
-        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
             sw(wKenshuCnt).Write(sb(wKenshuCnt))
             sw(wKenshuCnt).Close()
+        Next wKenshuCnt
+
+        '読込み
+        Dim wCsvDataCnt() As Integer
+        ReDim wCsvDataCnt(UBound(KENSHU))
+        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
+            Dim cReader As New System.IO.StreamReader(CsvPath(wKenshuCnt), System.Text.Encoding.Default)
+            Dim stResult As String = String.Empty
+            Dim wSplit() As String
+            While (cReader.Peek() >= 0)
+                Dim stBuffer As String = cReader.ReadLine()
+                If InStr(stBuffer, ",") > 0 Then
+                    wSplit = Split(stBuffer, ",")
+                    If UBound(wSplit) < MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE Then
+                        'ログ登録
+                        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, CsvPath(wKenshuCnt) & " 項目数が正しくありません。", MyBase.DbConnection)
+                    Else
+                        'バーコード部分読込み
+                        Dim wBarcode As String = Replace(wSplit(MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE), CmnConst.Csv.Delimiter, "")
+                        Dim CsvData As MyModule.Csv.TaxiPrintCsv.Barcode.DataStruct
+                        Dim wLength As Integer = 1
+
+                        CsvData.SALEFORCE_ID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID))
+                        wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID
+
+                        CsvData.SANKASHA_ID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID))
+                        wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID
+
+                        CsvData.KOUENKAI_NO = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO))
+                        wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO
+
+                        CsvData.TIME_STAMP_BYL = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL))
+                        wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL
+
+                        CsvData.DR_MPID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.DR_MPID))
+                        wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.DR_MPID
+
+                        CsvData.TKT_LINE_NO = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.TKT_LINE_NO))
+                        wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.TKT_LINE_NO
+
+                        'ログ登録
+                        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, _
+                                               GetName_TKT_KENSHU(KENSHU(wKenshuCnt)), _
+                                               CsvData.KOUENKAI_NO, _
+                                               CsvData.SANKASHA_ID, _
+                                               CsvData.TKT_LINE_NO, _
+                                               CsvData.SALEFORCE_ID, _
+                                               CsvData.TIME_STAMP_BYL, _
+                                               CsvData.DR_MPID, _
+                                               True, _
+                                               "", _
+                                               MyBase.DbConnection)
+                    End If
+                End If
+                wCsvDataCnt(wKenshuCnt) += 1
+            End While
+            cReader.Close()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, True, GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "：" & wCsvDataCnt(wKenshuCnt) & "件の参加者データを出力しました。", MyBase.DbConnection)
         Next wKenshuCnt
 
         'Zipファイル名
@@ -231,18 +286,21 @@ Partial Public Class TaxiPrintCsv
         Dim ZipPath As String = WebConfig.Path.TaxiPrintCsv & ZipFileName
         'Zip作成
         Using zip As New Ionic.Zip.ZipFile
-            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
                 zip.AddFile(CsvPath(wKenshuCnt), "")
             Next wKenshuCnt
             zip.Save(ZipPath)
         End Using
+
+        'ログ登録
+        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, True, "ZIPファイル作成(" & ZipFileName & ")", MyBase.DbConnection)
 
         'バックアップ作成
         System.IO.File.Copy(ZipPath, WebConfig.Path.TaxiPrintCsv_BackUp & ZipFileName)
 
         'Csv削除
         Try
-            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU) - 1
+            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
                 System.IO.File.Delete(CsvPath(wKenshuCnt))
             Next wKenshuCnt
         Catch ex As Exception
@@ -271,29 +329,44 @@ Partial Public Class TaxiPrintCsv
 
     'Csv出力用に編集
     '印刷データ
-    Private Function CsvData(ByVal LineNo As Integer, ByVal TAXI_HAKKO_DATE As String, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct, ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As System.Text.StringBuilder
+    Private Function CsvData(ByVal KENSHU As String, ByVal LineNo As Integer, ByVal TAXI_HAKKO_DATE As String, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct, ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As System.Text.StringBuilder
         Dim ANS_TAXI_DATE As String = GetANS_TAXI_DATE(LineNo, TBL_KOTSUHOTEL)
         Dim ANS_TAXI_KENSHU As String = GetANS_TAXI_KENSHU(LineNo, TBL_KOTSUHOTEL)
         Dim TKT_LINE_NO As String = GetTKT_LINE_NO(LineNo, TBL_KOTSUHOTEL)
         Dim sb As New System.Text.StringBuilder
 
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE(ANS_TAXI_DATE))))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOUENKAI.TAXI_PRT_NAME)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE_MM(ANS_TAXI_DATE))))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE_DD(ANS_TAXI_DATE))))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.SANKASHA_ID)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU))))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_TAXI_HAKKO_DATE(TAXI_HAKKO_DATE))))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_BARCODE(TBL_KOTSUHOTEL.SALEFORCE_ID, _
-                                               TBL_KOTSUHOTEL.SANKASHA_ID, _
-                                               TBL_KOTSUHOTEL.KOUENKAI_NO, _
-                                               TBL_KOTSUHOTEL.TIME_STAMP_BYL, _
-                                               TBL_KOTSUHOTEL.DR_MPID, _
-                                               TKT_LINE_NO, _
-                                               TAXI_HAKKO_DATE, _
-                                               ANS_TAXI_KENSHU)), True))
+        Try
+         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE(ANS_TAXI_DATE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOUENKAI.TAXI_PRT_NAME)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE_MM(ANS_TAXI_DATE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_DATE_DD(ANS_TAXI_DATE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.SANKASHA_ID)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_BARCODE(TBL_KOTSUHOTEL.SALEFORCE_ID, _
+                                                                   TBL_KOTSUHOTEL.SANKASHA_ID, _
+                                                                   TBL_KOTSUHOTEL.KOUENKAI_NO, _
+                                                                   TBL_KOTSUHOTEL.TIME_STAMP_BYL, _
+                                                                   TBL_KOTSUHOTEL.DR_MPID, _
+                                                                   TKT_LINE_NO, _
+                                                                   TAXI_HAKKO_DATE, _
+                                                                   ANS_TAXI_KENSHU)), True))
+             Return sb
+        Catch ex As Exception
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, _
+                                   GetName_TKT_KENSHU(KENSHU), _
+                                   TBL_KOTSUHOTEL.KOUENKAI_NO, _
+                                   TBL_KOTSUHOTEL.SANKASHA_ID, _
+                                   TKT_LINE_NO, _
+                                   TBL_KOTSUHOTEL.SALEFORCE_ID, _
+                                   TBL_KOTSUHOTEL.TIME_STAMP_BYL, _
+                                   TBL_KOTSUHOTEL.DR_MPID, _
+                                   False, _
+                                   "", _
+                                   MyBase.DbConnection)
 
-        Return sb
+            Throw New Exception(ex.ToString)
+        End Try
     End Function
 
     Private Function GetANS_TAXI_DATE(ByVal LineNo As Integer, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
@@ -383,12 +456,18 @@ Partial Public Class TaxiPrintCsv
 
     Private Function GetName_TKT_KAISHA(ByVal ANS_TAXI_KENSHU As String) As String
         Dim wStr As String = ANS_TAXI_KENSHU.ToUpper
-        If InStr(wStr, "TK") > 0 Then
-            Return "TK"
-        ElseIf InStr(wStr, "NG") > 0 Then
-            Return "NG"
+        If Not CmnCheck.IsNumberOnly(ANS_TAXI_KENSHU) Then
+            Return Left(ANS_TAXI_KENSHU, 2)
         Else
             Return "DC"
+        End If
+    End Function
+    Private Function GetName_TKT_KENSHU(ByVal TKT_KENSHU As String) As String
+        Dim wStr As String = TKT_KENSHU.ToUpper
+        If Not CmnCheck.IsNumberOnly(TKT_KENSHU) Then
+            Return TKT_KENSHU
+        Else
+            Return "DC" & TKT_KENSHU
         End If
     End Function
     Private Function GetName_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String) As String

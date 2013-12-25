@@ -43,6 +43,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''SEND_FLAG コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEND_FLAG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''TdUPDATE_DATE_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -149,15 +158,6 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TO_DATE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TO_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TAXI_PRT_NAME コントロール。
