@@ -56,8 +56,8 @@ Partial Public Class TaxiMenu
     End Sub
  
     '[タクチケ印刷データ作成]
-    Protected Sub BtnTaxiPrinterCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiPrinterCsv.Click
-        Response.Redirect(URL.TaxiPrinterCsv)
+    Protected Sub BtnTaxiPrintCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiPrintCsv.Click
+        Response.Redirect(URL.TaxiPrintCsv)
     End Sub
 
     '[タクチケ納品データ取込]

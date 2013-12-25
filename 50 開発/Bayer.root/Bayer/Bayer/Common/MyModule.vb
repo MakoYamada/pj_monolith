@@ -909,7 +909,7 @@ Public Class MyModule
 
         'タクチケ関連
         '印刷用データ
-        Public Class TaxiPrinterCsv
+        Public Class TaxiPrintCsv
             Public Class CsvIndex
                 Public Const TAXI_DATE As Integer = 0
                 Public Const TAXI_PRT_NAME As Integer = 1
