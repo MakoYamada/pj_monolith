@@ -8,6 +8,7 @@ Partial Public Class Preview
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private DSP_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private RPT_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private Joken As TableDef.Joken.DataStruct
     Private SEQ As Integer
     Private Popup As Boolean = False
@@ -214,6 +215,8 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
+        rpt1.KOTSUHOTEL_DATA = RPT_KOTSUHOTEL
+
         'レポートを作成
         rpt1.Run()
         Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
@@ -230,6 +233,10 @@ Partial Public Class Preview
         Dim wFlag As Boolean = False
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            RPT_KOTSUHOTEL = AppModule.SetRsData(RsData, RPT_KOTSUHOTEL)
+        End If
+        RsData.Close()
 
         Dim arguments As New DataSourceSelectArguments()
         'select 

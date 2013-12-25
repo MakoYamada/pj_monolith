@@ -3307,4 +3307,8 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
     End Sub
+
+    Protected Sub ANS_O_SEAT_1_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_O_SEAT_1.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -3627,9 +3627,9 @@
 					<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="220" />
 					<asp:Button ID="BtnSoufujo2" runat="server" Width="150px" Text="送付状印刷" 
-                        CssClass="Button" TabIndex="221" Visible="False" />
+                        CssClass="Button" TabIndex="221" />
 					<asp:Button ID="BtnTaxiKakunin2" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
-                        CssClass="Button" TabIndex="222" Visible="False" />
+                        CssClass="Button" TabIndex="222" />
                 </td>
             </tr>
             <tr align="right" style="width:100%">
