@@ -2611,6 +2611,7 @@
 
     Public Class TBL_LOG
         <Serializable()> Public Structure DataStruct
+            Public LOG_NO As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
             Public SYORI_KBN As String
@@ -2621,6 +2622,7 @@
             Public USER_NAME As String
         End Structure
         Public Class Column
+            Public Const LOG_NO As String = "LOG_NO"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const SYORI_KBN As String = "SYORI_KBN"
@@ -2631,6 +2633,7 @@
             Public Const USER_NAME As String = "USER_NAME"
         End Class
         Public Class Name
+            Public Const LOG_NO As String = ""
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
             Public Const SYORI_KBN As String = "処理区分"

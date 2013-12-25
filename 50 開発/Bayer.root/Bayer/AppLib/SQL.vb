@@ -4752,7 +4752,8 @@ Public Class SQL
 
         Private Const SQL_ORDERBY As String _
         = " ORDER BY" _
-        & " TBL_LOG.INPUT_DATE DESC"
+        & " TBL_LOG.INPUT_DATE DESC" _
+        & ",TBL_LOG.LOG_NO DESC"
 
         Public Shared Function byINPUT_DATE(ByVal INPUT_DATE As String) As String
             Dim strSQL As String = SQL_SELECT
