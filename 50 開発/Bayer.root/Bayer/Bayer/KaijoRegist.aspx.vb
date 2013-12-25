@@ -185,12 +185,12 @@ Partial Public Class KaijoRegist
     Private Sub GetData_Old()
         Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_UPDATE_DATE_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).UPDATE_DATE)
         Dim RsData As System.Data.SqlClient.SqlDataReader
-        Dim wFlAG As Boolean = False
+        Dim wFlag As Boolean = False
 
         OldTBL_KAIJO = Nothing
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
-            wFlAG = True
+            wFlag = True
             OldTBL_KAIJO = AppModule.SetRsData(RsData, OldTBL_KAIJO)
         End If
         RsData.Close()
