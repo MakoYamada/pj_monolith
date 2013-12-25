@@ -25,6 +25,12 @@
         Public Shared SCAN_CSV As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV")
         Public Shared SCAN_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV_BK")
 
+        'チケット類送付状
+        Public Shared AISATSU As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU")
+        Public Shared JR_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("JR_SETSUMEI")
+        Public Shared AIR_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI")
+        Public Shared OTHER_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("OTHER_SETSUMEI")
+        Public Shared FOOTER_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("FOOTER_SETSUMEI")
     End Class
 
     Public Class Db
