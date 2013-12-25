@@ -26,11 +26,25 @@
         Public Shared SCAN_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV_BK")
 
         'チケット類送付状
-        Public Shared AISATSU As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU")
-        Public Shared JR_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("JR_SETSUMEI")
-        Public Shared AIR_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI")
-        Public Shared OTHER_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("OTHER_SETSUMEI")
-        Public Shared FOOTER_SETSUMEI As String = System.Configuration.ConfigurationManager.AppSettings("FOOTER_SETSUMEI")
+        Public Shared AISATSU1 As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU1")
+        Public Shared AISATSU2 As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU2")
+        Public Shared AISATSU3 As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU3")
+        Public Shared JR_SETSUMEI1 As String = System.Configuration.ConfigurationManager.AppSettings("JR_SETSUMEI1")
+        Public Shared JR_SETSUMEI2 As String = System.Configuration.ConfigurationManager.AppSettings("JR_SETSUMEI2")
+        Public Shared JR_SETSUMEI3 As String = System.Configuration.ConfigurationManager.AppSettings("JR_SETSUMEI3")
+        Public Shared JR_SETSUMEI4 As String = System.Configuration.ConfigurationManager.AppSettings("JR_SETSUMEI4")
+        Public Shared AIR_SETSUMEI1 As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI1")
+        Public Shared AIR_SETSUMEI2 As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI2")
+        Public Shared AIR_SETSUMEI3 As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI3")
+        Public Shared AIR_SETSUMEI4 As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI4")
+        Public Shared AIR_SETSUMEI5 As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI5")
+        Public Shared AIR_SETSUMEI6 As String = System.Configuration.ConfigurationManager.AppSettings("AIR_SETSUMEI6")
+        Public Shared OTHER_SETSUMEI1 As String = System.Configuration.ConfigurationManager.AppSettings("OTHER_SETSUMEI1")
+        Public Shared OTHER_SETSUMEI2 As String = System.Configuration.ConfigurationManager.AppSettings("OTHER_SETSUMEI2")
+        Public Shared FOOTER_SETSUMEI1 As String = System.Configuration.ConfigurationManager.AppSettings("FOOTER_SETSUMEI1")
+        Public Shared FOOTER_SETSUMEI2 As String = System.Configuration.ConfigurationManager.AppSettings("FOOTER_SETSUMEI2")
+        Public Shared FOOTER_SETSUMEI3 As String = System.Configuration.ConfigurationManager.AppSettings("FOOTER_SETSUMEI3")
+        Public Shared FOOTER_SETSUMEI4 As String = System.Configuration.ConfigurationManager.AppSettings("FOOTER_SETSUMEI4")
     End Class
 
     Public Class Db

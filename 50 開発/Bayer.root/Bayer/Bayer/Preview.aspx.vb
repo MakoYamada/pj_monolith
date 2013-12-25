@@ -36,6 +36,7 @@ Partial Public Class Preview
                         PrintDrReport()
                     Case "Soufujo"
                         '送付状印刷
+                        PrintSoufujo()
                     Case "TaxiKakuninhyo"
                         'タクチケ手配確認票
                 End Select
@@ -184,6 +185,34 @@ Partial Public Class Preview
         Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
+
+        'レポートを作成
+        rpt1.Run()
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+
+    End Sub
+
+    'チケット類送付状印刷
+    Private Sub PrintSoufujo()
+
+        Dim rpt1 As New DrSoufujo()
+
+        'データ設定
+        rpt1.DataSource = GetDrData()
+
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         'レポートを作成
         rpt1.Run()
