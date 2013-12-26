@@ -484,6 +484,7 @@ Partial Public Class TaxiScan
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_20 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
                     'QQQ TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_20 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
             End Select
+            TBL_KOTSUHOTEL(wCnt).UPDATE_USER = Session.Item(SessionDef.LoginID)
         Next
 
         'データ更新
@@ -508,7 +509,7 @@ Partial Public Class TaxiScan
                 End If
 
                 '交通宿泊手配テーブル
-                strSQL = SQL.TBL_KOTSUHOTEL.Update_ANS_TAXI_HAKKO_DATE(TBL_KOTSUHOTEL(wCnt))
+                strSQL = SQL.TBL_KOTSUHOTEL.Update_ANS_TAXI_HAKKO_DATE(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO, TBL_KOTSUHOTEL(wCnt))
                 RtnTBL_KOTSUHOTEL = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_KOTSUHOTEL = 0 Then
