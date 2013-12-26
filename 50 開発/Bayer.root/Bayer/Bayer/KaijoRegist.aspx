@@ -61,7 +61,7 @@
 						<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 150px;">
 							<asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="145px"></asp:DropDownList>
 						</td>
-						<td nowrap="nowrap" align="left">
+						<td nowrap="nowrap" align="left" id="TdHelp" runat="server">
 							<asp:Image runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/help.png" /><a href="#" class="link" onclick="window.open('KaijoStatus.html','help','width=500,height=400,menubar=no,stausbar=no,toolbar=no,location=no,resizable=no,scrollbars=no')">ステータスについて</a>
 						</td>
 					</tr>

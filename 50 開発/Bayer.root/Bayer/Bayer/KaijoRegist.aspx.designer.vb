@@ -97,6 +97,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_STATUS_TEHAI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''TdHelp コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TdHelp As Global.System.Web.UI.HtmlControls.HtmlTableCell
+
+    '''<summary>
     '''KOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>

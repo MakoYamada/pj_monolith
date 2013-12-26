@@ -36,6 +36,8 @@ Partial Public Class Menu1
 
         CmnModule.SetEnabled(Me.BtnNewBentoList, False)
         CmnModule.SetEnabled(Me.BtnBentoList, False)
+
+        ''''''''' CmnModule.SetEnabled(Me.BtnTaxiMenu, False)
     End Sub
 
     'セッションを変数に格納

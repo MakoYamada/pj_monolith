@@ -295,9 +295,9 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KOUENKAI
             strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " (SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
-            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
             strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KOUENKAI"
             strSQL &= ","
@@ -307,9 +307,9 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KOTSUHOTEL  'QQQ
             strSQL &= ") AS TBL_KOTSUHOTEL_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOTSUHOTEL"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KOTSUHOTEL"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOTSUHOTEL_2"
-            strSQL &= "  WHERE TBL_KOTSUHOTEL_1.UPDATE_DATE=TBL_KOTSUHOTEL_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOTSUHOTEL_1.TIME_STAMP_BYL=TBL_KOTSUHOTEL_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO=TBL_KOTSUHOTEL_2.KOUENKAI_NO"
             'strSQL &= strSQL_WHERE_KOTSUHOTEL
             strSQL &= ") AS TBL_KOTSUHOTEL"
@@ -1675,10 +1675,10 @@ Public Class SQL
             strSQL &= " WHERE KOUENKAI_NO='" & CmnDb.SqlString(KOUENKAI_NO) & "'"   'QQQ
             strSQL &= ") AS TBL_KOTSUHOTEL_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOTSUHOTEL"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KOTSUHOTEL"
             strSQL &= "  WHERE KOUENKAI_NO='" & CmnDb.SqlString(KOUENKAI_NO) & "'"   'QQQ
             strSQL &= "  GROUP BY KOUENKAI_NO) AS TBL_KOTSUHOTEL_2"
-            strSQL &= "  WHERE TBL_KOTSUHOTEL_1.UPDATE_DATE=TBL_KOTSUHOTEL_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOTSUHOTEL_1.TIME_STAMP_BYL=TBL_KOTSUHOTEL_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO=TBL_KOTSUHOTEL_2.KOUENKAI_NO"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO='" & CmnDb.SqlString(KOUENKAI_NO) & "'"   'QQQ
             'strSQL &= strSQL_WHERE_KOTSUHOTEL
@@ -1686,7 +1686,7 @@ Public Class SQL
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO DESC"
             strSQL &= ",TBL_KOTSUHOTEL.SANKASHA_ID DESC"
-            strSQL &= ",TBL_KOTSUHOTEL.UPDATE_DATE DESC"
+            strSQL &= ",TBL_KOTSUHOTEL.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
@@ -3045,8 +3045,7 @@ Public Class SQL
         Private Const SQL_ORDERBY As String _
         = " ORDER BY" _
         & " TBL_KAIJO.KOUENKAI_NO" _
-        & ",TBL_KAIJO.TIME_STAMP_BYL" _
-        & ",TBL_KAIJO.UPDATE_DATE"
+        & ",TBL_KAIJO.TIME_STAMP_BYL"
 
         Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = SQL_SELECT
@@ -3077,7 +3076,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function byKOUENKAI_NO_UPDATE_DATE_DESC(ByVal KOUENKAI_NO As String, ByVal UPDATE_DATE As String) As String
+        Public Shared Function byKOUENKAI_NO_TIME_STAMP_BYL_DESC(ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String) As String
             Dim strSQL As String = ""
             Dim strSQL_WHERE_KAIJO As String = ""
             Dim strSQL_WHERE_KOUENKAI As String = ""
@@ -3086,7 +3085,7 @@ Public Class SQL
             '会場手配テーブル
             strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
-            strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.UPDATE_DATE<N'" & CmnDb.SqlString(UPDATE_DATE) & "'"
+            strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL<N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
 
             '講演会テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
@@ -3146,9 +3145,9 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KOUENKAI
             strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " (SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
-            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
             strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KOUENKAI"
             strSQL &= ","
@@ -3158,10 +3157,10 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KAIJO"
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
-            strSQL &= "  WHERE TBL_KAIJO_1.UPDATE_DATE=TBL_KAIJO_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KAIJO"
             strSQL &= ","
@@ -3173,7 +3172,7 @@ Public Class SQL
             strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
@@ -3203,6 +3202,9 @@ Public Class SQL
             End If
             If Trim(Joken.UPDATE_DATE) <> "" Then
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.UPDATE_DATE=N'" & CmnDb.SqlString(Joken.UPDATE_DATE) & "'"
+            End If
+            If Trim(Joken.TIME_STAMP_BYL) <> "" Then
+                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
             End If
 
             '講演会テーブル
@@ -3313,9 +3315,9 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KOUENKAI
             strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " (SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
-            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
             strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KOUENKAI"
             strSQL &= ","
@@ -3325,10 +3327,10 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KAIJO"
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
-            strSQL &= "  WHERE TBL_KAIJO_1.UPDATE_DATE=TBL_KAIJO_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KAIJO"
             strSQL &= ","
@@ -3340,7 +3342,7 @@ Public Class SQL
             strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
@@ -3352,7 +3354,7 @@ Public Class SQL
 
             'WHERE
             '会場手配テーブル
-            strSQL_WHERE_KAIJO &= " WHERE 1=1"
+            '            strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.SALEFORCE_ID=N'" & CmnDb.SqlString(SALEFORCE_ID) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(TEHAI_ID) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
@@ -3363,7 +3365,6 @@ Public Class SQL
             strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
 
             strSQL &= "SELECT"
-            strSQL &= " DISTINCT"
             strSQL &= " TBL_KAIJO.*"
             strSQL &= ",TBL_KOUENKAI.TIME_STAMP"
             strSQL &= ",TBL_KOUENKAI.TORIKESHI_FLG"
@@ -3416,9 +3417,10 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KOUENKAI
             strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " (SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= strSQL_WHERE_KOUENKAI
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
-            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
             strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KOUENKAI"
             strSQL &= ",TBL_KAIJO"
@@ -3429,9 +3431,10 @@ Public Class SQL
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
             strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= strSQL_WHERE_KAIJO
 
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
@@ -3512,9 +3515,9 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KOUENKAI
             strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " (SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
-            strSQL &= "  WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
             strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KOUENKAI"
             strSQL &= ","
@@ -3524,9 +3527,9 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(UPDATE_DATE) AS UPDATE_DATE,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KAIJO"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
-            strSQL &= "  WHERE TBL_KAIJO_1.UPDATE_DATE=TBL_KAIJO_2.UPDATE_DATE"
+            strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
             strSQL &= ") AS TBL_KAIJO"
             strSQL &= ","
@@ -3538,7 +3541,7 @@ Public Class SQL
             strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 
             Return strSQL
         End Function
@@ -3603,12 +3606,12 @@ Public Class SQL
             strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= ") AS TBL_KOUENKAI_1"
             strSQL &= ",(SELECT"
-            strSQL &= " MAX(UPDATE_DATE) AS UPDATE_DATE"
+            strSQL &= " MAX(TIME_STAMP) AS TIME_STAMP"
             strSQL &= ",KOUENKAI_NO"
             strSQL &= " FROM TBL_KOUENKAI"
             strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
-            strSQL &= " WHERE TBL_KOUENKAI_1.UPDATE_DATE=TBL_KOUENKAI_2.UPDATE_DATE"
+            strSQL &= " WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
             strSQL &= " AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO) AS TBL_KOUENKAI"
             strSQL &= ",(SELECT"
             strSQL &= " N'' AS LOGIN_ID"
@@ -3623,7 +3626,7 @@ Public Class SQL
             strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " ORDER BY"
-            strSQL &= " TBL_KAIJO.UPDATE_DATE DESC"
+            strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 
             If Trim(Joken.KOUENKAI_NO) = "" Then
                 strSQL = "TBL_KAIJO.Rireki: JOKEN.KOUTENKAI_NO ERROR!!" & vbNewLine & strSQL
@@ -3856,7 +3859,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_41120200_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_41120200_T) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.ANS_TOTAL_T & "=N'" & CmnDb.SqlString(TBL_KAIJO.ANS_TOTAL_T) & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KAIJO.SEND_FLAG) & "'"
-            strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KAIJO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KAIJO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_KAIJO.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.SALEFORCE_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KAIJO.Column.TEHAI_ID & "=N'" & CmnDb.SqlString(TBL_KAIJO.TEHAI_ID) & "'"

@@ -2690,6 +2690,7 @@
             Public SEISAN_YM As String
             Public SHOUNIN_KUBUN As String
             Public SHOUNIN_YM As String
+            Public TIME_STAMP_BYL As String
             Public TTEHAI_MITOUROKU As String
             Public TKT_NO As String
         End Structure
@@ -2734,6 +2735,7 @@
             Public Const SEIKYU_YM As String = "請求年月"
             Public Const SEISAN_YM As String = "トップツアー精算年月"
             Public Const SHOUNIN_KUBUN As String = "承認区分"
+            Public Const TIME_STAMP_BYL As String = "Timestamp(BYL)"
             Public Const TKT_NO As String = "タクチケ番号"
         End Class
     End Class

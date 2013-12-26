@@ -154,6 +154,7 @@ Partial Public Class KaijoRegist
             Me.BtnNozomi.Visible = False
             Me.BtnSubmit.Visible = False
             Me.TblComment.Visible = False
+            Me.TdHelp.Visible = False
         Else
             Me.BtnShisetsuKensaku.Visible = True
             Me.BtnCalc_ANS_MITSUMORI.Visible = True
@@ -163,6 +164,7 @@ Partial Public Class KaijoRegist
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
             Me.TblComment.Visible = True
+            Me.TdHelp.Visible = True
             'タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
             If IsExistLaterData() Then
                 CmnModule.SetEnabled(Me.BtnSubmit, False)
@@ -183,7 +185,7 @@ Partial Public Class KaijoRegist
 
     '旧データ取得
     Private Sub GetData_Old()
-        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_UPDATE_DATE_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).UPDATE_DATE)
+        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TIME_STAMP_BYL_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
 
@@ -677,6 +679,12 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
+        'タイムスタンプが新しい物がある時は、エラー
+        If IsExistLaterData() Then
+            CmnModule.AlertMessage("最新のデータがあるため、登録できません。\n新着一覧を確認してください。", Me)
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -777,8 +785,6 @@ Partial Public Class KaijoRegist
         TBL_KAIJO(SEQ).ANS_MITSUMORI_T = AppModule.GetValue_ANS_MITSUMORI_T(TBL_KAIJO(SEQ).ANS_TOTAL_T)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_TOTAL = AppModule.GetValue_ANS_MITSUMORI_TOTAL(TBL_KAIJO(SEQ).ANS_MITSUMORI_T, TBL_KAIJO(SEQ).ANS_MITSUMORI_TF)
         TBL_KAIJO(SEQ).ANS_MITSUMORI_URL = AppModule.GetValue_ANS_MITSUMORI_URL(Me.ANS_MITSUMORI_URL)
-        TBL_KAIJO(SEQ).TIME_STAMP_TOP = CmnModule.GetSysDateTime()
-        TBL_KAIJO(SEQ).UPDATE_DATE = TBL_KAIJO(SEQ).TIME_STAMP_TOP
         TBL_KAIJO(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
 
@@ -962,14 +968,7 @@ Partial Public Class KaijoRegist
         Dim Joken As TableDef.Joken.DataStruct = Nothing
         Dim strSQL As String = ""
 
-        Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
-        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
-            '履歴の場合
-            Joken.UPDATE_DATE = TBL_KAIJO(SEQ).UPDATE_DATE
-        End If
-        'strSQL = SQL.TBL_KAIJO.Search(Joken, False)
         strSQL = SQL.TBL_KAIJO.Print(TBL_KAIJO(SEQ).SALEFORCE_ID, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
-
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.PrintPreview) = "KaijoRegist"
