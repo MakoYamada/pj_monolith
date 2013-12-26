@@ -17,12 +17,14 @@
 				<asp:Button ID="BtnUpload" runat="server" Text="スキャンデータ取込" Width="180px" CssClass="Button" />
 			</td>
 		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="2" border="0">
 		<tr id="TrError" runat="server">
 			<td align="left" colspan="2" style="font-weight: bold; color: #cb1a1a;">
 				エラーがありました。
 				<br />
 				&nbsp;&nbsp;
-				<asp:TextBox ID="ErrorMessage" runat="server" Width="500px" Height="200px" TextMode="MultiLine" ForeColor="#732929"></asp:TextBox>
+				<asp:TextBox ID="LabelErrorMessage" runat="server" Width="900px" Height="350px" TextMode="MultiLine" ForeColor="#cb1a1a" TabIndex="-1" ReadOnly="true"></asp:TextBox>
 			</td>
 		</tr>
 		<tr id="TrEnd" runat="server">

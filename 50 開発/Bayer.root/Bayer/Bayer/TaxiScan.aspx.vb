@@ -163,7 +163,13 @@ Partial Public Class TaxiScan
                     If ScanData.TKT_NO = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号が記載されていません。" & vbNewLine
                     End If
-                End If
+
+                    '登録済み チェック
+                    If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(ScanData.TKT_NO), MyBase.DbConnection) OrElse _
+                       CmnDb.IsExist(SQL.TBL_KOTSUHOTEL.TaxiScanCsvCheck(ScanData.TKT_NO), MyBase.DbConnection) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & ScanData.TKT_NO & "］はスキャン情報取込済みです。" & vbNewLine
+                    End If
+                 End If
             End If
         End While
 
@@ -173,7 +179,7 @@ Partial Public Class TaxiScan
         If Trim(ErrorMessage) <> "" Then
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
-            Me.ErrorMessage.Text = ErrorMessage
+            Me.LabelErrorMessage.Text = ErrorMessage
             Return False
         Else
             Return True
@@ -285,7 +291,7 @@ Partial Public Class TaxiScan
         Dim TKT_HAKKO_FEE As String = "0"
         Dim wUpdateCntTAXI As Integer = 0
         Dim wUpdateCntKOTSUHOTEL As Integer = 0
-         
+
         '発行手数料
         wFlag = False
         strSQL = SQL.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_TESURYO)
@@ -539,7 +545,7 @@ Partial Public Class TaxiScan
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "タクシーチケット発行テーブル：" & wUpdateCntTAXI.ToString & "件、交通宿泊手配テーブル：" & wUpdateCntKOTSUHOTEL.ToString & "件を登録しました。", MyBase.DbConnection)
 
         If TBL_TAXITICKET_HAKKO.Length <> wUpdateCntTAXI OrElse TBL_KOTSUHOTEL.Length <> wUpdateCntKOTSUHOTEL Then
-            Me.ErrorMessage.Text = wStr
+            Me.LabelErrorMessage.Text = wStr
             Return False
         Else
             Return True
