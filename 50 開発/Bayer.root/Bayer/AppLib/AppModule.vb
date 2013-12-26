@@ -4169,7 +4169,7 @@ Public Class AppModule
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_KENSHU Then
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_KENSHU AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_TAXI_KENSHU Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
