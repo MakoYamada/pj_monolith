@@ -473,6 +473,12 @@
     <Compile Include="DrSoufujo.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TaxiKakuninReport.Designer.vb">
+      <DependentUpon>TaxiKakuninReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiKakuninReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -526,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrSoufujo.resx">
       <DependentUpon>DrSoufujo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxiKakuninReport.resx">
+      <DependentUpon>TaxiKakuninReport.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
