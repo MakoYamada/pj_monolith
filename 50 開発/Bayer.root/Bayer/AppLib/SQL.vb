@@ -1817,8 +1817,9 @@ Public Class SQL
             strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & SANKASHA_ID & "'"
 
             strSQL &= " ORDER BY WK_KOTSUHOTEL."
-            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
-            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+            strSQL &= " ,WK_KOTSUHOTEL."
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
             'strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
             'strSQL &= " DESC"
 
