@@ -976,14 +976,15 @@ Public Class DrSoufujo
         End If
         '復路１手配済
         If pKOTSUHOTEL_DATA.ANS_F_STATUS_1 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Then
-            KotsuFlg = True
-
-            Dim KotsuTitle As New Label
-            KotsuTitle.Text = "【交通】"
-            KotsuTitle.Height = RowHeight
-            KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
-            KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            Me.Detail.Controls.Add(KotsuTitle)
+            If Not KotsuFlg Then
+                KotsuFlg = True
+                Dim KotsuTitle As New Label
+                KotsuTitle.Text = "【交通】"
+                KotsuTitle.Height = RowHeight
+                KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
+                KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
+                Me.Detail.Controls.Add(KotsuTitle)
+            End If
 
             Dim Ouro1Title As New Label
             Ouro1Title.Text = "＜復路１＞"
