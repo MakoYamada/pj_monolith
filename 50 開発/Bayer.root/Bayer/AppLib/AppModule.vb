@@ -4163,6 +4163,75 @@ Public Class AppModule
         Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_20, ShortFormat)
     End Function
 
+    'タクシーチケット：発行日（回答）
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE(ByVal ANS_TAXI_HAKKO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = False Then
+            Return CmnModule.Format_Date(ANS_TAXI_HAKKO_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        Else
+            Return ANS_TAXI_HAKKO_DATE
+        End If
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_1(ByVal ANS_TAXI_HAKKO_DATE_1 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_1, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_2(ByVal ANS_TAXI_HAKKO_DATE_2 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_2, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_3(ByVal ANS_TAXI_HAKKO_DATE_3 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_3, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_4(ByVal ANS_TAXI_HAKKO_DATE_4 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_4, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_5(ByVal ANS_TAXI_HAKKO_DATE_5 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_5, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_6(ByVal ANS_TAXI_HAKKO_DATE_6 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_6, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_7(ByVal ANS_TAXI_HAKKO_DATE_7 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_7, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_8(ByVal ANS_TAXI_HAKKO_DATE_8 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_8, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_9(ByVal ANS_TAXI_HAKKO_DATE_9 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_9, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_10(ByVal ANS_TAXI_HAKKO_DATE_10 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_10, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_11(ByVal ANS_TAXI_HAKKO_DATE_11 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_11, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_12(ByVal ANS_TAXI_HAKKO_DATE_12 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_12, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_13(ByVal ANS_TAXI_HAKKO_DATE_13 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_13, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_14(ByVal ANS_TAXI_HAKKO_DATE_14 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_14, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_15(ByVal ANS_TAXI_HAKKO_DATE_15 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_15, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_16(ByVal ANS_TAXI_HAKKO_DATE_16 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_16, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_17(ByVal ANS_TAXI_HAKKO_DATE_17 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_17, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_18(ByVal ANS_TAXI_HAKKO_DATE_18 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_18, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_19(ByVal ANS_TAXI_HAKKO_DATE_19 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_19, ShortFormat)
+    End Function
+    Public Shared Function GetName_ANS_TAXI_HAKKO_DATE_20(ByVal ANS_TAXI_HAKKO_DATE_20 As String, Optional ByVal ShortFormat As Boolean = False) As String
+        Return GetName_ANS_TAXI_HAKKO_DATE(ANS_TAXI_HAKKO_DATE_20, ShortFormat)
+    End Function
+
     'タクシーチケット：券種（回答）
     Public Shared Function GetName_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)

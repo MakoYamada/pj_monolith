@@ -40,6 +40,7 @@ Partial Public Class Preview
                         PrintSoufujo()
                     Case "TaxiKakuninhyo"
                         'タクチケ手配確認票
+                        PrintKakuninhyo()
                 End Select
             ElseIf URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が新着講演会一覧の場合
@@ -199,6 +200,36 @@ Partial Public Class Preview
     Private Sub PrintSoufujo()
 
         Dim rpt1 As New DrSoufujo()
+
+        'データ設定
+        rpt1.DataSource = GetDrData()
+
+        rpt1.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt1.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+
+        '必要に応じマージン設定
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        rpt1.KOTSUHOTEL_DATA = RPT_KOTSUHOTEL
+
+        'レポートを作成
+        rpt1.Run()
+        Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer
+        Me.WebViewer1.ClearCachedReport()
+        Me.WebViewer1.Report = rpt1
+
+    End Sub
+
+    'タクチケ手配確認票
+    Private Sub PrintKakuninhyo()
+
+        Dim rpt1 As New TaxiKakuninReport()
 
         'データ設定
         rpt1.DataSource = GetDrData()
