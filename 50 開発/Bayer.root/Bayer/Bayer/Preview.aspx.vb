@@ -248,6 +248,9 @@ Partial Public Class Preview
 
         rpt1.KOTSUHOTEL_DATA = RPT_KOTSUHOTEL
 
+        'ログイン者名
+        rpt1.MS_USER = Session.Item(SessionDef.MS_USER)
+
         'レポートを作成
         rpt1.Run()
         Me.WebViewer1.ViewerType = DataDynamics.ActiveReports.Web.ViewerType.FlashViewer

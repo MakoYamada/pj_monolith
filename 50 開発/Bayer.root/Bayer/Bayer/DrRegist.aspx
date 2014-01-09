@@ -7,9 +7,9 @@
 					<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="1" />
 					<asp:Button ID="BtnSoufujo1" runat="server" Width="150px" Text="送付状印刷" 
-                        CssClass="Button" TabIndex="2" Visible="False" />
+                        CssClass="Button" TabIndex="2" />
 					<asp:Button ID="BtnTaxiKakunin1" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
-                        CssClass="Button" TabIndex="3" Visible="False" />
+                        CssClass="Button" TabIndex="3" />
 					<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="戻る" 
                         CssClass="Button" TabIndex="4" />
 				    <a href="#TaxiTehaiLink">タクチケ手配へ</a>

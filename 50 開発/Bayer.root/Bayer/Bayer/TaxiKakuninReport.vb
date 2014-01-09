@@ -5,6 +5,13 @@ Imports CommonLib
 
 Public Class TaxiKakuninReport
 
+    Private pMS_USER As TableDef.MS_USER.DataStruct
+    Public WriteOnly Property MS_USER() As TableDef.MS_USER.DataStruct
+        Set(ByVal value As TableDef.MS_USER.DataStruct)
+            pMS_USER = value
+        End Set
+    End Property
+
     Private pKOTSUHOTEL_DATA As TableDef.TBL_KOTSUHOTEL.DataStruct
     Public WriteOnly Property KOTSUHOTEL_DATA() As TableDef.TBL_KOTSUHOTEL.DataStruct
         Set(ByVal value As TableDef.TBL_KOTSUHOTEL.DataStruct)
@@ -111,6 +118,7 @@ Public Class TaxiKakuninReport
     End Sub
 
     Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
+        Me.PRINT_USER.Text = pMS_USER.USER_NAME
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
     End Sub
 End Class
