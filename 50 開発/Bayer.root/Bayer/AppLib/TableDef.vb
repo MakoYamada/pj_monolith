@@ -768,63 +768,123 @@
             Public ANS_TAXI_DATE_1 As String
             Public ANS_TAXI_KENSHU_1 As String
             Public ANS_TAXI_NO_1 As String
+            Public ANS_TAXI_HAKKO_1 As String
+            Public ANS_TAXI_HAKKO_DATE_1 As String
+            Public ANS_TAXI_RMKS_1 As String
             Public ANS_TAXI_DATE_2 As String
             Public ANS_TAXI_KENSHU_2 As String
             Public ANS_TAXI_NO_2 As String
+            Public ANS_TAXI_HAKKO_2 As String
+            Public ANS_TAXI_HAKKO_DATE_2 As String
+            Public ANS_TAXI_RMKS_2 As String
             Public ANS_TAXI_DATE_3 As String
             Public ANS_TAXI_KENSHU_3 As String
             Public ANS_TAXI_NO_3 As String
+            Public ANS_TAXI_HAKKO_3 As String
+            Public ANS_TAXI_HAKKO_DATE_3 As String
+            Public ANS_TAXI_RMKS_3 As String
             Public ANS_TAXI_DATE_4 As String
             Public ANS_TAXI_KENSHU_4 As String
             Public ANS_TAXI_NO_4 As String
+            Public ANS_TAXI_HAKKO_4 As String
+            Public ANS_TAXI_HAKKO_DATE_4 As String
+            Public ANS_TAXI_RMKS_4 As String
             Public ANS_TAXI_DATE_5 As String
             Public ANS_TAXI_KENSHU_5 As String
             Public ANS_TAXI_NO_5 As String
+            Public ANS_TAXI_HAKKO_5 As String
+            Public ANS_TAXI_HAKKO_DATE_5 As String
+            Public ANS_TAXI_RMKS_5 As String
             Public ANS_TAXI_DATE_6 As String
             Public ANS_TAXI_KENSHU_6 As String
             Public ANS_TAXI_NO_6 As String
+            Public ANS_TAXI_HAKKO_6 As String
+            Public ANS_TAXI_HAKKO_DATE_6 As String
+            Public ANS_TAXI_RMKS_6 As String
             Public ANS_TAXI_DATE_7 As String
             Public ANS_TAXI_KENSHU_7 As String
             Public ANS_TAXI_NO_7 As String
+            Public ANS_TAXI_HAKKO_7 As String
+            Public ANS_TAXI_HAKKO_DATE_7 As String
+            Public ANS_TAXI_RMKS_7 As String
             Public ANS_TAXI_DATE_8 As String
             Public ANS_TAXI_KENSHU_8 As String
             Public ANS_TAXI_NO_8 As String
+            Public ANS_TAXI_HAKKO_8 As String
+            Public ANS_TAXI_HAKKO_DATE_8 As String
+            Public ANS_TAXI_RMKS_8 As String
             Public ANS_TAXI_DATE_9 As String
             Public ANS_TAXI_KENSHU_9 As String
             Public ANS_TAXI_NO_9 As String
+            Public ANS_TAXI_HAKKO_9 As String
+            Public ANS_TAXI_HAKKO_DATE_9 As String
+            Public ANS_TAXI_RMKS_9 As String
             Public ANS_TAXI_DATE_10 As String
             Public ANS_TAXI_KENSHU_10 As String
             Public ANS_TAXI_NO_10 As String
+            Public ANS_TAXI_HAKKO_10 As String
+            Public ANS_TAXI_HAKKO_DATE_10 As String
+            Public ANS_TAXI_RMKS_10 As String
             Public ANS_TAXI_DATE_11 As String
             Public ANS_TAXI_KENSHU_11 As String
             Public ANS_TAXI_NO_11 As String
+            Public ANS_TAXI_HAKKO_11 As String
+            Public ANS_TAXI_HAKKO_DATE_11 As String
+            Public ANS_TAXI_RMKS_11 As String
             Public ANS_TAXI_DATE_12 As String
             Public ANS_TAXI_KENSHU_12 As String
             Public ANS_TAXI_NO_12 As String
+            Public ANS_TAXI_HAKKO_12 As String
+            Public ANS_TAXI_HAKKO_DATE_12 As String
+            Public ANS_TAXI_RMKS_12 As String
             Public ANS_TAXI_DATE_13 As String
             Public ANS_TAXI_KENSHU_13 As String
             Public ANS_TAXI_NO_13 As String
+            Public ANS_TAXI_HAKKO_13 As String
+            Public ANS_TAXI_HAKKO_DATE_13 As String
+            Public ANS_TAXI_RMKS_13 As String
             Public ANS_TAXI_DATE_14 As String
             Public ANS_TAXI_KENSHU_14 As String
             Public ANS_TAXI_NO_14 As String
+            Public ANS_TAXI_HAKKO_14 As String
+            Public ANS_TAXI_HAKKO_DATE_14 As String
+            Public ANS_TAXI_RMKS_14 As String
             Public ANS_TAXI_DATE_15 As String
             Public ANS_TAXI_KENSHU_15 As String
             Public ANS_TAXI_NO_15 As String
+            Public ANS_TAXI_HAKKO_15 As String
+            Public ANS_TAXI_HAKKO_DATE_15 As String
+            Public ANS_TAXI_RMKS_15 As String
             Public ANS_TAXI_DATE_16 As String
             Public ANS_TAXI_KENSHU_16 As String
             Public ANS_TAXI_NO_16 As String
+            Public ANS_TAXI_HAKKO_16 As String
+            Public ANS_TAXI_HAKKO_DATE_16 As String
+            Public ANS_TAXI_RMKS_16 As String
             Public ANS_TAXI_DATE_17 As String
             Public ANS_TAXI_KENSHU_17 As String
             Public ANS_TAXI_NO_17 As String
+            Public ANS_TAXI_HAKKO_17 As String
+            Public ANS_TAXI_HAKKO_DATE_17 As String
+            Public ANS_TAXI_RMKS_17 As String
             Public ANS_TAXI_DATE_18 As String
             Public ANS_TAXI_KENSHU_18 As String
             Public ANS_TAXI_NO_18 As String
+            Public ANS_TAXI_HAKKO_18 As String
+            Public ANS_TAXI_HAKKO_DATE_18 As String
+            Public ANS_TAXI_RMKS_18 As String
             Public ANS_TAXI_DATE_19 As String
             Public ANS_TAXI_KENSHU_19 As String
             Public ANS_TAXI_NO_19 As String
+            Public ANS_TAXI_HAKKO_19 As String
+            Public ANS_TAXI_HAKKO_DATE_19 As String
+            Public ANS_TAXI_RMKS_19 As String
             Public ANS_TAXI_DATE_20 As String
             Public ANS_TAXI_KENSHU_20 As String
             Public ANS_TAXI_NO_20 As String
+            Public ANS_TAXI_HAKKO_20 As String
+            Public ANS_TAXI_HAKKO_DATE_20 As String
+            Public ANS_TAXI_RMKS_20 As String
             Public ANS_TAXI_NOTE As String
             Public REQ_MR_O_TEHAI As String
             Public REQ_MR_F_TEHAI As String
@@ -839,6 +899,7 @@
             Public ANS_MR_HOTELHI_TOZEI As String
             Public SEND_FLAG As String
             Public TTANTO_ID As String
+            Public SEIKYU_NO_TOPTOUR As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
             Public UPDATE_DATE As String
