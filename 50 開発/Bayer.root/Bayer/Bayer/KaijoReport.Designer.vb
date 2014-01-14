@@ -134,6 +134,7 @@ Partial Public Class KaijoReport
         Me.UPDATE_DATE = New DataDynamics.ActiveReports.TextBox
         Me.SEND_FLAG = New DataDynamics.ActiveReports.TextBox
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Label6 = New DataDynamics.ActiveReports.Label
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -207,6 +208,7 @@ Partial Public Class KaijoReport
         CType(Me.Label42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -341,7 +343,7 @@ Partial Public Class KaijoReport
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label9, Me.KOUENKAI_NAME, Me.Shape2, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label36, Me.Label38, Me.Line1, Me.TEHAI_ID, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.TIME_STAMP_BYL, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.Label41, Me.KAISAI_DATE_NOTE, Me.KAISAI_KIBOU_ADDRESS1, Me.KAISAI_KIBOU_ADDRESS2, Me.KOUEN_TIME1, Me.KOUEN_TIME2, Me.KOUEN_KAIJO_LAYOUT, Me.IKENKOUKAN_KAIJO_TEHAI, Me.IROUKAI_KAIJO_TEHAI, Me.IROUKAI_SANKA_YOTEI_CNT, Me.KOUSHI_ROOM_TEHAI, Me.KOUSHI_ROOM_FROM, Me.KOUSHI_ROOM_CNT, Me.SHAIN_ROOM_TEHAI, Me.MANAGER_KAIJO_TEHAI, Me.MANAGER_ROOM_FROM, Me.MANAGER_ROOM_CNT, Me.REQ_ROOM_CNT, Me.REQ_STAY_DATE, Me.REQ_KOTSU_CNT, Me.REQ_TAXI_CNT, Me.OTHER_NOTE, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line11, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line29, Me.Line31, Me.Line7, Me.Line12, Me.Line13, Me.Line32, Me.Line34, Me.Line36, Me.Line35, Me.Line37, Me.Line38, Me.Label5, Me.Label25, Me.Label39, Me.Line8, Me.Line39, Me.Line41, Me.USER_NAME, Me.KAISAI_KIBOU_NOTE, Me.Label42, Me.Line9, Me.Line33, Me.Line42, Me.Line44, Me.UPDATE_DATE, Me.SEND_FLAG})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.KAISAI_KIBOU_NOTE, Me.KAISAI_KIBOU_ADDRESS2, Me.KAISAI_KIBOU_ADDRESS1, Me.KAISAI_DATE_NOTE, Me.SHONIN_DATE, Me.SHONIN_NAME, Me.UPDATE_DATE, Me.USER_NAME, Me.TIME_STAMP_BYL, Me.REQ_STATUS_TEHAI, Me.TEHAI_ID, Me.KOUENKAI_NO, Me.Label9, Me.KOUENKAI_NAME, Me.Shape2, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label36, Me.Label38, Me.Line1, Me.Label41, Me.KOUEN_TIME1, Me.KOUEN_TIME2, Me.KOUEN_KAIJO_LAYOUT, Me.IKENKOUKAN_KAIJO_TEHAI, Me.IROUKAI_KAIJO_TEHAI, Me.IROUKAI_SANKA_YOTEI_CNT, Me.KOUSHI_ROOM_TEHAI, Me.KOUSHI_ROOM_FROM, Me.KOUSHI_ROOM_CNT, Me.SHAIN_ROOM_TEHAI, Me.MANAGER_KAIJO_TEHAI, Me.MANAGER_ROOM_FROM, Me.MANAGER_ROOM_CNT, Me.REQ_ROOM_CNT, Me.REQ_STAY_DATE, Me.REQ_KOTSU_CNT, Me.REQ_TAXI_CNT, Me.OTHER_NOTE, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line11, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line29, Me.Line31, Me.Line7, Me.Line12, Me.Line13, Me.Line32, Me.Line34, Me.Line36, Me.Line35, Me.Line37, Me.Line38, Me.Label5, Me.Label25, Me.Label39, Me.Line8, Me.Line39, Me.Line41, Me.Label42, Me.Line9, Me.Line33, Me.Line42, Me.Line44, Me.SEND_FLAG, Me.Label6})
         Me.Detail.Height = 10.02308!
         Me.Detail.Name = "Detail"
         Me.Detail.NewPage = DataDynamics.ActiveReports.NewPage.After
@@ -354,7 +356,7 @@ Partial Public Class KaijoReport
         Me.Label9.Name = "Label9"
         Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold; white-space: nowrap"
         Me.Label9.Text = "講演会名："
-        Me.Label9.Top = 0.0488189!
+        Me.Label9.Top = 0.003937008!
         Me.Label9.Width = 0.7496064!
         '
         'KOUENKAI_NAME
@@ -365,7 +367,7 @@ Partial Public Class KaijoReport
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold; white-space: nowrap"
         Me.KOUENKAI_NAME.Text = "KOUENKAI_NAME"
-        Me.KOUENKAI_NAME.Top = 0.0488189!
+        Me.KOUENKAI_NAME.Top = 0.003937008!
         Me.KOUENKAI_NAME.Width = 5.179134!
         '
         'Shape2
@@ -389,7 +391,7 @@ Partial Public Class KaijoReport
         Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label10.Text = "会合手配Id"
         Me.Label10.Top = 0.2897638!
-        Me.Label10.Width = 1.753543!
+        Me.Label10.Width = 1.845669!
         '
         'Label11
         '
@@ -411,7 +413,7 @@ Partial Public Class KaijoReport
         Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label12.Text = "手配ステータス (依頼)"
         Me.Label12.Top = 0.7409451!
-        Me.Label12.Width = 1.753543!
+        Me.Label12.Width = 1.845669!
         '
         'Label13
         '
@@ -444,7 +446,7 @@ Partial Public Class KaijoReport
         Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label16.Text = "講演会番号"
         Me.Label16.Top = 0.5153545!
-        Me.Label16.Width = 1.753543!
+        Me.Label16.Width = 1.84567!
         '
         'Label17
         '
@@ -466,7 +468,7 @@ Partial Public Class KaijoReport
         Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label18.Text = "最終承認日"
         Me.Label18.Top = 1.868898!
-        Me.Label18.Width = 1.753543!
+        Me.Label18.Width = 1.845669!
         '
         'Label19
         '
@@ -672,73 +674,79 @@ Partial Public Class KaijoReport
         '
         Me.TEHAI_ID.CanGrow = False
         Me.TEHAI_ID.DataField = "TEHAI_ID"
-        Me.TEHAI_ID.Height = 0.1968504!
-        Me.TEHAI_ID.Left = 2.014961!
+        Me.TEHAI_ID.Height = 0.2145669!
+        Me.TEHAI_ID.Left = 1.983858!
         Me.TEHAI_ID.Name = "TEHAI_ID"
+        Me.TEHAI_ID.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.TEHAI_ID.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.TEHAI_ID.Text = "TEHAI_ID"
-        Me.TEHAI_ID.Top = 0.2897638!
-        Me.TEHAI_ID.Width = 3.937008!
+        Me.TEHAI_ID.Top = 0.2673229!
+        Me.TEHAI_ID.Width = 5.535433!
         '
         'KOUENKAI_NO
         '
         Me.KOUENKAI_NO.CanGrow = False
         Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Height = 0.1968504!
-        Me.KOUENKAI_NO.Left = 2.014961!
+        Me.KOUENKAI_NO.Height = 0.2145669!
+        Me.KOUENKAI_NO.Left = 1.983858!
         Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
+        Me.KOUENKAI_NO.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUENKAI_NO.Text = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Top = 0.5153545!
-        Me.KOUENKAI_NO.Width = 3.937008!
+        Me.KOUENKAI_NO.Top = 0.4929134!
+        Me.KOUENKAI_NO.Width = 5.535433!
         '
         'REQ_STATUS_TEHAI
         '
         Me.REQ_STATUS_TEHAI.CanGrow = False
         Me.REQ_STATUS_TEHAI.DataField = "REQ_STATUS_TEHAI"
-        Me.REQ_STATUS_TEHAI.Height = 0.1968504!
-        Me.REQ_STATUS_TEHAI.Left = 2.014961!
+        Me.REQ_STATUS_TEHAI.Height = 0.2145669!
+        Me.REQ_STATUS_TEHAI.Left = 1.983858!
         Me.REQ_STATUS_TEHAI.Name = "REQ_STATUS_TEHAI"
+        Me.REQ_STATUS_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.REQ_STATUS_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.REQ_STATUS_TEHAI.Text = "REQ_STATUS_TEHAI"
-        Me.REQ_STATUS_TEHAI.Top = 0.7409451!
-        Me.REQ_STATUS_TEHAI.Width = 3.937008!
+        Me.REQ_STATUS_TEHAI.Top = 0.718504!
+        Me.REQ_STATUS_TEHAI.Width = 5.535433!
         '
         'TIME_STAMP_BYL
         '
         Me.TIME_STAMP_BYL.CanGrow = False
         Me.TIME_STAMP_BYL.DataField = "TIME_STAMP_BYL"
-        Me.TIME_STAMP_BYL.Height = 0.1968504!
-        Me.TIME_STAMP_BYL.Left = 2.014961!
+        Me.TIME_STAMP_BYL.Height = 0.2145669!
+        Me.TIME_STAMP_BYL.Left = 1.983858!
         Me.TIME_STAMP_BYL.Name = "TIME_STAMP_BYL"
+        Me.TIME_STAMP_BYL.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.TIME_STAMP_BYL.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.TIME_STAMP_BYL.Text = "TIME_STAMP_BYL"
-        Me.TIME_STAMP_BYL.Top = 0.9665357!
-        Me.TIME_STAMP_BYL.Width = 3.937008!
+        Me.TIME_STAMP_BYL.Top = 0.9440945!
+        Me.TIME_STAMP_BYL.Width = 5.535433!
         '
         'SHONIN_NAME
         '
         Me.SHONIN_NAME.CanGrow = False
         Me.SHONIN_NAME.DataField = "SHONIN_NAME"
-        Me.SHONIN_NAME.Height = 0.1968504!
-        Me.SHONIN_NAME.Left = 2.014961!
+        Me.SHONIN_NAME.Height = 0.2145669!
+        Me.SHONIN_NAME.Left = 1.983858!
         Me.SHONIN_NAME.Name = "SHONIN_NAME"
+        Me.SHONIN_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.SHONIN_NAME.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.SHONIN_NAME.Text = "SHONIN_NAME"
-        Me.SHONIN_NAME.Top = 1.643308!
-        Me.SHONIN_NAME.Width = 5.456693!
+        Me.SHONIN_NAME.Top = 1.620866!
+        Me.SHONIN_NAME.Width = 5.535433!
         '
         'SHONIN_DATE
         '
         Me.SHONIN_DATE.CanGrow = False
         Me.SHONIN_DATE.DataField = "SHONIN_DATE"
-        Me.SHONIN_DATE.Height = 0.1968504!
-        Me.SHONIN_DATE.Left = 2.014961!
+        Me.SHONIN_DATE.Height = 0.2145669!
+        Me.SHONIN_DATE.Left = 1.983858!
         Me.SHONIN_DATE.Name = "SHONIN_DATE"
+        Me.SHONIN_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.SHONIN_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.SHONIN_DATE.Text = "SHONIN_DATE"
-        Me.SHONIN_DATE.Top = 1.868898!
-        Me.SHONIN_DATE.Width = 3.937008!
+        Me.SHONIN_DATE.Top = 1.846457!
+        Me.SHONIN_DATE.Width = 5.535433!
         '
         'Label41
         '
@@ -755,253 +763,274 @@ Partial Public Class KaijoReport
         '
         Me.KAISAI_DATE_NOTE.CanGrow = False
         Me.KAISAI_DATE_NOTE.DataField = "KAISAI_DATE_NOTE"
-        Me.KAISAI_DATE_NOTE.Height = 0.6299213!
-        Me.KAISAI_DATE_NOTE.Left = 2.014961!
+        Me.KAISAI_DATE_NOTE.Height = 0.6688976!
+        Me.KAISAI_DATE_NOTE.Left = 1.983858!
         Me.KAISAI_DATE_NOTE.Name = "KAISAI_DATE_NOTE"
+        Me.KAISAI_DATE_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KAISAI_DATE_NOTE.Style = "font-family: ＭＳ ゴシック"
         Me.KAISAI_DATE_NOTE.Text = "KAISAI_DATE_NOTE"
-        Me.KAISAI_DATE_NOTE.Top = 2.094489!
-        Me.KAISAI_DATE_NOTE.Width = 5.456693!
+        Me.KAISAI_DATE_NOTE.Top = 2.072047!
+        Me.KAISAI_DATE_NOTE.Width = 5.535433!
         '
         'KAISAI_KIBOU_ADDRESS1
         '
         Me.KAISAI_KIBOU_ADDRESS1.CanGrow = False
         Me.KAISAI_KIBOU_ADDRESS1.DataField = "KAISAI_KIBOU_ADDRESS1"
-        Me.KAISAI_KIBOU_ADDRESS1.Height = 0.1968504!
-        Me.KAISAI_KIBOU_ADDRESS1.Left = 2.014961!
+        Me.KAISAI_KIBOU_ADDRESS1.Height = 0.2145669!
+        Me.KAISAI_KIBOU_ADDRESS1.Left = 1.983858!
         Me.KAISAI_KIBOU_ADDRESS1.Name = "KAISAI_KIBOU_ADDRESS1"
+        Me.KAISAI_KIBOU_ADDRESS1.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KAISAI_KIBOU_ADDRESS1.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KAISAI_KIBOU_ADDRESS1.Text = "KAISAI_KIBOU_ADDRESS1"
-        Me.KAISAI_KIBOU_ADDRESS1.Top = 2.771261!
-        Me.KAISAI_KIBOU_ADDRESS1.Width = 5.456693!
+        Me.KAISAI_KIBOU_ADDRESS1.Top = 2.748819!
+        Me.KAISAI_KIBOU_ADDRESS1.Width = 5.535433!
         '
         'KAISAI_KIBOU_ADDRESS2
         '
         Me.KAISAI_KIBOU_ADDRESS2.CanGrow = False
         Me.KAISAI_KIBOU_ADDRESS2.DataField = "KAISAI_KIBOU_ADDRESS2"
-        Me.KAISAI_KIBOU_ADDRESS2.Height = 0.1968504!
-        Me.KAISAI_KIBOU_ADDRESS2.Left = 2.014961!
+        Me.KAISAI_KIBOU_ADDRESS2.Height = 0.2145669!
+        Me.KAISAI_KIBOU_ADDRESS2.Left = 1.983858!
         Me.KAISAI_KIBOU_ADDRESS2.Name = "KAISAI_KIBOU_ADDRESS2"
+        Me.KAISAI_KIBOU_ADDRESS2.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KAISAI_KIBOU_ADDRESS2.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KAISAI_KIBOU_ADDRESS2.Text = "KAISAI_KIBOU_ADDRESS2"
-        Me.KAISAI_KIBOU_ADDRESS2.Top = 2.996852!
-        Me.KAISAI_KIBOU_ADDRESS2.Width = 5.433071!
+        Me.KAISAI_KIBOU_ADDRESS2.Top = 2.974409!
+        Me.KAISAI_KIBOU_ADDRESS2.Width = 5.535433!
         '
         'KOUEN_TIME1
         '
         Me.KOUEN_TIME1.CanGrow = False
         Me.KOUEN_TIME1.DataField = "KOUEN_TIME1"
-        Me.KOUEN_TIME1.Height = 0.1968504!
-        Me.KOUEN_TIME1.Left = 2.014961!
+        Me.KOUEN_TIME1.Height = 0.2145669!
+        Me.KOUEN_TIME1.Left = 1.983858!
         Me.KOUEN_TIME1.Name = "KOUEN_TIME1"
+        Me.KOUEN_TIME1.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUEN_TIME1.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUEN_TIME1.Text = "KOUEN_TIME1"
-        Me.KOUEN_TIME1.Top = 3.899215!
-        Me.KOUEN_TIME1.Width = 3.937008!
+        Me.KOUEN_TIME1.Top = 3.876772!
+        Me.KOUEN_TIME1.Width = 5.535433!
         '
         'KOUEN_TIME2
         '
         Me.KOUEN_TIME2.CanGrow = False
         Me.KOUEN_TIME2.DataField = "KOUEN_TIME2"
-        Me.KOUEN_TIME2.Height = 0.1968504!
-        Me.KOUEN_TIME2.Left = 2.014961!
+        Me.KOUEN_TIME2.Height = 0.2145669!
+        Me.KOUEN_TIME2.Left = 1.983858!
         Me.KOUEN_TIME2.Name = "KOUEN_TIME2"
+        Me.KOUEN_TIME2.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUEN_TIME2.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUEN_TIME2.Text = "KOUEN_TIME2"
-        Me.KOUEN_TIME2.Top = 4.124805!
-        Me.KOUEN_TIME2.Width = 3.937008!
+        Me.KOUEN_TIME2.Top = 4.102362!
+        Me.KOUEN_TIME2.Width = 5.535433!
         '
         'KOUEN_KAIJO_LAYOUT
         '
         Me.KOUEN_KAIJO_LAYOUT.CanGrow = False
         Me.KOUEN_KAIJO_LAYOUT.DataField = "KOUEN_KAIJO_LAYOUT"
-        Me.KOUEN_KAIJO_LAYOUT.Height = 0.1968504!
-        Me.KOUEN_KAIJO_LAYOUT.Left = 2.014961!
+        Me.KOUEN_KAIJO_LAYOUT.Height = 0.2145669!
+        Me.KOUEN_KAIJO_LAYOUT.Left = 1.983858!
         Me.KOUEN_KAIJO_LAYOUT.Name = "KOUEN_KAIJO_LAYOUT"
+        Me.KOUEN_KAIJO_LAYOUT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUEN_KAIJO_LAYOUT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUEN_KAIJO_LAYOUT.Text = "KOUEN_KAIJO_LAYOUT"
-        Me.KOUEN_KAIJO_LAYOUT.Top = 4.350396!
-        Me.KOUEN_KAIJO_LAYOUT.Width = 3.937008!
+        Me.KOUEN_KAIJO_LAYOUT.Top = 4.327953!
+        Me.KOUEN_KAIJO_LAYOUT.Width = 5.535433!
         '
         'IKENKOUKAN_KAIJO_TEHAI
         '
         Me.IKENKOUKAN_KAIJO_TEHAI.CanGrow = False
         Me.IKENKOUKAN_KAIJO_TEHAI.DataField = "IKENKOUKAN_KAIJO_TEHAI"
-        Me.IKENKOUKAN_KAIJO_TEHAI.Height = 0.1968504!
-        Me.IKENKOUKAN_KAIJO_TEHAI.Left = 2.014961!
+        Me.IKENKOUKAN_KAIJO_TEHAI.Height = 0.2145669!
+        Me.IKENKOUKAN_KAIJO_TEHAI.Left = 1.983858!
         Me.IKENKOUKAN_KAIJO_TEHAI.Name = "IKENKOUKAN_KAIJO_TEHAI"
+        Me.IKENKOUKAN_KAIJO_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.IKENKOUKAN_KAIJO_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.IKENKOUKAN_KAIJO_TEHAI.Text = "IKENKOUKAN_KAIJO_TEHAI"
-        Me.IKENKOUKAN_KAIJO_TEHAI.Top = 4.575986!
-        Me.IKENKOUKAN_KAIJO_TEHAI.Width = 3.937008!
+        Me.IKENKOUKAN_KAIJO_TEHAI.Top = 4.553544!
+        Me.IKENKOUKAN_KAIJO_TEHAI.Width = 5.535433!
         '
         'IROUKAI_KAIJO_TEHAI
         '
         Me.IROUKAI_KAIJO_TEHAI.CanGrow = False
         Me.IROUKAI_KAIJO_TEHAI.DataField = "IROUKAI_KAIJO_TEHAI"
-        Me.IROUKAI_KAIJO_TEHAI.Height = 0.1968504!
-        Me.IROUKAI_KAIJO_TEHAI.Left = 2.014961!
+        Me.IROUKAI_KAIJO_TEHAI.Height = 0.2145669!
+        Me.IROUKAI_KAIJO_TEHAI.Left = 1.983858!
         Me.IROUKAI_KAIJO_TEHAI.Name = "IROUKAI_KAIJO_TEHAI"
+        Me.IROUKAI_KAIJO_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.IROUKAI_KAIJO_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.IROUKAI_KAIJO_TEHAI.Text = "IROUKAI_KAIJO_TEHAI"
-        Me.IROUKAI_KAIJO_TEHAI.Top = 4.801577!
-        Me.IROUKAI_KAIJO_TEHAI.Width = 3.937008!
+        Me.IROUKAI_KAIJO_TEHAI.Top = 4.779134!
+        Me.IROUKAI_KAIJO_TEHAI.Width = 5.535433!
         '
         'IROUKAI_SANKA_YOTEI_CNT
         '
         Me.IROUKAI_SANKA_YOTEI_CNT.CanGrow = False
         Me.IROUKAI_SANKA_YOTEI_CNT.DataField = "IROUKAI_SANKA_YOTEI_CNT"
-        Me.IROUKAI_SANKA_YOTEI_CNT.Height = 0.1968504!
-        Me.IROUKAI_SANKA_YOTEI_CNT.Left = 2.014961!
+        Me.IROUKAI_SANKA_YOTEI_CNT.Height = 0.2145669!
+        Me.IROUKAI_SANKA_YOTEI_CNT.Left = 1.983858!
         Me.IROUKAI_SANKA_YOTEI_CNT.Name = "IROUKAI_SANKA_YOTEI_CNT"
+        Me.IROUKAI_SANKA_YOTEI_CNT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.IROUKAI_SANKA_YOTEI_CNT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.IROUKAI_SANKA_YOTEI_CNT.Text = "IROUKAI_SANKA_YOTEI_CNT"
-        Me.IROUKAI_SANKA_YOTEI_CNT.Top = 5.027168!
-        Me.IROUKAI_SANKA_YOTEI_CNT.Width = 3.937008!
+        Me.IROUKAI_SANKA_YOTEI_CNT.Top = 5.004725!
+        Me.IROUKAI_SANKA_YOTEI_CNT.Width = 5.535433!
         '
         'KOUSHI_ROOM_TEHAI
         '
         Me.KOUSHI_ROOM_TEHAI.CanGrow = False
         Me.KOUSHI_ROOM_TEHAI.DataField = "KOUSHI_ROOM_TEHAI"
-        Me.KOUSHI_ROOM_TEHAI.Height = 0.1968504!
-        Me.KOUSHI_ROOM_TEHAI.Left = 2.014961!
+        Me.KOUSHI_ROOM_TEHAI.Height = 0.2145669!
+        Me.KOUSHI_ROOM_TEHAI.Left = 1.983858!
         Me.KOUSHI_ROOM_TEHAI.Name = "KOUSHI_ROOM_TEHAI"
+        Me.KOUSHI_ROOM_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUSHI_ROOM_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUSHI_ROOM_TEHAI.Text = "KOUSHI_ROOM_TEHAI"
-        Me.KOUSHI_ROOM_TEHAI.Top = 5.252759!
-        Me.KOUSHI_ROOM_TEHAI.Width = 3.937008!
+        Me.KOUSHI_ROOM_TEHAI.Top = 5.230315!
+        Me.KOUSHI_ROOM_TEHAI.Width = 5.535433!
         '
         'KOUSHI_ROOM_FROM
         '
         Me.KOUSHI_ROOM_FROM.CanGrow = False
         Me.KOUSHI_ROOM_FROM.DataField = "KOUSHI_ROOM_FROM"
-        Me.KOUSHI_ROOM_FROM.Height = 0.1968504!
-        Me.KOUSHI_ROOM_FROM.Left = 2.014961!
+        Me.KOUSHI_ROOM_FROM.Height = 0.2145669!
+        Me.KOUSHI_ROOM_FROM.Left = 1.983858!
         Me.KOUSHI_ROOM_FROM.Name = "KOUSHI_ROOM_FROM"
+        Me.KOUSHI_ROOM_FROM.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUSHI_ROOM_FROM.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUSHI_ROOM_FROM.Text = "KOUSHI_ROOM_FROM"
-        Me.KOUSHI_ROOM_FROM.Top = 5.478349!
-        Me.KOUSHI_ROOM_FROM.Width = 3.937008!
+        Me.KOUSHI_ROOM_FROM.Top = 5.455905!
+        Me.KOUSHI_ROOM_FROM.Width = 5.535433!
         '
         'KOUSHI_ROOM_CNT
         '
         Me.KOUSHI_ROOM_CNT.CanGrow = False
         Me.KOUSHI_ROOM_CNT.DataField = "KOUSHI_ROOM_CNT"
-        Me.KOUSHI_ROOM_CNT.Height = 0.1968504!
-        Me.KOUSHI_ROOM_CNT.Left = 2.014961!
+        Me.KOUSHI_ROOM_CNT.Height = 0.2145669!
+        Me.KOUSHI_ROOM_CNT.Left = 1.983858!
         Me.KOUSHI_ROOM_CNT.Name = "KOUSHI_ROOM_CNT"
+        Me.KOUSHI_ROOM_CNT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KOUSHI_ROOM_CNT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.KOUSHI_ROOM_CNT.Text = "KOUSHI_ROOM_CNT"
-        Me.KOUSHI_ROOM_CNT.Top = 5.70394!
-        Me.KOUSHI_ROOM_CNT.Width = 3.937008!
+        Me.KOUSHI_ROOM_CNT.Top = 5.681496!
+        Me.KOUSHI_ROOM_CNT.Width = 5.535433!
         '
         'SHAIN_ROOM_TEHAI
         '
         Me.SHAIN_ROOM_TEHAI.CanGrow = False
         Me.SHAIN_ROOM_TEHAI.DataField = "SHAIN_ROOM_TEHAI"
-        Me.SHAIN_ROOM_TEHAI.Height = 0.1968504!
-        Me.SHAIN_ROOM_TEHAI.Left = 2.014961!
+        Me.SHAIN_ROOM_TEHAI.Height = 0.2145669!
+        Me.SHAIN_ROOM_TEHAI.Left = 1.983858!
         Me.SHAIN_ROOM_TEHAI.Name = "SHAIN_ROOM_TEHAI"
+        Me.SHAIN_ROOM_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.SHAIN_ROOM_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.SHAIN_ROOM_TEHAI.Text = "SHAIN_ROOM_TEHAI"
-        Me.SHAIN_ROOM_TEHAI.Top = 5.929531!
-        Me.SHAIN_ROOM_TEHAI.Width = 3.937008!
+        Me.SHAIN_ROOM_TEHAI.Top = 5.907086!
+        Me.SHAIN_ROOM_TEHAI.Width = 5.535433!
         '
         'MANAGER_KAIJO_TEHAI
         '
         Me.MANAGER_KAIJO_TEHAI.CanGrow = False
         Me.MANAGER_KAIJO_TEHAI.DataField = "MANAGER_KAIJO_TEHAI"
-        Me.MANAGER_KAIJO_TEHAI.Height = 0.1968504!
-        Me.MANAGER_KAIJO_TEHAI.Left = 2.014961!
+        Me.MANAGER_KAIJO_TEHAI.Height = 0.2145669!
+        Me.MANAGER_KAIJO_TEHAI.Left = 1.983858!
         Me.MANAGER_KAIJO_TEHAI.Name = "MANAGER_KAIJO_TEHAI"
+        Me.MANAGER_KAIJO_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.MANAGER_KAIJO_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.MANAGER_KAIJO_TEHAI.Text = "MANAGER_KAIJO_TEHAI"
-        Me.MANAGER_KAIJO_TEHAI.Top = 6.155121!
-        Me.MANAGER_KAIJO_TEHAI.Width = 3.937008!
+        Me.MANAGER_KAIJO_TEHAI.Top = 6.132677!
+        Me.MANAGER_KAIJO_TEHAI.Width = 5.535433!
         '
         'MANAGER_ROOM_FROM
         '
         Me.MANAGER_ROOM_FROM.CanGrow = False
         Me.MANAGER_ROOM_FROM.DataField = "MANAGER_ROOM_FROM"
-        Me.MANAGER_ROOM_FROM.Height = 0.1968504!
-        Me.MANAGER_ROOM_FROM.Left = 2.014961!
+        Me.MANAGER_ROOM_FROM.Height = 0.2145669!
+        Me.MANAGER_ROOM_FROM.Left = 1.983858!
         Me.MANAGER_ROOM_FROM.Name = "MANAGER_ROOM_FROM"
+        Me.MANAGER_ROOM_FROM.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.MANAGER_ROOM_FROM.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.MANAGER_ROOM_FROM.Text = "MANAGER_ROOM_FROM"
-        Me.MANAGER_ROOM_FROM.Top = 6.380712!
-        Me.MANAGER_ROOM_FROM.Width = 3.937008!
+        Me.MANAGER_ROOM_FROM.Top = 6.358268!
+        Me.MANAGER_ROOM_FROM.Width = 5.535433!
         '
         'MANAGER_ROOM_CNT
         '
         Me.MANAGER_ROOM_CNT.CanGrow = False
         Me.MANAGER_ROOM_CNT.DataField = "MANAGER_ROOM_CNT"
-        Me.MANAGER_ROOM_CNT.Height = 0.1968504!
-        Me.MANAGER_ROOM_CNT.Left = 2.014961!
+        Me.MANAGER_ROOM_CNT.Height = 0.2145669!
+        Me.MANAGER_ROOM_CNT.Left = 1.983858!
         Me.MANAGER_ROOM_CNT.Name = "MANAGER_ROOM_CNT"
+        Me.MANAGER_ROOM_CNT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.MANAGER_ROOM_CNT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.MANAGER_ROOM_CNT.Text = "MANAGER_ROOM_CNT"
-        Me.MANAGER_ROOM_CNT.Top = 6.606303!
-        Me.MANAGER_ROOM_CNT.Width = 3.937008!
+        Me.MANAGER_ROOM_CNT.Top = 6.583858!
+        Me.MANAGER_ROOM_CNT.Width = 5.535433!
         '
         'REQ_ROOM_CNT
         '
         Me.REQ_ROOM_CNT.CanGrow = False
         Me.REQ_ROOM_CNT.DataField = "REQ_ROOM_CNT"
-        Me.REQ_ROOM_CNT.Height = 0.1968504!
-        Me.REQ_ROOM_CNT.Left = 2.014961!
+        Me.REQ_ROOM_CNT.Height = 0.2145669!
+        Me.REQ_ROOM_CNT.Left = 1.983858!
         Me.REQ_ROOM_CNT.Name = "REQ_ROOM_CNT"
+        Me.REQ_ROOM_CNT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.REQ_ROOM_CNT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.REQ_ROOM_CNT.Text = "REQ_ROOM_CNT"
-        Me.REQ_ROOM_CNT.Top = 6.831893!
-        Me.REQ_ROOM_CNT.Width = 3.937008!
+        Me.REQ_ROOM_CNT.Top = 6.809449!
+        Me.REQ_ROOM_CNT.Width = 5.535433!
         '
         'REQ_STAY_DATE
         '
         Me.REQ_STAY_DATE.CanGrow = False
         Me.REQ_STAY_DATE.DataField = "REQ_STAY_DATE"
-        Me.REQ_STAY_DATE.Height = 0.1968504!
-        Me.REQ_STAY_DATE.Left = 2.014961!
+        Me.REQ_STAY_DATE.Height = 0.2145669!
+        Me.REQ_STAY_DATE.Left = 1.983858!
         Me.REQ_STAY_DATE.Name = "REQ_STAY_DATE"
+        Me.REQ_STAY_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.REQ_STAY_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.REQ_STAY_DATE.Text = "REQ_STAY_DATE"
-        Me.REQ_STAY_DATE.Top = 7.057484!
-        Me.REQ_STAY_DATE.Width = 3.937008!
+        Me.REQ_STAY_DATE.Top = 7.035039!
+        Me.REQ_STAY_DATE.Width = 5.535433!
         '
         'REQ_KOTSU_CNT
         '
         Me.REQ_KOTSU_CNT.CanGrow = False
         Me.REQ_KOTSU_CNT.DataField = "REQ_KOTSU_CNT"
-        Me.REQ_KOTSU_CNT.Height = 0.1968504!
-        Me.REQ_KOTSU_CNT.Left = 2.014961!
+        Me.REQ_KOTSU_CNT.Height = 0.2145669!
+        Me.REQ_KOTSU_CNT.Left = 1.983858!
         Me.REQ_KOTSU_CNT.Name = "REQ_KOTSU_CNT"
+        Me.REQ_KOTSU_CNT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.REQ_KOTSU_CNT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.REQ_KOTSU_CNT.Text = "REQ_KOTSU_CNT"
-        Me.REQ_KOTSU_CNT.Top = 7.283075!
-        Me.REQ_KOTSU_CNT.Width = 3.937008!
+        Me.REQ_KOTSU_CNT.Top = 7.26063!
+        Me.REQ_KOTSU_CNT.Width = 5.535433!
         '
         'REQ_TAXI_CNT
         '
         Me.REQ_TAXI_CNT.CanGrow = False
         Me.REQ_TAXI_CNT.DataField = "REQ_TAXI_CNT"
-        Me.REQ_TAXI_CNT.Height = 0.1968504!
-        Me.REQ_TAXI_CNT.Left = 2.014961!
+        Me.REQ_TAXI_CNT.Height = 0.2145669!
+        Me.REQ_TAXI_CNT.Left = 1.983858!
         Me.REQ_TAXI_CNT.Name = "REQ_TAXI_CNT"
+        Me.REQ_TAXI_CNT.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.REQ_TAXI_CNT.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.REQ_TAXI_CNT.Text = "REQ_TAXI_CNT"
-        Me.REQ_TAXI_CNT.Top = 7.508666!
-        Me.REQ_TAXI_CNT.Width = 3.937008!
+        Me.REQ_TAXI_CNT.Top = 7.48622!
+        Me.REQ_TAXI_CNT.Width = 5.535433!
         '
         'OTHER_NOTE
         '
         Me.OTHER_NOTE.CanGrow = False
         Me.OTHER_NOTE.DataField = "OTHER_NOTE"
-        Me.OTHER_NOTE.Height = 0.6299213!
-        Me.OTHER_NOTE.Left = 2.014961!
+        Me.OTHER_NOTE.Height = 0.6688976!
+        Me.OTHER_NOTE.Left = 1.983858!
         Me.OTHER_NOTE.Name = "OTHER_NOTE"
+        Me.OTHER_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.OTHER_NOTE.Style = "font-family: ＭＳ ゴシック"
         Me.OTHER_NOTE.Text = "OTHER_NOTE"
-        Me.OTHER_NOTE.Top = 7.734256!
-        Me.OTHER_NOTE.Width = 5.456693!
+        Me.OTHER_NOTE.Top = 7.711811!
+        Me.OTHER_NOTE.Width = 5.535433!
         '
         'Line2
         '
@@ -1469,25 +1498,27 @@ Partial Public Class KaijoReport
         '
         Me.USER_NAME.CanGrow = False
         Me.USER_NAME.DataField = "USER_NAME"
-        Me.USER_NAME.Height = 0.1968504!
-        Me.USER_NAME.Left = 2.014961!
+        Me.USER_NAME.Height = 0.2145669!
+        Me.USER_NAME.Left = 1.983858!
         Me.USER_NAME.Name = "USER_NAME"
+        Me.USER_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.USER_NAME.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.USER_NAME.Text = "USER_NAME"
-        Me.USER_NAME.Top = 1.192126!
-        Me.USER_NAME.Width = 5.456693!
+        Me.USER_NAME.Top = 1.169685!
+        Me.USER_NAME.Width = 5.535433!
         '
         'KAISAI_KIBOU_NOTE
         '
         Me.KAISAI_KIBOU_NOTE.CanGrow = False
         Me.KAISAI_KIBOU_NOTE.DataField = "KAISAI_KIBOU_NOTE"
-        Me.KAISAI_KIBOU_NOTE.Height = 0.6299213!
-        Me.KAISAI_KIBOU_NOTE.Left = 2.014961!
+        Me.KAISAI_KIBOU_NOTE.Height = 0.6688976!
+        Me.KAISAI_KIBOU_NOTE.Left = 1.983858!
         Me.KAISAI_KIBOU_NOTE.Name = "KAISAI_KIBOU_NOTE"
+        Me.KAISAI_KIBOU_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.KAISAI_KIBOU_NOTE.Style = "font-family: ＭＳ ゴシック"
         Me.KAISAI_KIBOU_NOTE.Text = "KAISAI_KIBOU_NOTE"
-        Me.KAISAI_KIBOU_NOTE.Top = 3.222442!
-        Me.KAISAI_KIBOU_NOTE.Width = 5.456693!
+        Me.KAISAI_KIBOU_NOTE.Top = 3.2!
+        Me.KAISAI_KIBOU_NOTE.Width = 5.535433!
         '
         'Label42
         '
@@ -1556,30 +1587,42 @@ Partial Public Class KaijoReport
         '
         Me.UPDATE_DATE.CanGrow = False
         Me.UPDATE_DATE.DataField = "UPDATE_DATE"
-        Me.UPDATE_DATE.Height = 0.1968504!
-        Me.UPDATE_DATE.Left = 2.014961!
+        Me.UPDATE_DATE.Height = 0.2145669!
+        Me.UPDATE_DATE.Left = 1.983858!
         Me.UPDATE_DATE.Name = "UPDATE_DATE"
+        Me.UPDATE_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
         Me.UPDATE_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
         Me.UPDATE_DATE.Text = "UPDATE_DATE"
-        Me.UPDATE_DATE.Top = 1.417717!
-        Me.UPDATE_DATE.Width = 3.937008!
+        Me.UPDATE_DATE.Top = 1.395276!
+        Me.UPDATE_DATE.Width = 5.535433!
         '
         'SEND_FLAG
         '
         Me.SEND_FLAG.CanGrow = False
         Me.SEND_FLAG.DataField = "SEND_FLAG"
         Me.SEND_FLAG.Height = 0.1968504!
-        Me.SEND_FLAG.Left = 6.017717!
+        Me.SEND_FLAG.Left = 6.882284!
         Me.SEND_FLAG.Name = "SEND_FLAG"
-        Me.SEND_FLAG.Style = "font-family: ＭＳ ゴシック; text-align: right; white-space: nowrap"
-        Me.SEND_FLAG.Text = "NOZOMI送信：◎◎◎◎"
-        Me.SEND_FLAG.Top = 0.0488189!
-        Me.SEND_FLAG.Width = 1.503544!
+        Me.SEND_FLAG.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
+        Me.SEND_FLAG.Text = "◎◎◎◎"
+        Me.SEND_FLAG.Top = 0.003937008!
+        Me.SEND_FLAG.Width = 0.6389766!
         '
         'PageFooter
         '
         Me.PageFooter.Height = 0.0!
         Me.PageFooter.Name = "PageFooter"
+        '
+        'Label6
+        '
+        Me.Label6.Height = 0.1770833!
+        Me.Label6.HyperLink = Nothing
+        Me.Label6.Left = 6.017717!
+        Me.Label6.Name = "Label6"
+        Me.Label6.Style = "text-align: right"
+        Me.Label6.Text = "NOZOMI送信："
+        Me.Label6.Top = 0.003937008!
+        Me.Label6.Width = 0.8956695!
         '
         'KaijoReport
         '
@@ -1668,6 +1711,7 @@ Partial Public Class KaijoReport
         CType(Me.Label42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -1784,4 +1828,5 @@ Partial Public Class KaijoReport
     Private WithEvents Line44 As DataDynamics.ActiveReports.Line
     Private WithEvents UPDATE_DATE As DataDynamics.ActiveReports.TextBox
     Private WithEvents SEND_FLAG As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Label6 As DataDynamics.ActiveReports.Label
 End Class

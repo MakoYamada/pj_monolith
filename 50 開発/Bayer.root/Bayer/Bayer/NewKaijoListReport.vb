@@ -25,7 +25,7 @@ Public Class NewKaijoListReport
         '条件
         Me.JokenBU.Text = pJoken.BU
         Me.JokenKIKAKU_TANTO_AREA.Text = pJoken.AREA
-        Me.JokenREQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(pJoken.REQ_STATUS_TEHAI)
+        Me.JokenREQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(pJoken.REQ_STATUS_TEHAI, True)
     End Sub
 
     Private Sub PageHeader_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.BeforePrint
@@ -39,7 +39,7 @@ Public Class NewKaijoListReport
         Me.FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(Me.FROM_DATE.Text, Me.TO_DATE.Text, True)
         Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(Me.KOUENKAI_NAME.Text)
         Me.TIME_STAMP_BYL.Text = AppModule.GetName_TIME_STAMP_BYL(Me.TIME_STAMP_BYL.Text)
-        Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI.Text)
+        Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(Me.REQ_STATUS_TEHAI.Text, True)
         Me.USER_NAME.Text = AppModule.GetName_USER_NAME(Me.USER_NAME.Text)
     End Sub
 

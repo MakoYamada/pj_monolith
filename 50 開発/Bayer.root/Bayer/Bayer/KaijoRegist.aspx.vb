@@ -196,6 +196,7 @@ Partial Public Class KaijoRegist
             OldTBL_KAIJO = AppModule.SetRsData(RsData, OldTBL_KAIJO)
         End If
         RsData.Close()
+        Session.Item(SessionDef.OldTBL_KAIJO) = OldTBL_KAIJO
     End Sub
 
     '画面項目 表示
@@ -971,7 +972,11 @@ Partial Public Class KaijoRegist
         strSQL = SQL.TBL_KAIJO.Print(TBL_KAIJO(SEQ).SALEFORCE_ID, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
-        Session.Item(SessionDef.PrintPreview) = "KaijoRegist"
+        If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
+            Session.Item(SessionDef.PrintPreview) = "KaijoRegistRireki"
+        Else
+            Session.Item(SessionDef.PrintPreview) = "KaijoRegist"
+        End If
         Response.Redirect(URL.Preview)
     End Sub
 
