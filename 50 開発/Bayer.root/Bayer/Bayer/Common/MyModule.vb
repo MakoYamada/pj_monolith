@@ -327,12 +327,28 @@ Public Class MyModule
                 wStr = "座席区分"
             Case AppConst.MS_CODE.SEAT_KIBOU
                 wStr = "座席希望"
-            Case AppConst.MS_CODE.MR_TEHAI
-                wStr = "社員臨席希望"
+            Case AppConst.MS_CODE.REQ_MR_TEHAI
+                wStr = "依頼：社員臨席希望"
+            Case AppConst.MS_CODE.ANS_MR_TEHAI
+                wStr = "回答：社員臨席希望"
             Case AppConst.MS_CODE.MR_HOTEL_SMOKING
                 wStr = "社員ホテル禁煙"
             Case AppConst.MS_CODE.ROOM_TYPE
                 wStr = "宿泊部屋タイプ"
+            Case AppConst.MS_CODE.TAXI_KENSHU
+                wStr = "タクチケ券種"
+            Case AppConst.MS_CODE.TAXI_TESURYO
+                wStr = "タクチケ発券手数料単価"
+            Case AppConst.MS_CODE.TAXI_SEISAN_TESURYO
+                wStr = "タクチケ精算手数料"
+            Case AppConst.MS_CODE.TAXI_KAISHA
+                wStr = "タクシー会社"
+            Case AppConst.MS_CODE.TESURYO
+                wStr = "手数料（交通・宿泊）"
+            Case AppConst.MS_CODE.ANS_MR_TEHAI
+                wStr = "回答：社員復路手配"
+            Case AppConst.MS_CODE.REQ_SEAT_KIBOU
+                wStr = "依頼：座席希望"
             Case Else
                 wStr = MS_CODE.CODE
         End Select
