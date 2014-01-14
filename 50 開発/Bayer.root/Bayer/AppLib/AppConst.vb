@@ -490,6 +490,7 @@ Public Class AppConst
         Public Const TAXI_TESURYO As String = "13"          'タクチケ発券手数料単価
         Public Const TAXI_SEISAN_TESURYO As String = "14"   'タクチケ精算手数料
         Public Const TAXI_KAISHA As String = "15"           'タクシー会社
+        Public Const TESURYO As String = "16"               '手数料（交通・宿泊）
     End Class
 
     Public Class STOP_FLG
