@@ -76,7 +76,10 @@ Partial Public Class Preview
                         PrintKaijoListReport()
                     Case "KaijoRegist"
                         '会場手配回答登録画面
-                        PrintKaijoReport()
+                        PrintKaijoReport(False)
+                    Case "KaijoRegistRireki"
+                        '会場手配回答登録画面(履歴)
+                        PrintKaijoReport(True)
                     Case "KaijoRireki"
                         '会場手配履歴一覧
                         PrintKaijoRirekiReport()
@@ -283,7 +286,7 @@ Partial Public Class Preview
     End Function
 
     '会場手配依頼印刷
-    Private Sub PrintKaijoReport()
+    Private Sub PrintKaijoReport(ByVal Rireki As Boolean)
 
         Dim rpt1 As New KaijoReport()
 
@@ -303,7 +306,11 @@ Partial Public Class Preview
 
         'ログイン者名
         rpt1.MS_USER = Session.Item(SessionDef.MS_USER)
- 
+        '旧データ
+        rpt1.OldTBL_KAIJO = Session.Item(SessionDef.OldTBL_KAIJO)
+        '履歴=True
+        rpt1.Rireki = Rireki
+        
         'レポートを作成
         rpt1.Run()
 
