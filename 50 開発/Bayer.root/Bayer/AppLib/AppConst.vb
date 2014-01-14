@@ -79,22 +79,18 @@ Public Class AppConst
                     Public Const Uketsuke As String = "1"
                     Public Const Prepare As String = "2"
                     Public Const OK As String = "3"
-                    Public Const OK_Daian As String = "4"
-                    Public Const Changed As String = "5"
-                    Public Const NG As String = "6"
-                    Public Const TicketSend As String = "7"
-                    Public Const Canceled As String = "8"
+                    Public Const TicketSend As String = "4"
+                    Public Const Canceled As String = "5"
+                    Public Const Fuka As String = "6"
                 End Class
                 Public Class Name
                     Public Const NewTehai As String = "新着"
                     Public Const Uketsuke As String = "受付中"
                     Public Const Prepare As String = "手配中"
                     Public Const OK As String = "手配済"
-                    Public Const OK_Daian As String = "代案手配済"
-                    Public Const Changed As String = "変更済"
-                    Public Const NG As String = "手配不可"
                     Public Const TicketSend As String = "発送済"
                     Public Const Canceled As String = "取消済"
+                    Public Const Fuka As String = "手配不可"
                 End Class
             End Class
         End Class
@@ -115,7 +111,7 @@ Public Class AppConst
             '宿泊手配
             Public Class Code
                 Public Const Yes As String = "1"
-                Public Const No As String = "2"
+                Public Const No As String = "0"
             End Class
             Public Class Name
                 Public Const Yes As String = "希望する"
@@ -147,11 +143,13 @@ Public Class AppConst
                 Public Const Prepare As String = "1"
                 Public Const OK As String = "2"
                 Public Const Canceled As String = "3"
+                Public Const Fuka As String = "4"
             End Class
             Public Class Name
                 Public Const Prepare As String = "手配中"
                 Public Const OK As String = "手配済"
                 Public Const Canceled As String = "取消済"
+                Public Const Fuka As String = "手配不可"
             End Class
         End Class
 
@@ -159,7 +157,7 @@ Public Class AppConst
             '往路：交通手配
             Public Class Code
                 Public Const Yes As String = "1"
-                Public Const No As String = "2"
+                Public Const No As String = "0"
             End Class
             Public Class Name
                 Public Const Yes As String = "希望する"
@@ -179,11 +177,13 @@ Public Class AppConst
         Public Class REQ_O_IRAINAIYOU
             '往路：交通依頼内容
             Public Class Code
+                Public Const Mishitei As String = " "
                 Public Const Tehai As String = "1"
                 Public Const Change As String = "2"
                 Public Const Cancel As String = "3"
             End Class
             Public Class Name
+                Public Const Mishitei As String = "未指定"
                 Public Const Tehai As String = "手配依頼"
                 Public Const Change As String = "変更依頼"
                 Public Const Cancel As String = "取消依頼"
@@ -200,12 +200,16 @@ Public Class AppConst
             Public Class Code
                 Public Const Prepare As String = "1"
                 Public Const OK As String = "2"
-                Public Const Canceled As String = "3"
+                Public Const Daian As String = "3"
+                Public Const Canceled As String = "4"
+                Public Const Fuka As String = "5"
             End Class
             Public Class Name
                 Public Const Prepare As String = "手配中"
                 Public Const OK As String = "手配済"
+                Public Const Daian As String = "代案手配済"
                 Public Const Canceled As String = "取消済"
+                Public Const Fuka As String = "手配不可"
             End Class
         End Class
 
@@ -218,11 +222,11 @@ Public Class AppConst
             'タクシーチケット
             Public Class Code
                 Public Const Yes As String = "1"
-                Public Const No As String = "2"
+                Public Const No As String = "0"
             End Class
             Public Class Name
-                Public Const Yes As String = "要"
-                Public Const No As String = "不要"
+                Public Const Yes As String = "希望する"
+                Public Const No As String = "希望しない"
             End Class
             Public Class Mark
                 Public Const Yes As String = "●"
@@ -255,7 +259,7 @@ Public Class AppConst
                 Public Const No = "9"
             End Class
             Public Class Name
-                Public Const Side As String = "隣席にて手配済"
+                Public Const Side As String = "隣席"
                 Public Const DifferntSeat As String = "別席"
                 Public Const DifferntTraffic As String = "別便"
                 Public Const No = "手配無し"
@@ -482,8 +486,8 @@ Public Class AppConst
         Public Const ANS_HOTEL_SMOKING As String = "05"     '回答：ホテル喫煙
         Public Const KOTSUKIKAN As String = "06"            '交通機関
         Public Const SEAT As String = "07"                  '座席区分
-        Public Const SEAT_KIBOU As String = "08"            '座席希望
-        Public Const MR_TEHAI As String = "09"              '社員臨席希望
+        Public Const SEAT_KIBOU As String = "08"            '回答：座席希望
+        Public Const REQ_MR_TEHAI As String = "09"          '依頼：社員往路手配
         Public Const MR_HOTEL_SMOKING As String = "10"      '社員ホテル禁煙
         Public Const ROOM_TYPE As String = "11"             '宿泊部屋タイプ
         Public Const TAXI_KENSHU As String = "12"           'タクチケ券種
@@ -491,6 +495,8 @@ Public Class AppConst
         Public Const TAXI_SEISAN_TESURYO As String = "14"   'タクチケ精算手数料
         Public Const TAXI_KAISHA As String = "15"           'タクシー会社
         Public Const TESURYO As String = "16"               '手数料（交通・宿泊）
+        Public Const ANS_MR_TEHAI As String = "17"          '回答：社員復路手配
+        Public Const REQ_SEAT_KIBOU As String = "18"        '依頼：座席希望
     End Class
 
     Public Class STOP_FLG

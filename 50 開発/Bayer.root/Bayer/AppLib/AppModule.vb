@@ -2308,16 +2308,12 @@ Public Class AppModule
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Prepare
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK
-                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK_Daian, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian
-                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Changed, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed
-                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NG, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Fuka, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Fuka
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Fuka
 
                 Case Else
                     Return ""
@@ -2401,16 +2397,12 @@ Public Class AppModule
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Prepare
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK
-                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK_Daian
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian
-                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Changed
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed
-                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NG
-                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend
                 Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled
                     Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled
+                Case AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Fuka
+                    Return AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Fuka
                 Case Else
                     Return ""
             End Select
@@ -2677,6 +2669,8 @@ Public Class AppModule
                 Return AppConst.KOTSUHOTEL.HOTEL_IRAINAIYOU.Name.Change
             Case AppConst.KOTSUHOTEL.HOTEL_IRAINAIYOU.Code.Cancel, AppConst.KOTSUHOTEL.HOTEL_IRAINAIYOU.Name.Cancel
                 Return AppConst.KOTSUHOTEL.HOTEL_IRAINAIYOU.Name.Cancel
+            Case ""
+                Return "ñ¢éwíË"
 
             Case Else
                 Return ""
@@ -2820,7 +2814,8 @@ Public Class AppModule
                 Return AppConst.KOTSUHOTEL.REQ_O_IRAINAIYOU.Name.Change
             Case AppConst.KOTSUHOTEL.REQ_O_IRAINAIYOU.Code.Cancel, AppConst.KOTSUHOTEL.REQ_O_IRAINAIYOU.Name.Cancel
                 Return AppConst.KOTSUHOTEL.REQ_O_IRAINAIYOU.Name.Cancel
-
+            Case ""
+                Return "ñ¢éwíË"
             Case Else
                 Return ""
         End Select
@@ -2952,7 +2947,7 @@ Public Class AppModule
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_SEAT_KIBOU Then
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.REQ_SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_SEAT_KIBOU Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
@@ -3481,7 +3476,7 @@ Public Class AppModule
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_F_SEAT_KIBOU Then
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.REQ_SEAT_KIBOU AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_F_SEAT_KIBOU Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
@@ -4429,7 +4424,7 @@ Public Class AppModule
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_O_TEHAI Then
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.REQ_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_O_TEHAI Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
@@ -4443,7 +4438,35 @@ Public Class AppModule
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_F_TEHAI Then
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.REQ_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_MR_F_TEHAI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    'é–àıópâùòHó’ê»äÛñ]ÅiâÒìöÅj
+    Public Shared Function GetName_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_MR_O_TEHAI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    'é–àıópïúòHó’ê»äÛñ]ÅiâÒìöÅj
+    Public Shared Function GetName_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As String) As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_MR_F_TEHAI Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
@@ -6893,11 +6916,9 @@ Public Class AppModule
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Uketsuke, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Uketsuke))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Prepare, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Prepare))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK))
-                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK_Daian))
-                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Changed))
-                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NG))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Fuka, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Fuka))
             Else
                 'âÔèÍ
                 .Items.Add(New ListItem(AppConst.KAIJO.STATUS_TEHAI.Name.Tehai, AppConst.KAIJO.STATUS_TEHAI.Code.Tehai))
@@ -6935,18 +6956,16 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_STATUS_TEHAI(ByRef ANS_STATUS_TEHAI As DropDownList, Optional ByVal KAIJO As Boolean = False)
         With ANS_STATUS_TEHAI
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
+            '.Items.Add(New ListItem("---", "0"))
 
             If KAIJO = False Then
                 'èhîëåí 
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Uketsuke, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Uketsuke))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Prepare, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Prepare))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK))
-                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.OK_Daian, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.OK_Daian))
-                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Changed, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Changed))
-                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.NG, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NG))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.TicketSend, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend))
                 .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Canceled, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Canceled))
+                .Items.Add(New ListItem(AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Name.Fuka, AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Fuka))
             Else
                 'âÔèÍ
                 '.Items.Add(New ListItem(AppConst.KAIJO.ANS_STATUS_TEHAI.Name.NewTehai, AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai))
@@ -6974,11 +6993,12 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_STATUS_HOTEL(ByRef ANS_STATUS_HOTEL As DropDownList)
         With ANS_STATUS_HOTEL
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
+            '.Items.Add(New ListItem("---", "0"))
 
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Name.Prepare, AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.Prepare))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Name.OK, AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.OK))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Name.Canceled, AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.Canceled))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Name.Fuka, AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.Fuka))
         End With
     End Sub
 #End Region
@@ -7340,7 +7360,7 @@ Public Class AppModule
             Dim wStr As String = ""
             MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
             For wCnt As Integer = 0 To MS_CODE.Count - 1
-                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI Then
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI Then
                     .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
                 End If
             Next
@@ -7358,7 +7378,7 @@ Public Class AppModule
             Dim wStr As String = ""
             MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
             For wCnt As Integer = 0 To MS_CODE.Count - 1
-                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.MR_TEHAI Then
+                If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI Then
                     .Items.Add(New ListItem(MS_CODE(wCnt).DISP_TEXT, MS_CODE(wCnt).DISP_VALUE))
                 End If
             Next
