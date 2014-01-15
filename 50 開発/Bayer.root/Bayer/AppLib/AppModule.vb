@@ -3929,6 +3929,20 @@ Public Class AppModule
         End If
     End Function
 
+    '手数料単価（交通・宿泊）
+    Public Shared Function GetName_HAKKO_TESURYO() As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TESURYO Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
     '登録管理手数料
     Public Shared Function GetName_TOUROKUKANRI_FEE(ByVal TOUROKUKANRI_FEE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If Val(TOUROKUKANRI_FEE) = 0 Then
@@ -5955,7 +5969,7 @@ Public Class AppModule
     End Sub
 
     '【回答】手数料(タクチケ発券手数料)
-    Public Shared Sub SetForm_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As String, ByRef control As Label)
         control.Text = ANS_TAXI_TESURYO
     End Sub
 
@@ -8194,7 +8208,7 @@ Public Class AppModule
     End Function
 
     '【回答】手数料(タクチケ発券手数料)
-    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As Label) As String
         Return Trim(StrConv(ANS_TAXI_TESURYO.Text, VbStrConv.Narrow))
     End Function
 
