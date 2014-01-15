@@ -478,6 +478,7 @@ Public Class AppConst
         Public Const TESURYO As String = "16"               '手数料（交通・宿泊）
         Public Const ANS_MR_TEHAI As String = "17"          '回答：社員復路手配
         Public Const REQ_SEAT_KIBOU As String = "18"        '依頼：座席希望
+        Public Const TAXI_TICKET_TESURYO As String = "19"   'タクチケ発行手数料
     End Class
 
     Public Class STOP_FLG

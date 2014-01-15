@@ -3930,12 +3930,26 @@ Public Class AppModule
     End Function
 
     '手数料単価（交通・宿泊）
-    Public Shared Function GetName_HAKKO_TESURYO() As String
+    Public Shared Function GetName_TESURYO() As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
             If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TESURYO Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    'タクチケ発行手数料
+    Public Shared Function GetName_TAXI_TICKET_TESURYO() As String
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_TICKET_TESURYO Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
