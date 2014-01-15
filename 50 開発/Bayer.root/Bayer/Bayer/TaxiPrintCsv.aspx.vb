@@ -7,7 +7,7 @@ Partial Public Class TaxiPrintCsv
         Implements IComparable
         Dim TAXI_DATE As String
         Dim TAXI_KENSHU As String
-        Dim TAXI_NO As String
+        Dim TAXI_HAKKO_DATE As String
         Dim TAXI_HAKKO As String
         Dim TKT_LINE_NO As Integer
         Public Function CompareTo(ByVal obj As Object) As Integer Implements IComparable.CompareTo
@@ -51,10 +51,8 @@ Partial Public Class TaxiPrintCsv
     Private Sub InitControls()
         'クリア
         CmnModule.ClearAllControl(Me)
-    End Sub
 
-    '画面項目 表示
-    Private Sub SetForm()
+        'ボタン設定
         If CmnDb.IsExist(SQL.TBL_KOUENKAI.TaxiPrintCsv(), MyBase.DbConnection) Then
             CmnModule.SetEnabled(Me.BtnCsv, True)
             Me.TrNoData.Visible = False
@@ -64,11 +62,26 @@ Partial Public Class TaxiPrintCsv
         End If
     End Sub
 
+    '画面項目 表示
+    Private Sub SetForm()
+    End Sub
+
     '[Csvファイル作成]ボタン
     Protected Sub BtnCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCsv.Click
         '入力チェック
         If Not Check() Then Exit Sub
 
+        'CSV作成処理
+        CreateCsvData()
+    End Sub
+
+    '入力チェック
+    Private Function Check() As Boolean
+        Return True
+    End Function
+
+    'CSV作成処理
+    Private Sub CreateCsvData()
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
@@ -97,7 +110,7 @@ Partial Public Class TaxiPrintCsv
         Dim TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
 
         '券種毎にCsv作成
-        Dim TAXI_HAKKO_DATE As String = Now.ToString("yyyyMMddHHmm")
+        Dim TAXI_HAKKO_DATE As String = Now.ToString("yyMMddHHmm")
         Dim KENSHU() As String
         Dim wKenshuCnt As Integer
 
@@ -128,7 +141,7 @@ Partial Public Class TaxiPrintCsv
         ReDim CsvPath(UBound(KENSHU))
         ReDim sb(UBound(KENSHU))
         ReDim sw(UBound(KENSHU))
-   
+
         For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
             CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "_" & TAXI_HAKKO_DATE & ".csv"
             sb(wKenshuCnt) = New System.Text.StringBuilder
@@ -144,28 +157,28 @@ Partial Public Class TaxiPrintCsv
                 wFlag = True
                 TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
 
-                '発行フラグ＝ON ＋ タクチケ番号空欄 ＋ 発行日空欄
+                '発行フラグ＝ON＋発行日空欄＋利用日あり＋券種あり
                 wPrintFlag = False
-                If (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_1 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_1 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_1 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_2 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_2 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_2 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_3 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_3 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_3 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_4 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_4 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_4 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_5 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_5 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_5 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_6 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_6 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_6 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_7 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_7 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_7 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_8 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_8 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_8 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_9 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_9 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_9 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_10 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_10 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_10 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_11 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_11 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_11 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_12 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_12 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_12 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_13 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_13 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_13 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_14 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_14 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_14 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_15 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_15 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_15 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_16 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_16 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_16 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_17 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_17 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_17 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_18 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_18 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_18 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_19 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_19 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_19 = "") OrElse _
-                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_20 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20 = "") Then
+                If (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_1 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_1 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_2 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_2 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_3 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_3 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_4 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_4 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_5 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_5 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_6 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_6 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_7 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_7 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_8 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_8 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_9 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_9 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_10 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_10 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_11 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_11 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_12 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_12 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_13 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_13 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_14 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_14 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_15 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_15 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_16 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_16 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_17 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_17 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_18 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_18 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_19 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_19 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19 <> "") OrElse _
+                   (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20 <> "") Then
                     wPrintFlag = True
                 End If
 
@@ -173,83 +186,83 @@ Partial Public Class TaxiPrintCsv
                     '利用日1～20の降順にソートして再設定
                     TBL_KOTSUHOTEL = SortAnsTaxi(TBL_KOTSUHOTEL)
                     For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_1 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_1 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_1 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 1, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_2 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_2.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_2 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_2 = "" Then
+                            sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 2, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
+                            sb(wKenshuCnt).Append(vbNewLine)
+                        End If
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_3 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_3 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 3, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_3.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_3 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_4 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_4 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 4, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_4.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_4 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_5 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_5 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 5, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_5.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_5 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_6 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_6 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_6.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_6 = "" Then
-                            sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 6, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
-                            sb(wKenshuCnt).Append(vbNewLine)
-                        End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_7 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_7.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_7 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_7 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 7, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_8 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_8.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_8 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_8 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 8, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_9 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_9.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_9 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_9 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 9, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_10 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_10.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_10 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_10 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 10, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_11 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_11.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_11 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_11 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 11, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_12 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_12.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_12 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_12 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 12, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_13 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_13.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_13 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_13 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 13, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_14 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_14.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_14 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_14 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 14, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_15 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_15.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_15 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_15 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 15, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_16 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_16.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_16 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_16 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 16, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_17 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_17.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_17 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_17 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 17, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_18 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_18 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_18 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 18, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_19 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_19 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_19 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 19, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
-                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_NO_20 = "" Then
+                        If TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20.ToUpper = KENSHU(wKenshuCnt).ToUpper AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20 = "" Then
                             sb(wKenshuCnt).Append(CsvData(KENSHU(wKenshuCnt), 20, TAXI_HAKKO_DATE, TBL_KOTSUHOTEL, TBL_KOUENKAI(wCnt)))
                             sb(wKenshuCnt).Append(vbNewLine)
                         End If
@@ -285,7 +298,7 @@ Partial Public Class TaxiPrintCsv
                             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, CsvPath(wKenshuCnt) & " 項目数が正しくありません。", MyBase.DbConnection)
                         Else
                             '発行日
-                            Dim wTAXI_HAKKO_DATE As String = Mid(TAXI_HAKKO_DATE, 1, 8)
+                            Dim wTAXI_HAKKO_DATE As String = "20" & Mid(TAXI_HAKKO_DATE, 1, 6)
 
                             'バーコード部分読込み
                             Dim wBarcode As String = Replace(wSplit(MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE), CmnConst.Csv.Delimiter, "")
@@ -403,11 +416,6 @@ Partial Public Class TaxiPrintCsv
         Catch ex As Exception
         End Try
     End Sub
-
-    '入力チェック
-    Private Function Check() As Boolean
-        Return True
-    End Function
 
     'Csv出力用に編集
     '印刷データ
@@ -576,6 +584,7 @@ Partial Public Class TaxiPrintCsv
     End Function
     Private Function GetName_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String) As String
         Dim wStr As String = ANS_TAXI_KENSHU.ToUpper
+        wStr = Replace(wStr, "DC", "")
         wStr = Replace(wStr, "TK", "")
         wStr = Replace(wStr, "NG", "")
         If Not CmnCheck.IsNumberOnly(wStr) Then
@@ -585,7 +594,7 @@ Partial Public Class TaxiPrintCsv
         End If
     End Function
     Private Function GetName_TAXI_HAKKO_DATE(ByVal TAXI_HAKKO_DATE As String) As String
-        Return Mid(TAXI_HAKKO_DATE, 1, 4) & "/" & CInt(Mid(TAXI_HAKKO_DATE, 5, 2)).ToString & "/" & CInt(Mid(TAXI_HAKKO_DATE, 7, 2)).ToString
+        Return "20" & Mid(TAXI_HAKKO_DATE, 1, 2) & "/" & CInt(Mid(TAXI_HAKKO_DATE, 3, 2)).ToString & "/" & CInt(Mid(TAXI_HAKKO_DATE, 5, 2)).ToString
     End Function
 
     Private Function GetName_BARCODE(ByVal SALEFORCE_ID As String, ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String, ByVal DR_MPID As String, ByVal TKT_LINE_NO As String, ByVal TAXI_HAKKO_DATE As String, ByVal TAXI_KENSHU As String) As String
@@ -679,26 +688,26 @@ Partial Public Class TaxiPrintCsv
         AnsTaxiData(17).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18
         AnsTaxiData(18).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19
         AnsTaxiData(19).TAXI_KENSHU = TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20
-        AnsTaxiData(0).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_1
-        AnsTaxiData(1).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_2
-        AnsTaxiData(2).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_3
-        AnsTaxiData(3).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_4
-        AnsTaxiData(4).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_5
-        AnsTaxiData(5).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_6
-        AnsTaxiData(6).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_7
-        AnsTaxiData(7).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_8
-        AnsTaxiData(8).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_9
-        AnsTaxiData(9).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_10
-        AnsTaxiData(10).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_11
-        AnsTaxiData(11).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_12
-        AnsTaxiData(12).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_13
-        AnsTaxiData(13).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_14
-        AnsTaxiData(14).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_15
-        AnsTaxiData(15).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_16
-        AnsTaxiData(16).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_17
-        AnsTaxiData(17).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_18
-        AnsTaxiData(18).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_19
-        AnsTaxiData(19).TAXI_NO = TBL_KOTSUHOTEL.ANS_TAXI_NO_20
+        AnsTaxiData(0).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_1
+        AnsTaxiData(1).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_2
+        AnsTaxiData(2).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_3
+        AnsTaxiData(3).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_4
+        AnsTaxiData(4).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_5
+        AnsTaxiData(5).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_6
+        AnsTaxiData(6).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_7
+        AnsTaxiData(7).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_8
+        AnsTaxiData(8).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_9
+        AnsTaxiData(9).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_10
+        AnsTaxiData(10).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_11
+        AnsTaxiData(11).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_12
+        AnsTaxiData(12).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_13
+        AnsTaxiData(13).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_14
+        AnsTaxiData(14).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_15
+        AnsTaxiData(15).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_16
+        AnsTaxiData(16).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_17
+        AnsTaxiData(17).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_18
+        AnsTaxiData(18).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_19
+        AnsTaxiData(19).TAXI_HAKKO_DATE = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20
         AnsTaxiData(0).TAXI_HAKKO = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_1
         AnsTaxiData(1).TAXI_HAKKO = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_2
         AnsTaxiData(2).TAXI_HAKKO = TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_3
@@ -784,26 +793,26 @@ Partial Public Class TaxiPrintCsv
         TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_18 = AnsTaxiData(17).TAXI_KENSHU
         TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_19 = AnsTaxiData(18).TAXI_KENSHU
         TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20 = AnsTaxiData(19).TAXI_KENSHU
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_1 = AnsTaxiData(0).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_2 = AnsTaxiData(1).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_3 = AnsTaxiData(2).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_4 = AnsTaxiData(3).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_5 = AnsTaxiData(4).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_6 = AnsTaxiData(5).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_7 = AnsTaxiData(6).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_8 = AnsTaxiData(7).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_9 = AnsTaxiData(8).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_10 = AnsTaxiData(9).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_11 = AnsTaxiData(10).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_12 = AnsTaxiData(11).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_13 = AnsTaxiData(12).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_14 = AnsTaxiData(13).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_15 = AnsTaxiData(14).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_16 = AnsTaxiData(15).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_17 = AnsTaxiData(16).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_18 = AnsTaxiData(17).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_19 = AnsTaxiData(18).TAXI_NO
-        TBL_KOTSUHOTEL.ANS_TAXI_NO_20 = AnsTaxiData(19).TAXI_NO
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_1 = AnsTaxiData(0).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_2 = AnsTaxiData(1).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_3 = AnsTaxiData(2).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_4 = AnsTaxiData(3).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_5 = AnsTaxiData(4).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_6 = AnsTaxiData(5).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_7 = AnsTaxiData(6).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_8 = AnsTaxiData(7).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_9 = AnsTaxiData(8).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_10 = AnsTaxiData(9).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_11 = AnsTaxiData(10).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_12 = AnsTaxiData(11).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_13 = AnsTaxiData(12).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_14 = AnsTaxiData(13).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_15 = AnsTaxiData(14).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_16 = AnsTaxiData(15).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_17 = AnsTaxiData(16).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_18 = AnsTaxiData(17).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_19 = AnsTaxiData(18).TAXI_HAKKO_DATE
+        TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20 = AnsTaxiData(19).TAXI_HAKKO_DATE
         TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_1 = AnsTaxiData(0).TAXI_HAKKO
         TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_2 = AnsTaxiData(1).TAXI_HAKKO
         TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_3 = AnsTaxiData(2).TAXI_HAKKO
