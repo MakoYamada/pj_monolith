@@ -453,6 +453,7 @@ CREATE TABLE [dbo].[TBL_KOTSUHOTEL](
 	[SEND_FLAG] [nvarchar](1) COLLATE Japanese_CI_AS  NULL,
 	[TTANTO_ID] [nvarchar](10) COLLATE Japanese_CI_AS  NULL,
 	[SEIKYU_NO_TOPTOUR] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
+	[SCAN_IMPORT_DATE] [nvarchar](8) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
 	[INPUT_USER] [nvarchar](20) COLLATE Japanese_CI_AS  NULL,
 	[UPDATE_DATE] [nvarchar](14) COLLATE Japanese_CI_AS  NULL,
