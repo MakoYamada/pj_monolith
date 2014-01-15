@@ -337,8 +337,6 @@ Partial Public Class TaxiScan
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO = Trim(ScanData.TKT_LINE_NO)
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_NO = Trim(ScanData.TKT_NO)
 
-                '発行日
-                TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE = CmnModule.GetSysDate()
                 '発行手数料
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_HAKKO_FEE = TKT_HAKKO_FEE
                 '使用者
@@ -438,64 +436,44 @@ Partial Public Class TaxiScan
             Select Case Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
                 Case 1
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_1 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_1 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 2
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_2 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_2 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 3
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_3 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_3 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 4
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_4 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_4 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 5
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_5 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_5 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 6
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_6 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_6 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 7
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_7 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_7 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 8
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_8 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_8 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 9
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_9 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_9 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 10
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_10 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_10 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 11
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_11 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_11 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 12
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_12 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_12 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 13
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_13 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_13 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 14
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_14 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_14 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 15
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_15 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_15 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 16
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_16 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_16 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 17
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_17 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_17 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 18
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_18 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_18 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 19
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_19 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_19 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
                 Case 20
                     TBL_KOTSUHOTEL(wCnt).ANS_TAXI_NO_20 = TBL_TAXITICKET_HAKKO(wCnt).TKT_NO
-                    TBL_KOTSUHOTEL(wCnt).ANS_TAXI_HAKKO_DATE_20 = TBL_TAXITICKET_HAKKO(wCnt).TAXI_HAKKO_DATE
             End Select
             TBL_KOTSUHOTEL(wCnt).UPDATE_USER = Session.Item(SessionDef.LoginID)
         Next
@@ -508,7 +486,8 @@ Partial Public Class TaxiScan
         Try
             For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
                 'タクチケテーブル
-                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_Scan(TBL_TAXITICKET_HAKKO(wCnt))
+                'QQQ スキャンデータ取込日 QQQ
+                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_TaxiScan(TBL_TAXITICKET_HAKKO(wCnt))
                 RtnTBL_TAXITICKET_HAKKO = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_TAXITICKET_HAKKO = 0 Then
@@ -522,7 +501,7 @@ Partial Public Class TaxiScan
                 End If
 
                 '交通宿泊手配テーブル
-                strSQL = SQL.TBL_KOTSUHOTEL.Update_ANS_TAXI_HAKKO_DATE(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO, TBL_KOTSUHOTEL(wCnt))
+                strSQL = SQL.TBL_KOTSUHOTEL.Update_TaxiScan(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO, TBL_KOTSUHOTEL(wCnt))
                 RtnTBL_KOTSUHOTEL = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_KOTSUHOTEL = 0 Then

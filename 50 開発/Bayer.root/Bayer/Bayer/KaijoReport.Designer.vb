@@ -31,6 +31,18 @@ Partial Public Class KaijoReport
         Me.Label8 = New DataDynamics.ActiveReports.Label
         Me.LabelPage = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.KAISAI_KIBOU_NOTE = New DataDynamics.ActiveReports.TextBox
+        Me.KAISAI_KIBOU_ADDRESS2 = New DataDynamics.ActiveReports.TextBox
+        Me.KAISAI_KIBOU_ADDRESS1 = New DataDynamics.ActiveReports.TextBox
+        Me.KAISAI_DATE_NOTE = New DataDynamics.ActiveReports.TextBox
+        Me.SHONIN_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.SHONIN_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.UPDATE_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.TIME_STAMP_BYL = New DataDynamics.ActiveReports.TextBox
+        Me.REQ_STATUS_TEHAI = New DataDynamics.ActiveReports.TextBox
+        Me.TEHAI_ID = New DataDynamics.ActiveReports.TextBox
+        Me.KOUENKAI_NO = New DataDynamics.ActiveReports.TextBox
         Me.Label9 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Shape2 = New DataDynamics.ActiveReports.Shape
@@ -60,16 +72,7 @@ Partial Public Class KaijoReport
         Me.Label36 = New DataDynamics.ActiveReports.Label
         Me.Label38 = New DataDynamics.ActiveReports.Label
         Me.Line1 = New DataDynamics.ActiveReports.Line
-        Me.TEHAI_ID = New DataDynamics.ActiveReports.TextBox
-        Me.KOUENKAI_NO = New DataDynamics.ActiveReports.TextBox
-        Me.REQ_STATUS_TEHAI = New DataDynamics.ActiveReports.TextBox
-        Me.TIME_STAMP_BYL = New DataDynamics.ActiveReports.TextBox
-        Me.SHONIN_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.SHONIN_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Label41 = New DataDynamics.ActiveReports.Label
-        Me.KAISAI_DATE_NOTE = New DataDynamics.ActiveReports.TextBox
-        Me.KAISAI_KIBOU_ADDRESS1 = New DataDynamics.ActiveReports.TextBox
-        Me.KAISAI_KIBOU_ADDRESS2 = New DataDynamics.ActiveReports.TextBox
         Me.KOUEN_TIME1 = New DataDynamics.ActiveReports.TextBox
         Me.KOUEN_TIME2 = New DataDynamics.ActiveReports.TextBox
         Me.KOUEN_KAIJO_LAYOUT = New DataDynamics.ActiveReports.TextBox
@@ -124,17 +127,14 @@ Partial Public Class KaijoReport
         Me.Line8 = New DataDynamics.ActiveReports.Line
         Me.Line39 = New DataDynamics.ActiveReports.Line
         Me.Line41 = New DataDynamics.ActiveReports.Line
-        Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.KAISAI_KIBOU_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.Label42 = New DataDynamics.ActiveReports.Label
         Me.Line9 = New DataDynamics.ActiveReports.Line
         Me.Line33 = New DataDynamics.ActiveReports.Line
         Me.Line42 = New DataDynamics.ActiveReports.Line
         Me.Line44 = New DataDynamics.ActiveReports.Line
-        Me.UPDATE_DATE = New DataDynamics.ActiveReports.TextBox
         Me.SEND_FLAG = New DataDynamics.ActiveReports.TextBox
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Label6 = New DataDynamics.ActiveReports.Label
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,6 +145,18 @@ Partial Public Class KaijoReport
         CType(Me.PageCount, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LabelPage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KAISAI_KIBOU_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KAISAI_KIBOU_ADDRESS2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KAISAI_KIBOU_ADDRESS1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KAISAI_DATE_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SHONIN_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SHONIN_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TEHAI_ID, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,16 +184,7 @@ Partial Public Class KaijoReport
         CType(Me.Label35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label38, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TEHAI_ID, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SHONIN_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SHONIN_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label41, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KAISAI_DATE_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KAISAI_KIBOU_ADDRESS1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KAISAI_KIBOU_ADDRESS2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUEN_TIME1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUEN_TIME2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUEN_KAIJO_LAYOUT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -203,10 +206,7 @@ Partial Public Class KaijoReport
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label39, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KAISAI_KIBOU_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label42, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -343,10 +343,166 @@ Partial Public Class KaijoReport
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.KAISAI_KIBOU_NOTE, Me.KAISAI_KIBOU_ADDRESS2, Me.KAISAI_KIBOU_ADDRESS1, Me.KAISAI_DATE_NOTE, Me.SHONIN_DATE, Me.SHONIN_NAME, Me.UPDATE_DATE, Me.USER_NAME, Me.TIME_STAMP_BYL, Me.REQ_STATUS_TEHAI, Me.TEHAI_ID, Me.KOUENKAI_NO, Me.Label9, Me.KOUENKAI_NAME, Me.Shape2, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label36, Me.Label38, Me.Line1, Me.Label41, Me.KOUEN_TIME1, Me.KOUEN_TIME2, Me.KOUEN_KAIJO_LAYOUT, Me.IKENKOUKAN_KAIJO_TEHAI, Me.IROUKAI_KAIJO_TEHAI, Me.IROUKAI_SANKA_YOTEI_CNT, Me.KOUSHI_ROOM_TEHAI, Me.KOUSHI_ROOM_FROM, Me.KOUSHI_ROOM_CNT, Me.SHAIN_ROOM_TEHAI, Me.MANAGER_KAIJO_TEHAI, Me.MANAGER_ROOM_FROM, Me.MANAGER_ROOM_CNT, Me.REQ_ROOM_CNT, Me.REQ_STAY_DATE, Me.REQ_KOTSU_CNT, Me.REQ_TAXI_CNT, Me.OTHER_NOTE, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line11, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line29, Me.Line31, Me.Line7, Me.Line12, Me.Line13, Me.Line32, Me.Line34, Me.Line36, Me.Line35, Me.Line37, Me.Line38, Me.Label5, Me.Label25, Me.Label39, Me.Line8, Me.Line39, Me.Line41, Me.Label42, Me.Line9, Me.Line33, Me.Line42, Me.Line44, Me.SEND_FLAG, Me.Label6})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.SHAIN_ROOM_TEHAI, Me.MANAGER_KAIJO_TEHAI, Me.MANAGER_ROOM_FROM, Me.MANAGER_ROOM_CNT, Me.REQ_ROOM_CNT, Me.REQ_STAY_DATE, Me.REQ_KOTSU_CNT, Me.REQ_TAXI_CNT, Me.OTHER_NOTE, Me.KOUSHI_ROOM_CNT, Me.KOUSHI_ROOM_FROM, Me.KOUSHI_ROOM_TEHAI, Me.IROUKAI_SANKA_YOTEI_CNT, Me.IROUKAI_KAIJO_TEHAI, Me.IKENKOUKAN_KAIJO_TEHAI, Me.KOUEN_KAIJO_LAYOUT, Me.KOUEN_TIME2, Me.KOUEN_TIME1, Me.KAISAI_KIBOU_NOTE, Me.KAISAI_KIBOU_ADDRESS1, Me.KAISAI_KIBOU_ADDRESS2, Me.KAISAI_DATE_NOTE, Me.SHONIN_DATE, Me.SHONIN_NAME, Me.UPDATE_DATE, Me.USER_NAME, Me.TIME_STAMP_BYL, Me.REQ_STATUS_TEHAI, Me.KOUENKAI_NO, Me.TEHAI_ID, Me.Label9, Me.KOUENKAI_NAME, Me.Shape2, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label36, Me.Label38, Me.Line1, Me.Label41, Me.Line2, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line11, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Line29, Me.Line31, Me.Line7, Me.Line12, Me.Line13, Me.Line32, Me.Line34, Me.Line36, Me.Line35, Me.Line37, Me.Line38, Me.Label5, Me.Label25, Me.Label39, Me.Line8, Me.Line39, Me.Line41, Me.Label42, Me.Line9, Me.Line33, Me.Line42, Me.Line44, Me.SEND_FLAG, Me.Label6})
         Me.Detail.Height = 10.02308!
         Me.Detail.Name = "Detail"
         Me.Detail.NewPage = DataDynamics.ActiveReports.NewPage.After
+        '
+        'KAISAI_KIBOU_NOTE
+        '
+        Me.KAISAI_KIBOU_NOTE.CanGrow = False
+        Me.KAISAI_KIBOU_NOTE.DataField = "KAISAI_KIBOU_NOTE"
+        Me.KAISAI_KIBOU_NOTE.Height = 0.6688976!
+        Me.KAISAI_KIBOU_NOTE.Left = 1.983858!
+        Me.KAISAI_KIBOU_NOTE.Name = "KAISAI_KIBOU_NOTE"
+        Me.KAISAI_KIBOU_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.KAISAI_KIBOU_NOTE.Style = "font-family: ＭＳ ゴシック"
+        Me.KAISAI_KIBOU_NOTE.Text = "KAISAI_KIBOU_NOTE"
+        Me.KAISAI_KIBOU_NOTE.Top = 3.2!
+        Me.KAISAI_KIBOU_NOTE.Width = 5.535433!
+        '
+        'KAISAI_KIBOU_ADDRESS2
+        '
+        Me.KAISAI_KIBOU_ADDRESS2.CanGrow = False
+        Me.KAISAI_KIBOU_ADDRESS2.DataField = "KAISAI_KIBOU_ADDRESS2"
+        Me.KAISAI_KIBOU_ADDRESS2.Height = 0.2145669!
+        Me.KAISAI_KIBOU_ADDRESS2.Left = 1.983858!
+        Me.KAISAI_KIBOU_ADDRESS2.Name = "KAISAI_KIBOU_ADDRESS2"
+        Me.KAISAI_KIBOU_ADDRESS2.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.KAISAI_KIBOU_ADDRESS2.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.KAISAI_KIBOU_ADDRESS2.Text = "KAISAI_KIBOU_ADDRESS2"
+        Me.KAISAI_KIBOU_ADDRESS2.Top = 2.974409!
+        Me.KAISAI_KIBOU_ADDRESS2.Width = 5.535433!
+        '
+        'KAISAI_KIBOU_ADDRESS1
+        '
+        Me.KAISAI_KIBOU_ADDRESS1.CanGrow = False
+        Me.KAISAI_KIBOU_ADDRESS1.DataField = "KAISAI_KIBOU_ADDRESS1"
+        Me.KAISAI_KIBOU_ADDRESS1.Height = 0.2145669!
+        Me.KAISAI_KIBOU_ADDRESS1.Left = 1.983858!
+        Me.KAISAI_KIBOU_ADDRESS1.Name = "KAISAI_KIBOU_ADDRESS1"
+        Me.KAISAI_KIBOU_ADDRESS1.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.KAISAI_KIBOU_ADDRESS1.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.KAISAI_KIBOU_ADDRESS1.Text = "KAISAI_KIBOU_ADDRESS1"
+        Me.KAISAI_KIBOU_ADDRESS1.Top = 2.748819!
+        Me.KAISAI_KIBOU_ADDRESS1.Width = 5.535433!
+        '
+        'KAISAI_DATE_NOTE
+        '
+        Me.KAISAI_DATE_NOTE.CanGrow = False
+        Me.KAISAI_DATE_NOTE.DataField = "KAISAI_DATE_NOTE"
+        Me.KAISAI_DATE_NOTE.Height = 0.6688976!
+        Me.KAISAI_DATE_NOTE.Left = 1.983858!
+        Me.KAISAI_DATE_NOTE.Name = "KAISAI_DATE_NOTE"
+        Me.KAISAI_DATE_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.KAISAI_DATE_NOTE.Style = "font-family: ＭＳ ゴシック"
+        Me.KAISAI_DATE_NOTE.Text = "KAISAI_DATE_NOTE"
+        Me.KAISAI_DATE_NOTE.Top = 2.072047!
+        Me.KAISAI_DATE_NOTE.Width = 5.535433!
+        '
+        'SHONIN_DATE
+        '
+        Me.SHONIN_DATE.CanGrow = False
+        Me.SHONIN_DATE.DataField = "SHONIN_DATE"
+        Me.SHONIN_DATE.Height = 0.2145669!
+        Me.SHONIN_DATE.Left = 1.983858!
+        Me.SHONIN_DATE.Name = "SHONIN_DATE"
+        Me.SHONIN_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.SHONIN_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.SHONIN_DATE.Text = "SHONIN_DATE"
+        Me.SHONIN_DATE.Top = 1.846457!
+        Me.SHONIN_DATE.Width = 5.535433!
+        '
+        'SHONIN_NAME
+        '
+        Me.SHONIN_NAME.CanGrow = False
+        Me.SHONIN_NAME.DataField = "SHONIN_NAME"
+        Me.SHONIN_NAME.Height = 0.2145669!
+        Me.SHONIN_NAME.Left = 1.983858!
+        Me.SHONIN_NAME.Name = "SHONIN_NAME"
+        Me.SHONIN_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.SHONIN_NAME.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.SHONIN_NAME.Text = "SHONIN_NAME"
+        Me.SHONIN_NAME.Top = 1.620866!
+        Me.SHONIN_NAME.Width = 5.535433!
+        '
+        'UPDATE_DATE
+        '
+        Me.UPDATE_DATE.CanGrow = False
+        Me.UPDATE_DATE.DataField = "UPDATE_DATE"
+        Me.UPDATE_DATE.Height = 0.2145669!
+        Me.UPDATE_DATE.Left = 1.983858!
+        Me.UPDATE_DATE.Name = "UPDATE_DATE"
+        Me.UPDATE_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.UPDATE_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.UPDATE_DATE.Text = "UPDATE_DATE"
+        Me.UPDATE_DATE.Top = 1.395276!
+        Me.UPDATE_DATE.Width = 5.535433!
+        '
+        'USER_NAME
+        '
+        Me.USER_NAME.CanGrow = False
+        Me.USER_NAME.DataField = "USER_NAME"
+        Me.USER_NAME.Height = 0.2145669!
+        Me.USER_NAME.Left = 1.983858!
+        Me.USER_NAME.Name = "USER_NAME"
+        Me.USER_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.USER_NAME.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.USER_NAME.Text = "USER_NAME"
+        Me.USER_NAME.Top = 1.169685!
+        Me.USER_NAME.Width = 5.535433!
+        '
+        'TIME_STAMP_BYL
+        '
+        Me.TIME_STAMP_BYL.CanGrow = False
+        Me.TIME_STAMP_BYL.DataField = "TIME_STAMP_BYL"
+        Me.TIME_STAMP_BYL.Height = 0.2145669!
+        Me.TIME_STAMP_BYL.Left = 1.983858!
+        Me.TIME_STAMP_BYL.Name = "TIME_STAMP_BYL"
+        Me.TIME_STAMP_BYL.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.TIME_STAMP_BYL.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.TIME_STAMP_BYL.Text = "TIME_STAMP_BYL"
+        Me.TIME_STAMP_BYL.Top = 0.9440945!
+        Me.TIME_STAMP_BYL.Width = 5.535433!
+        '
+        'REQ_STATUS_TEHAI
+        '
+        Me.REQ_STATUS_TEHAI.CanGrow = False
+        Me.REQ_STATUS_TEHAI.DataField = "REQ_STATUS_TEHAI"
+        Me.REQ_STATUS_TEHAI.Height = 0.2145669!
+        Me.REQ_STATUS_TEHAI.Left = 1.983858!
+        Me.REQ_STATUS_TEHAI.Name = "REQ_STATUS_TEHAI"
+        Me.REQ_STATUS_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.REQ_STATUS_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.REQ_STATUS_TEHAI.Text = "REQ_STATUS_TEHAI"
+        Me.REQ_STATUS_TEHAI.Top = 0.718504!
+        Me.REQ_STATUS_TEHAI.Width = 5.535433!
+        '
+        'TEHAI_ID
+        '
+        Me.TEHAI_ID.CanGrow = False
+        Me.TEHAI_ID.DataField = "TEHAI_ID"
+        Me.TEHAI_ID.Height = 0.2145669!
+        Me.TEHAI_ID.Left = 1.983858!
+        Me.TEHAI_ID.Name = "TEHAI_ID"
+        Me.TEHAI_ID.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.TEHAI_ID.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.TEHAI_ID.Text = "TEHAI_ID"
+        Me.TEHAI_ID.Top = 0.2673229!
+        Me.TEHAI_ID.Width = 5.535433!
+        '
+        'KOUENKAI_NO
+        '
+        Me.KOUENKAI_NO.CanGrow = False
+        Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
+        Me.KOUENKAI_NO.Height = 0.2145669!
+        Me.KOUENKAI_NO.Left = 1.983858!
+        Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
+        Me.KOUENKAI_NO.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
+        Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
+        Me.KOUENKAI_NO.Text = "KOUENKAI_NO"
+        Me.KOUENKAI_NO.Top = 0.4929134!
+        Me.KOUENKAI_NO.Width = 5.535433!
         '
         'Label9
         '
@@ -670,84 +826,6 @@ Partial Public Class KaijoReport
         Me.Line1.Y1 = 0.4948819!
         Me.Line1.Y2 = 0.4948819!
         '
-        'TEHAI_ID
-        '
-        Me.TEHAI_ID.CanGrow = False
-        Me.TEHAI_ID.DataField = "TEHAI_ID"
-        Me.TEHAI_ID.Height = 0.2145669!
-        Me.TEHAI_ID.Left = 1.983858!
-        Me.TEHAI_ID.Name = "TEHAI_ID"
-        Me.TEHAI_ID.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.TEHAI_ID.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.TEHAI_ID.Text = "TEHAI_ID"
-        Me.TEHAI_ID.Top = 0.2673229!
-        Me.TEHAI_ID.Width = 5.535433!
-        '
-        'KOUENKAI_NO
-        '
-        Me.KOUENKAI_NO.CanGrow = False
-        Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Height = 0.2145669!
-        Me.KOUENKAI_NO.Left = 1.983858!
-        Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.KOUENKAI_NO.Text = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Top = 0.4929134!
-        Me.KOUENKAI_NO.Width = 5.535433!
-        '
-        'REQ_STATUS_TEHAI
-        '
-        Me.REQ_STATUS_TEHAI.CanGrow = False
-        Me.REQ_STATUS_TEHAI.DataField = "REQ_STATUS_TEHAI"
-        Me.REQ_STATUS_TEHAI.Height = 0.2145669!
-        Me.REQ_STATUS_TEHAI.Left = 1.983858!
-        Me.REQ_STATUS_TEHAI.Name = "REQ_STATUS_TEHAI"
-        Me.REQ_STATUS_TEHAI.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.REQ_STATUS_TEHAI.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.REQ_STATUS_TEHAI.Text = "REQ_STATUS_TEHAI"
-        Me.REQ_STATUS_TEHAI.Top = 0.718504!
-        Me.REQ_STATUS_TEHAI.Width = 5.535433!
-        '
-        'TIME_STAMP_BYL
-        '
-        Me.TIME_STAMP_BYL.CanGrow = False
-        Me.TIME_STAMP_BYL.DataField = "TIME_STAMP_BYL"
-        Me.TIME_STAMP_BYL.Height = 0.2145669!
-        Me.TIME_STAMP_BYL.Left = 1.983858!
-        Me.TIME_STAMP_BYL.Name = "TIME_STAMP_BYL"
-        Me.TIME_STAMP_BYL.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.TIME_STAMP_BYL.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.TIME_STAMP_BYL.Text = "TIME_STAMP_BYL"
-        Me.TIME_STAMP_BYL.Top = 0.9440945!
-        Me.TIME_STAMP_BYL.Width = 5.535433!
-        '
-        'SHONIN_NAME
-        '
-        Me.SHONIN_NAME.CanGrow = False
-        Me.SHONIN_NAME.DataField = "SHONIN_NAME"
-        Me.SHONIN_NAME.Height = 0.2145669!
-        Me.SHONIN_NAME.Left = 1.983858!
-        Me.SHONIN_NAME.Name = "SHONIN_NAME"
-        Me.SHONIN_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.SHONIN_NAME.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.SHONIN_NAME.Text = "SHONIN_NAME"
-        Me.SHONIN_NAME.Top = 1.620866!
-        Me.SHONIN_NAME.Width = 5.535433!
-        '
-        'SHONIN_DATE
-        '
-        Me.SHONIN_DATE.CanGrow = False
-        Me.SHONIN_DATE.DataField = "SHONIN_DATE"
-        Me.SHONIN_DATE.Height = 0.2145669!
-        Me.SHONIN_DATE.Left = 1.983858!
-        Me.SHONIN_DATE.Name = "SHONIN_DATE"
-        Me.SHONIN_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.SHONIN_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.SHONIN_DATE.Text = "SHONIN_DATE"
-        Me.SHONIN_DATE.Top = 1.846457!
-        Me.SHONIN_DATE.Width = 5.535433!
-        '
         'Label41
         '
         Me.Label41.Height = 0.1968504!
@@ -758,45 +836,6 @@ Partial Public Class KaijoReport
         Me.Label41.Text = "最終承認者 (氏名)"
         Me.Label41.Top = 1.643308!
         Me.Label41.Width = 1.753543!
-        '
-        'KAISAI_DATE_NOTE
-        '
-        Me.KAISAI_DATE_NOTE.CanGrow = False
-        Me.KAISAI_DATE_NOTE.DataField = "KAISAI_DATE_NOTE"
-        Me.KAISAI_DATE_NOTE.Height = 0.6688976!
-        Me.KAISAI_DATE_NOTE.Left = 1.983858!
-        Me.KAISAI_DATE_NOTE.Name = "KAISAI_DATE_NOTE"
-        Me.KAISAI_DATE_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.KAISAI_DATE_NOTE.Style = "font-family: ＭＳ ゴシック"
-        Me.KAISAI_DATE_NOTE.Text = "KAISAI_DATE_NOTE"
-        Me.KAISAI_DATE_NOTE.Top = 2.072047!
-        Me.KAISAI_DATE_NOTE.Width = 5.535433!
-        '
-        'KAISAI_KIBOU_ADDRESS1
-        '
-        Me.KAISAI_KIBOU_ADDRESS1.CanGrow = False
-        Me.KAISAI_KIBOU_ADDRESS1.DataField = "KAISAI_KIBOU_ADDRESS1"
-        Me.KAISAI_KIBOU_ADDRESS1.Height = 0.2145669!
-        Me.KAISAI_KIBOU_ADDRESS1.Left = 1.983858!
-        Me.KAISAI_KIBOU_ADDRESS1.Name = "KAISAI_KIBOU_ADDRESS1"
-        Me.KAISAI_KIBOU_ADDRESS1.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.KAISAI_KIBOU_ADDRESS1.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.KAISAI_KIBOU_ADDRESS1.Text = "KAISAI_KIBOU_ADDRESS1"
-        Me.KAISAI_KIBOU_ADDRESS1.Top = 2.748819!
-        Me.KAISAI_KIBOU_ADDRESS1.Width = 5.535433!
-        '
-        'KAISAI_KIBOU_ADDRESS2
-        '
-        Me.KAISAI_KIBOU_ADDRESS2.CanGrow = False
-        Me.KAISAI_KIBOU_ADDRESS2.DataField = "KAISAI_KIBOU_ADDRESS2"
-        Me.KAISAI_KIBOU_ADDRESS2.Height = 0.2145669!
-        Me.KAISAI_KIBOU_ADDRESS2.Left = 1.983858!
-        Me.KAISAI_KIBOU_ADDRESS2.Name = "KAISAI_KIBOU_ADDRESS2"
-        Me.KAISAI_KIBOU_ADDRESS2.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.KAISAI_KIBOU_ADDRESS2.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.KAISAI_KIBOU_ADDRESS2.Text = "KAISAI_KIBOU_ADDRESS2"
-        Me.KAISAI_KIBOU_ADDRESS2.Top = 2.974409!
-        Me.KAISAI_KIBOU_ADDRESS2.Width = 5.535433!
         '
         'KOUEN_TIME1
         '
@@ -1494,32 +1533,6 @@ Partial Public Class KaijoReport
         Me.Line41.Y1 = 1.848425!
         Me.Line41.Y2 = 1.848425!
         '
-        'USER_NAME
-        '
-        Me.USER_NAME.CanGrow = False
-        Me.USER_NAME.DataField = "USER_NAME"
-        Me.USER_NAME.Height = 0.2145669!
-        Me.USER_NAME.Left = 1.983858!
-        Me.USER_NAME.Name = "USER_NAME"
-        Me.USER_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.USER_NAME.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.USER_NAME.Text = "USER_NAME"
-        Me.USER_NAME.Top = 1.169685!
-        Me.USER_NAME.Width = 5.535433!
-        '
-        'KAISAI_KIBOU_NOTE
-        '
-        Me.KAISAI_KIBOU_NOTE.CanGrow = False
-        Me.KAISAI_KIBOU_NOTE.DataField = "KAISAI_KIBOU_NOTE"
-        Me.KAISAI_KIBOU_NOTE.Height = 0.6688976!
-        Me.KAISAI_KIBOU_NOTE.Left = 1.983858!
-        Me.KAISAI_KIBOU_NOTE.Name = "KAISAI_KIBOU_NOTE"
-        Me.KAISAI_KIBOU_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.KAISAI_KIBOU_NOTE.Style = "font-family: ＭＳ ゴシック"
-        Me.KAISAI_KIBOU_NOTE.Text = "KAISAI_KIBOU_NOTE"
-        Me.KAISAI_KIBOU_NOTE.Top = 3.2!
-        Me.KAISAI_KIBOU_NOTE.Width = 5.535433!
-        '
         'Label42
         '
         Me.Label42.Height = 0.1968504!
@@ -1583,19 +1596,6 @@ Partial Public Class KaijoReport
         Me.Line44.Y1 = 8.390552!
         Me.Line44.Y2 = 8.390552!
         '
-        'UPDATE_DATE
-        '
-        Me.UPDATE_DATE.CanGrow = False
-        Me.UPDATE_DATE.DataField = "UPDATE_DATE"
-        Me.UPDATE_DATE.Height = 0.2145669!
-        Me.UPDATE_DATE.Left = 1.983858!
-        Me.UPDATE_DATE.Name = "UPDATE_DATE"
-        Me.UPDATE_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 2, 0, 0)
-        Me.UPDATE_DATE.Style = "font-family: ＭＳ ゴシック; white-space: nowrap"
-        Me.UPDATE_DATE.Text = "UPDATE_DATE"
-        Me.UPDATE_DATE.Top = 1.395276!
-        Me.UPDATE_DATE.Width = 5.535433!
-        '
         'SEND_FLAG
         '
         Me.SEND_FLAG.CanGrow = False
@@ -1605,13 +1605,8 @@ Partial Public Class KaijoReport
         Me.SEND_FLAG.Name = "SEND_FLAG"
         Me.SEND_FLAG.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
         Me.SEND_FLAG.Text = "◎◎◎◎"
-        Me.SEND_FLAG.Top = 0.003937008!
+        Me.SEND_FLAG.Top = 0.02362205!
         Me.SEND_FLAG.Width = 0.6389766!
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
         '
         'Label6
         '
@@ -1621,8 +1616,13 @@ Partial Public Class KaijoReport
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "text-align: right"
         Me.Label6.Text = "NOZOMI送信："
-        Me.Label6.Top = 0.003937008!
+        Me.Label6.Top = 0.02362205!
         Me.Label6.Width = 0.8956695!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'KaijoReport
         '
@@ -1648,6 +1648,18 @@ Partial Public Class KaijoReport
         CType(Me.PageCount, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LabelPage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KAISAI_KIBOU_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KAISAI_KIBOU_ADDRESS2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KAISAI_KIBOU_ADDRESS1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KAISAI_DATE_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SHONIN_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SHONIN_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TEHAI_ID, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1675,16 +1687,7 @@ Partial Public Class KaijoReport
         CType(Me.Label35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label38, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TEHAI_ID, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SHONIN_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SHONIN_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label41, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KAISAI_DATE_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KAISAI_KIBOU_ADDRESS1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KAISAI_KIBOU_ADDRESS2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUEN_TIME1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUEN_TIME2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUEN_KAIJO_LAYOUT, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1706,10 +1709,7 @@ Partial Public Class KaijoReport
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label39, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KAISAI_KIBOU_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label42, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()

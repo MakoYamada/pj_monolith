@@ -41,6 +41,7 @@ Public Class KaijoReport
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '差異のある項目の背景色を変更
         If pRireki = False AndAlso Trim(pOldTBL_KAIJO.KOUENKAI_NO) <> "" Then
+            '履歴、新規登録時は除外
             SetChangedColor(Me.KOUENKAI_NAME, pOldTBL_KAIJO.KOUENKAI_NAME, Me.KOUENKAI_NAME.Text)
             SetChangedColor(Me.SEND_FLAG, pOldTBL_KAIJO.SEND_FLAG, Me.SEND_FLAG.Text)
             SetChangedColor(Me.REQ_STATUS_TEHAI, pOldTBL_KAIJO.REQ_STATUS_TEHAI, Me.REQ_STATUS_TEHAI.Text)
