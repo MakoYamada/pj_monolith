@@ -2806,6 +2806,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnTicketClear As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''SCAN_IMPORT_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SCAN_IMPORT_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''REQ_TAXI_NOTE コントロール。
     '''</summary>
     '''<remarks>
@@ -2833,13 +2842,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_1 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_1 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_1 コントロール。
@@ -2849,6 +2876,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_1 コントロール。
@@ -2878,6 +2914,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_2 コントロール。
     '''</summary>
     '''<remarks>
@@ -2887,13 +2932,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_2 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_2 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_2 コントロール。
@@ -2903,6 +2966,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_2 コントロール。
@@ -2932,6 +3004,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_3 コントロール。
     '''</summary>
     '''<remarks>
@@ -2941,13 +3022,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_3 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_3 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_3 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_3 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_3 コントロール。
@@ -2957,6 +3056,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_3 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_3 コントロール。
@@ -2986,6 +3094,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_3 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_4 コントロール。
     '''</summary>
     '''<remarks>
@@ -2995,13 +3112,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_4 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_4 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_4 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_4 コントロール。
@@ -3011,6 +3146,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_4 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_4 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_4 コントロール。
@@ -3040,6 +3184,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_4 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_4 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_5 コントロール。
     '''</summary>
     '''<remarks>
@@ -3049,13 +3202,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_5 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_5 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_5 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_5 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_5 コントロール。
@@ -3065,6 +3236,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_5 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_5 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_5 コントロール。
@@ -3094,6 +3274,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_5 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_5 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_6 コントロール。
     '''</summary>
     '''<remarks>
@@ -3103,13 +3292,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_6 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_6 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_6 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_6 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_6 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_6 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_6 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_6 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_6 コントロール。
@@ -3119,6 +3326,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_6 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_6 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_6 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_6 コントロール。
@@ -3148,6 +3364,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_6 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_6 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_6 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_7 コントロール。
     '''</summary>
     '''<remarks>
@@ -3157,13 +3382,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_7 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_7 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_7 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_7 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_7 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_7 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_7 コントロール。
@@ -3173,6 +3416,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_7 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_7 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_7 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_7 コントロール。
@@ -3202,6 +3454,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_7 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_7 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_7 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_8 コントロール。
     '''</summary>
     '''<remarks>
@@ -3211,13 +3472,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_8 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_8 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_8 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_8 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_8 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_8 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_8 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_8 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_8 コントロール。
@@ -3227,6 +3506,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_8 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_8 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_8 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_8 コントロール。
@@ -3256,6 +3544,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_8 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_8 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_8 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_9 コントロール。
     '''</summary>
     '''<remarks>
@@ -3265,13 +3562,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_9 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_9 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_9 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_9 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_9 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_9 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_9 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_9 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_9 コントロール。
@@ -3281,6 +3596,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_9 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_9 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_9 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_9 コントロール。
@@ -3310,6 +3634,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_9 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_9 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_9 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_TAXI_DATE_10 コントロール。
     '''</summary>
     '''<remarks>
@@ -3319,13 +3652,31 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_TAXI_DATE_10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_TAXI_DATE_10 コントロール。
+    '''CHK_ANS_TAXI_HAKKO_10 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_DATE_10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_10 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_10 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_10 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_10 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''REQ_TAXI_FROM_10 コントロール。
@@ -3335,6 +3686,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_FROM_10 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_DATE_10 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_DATE_10 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_KENSHU_10 コントロール。
@@ -3364,6 +3724,42 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_10 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_10 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_10 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_11 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_11 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_11 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_11 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_11 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_11 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_TAXI_DATE_11 コントロール。
     '''</summary>
     '''<remarks>
@@ -3389,6 +3785,42 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TAXI_NO_11 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_RMKS_11 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_11 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_12 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_12 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_12 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_12 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_12 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_12 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_TAXI_DATE_12 コントロール。
@@ -3418,6 +3850,42 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_12 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_12 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_12 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_13 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_13 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_13 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_13 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_13 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_13 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_TAXI_DATE_13 コントロール。
     '''</summary>
     '''<remarks>
@@ -3443,6 +3911,42 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TAXI_NO_13 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_RMKS_13 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_13 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_14 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_14 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_14 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_14 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_14 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_14 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_TAXI_DATE_14 コントロール。
@@ -3472,6 +3976,42 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_14 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_14 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_14 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_15 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_15 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_15 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_15 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_15 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_15 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_TAXI_DATE_15 コントロール。
     '''</summary>
     '''<remarks>
@@ -3497,6 +4037,42 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TAXI_NO_15 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_RMKS_15 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_15 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_16 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_16 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_16 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_16 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_16 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_16 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_TAXI_DATE_16 コントロール。
@@ -3526,6 +4102,42 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_16 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_16 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_16 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_17 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_17 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_17 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_17 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_17 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_17 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_TAXI_DATE_17 コントロール。
     '''</summary>
     '''<remarks>
@@ -3551,6 +4163,42 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TAXI_NO_17 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_RMKS_17 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_17 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_18 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_18 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_18 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_18 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_18 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_18 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_TAXI_DATE_18 コントロール。
@@ -3580,6 +4228,42 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_18 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_18 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_18 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_19 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_19 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_19 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_19 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_19 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_19 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_TAXI_DATE_19 コントロール。
     '''</summary>
     '''<remarks>
@@ -3607,6 +4291,42 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NO_19 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_TAXI_RMKS_19 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_19 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_ANS_TAXI_HAKKO_20 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_ANS_TAXI_HAKKO_20 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_20 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_20 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_TAXI_HAKKO_DATE_20 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_HAKKO_DATE_20 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ANS_TAXI_DATE_20 コントロール。
     '''</summary>
     '''<remarks>
@@ -3632,6 +4352,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TAXI_NO_20 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_TAXI_RMKS_20 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_RMKS_20 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''REQ_MR_O_TEHAI コントロール。
@@ -3802,7 +4531,16 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_KOTSUHOTEL_TESURYO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_KOTSUHOTEL_TESURYO As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''ANS_TAXI_MAISUU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_TAXI_MAISUU As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_TESURYO コントロール。
@@ -3811,7 +4549,7 @@ Partial Public Class DrRegist
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ANS_MR_HOTELHI コントロール。

@@ -234,6 +234,20 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class TAXI_HAKKO
+            '発行フラグ
+            Public Class Code
+                Public Const Mi As String = "0"
+                Public Const Taisho As String = "1"
+                Public Const Sumi As String = "2"
+            End Class
+            Public Class Name
+                Public Const Mi As String = "未発行"
+                Public Const Taisho As String = "発行対象"
+                Public Const Sumi As String = "発行済"
+            End Class
+        End Class
+
         Public Class ANS_MR_O_TEHAI
             '社員往路：回答ステータス
             Public Class Code
@@ -478,7 +492,6 @@ Public Class AppConst
         Public Const TESURYO As String = "16"               '手数料（交通・宿泊）
         Public Const ANS_MR_TEHAI As String = "17"          '回答：社員復路手配
         Public Const REQ_SEAT_KIBOU As String = "18"        '依頼：座席希望
-        Public Const TAXI_TICKET_TESURYO As String = "19"   'タクチケ発行手数料
     End Class
 
     Public Class STOP_FLG
