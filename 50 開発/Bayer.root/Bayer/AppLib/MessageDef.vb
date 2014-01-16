@@ -106,6 +106,10 @@ Public Class MessageDef
             Return ItemName & "が間違っています。再入力してください。"
         End Function
 
+        Public Shared Function SelectError(ByVal ItemName As String) As String
+            Return ItemName & "が未入力の為、発行対象にはできません。"
+        End Function
+
         '桁数エラー時のメッセージを返す
         '引数: 項目名、バイト数、(任意)全角 ←全角のときはバイト数を半分にして返す
         Public Shared Function LengthEQ(ByVal ItemName As String, ByVal Length As Integer, Optional ByVal Zenkaku As Boolean = False) As String
