@@ -97,6 +97,7 @@
             Public ANS_SEISAN_TF As String
             Public ANS_SEISAN_T As String
             Public ANS_SEISANSHO_URL As String
+            Public FROM_DATE_YM As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -194,6 +195,7 @@
             Public Const ANS_SEISAN_TF As String = "ANS_SEISAN_TF"
             Public Const ANS_SEISAN_T As String = "ANS_SEISAN_T"
             Public Const ANS_SEISANSHO_URL As String = "ANS_SEISANSHO_URL"
+            Public Const FROM_DATE_YM As String = "FROM_DATE_YM"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"

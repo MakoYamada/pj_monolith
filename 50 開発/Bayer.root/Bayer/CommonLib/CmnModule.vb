@@ -328,6 +328,8 @@ Public Class CmnModule
                 wStr = Format(in_Date, "yyyyMMdd")
             Case DateFormatType.YYMMDD
                 wStr = Format(in_Date, "yyMMdd")
+            Case DateFormatType.YYYYMM
+                wStr = Format(in_Date, "yyyyMM")
             Case DateFormatType.MMDD
                 wStr = Format(in_Date, "MMdd")
             Case DateFormatType.HHMMSS
@@ -534,6 +536,7 @@ Public Class CmnModule
         [YYMMDD]
         [YYYYMD]
         [YYMD]
+        [YYYYMM]
         [MD]
         [MMDD]
         [YYYYMMDDHHMMSS]
@@ -816,8 +819,10 @@ Public Class CmnModule
         TextBox.Enabled = Enabled
         If Enabled = False Then
             TextBox.ForeColor = System.Drawing.Color.FromArgb(160, 160, 160)
+            TextBox.BackColor = System.Drawing.Color.FromArgb(246, 246, 246)
         Else
             TextBox.ForeColor = System.Drawing.Color.FromArgb(10, 10, 10)
+            TextBox.BackColor = System.Drawing.Color.White
         End If
     End Sub
     Public Shared Sub SetEnabled(ByRef Label As System.Web.UI.WebControls.Label, ByVal Enabled As Boolean)

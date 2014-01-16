@@ -297,6 +297,56 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function TaxiMeisaiCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+ 
+            strSQL &= "SELECT"
+            strSQL &= " DISTINCT"
+            strSQL &= " TBL_KOUENKAI.TIME_STAMP"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",TBL_KOUENKAI.FROM_DATE"
+            strSQL &= ",TBL_KOUENKAI.TO_DATE"
+            strSQL &= ",TBL_KOUENKAI.UPDATE_DATE"
+            strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",MS_USER.USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= "(SELECT TBL_KOUENKAI_1.* FROM "
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI"
+            strSQL &= " WHERE 1=1"
+            strSQL &= ") AS TBL_KOUENKAI_1"
+            strSQL &= ","
+            strSQL &= "(SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
+            strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
+            strSQL &= ") AS TBL_KOUENKAI"
+            strSQL &= ",TBL_TAXITICKET_HAKKO"
+            strSQL &= ","
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= "   AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            If Trim(Joken.TKT_SEIKYU_YM) <> "" Then
+                strSQL &= "   AND TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM=N'" & CmnDb.SqlString(Joken.TKT_SEIKYU_YM) & "'"
+            End If
+            If Trim(Joken.TKT_ENTA) = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.N_Igai Then
+                strSQL &= "   AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_ENTA,N'')<>N'N'"
+            ElseIf Trim(Joken.TKT_ENTA) = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.N_Only Then
+                strSQL &= "   AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_ENTA,N'')=N'N'"
+            End If
+            If Trim(Joken.FROM_DATE) <> "" Then
+                strSQL &= "    AND TBL_KOUENKAI.FROM_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+            End If
+            strSQL &= " ORDER BY"
+            strSQL &= " TBL_KOUENKAI.FROM_DATE ASC"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NO ASC"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As String
             Dim strSQL As String = ""
 

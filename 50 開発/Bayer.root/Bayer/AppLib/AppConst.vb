@@ -485,6 +485,11 @@ Public Class AppConst
                 Public Const FuSanka As String = "ïséQâ¡"
                 Public Const SeisanFuka As String = "ê∏éZïsâ¬"
             End Class
+            Public Class Joken_MeisaiCsv
+                Public Const ALL As String = "0"
+                Public Const N_Igai As String = "1"
+                Public Const N_Only As String = "2"
+            End Class
         End Class
     End Class
 

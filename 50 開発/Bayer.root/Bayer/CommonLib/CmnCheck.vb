@@ -708,6 +708,13 @@ Public Class CmnCheck
             Return True
         End If
     End Function
+    Public Shared Function IsInput(ByVal TextBox1 As System.Web.UI.WebControls.TextBox, ByVal TextBox2 As System.Web.UI.WebControls.TextBox, ByVal TextBox3 As System.Web.UI.WebControls.TextBox, ByVal TextBox4 As System.Web.UI.WebControls.TextBox) As Boolean
+        If Trim(TextBox1.Text) = "" OrElse Trim(TextBox2.Text) = "" OrElse Trim(TextBox3.Text) = "" OrElse Trim(TextBox4.Text) = "" Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
     Public Shared Function IsInput(ByVal DropDownList As System.Web.UI.WebControls.DropDownList, Optional ByVal Mode As Boolean = False) As Boolean
         If DropDownList.SelectedIndex <= 0 Then
             If Mode Then
