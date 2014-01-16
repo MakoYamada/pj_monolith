@@ -621,9 +621,9 @@ Public Class SQL
             End If
 
             strSQL &= " ORDER BY"
-            strSQL &= " WK_KOUENKAI.FROM_DATE"
+            strSQL &= " WK_SEIKYU.SEISAN_YM DESC"
+            strSQL &= ",WK_KOUENKAI.FROM_DATE"
             strSQL &= ",WK_SEIKYU.KOUENKAI_NO"
-            strSQL &= ",WK_SEIKYU.SEISAN_YM"
             strSQL &= ",WK_SEIKYU.SEIKYU_NO_TOPTOUR"
 
             Return strSQL
