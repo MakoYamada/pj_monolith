@@ -416,6 +416,15 @@ a.link:active
 	color: #263d52;
 	text-decoration: underline;
 }
+.pagerlink span
+{
+	font-weight: bold;
+	border: 0 none;
+	text-decoration: none;
+	vertical-align: middle;
+	padding: 1px 4px 1px 4px;
+	display: block;
+}
 .pagerlink a
 {
 	font-weight: bold;
@@ -423,6 +432,7 @@ a.link:active
 	border: 1px #6e7f88 solid;
 	text-decoration: none;
 	text-align: center;
+	vertical-align: middle;
 	cursor: pointer;
 	padding: 1px 4px 1px 4px;
 	display: block;
