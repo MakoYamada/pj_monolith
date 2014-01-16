@@ -2548,7 +2548,8 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_1" runat="server" TabIndex="143" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_1" runat="server" TabIndex="143" 
+                                Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_1" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -2623,7 +2624,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_2" runat="server" TabIndex="148" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_2" runat="server" TabIndex="148" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_2" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -2698,7 +2699,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_3" runat="server" TabIndex="153" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_3" runat="server" TabIndex="153" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_3" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -2773,7 +2774,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_4" runat="server" TabIndex="158" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_4" runat="server" TabIndex="158" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_4" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -2848,7 +2849,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_5" runat="server" TabIndex="163" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_5" runat="server" TabIndex="163" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_5" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -2923,7 +2924,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_6" runat="server" TabIndex="168" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_6" runat="server" TabIndex="168" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_6" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -2998,7 +2999,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_7" runat="server" TabIndex="173" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_7" runat="server" TabIndex="173" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_7" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3073,7 +3074,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_8" runat="server" TabIndex="178" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_8" runat="server" TabIndex="178" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_8" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3148,7 +3149,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_9" runat="server" TabIndex="183" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_9" runat="server" TabIndex="183" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_9" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3223,7 +3224,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_10" runat="server" TabIndex="188" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_10" runat="server" TabIndex="188" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_10" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3291,7 +3292,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_11" runat="server" TabIndex="193" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_11" runat="server" TabIndex="193" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_11" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3342,7 +3343,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_12" runat="server" TabIndex="198" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_12" runat="server" TabIndex="198" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_12" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3393,7 +3394,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_13" runat="server" TabIndex="203" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_13" runat="server" TabIndex="203" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_13" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3444,7 +3445,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_14" runat="server" TabIndex="208" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_14" runat="server" TabIndex="208" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_14" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3495,7 +3496,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_15" runat="server" TabIndex="213" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_15" runat="server" TabIndex="213" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_15" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3546,7 +3547,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_16" runat="server" TabIndex="218" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_16" runat="server" TabIndex="218" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_16" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3597,7 +3598,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_17" runat="server" TabIndex="223" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_17" runat="server" TabIndex="223" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_17" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3648,7 +3649,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_18" runat="server" TabIndex="228" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_18" runat="server" TabIndex="228" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_18" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3699,7 +3700,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_19" runat="server" TabIndex="233" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_19" runat="server" TabIndex="233" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_19" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3750,7 +3751,7 @@
                             発行
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_20" runat="server" TabIndex="238" />
+                            <asp:CheckBox ID="CHK_ANS_TAXI_HAKKO_20" runat="server" TabIndex="238" Text="発行対象" />
 							<asp:Label ID="ANS_TAXI_HAKKO_20" runat="server" Width="80px">発行済</asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -3985,7 +3986,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_MAISUU" runat="server" MaxLength="3" 
-                                Height="18px" Width="35px" TabIndex="256"></asp:TextBox>枚
+                                Height="18px" Width="35px" TabIndex="256" AutoPostBack="True"></asp:TextBox>枚
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             タクチケ発券手数料

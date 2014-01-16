@@ -8241,8 +8241,13 @@ Public Class AppModule
     End Function
 
     '【回答】手数料(タクチケ発券手数料)
-    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As Label) As String
-        Return Trim(StrConv(ANS_TAXI_TESURYO.Text, VbStrConv.Narrow))
+    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_MAISUU As TextBox) As String
+        If ANS_TAXI_MAISUU.Text.Trim = String.Empty OrElse ANS_TAXI_MAISUU.Text.Trim = "0" Then
+            Return "0"
+            Exit Function
+        End If
+
+        Return (Double.Parse(ANS_TAXI_MAISUU.Text) * Double.Parse(AppModule.GetName_TAXI_TESURYO())).ToString
     End Function
 
     '【回答】MR　交通費
@@ -8278,6 +8283,75 @@ Public Class AppModule
     'タクチケ精算手数料
     Public Shared Function GetValue_TAXI_SEISAN_FEE(ByVal TAXI_SEISAN_FEE As TextBox) As String
         Return Trim(StrConv(TAXI_SEISAN_FEE.Text, VbStrConv.Narrow))
+    End Function
+
+    'タクシーチケット：番号（回答）
+    Public Shared Function GetValue_ANS_TAXI_HAKKO(ByVal ANS_TAXI_HAKKO As CheckBox) As String
+        If ANS_TAXI_HAKKO.Checked Then
+            Return AppConst.KOTSUHOTEL.TAXI_HAKKO.Code.Taisho
+        Else
+            Return AppConst.KOTSUHOTEL.TAXI_HAKKO.Code.Mi
+        End If
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_1(ByVal ANS_TAXI_HAKKO_1 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_1)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_2(ByVal ANS_TAXI_HAKKO_2 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_2)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_3(ByVal ANS_TAXI_HAKKO_3 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_3)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_4(ByVal ANS_TAXI_HAKKO_4 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_4)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_5(ByVal ANS_TAXI_HAKKO_5 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_5)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_6(ByVal ANS_TAXI_HAKKO_6 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_6)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_7(ByVal ANS_TAXI_HAKKO_7 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_7)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_8(ByVal ANS_TAXI_HAKKO_8 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_8)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_9(ByVal ANS_TAXI_HAKKO_9 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_9)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_10(ByVal ANS_TAXI_HAKKO_10 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_10)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_11(ByVal ANS_TAXI_HAKKO_11 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_11)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_12(ByVal ANS_TAXI_HAKKO_12 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_12)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_13(ByVal ANS_TAXI_HAKKO_13 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_13)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_14(ByVal ANS_TAXI_HAKKO_14 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_14)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_15(ByVal ANS_TAXI_HAKKO_15 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_15)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_16(ByVal ANS_TAXI_HAKKO_16 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_16)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_17(ByVal ANS_TAXI_HAKKO_17 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_17)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_18(ByVal ANS_TAXI_HAKKO_18 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_18)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_19(ByVal ANS_TAXI_HAKKO_19 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_19)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_HAKKO_20(ByVal ANS_TAXI_HAKKO_20 As CheckBox) As String
+        Return GetValue_ANS_TAXI_HAKKO(ANS_TAXI_HAKKO_20)
     End Function
 
     'タクシーチケット：利用日（回答）
@@ -8473,6 +8547,71 @@ Public Class AppModule
     End Function
     Public Shared Function GetValue_ANS_TAXI_NO_20(ByVal ANS_TAXI_NO_20 As TextBox) As String
         Return GetValue_ANS_TAXI_NO(ANS_TAXI_NO_20)
+    End Function
+
+    'タクシーチケット：備考（回答）
+    Public Shared Function GetValue_ANS_TAXI_RMKS(ByVal ANS_TAXI_RMKS As TextBox) As String
+        Return Trim(ANS_TAXI_RMKS.Text)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_1(ByVal ANS_TAXI_RMKS_1 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_1)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_2(ByVal ANS_TAXI_RMKS_2 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_2)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_3(ByVal ANS_TAXI_RMKS_3 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_3)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_4(ByVal ANS_TAXI_RMKS_4 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_4)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_5(ByVal ANS_TAXI_RMKS_5 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_5)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_6(ByVal ANS_TAXI_RMKS_6 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_6)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_7(ByVal ANS_TAXI_RMKS_7 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_7)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_8(ByVal ANS_TAXI_RMKS_8 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_8)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_9(ByVal ANS_TAXI_RMKS_9 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_9)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_10(ByVal ANS_TAXI_RMKS_10 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_10)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_11(ByVal ANS_TAXI_RMKS_11 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_11)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_12(ByVal ANS_TAXI_RMKS_12 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_12)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_13(ByVal ANS_TAXI_RMKS_13 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_13)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_14(ByVal ANS_TAXI_RMKS_14 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_14)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_15(ByVal ANS_TAXI_RMKS_15 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_15)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_16(ByVal ANS_TAXI_RMKS_16 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_16)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_17(ByVal ANS_TAXI_RMKS_17 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_17)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_18(ByVal ANS_TAXI_RMKS_18 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_18)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_19(ByVal ANS_TAXI_RMKS_19 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_19)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_RMKS_20(ByVal ANS_TAXI_RMKS_20 As TextBox) As String
+        Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_20)
     End Function
 
     '社員用往路手配（回答）
