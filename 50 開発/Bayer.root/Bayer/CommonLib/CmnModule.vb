@@ -628,8 +628,8 @@ Public Class CmnModule
     End Function
 
     'プルダウンの値を返す
-    Public Shared Function GetSelectedItemValue(ByVal DropDownList As System.Web.UI.WebControls.DropDownList) As String
-        If Not CmnCheck.IsInput(DropDownList) Then
+    Public Shared Function GetSelectedItemValue(ByVal DropDownList As System.Web.UI.WebControls.DropDownList, Optional ByVal Mode As Boolean = False) As String
+        If Not CmnCheck.IsInput(DropDownList, Mode) Then
             '未選択だったら空文字を返す
             Return ""
         Else

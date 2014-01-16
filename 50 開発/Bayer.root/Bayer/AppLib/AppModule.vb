@@ -7778,12 +7778,12 @@ Public Class AppModule
 
     '宿泊部屋タイプ（回答）
     Public Shared Function GetValue_ANS_ROOM_TYPE(ByVal ANS_ROOM_TYPE As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_ROOM_TYPE)
+        Return CmnModule.GetSelectedItemValue(ANS_ROOM_TYPE, True)
     End Function
 
     '宿泊ホテル喫煙（回答）
     Public Shared Function GetValue_ANS_HOTEL_SMOKING(ByVal ANS_HOTEL_SMOKING As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_HOTEL_SMOKING)
+        Return CmnModule.GetSelectedItemValue(ANS_HOTEL_SMOKING, True)
     End Function
 
     '宿泊備考（回答）
@@ -7793,7 +7793,7 @@ Public Class AppModule
 
     '往路：ステータス（回答）
     Public Shared Function GetValue_ANS_O_STATUS(ByVal ANS_O_STATUS As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_O_STATUS)
+        Return CmnModule.GetSelectedItemValue(ANS_O_STATUS, True)
     End Function
     Public Shared Function GetValue_ANS_O_STATUS_1(ByVal ANS_O_STATUS_1 As DropDownList) As String
         Return GetValue_ANS_O_STATUS(ANS_O_STATUS_1)
@@ -7813,7 +7813,7 @@ Public Class AppModule
 
     '往路：交通機関（回答）
     Public Shared Function GetValue_ANS_O_KOTSUKIKAN(ByVal ANS_O_KOTSUKIKAN As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_O_KOTSUKIKAN)
+        Return CmnModule.GetSelectedItemValue(ANS_O_KOTSUKIKAN, True)
     End Function
     Public Shared Function GetValue_ANS_O_KOTSUKIKAN_1(ByVal ANS_O_KOTSUKIKAN_1 As DropDownList) As String
         Return GetValue_ANS_O_KOTSUKIKAN(ANS_O_KOTSUKIKAN_1)
@@ -7953,7 +7953,7 @@ Public Class AppModule
 
     '往路：座席区分（回答）
     Public Shared Function GetValue_ANS_O_SEAT(ByVal ANS_O_SEAT As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_O_SEAT)
+        Return CmnModule.GetSelectedItemValue(ANS_O_SEAT, True)
     End Function
     Public Shared Function GetValue_ANS_O_SEAT_1(ByVal ANS_O_SEAT_1 As DropDownList) As String
         Return GetValue_ANS_O_SEAT(ANS_O_SEAT_1)
@@ -7973,7 +7973,7 @@ Public Class AppModule
 
     '往路：座席希望（回答）
     Public Shared Function GetValue_ANS_O_SEAT_KIBOU(ByVal ANS_O_SEAT_KIBOU As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_O_SEAT_KIBOU)
+        Return CmnModule.GetSelectedItemValue(ANS_O_SEAT_KIBOU, True)
     End Function
     Public Shared Function GetValue_ANS_O_SEAT_KIBOU1(ByVal ANS_O_SEAT_KIBOU1 As DropDownList) As String
         Return GetValue_ANS_O_SEAT(ANS_O_SEAT_KIBOU1)
@@ -8013,7 +8013,7 @@ Public Class AppModule
 
     '復路：交通機関（回答）
     Public Shared Function GetValue_ANS_F_KOTSUKIKAN(ByVal ANS_F_KOTSUKIKAN As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_F_KOTSUKIKAN)
+        Return CmnModule.GetSelectedItemValue(ANS_F_KOTSUKIKAN, True)
     End Function
     Public Shared Function GetValue_ANS_F_KOTSUKIKAN_1(ByVal ANS_F_KOTSUKIKAN_1 As DropDownList) As String
         Return GetValue_ANS_F_KOTSUKIKAN(ANS_F_KOTSUKIKAN_1)
@@ -8153,7 +8153,7 @@ Public Class AppModule
 
     '復路：座席区分（回答）
     Public Shared Function GetValue_ANS_F_SEAT(ByVal ANS_F_SEAT As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_F_SEAT)
+        Return CmnModule.GetSelectedItemValue(ANS_F_SEAT, True)
     End Function
     Public Shared Function GetValue_ANS_F_SEAT_1(ByVal ANS_F_SEAT_1 As DropDownList) As String
         Return GetValue_ANS_F_SEAT(ANS_F_SEAT_1)
@@ -8173,7 +8173,7 @@ Public Class AppModule
 
     '復路：座席希望（回答）
     Public Shared Function GetValue_ANS_F_SEAT_KIBOU(ByVal ANS_F_SEAT_KIBOU As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_F_SEAT_KIBOU)
+        Return CmnModule.GetSelectedItemValue(ANS_F_SEAT_KIBOU, True)
     End Function
     Public Shared Function GetValue_ANS_F_SEAT_KIBOU1(ByVal ANS_F_SEAT_KIBOU1 As DropDownList) As String
         Return GetValue_ANS_F_SEAT(ANS_F_SEAT_KIBOU1)
@@ -8436,7 +8436,7 @@ Public Class AppModule
 
     'タクシーチケット：券種（回答）
     Public Shared Function GetValue_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_TAXI_KENSHU)
+        Return CmnModule.GetSelectedItemValue(ANS_TAXI_KENSHU, True)
     End Function
     Public Shared Function GetValue_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As DropDownList) As String
         Return GetValue_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_1)
@@ -8631,12 +8631,12 @@ Public Class AppModule
 
     '社員用往路手配（回答）
     Public Shared Function GetValue_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_MR_O_TEHAI)
+        Return CmnModule.GetSelectedItemValue(ANS_MR_O_TEHAI, True)
     End Function
 
     '社員用復路手配（回答）
     Public Shared Function GetValue_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI)
+        Return CmnModule.GetSelectedItemValue(ANS_MR_F_TEHAI, True)
     End Function
 
     '社員用手配備考（回答）
