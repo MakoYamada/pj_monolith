@@ -2879,6 +2879,8 @@
             Public TIME_STAMP_BYL As String
             Public TTEHAI_MITOUROKU As String
             Public TKT_NO As String
+            Public TKT_SEIKYU_YM As String
+            Public TKT_ENTA As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
