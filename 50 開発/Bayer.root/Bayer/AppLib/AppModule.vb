@@ -2930,7 +2930,7 @@ Public Class AppModule
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_KOTSUKIKAN Then
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.KOTSUKIKAN AndAlso MS_CODE(wCnt).DISP_VALUE = REQ_O_KOTSUKIKAN.Trim Then
                 wStr = MS_CODE(wCnt).DISP_TEXT
                 Exit For
             End If
@@ -5541,7 +5541,7 @@ Public Class AppModule
 
     '往路：交通機関（回答）
     Public Shared Sub SetForm_ANS_O_KOTSUKIKAN(ByVal ANS_O_KOTSUKIKAN As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_KOTSUKIKAN, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_KOTSUKIKAN, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_O_KOTSUKIKAN_1(ByVal ANS_O_KOTSUKIKAN_1 As String, ByRef control As DropDownList)
         SetForm_ANS_O_KOTSUKIKAN(ANS_O_KOTSUKIKAN_1, control)
@@ -5681,7 +5681,7 @@ Public Class AppModule
 
     '往路：座席希望（回答）
     Public Shared Sub SetForm_ANS_O_SEAT_KIBOU(ByVal ANS_O_SEAT_KIBOU As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT_KIBOU, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT_KIBOU, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_O_SEAT_KIBOU1(ByVal ANS_O_SEAT_KIBOU1 As String, ByRef control As DropDownList)
         SetForm_ANS_O_SEAT(ANS_O_SEAT_KIBOU1, control)
@@ -5701,7 +5701,7 @@ Public Class AppModule
 
     '往路：座席区分（回答）
     Public Shared Sub SetForm_ANS_O_SEAT(ByVal ANS_O_SEAT As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_O_SEAT, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_O_SEAT_1(ByVal ANS_O_SEAT_1 As String, ByRef control As DropDownList)
         SetForm_ANS_O_SEAT(ANS_O_SEAT_1, control)
@@ -5741,7 +5741,7 @@ Public Class AppModule
 
     '復路：交通機関（回答）
     Public Shared Sub SetForm_ANS_F_KOTSUKIKAN(ByVal ANS_F_KOTSUKIKAN As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_KOTSUKIKAN, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_KOTSUKIKAN, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_F_KOTSUKIKAN_1(ByVal ANS_F_KOTSUKIKAN_1 As String, ByRef control As DropDownList)
         SetForm_ANS_F_KOTSUKIKAN(ANS_F_KOTSUKIKAN_1, control)
@@ -5881,7 +5881,7 @@ Public Class AppModule
 
     '復路：座席区分（回答）
     Public Shared Sub SetForm_ANS_F_SEAT(ByVal ANS_F_SEAT As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_SEAT, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_SEAT, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_F_SEAT_1(ByVal ANS_F_SEAT_1 As String, ByRef control As DropDownList)
         SetForm_ANS_F_SEAT(ANS_F_SEAT_1, control)
@@ -5901,7 +5901,7 @@ Public Class AppModule
 
     '復路：座席希望（回答）
     Public Shared Sub SetForm_ANS_F_SEAT_KIBOU(ByVal ANS_F_SEAT_KIBOU As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_SEAT_KIBOU, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_F_SEAT_KIBOU, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_F_SEAT_KIBOU1(ByVal ANS_F_SEAT_KIBOU1 As String, ByRef control As DropDownList)
         SetForm_ANS_F_SEAT(ANS_F_SEAT_KIBOU1, control)
@@ -6905,7 +6905,7 @@ Public Class AppModule
         Else
             control1.Visible = False
             control2.Visible = True
-            If ANS_TAXI_HAKKO = AppConst.KOTSUHOTEL.TAXI_HAKKO.Code.Mi Then
+            If ANS_TAXI_HAKKO = AppConst.KOTSUHOTEL.TAXI_HAKKO.Code.Mi OrElse ANS_TAXI_HAKKO.Trim = String.Empty Then
                 control2.Checked = False
             Else
                 control2.Checked = True
@@ -7206,11 +7206,12 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_O_STATUS(ByRef ANS_O_STATUS As DropDownList)
         With ANS_O_STATUS
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_STATUS.Name.Prepare, AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Prepare))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_STATUS.Name.OK, AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_STATUS.Name.Daian, AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_STATUS.Name.Canceled, AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Canceled))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_O_STATUS.Name.Fuka, AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Fuka))
         End With
     End Sub
     Public Shared Sub SetDropDownList_ANS_O_STATUS_1(ByRef ANS_O_STATUS_1 As DropDownList)
@@ -7234,7 +7235,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_O_KOTSUKIKAN(ByRef ANS_O_KOTSUKIKAN As DropDownList)
         With ANS_O_KOTSUKIKAN
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7267,7 +7267,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_O_SEAT(ByRef ANS_O_SEAT As DropDownList)
         With ANS_O_SEAT
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7300,7 +7299,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_O_SEAT_KIBOU(ByRef ANS_O_SEAT_KIBOU As DropDownList)
         With ANS_O_SEAT_KIBOU
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7333,11 +7331,12 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_F_STATUS(ByRef ANS_F_STATUS As DropDownList)
         With ANS_F_STATUS
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_STATUS.Name.Prepare, AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Prepare))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_STATUS.Name.OK, AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_STATUS.Name.Daian, AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian))
             .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_STATUS.Name.Canceled, AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled))
+            .Items.Add(New ListItem(AppConst.KOTSUHOTEL.ANS_F_STATUS.Name.Fuka, AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Fuka))
         End With
     End Sub
     Public Shared Sub SetDropDownList_ANS_F_STATUS_1(ByRef ANS_F_STATUS_1 As DropDownList)
@@ -7361,7 +7360,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_F_KOTSUKIKAN(ByRef ANS_F_KOTSUKIKAN As DropDownList)
         With ANS_F_KOTSUKIKAN
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7394,7 +7392,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_F_SEAT(ByRef ANS_F_SEAT As DropDownList)
         With ANS_F_SEAT
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7427,7 +7424,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_F_SEAT_KIBOU(ByRef ANS_F_SEAT_KIBOU As DropDownList)
         With ANS_F_SEAT_KIBOU
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
