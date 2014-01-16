@@ -900,6 +900,7 @@
             Public SEND_FLAG As String
             Public TTANTO_ID As String
             Public SEIKYU_NO_TOPTOUR As String
+            Public SCAN_IMPORT_DATE As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
             Public UPDATE_DATE As String
@@ -1384,6 +1385,7 @@
             Public Const SEND_FLAG As String = "SEND_FLAG"
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
+            Public Const SCAN_IMPORT_DATE As String = "SCAN_IMPORT_DATE"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
@@ -1847,6 +1849,7 @@
             Public Const SEND_FLAG As String = "送信フラグ"
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
+            Public Const SCAN_IMPORT_DATE As String = "スキャンデータ取込日"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
