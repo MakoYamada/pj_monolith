@@ -163,7 +163,7 @@ Partial Public Class Menu1
         Response.Redirect(URL.SapCsv)
     End Sub
 
-    '[タクシーチケット管理へ]
+    '[タクシーチケット管理]
     Protected Sub BtnSeikyuMeisai0_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMenu.Click
         Response.Redirect(URL.TaxiMenu)
     End Sub
