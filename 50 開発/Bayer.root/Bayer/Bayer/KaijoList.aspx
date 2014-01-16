@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	W<table cellspacing="0" cellpadding="2" border="0">
+	<table cellspacing="0" cellpadding="2" border="0">
 		<tr>
 			<td align="left">
 				<table cellpadding="2" cellspacing="0" border="0">
@@ -66,8 +66,8 @@
 				<div class="FontSize1" style="height: 4px;"></div>
 				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
 				<table cellspacing="0" cellpadding="2" border="0" id="TblButton1" runat="server">
-					<tr align="center" style="height: 40px;">
-						<td>
+					<tr style="height: 40px;">
+						<td align="left">
 							<asp:Button ID="BtnKaijoListPrint1" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
 							&nbsp;
 							<asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
@@ -104,8 +104,8 @@
 		</tr>
 	</table>
 	<table cellspacing="0" cellpadding="2" border="0">
-		<tr align="center" style="height: 40px;">
-			<td>
+		<tr style="height: 40px;">
+			<td align="left">
 				<span id="SpnBtnKaijoListPrint2" runat="server">
 				<asp:Button ID="BtnKaijoListPrint2" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
 				&nbsp;</span>

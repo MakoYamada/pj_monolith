@@ -34,8 +34,8 @@
 				<div class="FontSize1" style="height: 4px;"></div>
 				<asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
 				<table cellspacing="0" cellpadding="2" border="0" id="TblButton1" runat="server">
-					<tr align="center" style="height: 40px;">
-						<td>
+					<tr style="height: 40px;">
+						<td align="left">
 							<asp:Button ID="BtnKaijoPrint1" runat="server" Text="手配書印刷" Width="130px" CssClass="Button" />
 							&nbsp;
 							<asp:Button ID="BtnNewKaijoListPrint1" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
@@ -86,8 +86,8 @@
 		</tr>
 	</table>
 	<table cellspacing="0" cellpadding="2" border="0">
-        <tr align="center" style="height: 40px;">
-            <td>
+		<tr style="height: 40px;">
+			<td align="left">
 				<asp:Button ID="BtnKaijoPrint2" runat="server" Text="手配書印刷" Width="130px" CssClass="Button" />
 				&nbsp;
                 <asp:Button ID="BtnNewKaijoListPrint2" runat="server" Text="手配依頼一覧印刷" Width="130px" CssClass="Button" />
