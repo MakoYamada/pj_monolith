@@ -4745,6 +4745,22 @@ Public Class AppModule
     End Function
 #End Region
 
+#Region "タクチケ管理台帳"
+
+    'エンタ
+    Public Shared Function GetName_TKT_ENTA(ByVal TKT_ENTA As String) As String
+        Select Case TKT_ENTA
+            Case AppConST.TAXITICKET_HAKKO.TKT_ENTA.Code.FUSANKA
+                Return AppConST.TAXITICKET_HAKKO.TKT_ENTA.Name.FUSANKA
+            Case AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka
+                Return AppConst.TAXITICKET_HAKKO.TKT_ENTA.Name.SeisanFuka
+            Case Else
+                Return String.Empty
+        End Select
+    End Function
+
+#End Region
+
 #End Region
 
 
