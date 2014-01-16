@@ -6176,7 +6176,7 @@ Public Class AppModule
 
     'タクシーチケット：券種（回答）
     Public Shared Sub SetForm_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_TAXI_KENSHU, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_TAXI_KENSHU, control, True)
     End Sub
     Public Shared Sub SetForm_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As String, ByRef control As DropDownList)
         SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_1, control)
@@ -6321,7 +6321,7 @@ Public Class AppModule
 
     '社員用往路隣席希望（回答）
     Public Shared Sub SetForm_ANS_MR_O_TEHAI(ByVal ANR_MR_O_TEHAI As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANR_MR_O_TEHAI, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANR_MR_O_TEHAI, control, True)
     End Sub
 
     '社員用復路隣席希望（依頼）
@@ -6331,7 +6331,7 @@ Public Class AppModule
 
     '社員用復路隣席希望（回答）
     Public Shared Sub SetForm_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As String, ByRef control As DropDownList)
-        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_MR_F_TEHAI, control)
+        control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_MR_F_TEHAI, control, True)
     End Sub
 
     'MR性別
@@ -7458,7 +7458,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_MR_O_TEHAI(ByRef ANS_MR_O_TEHAI As DropDownList)
         With ANS_MR_O_TEHAI
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7476,7 +7475,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_MR_F_TEHAI(ByRef ANS_MR_F_TEHAI As DropDownList)
         With ANS_MR_F_TEHAI
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
@@ -7494,7 +7492,6 @@ Public Class AppModule
     Public Shared Sub SetDropDownList_ANS_TAXI_KENSHU(ByRef ANS_TAXI_KENSHU As DropDownList)
         With ANS_TAXI_KENSHU
             .Items.Clear()
-            .Items.Add(New ListItem("---", "0"))
 
             Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
             Dim wStr As String = ""
