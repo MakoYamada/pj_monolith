@@ -473,6 +473,21 @@ Public Class AppConst
         End Class
     End Class
 
+    Public Class TAXITICKET_HAKKO
+        'タクチケ発行テーブル関連
+        Public Class TKT_ENTA
+            'エンタ
+            Public Class Code
+                Public Const FuSanka As String = "E"
+                Public Const SeisanFuka As String = "N"
+            End Class
+            Public Class Name
+                Public Const FuSanka As String = "不参加"
+                Public Const SeisanFuka As String = "精算不可"
+            End Class
+        End Class
+    End Class
+
     Public Class MS_CODE
         Public Const SEX As String = "01"                   '性別
         Public Const KOUEN_KAIJO_LAYOUT As String = "02"    'レイアウト
