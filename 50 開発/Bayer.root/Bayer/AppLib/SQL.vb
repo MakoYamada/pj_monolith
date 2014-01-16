@@ -3127,6 +3127,19 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Update_SEIKYU_NO(ByVal KOUENKAI_NO As String, ByVal SEIKYU_NO_TOPTOUR As String, ByVal UPDATE_USER As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_KOTSUHOTEL SET"
+            strSQL &= " " & TableDef.TBL_KOTSUHOTEL.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND RTRIM(ISNULL(" & TableDef.TBL_KOTSUHOTEL.Column.SEIKYU_NO_TOPTOUR & ",'')) = ''"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class TBL_KAIJO
