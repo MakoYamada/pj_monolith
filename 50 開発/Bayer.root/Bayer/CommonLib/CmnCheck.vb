@@ -708,9 +708,13 @@ Public Class CmnCheck
             Return True
         End If
     End Function
-    Public Shared Function IsInput(ByVal DropDownList As System.Web.UI.WebControls.DropDownList) As Boolean
+    Public Shared Function IsInput(ByVal DropDownList As System.Web.UI.WebControls.DropDownList, Optional ByVal Mode As Boolean = False) As Boolean
         If DropDownList.SelectedIndex <= 0 Then
-            Return False
+            If Mode Then
+                Return True
+            Else
+                Return False
+            End If
         Else
             Return True
         End If
