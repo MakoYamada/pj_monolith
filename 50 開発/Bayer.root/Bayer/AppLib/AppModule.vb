@@ -5971,7 +5971,11 @@ Public Class AppModule
 
     '【回答】手数料(タクチケ発券手数料)
     Public Shared Sub SetForm_ANS_TAXI_TESURYO(ByVal ANS_TAXI_TESURYO As String, ByRef control As Label)
-        control.Text = ANS_TAXI_TESURYO
+        If ANS_TAXI_TESURYO = "" Then
+            control.Text = "0"
+        Else
+            control.Text = ANS_TAXI_TESURYO
+        End If
     End Sub
 
     'タクチケ発行枚数
