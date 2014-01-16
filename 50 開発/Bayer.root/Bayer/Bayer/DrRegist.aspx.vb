@@ -74,6 +74,35 @@ Partial Public Class DrRegist
                 End If
             End If
 
+            '発行済のタクチケがある場合は、タクチケコピー・クリアボタンは使用不可
+            If Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" Then
+
+                BtnTicketCopy.Visible = False
+                BtnTicketClear.Visible = False
+            Else
+                BtnTicketCopy.Visible = True
+                BtnTicketClear.Visible = True
+            End If
+
         Else
             If Trim(Session.Item(SessionDef.DrRireki)) = Session.SessionID Then
             Else
@@ -860,8 +889,8 @@ Partial Public Class DrRegist
         AppModule.SetForm_REQ_MR_F_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_F_TEHAI, Me.REQ_MR_F_TEHAI)
         AppModule.SetForm_MR_SEX(DSP_KOTSUHOTEL(DSP_SEQ).MR_SEX, Me.MR_SEX)
         AppModule.SetForm_MR_AGE(DSP_KOTSUHOTEL(DSP_SEQ).MR_AGE, Me.MR_AGE)
-        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_O_TEHAI, Me.ANS_MR_O_TEHAI)
-        AppModule.SetForm_ANS_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_F_TEHAI, Me.ANS_MR_F_TEHAI)
+        AppModule.SetForm_ANS_MR_O_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_O_TEHAI, Me.ANS_MR_O_TEHAI)
+        AppModule.SetForm_ANS_MR_F_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_F_TEHAI, Me.ANS_MR_F_TEHAI)
         AppModule.setform_REQ_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_HOTEL_NOTE, Me.REQ_MR_HOTEL_NOTE)
         AppModule.SetForm_ANS_MR_HOTEL_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTEL_NOTE, Me.ANS_MR_HOTEL_NOTE)
 
@@ -1175,6 +1204,8 @@ Partial Public Class DrRegist
         If RsData.Read() Then
             wFlAG = True
             OldTBL_KOTSUHOTEL = AppModule.SetRsData(RsData, OldTBL_KOTSUHOTEL)
+        Else
+            OldTBL_KOTSUHOTEL = DSP_KOTSUHOTEL(SEQ)
         End If
         RsData.Close()
     End Sub
@@ -1641,7 +1672,7 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.Invalid("タクチケ-利用日1"), Me)
             SetFocus(Me.ANS_TAXI_DATE_1)
             Return False
-        Else
+        ElseIf Me.ANS_TAXI_DATE_2.Text.Trim = String.Empty Then
             If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
                 CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日1"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_1)
@@ -1650,7 +1681,7 @@ Partial Public Class DrRegist
         End If
 
         '券種1
-        If Me.ANS_TAXI_KENSHU_1.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
+        If Me.ANS_TAXI_KENSHU_1.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種1"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_1)
             Return False
@@ -1679,7 +1710,7 @@ Partial Public Class DrRegist
         End If
 
         '券種2
-        If Me.ANS_TAXI_KENSHU_2.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
+        If Me.ANS_TAXI_KENSHU_2.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種2"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_2)
             Return False
@@ -1708,7 +1739,7 @@ Partial Public Class DrRegist
         End If
 
         '券種3
-        If Me.ANS_TAXI_KENSHU_3.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
+        If Me.ANS_TAXI_KENSHU_3.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種3"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_3)
             Return False
@@ -1737,7 +1768,7 @@ Partial Public Class DrRegist
         End If
 
         '券種4
-        If Me.ANS_TAXI_KENSHU_4.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
+        If Me.ANS_TAXI_KENSHU_4.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種4"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_4)
             Return False
@@ -1766,7 +1797,7 @@ Partial Public Class DrRegist
         End If
 
         '券種5
-        If Me.ANS_TAXI_KENSHU_5.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
+        If Me.ANS_TAXI_KENSHU_5.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種5"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_5)
             Return False
@@ -1795,7 +1826,7 @@ Partial Public Class DrRegist
         End If
 
         '券種6
-        If Me.ANS_TAXI_KENSHU_6.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
+        If Me.ANS_TAXI_KENSHU_6.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種6"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_6)
             Return False
@@ -1824,7 +1855,7 @@ Partial Public Class DrRegist
         End If
 
         '券種7
-        If Me.ANS_TAXI_KENSHU_7.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
+        If Me.ANS_TAXI_KENSHU_7.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種7"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_7)
             Return False
@@ -1853,7 +1884,7 @@ Partial Public Class DrRegist
         End If
 
         '券種8
-        If Me.ANS_TAXI_KENSHU_8.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
+        If Me.ANS_TAXI_KENSHU_8.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種8"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_8)
             Return False
@@ -1882,7 +1913,7 @@ Partial Public Class DrRegist
         End If
 
         '券種9
-        If Me.ANS_TAXI_KENSHU_9.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
+        If Me.ANS_TAXI_KENSHU_9.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種9"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_9)
             Return False
@@ -1911,7 +1942,7 @@ Partial Public Class DrRegist
         End If
 
         '券種10
-        If Me.ANS_TAXI_KENSHU_10.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
+        If Me.ANS_TAXI_KENSHU_10.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種10"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_10)
             Return False
@@ -1940,7 +1971,7 @@ Partial Public Class DrRegist
         End If
 
         '券種11
-        If Me.ANS_TAXI_KENSHU_11.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
+        If Me.ANS_TAXI_KENSHU_11.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種11"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_11)
             Return False
@@ -1969,7 +2000,7 @@ Partial Public Class DrRegist
         End If
 
         '券種12
-        If Me.ANS_TAXI_KENSHU_12.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
+        If Me.ANS_TAXI_KENSHU_12.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種12"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_12)
             Return False
@@ -1998,7 +2029,7 @@ Partial Public Class DrRegist
         End If
 
         '券種13
-        If Me.ANS_TAXI_KENSHU_13.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
+        If Me.ANS_TAXI_KENSHU_13.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種13"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_13)
             Return False
@@ -2027,7 +2058,7 @@ Partial Public Class DrRegist
         End If
 
         '券種14
-        If Me.ANS_TAXI_KENSHU_14.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
+        If Me.ANS_TAXI_KENSHU_14.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種14"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_14)
             Return False
@@ -2056,7 +2087,7 @@ Partial Public Class DrRegist
         End If
 
         '券種15
-        If Me.ANS_TAXI_KENSHU_15.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
+        If Me.ANS_TAXI_KENSHU_15.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種15"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_15)
             Return False
@@ -2085,7 +2116,7 @@ Partial Public Class DrRegist
         End If
 
         '券種16
-        If Me.ANS_TAXI_KENSHU_16.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
+        If Me.ANS_TAXI_KENSHU_16.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種16"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_16)
             Return False
@@ -2114,7 +2145,7 @@ Partial Public Class DrRegist
         End If
 
         '券種17
-        If Me.ANS_TAXI_KENSHU_17.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
+        If Me.ANS_TAXI_KENSHU_17.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種17"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_17)
             Return False
@@ -2143,7 +2174,7 @@ Partial Public Class DrRegist
         End If
 
         '券種18
-        If Me.ANS_TAXI_KENSHU_18.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
+        If Me.ANS_TAXI_KENSHU_18.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種18"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_18)
             Return False
@@ -2172,7 +2203,7 @@ Partial Public Class DrRegist
         End If
 
         '券種19
-        If Me.ANS_TAXI_KENSHU_19.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
+        If Me.ANS_TAXI_KENSHU_19.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種19"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_19)
             Return False
@@ -2201,7 +2232,7 @@ Partial Public Class DrRegist
         End If
 
         '券種20
-        If Me.ANS_TAXI_KENSHU_20.SelectedIndex = "0" AndAlso Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
+        If Me.ANS_TAXI_KENSHU_20.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
             CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種20"), Me)
             SetFocus(Me.ANS_TAXI_KENSHU_20)
             Return False
@@ -2662,15 +2693,15 @@ Partial Public Class DrRegist
     '交通往路１コピーボタン
     Protected Sub BtnCopy_O_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_1.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_O_KOTSUKIKAN_1.SelectedIndex >= 1 OrElse _
+        If ANS_O_KOTSUKIKAN_1.SelectedValue <> "" OrElse _
             ANS_O_DATE_1.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT1_1.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT2_1.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME1_1.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME2_1.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_1.Text.Trim <> String.Empty OrElse _
-            ANS_O_SEAT_1.SelectedIndex >= 1 OrElse _
-            ANS_O_SEAT_KIBOU1.SelectedIndex >= 1 Then
+            ANS_O_SEAT_1.SelectedValue <> "" OrElse _
+            ANS_O_SEAT_KIBOU1.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -2719,15 +2750,15 @@ Partial Public Class DrRegist
     '交通往路２コピーボタン
     Protected Sub BtnCopy_O_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_2.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_O_KOTSUKIKAN_2.SelectedIndex >= 1 OrElse _
+        If ANS_O_KOTSUKIKAN_2.SelectedValue <> "" OrElse _
             ANS_O_DATE_2.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT1_2.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT2_2.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME1_2.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME2_2.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_2.Text.Trim <> String.Empty OrElse _
-            ANS_O_SEAT_2.SelectedIndex >= 1 OrElse _
-            ANS_O_SEAT_kibou2.SelectedIndex >= 1 Then
+            ANS_O_SEAT_2.SelectedValue <> "" OrElse _
+            ANS_O_SEAT_KIBOU2.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -2776,15 +2807,15 @@ Partial Public Class DrRegist
     '交通往路３コピーボタン
     Protected Sub BtnCopy_O_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_3.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_O_KOTSUKIKAN_3.SelectedIndex >= 1 OrElse _
+        If ANS_O_KOTSUKIKAN_3.SelectedValue <> "" OrElse _
             ANS_O_DATE_3.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT1_3.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT2_3.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME1_3.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME2_3.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_3.Text.Trim <> String.Empty OrElse _
-            ANS_O_SEAT_3.SelectedIndex >= 1 OrElse _
-            ANS_O_SEAT_kibou3.SelectedIndex >= 1 Then
+            ANS_O_SEAT_3.SelectedValue <> "" OrElse _
+            ANS_O_SEAT_KIBOU3.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -2833,15 +2864,15 @@ Partial Public Class DrRegist
     '交通往路４コピーボタン
     Protected Sub BtnCopy_O_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_4.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_O_KOTSUKIKAN_4.SelectedIndex >= 1 OrElse _
+        If ANS_O_KOTSUKIKAN_4.SelectedValue <> "" OrElse _
             ANS_O_DATE_4.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT1_4.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT2_4.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME1_4.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME2_4.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_4.Text.Trim <> String.Empty OrElse _
-            ANS_O_SEAT_4.SelectedIndex >= 1 OrElse _
-            ANS_O_SEAT_kibou4.SelectedIndex >= 1 Then
+            ANS_O_SEAT_4.SelectedValue <> "" OrElse _
+            ANS_O_SEAT_KIBOU4.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -2890,15 +2921,15 @@ Partial Public Class DrRegist
     '交通往路５コピーボタン
     Protected Sub BtnCopy_O_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_O_TEHAI_5.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_O_KOTSUKIKAN_5.SelectedIndex >= 1 OrElse _
+        If ANS_O_KOTSUKIKAN_5.SelectedValue <> "" OrElse _
             ANS_O_DATE_5.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT1_5.Text.Trim <> String.Empty OrElse _
             ANS_O_AIRPORT2_5.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME1_5.Text.Trim <> String.Empty OrElse _
             ANS_O_TIME2_5.Text.Trim <> String.Empty OrElse _
             ANS_O_BIN_5.Text.Trim <> String.Empty OrElse _
-            ANS_O_SEAT_5.SelectedIndex >= 1 OrElse _
-            ANS_O_SEAT_KIBOU5.SelectedIndex >= 1 Then
+            ANS_O_SEAT_5.SelectedValue <> "" OrElse _
+            ANS_O_SEAT_KIBOU5.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -2948,15 +2979,15 @@ Partial Public Class DrRegist
         Dim wStr As String
 
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_F_KOTSUKIKAN_1.SelectedIndex >= 1 OrElse _
+        If ANS_F_KOTSUKIKAN_1.SelectedValue <> "" OrElse _
             ANS_F_DATE_1.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT1_1.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT2_1.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME1_1.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME2_1.Text.Trim <> String.Empty OrElse _
             ANS_F_BIN_1.Text.Trim <> String.Empty OrElse _
-            ANS_F_SEAT_1.SelectedIndex >= 1 OrElse _
-            ANS_F_SEAT_KIBOU1.SelectedIndex >= 1 Then
+            ANS_F_SEAT_1.SelectedValue <> "" OrElse _
+            ANS_F_SEAT_KIBOU1.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -3005,15 +3036,15 @@ Partial Public Class DrRegist
     '交通往路２コピーボタン
     Protected Sub BtnCopy_F_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_2.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_F_KOTSUKIKAN_2.SelectedIndex >= 1 OrElse _
+        If ANS_F_KOTSUKIKAN_2.SelectedValue <> "" OrElse _
             ANS_F_DATE_2.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT1_2.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT2_2.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME1_2.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME2_2.Text.Trim <> String.Empty OrElse _
             ANS_F_BIN_2.Text.Trim <> String.Empty OrElse _
-            ANS_F_SEAT_2.SelectedIndex >= 1 OrElse _
-            ANS_F_SEAT_kibou2.SelectedIndex >= 1 Then
+            ANS_F_SEAT_2.SelectedValue <> "" OrElse _
+            ANS_F_SEAT_KIBOU2.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -3061,15 +3092,15 @@ Partial Public Class DrRegist
     '交通往路３コピーボタン
     Protected Sub BtnCopy_F_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_3.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_F_KOTSUKIKAN_3.SelectedIndex >= 1 OrElse _
+        If ANS_F_KOTSUKIKAN_3.SelectedValue <> "" OrElse _
             ANS_F_DATE_3.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT1_3.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT2_3.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME1_3.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME2_3.Text.Trim <> String.Empty OrElse _
             ANS_F_BIN_3.Text.Trim <> String.Empty OrElse _
-            ANS_F_SEAT_3.SelectedIndex >= 1 OrElse _
-            ANS_F_SEAT_kibou3.SelectedIndex >= 1 Then
+            ANS_F_SEAT_3.SelectedValue <> "" OrElse _
+            ANS_F_SEAT_KIBOU3.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -3117,15 +3148,15 @@ Partial Public Class DrRegist
     '交通往路４コピーボタン
     Protected Sub BtnCopy_F_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_4.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_F_KOTSUKIKAN_4.SelectedIndex >= 1 OrElse _
+        If ANS_F_KOTSUKIKAN_4.SelectedValue <> "" OrElse _
             ANS_F_DATE_4.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT1_4.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT2_4.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME1_4.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME2_4.Text.Trim <> String.Empty OrElse _
             ANS_F_BIN_4.Text.Trim <> String.Empty OrElse _
-            ANS_F_SEAT_4.SelectedIndex >= 1 OrElse _
-            ANS_F_SEAT_kibou4.SelectedIndex >= 1 Then
+            ANS_F_SEAT_4.SelectedValue <> "" OrElse _
+            ANS_F_SEAT_KIBOU4.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -3173,15 +3204,15 @@ Partial Public Class DrRegist
     '交通往路５コピーボタン
     Protected Sub BtnCopy_F_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCopy_F_TEHAI_5.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
-        If ANS_F_KOTSUKIKAN_5.SelectedIndex >= 1 OrElse _
+        If ANS_F_KOTSUKIKAN_5.SelectedValue <> "" OrElse _
             ANS_F_DATE_5.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT1_5.Text.Trim <> String.Empty OrElse _
             ANS_F_AIRPORT2_5.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME1_5.Text.Trim <> String.Empty OrElse _
             ANS_F_TIME2_5.Text.Trim <> String.Empty OrElse _
             ANS_F_BIN_5.Text.Trim <> String.Empty OrElse _
-            ANS_F_SEAT_5.SelectedIndex >= 1 OrElse _
-            ANS_F_SEAT_KIBOU5.SelectedIndex >= 1 Then
+            ANS_F_SEAT_5.SelectedValue <> "" OrElse _
+            ANS_F_SEAT_KIBOU5.SelectedValue <> "" Then
 
             CmnModule.AlertMessage(MessageDef.Error.Copy, Me)
             Exit Sub
@@ -3290,205 +3321,205 @@ Partial Public Class DrRegist
 
     '交通(往路)手配1クリアボタン
     Protected Sub BtnClear_O_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_1.Click
-        Me.ANS_O_KOTSUKIKAN_1.SelectedIndex = 0
+        Me.ANS_O_KOTSUKIKAN_1.SelectedValue = ""
         Me.ANS_O_DATE_1.Text = ""
         Me.ANS_O_AIRPORT1_1.Text = ""
         Me.ANS_O_AIRPORT2_1.Text = ""
         Me.ANS_O_TIME1_1.Text = ""
         Me.ANS_O_TIME2_1.Text = ""
         Me.ANS_O_BIN_1.Text = ""
-        Me.ANS_O_SEAT_1.SelectedIndex = 0
-        Me.ANS_O_SEAT_KIBOU1.SelectedIndex = 0
+        Me.ANS_O_SEAT_1.SelectedValue = ""
+        Me.ANS_O_SEAT_KIBOU1.SelectedValue = ""
         SetFocus(Me.ANS_O_KOTSUKIKAN_1)
     End Sub
 
     '交通(往路)手配2クリアボタン
     Protected Sub BtnClear_O_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_2.Click
-        Me.ANS_O_KOTSUKIKAN_2.SelectedIndex = 0
+        Me.ANS_O_KOTSUKIKAN_2.SelectedValue = ""
         Me.ANS_O_DATE_2.Text = ""
         Me.ANS_O_AIRPORT1_2.Text = ""
         Me.ANS_O_AIRPORT2_2.Text = ""
         Me.ANS_O_TIME1_2.Text = ""
         Me.ANS_O_TIME2_2.Text = ""
         Me.ANS_O_BIN_2.Text = ""
-        Me.ANS_O_SEAT_2.SelectedIndex = 0
-        Me.ANS_O_SEAT_KIBOU2.SelectedIndex = 0
+        Me.ANS_O_SEAT_2.SelectedValue = ""
+        Me.ANS_O_SEAT_KIBOU2.SelectedValue = ""
         SetFocus(Me.ANS_O_KOTSUKIKAN_2)
     End Sub
 
     '交通(往路)手配3クリアボタン
     Protected Sub BtnClear_O_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_3.Click
-        Me.ANS_O_KOTSUKIKAN_3.SelectedIndex = 0
+        Me.ANS_O_KOTSUKIKAN_3.SelectedValue = ""
         Me.ANS_O_DATE_3.Text = ""
         Me.ANS_O_AIRPORT1_3.Text = ""
         Me.ANS_O_AIRPORT2_3.Text = ""
         Me.ANS_O_TIME1_3.Text = ""
         Me.ANS_O_TIME2_3.Text = ""
         Me.ANS_O_BIN_3.Text = ""
-        Me.ANS_O_SEAT_3.SelectedIndex = 0
-        Me.ANS_O_SEAT_KIBOU3.SelectedIndex = 0
+        Me.ANS_O_SEAT_3.SelectedValue = ""
+        Me.ANS_O_SEAT_KIBOU3.SelectedValue = ""
         SetFocus(Me.ANS_O_KOTSUKIKAN_3)
     End Sub
 
     '交通(往路)手配4クリアボタン
     Protected Sub BtnClear_O_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_4.Click
-        Me.ANS_O_KOTSUKIKAN_4.SelectedIndex = 0
+        Me.ANS_O_KOTSUKIKAN_4.SelectedValue = ""
         Me.ANS_O_DATE_4.Text = ""
         Me.ANS_O_AIRPORT1_4.Text = ""
         Me.ANS_O_AIRPORT2_4.Text = ""
         Me.ANS_O_TIME1_4.Text = ""
         Me.ANS_O_TIME2_4.Text = ""
         Me.ANS_O_BIN_4.Text = ""
-        Me.ANS_O_SEAT_4.SelectedIndex = 0
-        Me.ANS_O_SEAT_KIBOU4.SelectedIndex = 0
+        Me.ANS_O_SEAT_4.SelectedValue = ""
+        Me.ANS_O_SEAT_KIBOU4.SelectedValue = ""
         SetFocus(Me.ANS_O_KOTSUKIKAN_4)
     End Sub
 
     '交通(往路)手配5クリアボタン
     Protected Sub BtnClear_O_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_5.Click
-        Me.ANS_O_KOTSUKIKAN_5.SelectedIndex = 0
+        Me.ANS_O_KOTSUKIKAN_5.SelectedValue = ""
         Me.ANS_O_DATE_5.Text = ""
         Me.ANS_O_AIRPORT1_5.Text = ""
         Me.ANS_O_AIRPORT2_5.Text = ""
         Me.ANS_O_TIME1_5.Text = ""
         Me.ANS_O_TIME2_5.Text = ""
         Me.ANS_O_BIN_5.Text = ""
-        Me.ANS_O_SEAT_5.SelectedIndex = 0
-        Me.ANS_O_SEAT_KIBOU5.SelectedIndex = 0
+        Me.ANS_O_SEAT_5.SelectedValue = ""
+        Me.ANS_O_SEAT_KIBOU5.SelectedValue = ""
         SetFocus(Me.ANS_O_KOTSUKIKAN_5)
     End Sub
 
     '交通(復路)手配1クリアボタン
     Protected Sub BtnClear_F_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_1.Click
-        Me.ANS_F_KOTSUKIKAN_1.SelectedIndex = 0
+        Me.ANS_F_KOTSUKIKAN_1.SelectedValue = ""
         Me.ANS_F_DATE_1.Text = ""
         Me.ANS_F_AIRPORT1_1.Text = ""
         Me.ANS_F_AIRPORT2_1.Text = ""
         Me.ANS_F_TIME1_1.Text = ""
         Me.ANS_F_TIME2_1.Text = ""
         Me.ANS_F_BIN_1.Text = ""
-        Me.ANS_F_SEAT_1.SelectedIndex = 0
-        Me.ANS_F_SEAT_KIBOU1.SelectedIndex = 0
+        Me.ANS_F_SEAT_1.SelectedValue = ""
+        Me.ANS_F_SEAT_KIBOU1.SelectedValue = ""
         SetFocus(Me.ANS_F_KOTSUKIKAN_1)
     End Sub
 
     '交通(復路)手配2クリアボタン
     Protected Sub BtnClear_F_TEHAI_2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_2.Click
-        Me.ANS_F_KOTSUKIKAN_2.SelectedIndex = 0
+        Me.ANS_F_KOTSUKIKAN_2.SelectedValue = ""
         Me.ANS_F_DATE_2.Text = ""
         Me.ANS_F_AIRPORT1_2.Text = ""
         Me.ANS_F_AIRPORT2_2.Text = ""
         Me.ANS_F_TIME1_2.Text = ""
         Me.ANS_F_TIME2_2.Text = ""
         Me.ANS_F_BIN_2.Text = ""
-        Me.ANS_F_SEAT_2.SelectedIndex = 0
-        Me.ANS_F_SEAT_KIBOU2.SelectedIndex = 0
+        Me.ANS_F_SEAT_2.SelectedValue = ""
+        Me.ANS_F_SEAT_KIBOU2.SelectedValue = ""
         SetFocus(Me.ANS_F_KOTSUKIKAN_2)
     End Sub
 
     '交通(復路)手配3クリアボタン
     Protected Sub BtnClear_F_TEHAI_3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_3.Click
-        Me.ANS_F_KOTSUKIKAN_3.SelectedIndex = 0
+        Me.ANS_F_KOTSUKIKAN_3.SelectedValue = ""
         Me.ANS_F_DATE_3.Text = ""
         Me.ANS_F_AIRPORT1_3.Text = ""
         Me.ANS_F_AIRPORT2_3.Text = ""
         Me.ANS_F_TIME1_3.Text = ""
         Me.ANS_F_TIME2_3.Text = ""
         Me.ANS_F_BIN_3.Text = ""
-        Me.ANS_F_SEAT_3.SelectedIndex = 0
-        Me.ANS_F_SEAT_KIBOU3.SelectedIndex = 0
+        Me.ANS_F_SEAT_3.SelectedValue = ""
+        Me.ANS_F_SEAT_KIBOU3.SelectedValue = ""
         SetFocus(Me.ANS_F_KOTSUKIKAN_3)
     End Sub
 
     '交通(復路)手配4クリアボタン
     Protected Sub BtnClear_F_TEHAI_4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_4.Click
-        Me.ANS_F_KOTSUKIKAN_4.SelectedIndex = 0
+        Me.ANS_F_KOTSUKIKAN_4.SelectedValue = ""
         Me.ANS_F_DATE_4.Text = ""
         Me.ANS_F_AIRPORT1_4.Text = ""
         Me.ANS_F_AIRPORT2_4.Text = ""
         Me.ANS_F_TIME1_4.Text = ""
         Me.ANS_F_TIME2_4.Text = ""
         Me.ANS_F_BIN_4.Text = ""
-        Me.ANS_F_SEAT_4.SelectedIndex = 0
-        Me.ANS_F_SEAT_KIBOU4.SelectedIndex = 0
+        Me.ANS_F_SEAT_4.SelectedValue = ""
+        Me.ANS_F_SEAT_KIBOU4.SelectedValue = ""
         SetFocus(Me.ANS_F_KOTSUKIKAN_4)
     End Sub
 
     '交通(復路)手配5クリアボタン
     Protected Sub BtnClear_F_TEHAI_5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_F_TEHAI_5.Click
-        Me.ANS_F_KOTSUKIKAN_5.SelectedIndex = 0
+        Me.ANS_F_KOTSUKIKAN_5.SelectedValue = ""
         Me.ANS_F_DATE_5.Text = ""
         Me.ANS_F_AIRPORT1_5.Text = ""
         Me.ANS_F_AIRPORT2_5.Text = ""
         Me.ANS_F_TIME1_5.Text = ""
         Me.ANS_F_TIME2_5.Text = ""
         Me.ANS_F_BIN_5.Text = ""
-        Me.ANS_F_SEAT_5.SelectedIndex = 0
-        Me.ANS_F_SEAT_KIBOU5.SelectedIndex = 0
+        Me.ANS_F_SEAT_5.SelectedValue = ""
+        Me.ANS_F_SEAT_KIBOU5.SelectedValue = ""
         SetFocus(Me.ANS_F_KOTSUKIKAN_5)
     End Sub
 
     'タクチケクリアボタン
     Protected Sub BtnTicketClear_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTicketClear.Click
         Me.ANS_TAXI_DATE_1.Text = ""
-        Me.ANS_TAXI_KENSHU_1.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_1.SelectedValue = ""
         Me.ANS_TAXI_NO_1.Text = ""
         Me.ANS_TAXI_DATE_2.Text = ""
-        Me.ANS_TAXI_KENSHU_2.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_2.SelectedValue = ""
         Me.ANS_TAXI_NO_2.Text = ""
         Me.ANS_TAXI_DATE_3.Text = ""
-        Me.ANS_TAXI_KENSHU_3.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_3.SelectedValue = ""
         Me.ANS_TAXI_NO_3.Text = ""
         Me.ANS_TAXI_DATE_4.Text = ""
-        Me.ANS_TAXI_KENSHU_4.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_4.SelectedValue = ""
         Me.ANS_TAXI_NO_4.Text = ""
         Me.ANS_TAXI_DATE_5.Text = ""
-        Me.ANS_TAXI_KENSHU_5.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_5.SelectedValue = ""
         Me.ANS_TAXI_NO_5.Text = ""
         Me.ANS_TAXI_DATE_6.Text = ""
-        Me.ANS_TAXI_KENSHU_6.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_6.SelectedValue = ""
         Me.ANS_TAXI_NO_6.Text = ""
         Me.ANS_TAXI_DATE_7.Text = ""
-        Me.ANS_TAXI_KENSHU_7.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_7.SelectedValue = ""
         Me.ANS_TAXI_NO_7.Text = ""
         Me.ANS_TAXI_DATE_8.Text = ""
-        Me.ANS_TAXI_KENSHU_8.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_8.SelectedValue = ""
         Me.ANS_TAXI_NO_8.Text = ""
         Me.ANS_TAXI_DATE_9.Text = ""
-        Me.ANS_TAXI_KENSHU_9.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_9.SelectedValue = ""
         Me.ANS_TAXI_NO_9.Text = ""
         Me.ANS_TAXI_DATE_10.Text = ""
-        Me.ANS_TAXI_KENSHU_10.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_10.SelectedValue = ""
         Me.ANS_TAXI_NO_10.Text = ""
         Me.ANS_TAXI_DATE_11.Text = ""
-        Me.ANS_TAXI_KENSHU_11.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_11.SelectedValue = ""
         Me.ANS_TAXI_NO_11.Text = ""
         Me.ANS_TAXI_DATE_12.Text = ""
-        Me.ANS_TAXI_KENSHU_12.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_12.SelectedValue = ""
         Me.ANS_TAXI_NO_12.Text = ""
         Me.ANS_TAXI_DATE_13.Text = ""
-        Me.ANS_TAXI_KENSHU_13.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_13.SelectedValue = ""
         Me.ANS_TAXI_NO_13.Text = ""
         Me.ANS_TAXI_DATE_14.Text = ""
-        Me.ANS_TAXI_KENSHU_14.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_14.SelectedValue = ""
         Me.ANS_TAXI_NO_14.Text = ""
         Me.ANS_TAXI_DATE_15.Text = ""
-        Me.ANS_TAXI_KENSHU_15.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_15.SelectedValue = ""
         Me.ANS_TAXI_NO_15.Text = ""
         Me.ANS_TAXI_DATE_16.Text = ""
-        Me.ANS_TAXI_KENSHU_16.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_16.SelectedValue = ""
         Me.ANS_TAXI_NO_16.Text = ""
         Me.ANS_TAXI_DATE_17.Text = ""
-        Me.ANS_TAXI_KENSHU_17.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_17.SelectedValue = ""
         Me.ANS_TAXI_NO_17.Text = ""
         Me.ANS_TAXI_DATE_18.Text = ""
-        Me.ANS_TAXI_KENSHU_18.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_18.SelectedValue = ""
         Me.ANS_TAXI_NO_18.Text = ""
         Me.ANS_TAXI_DATE_19.Text = ""
-        Me.ANS_TAXI_KENSHU_19.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_19.SelectedValue = ""
         Me.ANS_TAXI_NO_19.Text = ""
         Me.ANS_TAXI_DATE_20.Text = ""
-        Me.ANS_TAXI_KENSHU_20.SelectedIndex = 0
+        Me.ANS_TAXI_KENSHU_20.SelectedValue = ""
         Me.ANS_TAXI_NO_20.Text = ""
         SetFocus(Me.ANS_TAXI_DATE_1)
     End Sub
@@ -3497,100 +3528,100 @@ Partial Public Class DrRegist
     Protected Sub BtnTicketCopy_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTicketCopy.Click
         '何れかの項目が入力済みの場合、確認メッセージ表示
         If Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_1.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_1.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_1.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_2.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_2.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_2.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_2.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_3.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_3.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_3.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_3.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_4.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_4.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_4.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_4.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_5.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_5.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_5.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_5.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_6.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_6.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_6.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_6.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_7.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_7.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_7.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_7.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_8.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_8.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_8.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_8.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_9.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_9.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_9.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_9.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_10.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_10.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_10.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_10.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_11.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_11.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_11.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_11.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_12.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_12.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_12.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_12.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_13.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_13.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_13.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_13.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_14.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_14.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_15.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_15.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_15.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_15.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_16.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_16.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_16.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_16.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_17.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_17.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_17.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_17.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_18.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_18.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_18.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_18.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_19.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_19.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_19.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_19.Text.Trim <> String.Empty OrElse _
             Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty OrElse _
-            Me.ANS_TAXI_KENSHU_20.SelectedIndex >= 1 OrElse _
+            Me.ANS_TAXI_KENSHU_20.SelectedValue <> "" OrElse _
             Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty OrElse _
             Me.CHK_ANS_TAXI_HAKKO_20.Checked = True OrElse _
             Me.ANS_TAXI_HAKKO_DATE_20.Text.Trim <> String.Empty Then
