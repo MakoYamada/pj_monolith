@@ -6901,6 +6901,7 @@ Public Class AppModule
     Public Shared Sub SetForm_ANS_TAXI_HAKKO(ByVal ANS_TAXI_HAKKO As String, ByVal ANS_TAXI_HAKKO_DATE As String, ByRef control1 As Label, ByRef control2 As CheckBox)
         If ANS_TAXI_HAKKO_DATE.Trim <> "" Then
             control1.Visible = True
+            control1.Text = "î≠çsçœ"
             control2.Visible = False
         Else
             control1.Visible = False
