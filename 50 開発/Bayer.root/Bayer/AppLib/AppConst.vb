@@ -478,10 +478,12 @@ Public Class AppConst
         Public Class TKT_ENTA
             'エンタ
             Public Class Code
+                Public Const All As String = ""
                 Public Const FuSanka As String = "E"
                 Public Const SeisanFuka As String = "N"
             End Class
             Public Class Name
+                Public Const All As String = ""
                 Public Const FuSanka As String = "不参加"
                 Public Const SeisanFuka As String = "精算不可"
             End Class
