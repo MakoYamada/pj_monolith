@@ -404,6 +404,13 @@
     <Compile Include="MishuHoukoku.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TaxiMeisaiCsv.aspx.designer.vb">
+      <DependentUpon>TaxiMeisaiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMeisaiCsv.aspx.vb">
+      <DependentUpon>TaxiMeisaiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="TaxiMenu.aspx.designer.vb">
       <DependentUpon>TaxiMenu.aspx</DependentUpon>
     </Compile>
@@ -589,6 +596,7 @@
     <Content Include="ShisetsuKensaku.aspx" />
     <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
+    <Content Include="TaxiMeisaiCsv.aspx" />
     <Content Include="TaxiMenu.aspx" />
     <Content Include="TaxiPrintCsv.aspx" />
     <Content Include="TaxiScan.aspx" />

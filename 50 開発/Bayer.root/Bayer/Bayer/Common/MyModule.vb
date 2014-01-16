@@ -574,12 +574,8 @@ Public Class MyModule
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeisanMikanryou
             Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiMiketsu
                 TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMiketsu
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiSeikyuMeisai
-                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuMeisai
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiSeikyuFuka
-                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuFuka
-            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiKouenkaiMeisai
-                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiKouenkaiMeisai
+            Case AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiMeisaiCsv
+                TBL_LOG.SYORI_NAME = AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMeisaiCsv
             Case Else
                 TBL_LOG.SYORI_NAME = "画面名 エラー"
         End Select

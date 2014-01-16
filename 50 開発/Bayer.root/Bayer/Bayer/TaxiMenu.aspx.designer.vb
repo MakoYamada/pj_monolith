@@ -79,31 +79,13 @@ Partial Public Class TaxiMenu
     Protected WithEvents BtnTaxiMiketsu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTaxiSeikyuMeisai コントロール。
+    '''BtnTaxiMeisaiCsv コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiSeikyuMeisai As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnTaxiSeikyuFuka コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnTaxiSeikyuFuka As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnTaxiKouenkaiMeisai コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnTaxiKouenkaiMeisai As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnTaxiMeisaiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

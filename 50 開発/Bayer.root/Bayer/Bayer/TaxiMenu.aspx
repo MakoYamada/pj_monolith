@@ -41,14 +41,10 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiSeikyuMeisai" runat="server" Text="請求月・講演会別明細CSV" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiMeisaiCsv" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
 						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiSeikyuFuka" runat="server" Text="請求不可データCSV" Width="200px" CssClass="Button" />
-						</td>
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiKouenkaiMeisai" runat="server" Text="講演会別明細CSV" Width="200px" CssClass="Button" />
-						</td>
+						<td></td>
+						<td></td>
 						<td></td>
 					</tr>
 				</table>

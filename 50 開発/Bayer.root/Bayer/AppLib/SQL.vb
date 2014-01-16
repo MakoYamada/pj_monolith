@@ -5380,7 +5380,7 @@ Public Class SQL
             strSQL &= "SELECT *"
             strSQL &= " FROM TBL_TAXITICKET_HAKKO"
             strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= " AND ISNULL(TBL_TAXITICKET_HAKKO.KOUENKAI_NO,'')<>''"
+            strSQL &= " AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE,'')<>''"
 
             Return strSQL
         End Function

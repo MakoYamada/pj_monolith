@@ -7584,9 +7584,7 @@ Public Class AppModule
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiJisseki, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiJisseki))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeisanMikanryou, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeisanMikanryou))
                 .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMiketsu, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMiketsu))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuMeisai, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuMeisai))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuFuka, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiSeikyuFuka))
-                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiKouenkaiMeisai, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiKouenkaiMeisai))
+                .Items.Add(New ListItem(AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMeisaiCsv, AppConst.TBL_LOG.SYORI_NAME.GAMEN.Name.TaxiMeisaiCsv))
             End With
         End Sub
     End Class

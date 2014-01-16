@@ -597,9 +597,7 @@ Public Class AppConst
                     Public Const TaxiJisseki As String = "タクチケ実績データ取込"
                     Public Const TaxiSeisanMikanryou As String = "精算未完了CSV"
                     Public Const TaxiMiketsu As String = "タクチケ未決登録"
-                    Public Const TaxiSeikyuMeisai As String = "請求月・講演会別明細CSV"
-                    Public Const TaxiSeikyuFuka As String = "請求不可データCSV"
-                    Public Const TaxiKouenkaiMeisai As String = "講演会別明細CSV"
+                    Public Const TaxiMeisaiCsv As String = "タクチケ管理台帳"
                 End Class
                 Public Enum GamenType
                     KouenkaiRegist
@@ -619,9 +617,7 @@ Public Class AppConst
                     TaxiJisseki
                     TaxiSeisanMikanryou
                     TaxiMiketsu
-                    TaxiSeikyuMeisai
-                    TaxiSeikyuFuka
-                    TaxiKouenkaiMeisai
+                    TaxiMeisaiCsv
                 End Enum
             End Class
         End Class

@@ -85,4 +85,9 @@ Partial Public Class TaxiMenu
         Response.Redirect(URL.TaxiJisseki)
     End Sub
 
+    '[タクチケ管理台帳]
+    Protected Sub BtnTaxiMeisaiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMeisaiCsv.Click
+        Response.Redirect(URL.TaxiMeisaiCsv)
+    End Sub
+
 End Class

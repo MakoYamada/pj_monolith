@@ -66,12 +66,18 @@ Partial Public Class TaxiScan
         If UpdateData(CsvPath, System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName)) Then
             Me.TrError.Visible = False
             Me.TrEnd.Visible = True
-            'バックアップ作成
-            System.IO.File.Move(CsvPath, WebConfig.Site.SCAN_CSV_BK & CsvFileName)
         Else
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
         End If
+
+        'バックアップ作成
+        System.IO.File.Move(CsvPath, WebConfig.Site.SCAN_CSV_BK & CsvFileName)
+        '作業用に保存したファイルを削除
+        Try
+            System.IO.File.Delete(CsvPath)
+        Catch ex As Exception
+        End Try
     End Sub
 
     'ファイルチェック
@@ -147,6 +153,8 @@ Partial Public Class TaxiScan
                     wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
                     If ScanData.TIME_STAMP_BYL = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】Timestamp(BYL)が記載されていません。" & vbNewLine
+                    ElseIf Not CmnCheck.IsNumberOnly(ScanData.TIME_STAMP_BYL) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】Timestamp(BYL)に数字以外の文字があります。" & vbNewLine
                     End If
 
                     ScanData.DR_MPID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
@@ -171,10 +179,9 @@ Partial Public Class TaxiScan
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号が記載されていません。" & vbNewLine
                     End If
 
-                    '登録済み チェック
-                    If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(ScanData.TKT_NO), MyBase.DbConnection) OrElse _
-                       CmnDb.IsExist(SQL.TBL_KOTSUHOTEL.TaxiScanCsvCheck(ScanData.TKT_NO), MyBase.DbConnection) Then
-                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & ScanData.TKT_NO & "］はスキャン情報取込済みです。" & vbNewLine
+                    '取込み済み チェック
+                    If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(ScanData.TKT_NO), MyBase.DbConnection) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & ScanData.TKT_NO & "］はスキャンデータ取込済みです。" & vbNewLine
                     End If
                 End If
             End If
@@ -191,68 +198,6 @@ Partial Public Class TaxiScan
         Else
             Return True
         End If
-    End Function
-
-    'Csvデータをチェック
-    Private Function CheckCsvData(ByRef ErrorMessage As String, ByVal CsvData As String) As MyModule.Csv.TaxiScan.DataStruct
-        Dim wCsvData As MyModule.Csv.TaxiScan.DataStruct
-        Dim wLength As Integer = 1
-
-        If Trim(CsvData) = "" Then
-            ErrorMessage = "値なし"
-            Return Nothing
-        End If
-
-        wCsvData.SALEFORCE_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
-        wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
-        If wCsvData.SALEFORCE_ID = "" Then
-            ErrorMessage = "SalesForceID"
-            Return Nothing
-        End If
-
-        wCsvData.SANKASHA_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
-        wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
-        If wCsvData.SANKASHA_ID = "" Then
-            ErrorMessage = "参加者ID"
-            Return Nothing
-        End If
-
-        wCsvData.KOUENKAI_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
-        wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
-        If wCsvData.KOUENKAI_NO = "" Then
-            ErrorMessage = "講演会番号"
-            Return Nothing
-        End If
-
-        wCsvData.TIME_STAMP_BYL = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
-        wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
-        If wCsvData.TIME_STAMP_BYL = "" Then
-            ErrorMessage = "Timestamp(BYL)"
-            Return Nothing
-        End If
-
-        wCsvData.DR_MPID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
-        wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
-        If wCsvData.DR_MPID = "" Then
-            ErrorMessage = "MPID"
-            Return Nothing
-        End If
-
-        wCsvData.TKT_LINE_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
-        wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
-        If wCsvData.TKT_LINE_NO = "" Then
-            ErrorMessage = "行番号"
-            Return Nothing
-        End If
-
-        wCsvData.TKT_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
-        wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
-        If wCsvData.TKT_NO = "" Then
-            ErrorMessage = "タクシーチケット番号"
-            Return Nothing
-        End If
-
-        Return wCsvData
     End Function
 
     'Csvのデータを構造体にセット
@@ -298,6 +243,7 @@ Partial Public Class TaxiScan
         Dim TKT_HAKKO_FEE As String = "0"
         Dim wUpdateCntTAXI As Integer = 0
         Dim wUpdateCntKOTSUHOTEL As Integer = 0
+        Dim wTKT_IMPORT_DATE As String = CmnModule.GetSysDate()
 
         '発行手数料
         wFlag = False
@@ -339,6 +285,8 @@ Partial Public Class TaxiScan
 
                 '発行手数料
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_HAKKO_FEE = TKT_HAKKO_FEE
+                '取込日
+                TBL_TAXITICKET_HAKKO(wCnt).TKT_IMPORT_DATE = wTKT_IMPORT_DATE
                 '使用者
                 TBL_TAXITICKET_HAKKO(wCnt).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
@@ -432,6 +380,7 @@ Partial Public Class TaxiScan
             TBL_KOTSUHOTEL(wCnt).KOUENKAI_NO = TBL_TAXITICKET_HAKKO(wCnt).KOUENKAI_NO
             TBL_KOTSUHOTEL(wCnt).TIME_STAMP_BYL = TBL_TAXITICKET_HAKKO(wCnt).TIME_STAMP_BYL
             TBL_KOTSUHOTEL(wCnt).DR_MPID = TBL_TAXITICKET_HAKKO(wCnt).DR_MPID
+            TBL_KOTSUHOTEL(wCnt).SCAN_IMPORT_DATE = TBL_TAXITICKET_HAKKO(wCnt).TKT_IMPORT_DATE
 
             Select Case Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
                 Case 1
@@ -486,8 +435,7 @@ Partial Public Class TaxiScan
         Try
             For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
                 'タクチケテーブル
-                'QQQ スキャンデータ取込日 QQQ
-                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_TaxiScan(TBL_TAXITICKET_HAKKO(wCnt))
+                  strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_TaxiScan(TBL_TAXITICKET_HAKKO(wCnt))
                 RtnTBL_TAXITICKET_HAKKO = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_TAXITICKET_HAKKO = 0 Then
@@ -539,19 +487,27 @@ Partial Public Class TaxiScan
     End Function
 
     Private Function GetName_TKT_KENSHU(ByVal TAXI_KENSHU As String) As String
-        If Not CmnCheck.IsNumberOnly(TAXI_KENSHU) Then
-            Return Trim(TAXI_KENSHU)
+        If Trim(TAXI_KENSHU) = "" Then
+            Return ""
         Else
-            Return "DC" & Trim(TAXI_KENSHU)
+            If CmnCheck.IsNumberOnly(TAXI_KENSHU) Then
+                Return "DC" & Trim(TAXI_KENSHU)
+            Else
+                Return Trim(TAXI_KENSHU)
+            End If
         End If
     End Function
 
     Private Function GetName_TKT_KAISHA(ByVal TAXI_KENSHU As String) As String
-        Dim wStr As String = TAXI_KENSHU.ToUpper
-        If Not CmnCheck.IsNumberOnly(TAXI_KENSHU) Then
-            Return Left(TAXI_KENSHU, 2)
+        If Trim(TAXI_KENSHU) = "" Then
+            Return ""
         Else
-            Return "DC"
+            Dim wStr As String = TAXI_KENSHU.ToUpper
+            If CmnCheck.IsNumberOnly(TAXI_KENSHU) Then
+                Return "DC"
+            Else
+                Return Left(TAXI_KENSHU, 2)
+            End If
         End If
     End Function
 
