@@ -6025,6 +6025,11 @@ Public Class AppModule
         control.Text = GetName_TEHAI_TAXI(TEHAI_TAXI)
     End Sub
 
+    'スキャニングデータ取込日
+    Public Shared Sub SetForm_SCAN_IMPORT_DATE(ByVal SCAN_IMPORT_DATE As String, ByRef control As Label)
+        control.Text = CommonLib.CmnModule.Format_Date(SCAN_IMPORT_DATE, CmnModule.DateFormatType.YYYYMMDD)
+    End Sub
+
     'タクシーチケット：利用日（依頼）
     Public Shared Sub SetForm_REQ_TAXI_DATE(ByVal REQ_TAXI_DATE As String, ByRef control As Label)
         control.Text = GetName_REQ_TAXI_DATE(REQ_TAXI_DATE)
