@@ -10,8 +10,10 @@
                             <table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse; margin-bottom: 5px;" width="100%">
                                 <tr align="right">
                                     <td colspan="3">
-                                        <asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="印刷" CssClass="Button" />
-							            <asp:Button ID="BtnCancel1" runat="server" Width="130px" Text="戻る" CssClass="Button" />
+                                        <asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="印刷" 
+                                            CssClass="Button" BackColor="#ececec" />
+							            <asp:Button ID="BtnCancel1" runat="server" Width="130px" Text="戻る" 
+                                            CssClass="Button" BackColor="#ececec" />
                                     </td>
                                 </tr>
                                 <tr align="right">
@@ -26,9 +28,7 @@
                                 <tr>
                                     <td colspan="3">
                                         <div ID="DivMessage" runat="server" visible="false">
-		                                    <asp:Label ID="LabelMessage" runat="server" Font-Bold="true">
-			                                    精算データを登録しました。
-		                                    </asp:Label>
+		                                    <asp:Label ID="LabelMessage" runat="server" Font-Bold="true"> 精算データを登録しました。 </asp:Label>
 	                                    </div>
                                     </td>
                                 </tr>
@@ -445,13 +445,35 @@
 			<td nowrap="nowrap" align="left">
 				<div class="FontSize1" style="height: 10px;"></div>
 				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+				    <tr style="height: 36px;">
+				        <td nowrap="nowrap" align="center">
+					        <asp:Button ID="BtnDrCsv" runat="server" Width="180px" Text="参加者一覧CSV作成" 
+                                CssClass="Button" BackColor="#ececec" />
+                            <asp:Button ID="BtnDrCsvHid" runat="server" Width="100px" Text="" style="visibility:hidden"
+                                CssClass="Button" />
+					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					        <asp:Button ID="BtnMrCsv" runat="server" Width="180px" Text="MR一覧CSV作成" 
+                                CssClass="Button" BackColor="#ececec" />
+                            <asp:Button ID="BtnMrCsvHid" runat="server" Width="100px" Text="" style="visibility:hidden"
+                                CssClass="Button" />
+					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					        <asp:Button ID="BtnTaxiCsv" runat="server" Width="180px" Text="タクチケ精算データCSV作成" 
+                                CssClass="Button" BackColor="#ececec" />					        
+					        
+					    </td>
+				    </tr>
 					<tr style="height: 36px;">
 						<td nowrap="nowrap" align="center">
-						    <asp:Button ID="BtnCalc" runat="server" Width="130px" Text="再計算" CssClass="Button" />
-							<asp:Button ID="BtnSubmit" runat="server" Width="130px" Text="登録" CssClass="Button" />
-							<asp:Button ID="BtnNozomi" runat="server" Width="130px" Text="NOZOMIへ" CssClass="Button" />
-							<asp:Button ID="BtnPrint2" runat="server" Width="130px" Text="印刷" CssClass="Button" />
-							<asp:Button ID="BtnCancel2" runat="server" Width="130px" Text="戻る" CssClass="Button" />
+						    <asp:Button ID="BtnCalc" runat="server" Width="130px" Text="再計算" 
+                                CssClass="Button" BackColor="#ececec" />
+							<asp:Button ID="BtnSubmit" runat="server" Width="130px" Text="登録" 
+                                CssClass="Button" BackColor="#ececec" />
+							<asp:Button ID="BtnNozomi" runat="server" Width="130px" Text="NOZOMIへ" 
+                                CssClass="Button" BackColor="#ececec" />
+							<asp:Button ID="BtnPrint2" runat="server" Width="130px" Text="印刷" 
+                                CssClass="Button" BackColor="#ececec" />
+							<asp:Button ID="BtnCancel2" runat="server" Width="130px" Text="戻る" 
+                                CssClass="Button" BackColor="#ececec" />
 						</td>
 					</tr>
 				</table>

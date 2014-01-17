@@ -350,6 +350,7 @@ Partial Public Class SeisanList
     '[新規登録]
     Private Sub BtnInsert_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnInsert.Click
         TBL_SEIKYU = Nothing
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
         Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Insert
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Response.Redirect(URL.SeisanRegist)

@@ -657,76 +657,267 @@ Public Class MyModule
 
     '== CSV ==
     Public Class Csv
-        Public Shared Function DrCsv(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct) As String
+        Public Shared Function DrCsv(ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct, _
+                                     ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
             Dim wCnt As Integer = 0
             Dim sb As New System.Text.StringBuilder
 
-            Dim HOTELHI_TF As Long = 0
-            Dim HOTELHI_TOZEI As Long = 0
-            Dim JR_TF As Long = 0
-            Dim AIR_TF As Long = 0
-            Dim OTHER_TRAFFIC_TF As Long = 0
-            Dim TAXI_COMMISSION_TF As Long = 0
-            Dim HOTEL_COMMISSION_TF As Long = 0
-            Dim TAXI_TF As Long = 0
-            Dim TAXI_SEISAN_TF As Long = 0
+            Dim KEI_HOTELHI As Long = 0
+            Dim KEI_HOTELHI_CANCEL As Long = 0 '宿泊取消料
+            Dim KEI_HOTELHI_TOTAL As Long = 0 '宿泊費+宿泊取消料
+            Dim KEI_HOTELHI_TOZEI As Long = 0
+            Dim KEI_RAIL_FARE As Long = 0
+            Dim KEI_RAIL_CANCELLATION As Long = 0 'JR取消料
+            Dim KEI_RAIL_TOTAL As Long = 0 'JR代+JR取消料
+            Dim KEI_AIR_FARE As Long = 0
+            Dim KEI_AIR_CANCELLATION As Long = 0 '航空券取消料
+            Dim KEI_AIR_TOTAL As Long = 0 '航空券代+航空券取消料
+            Dim KEI_OTHER_FARE As Long = 0
+            Dim KEI_OTHER_CANCELLATION As Long = 0 'その他鉄道取消料
+            Dim KEI_OTHER_TOTAL As Long = 0 'その他鉄道等費用+その他鉄道取消料
+            Dim KEI_TAXI_TESURYO As Long = 0
+            Dim KEI_KOTSUHOTEL_TESURYO As Long = 0
+
+            '税率取得
+            Dim strZeiRate As String = AppModule.GetZeiRate(CsvData(wCnt).FROM_DATE, DbConn)
 
             'ヘッダ列
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会日")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ドクター氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名（カナ）")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("出欠状況")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊取消料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費+宿泊取消料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費都税")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JR代")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JR取消料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JR代+JR取消料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("航空券代")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("航空券取消料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("航空券代+航空券取消料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道等費用")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道取消料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道等費用+その他鉄道取消料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ発券手数料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録手数料")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ実車料金")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ精算手数料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRのエリア名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRの営業所名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRの氏名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Account Code")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(" Cost Center")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(" Internal order")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(" zetia Code")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("泊数")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路１乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路１発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路１着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路１便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路２乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路２発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路２着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路２便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路３乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路３発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路３着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路３便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路４乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路４発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路４着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路４便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路５乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路５発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路５着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路５便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路１乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路１発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路１着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路１便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路２乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路２発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路２着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路２便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路３乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路３発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路３着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路３便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路４乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路４発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路４着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路４便名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路５乗車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路５発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路５着地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("復路５便名")))
             sb.Append(vbNewLine)
 
             For wCnt = 0 To UBound(CsvData)
+
+                Dim HOTELHI_TOTAL As Long = 0 '宿泊費+宿泊取消料
+                Dim RAIL_TOTAL As Long = 0 'JR代+JR取消料
+                Dim AIR_TOTAL As Long = 0 '航空券代+航空券取消料
+                Dim OTHER_TOTAL As Long = 0 'その他鉄道等費用+その他鉄道取消料
+
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).FROM_DATE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TOZEI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JR_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).AIR_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TRAFFIC_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_COMMISSION_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTEL_COMMISSION_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TAXI_SEISAN_TF)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_KANA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SANKA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI_CANCEL)))
+
+                HOTELHI_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI) + _
+                                CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI_CANCEL)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TOTAL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI_TOZEI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_RAIL_FARE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_RAIL_CANCELLATION)))
+
+                RAIL_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_FARE) + _
+                             CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_CANCELLATION)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(RAIL_TOTAL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_AIR_FARE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_AIR_CANCELLATION)))
+
+                AIR_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_AIR_FARE) + _
+                            CmnModule.DbVal(CsvData(wCnt).ANS_AIR_CANCELLATION)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AIR_TOTAL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_FARE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_CANCELLATION)))
+
+                OTHER_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_FARE) + _
+                              CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_CANCELLATION)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(OTHER_TOTAL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_TESURYO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_AREA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EIGYOSHO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ACCOUNT_CD)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INTERNAL_ORDER)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ZETIA_CD)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTEL_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HAKUSU)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_DATE_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT1_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT2_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_DATE_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT1_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT2_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_DATE_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT1_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT2_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_DATE_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT1_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT2_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_DATE_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT1_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_AIRPORT2_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_O_BIN_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_DATE_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT1_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT2_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_1)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_DATE_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT1_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT2_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_2)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_DATE_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT1_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT2_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_3)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_DATE_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT1_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT2_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_4)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_DATE_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT1_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_AIRPORT2_5)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_5)))
                 sb.Append(vbNewLine)
 
-                HOTELHI_TF += CmnModule.DbVal(CsvData(wCnt).HOTELHI_TF)
-                HOTELHI_TOZEI += CmnModule.DbVal(CsvData(wCnt).HOTELHI_TOZEI)
-                JR_TF += CmnModule.DbVal(CsvData(wCnt).JR_TF)
-                AIR_TF += CmnModule.DbVal(CsvData(wCnt).AIR_TF)
-                OTHER_TRAFFIC_TF += CmnModule.DbVal(CsvData(wCnt).OTHER_TRAFFIC_TF)
-                TAXI_COMMISSION_TF += CmnModule.DbVal(CsvData(wCnt).TAXI_COMMISSION_TF)
-                HOTEL_COMMISSION_TF += CmnModule.DbVal(CsvData(wCnt).HOTEL_COMMISSION_TF)
-                TAXI_TF += CmnModule.DbVal(CsvData(wCnt).TAXI_TF)
-                TAXI_SEISAN_TF += CmnModule.DbVal(CsvData(wCnt).TAXI_SEISAN_TF)
+                KEI_HOTELHI += CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI)
+                KEI_HOTELHI_CANCEL += CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI_CANCEL)
+                KEI_HOTELHI_TOTAL += HOTELHI_TOTAL
+                KEI_HOTELHI_TOZEI += CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI_TOZEI)
+                KEI_RAIL_FARE += CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_FARE)
+                KEI_RAIL_CANCELLATION += CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_CANCELLATION)
+                KEI_RAIL_TOTAL += RAIL_TOTAL
+                KEI_AIR_FARE += CmnModule.DbVal(CsvData(wCnt).ANS_AIR_FARE)
+                KEI_AIR_CANCELLATION += CmnModule.DbVal(CsvData(wCnt).ANS_AIR_CANCELLATION)
+                KEI_AIR_TOTAL += AIR_TOTAL
+                KEI_OTHER_FARE += CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_FARE)
+                KEI_OTHER_CANCELLATION += CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_CANCELLATION)
+                KEI_OTHER_TOTAL += OTHER_TOTAL
+                KEI_TAXI_TESURYO += CmnModule.DbVal(CsvData(wCnt).ANS_TAXI_TESURYO)
+                KEI_KOTSUHOTEL_TESURYO += CmnModule.DbVal(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)
             Next wCnt
 
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(込)")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TOZEI)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(JR_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AIR_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(OTHER_TRAFFIC_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_COMMISSION_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTEL_COMMISSION_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TAXI_SEISAN_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_HOTELHI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_HOTELHI_CANCEL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_HOTELHI_TOTAL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_HOTELHI_TOZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_RAIL_FARE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_RAIL_CANCELLATION)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_RAIL_TOTAL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_AIR_FARE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_AIR_CANCELLATION)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_AIR_TOTAL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_OTHER_FARE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_OTHER_CANCELLATION)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_OTHER_TOTAL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_TAXI_TESURYO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_KOTSUHOTEL_TESURYO)))
+            sb.Append(vbNewLine)
+
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(抜)")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_HOTELHI, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_HOTELHI_CANCEL, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_HOTELHI_TOTAL, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_RAIL_FARE, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_RAIL_CANCELLATION, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_RAIL_TOTAL, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_AIR_FARE, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_AIR_CANCELLATION, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_AIR_TOTAL, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_FARE, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_CANCELLATION, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_TOTAL, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_TAXI_TESURYO, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_KOTSUHOTEL_TESURYO, strZeiRate))))
             sb.Append(vbNewLine)
 
             Return sb.ToString

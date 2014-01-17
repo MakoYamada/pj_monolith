@@ -430,6 +430,51 @@ Partial Public Class SeisanRegist
     Protected WithEvents SEISAN_KANRYO As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''BtnDrCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDrCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnDrCsvHid コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDrCsvHid As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnMrCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnMrCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnMrCsvHid コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnMrCsvHid As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTaxiCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnCalc コントロール。
     '''</summary>
     '''<remarks>
