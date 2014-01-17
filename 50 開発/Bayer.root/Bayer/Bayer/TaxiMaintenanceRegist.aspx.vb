@@ -200,6 +200,8 @@ Partial Public Class TaxiMaintenanceRegist
             CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("参加者ID"), Me)
             Return False
         End If
+
+        Return True
     End Function
 
     'データ取得

@@ -79,7 +79,8 @@
 			                ŽQ‰ÁŽÒID
 		                </td>
 		                <td align="left" valign="middle" colspan="7">							
-		                    <asp:TextBox ID="SANKASHA_ID" runat="server" Width="124px" tabindex="2"></asp:TextBox>							
+		                    <asp:TextBox ID="SANKASHA_ID" runat="server" Width="124px" tabindex="2" 
+                                MaxLength="14"></asp:TextBox>							
                             <asp:Button ID="BtnSankasha" runat="server" Text="ŽQ‰ÁŽÒÄ•\Ž¦" Width="130px" 
                                 CssClass="Button" tabindex="3"/>
 		                </td>

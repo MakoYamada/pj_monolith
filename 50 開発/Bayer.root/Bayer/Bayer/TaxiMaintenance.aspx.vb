@@ -19,6 +19,7 @@ Partial Public Class TaxiMaintenance
         TKT_USED_DATE
         TKT_SEIKYU_YM
         VOID_DATE
+        button
         TKT_LINE_NO
         TKT_VOID
         KOUENKAI_NO
@@ -204,7 +205,12 @@ Partial Public Class TaxiMaintenance
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(CellIndex.TKT_LINE_NO).Visible = False
+            e.Row.Cells(CellIndex.TKT_VOID).Visible = False
             e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
+            e.Row.Cells(CellIndex.FROM_DATE).Visible = False
+            e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            e.Row.Cells(CellIndex.UPDATE_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
