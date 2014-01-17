@@ -3047,6 +3047,7 @@
             Public TKT_MIKETSU As String
             Public TKT_IMPORT_DATE As String
             Public TKT_SEIKYU_YM As String
+            Public SEIKYU_NO_TOPTOUR As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
             Public UPDATE_DATE As String
@@ -3211,6 +3212,7 @@
             Public Const TKT_MIKETSU As String = "TKT_MIKETSU"
             Public Const TKT_IMPORT_DATE As String = "TKT_IMPORT_DATE"
             Public Const TKT_SEIKYU_YM As String = "TKT_SEIKYU_YM"
+            Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
@@ -3371,6 +3373,7 @@
             Public Const TKT_MIKETSU As String = "未決フラグ"
             Public Const TKT_IMPORT_DATE As String = "取込日"
             Public Const TKT_SEIKYU_YM As String = "請求年月"
+            Public Const SEIKYU_NO_TOPTOUR As String = "精算番号"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
