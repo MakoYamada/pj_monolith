@@ -7729,7 +7729,7 @@ Public Class AppModule
 
     '【回答】手配ステータス
     Public Shared Function GetValue_ANS_STATUS_TEHAI(ByVal ANS_STATUS_TEHAI As DropDownList) As String
-        Return CmnModule.GetSelectedItemValue(ANS_STATUS_TEHAI)
+        Return CmnModule.GetSelectedItemValue(ANS_STATUS_TEHAI, True)
     End Function
 
     '【回答】チケット類発送日
