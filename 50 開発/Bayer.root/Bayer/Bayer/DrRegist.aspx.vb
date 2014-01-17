@@ -116,7 +116,7 @@ Partial Public Class DrRegist
                     SetFocus(Me.BtnHotelKensaku)
                 End If
             End If
-
+            If Not Popup Then AppModule.SetForm_SEND_FLAG(DSP_KOTSUHOTEL(SEQ).SEND_FLAG, Me.SEND_FLAG)
         End If
         Session.Remove(SessionDef.HotelKensaku_Back)
         Session.Remove(SessionDef.KaijoPrint_SQL)
@@ -698,6 +698,7 @@ Partial Public Class DrRegist
 
         'タクチケ手配
         AppModule.SetForm_TEHAI_TAXI(DSP_KOTSUHOTEL(DSP_SEQ).TEHAI_TAXI, Me.TEHAI_TAXI)
+        AppModule.SetForm_SCAN_IMPORT_DATE(DSP_KOTSUHOTEL(DSP_SEQ).SCAN_IMPORT_DATE, Me.SCAN_IMPORT_DATE)
         AppModule.SetForm_REQ_TAXI_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).REQ_TAXI_NOTE, Me.REQ_TAXI_NOTE)
         AppModule.SetForm_ANS_TAXI_NOTE(DSP_KOTSUHOTEL(DSP_SEQ).ANS_TAXI_NOTE, Me.ANS_TAXI_NOTE)
 
@@ -1242,6 +1243,7 @@ Partial Public Class DrRegist
 
         'データ更新
         If ExecuteTransaction() Then
+            SetForm()
         End If
     End Sub
 
@@ -1254,6 +1256,7 @@ Partial Public Class DrRegist
 
         'データ更新
         If ExecuteTransaction() Then
+            SetForm()
         End If
     End Sub
 
@@ -2631,7 +2634,7 @@ Partial Public Class DrRegist
 
         'MR手配
         DSP_KOTSUHOTEL(SEQ).ANS_MR_O_TEHAI = AppModule.getvalue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
-        DSP_KOTSUHOTEL(SEQ).ANS_MR_F_TEHAI = AppModule.GetValue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
+        DSP_KOTSUHOTEL(SEQ).ANS_MR_F_TEHAI = AppModule.GetValue_ANS_MR_F_TEHAI(Me.ANS_MR_F_TEHAI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTEL_NOTE = AppModule.GetValue_ANS_MR_HOTEL_NOTE(Me.ANS_MR_HOTEL_NOTE)
 
         '各種代金

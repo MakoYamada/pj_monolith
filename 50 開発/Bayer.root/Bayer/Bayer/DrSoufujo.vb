@@ -267,7 +267,7 @@ Public Class DrSoufujo
         '【交通】
         Dim KotsuFlg As Boolean = False
         '往路１手配済
-        If pKOTSUHOTEL_DATA.ANS_O_STATUS_1 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_O_STATUS_1 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_O_STATUS_1 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             KotsuFlg = True
 
             Dim KotsuTitle As New Label
@@ -408,7 +408,7 @@ Public Class DrSoufujo
         End If
 
         '往路２手配済
-        If pKOTSUHOTEL_DATA.ANS_O_STATUS_2 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_O_STATUS_2 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_O_STATUS_2 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -550,7 +550,7 @@ Public Class DrSoufujo
         End If
 
         '往路３手配済
-        If pKOTSUHOTEL_DATA.ANS_O_STATUS_3 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_O_STATUS_3 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_O_STATUS_3 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -692,7 +692,7 @@ Public Class DrSoufujo
         End If
 
         '往路４手配済
-        If pKOTSUHOTEL_DATA.ANS_O_STATUS_4 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_O_STATUS_4 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_O_STATUS_4 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -834,7 +834,7 @@ Public Class DrSoufujo
         End If
 
         '往路５手配済
-        If pKOTSUHOTEL_DATA.ANS_O_STATUS_5 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_O_STATUS_5 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_O_STATUS_5 = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -975,7 +975,7 @@ Public Class DrSoufujo
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
         End If
         '復路１手配済
-        If pKOTSUHOTEL_DATA.ANS_F_STATUS_1 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_F_STATUS_1 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_F_STATUS_1 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -1117,7 +1117,7 @@ Public Class DrSoufujo
         End If
 
         '復路２手配済
-        If pKOTSUHOTEL_DATA.ANS_F_STATUS_2 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_F_STATUS_2 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_F_STATUS_2 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -1259,7 +1259,7 @@ Public Class DrSoufujo
         End If
 
         '復路３手配済
-        If pKOTSUHOTEL_DATA.ANS_F_STATUS_3 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_F_STATUS_3 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_F_STATUS_3 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -1401,7 +1401,7 @@ Public Class DrSoufujo
         End If
 
         '復路４手配済
-        If pKOTSUHOTEL_DATA.ANS_F_STATUS_4 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_F_STATUS_4 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_F_STATUS_4 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -1543,7 +1543,7 @@ Public Class DrSoufujo
         End If
 
         '復路５手配済
-        If pKOTSUHOTEL_DATA.ANS_F_STATUS_5 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Then
+        If pKOTSUHOTEL_DATA.ANS_F_STATUS_5 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or pKOTSUHOTEL_DATA.ANS_F_STATUS_5 = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
                 Dim KotsuTitle As New Label
@@ -1684,7 +1684,7 @@ Public Class DrSoufujo
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
         End If
 
-        'タクチケ１手配済
+        'タクチケ１発行済
         Dim TaxiFlg As Boolean = False
         If pKOTSUHOTEL_DATA.ANS_TAXI_DATE_1.Trim <> "" Then
             If Not TaxiFlg Then
@@ -1757,7 +1757,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_1_Title)
 
             Dim Ans_Taxi_Rmks_1 As New TextBox
-            'Ans_Taxi_Rmks_1.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_1
+            Ans_Taxi_Rmks_1.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_1
             Ans_Taxi_Rmks_1.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_1.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_1.CanGrow = True
@@ -1843,7 +1843,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_2_Title)
 
             Dim Ans_Taxi_Rmks_2 As New TextBox
-            'Ans_Taxi_Rmks_2.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_2
+            Ans_Taxi_Rmks_2.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_2
             Ans_Taxi_Rmks_2.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_2.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_2.CanGrow = True
@@ -1929,7 +1929,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_3_Title)
 
             Dim Ans_Taxi_Rmks_3 As New TextBox
-            'Ans_Taxi_Rmks_3.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_3
+            Ans_Taxi_Rmks_3.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_3
             Ans_Taxi_Rmks_3.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_3.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_3.CanGrow = True
@@ -2015,7 +2015,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_4_Title)
 
             Dim Ans_Taxi_Rmks_4 As New TextBox
-            'Ans_Taxi_Rmks_4.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_4
+            Ans_Taxi_Rmks_4.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_4
             Ans_Taxi_Rmks_4.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_4.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_4.CanGrow = True
@@ -2101,7 +2101,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_5_Title)
 
             Dim Ans_Taxi_Rmks_5 As New TextBox
-            'Ans_Taxi_Rmks_5.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_5
+            Ans_Taxi_Rmks_5.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_5
             Ans_Taxi_Rmks_5.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_5.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_5.CanGrow = True
@@ -2116,7 +2116,7 @@ Public Class DrSoufujo
         End If
 
         'タクチケ６手配済
-        If pKOTSUHOTEL_DATA.ANS_TAXI_DATE_6.Trim <> "" Then
+        If pKOTSUHOTEL_DATA.ANS_TAXI_DATE_5.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
                 Dim TaxiTitle As New Label
@@ -2187,7 +2187,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_6_Title)
 
             Dim Ans_Taxi_Rmks_6 As New TextBox
-            'Ans_Taxi_Rmks_6.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_6
+            Ans_Taxi_Rmks_6.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_6
             Ans_Taxi_Rmks_6.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_6.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_6.CanGrow = True
@@ -2273,7 +2273,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_7_Title)
 
             Dim Ans_Taxi_Rmks_7 As New TextBox
-            'Ans_Taxi_Rmks_7.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_7
+            Ans_Taxi_Rmks_7.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_7
             Ans_Taxi_Rmks_7.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_7.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_7.CanGrow = True
@@ -2359,7 +2359,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_8_Title)
 
             Dim Ans_Taxi_Rmks_8 As New TextBox
-            'Ans_Taxi_Rmks_8.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_8
+            Ans_Taxi_Rmks_8.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_8
             Ans_Taxi_Rmks_8.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_8.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_8.CanGrow = True
@@ -2445,7 +2445,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_9_Title)
 
             Dim Ans_Taxi_Rmks_9 As New TextBox
-            'Ans_Taxi_Rmks_9.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_9
+            Ans_Taxi_Rmks_9.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_9
             Ans_Taxi_Rmks_9.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_9.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_9.CanGrow = True
@@ -2531,7 +2531,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_10_Title)
 
             Dim Ans_Taxi_Rmks_10 As New TextBox
-            'Ans_Taxi_Rmks_10.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_10
+            Ans_Taxi_Rmks_10.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_10
             Ans_Taxi_Rmks_10.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_10.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_10.CanGrow = True
@@ -2617,7 +2617,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_11_Title)
 
             Dim Ans_Taxi_Rmks_11 As New TextBox
-            'Ans_Taxi_Rmks_11.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_11
+            Ans_Taxi_Rmks_11.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_11
             Ans_Taxi_Rmks_11.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_11.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_11.CanGrow = True
@@ -2703,7 +2703,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_12_Title)
 
             Dim Ans_Taxi_Rmks_12 As New TextBox
-            'Ans_Taxi_Rmks_12.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_12
+            Ans_Taxi_Rmks_12.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_12
             Ans_Taxi_Rmks_12.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_12.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_12.CanGrow = True
@@ -2789,7 +2789,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_13_Title)
 
             Dim Ans_Taxi_Rmks_13 As New TextBox
-            'Ans_Taxi_Rmks_13.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_13
+            Ans_Taxi_Rmks_13.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_13
             Ans_Taxi_Rmks_13.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_13.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_13.CanGrow = True
@@ -2875,7 +2875,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_14_Title)
 
             Dim Ans_Taxi_Rmks_14 As New TextBox
-            'Ans_Taxi_Rmks_14.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_14
+            Ans_Taxi_Rmks_14.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_14
             Ans_Taxi_Rmks_14.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_14.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_14.CanGrow = True
@@ -2961,7 +2961,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_15_Title)
 
             Dim Ans_Taxi_Rmks_15 As New TextBox
-            'Ans_Taxi_Rmks_15.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_15
+            Ans_Taxi_Rmks_15.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_15
             Ans_Taxi_Rmks_15.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_15.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_15.CanGrow = True
@@ -3047,7 +3047,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_16_Title)
 
             Dim Ans_Taxi_Rmks_16 As New TextBox
-            'Ans_Taxi_Rmks_16.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_16
+            Ans_Taxi_Rmks_16.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_16
             Ans_Taxi_Rmks_16.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_16.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_16.CanGrow = True
@@ -3133,7 +3133,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_17_Title)
 
             Dim Ans_Taxi_Rmks_17 As New TextBox
-            'Ans_Taxi_Rmks_17.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_17
+            Ans_Taxi_Rmks_17.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_17
             Ans_Taxi_Rmks_17.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_17.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_17.CanGrow = True
@@ -3219,7 +3219,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_18_Title)
 
             Dim Ans_Taxi_Rmks_18 As New TextBox
-            'Ans_Taxi_Rmks_18.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_18
+            Ans_Taxi_Rmks_18.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_18
             Ans_Taxi_Rmks_18.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_18.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_18.CanGrow = True
@@ -3305,7 +3305,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_19_Title)
 
             Dim Ans_Taxi_Rmks_19 As New TextBox
-            'Ans_Taxi_Rmks_19.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_19
+            Ans_Taxi_Rmks_19.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_19
             Ans_Taxi_Rmks_19.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_19.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_19.CanGrow = True
@@ -3391,7 +3391,7 @@ Public Class DrSoufujo
             Me.Detail.Controls.Add(Ans_Taxi_Rmks_20_Title)
 
             Dim Ans_Taxi_Rmks_20 As New TextBox
-            'Ans_Taxi_Rmks_20.Text = pKOTSUHOTEL_DATA.ans_taxi_rmks_20
+            Ans_Taxi_Rmks_20.Text = pKOTSUHOTEL_DATA.ANS_TAXI_RMKS_20
             Ans_Taxi_Rmks_20.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
             Ans_Taxi_Rmks_20.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Rmks_20.CanGrow = True
