@@ -5557,7 +5557,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_USED_DATE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEISAN_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE) & "'"
-            strSQL &= " " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
