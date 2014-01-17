@@ -720,7 +720,7 @@ Partial Public Class SeisanRegist
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "MRIchiran.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
 
-            Response.Write(MyModule.Csv.MrCsv(CsvData))
+            Response.Write(MyModule.Csv.MrCsv(CsvData, MyBase.DbConnection))
             Response.End()
         End If
     End Sub
