@@ -449,12 +449,12 @@
 				        <td nowrap="nowrap" align="center">
 					        <asp:Button ID="BtnDrCsv" runat="server" Width="180px" Text="参加者一覧CSV作成" 
                                 CssClass="Button" BackColor="#ececec" />
-                            <asp:Button ID="BtnDrCsvHid" runat="server" Width="100px" Text="" style="visibility:hidden"
+                            <asp:Button ID="BtnDrCsvHid" runat="server" Width="25px" Text="" style="visibility:hidden"
                                 CssClass="Button" />
 					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					        <asp:Button ID="BtnMrCsv" runat="server" Width="180px" Text="MR一覧CSV作成" 
                                 CssClass="Button" BackColor="#ececec" />
-                            <asp:Button ID="BtnMrCsvHid" runat="server" Width="100px" Text="" style="visibility:hidden"
+                            <asp:Button ID="BtnMrCsvHid" runat="server" Width="25px" Text="" style="visibility:hidden"
                                 CssClass="Button" />
 					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					        <asp:Button ID="BtnTaxiCsv" runat="server" Width="180px" Text="タクチケ精算データCSV作成" 

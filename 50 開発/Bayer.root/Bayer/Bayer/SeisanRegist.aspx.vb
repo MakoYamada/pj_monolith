@@ -614,7 +614,8 @@ Partial Public Class SeisanRegist
 
     '[タクチケ精算データCSV作成]
     Protected Sub BtnTaxiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsv.Click
-
+        UpdateTaxiData()
+        'OutputTaxiCsv()
     End Sub
 
     '請求番号採番、精算番号を交通宿泊データに登録、請求データ作成
@@ -668,7 +669,7 @@ Partial Public Class SeisanRegist
 
         Dim CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct
         If GetDrCsvData(CsvData) Then
-            'CSV出力
+            'CSV出力
             Response.Clear()
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
@@ -689,7 +690,10 @@ Partial Public Class SeisanRegist
 
         ReDim CsvData(wCnt)
 
-        strSQL = SQL.TBL_SEIKYU.DrCsv(Joken)
+        Dim csvJoken As TableDef.Joken.DataStruct
+        csvJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+        csvJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        strSQL = SQL.TBL_SEIKYU.DrCsv(csvJoken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -734,7 +738,10 @@ Partial Public Class SeisanRegist
 
         ReDim CsvData(wCnt)
 
-        strSQL = SQL.TBL_SEIKYU.MrCsv(Joken)
+        Dim csvJoken As TableDef.Joken.DataStruct
+        csvJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+        csvJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        strSQL = SQL.TBL_SEIKYU.MrCsv(csvJoken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -753,4 +760,8 @@ Partial Public Class SeisanRegist
         Return True
     End Function
 
+    '
+    Private Function UpdateTaxiData() As Boolean
+
+    End Function
 End Class
