@@ -162,7 +162,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TKT_SEIKYU_YM"  HeaderText="請求年月" />
-                        <asp:BoundField DataField="VOID_DATE" HeaderText="VOID(日)" />
+                        <asp:BoundField DataField="UPDATE_DATE" HeaderText="VOID(日)" />
                         <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
                             ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">

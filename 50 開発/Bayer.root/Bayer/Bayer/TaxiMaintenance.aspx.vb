@@ -168,7 +168,7 @@ Partial Public Class TaxiMaintenance
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.Search(Joken, True)
+        Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Search(Joken, False)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -237,7 +237,7 @@ Partial Public Class TaxiMaintenance
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
                 Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
-                Response.Redirect(URL.TaxiMiketsuRegist)
+                Response.Redirect(URL.TaxiMaintenanceRegist)
         End Select
     End Sub
 
