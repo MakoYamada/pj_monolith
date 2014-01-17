@@ -79,4 +79,5 @@
     Public Const MstCode As String = "MstCode"
     Public Const MstUser As String = "MstUser"
     Public Const OldTBL_KAIJO As String = "OldTBL_KAIJO"
+    Public Const OldTBL_KOTSUHOTEL As String = "OldTBL_KOTSUHOTEL"
 End Class

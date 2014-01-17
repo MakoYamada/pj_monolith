@@ -34,7 +34,10 @@ Partial Public Class Preview
                 Select Case Session.Item(SessionDef.PrintPreview)
                     Case "Tehaisho"
                         '手配書印刷
-                        PrintDrReport()
+                        PrintDrReport(False)
+                    Case "TehaishoRireki"
+                        '手配書印刷(履歴)
+                        PrintDrReport(True)
                     Case "Soufujo"
                         '送付状印刷
                         PrintSoufujo()
@@ -58,7 +61,7 @@ Partial Public Class Preview
                     PrintNewDrList()
                 ElseIf Session.Item(SessionDef.PrintPreview) = "TehaishoPrint" Then
                     '手配書一括印刷
-                    PrintDrReport()
+                    PrintDrReport(False)
                 End If
             ElseIf URL.DrList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が交通・宿泊履歴一覧の場合
@@ -168,7 +171,7 @@ Partial Public Class Preview
     End Function
 
     'ドクター情報印刷
-    Private Sub PrintDrReport()
+    Private Sub PrintDrReport(ByVal pRireki As Boolean)
 
         Dim rpt1 As New DrReport()
 
@@ -190,6 +193,11 @@ Partial Public Class Preview
         Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
         DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
+
+        '旧データ
+        rpt1.OldTBL_KOTSUHOTEL = Session.Item(SessionDef.OldTBL_KAIJO)
+        '履歴=True
+        rpt1.Rireki = pRireki
 
         'レポートを作成
         rpt1.Run()
