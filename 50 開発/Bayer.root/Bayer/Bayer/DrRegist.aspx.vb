@@ -1209,6 +1209,7 @@ Partial Public Class DrRegist
             OldTBL_KOTSUHOTEL = DSP_KOTSUHOTEL(SEQ)
         End If
         RsData.Close()
+        Session.Item(SessionDef.OldTBL_KOTSUHOTEL) = OldTBL_KOTSUHOTEL
     End Sub
 
     '講演会基本情報ボタン
@@ -3285,7 +3286,11 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
         Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
-        Session.Item(SessionDef.PrintPreview) = "Tehaisho"
+        If Popup Then
+            Session.Item(SessionDef.PrintPreview) = "TehaishoRireki"
+        Else
+            Session.Item(SessionDef.PrintPreview) = "Tehaisho"
+        End If
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
     End Sub
