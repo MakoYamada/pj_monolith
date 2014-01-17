@@ -6136,133 +6136,143 @@ Public Class AppModule
     End Sub
 
     'タクシーチケット：利用日（回答）
-    Public Shared Sub SetForm_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String, ByRef control As TextBox)
+    Public Shared Sub SetForm_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
         control.Text = ANS_TAXI_DATE
+        If ANS_TAXI_HAKKO_DATE.Trim <> "" Then
+            control.Enabled = False
+        Else
+            control.Enabled = True
+        End If
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_1(ByVal ANS_TAXI_DATE_1 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_1, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_1(ByVal ANS_TAXI_DATE_1 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_1, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_2(ByVal ANS_TAXI_DATE_2 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_2, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_2(ByVal ANS_TAXI_DATE_2 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_2, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_3(ByVal ANS_TAXI_DATE_3 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_3, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_3(ByVal ANS_TAXI_DATE_3 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_3, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_4(ByVal ANS_TAXI_DATE_4 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_4, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_4(ByVal ANS_TAXI_DATE_4 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_4, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_5(ByVal ANS_TAXI_DATE_5 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_5, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_5(ByVal ANS_TAXI_DATE_5 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_5, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_6(ByVal ANS_TAXI_DATE_6 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_6, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_6(ByVal ANS_TAXI_DATE_6 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_6, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_7(ByVal ANS_TAXI_DATE_7 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_7, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_7(ByVal ANS_TAXI_DATE_7 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_7, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_8(ByVal ANS_TAXI_DATE_8 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_8, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_8(ByVal ANS_TAXI_DATE_8 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_8, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_9(ByVal ANS_TAXI_DATE_9 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_9, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_9(ByVal ANS_TAXI_DATE_9 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_9, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_10(ByVal ANS_TAXI_DATE_10 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_10, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_10(ByVal ANS_TAXI_DATE_10 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_10, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_11(ByVal ANS_TAXI_DATE_11 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_11, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_11(ByVal ANS_TAXI_DATE_11 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_11, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_12(ByVal ANS_TAXI_DATE_12 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_12, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_12(ByVal ANS_TAXI_DATE_12 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_12, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_13(ByVal ANS_TAXI_DATE_13 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_13, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_13(ByVal ANS_TAXI_DATE_13 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_13, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_14(ByVal ANS_TAXI_DATE_14 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_14, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_14(ByVal ANS_TAXI_DATE_14 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_14, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_15(ByVal ANS_TAXI_DATE_15 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_15, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_15(ByVal ANS_TAXI_DATE_15 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_15, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_16(ByVal ANS_TAXI_DATE_16 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_16, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_16(ByVal ANS_TAXI_DATE_16 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_16, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_17(ByVal ANS_TAXI_DATE_17 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_17, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_17(ByVal ANS_TAXI_DATE_17 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_17, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_18(ByVal ANS_TAXI_DATE_18 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_18, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_18(ByVal ANS_TAXI_DATE_18 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_18, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_19(ByVal ANS_TAXI_DATE_19 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_19, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_19(ByVal ANS_TAXI_DATE_19 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_19, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_DATE_20(ByVal ANS_TAXI_DATE_20 As String, ByRef control As TextBox)
-        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_20, control)
+    Public Shared Sub SetForm_ANS_TAXI_DATE_20(ByVal ANS_TAXI_DATE_20 As String, ByRef control As TextBox, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_DATE(ANS_TAXI_DATE_20, control, ANS_TAXI_HAKKO_DATE)
     End Sub
 
     'タクシーチケット：券種（回答）
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String, ByRef control As DropDownList)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU(ByVal ANS_TAXI_KENSHU As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
         control.SelectedIndex = CmnModule.GetSelectedIndex(ANS_TAXI_KENSHU, control, True)
+        If ANS_TAXI_HAKKO_DATE.Trim <> "" Then
+            control.Enabled = False
+        Else
+            control.Enabled = True
+        End If
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_1, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_1(ByVal ANS_TAXI_KENSHU_1 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_1, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_2(ByVal ANS_TAXI_KENSHU_2 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_2, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_2(ByVal ANS_TAXI_KENSHU_2 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_2, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_3(ByVal ANS_TAXI_KENSHU_3 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_3, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_3(ByVal ANS_TAXI_KENSHU_3 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_3, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_4(ByVal ANS_TAXI_KENSHU_4 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_4, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_4(ByVal ANS_TAXI_KENSHU_4 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_4, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_5(ByVal ANS_TAXI_KENSHU_5 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_5, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_5(ByVal ANS_TAXI_KENSHU_5 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_5, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_6(ByVal ANS_TAXI_KENSHU_6 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_6, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_6(ByVal ANS_TAXI_KENSHU_6 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_6, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_7(ByVal ANS_TAXI_KENSHU_7 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_7, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_7(ByVal ANS_TAXI_KENSHU_7 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_7, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_8(ByVal ANS_TAXI_KENSHU_8 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_8, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_8(ByVal ANS_TAXI_KENSHU_8 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_8, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_9(ByVal ANS_TAXI_KENSHU_9 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_9, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_9(ByVal ANS_TAXI_KENSHU_9 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_9, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_10, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_10(ByVal ANS_TAXI_KENSHU_10 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_10, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_11, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_11(ByVal ANS_TAXI_KENSHU_11 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_11, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_12, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_12(ByVal ANS_TAXI_KENSHU_12 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_12, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_13, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_13(ByVal ANS_TAXI_KENSHU_13 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_13, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_14, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_14(ByVal ANS_TAXI_KENSHU_14 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_14, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_15, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_15(ByVal ANS_TAXI_KENSHU_15 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_15, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_16, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_16(ByVal ANS_TAXI_KENSHU_16 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_16, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_17, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_17(ByVal ANS_TAXI_KENSHU_17 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_17, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_18, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_18(ByVal ANS_TAXI_KENSHU_18 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_18, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_19, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_19(ByVal ANS_TAXI_KENSHU_19 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_19, control, ANS_TAXI_HAKKO_DATE)
     End Sub
-    Public Shared Sub SetForm_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As String, ByRef control As DropDownList)
-        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_20, control)
+    Public Shared Sub SetForm_ANS_TAXI_KENSHU_20(ByVal ANS_TAXI_KENSHU_20 As String, ByRef control As DropDownList, ByVal ANS_TAXI_HAKKO_DATE As String)
+        SetForm_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU_20, control, ANS_TAXI_HAKKO_DATE)
     End Sub
 
     'タクシーチケット：番号（回答）
