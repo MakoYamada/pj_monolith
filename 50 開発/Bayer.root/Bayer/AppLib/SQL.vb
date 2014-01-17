@@ -857,6 +857,7 @@ Public Class SQL
             strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
             strSQL &= " WHERE"
             strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND WK2.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
             strSQL &= " ORDER BY WK1.KOUENKAI_NO,WK1.SANKASHA_ID"
 
             Return strSQL
@@ -895,7 +896,9 @@ Public Class SQL
             strSQL &= "  )WK_KOUENKAI"
             strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
             strSQL &= " WHERE"
-            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "') WK4"
+            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND WK2.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= ") WK4"
             strSQL &= " WHERE ((WK4.MR_HOTEL <> 0) OR (WK4.MR_HOTEL_TOZEI <> 0) OR (WK4.MR_JR <> 0))"
             strSQL &= " ORDER BY WK4.KOUENKAI_NO,WK4.COST_CENTER"
 
