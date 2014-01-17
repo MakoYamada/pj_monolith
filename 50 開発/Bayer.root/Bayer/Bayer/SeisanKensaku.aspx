@@ -105,7 +105,7 @@
             <td>
                 <asp:GridView ID="GrvList" runat="server" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="10" DataKeyNames="KOUENKAI_NO"
-                    DataSourceID="SqlDataSource1" Width="988px">
+                    DataSourceID="SqlDataSource1" Width="848px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                     <RowStyle Wrap="false" BackColor="#ffffff" />
                     <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -145,24 +145,6 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="90px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:ButtonField ButtonType="Button" Text="CSV" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center" CommandName="DrCSV" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="70px" ItemStyle-Width="76px" 
-                            ItemStyle-BackColor="#e4e9d1" HeaderText="参加者一覧">
-                            <ControlStyle CssClass="ButtonList" Width="70px"></ControlStyle>
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1">
-                            </ItemStyle>
-                        </asp:ButtonField>
-                        <asp:ButtonField ButtonType="Button" Text="CSV" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center" CommandName="MrCSV" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="70px" ItemStyle-Width="76px" 
-                            ItemStyle-BackColor="#e4e9d1" HeaderText="MR一覧">
-                            <ControlStyle CssClass="ButtonList" Width="70px"></ControlStyle>
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1">
-                            </ItemStyle>
-                        </asp:ButtonField>
                         <asp:ButtonField ButtonType="Button" Text="検索" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="Seisan" ControlStyle-CssClass="ButtonList"
                             ControlStyle-Width="70px" ItemStyle-Width="76px" 

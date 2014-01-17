@@ -13,8 +13,6 @@ Partial Public Class SeisanKensaku
         FROM_DATE
         KOUENKAI_NAME
         USER_NAME
-        btnDr
-        btnMr
         btnSeisan
         KOUENKAI_NO
         TO_DATE
@@ -235,12 +233,6 @@ Partial Public Class SeisanKensaku
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
-            'Case "DrCSV"
-            '    Joken.KOUENKAI_NO = TBL_KOUENKAI((Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)).KOUENKAI_NO
-            '    OutputDrCsv()
-            'Case "MrCSV"
-            '    Joken.KOUENKAI_NO = TBL_KOUENKAI((Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)).KOUENKAI_NO
-            '    OutputMrCsv()
             Case "Seisan"
                 '選択レコード情報をセッション変数にセット
                 Session.Item(SessionDef.SeisanKensaku_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
@@ -339,93 +331,4 @@ Partial Public Class SeisanKensaku
         Response.Redirect(URL.Menu)
     End Sub
 
-    ''参加者一覧CSV出力
-    'Private Sub OutputDrCsv()
-
-    '    Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
-    '    If GetDrCsvData(CsvData) Then
-    '        'CSV出力
-    '        Response.Clear()
-    '        Response.ContentType = CmnConst.Csv.ContentType
-    '        Response.Charset = CmnConst.Csv.Charset
-    '        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "SankashaIchiran.csv")
-    '        Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
-
-    '        Response.Write(MyModule.Csv.DrCsv(CsvData))
-    '        Response.End()
-    '    End If
-    'End Sub
-
-    ''参加者一覧CSV用データ取得
-    'Private Function GetDrCsvData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
-    '    Dim wCnt As Integer = 0
-    '    Dim strSQL As String = ""
-    '    Dim RsData As System.Data.SqlClient.SqlDataReader
-    '    Dim wFlag As Boolean = False
-
-    '    ReDim CsvData(wCnt)
-
-    '    strSQL = SQL.TBL_SEIKYU.DrCsv(Joken)
-    '    RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-    '    While RsData.Read()
-    '        wFlag = True
-    '        ReDim Preserve CsvData(wCnt)
-    '        CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
-
-    '        wCnt += 1
-    '    End While
-    '    RsData.Close()
-
-    '    If wFlag = False Then
-    '        CmnModule.AlertMessage("対象データがありません。", Me)
-    '        Return False
-    '    End If
-
-    '    Return True
-    'End Function
-
-    ''MR一覧CSV出力
-    'Private Sub OutputMrCsv()
-
-    '    Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
-    '    If GetMrCsvData(CsvData) Then
-    '        'CSV出力
-    '        Response.Clear()
-    '        Response.ContentType = CmnConst.Csv.ContentType
-    '        Response.Charset = CmnConst.Csv.Charset
-    '        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "MRIchiran.csv")
-    '        Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
-
-    '        Response.Write(MyModule.Csv.MrCsv(CsvData))
-    '        Response.End()
-    '    End If
-    'End Sub
-
-    ''MR一覧CSV用データ取得
-    'Private Function GetMrCsvData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
-    '    Dim wCnt As Integer = 0
-    '    Dim strSQL As String = ""
-    '    Dim RsData As System.Data.SqlClient.SqlDataReader
-    '    Dim wFlag As Boolean = False
-
-    '    ReDim CsvData(wCnt)
-
-    '    strSQL = SQL.TBL_SEIKYU.MrCsv(Joken)
-    '    RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-    '    While RsData.Read()
-    '        wFlag = True
-    '        ReDim Preserve CsvData(wCnt)
-    '        CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
-
-    '        wCnt += 1
-    '    End While
-    '    RsData.Close()
-
-    '    If wFlag = False Then
-    '        CmnModule.AlertMessage("対象データがありません。", Me)
-    '        Return False
-    '    End If
-
-    '    Return True
-    'End Function
 End Class
