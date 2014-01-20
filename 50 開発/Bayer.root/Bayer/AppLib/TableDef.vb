@@ -3195,6 +3195,9 @@
             Public SALEFORCE_ID As String
             Public TIME_STAMP_BYL As String
             Public TAXI_KENSHU As String
+            Public KAZEI_KBN As String
+            Public COST_CENTER As String
+            Public REQ_TAXI_DATE As String
         End Structure
         Public Class Column
             Public Const TKT_KAISHA As String = "TKT_KAISHA"
@@ -3356,6 +3359,10 @@
             Public Const ANS_TAXI_HAKKO_DATE_20 As String = "ANS_TAXI_HAKKO_DATE_20"
             Public Const ANS_TAXI_RMKS_20 As String = "ANS_TAXI_RMKS_20"
             Public Const TAXI_HAKKO_DATE As String = "TAXI_HAKKO_DATE"
+
+            Public Const KAZEI_KBN As String = "KAZEI_KBN"
+            Public Const COST_CENTER As String = "COST_CENTER"
+            Public Const REQ_TAXI_DATE As String = "REQ_TAXI_DATE"
         End Class
         Public Class Name
             Public Const TKT_KAISHA As String = "タクシー会社"
