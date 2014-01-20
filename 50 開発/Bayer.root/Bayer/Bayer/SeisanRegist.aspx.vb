@@ -187,26 +187,33 @@ Partial Public Class SeisanRegist
 
         Try
             '991330401
-            wTOTAL_TF1 = CLng(AppModule.GetName_ANS_991330401_TF(Me.KAIJOHI_TF.Text.Trim, Me.KIZAIHI_TF.Text.Trim, Me.INSHOKUHI_TF.Text.Trim, True))
+            wTOTAL_TF1 = CmnModule.DbVal_Kingaku(Me.KAIJOHI_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.KIZAIHI_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.INSHOKUHI_TF.Text.Trim)
 
             '41120200
-            wTOTAL_TF2 = CLng(AppModule.GetName_ANS_41120200_TF(CStr(CmnModule.DbVal(Me.HOTELHI_TF.Text.Trim) + CmnModule.DbVal(Me.HOTELHI_TOZEI.Text.Trim)), _
-                                                                Me.JR_TF.Text.Trim, _
-                                                                Me.AIR_TF.Text.Trim, _
-                                                                Me.OTHER_TRAFFIC_TF.Text.Trim, _
-                                                                Me.TAXI_TF.Text.Trim, _
-                                                                Me.HOTEL_COMMISSION_TF.Text.Trim, _
-                                                                Me.TAXI_COMMISSION_TF.Text.Trim, _
-                                                                Me.TAXI_SEISAN_TF.Text.Trim, _
-                                                                Me.JINKENHI_TF.Text.Trim, _
-                                                                Me.OTHER_TF.Text.Trim, _
-                                                                Me.KANRIHI_TF.Text.Trim, True))
+            wTOTAL_TF2 = CmnModule.DbVal_Kingaku(Me.HOTELHI_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.HOTELHI_TOZEI.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.JR_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.AIR_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.OTHER_TRAFFIC_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.TAXI_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.HOTEL_COMMISSION_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.TAXI_COMMISSION_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.TAXI_SEISAN_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.JINKENHI_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.OTHER_TF.Text.Trim) + _
+                         CmnModule.DbVal_Kingaku(Me.KANRIHI_TF.Text.Trim)
 
             '991330401
-            wTOTAL_T1 = CLng(AppModule.GetName_ANS_991330401_T(Me.KAIJOUHI_T.Text.Trim, Me.KIZAIHI_T.Text.Trim, Me.INSHOKUHI_T.Text.Trim, True))
+            wTOTAL_T1 = CmnModule.DbVal_Kingaku(Me.KAIJOUHI_T.Text.Trim) + _
+                        CmnModule.DbVal_Kingaku(Me.KIZAIHI_T.Text.Trim) + _
+                        CmnModule.DbVal_Kingaku(Me.INSHOKUHI_T.Text.Trim)
 
             '41120200
-            wTOTAL_T2 = CLng(AppModule.GetName_ANS_41120200_T(Me.JINKENHI_T.Text.Trim, Me.OTHER_T.Text.Trim, Me.KANRIHI_T.Text.Trim, True))
+            wTOTAL_T2 = CmnModule.DbVal_Kingaku(Me.JINKENHI_T.Text.Trim) + _
+                        CmnModule.DbVal_Kingaku(Me.OTHER_T.Text.Trim) + _
+                        CmnModule.DbVal_Kingaku(Me.KANRIHI_T.Text.Trim)
 
         Catch ex As Exception
         End Try
@@ -290,27 +297,27 @@ Partial Public Class SeisanRegist
         End If
 
 
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.TAXI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_SEISAN_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.TAXI_SEISAN_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.MR_JR) Then
+        If Not CmnCheck.IsValidKingaku(Me.MR_JR) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.MR_HOTEL) Then
+        If Not CmnCheck.IsValidKingaku(Me.MR_HOTEL) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.MR_HOTEL_TOZEI) Then
+        If Not CmnCheck.IsValidKingaku(Me.MR_HOTEL_TOZEI) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL_TOZEI), Me)
             Return False
         End If
@@ -321,107 +328,107 @@ Partial Public Class SeisanRegist
     '集計対象項目の数値チェック
     Private Function CheckCalcItem() As Boolean
 
-        If Not CmnCheck.IsNumberOnly(Me.KAIJOHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.KAIJOHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KAIJOHI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.KIZAIHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.KIZAIHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KIZAIHI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.INSHOKUHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.INSHOKUHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.INSHOKUHI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.HOTELHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.HOTELHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.HOTELHI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.HOTELHI_TOZEI) Then
+        If Not CmnCheck.IsValidKingaku(Me.HOTELHI_TOZEI) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.HOTELHI_TOZEI), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JR_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.JR_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.JR_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.AIR_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.AIR_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.AIR_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.OTHER_TRAFFIC_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.OTHER_TRAFFIC_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.OTHER_TRAFFIC_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.TAXI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.HOTEL_COMMISSION_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.HOTEL_COMMISSION_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.HOTEL_COMMISSION_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_COMMISSION_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.TAXI_COMMISSION_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_COMMISSION_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.TAXI_SEISAN_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.TAXI_SEISAN_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.TAXI_SEISAN_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JINKENHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.JINKENHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.JINKENHI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.OTHER_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.OTHER_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.OTHER_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.KANRIHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.KANRIHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KANRIHI_TF), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.KAIJOUHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.KAIJOUHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KAIJOUHI_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.KIZAIHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.KIZAIHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KIZAIHI_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.INSHOKUHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.INSHOKUHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.INSHOKUHI_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JINKENHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.JINKENHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.JINKENHI_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.OTHER_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.OTHER_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.OTHER_T), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.KANRIHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.KANRIHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.KANRIHI_T), Me)
             Return False
         End If
@@ -615,7 +622,7 @@ Partial Public Class SeisanRegist
     '[タクチケ精算データCSV作成]
     Protected Sub BtnTaxiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsv.Click
         UpdateTaxiData()
-        'OutputTaxiCsv()
+        OutputTaxiCsv()
     End Sub
 
     '請求番号採番、精算番号を交通宿泊データに登録、請求データ作成
@@ -654,7 +661,7 @@ Partial Public Class SeisanRegist
                 MyBase.Rollback()
 
                 'エラーメッセージ
-                Exit Function
+                Return False
             End Try
 
             MyBase.Commit()
@@ -760,8 +767,81 @@ Partial Public Class SeisanRegist
         Return True
     End Function
 
-    '
+    'タクチケ発行テーブルに請求番号を登録
     Private Function UpdateTaxiData() As Boolean
 
+        '入力チェック
+        If Not Check() Then Exit Function
+
+        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+            'TODO:要確認
+            CmnModule.AlertMessage("先に参加者一覧CSVまたはMR一覧CSVを出力してください。", Me)
+            Exit Function
+        End If
+
+        Try
+            MyBase.BeginTransaction()
+
+            '講演会番号をキーにタクチケ発行テーブルに請求番号を登録(請求番号未設定のデータのみ)
+            'データ更新
+            Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+            Dim cnt As Integer = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'エラーメッセージ
+            Return False
+        End Try
+
+        MyBase.Commit()
+
+        Return True
+    End Function
+
+    Private Sub OutputTaxiCsv()
+
+        Dim CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+        If GetTaxiCsvData(CsvData) Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiSeisan.csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(MyModule.Csv.TaxiSeisanCsv(CsvData, MyBase.DbConnection))
+            Response.End()
+        End If
+    End Sub
+
+    Private Function GetTaxiCsvData(ByRef CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As Boolean
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+
+        ReDim CsvData(wCnt)
+
+        Dim csvJoken As TableDef.Joken.DataStruct
+        csvJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+        csvJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanCsv(csvJoken)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve CsvData(wCnt)
+            CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        If wFlag = False Then
+            CmnModule.AlertMessage("対象データがありません。", Me)
+            Return False
+        End If
+
+        Return True
     End Function
 End Class

@@ -1021,6 +1021,121 @@ Public Class MyModule
             Return sb.ToString
         End Function
 
+        Public Shared Function TaxiSeisanCsv(ByVal CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct, _
+                                             ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            Dim strKazeiKbn As String = ""
+            Dim strCostCenter As String = ""
+            Dim TKT_URIAGE As Long = 0
+            Dim TKT_SEISAN_FEE As Long = 0
+            Dim KAZEIKEI_TKT_URIAGE As Long = 0
+            Dim KAZEIKEI_TKT_SEISAN_FEE As Long = 0
+
+            'ヘッダ列
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("課税区分")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日(依頼)")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用年月日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("売上金額")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算番号")))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+
+                If (strCostCenter <> "" AndAlso _
+                   strCostCenter <> CsvData(wCnt).COST_CENTER) OrElse _
+                   (strKazeiKbn <> "" AndAlso _
+                   strKazeiKbn <> CsvData(wCnt).KAZEI_KBN) Then
+
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TKT_URIAGE)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TKT_SEISAN_FEE)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(vbNewLine)
+
+                    '初期化
+                    TKT_URIAGE = 0
+                    TKT_SEISAN_FEE = 0
+                End If
+
+                If strKazeiKbn <> "" AndAlso _
+                   strKazeiKbn <> CsvData(wCnt).KAZEI_KBN Then
+
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KAZEIKEI_TKT_URIAGE)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KAZEIKEI_TKT_SEISAN_FEE)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(vbNewLine)
+
+                    '初期化
+                    KAZEIKEI_TKT_URIAGE = 0
+                    KAZEIKEI_TKT_SEISAN_FEE = 0
+                End If
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAZEI_KBN)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).COST_CENTER)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_Date(CsvData(wCnt).REQ_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_Date(CsvData(wCnt).TKT_USED_DATE, CmnModule.DateFormatType.YYYYMMDD))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_URIAGE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_SEISAN_FEE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYU_NO_TOPTOUR)))
+                sb.Append(vbNewLine)
+
+                strKazeiKbn = CsvData(wCnt).KAZEI_KBN
+                strCostCenter = CsvData(wCnt).COST_CENTER
+
+                'コストセンター計　加算
+                TKT_URIAGE += CmnModule.DbVal(CsvData(wCnt).TKT_URIAGE)
+                TKT_SEISAN_FEE += CmnModule.DbVal(CsvData(wCnt).TKT_SEISAN_FEE)
+
+                '課税区分合計　加算
+                KAZEIKEI_TKT_URIAGE += CmnModule.DbVal(CsvData(wCnt).TKT_URIAGE)
+                KAZEIKEI_TKT_SEISAN_FEE += CmnModule.DbVal(CsvData(wCnt).TKT_SEISAN_FEE)
+            Next wCnt
+
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TKT_URIAGE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TKT_SEISAN_FEE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(vbNewLine)
+
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KAZEIKEI_TKT_URIAGE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KAZEIKEI_TKT_SEISAN_FEE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(vbNewLine)
+
+            Return sb.ToString
+        End Function
+
         Public Shared Function SapCsv(ByVal CsvData() As TableDef.SAP_CSV.DataStruct) As String
 
             Dim wCnt As Integer = 0
