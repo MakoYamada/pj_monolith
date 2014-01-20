@@ -5590,6 +5590,20 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Update_SEIKYU_NO(ByVal KOUENKAI_NO As String, ByVal SEIKYU_NO_TOPTOUR As String, ByVal UPDATE_USER As String)
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_TAXITICKET_HAKKO SET"
+            strSQL &= " " & TableDef.TBL_TAXITICKET_HAKKO.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(UPDATE_USER) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & ",N'') <> N''"
+            strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & " <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Delete(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
             Dim strSQL As String = ""
 
