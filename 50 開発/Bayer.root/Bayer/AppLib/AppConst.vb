@@ -491,6 +491,17 @@ Public Class AppConst
                 Public Const N_Only As String = "2"
             End Class
         End Class
+        Public Class TKT_MIKETSU
+            '未決フラグ
+            Public Class Code
+                Public Const Fuka As String = "0"
+                Public Const Kanou As String = "1"
+            End Class
+            Public Class Name
+                Public Const Fuka As String = "精算完了不可"
+                Public Const Kanou As String = "精算完了可能"
+            End Class
+        End Class
     End Class
 
     Public Class MS_CODE
