@@ -65,7 +65,7 @@
 							<asp:Button ID="BtnMstCode" runat="server" Text="コードマスタ" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-						    <asp:Button ID="BtnMstCostcenter" runat="server" Text="コストセンターマスタ" Width="200px" CssClass="Button" />
+						    <asp:Button ID="BtnMstCostcenter" runat="server" Text="コストセンターマスタ" Width="200px" CssClass="Button" Visible="false" />
 						</td>
 					</tr>
 					<tr>
@@ -99,10 +99,10 @@
 							<asp:Button ID="BtnSeisan" runat="server" Text="精算処理" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnCost" runat="server" Text="コストセンター別費用入力" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnSap" runat="server" Text="SAPデータ作成" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnSap" runat="server" Text="SAPデータ作成" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnCost" runat="server" Text="コストセンター別費用入力" Width="200px" CssClass="Button" Visible="false" />
 						</td>
 						<td></td>
 					</tr>
