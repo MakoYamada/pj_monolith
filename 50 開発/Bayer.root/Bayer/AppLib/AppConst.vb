@@ -457,6 +457,9 @@ Public Class AppConst
                 Public Const Kanryo As String = "Š®—¹"
             End Class
         End Class
+
+        '¸Zˆ—@ŠJn“ú
+        Public Const START_DAY As String = "21"
     End Class
 
     Public Class COST

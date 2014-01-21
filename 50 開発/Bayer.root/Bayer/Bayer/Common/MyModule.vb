@@ -177,9 +177,8 @@ Public Class MyModule
     '承認年月から対象となる精算承認日の期間(FromTo)を取得
     Public Shared Sub GetSeisanFromTo(ByVal shouninY As String, ByVal shouninM As String, ByRef strFromDate As String, ByRef strToDate As String)
 
-        Dim startDay As String = "21"
         Dim shouninDate As Date = CDate(shouninY & "/" & shouninM & "/01")
-        Dim fromDate As Date = shouninDate.AddMonths(-1).Year.ToString & "/" & shouninDate.AddMonths(-1).Month.ToString & "/" & startDay
+        Dim fromDate As Date = shouninDate.AddMonths(-1).Year.ToString & "/" & shouninDate.AddMonths(-1).Month.ToString & "/" & AppConst.SEISAN.START_DAY
 
         strFromDate = fromDate.ToString("yyyyMMdd")
 
