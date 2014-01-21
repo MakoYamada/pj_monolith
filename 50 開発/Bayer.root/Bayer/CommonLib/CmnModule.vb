@@ -387,6 +387,12 @@ Public Class CmnModule
                 'If Len(wStr) = 4 Then wStr &= "2013" & wStr '4桁→年なしと判断
 
                 wStr = Mid(wStr, 1, 4) & "/" & Mid(wStr, 5, 2) & "/" & Mid(wStr, 7, 2)
+            Case DateFormatType.YYYYMM
+                'yyyy/MM
+                wStr = Mid(wStr, 1, 4) & "/" & Mid(wStr, 5, 2)
+            Case DateFormatType.YYYYM
+                'yyyy/M
+                wStr = Mid(wStr, 1, 4) & "/" & CInt(Mid(wStr, 5, 2)).ToString
             Case DateFormatType.YYMMDD
                 'yy/MM/dd
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
@@ -477,6 +483,12 @@ Public Class CmnModule
                 If Len(wStr) = 4 Then wStr &= "2013" & wStr '4桁→年なしと判断
 
                 wStr = Mid(wStr, 1, 4) & "年" & Mid(wStr, 5, 2) & "月" & Mid(wStr, 7, 2) & "日"
+            Case DateFormatType.YYYYMM
+                'yyyy/MM
+                wStr = Mid(wStr, 1, 4) & "年" & Mid(wStr, 5, 2) & "月"
+            Case DateFormatType.YYYYM
+                'yyyy/M
+                wStr = Mid(wStr, 1, 4) & "年" & CInt(Mid(wStr, 5, 2)).ToString & "月"
             Case DateFormatType.YYMMDD
                 'yy年MM月dd日
                 If Len(wStr) = 14 Then wStr = Mid(wStr, 1, 8) '時間が入っていたら、日にち部分を切り取る
@@ -537,6 +549,7 @@ Public Class CmnModule
         [YYYYMD]
         [YYMD]
         [YYYYMM]
+        [YYYYM]
         [MD]
         [MMDD]
         [YYYYMMDDHHMMSS]
