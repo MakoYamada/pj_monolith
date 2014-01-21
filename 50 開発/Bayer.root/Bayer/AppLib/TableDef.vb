@@ -3388,4 +3388,61 @@
         End Class
     End Class
 
+    Public Class TaxiMeisaiCsv
+        <Serializable()> Public Structure DataStruct
+            Public TKT_KAISHA As String
+            Public TKT_KENSHU As String
+            Public TKT_NO As String
+            Public PO_NO As String
+            Public KOUENKAI_NO As String
+            Public KOUENKAI_NAME As String
+            Public JIGYOSHO As String
+            Public MR_BU As String
+            Public MR_AREA As String
+            Public MR_EIGYOSHO As String
+            Public MR_NAME As String
+            Public DR_SHISETSU_NAME As String
+            Public DR_NAME As String
+            Public SANKASHA_ID As String
+            Public DR_SANKA As String
+            Public FROM_DATE As String
+            Public TO_DATE As String
+            Public TKT_LINE_NO As String
+            Public ANS_TAXI_DATE_1 As String
+            Public ANS_TAXI_DATE_2 As String
+            Public ANS_TAXI_DATE_3 As String
+            Public ANS_TAXI_DATE_4 As String
+            Public ANS_TAXI_DATE_5 As String
+            Public ANS_TAXI_DATE_6 As String
+            Public ANS_TAXI_DATE_7 As String
+            Public ANS_TAXI_DATE_8 As String
+            Public ANS_TAXI_DATE_9 As String
+            Public ANS_TAXI_DATE_10 As String
+            Public ANS_TAXI_DATE_11 As String
+            Public ANS_TAXI_DATE_12 As String
+            Public ANS_TAXI_DATE_13 As String
+            Public ANS_TAXI_DATE_14 As String
+            Public ANS_TAXI_DATE_15 As String
+            Public ANS_TAXI_DATE_16 As String
+            Public ANS_TAXI_DATE_17 As String
+            Public ANS_TAXI_DATE_18 As String
+            Public ANS_TAXI_DATE_19 As String
+            Public ANS_TAXI_DATE_20 As String
+            Public TKT_USED_DATE As String
+            Public TKT_ENTA As String
+            Public ACCOUNT_CD As String
+            Public COST_CENTER As String
+            Public INTERNAL_ORDER As String
+            Public ZETIA_CD As String
+            Public TKT_URIAGE As String
+            Public TKT_SEISAN_FEE As String
+            Public SEISAN_KINGAKU As String
+            Public TKT_HAKKO_FEE As String
+            Public TOTAL_KINGAKU As String
+            Public TKT_SEIKYU_YM As String
+            Public TKT_VOID As String
+            Public TKT_MIKETSU As String
+        End Structure
+    End Class
+
 End Class
