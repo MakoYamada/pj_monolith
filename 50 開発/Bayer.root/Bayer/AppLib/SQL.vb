@@ -953,7 +953,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function SapCsvMrRyohi(ByVal Joken As TableDef.Joken.DataStruct) As String
+        Public Shared Function SapCsvMrRyohi(ByVal kouenkaiNo As String, ByVal seisanNo As String) As String
             Dim strSQL As String = ""
 
             strSQL &= "SELECT"
@@ -975,8 +975,8 @@ Public Class SQL
             strSQL &= "  AND (WK1.DR_MPID = WK2.DR_MPID)"
             strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
             strSQL &= " WHERE"
-            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " WK2.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(kouenkaiNo) & "'"
+            strSQL &= " AND WK2.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(seisanNo) & "'"
             strSQL &= " GROUP BY WK2.COST_CENTER,WK2.ACCOUNT_CD,WK2.INTERNAL_ORDER,WK2.ZETIA_CD"
             strSQL &= " ORDER BY WK2.COST_CENTER"
 
@@ -5757,9 +5757,6 @@ Public Class SQL
 
             strSQL &= "SELECT"
             strSQL &= " WK_KOTSUHOTEL.COST_CENTER"
-            strSQL &= ",WK_KOTSUHOTEL.ACCOUNT_CD"
-            strSQL &= ",WK_KOTSUHOTEL.INTERNAL_ORDER"
-            strSQL &= ",WK_KOTSUHOTEL.ZETIA_CD"
             strSQL &= ",SUM(CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) AS TKT_URIAGE"
             strSQL &= " FROM"
             strSQL &= " (SELECT * FROM TBL_TAXITICKET_HAKKO"
@@ -5785,7 +5782,7 @@ Public Class SQL
             strSQL &= "  ON WK_TAXI.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO"
             strSQL &= " AND WK_TAXI.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID"
             strSQL &= " AND WK_TAXI.SEIKYU_NO_TOPTOUR = WK_KOTSUHOTEL.SEIKYU_NO_TOPTOUR"
-            strSQL &= " GROUP BY WK_KOTSUHOTEL.COST_CENTER,WK_KOTSUHOTEL.ACCOUNT_CD,WK_KOTSUHOTEL.INTERNAL_ORDER,WK_KOTSUHOTEL.ZETIA_CD"
+            strSQL &= " GROUP BY WK_KOTSUHOTEL.COST_CENTER"
             strSQL &= " ORDER BY WK_KOTSUHOTEL.COST_CENTER"
 
             Return strSQL
