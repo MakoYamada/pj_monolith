@@ -5558,6 +5558,7 @@ Public Class SQL
 
             strSQL &= "SELECT"
             strSQL &= " TBL_TAXITICKET_HAKKO.*"
+            strSQL &= ",TBL_KOUENKAI.KOUENKAI_NAME"
             strSQL &= ",TBL_KOUENKAI.FROM_DATE"
             strSQL &= ",TBL_KOUENKAI.TO_DATE"
             strSQL &= " FROM"
