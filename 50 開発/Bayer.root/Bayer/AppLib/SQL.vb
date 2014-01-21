@@ -1914,6 +1914,17 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byTKT_NO_TKT_LINE_NO(ByVal TKT_NO As String, ByVal TKT_LINE_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " TBL_KOTSUHOTEL.*"
+            strSQL &= " FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE TBL_KOTSUHOTEL.ANS_TAXI_NO_" & TKT_LINE_NO & "='" & CmnDb.SqlString(TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -5571,17 +5582,6 @@ Public Class SQL
 
             strSQL &= " ORDER BY"
             strSQL &= " TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM ASC"
-
-            Return strSQL
-        End Function
-
-        Public Shared Function byTKT_NO_TKT_LINE_NO(ByVal TKT_NO As String, ByVal TKT_LINE_NO As String) As String
-            Dim strSQL As String = ""
-
-            strSQL &= "SELECT"
-            strSQL &= " TBL_KOTSUHOTEL.*"
-            strSQL &= " FROM TBL_KOTSUHOTEL"
-            strSQL &= " WHERE TBL_KOTSUHOTEL.ANS_TAXI_NO_" & TKT_LINE_NO & "='" & CmnDb.SqlString(TKT_NO) & "'"
 
             Return strSQL
         End Function
