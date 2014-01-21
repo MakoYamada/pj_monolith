@@ -3408,26 +3408,7 @@
             Public FROM_DATE As String
             Public TO_DATE As String
             Public TKT_LINE_NO As String
-            Public ANS_TAXI_DATE_1 As String
-            Public ANS_TAXI_DATE_2 As String
-            Public ANS_TAXI_DATE_3 As String
-            Public ANS_TAXI_DATE_4 As String
-            Public ANS_TAXI_DATE_5 As String
-            Public ANS_TAXI_DATE_6 As String
-            Public ANS_TAXI_DATE_7 As String
-            Public ANS_TAXI_DATE_8 As String
-            Public ANS_TAXI_DATE_9 As String
-            Public ANS_TAXI_DATE_10 As String
-            Public ANS_TAXI_DATE_11 As String
-            Public ANS_TAXI_DATE_12 As String
-            Public ANS_TAXI_DATE_13 As String
-            Public ANS_TAXI_DATE_14 As String
-            Public ANS_TAXI_DATE_15 As String
-            Public ANS_TAXI_DATE_16 As String
-            Public ANS_TAXI_DATE_17 As String
-            Public ANS_TAXI_DATE_18 As String
-            Public ANS_TAXI_DATE_19 As String
-            Public ANS_TAXI_DATE_20 As String
+            Public ANS_TAXI_DATE As String
             Public TKT_USED_DATE As String
             Public TKT_ENTA As String
             Public ACCOUNT_CD As String
