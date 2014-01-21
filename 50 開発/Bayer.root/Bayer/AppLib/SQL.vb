@@ -338,7 +338,11 @@ Public Class SQL
                 strSQL &= "   AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_ENTA,N'')=N'N'"
             End If
             If Trim(Joken.FROM_DATE) <> "" Then
-                strSQL &= "    AND TBL_KOUENKAI.FROM_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                strSQL &= "    AND ("
+                strSQL &= "         TBL_KOUENKAI.FROM_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                strSQL &= "         OR "
+                strSQL &= "         TBL_KOUENKAI.TO_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                strSQL &= "        )"
             End If
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KOUENKAI.FROM_DATE ASC"
@@ -5503,6 +5507,64 @@ Public Class SQL
             strSQL &= " FROM TBL_TAXITICKET_HAKKO"
             strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO='" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= " AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE,'')<>''"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function TaxiMeisaiCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+            Dim strSQL_WHERE_KOUENKAI As String = ""
+            Dim strSQL_WHERE_TAXITICKET_HAKKO As String = ""
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL_WHERE_TAXITICKET_HAKKO &= " AND TBL_TAXITICKET_HAKKO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.FROM_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                strSQL_WHERE_KOUENKAI &= "      OR "
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TO_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+
+            If Trim(Joken.TKT_SEIKYU_YM) <> "" Then
+                strSQL_WHERE_TAXITICKET_HAKKO &= " AND TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM=N'" & CmnDb.SqlString(Joken.TKT_SEIKYU_YM) & "'"
+            End If
+
+            If Trim(Joken.TKT_ENTA) = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.N_Igai Then
+                strSQL_WHERE_TAXITICKET_HAKKO &= "   AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_ENTA,N'')<>N'N'"
+            ElseIf Trim(Joken.TKT_ENTA) = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.N_Only Then
+                strSQL_WHERE_TAXITICKET_HAKKO &= "   AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_ENTA,N'')=N'N'"
+            End If
+
+            strSQL &= "SELECT"
+            strSQL &= " TBL_TAXITICKET_HAKKO.*"
+            strSQL &= ",TBL_KOUENKAI.FROM_DATE"
+            strSQL &= ",TBL_KOUENKAI.TO_DATE"
+            strSQL &= " FROM"
+            strSQL &= " TBL_TAXITICKET_HAKKO"
+            strSQL &= ","
+            strSQL &= "("
+            strSQL &= " SELECT TBL_KOUENKAI_1.* FROM "
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI"
+            strSQL &= "  WHERE 1=1"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= "  ) AS TBL_KOUENKAI_1"
+            strSQL &= "  ,"
+            strSQL &= " (SELECT MAX(TIME_STAMP) AS TIME_STAMP,KOUENKAI_NO FROM TBL_KOUENKAI"
+            strSQL &= "  WHERE 1=1"
+            strSQL &= strSQL_WHERE_KOUENKAI
+            strSQL &= "  GROUP BY KOUENKAI_NO) AS TBL_KOUENKAI_2"
+            strSQL &= "  WHERE TBL_KOUENKAI_1.TIME_STAMP=TBL_KOUENKAI_2.TIME_STAMP"
+            strSQL &= "   AND TBL_KOUENKAI_1.KOUENKAI_NO=TBL_KOUENKAI_2.KOUENKAI_NO"
+            strSQL &= ") AS TBL_KOUENKAI"
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
+            strSQL &= strSQL_WHERE_TAXITICKET_HAKKO
+
+            strSQL &= " ORDER BY"
+            strSQL &= " TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM ASC"
 
             Return strSQL
         End Function
