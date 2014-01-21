@@ -174,6 +174,19 @@ Public Class MyModule
         Return wSEISAN_NO.ToString.PadLeft(14, "0"c)
     End Function
 
+    '承認年月から対象となる精算承認日の期間(FromTo)を取得
+    Public Shared Sub GetSeisanFromTo(ByVal shouninY As String, ByVal shouninM As String, ByRef strFromDate As String, ByRef strToDate As String)
+
+        Dim startDay As String = "21"
+        Dim shouninDate As Date = CDate(shouninY & "/" & shouninM & "/01")
+        Dim fromDate As Date = shouninDate.AddMonths(-1).Year.ToString & "/" & shouninDate.AddMonths(-1).Month.ToString & "/" & startDay
+
+        strFromDate = fromDate.ToString("yyyyMMdd")
+
+        strToDate = fromDate.AddMonths(1).AddDays(-1).ToString("yyyyMMdd")
+
+    End Sub
+
     'ログテーブル
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
                                          ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct, _

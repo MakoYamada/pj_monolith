@@ -905,7 +905,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function SapCsvMain(ByVal Joken As TableDef.Joken.DataStruct) As String
+        Public Shared Function SapCsvMain(ByVal fromDate As String, ByVal toDate As String) As String
             Dim strSQL As String = ""
 
             strSQL &= "SELECT"
@@ -914,7 +914,7 @@ Public Class SQL
             strSQL &= ",WK_KOUENKAI.*"
             strSQL &= " FROM"
             strSQL &= " (SELECT * FROM TBL_SEIKYU"
-            strSQL &= "  WHERE LEFT(TBL_SEIKYU.SHOUNIN_DATE,6) = N'" & CmnDb.SqlString(Joken.SHOUNIN_YM) & "'"
+            strSQL &= "  WHERE TBL_SEIKYU.SHOUNIN_DATE BETWEEN N'" & CmnDb.SqlString(fromDate) & "' AND N'" & CmnDb.SqlString(toDate) & "'"
             strSQL &= "  AND TBL_SEIKYU.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
             strSQL &= " ) WK_SEIKYU"
             strSQL &= " LEFT JOIN"

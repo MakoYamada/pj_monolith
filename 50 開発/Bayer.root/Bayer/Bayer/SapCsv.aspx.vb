@@ -37,6 +37,12 @@ Partial Public Class SapCsv
         '入力チェック
         If Not Check() Then Exit Sub
 
+        '請求書番号必須入力
+        If Not CmnCheck.IsInput(Me.SEIKYUSHO_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書番号"), Me)
+            Exit Sub
+        End If
+
         Dim SeikyuData() As TableDef.TBL_SEIKYU.DataStruct
         If GetData(SeikyuData) Then
 
@@ -97,11 +103,6 @@ Partial Public Class SapCsv
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.SEIKYUSHO_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書番号"), Me)
-            Return False
-        End If
-
         '数値
         If Not CmnCheck.IsNumberOnly(Me.JokenSHOUNIN_Y) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("承認年月(年)"), Me)
@@ -134,10 +135,11 @@ Partial Public Class SapCsv
 
         ReDim CsvData(wCnt)
 
-        Dim Joken As TableDef.Joken.DataStruct
-        Joken.SHOUNIN_YM = Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text.PadLeft(2, "0"c)
+        Dim fromDate As String = ""
+        Dim toDate As String = ""
+        MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text, fromDate, toDate)
 
-        strSQL = SQL.TBL_SEIKYU.SapCsvMain(Joken)
+        strSQL = SQL.TBL_SEIKYU.SapCsvMain(fromDate, toDate)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
