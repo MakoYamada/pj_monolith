@@ -231,11 +231,14 @@ Partial Public Class SapCsv
             SetTaxiRecord(SeikyuData(wCnt), csvData, rowCnt, lngTotalKingaku, strSapZeiCd, MyBase.DbConnection, isTopTour)
         Next
 
+        Dim toDate As String = ""
+        MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text, "", toDate)
+
         '明細行1行目
         rowCnt = 2
         csvData(rowCnt).KUBUN = "X"
         csvData(rowCnt).KAISHA_CD = "0094"
-        csvData(rowCnt).SEIKYU_YMD = AppModule.GetName_SAP_SEIKYU_YMD(CmnModule.GetLastDateOfMonth(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text))
+        csvData(rowCnt).SEIKYU_YMD = AppModule.GetName_SAP_SEIKYU_YMD(toDate)
         csvData(rowCnt).DENPYO_TYPE = "KR"
         csvData(rowCnt).SEIKYUSHO_NO = Me.SEIKYUSHO_NO.Text
         csvData(rowCnt).DOC_HTEXT = "Top tour"

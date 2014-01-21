@@ -914,19 +914,12 @@ Public Class SQL
 
             strSQL &= "SELECT"
             strSQL &= " WK_SEIKYU.*"
-            strSQL &= ",WK_SEIKYU_CNT.ROW_NO"
             strSQL &= ",WK_KOUENKAI.*"
             strSQL &= " FROM"
             strSQL &= " (SELECT * FROM TBL_SEIKYU"
             strSQL &= "  WHERE TBL_SEIKYU.SHOUNIN_DATE BETWEEN N'" & CmnDb.SqlString(fromDate) & "' AND N'" & CmnDb.SqlString(toDate) & "'"
             strSQL &= "  AND TBL_SEIKYU.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
             strSQL &= " ) WK_SEIKYU"
-            strSQL &= " LEFT JOIN"
-            strSQL &= "  (SELECT KOUENKAI_NO,SEIKYU_NO_TOPTOUR"
-            strSQL &= "   ,ROW_NUMBER() OVER( PARTITION BY KOUENKAI_NO ORDER BY SEIKYU_NO_TOPTOUR) ROW_NO"
-            strSQL &= "   FROM TBL_SEIKYU) WK_SEIKYU_CNT"
-            strSQL &= " ON WK_SEIKYU.KOUENKAI_NO = WK_SEIKYU_CNT.KOUENKAI_NO"
-            strSQL &= " AND WK_SEIKYU.SEIKYU_NO_TOPTOUR = WK_SEIKYU_CNT.SEIKYU_NO_TOPTOUR"
             strSQL &= " LEFT JOIN"
             strSQL &= "  (SELECT "
             strSQL &= "    WK1.KOUENKAI_NO"
@@ -948,7 +941,7 @@ Public Class SQL
             strSQL &= "       WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
             strSQL &= "      )WK_KOUENKAI"
             strSQL &= " ON WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " ORDER BY WK_SEIKYU.KOUENKAI_NO,WK_SEIKYU.SEIKYU_NO_TOPTOUR"
+            strSQL &= " ORDER BY WK_SEIKYU.KOUENKAI_NO,WK_SEIKYU.SHIHARAI_NO"
 
             Return strSQL
         End Function
