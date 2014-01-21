@@ -3408,6 +3408,7 @@
             Public FROM_DATE As String
             Public TO_DATE As String
             Public TKT_LINE_NO As String
+            Public ANS_TAXI_DATE As String
             Public ANS_TAXI_DATE_1 As String
             Public ANS_TAXI_DATE_2 As String
             Public ANS_TAXI_DATE_3 As String
