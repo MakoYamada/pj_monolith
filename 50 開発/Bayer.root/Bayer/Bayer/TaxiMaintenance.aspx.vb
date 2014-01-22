@@ -52,6 +52,7 @@ Partial Public Class TaxiMaintenance
 
         'マスターページ設定
         With Me.Master
+            .DispTaxiMenu = True
             .PageTitle = "タクチケメンテナンス一覧"
         End With
 

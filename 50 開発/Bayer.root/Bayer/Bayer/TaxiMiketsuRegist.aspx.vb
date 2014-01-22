@@ -32,6 +32,7 @@ Partial Public Class TaxiMiketsuRegist
             .PageTitle = "未決登録"
             .HideLogout = False
             .HideMenu = False
+            .DispTaxiMenu = True
         End With
     End Sub
 

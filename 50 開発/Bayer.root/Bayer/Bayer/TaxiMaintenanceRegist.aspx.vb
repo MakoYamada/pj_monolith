@@ -31,8 +31,8 @@ Partial Public Class TaxiMaintenanceRegist
         With Me.Master
             .PageTitle = "タクチケメンテナンス"
             .HideLogout = False
-
             .HideMenu = False
+            .DispTaxiMenu = True
         End With
     End Sub
 

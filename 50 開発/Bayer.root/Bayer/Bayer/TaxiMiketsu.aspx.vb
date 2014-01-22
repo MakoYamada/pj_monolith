@@ -175,6 +175,7 @@ Partial Public Class TaxiMiketsu
 
         'マスターページ設定
         With Me.Master
+            .DispTaxiMenu = True
             .PageTitle = "未決一覧"
         End With
 
