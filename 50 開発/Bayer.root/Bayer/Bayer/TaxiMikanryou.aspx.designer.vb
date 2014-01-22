@@ -16,58 +16,22 @@ Option Explicit On
 Partial Public Class TaxiMikanryou
 
     '''<summary>
-    '''JokenFROM_DATE_YYYY コントロール。
+    '''Joken_YYYY コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenFROM_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Joken_YYYY As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenFROM_DATE_MM コントロール。
+    '''Joken_MM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenFROM_DATE_MM As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenFROM_DATE_DD コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenFROM_DATE_DD As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTO_DATE_YYYY コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTO_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTO_DATE_MM コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTO_DATE_MM As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTO_DATE_DD コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Joken_MM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TrNoData コントロール。

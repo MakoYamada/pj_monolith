@@ -17,22 +17,10 @@
                                         実施日
                                     </td>
                                     <td>
-							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
+							            <asp:TextBox ID="Joken_YYYY" runat="server" Width="50px" MaxLength="4" 
                                             TabIndex="1"></asp:TextBox>年
-							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="2"></asp:TextBox>月
-
-							            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="3"></asp:TextBox>日
-							            ～
-
-							            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="4"></asp:TextBox>年
-							            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="5"></asp:TextBox>月
-
-							            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="6"></asp:TextBox>日
+							            <asp:TextBox ID="Joken_MM" runat="server" Width="30px" MaxLength="2" 
+                                            TabIndex="2"></asp:TextBox>月&nbsp;
                                     </td>
                                 </tr>
                             </table>
