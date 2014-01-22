@@ -47,4 +47,5 @@ Public Class URL
     Public Shared TaxiMiketsu As String = WebConfig.Site.URL & "TaxiMiketsu.aspx"
     Public Shared TaxiMiketsuRegist As String = WebConfig.Site.URL & "TaxiMiketsuRegist.aspx"
     Public Shared TaxiMeisaiCsv As String = WebConfig.Site.URL & "TaxiMeisaiCsv.aspx"
+    Public Shared TaxiMikanryou As String = WebConfig.Site.URL & "TaxiMikanryou.aspx"
 End Class

@@ -90,4 +90,8 @@ Partial Public Class TaxiMenu
         Response.Redirect(URL.TaxiMeisaiCsv)
     End Sub
 
+    '[精算未完了リスト]
+    Protected Sub BtnTaxiMiseisan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMiseisan.Click
+        Response.Redirect(URL.TaxiMikanryou)
+    End Sub
 End Class
