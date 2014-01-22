@@ -111,7 +111,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="16" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -187,9 +187,9 @@
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnCsv2" runat="server" Text="タクチケメンテナンスCSV" Width="170px" 
-                                CssClass="Button" tabindex="15"/>
+                                CssClass="Button" tabindex="16"/>
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="16" />
+                                CssClass="Button" TabIndex="17" />
                         </td>
                     </tr>
                 </table> 
