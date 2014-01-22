@@ -340,8 +340,8 @@ Public Class SQL
             If Trim(Joken.FROM_DATE) <> "" Then
                 strSQL &= "    AND ("
                 strSQL &= "         TBL_KOUENKAI.FROM_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
-                strSQL &= "         OR "
-                strSQL &= "         TBL_KOUENKAI.TO_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                'strSQL &= "         OR "
+                'strSQL &= "         TBL_KOUENKAI.TO_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
                 strSQL &= "        )"
             End If
             strSQL &= " ORDER BY"
@@ -5535,8 +5535,8 @@ Public Class SQL
             If Trim(Joken.FROM_DATE) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND ("
                 strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.FROM_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
-                strSQL_WHERE_KOUENKAI &= "      OR "
-                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TO_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
+                'strSQL_WHERE_KOUENKAI &= "      OR "
+                'strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TO_DATE LIKE N'" & CmnDb.SqlString(Joken.FROM_DATE) & "%'"
                 strSQL_WHERE_KOUENKAI &= ")"
             End If
 
