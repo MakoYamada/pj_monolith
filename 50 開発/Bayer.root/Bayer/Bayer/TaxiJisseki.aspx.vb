@@ -36,6 +36,7 @@ Partial Public Class TaxiJisseki
 
         'マスターページ設定
         With Me.Master
+            .DispTaxiMenu = True
             .PageTitle = "タクチケ実績データ取込"
         End With
 

@@ -28,6 +28,7 @@ Partial Public Class TaxiNouhinTorikomi
 
         'マスターページ設定
         With Me.Master
+            .DispTaxiMenu = True
             .PageTitle = "タクチケ納品データ取込"
         End With
 
