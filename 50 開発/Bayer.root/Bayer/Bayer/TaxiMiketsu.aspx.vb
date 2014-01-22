@@ -657,7 +657,7 @@ Partial Public Class TaxiMiketsu
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiMiketsu.csv")
-            Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-JIS")
 
             Response.Write(MyModule.Csv.TaxiMiketsu(TBL_TAXITICKET_HAKKO))
             Response.End()

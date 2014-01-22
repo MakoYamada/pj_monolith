@@ -193,7 +193,9 @@ Partial Public Class TaxiMaintenance
 
             e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
             e.Row.Cells(CellIndex.TKT_USED_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_USED_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD).Substring(0, 7)
+            If e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text.Trim <> "" AndAlso e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text.Trim <> "&nbsp;" Then
+                e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD).Substring(0, 7)            
+            End If
             If e.Row.Cells(CellIndex.TKT_VOID).Text = CmnConst.Flag.On Then
                 e.Row.Cells(CellIndex.VOID_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text.Substring(0, 8), CmnModule.DateFormatType.YYYYMMDD)
             Else
@@ -259,7 +261,7 @@ Partial Public Class TaxiMaintenance
 
     '[戻る]
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
-        Response.Redirect(URL.Menu)
+        Response.Redirect(URL.TaxiMenu)
     End Sub
 
     '入力チェック
@@ -344,7 +346,7 @@ Partial Public Class TaxiMaintenance
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiMaintenance.csv")
-            Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-JIS")
 
             Response.Write(MyModule.Csv.TaxiMaintenance(TBL_TAXITICKET_HAKKO))
             Response.End()
