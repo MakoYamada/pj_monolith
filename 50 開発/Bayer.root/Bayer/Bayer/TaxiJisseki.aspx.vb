@@ -44,6 +44,9 @@ Partial Public Class TaxiJisseki
 
     '画面項目 初期化
     Private Sub InitControls()
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
+
         'クリア
         CmnModule.ClearAllControl(Me)
 
@@ -123,19 +126,29 @@ Partial Public Class TaxiJisseki
 
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
+        Dim ErrorMessage As String = String.Empty
 
         While Not parser.EndOfData
             Dim fileData As String() = parser.ReadFields() ' 1行読み込み
             rowCnt += 1
 
-            If CheckInput(fileData, strFileName, rowCnt.ToString) Then
+            If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
                 'タクチケ発行テーブル更新
-                insCnt += UpdateTable(fileData, strFileName, rowCnt)
+                insCnt += UpdateTable(fileData, strFileName, rowCnt, ErrorMessage)
             End If
         End While
 
         'インスタンス開放
         parser.Dispose()
+
+        If Trim(ErrorMessage) <> "" Then
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Return True
+        End If
 
     End Function
 
@@ -149,34 +162,34 @@ Partial Public Class TaxiJisseki
     End Function
 
     'CSVデータ内容チェック
-    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String) As Boolean
+    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByRef ErrorMessage As String) As Boolean
 
         Try
             '項目数チェック
             If fileData.Count <> COL_COUNT Then
-                Throw New Exception("項目数が不正です。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
             End If
 
             '必須入力チェック
             If fileData(COL_NO.TAXI_KAISHA).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.TAXI_KAISHA & "がセットされていません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TAXI_KAISHA & "がセットされていません。" & vbNewLine
             End If
 
             If fileData(COL_NO.TKT_NO).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.TKT_NO & "がセットされていません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_NO & "がセットされていません。" & vbNewLine
             End If
 
             If fileData(COL_NO.USED_DATE).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.USED_DATE & "がセットされていません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.USED_DATE & "がセットされていません。" & vbNewLine
             End If
 
             If fileData(COL_NO.URIAGE).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.URIAGE & "がセットされていません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.URIAGE & "がセットされていません。" & vbNewLine
             End If
 
             'タクシー会社チェック
             If fileData(COL_NO.TAXI_KAISHA).Trim <> Me.RdoTaxi.SelectedValue Then
-                Throw New Exception(COL_NAME.USED_DATE & "がタクシー会社と一致しません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & fileData(COL_NO.TAXI_KAISHA).Trim & "がタクシー会社と一致しません。" & vbNewLine
             End If
 
         Catch ex As Exception
@@ -191,13 +204,13 @@ Partial Public Class TaxiJisseki
     End Function
 
     'データ登録
-    Private Function UpdateTable(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long) As Integer
+    Private Function UpdateTable(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As Integer
 
         Dim strSQL As String = ""
         Dim insCnt As Integer = 0
         Dim TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
 
-        TBL_TAXITICKET_HAKKO = SetUpdateData(fileData, strFileName, rowCnt)
+        TBL_TAXITICKET_HAKKO = SetUpdateData(fileData, strFileName, rowCnt, ErrorMessage)
         Try
             strSQL = SQL.TBL_TAXITICKET_HAKKO.Update(TBL_TAXITICKET_HAKKO)
             insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
@@ -218,7 +231,7 @@ Partial Public Class TaxiJisseki
     End Function
 
     '登録内容をセットする
-    Private Function SetUpdateData(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long) As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+    Private Function SetUpdateData(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
         Try
             'タクチケ発行テーブル更新対象レコード取得
             If GetTaxiticketHakko(fileData(COL_NO.TAXI_KAISHA), fileData(COL_NO.TKT_NO)) Then
@@ -331,6 +344,7 @@ Partial Public Class TaxiJisseki
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
             Dim strErrMsg As String = strFileName & "【" & rowCnt & "行目】" & ex.Message
+            ErrorMessage &= strErrMsg & vbNewLine
             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
         End Try
 
@@ -392,6 +406,6 @@ Partial Public Class TaxiJisseki
         TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
         TBL_TAXITICKET_HAKKO.TKT_MIKETSU = "0"
-        TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM = Now.ToString("yyyyMM")
+        'TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM = Now.ToString("yyyyMM")
     End Sub
 End Class
