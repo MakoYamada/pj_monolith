@@ -161,112 +161,132 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
-                        <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者ID" Visible="False" />
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日FROM" Visible="False" />
-                        <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" Visible="False" />
-                        <asp:BoundField DataField="VOID" HeaderText="VOID" Visible="False" />
-                        <asp:BoundField DataField="UPDATE_DATE" HeaderText="更新日" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_1" HeaderText="利用日1" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_1" HeaderText="券種1" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_1" HeaderText="ﾀｸﾁｹ番号1" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_1" HeaderText="発行日1" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_1" HeaderText="備考1" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_2" HeaderText="利用日2" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_2" HeaderText="券種2" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_2" HeaderText="ﾀｸﾁｹ番号2" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_2" HeaderText="発行日2" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_2" HeaderText="備考2" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_3" HeaderText="利用日3" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_3" HeaderText="券種3" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_3" HeaderText="ﾀｸﾁｹ番号3" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_3" HeaderText="発行日3" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_3" HeaderText="備考3" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_4" HeaderText="利用日4" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_4" HeaderText="券種4" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_4" HeaderText="ﾀｸﾁｹ番号4" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_4" HeaderText="発行日4" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_4" HeaderText="備考4" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_5" HeaderText="利用日5" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_5" HeaderText="券種5" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_5" HeaderText="ﾀｸﾁｹ番号5" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_5" HeaderText="発行日5" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_5" HeaderText="備考5" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_6" HeaderText="利用日6" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_6" HeaderText="券種6" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_6" HeaderText="ﾀｸﾁｹ番号6" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_6" HeaderText="発行日6" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_6" HeaderText="備考6" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_7" HeaderText="利用日7" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_7" HeaderText="券種7" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_7" HeaderText="ﾀｸﾁｹ番号7" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_7" HeaderText="発行日7" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_7" HeaderText="備考7" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_8" HeaderText="利用日8" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_8" HeaderText="券種8" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_8" HeaderText="ﾀｸﾁｹ番号8" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_8" HeaderText="発行日8" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_8" HeaderText="備考8" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_9" HeaderText="利用日9" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_9" HeaderText="券種9" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_9" HeaderText="ﾀｸﾁｹ番号9" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_9" HeaderText="発行日9" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_9" HeaderText="備考9" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_10" HeaderText="利用日10" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_10" HeaderText="券種10" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_10" HeaderText="ﾀｸﾁｹ番号10" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_10" HeaderText="発行日10" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_10" HeaderText="備考10" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_11" HeaderText="利用日11" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_11" HeaderText="券種11" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_11" HeaderText="ﾀｸﾁｹ番号11" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_11" HeaderText="発行日11" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_11" HeaderText="備考11" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_12" HeaderText="利用日12" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_12" HeaderText="券種12" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_12" HeaderText="ﾀｸﾁｹ番号12" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_12" HeaderText="発行日12" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_12" HeaderText="備考12" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_13" HeaderText="利用日13" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_13" HeaderText="券種13" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_13" HeaderText="ﾀｸﾁｹ番号13" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_13" HeaderText="発行日13" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_13" HeaderText="備考13" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_14" HeaderText="利用日14" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_14" HeaderText="券種14" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_14" HeaderText="ﾀｸﾁｹ番号14" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_14" HeaderText="発行日14" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_14" HeaderText="備考14" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_15" HeaderText="利用日15" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_15" HeaderText="券種15" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_15" HeaderText="ﾀｸﾁｹ番号15" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_15" HeaderText="発行日15" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_15" HeaderText="備考15" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_16" HeaderText="利用日16" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_16" HeaderText="券種16" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_16" HeaderText="ﾀｸﾁｹ番号16" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_16" HeaderText="発行日16" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_16" HeaderText="備考16" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_17" HeaderText="利用日17" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_17" HeaderText="券種17" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_17" HeaderText="ﾀｸﾁｹ番号17" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_17" HeaderText="発行日17" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_17" HeaderText="備考17" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_18" HeaderText="利用日18" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_18" HeaderText="券種18" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_18" HeaderText="ﾀｸﾁｹ番号18" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_18" HeaderText="発行日18" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_18" HeaderText="備考18" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_19" HeaderText="利用日19" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_19" HeaderText="券種19" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_19" HeaderText="ﾀｸﾁｹ番号19" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_19" HeaderText="発行日19" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_19" HeaderText="備考19" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_DATE_20" HeaderText="利用日20" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_KENSHU_20" HeaderText="券種20" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_NO_20" HeaderText="ﾀｸﾁｹ番号20" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_20" HeaderText="発行日20" Visible="False" />
-                        <asp:BoundField DataField="ANS_TAXI_RMKS_20" HeaderText="備考20" Visible="False" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" />
+                        <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者ID" />
+                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日FROM" />
+                        <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" />
+                        <asp:BoundField DataField="TKT_VOID" HeaderText="VOID" />
+                        <asp:BoundField DataField="UPDATE_DATE" HeaderText="更新日" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_1" HeaderText="利用日1" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_1" HeaderText="券種1" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_1" HeaderText="ﾀｸﾁｹ番号1" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_1" HeaderText="発行Flag1" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_1" HeaderText="発行日1" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_1" HeaderText="備考1" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_2" HeaderText="利用日2" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_2" HeaderText="券種2" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_2" HeaderText="ﾀｸﾁｹ番号2" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_2" HeaderText="発行Flag2" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_2" HeaderText="発行日2" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_2" HeaderText="備考2" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_3" HeaderText="利用日3" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_3" HeaderText="券種3" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_3" HeaderText="ﾀｸﾁｹ番号3" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_3" HeaderText="発行Flag3" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_3" HeaderText="発行日3" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_3" HeaderText="備考3" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_4" HeaderText="利用日4" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_4" HeaderText="券種4" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_4" HeaderText="ﾀｸﾁｹ番号4" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_4" HeaderText="発行Flag4" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_4" HeaderText="発行日4" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_4" HeaderText="備考4" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_5" HeaderText="利用日5" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_5" HeaderText="券種5" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_5" HeaderText="ﾀｸﾁｹ番号5" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_5" HeaderText="発行Flag5" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_5" HeaderText="発行日5" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_5" HeaderText="備考5" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_6" HeaderText="利用日6" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_6" HeaderText="券種6" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_6" HeaderText="ﾀｸﾁｹ番号6" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_6" HeaderText="発行Flag6" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_6" HeaderText="発行日6" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_6" HeaderText="備考6" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_7" HeaderText="利用日7" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_7" HeaderText="券種7" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_7" HeaderText="ﾀｸﾁｹ番号7" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_7" HeaderText="発行Flag7" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_7" HeaderText="発行日7" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_7" HeaderText="備考7" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_8" HeaderText="利用日8" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_8" HeaderText="券種8" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_8" HeaderText="ﾀｸﾁｹ番号8" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_8" HeaderText="発行Flag8" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_8" HeaderText="発行日8" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_8" HeaderText="備考8" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_9" HeaderText="利用日9" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_9" HeaderText="券種9" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_9" HeaderText="ﾀｸﾁｹ番号9" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_9" HeaderText="発行Flag9" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_9" HeaderText="発行日9" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_9" HeaderText="備考9" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_10" HeaderText="利用日10" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_10" HeaderText="券種10" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_10" HeaderText="ﾀｸﾁｹ番号10" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_10" HeaderText="発行Flag10" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_10" HeaderText="発行日10" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_10" HeaderText="備考10" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_11" HeaderText="利用日11" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_11" HeaderText="券種11" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_11" HeaderText="ﾀｸﾁｹ番号11" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_11" HeaderText="発行Flag11" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_11" HeaderText="発行日11" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_11" HeaderText="備考11" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_12" HeaderText="利用日12" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_12" HeaderText="券種12" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_12" HeaderText="ﾀｸﾁｹ番号12" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_12" HeaderText="発行Flag12" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_12" HeaderText="発行日12" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_12" HeaderText="備考12" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_13" HeaderText="利用日13" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_13" HeaderText="券種13" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_13" HeaderText="ﾀｸﾁｹ番号13" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_13" HeaderText="発行Flag13" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_13" HeaderText="発行日13" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_13" HeaderText="備考13" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_14" HeaderText="利用日14" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_14" HeaderText="券種14" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_14" HeaderText="ﾀｸﾁｹ番号14" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_14" HeaderText="発行Flag14" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_14" HeaderText="発行日14" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_14" HeaderText="備考14" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_15" HeaderText="利用日15" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_15" HeaderText="券種15" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_15" HeaderText="ﾀｸﾁｹ番号15" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_15" HeaderText="発行Flag15" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_15" HeaderText="発行日15" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_15" HeaderText="備考15" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_16" HeaderText="利用日16" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_16" HeaderText="券種16" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_16" HeaderText="ﾀｸﾁｹ番号16" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_16" HeaderText="発行Flag16" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_16" HeaderText="発行日16" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_16" HeaderText="備考16" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_17" HeaderText="利用日17" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_17" HeaderText="券種17" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_17" HeaderText="ﾀｸﾁｹ番号17" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_17" HeaderText="発行Flag17" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_17" HeaderText="発行日17" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_17" HeaderText="備考17" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_18" HeaderText="利用日18" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_18" HeaderText="券種18" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_18" HeaderText="ﾀｸﾁｹ番号18" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_18" HeaderText="発行Flag18" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_18" HeaderText="発行日18" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_18" HeaderText="備考18" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_19" HeaderText="利用日19" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_19" HeaderText="券種19" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_19" HeaderText="ﾀｸﾁｹ番号19" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_19" HeaderText="発行Flag19" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_19" HeaderText="発行日19" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_19" HeaderText="備考19" />
+                        <asp:BoundField DataField="ANS_TAXI_DATE_20" HeaderText="利用日20" />
+                        <asp:BoundField DataField="ANS_TAXI_KENSHU_20" HeaderText="券種20" />
+                        <asp:BoundField DataField="ANS_TAXI_NO_20" HeaderText="ﾀｸﾁｹ番号20" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_20" HeaderText="発行Flag20" />
+                        <asp:BoundField DataField="ANS_TAXI_HAKKO_DATE_20" HeaderText="発行日20" />
+                        <asp:BoundField DataField="ANS_TAXI_RMKS_20" HeaderText="備考20" />
                     </Columns>
                 </asp:GridView>
             </td>

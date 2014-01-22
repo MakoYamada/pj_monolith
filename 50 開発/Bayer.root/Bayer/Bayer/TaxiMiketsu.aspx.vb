@@ -22,6 +22,7 @@ Partial Public Class TaxiMiketsu
         TKT_SEIKYU_YM
         VOID_DATE
         TKT_LINE_NO
+        BUTTON
         KOUENKAI_NO
         SANKASHA_ID
         FROM_DATE
@@ -287,7 +288,7 @@ Partial Public Class TaxiMiketsu
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = Sql.TBL_KOTSUHOTEL.Search(Joken, True)
+        Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Search(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -393,7 +394,9 @@ Partial Public Class TaxiMiketsu
                     e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_20).Text, CmnModule.DateFormatType.YYYYMMDD)
             End Select
             e.Row.Cells(CellIndex.TKT_USED_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_USED_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
-            e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD).Substring(0, 7)
+            If e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text.Trim <> "" AndAlso e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text.Trim <> "&nbsp;" Then
+                e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TKT_SEIKYU_YM).Text & "01", CmnModule.DateFormatType.YYYYMMDD).Substring(0, 7)
+            End If
             If e.Row.Cells(CellIndex.TKT_VOID).Text = CmnConst.Flag.On Then
                 e.Row.Cells(CellIndex.VOID_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text.Substring(0, 8), CmnModule.DateFormatType.YYYYMMDD)
             Else
@@ -406,6 +409,131 @@ Partial Public Class TaxiMiketsu
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
+            e.Row.Cells(CellIndex.SANKASHA_ID).Visible = False
+            e.Row.Cells(CellIndex.FROM_DATE).Visible = False
+            e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            e.Row.Cells(CellIndex.TKT_VOID).Visible = False
+            e.Row.Cells(CellIndex.UPDATE_DATE).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_1).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_1).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_1).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_1).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_1).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_1).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_2).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_2).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_2).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_2).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_2).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_2).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_3).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_3).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_3).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_3).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_3).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_3).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_4).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_4).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_4).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_4).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_4).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_4).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_5).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_5).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_5).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_5).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_5).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_5).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_6).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_6).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_6).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_6).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_6).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_6).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_7).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_7).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_7).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_7).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_7).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_7).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_8).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_8).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_8).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_8).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_8).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_8).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_9).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_9).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_9).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_9).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_9).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_9).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_10).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_10).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_10).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_10).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_10).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_10).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_11).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_11).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_11).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_11).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_11).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_11).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_12).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_12).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_12).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_12).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_12).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_12).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_13).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_13).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_13).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_13).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_13).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_13).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_14).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_14).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_14).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_14).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_14).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_14).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_15).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_15).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_15).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_15).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_15).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_15).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_16).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_16).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_16).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_16).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_16).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_16).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_17).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_17).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_17).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_17).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_17).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_17).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_18).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_18).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_18).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_18).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_18).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_18).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_19).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_19).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_19).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_19).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_19).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_19).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_DATE_20).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_KENSHU_20).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_NO_20).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_20).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_HAKKO_DATE_20).Visible = False
+            e.Row.Cells(CellIndex.ANS_TAXI_RMKS_20).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
@@ -454,7 +582,7 @@ Partial Public Class TaxiMiketsu
 
     '[戻る]
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
-        Response.Redirect(URL.Menu)
+        Response.Redirect(URL.TaxiMenu)
     End Sub
 
     '入力チェック
