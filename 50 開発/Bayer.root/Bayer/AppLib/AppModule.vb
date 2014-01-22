@@ -1397,6 +1397,18 @@ Public Class AppModule
 
         Return wFlag
     End Function
+    Public Shared Function IsExist(ByVal SQL As String, ByVal DbConn As System.Data.SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction) As Boolean
+        Dim wFlag As Boolean = False
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        RsData = CmnDb.Read(SQL, DbConn, DbTrans)
+        If RsData.Read() Then
+            wFlag = True
+        End If
+        RsData.Close()
+
+        Return wFlag
+    End Function
 
 #End Region
 

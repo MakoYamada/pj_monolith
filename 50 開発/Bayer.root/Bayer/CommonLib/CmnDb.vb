@@ -115,6 +115,25 @@ Public Class CmnDb
             Throw New Exception(System.Web.HttpContext.Current.Session.Item(SessionDbError))
         End Try
     End Function
+    Public Shared Function Read(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction) As SqlClient.SqlDataReader
+        Dim DbCmd As System.Data.SqlClient.SqlCommand
+        Dim RsData As SqlClient.SqlDataReader
+        If Not IsNothing(DbCmd) Then DbCmd.Dispose()
+
+        Try
+            DbOpen(DbConn)
+            DbCmd = New System.Data.SqlClient.SqlCommand(strSQL, DbConn, DbTrans)
+            RsData = DbCmd.ExecuteReader
+            DbCmd.Dispose()
+
+            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ""
+
+            Return RsData
+        Catch ex As Exception
+            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ex.Message & "    SQL：" & strSQL
+            Throw New Exception(System.Web.HttpContext.Current.Session.Item(SessionDbError))
+        End Try
+    End Function
 
     'データの有無を返す
     Public Shared Function IsExist(ByVal strSQL As String, ByVal DbConn As System.Data.SqlClient.SqlConnection) As Boolean
