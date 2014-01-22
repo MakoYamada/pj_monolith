@@ -70,58 +70,13 @@ Partial Public Class TaxiMikanryou
     Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenKOUENKAI_NO コントロール。
+    '''TrNoData コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenKOUENKAI_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTTEHAI_TANTO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTTEHAI_TANTO As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''BtnSearch コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnSearch As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnCsv1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnCsv1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnBack1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TrNoData As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
     '''LabelNoData コントロール。
@@ -133,40 +88,13 @@ Partial Public Class TaxiMikanryou
     Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''SqlDataSource1 コントロール。
+    '''BtnCsv コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
-
-    '''<summary>
-    '''GrvList コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''BtnCsv2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnCsv2 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnBack2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。
