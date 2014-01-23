@@ -20,7 +20,7 @@
 							            <asp:TextBox ID="Joken_YYYY" runat="server" Width="50px" MaxLength="4" 
                                             TabIndex="1"></asp:TextBox>年
 							            <asp:TextBox ID="Joken_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="2"></asp:TextBox>月&nbsp;
+                                            TabIndex="2"></asp:TextBox>月 以前&nbsp;
                                     </td>
                                 </tr>
                             </table>

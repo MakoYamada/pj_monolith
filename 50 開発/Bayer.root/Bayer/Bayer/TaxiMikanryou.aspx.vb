@@ -99,9 +99,7 @@ Partial Public Class TaxiMikanryou
 
         ReDim TBL_SEIKYU(wCnt)
 
-        'QQQ
-        'strSQL = SQL.TBL_SEIKYU.Mikanryou(Joken)
-        strSQL = Mikanryou(Joken)
+        strSQL = SQL.TBL_SEIKYU.Mikanryou(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -125,37 +123,19 @@ Partial Public Class TaxiMikanryou
         End If
 
         If Not CmnCheck.IsNumberOnly(Me.Joken_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(年)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(年)"), Me)
             Return False
         End If
 
         If Not CmnCheck.IsNumberOnly(Me.Joken_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日From(月)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(月)"), Me)
             Return False
         End If
 
         If CmnCheck.IsInput(Me.Joken_YYYY) AndAlso CmnCheck.IsInput(Me.Joken_MM) Then
             Dim wStr As String = StrConv(Trim(Me.Joken_YYYY.Text) & "/" & Trim(Me.Joken_MM.Text) & "/01", VbStrConv.Narrow)
             If Not IsDate(wStr) Then
-                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日From"), Me)
-                Return False
-            End If
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.Joken_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(年)"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.Joken_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日To(月)"), Me)
-            Return False
-        End If
-
-        If CmnCheck.IsInput(Me.Joken_YYYY) AndAlso CmnCheck.IsInput(Me.Joken_MM) Then
-            Dim wStr As String = StrConv(Trim(Me.Joken_YYYY.Text) & "/" & Trim(Me.Joken_MM.Text) & "/01", VbStrConv.Narrow)
-            If Not IsDate(wStr) Then
-                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日To"), Me)
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日"), Me)
                 Return False
             End If
         End If
@@ -168,7 +148,6 @@ Partial Public Class TaxiMikanryou
         If Not Check() Then Exit Sub
 
         If GetData() Then
-            Me.LabelNoData.Visible = False
 
             'CSV出力
             Response.Clear()
@@ -180,52 +159,8 @@ Partial Public Class TaxiMikanryou
             Response.Write(MyModule.Csv.Mikanryou(TBL_SEIKYU))
             Response.End()
         Else
-            Me.LabelNoData.Visible = True
+            CmnModule.AlertMessage("対象データがありません。", Me)
         End If
     End Sub
-    Public Shared Function Mikanryou(ByVal JOKEN As TableDef.Joken.DataStruct) As String
-        Dim strSQL As String = ""
 
-        strSQL &= "SELECT DISTINCT"
-        strSQL &= " WK_SEIKYU." & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
-        strSQL &= " ,WK_SEIKYU." & TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.BU
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_EIGYOSHO
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_NAME
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.FROM_DATE
-        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TO_DATE
-
-        strSQL &= " FROM"
-        strSQL &= " TBL_SEIKYU AS WK_SEIKYU"
-        strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
-        strSQL &= " WHERE"
-        strSQL &= " WK_KOUENKAI.TIME_STAMP=("
-        strSQL &= " SELECT MAX(TIME_STAMP)"
-        strSQL &= " FROM"
-        strSQL &= " TBL_KOUENKAI"
-        strSQL &= " WHERE"
-        strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
-        strSQL &= " )"
-        strSQL &= " AND"
-        strSQL &= " WK_SEIKYU.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
-
-        strSQL &= " AND"
-        strSQL &= " WK_SEIKYU."
-        strSQL &= TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
-        strSQL &= "=N'" & CmnConst.Flag.Off & "'"
-
-        strSQL &= " AND"
-        strSQL &= " WK_KOUENKAI."
-        strSQL &= TableDef.TBL_KOUENKAI.Column.TO_DATE
-        strSQL &= "<=N'" & JOKEN.TO_DATE & "'"
-
-        strSQL &= " ORDER BY"
-        strSQL &= " WK_KOUENKAI."
-        strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-
-        Return strSQL
-    End Function
 End Class
