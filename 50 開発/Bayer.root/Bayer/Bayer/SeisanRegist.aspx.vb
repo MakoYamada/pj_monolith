@@ -649,7 +649,7 @@ Partial Public Class SeisanRegist
 
         Try
             Dim strSQL As String = SQL.TBL_SEIKYU.Update_SEND_FLAG(TBL_SEIKYU(SEQ))
-            CmnDb.Execute(strSQL, MyBase.DbConnection)
+            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
         Catch ex As Exception
             MyBase.Rollback()
@@ -827,7 +827,7 @@ Partial Public Class SeisanRegist
         Dim csvJoken As TableDef.Joken.DataStruct
         csvJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
         csvJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
-        strSQL = SQL.TBL_SEIKYU.DrCsv(csvJoken)
+        strSQL = SQL.TBL_KOTSUHOTEL.DrCsv(csvJoken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -875,7 +875,7 @@ Partial Public Class SeisanRegist
         Dim csvJoken As TableDef.Joken.DataStruct
         csvJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
         csvJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
-        strSQL = SQL.TBL_SEIKYU.MrCsv(csvJoken)
+        strSQL = SQL.TBL_KOTSUHOTEL.MrCsv(csvJoken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -929,7 +929,12 @@ Partial Public Class SeisanRegist
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 '講演会番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
-                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+                Dim updateData As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+                updateData.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+                updateData.TKT_SEIKYU_YM = Me.SEISAN_YM.Text
+                updateData.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                updateData.UPDATE_USER = Session.Item(SessionDef.LoginID)
+                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO_YM(updateData)
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             Catch ex As Exception
@@ -953,8 +958,12 @@ Partial Public Class SeisanRegist
 
             Try
                 '講演会番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
-                'データ更新
-                Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+                Dim updateData As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+                updateData.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+                updateData.TKT_SEIKYU_YM = Me.SEISAN_YM.Text
+                updateData.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                updateData.UPDATE_USER = Session.Item(SessionDef.LoginID)
+                Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO_YM(updateData)
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             Catch ex As Exception
                 MyBase.Rollback()
