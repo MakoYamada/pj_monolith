@@ -1188,6 +1188,52 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Mikanryou(ByVal JOKEN As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_SEIKYU." & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
+            strSQL &= " ,WK_SEIKYU." & TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.BU
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_EIGYOSHO
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_NAME
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.FROM_DATE
+            strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TO_DATE
+
+            strSQL &= " FROM"
+            strSQL &= " TBL_SEIKYU AS WK_SEIKYU"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU."
+            strSQL &= TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
+            strSQL &= "=N'" & CmnConst.Flag.Off & "'"
+
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI."
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TO_DATE
+            strSQL &= "<=N'" & JOKEN.TO_DATE & "'"
+
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_KOUENKAI."
+            strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
