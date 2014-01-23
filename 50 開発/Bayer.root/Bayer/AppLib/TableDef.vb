@@ -319,6 +319,9 @@
             Public TO_DATE As String
             Public DANTAI_CODE As String
             Public KIKAKU_TANTO_NAME As String
+            Public BU As String
+            Public KIKAKU_TANTO_AREA As String
+            Public KIKAKU_TANTO_EIGYOSHO As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -386,6 +389,9 @@
             Public Const TO_DATE As String = "TO_DATE"
             Public Const DANTAI_CODE As String = "DANTAI_CODE"
             Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"
+            Public Const BU As String = "BU"
+            Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
+            Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "講演会番号"
@@ -452,6 +458,9 @@
             Public Const TO_DATE As String = "講演会開催日To"
             Public Const DANTAI_CODE As String = "団体コード"
             Public Const KIKAKU_TANTO_NAME As String = "担当者(企画担当者)名"
+            Public Const BU As String = "企画担当者BU"
+            Public Const KIKAKU_TANTO_AREA As String = "企画担当者エリア"
+            Public Const KIKAKU_TANTO_EIGYOSHO As String = "企画担当者営業所"
         End Class
     End Class
 

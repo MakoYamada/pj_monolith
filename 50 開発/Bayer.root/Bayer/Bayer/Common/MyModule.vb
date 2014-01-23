@@ -1377,6 +1377,35 @@ Public Class MyModule
             Return sb.ToString
         End Function
 
+        Public Shared Function Mikanryou(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct) As String
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            'ヘッダ列 必要?
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG №")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者BU")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者エリア")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者営業所")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者")))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).FROM_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).BU)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_AREA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_EIGYOSHO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                sb.Append(vbNewLine)
+            Next wCnt
+
+            Return sb.ToString
+        End Function
+
         'タクチケ関連
         '印刷用データ
         Public Class TaxiPrintCsv

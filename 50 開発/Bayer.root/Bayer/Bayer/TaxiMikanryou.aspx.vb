@@ -5,7 +5,7 @@ Imports System.IO
 Partial Public Class TaxiMikanryou
     Inherits WebBase
 
-    Private TBL_TAXITICKET_HAKKO() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+    Private TBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
     Private Joken As TableDef.Joken.DataStruct
 
     'CSV列    Private Enum CellIndex
@@ -29,7 +29,7 @@ Partial Public Class TaxiMikanryou
     End Class
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        Session.Item(SessionDef.TBL_TAXITICKET_HAKKO) = TBL_TAXITICKET_HAKKO
+        Session.Item(SessionDef.TBL_SEIKYU) = TBL_SEIKYU
         Session.Item(SessionDef.Joken) = Joken
     End Sub
 
@@ -97,15 +97,17 @@ Partial Public Class TaxiMikanryou
         Joken = Nothing
         Joken.TO_DATE = CmnModule.GetLastDateOfMonth(Me.Joken_YYYY.Text, Me.Joken_MM.Text)
 
-        ReDim TBL_TAXITICKET_HAKKO(wCnt)
+        ReDim TBL_SEIKYU(wCnt)
 
-        strSQL = SQL.TBL_SEIKYU.Search(Joken)
+        'QQQ
+        'strSQL = SQL.TBL_SEIKYU.Mikanryou(Joken)
+        strSQL = Mikanryou(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
 
-            ReDim Preserve TBL_TAXITICKET_HAKKO(wCnt)
-            TBL_TAXITICKET_HAKKO(wCnt) = AppModule.SetRsData(RsData, TBL_TAXITICKET_HAKKO(wCnt))
+            ReDim Preserve TBL_SEIKYU(wCnt)
+            TBL_SEIKYU(wCnt) = AppModule.SetRsData(RsData, TBL_SEIKYU(wCnt))
 
             wCnt += 1
         End While
@@ -175,10 +177,55 @@ Partial Public Class TaxiMikanryou
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "SeisanMikanryou.csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-JIS")
 
-            Response.Write(MyModule.Csv.TaxiMiketsu(TBL_TAXITICKET_HAKKO))
+            Response.Write(MyModule.Csv.Mikanryou(TBL_SEIKYU))
             Response.End()
         Else
             Me.LabelNoData.Visible = True
         End If
     End Sub
+    Public Shared Function Mikanryou(ByVal JOKEN As TableDef.Joken.DataStruct) As String
+        Dim strSQL As String = ""
+
+        strSQL &= "SELECT DISTINCT"
+        strSQL &= " WK_SEIKYU." & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
+        strSQL &= " ,WK_SEIKYU." & TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.BU
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_EIGYOSHO
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_NAME
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.FROM_DATE
+        strSQL &= " ,WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TO_DATE
+
+        strSQL &= " FROM"
+        strSQL &= " TBL_SEIKYU AS WK_SEIKYU"
+        strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+        strSQL &= " WHERE"
+        strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+        strSQL &= " SELECT MAX(TIME_STAMP)"
+        strSQL &= " FROM"
+        strSQL &= " TBL_KOUENKAI"
+        strSQL &= " WHERE"
+        strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+        strSQL &= " )"
+        strSQL &= " AND"
+        strSQL &= " WK_SEIKYU.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
+        strSQL &= " AND"
+        strSQL &= " WK_SEIKYU."
+        strSQL &= TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
+        strSQL &= "=N'" & CmnConst.Flag.Off & "'"
+
+        strSQL &= " AND"
+        strSQL &= " WK_KOUENKAI."
+        strSQL &= TableDef.TBL_KOUENKAI.Column.TO_DATE
+        strSQL &= "<=N'" & JOKEN.TO_DATE & "'"
+
+        strSQL &= " ORDER BY"
+        strSQL &= " WK_KOUENKAI."
+        strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+
+        Return strSQL
+    End Function
 End Class
