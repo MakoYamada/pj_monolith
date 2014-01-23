@@ -16,24 +16,6 @@ Option Explicit On
 Partial Public Class TaxiSoufujoIkkatsu
 
     '''<summary>
-    '''JokenKOUENKAI_NO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenKOUENKAI_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''JokenFROM_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
@@ -88,33 +70,6 @@ Partial Public Class TaxiSoufujoIkkatsu
     Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JokenTKT_NO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTKT_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSANKASHA_ID コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSANKASHA_ID As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTTEHAI_TANTO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTTEHAI_TANTO As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''BtnSearch コントロール。
     '''</summary>
     '''<remarks>
@@ -124,13 +79,22 @@ Partial Public Class TaxiSoufujoIkkatsu
     Protected WithEvents BtnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnCsv1 コントロール。
+    '''BtnSoufujo1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCsv1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSoufujo1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnKakuninhyo1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnKakuninhyo1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack1 コントロール。
@@ -169,13 +133,22 @@ Partial Public Class TaxiSoufujoIkkatsu
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''BtnCsv2 コントロール。
+    '''BtnSoufujo2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnCsv2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSoufujo2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnKakuninhyo2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnKakuninhyo2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack2 コントロール。
