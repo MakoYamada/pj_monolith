@@ -51,13 +51,22 @@ Partial Public Class TaxiScan
         If Not Check_File() Then Exit Sub
 
         '指定されたファイルをアップロードする
-        Dim CsvFileName As String = CmnModule.GetSysDateTime() & System.IO.Path.GetExtension(Me.FileUpload1.PostedFile.FileName)
+        Dim CsvFileName As String = CmnModule.GetSysDateTime() & "_" & System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName)
         Dim CsvPath As String
         CsvPath = WebConfig.Site.SCAN_CSV & CsvFileName
         Me.FileUpload1.PostedFile.SaveAs(CsvPath)
 
         'ファイル内容チェック
-        If Not Check_Csv(CsvPath) Then Exit Sub
+        If Not Check_Csv(CsvPath) Then
+            'バックアップ作成
+            System.IO.File.Move(CsvPath, WebConfig.Site.SCAN_CSV_BK & CsvFileName)
+            '作業用に保存したファイルを削除
+            Try
+                System.IO.File.Delete(CsvPath)
+            Catch ex As Exception
+            End Try
+            Exit Sub
+        End If
 
         'ログ登録
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "アップロードファイル：" & Me.FileUpload1.PostedFile.FileName, MyBase.DbConnection)
