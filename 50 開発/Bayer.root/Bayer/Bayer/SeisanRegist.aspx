@@ -10,6 +10,8 @@
                             <table border="0" cellpadding="2" cellspacing="0" style="border-collapse: collapse; margin-bottom: 5px;" width="100%">
                                 <tr align="right">
                                     <td colspan="3">
+                                        <asp:Button ID="BtnLockCancel" runat="server" Width="80px" Text="解除" 
+                                            CssClass="Button" BackColor="#ececec" />&nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="印刷" 
                                             CssClass="Button" BackColor="#ececec" />
 							            <asp:Button ID="BtnCancel1" runat="server" Width="130px" Text="戻る" 
@@ -447,17 +449,17 @@
 				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
 				    <tr style="height: 36px;">
 				        <td nowrap="nowrap" align="center">
-					        <asp:Button ID="BtnDrCsv" runat="server" Width="180px" Text="参加者一覧CSV作成" 
+					        <asp:Button ID="BtnDrCsv" runat="server" Width="200px" Text="参加者一覧CSV作成" 
                                 CssClass="Button" BackColor="#ececec" />
-                            <asp:Button ID="BtnDrCsvHid" runat="server" Width="25px" Text="" style="visibility:hidden"
+                            <asp:Button ID="BtnDrCsvHid" runat="server" Width="10px" Text="" style="visibility:hidden"
                                 CssClass="Button" />
-					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					        <asp:Button ID="BtnMrCsv" runat="server" Width="180px" Text="MR一覧CSV作成" 
+					        &nbsp;
+					        <asp:Button ID="BtnMrCsv" runat="server" Width="200px" Text="MR一覧CSV作成" 
                                 CssClass="Button" BackColor="#ececec" />
-                            <asp:Button ID="BtnMrCsvHid" runat="server" Width="25px" Text="" style="visibility:hidden"
+                            <asp:Button ID="BtnMrCsvHid" runat="server" Width="10px" Text="" style="visibility:hidden"
                                 CssClass="Button" />
-					        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					        <asp:Button ID="BtnTaxiCsv" runat="server" Width="180px" Text="タクチケ精算データCSV作成" 
+					        &nbsp;
+					        <asp:Button ID="BtnTaxiCsv" runat="server" Width="200px" Text="タクチケ精算データCSV作成" 
                                 CssClass="Button" BackColor="#ececec" />					        
 					        
 					    </td>

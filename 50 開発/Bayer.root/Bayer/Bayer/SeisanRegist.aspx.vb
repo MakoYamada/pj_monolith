@@ -3,6 +3,7 @@ Imports AppLib
 Partial Public Class SeisanRegist
     Inherits WebBase
 
+    Private MS_USER As TableDef.MS_USER.DataStruct
     Private Joken As TableDef.Joken.DataStruct
     Private TBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
     Private SEQ As Integer
@@ -44,6 +45,12 @@ Partial Public Class SeisanRegist
 
     'セッションを変数に格納
     Private Function SetSession() As Boolean
+        Try
+            MS_USER = Session.Item(SessionDef.MS_USER)
+            If IsNothing(MS_USER) Then Return False
+        Catch ex As Exception
+            Return False
+        End Try
         Try
             Joken = Session.Item(SessionDef.Joken)
         Catch ex As Exception
@@ -106,6 +113,7 @@ Partial Public Class SeisanRegist
 
         AppModule.SetDropDownList_SEND_FLAG(Me.SEND_FLAG)
         CmnModule.SetEnabled(Me.SEND_FLAG, False)
+        CmnModule.SetEnabled(Me.BtnLockCancel, False)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -176,6 +184,28 @@ Partial Public Class SeisanRegist
         Me.MR_JR.Text = TBL_SEIKYU(SEQ).MR_JR
         Me.MR_HOTEL.Text = TBL_SEIKYU(SEQ).MR_HOTEL
         Me.MR_HOTEL_TOZEI.Text = TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI
+
+        'ボタン制御
+        If MS_USER.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
+            Me.BtnLockCancel.Visible = True
+        Else
+            Me.BtnLockCancel.Visible = False
+        End If
+
+        Select Case Me.SEND_FLAG.SelectedValue
+            Case AppConst.SEND_FLAG.Code.Mi
+                CmnModule.SetEnabled(Me.BtnLockCancel, False)
+                CmnModule.SetEnabled(Me.BtnSubmit, True)
+                CmnModule.SetEnabled(Me.BtnNozomi, True)
+            Case AppConst.SEND_FLAG.Code.Taisho
+                CmnModule.SetEnabled(Me.BtnLockCancel, False)
+                CmnModule.SetEnabled(Me.BtnSubmit, False)
+                CmnModule.SetEnabled(Me.BtnNozomi, False)
+            Case AppConst.SEND_FLAG.Code.Sumi
+                CmnModule.SetEnabled(Me.BtnLockCancel, True)
+                CmnModule.SetEnabled(Me.BtnSubmit, False)
+                CmnModule.SetEnabled(Me.BtnNozomi, False)
+        End Select
     End Sub
 
     Private Sub CalculateKingaku()
@@ -487,6 +517,44 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
 
+    'DB登録処理
+    Private Function ExecuteTransaction() As Boolean
+
+        If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                            TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                            MyBase.DbConnection) Then
+            '更新
+            Return UpdateData()
+        Else
+            '新規登録
+            Return InsertData()
+        End If
+
+    End Function
+
+    'データ新規登録
+    Private Function InsertData() As Boolean
+        MyBase.BeginTransaction()
+        Try
+            'データ登録
+            Dim strSQL As String = SQL.TBL_SEIKYU.Insert(TBL_SEIKYU(SEQ))
+            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            MyBase.Commit()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), True, "", MyBase.DbConnection)
+
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+        End Try
+
+        Return True
+    End Function
+
     'データ更新
     Private Function UpdateData() As Boolean
         MyBase.BeginTransaction()
@@ -499,7 +567,6 @@ Partial Public Class SeisanRegist
             'ログ登録
             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), True, "", MyBase.DbConnection)
 
-            Return True
         Catch ex As Exception
             MyBase.Rollback()
 
@@ -531,16 +598,15 @@ Partial Public Class SeisanRegist
         If Not Check() Then Exit Sub
 
         If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
-            'TODO:要確認
-            CmnModule.AlertMessage("先に参加者一覧CSVまたはMR一覧CSVを出力してください。", Me)
-            Exit Sub
+            '自動採番
+            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
         End If
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Mi)
 
         'データ更新
-        If UpdateData() Then
+        If ExecuteTransaction() Then
             Response.Redirect(URL.SeisanRegist & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
     End Sub
@@ -557,18 +623,44 @@ Partial Public Class SeisanRegist
         If Not Check() Then Exit Sub
 
         If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
-            'TODO:要確認
-            CmnModule.AlertMessage("先に参加者一覧CSVまたはMR一覧CSVを出力してください。", Me)
-            Exit Sub
+            '自動採番
+            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
         End If
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Taisho)
 
         'データ更新
-        If UpdateData() Then
+        If ExecuteTransaction() Then
             Response.Redirect(URL.SeisanRegist & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
+    End Sub
+
+    '[解除]
+    Protected Sub BtnLockCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnLockCancel.Click
+
+        '送信フラグを「未送信」に戻す
+        TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
+        TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
+        TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
+
+        MyBase.BeginTransaction()
+
+        Try
+            Dim strSQL As String = SQL.TBL_SEIKYU.Update_SEND_FLAG(TBL_SEIKYU(SEQ))
+            CmnDb.Execute(strSQL, MyBase.DbConnection)
+            MyBase.Commit()
+        Catch ex As Exception
+            MyBase.Rollback()
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+        End Try
+
+        'ログ登録
+        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), True, "", MyBase.DbConnection)
+        '自画面へ遷移
+        Response.Redirect(URL.SeisanRegist)
     End Sub
 
     '[印刷]
@@ -596,9 +688,7 @@ Partial Public Class SeisanRegist
 
     '[参加者一覧CSV作成]
     Protected Sub BtnDrCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnDrCsv.Click
-        If Not FixSeikyuNo() Then
-            Exit Sub
-        End If
+        If Not FixSeikyuNo() Then Exit Sub
 
         '非表示ボタンをクリック(画面再表示の為)
         Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType, "click", "<script language=javascript>document.getElementById('" + BtnDrCsvHid.ClientID + "').click();</script>")
@@ -609,9 +699,8 @@ Partial Public Class SeisanRegist
 
     '[MR一覧CSV作成]
     Protected Sub BtnMrCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMrCsv.Click
-        If Not FixSeikyuNo() Then
-            Exit Sub
-        End If
+        If Not FixSeikyuNo() Then Exit Sub
+
         '非表示ボタンをクリック(画面再表示の為)
         Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType, "click", "<script language=javascript>document.getElementById('" + BtnMrCsvHid.ClientID + "').click();</script>")
     End Sub
@@ -625,47 +714,85 @@ Partial Public Class SeisanRegist
         OutputTaxiCsv()
     End Sub
 
-    '請求番号採番、精算番号を交通宿泊データに登録、請求データ作成
+    '交通宿泊テーブルに精算番号を登録
     Private Function FixSeikyuNo() As Boolean
 
+        If Me.SEND_FLAG.SelectedValue <> AppConst.SEND_FLAG.Code.Mi Then
+            'データ更新処理は行わない
+            Return True
+        End If
+
         '入力チェック
-        If Not Check() Then Exit Function
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        '必須入力
+        If Not CmnCheck.IsInput(Me.KOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO), Me)
+            Return False
+        End If
 
         If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
 
+            Dim kensakuJoken As TableDef.Joken.DataStruct
+            kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+            If Not AppModule.IsExist(SQL.TBL_KOTSUHOTEL.DrCsvCheck(kensakuJoken), MyBase.DbConnection) Then
+                CmnModule.AlertMessage("対象データがありません。", Me)
+                Return False
+            End If
+
+            '自動採番
+            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+
+            MyBase.BeginTransaction()
+
             Try
-                '自動採番
-                Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
-
-                MyBase.BeginTransaction()
-
-                '講演会番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
-                'データ更新
-                Dim strSQL As String = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
-                Dim cnt As Integer = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-
-                ''TODO:更新対象データがないときは？
-                'If cnt = 0 Then
-                '    Exit Function
-                'End If
-
-                '請求データを登録する
-                '入力値を取得
-                GetValue(AppConst.SEND_FLAG.Code.Mi)
-
-                'データ登録
-                strSQL = SQL.TBL_SEIKYU.Insert(TBL_SEIKYU(SEQ))
+                '請求データ(キー項目と送信フラグのみ)を登録する
+                TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
+                TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
+                TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
+                TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
+                Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
+                '講演会番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
+                strSQL = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+                CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             Catch ex As Exception
                 MyBase.Rollback()
 
-                'エラーメッセージ
-                Return False
+                'ログ登録
+                MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+                Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
             End Try
-
             MyBase.Commit()
+        Else
+            Dim kensakuJoken As TableDef.Joken.DataStruct
+            kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+            kensakuJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+            If Not AppModule.IsExist(SQL.TBL_KOTSUHOTEL.DrCsvCheck(kensakuJoken), MyBase.DbConnection) Then
+                CmnModule.AlertMessage("対象データがありません。", Me)
+                Return False
+            End If
 
+            MyBase.BeginTransaction()
+
+            Try
+                '講演会番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
+                Dim strSQL As String = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+                CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            Catch ex As Exception
+                MyBase.Rollback()
+
+                'ログ登録
+                MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+                Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+            End Try
+            MyBase.Commit()
         End If
 
         Return True
@@ -770,31 +897,74 @@ Partial Public Class SeisanRegist
     'タクチケ発行テーブルに請求番号を登録
     Private Function UpdateTaxiData() As Boolean
 
-        '入力チェック
-        If Not Check() Then Exit Function
-
-        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
-            'TODO:要確認
-            CmnModule.AlertMessage("先に参加者一覧CSVまたはMR一覧CSVを出力してください。", Me)
-            Exit Function
+        If Me.SEND_FLAG.SelectedValue <> AppConst.SEND_FLAG.Code.Mi Then
+            'データ更新処理は行わない
+            Return True
         End If
 
-        Try
+        '入力チェック
+        If Not Check() Then Return False
+
+        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+            Dim kensakuJoken As TableDef.Joken.DataStruct
+            kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+            If Not AppModule.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanCsvCheck(kensakuJoken), MyBase.DbConnection) Then
+                CmnModule.AlertMessage("対象データがありません。", Me)
+                Return False
+            End If
+
+            '自動採番
+            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+
             MyBase.BeginTransaction()
 
-            '講演会番号をキーにタクチケ発行テーブルに請求番号を登録(請求番号未設定のデータのみ)
-            'データ更新
-            Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
-            Dim cnt As Integer = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            Try
+                '請求データ(キー項目と送信フラグのみ)を登録する
+                TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
+                TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
+                TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
+                TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
+                Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
+                CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-        Catch ex As Exception
-            MyBase.Rollback()
+                '講演会番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
+                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+                CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-            'エラーメッセージ
-            Return False
-        End Try
+            Catch ex As Exception
+                MyBase.Rollback()
 
-        MyBase.Commit()
+                'ログ登録
+                MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+                Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+            End Try
+            MyBase.Commit()
+        Else
+            Dim kensakuJoken As TableDef.Joken.DataStruct
+            kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+            kensakuJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+            If Not AppModule.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanCsvCheck(kensakuJoken), MyBase.DbConnection) Then
+                CmnModule.AlertMessage("対象データがありません。", Me)
+                Return False
+            End If
+
+            MyBase.BeginTransaction()
+
+            Try
+                '講演会番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
+                'データ更新
+                Dim strSQL As String = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
+                CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            Catch ex As Exception
+                MyBase.Rollback()
+
+                'ログ登録
+                MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+                Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+            End Try
+            MyBase.Commit()
+        End If
 
         Return True
     End Function
@@ -844,4 +1014,5 @@ Partial Public Class SeisanRegist
 
         Return True
     End Function
+
 End Class
