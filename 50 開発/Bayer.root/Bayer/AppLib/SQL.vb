@@ -1339,6 +1339,31 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function InsertSEIKYU_NO(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_SEIKYU"
+            strSQL &= " (" & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_USER
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.INPUT_USER) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Update(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -2008,6 +2033,28 @@ Public Class SQL
             strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_18='" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_19='" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_20='" & CmnDb.SqlString(TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function DrCsvCheck(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " *"
+            strSQL &= " FROM TBL_KOTSUHOTEL TKH"
+            strSQL &= " WHERE"
+            strSQL &= " TKH.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+
+            If Trim(Joken.SEIKYU_NO_TOPTOUR) = "" Then
+                strSQL &= " AND RTRIM(ISNULL(TKH.SEIKYU_NO_TOPTOUR,N'')) = N''"
+            Else
+                strSQL &= " AND "
+                strSQL &= " (TKH.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+                strSQL &= "   OR "
+                strSQL &= "  RTRIM(ISNULL(TKH.SEIKYU_NO_TOPTOUR,N'')) = N''"
+                strSQL &= " )"
+            End If
 
             Return strSQL
         End Function
@@ -5776,6 +5823,123 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function TaxiSeisanCsvCheck(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT * FROM"
+            strSQL &= " TBL_TAXITICKET_HAKKO TTH"
+            strSQL &= " WHERE"
+            strSQL &= " TTH.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND ISNULL(TTH.TKT_URIAGE,N'') <> N''"
+            strSQL &= " AND ISNULL(TTH.TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
+
+            If Trim(Joken.SEIKYU_NO_TOPTOUR) = "" Then
+                strSQL &= " AND RTRIM(ISNULL(TTH.SEIKYU_NO_TOPTOUR,N'')) = N''"
+            Else
+                strSQL &= " AND "
+                strSQL &= " (TTH.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+                strSQL &= "   OR "
+                strSQL &= "  RTRIM(ISNULL(TTH.SEIKYU_NO_TOPTOUR,N'')) = N''"
+                strSQL &= " )"
+            End If
+
+            Return strSQL
+        End Function
+
+        Public Shared Function TaxiSeisanCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " CASE ISNULL(TTH.TKT_ENTA,N'')"
+            strSQL &= "  WHEN N'' THEN '非課税'"
+            strSQL &= "  WHEN N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka & "' THEN '課税'"
+            strSQL &= "  ELSE N'' END AS KAZEI_KBN"
+            strSQL &= ",WK_KOTSUHOTEL.COST_CENTER"
+            strSQL &= ",TTH.TKT_NO"
+            strSQL &= ",TTH.KOUENKAI_NO"
+            strSQL &= ",CASE TTH.TKT_LINE_NO"
+            strSQL &= "  WHEN N'1' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_1"
+            strSQL &= "  WHEN N'2' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_2"
+            strSQL &= "  WHEN N'3' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_3"
+            strSQL &= "  WHEN N'4' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_4"
+            strSQL &= "  WHEN N'5' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_5"
+            strSQL &= "  WHEN N'6' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_6"
+            strSQL &= "  WHEN N'7' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_7"
+            strSQL &= "  WHEN N'8' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_8"
+            strSQL &= "  WHEN N'9' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_9"
+            strSQL &= "  WHEN N'10' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_10"
+            strSQL &= "  ELSE N'' END AS REQ_TAXI_DATE"
+            strSQL &= ",TTH.TKT_USED_DATE"
+            strSQL &= ",TTH.TKT_URIAGE"
+            strSQL &= ",TTH.TKT_SEISAN_FEE"
+            strSQL &= ",TTH.SEIKYU_NO_TOPTOUR"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT * FROM"
+            strSQL &= " TBL_TAXITICKET_HAKKO"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= " AND ISNULL(TKT_URIAGE,N'') <> N''"
+            strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
+            strSQL &= " ) TTH"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
+            strSQL &= "  FROM TBL_KOTSUHOTEL TKH"
+            strSQL &= "  GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
+            strSQL &= "  ) WK1"
+            strSQL &= "  ON TTH.KOUENKAI_NO = WK1.KOUENKAI_NO AND TTH.SANKASHA_ID = WK1.SANKASHA_ID"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL) WK_KOTSUHOTEL"
+            strSQL &= "   ON (WK1.SALEFORCE_ID = WK_KOTSUHOTEL.SALEFORCE_ID)"
+            strSQL &= "  AND (WK1.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO)"
+            strSQL &= "  AND (WK1.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID)"
+            strSQL &= "  AND (WK1.DR_MPID = WK_KOTSUHOTEL.DR_MPID)"
+            strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK_KOTSUHOTEL.TIME_STAMP_BYL)"
+            strSQL &= " ORDER BY"
+            strSQL &= " CASE ISNULL(TTH.TKT_ENTA,N'')"
+            strSQL &= "  WHEN N'' THEN '0' WHEN N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka & "' THEN '1' ELSE '9' END"
+            strSQL &= ",COST_CENTER"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function SapCsvTaxi(ByVal kouenkaiNo As String, ByVal seisanNo As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " WK_KOTSUHOTEL.COST_CENTER"
+            strSQL &= ",SUM(CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) AS TKT_URIAGE"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT * FROM TBL_TAXITICKET_HAKKO"
+            strSQL &= "  WHERE"
+            strSQL &= "  KOUENKAI_NO = N'" & CmnDb.SqlString(kouenkaiNo) & "'"
+            strSQL &= "  AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(seisanNo) & "'"
+            strSQL &= "  AND TKT_ENTA = N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka & "'"
+            strSQL &= " ) WK_TAXI"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT WK2.* FROM"
+            strSQL &= "  (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
+            strSQL &= "   FROM TBL_KOTSUHOTEL TKH"
+            strSQL &= "   GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
+            strSQL &= "   ) WK1"
+            strSQL &= "  LEFT JOIN"
+            strSQL &= "  (SELECT * FROM TBL_KOTSUHOTEL)WK2"
+            strSQL &= "  ON (WK1.SALEFORCE_ID = WK2.SALEFORCE_ID)"
+            strSQL &= "  AND(WK1.KOUENKAI_NO = WK2.KOUENKAI_NO)"
+            strSQL &= "  AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID)"
+            strSQL &= "  AND (WK1.DR_MPID = WK2.DR_MPID)"
+            strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
+            strSQL &= " ) WK_KOTSUHOTEL"
+            strSQL &= "  ON WK_TAXI.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO"
+            strSQL &= " AND WK_TAXI.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= " AND WK_TAXI.SEIKYU_NO_TOPTOUR = WK_KOTSUHOTEL.SEIKYU_NO_TOPTOUR"
+            strSQL &= " WHERE (CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) <> 0"
+            strSQL &= " GROUP BY WK_KOTSUHOTEL.COST_CENTER"
+            strSQL &= " ORDER BY WK_KOTSUHOTEL.COST_CENTER"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -5880,100 +6044,6 @@ Public Class SQL
             strSQL = "DELETE TBL_TAXITICKET_HAKKO"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
             strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
-
-            Return strSQL
-        End Function
-
-        Public Shared Function TaxiSeisanCsv(ByVal Joken As TableDef.Joken.DataStruct) As String
-            Dim strSQL As String = ""
-
-            strSQL &= "SELECT"
-            strSQL &= " CASE ISNULL(TTH.TKT_ENTA,N'')"
-            strSQL &= "  WHEN N'' THEN '非課税'"
-            strSQL &= "  WHEN N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka & "' THEN '課税'"
-            strSQL &= "  ELSE N'' END AS KAZEI_KBN"
-            strSQL &= ",WK_KOTSUHOTEL.COST_CENTER"
-            strSQL &= ",TTH.TKT_NO"
-            strSQL &= ",TTH.KOUENKAI_NO"
-            strSQL &= ",CASE TTH.TKT_LINE_NO"
-            strSQL &= "  WHEN N'1' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_1"
-            strSQL &= "  WHEN N'2' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_2"
-            strSQL &= "  WHEN N'3' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_3"
-            strSQL &= "  WHEN N'4' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_4"
-            strSQL &= "  WHEN N'5' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_5"
-            strSQL &= "  WHEN N'6' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_6"
-            strSQL &= "  WHEN N'7' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_7"
-            strSQL &= "  WHEN N'8' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_8"
-            strSQL &= "  WHEN N'9' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_9"
-            strSQL &= "  WHEN N'10' THEN WK_KOTSUHOTEL.REQ_TAXI_DATE_10"
-            strSQL &= "  ELSE N'' END AS REQ_TAXI_DATE"
-            strSQL &= ",TTH.TKT_USED_DATE"
-            strSQL &= ",TTH.TKT_URIAGE"
-            strSQL &= ",TTH.TKT_SEISAN_FEE"
-            strSQL &= ",TTH.SEIKYU_NO_TOPTOUR"
-            strSQL &= " FROM"
-            strSQL &= " (SELECT * FROM"
-            strSQL &= " TBL_TAXITICKET_HAKKO"
-            strSQL &= " WHERE"
-            strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
-            strSQL &= " AND ISNULL(TKT_URIAGE,N'') <> N''"
-            strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
-            strSQL &= " ) TTH"
-            strSQL &= " LEFT JOIN"
-            strSQL &= " (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
-            strSQL &= "  FROM TBL_KOTSUHOTEL TKH"
-            strSQL &= "  GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
-            strSQL &= "  ) WK1"
-            strSQL &= "  ON TTH.KOUENKAI_NO = WK1.KOUENKAI_NO AND TTH.SANKASHA_ID = WK1.SANKASHA_ID"
-            strSQL &= " LEFT JOIN"
-            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL) WK_KOTSUHOTEL"
-            strSQL &= "   ON (WK1.SALEFORCE_ID = WK_KOTSUHOTEL.SALEFORCE_ID)"
-            strSQL &= "  AND (WK1.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO)"
-            strSQL &= "  AND (WK1.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID)"
-            strSQL &= "  AND (WK1.DR_MPID = WK_KOTSUHOTEL.DR_MPID)"
-            strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK_KOTSUHOTEL.TIME_STAMP_BYL)"
-            strSQL &= " ORDER BY"
-            strSQL &= " CASE ISNULL(TTH.TKT_ENTA,N'')"
-            strSQL &= "  WHEN N'' THEN '0' WHEN N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka & "' THEN '1' ELSE '9' END"
-            strSQL &= ",COST_CENTER"
-
-            Return strSQL
-        End Function
-
-        Public Shared Function SapCsvTaxi(ByVal kouenkaiNo As String, ByVal seisanNo As String) As String
-            Dim strSQL As String = ""
-
-            strSQL &= "SELECT"
-            strSQL &= " WK_KOTSUHOTEL.COST_CENTER"
-            strSQL &= ",SUM(CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) AS TKT_URIAGE"
-            strSQL &= " FROM"
-            strSQL &= " (SELECT * FROM TBL_TAXITICKET_HAKKO"
-            strSQL &= "  WHERE"
-            strSQL &= "  KOUENKAI_NO = N'" & CmnDb.SqlString(kouenkaiNo) & "'"
-            strSQL &= "  AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(seisanNo) & "'"
-            strSQL &= "  AND TKT_ENTA = N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka & "'"
-            strSQL &= " ) WK_TAXI"
-            strSQL &= " LEFT JOIN"
-            strSQL &= " (SELECT WK2.* FROM"
-            strSQL &= "  (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
-            strSQL &= "   FROM TBL_KOTSUHOTEL TKH"
-            strSQL &= "   GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
-            strSQL &= "   ) WK1"
-            strSQL &= "  LEFT JOIN"
-            strSQL &= "  (SELECT * FROM TBL_KOTSUHOTEL)WK2"
-            strSQL &= "  ON (WK1.SALEFORCE_ID = WK2.SALEFORCE_ID)"
-            strSQL &= "  AND(WK1.KOUENKAI_NO = WK2.KOUENKAI_NO)"
-            strSQL &= "  AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID)"
-            strSQL &= "  AND (WK1.DR_MPID = WK2.DR_MPID)"
-            strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
-            strSQL &= " ) WK_KOTSUHOTEL"
-            strSQL &= "  ON WK_TAXI.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO"
-            strSQL &= " AND WK_TAXI.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID"
-            strSQL &= " AND WK_TAXI.SEIKYU_NO_TOPTOUR = WK_KOTSUHOTEL.SEIKYU_NO_TOPTOUR"
-            strSQL &= " WHERE (CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) <> 0"
-            strSQL &= " GROUP BY WK_KOTSUHOTEL.COST_CENTER"
-            strSQL &= " ORDER BY WK_KOTSUHOTEL.COST_CENTER"
 
             Return strSQL
         End Function
