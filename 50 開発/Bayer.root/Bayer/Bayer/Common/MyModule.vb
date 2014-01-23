@@ -782,38 +782,38 @@ Public Class MyModule
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_KANA)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SANKA)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI_CANCEL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_DR_SANKA(CsvData(wCnt).DR_SANKA))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI_CANCEL))))
 
-                HOTELHI_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI) + _
-                                CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI_CANCEL)
+                HOTELHI_TOTAL = CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI) + _
+                                CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI_CANCEL)
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(HOTELHI_TOTAL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_HOTELHI_TOZEI)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_RAIL_FARE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_RAIL_CANCELLATION)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI_TOZEI))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_RAIL_FARE))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_RAIL_CANCELLATION))))
 
-                RAIL_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_FARE) + _
-                             CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_CANCELLATION)
+                RAIL_TOTAL = CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_RAIL_FARE) + _
+                             CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_RAIL_CANCELLATION)
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(RAIL_TOTAL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_AIR_FARE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_AIR_CANCELLATION)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_AIR_FARE))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_AIR_CANCELLATION))))
 
-                AIR_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_AIR_FARE) + _
-                            CmnModule.DbVal(CsvData(wCnt).ANS_AIR_CANCELLATION)
+                AIR_TOTAL = CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_AIR_FARE) + _
+                            CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_AIR_CANCELLATION)
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AIR_TOTAL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_FARE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_OTHER_CANCELLATION)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_FARE))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_CANCELLATION))))
 
-                OTHER_TOTAL = CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_FARE) + _
-                              CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_CANCELLATION)
+                OTHER_TOTAL = CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_FARE) + _
+                              CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_CANCELLATION)
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(OTHER_TOTAL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_TESURYO)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_AREA)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EIGYOSHO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
