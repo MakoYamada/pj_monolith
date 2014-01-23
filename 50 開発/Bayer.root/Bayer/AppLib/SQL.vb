@@ -904,8 +904,8 @@ Public Class SQL
             End If
 
             strSQL &= " ORDER BY WK_KOUENKAI."
-            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
-            strSQL &= " DESC"
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP & " DESC"
+            strSQL &= ",WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
 
             Return strSQL
         End Function
