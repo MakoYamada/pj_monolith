@@ -43,7 +43,9 @@
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiMeisaiCsv" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
 						</td>
-						<td></td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiSoufujoIkkatsu" runat="server" Text="送付状・確認票一括印刷" Width="200px" CssClass="Button" />
+						</td>
 						<td></td>
 						<td></td>
 					</tr>

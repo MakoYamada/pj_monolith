@@ -94,4 +94,9 @@ Partial Public Class TaxiMenu
     Protected Sub BtnTaxiMiseisan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMiseisan.Click
         Response.Redirect(URL.TaxiMikanryou)
     End Sub
+
+    '[送付状・確認票一括印刷]
+    Protected Sub BtnTaxiSoufujoIkkatsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSoufujoIkkatsu.Click
+        Response.Redirect(URL.TaxiSoufujoIkkatsu)
+    End Sub
 End Class
