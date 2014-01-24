@@ -120,10 +120,12 @@ Partial Public Class TaxiPrintCsv
         strSQL = SQL.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_KENSHU)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
-            wFlag = True
-            ReDim Preserve KENSHU(wCnt)
-            KENSHU(wCnt) = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
-            wCnt += 1
+            If Trim(CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)) <> "" Then    '未指定を除く
+                wFlag = True
+                ReDim Preserve KENSHU(wCnt)
+                KENSHU(wCnt) = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
+                wCnt += 1
+            End If
         End While
         RsData.Close()
 

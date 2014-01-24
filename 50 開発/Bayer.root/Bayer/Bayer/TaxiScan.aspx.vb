@@ -72,9 +72,11 @@ Partial Public Class TaxiScan
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "アップロードファイル：" & Me.FileUpload1.PostedFile.FileName, MyBase.DbConnection)
 
         'DB
-        If UpdateData(CsvPath, System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName)) Then
+        Dim UpdatedCount As Integer = 0
+        If UpdateData(CsvPath, System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName), UpdatedCount) Then
             Me.TrError.Visible = False
             Me.TrEnd.Visible = True
+            Me.LabelUpdatedCount.Text = UpdatedCount.ToString
         Else
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
@@ -239,7 +241,7 @@ Partial Public Class TaxiScan
     End Function
 
     'Csv読込 → DB展開
-    Private Function UpdateData(ByVal CsvPath As String, ByVal CsvFileName As String) As Boolean
+    Private Function UpdateData(ByVal CsvPath As String, ByVal CsvFileName As String, ByRef UpdatedCount As Integer) As Boolean
         Dim CsvData As New System.IO.StreamReader(CsvPath, System.Text.Encoding.Default)
         Dim wLineCnt As Integer = 0
         Dim strSQL As String = ""
@@ -438,13 +440,14 @@ Partial Public Class TaxiScan
 
         'データ更新
         wStr = ""
+        UpdatedCount = 0
         Dim RtnTBL_TAXITICKET_HAKKO As Integer
         Dim RtnTBL_KOTSUHOTEL As Integer
         MyBase.BeginTransaction()
         Try
             For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
                 'タクチケテーブル
-                  strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_TaxiScan(TBL_TAXITICKET_HAKKO(wCnt))
+                strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_TaxiScan(TBL_TAXITICKET_HAKKO(wCnt))
                 RtnTBL_TAXITICKET_HAKKO = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_TAXITICKET_HAKKO = 0 Then
@@ -469,6 +472,10 @@ Partial Public Class TaxiScan
                     wUpdateCntKOTSUHOTEL += 1
                     'ログ登録
                     MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_KOTSUHOTEL", MyBase.DbConnection, MyBase.DbTransaction)
+                End If
+
+                If RtnTBL_TAXITICKET_HAKKO = 1 AndAlso RtnTBL_KOTSUHOTEL = 1 Then
+                    UpdatedCount += 1
                 End If
             Next wCnt
 

@@ -61,6 +61,15 @@ Partial Public Class TaxiScan
     Protected WithEvents TrEnd As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
+    '''LabelUpdatedCount コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelUpdatedCount As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>
