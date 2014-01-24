@@ -1204,6 +1204,7 @@ Public Class SQL
             strSQL = "INSERT INTO TBL_SEIKYU"
             strSQL &= " (" & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_YM
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_DATE
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_USER
@@ -1213,6 +1214,7 @@ Public Class SQL
             strSQL &= " VALUES"
             strSQL &= "(N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_YM) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.INPUT_USER) & "'"
