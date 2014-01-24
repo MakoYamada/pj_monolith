@@ -865,21 +865,21 @@ Public Class MyModule
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_F_BIN_5), True))
                 sb.Append(vbNewLine)
 
-                KEI_HOTELHI += CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI)
-                KEI_HOTELHI_CANCEL += CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI_CANCEL)
+                KEI_HOTELHI += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI)
+                KEI_HOTELHI_CANCEL += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI_CANCEL)
                 KEI_HOTELHI_TOTAL += HOTELHI_TOTAL
-                KEI_HOTELHI_TOZEI += CmnModule.DbVal(CsvData(wCnt).ANS_HOTELHI_TOZEI)
-                KEI_RAIL_FARE += CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_FARE)
-                KEI_RAIL_CANCELLATION += CmnModule.DbVal(CsvData(wCnt).ANS_RAIL_CANCELLATION)
+                KEI_HOTELHI_TOZEI += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI_TOZEI)
+                KEI_RAIL_FARE += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_RAIL_FARE)
+                KEI_RAIL_CANCELLATION += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_RAIL_CANCELLATION)
                 KEI_RAIL_TOTAL += RAIL_TOTAL
-                KEI_AIR_FARE += CmnModule.DbVal(CsvData(wCnt).ANS_AIR_FARE)
-                KEI_AIR_CANCELLATION += CmnModule.DbVal(CsvData(wCnt).ANS_AIR_CANCELLATION)
+                KEI_AIR_FARE += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_AIR_FARE)
+                KEI_AIR_CANCELLATION += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_AIR_CANCELLATION)
                 KEI_AIR_TOTAL += AIR_TOTAL
-                KEI_OTHER_FARE += CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_FARE)
-                KEI_OTHER_CANCELLATION += CmnModule.DbVal(CsvData(wCnt).ANS_OTHER_CANCELLATION)
+                KEI_OTHER_FARE += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_FARE)
+                KEI_OTHER_CANCELLATION += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_CANCELLATION)
                 KEI_OTHER_TOTAL += OTHER_TOTAL
-                KEI_TAXI_TESURYO += CmnModule.DbVal(CsvData(wCnt).ANS_TAXI_TESURYO)
-                KEI_KOTSUHOTEL_TESURYO += CmnModule.DbVal(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)
+                KEI_TAXI_TESURYO += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO)
+                KEI_KOTSUHOTEL_TESURYO += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)
             Next wCnt
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(込)")))
@@ -1091,14 +1091,14 @@ Public Class MyModule
                 strCostCenter = CsvData(wCnt).COST_CENTER
 
                 'コストセンター計　加算
-                MR_HOTEL += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL)
-                MR_HOTEL_TOZEI += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL_TOZEI)
-                MR_JR += CmnModule.DbVal(CsvData(wCnt).MR_JR)
+                MR_HOTEL += CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_HOTEL)
+                MR_HOTEL_TOZEI += CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_HOTEL_TOZEI)
+                MR_JR += CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_JR)
 
                 '合計　加算
-                KEI_MR_HOTEL += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL)
-                KEI_MR_HOTEL_TOZEI += CmnModule.DbVal(CsvData(wCnt).MR_HOTEL_TOZEI)
-                KEI_MR_JR += CmnModule.DbVal(CsvData(wCnt).MR_JR)
+                KEI_MR_HOTEL += CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_HOTEL)
+                KEI_MR_HOTEL_TOZEI += CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_HOTEL_TOZEI)
+                KEI_MR_JR += CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_JR)
             Next wCnt
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計(込)")))
@@ -1213,12 +1213,12 @@ Public Class MyModule
                 strCostCenter = CsvData(wCnt).COST_CENTER
 
                 'コストセンター計　加算
-                TKT_URIAGE += CmnModule.DbVal(CsvData(wCnt).TKT_URIAGE)
-                TKT_SEISAN_FEE += CmnModule.DbVal(CsvData(wCnt).TKT_SEISAN_FEE)
+                TKT_URIAGE += CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_URIAGE)
+                TKT_SEISAN_FEE += CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_SEISAN_FEE)
 
                 '課税区分合計　加算
-                KAZEIKEI_TKT_URIAGE += CmnModule.DbVal(CsvData(wCnt).TKT_URIAGE)
-                KAZEIKEI_TKT_SEISAN_FEE += CmnModule.DbVal(CsvData(wCnt).TKT_SEISAN_FEE)
+                KAZEIKEI_TKT_URIAGE += CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_URIAGE)
+                KAZEIKEI_TKT_SEISAN_FEE += CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_SEISAN_FEE)
             Next wCnt
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
