@@ -461,7 +461,8 @@
 					        &nbsp;
 					        <asp:Button ID="BtnTaxiCsv" runat="server" Width="200px" Text="タクチケ精算データCSV作成" 
                                 CssClass="Button" BackColor="#ececec" />					        
-					        
+					        <asp:Button ID="BtnTaxiCsvHid" runat="server" Width="10px" Text="" style="visibility:hidden"
+                                CssClass="Button" />
 					    </td>
 				    </tr>
 					<tr style="height: 36px;">

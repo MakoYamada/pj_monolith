@@ -484,6 +484,15 @@ Partial Public Class SeisanRegist
     Protected WithEvents BtnTaxiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnTaxiCsvHid コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiCsvHid As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnCalc コントロール。
     '''</summary>
     '''<remarks>

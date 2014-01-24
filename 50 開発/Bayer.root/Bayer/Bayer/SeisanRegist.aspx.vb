@@ -118,6 +118,7 @@ Partial Public Class SeisanRegist
         'クリア
         CmnModule.ClearAllControl(Me)
 
+        '初期表示時の設定
         If MyModule.IsInsertMode() Then
             '新規登録
             'キー項目入力可
@@ -140,6 +141,9 @@ Partial Public Class SeisanRegist
             Me.LabelMessage.Text = wStr
 
             Me.DivMessage.Visible = True
+
+            '登録後は、更新モードとする
+            Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
         End If
 
         Me.SEND_FLAG.SelectedValue = TBL_SEIKYU(SEQ).SEND_FLAG
@@ -206,6 +210,12 @@ Partial Public Class SeisanRegist
                 CmnModule.SetEnabled(Me.BtnSubmit, False)
                 CmnModule.SetEnabled(Me.BtnNozomi, False)
         End Select
+
+        '登録処理後のコントロール制御
+        If Not MyModule.IsInsertMode() Then
+            Me.KOUENKAI_NO.Enabled = False
+            Me.SEISAN_YM.Enabled = False
+        End If
     End Sub
 
     Private Sub CalculateKingaku()
@@ -710,7 +720,12 @@ Partial Public Class SeisanRegist
 
     '[タクチケ精算データCSV作成]
     Protected Sub BtnTaxiCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsv.Click
-        UpdateTaxiData()
+        If Not UpdateTaxiData() Then Exit Sub
+
+        '非表示ボタンをクリック(画面再表示の為)
+        Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType, "click", "<script language=javascript>document.getElementById('" + BtnTaxiCsvHid.ClientID + "').click();</script>")
+    End Sub
+    Protected Sub BtnTaxiCsvHid_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiCsvHid.Click
         OutputTaxiCsv()
     End Sub
 
@@ -723,20 +738,9 @@ Partial Public Class SeisanRegist
         End If
 
         '入力チェック
-        'セキュリティチェック
-        If Not CmnCheck.IsSecurityOK(Me) Then
-            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
-            Return False
-        End If
-
-        '必須入力
-        If Not CmnCheck.IsInput(Me.KOUENKAI_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.KOUENKAI_NO), Me)
-            Return False
-        End If
+        If Not Check() Then Return False
 
         If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
-
             Dim kensakuJoken As TableDef.Joken.DataStruct
             kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
             If Not AppModule.IsExist(SQL.TBL_KOTSUHOTEL.DrCsvCheck(kensakuJoken), MyBase.DbConnection) Then
@@ -753,6 +757,7 @@ Partial Public Class SeisanRegist
                 '請求データ(キー項目と送信フラグのみ)を登録する
                 TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
                 TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
                 TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
                 TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
                 TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
@@ -762,6 +767,11 @@ Partial Public Class SeisanRegist
                 '講演会番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
                 strSQL = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+                '更新モードに切り替える
+                Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
+                Me.KOUENKAI_NO.Enabled = False
+                Me.SEISAN_YM.Enabled = False
             Catch ex As Exception
                 MyBase.Rollback()
 
@@ -922,6 +932,7 @@ Partial Public Class SeisanRegist
                 '請求データ(キー項目と送信フラグのみ)を登録する
                 TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
                 TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
                 TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
                 TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
                 TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
@@ -937,6 +948,10 @@ Partial Public Class SeisanRegist
                 strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO_YM(updateData)
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
+                '更新モードに切り替える
+                Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
+                Me.KOUENKAI_NO.Enabled = False
+                Me.SEISAN_YM.Enabled = False
             Catch ex As Exception
                 MyBase.Rollback()
 
@@ -978,6 +993,7 @@ Partial Public Class SeisanRegist
         Return True
     End Function
 
+    'タクチケ精算データCSV出力
     Private Sub OutputTaxiCsv()
 
         Dim CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
@@ -994,6 +1010,7 @@ Partial Public Class SeisanRegist
         End If
     End Sub
 
+    'タクチケ精算データCSV出力用データ取得
     Private Function GetTaxiCsvData(ByRef CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As Boolean
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
