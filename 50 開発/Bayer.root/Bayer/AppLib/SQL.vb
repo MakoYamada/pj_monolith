@@ -5889,7 +5889,7 @@ Public Class SQL
             strSQL &= " TBL_TAXITICKET_HAKKO TTH"
             strSQL &= " WHERE"
             strSQL &= " TTH.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " AND ISNULL(TTH.TKT_URIAGE,N'') <> N''"
+            strSQL &= " AND CAST(ISNULL(TTH.TKT_URIAGE,'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TTH.TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
 
             If Trim(Joken.SEIKYU_NO_TOPTOUR) = "" Then
@@ -5941,7 +5941,7 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
-            strSQL &= " AND ISNULL(TKT_URIAGE,N'') <> N''"
+            strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
             strSQL &= " ) TTH"
             strSQL &= " LEFT JOIN"
@@ -6002,7 +6002,7 @@ Public Class SQL
             strSQL &= "  ON WK_TAXI.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO"
             strSQL &= " AND WK_TAXI.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID"
             strSQL &= " AND WK_TAXI.SEIKYU_NO_TOPTOUR = WK_KOTSUHOTEL.SEIKYU_NO_TOPTOUR"
-            strSQL &= " WHERE (CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) <> 0"
+            strSQL &= " WHERE CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) <> 0"
             strSQL &= " GROUP BY WK_KOTSUHOTEL.COST_CENTER"
             strSQL &= " ORDER BY WK_KOTSUHOTEL.COST_CENTER"
 
@@ -6102,7 +6102,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
             strSQL &= " AND ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.SEIKYU_NO_TOPTOUR & ",N'') = N''"
-            strSQL &= " AND ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & ",N'') <> N''"
+            strSQL &= " AND CAST(ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & ",'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & ",N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
 
             Return strSQL
