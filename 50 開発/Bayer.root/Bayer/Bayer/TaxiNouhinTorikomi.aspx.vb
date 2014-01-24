@@ -155,15 +155,15 @@ Partial Public Class TaxiNouhinTorikomi
             End If
 
             'タクシー会社チェック
-            If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "10" AndAlso _
-                fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "20" AndAlso _
-                fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "30" AndAlso _
-                fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "50" Then
-                If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> Me.RdoTaxi.SelectedValue Then
+            If fileData(COL_NO.Field2).Trim.Substring(0, 2) = "10" OrElse _
+                fileData(COL_NO.Field2).Trim.Substring(0, 2) = "20" OrElse _
+                fileData(COL_NO.Field2).Trim.Substring(0, 2) = "30" OrElse _
+                fileData(COL_NO.Field2).Trim.Substring(0, 2) = "50" Then
+                If Me.RdoTaxi.SelectedValue <> "DC" Then
                     Throw New Exception(COL_NAME.Field2 & "がタクシー会社と一致しません。")
                 End If
             Else
-                If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> "DC" Then
+                If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> Me.RdoTaxi.SelectedValue Then
                     Throw New Exception(COL_NAME.Field2 & "がタクシー会社と一致しません。")
                 End If
             End If

@@ -19,6 +19,9 @@ Partial Public Class DrSoufujo
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.ReportHeader1 = New DataDynamics.ActiveReports.ReportHeader
+        Me.ReportFooter1 = New DataDynamics.ActiveReports.ReportFooter
+        Me.GroupHeader1 = New DataDynamics.ActiveReports.GroupHeader
+        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.Label2 = New DataDynamics.ActiveReports.Label
@@ -40,7 +43,6 @@ Partial Public Class DrSoufujo
         Me.AISATSU1 = New DataDynamics.ActiveReports.TextBox
         Me.AISATSU2 = New DataDynamics.ActiveReports.TextBox
         Me.AISATSU3 = New DataDynamics.ActiveReports.TextBox
-        Me.ReportFooter1 = New DataDynamics.ActiveReports.ReportFooter
         Me.Label9 = New DataDynamics.ActiveReports.Label
         Me.JR_SETSUMEI1 = New DataDynamics.ActiveReports.TextBox
         Me.AIR_SETSUMEI1 = New DataDynamics.ActiveReports.TextBox
@@ -104,7 +106,7 @@ Partial Public Class DrSoufujo
         Me.Detail.CanShrink = True
         Me.Detail.ColumnSpacing = 0.0!
         Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label3})
-        Me.Detail.Height = 0.9539372!
+        Me.Detail.Height = 0.3914372!
         Me.Detail.Name = "Detail"
         '
         'Label3
@@ -121,9 +123,29 @@ Partial Public Class DrSoufujo
         '
         'ReportHeader1
         '
-        Me.ReportHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.MR_NAME, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3})
-        Me.ReportHeader1.Height = 3.614583!
+        Me.ReportHeader1.Height = 0.0!
         Me.ReportHeader1.Name = "ReportHeader1"
+        '
+        'ReportFooter1
+        '
+        Me.ReportFooter1.CanShrink = True
+        Me.ReportFooter1.Height = 0.0!
+        Me.ReportFooter1.Name = "ReportFooter1"
+        '
+        'GroupHeader1
+        '
+        Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.MR_NAME, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3})
+        Me.GroupHeader1.DataField = "=KOUENKAI_NO + SANKASHA_ID"
+        Me.GroupHeader1.Height = 3.604166!
+        Me.GroupHeader1.Name = "GroupHeader1"
+        Me.GroupHeader1.NewPage = DataDynamics.ActiveReports.NewPage.Before
+        '
+        'GroupFooter1
+        '
+        Me.GroupFooter1.CanShrink = True
+        Me.GroupFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label9, Me.JR_SETSUMEI1, Me.AIR_SETSUMEI1, Me.OTHER_SETSUMEI1, Me.FOOTER_SETSUMEI1, Me.JR_SETSUMEI2, Me.JR_SETSUMEI3, Me.JR_SETSUMEI4, Me.AIR_SETSUMEI2, Me.AIR_SETSUMEI3, Me.AIR_SETSUMEI4, Me.AIR_SETSUMEI5, Me.AIR_SETSUMEI6, Me.OTHER_SETSUMEI2, Me.FOOTER_SETSUMEI2, Me.FOOTER_SETSUMEI3, Me.FOOTER_SETSUMEI4})
+        Me.GroupFooter1.Height = 3.520833!
+        Me.GroupFooter1.Name = "GroupFooter1"
         '
         'PRINT_DATE
         '
@@ -168,7 +190,7 @@ Partial Public Class DrSoufujo
             "hite-space: nowrap"
         Me.DR_NAME.Text = "[DR_NAME]"
         Me.DR_NAME.Top = 0.1999996!
-        Me.DR_NAME.Width = 3.495276!
+        Me.DR_NAME.Width = 3.495275!
         '
         'MR_SEND_SAKI
         '
@@ -203,7 +225,7 @@ Partial Public Class DrSoufujo
             "do-char-set: 1"
         Me.Label4.Text = "講演会開催日："
         Me.Label4.Top = 2.377167!
-        Me.Label4.Width = 0.8744093!
+        Me.Label4.Width = 0.8744091!
         '
         'JISSI_DATE
         '
@@ -227,7 +249,7 @@ Partial Public Class DrSoufujo
             "do-char-set: 1"
         Me.Label5.Text = "講演会名："
         Me.Label5.Top = 2.556299!
-        Me.Label5.Width = 0.8744095!
+        Me.Label5.Width = 0.8744097!
         '
         'KOUENKAI_NAME
         '
@@ -264,7 +286,7 @@ Partial Public Class DrSoufujo
             "e-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NO.Text = "[KOUENKAI_NO]"
         Me.KOUENKAI_NO.Top = 2.377166!
-        Me.KOUENKAI_NO.Width = 0.9330714!
+        Me.KOUENKAI_NO.Width = 0.9330716!
         '
         'Label7
         '
@@ -288,7 +310,7 @@ Partial Public Class DrSoufujo
             "e-space: nowrap; ddo-char-set: 1"
         Me.SANKASHA_ID.Text = "[SANKASHA_ID]"
         Me.SANKASHA_ID.Top = 2.377166!
-        Me.SANKASHA_ID.Width = 0.923622!
+        Me.SANKASHA_ID.Width = 0.9236222!
         '
         'Label8
         '
@@ -300,7 +322,7 @@ Partial Public Class DrSoufujo
             "do-char-set: 1"
         Me.Label8.Text = "会場："
         Me.Label8.Top = 2.735433!
-        Me.Label8.Width = 0.8854331!
+        Me.Label8.Width = 0.8854334!
         '
         'KAIJO_NAME
         '
@@ -348,8 +370,8 @@ Partial Public Class DrSoufujo
         Me.AISATSU1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU1.Text = "[AISATSU1]"
-        Me.AISATSU1.Top = 3.016929!
-        Me.AISATSU1.Width = 6.579528!
+        Me.AISATSU1.Top = 3.016928!
+        Me.AISATSU1.Width = 6.579529!
         '
         'AISATSU2
         '
@@ -371,14 +393,7 @@ Partial Public Class DrSoufujo
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU3.Text = "[AISATSU3]"
         Me.AISATSU3.Top = 3.375197!
-        Me.AISATSU3.Width = 6.579528!
-        '
-        'ReportFooter1
-        '
-        Me.ReportFooter1.CanShrink = True
-        Me.ReportFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label9, Me.JR_SETSUMEI1, Me.AIR_SETSUMEI1, Me.OTHER_SETSUMEI1, Me.FOOTER_SETSUMEI1, Me.JR_SETSUMEI2, Me.JR_SETSUMEI3, Me.JR_SETSUMEI4, Me.AIR_SETSUMEI2, Me.AIR_SETSUMEI3, Me.AIR_SETSUMEI4, Me.AIR_SETSUMEI5, Me.AIR_SETSUMEI6, Me.OTHER_SETSUMEI2, Me.FOOTER_SETSUMEI2, Me.FOOTER_SETSUMEI3, Me.FOOTER_SETSUMEI4})
-        Me.ReportFooter1.Height = 3.719768!
-        Me.ReportFooter1.Name = "ReportFooter1"
+        Me.AISATSU3.Width = 6.579529!
         '
         'Label9
         '
@@ -389,7 +404,7 @@ Partial Public Class DrSoufujo
         Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10.5pt; font-weight: normal; text-align: left; d" & _
             "do-char-set: 1"
         Me.Label9.Text = "～　チケット類の変更、取消について　～"
-        Me.Label9.Top = 0.1236221!
+        Me.Label9.Top = 0.0!
         Me.Label9.Width = 7.151965!
         '
         'JR_SETSUMEI1
@@ -399,8 +414,8 @@ Partial Public Class DrSoufujo
         Me.JR_SETSUMEI1.Name = "JR_SETSUMEI1"
         Me.JR_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.JR_SETSUMEI1.Text = "[JR_SETSUMEI1]"
-        Me.JR_SETSUMEI1.Top = 0.353937!
-        Me.JR_SETSUMEI1.Width = 7.151969!
+        Me.JR_SETSUMEI1.Top = 0.230315!
+        Me.JR_SETSUMEI1.Width = 7.151965!
         '
         'AIR_SETSUMEI1
         '
@@ -409,7 +424,7 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI1.Name = "AIR_SETSUMEI1"
         Me.AIR_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.AIR_SETSUMEI1.Text = "[AIR_SETSUMEI1]"
-        Me.AIR_SETSUMEI1.Top = 1.070472!
+        Me.AIR_SETSUMEI1.Top = 0.9468502!
         Me.AIR_SETSUMEI1.Width = 7.151965!
         '
         'OTHER_SETSUMEI1
@@ -419,8 +434,8 @@ Partial Public Class DrSoufujo
         Me.OTHER_SETSUMEI1.Name = "OTHER_SETSUMEI1"
         Me.OTHER_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.OTHER_SETSUMEI1.Text = "[OTHER_SETSUMEI1]"
-        Me.OTHER_SETSUMEI1.Top = 2.452362!
-        Me.OTHER_SETSUMEI1.Width = 7.151969!
+        Me.OTHER_SETSUMEI1.Top = 2.32874!
+        Me.OTHER_SETSUMEI1.Width = 7.151965!
         '
         'FOOTER_SETSUMEI1
         '
@@ -429,7 +444,7 @@ Partial Public Class DrSoufujo
         Me.FOOTER_SETSUMEI1.Name = "FOOTER_SETSUMEI1"
         Me.FOOTER_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.FOOTER_SETSUMEI1.Text = "[FOOTER_SETSUMEI1]"
-        Me.FOOTER_SETSUMEI1.Top = 2.933858!
+        Me.FOOTER_SETSUMEI1.Top = 2.810235!
         Me.FOOTER_SETSUMEI1.Width = 7.151965!
         '
         'JR_SETSUMEI2
@@ -439,7 +454,7 @@ Partial Public Class DrSoufujo
         Me.JR_SETSUMEI2.Name = "JR_SETSUMEI2"
         Me.JR_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.JR_SETSUMEI2.Text = "[JR_SETSUMEI2]"
-        Me.JR_SETSUMEI2.Top = 0.533071!
+        Me.JR_SETSUMEI2.Top = 0.4094489!
         Me.JR_SETSUMEI2.Width = 7.151965!
         '
         'JR_SETSUMEI3
@@ -449,7 +464,7 @@ Partial Public Class DrSoufujo
         Me.JR_SETSUMEI3.Name = "JR_SETSUMEI3"
         Me.JR_SETSUMEI3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.JR_SETSUMEI3.Text = "[JR_SETSUMEI3]"
-        Me.JR_SETSUMEI3.Top = 0.7122048!
+        Me.JR_SETSUMEI3.Top = 0.5885828!
         Me.JR_SETSUMEI3.Width = 7.151965!
         '
         'JR_SETSUMEI4
@@ -459,7 +474,7 @@ Partial Public Class DrSoufujo
         Me.JR_SETSUMEI4.Name = "JR_SETSUMEI4"
         Me.JR_SETSUMEI4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.JR_SETSUMEI4.Text = "[JR_SETSUMEI4]"
-        Me.JR_SETSUMEI4.Top = 0.8913383!
+        Me.JR_SETSUMEI4.Top = 0.7677161!
         Me.JR_SETSUMEI4.Width = 7.151965!
         '
         'AIR_SETSUMEI2
@@ -469,7 +484,7 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI2.Name = "AIR_SETSUMEI2"
         Me.AIR_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.AIR_SETSUMEI2.Text = "[AIR_SETSUMEI2]"
-        Me.AIR_SETSUMEI2.Top = 1.249606!
+        Me.AIR_SETSUMEI2.Top = 1.125984!
         Me.AIR_SETSUMEI2.Width = 7.151965!
         '
         'AIR_SETSUMEI3
@@ -479,7 +494,7 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI3.Name = "AIR_SETSUMEI3"
         Me.AIR_SETSUMEI3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.AIR_SETSUMEI3.Text = "[AIR_SETSUMEI3]"
-        Me.AIR_SETSUMEI3.Top = 1.531102!
+        Me.AIR_SETSUMEI3.Top = 1.40748!
         Me.AIR_SETSUMEI3.Width = 7.151965!
         '
         'AIR_SETSUMEI4
@@ -489,7 +504,7 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI4.Name = "AIR_SETSUMEI4"
         Me.AIR_SETSUMEI4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.AIR_SETSUMEI4.Text = "[AIR_SETSUMEI4]"
-        Me.AIR_SETSUMEI4.Top = 1.710236!
+        Me.AIR_SETSUMEI4.Top = 1.586614!
         Me.AIR_SETSUMEI4.Width = 7.151965!
         '
         'AIR_SETSUMEI5
@@ -499,7 +514,7 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI5.Name = "AIR_SETSUMEI5"
         Me.AIR_SETSUMEI5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.AIR_SETSUMEI5.Text = "[AIR_SETSUMEI5]"
-        Me.AIR_SETSUMEI5.Top = 1.991732!
+        Me.AIR_SETSUMEI5.Top = 1.86811!
         Me.AIR_SETSUMEI5.Width = 7.151965!
         '
         'AIR_SETSUMEI6
@@ -509,7 +524,7 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI6.Name = "AIR_SETSUMEI6"
         Me.AIR_SETSUMEI6.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.AIR_SETSUMEI6.Text = "[AIR_SETSUMEI6]"
-        Me.AIR_SETSUMEI6.Top = 2.170866!
+        Me.AIR_SETSUMEI6.Top = 2.047244!
         Me.AIR_SETSUMEI6.Width = 7.151965!
         '
         'OTHER_SETSUMEI2
@@ -519,7 +534,7 @@ Partial Public Class DrSoufujo
         Me.OTHER_SETSUMEI2.Name = "OTHER_SETSUMEI2"
         Me.OTHER_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.OTHER_SETSUMEI2.Text = "[OTHER_SETSUMEI2]"
-        Me.OTHER_SETSUMEI2.Top = 2.652362!
+        Me.OTHER_SETSUMEI2.Top = 2.528739!
         Me.OTHER_SETSUMEI2.Width = 7.151965!
         '
         'FOOTER_SETSUMEI2
@@ -529,7 +544,7 @@ Partial Public Class DrSoufujo
         Me.FOOTER_SETSUMEI2.Name = "FOOTER_SETSUMEI2"
         Me.FOOTER_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.FOOTER_SETSUMEI2.Text = "[FOOTER_SETSUMEI2]"
-        Me.FOOTER_SETSUMEI2.Top = 3.112992!
+        Me.FOOTER_SETSUMEI2.Top = 2.989369!
         Me.FOOTER_SETSUMEI2.Width = 7.151965!
         '
         'FOOTER_SETSUMEI3
@@ -539,7 +554,7 @@ Partial Public Class DrSoufujo
         Me.FOOTER_SETSUMEI3.Name = "FOOTER_SETSUMEI3"
         Me.FOOTER_SETSUMEI3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.FOOTER_SETSUMEI3.Text = "[FOOTER_SETSUMEI3]"
-        Me.FOOTER_SETSUMEI3.Top = 3.292125!
+        Me.FOOTER_SETSUMEI3.Top = 3.168503!
         Me.FOOTER_SETSUMEI3.Width = 7.151965!
         '
         'FOOTER_SETSUMEI4
@@ -549,7 +564,7 @@ Partial Public Class DrSoufujo
         Me.FOOTER_SETSUMEI4.Name = "FOOTER_SETSUMEI4"
         Me.FOOTER_SETSUMEI4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
         Me.FOOTER_SETSUMEI4.Text = "[FOOTER_SETSUMEI4]"
-        Me.FOOTER_SETSUMEI4.Top = 3.471259!
+        Me.FOOTER_SETSUMEI4.Top = 3.347637!
         Me.FOOTER_SETSUMEI4.Width = 7.151965!
         '
         'DrSoufujo
@@ -559,7 +574,9 @@ Partial Public Class DrSoufujo
         Me.PageSettings.PaperWidth = 8.5!
         Me.PrintWidth = 7.165355!
         Me.Sections.Add(Me.ReportHeader1)
+        Me.Sections.Add(Me.GroupHeader1)
         Me.Sections.Add(Me.Detail)
+        Me.Sections.Add(Me.GroupFooter1)
         Me.Sections.Add(Me.ReportFooter1)
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; " & _
                     "color: Black; font-family: MS UI Gothic; ddo-char-set: 128", "Normal"))
@@ -611,6 +628,8 @@ Partial Public Class DrSoufujo
     Private WithEvents Label3 As DataDynamics.ActiveReports.Label
     Private WithEvents ReportHeader1 As DataDynamics.ActiveReports.ReportHeader
     Private WithEvents ReportFooter1 As DataDynamics.ActiveReports.ReportFooter
+    Private WithEvents GroupHeader1 As DataDynamics.ActiveReports.GroupHeader
+    Private WithEvents GroupFooter1 As DataDynamics.ActiveReports.GroupFooter
     Private WithEvents PRINT_DATE As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label1 As DataDynamics.ActiveReports.Label
     Private WithEvents Label2 As DataDynamics.ActiveReports.Label
@@ -627,16 +646,16 @@ Partial Public Class DrSoufujo
     Private WithEvents SANKASHA_ID As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label8 As DataDynamics.ActiveReports.Label
     Private WithEvents KAIJO_NAME As DataDynamics.ActiveReports.TextBox
-    Private WithEvents Label9 As DataDynamics.ActiveReports.Label
-    Private WithEvents JR_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents OTHER_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents FOOTER_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents MR_SEND_SAKI_FS As DataDynamics.ActiveReports.TextBox
     Private WithEvents MR_SEND_SAKI_OTHER As DataDynamics.ActiveReports.TextBox
     Private WithEvents AISATSU1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents AISATSU2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents AISATSU3 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Label9 As DataDynamics.ActiveReports.Label
+    Private WithEvents JR_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents AIR_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents OTHER_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents FOOTER_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents JR_SETSUMEI2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents JR_SETSUMEI3 As DataDynamics.ActiveReports.TextBox
     Private WithEvents JR_SETSUMEI4 As DataDynamics.ActiveReports.TextBox

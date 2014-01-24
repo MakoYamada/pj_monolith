@@ -97,6 +97,15 @@ Partial Public Class Preview
                     '精算データ一覧印刷
                     PrintSeisanListReport()
                 End If
+            ElseIf URL.TaxiSoufujoIkkatsu.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
+                Select Case Session.Item(SessionDef.PrintPreview)
+                    Case "Soufujo"
+                        '送付状一括印刷
+                        PrintSoufujo()
+                    Case "TaxiKakuninhyo"
+                        '確認票一括印刷
+                        PrintKakuninhyo()
+                End Select
             End If
         End If
 
@@ -213,7 +222,7 @@ Partial Public Class Preview
         Dim rpt1 As New DrSoufujo()
 
         'データ設定
-        rpt1.DataSource = GetDrData()
+        rpt1.DataSource = GetTehaishoIkkatsu()
 
         rpt1.Document.Printer.PrinterName = ""
 
@@ -238,12 +247,18 @@ Partial Public Class Preview
     End Sub
 
     'タクチケ手配確認票
-    Private Sub PrintKakuninhyo()
+    Private Sub PrintKakuninhyo(Optional ByVal Ikkatsu As Boolean = False)
 
         Dim rpt1 As New TaxiKakuninReport()
 
         'データ設定
-        rpt1.DataSource = GetDrData()
+        If Ikkatsu Then
+            '一括印刷
+            rpt1.DataSource = GetDrData()
+        Else
+            '個別印刷
+            rpt1.DataSource = GetDrData()
+        End If
 
         rpt1.Document.Printer.PrinterName = ""
 
@@ -293,6 +308,28 @@ Partial Public Class Preview
         Return dtView.Table
     End Function
 
+    '送付状・確認票一括印刷データ取得
+    Private Function GetTehaishoIkkatsu() As DataTable
+        Dim strSQL As String = Session.Item(SessionDef.TehaishoPrint_SQL)
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+        Dim wFlag As Boolean = False
+
+        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        'If RsData.Read() Then
+        '    RPT_KOTSUHOTEL = AppModule.SetRsData(RsData, RPT_KOTSUHOTEL)
+        'End If
+        'RsData.Close()
+
+        Dim arguments As New DataSourceSelectArguments()
+        'select 
+        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
+        Me.SqlDataSource1.SelectCommand = strSQL
+
+        Dim dtView As DataView = Me.SqlDataSource1.Select(arguments)
+
+        Return dtView.Table
+    End Function
     '会場手配依頼印刷
     Private Sub PrintKaijoReport(ByVal Rireki As Boolean)
 

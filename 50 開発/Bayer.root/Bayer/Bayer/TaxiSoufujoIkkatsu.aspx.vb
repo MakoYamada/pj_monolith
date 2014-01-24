@@ -49,7 +49,7 @@ Partial Public Class TaxiSoufujoIkkatsu
         'マスターページ設定
         With Me.Master
             .DispTaxiMenu = True
-            .PageTitle = "タクチケメンテナンス一覧"
+            .PageTitle = "手配書・確認票一括印刷"
         End With
 
     End Sub
@@ -273,9 +273,12 @@ Partial Public Class TaxiSoufujoIkkatsu
     '[送付状印刷]
     Private Sub BtnSoufujo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSoufujo1.Click, BtnSoufujo2.Click
         Dim strSQL As String = ""
-        'strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
-        'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-        'Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
+
+        Joken = Nothing
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        strSQL = SQL.TBL_KOTSUHOTEL.Soufujo(Joken)
+
         Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
         Session.Item(SessionDef.PrintPreview) = "Soufujo"
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
@@ -285,10 +288,13 @@ Partial Public Class TaxiSoufujoIkkatsu
     '[タクチケ手配確認票印刷]
     Private Sub BtnKakuninhyo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKakuninhyo1.Click, BtnKakuninhyo2.Click
         Dim strSQL As String = ""
-        'strSQL = SQL.TBL_KOTSUHOTEL.DrReport(DSP_KOTSUHOTEL(SEQ).KOUENKAI_NO, DSP_KOTSUHOTEL(SEQ).SANKASHA_ID)
-        'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
-        'Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
-        Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
+
+        Joken = Nothing
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        strSQL = SQL.TBL_KOTSUHOTEL.Soufujo(Joken)
+
+        Session.Item(SessionDef.DrPrint_SQL) = strSQL
         Session.Item(SessionDef.PrintPreview) = "TaxiKakuninhyo"
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
