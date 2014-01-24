@@ -3914,7 +3914,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_HOTELHI_TOZEI" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="249" AutoPostBack="True"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="249"></asp:TextBox>â~                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle">
                             JRåîéÊè¡óø
@@ -4017,7 +4017,7 @@
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="6">
                             <asp:TextBox ID="ANS_MR_HOTELHI_TOZEI" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="260" AutoPostBack="True"></asp:TextBox>â~                            
+                                Height="18px" Width="85px" TabIndex="260"></asp:TextBox>â~                            
                         </td>
                     </tr>
                     <tr>

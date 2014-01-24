@@ -1676,7 +1676,7 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.Invalid("タクチケ-利用日1"), Me)
             SetFocus(Me.ANS_TAXI_DATE_1)
             Return False
-        ElseIf Me.ANS_TAXI_DATE_2.Text.Trim = String.Empty Then
+        ElseIf Me.ANS_TAXI_DATE_1.Text.Trim = String.Empty Then
             If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
                 CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日1"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_1)
@@ -2054,8 +2054,8 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_14)
             Return False
         ElseIf Me.ANS_TAXI_DATE_14.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日1"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日14"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_14)
                 Return False
             End If
