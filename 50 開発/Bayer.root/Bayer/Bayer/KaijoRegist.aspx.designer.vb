@@ -880,6 +880,24 @@ Partial Public Class KaijoRegist
     Protected WithEvents ANS_KAISAI_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Table1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Table1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''Image2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
     '''ANS_KAIJOUHI_TF コントロール。
     '''</summary>
     '''<remarks>

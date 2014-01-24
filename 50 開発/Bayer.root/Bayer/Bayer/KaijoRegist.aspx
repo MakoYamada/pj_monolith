@@ -833,6 +833,16 @@
 									</td>
 								</tr>
 							</table>
+							<table id="Table1" border="0" cellpadding="2" cellspacing="0" style="margin-top: 5px;" runat="server" visible="true">
+								<tr style="height: 20px;">
+									<td align="left">
+										<asp:Image ID="Image2" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/exclamation.png" />
+									</td>
+									<td style="color: #cb1a1a; font-weight: bold; font-size: 11pt;" align="left">
+										‹àŠz‚Í Å”²‚« ‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B
+									</td>
+								</tr>
+							</table>
 							<table border="0" cellpadding="1" cellspacing="2">
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijo" style="width: 110px;" rowspan="3">
