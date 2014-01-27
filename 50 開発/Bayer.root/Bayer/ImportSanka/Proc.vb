@@ -163,7 +163,7 @@ Public Class Proc
     'ログテーブル登録処理
     Private Sub InsertTBL_LOG(ByVal status As String, ByVal strMsg As String, Optional ByVal tableName As String = "", Optional ByVal strSQL As String = "")
 
-        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct
+        Dim TBL_LOG As New TableDef.TBL_LOG.DataStruct
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
@@ -179,32 +179,32 @@ Public Class Proc
 
     End Sub
 
-    'データ更新
+    'データ更新または新規登録
     Private Function UpdateTable(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String) As Integer
 
         Dim strSQL As String = ""
         Dim updCnt As Integer = 0
-        Dim TBL_KOTSUHOTEL As New TableDef.TBL_KOTSUHOTEL.DataStruct
+        Dim TBL_SANKA As New TableDef.TBL_SANKA.DataStruct
 
         Try
-            TBL_KOTSUHOTEL.KOUENKAI_NO = fileData(COL_NO.Field1)
-            TBL_KOTSUHOTEL.SANKASHA_ID = fileData(COL_NO.Field2)
-            TBL_KOTSUHOTEL.DR_SANKA = fileData(COL_NO.Field3)
-            TBL_KOTSUHOTEL.UPDATE_USER = pbatchID
+            TBL_SANKA.KOUENKAI_NO = fileData(COL_NO.Field1)
+            TBL_SANKA.SANKASHA_ID = fileData(COL_NO.Field2)
+            TBL_SANKA.DR_SANKA = fileData(COL_NO.Field3)
+            TBL_SANKA.UPDATE_USER = pbatchID
 
-            strSQL = SQL.TBL_KOTSUHOTEL.Update_DR_SANKA(TBL_KOTSUHOTEL)
+            strSQL = SQL.TBL_SANKA.Update(TBL_SANKA)
             updCnt = CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             If updCnt = 0 Then
-                Dim strMsg As String = strfileName & "【" & strRowCnt & "行目】" _
-                                    & COL_NAME.Field1 & ":" & fileData(COL_NO.Field1) & "、" _
-                                    & COL_NAME.Field2 & ":" & fileData(COL_NO.Field2) & " のデータは登録されていません。"
-                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, strMsg, "TBL_KOTSUHOTEL", " SQL:" & strSQL)
+                TBL_SANKA.INPUT_USER = pbatchID
+
+                strSQL = SQL.TBL_SANKA.Insert(TBL_SANKA)
+                updCnt = CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             End If
 
         Catch ex As Exception
             'ログテーブルに登録
-            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[データ更新失敗]" & ex.Message, "TBL_KOTSUHOTEL", " SQL:" & strSQL)
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[データ登録失敗]" & ex.Message, "TBL_SANKA", " SQL:" & strSQL)
         End Try
 
         '更新成功件数を返す

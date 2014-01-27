@@ -183,34 +183,34 @@ Public Class Proc
 
     End Sub
 
-    'データ更新
+    'データ更新または新規登録
     Private Function UpdateTable(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String) As Integer
 
         Dim strSQL As String = ""
         Dim updCnt As Integer = 0
-        Dim TBL_SEIKYU As New TableDef.TBL_SEIKYU.DataStruct
+        Dim TBL_SHOUNIN As New TableDef.TBL_SHOUNIN.DataStruct
 
         Try
-            TBL_SEIKYU.KOUENKAI_NO = fileData(COL_NO.Field1)
-            TBL_SEIKYU.SHIHARAI_NO = fileData(COL_NO.Field2)
-            TBL_SEIKYU.SEIKYU_NO_TOPTOUR = fileData(COL_NO.Field3)
-            TBL_SEIKYU.SHOUNIN_KUBUN = fileData(COL_NO.Field4)
-            TBL_SEIKYU.SHOUNIN_DATE = fileData(COL_NO.Field5)
-            TBL_SEIKYU.UPDATE_USER = pbatchID
+            TBL_SHOUNIN.KOUENKAI_NO = fileData(COL_NO.Field1)
+            TBL_SHOUNIN.SHIHARAI_NO = fileData(COL_NO.Field2)
+            TBL_SHOUNIN.SEIKYU_NO_TOPTOUR = fileData(COL_NO.Field3)
+            TBL_SHOUNIN.SHOUNIN_KUBUN = fileData(COL_NO.Field4)
+            TBL_SHOUNIN.SHOUNIN_DATE = fileData(COL_NO.Field5)
+            TBL_SHOUNIN.UPDATE_USER = pbatchID
 
-            strSQL = SQL.TBL_SEIKYU.Update_SHOUNIN_KEKKA(TBL_SEIKYU)
+            strSQL = SQL.TBL_SHOUNIN.Update(TBL_SHOUNIN)
             updCnt = CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             If updCnt = 0 Then
-                Dim strMsg As String = strfileName & "【" & strRowCnt & "行目】" _
-                                    & COL_NAME.Field1 & ":" & fileData(COL_NO.Field1) & "、" _
-                                    & COL_NAME.Field3 & ":" & fileData(COL_NO.Field3) & " のデータは登録されていません。"
-                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, strMsg, "TBL_SEIKYU", " SQL:" & strSQL)
+                TBL_SHOUNIN.INPUT_USER = pbatchID
+
+                strSQL = SQL.TBL_SHOUNIN.Insert(TBL_SHOUNIN)
+                updCnt = CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             End If
 
         Catch ex As Exception
             'ログテーブルに登録
-            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[データ更新失敗]" & ex.Message, "TBL_SEIKYU", " SQL:" & strSQL)
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[データ登録失敗]" & ex.Message, "TBL_SHOUNIN", " SQL:" & strSQL)
         End Try
 
         '更新成功件数を返す
