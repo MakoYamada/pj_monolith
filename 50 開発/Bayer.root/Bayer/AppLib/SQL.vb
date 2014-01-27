@@ -2196,6 +2196,16 @@ Public Class SQL
             strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
             strSQL &= " )"
             strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.TIME_STAMP_BYL=("
+            strSQL &= " SELECT MAX(TIME_STAMP_BYL)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID=SANKASHA_ID"
+            strSQL &= " )"
+            strSQL &= " AND"
             strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
 
             If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
