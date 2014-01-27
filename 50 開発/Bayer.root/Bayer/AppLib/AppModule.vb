@@ -1067,6 +1067,44 @@ Public Class AppModule
     End Function
 #End Region
 
+#Region "参加テーブル"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_SANKA As TableDef.TBL_SANKA.DataStruct) As TableDef.TBL_SANKA.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.KOUENKAI_NO.ToUpper Then TBL_SANKA.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.SANKASHA_ID.ToUpper Then TBL_SANKA.SANKASHA_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.DR_SANKA.ToUpper Then TBL_SANKA.DR_SANKA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.INPUT_DATE.ToUpper Then TBL_SANKA.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.INPUT_USER.ToUpper Then TBL_SANKA.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.UPDATE_DATE.ToUpper Then TBL_SANKA.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SANKA.Column.UPDATE_USER.ToUpper Then TBL_SANKA.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_SANKA
+    End Function
+#End Region
+
+#Region "承認テーブル"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_SHOUNIN As TableDef.TBL_SHOUNIN.DataStruct) As TableDef.TBL_SHOUNIN.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.KOUENKAI_NO.ToUpper Then TBL_SHOUNIN.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.SEIKYU_NO_TOPTOUR.ToUpper Then TBL_SHOUNIN.SEIKYU_NO_TOPTOUR = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.SHIHARAI_NO.ToUpper Then TBL_SHOUNIN.SHIHARAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.SHOUNIN_KUBUN.ToUpper Then TBL_SHOUNIN.SHOUNIN_KUBUN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.SHOUNIN_DATE.ToUpper Then TBL_SHOUNIN.SHOUNIN_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.INPUT_DATE.ToUpper Then TBL_SHOUNIN.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.INPUT_USER.ToUpper Then TBL_SHOUNIN.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.UPDATE_DATE.ToUpper Then TBL_SHOUNIN.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SHOUNIN.Column.UPDATE_USER.ToUpper Then TBL_SHOUNIN.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_SHOUNIN
+    End Function
+#End Region
+
 #Region "施設マスタ"
     Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_SHISETSU As TableDef.MS_SHISETSU.DataStruct) As TableDef.MS_SHISETSU.DataStruct
         Dim wCnt As Integer = 0
