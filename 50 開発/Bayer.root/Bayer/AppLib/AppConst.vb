@@ -459,7 +459,7 @@ Public Class AppConst
         End Class
 
         '¸Zˆ—@ŠJn“ú
-        Public Const START_DAY As String = "21"
+        Public Const START_DAY As String = "26"
     End Class
 
     Public Class COST
