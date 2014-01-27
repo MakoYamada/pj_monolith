@@ -87,6 +87,10 @@ Public Class Proc
 
     Private Function CreateFile(ByVal fileName As String, ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
 
+        'コードマスタ取得
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        MS_CODE = GetMsCode()
+
         '出力ファイル作成
         Dim sw As New StreamWriter(fileName, False, New System.Text.UTF8Encoding(False))
         sw.NewLine = vbCrLf
@@ -326,8 +330,8 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_TAXI_NO_20))))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_TAXI_NOTE))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_O_TEHAI))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_F_TEHAI))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(GetName_ANS_MR_O_TEHAI(CsvData(wCnt).ANS_MR_O_TEHAI, MS_CODE)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(GetName_ANS_MR_F_TEHAI(CsvData(wCnt).ANS_MR_F_TEHAI, MS_CODE)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_HOTEL_NOTE))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_KOTSUHI), strZeiRate))))
                 sb.Append(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_HOTELHI), strZeiRate)))
@@ -385,4 +389,53 @@ Public Class Proc
 
     End Sub
 
+    '社員用往路臨席希望（回答）
+    Private Function GetName_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As String, ByVal MS_CODE As List(Of TableDef.MS_CODE.DataStruct)) As String
+
+        Dim wStr As String = ""
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_MR_O_TEHAI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    '社員用復路臨席希望（回答）
+    Private Function GetName_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As String, ByVal MS_CODE As List(Of TableDef.MS_CODE.DataStruct)) As String
+
+        Dim wStr As String = ""
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_MR_F_TEHAI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    'MS_CODEのデータを取得
+    Private Function GetMsCode() As List(Of TableDef.MS_CODE.DataStruct)
+
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+
+        Dim strSQL As String = SQL.MS_CODE.AllData()
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsData.Read()
+            Dim MS_CODE_Item As New TableDef.MS_CODE.DataStruct
+            With MS_CODE_Item
+                .CODE = CmnDb.DbData(TableDef.MS_CODE.Column.CODE, RsData)
+                .DATA_ID = CmnDb.DbData(TableDef.MS_CODE.Column.DATA_ID, RsData)
+                .DISP_VALUE = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
+                .DISP_TEXT = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_TEXT, RsData)
+            End With
+            MS_CODE.Add(MS_CODE_Item)
+        End While
+        RsData.Close()
+
+        Return MS_CODE
+    End Function
 End Class
