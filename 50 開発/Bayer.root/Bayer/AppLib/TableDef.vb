@@ -3439,4 +3439,70 @@
         End Structure
     End Class
 
+    Public Class TBL_SANKA
+        <Serializable()> Public Structure DataStruct
+            Public KOUENKAI_NO As String
+            Public SANKASHA_ID As String
+            Public DR_SANKA As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const SANKASHA_ID As String = "SANKASHA_ID"
+            Public Const DR_SANKA As String = "DR_SANKA"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const SANKASHA_ID As String = "参加者ID"
+            Public Const DR_SANKA As String = "参加/不参加"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
+    Public Class TBL_SHOUNIN
+        <Serializable()> Public Structure DataStruct
+            Public KOUENKAI_NO As String
+            Public SEIKYU_NO_TOPTOUR As String
+            Public SHIHARAI_NO As String
+            Public SHOUNIN_KUBUN As String
+            Public SHOUNIN_DATE As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
+            Public Const SHIHARAI_NO As String = "SHIHARAI_NO"
+            Public Const SHOUNIN_KUBUN As String = "SHOUNIN_KUBUN"
+            Public Const SHOUNIN_DATE As String = "SHOUNIN_DATE"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
+            Public Const SHIHARAI_NO As String = "支払番号"
+            Public Const SHOUNIN_KUBUN As String = "承認区分"
+            Public Const SHOUNIN_DATE As String = "精算承認日"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
 End Class
