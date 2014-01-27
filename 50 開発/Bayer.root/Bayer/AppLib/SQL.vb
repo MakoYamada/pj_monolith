@@ -6129,4 +6129,93 @@ Public Class SQL
         End Function
     End Class
 
+    Public Class TBL_SANKA
+
+        Public Shared Function Insert(ByVal TBL_SANKA As TableDef.TBL_SANKA.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_SANKA"
+            strSQL &= " (" & TableDef.TBL_SANKA.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_SANKA.Column.SANKASHA_ID
+            strSQL &= "," & TableDef.TBL_SANKA.Column.DR_SANKA
+            strSQL &= "," & TableDef.TBL_SANKA.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_SANKA.Column.INPUT_USER
+            strSQL &= "," & TableDef.TBL_SANKA.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.TBL_SANKA.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_SANKA.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SANKA.SANKASHA_ID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SANKA.DR_SANKA) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SANKA.INPUT_USER) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SANKA.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_SANKA As TableDef.TBL_SANKA.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_SANKA SET"
+            strSQL &= " " & TableDef.TBL_SANKA.Column.DR_SANKA & "=N'" & CmnDb.SqlString(TBL_SANKA.DR_SANKA) & "'"
+            strSQL &= "," & TableDef.TBL_SANKA.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_SANKA.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SANKA.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_SANKA.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SANKA.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_SANKA.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_SANKA.SANKASHA_ID) & "'"
+
+            Return strSQL
+        End Function
+
+    End Class
+
+    Public Class TBL_SHOUNIN
+
+        Public Shared Function Insert(ByVal TBL_SHOUNIN As TableDef.TBL_SHOUNIN.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_SHOUNIN"
+            strSQL &= " (" & TableDef.TBL_SHOUNIN.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.SEIKYU_NO_TOPTOUR
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.SHIHARAI_NO
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.SHOUNIN_KUBUN
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.SHOUNIN_DATE
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.INPUT_USER
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_SHOUNIN.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SHOUNIN.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SHOUNIN.SHIHARAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SHOUNIN.SHOUNIN_KUBUN) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SHOUNIN.SHOUNIN_DATE) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SHOUNIN.INPUT_USER) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SHOUNIN.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_SHOUNIN As TableDef.TBL_SHOUNIN.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_SHOUNIN SET"
+            strSQL &= " " & TableDef.TBL_SHOUNIN.Column.SHIHARAI_NO & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.SHIHARAI_NO) & "'"
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.SHOUNIN_KUBUN & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.SHOUNIN_KUBUN) & "'"
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.SHOUNIN_DATE & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.SHOUNIN_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_SHOUNIN.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_SHOUNIN.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_SHOUNIN.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.SEIKYU_NO_TOPTOUR) & "'"
+
+            Return strSQL
+        End Function
+    End Class
+
 End Class
