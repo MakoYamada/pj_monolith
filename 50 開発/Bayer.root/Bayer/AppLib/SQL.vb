@@ -1625,25 +1625,58 @@ Public Class SQL
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
 
+            'strSQL &= "SELECT DISTINCT"
+            'strSQL &= " WK_KOTSUHOTEL.*"
+            'strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            'strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            'strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            'strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            'strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            'strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            'strSQL &= " ,USER_NAME"
+            'strSQL &= " FROM"
+            'strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            'strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            'strSQL &= " ,"
+            'strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            'strSQL &= " UNION ALL "
+            'strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            'strSQL &= " ) AS MS_USER"
+            'strSQL &= " WHERE"
+            'strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            'strSQL &= " AND"
+            'strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            'strSQL &= " SELECT MAX(TIME_STAMP)"
+            'strSQL &= " FROM"
+            'strSQL &= " TBL_KOUENKAI"
+            'strSQL &= " WHERE"
+            'strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            'strSQL &= " )"
+            'strSQL &= " AND"
+            'strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
             strSQL &= "SELECT DISTINCT"
             strSQL &= " WK_KOTSUHOTEL.*"
-            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
-            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
-            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
-            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
-            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
-            strSQL &= " ,WK_KOUENKAI.TO_DATE"
-            strSQL &= " ,USER_NAME"
-            strSQL &= " FROM"
-            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
-            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
-            strSQL &= " ,"
-            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
-            strSQL &= " UNION ALL "
-            strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
-            strSQL &= " ) AS MS_USER"
-            strSQL &= " WHERE"
-            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            strSQL &= " ISNULL(WK_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
             strSQL &= " AND"
             strSQL &= " WK_KOUENKAI.TIME_STAMP=("
             strSQL &= " SELECT MAX(TIME_STAMP)"
@@ -1652,16 +1685,16 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
             strSQL &= " )"
-            strSQL &= " AND"
-            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
 
             If NewData = True Then
                 '新着
-                strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
+                strSQL &= " AND"
+                strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
             Else
                 If TEHAISHO_JOKEN Is Nothing Then
                     '検索
-                    strSQL &= " AND WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
                     strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
                     strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
                 End If
@@ -1709,9 +1742,12 @@ Public Class SQL
             End If
 
             If Trim(Joken.DR_SANKA) <> "" Then
-                strSQL &= " AND WK_KOTSUHOTEL."
-                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
+                strSQL &= " AND SANKA_FLAG"
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
+
+                'strSQL &= " AND WK_KOTSUHOTEL."
+                'strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_SANKA
+                'strSQL &= " =N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
