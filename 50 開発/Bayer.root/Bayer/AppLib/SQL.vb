@@ -6799,6 +6799,35 @@ Public Class SQL
 
     Public Class TBL_SANKA
 
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_SANKA.*" _
+        & " FROM TBL_SANKA"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " TBL_SANKA.KOUENKAI_NO" _
+        & ",TBL_SANKA.SANKASHA_ID"
+
+        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_SANKA.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byKOUENKAI_NO_SANKASHA_ID(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_SANKA.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_SANKA.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_SANKA As TableDef.TBL_SANKA.DataStruct) As String
             Dim strSQL As String = ""
 
