@@ -8,20 +8,20 @@
     <table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td align="left">
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                <table cellpadding="2" cellspacing="0" border="0">
                     <tr style="width:900px">
-                        <td style="width:10%">
+                        <td width="200px">
                             BYL企画担当者BU 
                         </td>
                         <td>
-                            <asp:DropDownList ID="JOKEN_BU" runat="server" TabIndex="1">
+                            <asp:DropDownList ID="JOKEN_BU" runat="server" TabIndex="1" Width="250px">
                             </asp:DropDownList>
                         </td>
-                        <td style="width:10%">
+                        <td style="width:200px">
                             BYL企画担当者エリア
                         </td>
                         <td>
-                            <asp:DropDownList ID="JOKEN_AREA" runat="server" TabIndex="2">
+                            <asp:DropDownList ID="JOKEN_AREA" runat="server" TabIndex="2" Width="250px">
                             </asp:DropDownList>
                         </td>
                     </tr>

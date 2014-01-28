@@ -44,6 +44,12 @@ Partial Public Class TaxiSoufujoIkkatsu
             Me.BtnSoufujo2.Visible = False
             Me.BtnKakuninhyo1.Visible = False
             Me.BtnKakuninhyo2.Visible = False
+            Me.BtnBack2.Visible = False
+
+            SetJoken()
+            If Me.JokenFROM_DATE_YYYY.Text.Trim <> "" OrElse Me.JokenTO_DATE_YYYY.Text.Trim <> "" Then
+                DispList()
+            End If
         End If
 
         'マスターページ設定
@@ -129,6 +135,7 @@ Partial Public Class TaxiSoufujoIkkatsu
             Me.BtnSoufujo2.Visible = True
             Me.BtnKakuninhyo1.Visible = True
             Me.BtnKakuninhyo2.Visible = True
+            Me.BtnBack2.Visible = True
 
             'グリッドビュー表示
             SetGridView()
@@ -298,5 +305,18 @@ Partial Public Class TaxiSoufujoIkkatsu
         Session.Item(SessionDef.PrintPreview) = "TaxiKakuninhyo"
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
+    End Sub
+
+    Private Sub SetJoken()
+        If Joken.FROM_DATE <> Nothing AndAlso Joken.FROM_DATE.Trim <> "" Then
+            Me.JokenFROM_DATE_YYYY.Text = Joken.FROM_DATE.Substring(0, 4)
+            Me.JokenFROM_DATE_MM.Text = Joken.FROM_DATE.Substring(4, 2)
+            Me.JokenFROM_DATE_DD.Text = Joken.FROM_DATE.Substring(6, 2)
+        End If
+        If Joken.TO_DATE <> Nothing AndAlso Joken.TO_DATE.Trim <> "" Then
+            Me.JokenTO_DATE_YYYY.Text = Joken.TO_DATE.Substring(0, 4)
+            Me.JokenTO_DATE_MM.Text = Joken.TO_DATE.Substring(4, 2)
+            Me.JokenTO_DATE_DD.Text = Joken.TO_DATE.Substring(6, 2)
+        End If
     End Sub
 End Class

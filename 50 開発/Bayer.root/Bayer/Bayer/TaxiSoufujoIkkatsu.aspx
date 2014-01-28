@@ -13,10 +13,10 @@
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0" width="100%">
                                 <tr>
-                                    <td>
+                                    <td style="width:140px">
                                         スキャンデータ取込日
                                     </td>
-                                    <td valign="middle" colspan="5">
+                                    <td align="left" valign="middle" colspan="5">
 							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
                                             TabIndex="3"></asp:TextBox>年
 							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 

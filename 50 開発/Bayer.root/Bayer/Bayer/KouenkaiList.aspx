@@ -5,28 +5,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table cellspacing="0" cellpadding="2" border="0" width="900px">
+    <table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td align="left">
-                <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                <table cellpadding="2" cellspacing="0" border="0">
                     <tr>
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
-                                    <td align="right">
+                                    <td align="right" width="140px">
                                         BYL企画担当者<br />
                                         (ローマ字)
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="350px" 
+                                        <asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="250px" 
                                             MaxLength="300" TabIndex="1"></asp:TextBox>                                        
                                     </td>
-                                    <td align="right">
+                                    <td align="right" width="120px">
                                         BYL手配担当者<br />
                                         (ローマ字)
                                     </td>
                                     <td colspan="3">
-                                        <asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="350px" MaxLength="300" 
+                                        <asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="250px" MaxLength="300" 
                                             TabIndex="2"></asp:TextBox>                                        
                                     </td>
                                 </tr>
@@ -43,10 +43,14 @@
                                     <td align="right">
                                         講演会番号
                                     </td>
-                                    <td colspan="5">
+                                    <td>
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="121px" MaxLength="14" 
-                                            TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
-                                        講演会名&nbsp;&nbsp;&nbsp;
+                                            TabIndex="4"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        講演会名
+                                    </td>
+                                    <td colspan="3">
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="544px" MaxLength="160" 
                                             TabIndex="5"></asp:TextBox>
                                     </td>
