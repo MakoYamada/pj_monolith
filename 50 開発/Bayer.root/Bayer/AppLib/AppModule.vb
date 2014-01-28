@@ -4226,11 +4226,7 @@ Public Class AppModule
 
     'タクシーチケット：利用日（回答）
     Public Shared Function GetName_ANS_TAXI_DATE(ByVal ANS_TAXI_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
-        If ShortFormat = False Then
-            Return CmnModule.Format_Date(ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-        Else
-            Return ANS_TAXI_DATE
-        End If
+        Return CmnModule.Format_Date(ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD)
     End Function
     Public Shared Function GetName_ANS_TAXI_DATE_1(ByVal ANS_TAXI_DATE_1 As String, Optional ByVal ShortFormat As Boolean = False) As String
         Return GetName_ANS_TAXI_DATE(ANS_TAXI_DATE_1, ShortFormat)

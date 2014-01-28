@@ -294,7 +294,7 @@ Partial Public Class TaxiSoufujoIkkatsu
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
         strSQL = SQL.TBL_KOTSUHOTEL.Soufujo(Joken)
 
-        Session.Item(SessionDef.DrPrint_SQL) = strSQL
+        Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
         Session.Item(SessionDef.PrintPreview) = "TaxiKakuninhyo"
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)

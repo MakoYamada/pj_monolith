@@ -247,18 +247,12 @@ Partial Public Class Preview
     End Sub
 
     'タクチケ手配確認票
-    Private Sub PrintKakuninhyo(Optional ByVal Ikkatsu As Boolean = False)
+    Private Sub PrintKakuninhyo()
 
         Dim rpt1 As New TaxiKakuninReport()
 
         'データ設定
-        If Ikkatsu Then
-            '一括印刷
-            rpt1.DataSource = GetDrData()
-        Else
-            '個別印刷
-            rpt1.DataSource = GetDrData()
-        End If
+        rpt1.DataSource = GetTehaishoIkkatsu()
 
         rpt1.Document.Printer.PrinterName = ""
 
