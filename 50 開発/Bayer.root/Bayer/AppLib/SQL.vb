@@ -1742,7 +1742,7 @@ Public Class SQL
             End If
 
             If Trim(Joken.DR_SANKA) <> "" Then
-                strSQL &= " AND SANKA_FLAG"
+                strSQL &= " AND TBL_SANKA.DR_SANKA"
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
 
                 'strSQL &= " AND WK_KOTSUHOTEL."
