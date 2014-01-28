@@ -583,10 +583,10 @@ Partial Public Class TaxiMeisaiCsv
         End If
     End Function
     Private Function GetName_TKT_MIKETSU(ByVal TKT_SEIKYU_YM As String, ByVal TKT_MIKETSU As String) As String
-        If Trim(TKT_SEIKYU_YM) <> "" AndAlso Trim(TKT_MIKETSU) = AppConst.TAXITICKET_HAKKO.TKT_MIKETSU.Code.Fuka Then
-            Return ""
-        Else
+        If Trim(TKT_SEIKYU_YM) = "" AndAlso Trim(TKT_MIKETSU) = AppConst.TAXITICKET_HAKKO.TKT_MIKETSU.Code.Kanou Then
             Return "○"
+        Else
+            Return ""
         End If
     End Function
     Private Function GetName_STATUS(ByVal TKT_SEIKYU_YM As String, ByVal TKT_VOID As String) As String
