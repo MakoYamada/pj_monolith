@@ -949,6 +949,8 @@
             Public TKT_LINE_NO_18 As Integer
             Public TKT_LINE_NO_19 As Integer
             Public TKT_LINE_NO_20 As Integer
+
+            Public SANKA_FLG As String
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1413,6 +1415,7 @@
             Public Const USER_NAME As String = "USER_NAME"
             Public Const SEIHIN_NAME As String = "SEIHIN_NAME"
             Public Const TIME_STAMP As String = "TIME_STAMP"
+            Public Const SANKA_FLG As String = "SANKA_FLG"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
@@ -1875,6 +1878,7 @@
             Public Const FROM_DATE As String = "開催日FROM"
             Public Const TO_DATE As String = "開催日TO"
             Public Const USER_NAME As String = "トップツアー担当者"
+            Public Const SANKA_FLG As String = "参加/不参加"
         End Class
     End Class
 

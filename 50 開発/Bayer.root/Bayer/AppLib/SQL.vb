@@ -1592,7 +1592,8 @@ Public Class SQL
             strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
             strSQL &= " ,WK_KOUENKAI.FROM_DATE"
             strSQL &= " ,WK_KOUENKAI.TO_DATE"
-            strSQL &= " , USER_NAME"
+            strSQL &= " ,WK_SANKA.DR_SANKA AS SANKA_FLG"
+            strSQL &= " ,USER_NAME"
             strSQL &= " FROM"
             strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
             strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
@@ -1601,6 +1602,11 @@ Public Class SQL
             strSQL &= " UNION ALL "
             strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= " ) AS MS_USER"
+            strSQL &= " ,"
+            strSQL &= " (SELECT N'' AS KOUENKAI_NO,N'' AS SANKASHA_ID,N'' AS DR_SANKA"
+            strSQL &= " UNION ALL "
+            strSQL &= " SELECT KOUENKAI_NO,SANKASHA_ID,DR_SANKA FROM TBL_SANKA"
+            strSQL &= " ) AS WK_SANKA"
             strSQL &= " WHERE"
             strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
             strSQL &= " AND"
@@ -1613,6 +1619,10 @@ Public Class SQL
             strSQL &= " )"
             strSQL &= " AND"
             strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+            'strSQL &= " AND"
+            'strSQL &= " ISNULL(WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & ",N'')=WK_SANKA.KOUENKAI_NO"
+            'strSQL &= " AND"
+            'strSQL &= " ISNULL(WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & ",N'')=WK_SANKA.SANKASHA_ID"
 
             If NewData = True Then
                 '新着

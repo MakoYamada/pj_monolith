@@ -659,6 +659,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.USER_NAME.ToUpper Then TBL_KOTSUHOTEL.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEIHIN_NAME.ToUpper Then TBL_KOTSUHOTEL.SEIHIN_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP.ToUpper Then TBL_KOTSUHOTEL.TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKA_FLG.ToUpper Then TBL_KOTSUHOTEL.TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KOTSUHOTEL
