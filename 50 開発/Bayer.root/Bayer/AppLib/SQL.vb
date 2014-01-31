@@ -6542,11 +6542,10 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function byTKT_KAISHA_TKT_NO(ByVal TKT_KAISHA As String, ByVal TKT_NO As String) As String
+        Public Shared Function byTKT_NO(ByVal TKT_NO As String) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_KAISHA=N'" & CmnDb.SqlString(TKT_KAISHA) & "'"
-            strSQL &= " AND TBL_TAXITICKET_HAKKO.TKT_NO=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO=N'" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
