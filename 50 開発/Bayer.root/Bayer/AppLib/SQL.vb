@@ -1452,9 +1452,42 @@ Public Class SQL
         End Function
 
         Public Shared Function byKOUENKAI_NO_SANKASHA_ID_NEW(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As String
-            Dim strSQL As String = SQL_SELECT
+            'Dim strSQL As String = SQL_SELECT
+            Dim strSQL As String = String.Empty
 
-            strSQL &= " WHERE TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            strSQL &= " ISNULL(WK_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            'strSQL &= " WHERE TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
             strSQL &= " AND"
             strSQL &= " TBL_KOTSUHOTEL.TIME_STAMP_BYL=("
