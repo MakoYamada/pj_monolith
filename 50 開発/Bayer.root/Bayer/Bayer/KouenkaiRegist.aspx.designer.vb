@@ -16,6 +16,15 @@ Option Explicit On
 Partial Public Class KouenkaiRegist
 
     '''<summary>
+    '''BtnSubmit1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSubmit1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnBack1 コントロール。
     '''</summary>
     '''<remarks>
@@ -340,13 +349,13 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents BtnRireki As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnSubmit コントロール。
+    '''BtnSubmit2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSubmit2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnNozomi コントロール。

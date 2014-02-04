@@ -33,13 +33,24 @@
 		    	<asp:GridView ID="GrvList" runat="server" TabIndex="-1" CellPadding="2" 
 				 AutoGenerateColumns="False" 
 				 AllowPaging="True" PageSize="13"
-				 DataKeyNames="KOUENKAI_NO" DataSourceID="SqlDataSource1">
+				 DataKeyNames="KOUENKAI_NO" DataSourceID="SqlDataSource1" Width="900px">
 					<HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
 					<AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
 					<RowStyle Wrap="false" BackColor="#ffffff" />
 					<PagerSettings Mode="NumericFirstLast" Position="Top" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
+						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" 
+                            ItemStyle-Wrap="false" HeaderStyle-Wrap="false" 
+                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" 
+                            ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" 
+                            ItemStyle-Width="68px" >
+<ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
+
+<HeaderStyle Wrap="False"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Center" Wrap="False" Width="68px"></ItemStyle>
+                        </asp:ButtonField>
 					    <asp:BoundField DataField="TIME_STAMP" HeaderText="Timestamp" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
@@ -54,21 +65,25 @@
                         </asp:BoundField>
 						<asp:BoundField DataField="BU" HeaderText="BYL企画担当BU" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
-<HeaderStyle Wrap="False"></HeaderStyle>
+<HeaderStyle Wrap="True"></HeaderStyle>
 
-<ItemStyle Wrap="False" HorizontalAlign="Center" Width="100px"></ItemStyle>
+<ItemStyle Wrap="True" HorizontalAlign="Center" Width="80px"></ItemStyle>
                         </asp:BoundField>
 						<asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="BYL企画担当エリア" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
-<HeaderStyle Wrap="False"></HeaderStyle>
+<HeaderStyle Wrap="True"></HeaderStyle>
 
-<ItemStyle Wrap="False" HorizontalAlign="Center" Width="80px"></ItemStyle>
+<ItemStyle Wrap="True" HorizontalAlign="Center" Width="80px"></ItemStyle>
                         </asp:BoundField>
 						<asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="BYL企画担当営業所" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" >
-<HeaderStyle Wrap="False"></HeaderStyle>
+<HeaderStyle Wrap="True"></HeaderStyle>
 
-<ItemStyle Wrap="False" HorizontalAlign="Center" Width="100px"></ItemStyle>
+<ItemStyle Wrap="True" HorizontalAlign="Center" Width="80px"></ItemStyle>
+                        </asp:BoundField>
+						<asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="BYL企画担当">
+                        <HeaderStyle Width="140px" Wrap="False" />
+                        <ItemStyle Width="140px" Wrap="False" />
                         </asp:BoundField>
 						<asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" >
@@ -82,17 +97,6 @@
 
 <ItemStyle Wrap="False" HorizontalAlign="Center" Width="100px"></ItemStyle>
                         </asp:BoundField>
-						<asp:ButtonField ButtonType="Button" HeaderText="" Text="詳細" 
-                            ItemStyle-Wrap="false" HeaderStyle-Wrap="false" 
-                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" 
-                            ControlStyle-CssClass="ButtonList" ControlStyle-Width="46px" 
-                            ItemStyle-Width="68px" >
-<ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
-
-<HeaderStyle Wrap="False"></HeaderStyle>
-
-<ItemStyle HorizontalAlign="Center" Wrap="False" Width="68px"></ItemStyle>
-                        </asp:ButtonField>
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />
 					</Columns>

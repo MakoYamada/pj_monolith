@@ -46,21 +46,25 @@ Partial Public Class KouenkaiRegist
             '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
             If URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
                 URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
-                BtnSubmit.Visible = True
+                BtnSubmit1.Visible = True
+                BtnSubmit2.Visible = True
                 '''BtnNozomi.Visible = True
             Else
-                BtnSubmit.Visible = False
+                BtnSubmit1.Visible = False
+                BtnSubmit2.Visible = False
                 '''BtnNozomi.Visible = False
             End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
             If Popup Then
                 BtnRireki.Visible = False
-                BtnSubmit.Visible = False
+                BtnSubmit1.Visible = False
+                BtnSubmit2.Visible = False
                 '''BtnNozomi.Visible = False
             Else
                 BtnRireki.Visible = True
-                BtnSubmit.Visible = True
+                BtnSubmit1.Visible = True
+                BtnSubmit2.Visible = True
                 '''BtnNozomi.Visible = True
             End If
 
@@ -139,8 +143,8 @@ Partial Public Class KouenkaiRegist
         Me.TIME_STAMP.Text = AppModule.GetName_TIME_STAMP(DSP_KOUENKAI(DSP_SEQ).TIME_STAMP)
         Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(DSP_KOUENKAI(DSP_SEQ).KOUENKAI_NAME)
         Me.TAXI_PRT_NAME.Text = AppModule.GetName_TAXI_PRT_NAME(DSP_KOUENKAI(DSP_SEQ).TAXI_PRT_NAME)
-        Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(DSP_KOUENKAI(DSP_SEQ).FROM_DATE)
-        Me.TO_DATE.Text = AppModule.GetName_TO_DATE(DSP_KOUENKAI(DSP_SEQ).TO_DATE)
+        Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(DSP_KOUENKAI(DSP_SEQ).FROM_DATE, True)
+        Me.TO_DATE.Text = AppModule.GetName_TO_DATE(DSP_KOUENKAI(DSP_SEQ).TO_DATE, True)
         Me.KAIJO_NAME.Text = AppModule.GetName_KAIJO_NAME(DSP_KOUENKAI(DSP_SEQ).KAIJO_NAME)
         Me.SEIHIN_NAME.Text = AppModule.GetName_SEIHIN_NAME(DSP_KOUENKAI(DSP_SEQ).SEIHIN_NAME)
         Me.INTERNAL_ORDER_T.Text = AppModule.GetName_INTERNAL_ORDER_T(DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_T)
@@ -353,7 +357,7 @@ Partial Public Class KouenkaiRegist
     End Sub
 
     '[登録]
-    Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
+    Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit1.Click, BtnSubmit2.Click
         If Not Check() Then Exit Sub
 
         '入力値を取得

@@ -9,16 +9,19 @@ Partial Public Class DrRireki
     Private SEQ As Integer
 
     'グリッド列    Private Enum CellIndex
+        Button1
         FROM_DATE
+        SANKASHA_ID
         DR_NAME
+        MR_NAME
         TIME_STAMP
         UPDATE_DATE
         USER_NAME
+        ANS_STATUS_TEHAI
         TEHAI_HOTEL
         TEHAI_KOTSU
         TEHAI_TAXI
         SEND_FLAG
-        Button1
         KOUENKAI_NO
         SALESFORCE_ID
         TO_DATE
@@ -159,6 +162,8 @@ Partial Public Class DrRireki
             e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
             '更新日
             e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            'TOPステータス
+            e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text = AppModule.GetName_ANS_STATUS_TEHAI(e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text)
             '宿泊
             e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetMark_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
             '交通

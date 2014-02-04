@@ -9,8 +9,10 @@
                         <td style="width:50%">
                         </td>
                         <td style="width:50%" align="right">
-                            <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+				            <asp:Button ID="BtnSubmit1" runat="server" Width="150px" Text="登録" 
                                 CssClass="Button" TabIndex="1" />
+                            <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
+                                CssClass="Button" TabIndex="2" />
                         </td>
                     </tr>
                 </table> 
@@ -30,7 +32,7 @@
 							新着ステータス
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
-							<asp:DropDownList ID="KIDOKU_FLG" runat="server" Width="100px" TabIndex="2"></asp:DropDownList>
+							<asp:DropDownList ID="KIDOKU_FLG" runat="server" Width="100px" TabIndex="3"></asp:DropDownList>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
 							ステータス
@@ -51,7 +53,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
 						    <asp:TextBox ID="KOUENKAI_NAME" runat="server" BorderStyle="None" Height="35px" 
-                                ReadOnly="True" TextMode="MultiLine" Width="624px"></asp:TextBox>
+                                ReadOnly="True" TextMode="MultiLine" Width="624px" TabStop="False"></asp:TextBox>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
 							チケット印字名
@@ -78,7 +80,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" colspan="7">
                             <asp:TextBox ID="KAIJO_NAME" runat="server" BorderStyle="None" Height="35px" 
-                                ReadOnly="True" TextMode="MultiLine" Width="624px"></asp:TextBox>
+                                ReadOnly="True" TextMode="MultiLine" Width="624px" TabStop="False"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>
@@ -140,7 +142,7 @@
 							TOP担当者
 						</td>
 						<td nowrap="nowrap" align="left">
-                            <asp:DropDownList ID="TTEHAI_TANTO" runat="server" TabIndex="3">
+                            <asp:DropDownList ID="TTEHAI_TANTO" runat="server" TabIndex="4">
                             </asp:DropDownList>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
@@ -148,7 +150,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" colspan="5">
                             <asp:TextBox ID="DANTAI_CODE" runat="server" Width="62px" 
-                                MaxLength="6" TabIndex="4"></asp:TextBox>                                        
+                                MaxLength="6" TabIndex="5"></asp:TextBox>                                        
 
 						</td>
 					</tr>
@@ -184,7 +186,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
                             <asp:TextBox ID="KIKAKU_TANTO_AREA" runat="server" MaxLength="80" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="418px" TabIndex="250" 
+                                TextMode="MultiLine" Height="35px" Width="418px" TabStop="False"
                                 BorderStyle="None"></asp:TextBox>
 						</td>
 					</tr>
@@ -194,7 +196,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
                             <asp:TextBox ID="KIKAKU_TANTO_EIGYOSHO" runat="server" MaxLength="80" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="418px" TabIndex="250" 
+                                TextMode="MultiLine" Height="35px" Width="418px" TabStop="False" 
                                 BorderStyle="None"></asp:TextBox>
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
@@ -210,7 +212,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem">
                             <asp:TextBox ID="KIKAKU_TANTO_NAME" runat="server" MaxLength="150" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="417px" TabIndex="250" 
+                                TextMode="MultiLine" Height="35px" Width="417px" TabStop="False" 
                                 BorderStyle="None"></asp:TextBox>                            
 						</td>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
@@ -218,7 +220,7 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
                             <asp:TextBox ID="KIKAKU_TANTO_ROMA" runat="server" MaxLength="150" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="417px" TabIndex="250" 
+                                TextMode="MultiLine" Height="35px" Width="417px" TabStop="False" 
                                 BorderStyle="None"></asp:TextBox>                            
 						</td>
 					</tr>
@@ -242,7 +244,7 @@
 						</td>
 						<td align="left" class="TdItem" colspan="5">
                             <asp:TextBox ID="KIKAKU_TANTO_EMAIL" runat="server" MaxLength="128" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="903px" TabIndex="250" 
+                                TextMode="MultiLine" Height="35px" Width="903px" TabStop="False" 
                                 BorderStyle="None"></asp:TextBox>                            
 						</td>
 					</tr>
@@ -252,7 +254,7 @@
 						</td>
 						<td align="left" class="TdItem" colspan="5">
                             <asp:TextBox ID="KIKAKU_TANTO_EMAIL_KEITAI" runat="server" MaxLength="128" ReadOnly="true" 
-                                TextMode="MultiLine" Height="35px" Width="903px" TabIndex="250" 
+                                TextMode="MultiLine" Height="35px" Width="903px" TabStop="False" 
                                 BorderStyle="None"></asp:TextBox>                            
 						</td>
 					</tr>
@@ -310,14 +312,16 @@
 		        <table cellspacing="0" cellpadding="0" border="0" style="width:1100px;">
 			        <tr style="height: 36px; width:100%">
 				        <td align="left" style="width:30%">
-				            <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" CssClass="Button" TabIndex="5" />
+				            <asp:Button ID="BtnRireki" runat="server" Width="150px" Text="履歴表示" 
+                                CssClass="Button" TabIndex="6" />
 				        </td>
 				        <td align="right" style="width:70%">
-				            <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" 
-                                CssClass="Button" TabIndex="6" />
+				            <asp:Button ID="BtnSubmit2" runat="server" Width="150px" Text="登録" 
+                                CssClass="Button" TabIndex="7" />
 				            <!-- <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" 
                                 CssClass="Button" /> -->
-					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="戻る" CssClass="Button" TabIndex="7" />
+					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="戻る" 
+                                CssClass="Button" TabIndex="8" />
 				        </td>
 			        </tr>
 		        </table>

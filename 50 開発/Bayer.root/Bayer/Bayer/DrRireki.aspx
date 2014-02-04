@@ -43,14 +43,28 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
+                        <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
+                            ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
+                            <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
+                            </ItemStyle>
+                        </asp:ButtonField>
                         <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
+                        <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者番号">
+                        <ItemStyle Width="100px" Wrap="False" />
+                        </asp:BoundField>
                         <asp:BoundField DataField="DR_NAME" HeaderText="ＤＲ氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="MR_NAME" HeaderText="DR担当MR">
+                        <ItemStyle Width="100px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
@@ -67,6 +81,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
+                        <asp:BoundField DataField="ANS_STATUS_TEHAI" HeaderText="TOPステータス" />
                         <asp:BoundField DataField="TEHAI_HOTEL" HeaderText="宿泊" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
@@ -85,14 +100,6 @@
                         <asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI送信">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
-                        <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
-                            <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
-                            </ItemStyle>
-                        </asp:ButtonField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" Visible="False" />
                         <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALEFORCE_ID" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
