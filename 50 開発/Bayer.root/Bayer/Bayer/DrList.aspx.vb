@@ -8,18 +8,21 @@ Partial Public Class DrList
     Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
+        Button1
         FROM_DATE
+        KOUENKAI_NO
         KOUENKAI_NAME
+        SANKASHA_ID
         DR_NAME
+        MR_NAME
         TIME_STAMP
         UPDATE_DATE
         USER_NAME
+        ANS_STATUS_TEHAI
         TEHAI_HOTEL
         TEHAI_KOTSU
         TEHAI_TAXI
         SEND_FLAG
-        Button1
-        KOUENKAI_NO
         SALESFORCE_ID
         TO_DATE
         REQ_O_TEHAI_1
@@ -242,6 +245,8 @@ Partial Public Class DrList
             e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
             '更新日
             e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            'TOPステータス
+            e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text = AppModule.GetName_ANS_STATUS_TEHAI(e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text)
             '宿泊
             e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetMark_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
             '交通
@@ -270,7 +275,7 @@ Partial Public Class DrList
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
+            Me.GrvList.BorderStyle = BorderStyle.NotSet
             e.Row.Cells(CellIndex.SALESFORCE_ID).Visible = False
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
             e.Row.Cells(CellIndex.REQ_O_TEHAI_1).Visible = False

@@ -9,17 +9,18 @@ Partial Public Class NewDrList
 
     'グリッド列    Private Enum CellIndex
         CHK_PRINT
+        Button1
         JISSHI_DATE
+        KOUENKAI_NO
         KOUENKAI_NAME
         DR_NAME
+        MR_NAME
         TIME_STAMP
         USER_NAME
         KUBUN
         REQ_HOTEL
         REQ_KOTSU
         REQ_TAXI
-        Button1
-        KOUENKAI_NO
         SALESFORCE_ID
         TO_DATE
         REQ_O_TEHAI_1
@@ -253,7 +254,6 @@ Partial Public Class NewDrList
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
             e.Row.Cells(CellIndex.SALESFORCE_ID).Visible = False
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
             e.Row.Cells(CellIndex.REQ_O_TEHAI_1).Visible = False
