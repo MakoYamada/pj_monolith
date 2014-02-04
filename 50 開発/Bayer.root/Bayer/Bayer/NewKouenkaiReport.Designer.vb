@@ -318,7 +318,7 @@ Partial Public Class NewKouenkaiReport
         Me.Label1.Left = 0.03937008!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = resources.GetString("Label1.Style")
-        Me.Label1.Text = "新着　会合一覧"
+        Me.Label1.Text = "【新着】会合一覧"
         Me.Label1.Top = 0.6874017!
         Me.Label1.Width = 12.08661!
         '

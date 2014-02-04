@@ -45,7 +45,7 @@ Partial Public Class NewKouenkaiList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "新着　会合（基本情報）"
+            .PageTitle = "【新着】基本情報"
         End With
 
     End Sub

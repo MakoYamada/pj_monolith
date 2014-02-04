@@ -49,7 +49,7 @@ Partial Public Class KouenkaiList
         'マスターページ設定
         With Me.Master
             .HideLoginUser = True   'QQQ
-            .PageTitle = "【検索】会合基本情報"
+            .PageTitle = "【検索】基本情報"
         End With
     End Sub
 

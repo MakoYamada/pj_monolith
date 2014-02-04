@@ -58,7 +58,7 @@ Partial Public Class NewDrList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "新着　交通・宿泊手配依頼"
+            .PageTitle = "【新着】交通・宿泊手配依頼"
         End With
 
     End Sub

@@ -67,6 +67,14 @@ Partial Public Class DrListReport
         Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Line26 = New DataDynamics.ActiveReports.Line
         Me.Line27 = New DataDynamics.ActiveReports.Line
+        Me.Label22 = New DataDynamics.ActiveReports.Label
+        Me.JOKEN_JISSIBI = New DataDynamics.ActiveReports.TextBox
+        Me.Label23 = New DataDynamics.ActiveReports.Label
+        Me.JOKEN_TEHAI_AREA = New DataDynamics.ActiveReports.TextBox
+        Me.Label24 = New DataDynamics.ActiveReports.Label
+        Me.JOKEN_UPD_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.Line28 = New DataDynamics.ActiveReports.Line
+        Me.Label25 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
@@ -99,17 +107,9 @@ Partial Public Class DrListReport
         Me.Line10 = New DataDynamics.ActiveReports.Line
         Me.Line11 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Label22 = New DataDynamics.ActiveReports.Label
-        Me.JOKEN_JISSIBI = New DataDynamics.ActiveReports.TextBox
-        Me.Label23 = New DataDynamics.ActiveReports.Label
-        Me.JOKEN_TEHAI_AREA = New DataDynamics.ActiveReports.TextBox
-        Me.Label24 = New DataDynamics.ActiveReports.Label
-        Me.JOKEN_UPD_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.Line28 = New DataDynamics.ActiveReports.Line
         Me.Line29 = New DataDynamics.ActiveReports.Line
-        Me.Label25 = New DataDynamics.ActiveReports.Label
         Me.SEND_FLAG = New DataDynamics.ActiveReports.TextBox
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +141,13 @@ Partial Public Class DrListReport
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JOKEN_JISSIBI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JOKEN_TEHAI_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JOKEN_UPD_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,13 +168,6 @@ Partial Public Class DrListReport
         CType(Me.REQ_F_TEHAI_4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_F_TEHAI_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JOKEN_JISSIBI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JOKEN_TEHAI_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JOKEN_UPD_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -393,7 +393,7 @@ Partial Public Class DrListReport
         Me.Label1.Left = 0.03937008!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = resources.GetString("Label1.Style")
-        Me.Label1.Text = "検索　交通・宿泊一覧"
+        Me.Label1.Text = "【検索】交通・宿泊一覧"
         Me.Label1.Top = 0.6874017!
         Me.Label1.Width = 12.08661!
         '
@@ -451,7 +451,7 @@ Partial Public Class DrListReport
         '
         'Line19
         '
-        Me.Line19.Height = 0.2818899!
+        Me.Line19.Height = 0.2818902!
         Me.Line19.Left = 12.16535!
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
@@ -729,6 +729,96 @@ Partial Public Class DrListReport
         Me.Line27.X2 = 1.65315!
         Me.Line27.Y1 = 3.094488!
         Me.Line27.Y2 = 3.376379!
+        '
+        'Label22
+        '
+        Me.Label22.Height = 0.2!
+        Me.Label22.HyperLink = Nothing
+        Me.Label22.Left = 0.0!
+        Me.Label22.Name = "Label22"
+        Me.Label22.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.Label22.Text = "実施日："
+        Me.Label22.Top = 2.033071!
+        Me.Label22.Width = 1.802756!
+        '
+        'JOKEN_JISSIBI
+        '
+        Me.JOKEN_JISSIBI.CanGrow = False
+        Me.JOKEN_JISSIBI.Height = 0.2!
+        Me.JOKEN_JISSIBI.Left = 1.802756!
+        Me.JOKEN_JISSIBI.Name = "JOKEN_JISSIBI"
+        Me.JOKEN_JISSIBI.Style = "white-space: nowrap"
+        Me.JOKEN_JISSIBI.Text = Nothing
+        Me.JOKEN_JISSIBI.Top = 2.033071!
+        Me.JOKEN_JISSIBI.Width = 3.0!
+        '
+        'Label23
+        '
+        Me.Label23.Height = 0.2!
+        Me.Label23.HyperLink = Nothing
+        Me.Label23.Left = 0.0!
+        Me.Label23.Name = "Label23"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.Label23.Text = "BYL手配担当者エリア："
+        Me.Label23.Top = 2.433071!
+        Me.Label23.Width = 1.802756!
+        '
+        'JOKEN_TEHAI_AREA
+        '
+        Me.JOKEN_TEHAI_AREA.CanGrow = False
+        Me.JOKEN_TEHAI_AREA.Height = 0.2!
+        Me.JOKEN_TEHAI_AREA.Left = 1.802756!
+        Me.JOKEN_TEHAI_AREA.Name = "JOKEN_TEHAI_AREA"
+        Me.JOKEN_TEHAI_AREA.Style = "white-space: nowrap"
+        Me.JOKEN_TEHAI_AREA.Text = Nothing
+        Me.JOKEN_TEHAI_AREA.Top = 2.433071!
+        Me.JOKEN_TEHAI_AREA.Width = 1.479134!
+        '
+        'Label24
+        '
+        Me.Label24.Height = 0.2!
+        Me.Label24.HyperLink = Nothing
+        Me.Label24.Left = 0.0!
+        Me.Label24.Name = "Label24"
+        Me.Label24.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.Label24.Text = "更新日："
+        Me.Label24.Top = 2.833071!
+        Me.Label24.Width = 1.802756!
+        '
+        'JOKEN_UPD_DATE
+        '
+        Me.JOKEN_UPD_DATE.CanGrow = False
+        Me.JOKEN_UPD_DATE.Height = 0.2!
+        Me.JOKEN_UPD_DATE.Left = 1.802756!
+        Me.JOKEN_UPD_DATE.Name = "JOKEN_UPD_DATE"
+        Me.JOKEN_UPD_DATE.Style = "white-space: nowrap"
+        Me.JOKEN_UPD_DATE.Text = Nothing
+        Me.JOKEN_UPD_DATE.Top = 2.833071!
+        Me.JOKEN_UPD_DATE.Width = 1.479134!
+        '
+        'Line28
+        '
+        Me.Line28.Height = 0.2818911!
+        Me.Line28.Left = 11.60276!
+        Me.Line28.LineWeight = 1.0!
+        Me.Line28.Name = "Line28"
+        Me.Line28.Top = 3.094488!
+        Me.Line28.Width = 0.0!
+        Me.Line28.X1 = 11.60276!
+        Me.Line28.X2 = 11.60276!
+        Me.Line28.Y1 = 3.094488!
+        Me.Line28.Y2 = 3.376379!
+        '
+        'Label25
+        '
+        Me.Label25.Height = 0.2!
+        Me.Label25.HyperLink = Nothing
+        Me.Label25.Left = 11.6311!
+        Me.Label25.Name = "Label25"
+        Me.Label25.Style = "font-family: ＭＳ ゴシック; text-align: center"
+        Me.Label25.Text = "NOZOMI"
+        Me.Label25.Top = 3.135433!
+        Me.Label25.Width = 0.4948815!
         '
         'Detail
         '
@@ -1131,90 +1221,6 @@ Partial Public Class DrListReport
         Me.Line12.Y1 = 0.0!
         Me.Line12.Y2 = 0.2362205!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'Label22
-        '
-        Me.Label22.Height = 0.2!
-        Me.Label22.HyperLink = Nothing
-        Me.Label22.Left = 0.0!
-        Me.Label22.Name = "Label22"
-        Me.Label22.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label22.Text = "実施日："
-        Me.Label22.Top = 2.033071!
-        Me.Label22.Width = 1.802756!
-        '
-        'JOKEN_JISSIBI
-        '
-        Me.JOKEN_JISSIBI.CanGrow = False
-        Me.JOKEN_JISSIBI.Height = 0.2!
-        Me.JOKEN_JISSIBI.Left = 1.802756!
-        Me.JOKEN_JISSIBI.Name = "JOKEN_JISSIBI"
-        Me.JOKEN_JISSIBI.Style = "white-space: nowrap"
-        Me.JOKEN_JISSIBI.Text = Nothing
-        Me.JOKEN_JISSIBI.Top = 2.033071!
-        Me.JOKEN_JISSIBI.Width = 3.0!
-        '
-        'Label23
-        '
-        Me.Label23.Height = 0.2!
-        Me.Label23.HyperLink = Nothing
-        Me.Label23.Left = 0.0!
-        Me.Label23.Name = "Label23"
-        Me.Label23.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label23.Text = "BYL手配担当者エリア："
-        Me.Label23.Top = 2.433071!
-        Me.Label23.Width = 1.802756!
-        '
-        'JOKEN_TEHAI_AREA
-        '
-        Me.JOKEN_TEHAI_AREA.CanGrow = False
-        Me.JOKEN_TEHAI_AREA.Height = 0.2!
-        Me.JOKEN_TEHAI_AREA.Left = 1.802756!
-        Me.JOKEN_TEHAI_AREA.Name = "JOKEN_TEHAI_AREA"
-        Me.JOKEN_TEHAI_AREA.Style = "white-space: nowrap"
-        Me.JOKEN_TEHAI_AREA.Text = Nothing
-        Me.JOKEN_TEHAI_AREA.Top = 2.433071!
-        Me.JOKEN_TEHAI_AREA.Width = 1.479134!
-        '
-        'Label24
-        '
-        Me.Label24.Height = 0.2!
-        Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 0.0!
-        Me.Label24.Name = "Label24"
-        Me.Label24.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label24.Text = "更新日："
-        Me.Label24.Top = 2.833071!
-        Me.Label24.Width = 1.802756!
-        '
-        'JOKEN_UPD_DATE
-        '
-        Me.JOKEN_UPD_DATE.CanGrow = False
-        Me.JOKEN_UPD_DATE.Height = 0.2!
-        Me.JOKEN_UPD_DATE.Left = 1.802756!
-        Me.JOKEN_UPD_DATE.Name = "JOKEN_UPD_DATE"
-        Me.JOKEN_UPD_DATE.Style = "white-space: nowrap"
-        Me.JOKEN_UPD_DATE.Text = Nothing
-        Me.JOKEN_UPD_DATE.Top = 2.833071!
-        Me.JOKEN_UPD_DATE.Width = 1.479134!
-        '
-        'Line28
-        '
-        Me.Line28.Height = 0.2818909!
-        Me.Line28.Left = 11.60276!
-        Me.Line28.LineWeight = 1.0!
-        Me.Line28.Name = "Line28"
-        Me.Line28.Top = 3.094488!
-        Me.Line28.Width = 0.0!
-        Me.Line28.X1 = 11.60276!
-        Me.Line28.X2 = 11.60276!
-        Me.Line28.Y1 = 3.094488!
-        Me.Line28.Y2 = 3.376379!
-        '
         'Line29
         '
         Me.Line29.Height = 0.2362205!
@@ -1228,17 +1234,6 @@ Partial Public Class DrListReport
         Me.Line29.Y1 = 0.007086605!
         Me.Line29.Y2 = 0.2433071!
         '
-        'Label25
-        '
-        Me.Label25.Height = 0.2!
-        Me.Label25.HyperLink = Nothing
-        Me.Label25.Left = 11.6311!
-        Me.Label25.Name = "Label25"
-        Me.Label25.Style = "font-family: ＭＳ ゴシック; text-align: center"
-        Me.Label25.Text = "NOZOMI"
-        Me.Label25.Top = 3.135433!
-        Me.Label25.Width = 0.4948815!
-        '
         'SEND_FLAG
         '
         Me.SEND_FLAG.CanGrow = False
@@ -1250,6 +1245,11 @@ Partial Public Class DrListReport
         Me.SEND_FLAG.Text = Nothing
         Me.SEND_FLAG.Top = 0.0!
         Me.SEND_FLAG.Width = 0.4948816!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrListReport
         '
@@ -1296,6 +1296,13 @@ Partial Public Class DrListReport
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JOKEN_JISSIBI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JOKEN_TEHAI_AREA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JOKEN_UPD_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1316,13 +1323,6 @@ Partial Public Class DrListReport
         CType(Me.REQ_F_TEHAI_4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_F_TEHAI_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JOKEN_JISSIBI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JOKEN_TEHAI_AREA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JOKEN_UPD_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
