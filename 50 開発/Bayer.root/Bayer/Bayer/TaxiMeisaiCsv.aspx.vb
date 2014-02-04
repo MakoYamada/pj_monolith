@@ -358,7 +358,7 @@ Partial Public Class TaxiMeisaiCsv
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        '講演会情報
+        '会合情報
         strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(KOUENKAI_NO)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.HasRows = False Then
@@ -493,7 +493,7 @@ Partial Public Class TaxiMeisaiCsv
 
         '表題
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG No")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("出欠")))
@@ -514,7 +514,7 @@ Partial Public Class TaxiMeisaiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者エリア")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者営業所")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開始日")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開始日")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日(依頼)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用年月日")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AcountCode")))

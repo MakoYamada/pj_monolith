@@ -363,7 +363,7 @@ Public Class AppConst
         End Class
 
         Public Class KOUEN_KAIJO_TEHAI
-            '講演会場　要・不要
+            '会合場　要・不要
             Public Class Code
                 Public Const Yes As String = "1"
                 Public Const No As String = "0"
@@ -603,7 +603,7 @@ Public Class AppConst
         Public Class SYORI_NAME
             Public Class BATCH
                 Public Class Name
-                    Public Const ImportKouenkai As String = "講演会基本情報ファイル取込"
+                    Public Const ImportKouenkai As String = "会合基本情報ファイル取込"
                     Public Const ImportKaijo As String = "会場手配ファイル取込"
                     Public Const ExportKaijo As String = "会場手配回答ファイル作成"
                     Public Const ImportKotsuHotel As String = "交通宿泊手配依頼ファイル取込"
@@ -615,9 +615,9 @@ Public Class AppConst
             End Class
             Public Class GAMEN
                 Public Class Name
-                    Public Const KouenkaiRegist As String = "講演会基本情報"
+                    Public Const KouenkaiRegist As String = "会合基本情報"
                     Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
-                    Public Const KaijoRegist As String = "講演会場 手配・見積依頼"
+                    Public Const KaijoRegist As String = "会合場 手配・見積依頼"
                     Public Const SeisanRegist As String = "精算金額入力"
                     Public Const CostRegist As String = "コストセンター別費用入力"
                     Public Const MstShisetsu As String = "施設マスタメンテナンス"

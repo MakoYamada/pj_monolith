@@ -61,12 +61,12 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        講演会番号
+                                        会合番号
                                     </td>
                                     <td colspan="5">
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="126px" MaxLength="14" 
                                             TabIndex="4"></asp:TextBox>&nbsp;&nbsp;&nbsp;
-                                        講演会名&nbsp;&nbsp;&nbsp;
+                                        会合名&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
                                             TabIndex="5"></asp:TextBox>
                                     </td>
@@ -165,7 +165,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
@@ -215,7 +215,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" />
                         <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALESFORCE_ID" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
                         <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="REQ_O_TEHAI_1" />

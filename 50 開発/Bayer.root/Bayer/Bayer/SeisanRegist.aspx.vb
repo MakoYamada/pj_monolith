@@ -764,7 +764,7 @@ Partial Public Class SeisanRegist
                 Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-                '講演会番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
+                '会合番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
                 strSQL = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
@@ -792,7 +792,7 @@ Partial Public Class SeisanRegist
             MyBase.BeginTransaction()
 
             Try
-                '講演会番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
+                '会合番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
                 Dim strSQL As String = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             Catch ex As Exception
@@ -939,7 +939,7 @@ Partial Public Class SeisanRegist
                 Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-                '講演会番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
+                '会合番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
                 Dim updateData As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
                 updateData.KOUENKAI_NO = Me.KOUENKAI_NO.Text
                 updateData.TKT_SEIKYU_YM = Me.SEISAN_YM.Text
@@ -972,7 +972,7 @@ Partial Public Class SeisanRegist
             MyBase.BeginTransaction()
 
             Try
-                '講演会番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
+                '会合番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
                 Dim updateData As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
                 updateData.KOUENKAI_NO = Me.KOUENKAI_NO.Text
                 updateData.TKT_SEIKYU_YM = Me.SEISAN_YM.Text

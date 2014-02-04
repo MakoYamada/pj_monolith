@@ -87,7 +87,7 @@ Partial Public Class TaxiPrintCsv
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
 
-        '講演会
+        '会合
         Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
         wCnt = 0
         wFlag = False
@@ -609,7 +609,7 @@ Partial Public Class TaxiPrintCsv
         wBARCODE &= Trim(SALEFORCE_ID).PadRight(MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID, " ")
         '参加者ID
         wBARCODE &= Trim(SANKASHA_ID).PadRight(MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID, " ")
-        '講演会番号
+        '会合番号
         wBARCODE &= Trim(KOUENKAI_NO).PadRight(MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO, " ")
         'タイムスタンプBYL
         wBARCODE &= Trim(TIME_STAMP_BYL).PadRight(MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL, " ")

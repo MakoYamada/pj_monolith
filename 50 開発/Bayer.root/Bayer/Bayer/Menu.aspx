@@ -12,7 +12,7 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnNewKoenkaiList" runat="server" Text="講演会基本情報" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnNewKoenkaiList" runat="server" Text="会合基本情報" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnNewKaijoList" runat="server" Text="会場手配" Width="200px" CssClass="Button" />
@@ -29,12 +29,12 @@
 					</tr>
 					<tr valign="middle">
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
-							■登録済　講演会検索・回答登録
+							■登録済　会合検索・回答登録
 						</td>
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnKoenkaiList" runat="server" Text="講演会基本情報" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnKoenkaiList" runat="server" Text="会合基本情報" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnKaijoList" runat="server" Text="会場手配" Width="200px" CssClass="Button" />

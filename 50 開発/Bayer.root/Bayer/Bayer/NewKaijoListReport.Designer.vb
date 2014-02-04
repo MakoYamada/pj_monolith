@@ -299,7 +299,7 @@ Partial Public Class NewKaijoListReport
         Me.Label13.Left = 4.370079!
         Me.Label13.Name = "Label13"
         Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
-        Me.Label13.Text = "講演会名"
+        Me.Label13.Text = "会合名"
         Me.Label13.Top = 1.474016!
         Me.Label13.Width = 3.119291!
         '

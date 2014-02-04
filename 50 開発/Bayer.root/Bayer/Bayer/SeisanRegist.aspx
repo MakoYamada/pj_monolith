@@ -38,7 +38,7 @@
                             <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="100%">
                                 <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:130px;">
-                                        講演会番号
+                                        会合番号
                                     </td>
                                     <td nowrap="nowrap" align="left" style="width:130px;">
                                         <asp:TextBox ID="KOUENKAI_NO" runat="server" Text="12345678901234" Width="125px" MaxLength="14"></asp:TextBox>

@@ -272,7 +272,7 @@ Partial Public Class NewDrListReport
         Me.Label7.Left = 1.696457!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
-        Me.Label7.Text = "講演会名"
+        Me.Label7.Text = "会合名"
         Me.Label7.Top = 2.874016!
         Me.Label7.Width = 1.051969!
         '
@@ -538,7 +538,7 @@ Partial Public Class NewDrListReport
         Me.Label15.Left = 0.0!
         Me.Label15.Name = "Label15"
         Me.Label15.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label15.Text = "講演会番号："
+        Me.Label15.Text = "会合番号："
         Me.Label15.Top = 1.833071!
         Me.Label15.Width = 1.802756!
         '
@@ -560,7 +560,7 @@ Partial Public Class NewDrListReport
         Me.Label16.Left = 2.968898!
         Me.Label16.Name = "Label16"
         Me.Label16.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label16.Text = "講演会名："
+        Me.Label16.Text = "会合名："
         Me.Label16.Top = 1.833071!
         Me.Label16.Width = 0.8027562!
         '

@@ -8,7 +8,7 @@ Public Class AppModule
     '== データベース関連 ==
 #Region "テーブルから構造体にデータをセット"
 
-#Region "講演会テーブル"
+#Region "会合テーブル"
     Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As TableDef.TBL_KOUENKAI.DataStruct
         Dim wCnt As Integer = 0
 
@@ -1507,8 +1507,8 @@ Public Class AppModule
         End Select
     End Function
 
-#Region "講演会情報"
-    '講演会番号
+#Region "会合情報"
+    '会合番号
     Public Shared Function GetName_KOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
         Return KOUENKAI_NO
     End Function
@@ -1542,12 +1542,12 @@ Public Class AppModule
         Return TEHAI_ID
     End Function
 
-    '講演会名
+    '会合名
     Public Shared Function GetName_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String) As String
         Return KOUENKAI_NAME
     End Function
 
-    '講演会開催日From
+    '会合開催日From
     Public Shared Function GetName_FROM_DATE(ByVal FROM_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = True Then
             Return CmnModule.Format_Date(FROM_DATE, CmnModule.DateFormatType.YYYYMD)
@@ -1562,7 +1562,7 @@ Public Class AppModule
         End If
     End Function
 
-    '講演会開催日To
+    '会合開催日To
     Public Shared Function GetName_TO_DATE(ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         If ShortFormat = True Then
             Return CmnModule.Format_Date(TO_DATE, CmnModule.DateFormatType.YYYYMD)
@@ -1577,7 +1577,7 @@ Public Class AppModule
         End If
     End Function
 
-    '講演会開催日
+    '会合開催日
     Public Shared Function GetName_KOUENKAI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, Optional ByVal ShortFormat As Boolean = False) As String
         Dim wStr As String = ""
         If ShortFormat = True Then
@@ -1624,7 +1624,7 @@ Public Class AppModule
         Return KAIJO_NAME
     End Function
 
-    '講演会タイトル
+    '会合タイトル
     Public Shared Function GetName_KOUENKAI_TITLE(ByVal KOUENKAI_TITLE As String) As String
         Return KOUENKAI_TITLE
     End Function
@@ -1953,17 +1953,17 @@ Public Class AppModule
         Return KAISAI_KIBOU_NOTE
     End Function
 
-    '講演会　開始時間
+    '会合　開始時間
     Public Shared Function GetName_KOUEN_TIME1(ByVal KOUEN_TIME1 As String) As String
         Return KOUEN_TIME1
     End Function
 
-    '講演会　終了時間
+    '会合　終了時間
     Public Shared Function GetName_KOUEN_TIME2(ByVal KOUEN_TIME2 As String) As String
         Return KOUEN_TIME2
     End Function
 
-    '講演会場　要・不要
+    '会合場　要・不要
     Public Shared Function GetName_KOUEN_KAIJO_TEHAI(ByVal KOUEN_KAIJO_TEHAI As String, Optional ByVal ShortFomat As Boolean = False) As String
         Select Case KOUEN_KAIJO_TEHAI
             Case AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.ShortFormat.Yes
@@ -1999,7 +1999,7 @@ Public Class AppModule
         End Select
     End Function
 
-    '講演会場　レイアウト
+    '会合場　レイアウト
     Public Shared Function GetName_KOUEN_KAIJO_LAYOUT(ByVal KOUEN_KAIJO_LAYOUT As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
         Dim wStr As String = ""
@@ -4837,17 +4837,17 @@ Public Class AppModule
     End Sub
 
 #Region "交通・宿泊手配回答登録画面　画面項目表示"
-    '講演会番号
+    '会合番号
     Public Shared Sub SetForm_KOUENKAI_NO(ByVal KOUENKAI_NO As String, ByRef control As Label)
         control.Text = KOUENKAI_NO
     End Sub
 
-    '講演会名
+    '会合名
     Public Shared Sub SetForm_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String, ByRef control As TextBox)
         control.Text = KOUENKAI_NAME
     End Sub
 
-    '講演会基本情報TimeStamp
+    '会合基本情報TimeStamp
     Public Shared Sub SetForm_KOUENKAI_TIME_STAMP(ByVal KOUENKAI_TIME_STAMP As String, ByRef control As Label)
         control.Text = CmnModule.Format_Date(KOUENKAI_TIME_STAMP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
     End Sub
@@ -5007,7 +5007,7 @@ Public Class AppModule
         control.Text = DR_AGE
     End Sub
 
-    '講演会への参加
+    '会合への参加
     Public Shared Sub SetForm_DR_SANKA(ByVal DR_SANKA As String, ByRef control As Label)
         control.Text = GetName_DR_SANKA(DR_SANKA)
     End Sub
@@ -6610,12 +6610,12 @@ Public Class AppModule
         control.Text = ANS_SHISETSU_ZIP
     End Sub
 
-    '【回答】開催地(講演会会場名)
+    '【回答】開催地(会合会場名)
     Public Shared Sub SetForm_ANS_KOUEN_KAIJO_NAME(ByVal ANS_KOUEN_KAIJO_NAME As String, ByRef control As TextBox)
         control.Text = ANS_KOUEN_KAIJO_NAME
     End Sub
 
-    '【回答】開催地(講演会会場フロア)
+    '【回答】開催地(会合会場フロア)
     Public Shared Sub SetForm_ANS_KOUEN_KAIJO_FLOOR(ByVal ANS_KOUEN_KAIJO_FLOOR As String, ByRef control As TextBox)
         control.Text = ANS_KOUEN_KAIJO_FLOOR
     End Sub
@@ -6944,7 +6944,7 @@ Public Class AppModule
 #End Region
 
 #Region "未決登録画面　画面項目表示"
-    '講演会実施日(From～To)
+    '会合実施日(From～To)
     Public Shared Sub SetForm_JISSI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, ByRef control As Label)
         control.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE, TO_DATE, True)
     End Sub
@@ -7611,7 +7611,7 @@ Public Class AppModule
     End Sub
 #End Region
 
-#Region "講演会基本情報　ステータス"
+#Region "会合基本情報　ステータス"
     Public Shared Sub SetDropDownList_KIDOKU(ByRef KUBUN As DropDownList)
         With KUBUN
             .Items.Clear()
@@ -8726,12 +8726,12 @@ Public Class AppModule
         Return Trim(ANS_SHISETSU_ZIP.Text)
     End Function
 
-    '【回答】開催地(講演会会場名)
+    '【回答】開催地(会合会場名)
     Public Shared Function GetValue_ANS_KOUEN_KAIJO_NAME(ByVal ANS_KOUEN_KAIJO_NAME As TextBox) As String
         Return Trim(ANS_KOUEN_KAIJO_NAME.Text)
     End Function
 
-    '【回答】開催地(講演会会場フロア)
+    '【回答】開催地(会合会場フロア)
     Public Shared Function GetValue_ANS_KOUEN_KAIJO_FLOOR(ByVal ANS_KOUEN_KAIJO_FLOOR As TextBox) As String
         Return Trim(ANS_KOUEN_KAIJO_FLOOR.Text)
     End Function

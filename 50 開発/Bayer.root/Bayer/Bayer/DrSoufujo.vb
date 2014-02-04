@@ -83,7 +83,7 @@ Public Class DrSoufujo
         '開催日
         Me.JISSI_DATE.Text = AppModule.GetName_KOUENKAI_DATE(pKOTSUHOTEL_DATA.FROM_DATE, pKOTSUHOTEL_DATA.TO_DATE)
 
-        '講演会名
+        '会合名
         If Me.KOUENKAI_NAME.Text.Trim.Length > 50 Then
             Me.KOUENKAI_NAME.Text = Left(Me.KOUENKAI_NAME.Text.Trim, 50)
         Else

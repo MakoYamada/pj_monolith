@@ -641,7 +641,7 @@ Partial Public Class TaxiMiketsu
         End If
 
         If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("会合番号"), Me)
             Return False
         End If
 

@@ -337,7 +337,7 @@ Partial Public Class TaxiJisseki
                                 End If
                         End Select
                     Else
-                        Throw New Exception("交通宿泊テーブルに登録されていません。[講演会番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
+                        Throw New Exception("交通宿泊テーブルに登録されていません。[会合番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
                     End If
                 End If
             Else

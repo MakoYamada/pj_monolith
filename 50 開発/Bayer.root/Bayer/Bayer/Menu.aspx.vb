@@ -112,12 +112,12 @@ Partial Public Class Menu1
         Response.Redirect(URL.MstCode)
     End Sub
 
-    '[新着 講演会基本情報一覧]
+    '[新着 会合基本情報一覧]
     Private Sub BtnNewKoenkaiList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNewKoenkaiList.Click
         Response.Redirect(URL.NewKouenkaiList)
     End Sub
 
-    '[検索 講演会基本情報一覧]
+    '[検索 会合基本情報一覧]
     Private Sub BtnKoenkaiList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKoenkaiList.Click
         Response.Redirect(URL.KouenkaiList)
     End Sub

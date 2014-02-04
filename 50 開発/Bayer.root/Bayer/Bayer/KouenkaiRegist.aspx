@@ -21,7 +21,7 @@
 				<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="1100px">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							u‰‰‰ï”Ô†
+							‰ï‡”Ô†
 						</td>
 						<td nowrap="nowrap" align="left" style="width: 100px;">
 							<asp:Label ID="KOUENKAI_NO" runat="server" Width="120px"></asp:Label>
@@ -47,7 +47,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							u‰‰‰ï–¼
+							‰ï‡–¼
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
 						    <asp:TextBox ID="KOUENKAI_NAME" runat="server" BorderStyle="None" Height="35px" 
@@ -64,7 +64,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
-							u‰‰‰ïŠJÃ“ú
+							‰ï‡ŠJÃ“ú
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="7">
 							<asp:Label ID="FROM_DATE" runat="server" Width="80px"></asp:Label>
@@ -74,7 +74,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							u‰‰‰ï‰ïê–¼
+							‰ï‡‰ïê–¼
 						</td>
 						<td nowrap="nowrap" align="left" colspan="7">
                             <asp:TextBox ID="KAIJO_NAME" runat="server" BorderStyle="None" Height="35px" 
@@ -160,7 +160,7 @@
 				<table style="border-collapse: collapse; margin-top: 10px;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="1100px">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" colspan="8">
-							¡ u‰‰‰ï Šé‰æ’S“–ŽÒ
+							¡ ‰ï‡ Šé‰æ’S“–ŽÒ
 
 						</td>
 					</tr>

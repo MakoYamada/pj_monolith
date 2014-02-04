@@ -49,7 +49,7 @@ Partial Public Class KouenkaiList
         'マスターページ設定
         With Me.Master
             .HideLoginUser = True   'QQQ
-            .PageTitle = "【検索】講演会基本情報"
+            .PageTitle = "【検索】会合基本情報"
         End With
     End Sub
 
@@ -289,7 +289,7 @@ Partial Public Class KouenkaiList
         End If
 
         If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("講演会番号"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("会合番号"), Me)
             Return False
         End If
 

@@ -17,19 +17,19 @@
 			</tr>
 		<tr>
 			<td align="left" colspan="2">
-			    <!-- u‰‰‰ïî•ñ -->
+			    <!-- ‰ï‡î•ñ -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
-                            ¡u‰‰‰ïî•ñ
+                            ¡‰ï‡î•ñ
 	                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="Šî–{î•ñ‚Ö" 
                                 CssClass="Button" TabIndex="5" />
                         </td>
                     </tr>
                     <tr>
 						<td align="left" class="TdTitleHeader" style="width:120px">
-							u‰‰‰ï”Ô†
+							‰ï‡”Ô†
 						</td>
 						<td align="left" class="TdItem" style="width:100px">
 							<asp:Label ID="KOUENKAI_NO" runat="server" Width="120px"></asp:Label>
@@ -51,7 +51,7 @@
                     </tr>
 					<tr>
 						<td align="left" class="TdTitleHeader" style="width:120px">
-							u‰‰‰ï–¼
+							‰ï‡–¼
 						</td>
 						<td align="left" class="TdItem" colspan="5">
                             <asp:TextBox ID="KOUENKAI_NAME" runat="server" MaxLength="80" ReadOnly="True" 
@@ -310,7 +310,7 @@
 							<asp:Label ID="DR_AGE" runat="server" Width="100px"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                u‰‰‰ï‚Ö‚ÌŽQ‰Á
+			                ‰ï‡‚Ö‚ÌŽQ‰Á
 		                </td>
 		                <td align="left" valign="middle">
 							<asp:Label ID="DR_SANKA" runat="server" Width="100px"></asp:Label>

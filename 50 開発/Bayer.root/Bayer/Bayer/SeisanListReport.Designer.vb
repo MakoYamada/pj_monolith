@@ -325,7 +325,7 @@ Partial Public Class SeisanListReport
         Me.Label19.Left = 0.1330713!
         Me.Label19.Name = "Label19"
         Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label19.Text = "講演会番号："
+        Me.Label19.Text = "会合番号："
         Me.Label19.Top = 1.170079!
         Me.Label19.Width = 1.181102!
         '
@@ -556,7 +556,7 @@ Partial Public Class SeisanListReport
         Me.Label23.Left = 5.093701!
         Me.Label23.Name = "Label23"
         Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
-        Me.Label23.Text = "講演会番号"
+        Me.Label23.Text = "会合番号"
         Me.Label23.Top = 1.87874!
         Me.Label23.Width = 1.065354!
         '
@@ -567,7 +567,7 @@ Partial Public Class SeisanListReport
         Me.Label24.Left = 6.159056!
         Me.Label24.Name = "Label24"
         Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
-        Me.Label24.Text = "講演会名"
+        Me.Label24.Text = "会合名"
         Me.Label24.Top = 1.87874!
         Me.Label24.Width = 2.190158!
         '

@@ -93,7 +93,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" Visible="False" />
                         <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALEFORCE_ID" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
                         <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="REQ_O_TEHAI_1" />

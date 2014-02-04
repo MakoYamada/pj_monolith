@@ -46,13 +46,13 @@ Partial Public Class Preview
                         PrintKakuninhyo()
                 End Select
             ElseIf URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
-                '呼び元画面が新着講演会一覧の場合
+                '呼び元画面が新着会合一覧の場合
                 PrintNewKouenkaiList()
             ElseIf URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
-                '呼び元画面が検索講演会一覧の場合
+                '呼び元画面が検索会合一覧の場合
                 PrintKouenkaiList()
             ElseIf URL.KouenkaiRireki.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
-                '呼び元画面が講演会基本情報履歴一覧の場合
+                '呼び元画面が会合基本情報履歴一覧の場合
                 PrintKouenkaiRireki()
             ElseIf URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
                 '呼び元画面が新着交通・宿泊一覧の場合
@@ -113,7 +113,7 @@ Partial Public Class Preview
         With Me.Master
             .PageTitle = "プレビュー"
         End With
-         
+
     End Sub
 
     'セッションを変数に格納
@@ -349,7 +349,7 @@ Partial Public Class Preview
         rpt1.OldTBL_KAIJO = Session.Item(SessionDef.OldTBL_KAIJO)
         '履歴=True
         rpt1.Rireki = Rireki
-        
+
         'レポートを作成
         rpt1.Run()
 
@@ -379,7 +379,7 @@ Partial Public Class Preview
 
     End Function
 
-    '新着講演会一覧印刷
+    '新着会合一覧印刷
     Private Sub PrintNewKouenkaiList()
 
         Dim rpt1 As New NewKouenkaiReport()
@@ -434,7 +434,7 @@ Partial Public Class Preview
         Return dtView.Table
     End Function
 
-    '検索講演会一覧印刷
+    '検索会合一覧印刷
     Private Sub PrintKouenkaiList()
 
         Dim rpt1 As New KouenkaiReport()
@@ -518,7 +518,7 @@ Partial Public Class Preview
         Return dtView.Table
     End Function
 
-    '講演会基本情報履歴一覧印刷
+    '会合基本情報履歴一覧印刷
     Private Sub PrintKouenkaiRireki()
 
         Dim rpt1 As New KouenkaiRirekiReport()
@@ -537,7 +537,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
-        '講演会№・講演会名を渡す
+        '会合№・会合名を渡す
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NO"),  _
             DataDynamics.ActiveReports.TextBox).Text = TBL_KOUENKAI(SEQ).KOUENKAI_NO
         DirectCast(rpt1.Sections("PageHeader").Controls("JOKEN_KOUENKAI_NAME"),  _

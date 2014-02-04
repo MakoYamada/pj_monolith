@@ -198,16 +198,16 @@
             Public Const FROM_DATE_YM As String = "FROM_DATE_YM"
         End Class
         Public Class Name
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const TIME_STAMP As String = "Timestamp(BYL)"
             Public Const TORIKESHI_FLG As String = "取消フラグ"
             Public Const KIDOKU_FLG As String = "既読フラグ"
             Public Const KOUENKAI_TITLE As String = "タイトル"
-            Public Const KOUENKAI_NAME As String = "講演会名"
-            Public Const TAXI_PRT_NAME As String = "講演会名(チケット印字用)"
-            Public Const FROM_DATE As String = "講演会開催日From"
-            Public Const TO_DATE As String = "講演会開催日To"
-            Public Const KAIJO_NAME As String = "講演会会場名"
+            Public Const KOUENKAI_NAME As String = "会合名"
+            Public Const TAXI_PRT_NAME As String = "会合名(チケット印字用)"
+            Public Const FROM_DATE As String = "会合開催日From"
+            Public Const TO_DATE As String = "会合開催日To"
+            Public Const KAIJO_NAME As String = "会合会場名"
             Public Const SEIHIN_NAME As String = "製品名"
             Public Const INTERNAL_ORDER_T As String = "Internal order(課税)"
             Public Const INTERNAL_ORDER_TF As String = "Internal order(非課税)"
@@ -394,7 +394,7 @@
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
         End Class
         Public Class Name
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const SHIHARAI_NO As String = "支払番号"
             Public Const SEISAN_YM As String = "トップツアー精算年月"
             Public Const SHOUNIN_KUBUN As String = "承認区分"
@@ -442,7 +442,7 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
 
-            Public Const KOUENKAI_NAME As String = "講演会名"
+            Public Const KOUENKAI_NAME As String = "会合名"
             Public Const FROM_DATE As String = "開催日FROM"
             Public Const SANKASHA_ID As String = "参加者ID"
             Public Const DR_CD As String = "DRコード"
@@ -455,7 +455,7 @@
             Public Const ACCOUNT_CD_TF As String = "Account Code(非課税)"
             Public Const ZETIA_CD As String = "Zetia Code"
             Public Const SRM_HACYU_KBN As String = "SRM発注区分"
-            Public Const TO_DATE As String = "講演会開催日To"
+            Public Const TO_DATE As String = "会合開催日To"
             Public Const DANTAI_CODE As String = "団体コード"
             Public Const KIKAKU_TANTO_NAME As String = "担当者(企画担当者)名"
             Public Const BU As String = "企画担当者BU"
@@ -1420,7 +1420,7 @@
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
             Public Const SANKASHA_ID As String = "参加者ID"
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const REQ_STATUS_TEHAI As String = "手配ステータス(依頼)"
             Public Const ANS_STATUS_TEHAI As String = "手配ステータス(回答)"
             Public Const TIME_STAMP_BYL As String = "Timestamp(BYL)"
@@ -1870,7 +1870,7 @@
             Public Const UPDATE_USER As String = "更新者"
             Public Const SEND_DATE As String = "発送日"
 
-            Public Const KOUENKAI_NAME As String = "講演会名"
+            Public Const KOUENKAI_NAME As String = "会合名"
             Public Const KOUENKAI_TIME_STAMP As String = "TimeStamp"
             Public Const TORIKESHI_FLG As String = "取消フラグ"
             Public Const TAXI_PRT_NAME As String = "チケット印字名"
@@ -2139,8 +2139,8 @@
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
-            Public Const TEHAI_ID As String = "講演会手配ID"
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const TEHAI_ID As String = "会合手配ID"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const REQ_STATUS_TEHAI As String = "手配ステータス(依頼)"
             Public Const ANS_STATUS_TEHAI As String = "手配ステータス(回答)"
             Public Const TIME_STAMP_BYL As String = "Timestamp(BYL)"
@@ -2151,9 +2151,9 @@
             Public Const KAISAI_KIBOU_ADDRESS1 As String = "開催希望地 (都道府県)"
             Public Const KAISAI_KIBOU_ADDRESS2 As String = "開催希望地 (市町村)"
             Public Const KAISAI_KIBOU_NOTE As String = "開催希望 (フリーテキスト)"
-            Public Const KOUEN_TIME1 As String = "講演会 開始時間"
-            Public Const KOUEN_TIME2 As String = "講演会 終了時間"
-            Public Const KOUEN_KAIJO_LAYOUT As String = "講演会場 レイアウト"
+            Public Const KOUEN_TIME1 As String = "会合 開始時間"
+            Public Const KOUEN_TIME2 As String = "会合 終了時間"
+            Public Const KOUEN_KAIJO_LAYOUT As String = "会合場 レイアウト"
             Public Const IKENKOUKAN_KAIJO_TEHAI As String = "意見交換会場 要・不要"
             Public Const IROUKAI_KAIJO_TEHAI As String = "慰労会会場 (要・不要)"
             Public Const IROUKAI_SANKA_YOTEI_CNT As String = "慰労会参加予定者数"
@@ -2181,8 +2181,8 @@
             Public Const ANS_SHISETSU_ADDRESS As String = "【回答】 開催地 (施設住所)"
             Public Const ANS_SHISETSU_TEL As String = "【回答】 開催地 (施設TEL)"
             Public Const ANS_SHISETSU_URL As String = "【回答】 開催地 (施設HP URL)"
-            Public Const ANS_KOUEN_KAIJO_NAME As String = "【回答】 開催地 (講演会会場名)"
-            Public Const ANS_KOUEN_KAIJO_FLOOR As String = "【回答】 開催地 (講演会会場フロア)"
+            Public Const ANS_KOUEN_KAIJO_NAME As String = "【回答】 開催地 (会合会場名)"
+            Public Const ANS_KOUEN_KAIJO_FLOOR As String = "【回答】 開催地 (会合会場フロア)"
             Public Const ANS_IKENKOUKAN_KAIJO_NAME As String = "【回答】 開催地 (意見交換会場名)"
             Public Const ANS_IROUKAI_KAIJO_NAME As String = "【回答】 開催地 (慰労会会場名)"
             Public Const ANS_KOUSHI_ROOM_NAME As String = "【回答】 開催地 (講師控室会場名)"
@@ -2374,9 +2374,9 @@
             Public Const DR_ADDRESS As String = "DR住所"
             Public Const DR_GOFFICIAL As String = "国家公務員"
             Public Const DR_YAKUWARI As String = "参加者役割"
-            Public Const KOUENKAI_NAME As String = "講演会名"
-            Public Const KOUENKAI_DATE As String = "講演会開催日"
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NAME As String = "会合名"
+            Public Const KOUENKAI_DATE As String = "会合開催日"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const KAIJO As String = "会場"
             Public Const BU As String = "BU"
             Public Const ACCOUNT_CODE As String = "Account Code"
@@ -2898,15 +2898,15 @@
             Public TKT_ENTA As String
         End Structure
         Public Class Name
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const BU As String = "BU"
             Public Const AREA As String = "エリア"
             Public Const EIGYOSHO As String = "営業所"
             Public Const TANTO_NAME As String = "担当者名"
             Public Const TANTO_KANA As String = "担当者名(カタカナ)"
-            Public Const KOUENKAI_NAME As String = "講演会名"
-            Public Const FROM_DATE As String = "講演会開催日(From)"
-            Public Const TO_DATE As String = "講演会開催日(To)"
+            Public Const KOUENKAI_NAME As String = "会合名"
+            Public Const FROM_DATE As String = "会合開催日(From)"
+            Public Const TO_DATE As String = "会合開催日(To)"
             Public Const TTANTO_ID As String = "担当者"
             Public Const KUBUN As String = "区分"
             Public Const SEIHIN_NAME As String = "製品名"
@@ -3026,8 +3026,8 @@
 
             Public Const DANTAI_CODE As String = "団体コード"
             Public Const FROM_DATE As String = "実施日"
-            Public Const KOUENKAI_NO As String = "講演会番号"
-            Public Const KOUENKAI_NAME As String = "講演会名"
+            Public Const KOUENKAI_NO As String = "会合番号"
+            Public Const KOUENKAI_NAME As String = "会合名"
             Public Const KIKAKU_TANTO_NAME As String = "BYL企画担当者名"
         End Class
     End Class
@@ -3381,7 +3381,7 @@
             Public Const TKT_KAISHA As String = "タクシー会社"
             Public Const TKT_NO As String = "タクシーチケット番号"
             Public Const TKT_KENSHU As String = "券種"
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const SANKASHA_ID As String = "参加者ID"
             Public Const TKT_LINE_NO As String = "交通手配タクチケ行番号"
             Public Const TKT_USED_DATE As String = "利用日"
@@ -3463,7 +3463,7 @@
             Public Const UPDATE_USER As String = "UPDATE_USER"
         End Class
         Public Class Name
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const SANKASHA_ID As String = "参加者ID"
             Public Const DR_SANKA As String = "参加/不参加"
             Public Const INPUT_DATE As String = "登録日時"
@@ -3497,7 +3497,7 @@
             Public Const UPDATE_USER As String = "UPDATE_USER"
         End Class
         Public Class Name
-            Public Const KOUENKAI_NO As String = "講演会番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
             Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
             Public Const SHIHARAI_NO As String = "支払番号"
             Public Const SHOUNIN_KUBUN As String = "承認区分"

@@ -88,7 +88,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>

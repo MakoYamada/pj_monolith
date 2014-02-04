@@ -325,7 +325,7 @@ Partial Public Class KaijoListReport
         Me.Label13.Left = 4.370079!
         Me.Label13.Name = "Label13"
         Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
-        Me.Label13.Text = "講演会名"
+        Me.Label13.Text = "会合名"
         Me.Label13.Top = 1.934645!
         Me.Label13.Width = 3.260237!
         '
@@ -644,7 +644,7 @@ Partial Public Class KaijoListReport
         Me.Label19.Left = 0.1330709!
         Me.Label19.Name = "Label19"
         Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label19.Text = "講演会番号："
+        Me.Label19.Text = "会合番号："
         Me.Label19.Top = 1.416929!
         Me.Label19.Width = 1.181102!
         '
@@ -666,7 +666,7 @@ Partial Public Class KaijoListReport
         Me.Label21.Left = 3.022048!
         Me.Label21.Name = "Label21"
         Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label21.Text = "講演会名："
+        Me.Label21.Text = "会合名："
         Me.Label21.Top = 1.416929!
         Me.Label21.Width = 1.181102!
         '

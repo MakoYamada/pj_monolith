@@ -4672,7 +4672,7 @@ Partial Public Class DrSoufujo
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
-        Me.Label4.Text = "講演会開催日："
+        Me.Label4.Text = "会合開催日："
         Me.Label4.Top = 2.377167!
         Me.Label4.Width = 0.8744091!
         '
@@ -4696,7 +4696,7 @@ Partial Public Class DrSoufujo
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
-        Me.Label5.Text = "講演会名："
+        Me.Label5.Text = "会合名："
         Me.Label5.Top = 2.556299!
         Me.Label5.Width = 0.8744097!
         '
@@ -4721,7 +4721,7 @@ Partial Public Class DrSoufujo
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
-        Me.Label6.Text = "講演会ID："
+        Me.Label6.Text = "会合ID："
         Me.Label6.Top = 2.377167!
         Me.Label6.Width = 0.6354331!
         '

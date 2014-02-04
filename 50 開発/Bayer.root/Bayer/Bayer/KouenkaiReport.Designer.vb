@@ -208,7 +208,7 @@ Partial Public Class KouenkaiReport
         Me.Label7.Left = 6.446064!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
-        Me.Label7.Text = "講演会名"
+        Me.Label7.Text = "会合名"
         Me.Label7.Top = 2.877954!
         Me.Label7.Width = 1.051969!
         '
@@ -398,7 +398,7 @@ Partial Public Class KouenkaiReport
         Me.Label16.Left = 0.0!
         Me.Label16.Name = "Label16"
         Me.Label16.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label16.Text = "講演会番号："
+        Me.Label16.Text = "会合番号："
         Me.Label16.Top = 1.822834!
         Me.Label16.Width = 1.916536!
         '
@@ -420,7 +420,7 @@ Partial Public Class KouenkaiReport
         Me.Label17.Left = 3.031102!
         Me.Label17.Name = "Label17"
         Me.Label17.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label17.Text = "講演会名："
+        Me.Label17.Text = "会合名："
         Me.Label17.Top = 1.822834!
         Me.Label17.Width = 0.9062993!
         '
@@ -637,7 +637,7 @@ Partial Public Class KouenkaiReport
         Me.Label23.Left = 0.03937007!
         Me.Label23.Name = "Label23"
         Me.Label23.Style = resources.GetString("Label23.Style")
-        Me.Label23.Text = "検索　講演会一覧"
+        Me.Label23.Text = "検索　会合一覧"
         Me.Label23.Top = 0.6870081!
         Me.Label23.Width = 12.08661!
         '

@@ -37,12 +37,12 @@
                                 </tr>
                                 <tr>
                                     <td align="right" valign="middle">
-                                        講演会番号
+                                        会合番号
                                     </td>
                                     <td colspan="5" valign="middle">
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="126px" MaxLength="14" 
                                             TabIndex="7"></asp:TextBox>&nbsp;&nbsp;&nbsp;
-                                        講演会名&nbsp;&nbsp;&nbsp;
+                                        会合名&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
                                             TabIndex="8"></asp:TextBox>
                                     </td>
@@ -108,7 +108,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
@@ -161,7 +161,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" />
                         <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者ID" />
                         <asp:BoundField DataField="FROM_DATE" HeaderText="開催日FROM" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" />

@@ -94,7 +94,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
@@ -117,7 +117,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="実施日TO" ReadOnly="True" />
                         <asp:BoundField DataField="CNT" HeaderText="件数" />
                     </Columns>

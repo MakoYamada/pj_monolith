@@ -19,9 +19,9 @@ Partial Public Class TaxiMikanryou
     End Enum
 
     Private Class COL_NAME
-        Public Const FROM_DATE As String = "講演会開始日"
+        Public Const FROM_DATE As String = "会合開始日"
         Public Const KOUENKAI_NO As String = "MTG №"
-        Public Const KOUENKAI_NAME As String = "講演会名"
+        Public Const KOUENKAI_NAME As String = "会合名"
         Public Const BU As String = "企画担当者BU"
         Public Const KIKAKU_TANTO_AREA As String = "企画担当者エリア"
         Public Const KIKAKU_TANTO_EIGYOSHO As String = "企画担当者営業所"

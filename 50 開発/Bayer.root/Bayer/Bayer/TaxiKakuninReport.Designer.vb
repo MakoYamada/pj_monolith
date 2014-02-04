@@ -842,7 +842,7 @@ Partial Public Class TaxiKakuninReport
         Me.Label5.Left = 0.0!
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
-        Me.Label5.Text = "講演会名："
+        Me.Label5.Text = "会合名："
         Me.Label5.Top = 0.2740158!
         Me.Label5.Width = 0.8437008!
         '
@@ -865,7 +865,7 @@ Partial Public Class TaxiKakuninReport
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
-        Me.Label6.Text = "講演会番号"
+        Me.Label6.Text = "会合番号"
         Me.Label6.Top = 0.4740149!
         Me.Label6.Width = 1.323622!
         '

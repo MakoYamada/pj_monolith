@@ -12,7 +12,7 @@
                             <table>
                                 <tr>
                                     <td align="right">
-                                        çuâââÔî‘çÜ
+                                        âÔçáî‘çÜ
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
@@ -132,10 +132,10 @@
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle HorizontalAlign="Center" Wrap="False" Width="90px"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="KOUENKAI_NO" HeaderText="çuâââÔî‘çÜ" >
+                                    <asp:BoundField DataField="KOUENKAI_NO" HeaderText="âÔçáî‘çÜ" >
                                     <ItemStyle HorizontalAlign="Left" Width="130px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="çuâââÔñº" ItemStyle-Wrap="false"
+                                    <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="âÔçáñº" ItemStyle-Wrap="false"
                                         HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="250px" HorizontalAlign="Left"></ItemStyle>

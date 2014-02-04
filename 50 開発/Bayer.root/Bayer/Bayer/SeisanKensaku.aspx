@@ -48,12 +48,12 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        講演会番号
+                                        会合番号
                                     </td>
                                     <td colspan="5">
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="130px" MaxLength="14"></asp:TextBox>
                                         &nbsp;&nbsp;&nbsp;
-                                        講演会名&nbsp;&nbsp;&nbsp;
+                                        会合名&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="350px" MaxLength="160"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -135,7 +135,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
@@ -154,7 +154,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" Visible="False" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
                     </Columns>
                 </asp:GridView>

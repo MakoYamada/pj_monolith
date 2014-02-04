@@ -495,7 +495,7 @@ Partial Public Class SeisanRegistReport
         Me.lblKOUENKAI_NO.Left = 0.007480315!
         Me.lblKOUENKAI_NO.Name = "lblKOUENKAI_NO"
         Me.lblKOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
-        Me.lblKOUENKAI_NO.Text = "講演会番号"
+        Me.lblKOUENKAI_NO.Text = "会合番号"
         Me.lblKOUENKAI_NO.Top = 0.1874016!
         Me.lblKOUENKAI_NO.Width = 0.8547245!
         '

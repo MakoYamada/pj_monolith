@@ -326,7 +326,7 @@ Partial Public Class SapCsv
 
     End Sub
 
-    '講演会に紐づくMR旅費(課税)を取得して、コストセンター分レコードを作成する
+    '会合に紐づくMR旅費(課税)を取得して、コストセンター分レコードを作成する
     Private Sub SetMrRecord(ByVal SeikyuData As TableDef.TBL_SEIKYU.DataStruct, _
                                           ByRef csvData() As TableDef.SAP_CSV.DataStruct, _
                                           ByRef rowCnt As Integer, _

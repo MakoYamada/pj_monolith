@@ -58,7 +58,7 @@ Partial Public Class KaijoRegist
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "講演会場　手配・見積依頼"
+            .PageTitle = "会合場　手配・見積依頼"
             If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
                 .PageTitle &= " ：履歴照会"
                 .HideMenu = True

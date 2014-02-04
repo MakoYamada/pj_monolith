@@ -157,7 +157,7 @@ Partial Public Class TaxiScan
                     ScanData.KOUENKAI_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
                     wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
                     If ScanData.KOUENKAI_NO = "" Then
-                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】講演会番号が記載されていません。" & vbNewLine
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】会合番号が記載されていません。" & vbNewLine
                     End If
 
                     ScanData.TIME_STAMP_BYL = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))

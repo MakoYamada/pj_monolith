@@ -195,7 +195,7 @@ Public Class MyModule
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
-        TBL_LOG.NOTE = "講演会番号：" & TBL_KOUENKAI.KOUENKAI_NO
+        TBL_LOG.NOTE = "会合番号：" & TBL_KOUENKAI.KOUENKAI_NO
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -207,7 +207,7 @@ Public Class MyModule
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
-        TBL_LOG.NOTE = "講演会番号：" & TBL_KAIJO.KOUENKAI_NO
+        TBL_LOG.NOTE = "会合番号：" & TBL_KAIJO.KOUENKAI_NO
 
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, Message, DbConn)
     End Function
@@ -219,7 +219,7 @@ Public Class MyModule
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
-        TBL_LOG.NOTE = "講演会番号：" & TBL_KOTSUHOTEL.KOUENKAI_NO _
+        TBL_LOG.NOTE = "会合番号：" & TBL_KOTSUHOTEL.KOUENKAI_NO _
                      & "／" _
                      & "参加者ID：" & TBL_KOTSUHOTEL.SANKASHA_ID _
                      & "／" _
@@ -235,7 +235,7 @@ Public Class MyModule
 
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
 
-        TBL_LOG.NOTE = "講演会番号：" & TBL_SEIKYU.KOUENKAI_NO _
+        TBL_LOG.NOTE = "会合番号：" & TBL_SEIKYU.KOUENKAI_NO _
                      & "／" _
                      & "精算番号：" & TBL_SEIKYU.SEIKYU_NO_TOPTOUR
 
@@ -399,7 +399,7 @@ Public Class MyModule
 
         'TBL_LOG.NOTE = "券種：" & TKT_KENSHU _
         '             & "／" _
-        '             & "講演会番号：" & KOUENKAI_NO _
+        '             & "会合番号：" & KOUENKAI_NO _
         '             & "／" _
         '             & "参加者ID：" & SANKASHA_ID _
         '             & "／" _
@@ -413,12 +413,12 @@ Public Class MyModule
 
         TBL_LOG.NOTE = "券種：" & TKT_KENSHU _
                      & "／" _
-                     & "講演会番号：" & KOUENKAI_NO _
+                     & "会合番号：" & KOUENKAI_NO _
                      & "／" _
                      & "参加者ID：" & SANKASHA_ID _
                      & "／" _
                      & "行番号：" & TKT_LINE_NO
- 
+
         Return InsertTBL_LOG(GamenType, TBL_LOG, STATUS_OK, TBL_LOG.NOTE, DbConn)
     End Function
     Public Shared Function InsertTBL_LOG(ByVal GamenType As AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType, _
@@ -437,7 +437,7 @@ Public Class MyModule
         End If
         'TBL_LOG.NOTE &= "タクシーチケット番号：" & TBL_TAXITICKET_HAKKO.TKT_NO _
         '             & "／" _
-        '             & "講演会番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
+        '             & "会合番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
         '             & "／" _
         '             & "参加者ID：" & TBL_TAXITICKET_HAKKO.SANKASHA_ID _
         '             & "／" _
@@ -451,12 +451,12 @@ Public Class MyModule
 
         TBL_LOG.NOTE &= "タクシーチケット番号：" & TBL_TAXITICKET_HAKKO.TKT_NO _
                      & "／" _
-                     & "講演会番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
+                     & "会合番号：" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO _
                      & "／" _
                      & "参加者ID：" & TBL_TAXITICKET_HAKKO.SANKASHA_ID _
                      & "／" _
                      & "行番号：" & TBL_TAXITICKET_HAKKO.TKT_LINE_NO
- 
+
         If TableName <> "" Then
             TBL_LOG.TABLE_NAME = TableName
         End If
@@ -694,9 +694,9 @@ Public Class MyModule
             Dim strZeiRate As String = AppModule.GetZeiRate(CsvData(wCnt).FROM_DATE, DbConn)
 
             'ヘッダ列
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会日")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名（カナ）")))
@@ -1050,8 +1050,8 @@ Public Class MyModule
             Dim strZeiRate As String = AppModule.GetZeiRate(CsvData(wCnt).FROM_DATE, DbConn)
 
             'ヘッダ列
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員氏名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員宿泊費(非課税)(込)")))
@@ -1148,7 +1148,7 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("課税区分")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日(依頼)")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用年月日")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("売上金額")))
@@ -1311,10 +1311,10 @@ Public Class MyModule
             Dim sb As New System.Text.StringBuilder
 
             'ヘッダ列 必要?
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日From")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日To")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開催日From")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開催日To")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP担当者")))
@@ -1438,10 +1438,10 @@ Public Class MyModule
             Dim sb As New System.Text.StringBuilder
 
             'ヘッダ列 必要?
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日From")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日To")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開催日From")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開催日To")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP担当者")))
@@ -1480,9 +1480,9 @@ Public Class MyModule
             Dim sb As New System.Text.StringBuilder
 
             'ヘッダ列 必要?
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会開催日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開催日")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG №")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("講演会名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者BU")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者エリア")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者営業所")))

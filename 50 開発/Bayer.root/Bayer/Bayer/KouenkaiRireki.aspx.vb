@@ -45,7 +45,7 @@ Partial Public Class KouenkaiRireki
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "講演会基本情報履歴"
+            .PageTitle = "会合基本情報履歴"
         End With
 
     End Sub

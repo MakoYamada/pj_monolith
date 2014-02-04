@@ -19,12 +19,12 @@
 				<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="100%">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" colspan="8">
-							■ 講演会情報
+							■ 会合情報
 						</td>
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							講演会番号
+							会合番号
 						</td>
 						<td nowrap="nowrap" align="left" style="width: 100px;" colspan="7">
 							<asp:Label ID="KOUENKAI_NO" runat="server" Text=""></asp:Label>
@@ -32,7 +32,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
-							講演会名
+							会合名
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
 						    <asp:TextBox ID="KOUENKAI_NAME" runat="server" BorderStyle="None" Height="35px" 
@@ -49,7 +49,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 90px;">
-							講演会開催日
+							会合開催日
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" >
 							<asp:Label ID="KOUENKAI_DATE" runat="server" Text=""></asp:Label>
@@ -116,7 +116,7 @@
 							<asp:Label ID="DR_AGE" runat="server"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                講演会への参加
+			                会合への参加
 		                </td>
 		                <td align="left" valign="middle">
 							<asp:Label ID="DR_SANKA" runat="server"></asp:Label>

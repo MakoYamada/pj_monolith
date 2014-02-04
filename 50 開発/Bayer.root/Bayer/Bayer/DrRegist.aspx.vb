@@ -390,11 +390,11 @@ Partial Public Class DrRegist
             DSP_SEQ = SEQ
         End If
 
-        '講演会最新情報取得
+        '会合最新情報取得
         If Not GetKouenkaiData() Then Exit Sub
 
         '画面項目表示
-        '講演会情報
+        '会合情報
         AppModule.SetForm_KOUENKAI_NO(TBL_KOUENKAI(0).KOUENKAI_NO, Me.KOUENKAI_NO)
         AppModule.SetForm_FROM_DATE(TBL_KOUENKAI(0).FROM_DATE, Me.FROM_DATE)
         AppModule.SetForm_TO_DATE(TBL_KOUENKAI(0).TO_DATE, Me.TO_DATE)
@@ -1135,7 +1135,7 @@ Partial Public Class DrRegist
         End With
     End Sub
 
-    '講演会最新情報取得
+    '会合最新情報取得
     Private Function GetKouenkaiData() As Boolean
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
@@ -1212,7 +1212,7 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.OldTBL_KOTSUHOTEL) = OldTBL_KOTSUHOTEL
     End Sub
 
-    '講演会基本情報ボタン
+    '会合基本情報ボタン
     Private Sub BtnKihon_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKihon.Click
         '選択レコード情報をセッション変数にセット
         Session.Item(SessionDef.SEQ) = 0

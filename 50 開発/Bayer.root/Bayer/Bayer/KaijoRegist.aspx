@@ -73,7 +73,7 @@
 				<table style="width: 940px; border: 1px solid #738891;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
-							¡ u‰‰‰ïî•ñ
+							¡ ‰ï‡î•ñ
 						</td>
 					</tr>
 					<tr>
@@ -81,7 +81,7 @@
 							<table cellspacing="2" border="0">
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
-										u‰‰‰ï”Ô†
+										‰ï‡”Ô†
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="KOUENKAI_NO" runat="server" Text="12345678901234"></asp:Label>
@@ -115,7 +115,7 @@
 								</tr>
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
-										u‰‰‰ï–¼
+										‰ï‡–¼
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
 										<asp:Label ID="KOUENKAI_NAME" runat="server" Text="" Width="600px"></asp:Label>
@@ -196,7 +196,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
-							¡ u‰‰‰ï Šé‰æ’S“–ŽÒ
+							¡ ‰ï‡ Šé‰æ’S“–ŽÒ
 						</td>
 					</tr>
 					<tr>
@@ -277,7 +277,7 @@
 					</tr>
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
-							¡ u‰‰‰ï Žè”z’S“–ŽÒ
+							¡ ‰ï‡ Žè”z’S“–ŽÒ
 						</td>
 					</tr>
 					<tr>
@@ -473,7 +473,7 @@
 										<table cellpadding="2" cellspacing="2">
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 90px;">
-													u‰‰‰ï
+													‰ï‡
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp2" style="width: 70px;">
 													ŠJŽnŽžŠÔ
@@ -767,7 +767,7 @@
 											</tr>
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													u‰‰‰ï‰ïê–¼
+													‰ï‡‰ïê–¼
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
 													<asp:TextBox ID="ANS_KOUEN_KAIJO_NAME" runat="server" Text="" Width="650px" MaxLength="160"></asp:TextBox>

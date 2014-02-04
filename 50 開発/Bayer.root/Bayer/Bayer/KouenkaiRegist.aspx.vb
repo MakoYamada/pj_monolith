@@ -64,7 +64,7 @@ Partial Public Class KouenkaiRegist
                 '''BtnNozomi.Visible = True
             End If
 
-            '' ''表示対象より新しい講演会基本情報がある場合はNOZOMIボタンは使用不可
+            '' ''表示対象より新しい会合基本情報がある場合はNOZOMIボタンは使用不可
             ' ''If ChkNewData() Then
             ' ''    BtnNozomi.Enabled = True
             ' ''Else
@@ -75,7 +75,7 @@ Partial Public Class KouenkaiRegist
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "講演会基本情報"
+            .PageTitle = "会合基本情報"
             If Popup Then
                 .HideLogout = True
                 .HideMenu = True

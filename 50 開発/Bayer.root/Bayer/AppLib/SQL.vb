@@ -254,7 +254,7 @@ Public Class SQL
             strSQL_WHERE_KOTSUHOTEL &= " OR ISNULL(TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20,N'')=N'1' AND ISNULL(TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20,N'')=N'' AND ISNULL(TBL_KOTSUHOTEL.ANS_TAXI_DATE_20,N'')<>N'' AND ISNULL(TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20,N'')<>N''"
             strSQL_WHERE_KOTSUHOTEL &= ")"
 
-            '講演会テーブル
+            '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
 
             strSQL &= "SELECT"
@@ -1853,7 +1853,7 @@ Public Class SQL
 
         Public Shared Function TaxiPrintCsv(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = ""
-      
+
             strSQL &= "SELECT"
             strSQL &= " DISTINCT"
             strSQL &= " TBL_KOTSUHOTEL.SALEFORCE_ID"
@@ -1962,7 +1962,7 @@ Public Class SQL
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO DESC"
             strSQL &= ",TBL_KOTSUHOTEL.SANKASHA_ID DESC"
-            
+
             Return strSQL
         End Function
 
@@ -4245,7 +4245,7 @@ Public Class SQL
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL<N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
 
-            '講演会テーブル
+            '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
 
@@ -4365,7 +4365,7 @@ Public Class SQL
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
             End If
 
-            '講演会テーブル
+            '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             If Trim(Joken.BU) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.BU=N'" & CmnDb.SqlString(Joken.BU) & "'"
@@ -4518,7 +4518,7 @@ Public Class SQL
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
 
-            '講演会テーブル
+            '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
 
@@ -4609,7 +4609,7 @@ Public Class SQL
             strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,N'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
 
-            '講演会テーブル
+            '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO IN("
             For wCnt = LBound(KOUENKAI_NO) To UBound(KOUENKAI_NO)

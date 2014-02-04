@@ -22,10 +22,10 @@
 					</tr>
 					<tr>
 						<td align="left" colspan="2">
-							講演会番号
+							会合番号
 							<asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="140px" MaxLength="14"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
-							講演会名
+							会合名
 							<asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="350px" MaxLength="200"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 						</td>
@@ -93,7 +93,7 @@
 						<asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
-						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP" HeaderText="Timestamp" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="UPDATE_DATE" HeaderText="更新日時" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />

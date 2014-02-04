@@ -218,7 +218,7 @@ Partial Public Class DrRirekiReport
         Me.Label7.Left = 1.696457!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
-        Me.Label7.Text = "講演会名"
+        Me.Label7.Text = "会合名"
         Me.Label7.Top = 1.098032!
         Me.Label7.Width = 1.051969!
         '

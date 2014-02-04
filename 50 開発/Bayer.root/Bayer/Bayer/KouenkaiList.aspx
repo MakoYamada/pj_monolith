@@ -41,14 +41,14 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        講演会番号
+                                        会合番号
                                     </td>
                                     <td>
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="121px" MaxLength="14" 
                                             TabIndex="4"></asp:TextBox>
                                     </td>
                                     <td>
-                                        講演会名
+                                        会合名
                                     </td>
                                     <td colspan="3">
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="544px" MaxLength="160" 
@@ -168,7 +168,7 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="講演会名" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
@@ -191,7 +191,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="講演会番号" Visible="False" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" Visible="False" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
                     </Columns>
                 </asp:GridView>
