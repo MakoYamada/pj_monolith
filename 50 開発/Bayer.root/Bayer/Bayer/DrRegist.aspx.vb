@@ -50,27 +50,37 @@ Partial Public Class DrRegist
             '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
             If URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
                 URL.DrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
-                BtnSubmit.Visible = True
-                BtnNozomi.Visible = True
+                BtnSubmit1.Visible = True
+                BtnSubmit2.Visible = True
+                BtnNozomi1.Visible = True
+                BtnNozomi2.Visible = True
             Else
-                BtnSubmit.Visible = False
-                BtnNozomi.Visible = False
+                BtnSubmit1.Visible = False
+                BtnSubmit2.Visible = False
+                BtnNozomi1.Visible = False
+                BtnNozomi2.Visible = False
             End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
             If Popup Then
                 BtnRireki.Visible = False
-                BtnSubmit.Visible = False
-                BtnNozomi.Visible = False
+                BtnSubmit1.Visible = False
+                BtnSubmit2.Visible = False
+                BtnNozomi1.Visible = False
+                BtnNozomi2.Visible = False
             Else
                 BtnRireki.Visible = True
-                BtnSubmit.Visible = True
-                BtnNozomi.Visible = True
+                BtnSubmit1.Visible = True
+                BtnSubmit2.Visible = True
+                BtnNozomi1.Visible = True
+                BtnNozomi2.Visible = True
 
                 '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
                 If Not ChkNewData() Then
-                    BtnNozomi.Visible = False
-                    BtnSubmit.Visible = False
+                    BtnNozomi1.Visible = False
+                    BtnNozomi2.Visible = False
+                    BtnSubmit1.Visible = False
+                    BtnSubmit2.Visible = False
                 End If
             End If
 
@@ -1235,7 +1245,7 @@ Partial Public Class DrRegist
     End Sub
 
     '[登録]
-    Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
+    Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit1.Click, BtnSubmit2.Click
         '入力チェック
         If Not Check() Then Exit Sub
 
@@ -1249,7 +1259,7 @@ Partial Public Class DrRegist
     End Sub
 
     '[NOZOMIへ]
-    Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi.Click
+    Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi1.Click, BtnNozomi2.Click
         If Not Check() Then Exit Sub
 
         '入力値を取得

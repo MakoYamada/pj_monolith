@@ -43,6 +43,24 @@ Partial Public Class DrRegist
     Protected WithEvents BtnTaxiKakunin1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnSubmit1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSubmit1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnNozomi1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNozomi1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnBack1 コントロール。
     '''</summary>
     '''<remarks>
@@ -4624,22 +4642,22 @@ Partial Public Class DrRegist
     Protected WithEvents BtnTaxiKakunin2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnSubmit コントロール。
+    '''BtnSubmit2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnSubmit As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSubmit2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnNozomi コントロール。
+    '''BtnNozomi2 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnNozomi As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnNozomi2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnBack2 コントロール。

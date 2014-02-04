@@ -4,16 +4,25 @@
 	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:100%">
+					<a name="PageTopLink"></a>
 					<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="1" />
 					<asp:Button ID="BtnSoufujo1" runat="server" Width="150px" Text="送付状印刷" 
                         CssClass="Button" TabIndex="2" />
 					<asp:Button ID="BtnTaxiKakunin1" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
                         CssClass="Button" TabIndex="3" />
+				    <asp:Button ID="BtnSubmit1" runat="server" Width="150px" Text="登録" 
+                        CssClass="Button" TabIndex="264" />
+				    <asp:Button ID="BtnNozomi1" runat="server" Width="150px" Text="NOZOMIへ" 
+                        CssClass="Button" TabIndex="265" />
 					<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="戻る" 
                         CssClass="Button" TabIndex="4" />
-				    <a href="#TaxiTehaiLink" tabindex="5">タクチケ手配へ</a>
 				</td>
+			</tr>
+			<tr style="height: 36px; width:100%">
+			    <td align="left" style="width:100%">
+				    <a href="#TaxiTehaiLink" tabindex="5">タクチケ手配へ</a>
+			    </td>
 			</tr>
 		<tr>
 			<td align="left" colspan="2">
@@ -68,7 +77,6 @@
 				</table>
 			</td>
 		</tr>
-
 		<tr>
 		    <td align="left" colspan="2">
 				<!-- DR担当MR -->
@@ -211,6 +219,11 @@
 	                </tr>
                 </table> 		        
 		    </td>		    
+		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
 		</tr>
 		<tr>
 		    <td align="left"  colspan="2">
@@ -390,6 +403,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 
 		<tr>
 		    <td align="left"  colspan="2">
@@ -397,12 +415,12 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
+                        <td align="left" valign="middle" class="TdTitleHotel" colspan="8">
                             ■宿泊手配
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleHotel" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -410,7 +428,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
                             宿泊依頼
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -425,7 +443,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -442,13 +460,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
                             宿泊日
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_HOTEL_DATE" runat="server" Width="80px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
                             泊数
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -464,7 +482,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
                             喫煙
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -479,7 +497,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px" rowspan="5">
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px" rowspan="5">
                             備考
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="5">
@@ -550,6 +568,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
@@ -557,7 +580,7 @@
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleOuro" style="width:170px">
 							■交通（往路１）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -574,14 +597,13 @@
 				</table>
 		    </td>
 		</tr>
-
 		<tr runat="server" id="TB_KOTSU_O_1">
 		    <td align="left"  colspan="2">
 				<!-- 交通（往路１）手配 -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleOuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -594,7 +616,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -602,7 +624,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -617,7 +639,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -632,7 +654,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -640,7 +662,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                  tabstop="false"  BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -664,13 +686,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TIME1_1" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -692,7 +714,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -709,13 +731,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_SEAT_1" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -739,6 +761,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
@@ -746,7 +773,7 @@
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleOuro" style="width:170px">
 							■交通（往路２）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -770,7 +797,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleOuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -783,7 +810,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -791,7 +818,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -806,7 +833,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -821,7 +848,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -829,7 +856,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                  tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -853,13 +880,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TIME1_2" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -881,7 +908,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -898,13 +925,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_SEAT_2" runat="server" Width="120px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -928,6 +955,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
@@ -935,7 +967,7 @@
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleOuro" style="width:170px">
 							■交通（往路３）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -959,7 +991,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleOuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -972,7 +1004,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px" 
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px" 
                             width="200">
                             依頼内容
                         </td>
@@ -981,7 +1013,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -996,7 +1028,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1011,7 +1043,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1019,7 +1051,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1043,13 +1075,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TIME1_3" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1071,7 +1103,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1088,13 +1120,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_SEAT_3" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1118,6 +1150,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
@@ -1125,7 +1162,7 @@
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleOuro" style="width:170px">
 							■交通（往路４）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1149,7 +1186,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleOuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -1162,7 +1199,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -1170,7 +1207,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1185,7 +1222,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1200,7 +1237,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1208,7 +1245,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1232,13 +1269,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TIME1_4" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1260,7 +1297,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1277,13 +1314,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_SEAT_4" runat="server" Width="120px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1307,6 +1344,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
@@ -1314,7 +1356,7 @@
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleOuro" style="width:170px">
 							■交通（往路５）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1338,7 +1380,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleOuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -1351,7 +1393,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -1359,7 +1401,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1374,7 +1416,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1389,7 +1431,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1397,7 +1439,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1421,13 +1463,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TIME1_5" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1449,7 +1491,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1466,13 +1508,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_SEAT_5" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1496,6 +1538,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>		
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		
 		<tr>
 			<td align="left" colspan="2">
@@ -1503,7 +1550,7 @@
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleFukuro" style="width:170px">
 							■交通（復路１）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1527,7 +1574,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleFukuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -1540,7 +1587,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -1548,7 +1595,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1563,7 +1610,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1578,7 +1625,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1586,7 +1633,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1610,13 +1657,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TIME1_1" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1638,7 +1685,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1655,13 +1702,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_SEAT_1" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1685,14 +1732,18 @@
                 </table> 		        
 		    </td>		    
 		</tr>
-		
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>		
 		<tr>
 			<td align="left" colspan="2">
 				<!-- 交通（復路２）タイトル -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleFukuro" style="width:170px">
 							■交通（復路２）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1716,7 +1767,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleFukuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -1729,7 +1780,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -1737,7 +1788,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1752,7 +1803,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1767,7 +1818,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1775,7 +1826,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1799,13 +1850,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TIME1_2" runat="server" Width="80px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1827,7 +1878,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1844,13 +1895,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_SEAT_2" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1874,14 +1925,18 @@
                 </table> 		        
 		    </td>		    
 		</tr>
-		
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>		
 		<tr>
 			<td align="left" colspan="2">
 				<!-- 交通（復路３）タイトル -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleFukuro" style="width:170px">
 							■交通（復路３）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1905,7 +1960,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleFukuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -1918,7 +1973,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -1926,7 +1981,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1941,7 +1996,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -1956,7 +2011,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -1964,7 +2019,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -1988,13 +2043,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TIME1_3" runat="server" Width="80px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2016,7 +2071,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2033,13 +2088,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_SEAT_3" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2063,14 +2118,18 @@
                 </table> 		        
 		    </td>		    
 		</tr>
-		
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>		
 		<tr>
 			<td align="left" colspan="2">
 				<!-- 交通（復路４）タイトル -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleFukuro" style="width:170px">
 							■交通（復路４）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -2094,10 +2153,10 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="style1" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleFukuro" colspan="4">
                             ◆依頼内容
                         </td>
-                        <td align="left" valign="middle" class="style2" colspan="4">
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_4" runat="server" Width="55px" Text="コピー" 
                                 CssClass="ButtonList" TabIndex="117" />
@@ -2107,7 +2166,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -2115,7 +2174,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2130,7 +2189,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2145,7 +2204,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -2153,7 +2212,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2177,13 +2236,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TIME1_4" runat="server" Width="80px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2205,7 +2264,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2222,13 +2281,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_SEAT_4" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2252,14 +2311,18 @@
                 </table> 		        
 		    </td>		    
 		</tr>
-		
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>		
 		<tr>
 			<td align="left" colspan="2">
 				<!-- 交通（復路５）タイトル -->				
 				<table style="margin-bottom: 0px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="0" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleFukuro" style="width:170px">
 							■交通（復路５）手配
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -2283,7 +2346,7 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleFukuro" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2296,7 +2359,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="7">
@@ -2304,7 +2367,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2319,7 +2382,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2334,7 +2397,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -2342,7 +2405,7 @@
                                 readonly="true" textmode="MultiLine" Height="18px" Width="148px" 
                                 tabstop="false" BorderStyle="None"></asp:TextBox>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2366,13 +2429,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             出発時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TIME1_5" runat="server" Width="80px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             到着時刻
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2394,7 +2457,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2411,13 +2474,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席区分
                         </td>
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_SEAT_5" runat="server" Width="120px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             座席位置
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
@@ -2447,12 +2510,12 @@
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" colspan="5">
+						<td align="left" valign="middle" class="TdTitleFukuro" colspan="5">
 							■交通備考
                         </td>
 					</tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader">
+                        <td align="left" valign="middle" class="TdTitleFukuro">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2473,15 +2536,19 @@
 				</table>
 		    </td>
 		</tr>
-		
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>		
 		<tr runat="server" id="TB_TAXI_1">
 		    <td align="left"  colspan="2">
 				<!-- タクチケ手配 -->
 				<table style="margin-bottom: 8px; border-collapse: collapse;" cellspacing="0" 
                     cellpadding="2" border="1" bordercolor="#4f5b61" style="width:900px">
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
-							チケット手配
+						<td align="left" valign="middle" class="TdTitleTaxi" style="width:170px">
+							タクチケ手配
                         </td>
                         <td align="left" valign="middle" class="TdItem"  colspan="5">
 							<asp:Label ID="TEHAI_TAXI" runat="server" Width="120px"></asp:Label>
@@ -2492,7 +2559,7 @@
                                 CssClass="ButtonList" TabIndex="142" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>							
                         </td>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleTaxi" style="width:170px">
 							スキャンデータ取込日
                         </td>
                         <td align="left" valign="middle" class="TdItem">
@@ -2500,12 +2567,12 @@
                         </td>
 					</tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="8">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="8">
                             ■タクチケ備考
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆依頼内容
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2513,7 +2580,7 @@
             			</td>
                     </tr>
 					<tr>
-						<td align="left" valign="middle" class="TdTitleHeader" style="width:170px">
+						<td align="left" valign="middle" class="TdTitleTaxi" style="width:170px">
 							備考
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2530,7 +2597,7 @@
                         </td>
 					</tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程１
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2538,7 +2605,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2560,7 +2627,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2583,7 +2650,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2606,7 +2673,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程２
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2614,7 +2681,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2635,7 +2702,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2658,7 +2725,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2681,7 +2748,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程３
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2689,7 +2756,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2710,7 +2777,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2733,7 +2800,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2756,7 +2823,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程４
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2764,7 +2831,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2785,7 +2852,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2808,7 +2875,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2831,7 +2898,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程５
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2839,7 +2906,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2860,7 +2927,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2883,7 +2950,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2906,7 +2973,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程６
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2914,7 +2981,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2935,7 +3002,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2958,7 +3025,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -2981,7 +3048,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程７
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -2989,7 +3056,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3010,7 +3077,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3033,7 +3100,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3056,7 +3123,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程８
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -3064,7 +3131,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3085,7 +3152,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3108,7 +3175,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3131,7 +3198,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程９
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -3139,7 +3206,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3160,7 +3227,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3183,7 +3250,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3206,7 +3273,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+                        <td align="left" valign="middle" class="TdTitleTaxi" colspan="4">
                             ◆行程１０
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
@@ -3214,7 +3281,7 @@
             				</td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3235,7 +3302,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             発地
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3258,7 +3325,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+                        <td align="left" valign="middle" class="TdTitleTaxi" style="width:100px">
                             依頼金額
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
@@ -3795,7 +3862,11 @@
                 </table> 		        
 		    </td>		    
 		</tr>
-
+		<tr style="height: 36px; width:100%">
+		    <td align="left" style="width:100%">
+			    <a href="#PageTopLink">ページトップへ</a>
+		    </td>
+		</tr>
 		<tr>
 			<td align="left" colspan="2">
 				<!-- MR手配情報 -->				
@@ -4048,9 +4119,9 @@
             </tr>
             <tr align="right" style="width:100%">
                 <td>
-				    <asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="登録" 
+				    <asp:Button ID="BtnSubmit2" runat="server" Width="150px" Text="登録" 
                         CssClass="Button" TabIndex="264" />
-				    <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIへ" 
+				    <asp:Button ID="BtnNozomi2" runat="server" Width="150px" Text="NOZOMIへ" 
                         CssClass="Button" TabIndex="265" />
 					<asp:Button ID="BtnBack2" runat="server" Width="150px" Text="戻る" 
                         CssClass="Button" TabIndex="266" />

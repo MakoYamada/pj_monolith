@@ -25,7 +25,7 @@ div#container
 	background-color: #ffffff;
 	margin: 0 auto;
 	width: 100%;
-	height: auto !impotant;
+	height: auto;
 	height: 100%;
 	min-height: 100%;
 }
@@ -211,6 +211,30 @@ img
 	padding-right: 5px;
 	width: 130px;
 	text-align:right;
+}
+.TdTitleHotel
+{
+	background-color: #9f6f55;
+	color: #ffffff;
+	font-weight: bold;
+}
+.TdTitleOuro
+{
+	background-color: #202f55;
+	color: #ffffff;
+	font-weight: bold;
+}
+.TdTitleFukuro
+{
+	background-color: #7ebeab;
+	color: #22332d;
+	font-weight: bold;
+}
+.TdTitleTaxi
+{
+	background-color: #e5a800;
+	color: #332500;
+	font-weight: bold;
 }
 .ItemConfirm 
 {
