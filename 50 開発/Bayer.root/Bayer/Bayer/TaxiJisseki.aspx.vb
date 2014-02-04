@@ -4,7 +4,7 @@ Imports System.IO
 Partial Public Class TaxiJisseki
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 4 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 9 'ファイルの項目数
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "0"
     Private HAKKO_TESURYO As String = "0"
@@ -12,17 +12,27 @@ Partial Public Class TaxiJisseki
     Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
 
     Private Enum COL_NO
-        TAXI_KAISHA = 0
+        KOUZA_NO = 0
+        KOUZA_SUBNO
+        KOUZA_NAME1
+        KOUZA_NAME2
+        KOUZA_BUKA
         TKT_NO
         USED_DATE
+        USED_TAXI
         URIAGE
     End Enum
 
     Private Class COL_NAME
-        Public Const TAXI_KAISHA As String = "タクシー会社"
-        Public Const TKT_NO As String = "タクチケ番号"
-        Public Const USED_DATE As String = "利用日"
-        Public Const URIAGE As String = "売上金額"
+        Public Const KOUZA_NO As String = "口座番号"
+        Public Const KOUZA_SUBNO As String = "口座番号枝番"
+        Public Const KOUZA_NAME1 As String = "口座名１"
+        Public Const KOUZA_NAME2 As String = "口座名２"
+        Public Const KOUZA_BUKA As String = "部課名"
+        Public Const TKT_NO As String = "チケット番号"
+        Public Const USED_DATE As String = "使用日付"
+        Public Const USED_TAXI As String = "タクシー会社コード"
+        Public Const URIAGE As String = "金額"
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -49,10 +59,6 @@ Partial Public Class TaxiJisseki
 
         'クリア
         CmnModule.ClearAllControl(Me)
-
-        'タクシー会社ラジオボタン設定
-        AppModule.SetRadioButtonList_RDO_TAXI(Me.RdoTaxi)
-        Me.RdoTaxi.SelectedValue = "DC"
     End Sub
 
     '[取込開始]
@@ -132,9 +138,12 @@ Partial Public Class TaxiJisseki
             Dim fileData As String() = parser.ReadFields() ' 1行読み込み
             rowCnt += 1
 
-            If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
-                'タクチケ発行テーブル更新
-                insCnt += UpdateTable(fileData, strFileName, rowCnt, ErrorMessage)
+            '1行目はタイトル行のため読み飛ばす
+            If rowCnt > 1 Then
+                If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
+                    'タクチケ発行テーブル更新
+                    insCnt += UpdateTable(fileData, strFileName, rowCnt, ErrorMessage)
+                End If
             End If
         End While
 
@@ -170,11 +179,6 @@ Partial Public Class TaxiJisseki
                 ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
             End If
 
-            '必須入力チェック
-            If fileData(COL_NO.TAXI_KAISHA).Trim.Equals(String.Empty) Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TAXI_KAISHA & "がセットされていません。" & vbNewLine
-            End If
-
             If fileData(COL_NO.TKT_NO).Trim.Equals(String.Empty) Then
                 ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_NO & "がセットされていません。" & vbNewLine
             End If
@@ -187,15 +191,10 @@ Partial Public Class TaxiJisseki
                 ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.URIAGE & "がセットされていません。" & vbNewLine
             End If
 
-            'タクシー会社チェック
-            If fileData(COL_NO.TAXI_KAISHA).Trim <> Me.RdoTaxi.SelectedValue Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & fileData(COL_NO.TAXI_KAISHA).Trim & "がタクシー会社と一致しません。" & vbNewLine
-            End If
-
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
-            Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
+            'Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
             Return False
         End Try
 
@@ -208,11 +207,11 @@ Partial Public Class TaxiJisseki
 
         Dim strSQL As String = ""
         Dim insCnt As Integer = 0
-        Dim TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+        Dim TBL_TAITICKET_HAKKO_UPD As TableDef.TBL_TAXITICKET_HAKKO.DataStruct = Nothing
 
-        TBL_TAXITICKET_HAKKO = SetUpdateData(fileData, strFileName, rowCnt, ErrorMessage)
+        TBL_TAITICKET_HAKKO_UPD = SetUpdateData(fileData, strFileName, rowCnt, ErrorMessage)
         Try
-            strSQL = SQL.TBL_TAXITICKET_HAKKO.Update(TBL_TAXITICKET_HAKKO)
+            strSQL = SQL.TBL_TAXITICKET_HAKKO.Update(TBL_TAITICKET_HAKKO_UPD)
             insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
             Return True
@@ -234,10 +233,10 @@ Partial Public Class TaxiJisseki
     Private Function SetUpdateData(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
         Try
             'タクチケ発行テーブル更新対象レコード取得
-            If GetTaxiticketHakko(fileData(COL_NO.TAXI_KAISHA), fileData(COL_NO.TKT_NO)) Then
+            If GetTaxiticketHakko(fileData(COL_NO.TKT_NO)) Then
                 '未決登録済みのタクチケは取込エラーとする。
                 If TBL_TAXITICKET_HAKKO.TKT_MIKETSU = CmnConst.Flag.On Then
-                    Throw New Exception("未決登録済のため、実績取込できません。[タクシー会社:" & fileData(COL_NO.TAXI_KAISHA) & ",タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
+                    Throw New Exception("未決登録済のため、実績取込できません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
                 Else
 
                     '実績CSVの内容をタクチケ発行テーブルの項目へセット
@@ -248,89 +247,92 @@ Partial Public Class TaxiJisseki
                         '実績CSVに利用日・金額が設定されているが、DRが不参加の場合エンタ="E"
                         If fileData(COL_NO.USED_DATE).Trim <> "" And _
                             Val(fileData(COL_NO.URIAGE).Trim) <> 0 And _
-                            TBL_KOTSUHOTEL.DR_SANKA = CmnConst.Flag.Off Then
+                            TBL_KOTSUHOTEL.SANKA_FLAG = AppConst.KOTSUHOTEL.DR_SANKA.Code.No Then
                             TBL_TAXITICKET_HAKKO.TKT_ENTA = "E"
                         End If
                         '実績CSVの利用日(実車日)と、交通宿泊テーブルの利用日(予定日)が異なる場合
+                        Dim wDate As Date = fileData(COL_NO.USED_DATE)
+                        Dim wDateStr As String = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
+
                         Select Case Val(TBL_TAXITICKET_HAKKO.TKT_LINE_NO)
                             Case 1
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_1) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 2
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_2) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 3
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_3) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 4
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_4) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 5
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_5) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 6
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_6) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 7
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_7) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 8
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_8) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 9
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_9) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 10
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_10) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 11
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_11) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 12
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_12) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 13
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_13) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 14
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_14) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 15
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_15) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 16
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_16) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 17
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_17) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 18
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_18) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 19
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_19) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                             Case 20
-                                If Val(fileData(COL_NO.USED_DATE)) <> Val(TBL_KOTSUHOTEL.ANS_TAXI_DATE_20) Then
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
                                 End If
                         End Select
@@ -339,14 +341,16 @@ Partial Public Class TaxiJisseki
                     End If
                 End If
             Else
-                Throw New Exception("タクチケ発行テーブルに登録されていません。[タクシー会社:" & fileData(COL_NO.TAXI_KAISHA) & ",タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
+                Throw New Exception("タクチケ発行テーブルに登録されていません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
             End If
         Catch ex As Exception
-            Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+            'Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
             Dim strErrMsg As String = strFileName & "【" & rowCnt & "行目】" & ex.Message
             ErrorMessage &= strErrMsg & vbNewLine
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
         End Try
+
+        Return TBL_TAXITICKET_HAKKO
 
     End Function
 
@@ -365,12 +369,12 @@ Partial Public Class TaxiJisseki
     End Function
 
     'タクチケ発行情報取得
-    Private Function GetTaxiticketHakko(ByVal TAXI_KAISHA As String, ByVal TKT_NO As String) As Boolean
+    Private Function GetTaxiticketHakko(ByVal TKT_NO As String) As Boolean
         Dim wFlag As Boolean = False
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_TAXITICKET_HAKKO.byTKT_KAISHA_TKT_NO(TAXI_KAISHA, TKT_NO)
+        strSQL = SQL.TBL_TAXITICKET_HAKKO.byTKT_NO(TKT_NO)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
             wFlag = True
@@ -400,7 +404,8 @@ Partial Public Class TaxiJisseki
 
     '実績CSV→タクチケ発行テーブル項目セット
     Private Sub SetItem(ByVal filedata() As String)
-        TBL_TAXITICKET_HAKKO.TKT_USED_DATE = filedata(COL_NO.USED_DATE)
+        Dim wDate As Date = filedata(COL_NO.USED_DATE)
+        TBL_TAXITICKET_HAKKO.TKT_USED_DATE = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
         TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.URIAGE)
         TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = HAKKO_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO

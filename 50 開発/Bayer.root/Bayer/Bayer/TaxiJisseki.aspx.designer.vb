@@ -16,15 +16,6 @@ Option Explicit On
 Partial Public Class TaxiJisseki
 
     '''<summary>
-    '''RdoTaxi コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents RdoTaxi As Global.System.Web.UI.WebControls.RadioButtonList
-
-    '''<summary>
     '''FileUpload1 コントロール。
     '''</summary>
     '''<remarks>

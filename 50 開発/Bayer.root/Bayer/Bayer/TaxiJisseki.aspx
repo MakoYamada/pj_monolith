@@ -8,16 +8,7 @@
 			<td align="left">
 				<table cellpadding="2" cellspacing="0" border="0" width="900px">
 					<tr style="width:100%">
-						<td align="right" style="width:20%">
-							タクシー会社
-						</td>
-						<td align="left">
-						    <asp:RadioButtonList ID="RdoTaxi" runat="server" RepeatDirection="Horizontal">
-                            </asp:RadioButtonList>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td align="right" style="width:20%">
+						<td align="left" style="width:15%">
 						    取込ファイル
 						</td>
 						<td align="left">
@@ -25,7 +16,7 @@
 						</td>
 					</tr>					
 					<tr style="height: 50px;" valign="bottom">
-						<td align="center" colspan="2">
+						<td align="left" colspan="2">
 							<asp:Button ID="BtnTorikomi" runat="server" Text="取込開始" Width="180px" CssClass="Button" />
 						</td>
 					</tr>
