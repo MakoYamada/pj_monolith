@@ -8,15 +8,16 @@ Partial Public Class NewKouenkaiList
     Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
+        Button1
         BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
+        KIKAKU_TANTO_NAME
         JISSHI_DATE
+        KOUENKAI_NO
         KOUENKAI_NAME
         TIME_STAMP
         KUBUN
-        Button1
-        KOUENKAI_NO
         TO_DATE
         CNT
     End Enum
@@ -188,7 +189,6 @@ Partial Public Class NewKouenkaiList
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
             e.Row.Cells(CellIndex.CNT).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
