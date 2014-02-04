@@ -12,13 +12,16 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnNewKoenkaiList" runat="server" Text="会合基本情報" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnNewKoenkaiList" runat="server" Text="【新着】基本情報" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnNewKaijoList" runat="server" Text="会場手配" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnNewKaijoList" runat="server" Text="【新着】会場手配" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnNewKotsuList" runat="server" Text="宿泊・交通" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnNewKotsuList" runat="server" Text="【新着】交通・手配" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnNewBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
@@ -34,13 +37,16 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnKoenkaiList" runat="server" Text="会合基本情報" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnKoenkaiList" runat="server" Text="【検索】基本情報" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnKaijoList" runat="server" Text="会場手配" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnKaijoList" runat="server" Text="【検索】会場手配" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnKotsuList" runat="server" Text="宿泊・交通" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnKotsuList" runat="server" Text="【検索】交通・手配" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
@@ -62,7 +68,8 @@
 							<asp:Button ID="BtnMstUser" runat="server" Text="TOP担当者マスタ" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnMstCode" runat="server" Text="コードマスタ" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnMstCode" runat="server" Text="【ステータス】コードマスタ" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 						    <asp:Button ID="BtnMstCostcenter" runat="server" Text="コストセンターマスタ" Width="200px" CssClass="Button" Visible="false" />
