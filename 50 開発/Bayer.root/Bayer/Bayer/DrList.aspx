@@ -74,7 +74,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        実施日
+                                        開催日
                                     </td>
                                     <td colspan="5">
 							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
@@ -178,7 +178,7 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>

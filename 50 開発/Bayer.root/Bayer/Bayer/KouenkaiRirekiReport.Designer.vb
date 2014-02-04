@@ -169,7 +169,7 @@ Partial Public Class KouenkaiRirekiReport
         Me.Label6.Left = 8.218898!
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "font-family: ＭＳ ゴシック"
-        Me.Label6.Text = "実施日"
+        Me.Label6.Text = "開催日"
         Me.Label6.Top = 1.336221!
         Me.Label6.Width = 0.5102362!
         '

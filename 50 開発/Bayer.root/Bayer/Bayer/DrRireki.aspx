@@ -43,7 +43,7 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>

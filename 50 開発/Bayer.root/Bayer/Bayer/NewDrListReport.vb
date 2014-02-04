@@ -34,7 +34,7 @@ Public Class NewDrListReport
         '区分
         REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(REQ_STATUS_TEHAI.Text, False, True)
 
-        '実施日
+        '開催日
         FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE.Text, TO_DATE.Text, True)
 
         'TimeStamp

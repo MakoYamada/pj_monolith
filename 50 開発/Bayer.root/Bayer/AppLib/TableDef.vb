@@ -2391,7 +2391,7 @@
             Public Const CMSHONIN_TIME As String = "CM承認時間"
             Public Const CMSHONIN_NOTE As String = "CM承認者備考"
             Public Const STATUS_TEHAI As String = "手配ステータス"
-            Public Const HAITATSU_DATE As String = "配達日(実施日)"
+            Public Const HAITATSU_DATE As String = "配達日(開催日)"
             Public Const HAITATSU_KIBOU_TIME As String = "利用(配達希望)時間"
             Public Const HAITATSU_ADDRESS As String = "利用(配達)住所"
             Public Const HAITATSU_SHISETSU As String = "利用(配達)施設名"
@@ -3025,7 +3025,7 @@
             Public Const BARCODE As String = "ﾊﾞｰｺｰﾄﾞ"
 
             Public Const DANTAI_CODE As String = "団体コード"
-            Public Const FROM_DATE As String = "実施日"
+            Public Const FROM_DATE As String = "開催日"
             Public Const KOUENKAI_NO As String = "会合番号"
             Public Const KOUENKAI_NAME As String = "会合名"
             Public Const KIKAKU_TANTO_NAME As String = "BYL企画担当者名"

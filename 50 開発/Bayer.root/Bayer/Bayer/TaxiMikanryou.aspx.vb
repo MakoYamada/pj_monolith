@@ -123,19 +123,19 @@ Partial Public Class TaxiMikanryou
         End If
 
         If Not CmnCheck.IsNumberOnly(Me.Joken_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(年)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日(年)"), Me)
             Return False
         End If
 
         If Not CmnCheck.IsNumberOnly(Me.Joken_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("実施日(月)"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日(月)"), Me)
             Return False
         End If
 
         If CmnCheck.IsInput(Me.Joken_YYYY) AndAlso CmnCheck.IsInput(Me.Joken_MM) Then
             Dim wStr As String = StrConv(Trim(Me.Joken_YYYY.Text) & "/" & Trim(Me.Joken_MM.Text) & "/01", VbStrConv.Narrow)
             If Not IsDate(wStr) Then
-                CmnModule.AlertMessage(MessageDef.Error.Invalid("実施日"), Me)
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("開催日"), Me)
                 Return False
             End If
         End If

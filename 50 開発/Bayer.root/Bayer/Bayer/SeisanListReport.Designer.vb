@@ -347,7 +347,7 @@ Partial Public Class SeisanListReport
         Me.Label22.Left = 2.888977!
         Me.Label22.Name = "Label22"
         Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: normal; text-align: right"
-        Me.Label22.Text = "実施日："
+        Me.Label22.Text = "開催日："
         Me.Label22.Top = 1.170079!
         Me.Label22.Width = 1.262992!
         '
@@ -545,7 +545,7 @@ Partial Public Class SeisanListReport
         Me.Label21.Left = 3.475985!
         Me.Label21.Name = "Label21"
         Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
-        Me.Label21.Text = "実施日"
+        Me.Label21.Text = "開催日"
         Me.Label21.Top = 1.87874!
         Me.Label21.Width = 1.617717!
         '

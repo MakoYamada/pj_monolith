@@ -169,7 +169,7 @@ Partial Public Class NewKouenkaiList
 
         If e.Row.RowType = DataControlRowType.DataRow Then
 
-            '実施日
+            '開催日
             e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.JISSHI_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
 
             'TimeStamp

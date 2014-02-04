@@ -35,7 +35,7 @@
 							<asp:Label ID="KOUENKAI_NO" runat="server" Width="120px"></asp:Label>
 						</td>
 						<td align="left" class="TdTitleHeader" style="width:100px">
-							ŽÀŽ{“ú
+							ŠJÃ“ú
 						</td>
                         <td align="left" class="TdItem">
 							<asp:Label ID="FROM_DATE" runat="server" Width="80px"></asp:Label>

@@ -248,7 +248,7 @@ Partial Public Class DrListReport
         Me.Label6.Left = 0.007874016!
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "font-family: ＭＳ ゴシック"
-        Me.Label6.Text = "実施日"
+        Me.Label6.Text = "開催日"
         Me.Label6.Top = 3.135433!
         Me.Label6.Width = 0.5102362!
         '
@@ -737,7 +737,7 @@ Partial Public Class DrListReport
         Me.Label22.Left = 0.0!
         Me.Label22.Name = "Label22"
         Me.Label22.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label22.Text = "実施日："
+        Me.Label22.Text = "開催日："
         Me.Label22.Top = 2.033071!
         Me.Label22.Width = 1.802756!
         '

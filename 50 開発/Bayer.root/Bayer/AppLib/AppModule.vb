@@ -6944,7 +6944,7 @@ Public Class AppModule
 #End Region
 
 #Region "–¢Œˆ“o˜^‰æ–Ê@‰æ–Ê€–Ú•\¦"
-    '‰ï‡À{“ú(From`To)
+    '‰ï‡ŠJÃ“ú(From`To)
     Public Shared Sub SetForm_JISSI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, ByRef control As Label)
         control.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE, TO_DATE, True)
     End Sub

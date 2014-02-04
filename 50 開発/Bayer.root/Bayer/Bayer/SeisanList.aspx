@@ -20,7 +20,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        é¿é{ì˙
+                                        äJç√ì˙
                                     </td>
                                     <td colspan="5">
 							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>îN
@@ -127,7 +127,7 @@
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="85px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="FROM_DATE" HeaderText="é¿é{ì˙" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                                    <asp:BoundField DataField="FROM_DATE" HeaderText="äJç√ì˙" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                                         ItemStyle-HorizontalAlign="Center">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle HorizontalAlign="Center" Wrap="False" Width="90px"></ItemStyle>

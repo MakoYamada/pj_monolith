@@ -14,7 +14,7 @@
                             <table cellpadding="2" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="left" style="width:50px">
-                                        実施日
+                                        開催日
                                     </td>
                                     <td>
 							            <asp:TextBox ID="Joken_YYYY" runat="server" Width="50px" MaxLength="4" 

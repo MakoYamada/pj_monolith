@@ -70,7 +70,7 @@
 
 <ItemStyle Wrap="False" HorizontalAlign="Center" Width="100px"></ItemStyle>
                         </asp:BoundField>
-						<asp:BoundField DataField="FROM_DATE" HeaderText="実施日" ItemStyle-Wrap="false" 
+						<asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" >
 <HeaderStyle Wrap="False"></HeaderStyle>
 

@@ -11,7 +11,7 @@ Public Class KouenkaiRirekiReport
         If Len(KIKAKU_TANTO_EIGYOSHO.Text) > 20 Then KIKAKU_TANTO_EIGYOSHO.Text = Left(KIKAKU_TANTO_EIGYOSHO.Text, 20)
         If Len(USER_NAME.Text) > 20 Then USER_NAME.Text = Left(USER_NAME.Text, 20)
 
-        '実施日
+        '開催日
         FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE.Text, TO_DATE.Text, True)
 
         'TimeStamp
