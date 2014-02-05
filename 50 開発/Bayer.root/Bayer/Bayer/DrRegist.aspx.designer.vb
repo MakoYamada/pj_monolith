@@ -133,141 +133,6 @@ Partial Public Class DrRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''MR_BU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_BU As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_AREA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_AREA As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_EIGYOSHO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_EIGYOSHO As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ACCOUNT_CODE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ACCOUNT_CODE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''COST_CENTER コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents COST_CENTER As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''INTERNAL_ORDER コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents INTERNAL_ORDER As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ZETIA_CD コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ZETIA_CD As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MR_ROMA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_ROMA As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MR_KEITAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_KEITAI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_TEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_TEL As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_EMAIL_KEITAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_EMAIL_KEITAI As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MR_EMAIL_PC コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_EMAIL_PC As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''MR_SEND_SAKI_FS コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_SEND_SAKI_FS As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_SEND_SAKI_OTHER コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_SEND_SAKI_OTHER As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''REQ_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>
@@ -446,6 +311,213 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SHONIN_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_BU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_BU As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_AREA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_AREA As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_EIGYOSHO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_EIGYOSHO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ACCOUNT_CODE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ACCOUNT_CODE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''COST_CENTER コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents COST_CENTER As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''INTERNAL_ORDER コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents INTERNAL_ORDER As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ZETIA_CD コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ZETIA_CD As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''MR_ROMA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_ROMA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''MR_KEITAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_KEITAI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_TEL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_TEL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_EMAIL_KEITAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_EMAIL_KEITAI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''MR_EMAIL_PC コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_EMAIL_PC As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''MR_SEND_SAKI_FS コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_SEND_SAKI_FS As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_SEND_SAKI_OTHER コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_SEND_SAKI_OTHER As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''REQ_MR_O_TEHAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_MR_O_TEHAI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_MR_O_TEHAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MR_O_TEHAI As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''REQ_MR_F_TEHAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_MR_F_TEHAI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_MR_F_TEHAI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MR_F_TEHAI As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''MR_SEX コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_SEX As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_AGE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_AGE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''REQ_MR_HOTEL_NOTE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents REQ_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_MR_HOTEL_NOTE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TEHAI_HOTEL コントロール。
@@ -4381,78 +4453,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_RMKS_20 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''REQ_MR_O_TEHAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents REQ_MR_O_TEHAI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_MR_O_TEHAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_O_TEHAI As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''REQ_MR_F_TEHAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents REQ_MR_F_TEHAI As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_MR_F_TEHAI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_F_TEHAI As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''MR_SEX コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_SEX As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''MR_AGE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_AGE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''REQ_MR_HOTEL_NOTE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents REQ_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MR_HOTEL_NOTE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''ANS_HOTELHI コントロール。
     '''</summary>
     '''<remarks>
@@ -4460,69 +4460,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_HOTELHI As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_RAIL_FARE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_HOTELHI_TOZEI コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_RAIL_CANCELLATION コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_HOTELHI_TF コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_HOTELHI_TF As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ANS_OTHER_FARE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_HOTELHI_CANCEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_HOTELHI_CANCEL As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_OTHER_CANCELLATION コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_AIR_FARE コントロール。
@@ -4534,6 +4471,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_AIR_FARE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_HOTELHI_TOZEI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ANS_AIR_CANCELLATION コントロール。
     '''</summary>
     '''<remarks>
@@ -4543,13 +4489,49 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_AIR_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''ANS_HOTELHI_CANCEL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTELHI_CANCEL As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_RAIL_FARE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_RAIL_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CHK_KOTSUHOTEL_TESURYO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents CHK_KOTSUHOTEL_TESURYO As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''ANS_KOTSUHOTEL_TESURYO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_KOTSUHOTEL_TESURYO As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents ANS_KOTSUHOTEL_TESURYO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_RAIL_CANCELLATION コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_RAIL_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_TAXI_MAISUU コントロール。
@@ -4568,6 +4550,24 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_TAXI_TESURYO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_OTHER_FARE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_FARE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_OTHER_CANCELLATION コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_OTHER_CANCELLATION As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_MR_HOTELHI コントロール。
@@ -4595,15 +4595,6 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_MR_HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ANS_MR_HOTELHI_TF コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_MR_HOTELHI_TF As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnRireki コントロール。

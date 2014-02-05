@@ -6056,7 +6056,7 @@ Public Class AppModule
         If ANS_TAXI_TESURYO = "" Then
             control.Text = "0"
         Else
-            control.Text = ANS_TAXI_TESURYO
+            control.Text = CmnModule.EditComma(ANS_TAXI_TESURYO)
         End If
     End Sub
 

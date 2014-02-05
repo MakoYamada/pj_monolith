@@ -191,11 +191,11 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" Visible="False" />
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" />
                         <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
+                            <ItemStyle Wrap="False" Width="150px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者番号">
                         <ItemStyle Width="100px" Wrap="False" />

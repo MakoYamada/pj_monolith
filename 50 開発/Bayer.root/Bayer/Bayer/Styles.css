@@ -212,22 +212,28 @@ img
 	width: 130px;
 	text-align:right;
 }
-.TdTitleHotel
-{
-	background-color: #9f6f55;
-	color: #ffffff;
-	font-weight: bold;
-}
-.TdTitleOuro
+.TdTitleMR
 {
 	background-color: #202f55;
 	color: #ffffff;
 	font-weight: bold;
 }
+.TdTitleHotel
+{
+	background-color: #fffacd;
+	color: #4c4b3d;
+	font-weight: bold;
+}
+.TdTitleOuro
+{
+	background-color: #336699;
+	color: #ffffff;
+	font-weight: bold;
+}
 .TdTitleFukuro
 {
-	background-color: #7ebeab;
-	color: #22332d;
+	background-color: #003366;
+	color: #ffffff;
 	font-weight: bold;
 }
 .TdTitleTaxi

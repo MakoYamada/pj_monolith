@@ -84,9 +84,6 @@ Partial Public Class HotelKensaku
         If Trim(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1)) <> "" Then
             AppModule.SetForm_ADDRESS1(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1), Me.ADDRESS1)
         End If
-        'If Trim(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2)) <> "" Then
-        '    AppModule.SetForm_ADDRESS2(Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2), Me.ADDRESS2)
-        'End If
         If Trim(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME)) <> "" Then
             AppModule.SetForm_SHISETSU_NAME(Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME), Me.SHISETSU_NAME)
         End If
@@ -144,11 +141,7 @@ Partial Public Class HotelKensaku
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = String.Empty
-
-        '仮
-        strSQL = "SELECT * FROM  MS_SHISETSU"
-
+        Dim strSQL As String = SQL.MS_SHISETSU.Search(Joken)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -223,6 +216,31 @@ Partial Public Class HotelKensaku
 
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
 
+        Joken.ADDRESS1 = CmnModule.GetSelectedItemValue(Me.ADDRESS1)
+        Joken.SHISETSU_NAME = Trim(Me.SHISETSU_NAME.Text)
+        Joken.SHISETSU_KANA = Trim(Me.SHISETSU_KANA.Text)
+        Session.Item(SessionDef.Joken) = Joken
+
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = Joken.ADDRESS1
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = Joken.ADDRESS2
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = Joken.SHISETSU_NAME
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = Joken.SHISETSU_KANA
+
+        '画面項目表示
+        SetForm()
     End Sub
+
+    '入力チェック
+    Private Function Check() As Boolean
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class

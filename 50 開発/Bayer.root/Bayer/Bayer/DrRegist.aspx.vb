@@ -920,7 +920,9 @@ Partial Public Class DrRegist
         AppModule.SetForm_ANS_MR_KOTSUHI(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_KOTSUHI, Me.ANS_MR_KOTSUHI)
         AppModule.SetForm_ANS_TAXI_TESURYO(DSP_KOTSUHOTEL(SEQ).ANS_TAXI_TESURYO, Me.ANS_TAXI_TESURYO)
         AppModule.SetForm_ANS_TAXI_MAISUU(DSP_KOTSUHOTEL(SEQ).ANS_TAXI_TESURYO, Me.ANS_TAXI_MAISUU)
-        AppModule.SetForm_ANS_KOTSUHOTEL_TESURYO(DSP_KOTSUHOTEL(SEQ).ANS_KOTSUHOTEL_TESURYO, Me.ANS_KOTSUHOTEL_TESURYO)
+        AppModule.SetForm_ANS_KOTSUHOTEL_TESURYO(DSP_KOTSUHOTEL(SEQ).ANS_KOTSUHOTEL_TESURYO, Me.CHK_KOTSUHOTEL_TESURYO)
+        Me.ANS_KOTSUHOTEL_TESURYO.Text = CmnModule.EditComma(AppModule.GetValue_ANS_KOTSUHOTEL_TESURYO(Me.CHK_KOTSUHOTEL_TESURYO))
+
 
         If Not Popup Then
             SetChangedColor(Me.MR_BU, DSP_KOTSUHOTEL(DSP_SEQ).MR_BU, OldTBL_KOTSUHOTEL.MR_BU)
@@ -1110,12 +1112,12 @@ Partial Public Class DrRegist
             SetChangedColor(Me.REQ_MR_HOTEL_NOTE, DSP_KOTSUHOTEL(DSP_SEQ).REQ_MR_HOTEL_NOTE, OldTBL_KOTSUHOTEL.REQ_MR_HOTEL_NOTE)
         End If
 
-        '宿泊費税抜金額表示
-        Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(DSP_SEQ).FROM_DATE, MyBase.DbConnection)
-        Dim strZeikomiGaku As String = CStr(CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI)) - CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI)))
-        Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
-        Dim strMrZeikomiGaku As String = CStr(CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI)) - CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI)))
-        Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strMrZeikomiGaku, strZeiRate))
+        ''宿泊費税抜金額表示
+        'Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(DSP_SEQ).FROM_DATE, MyBase.DbConnection)
+        'Dim strZeikomiGaku As String = CStr(CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI)) - CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_HOTELHI_TOZEI)))
+        'Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strZeikomiGaku, strZeiRate))
+        'Dim strMrZeikomiGaku As String = CStr(CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI)) - CLng(Val(DSP_KOTSUHOTEL(DSP_SEQ).ANS_MR_HOTELHI_TOZEI)))
+        'Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(strMrZeikomiGaku, strZeiRate))
     End Sub
 
     '差異
@@ -2658,7 +2660,7 @@ Partial Public Class DrRegist
         DSP_KOTSUHOTEL(SEQ).ANS_OTHER_CANCELLATION = AppModule.GetValue_ANS_OTHER_CANCELLATION(Me.ANS_OTHER_CANCELLATION)
         DSP_KOTSUHOTEL(SEQ).ANS_AIR_FARE = AppModule.GetValue_ANS_AIR_FARE(Me.ANS_AIR_FARE)
         DSP_KOTSUHOTEL(SEQ).ANS_AIR_CANCELLATION = AppModule.GetValue_ANS_AIR_CANCELLATION(Me.ANS_AIR_CANCELLATION)
-        DSP_KOTSUHOTEL(SEQ).ANS_KOTSUHOTEL_TESURYO = AppModule.GetValue_ANS_KOTSUHOTEL_TESURYO(Me.ANS_KOTSUHOTEL_TESURYO)
+        DSP_KOTSUHOTEL(SEQ).ANS_KOTSUHOTEL_TESURYO = AppModule.GetValue_ANS_KOTSUHOTEL_TESURYO(Me.CHK_KOTSUHOTEL_TESURYO)
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_TESURYO = AppModule.GetValue_ANS_TAXI_TESURYO(Me.ANS_TAXI_MAISUU)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_KOTSUHI = AppModule.GetValue_ANS_MR_KOTSUHI(Me.ANS_MR_KOTSUHI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTELHI = AppModule.GetValue_ANS_MR_HOTELHI(Me.ANS_MR_HOTELHI)
@@ -3305,37 +3307,37 @@ Partial Public Class DrRegist
         Response.Redirect(URL.Preview)
     End Sub
 
-    '宿泊費消費税抜金額表示
-    Private Sub ANS_HOTELHI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_HOTELHI.TextChanged
+    ''宿泊費消費税抜金額表示
+    'Private Sub ANS_HOTELHI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_HOTELHI.TextChanged
 
-        '宿泊費（税込)
-        If Me.ANS_HOTELHI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費"), Me)
-            SetFocus(Me.ANS_HOTELHI)
-            Exit Sub
-        End If
+    '    '宿泊費（税込)
+    '    If Me.ANS_HOTELHI.Text.Trim <> String.Empty AndAlso _
+    '        Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI) Then
+    '        CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費"), Me)
+    '        SetFocus(Me.ANS_HOTELHI)
+    '        Exit Sub
+    '    End If
 
-        Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
-        Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(Me.ANS_HOTELHI.Text.Trim.ToString, strZeiRate))
-        SetFocus(Me.ANS_HOTELHI_TOZEI)
-    End Sub
+    '    Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
+    '    Me.ANS_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(Me.ANS_HOTELHI.Text.Trim.ToString, strZeiRate))
+    '    SetFocus(Me.ANS_HOTELHI_TOZEI)
+    'End Sub
 
-    'MR宿泊費消費税抜金額表示
-    Private Sub ANS_MR_HOTELHI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_MR_HOTELHI.TextChanged
+    ''MR宿泊費消費税抜金額表示
+    'Private Sub ANS_MR_HOTELHI_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ANS_MR_HOTELHI.TextChanged
 
-        'MR宿泊費（税込)
-        If Me.ANS_MR_HOTELHI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費"), Me)
-            SetFocus(Me.ANS_MR_HOTELHI)
-            Exit Sub
-        End If
+    '    'MR宿泊費（税込)
+    '    If Me.ANS_MR_HOTELHI.Text.Trim <> String.Empty AndAlso _
+    '        Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI) Then
+    '        CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費"), Me)
+    '        SetFocus(Me.ANS_MR_HOTELHI)
+    '        Exit Sub
+    '    End If
 
-        Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
-        Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(Me.ANS_MR_HOTELHI.Text.Trim.ToString, strZeiRate))
-        SetFocus(Me.ANS_MR_HOTELHI_TOZEI)
-    End Sub
+    '    Dim strZeiRate As String = AppModule.GetZeiRate(DSP_KOTSUHOTEL(SEQ).FROM_DATE, MyBase.DbConnection)
+    '    Me.ANS_MR_HOTELHI_TF.Text = CmnModule.EditComma(AppModule.GetZeinukiGaku(Me.ANS_MR_HOTELHI.Text.Trim.ToString, strZeiRate))
+    '    SetFocus(Me.ANS_MR_HOTELHI_TOZEI)
+    'End Sub
 
     '交通(往路)手配1クリアボタン
     Protected Sub BtnClear_O_TEHAI_1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClear_O_TEHAI_1.Click
@@ -3745,5 +3747,11 @@ Partial Public Class DrRegist
 
         Me.ANS_TAXI_TESURYO.Text = (Double.Parse(Me.ANS_TAXI_MAISUU.Text) * Double.Parse(AppModule.GetName_TAXI_TESURYO())).ToString
         SetFocus(Me.ANS_MR_HOTELHI)
+    End Sub
+
+    '登録手数料金額表示
+    Protected Sub CHK_KOTSUHOTEL_TESURYO_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles CHK_KOTSUHOTEL_TESURYO.CheckedChanged
+        Me.ANS_KOTSUHOTEL_TESURYO.Text = CmnModule.EditComma(AppModule.GetValue_ANS_KOTSUHOTEL_TESURYO(Me.CHK_KOTSUHOTEL_TESURYO))
+        SetFocus(Me.ANS_TAXI_MAISUU)
     End Sub
 End Class
