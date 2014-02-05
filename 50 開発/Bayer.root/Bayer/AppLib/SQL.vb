@@ -106,6 +106,14 @@ Public Class SQL
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE"
             strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
 
             If NewData = True Then
                 '新着
