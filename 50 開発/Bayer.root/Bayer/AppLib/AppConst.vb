@@ -506,7 +506,7 @@ Public Class AppConst
         Public Const TAXI_SEISAN_TESURYO As String = "14"   'タクチケ精算手数料
         Public Const TAXI_KAISHA As String = "15"           'タクシー会社
         Public Const TESURYO As String = "16"               '手数料（交通・宿泊）
-        Public Const ANS_MR_TEHAI As String = "17"          '回答：社員復路手配
+        'Public Const ANS_MR_TEHAI As String = "17"          '回答：社員復路手配
         Public Const REQ_SEAT_KIBOU As String = "18"        '依頼：座席希望
     End Class
 

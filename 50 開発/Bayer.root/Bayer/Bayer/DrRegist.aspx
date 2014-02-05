@@ -4,7 +4,6 @@
 	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:100%">
-					<a name="PageTopLink"></a>
 					<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" 
                         CssClass="Button" TabIndex="1" />
 					<asp:Button ID="BtnSoufujo1" runat="server" Width="150px" Text="送付状印刷" 
@@ -2552,7 +2551,6 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem"  colspan="5">
 							<asp:Label ID="TEHAI_TAXI" runat="server" Width="120px"></asp:Label>
-							<a name="TaxiTehaiLink"></a>
             				<asp:Button ID="BtnTicketCopy" runat="server" Width="55px" Text="コピー" 
                                 CssClass="ButtonList" TabIndex="141" />
             				<asp:Button ID="BtnTicketClear" runat="server" Width="55px" Text="クリア" 
@@ -4129,39 +4127,9 @@
 			</tr>
 		</table>
 	</table>
+    ては
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
-
-		<style type="text/css">
-            .style1
-            {
-                background-color: #738891;
-                color: #ffffff;
-                font-weight: bold;
-                height: 37px;
-            }
-            .style2
-            {
-                background-color: #b8c3c8;
-                color: #273034;
-                font-weight: bold;
-                height: 37px;
-            }
-            .style3
-            {
-                background-color: #738891;
-                color: #ffffff;
-                font-weight: bold;
-                width: 100px;
-            }
-            .style4
-            {
-                background-color: #b8c3c8;
-                color: #273034;
-                font-weight: bold;
-                width: 100px;
-            }
-        </style>
 
 		</asp:Content>
 

@@ -341,8 +341,6 @@ Public Class MyModule
                 wStr = "座席希望"
             Case AppConst.MS_CODE.REQ_MR_TEHAI
                 wStr = "依頼：社員臨席希望"
-            Case AppConst.MS_CODE.ANS_MR_TEHAI
-                wStr = "回答：社員臨席希望"
             Case AppConst.MS_CODE.MR_HOTEL_SMOKING
                 wStr = "社員ホテル禁煙"
             Case AppConst.MS_CODE.ROOM_TYPE
@@ -357,8 +355,6 @@ Public Class MyModule
                 wStr = "タクシー会社"
             Case AppConst.MS_CODE.TESURYO
                 wStr = "手数料（交通・宿泊）"
-            Case AppConst.MS_CODE.ANS_MR_TEHAI
-                wStr = "回答：社員復路手配"
             Case AppConst.MS_CODE.REQ_SEAT_KIBOU
                 wStr = "依頼：座席希望"
             Case Else

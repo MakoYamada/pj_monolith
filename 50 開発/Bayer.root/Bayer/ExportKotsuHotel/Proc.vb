@@ -391,28 +391,40 @@ Public Class Proc
 
     '社員用往路臨席希望（回答）
     Private Function GetName_ANS_MR_O_TEHAI(ByVal ANS_MR_O_TEHAI As String, ByVal MS_CODE As List(Of TableDef.MS_CODE.DataStruct)) As String
+        Select Case ANS_MR_O_TEHAI
+            Case AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Code.Prepare, AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Prepare
+                Return AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Prepare
+            Case AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Code.OK, AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.OK
+                Return AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.OK
+            Case AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Code.Daian, AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Daian
+                Return AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Daian
+            Case AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Code.Canceled, AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Canceled
+                Return AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Canceled
+            Case AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Code.Fuka, AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Fuka
+                Return AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Name.Fuka
 
-        Dim wStr As String = ""
-        For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_MR_O_TEHAI Then
-                wStr = MS_CODE(wCnt).DISP_TEXT
-                Exit For
-            End If
-        Next
-        Return wStr
+            Case Else
+                Return ""
+        End Select
     End Function
 
     '社員用復路臨席希望（回答）
     Private Function GetName_ANS_MR_F_TEHAI(ByVal ANS_MR_F_TEHAI As String, ByVal MS_CODE As List(Of TableDef.MS_CODE.DataStruct)) As String
+        Select Case ANS_MR_F_TEHAI
+            Case AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.Prepare, AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Prepare
+                Return AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Prepare
+            Case AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.OK, AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.OK
+                Return AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.OK
+            Case AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.Daian, AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Daian
+                Return AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Daian
+            Case AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.Canceled, AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Canceled
+                Return AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Canceled
+            Case AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.Fuka, AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Fuka
+                Return AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Name.Fuka
 
-        Dim wStr As String = ""
-        For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.ANS_MR_TEHAI AndAlso MS_CODE(wCnt).DISP_VALUE = ANS_MR_F_TEHAI Then
-                wStr = MS_CODE(wCnt).DISP_TEXT
-                Exit For
-            End If
-        Next
-        Return wStr
+            Case Else
+                Return ""
+        End Select
     End Function
 
     'MS_CODEのデータを取得
