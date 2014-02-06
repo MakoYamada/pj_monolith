@@ -230,8 +230,8 @@ Partial Public Class DrRireki
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Detail"
-                Session.Item(SessionDef.KouenkaiRireki_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
-                Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Me.GrvList.PageIndex
+                Session.Item(SessionDef.DrRireki_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
+                Session.Item(SessionDef.DrRireki_PageIndex) = Me.GrvList.PageIndex
 
                 Dim scriptStr As String
                 scriptStr = "<script type='text/javascript'>"
