@@ -1615,8 +1615,8 @@ Public Class SQL
             strSQL &= " )) LEFT JOIN MS_USER ON "
             strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
             strSQL &= " WHERE "
-            strSQL &= " ISNULL(WK_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
-            strSQL &= " AND"
+            'strSQL &= " ISNULL(WK_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
+            'strSQL &= " AND"
             strSQL &= " WK_KOUENKAI.TIME_STAMP=("
             strSQL &= " SELECT MAX(TIME_STAMP)"
             strSQL &= " FROM"
@@ -1632,7 +1632,7 @@ Public Class SQL
             strSQL &= " AND"
             strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID=N'" & SANKASHA_ID & "'"
             strSQL &= " AND"
-            strSQL &= " WK_KOTSUHOTEL.UPDATE_DATE<N'" & UPDATE_DATE & "'"
+            strSQL &= " WK_KOTSUHOTEL.UPDATE_DATE<'" & UPDATE_DATE & "'"
 
             strSQL &= " ORDER BY WK_KOTSUHOTEL."
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
