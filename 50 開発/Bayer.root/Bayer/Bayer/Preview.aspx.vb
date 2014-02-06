@@ -204,7 +204,7 @@ Partial Public Class Preview
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         '旧データ
-        rpt1.OldTBL_KOTSUHOTEL = Session.Item(SessionDef.OldTBL_KAIJO)
+        rpt1.OldTBL_KOTSUHOTEL = Session.Item(SessionDef.OldTBL_KOTSUHOTEL)
         '履歴=True
         rpt1.Rireki = pRireki
 

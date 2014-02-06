@@ -6,7 +6,10 @@ Imports CommonLib
 Public Class DrReport
 
     Private pOldTBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
-    Public WriteOnly Property OldTBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Public Property OldTBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+        Get
+            Return pOldTBL_KOTSUHOTEL
+        End Get
         Set(ByVal value As TableDef.TBL_KOTSUHOTEL.DataStruct)
             pOldTBL_KOTSUHOTEL = value
         End Set

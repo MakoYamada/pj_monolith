@@ -17,6 +17,7 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
         Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
+        'Session.Item(SessionDef.OldTBL_KOTSUHOTEL) = OldTBL_KOTSUHOTEL
     End Sub
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
