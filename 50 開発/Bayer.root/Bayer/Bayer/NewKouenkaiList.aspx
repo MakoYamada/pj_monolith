@@ -8,16 +8,16 @@
     <table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td align="left">
-                <table cellpadding="2" cellspacing="0" border="0">
+                <table cellpadding="2" cellspacing="0" border="0" width="972px">
                     <tr style="width:900px">
-                        <td width="200px">
+                        <td>
                             BYL企画担当者BU 
                         </td>
                         <td>
                             <asp:DropDownList ID="JOKEN_BU" runat="server" TabIndex="1" Width="250px">
                             </asp:DropDownList>
                         </td>
-                        <td style="width:200px">
+                        <td>
                             BYL企画担当者エリア
                         </td>
                         <td>
@@ -81,33 +81,39 @@
                             ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
                             ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
                             <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
-                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="BU" HeaderText="BYL企画担当BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="True"></HeaderStyle>
+                        <asp:BoundField DataField="BU" HeaderText="BYL&lt;br /&gt;企画担当&lt;br /&gt;BU" 
+                            ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="BYL企画担当エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="True"></HeaderStyle>
+                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" 
+                            HeaderText="BYL&lt;br /&gt;企画担当&lt;br /&gt;エリア" ItemStyle-Wrap="false" 
+                            HeaderStyle-Wrap="false" HtmlEncode="False">
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="BYL企画担当営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="True" Width="80px"></HeaderStyle>
+                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" 
+                            HeaderText="BYL&lt;br /&gt;企画担当&lt;br /&gt;営業所" ItemStyle-Wrap="false" 
+                            HeaderStyle-Wrap="false" HtmlEncode="False">
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="BYL企画担当">
-                        <HeaderStyle Width="140px" Wrap="False" />
+                        <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="BYL&lt;br /&gt;企画担当" 
+                            HtmlEncode="False">
+                        <HeaderStyle  Wrap="true" />
                         <ItemStyle Width="140px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <HeaderStyle></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" >
-                        <HeaderStyle Width="100px" />
+                        <HeaderStyle Wrap="false" />
                         <ItemStyle Width="100px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"

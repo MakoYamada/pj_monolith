@@ -97,15 +97,6 @@ Partial Public Class KouenkaiRegist
     Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TO_DATE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TO_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''KAIJO_NAME コントロール。
     '''</summary>
     '''<remarks>

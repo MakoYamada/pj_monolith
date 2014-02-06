@@ -194,6 +194,11 @@ Partial Public Class KouenkaiList
         Me.SqlDataSource1.SelectCommand = strSQL
 
         With Me.GrvList
+            '.Columns.Item(CellIndex.BU).HeaderText = "BYL" & vbNewLine & "企画担当" & vbNewLine & "BU"
+            '.Columns.Item(CellIndex.KIKAKU_TANTO_AREA).HeaderText = "BYL" & vbNewLine & "企画担当" & vbNewLine & "エリア"
+            '.Columns.Item(CellIndex.KIKAKU_TANTO_AREA).HeaderText = "BYL" & vbNewLine & "企画担当" & vbNewLine & "営業所"
+            '.Columns.Item(CellIndex.KIKAKU_TANTO_NAME).HeaderText = "BYL" & vbNewLine & "企画担当"
+
             Try
                 .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
                 .DataBind()
@@ -217,6 +222,7 @@ Partial Public Class KouenkaiList
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
+            Me.GrvList.BorderStyle = BorderStyle.NotSet
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0

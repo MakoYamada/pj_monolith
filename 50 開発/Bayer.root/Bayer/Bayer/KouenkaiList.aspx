@@ -8,12 +8,12 @@
     <table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td align="left">
-                <table cellpadding="2" cellspacing="0" border="0">
+                <table cellpadding="2" cellspacing="0" border="0" width="972px">
                     <tr>
                         <td align="left">
                             <table cellpadding="2" cellspacing="0" border="0">
                                 <tr>
-                                    <td align="right" width="140px">
+                                    <td align="right" style="width:200px">
                                         BYL企画担当者<br />
                                         (ローマ字)
                                     </td>
@@ -21,7 +21,7 @@
                                         <asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="250px" 
                                             MaxLength="300" TabIndex="1"></asp:TextBox>                                        
                                     </td>
-                                    <td align="right" width="120px">
+                                    <td align="right" style="width:200px">
                                         BYL手配担当者<br />
                                         (ローマ字)
                                     </td>
@@ -35,7 +35,8 @@
                                         製品名
                                     </td>
                                     <td colspan="5">
-                                        <asp:DropDownList ID="JokenSEIHIN_NAME" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenSEIHIN_NAME" runat="server" TabIndex="3" 
+                                            Height="24px" Width="361px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -51,8 +52,8 @@
                                         会合名
                                     </td>
                                     <td colspan="3">
-                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="544px" MaxLength="160" 
-                                            TabIndex="5"></asp:TextBox>
+                                        <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="496px" MaxLength="160" 
+                                            TabIndex="5" Height="42px" TextMode="MultiLine"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -80,19 +81,18 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        BYL企画担当者BU
+                                        BYL企画担当者<br />BU
                                     </td>
-                                    <td colspan="5">
-                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="12">
+                                    <td>
+                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="12" Width="145px">
                                         </asp:DropDownList>
                                     </td>
-                                </tr> 
-                                <tr>
                                     <td align="right">
-                                        BYL企画担当者エリア
+                                        BYL企画担当者<br />エリア
                                     </td>
-                                    <td colspan="5">
-                                        <asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" TabIndex="13">
+                                    <td colspan="3">
+                                        <asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" TabIndex="13" 
+                                            Width="145px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr> 
@@ -101,7 +101,8 @@
                                         TOP担当者
                                     </td>
                                     <td colspan="5">
-                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="14">
+                                        <asp:DropDownList ID="JokenTTEHAI_TANTO" runat="server" TabIndex="14" 
+                                            Width="145px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -141,7 +142,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="6" CellPadding="2" AutoGenerateColumns="False"
+                <asp:GridView ID="GrvList" runat="server" TabIndex="18" CellPadding="2" AutoGenerateColumns="False"
                     AllowPaging="True" PageSize="8" DataKeyNames="KOUENKAI_NO"
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -159,20 +160,26 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
                             </ItemStyle>
                         </asp:ButtonField>
-                        <asp:BoundField DataField="BU" HeaderText="BYL企画担当BU" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="True"></HeaderStyle>
+                        <asp:BoundField DataField="BU" HeaderText="BYL&lt;br /&gt;企画担当&lt;br /&gt;BU" 
+                            ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="BYL企画担当エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="True"></HeaderStyle>
+                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" 
+                            HeaderText="BYL&lt;br /&gt;企画担当&lt;br /&gt;エリア" ItemStyle-Wrap="false" 
+                            HeaderStyle-Wrap="false" HtmlEncode="False">
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="BYL企画担当営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="True" Width="80px"></HeaderStyle>
+                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" 
+                            HeaderText="BYL&lt;br /&gt;企画担当&lt;br /&gt;営業所" ItemStyle-Wrap="false" 
+                            HeaderStyle-Wrap="false" HtmlEncode="False">
+                            <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="BYL企画担当">
-                        <HeaderStyle Width="140px" Wrap="False" />
+                        <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="BYL&lt;br /&gt;企画担当" 
+                            HtmlEncode="False">
+                        <HeaderStyle Wrap="true" />
                         <ItemStyle Width="140px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
@@ -181,7 +188,7 @@
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" >
-                        <HeaderStyle Width="100px" />
+                        <HeaderStyle />
                         <ItemStyle Width="100px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
