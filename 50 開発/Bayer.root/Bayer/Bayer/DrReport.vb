@@ -221,6 +221,8 @@ Public Class DrReport
             SetChangedColor(Me.REQ_F_SEAT_KIBOU5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_KIBOU5.Text)
         End If        '項目の編集
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
+        FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE.Text, TO_DATE.Text)
+        FROM_DATE2.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE.Text, TO_DATE.Text)
         REQ_STATUS_TEHAI.Text = AppModule.GetName_STATUS_TEHAI(REQ_STATUS_TEHAI.Text, False, True)
         REQ_STATUS_TEHAI2.Text = AppModule.GetName_STATUS_TEHAI(REQ_STATUS_TEHAI2.Text, False, True)
         TIME_STAMP_BYL.Text = CmnModule.Format_Date(TIME_STAMP_BYL.Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
@@ -413,5 +415,9 @@ Public Class DrReport
                 .BackColor = Drawing.Color.White
             End If
         End With
+    End Sub
+
+    Private Sub DrReport_ReportStart(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.ReportStart
+
     End Sub
 End Class
