@@ -33,20 +33,21 @@
                 <table cellpadding="2" cellspacing="0" border="0">
                     <tr>
                         <td align="left">
-                            <table cellpadding="2" cellspacing="0" border="0" width="900px">
+                            <table cellpadding="2" cellspacing="0" border="0" width="972px">
                                 <tr>
                                     <td align="right" style="width:90px">
                                         BYL手配担当者<br />BU
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="1">
+                                        <asp:DropDownList ID="JokenBU" runat="server" TabIndex="1" Width="145px">
                                         </asp:DropDownList>
                                     </td>
                                     <td align="right" style="width:90px">
                                         BYL手配担当者<br />エリア
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="JokenTEHAI_TANTO_AREA" runat="server" TabIndex="2">
+                                        <asp:DropDownList ID="JokenTEHAI_TANTO_AREA" runat="server" TabIndex="2" 
+                                            Width="145px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -55,7 +56,7 @@
                                         区分
                                     </td>
                                     <td colspan="3">
-                                        <asp:DropDownList ID="JokenKUBUN" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="JokenKUBUN" runat="server" TabIndex="3" Width="145px">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>

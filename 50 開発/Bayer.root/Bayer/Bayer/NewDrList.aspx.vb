@@ -106,7 +106,7 @@ Partial Public Class NewDrList
         If Joken.TEHAI_TANTO_ROMA <> "" AndAlso Joken.TEHAI_TANTO_ROMA <> "指定なし" Then Me.JokenTEHAI_TANTO_ROMA.Text = Joken.KOUENKAI_NAME
         If Joken.KUBUN <> "" AndAlso Joken.KUBUN <> "指定なし" Then Me.JokenKUBUN.SelectedValue = Joken.KUBUN
         If Joken.TTANTO_ID <> "" AndAlso Joken.TTANTO_ID <> "指定なし" Then Me.JokenTTEHAI_TANTO.SelectedValue = Joken.TTANTO_ID
-        If Joken.TTEHAI_MITOUROKU <> "" AndAlso Joken.TTEHAI_MITOUROKU <> "指定なし" Then Me.ChkTTEHAI_TANTO.Checked = True
+        If Joken.TTEHAI_MITOUROKU <> "0" AndAlso Joken.TTEHAI_MITOUROKU <> "指定なし" AndAlso Joken.TTEHAI_MITOUROKU <> Nothing Then Me.ChkTTEHAI_TANTO.Checked = True
 
         'データ取得
         If Not GetData() Then
