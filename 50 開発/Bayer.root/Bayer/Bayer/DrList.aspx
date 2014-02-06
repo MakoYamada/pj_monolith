@@ -204,7 +204,8 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="MR_NAME" HeaderText="DR担当MR">
+                        <asp:BoundField DataField="MR_NAME" HeaderText="DR&lt;br /&gt;担当MR" 
+                            HtmlEncode="False">
                         <ItemStyle Width="100px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false"
@@ -217,12 +218,14 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
+                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP&lt;br /&gt;担当者" 
+                            ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                            ItemStyle-HorizontalAlign="Center" HtmlEncode="False">
+                            <HeaderStyle Wrap="True"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="ANS_STATUS_TEHAI" HeaderText="TOPステータス">
+                        <asp:BoundField DataField="ANS_STATUS_TEHAI" HeaderText="TOP&lt;br /&gt;ｽﾃｰﾀｽ" 
+                            HtmlEncode="False">
                         <ItemStyle Width="100px" Wrap="False" />
                         </asp:BoundField>
                         <asp:BoundField DataField="TEHAI_HOTEL" HeaderText="宿泊" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
