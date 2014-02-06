@@ -4213,16 +4213,7 @@ Public Class SQL
         = " ORDER BY" _
         & " TBL_KAIJO.KOUENKAI_NO" _
         & ",TBL_KAIJO.TIME_STAMP_BYL"
-
-        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
-            Dim strSQL As String = SQL_SELECT
-
-            strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
-            strSQL &= SQL_ORDERBY
-
-            Return strSQL
-        End Function
-
+          
         Public Shared Function byKOUENKAI_NO_TEHAI_ID(ByVal KOUENKAI_NO As String, ByVal TEHAI_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -4233,17 +4224,18 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function byKOUENKAI_NO_TIME_STAMP_BYL(ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String) As String
+        Public Shared Function byKOUENKAI_NO_TEHAI_ID_TIME_STAMP_BYL(ByVal KOUENKAI_NO As String, ByVal TEHAI_ID As String, ByVal TIME_STAMP_BYL As String) As String
             Dim strSQL As String = SQL_SELECT
 
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(TEHAI_ID) & "'"
             strSQL &= " AND TBL_KAIJO.TIME_STAMP_BYL>N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
         End Function
 
-        Public Shared Function byKOUENKAI_NO_TIME_STAMP_BYL_DESC(ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String) As String
+        Public Shared Function byKOUENKAI_NO_TEHAI_ID_TIME_STAMP_BYL_DESC(ByVal KOUENKAI_NO As String, ByVal TEHAI_ID As String, ByVal TIME_STAMP_BYL As String) As String
             Dim strSQL As String = ""
             Dim strSQL_WHERE_KAIJO As String = ""
             Dim strSQL_WHERE_KOUENKAI As String = ""
@@ -4252,6 +4244,7 @@ Public Class SQL
             '会場手配テーブル
             strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(TEHAI_ID) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL<N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
 
             '会合テーブル
@@ -4324,11 +4317,12 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO,TEHAI_ID FROM TBL_KAIJO"
             strSQL &= strSQL_WHERE_KAIJO
-            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
+            strSQL &= " GROUP BY KOUENKAI_NO,TEHAI_ID) AS TBL_KAIJO_2"
             strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
+            strSQL &= "   AND TBL_KAIJO_1.TEHAI_ID=TBL_KAIJO_2.TEHAI_ID"
             strSQL &= ") AS TBL_KAIJO"
             strSQL &= ","
             strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
@@ -4373,6 +4367,12 @@ Public Class SQL
             If Trim(Joken.TIME_STAMP_BYL) <> "" Then
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
             End If
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+            If Trim(Joken.TEHAI_ID) <> "" Then
+                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"
+            End If
 
             '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
@@ -4410,10 +4410,6 @@ Public Class SQL
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.SEIHIN_NAME=N'" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "'"
-            End If
-
-            If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
@@ -4494,11 +4490,12 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KAIJO"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO,TEHAI_ID FROM TBL_KAIJO"
             strSQL &= strSQL_WHERE_KAIJO
-            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
+            strSQL &= " GROUP BY KOUENKAI_NO,TEHAI_ID) AS TBL_KAIJO_2"
             strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
+            strSQL &= "   AND TBL_KAIJO_1.TEHAI_ID=TBL_KAIJO_2.TEHAI_ID"
             strSQL &= ") AS TBL_KAIJO"
             strSQL &= ","
             strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
@@ -4521,7 +4518,6 @@ Public Class SQL
 
             'WHERE
             '会場手配テーブル
-            '            strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.SALEFORCE_ID=N'" & CmnDb.SqlString(SALEFORCE_ID) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(TEHAI_ID) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
@@ -4606,7 +4602,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function NewListPrint(ByVal KOUENKAI_NO() As String) As String
+        Public Shared Function NewListPrint(ByVal KOUENKAI_NO() As String, ByVal TEHAI_ID() As String) As String
             Dim strSQL As String = ""
             Dim strSQL_WHERE_KAIJO As String = ""
             Dim strSQL_WHERE_KOUENKAI As String = ""
@@ -4615,10 +4611,19 @@ Public Class SQL
 
             'WHERE
             '会場手配テーブル
+            wStr = ""
             strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,N'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
+            strSQL_WHERE_KAIJO &= " AND ("
+            For wCnt = LBound(KOUENKAI_NO) To UBound(KOUENKAI_NO)
+                If wCnt > 0 Then wStr &= " OR "
+                wStr &= "(TBL_KAIJO.KOUENKAI_NO=N'" & KOUENKAI_NO(wCnt) & "' AND TBL_KAIJO.TEHAI_ID=N'" & TEHAI_ID(wCnt) & "')"
+            Next wCnt
+            strSQL_WHERE_KAIJO &= wStr
+            strSQL_WHERE_KAIJO &= ")"
 
             '会合テーブル
+            wStr = ""
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
             strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO IN("
             For wCnt = LBound(KOUENKAI_NO) To UBound(KOUENKAI_NO)
@@ -4694,10 +4699,11 @@ Public Class SQL
             strSQL &= strSQL_WHERE_KAIJO
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
-            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO FROM TBL_KAIJO"
-            strSQL &= " GROUP BY KOUENKAI_NO) AS TBL_KAIJO_2"
+            strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO,TEHAI_ID FROM TBL_KAIJO"
+            strSQL &= " GROUP BY KOUENKAI_NO,TEHAI_ID) AS TBL_KAIJO_2"
             strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
+            strSQL &= "   AND TBL_KAIJO_1.TEHAI_ID=TBL_KAIJO_2.TEHAI_ID"
             strSQL &= ") AS TBL_KAIJO"
             strSQL &= ","
             strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
@@ -4792,6 +4798,7 @@ Public Class SQL
             strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
             strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
 

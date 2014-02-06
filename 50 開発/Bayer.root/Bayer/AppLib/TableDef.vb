@@ -2896,6 +2896,7 @@
             Public TKT_NO As String
             Public TKT_SEIKYU_YM As String
             Public TKT_ENTA As String
+            Public TEHAI_ID As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
