@@ -133,6 +133,15 @@ Partial Public Class DrRegist
     Protected WithEvents TAXI_PRT_NAME As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''KAIJO_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KAIJO_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''REQ_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>

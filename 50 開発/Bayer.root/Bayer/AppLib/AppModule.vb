@@ -4857,6 +4857,11 @@ Public Class AppModule
         control.Text = KOUENKAI_NAME
     End Sub
 
+    'âÔèÍñº
+    Public Shared Sub SetForm_KAIJO_NAME(ByVal KAIJO_NAME As String, ByRef control As TextBox)
+        control.Text = KAIJO_NAME
+    End Sub
+
     'âÔçáäÓñ{èÓïÒTimeStamp
     Public Shared Sub SetForm_KOUENKAI_TIME_STAMP(ByVal KOUENKAI_TIME_STAMP As String, ByRef control As Label)
         control.Text = CmnModule.Format_Date(KOUENKAI_TIME_STAMP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)

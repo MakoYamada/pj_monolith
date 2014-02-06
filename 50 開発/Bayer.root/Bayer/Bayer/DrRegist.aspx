@@ -74,6 +74,16 @@
 							<asp:Label ID="TAXI_PRT_NAME" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
+					<tr>
+						<td align="left" class="TdTitleHeader" style="width:120px">
+							âÔèÍñº
+						</td>
+						<td align="left" class="TdItem" colspan="7">
+                            <asp:TextBox ID="KAIJO_NAME" runat="server" MaxLength="80" ReadOnly="True" 
+                                TextMode="MultiLine" Height="30px" Width="731px" tabstop="false" 
+                                BorderStyle="None"></asp:TextBox>
+						</td>
+					</tr>
 				</table>
 			</td>
 		</tr>
