@@ -69,7 +69,7 @@
 							‰ï‡ŠJÃ“ú
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="7">
-							<asp:Label ID="FROM_DATE" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="FROM_DATE" runat="server" Width="622px"></asp:Label>
 						</td>
 					</tr>
 					<tr>
