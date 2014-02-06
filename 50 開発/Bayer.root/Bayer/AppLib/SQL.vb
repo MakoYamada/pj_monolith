@@ -4245,7 +4245,7 @@ Public Class SQL
             strSQL_WHERE_KAIJO &= " WHERE 1=1"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(TEHAI_ID) & "'"
-            strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL<N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
+            strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL>N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
 
             '会合テーブル
             strSQL_WHERE_KOUENKAI &= " WHERE 1=1"
