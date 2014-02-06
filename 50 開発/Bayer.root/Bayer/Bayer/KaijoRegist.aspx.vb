@@ -175,7 +175,7 @@ Partial Public Class KaijoRegist
 
     '新しいタイムスタンプのデータをチェック
     Private Function IsExistLaterData() As Boolean
-        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TIME_STAMP_BYL(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
+        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TEHAI_ID_TIME_STAMP_BYL_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         If CmnDb.IsExist(strSQL, MyBase.DbConnection) Then
             Return True
         Else
@@ -185,7 +185,7 @@ Partial Public Class KaijoRegist
 
     '旧データ取得
     Private Sub GetData_Old()
-        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TIME_STAMP_BYL_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
+        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TEHAI_ID_TIME_STAMP_BYL_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
 
@@ -953,6 +953,7 @@ Partial Public Class KaijoRegist
     Protected Sub BtnRireki_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnRireki.Click
         Dim KaijoRireki_Joken As TableDef.Joken.DataStruct = Nothing
         KaijoRireki_Joken.KOUENKAI_NO = TBL_KAIJO(SEQ).KOUENKAI_NO
+        KaijoRireki_Joken.TEHAI_ID = TBL_KAIJO(SEQ).TEHAI_ID
         KaijoRireki_Joken.KOUENKAI_NAME = TBL_KAIJO(SEQ).KOUENKAI_NAME
         Session.Item(SessionDef.KaijoRireki_Joken) = KaijoRireki_Joken
 

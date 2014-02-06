@@ -240,20 +240,24 @@ Partial Public Class NewKaijoList
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
         Dim KOUENKAI_NO() As String
-       
+        Dim TEHAI_ID() As String
+
         'チェック
         ReDim KOUENKAI_NO(wCnt)
+        ReDim TEHAI_ID(wCnt)
         For Each wRow As GridViewRow In Me.GrvList.Rows
             If CType(wRow.Cells(CellIndex.Template1).FindControl("ChkPrint"), CheckBox).Checked = True Then
                 wFlag = True
                 ReDim Preserve KOUENKAI_NO(wCnt)
+                ReDim Preserve TEHAI_ID(wCnt)
                 KOUENKAI_NO(wCnt) = wRow.Cells(CellIndex.KOUENKAI_NO).Text
+                TEHAI_ID(wCnt) = wRow.Cells(CellIndex.TEHAI_ID).Text
                 wCnt += 1
             End If
         Next
 
         If wFlag = True Then
-            strSQL = SQL.TBL_KAIJO.NewListPrint(KOUENKAI_NO)
+            strSQL = SQL.TBL_KAIJO.NewListPrint(KOUENKAI_NO, TEHAI_ID)
             Session.Item(SessionDef.KaijoPrint_SQL) = strSQL
             Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
             Session.Item(SessionDef.PrintPreview) = "KaijoRegist"

@@ -7,8 +7,7 @@
 				<table cellspacing="2" border="0" style="border: 3px double #339933; width: 100%; background-color: #eaf8ff; margin-bottom: 5px;">
 					<tr>
 						<td align="center" style="padding: 3px; color: #0099cc; font-weight: bold;">
-							ダブルクォーテーション「”」・改行(Enterキー)は<br />
-							入力できません。
+							ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
 						</td>
 					</tr>
 				</table>
@@ -18,7 +17,7 @@
 	<table cellspacing="0" cellpadding="0" border="0" style="width: 940px; margin-bottom: 10px;">
 		<tr>
 			<td nowrap="nowrap" align="left">
-				&nbsp;
+				&nbsp;<a name="PageTopLink"></a>
 			</td>
 			<td nowrap="nowrap"align="right">
 				<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="手配書印刷" CssClass="Button" />
@@ -159,13 +158,13 @@
 							<table border="0" cellpadding="1" cellspacing="2">
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
-										Internal order<br />(課税)
+										Internal Order<br />(課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="INTERNAL_ORDER_T" runat="server" Text="123456789012" Width="110px"></asp:Label>
 									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
-										Internal order<br />(非課税)
+										Internal Order<br />(非課税)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="INTERNAL_ORDER_TF" runat="server" Text="123456789012" Width="110px"></asp:Label>
@@ -356,6 +355,15 @@
 							</table>
 						</td>
 					</tr>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 940px; margin-top: 5px;">
+					<tr>
+						<td nowrap="nowrap" align="right">
+							<a href="#PageTopLink">ページトップへ</a>
+						</td>
+					</tr>
+				</table>
+				<table style="width: 940px; border: 1px solid #738891;" cellspacing="0" border="0">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 							■ 概要
@@ -686,11 +694,14 @@
 						</td>
 					</tr>
 				</table>
-			</td>
-		</tr>
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<table cellspacing="2" border="0" style="margin-top: 10px; width: 940px; border: 1px solid #9babb3;">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 940px; margin-top: 5px;">
+					<tr>
+						<td nowrap="nowrap" align="right">
+							<a href="#PageTopLink">ページトップへ</a>
+						</td>
+					</tr>
+				</table>
+				<table cellspacing="2" border="0" style="width: 940px; border: 1px solid #9babb3;">
 					<tr>
 						<td nowrap="nowrap" align="left" class="TdTitleKaijo">
 							■ 回答
@@ -704,6 +715,9 @@
 										会場回答
 									</td>
 									<td nowrap="nowrap" align="left">
+										<div style="font-weight: bold; color: #2424f0;">
+											ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
+										</div>
 										<table cellspacing="2" border="0">
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 100px;">
@@ -833,13 +847,14 @@
 									</td>
 								</tr>
 							</table>
-							<table id="Table1" border="0" cellpadding="2" cellspacing="0" style="margin-top: 5px;" runat="server" visible="true">
+							<table id="Table1" border="0" cellpadding="2" cellspacing="0" style="margin-top: 5px; width: 100%;" runat="server" visible="true">
 								<tr style="height: 20px;">
-									<td align="left">
-										<asp:Image ID="Image2" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/exclamation.png" />
-									</td>
 									<td style="color: #cb1a1a; font-weight: bold; font-size: 11pt;" align="left">
-										金額は 税抜き で入力してください。
+										<asp:Image ID="Image2" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/exclamation.png" />
+										金額は 税込み で入力してください。
+									</td>
+									<td align="right">
+										<a href="#PageTopLink">ページトップへ</a>
 									</td>
 								</tr>
 							</table>
@@ -1172,6 +1187,12 @@
 						</td>
 					</tr>
 				</table>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap" align="right">
+				<div class="FontSize1" style="height: 2px;"></div>
+				<a href="#PageTopLink">ページトップへ</a>
 			</td>
 		</tr>
 		<tr>

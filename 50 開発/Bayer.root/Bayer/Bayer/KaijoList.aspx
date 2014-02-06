@@ -6,17 +6,17 @@
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr>
 			<td align="left">
-				<table cellpadding="2" cellspacing="0" border="0">
+				<table cellpadding="2" cellspacing="0" border="0" style="width: 800px;">
 					<tr>
 						<td align="left" colspan="2">
-							BYL企画担当者
-							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
-							&nbsp;&nbsp;&nbsp;
-							BYL手配担当者
-							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
-							&nbsp;&nbsp;&nbsp;
-							製品名
-							<asp:DropDownList ID="JokenSEIHIN" runat="server" Width="240px"></asp:DropDownList>
+							開催日
+							<asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							<asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+							<asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
+							～
+							<asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
+							<asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
+							<asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
 						</td>
 					</tr>
 					<tr>
@@ -30,25 +30,28 @@
 					</tr>
 					<tr>
 						<td align="left" colspan="2">
-							開催日
-							<asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
-							<asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
-							<asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
-							～
-							<asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4"></asp:TextBox>年
-							<asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2"></asp:TextBox>月
-							<asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2"></asp:TextBox>日
-							&nbsp;&nbsp;&nbsp;
 							BU
 							<asp:DropDownList ID="JokenBU" runat="server" Width="120px"></asp:DropDownList>
 							&nbsp;&nbsp;&nbsp;
 							エリア
 							<asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" Width="200px"></asp:DropDownList>
+							&nbsp;&nbsp;&nbsp;
+							製品名
+							<asp:DropDownList ID="JokenSEIHIN" runat="server" Width="240px"></asp:DropDownList>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="2">
+							BYL企画担当者(漢字)
+							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
+							&nbsp;&nbsp;&nbsp;
+							BYL手配担当者(ローマ字/半角)
+							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>
 						<td align="left">
-							TOP担当者
+							TOP担当者
 							<asp:DropDownList ID="JoKenTTANTO_ID" runat="server" Width="200px"></asp:DropDownList>
 						</td>
 						<td align="right">

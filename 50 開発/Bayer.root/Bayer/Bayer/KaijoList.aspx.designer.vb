@@ -16,51 +16,6 @@ Option Explicit On
 Partial Public Class KaijoList
 
     '''<summary>
-    '''JokenKIKAKU_TANTO_ROMA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenTEHAI_TANTO_ROMA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenSEIHIN コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenSEIHIN As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''JokenKOUENKAI_NO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''JokenKOUENKAI_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''JokenFROM_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
@@ -115,6 +70,24 @@ Partial Public Class KaijoList
     Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''JokenKOUENKAI_NO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenKOUENKAI_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKOUENKAI_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''JokenBU コントロール。
     '''</summary>
     '''<remarks>
@@ -131,6 +104,33 @@ Partial Public Class KaijoList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents JokenKIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''JokenSEIHIN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenSEIHIN As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''JokenKIKAKU_TANTO_ROMA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenKIKAKU_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JokenTEHAI_TANTO_ROMA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''JoKenTTANTO_ID コントロール。
