@@ -34,6 +34,7 @@ Public Class AppConst
     End Class
 
     Public Class KOTSUHOTEL
+        Public Const NotSelect As String = "99"
 
         Public Class RECORD_KUBUN
             'ƒf[ƒ^‹æ•ª
