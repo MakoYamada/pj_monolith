@@ -15,6 +15,14 @@ Partial Public Class KaijoRegist
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        '遷移元チェック
+        If Not Page.IsPostBack Then
+            If Not MyModule.IsReferer(Request) Then
+                Session.Abandon()
+                Response.Redirect(URL.SorryPage)
+            End If
+        End If
+
         '共通チェック
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
             MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
@@ -153,7 +161,7 @@ Partial Public Class KaijoRegist
             Me.BtnRireki.Visible = False
             Me.BtnNozomi.Visible = False
             Me.BtnSubmit.Visible = False
-            Me.TblComment.Visible = False
+            Me.DivComment.Visible = False
             Me.TdHelp.Visible = False
         Else
             Me.BtnShisetsuKensaku.Visible = True
@@ -163,7 +171,7 @@ Partial Public Class KaijoRegist
             Me.BtnRireki.Visible = True
             Me.BtnNozomi.Visible = True
             Me.BtnSubmit.Visible = True
-            Me.TblComment.Visible = True
+            Me.DivComment.Visible = True
             Me.TdHelp.Visible = True
             'タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
             If IsExistLaterData() Then

@@ -9,6 +9,14 @@ Partial Public Class Menu1
     End Sub
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load, Me.Load
+        '遷移元チェック
+        If Not Page.IsPostBack Then
+            If Not MyModule.IsReferer(Request) Then
+                Session.Abandon()
+                Response.Redirect(URL.SorryPage)
+            End If
+        End If
+
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 

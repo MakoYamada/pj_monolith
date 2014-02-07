@@ -53,7 +53,7 @@
 											&nbsp;&nbsp;
 											<span id="SpnMenu" runat="server">
 												<asp:Image ID="Image1" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/gomenu.gif" />
-												<asp:LinkButton ID="LnkBMenu" runat="server" CssClass="baselink">メニューへ</asp:LinkButton>
+												<asp:LinkButton ID="LnkBMenu" runat="server" CssClass="baselinkmenu">メニューへ</asp:LinkButton>
 											</span>
 											&nbsp;&nbsp;
 											<span id="SpnLogout" runat="server">

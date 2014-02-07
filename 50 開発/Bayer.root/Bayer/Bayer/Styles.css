@@ -337,6 +337,32 @@ a.baselink:active
 	color: #109dcc;
 	text-decoration: underline;
 }
+.baselinkmenu
+{
+	font-size: 12pt;
+	color: #231ad4;
+	font-weight: bold;
+}
+a.baselinkmenu:link 
+{
+	color: #231ad4;
+	text-decoration: none;
+}
+a.baselinkmenu:visited 
+{
+	color: #231ad4;
+	text-decoration: none;
+}
+a.baselinkmenu:hover 
+{
+	color: #cd4b11;
+	text-decoration: underline;
+}
+a.baselinkmenu:active 
+{
+	color: #cd4b11;
+	text-decoration: underline;
+}
 .FontSize1 
 {
 	font-size: 1pt;

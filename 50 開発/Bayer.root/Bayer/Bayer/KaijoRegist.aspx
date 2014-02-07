@@ -1,19 +1,6 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="KaijoRegist.aspx.vb" Inherits="Bayer.KaijoRegist" MaintainScrollPositionOnPostback="true" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table cellspacing="2" border="0" id="TblComment" runat="server" style="width: 940px;">
-		<tr>
-			<td nowrap="nowrap" align="left">
-				<table cellspacing="2" border="0" style="border: 3px double #339933; width: 100%; background-color: #eaf8ff; margin-bottom: 5px;">
-					<tr>
-						<td align="center" style="padding: 3px; color: #0099cc; font-weight: bold;">
-							ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
 	<table cellspacing="0" cellpadding="0" border="0" style="width: 940px; margin-bottom: 10px;">
 		<tr>
 			<td nowrap="nowrap" align="left">
@@ -715,7 +702,7 @@
 										会場回答
 									</td>
 									<td nowrap="nowrap" align="left">
-										<div style="font-weight: bold; color: #2424f0;">
+										<div style="font-weight: bold; color: #2424f0;" id="DivComment" runat="server">
 											ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
 										</div>
 										<table cellspacing="2" border="0">

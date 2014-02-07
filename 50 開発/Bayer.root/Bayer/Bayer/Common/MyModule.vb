@@ -51,6 +51,155 @@ Public Class MyModule
         Return True
     End Function
 
+    'セキュリティ(CSRF)対策の為、遷移元をチェック
+    Public Shared Function IsReferer(ByVal wkRequest As Web.HttpRequest) As Boolean
+
+        Dim currentUrl As String = wkRequest.Url.AbsoluteUri    '表示中のURLを格納
+        Dim referreUrl As String     'ReferrerURLを格納
+        Dim chkArray() As String    'チェック用URLを格納
+        Dim cnt As Integer  'チェックURL個数をカウント
+
+        If Not wkRequest.UrlReferrer Is Nothing Then
+            referreUrl = wkRequest.UrlReferrer.AbsoluteUri
+        Else
+            referreUrl = ""
+        End If
+
+        If referreUrl.ToLower = WebConfig.Site.URL.ToLower Then
+            referreUrl = URL.Login
+        End If
+
+        If wkRequest.UrlReferrer Is Nothing AndAlso _
+           (currentUrl.ToLower.IndexOf(URL.Login.ToLower) >= 0 Or _
+            currentUrl.ToLower.IndexOf(URL.HotelKensaku.ToLower) >= 0 Or _
+            currentUrl.ToLower.IndexOf(URL.ShisetsuKensaku.ToLower) >= 0) Then
+            Return True
+        ElseIf wkRequest.UrlReferrer Is Nothing Then
+            'Referrer無し
+            Return False
+        ElseIf currentUrl.ToLower.IndexOf(URL.HotelKensaku.ToLower) >= 0 Then
+            '施設検索(ホテル)
+            Return True
+        ElseIf currentUrl.ToLower.IndexOf(URL.ShisetsuKensaku.ToLower) >= 0 Then
+            '施設検索(会場)
+            Return True
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.Menu.ToLower) >= 0 Then
+            'メニュー
+            cnt = 0
+            ReDim chkArray(37)
+            AddChkArray(cnt, chkArray, URL.Login)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
+            AddChkArray(cnt, chkArray, URL.NewKaijoList)
+            AddChkArray(cnt, chkArray, URL.NewDrList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRegist)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRireki)
+            AddChkArray(cnt, chkArray, URL.KaijoList)
+            AddChkArray(cnt, chkArray, URL.KaijoRegist)
+            AddChkArray(cnt, chkArray, URL.KaijoRireki)
+            AddChkArray(cnt, chkArray, URL.Preview)
+            AddChkArray(cnt, chkArray, URL.DrList)
+            AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.DrRireki)
+            AddChkArray(cnt, chkArray, URL.MstShisetsu)
+            AddChkArray(cnt, chkArray, URL.MstUser)
+            AddChkArray(cnt, chkArray, URL.MstCode)
+            AddChkArray(cnt, chkArray, URL.LogFile)
+            AddChkArray(cnt, chkArray, URL.LogSousa)
+            AddChkArray(cnt, chkArray, URL.SeisanKensaku)
+            AddChkArray(cnt, chkArray, URL.SeisanList)
+            AddChkArray(cnt, chkArray, URL.SeisanRegist)
+            AddChkArray(cnt, chkArray, URL.CostRegist)
+            AddChkArray(cnt, chkArray, URL.SapCsv)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiNouhinTorikomi)
+            AddChkArray(cnt, chkArray, URL.TaxiPrintCsv)
+            AddChkArray(cnt, chkArray, URL.TaxiScan)
+            AddChkArray(cnt, chkArray, URL.TaxiMaintenance)
+            AddChkArray(cnt, chkArray, URL.TaxiMaintenanceRegist)
+            AddChkArray(cnt, chkArray, URL.TaxiJisseki)
+            AddChkArray(cnt, chkArray, URL.TaxiSeisanMikanryou)
+            AddChkArray(cnt, chkArray, URL.TaxiMiketsu)
+            AddChkArray(cnt, chkArray, URL.TaxiMiketsuRegist)
+            AddChkArray(cnt, chkArray, URL.TaxiMeisaiCsv)
+            AddChkArray(cnt, chkArray, URL.TaxiMikanryou)
+            AddChkArray(cnt, chkArray, URL.TaxiSoufujoIkkatsu)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.NewKaijoList.ToLower) >= 0 Then
+            '新着会場手配一覧
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.NewKaijoList)
+            AddChkArray(cnt, chkArray, URL.KaijoRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.KaijoList.ToLower) >= 0 Then
+            '検索会場手配一覧
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.KaijoList)
+            AddChkArray(cnt, chkArray, URL.KaijoRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.KaijoRegist.ToLower) >= 0 Then
+            '会場手配
+            cnt = 0
+            ReDim chkArray(5)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.NewKaijoList)
+            AddChkArray(cnt, chkArray, URL.KaijoList)
+            AddChkArray(cnt, chkArray, URL.KaijoRireki)
+            AddChkArray(cnt, chkArray, URL.KaijoRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        End If
+
+        Return True
+
+    End Function
+
+    '引数文字列１に文字列配列の値が含まれているかチェックし、
+    '含まれる場合「True」、含まれない場合「False」
+    Private Shared Function IsReferrer(ByVal referreUrl As String, ByVal chkArray() As String) As Boolean
+
+        Dim cnt As Integer
+
+        For cnt = 0 To chkArray.Length - 1
+            '全部小文字にして比較
+            If referreUrl.ToLower.IndexOf(chkArray(cnt).ToLower) >= 0 Then
+                Return True
+            End If
+
+        Next
+
+        Return False
+
+    End Function
+
+    'IsReffererチェック用に、チェック用配列を作成する。
+    Private Shared Sub AddChkArray(ByRef cnt As Integer, ByRef wkArray() As String, ByVal wkString As String)
+
+        ReDim Preserve wkArray(cnt)
+
+        wkArray(cnt) = wkString
+
+        cnt += 1
+
+    End Sub
+
+
     'データ登録モードを返す
     Public Shared Function IsInsertMode() As Boolean
         If Trim(System.Web.HttpContext.Current.Session(SessionDef.RECORD_KUBUN)) = AppConst.KOTSUHOTEL.RECORD_KUBUN.Code.Insert Then

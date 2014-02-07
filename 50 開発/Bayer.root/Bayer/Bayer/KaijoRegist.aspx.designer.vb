@@ -16,15 +16,6 @@ Option Explicit On
 Partial Public Class KaijoRegist
 
     '''<summary>
-    '''TblComment コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TblComment As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
     '''BtnPrint1 コントロール。
     '''</summary>
     '''<remarks>
@@ -716,6 +707,15 @@ Partial Public Class KaijoRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents OTHER_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''DivComment コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DivComment As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''ANS_SENTEI_RIYU コントロール。
