@@ -14,8 +14,13 @@ Partial Public Class KouenkaiRegist
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'QQQ
-        Session.Item(SessionDef.LoginID) = "QQQ"
+        '遷移元チェック
+        If Not Page.IsPostBack Then
+            If Not MyModule.IsReferer(Request) Then
+                Session.Abandon()
+                Response.Redirect(URL.SorryPage)
+            End If
+        End If
 
         '共通チェック
         If Not Session.Item(SessionDef.KouenkaiRireki) Then

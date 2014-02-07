@@ -209,6 +209,190 @@ Public Class MyModule
             AddChkArray(cnt, chkArray, URL.SeisanRegist)
 
             Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.NewDrList.ToLower) >= 0 Then
+            '新着交通宿泊手配一覧
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.NewDrList)
+            AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.DrList.ToLower) >= 0 Then
+            '検索交通宿泊手配一覧
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.DrList)
+            AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.DrRegist.ToLower) >= 0 Then
+            '交通宿泊登録
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.NewDrList)
+            AddChkArray(cnt, chkArray, URL.DrList)
+            AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.NewKouenkaiList.ToLower) >= 0 Then
+            '新規基本情報一覧
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.KouenkaiList.ToLower) >= 0 Then
+            '検索基本情報一覧
+            cnt = 0
+            ReDim chkArray(3)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.KouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.KouenkaiRegist.ToLower) >= 0 Then
+            '基本情報登録
+            cnt = 0
+            ReDim chkArray(4)
+            AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRegist)
+            AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiNouhinTorikomi.ToLower) >= 0 Then
+            'タクチケ納品データ取込
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiNouhinTorikomi)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiJisseki.ToLower) >= 0 Then
+            'タクチケ実績データ取込
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiJisseki)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMaintenance.ToLower) >= 0 Then
+            'タクチケメンテナンス一覧
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiMaintenance)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMaintenanceRegist.ToLower) >= 0 Then
+            'タクチケメンテナンス
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMaintenance)
+            AddChkArray(cnt, chkArray, URL.TaxiMaintenanceRegist)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMikanryou.ToLower) >= 0 Then
+            'タクチケ未完了リスト
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiMikanryou)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMiketsu.ToLower) >= 0 Then
+            'タクチケ未決一覧
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiMiketsu)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMiketsuRegist.ToLower) >= 0 Then
+            'タクチケ未決登録
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMiketsu)
+            AddChkArray(cnt, chkArray, URL.TaxiMiketsuRegist)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiSoufujoIkkatsu.ToLower) >= 0 Then
+            '送付状・確認票一括印刷
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiSoufujoIkkatsu)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.MstShisetsu.ToLower) >= 0 Then
+            '施設マスタメンテナンス
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.MstShisetsu)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.MstUser.ToLower) >= 0 Then
+            'TOP担当者マスタメンテナンス
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.MstUser)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.MstCode.ToLower) >= 0 Then
+            'コードマスタメンテナンス
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.MstCode)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.LogFile.ToLower) >= 0 Then
+            '送受信ログ照会
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.LogFile)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.LogSousa.ToLower) >= 0 Then
+            '操作ログ照会
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.LogSousa)
+
+            Return IsReferrer(referreUrl, chkArray)
         End If
 
         Return True
