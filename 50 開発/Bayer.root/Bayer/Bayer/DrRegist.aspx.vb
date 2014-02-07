@@ -1251,7 +1251,7 @@ Partial Public Class DrRegist
     '[登録]
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit1.Click, BtnSubmit2.Click
         '入力チェック
-        If Not Check() Then Exit Sub
+        If Not Check(False) Then Exit Sub
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Mi)
@@ -1264,7 +1264,7 @@ Partial Public Class DrRegist
 
     '[NOZOMIへ]
     Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi1.Click, BtnNozomi2.Click
-        If Not Check() Then Exit Sub
+        If Not Check(True) Then Exit Sub
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Taisho)
@@ -1284,12 +1284,21 @@ Partial Public Class DrRegist
     End Sub
 
     '入力チェック
-    Private Function Check() As Boolean
+    Private Function Check(ByVal Nozomi As Boolean) As Boolean
         'セキュリティチェック
         If Not CmnCheck.IsSecurityOK(Me) Then
             CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
             Return False
         End If
+
+        'Nozomi送信の場合、回答ステータス=新着はエラー
+        If Nozomi And Me.ANS_STATUS_TEHAI.SelectedValue = AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai Then
+            CmnModule.AlertMessage(MessageDef.Error.AnsStatusError, Me)
+            SetFocus(Me.ANS_TICKET_SEND_DAY)
+            Return False
+        End If
+
+
 
         'チケット類発送日
         If Not CmnCheck.IsNumberOnly(Me.ANS_TICKET_SEND_DAY) Then
@@ -1313,6 +1322,15 @@ Partial Public Class DrRegist
             End If
         End If
 
+        'Nozomiへボタン押下時、宿泊ステータス(依頼)が「希望する」の場合、必須
+        If Nozomi And DSP_KOTSUHOTEL(SEQ).TEHAI_HOTEL = AppConst.KOTSUHOTEL.TEHAI_HOTEL.Code.Yes Then
+            If Me.ANS_STATUS_HOTEL.SelectedValue = AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.NewTehai Then
+                CmnModule.AlertMessage(MessageDef.Error.MustSelect("宿泊手配-回答ステータス"), Me)
+                SetFocus(Me.ANS_STATUS_HOTEL)
+                Return False
+            End If
+        End If
+
         '宿泊施設TEL
         If Me.ANS_HOTEL_TEL.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidTel(Me.ANS_HOTEL_TEL) Then
@@ -1331,7 +1349,7 @@ Partial Public Class DrRegist
 
         '泊数
         If Me.ANS_HAKUSU.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.isnumberonly(Me.ANS_HAKUSU) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_HAKUSU) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("泊数"), Me)
             SetFocus(Me.ANS_HAKUSU)
             Return False
@@ -1360,6 +1378,99 @@ Partial Public Class DrRegist
                 Me.ANS_CHECKOUT_TIME.Text = CmnModule.Format_Date(Now.ToString("yyyyMMdd") & Me.ANS_CHECKOUT_TIME.Text & "00", CmnModule.DateFormatType.HHMM)
             End If
         End If
+
+        'Nozomiへボタン押下時で宿泊手配(回答)=手配済の場合 必須
+        If Nozomi And Me.ANS_STATUS_HOTEL.SelectedValue = AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.OK Then
+            '施設名
+            If Me.ANS_HOTEL_NAME.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-施設名"), Me)
+                SetFocus(Me.ANS_HOTEL_NAME)
+                Return False
+            End If
+            '施設住所
+            If Me.ANS_HOTEL_ADDRESS.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-施設住所"), Me)
+                SetFocus(Me.ANS_HOTEL_ADDRESS)
+                Return False
+            End If
+            '施設TEL
+            If Me.ANS_HOTEL_TEL.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-施設TEL"), Me)
+                SetFocus(Me.ANS_HOTEL_TEL)
+                Return False
+            End If
+            '宿泊日
+            If Me.ANS_HOTEL_DATE.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-宿泊日"), Me)
+                SetFocus(Me.ANS_HOTEL_DATE)
+                Return False
+            End If
+            '泊数
+            If Me.ANS_HAKUSU.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-泊数"), Me)
+                SetFocus(Me.ANS_HAKUSU)
+                Return False
+            End If
+            'チェックイン
+            If Me.ANS_CHECKIN_TIME.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-チェックイン"), Me)
+                SetFocus(Me.ANS_CHECKIN_TIME)
+                Return False
+            End If
+            'チェックアウト
+            If Me.ANS_CHECKOUT_TIME.Text.Trim = String.Empty Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("宿泊手配-チェックアウト"), Me)
+                SetFocus(Me.ANS_CHECKOUT_TIME)
+                Return False
+            End If
+            '部屋タイプ
+            If Me.ANS_ROOM_TYPE.SelectedValue = "0" Then
+                CmnModule.AlertMessage(MessageDef.Error.MustSelect("宿泊手配-部屋タイプ"), Me)
+                SetFocus(Me.ANS_ROOM_TYPE)
+                Return False
+            End If
+            '喫煙
+            If Me.ANS_HOTEL_SMOKING.SelectedValue = "0" Then
+                CmnModule.AlertMessage(MessageDef.Error.MustSelect("宿泊手配-喫煙"), Me)
+                SetFocus(Me.ANS_HOTEL_SMOKING)
+                Return False
+            End If
+            'DR宿泊費（税込)
+            If Val(Me.ANS_HOTELHI.Text.Trim) = 0 Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊費(税込)"), Me)
+                SetFocus(Me.ANS_HOTELHI)
+                Return False
+            End If
+            'DR宿泊費都税
+            If Val(Me.ANS_HOTELHI_TOZEI.Text.Trim) = 0 Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊費東京都税"), Me)
+                SetFocus(Me.ANS_HOTELHI_TOZEI)
+                Return False
+            End If
+            '登録手数料
+            If Not Me.CHK_KOTSUHOTEL_TESURYO.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.MustSelect("各種代金-登録手数料(交通・宿泊)"), Me)
+                SetFocus(Me.CHK_KOTSUHOTEL_TESURYO)
+                Return False
+            End If
+        End If
+
+        'Nozomiへボタン押下時で宿泊手配(回答)=取消済の場合 必須
+        If Nozomi And Me.ANS_STATUS_HOTEL.SelectedValue = AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.Canceled Then
+            'DR宿泊取消料(税込)
+            If Val(Me.ANS_HOTELHI_CANCEL.Text.Trim) = 0 Then
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊取消料(税込)"), Me)
+                SetFocus(Me.ANS_HOTELHI_TOZEI)
+                Return False
+            End If
+            '登録手数料
+            If Not Me.CHK_KOTSUHOTEL_TESURYO.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.MustSelect("各種代金-登録手数料"), Me)
+                SetFocus(Me.CHK_KOTSUHOTEL_TESURYO)
+                Return False
+            End If
+        End If
+
 
         '往路
         '利用日1
@@ -1683,6 +1794,738 @@ Partial Public Class DrRegist
             End If
         End If
 
+        'Nozomiへボタン押下時
+        If Nozomi Then
+            '往路ステータス(依頼)が「希望する」の場合、必須
+            If DSP_KOTSUHOTEL(SEQ).REQ_F_TEHAI_1 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
+                If Me.ANS_F_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_F_STATUS_1)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_F_TEHAI_2 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
+                If Me.ANS_F_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_F_STATUS_2)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_F_TEHAI_3 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
+                If Me.ANS_F_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_F_STATUS_3)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_F_TEHAI_4 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
+                If Me.ANS_F_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_F_STATUS_4)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_F_TEHAI_5 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
+                If Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_F_STATUS_5)
+                    Return False
+                End If
+            End If
+            '復路ステータス(依頼)が「希望する」の場合、必須
+            If DSP_KOTSUHOTEL(SEQ).REQ_O_TEHAI_1 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+                If Me.ANS_O_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_O_STATUS_1)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_O_TEHAI_2 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+                If Me.ANS_O_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_O_STATUS_2)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_O_TEHAI_3 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+                If Me.ANS_O_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_O_STATUS_3)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_O_TEHAI_4 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+                If Me.ANS_O_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_O_STATUS_4)
+                    Return False
+                End If
+            End If
+            If DSP_KOTSUHOTEL(SEQ).REQ_O_TEHAI_5 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+                If Me.ANS_O_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.NewTehai Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)手配-回答ステータス"), Me)
+                    SetFocus(Me.ANS_O_STATUS_5)
+                    Return False
+                End If
+            End If
+            '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_O_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_O_KOTSUKIKAN_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_O_KOTSUKIKAN_1)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_O_DATE_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路1)回答-利用日"), Me)
+                    SetFocus(Me.ANS_O_DATE_1)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_O_AIRPORT1_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路1)回答-出発地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT1_1)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_O_AIRPORT2_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路1)回答-到着地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT2_1)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_O_TIME1_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路1)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME1_1)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_O_TIME2_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路1)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME2_1)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_O_BIN_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路1)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_O_BIN_1)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_O_SEAT_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_O_SEAT_1)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_O_SEAT_KIBOU1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_O_SEAT_KIBOU1)
+                    Return False
+                End If
+            End If
+
+            '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_O_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_O_KOTSUKIKAN_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_O_KOTSUKIKAN_2)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_O_DATE_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路2)回答-利用日"), Me)
+                    SetFocus(Me.ANS_O_DATE_2)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_O_AIRPORT1_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路2)回答-出発地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT1_2)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_O_AIRPORT2_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路2)回答-到着地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT2_2)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_O_TIME1_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路2)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME1_2)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_O_TIME2_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路2)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME2_2)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_O_BIN_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路2)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_O_BIN_2)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_O_SEAT_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_O_SEAT_2)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_O_SEAT_KIBOU2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_O_SEAT_KIBOU2)
+                    Return False
+                End If
+            End If
+
+            '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_O_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_O_KOTSUKIKAN_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_O_KOTSUKIKAN_3)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_O_DATE_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路3)回答-利用日"), Me)
+                    SetFocus(Me.ANS_O_DATE_3)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_O_AIRPORT1_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路3)回答-出発地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT1_3)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_O_AIRPORT2_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路3)回答-到着地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT2_3)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_O_TIME1_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路3)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME1_3)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_O_TIME2_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路3)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME2_3)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_O_BIN_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路3)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_O_BIN_3)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_O_SEAT_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_O_SEAT_3)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_O_SEAT_KIBOU3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_O_SEAT_KIBOU3)
+                    Return False
+                End If
+            End If
+
+            '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_O_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_O_KOTSUKIKAN_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_O_KOTSUKIKAN_4)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_O_DATE_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路4)回答-利用日"), Me)
+                    SetFocus(Me.ANS_O_DATE_4)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_O_AIRPORT1_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路4)回答-出発地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT1_4)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_O_AIRPORT2_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路4)回答-到着地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT2_4)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_O_TIME1_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路4)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME1_4)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_O_TIME2_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路4)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME2_4)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_O_BIN_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路4)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_O_BIN_4)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_O_SEAT_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_O_SEAT_4)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_O_SEAT_KIBOU4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_O_SEAT_KIBOU4)
+                    Return False
+                End If
+            End If
+
+            '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_O_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_O_KOTSUKIKAN_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_O_KOTSUKIKAN_5)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_O_DATE_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路5)回答-利用日"), Me)
+                    SetFocus(Me.ANS_O_DATE_5)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_O_AIRPORT1_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路5)回答-出発地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT1_5)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_O_AIRPORT2_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路5)回答-到着地"), Me)
+                    SetFocus(Me.ANS_O_AIRPORT2_5)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_O_TIME1_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路5)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME1_5)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_O_TIME2_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路5)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_O_TIME2_5)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_O_BIN_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(往路5)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_O_BIN_5)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_O_SEAT_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_O_SEAT_5)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_O_SEAT_KIBOU5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_O_SEAT_KIBOU5)
+                    Return False
+                End If
+            End If
+
+            '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_F_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_F_KOTSUKIKAN_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_F_KOTSUKIKAN_1)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_F_DATE_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路1)回答-利用日"), Me)
+                    SetFocus(Me.ANS_F_DATE_1)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_F_AIRPORT1_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路1)回答-出発地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT1_1)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_F_AIRPORT2_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路1)回答-到着地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT2_1)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_F_TIME1_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路1)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME1_1)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_F_TIME2_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路1)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME2_1)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_F_BIN_1.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路1)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_F_BIN_1)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_F_SEAT_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_F_SEAT_1)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_F_SEAT_KIBOU1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_F_SEAT_KIBOU1)
+                    Return False
+                End If
+            End If
+
+            '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_F_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_F_KOTSUKIKAN_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_F_KOTSUKIKAN_2)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_F_DATE_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路2)回答-利用日"), Me)
+                    SetFocus(Me.ANS_F_DATE_2)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_F_AIRPORT1_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路2)回答-出発地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT1_2)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_F_AIRPORT2_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路2)回答-到着地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT2_2)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_F_TIME1_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路2)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME1_2)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_F_TIME2_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路2)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME2_2)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_F_BIN_2.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路2)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_F_BIN_2)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_F_SEAT_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_F_SEAT_2)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_F_SEAT_KIBOU2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_F_SEAT_KIBOU2)
+                    Return False
+                End If
+            End If
+
+            '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_F_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_F_KOTSUKIKAN_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_F_KOTSUKIKAN_3)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_F_DATE_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路3)回答-利用日"), Me)
+                    SetFocus(Me.ANS_F_DATE_3)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_F_AIRPORT1_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路3)回答-出発地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT1_3)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_F_AIRPORT2_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路3)回答-到着地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT2_3)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_F_TIME1_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路3)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME1_3)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_F_TIME2_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路3)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME2_3)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_F_BIN_3.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路3)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_F_BIN_3)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_F_SEAT_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_F_SEAT_3)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_F_SEAT_KIBOU3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_F_SEAT_KIBOU3)
+                    Return False
+                End If
+            End If
+
+            '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_F_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_F_KOTSUKIKAN_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_F_KOTSUKIKAN_4)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_F_DATE_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路4)回答-利用日"), Me)
+                    SetFocus(Me.ANS_F_DATE_4)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_F_AIRPORT1_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路4)回答-出発地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT1_4)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_F_AIRPORT2_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路4)回答-到着地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT2_4)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_F_TIME1_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路4)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME1_4)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_F_TIME2_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路4)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME2_4)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_F_BIN_4.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路4)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_F_BIN_4)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_F_SEAT_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_F_SEAT_4)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_F_SEAT_KIBOU4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_F_SEAT_KIBOU4)
+                    Return False
+                End If
+            End If
+
+            '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
+
+                '交通機関
+                If Me.ANS_F_KOTSUKIKAN_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-交通機関"), Me)
+                    SetFocus(Me.ANS_F_KOTSUKIKAN_5)
+                    Return False
+                End If
+                '利用日
+                If Me.ANS_F_DATE_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路5)回答-利用日"), Me)
+                    SetFocus(Me.ANS_F_DATE_5)
+                    Return False
+                End If
+                '出発地
+                If Me.ANS_F_AIRPORT1_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路5)回答-出発地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT1_5)
+                    Return False
+                End If
+                '到着地
+                If Me.ANS_F_AIRPORT2_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路5)回答-到着地"), Me)
+                    SetFocus(Me.ANS_F_AIRPORT2_5)
+                    Return False
+                End If
+                '出発時刻
+                If Me.ANS_F_TIME1_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路5)回答-出発時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME1_5)
+                    Return False
+                End If
+                '到着時刻
+                If Me.ANS_F_TIME2_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路5)回答-到着時刻"), Me)
+                    SetFocus(Me.ANS_F_TIME2_5)
+                    Return False
+                End If
+                '列車・便名
+                If Me.ANS_F_BIN_5.Text.Trim = String.Empty Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("交通(復路5)回答-列車・便名"), Me)
+                    SetFocus(Me.ANS_F_BIN_5)
+                    Return False
+                End If
+                '座席区分
+                If Me.ANS_F_SEAT_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-座席区分"), Me)
+                    SetFocus(Me.ANS_F_SEAT_5)
+                    Return False
+                End If
+                '座席位置
+                If Me.ANS_F_SEAT_KIBOU5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-座席位置"), Me)
+                    SetFocus(Me.ANS_F_SEAT_KIBOU5)
+                    Return False
+                End If
+            End If
+
+            '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
+            If Me.ANS_O_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Or _
+                Me.ANS_O_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Or _
+                Me.ANS_O_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Or _
+                Me.ANS_O_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Or _
+                Me.ANS_O_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or _
+                Me.ANS_O_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Or _
+                Me.ANS_F_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Or _
+                Me.ANS_F_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Or _
+                Me.ANS_F_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Or _
+                Me.ANS_F_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Or _
+                Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or _
+                Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
+
+                '航空券取消料・JR券取消料・その他鉄道代取消料の何れか必須
+                If Val(Me.ANS_AIR_CANCELLATION.Text) = 0 And Val(Me.ANS_RAIL_CANCELLATION.Text) = 0 And Val(Me.ANS_OTHER_CANCELLATION.Text) Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-航空券取消料(税込)・JR券取消料(税込)・その他鉄道代等取消料(税込)の何れか"), Me)
+                    SetFocus(Me.ANS_AIR_CANCELLATION)
+                    Return False
+                End If
+
+                '登録手数料
+                If Not Me.CHK_KOTSUHOTEL_TESURYO.Checked Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("各種代金-登録手数料(交通・宿泊)"), Me)
+                    SetFocus(Me.CHK_KOTSUHOTEL_TESURYO)
+                    Return False
+                End If
+            End If
+
+            '往路ステータス(回答)が「取消済」の場合、必須
+            If Me.ANS_O_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Canceled Or _
+                 Me.ANS_O_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Canceled Or _
+                 Me.ANS_O_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Canceled Or _
+                 Me.ANS_O_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Canceled Or _
+                 Me.ANS_O_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Canceled Or _
+                 Me.ANS_F_STATUS_1.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled Or _
+                 Me.ANS_F_STATUS_2.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled Or _
+                 Me.ANS_F_STATUS_3.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled Or _
+                 Me.ANS_F_STATUS_4.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled Or _
+                 Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled Then
+
+                '航空券取消料・JR券取消料・その他鉄道代取消料の何れか必須
+                If Val(Me.ANS_AIR_CANCELLATION.Text) = 0 And Val(Me.ANS_RAIL_CANCELLATION.Text) = 0 And Val(Me.ANS_OTHER_CANCELLATION.Text) Then
+                    CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-航空券取消料(税込)・JR券取消料(税込)・その他鉄道代等取消料(税込)の何れか"), Me)
+                    SetFocus(Me.ANS_AIR_CANCELLATION)
+                    Return False
+                End If
+            End If
+        End If
+
         'タクチケ
         '利用日1
         If Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty AndAlso _
@@ -1691,18 +2534,26 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_1)
             Return False
         ElseIf Me.ANS_TAXI_DATE_1.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日1"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_1.Checked Or _
+                Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日1"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_1)
                 Return False
             End If
         End If
 
         '券種1
-        If Me.ANS_TAXI_KENSHU_1.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種1"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_1)
-            Return False
+        If Me.ANS_TAXI_KENSHU_1.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_1.Checked Or _
+                Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種1"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_1)
+                Return False
+            End If
         End If
 
         '番号1
@@ -1711,8 +2562,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号1"), Me)
             SetFocus(Me.ANS_TAXI_NO_1)
             Return False
-        End If
+        ElseIf Me.ANS_TAXI_NO_1.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty Then
 
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号1"), Me)
+            SetFocus(Me.ANS_TAXI_NO_1)
+            Return False
+        End If
         '利用日2
         If Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_2) Then
@@ -1720,28 +2577,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_2)
             Return False
         ElseIf Me.ANS_TAXI_DATE_2.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日2"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_2.Checked Or _
+                Me.ANS_TAXI_KENSHU_2.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日2"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_2)
                 Return False
             End If
         End If
 
         '券種2
-        If Me.ANS_TAXI_KENSHU_2.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種2"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_2)
-            Return False
+        If Me.ANS_TAXI_KENSHU_2.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_2.Checked Or _
+                Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種2"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_2)
+                Return False
+            End If
         End If
 
         '番号2
         If Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_2) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号2"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号2"), Me)
+            SetFocus(Me.ANS_TAXI_NO_2)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_2.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_2.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号2"), Me)
             SetFocus(Me.ANS_TAXI_NO_2)
             Return False
         End If
-
         '利用日3
         If Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_3) Then
@@ -1749,28 +2620,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_3)
             Return False
         ElseIf Me.ANS_TAXI_DATE_3.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日3"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_3.Checked Or _
+                Me.ANS_TAXI_KENSHU_3.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日3"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_3)
                 Return False
             End If
         End If
 
         '券種3
-        If Me.ANS_TAXI_KENSHU_3.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種3"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_3)
-            Return False
+        If Me.ANS_TAXI_KENSHU_3.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_3.Checked Or _
+                Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種3"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_3)
+                Return False
+            End If
         End If
 
         '番号3
         If Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_3) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号3"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号3"), Me)
+            SetFocus(Me.ANS_TAXI_NO_3)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_3.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_3.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号3"), Me)
             SetFocus(Me.ANS_TAXI_NO_3)
             Return False
         End If
-
         '利用日4
         If Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_4) Then
@@ -1778,28 +2663,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_4)
             Return False
         ElseIf Me.ANS_TAXI_DATE_4.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日4"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_4.Checked Or _
+                Me.ANS_TAXI_KENSHU_4.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日4"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_4)
                 Return False
             End If
         End If
 
         '券種4
-        If Me.ANS_TAXI_KENSHU_4.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種4"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_4)
-            Return False
+        If Me.ANS_TAXI_KENSHU_4.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_4.Checked Or _
+                Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種4"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_4)
+                Return False
+            End If
         End If
 
         '番号4
         If Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_4) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号4"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号4"), Me)
+            SetFocus(Me.ANS_TAXI_NO_4)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_4.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_4.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号4"), Me)
             SetFocus(Me.ANS_TAXI_NO_4)
             Return False
         End If
-
         '利用日5
         If Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_5) Then
@@ -1807,28 +2706,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_5)
             Return False
         ElseIf Me.ANS_TAXI_DATE_5.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日5"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_5.Checked Or _
+                Me.ANS_TAXI_KENSHU_5.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日5"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_5)
                 Return False
             End If
         End If
 
         '券種5
-        If Me.ANS_TAXI_KENSHU_5.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種5"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_5)
-            Return False
+        If Me.ANS_TAXI_KENSHU_5.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_5.Checked Or _
+                Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種5"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_5)
+                Return False
+            End If
         End If
 
         '番号5
         If Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_5) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号5"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号5"), Me)
+            SetFocus(Me.ANS_TAXI_NO_5)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_5.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_5.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号5"), Me)
             SetFocus(Me.ANS_TAXI_NO_5)
             Return False
         End If
-
         '利用日6
         If Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_6) Then
@@ -1836,28 +2749,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_6)
             Return False
         ElseIf Me.ANS_TAXI_DATE_6.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日6"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_6.Checked Or _
+                Me.ANS_TAXI_KENSHU_6.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日6"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_6)
                 Return False
             End If
         End If
 
         '券種6
-        If Me.ANS_TAXI_KENSHU_6.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種6"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_6)
-            Return False
+        If Me.ANS_TAXI_KENSHU_6.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_6.Checked Or _
+                Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種6"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_6)
+                Return False
+            End If
         End If
 
         '番号6
         If Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_6) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号6"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号6"), Me)
+            SetFocus(Me.ANS_TAXI_NO_6)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_6.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_6.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号6"), Me)
             SetFocus(Me.ANS_TAXI_NO_6)
             Return False
         End If
-
         '利用日7
         If Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_7) Then
@@ -1865,28 +2792,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_7)
             Return False
         ElseIf Me.ANS_TAXI_DATE_7.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日7"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_7.Checked Or _
+                Me.ANS_TAXI_KENSHU_7.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日7"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_7)
                 Return False
             End If
         End If
 
         '券種7
-        If Me.ANS_TAXI_KENSHU_7.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種7"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_7)
-            Return False
+        If Me.ANS_TAXI_KENSHU_7.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_7.Checked Or _
+                Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種7"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_7)
+                Return False
+            End If
         End If
 
         '番号7
         If Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_7) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号7"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号7"), Me)
+            SetFocus(Me.ANS_TAXI_NO_7)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_7.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_7.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号7"), Me)
             SetFocus(Me.ANS_TAXI_NO_7)
             Return False
         End If
-
         '利用日8
         If Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_8) Then
@@ -1894,28 +2835,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_8)
             Return False
         ElseIf Me.ANS_TAXI_DATE_8.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日8"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_8.Checked Or _
+                Me.ANS_TAXI_KENSHU_8.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日8"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_8)
                 Return False
             End If
         End If
 
         '券種8
-        If Me.ANS_TAXI_KENSHU_8.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種8"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_8)
-            Return False
+        If Me.ANS_TAXI_KENSHU_8.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_8.Checked Or _
+                Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種8"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_8)
+                Return False
+            End If
         End If
 
         '番号8
         If Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_8) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号8"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号8"), Me)
+            SetFocus(Me.ANS_TAXI_NO_8)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_8.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_8.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号8"), Me)
             SetFocus(Me.ANS_TAXI_NO_8)
             Return False
         End If
-
         '利用日9
         If Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_9) Then
@@ -1923,28 +2878,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_9)
             Return False
         ElseIf Me.ANS_TAXI_DATE_9.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日9"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_9.Checked Or _
+                Me.ANS_TAXI_KENSHU_9.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日9"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_9)
                 Return False
             End If
         End If
 
         '券種9
-        If Me.ANS_TAXI_KENSHU_9.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種9"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_9)
-            Return False
+        If Me.ANS_TAXI_KENSHU_9.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_9.Checked Or _
+                Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種9"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_9)
+                Return False
+            End If
         End If
 
         '番号9
         If Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_9) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号9"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号9"), Me)
+            SetFocus(Me.ANS_TAXI_NO_9)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_9.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_9.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号9"), Me)
             SetFocus(Me.ANS_TAXI_NO_9)
             Return False
         End If
-
         '利用日10
         If Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_10) Then
@@ -1952,28 +2921,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_10)
             Return False
         ElseIf Me.ANS_TAXI_DATE_10.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日10"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_10.Checked Or _
+                Me.ANS_TAXI_KENSHU_10.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日10"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_10)
                 Return False
             End If
         End If
 
         '券種10
-        If Me.ANS_TAXI_KENSHU_10.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種10"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_10)
-            Return False
+        If Me.ANS_TAXI_KENSHU_10.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_10.Checked Or _
+                Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種10"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_10)
+                Return False
+            End If
         End If
 
         '番号10
         If Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_10) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号10"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号10"), Me)
+            SetFocus(Me.ANS_TAXI_NO_10)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_10.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_10.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号10"), Me)
             SetFocus(Me.ANS_TAXI_NO_10)
             Return False
         End If
-
         '利用日11
         If Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_11) Then
@@ -1981,28 +2964,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_11)
             Return False
         ElseIf Me.ANS_TAXI_DATE_11.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日11"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_11.Checked Or _
+                Me.ANS_TAXI_KENSHU_11.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日11"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_11)
                 Return False
             End If
         End If
 
         '券種11
-        If Me.ANS_TAXI_KENSHU_11.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種11"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_11)
-            Return False
+        If Me.ANS_TAXI_KENSHU_11.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_11.Checked Or _
+                Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種11"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_11)
+                Return False
+            End If
         End If
 
         '番号11
         If Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_11) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号11"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号11"), Me)
+            SetFocus(Me.ANS_TAXI_NO_11)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_11.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_11.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号11"), Me)
             SetFocus(Me.ANS_TAXI_NO_11)
             Return False
         End If
-
         '利用日12
         If Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_12) Then
@@ -2010,28 +3007,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_12)
             Return False
         ElseIf Me.ANS_TAXI_DATE_12.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日12"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_12.Checked Or _
+                Me.ANS_TAXI_KENSHU_12.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日12"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_12)
                 Return False
             End If
         End If
 
         '券種12
-        If Me.ANS_TAXI_KENSHU_12.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種12"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_12)
-            Return False
+        If Me.ANS_TAXI_KENSHU_12.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_12.Checked Or _
+                Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種12"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_12)
+                Return False
+            End If
         End If
 
         '番号12
         If Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_12) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号12"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号12"), Me)
+            SetFocus(Me.ANS_TAXI_NO_12)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_12.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_12.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号12"), Me)
             SetFocus(Me.ANS_TAXI_NO_12)
             Return False
         End If
-
         '利用日13
         If Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_13) Then
@@ -2039,28 +3050,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_13)
             Return False
         ElseIf Me.ANS_TAXI_DATE_13.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日13"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_13.Checked Or _
+                Me.ANS_TAXI_KENSHU_13.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日13"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_13)
                 Return False
             End If
         End If
 
         '券種13
-        If Me.ANS_TAXI_KENSHU_13.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種13"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_13)
-            Return False
+        If Me.ANS_TAXI_KENSHU_13.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_13.Checked Or _
+                Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種13"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_13)
+                Return False
+            End If
         End If
 
         '番号13
         If Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_13) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号13"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号13"), Me)
+            SetFocus(Me.ANS_TAXI_NO_13)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_13.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_13.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号13"), Me)
             SetFocus(Me.ANS_TAXI_NO_13)
             Return False
         End If
-
         '利用日14
         If Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_14) Then
@@ -2068,28 +3093,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_14)
             Return False
         ElseIf Me.ANS_TAXI_DATE_14.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日14"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_14.Checked Or _
+                Me.ANS_TAXI_KENSHU_14.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日14"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_14)
                 Return False
             End If
         End If
 
         '券種14
-        If Me.ANS_TAXI_KENSHU_14.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種14"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_14)
-            Return False
+        If Me.ANS_TAXI_KENSHU_14.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_14.Checked Or _
+                Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種14"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_14)
+                Return False
+            End If
         End If
 
         '番号14
         If Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_14) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号14"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号14"), Me)
+            SetFocus(Me.ANS_TAXI_NO_14)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_14.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_14.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号14"), Me)
             SetFocus(Me.ANS_TAXI_NO_14)
             Return False
         End If
-
         '利用日15
         If Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_15) Then
@@ -2097,28 +3136,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_15)
             Return False
         ElseIf Me.ANS_TAXI_DATE_15.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日15"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_15.Checked Or _
+                Me.ANS_TAXI_KENSHU_15.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日15"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_15)
                 Return False
             End If
         End If
 
         '券種15
-        If Me.ANS_TAXI_KENSHU_15.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種15"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_15)
-            Return False
+        If Me.ANS_TAXI_KENSHU_15.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_15.Checked Or _
+                Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種15"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_15)
+                Return False
+            End If
         End If
 
         '番号15
         If Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_15) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号15"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号15"), Me)
+            SetFocus(Me.ANS_TAXI_NO_15)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_15.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_15.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号15"), Me)
             SetFocus(Me.ANS_TAXI_NO_15)
             Return False
         End If
-
         '利用日16
         If Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_16) Then
@@ -2126,28 +3179,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_16)
             Return False
         ElseIf Me.ANS_TAXI_DATE_16.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日16"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_16.Checked Or _
+                Me.ANS_TAXI_KENSHU_16.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日16"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_16)
                 Return False
             End If
         End If
 
         '券種16
-        If Me.ANS_TAXI_KENSHU_16.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種16"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_16)
-            Return False
+        If Me.ANS_TAXI_KENSHU_16.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_16.Checked Or _
+                Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種16"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_16)
+                Return False
+            End If
         End If
 
         '番号16
         If Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_16) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号16"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号16"), Me)
+            SetFocus(Me.ANS_TAXI_NO_16)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_16.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_16.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号16"), Me)
             SetFocus(Me.ANS_TAXI_NO_16)
             Return False
         End If
-
         '利用日17
         If Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_17) Then
@@ -2155,28 +3222,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_17)
             Return False
         ElseIf Me.ANS_TAXI_DATE_17.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日17"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_17.Checked Or _
+                Me.ANS_TAXI_KENSHU_17.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日17"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_17)
                 Return False
             End If
         End If
 
         '券種17
-        If Me.ANS_TAXI_KENSHU_17.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種17"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_17)
-            Return False
+        If Me.ANS_TAXI_KENSHU_17.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_17.Checked Or _
+                Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種17"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_17)
+                Return False
+            End If
         End If
 
         '番号17
         If Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_17) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号17"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号17"), Me)
+            SetFocus(Me.ANS_TAXI_NO_17)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_17.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_17.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号17"), Me)
             SetFocus(Me.ANS_TAXI_NO_17)
             Return False
         End If
-
         '利用日18
         If Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_18) Then
@@ -2184,28 +3265,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_18)
             Return False
         ElseIf Me.ANS_TAXI_DATE_18.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日18"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_18.Checked Or _
+                Me.ANS_TAXI_KENSHU_18.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日18"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_18)
                 Return False
             End If
         End If
 
         '券種18
-        If Me.ANS_TAXI_KENSHU_18.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種18"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_18)
-            Return False
+        If Me.ANS_TAXI_KENSHU_18.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_18.Checked Or _
+                Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種18"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_18)
+                Return False
+            End If
         End If
 
         '番号18
         If Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_18) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号18"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号18"), Me)
+            SetFocus(Me.ANS_TAXI_NO_18)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_18.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_18.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号18"), Me)
             SetFocus(Me.ANS_TAXI_NO_18)
             Return False
         End If
-
         '利用日19
         If Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_19) Then
@@ -2213,28 +3308,42 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_19)
             Return False
         ElseIf Me.ANS_TAXI_DATE_19.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日19"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_19.Checked Or _
+                Me.ANS_TAXI_KENSHU_19.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日19"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_19)
                 Return False
             End If
         End If
 
         '券種19
-        If Me.ANS_TAXI_KENSHU_19.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種19"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_19)
-            Return False
+        If Me.ANS_TAXI_KENSHU_19.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_19.Checked Or _
+                Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種19"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_19)
+                Return False
+            End If
         End If
 
         '番号19
         If Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_19) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号19"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号19"), Me)
+            SetFocus(Me.ANS_TAXI_NO_19)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_19.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_19.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号19"), Me)
             SetFocus(Me.ANS_TAXI_NO_19)
             Return False
         End If
-
         '利用日20
         If Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_20) Then
@@ -2242,24 +3351,39 @@ Partial Public Class DrRegist
             SetFocus(Me.ANS_TAXI_DATE_20)
             Return False
         ElseIf Me.ANS_TAXI_DATE_20.Text.Trim = String.Empty Then
-            If Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-利用日20"), Me)
+            If Me.CHK_ANS_TAXI_HAKKO_20.Checked Or _
+                Me.ANS_TAXI_KENSHU_20.SelectedValue <> String.Empty Or _
+                Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-利用日20"), Me)
                 SetFocus(Me.ANS_TAXI_DATE_20)
                 Return False
             End If
         End If
 
         '券種20
-        If Me.ANS_TAXI_KENSHU_20.SelectedValue = "" AndAlso Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
-            CmnModule.AlertMessage(MessageDef.Error.SelectError("タクチケ-券種20"), Me)
-            SetFocus(Me.ANS_TAXI_KENSHU_20)
-            Return False
+        If Me.ANS_TAXI_KENSHU_20.SelectedValue = String.Empty Then
+            If Me.CHK_ANS_TAXI_HAKKO_20.Checked Or _
+                Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty Or _
+                Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty Then
+
+                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ-券種20"), Me)
+                SetFocus(Me.ANS_TAXI_KENSHU_20)
+                Return False
+            End If
         End If
 
         '番号20
         If Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsHankaku(Me.ANS_TAXI_NO_20) Then
-            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("タクチケ-番号20"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号20"), Me)
+            SetFocus(Me.ANS_TAXI_NO_20)
+            Return False
+        ElseIf Me.ANS_TAXI_NO_20.Text.Trim = String.Empty Or _
+            Me.ANS_TAXI_KENSHU_20.SelectedValue <> String.Empty Or _
+            Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty Then
+
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号20"), Me)
             SetFocus(Me.ANS_TAXI_NO_20)
             Return False
         End If
