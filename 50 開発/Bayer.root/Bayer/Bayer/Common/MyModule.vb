@@ -72,7 +72,8 @@ Public Class MyModule
         If wkRequest.UrlReferrer Is Nothing AndAlso _
            (currentUrl.ToLower.IndexOf(URL.Login.ToLower) >= 0 Or _
             currentUrl.ToLower.IndexOf(URL.HotelKensaku.ToLower) >= 0 Or _
-            currentUrl.ToLower.IndexOf(URL.ShisetsuKensaku.ToLower) >= 0) Then
+            currentUrl.ToLower.IndexOf(URL.ShisetsuKensaku.ToLower) >= 0 Or _
+            currentUrl.ToLower.IndexOf(URL.KouenkaiRegist.ToLower) >= 0) Then
             Return True
         ElseIf wkRequest.UrlReferrer Is Nothing Then
             'Referrer無し
