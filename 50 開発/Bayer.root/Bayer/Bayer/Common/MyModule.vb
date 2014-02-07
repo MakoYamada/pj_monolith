@@ -164,6 +164,51 @@ Public Class MyModule
 
             Return IsReferrer(referreUrl, chkArray)
 
+        ElseIf currentUrl.ToLower.IndexOf(URL.SeisanKensaku.ToLower) >= 0 Then
+            '精算処理
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.Menu)
+            AddChkArray(cnt, chkArray, URL.SeisanList)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.SeisanList.ToLower) >= 0 Then
+            '【検索】精算データ
+            cnt = 0
+            ReDim chkArray(2)
+            AddChkArray(cnt, chkArray, URL.SeisanKensaku)
+            AddChkArray(cnt, chkArray, URL.SeisanRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.SeisanRegist.ToLower) >= 0 Then
+            '精算金額入力
+            cnt = 0
+            ReDim chkArray(2)
+            AddChkArray(cnt, chkArray, URL.SeisanList)
+            AddChkArray(cnt, chkArray, URL.SeisanRegist)
+            AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.SapCsv.ToLower) >= 0 Then
+            'SAP用CSVデータ作成
+            cnt = 0
+            ReDim chkArray(0)
+            AddChkArray(cnt, chkArray, URL.Menu)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.Preview.ToLower) >= 0 Then
+            'プレビュー
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.SeisanList)
+            AddChkArray(cnt, chkArray, URL.SeisanRegist)
+
+            Return IsReferrer(referreUrl, chkArray)
         End If
 
         Return True

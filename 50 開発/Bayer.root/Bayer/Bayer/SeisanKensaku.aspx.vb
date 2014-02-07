@@ -24,6 +24,13 @@ Partial Public Class SeisanKensaku
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        '遷移元チェック
+        If Not Page.IsPostBack Then
+            If Not MyModule.IsReferer(Request) Then
+                Session.Abandon()
+                Response.Redirect(URL.SorryPage)
+            End If
+        End If
 
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)

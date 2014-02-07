@@ -19,6 +19,14 @@ Partial Public Class Preview
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        '遷移元チェック
+        If Not Page.IsPostBack Then
+            If Not MyModule.IsReferer(Request) Then
+                Session.Abandon()
+                Response.Redirect(URL.SorryPage)
+            End If
+        End If
+
         '呼び元が履歴一覧・手配画面の場合
         MyModule.IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
         Popup = True
