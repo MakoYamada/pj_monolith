@@ -204,9 +204,17 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.Preview.ToLower) >= 0 Then
             'プレビュー
             cnt = 0
-            ReDim chkArray(1)
+            ReDim chkArray(9)
             AddChkArray(cnt, chkArray, URL.SeisanList)
             AddChkArray(cnt, chkArray, URL.SeisanRegist)
+            AddChkArray(cnt, chkArray, URL.KouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRireki)
+            AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
+            AddChkArray(cnt, chkArray, URL.DrList)
+            AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.DrRireki)
+            AddChkArray(cnt, chkArray, URL.NewDrList)
+            AddChkArray(cnt, chkArray, URL.TaxiSoufujoIkkatsu)
 
             Return IsReferrer(referreUrl, chkArray)
 
