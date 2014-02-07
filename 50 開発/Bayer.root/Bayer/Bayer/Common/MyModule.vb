@@ -309,9 +309,10 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMaintenance.ToLower) >= 0 Then
             'タクチケメンテナンス一覧
             cnt = 0
-            ReDim chkArray(1)
+            ReDim chkArray(2)
             AddChkArray(cnt, chkArray, URL.TaxiMenu)
             AddChkArray(cnt, chkArray, URL.TaxiMaintenance)
+            AddChkArray(cnt, chkArray, URL.TaxiMaintenanceRegist)
 
             Return IsReferrer(referreUrl, chkArray)
 
@@ -336,9 +337,10 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.TaxiMiketsu.ToLower) >= 0 Then
             'タクチケ未決一覧
             cnt = 0
-            ReDim chkArray(1)
+            ReDim chkArray(2)
             AddChkArray(cnt, chkArray, URL.TaxiMenu)
             AddChkArray(cnt, chkArray, URL.TaxiMiketsu)
+            AddChkArray(cnt, chkArray, URL.TaxiMiketsuRegist)
 
             Return IsReferrer(referreUrl, chkArray)
 
