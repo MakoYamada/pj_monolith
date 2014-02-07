@@ -204,12 +204,15 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.Preview.ToLower) >= 0 Then
             'プレビュー
             cnt = 0
-            ReDim chkArray(9)
+            ReDim chkArray(12)
             AddChkArray(cnt, chkArray, URL.SeisanList)
             AddChkArray(cnt, chkArray, URL.SeisanRegist)
             AddChkArray(cnt, chkArray, URL.KouenkaiList)
             AddChkArray(cnt, chkArray, URL.KouenkaiRireki)
             AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
+            AddChkArray(cnt, chkArray, URL.KaijoList)
+            AddChkArray(cnt, chkArray, URL.KaijoRireki)
+            AddChkArray(cnt, chkArray, URL.NewKaijoList)
             AddChkArray(cnt, chkArray, URL.DrList)
             AddChkArray(cnt, chkArray, URL.DrRegist)
             AddChkArray(cnt, chkArray, URL.DrRireki)
