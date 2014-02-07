@@ -8,6 +8,7 @@ Public Class MessageDef
         Public Const MustInput_Kotsu As String = "公共交通手配がチェックされています。手配内容を入力してください。"
         Public Const MustInput_Joken As String = "検索条件を指定してください。"
         Public Const InvalidTime As String = "時間は半角数字4桁で入力してください。：は不要です。"
+        Public Const AnsStatusError As String = "回答ステータスが「新着」の為、NOZOMIへは送信できません。"
 
         '必須        Public Shared Function MustInput(ByVal ItemName As String) As String
             Return ItemName & "を入力してください。"
