@@ -9,7 +9,6 @@ Partial Public Class NewDrList
 
     'グリッド列    Private Enum CellIndex
         CHK_PRINT
-        Button1
         JISSHI_DATE
         KOUENKAI_NO
         KOUENKAI_NAME
@@ -21,6 +20,8 @@ Partial Public Class NewDrList
         REQ_HOTEL
         REQ_KOTSU
         REQ_TAXI
+        REQ_MR
+        Button1
         SALESFORCE_ID
         TO_DATE
         REQ_O_TEHAI_1
@@ -33,6 +34,9 @@ Partial Public Class NewDrList
         REQ_F_TEHAI_3
         REQ_F_TEHAI_4
         REQ_F_TEHAI_5
+        REQ_MR_O_TEHAI
+        REQ_MR_F_TEHAI
+        REQ_MR_HOTEL_NOTE
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -252,6 +256,19 @@ Partial Public Class NewDrList
             End If
             'タクチケ
             e.Row.Cells(CellIndex.REQ_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.REQ_TAXI).Text)
+            'MR手配
+            If e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Text.Trim <> "&nbsp;" Then
+
+                e.Row.Cells(CellIndex.REQ_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+            Else
+                e.Row.Cells(CellIndex.REQ_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+            End If
 
             '区分
             e.Row.Cells(CellIndex.KUBUN).Text = AppModule.GetName_REQ_STATUS_TEHAI(e.Row.Cells(CellIndex.KUBUN).Text, False, True)
@@ -273,6 +290,9 @@ Partial Public Class NewDrList
             e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
             e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
             e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
+            e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Visible = False
+            e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Visible = False
+            e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None

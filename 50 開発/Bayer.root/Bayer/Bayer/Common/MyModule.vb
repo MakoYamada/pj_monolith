@@ -73,6 +73,7 @@ Public Class MyModule
            (currentUrl.ToLower.IndexOf(URL.Login.ToLower) >= 0 Or _
             currentUrl.ToLower.IndexOf(URL.HotelKensaku.ToLower) >= 0 Or _
             currentUrl.ToLower.IndexOf(URL.ShisetsuKensaku.ToLower) >= 0 Or _
+            currentUrl.ToLower.IndexOf(URL.DrRegist.ToLower) >= 0 Or _
             currentUrl.ToLower.IndexOf(URL.KouenkaiRegist.ToLower) >= 0) Then
             Return True
         ElseIf wkRequest.UrlReferrer Is Nothing Then
@@ -257,10 +258,11 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.DrRegist.ToLower) >= 0 Then
             '交通宿泊登録
             cnt = 0
-            ReDim chkArray(3)
+            ReDim chkArray(4)
             AddChkArray(cnt, chkArray, URL.NewDrList)
             AddChkArray(cnt, chkArray, URL.DrList)
             AddChkArray(cnt, chkArray, URL.DrRegist)
+            AddChkArray(cnt, chkArray, URL.DrRireki)
             AddChkArray(cnt, chkArray, URL.Preview)
 
             Return IsReferrer(referreUrl, chkArray)
@@ -290,10 +292,11 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.KouenkaiRegist.ToLower) >= 0 Then
             '基本情報登録
             cnt = 0
-            ReDim chkArray(4)
+            ReDim chkArray(6)
             AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
             AddChkArray(cnt, chkArray, URL.KouenkaiList)
             AddChkArray(cnt, chkArray, URL.KouenkaiRegist)
+            AddChkArray(cnt, chkArray, URL.KouenkaiRireki)
             AddChkArray(cnt, chkArray, URL.DrRegist)
             AddChkArray(cnt, chkArray, URL.Preview)
 

@@ -9,7 +9,6 @@ Partial Public Class DrRireki
     Private SEQ As Integer
 
     'グリッド列    Private Enum CellIndex
-        Button1
         FROM_DATE
         SANKASHA_ID
         DR_NAME
@@ -21,7 +20,9 @@ Partial Public Class DrRireki
         TEHAI_HOTEL
         TEHAI_KOTSU
         TEHAI_TAXI
+        TEHAI_MR
         SEND_FLAG
+        Button1
         KOUENKAI_NO
         SALESFORCE_ID
         TO_DATE
@@ -35,6 +36,9 @@ Partial Public Class DrRireki
         REQ_F_TEHAI_3
         REQ_F_TEHAI_4
         REQ_F_TEHAI_5
+        REQ_MR_O_TEHAI
+        REQ_MR_F_TEHAI
+        REQ_MR_HOTEL_NOTE
     End Enum
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -192,6 +196,19 @@ Partial Public Class DrRireki
             End If
             'タクチケ
             e.Row.Cells(CellIndex.TEHAI_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
+            'MR手配
+            If e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+                e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Text.Trim <> "&nbsp;" Then
+
+                e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+            Else
+                e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+            End If
             'NOZOMI送信ステータス
             e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
@@ -213,6 +230,9 @@ Partial Public Class DrRireki
             e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
             e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
             e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
+            e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Visible = False
+            e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Visible = False
+            e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None

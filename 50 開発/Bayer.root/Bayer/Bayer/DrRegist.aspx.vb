@@ -147,8 +147,13 @@ Partial Public Class DrRegist
         'マスターページ設定
         With Me.Master
             .PageTitle = "交通・宿泊手配回答登録"
-            .HideLogout = False
-            .HideMenu = False
+            If Popup Then
+                .HideLogout = True
+                .HideMenu = True
+            Else
+                .HideLogout = False
+                .HideMenu = False
+            End If
         End With
     End Sub
 

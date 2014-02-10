@@ -178,14 +178,6 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
-                            ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
-                            <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
-                            </ItemStyle>
-                        </asp:ButtonField>
                         <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
@@ -243,9 +235,21 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="30px" HorizontalAlign="Center"></ItemStyle>
                         </asp:BoundField>
+                        <asp:BoundField HeaderText="MR&lt;br /&gt;手配" HtmlEncode="False" >
+                        <HeaderStyle HorizontalAlign="Center" />
+                        <ItemStyle HorizontalAlign="Center" Width="30px" />
+                        </asp:BoundField>
                         <asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI送信">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
+                        <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                            ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
+                            ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
+                            <ControlStyle CssClass="ButtonList" Width="46px"></ControlStyle>
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" BackColor="#E4E9D1" Width="52px">
+                            </ItemStyle>
+                        </asp:ButtonField>
                         <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SalesForceID" 
                             Visible="False" />
                         <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
@@ -259,6 +263,9 @@
                         <asp:BoundField DataField="REQ_F_TEHAI_3" HeaderText="REQ_F_TEHAI_3" />
                         <asp:BoundField DataField="REQ_F_TEHAI_4" HeaderText="REQ_F_TEHAI_4" />
                         <asp:BoundField DataField="REQ_F_TEHAI_5" HeaderText="REQ_F_TEHAI_5" />
+                        <asp:BoundField DataField="REQ_MR_O_TEHAI" HeaderText="REQ_MR_O_TEHAI" />
+                        <asp:BoundField DataField="REQ_MR_F_TEHAI" HeaderText="REQ_MR_F_TEHAI" />
+                        <asp:BoundField DataField="REQ_MR_HOTEL_NOTE" HeaderText="REQ_MR_HOTEL_NOTE" />
                     </Columns>
                 </asp:GridView>
             </td>
