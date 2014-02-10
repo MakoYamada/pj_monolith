@@ -362,7 +362,7 @@ Public Class AppConst
         End Class
 
         Public Class KOUEN_KAIJO_TEHAI
-            '会合場　要・不要
+            '講演会場　要・不要
             Public Class Code
                 Public Const Yes As String = "1"
                 Public Const No As String = "0"
@@ -616,7 +616,7 @@ Public Class AppConst
                 Public Class Name
                     Public Const KouenkaiRegist As String = "会合基本情報"
                     Public Const DrRegist As String = "宿泊・交通・タクシーチケット 手配依頼"
-                    Public Const KaijoRegist As String = "会合場 手配・見積依頼"
+                    Public Const KaijoRegist As String = "会場手配・見積回答"
                     Public Const SeisanRegist As String = "精算金額入力"
                     Public Const CostRegist As String = "コストセンター別費用入力"
                     Public Const MstShisetsu As String = "施設マスタメンテナンス"
