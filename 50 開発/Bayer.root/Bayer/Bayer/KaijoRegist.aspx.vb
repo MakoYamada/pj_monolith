@@ -15,11 +15,13 @@ Partial Public Class KaijoRegist
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        '遷移元チェック
-        If Not Page.IsPostBack Then
-            If Not MyModule.IsReferer(Request) Then
-                Session.Abandon()
-                Response.Redirect(URL.SorryPage)
+        If Trim(Session.Item(SessionDef.KaijoRireki)) <> Session.SessionID Then
+            '遷移元チェック
+            If Not Page.IsPostBack Then
+                If Not MyModule.IsReferer(Request) Then
+                    Session.Abandon()
+                    Response.Redirect(URL.SorryPage)
+                End If
             End If
         End If
 
@@ -36,11 +38,9 @@ Partial Public Class KaijoRegist
         End If
 
         If Not Page.IsPostBack Then
-            '画面項目 初期化
-            InitControls()
+            '画面項目 初期化            InitControls()
 
-            '旧データ取得
-            GetData_Old()
+            '旧データ取得            GetData_Old()
 
             '画面項目表示
             SetForm()
@@ -66,7 +66,7 @@ Partial Public Class KaijoRegist
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "会合場　手配・見積依頼"
+            .PageTitle = "会場手配・見積回答"
             If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
                 .PageTitle &= " ：履歴照会"
                 .HideMenu = True
@@ -153,14 +153,16 @@ Partial Public Class KaijoRegist
         CmnModule.ClearAllControl(Me)
 
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
-            '履歴からの場合、キャンセル、印刷以外のボタンを非表示にする
+            '履歴からの場合、戻る、印刷以外のボタンを非表示にする
             Me.BtnShisetsuKensaku.Visible = False
             Me.BtnCalc_ANS_MITSUMORI.Visible = False
             Me.BtnCalc_ANS_TOTAL_TF.Visible = False
             Me.BtnCalc_ANS_TOTAL_T.Visible = False
             Me.BtnRireki.Visible = False
-            Me.BtnNozomi.Visible = False
-            Me.BtnSubmit.Visible = False
+            Me.BtnNozomi1.Visible = False
+            Me.BtnNozomi2.Visible = False
+            Me.BtnSubmit1.Visible = False
+            Me.BtnSubmit2.Visible = False
             Me.DivComment.Visible = False
             Me.TdHelp.Visible = False
         Else
@@ -169,14 +171,18 @@ Partial Public Class KaijoRegist
             Me.BtnCalc_ANS_TOTAL_TF.Visible = True
             Me.BtnCalc_ANS_TOTAL_T.Visible = True
             Me.BtnRireki.Visible = True
-            Me.BtnNozomi.Visible = True
-            Me.BtnSubmit.Visible = True
+            Me.BtnNozomi1.Visible = True
+            Me.BtnNozomi2.Visible = True
+            Me.BtnSubmit1.Visible = True
+            Me.BtnSubmit2.Visible = True
             Me.DivComment.Visible = True
             Me.TdHelp.Visible = True
             'タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
             If IsExistLaterData() Then
-                CmnModule.SetEnabled(Me.BtnSubmit, False)
-                CmnModule.SetEnabled(Me.BtnNozomi, False)
+                CmnModule.SetEnabled(Me.BtnNozomi1, False)
+                CmnModule.SetEnabled(Me.BtnNozomi2, False)
+                CmnModule.SetEnabled(Me.BtnSubmit1, False)
+                CmnModule.SetEnabled(Me.BtnSubmit2, False)
             End If
         End If
     End Sub
@@ -193,7 +199,7 @@ Partial Public Class KaijoRegist
 
     '旧データ取得
     Private Sub GetData_Old()
-        Dim strSQL As String = SQL.TBL_KAIJO.byKOUENKAI_NO_TEHAI_ID_TIME_STAMP_BYL_DESC(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
+        Dim strSQL As String = SQL.TBL_KAIJO.OldData(TBL_KAIJO(SEQ).KOUENKAI_NO, TBL_KAIJO(SEQ).TEHAI_ID, TBL_KAIJO(SEQ).TIME_STAMP_BYL)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
 
@@ -526,21 +532,21 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_TF) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF.MaxLength), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsNumberOnly(Me.ANS_INSHOKUHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_TF), Me)
             Return False
         End If
         If Not CmnCheck.IsLengthLE(Me.ANS_INSHOKUHI_TF, Me.ANS_INSHOKUHI_TF.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_TF, Me.ANS_INSHOKUHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF, Me.ANS_KIZAIHI_TF.MaxLength), Me)
             Return False
         End If
 
@@ -607,21 +613,21 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_TF) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_OTHER_TF, Me.ANS_OTHER_TF.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF, Me.ANS_OTHER_TF.MaxLength), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsNumberOnly(Me.ANS_KANRIHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_TF), Me)
             Return False
         End If
         If Not CmnCheck.IsLengthLE(Me.ANS_KANRIHI_TF, Me.ANS_KANRIHI_TF.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_TF, Me.ANS_KANRIHI_TF.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_TF) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_OTHER_TF, Me.ANS_OTHER_TF.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF, Me.ANS_OTHER_TF.MaxLength), Me)
             Return False
         End If
 
@@ -634,21 +640,21 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_T) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T.MaxLength), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsNumberOnly(Me.ANS_INSHOKUHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_T), Me)
             Return False
         End If
         If Not CmnCheck.IsLengthLE(Me.ANS_INSHOKUHI_T, Me.ANS_INSHOKUHI_T.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_T, Me.ANS_INSHOKUHI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T, Me.ANS_KIZAIHI_T.MaxLength), Me)
             Return False
         End If
 
@@ -661,21 +667,21 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_T) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_T), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsLengthLE(Me.ANS_OTHER_T, Me.ANS_OTHER_T.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_OTHER_T, Me.ANS_OTHER_T.MaxLength), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsNumberOnly(Me.ANS_KANRIHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_T), Me)
             Return False
         End If
         If Not CmnCheck.IsLengthLE(Me.ANS_KANRIHI_T, Me.ANS_KANRIHI_T.MaxLength) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_T, Me.ANS_KANRIHI_T.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_T) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_T), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthLE(Me.ANS_OTHER_T, Me.ANS_OTHER_T.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KAIJO.Name.ANS_OTHER_T, Me.ANS_OTHER_T.MaxLength), Me)
             Return False
         End If
 
@@ -717,8 +723,30 @@ Partial Public Class KaijoRegist
         ClientScript.RegisterStartupScript(Me.GetType(), "ShisetsuKensaku", scriptStr)
     End Sub
 
+    '[クリア]
+    Protected Sub BtnShisetsuClear_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnShisetsuClear.Click
+        Session.Remove(SessionDef.ShisetsuKensaku_Back)
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS1) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS2) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_NAME) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_SHISETSU_KANA) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_ZIP) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_ADDRESS) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_TEL) = ""
+        Session.Item(SessionDef.ShisetsuKensaku_URL) = ""
+
+        CmnModule.ClearControl(Me.ADDRESS1)
+        CmnModule.ClearControl(Me.ADDRESS2)
+        CmnModule.ClearControl(Me.ANS_SHISETSU_ZIP)
+        CmnModule.ClearControl(Me.ANS_SHISETSU_TEL)
+        CmnModule.ClearControl(Me.ANS_SHISETSU_ADDRESS)
+        CmnModule.ClearControl(Me.ANS_SHISETSU_URL)
+
+        SetFocus(Me.BtnShisetsuClear)
+    End Sub
+ 
     '[登録]
-    Protected Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSubmit.Click
+    Protected Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSubmit1.Click, BtnSubmit2.Click
         '入力チェック
         If Not Check() Then Exit Sub
 
@@ -734,7 +762,7 @@ Partial Public Class KaijoRegist
     End Sub
 
     '[NOZOMIへ]
-    Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi.Click
+    Protected Sub BtnNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNozomi1.Click, BtnNozomi2.Click
         '入力チェック
         If Not Check() Then Exit Sub
 
@@ -939,7 +967,7 @@ Partial Public Class KaijoRegist
         Me.ANS_MITSUMORI_TOTAL.Text = AppModule.GetName_ANS_MITSUMORI_TOTAL(wANS_MITSUMORI_TOTAL) & "円"
     End Sub
 
-    '[キャンセル]
+    '[戻る]
     Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         If Trim(Session.Item(SessionDef.KaijoRireki)) = Session.SessionID Then
             Dim scriptStr As String

@@ -60,7 +60,7 @@ Partial Public Class MstCode
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "コードマスタ メンテナンス"
+            .PageTitle = "【ステータス】コードマスタ"
         End With
     End Sub
 

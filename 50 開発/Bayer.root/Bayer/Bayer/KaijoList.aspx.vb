@@ -11,15 +11,16 @@ Partial Public Class KaijoList
         BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
+        KIKAKU_TANTO_NAME
         FROM_DATE
+        KOUENKAI_NO
         KOUENKAI_NAME
+        TEHAI_ID
         TIME_STAMP_BYL
         SEND_FLAG
         USER_NAME
         Button1
         SALEFORCE_ID
-        TEHAI_ID
-        KOUENKAI_NO
         TO_DATE
     End Enum
 
@@ -59,7 +60,7 @@ Partial Public Class KaijoList
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "検索　会場手配依頼一覧"
+            .PageTitle = "【検索】会場手配"
         End With
 
     End Sub
@@ -211,11 +212,9 @@ Partial Public Class KaijoList
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.SALEFORCE_ID).Visible = False
-            e.Row.Cells(CellIndex.TEHAI_ID).Visible = False
-            e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
-            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 4
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 2
             Me.GrvList.BorderStyle = BorderStyle.None
             Dim PagerTableCell As TableCell = e.Row.Cells(0)
             PagerTableCell.BorderStyle = BorderStyle.None

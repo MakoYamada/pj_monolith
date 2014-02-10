@@ -13,6 +13,7 @@ Partial Public Class KaijoRireki
         BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
+        KIKAKU_TANTO_NAME
         FROM_DATE
         SEND_FLAG
         USER_NAME
@@ -98,6 +99,7 @@ Partial Public Class KaijoRireki
             CmnModule.SetEnabled(Me.BtnKaijoRirekiPrint2, True)
 
             Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KAIJO(0).KOUENKAI_NO)
+            Me.TEHAI_ID.Text = AppModule.GetName_TEHAI_ID(TBL_KAIJO(0).TEHAI_ID)
             Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KAIJO(0).KOUENKAI_NAME)
 
             'グリッドビュー表示

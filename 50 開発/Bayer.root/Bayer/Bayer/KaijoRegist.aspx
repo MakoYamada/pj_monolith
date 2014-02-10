@@ -6,9 +6,13 @@
 			<td nowrap="nowrap" align="left">
 				&nbsp;<a name="PageTopLink"></a>
 			</td>
-			<td nowrap="nowrap"align="right">
+			<td nowrap="nowrap" align="left">
 				<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="éËîzèëàÛç¸" CssClass="Button" />
-				<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="ÉLÉÉÉìÉZÉã" CssClass="Button" />
+			</td>
+			<td nowrap="nowrap" align="right">
+				<asp:Button ID="BtnNozomi1" runat="server" Width="150px" Text="NOZOMIÇ÷" CssClass="Button" />
+				<asp:Button ID="BtnSubmit1" runat="server" Width="150px" Text="ìoò^" CssClass="Button" />
+				<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="ñﬂÇÈ" CssClass="Button" />
 			</td>
 		</tr>
 	</table>
@@ -468,7 +472,7 @@
 										<table cellpadding="2" cellspacing="2">
 											<tr>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 90px;">
-													âÔçá
+													çuâââÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp2" style="width: 70px;">
 													äJénéûä‘
@@ -720,13 +724,13 @@
 													ìsìπï{åß
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 110px;">
-													<asp:DropDownList ID="ADDRESS1" runat="server" Width="100px"></asp:DropDownList>
+													<asp:DropDownList ID="ADDRESS1" runat="server" Width="100px" BackColor="#f4f9cd"></asp:DropDownList>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" style="width: 100px;">
 													ésãÊí¨ë∫
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 330px;">
-													<asp:TextBox ID="ADDRESS2" runat="server" Text="ÅùÅùÅùÅùÅùÅùÅùÅùÅùÅù" Width="350px" MaxLength="100"></asp:TextBox>
+													<asp:TextBox ID="ADDRESS2" runat="server" Text="ÅùÅùÅùÅùÅùÅùÅùÅùÅùÅù" Width="350px" MaxLength="100" BackColor="#f4f9cd"></asp:TextBox>
 												</td>
 												<td nowrap="nowrap">&nbsp;</td>
 											</tr>
@@ -735,9 +739,11 @@
 													é{ê›ñº
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="4">
-													<asp:TextBox ID="ANS_SHISETSU_NAME" runat="server" Text="ÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅù" Width="600px" MaxLength="80"></asp:TextBox>
+													<asp:TextBox ID="ANS_SHISETSU_NAME" runat="server" Text="ÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅùÅù" Width="550px" MaxLength="80" BackColor="#f4f9cd"></asp:TextBox>
 													&nbsp;
 													<asp:Button ID="BtnShisetsuKensaku" runat="server" Text="åüçı" Width="50px" CssClass="ButtonList" />
+													&nbsp;
+													<asp:Button ID="BtnShisetsuClear" runat="server" Text="ÉNÉäÉA" Width="50px" CssClass="ButtonList" />
 												</td>
 											</tr>
 											<tr>
@@ -862,10 +868,10 @@
 													âÔèÍîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													ã@çﬁîÔ
+													à˘êHîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													à˘êHîÔ
+													ã@çﬁîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" colspan="2">
 													è¨åv
@@ -877,11 +883,11 @@
 													â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_KIZAIHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
+													<asp:TextBox ID="ANS_INSHOKUHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
 													â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_INSHOKUHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
+													<asp:TextBox ID="ANS_KIZAIHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
 													â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
@@ -954,10 +960,10 @@
 													êlåèîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													ÇªÇÃëº
+													ä«óùîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													ä«óùîÔ
+													ÇªÇÃëº
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" colspan="2">
 													è¨åv
@@ -968,10 +974,10 @@
 													<asp:TextBox ID="ANS_JINKENHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_OTHER_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
+													<asp:TextBox ID="ANS_KANRIHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_KANRIHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
+													<asp:TextBox ID="ANS_OTHER_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
 													<asp:Label ID="ANS_41120200_TF" runat="server" Text="1,234,567,890"></asp:Label>
@@ -1021,10 +1027,10 @@
 													âÔèÍîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													ã@çﬁîÔ
+													à˘êHîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													à˘êHîÔ
+													ã@çﬁîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" colspan="2">
 													è¨åv
@@ -1036,11 +1042,11 @@
 													â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_KIZAIHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
+													<asp:TextBox ID="ANS_INSHOKUHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
 													â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_INSHOKUHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
+													<asp:TextBox ID="ANS_KIZAIHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>
 													â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
@@ -1065,10 +1071,10 @@
 													êlåèîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													ÇªÇÃëº
+													ä«óùîÔ
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer">
-													ä«óùîÔ
+													ÇªÇÃëº
 												</td>
 												<td nowrap="nowrap" align="left" class="TdTitleKaijoAnswer" colspan="2">
 													è¨åv
@@ -1079,10 +1085,10 @@
 													<asp:TextBox ID="ANS_JINKENHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_OTHER_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
+													<asp:TextBox ID="ANS_KANRIHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 130px;">
-													<asp:TextBox ID="ANS_KANRIHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
+													<asp:TextBox ID="ANS_OTHER_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>â~
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
 													<asp:Label ID="ANS_41120200_T" runat="server" Text="1,234,567,890"></asp:Label>
@@ -1186,15 +1192,15 @@
 			<td nowrap="nowrap" align="left">
 				<table cellspacing="0" cellpadding="2" border="0" style="width: 940px;">
 					<tr style="height: 36px;">
-						<td nowrap="nowrap"align="left">
+						<td nowrap="nowrap" align="left">
 							<asp:Button ID="BtnRireki" runat="server" Width="150px" Text="óöóï\é¶" CssClass="Button" />
 							<asp:Button ID="BtnPrint2" runat="server" Width="150px" Text="éËîzèëàÛç¸" CssClass="Button" />
 						</td>
 						<td>&nbsp;</td>
-						<td nowrap="nowrap"align="right">
-							<asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMIÇ÷" CssClass="Button" />
-							<asp:Button ID="BtnSubmit" runat="server" Width="150px" Text="ìoò^" CssClass="Button" />
-							<asp:Button ID="BtnBack2" runat="server" Width="150px" Text="ÉLÉÉÉìÉZÉã" CssClass="Button" />
+						<td nowrap="nowrap" align="right">
+							<asp:Button ID="BtnNozomi2" runat="server" Width="150px" Text="NOZOMIÇ÷" CssClass="Button" />
+							<asp:Button ID="BtnSubmit2" runat="server" Width="150px" Text="ìoò^" CssClass="Button" />
+							<asp:Button ID="BtnBack2" runat="server" Width="150px" Text="ñﬂÇÈ" CssClass="Button" />
 						</td>
 					</tr>
 				</table>

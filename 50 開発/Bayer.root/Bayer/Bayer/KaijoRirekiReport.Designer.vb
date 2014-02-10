@@ -74,6 +74,14 @@ Partial Public Class KaijoRirekiReport
         Me.KOUENKAI_NO = New DataDynamics.ActiveReports.TextBox
         Me.Line21 = New DataDynamics.ActiveReports.Line
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Label7 = New DataDynamics.ActiveReports.Label
+        Me.Label6 = New DataDynamics.ActiveReports.Label
+        Me.Label13 = New DataDynamics.ActiveReports.Label
+        Me.JokenTEHAI_ID = New DataDynamics.ActiveReports.Label
+        Me.KIIKAKU_TANTO_NAME = New DataDynamics.ActiveReports.TextBox
+        Me.Line20 = New DataDynamics.ActiveReports.Line
+        Me.Line23 = New DataDynamics.ActiveReports.Line
+        Me.Label17 = New DataDynamics.ActiveReports.Label
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,14 +112,20 @@ Partial Public Class KaijoRirekiReport
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JokenTEHAI_ID, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KIIKAKU_TANTO_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
         Me.PageHeader.CanGrow = False
         Me.PageHeader.CanShrink = True
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label8, Me.Shape2, Me.Label12, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.Label15, Me.Label16, Me.Line3, Me.Line4, Me.Line5, Me.Line6, Me.Line8, Me.Line10, Me.Line11, Me.Line12, Me.LabelPage, Me.JokenKOUENKAI_NO, Me.KOUENKAI_NAME, Me.Label5, Me.Line2, Me.Line22, Me.Line9})
-        Me.PageHeader.Height = 1.446457!
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.Shape1, Me.PageTotal, Me.PageCount, Me.Label8, Me.Shape2, Me.Label12, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.Label15, Me.Label16, Me.Line4, Me.Line5, Me.Line6, Me.Line10, Me.Line11, Me.Line12, Me.LabelPage, Me.JokenKOUENKAI_NO, Me.KOUENKAI_NAME, Me.Label5, Me.Line2, Me.Line22, Me.Line9, Me.Line3, Me.Label7, Me.Label6, Me.Label13, Me.JokenTEHAI_ID, Me.Label17, Me.Line8, Me.Line23})
+        Me.PageHeader.Height = 1.452756!
         Me.PageHeader.Name = "PageHeader"
         '
         'LOGIN_USER_NAME
@@ -119,7 +133,7 @@ Partial Public Class KaijoRirekiReport
         Me.LOGIN_USER_NAME.CanGrow = False
         Me.LOGIN_USER_NAME.DataField = "USER_NAME"
         Me.LOGIN_USER_NAME.Height = 0.1968504!
-        Me.LOGIN_USER_NAME.Left = 9.64567!
+        Me.LOGIN_USER_NAME.Left = 9.866142!
         Me.LOGIN_USER_NAME.Name = "LOGIN_USER_NAME"
         Me.LOGIN_USER_NAME.Style = "font-family: ＭＳ ゴシック"
         Me.LOGIN_USER_NAME.Text = Nothing
@@ -130,7 +144,7 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label1.Height = 0.1968504!
         Me.Label1.HyperLink = Nothing
-        Me.Label1.Left = 8.894884!
+        Me.Label1.Left = 9.115356!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label1.Text = "出力日"
@@ -141,7 +155,7 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label2.Height = 0.1968504!
         Me.Label2.HyperLink = Nothing
-        Me.Label2.Left = 8.894884!
+        Me.Label2.Left = 9.115356!
         Me.Label2.Name = "Label2"
         Me.Label2.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label2.Text = "出力担当"
@@ -152,7 +166,7 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label3.Height = 0.1968504!
         Me.Label3.HyperLink = Nothing
-        Me.Label3.Left = 9.489011!
+        Me.Label3.Left = 9.709483!
         Me.Label3.Name = "Label3"
         Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label3.Text = "："
@@ -163,7 +177,7 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label4.Height = 0.1968504!
         Me.Label4.HyperLink = Nothing
-        Me.Label4.Left = 9.489011!
+        Me.Label4.Left = 9.709483!
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 10pt"
         Me.Label4.Text = "："
@@ -173,7 +187,7 @@ Partial Public Class KaijoRirekiReport
         'PrintDate
         '
         Me.PrintDate.Height = 0.1968504!
-        Me.PrintDate.Left = 9.645703!
+        Me.PrintDate.Left = 9.866176!
         Me.PrintDate.Name = "PrintDate"
         Me.PrintDate.Style = "font-family: ＭＳ ゴシック"
         Me.PrintDate.Text = "2013/12/12 00:00:00"
@@ -187,8 +201,8 @@ Partial Public Class KaijoRirekiReport
         Me.Shape1.Left = 0.0!
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 9.999999!
-        Me.Shape1.Top = 0.6412075!
-        Me.Shape1.Width = 11.02362!
+        Me.Shape1.Top = 0.6322835!
+        Me.Shape1.Width = 11.24409!
         '
         'PageTotal
         '
@@ -219,11 +233,11 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label8.Height = 0.2688977!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 4.232874!
+        Me.Label8.Left = 4.736811!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = resources.GetString("Label8.Style")
         Me.Label8.Text = "会場手配依頼 履歴一覧"
-        Me.Label8.Top = 0.664239!
+        Me.Label8.Top = 0.655315!
         Me.Label8.Width = 1.770473!
         '
         'Shape2
@@ -236,7 +250,7 @@ Partial Public Class KaijoRirekiReport
         Me.Shape2.Name = "Shape2"
         Me.Shape2.RoundingRadius = 9.999999!
         Me.Shape2.Top = 1.208662!
-        Me.Shape2.Width = 9.590551!
+        Me.Shape2.Width = 11.24409!
         '
         'Label12
         '
@@ -244,7 +258,8 @@ Partial Public Class KaijoRirekiReport
         Me.Label12.HyperLink = Nothing
         Me.Label12.Left = 2.818898!
         Me.Label12.Name = "Label12"
-        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label12.Text = "BU"
         Me.Label12.Top = 1.228347!
         Me.Label12.Width = 0.492126!
@@ -255,7 +270,8 @@ Partial Public Class KaijoRirekiReport
         Me.Label9.HyperLink = Nothing
         Me.Label9.Left = 3.311024!
         Me.Label9.Name = "Label9"
-        Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label9.Text = "エリア"
         Me.Label9.Top = 1.228347!
         Me.Label9.Width = 0.984252!
@@ -266,7 +282,8 @@ Partial Public Class KaijoRirekiReport
         Me.Label10.HyperLink = Nothing
         Me.Label10.Left = 4.337008!
         Me.Label10.Name = "Label10"
-        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label10.Text = "営業所"
         Me.Label10.Top = 1.228347!
         Me.Label10.Width = 1.527559!
@@ -275,9 +292,10 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label11.Height = 0.1771654!
         Me.Label11.HyperLink = Nothing
-        Me.Label11.Left = 5.864567!
+        Me.Label11.Left = 7.476378!
         Me.Label11.Name = "Label11"
-        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label11.Text = "開催日"
         Me.Label11.Top = 1.228347!
         Me.Label11.Width = 1.622047!
@@ -288,7 +306,8 @@ Partial Public Class KaijoRirekiReport
         Me.Label14.HyperLink = Nothing
         Me.Label14.Left = 0.0!
         Me.Label14.Name = "Label14"
-        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label14.Text = "Timestamp"
         Me.Label14.Top = 1.228347!
         Me.Label14.Width = 1.409449!
@@ -297,9 +316,10 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label15.Height = 0.1771654!
         Me.Label15.HyperLink = Nothing
-        Me.Label15.Left = 7.444882!
+        Me.Label15.Left = 9.098426!
         Me.Label15.Name = "Label15"
-        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label15.Text = "NOZOMI送信"
         Me.Label15.Top = 1.228347!
         Me.Label15.Width = 0.8070866!
@@ -308,9 +328,10 @@ Partial Public Class KaijoRirekiReport
         '
         Me.Label16.Height = 0.1771654!
         Me.Label16.HyperLink = Nothing
-        Me.Label16.Left = 8.220473!
+        Me.Label16.Left = 9.905513!
         Me.Label16.Name = "Label16"
-        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label16.Text = "TOP担当者"
         Me.Label16.Top = 1.228347!
         Me.Label16.Width = 1.338583!
@@ -387,9 +408,9 @@ Partial Public Class KaijoRirekiReport
         Me.Line10.LineWeight = 1.0!
         Me.Line10.Name = "Line10"
         Me.Line10.Top = 1.208661!
-        Me.Line10.Width = 9.590551!
+        Me.Line10.Width = 11.24409!
         Me.Line10.X1 = 0.0!
-        Me.Line10.X2 = 9.590551!
+        Me.Line10.X2 = 11.24409!
         Me.Line10.Y1 = 1.208661!
         Me.Line10.Y2 = 1.208661!
         '
@@ -409,13 +430,13 @@ Partial Public Class KaijoRirekiReport
         'Line12
         '
         Me.Line12.Height = 0.236221!
-        Me.Line12.Left = 9.590552!
+        Me.Line12.Left = 11.24409!
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
         Me.Line12.Top = 1.208662!
         Me.Line12.Width = 0.0!
-        Me.Line12.X1 = 9.590552!
-        Me.Line12.X2 = 9.590552!
+        Me.Line12.X1 = 11.24409!
+        Me.Line12.X2 = 11.24409!
         Me.Line12.Y1 = 1.208662!
         Me.Line12.Y2 = 1.444883!
         '
@@ -423,33 +444,35 @@ Partial Public Class KaijoRirekiReport
         '
         Me.LabelPage.Height = 0.1968504!
         Me.LabelPage.HyperLink = Nothing
-        Me.LabelPage.Left = 9.425591!
+        Me.LabelPage.Left = 9.646064!
         Me.LabelPage.Name = "LabelPage"
         Me.LabelPage.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: right"
         Me.LabelPage.Text = "(999 / 999 ページ)"
-        Me.LabelPage.Top = 0.4354331!
+        Me.LabelPage.Top = 0.4047244!
         Me.LabelPage.Width = 1.574803!
         '
         'JokenKOUENKAI_NO
         '
-        Me.JokenKOUENKAI_NO.Height = 0.1968504!
+        Me.JokenKOUENKAI_NO.Height = 0.1771654!
         Me.JokenKOUENKAI_NO.HyperLink = Nothing
-        Me.JokenKOUENKAI_NO.Left = 0.0!
+        Me.JokenKOUENKAI_NO.Left = 0.7322835!
         Me.JokenKOUENKAI_NO.Name = "JokenKOUENKAI_NO"
-        Me.JokenKOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: bold; text-align: left"
+        Me.JokenKOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: bold; text-align: left; verti" & _
+            "cal-align: middle"
         Me.JokenKOUENKAI_NO.Text = "MTG13-00000001"
         Me.JokenKOUENKAI_NO.Top = 0.988189!
         Me.JokenKOUENKAI_NO.Width = 1.062992!
         '
         'KOUENKAI_NAME
         '
-        Me.KOUENKAI_NAME.Height = 0.1968504!
+        Me.KOUENKAI_NAME.Height = 0.1771654!
         Me.KOUENKAI_NAME.HyperLink = Nothing
-        Me.KOUENKAI_NAME.Left = 1.062992!
+        Me.KOUENKAI_NAME.Left = 4.635828!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
-        Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: bold; text-align: left"
+        Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: bold; text-align: left; verti" & _
+            "cal-align: middle"
         Me.KOUENKAI_NAME.Text = ""
-        Me.KOUENKAI_NAME.Top = 0.9881893!
+        Me.KOUENKAI_NAME.Top = 0.988189!
         Me.KOUENKAI_NAME.Width = 5.593307!
         '
         'Label5
@@ -458,7 +481,8 @@ Partial Public Class KaijoRirekiReport
         Me.Label5.HyperLink = Nothing
         Me.Label5.Left = 1.409449!
         Me.Label5.Name = "Label5"
-        Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
         Me.Label5.Text = "更新日時"
         Me.Label5.Top = 1.228347!
         Me.Label5.Width = 1.409449!
@@ -466,26 +490,26 @@ Partial Public Class KaijoRirekiReport
         'Line2
         '
         Me.Line2.Height = 0.236221!
-        Me.Line2.Left = 7.444882!
+        Me.Line2.Left = 9.098426!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
         Me.Line2.Top = 1.208662!
         Me.Line2.Width = 0.0!
-        Me.Line2.X1 = 7.444882!
-        Me.Line2.X2 = 7.444882!
+        Me.Line2.X1 = 9.098426!
+        Me.Line2.X2 = 9.098426!
         Me.Line2.Y1 = 1.208662!
         Me.Line2.Y2 = 1.444883!
         '
         'Line22
         '
         Me.Line22.Height = 0.236221!
-        Me.Line22.Left = 8.251969!
+        Me.Line22.Left = 9.905513!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
         Me.Line22.Top = 1.208662!
         Me.Line22.Width = 0.0!
-        Me.Line22.X1 = 8.251969!
-        Me.Line22.X2 = 8.251969!
+        Me.Line22.X1 = 9.905513!
+        Me.Line22.X2 = 9.905513!
         Me.Line22.Y1 = 1.208662!
         Me.Line22.Y2 = 1.444883!
         '
@@ -496,9 +520,9 @@ Partial Public Class KaijoRirekiReport
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
         Me.Line9.Top = 1.444882!
-        Me.Line9.Width = 9.590551!
+        Me.Line9.Width = 11.24409!
         Me.Line9.X1 = 0.0!
-        Me.Line9.X2 = 9.590551!
+        Me.Line9.X2 = 11.24409!
         Me.Line9.Y1 = 1.444882!
         Me.Line9.Y2 = 1.444882!
         '
@@ -507,7 +531,7 @@ Partial Public Class KaijoRirekiReport
         Me.Detail.CanGrow = False
         Me.Detail.CanShrink = True
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Line1, Me.Line7, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.FROM_DATE, Me.UPDATE_DATE, Me.TIME_STAMP_BYL, Me.SEND_FLAG, Me.USER_NAME, Me.Line19, Me.TO_DATE, Me.KOUENKAI_NO, Me.Line21})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.KIIKAKU_TANTO_NAME, Me.FROM_DATE, Me.Line20, Me.TIME_STAMP_BYL, Me.UPDATE_DATE, Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.SEND_FLAG, Me.USER_NAME, Me.Line1, Me.Line7, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.TO_DATE, Me.KOUENKAI_NO, Me.Line21})
         Me.Detail.Height = 0.234252!
         Me.Detail.Name = "Detail"
         '
@@ -579,39 +603,39 @@ Partial Public Class KaijoRirekiReport
         'Line16
         '
         Me.Line16.Height = 0.2322835!
-        Me.Line16.Left = 7.444882!
+        Me.Line16.Left = 9.098426!
         Me.Line16.LineWeight = 1.0!
         Me.Line16.Name = "Line16"
         Me.Line16.Top = 0.0!
         Me.Line16.Width = 0.0!
-        Me.Line16.X1 = 7.444882!
-        Me.Line16.X2 = 7.444882!
+        Me.Line16.X1 = 9.098426!
+        Me.Line16.X2 = 9.098426!
         Me.Line16.Y1 = 0.0!
         Me.Line16.Y2 = 0.2322835!
         '
         'Line17
         '
         Me.Line17.Height = 0.2322835!
-        Me.Line17.Left = 8.251969!
+        Me.Line17.Left = 9.905513!
         Me.Line17.LineWeight = 1.0!
         Me.Line17.Name = "Line17"
         Me.Line17.Top = 0.0!
         Me.Line17.Width = 0.0!
-        Me.Line17.X1 = 8.251969!
-        Me.Line17.X2 = 8.251969!
+        Me.Line17.X1 = 9.905513!
+        Me.Line17.X2 = 9.905513!
         Me.Line17.Y1 = 0.0!
         Me.Line17.Y2 = 0.2322835!
         '
         'Line18
         '
         Me.Line18.Height = 0.2322835!
-        Me.Line18.Left = 9.590552!
+        Me.Line18.Left = 11.24409!
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
         Me.Line18.Top = 0.0!
         Me.Line18.Width = 0.0!
-        Me.Line18.X1 = 9.590552!
-        Me.Line18.X2 = 9.590552!
+        Me.Line18.X1 = 11.24409!
+        Me.Line18.X2 = 11.24409!
         Me.Line18.Y1 = 0.0!
         Me.Line18.Y2 = 0.2322835!
         '
@@ -659,7 +683,7 @@ Partial Public Class KaijoRirekiReport
         Me.FROM_DATE.CanGrow = False
         Me.FROM_DATE.DataField = "FROM_DATE"
         Me.FROM_DATE.Height = 0.2165354!
-        Me.FROM_DATE.Left = 5.822835!
+        Me.FROM_DATE.Left = 7.476378!
         Me.FROM_DATE.Name = "FROM_DATE"
         Me.FROM_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
         Me.FROM_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
@@ -698,7 +722,7 @@ Partial Public Class KaijoRirekiReport
         Me.SEND_FLAG.CanGrow = False
         Me.SEND_FLAG.DataField = "SEND_FLAG"
         Me.SEND_FLAG.Height = 0.2165354!
-        Me.SEND_FLAG.Left = 7.444882!
+        Me.SEND_FLAG.Left = 9.098426!
         Me.SEND_FLAG.Name = "SEND_FLAG"
         Me.SEND_FLAG.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
         Me.SEND_FLAG.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
@@ -711,7 +735,7 @@ Partial Public Class KaijoRirekiReport
         Me.USER_NAME.CanGrow = False
         Me.USER_NAME.DataField = "USER_NAME"
         Me.USER_NAME.Height = 0.2165354!
-        Me.USER_NAME.Left = 8.251969!
+        Me.USER_NAME.Left = 9.905519!
         Me.USER_NAME.Name = "USER_NAME"
         Me.USER_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
         Me.USER_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
@@ -737,12 +761,12 @@ Partial Public Class KaijoRirekiReport
         Me.TO_DATE.CanGrow = False
         Me.TO_DATE.DataField = "TO_DATE"
         Me.TO_DATE.Height = 0.1692913!
-        Me.TO_DATE.Left = 3.377166!
+        Me.TO_DATE.Left = 2.45!
         Me.TO_DATE.Name = "TO_DATE"
         Me.TO_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
         Me.TO_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
         Me.TO_DATE.Text = "TO_DATE"
-        Me.TO_DATE.Top = 0.3811024!
+        Me.TO_DATE.Top = 0.7248032!
         Me.TO_DATE.Visible = False
         Me.TO_DATE.Width = 1.181102!
         '
@@ -751,12 +775,12 @@ Partial Public Class KaijoRirekiReport
         Me.KOUENKAI_NO.CanGrow = False
         Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Height = 0.1692913!
-        Me.KOUENKAI_NO.Left = 4.683465!
+        Me.KOUENKAI_NO.Left = 3.756299!
         Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
         Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NO.Text = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Top = 0.3811024!
+        Me.KOUENKAI_NO.Top = 0.7248032!
         Me.KOUENKAI_NO.Visible = False
         Me.KOUENKAI_NO.Width = 1.181102!
         '
@@ -767,9 +791,9 @@ Partial Public Class KaijoRirekiReport
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
         Me.Line21.Top = 0.2322835!
-        Me.Line21.Width = 9.590551!
+        Me.Line21.Width = 11.24409!
         Me.Line21.X1 = 0.0!
-        Me.Line21.X2 = 9.590551!
+        Me.Line21.X2 = 11.24409!
         Me.Line21.Y1 = 0.2322835!
         Me.Line21.Y2 = 0.2322835!
         '
@@ -778,12 +802,111 @@ Partial Public Class KaijoRirekiReport
         Me.PageFooter.Height = 0.0!
         Me.PageFooter.Name = "PageFooter"
         '
+        'Label7
+        '
+        Me.Label7.Height = 0.1771654!
+        Me.Label7.HyperLink = Nothing
+        Me.Label7.Left = 0.0!
+        Me.Label7.Name = "Label7"
+        Me.Label7.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt; font-weight: bold; text-align: left; ver" & _
+            "tical-align: middle"
+        Me.Label7.Text = "会合番号："
+        Me.Label7.Top = 0.988189!
+        Me.Label7.Width = 0.7322835!
+        '
+        'Label6
+        '
+        Me.Label6.Height = 0.1771654!
+        Me.Label6.HyperLink = Nothing
+        Me.Label6.Left = 4.021654!
+        Me.Label6.Name = "Label6"
+        Me.Label6.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt; font-weight: bold; text-align: left; ver" & _
+            "tical-align: middle"
+        Me.Label6.Text = "会合名："
+        Me.Label6.Top = 0.988189!
+        Me.Label6.Width = 0.6141732!
+        '
+        'Label13
+        '
+        Me.Label13.Height = 0.1771654!
+        Me.Label13.HyperLink = Nothing
+        Me.Label13.Left = 1.871654!
+        Me.Label13.Name = "Label13"
+        Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 9.75pt; font-weight: bold; text-align: left; ver" & _
+            "tical-align: middle"
+        Me.Label13.Text = "会場手配番号："
+        Me.Label13.Top = 0.988189!
+        Me.Label13.Width = 0.996063!
+        '
+        'JokenTEHAI_ID
+        '
+        Me.JokenTEHAI_ID.Height = 0.1771653!
+        Me.JokenTEHAI_ID.HyperLink = Nothing
+        Me.JokenTEHAI_ID.Left = 2.867717!
+        Me.JokenTEHAI_ID.Name = "JokenTEHAI_ID"
+        Me.JokenTEHAI_ID.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; font-weight: bold; text-align: left; verti" & _
+            "cal-align: middle"
+        Me.JokenTEHAI_ID.Text = "MTA13-00000001"
+        Me.JokenTEHAI_ID.Top = 0.988189!
+        Me.JokenTEHAI_ID.Width = 1.062992!
+        '
+        'KIIKAKU_TANTO_NAME
+        '
+        Me.KIIKAKU_TANTO_NAME.CanGrow = False
+        Me.KIIKAKU_TANTO_NAME.DataField = "KIIKAKU_TANTO_NAME"
+        Me.KIIKAKU_TANTO_NAME.Height = 0.2165354!
+        Me.KIIKAKU_TANTO_NAME.Left = 5.822835!
+        Me.KIIKAKU_TANTO_NAME.Name = "KIIKAKU_TANTO_NAME"
+        Me.KIIKAKU_TANTO_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
+        Me.KIIKAKU_TANTO_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.KIIKAKU_TANTO_NAME.Text = "KIIKAKU_TANTO_NAME"
+        Me.KIIKAKU_TANTO_NAME.Top = 0.01181102!
+        Me.KIIKAKU_TANTO_NAME.Width = 1.653543!
+        '
+        'Line20
+        '
+        Me.Line20.Height = 0.2322836!
+        Me.Line20.Left = 7.476378!
+        Me.Line20.LineWeight = 1.0!
+        Me.Line20.Name = "Line20"
+        Me.Line20.Top = 0.0!
+        Me.Line20.Width = 0.0!
+        Me.Line20.X1 = 7.476378!
+        Me.Line20.X2 = 7.476378!
+        Me.Line20.Y1 = 0.0!
+        Me.Line20.Y2 = 0.2322836!
+        '
+        'Line23
+        '
+        Me.Line23.Height = 0.2362223!
+        Me.Line23.Left = 7.476378!
+        Me.Line23.LineWeight = 1.0!
+        Me.Line23.Name = "Line23"
+        Me.Line23.Top = 1.208662!
+        Me.Line23.Width = 0.0!
+        Me.Line23.X1 = 7.476378!
+        Me.Line23.X2 = 7.476378!
+        Me.Line23.Y1 = 1.208662!
+        Me.Line23.Y2 = 1.444884!
+        '
+        'Label17
+        '
+        Me.Label17.Height = 0.1771654!
+        Me.Label17.HyperLink = Nothing
+        Me.Label17.Left = 5.822835!
+        Me.Label17.Name = "Label17"
+        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; vertical-align: middle" & _
+            ""
+        Me.Label17.Text = "企画担当者"
+        Me.Label17.Top = 1.228347!
+        Me.Label17.Width = 1.653543!
+        '
         'KaijoRirekiReport
         '
         Me.MasterReport = False
         Me.PageSettings.PaperHeight = 11.0!
         Me.PageSettings.PaperWidth = 8.5!
-        Me.PrintWidth = 11.04331!
+        Me.PrintWidth = 12.99213!
         Me.Sections.Add(Me.PageHeader)
         Me.Sections.Add(Me.Detail)
         Me.Sections.Add(Me.PageFooter)
@@ -822,6 +945,12 @@ Partial Public Class KaijoRirekiReport
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUENKAI_NO, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JokenTEHAI_ID, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KIIKAKU_TANTO_NAME, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -878,4 +1007,12 @@ Partial Public Class KaijoRirekiReport
     Private WithEvents Line22 As DataDynamics.ActiveReports.Line
     Private WithEvents KOUENKAI_NO As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line9 As DataDynamics.ActiveReports.Line
+    Private WithEvents Label7 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label6 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label13 As DataDynamics.ActiveReports.Label
+    Private WithEvents JokenTEHAI_ID As DataDynamics.ActiveReports.Label
+    Private WithEvents Label17 As DataDynamics.ActiveReports.Label
+    Private WithEvents Line23 As DataDynamics.ActiveReports.Line
+    Private WithEvents KIIKAKU_TANTO_NAME As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Line20 As DataDynamics.ActiveReports.Line
 End Class

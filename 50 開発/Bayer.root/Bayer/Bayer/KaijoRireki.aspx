@@ -6,9 +6,11 @@
 	<table cellspacing="0" cellpadding="2" border="0">
 		<tr id="TrKOUENKAI_NAME" runat="server">
 			<td align="left" style="font-weight: bold;">
-				<asp:Label ID="KOUENKAI_NO" runat="server"></asp:Label>
-				：
-				<asp:Label ID="KOUENKAI_NAME" runat="server"></asp:Label>
+				会合番号：<asp:Label ID="KOUENKAI_NO" runat="server"></asp:Label>
+				／
+				会合手配番号：<asp:Label ID="TEHAI_ID" runat="server"></asp:Label>
+				／
+				会合名：<asp:Label ID="KOUENKAI_NAME" runat="server"></asp:Label>
 			</td>
 		</tr>
 		<tr>
@@ -38,6 +40,7 @@
 						<asp:BoundField DataField="BU" HeaderText="&nbsp;BU&nbsp;" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="企画担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />

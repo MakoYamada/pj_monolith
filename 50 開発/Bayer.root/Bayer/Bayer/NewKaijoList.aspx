@@ -15,8 +15,7 @@
 							エリア
 							<asp:DropDownList ID="JokenKIKAKU_TANTO_AREA" runat="server" Width="200px"></asp:DropDownList>
 							&nbsp;&nbsp;&nbsp;
-							区分
-							<asp:DropDownList ID="JokenREQ_STATUS_TEHAI" runat="server" Width="140px"></asp:DropDownList>
+							区分							<asp:DropDownList ID="JokenREQ_STATUS_TEHAI" runat="server" Width="140px"></asp:DropDownList>
 						</td>
 						<td align="right">
 							&nbsp;&nbsp;&nbsp;
@@ -61,7 +60,7 @@
 					<PagerSettings Mode="NumericFirstLast" Position="TopAndBottom" PreviousPageText="&lt;" NextPageText="&gt;" FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
 					<PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
 					<Columns>
-						<asp:TemplateField HeaderText="手配書印刷" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="75px">
+						<asp:TemplateField HeaderText="手配書<br />印刷" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="75px">
 							<ItemTemplate>
 								<asp:CheckBox ID="ChkPrint" runat="server" />
 							</ItemTemplate>
@@ -69,15 +68,16 @@
 						<asp:BoundField DataField="BU" HeaderText="&nbsp;BU&nbsp;" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="エリア" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="営業所" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="企画担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="TEHAI_ID" HeaderText="会合手配番号" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false" ItemStyle-HorizontalAlign="Left" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="REQ_STATUS_TEHAI" HeaderText="区分" ItemStyle-Wrap="false" ItemStyle-HorizontalAlign="Left" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" CommandName="Regist" ControlStyle-CssClass="ButtonList" ControlStyle-Width="44px" ItemStyle-Width="56px" ItemStyle-BackColor="#e4e9d1" />
 						<asp:BoundField DataField="SALEFORCE_ID" />
-						<asp:BoundField DataField="TEHAI_ID" />
-						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />
 					</Columns>
 				</asp:GridView>

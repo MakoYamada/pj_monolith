@@ -340,27 +340,53 @@ a.baselink:active
 .baselinkmenu
 {
 	font-size: 12pt;
-	color: #231ad4;
+	color: #4617f5;
 	font-weight: bold;
 }
 a.baselinkmenu:link 
 {
-	color: #231ad4;
+	color: #4617f5;
 	text-decoration: none;
 }
 a.baselinkmenu:visited 
 {
-	color: #231ad4;
+	color: #4617f5;
 	text-decoration: none;
 }
 a.baselinkmenu:hover 
 {
-	color: #cd4b11;
+	color: #cc1e1e;
 	text-decoration: underline;
 }
 a.baselinkmenu:active 
 {
-	color: #cd4b11;
+	color: #cc1e1e;
+	text-decoration: underline;
+}
+.baselinktaximenu
+{
+	font-size: 11pt;
+	color: #095a71;
+	font-weight: bold;
+}
+a.baselinktaximenu:link 
+{
+	color: #095a71;
+	text-decoration: none;
+}
+a.baselinktaximenu:visited 
+{
+	color: #095a71;
+	text-decoration: none;
+}
+a.baselinktaximenu:hover 
+{
+	color: #cc1e1e;
+	text-decoration: underline;
+}
+a.baselinktaximenu:active 
+{
+	color: #cc1e1e;
 	text-decoration: underline;
 }
 .FontSize1 

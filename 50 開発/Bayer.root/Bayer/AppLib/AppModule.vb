@@ -1963,7 +1963,7 @@ Public Class AppModule
         Return KOUEN_TIME2
     End Function
 
-    '会合場　要・不要
+    '講演会場　要・不要
     Public Shared Function GetName_KOUEN_KAIJO_TEHAI(ByVal KOUEN_KAIJO_TEHAI As String, Optional ByVal ShortFomat As Boolean = False) As String
         Select Case KOUEN_KAIJO_TEHAI
             Case AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Code.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.Yes, AppConst.KAIJO.KOUEN_KAIJO_TEHAI.Name.ShortFormat.Yes
@@ -1999,7 +1999,7 @@ Public Class AppModule
         End Select
     End Function
 
-    '会合場　レイアウト
+    '講演会場　レイアウト
     Public Shared Function GetName_KOUEN_KAIJO_LAYOUT(ByVal KOUEN_KAIJO_LAYOUT As String) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
         Dim wStr As String = ""

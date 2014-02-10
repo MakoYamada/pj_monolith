@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label8.Style" xml:space="preserve">
-    <value>border-top-width: 1px; border-top-style: : : : : : : : : : : : : : : : solid; border-top-color: #000000; border-right-width: 1px; border-right-style: solid; border-right-color: #000000; border-bottom-width: 1px; border-bottom-style: : : : : : : : : : : : : : : : solid; border-bottom-color: #000000; border-left-width: 1px; border-left-style: : : : : : : : : : : : : : : : solid; border-left-color: #000000; font-size: 12pt; font-weight: bold; text-align: center; text-justify: auto; vertical-align: middle; white-space: nowrap</value>
+    <value>border-top-width: 1px; border-top-style: : : : : : : : : : : : : : : : : solid; border-top-color: #000000; border-right-width: 1px; border-right-style: solid; border-right-color: #000000; border-bottom-width: 1px; border-bottom-style: : : : : : : : : : : : : : : : : solid; border-bottom-color: #000000; border-left-width: 1px; border-left-style: : : : : : : : : : : : : : : : : solid; border-left-color: #000000; font-size: 12pt; font-weight: bold; text-align: center; text-justify: auto; vertical-align: middle; white-space: nowrap</value>
   </data>
   <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
