@@ -4852,6 +4852,11 @@ Public Class AppModule
         control.Text = KOUENKAI_NO
     End Sub
 
+    'äJç√ì˙
+    Public Shared Sub SetForm_KOUENKAI_DATE(ByVal FROM_DATE As String, ByVal TO_DATE As String, ByRef control As Label)
+        control.Text = GetName_KOUENKAI_DATE(FROM_DATE, TO_DATE)
+    End Sub
+
     'âÔçáñº
     Public Shared Sub SetForm_KOUENKAI_NAME(ByVal KOUENKAI_NAME As String, ByRef control As TextBox)
         control.Text = KOUENKAI_NAME
