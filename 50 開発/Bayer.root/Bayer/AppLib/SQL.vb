@@ -150,7 +150,8 @@ Public Class SQL
             If Trim(Joken.KOUENKAI_NO) <> "" Then
                 strSQL &= " AND "
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
-                strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+                'strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
@@ -1773,7 +1774,8 @@ Public Class SQL
             If Trim(Joken.KOUENKAI_NO) <> "" Then
                 strSQL &= " AND WK_KOTSUHOTEL."
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
-                strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+                'strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
