@@ -64,14 +64,68 @@ Me.Line65 = New DataDynamics.ActiveReports.Line
 Me.Line6 = New DataDynamics.ActiveReports.Line
 Me.Line7 = New DataDynamics.ActiveReports.Line
 Me.Detail = New DataDynamics.ActiveReports.Detail
+Me.TAXI_PRT_NAME2 = New DataDynamics.ActiveReports.TextBox
+Me.Label223 = New DataDynamics.ActiveReports.Label
+Me.FROM_DATE2 = New DataDynamics.ActiveReports.TextBox
+Me.Label222 = New DataDynamics.ActiveReports.Label
+Me.Label206 = New DataDynamics.ActiveReports.Label
+Me.KOUENKAI_NAME2 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_O_TIME1_3 = New DataDynamics.ActiveReports.TextBox
+Me.DR_SHISETSU_NAME2 = New DataDynamics.ActiveReports.TextBox
+Me.Label184 = New DataDynamics.ActiveReports.Label
+Me.REQ_F_SEAT_3 = New DataDynamics.ActiveReports.TextBox
+Me.Label187 = New DataDynamics.ActiveReports.Label
+Me.REQ_F_TIME1_3 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_AIRPORT1_3 = New DataDynamics.ActiveReports.TextBox
+Me.Label189 = New DataDynamics.ActiveReports.Label
+Me.Label155 = New DataDynamics.ActiveReports.Label
+Me.Label158 = New DataDynamics.ActiveReports.Label
+Me.Label160 = New DataDynamics.ActiveReports.Label
+Me.Label156 = New DataDynamics.ActiveReports.Label
+Me.Label175 = New DataDynamics.ActiveReports.Label
+Me.FUKURO1 = New DataDynamics.ActiveReports.Label
+Me.Label172 = New DataDynamics.ActiveReports.Label
+Me.Label185 = New DataDynamics.ActiveReports.Label
+Me.Label188 = New DataDynamics.ActiveReports.Label
+Me.Label186 = New DataDynamics.ActiveReports.Label
+Me.Label191 = New DataDynamics.ActiveReports.Label
+Me.Label194 = New DataDynamics.ActiveReports.Label
+Me.FUKURO3 = New DataDynamics.ActiveReports.Label
+Me.Label195 = New DataDynamics.ActiveReports.Label
+Me.Label198 = New DataDynamics.ActiveReports.Label
+Me.Label200 = New DataDynamics.ActiveReports.Label
+Me.REQ_O_SEAT_1 = New DataDynamics.ActiveReports.TextBox
+Me.Label162 = New DataDynamics.ActiveReports.Label
+Me.REQ_O_TIME1_1 = New DataDynamics.ActiveReports.TextBox
+Me.Label165 = New DataDynamics.ActiveReports.Label
+Me.REQ_O_AIRPORT1_1 = New DataDynamics.ActiveReports.TextBox
+Me.Label167 = New DataDynamics.ActiveReports.Label
+Me.Label163 = New DataDynamics.ActiveReports.Label
+Me.REQ_O_DATE_1 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_O_TEHAI_1 = New DataDynamics.ActiveReports.TextBox
+Me.Label171 = New DataDynamics.ActiveReports.Label
+Me.Label168 = New DataDynamics.ActiveReports.Label
+Me.FUKURO2 = New DataDynamics.ActiveReports.Label
+Me.REQ_O_TIME2_3 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_O_AIRPORT2_3 = New DataDynamics.ActiveReports.TextBox
+Me.Label216 = New DataDynamics.ActiveReports.Label
+Me.Label215 = New DataDynamics.ActiveReports.Label
+Me.Label214 = New DataDynamics.ActiveReports.Label
+Me.Label211 = New DataDynamics.ActiveReports.Label
+Me.Label208 = New DataDynamics.ActiveReports.Label
+Me.Line140 = New DataDynamics.ActiveReports.Line
+Me.Label201 = New DataDynamics.ActiveReports.Label
+Me.Label199 = New DataDynamics.ActiveReports.Label
+Me.Label190 = New DataDynamics.ActiveReports.Label
+Me.REQ_O_AIRPORT1_3 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_AIRPORT2_3 = New DataDynamics.ActiveReports.TextBox
+Me.REQ_F_TIME2_3 = New DataDynamics.ActiveReports.TextBox
 Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
 Me.TAXI_PRT_NAME = New DataDynamics.ActiveReports.TextBox
 Me.Label220 = New DataDynamics.ActiveReports.Label
 Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
 Me.Label219 = New DataDynamics.ActiveReports.Label
 Me.FUKURO4 = New DataDynamics.ActiveReports.Label
-Me.FUKURO3 = New DataDynamics.ActiveReports.Label
-Me.FUKURO1 = New DataDynamics.ActiveReports.Label
 Me.Line117 = New DataDynamics.ActiveReports.Line
 Me.Line116 = New DataDynamics.ActiveReports.Line
 Me.Line115 = New DataDynamics.ActiveReports.Line
@@ -82,16 +136,10 @@ Me.REQ_F_DATE_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_KOTSUKIKAN_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_IRAINAIYOU_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_TEHAI_1 = New DataDynamics.ActiveReports.TextBox
-Me.Label175 = New DataDynamics.ActiveReports.Label
 Me.Label174 = New DataDynamics.ActiveReports.Label
 Me.Label173 = New DataDynamics.ActiveReports.Label
-Me.Label172 = New DataDynamics.ActiveReports.Label
-Me.Label160 = New DataDynamics.ActiveReports.Label
 Me.Label159 = New DataDynamics.ActiveReports.Label
-Me.Label158 = New DataDynamics.ActiveReports.Label
 Me.Label157 = New DataDynamics.ActiveReports.Label
-Me.Label156 = New DataDynamics.ActiveReports.Label
-Me.Label155 = New DataDynamics.ActiveReports.Label
 Me.Label154 = New DataDynamics.ActiveReports.Label
 Me.REQ_F_AIRPORT1_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_AIRPORT2_1 = New DataDynamics.ActiveReports.TextBox
@@ -385,7 +433,6 @@ Me.Label125 = New DataDynamics.ActiveReports.Label
 Me.Label126 = New DataDynamics.ActiveReports.Label
 Me.Label127 = New DataDynamics.ActiveReports.Label
 Me.Label128 = New DataDynamics.ActiveReports.Label
-Me.FUKURO2 = New DataDynamics.ActiveReports.Label
 Me.Line71 = New DataDynamics.ActiveReports.Line
 Me.Label129 = New DataDynamics.ActiveReports.Label
 Me.Label130 = New DataDynamics.ActiveReports.Label
@@ -407,12 +454,9 @@ Me.REQ_O_TIME1_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_AIRPORT2_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_AIRPORT1_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_SEAT_KIBOU1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_SEAT_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_BIN_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_TIME2_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_TIME1_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_AIRPORT2_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_AIRPORT1_1 = New DataDynamics.ActiveReports.TextBox
 Me.Label140 = New DataDynamics.ActiveReports.Label
 Me.Label141 = New DataDynamics.ActiveReports.Label
 Me.Label142 = New DataDynamics.ActiveReports.Label
@@ -430,17 +474,11 @@ Me.Label153 = New DataDynamics.ActiveReports.Label
 Me.OURO4 = New DataDynamics.ActiveReports.Label
 Me.Line75 = New DataDynamics.ActiveReports.Line
 Me.Label161 = New DataDynamics.ActiveReports.Label
-Me.Label162 = New DataDynamics.ActiveReports.Label
-Me.Label163 = New DataDynamics.ActiveReports.Label
 Me.Label164 = New DataDynamics.ActiveReports.Label
-Me.Label165 = New DataDynamics.ActiveReports.Label
 Me.Label166 = New DataDynamics.ActiveReports.Label
-Me.Label167 = New DataDynamics.ActiveReports.Label
 Me.OURO1 = New DataDynamics.ActiveReports.Label
-Me.Label168 = New DataDynamics.ActiveReports.Label
 Me.Label169 = New DataDynamics.ActiveReports.Label
 Me.Label170 = New DataDynamics.ActiveReports.Label
-Me.Label171 = New DataDynamics.ActiveReports.Label
 Me.Label176 = New DataDynamics.ActiveReports.Label
 Me.Label177 = New DataDynamics.ActiveReports.Label
 Me.Label178 = New DataDynamics.ActiveReports.Label
@@ -448,56 +486,31 @@ Me.Label179 = New DataDynamics.ActiveReports.Label
 Me.Label181 = New DataDynamics.ActiveReports.Label
 Me.Label182 = New DataDynamics.ActiveReports.Label
 Me.Label183 = New DataDynamics.ActiveReports.Label
-Me.REQ_O_TEHAI_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_IRAINAIYOU_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_KOTSUKIKAN_1 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_DATE_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_TEHAI_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_IRAINAIYOU_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_KOTSUKIKAN_4 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_DATE_4 = New DataDynamics.ActiveReports.TextBox
 Me.Line76 = New DataDynamics.ActiveReports.Line
 Me.REQ_F_SEAT_KIBOU3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_SEAT_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_BIN_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TIME2_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_TIME1_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_AIRPORT2_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_F_AIRPORT1_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_DATE_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_KOTSUKIKAN_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_IRAINAIYOU_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_SEAT_KIBOU3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_SEAT_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_BIN_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_TIME2_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_TIME1_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_AIRPORT2_3 = New DataDynamics.ActiveReports.TextBox
-Me.REQ_O_AIRPORT1_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_DATE_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_KOTSUKIKAN_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_IRAINAIYOU_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_TEHAI_3 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_O_TEHAI_3 = New DataDynamics.ActiveReports.TextBox
-Me.Label184 = New DataDynamics.ActiveReports.Label
-Me.Label185 = New DataDynamics.ActiveReports.Label
-Me.Label186 = New DataDynamics.ActiveReports.Label
-Me.Label187 = New DataDynamics.ActiveReports.Label
-Me.Label188 = New DataDynamics.ActiveReports.Label
-Me.Label189 = New DataDynamics.ActiveReports.Label
-Me.Label190 = New DataDynamics.ActiveReports.Label
-Me.Label191 = New DataDynamics.ActiveReports.Label
 Me.Label192 = New DataDynamics.ActiveReports.Label
 Me.Label193 = New DataDynamics.ActiveReports.Label
-Me.Label194 = New DataDynamics.ActiveReports.Label
 Me.Line78 = New DataDynamics.ActiveReports.Line
-Me.Label195 = New DataDynamics.ActiveReports.Label
 Me.Label196 = New DataDynamics.ActiveReports.Label
 Me.Label197 = New DataDynamics.ActiveReports.Label
-Me.Label198 = New DataDynamics.ActiveReports.Label
-Me.Label199 = New DataDynamics.ActiveReports.Label
-Me.Label200 = New DataDynamics.ActiveReports.Label
-Me.Label201 = New DataDynamics.ActiveReports.Label
 Me.Label202 = New DataDynamics.ActiveReports.Label
 Me.Label203 = New DataDynamics.ActiveReports.Label
 Me.Label204 = New DataDynamics.ActiveReports.Label
@@ -523,19 +536,11 @@ Me.Line152 = New DataDynamics.ActiveReports.Line
 Me.Line173 = New DataDynamics.ActiveReports.Line
 Me.Line52 = New DataDynamics.ActiveReports.Line
 Me.DR_SHISETSU_ADDRESS2 = New DataDynamics.ActiveReports.TextBox
-Me.DR_SHISETSU_NAME2 = New DataDynamics.ActiveReports.TextBox
-Me.Label206 = New DataDynamics.ActiveReports.Label
-Me.KOUENKAI_NAME2 = New DataDynamics.ActiveReports.TextBox
 Me.Label207 = New DataDynamics.ActiveReports.Label
-Me.Label208 = New DataDynamics.ActiveReports.Label
 Me.Label209 = New DataDynamics.ActiveReports.Label
 Me.Label210 = New DataDynamics.ActiveReports.Label
-Me.Label211 = New DataDynamics.ActiveReports.Label
 Me.Label212 = New DataDynamics.ActiveReports.Label
 Me.Label213 = New DataDynamics.ActiveReports.Label
-Me.Label214 = New DataDynamics.ActiveReports.Label
-Me.Label215 = New DataDynamics.ActiveReports.Label
-Me.Label216 = New DataDynamics.ActiveReports.Label
 Me.Label217 = New DataDynamics.ActiveReports.Label
 Me.KOUENKAI_NO2 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_STATUS_TEHAI2 = New DataDynamics.ActiveReports.TextBox
@@ -552,11 +557,9 @@ Me.Line194 = New DataDynamics.ActiveReports.Line
 Me.DR_SEX2 = New DataDynamics.ActiveReports.TextBox
 Me.Line195 = New DataDynamics.ActiveReports.Line
 Me.Line196 = New DataDynamics.ActiveReports.Line
-Me.Line198 = New DataDynamics.ActiveReports.Line
 Me.Line199 = New DataDynamics.ActiveReports.Line
 Me.Line200 = New DataDynamics.ActiveReports.Line
 Me.Line79 = New DataDynamics.ActiveReports.Line
-Me.Line201 = New DataDynamics.ActiveReports.Line
 Me.Line68 = New DataDynamics.ActiveReports.Line
 Me.Line203 = New DataDynamics.ActiveReports.Line
 Me.Line70 = New DataDynamics.ActiveReports.Line
@@ -568,7 +571,6 @@ Me.Line99 = New DataDynamics.ActiveReports.Line
 Me.Line100 = New DataDynamics.ActiveReports.Line
 Me.Line102 = New DataDynamics.ActiveReports.Line
 Me.Line103 = New DataDynamics.ActiveReports.Line
-Me.Line77 = New DataDynamics.ActiveReports.Line
 Me.Line98 = New DataDynamics.ActiveReports.Line
 Me.Line105 = New DataDynamics.ActiveReports.Line
 Me.Line106 = New DataDynamics.ActiveReports.Line
@@ -581,22 +583,18 @@ Me.Line132 = New DataDynamics.ActiveReports.Line
 Me.Line133 = New DataDynamics.ActiveReports.Line
 Me.Line134 = New DataDynamics.ActiveReports.Line
 Me.Line135 = New DataDynamics.ActiveReports.Line
-Me.Line136 = New DataDynamics.ActiveReports.Line
 Me.Line137 = New DataDynamics.ActiveReports.Line
 Me.Line138 = New DataDynamics.ActiveReports.Line
 Me.Line139 = New DataDynamics.ActiveReports.Line
-Me.Line140 = New DataDynamics.ActiveReports.Line
 Me.Line141 = New DataDynamics.ActiveReports.Line
 Me.Line153 = New DataDynamics.ActiveReports.Line
 Me.Line84 = New DataDynamics.ActiveReports.Line
-Me.Line69 = New DataDynamics.ActiveReports.Line
 Me.Label180 = New DataDynamics.ActiveReports.Label
 Me.Line123 = New DataDynamics.ActiveReports.Line
 Me.Line124 = New DataDynamics.ActiveReports.Line
 Me.Line125 = New DataDynamics.ActiveReports.Line
 Me.Line126 = New DataDynamics.ActiveReports.Line
 Me.Line127 = New DataDynamics.ActiveReports.Line
-Me.Line73 = New DataDynamics.ActiveReports.Line
 Me.Line122 = New DataDynamics.ActiveReports.Line
 Me.Line85 = New DataDynamics.ActiveReports.Line
 Me.Line86 = New DataDynamics.ActiveReports.Line
@@ -614,7 +612,6 @@ Me.Line54 = New DataDynamics.ActiveReports.Line
 Me.Line142 = New DataDynamics.ActiveReports.Line
 Me.Line143 = New DataDynamics.ActiveReports.Line
 Me.Line144 = New DataDynamics.ActiveReports.Line
-Me.Line145 = New DataDynamics.ActiveReports.Line
 Me.Line146 = New DataDynamics.ActiveReports.Line
 Me.Line147 = New DataDynamics.ActiveReports.Line
 Me.Line148 = New DataDynamics.ActiveReports.Line
@@ -632,14 +629,17 @@ Me.Line164 = New DataDynamics.ActiveReports.Line
 Me.Line8 = New DataDynamics.ActiveReports.Line
 Me.Label218 = New DataDynamics.ActiveReports.Label
 Me.KAIJO_NAME = New DataDynamics.ActiveReports.TextBox
-Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+Me.Line136 = New DataDynamics.ActiveReports.Line
+Me.Line69 = New DataDynamics.ActiveReports.Line
+Me.Line73 = New DataDynamics.ActiveReports.Line
+Me.Line145 = New DataDynamics.ActiveReports.Line
+Me.Line198 = New DataDynamics.ActiveReports.Line
+Me.Line201 = New DataDynamics.ActiveReports.Line
+Me.Line77 = New DataDynamics.ActiveReports.Line
 Me.Label221 = New DataDynamics.ActiveReports.Label
 Me.KAIJO_NAME2 = New DataDynamics.ActiveReports.TextBox
-Me.Label222 = New DataDynamics.ActiveReports.Label
-Me.FROM_DATE2 = New DataDynamics.ActiveReports.TextBox
-Me.Label223 = New DataDynamics.ActiveReports.Label
-Me.TAXI_PRT_NAME2 = New DataDynamics.ActiveReports.TextBox
 Me.FROM_DATE1 = New DataDynamics.ActiveReports.TextBox
+Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).BeginInit
@@ -672,28 +672,75 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.TAXI_PRT_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label223,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FROM_DATE2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label222,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label206,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.KOUENKAI_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_TIME1_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_SHISETSU_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label184,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_SEAT_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label187,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TIME1_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_AIRPORT1_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label189,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label155,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label158,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label160,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label156,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label175,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label172,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label185,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label188,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label186,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label191,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label194,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label195,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label198,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label200,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_SEAT_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label162,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_TIME1_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label165,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_AIRPORT1_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label167,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label163,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_DATE_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_TEHAI_1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label171,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label168,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FUKURO2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_TIME2_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_AIRPORT2_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label216,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label215,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label214,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label211,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label208,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label201,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label199,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label190,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_O_AIRPORT1_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_AIRPORT2_3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.REQ_F_TIME2_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TO_DATE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TAXI_PRT_NAME,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label220,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.FROM_DATE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label219,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.FUKURO4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_DATE_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_TEHAI_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label175,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label174,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label173,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label172,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label160,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label159,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label158,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label157,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label156,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label155,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label154,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_AIRPORT1_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_AIRPORT2_1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -933,7 +980,6 @@ CType(Me.Label125,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label126,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label127,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label128,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FUKURO2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label129,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label130,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label131,System.ComponentModel.ISupportInitialize).BeginInit
@@ -954,12 +1000,9 @@ CType(Me.REQ_O_TIME1_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_AIRPORT2_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_AIRPORT1_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_SEAT_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_BIN_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_TIME2_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_TIME1_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_AIRPORT2_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_AIRPORT1_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label140,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label141,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label142,System.ComponentModel.ISupportInitialize).BeginInit
@@ -976,17 +1019,11 @@ CType(Me.Label152,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label153,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.OURO4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label161,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label162,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label163,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label164,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label165,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label166,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label167,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.OURO1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label168,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label169,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label170,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label171,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label176,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label177,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label178,System.ComponentModel.ISupportInitialize).BeginInit
@@ -994,73 +1031,40 @@ CType(Me.Label179,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label181,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label182,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label183,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_TEHAI_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_DATE_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_TEHAI_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_IRAINAIYOU_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_KOTSUKIKAN_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_DATE_4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_KIBOU3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_SEAT_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_BIN_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TIME2_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_TIME1_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_AIRPORT2_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_F_AIRPORT1_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_DATE_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_KOTSUKIKAN_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_IRAINAIYOU_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_SEAT_KIBOU3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_SEAT_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_BIN_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_TIME2_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_TIME1_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_AIRPORT2_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.REQ_O_AIRPORT1_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_DATE_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_KOTSUKIKAN_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_IRAINAIYOU_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_TEHAI_3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_O_TEHAI_3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label184,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label185,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label186,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label187,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label188,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label189,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label190,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label191,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label192,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label193,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label194,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label195,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label196,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label197,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label198,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label199,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label200,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label201,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label202,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label203,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label204,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label205,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.OURO3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SHISETSU_ADDRESS2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.DR_SHISETSU_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label206,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.KOUENKAI_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label207,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label208,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label209,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label210,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label211,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label212,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label213,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label214,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label215,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label216,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label217,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.KOUENKAI_NO2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_STATUS_TEHAI2,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1076,10 +1080,6 @@ CType(Me.Label218,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.KAIJO_NAME,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label221,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.KAIJO_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label222,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.FROM_DATE2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label223,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TAXI_PRT_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.FROM_DATE1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
 '
@@ -1617,6 +1617,660 @@ Me.Detail.Height = 18.30922!
 Me.Detail.KeepTogether = true
 Me.Detail.Name = "Detail"
 '
+'TAXI_PRT_NAME2
+'
+Me.TAXI_PRT_NAME2.DataField = "TAXI_PRT_NAME"
+Me.TAXI_PRT_NAME2.Height = 0.2!
+Me.TAXI_PRT_NAME2.Left = 4.828347!
+Me.TAXI_PRT_NAME2.Name = "TAXI_PRT_NAME2"
+Me.TAXI_PRT_NAME2.Style = "vertical-align: middle"
+Me.TAXI_PRT_NAME2.Text = Nothing
+Me.TAXI_PRT_NAME2.Top = 11.09685!
+Me.TAXI_PRT_NAME2.Width = 2.323622!
+'
+'Label223
+'
+Me.Label223.Height = 0.2!
+Me.Label223.HyperLink = Nothing
+Me.Label223.Left = 3.558662!
+Me.Label223.Name = "Label223"
+Me.Label223.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
+Me.Label223.Text = "チケット印字名："
+Me.Label223.Top = 11.09685!
+Me.Label223.Width = 1.269685!
+'
+'FROM_DATE2
+'
+Me.FROM_DATE2.Height = 0.2!
+Me.FROM_DATE2.Left = 0.6771654!
+Me.FROM_DATE2.Name = "FROM_DATE2"
+Me.FROM_DATE2.Style = "font-weight: normal; white-space: nowrap"
+Me.FROM_DATE2.Text = Nothing
+Me.FROM_DATE2.Top = 11.09685!
+Me.FROM_DATE2.Width = 2.871259!
+'
+'Label222
+'
+Me.Label222.Height = 0.2!
+Me.Label222.HyperLink = Nothing
+Me.Label222.Left = 0!
+Me.Label222.Name = "Label222"
+Me.Label222.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
+Me.Label222.Text = "開催日："
+Me.Label222.Top = 11.09685!
+Me.Label222.Width = 0.6771654!
+'
+'Label206
+'
+Me.Label206.Height = 0.2!
+Me.Label206.HyperLink = Nothing
+Me.Label206.Left = 0!
+Me.Label206.Name = "Label206"
+Me.Label206.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
+Me.Label206.Text = "会合名："
+Me.Label206.Top = 10.69685!
+Me.Label206.Width = 0.6771654!
+'
+'KOUENKAI_NAME2
+'
+Me.KOUENKAI_NAME2.DataField = "KOUENKAI_NAME"
+Me.KOUENKAI_NAME2.Height = 0.2!
+Me.KOUENKAI_NAME2.Left = 0.6771654!
+Me.KOUENKAI_NAME2.Name = "KOUENKAI_NAME2"
+Me.KOUENKAI_NAME2.Style = "font-weight: bold; white-space: nowrap"
+Me.KOUENKAI_NAME2.Text = Nothing
+Me.KOUENKAI_NAME2.Top = 10.69685!
+Me.KOUENKAI_NAME2.Width = 6.474803!
+'
+'REQ_O_TIME1_3
+'
+Me.REQ_O_TIME1_3.DataField = "REQ_O_TIME1_3"
+Me.REQ_O_TIME1_3.Height = 0.2!
+Me.REQ_O_TIME1_3.Left = 0.9165355!
+Me.REQ_O_TIME1_3.Name = "REQ_O_TIME1_3"
+Me.REQ_O_TIME1_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_TIME1_3.Text = Nothing
+Me.REQ_O_TIME1_3.Top = 15.49685!
+Me.REQ_O_TIME1_3.Width = 0.9858269!
+'
+'DR_SHISETSU_NAME2
+'
+Me.DR_SHISETSU_NAME2.DataField = "DR_SHISETSU_NAME"
+Me.DR_SHISETSU_NAME2.Height = 0.2!
+Me.DR_SHISETSU_NAME2.Left = 4.507481!
+Me.DR_SHISETSU_NAME2.Name = "DR_SHISETSU_NAME2"
+Me.DR_SHISETSU_NAME2.Style = "vertical-align: middle"
+Me.DR_SHISETSU_NAME2.Text = Nothing
+Me.DR_SHISETSU_NAME2.Top = 11.69685!
+Me.DR_SHISETSU_NAME2.Width = 2.657874!
+'
+'Label184
+'
+Me.Label184.Height = 0.2!
+Me.Label184.HyperLink = Nothing
+Me.Label184.Left = 5.485433!
+Me.Label184.Name = "Label184"
+Me.Label184.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label184.Text = "座席希望"
+Me.Label184.Top = 15.69685!
+Me.Label184.Width = 0.6874018!
+'
+'REQ_F_SEAT_3
+'
+Me.REQ_F_SEAT_3.DataField = "REQ_F_SEAT_3"
+Me.REQ_F_SEAT_3.Height = 0.2!
+Me.REQ_F_SEAT_3.Left = 4.507481!
+Me.REQ_F_SEAT_3.Name = "REQ_F_SEAT_3"
+Me.REQ_F_SEAT_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_SEAT_3.Text = Nothing
+Me.REQ_F_SEAT_3.Top = 15.69685!
+Me.REQ_F_SEAT_3.Width = 0.9779529!
+'
+'Label187
+'
+Me.Label187.Height = 0.2!
+Me.Label187.HyperLink = Nothing
+Me.Label187.Left = 5.485433!
+Me.Label187.Name = "Label187"
+Me.Label187.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label187.Text = "到着時間"
+Me.Label187.Top = 15.49685!
+Me.Label187.Width = 0.6874018!
+'
+'REQ_F_TIME1_3
+'
+Me.REQ_F_TIME1_3.DataField = "REQ_F_TIME1_3"
+Me.REQ_F_TIME1_3.Height = 0.2!
+Me.REQ_F_TIME1_3.Left = 4.507481!
+Me.REQ_F_TIME1_3.Name = "REQ_F_TIME1_3"
+Me.REQ_F_TIME1_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TIME1_3.Text = Nothing
+Me.REQ_F_TIME1_3.Top = 15.49685!
+Me.REQ_F_TIME1_3.Width = 0.9779529!
+'
+'REQ_F_AIRPORT1_3
+'
+Me.REQ_F_AIRPORT1_3.DataField = "REQ_F_AIRPORT1_3"
+Me.REQ_F_AIRPORT1_3.Height = 0.2!
+Me.REQ_F_AIRPORT1_3.Left = 4.507481!
+Me.REQ_F_AIRPORT1_3.Name = "REQ_F_AIRPORT1_3"
+Me.REQ_F_AIRPORT1_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_AIRPORT1_3.Text = Nothing
+Me.REQ_F_AIRPORT1_3.Top = 15.29685!
+Me.REQ_F_AIRPORT1_3.Width = 0.9779529!
+'
+'Label189
+'
+Me.Label189.Height = 0.2!
+Me.Label189.HyperLink = Nothing
+Me.Label189.Left = 5.485433!
+Me.Label189.Name = "Label189"
+Me.Label189.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label189.Text = "到着地"
+Me.Label189.Top = 15.29685!
+Me.Label189.Width = 0.6874018!
+'
+'Label155
+'
+Me.Label155.Height = 0.2!
+Me.Label155.HyperLink = Nothing
+Me.Label155.Left = 3.787795!
+Me.Label155.Name = "Label155"
+Me.Label155.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label155.Text = "座席区分"
+Me.Label155.Top = 13.29685!
+Me.Label155.Width = 0.7196856!
+'
+'Label158
+'
+Me.Label158.Height = 0.2!
+Me.Label158.HyperLink = Nothing
+Me.Label158.Left = 3.787795!
+Me.Label158.Name = "Label158"
+Me.Label158.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label158.Text = "出発時間"
+Me.Label158.Top = 13.09685!
+Me.Label158.Width = 0.7196856!
+'
+'Label160
+'
+Me.Label160.Height = 0.2!
+Me.Label160.HyperLink = Nothing
+Me.Label160.Left = 3.787796!
+Me.Label160.Name = "Label160"
+Me.Label160.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label160.Text = "出発地"
+Me.Label160.Top = 12.89685!
+Me.Label160.Width = 0.7196851!
+'
+'Label156
+'
+Me.Label156.Height = 0.2!
+Me.Label156.HyperLink = Nothing
+Me.Label156.Left = 3.787795!
+Me.Label156.Name = "Label156"
+Me.Label156.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label156.Text = "列車・便名"
+Me.Label156.Top = 12.69685!
+Me.Label156.Width = 0.7196854!
+'
+'Label175
+'
+Me.Label175.Height = 0.2!
+Me.Label175.HyperLink = Nothing
+Me.Label175.Left = 3.787795!
+Me.Label175.Name = "Label175"
+Me.Label175.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label175.Text = "利用日"
+Me.Label175.Top = 12.49685!
+Me.Label175.Width = 0.7196856!
+'
+'FUKURO1
+'
+Me.FUKURO1.Height = 1.2!
+Me.FUKURO1.HyperLink = Nothing
+Me.FUKURO1.Left = 3.558662!
+Me.FUKURO1.Name = "FUKURO1"
+Me.FUKURO1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
+    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
+    "rtical: true"
+Me.FUKURO1.Text = ""
+Me.FUKURO1.Top = 12.29685!
+Me.FUKURO1.Width = 0.2291338!
+'
+'Label172
+'
+Me.Label172.Height = 0.1999999!
+Me.Label172.HyperLink = Nothing
+Me.Label172.Left = 3.787795!
+Me.Label172.Name = "Label172"
+Me.Label172.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label172.Text = "希望する"
+Me.Label172.Top = 12.29685!
+Me.Label172.Width = 0.7196856!
+'
+'Label185
+'
+Me.Label185.Height = 0.2!
+Me.Label185.HyperLink = Nothing
+Me.Label185.Left = 3.763779!
+Me.Label185.Name = "Label185"
+Me.Label185.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label185.Text = "座席区分"
+Me.Label185.Top = 15.69685!
+Me.Label185.Width = 0.743701!
+'
+'Label188
+'
+Me.Label188.Height = 0.2!
+Me.Label188.HyperLink = Nothing
+Me.Label188.Left = 3.763779!
+Me.Label188.Name = "Label188"
+Me.Label188.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label188.Text = "出発時間"
+Me.Label188.Top = 15.49685!
+Me.Label188.Width = 0.743701!
+'
+'Label186
+'
+Me.Label186.Height = 0.2!
+Me.Label186.HyperLink = Nothing
+Me.Label186.Left = 3.763779!
+Me.Label186.Name = "Label186"
+Me.Label186.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label186.Text = "列車・便名"
+Me.Label186.Top = 15.09685!
+Me.Label186.Width = 0.7437013!
+'
+'Label191
+'
+Me.Label191.Height = 0.2!
+Me.Label191.HyperLink = Nothing
+Me.Label191.Left = 3.763779!
+Me.Label191.Name = "Label191"
+Me.Label191.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label191.Text = "利用日"
+Me.Label191.Top = 14.89685!
+Me.Label191.Width = 0.743701!
+'
+'Label194
+'
+Me.Label194.Height = 0.1999999!
+Me.Label194.HyperLink = Nothing
+Me.Label194.Left = 3.763779!
+Me.Label194.Name = "Label194"
+Me.Label194.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label194.Text = "希望する"
+Me.Label194.Top = 14.69685!
+Me.Label194.Width = 0.743701!
+'
+'FUKURO3
+'
+Me.FUKURO3.Height = 1.200001!
+Me.FUKURO3.HyperLink = Nothing
+Me.FUKURO3.Left = 3.558662!
+Me.FUKURO3.Name = "FUKURO3"
+Me.FUKURO3.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
+    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
+    "rtical: true"
+Me.FUKURO3.Text = ""
+Me.FUKURO3.Top = 14.69685!
+Me.FUKURO3.Width = 0.2051181!
+'
+'Label195
+'
+Me.Label195.Height = 0.2!
+Me.Label195.HyperLink = Nothing
+Me.Label195.Left = 1.892126!
+Me.Label195.Name = "Label195"
+Me.Label195.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label195.Text = "座席希望"
+Me.Label195.Top = 15.69685!
+Me.Label195.Width = 0.6874014!
+'
+'Label198
+'
+Me.Label198.Height = 0.2!
+Me.Label198.HyperLink = Nothing
+Me.Label198.Left = 1.892126!
+Me.Label198.Name = "Label198"
+Me.Label198.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label198.Text = "到着時間"
+Me.Label198.Top = 15.49685!
+Me.Label198.Width = 0.6874014!
+'
+'Label200
+'
+Me.Label200.Height = 0.2!
+Me.Label200.HyperLink = Nothing
+Me.Label200.Left = 1.892126!
+Me.Label200.Name = "Label200"
+Me.Label200.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label200.Text = "到着地"
+Me.Label200.Top = 15.29685!
+Me.Label200.Width = 0.6874015!
+'
+'REQ_O_SEAT_1
+'
+Me.REQ_O_SEAT_1.DataField = "REQ_O_SEAT_1"
+Me.REQ_O_SEAT_1.Height = 0.2!
+Me.REQ_O_SEAT_1.Left = 0.9165352!
+Me.REQ_O_SEAT_1.Name = "REQ_O_SEAT_1"
+Me.REQ_O_SEAT_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_SEAT_1.Text = Nothing
+Me.REQ_O_SEAT_1.Top = 13.29685!
+Me.REQ_O_SEAT_1.Width = 0.9858268!
+'
+'Label162
+'
+Me.Label162.Height = 0.2!
+Me.Label162.HyperLink = Nothing
+Me.Label162.Left = 0.2291339!
+Me.Label162.Name = "Label162"
+Me.Label162.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label162.Text = "座席区分"
+Me.Label162.Top = 13.29685!
+Me.Label162.Width = 0.6874014!
+'
+'REQ_O_TIME1_1
+'
+Me.REQ_O_TIME1_1.DataField = "REQ_O_TIME1_1"
+Me.REQ_O_TIME1_1.Height = 0.2!
+Me.REQ_O_TIME1_1.Left = 0.9165352!
+Me.REQ_O_TIME1_1.Name = "REQ_O_TIME1_1"
+Me.REQ_O_TIME1_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_TIME1_1.Text = Nothing
+Me.REQ_O_TIME1_1.Top = 13.09685!
+Me.REQ_O_TIME1_1.Width = 0.9858268!
+'
+'Label165
+'
+Me.Label165.Height = 0.2!
+Me.Label165.HyperLink = Nothing
+Me.Label165.Left = 0.2291339!
+Me.Label165.Name = "Label165"
+Me.Label165.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label165.Text = "出発時間"
+Me.Label165.Top = 13.09685!
+Me.Label165.Width = 0.6874014!
+'
+'REQ_O_AIRPORT1_1
+'
+Me.REQ_O_AIRPORT1_1.DataField = "REQ_O_AIRPORT1_1"
+Me.REQ_O_AIRPORT1_1.Height = 0.2!
+Me.REQ_O_AIRPORT1_1.Left = 0.9165352!
+Me.REQ_O_AIRPORT1_1.Name = "REQ_O_AIRPORT1_1"
+Me.REQ_O_AIRPORT1_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_AIRPORT1_1.Text = Nothing
+Me.REQ_O_AIRPORT1_1.Top = 12.89685!
+Me.REQ_O_AIRPORT1_1.Width = 0.9858268!
+'
+'Label167
+'
+Me.Label167.Height = 0.2!
+Me.Label167.HyperLink = Nothing
+Me.Label167.Left = 0.2291339!
+Me.Label167.Name = "Label167"
+Me.Label167.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label167.Text = "出発地"
+Me.Label167.Top = 12.89685!
+Me.Label167.Width = 0.6874015!
+'
+'Label163
+'
+Me.Label163.Height = 0.2!
+Me.Label163.HyperLink = Nothing
+Me.Label163.Left = 0.2291339!
+Me.Label163.Name = "Label163"
+Me.Label163.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label163.Text = "列車・便名"
+Me.Label163.Top = 12.69685!
+Me.Label163.Width = 0.6874015!
+'
+'REQ_O_DATE_1
+'
+Me.REQ_O_DATE_1.DataField = "REQ_O_DATE_1"
+Me.REQ_O_DATE_1.Height = 0.2!
+Me.REQ_O_DATE_1.Left = 0.9165355!
+Me.REQ_O_DATE_1.Name = "REQ_O_DATE_1"
+Me.REQ_O_DATE_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_DATE_1.Text = Nothing
+Me.REQ_O_DATE_1.Top = 12.49685!
+Me.REQ_O_DATE_1.Width = 0.9858268!
+'
+'REQ_O_TEHAI_1
+'
+Me.REQ_O_TEHAI_1.DataField = "REQ_O_TEHAI_1"
+Me.REQ_O_TEHAI_1.Height = 0.1999998!
+Me.REQ_O_TEHAI_1.Left = 0.9165355!
+Me.REQ_O_TEHAI_1.Name = "REQ_O_TEHAI_1"
+Me.REQ_O_TEHAI_1.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_TEHAI_1.Text = Nothing
+Me.REQ_O_TEHAI_1.Top = 12.29685!
+Me.REQ_O_TEHAI_1.Width = 0.9858268!
+'
+'Label171
+'
+Me.Label171.Height = 0.2!
+Me.Label171.HyperLink = Nothing
+Me.Label171.Left = 0.2291339!
+Me.Label171.Name = "Label171"
+Me.Label171.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label171.Text = "利用日"
+Me.Label171.Top = 12.49685!
+Me.Label171.Width = 0.6874015!
+'
+'Label168
+'
+Me.Label168.Height = 0.1999999!
+Me.Label168.HyperLink = Nothing
+Me.Label168.Left = 0.2291346!
+Me.Label168.Name = "Label168"
+Me.Label168.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label168.Text = "希望する"
+Me.Label168.Top = 12.29685!
+Me.Label168.Width = 0.6874014!
+'
+'FUKURO2
+'
+Me.FUKURO2.Height = 1.2!
+Me.FUKURO2.HyperLink = Nothing
+Me.FUKURO2.Left = 3.558662!
+Me.FUKURO2.Name = "FUKURO2"
+Me.FUKURO2.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: b"& _ 
+    "old; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-v"& _ 
+    "ertical: true"
+Me.FUKURO2.Text = ""
+Me.FUKURO2.Top = 13.49685!
+Me.FUKURO2.Width = 0.2051181!
+'
+'REQ_O_TIME2_3
+'
+Me.REQ_O_TIME2_3.DataField = "REQ_O_TIME2_3"
+Me.REQ_O_TIME2_3.Height = 0.2!
+Me.REQ_O_TIME2_3.Left = 2.579528!
+Me.REQ_O_TIME2_3.Name = "REQ_O_TIME2_3"
+Me.REQ_O_TIME2_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_TIME2_3.Text = Nothing
+Me.REQ_O_TIME2_3.Top = 15.49685!
+Me.REQ_O_TIME2_3.Width = 0.9791338!
+'
+'REQ_O_AIRPORT2_3
+'
+Me.REQ_O_AIRPORT2_3.DataField = "REQ_O_AIRPORT2_3"
+Me.REQ_O_AIRPORT2_3.Height = 0.2!
+Me.REQ_O_AIRPORT2_3.Left = 2.579528!
+Me.REQ_O_AIRPORT2_3.Name = "REQ_O_AIRPORT2_3"
+Me.REQ_O_AIRPORT2_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_AIRPORT2_3.Text = Nothing
+Me.REQ_O_AIRPORT2_3.Top = 15.29685!
+Me.REQ_O_AIRPORT2_3.Width = 0.9791338!
+'
+'Label216
+'
+Me.Label216.Height = 0.2!
+Me.Label216.HyperLink = Nothing
+Me.Label216.Left = 3.558662!
+Me.Label216.Name = "Label216"
+Me.Label216.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label216.Text = "性別"
+Me.Label216.Top = 12.09685!
+Me.Label216.Width = 0.9488187!
+'
+'Label215
+'
+Me.Label215.Height = 0.2!
+Me.Label215.HyperLink = Nothing
+Me.Label215.Left = 3.558662!
+Me.Label215.Name = "Label215"
+Me.Label215.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label215.Text = "施設住所"
+Me.Label215.Top = 11.89685!
+Me.Label215.Width = 0.9488187!
+'
+'Label214
+'
+Me.Label214.Height = 0.2!
+Me.Label214.HyperLink = Nothing
+Me.Label214.Left = 3.558662!
+Me.Label214.Name = "Label214"
+Me.Label214.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label214.Text = "施設名"
+Me.Label214.Top = 11.69685!
+Me.Label214.Width = 0.9488187!
+'
+'Label211
+'
+Me.Label211.Height = 0.2!
+Me.Label211.HyperLink = Nothing
+Me.Label211.Left = 3.558662!
+Me.Label211.Name = "Label211"
+Me.Label211.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label211.Text = "DRコード"
+Me.Label211.Top = 11.49685!
+Me.Label211.Width = 0.9488187!
+'
+'Label208
+'
+Me.Label208.Height = 0.2!
+Me.Label208.HyperLink = Nothing
+Me.Label208.Left = 3.558662!
+Me.Label208.Name = "Label208"
+Me.Label208.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label208.Text = "手配ステータス"
+Me.Label208.Top = 11.29685!
+Me.Label208.Width = 0.9488187!
+'
+'Line140
+'
+Me.Line140.Height = 1!
+Me.Line140.Left = 2.589764!
+Me.Line140.LineWeight = 1!
+Me.Line140.Name = "Line140"
+Me.Line140.Top = 15.29685!
+Me.Line140.Width = 0!
+Me.Line140.X1 = 2.589764!
+Me.Line140.X2 = 2.589764!
+Me.Line140.Y1 = 15.29685!
+Me.Line140.Y2 = 16.29685!
+'
+'Label201
+'
+Me.Label201.Height = 0.2!
+Me.Label201.HyperLink = Nothing
+Me.Label201.Left = 0.229134!
+Me.Label201.Name = "Label201"
+Me.Label201.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label201.Text = "出発地"
+Me.Label201.Top = 15.29685!
+Me.Label201.Width = 0.6874015!
+'
+'Label199
+'
+Me.Label199.Height = 0.2!
+Me.Label199.HyperLink = Nothing
+Me.Label199.Left = 0.229134!
+Me.Label199.Name = "Label199"
+Me.Label199.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label199.Text = "出発時間"
+Me.Label199.Top = 15.49685!
+Me.Label199.Width = 0.6874014!
+'
+'Label190
+'
+Me.Label190.Height = 0.2!
+Me.Label190.HyperLink = Nothing
+Me.Label190.Left = 3.763779!
+Me.Label190.Name = "Label190"
+Me.Label190.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
+    " middle; white-space: nowrap"
+Me.Label190.Text = "出発地"
+Me.Label190.Top = 15.29685!
+Me.Label190.Width = 0.743701!
+'
+'REQ_O_AIRPORT1_3
+'
+Me.REQ_O_AIRPORT1_3.DataField = "REQ_O_AIRPORT1_3"
+Me.REQ_O_AIRPORT1_3.Height = 0.2!
+Me.REQ_O_AIRPORT1_3.Left = 0.9165355!
+Me.REQ_O_AIRPORT1_3.Name = "REQ_O_AIRPORT1_3"
+Me.REQ_O_AIRPORT1_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_O_AIRPORT1_3.Text = Nothing
+Me.REQ_O_AIRPORT1_3.Top = 15.29685!
+Me.REQ_O_AIRPORT1_3.Width = 0.9755906!
+'
+'REQ_F_AIRPORT2_3
+'
+Me.REQ_F_AIRPORT2_3.DataField = "REQ_F_AIRPORT2_3"
+Me.REQ_F_AIRPORT2_3.Height = 0.2!
+Me.REQ_F_AIRPORT2_3.Left = 6.172835!
+Me.REQ_F_AIRPORT2_3.Name = "REQ_F_AIRPORT2_3"
+Me.REQ_F_AIRPORT2_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_AIRPORT2_3.Text = Nothing
+Me.REQ_F_AIRPORT2_3.Top = 15.29685!
+Me.REQ_F_AIRPORT2_3.Width = 0.979134!
+'
+'REQ_F_TIME2_3
+'
+Me.REQ_F_TIME2_3.DataField = "REQ_F_TIME2_3"
+Me.REQ_F_TIME2_3.Height = 0.2!
+Me.REQ_F_TIME2_3.Left = 6.172835!
+Me.REQ_F_TIME2_3.Name = "REQ_F_TIME2_3"
+Me.REQ_F_TIME2_3.Style = "text-align: left; vertical-align: middle"
+Me.REQ_F_TIME2_3.Text = Nothing
+Me.REQ_F_TIME2_3.Top = 15.49685!
+Me.REQ_F_TIME2_3.Width = 0.979134!
+'
 'TO_DATE
 '
 Me.TO_DATE.DataField = "TO_DATE"
@@ -1686,32 +2340,6 @@ Me.FUKURO4.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシッ�
 Me.FUKURO4.Text = ""
 Me.FUKURO4.Top = 15.89685!
 Me.FUKURO4.Width = 0.2051181!
-'
-'FUKURO3
-'
-Me.FUKURO3.Height = 1.200001!
-Me.FUKURO3.HyperLink = Nothing
-Me.FUKURO3.Left = 3.558662!
-Me.FUKURO3.Name = "FUKURO3"
-Me.FUKURO3.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
-Me.FUKURO3.Text = ""
-Me.FUKURO3.Top = 14.69685!
-Me.FUKURO3.Width = 0.2051181!
-'
-'FUKURO1
-'
-Me.FUKURO1.Height = 1.2!
-Me.FUKURO1.HyperLink = Nothing
-Me.FUKURO1.Left = 3.558662!
-Me.FUKURO1.Name = "FUKURO1"
-Me.FUKURO1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
-Me.FUKURO1.Text = ""
-Me.FUKURO1.Top = 12.29685!
-Me.FUKURO1.Width = 0.2291338!
 '
 'Line117
 '
@@ -1841,18 +2469,6 @@ Me.REQ_F_TEHAI_1.Text = Nothing
 Me.REQ_F_TEHAI_1.Top = 12.29685!
 Me.REQ_F_TEHAI_1.Width = 0.977953!
 '
-'Label175
-'
-Me.Label175.Height = 0.2!
-Me.Label175.HyperLink = Nothing
-Me.Label175.Left = 3.787795!
-Me.Label175.Name = "Label175"
-Me.Label175.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label175.Text = "利用日"
-Me.Label175.Top = 12.49685!
-Me.Label175.Width = 0.7196856!
-'
 'Label174
 '
 Me.Label174.Height = 0.2!
@@ -1877,30 +2493,6 @@ Me.Label173.Text = "依頼内容"
 Me.Label173.Top = 12.29685!
 Me.Label173.Width = 0.6874018!
 '
-'Label172
-'
-Me.Label172.Height = 0.1999999!
-Me.Label172.HyperLink = Nothing
-Me.Label172.Left = 3.787795!
-Me.Label172.Name = "Label172"
-Me.Label172.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label172.Text = "希望する"
-Me.Label172.Top = 12.29685!
-Me.Label172.Width = 0.7196856!
-'
-'Label160
-'
-Me.Label160.Height = 0.2!
-Me.Label160.HyperLink = Nothing
-Me.Label160.Left = 3.787796!
-Me.Label160.Name = "Label160"
-Me.Label160.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label160.Text = "出発地"
-Me.Label160.Top = 12.89685!
-Me.Label160.Width = 0.7196851!
-'
 'Label159
 '
 Me.Label159.Height = 0.2!
@@ -1913,18 +2505,6 @@ Me.Label159.Text = "到着地"
 Me.Label159.Top = 12.89685!
 Me.Label159.Width = 0.6874022!
 '
-'Label158
-'
-Me.Label158.Height = 0.2!
-Me.Label158.HyperLink = Nothing
-Me.Label158.Left = 3.787795!
-Me.Label158.Name = "Label158"
-Me.Label158.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label158.Text = "出発時間"
-Me.Label158.Top = 13.09685!
-Me.Label158.Width = 0.7196856!
-'
 'Label157
 '
 Me.Label157.Height = 0.2!
@@ -1936,30 +2516,6 @@ Me.Label157.Style = "background-color: darkgray; font-family: ＭＳ ゴシッ�
 Me.Label157.Text = "到着時間"
 Me.Label157.Top = 13.09685!
 Me.Label157.Width = 0.6874022!
-'
-'Label156
-'
-Me.Label156.Height = 0.2!
-Me.Label156.HyperLink = Nothing
-Me.Label156.Left = 3.787795!
-Me.Label156.Name = "Label156"
-Me.Label156.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label156.Text = "列車・便名"
-Me.Label156.Top = 12.69685!
-Me.Label156.Width = 0.7196854!
-'
-'Label155
-'
-Me.Label155.Height = 0.2!
-Me.Label155.HyperLink = Nothing
-Me.Label155.Left = 3.787795!
-Me.Label155.Name = "Label155"
-Me.Label155.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label155.Text = "座席区分"
-Me.Label155.Top = 13.29685!
-Me.Label155.Width = 0.7196856!
 '
 'Label154
 '
@@ -2895,7 +3451,7 @@ Me.Label71.HyperLink = Nothing
 Me.Label71.Left = 1.192093E-07!
 Me.Label71.Name = "Label71"
 Me.Label71.Style = "background-color: darkgray; white-space: nowrap"
-Me.Label71.Text = "タクシーチケット(要・不要)"
+Me.Label71.Text = "タクシーチケット手配"
 Me.Label71.Top = 7.248813!
 Me.Label71.Width = 1.677953!
 '
@@ -5384,19 +5940,6 @@ Me.Label128.Text = "希望する"
 Me.Label128.Top = 13.49685!
 Me.Label128.Width = 0.743701!
 '
-'FUKURO2
-'
-Me.FUKURO2.Height = 1.2!
-Me.FUKURO2.HyperLink = Nothing
-Me.FUKURO2.Left = 3.558662!
-Me.FUKURO2.Name = "FUKURO2"
-Me.FUKURO2.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: b"& _ 
-    "old; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-v"& _ 
-    "ertical: true"
-Me.FUKURO2.Text = ""
-Me.FUKURO2.Top = 13.49685!
-Me.FUKURO2.Width = 0.2051181!
-'
 'Line71
 '
 Me.Line71.Height = 2.2!
@@ -5643,17 +6186,6 @@ Me.REQ_O_SEAT_KIBOU1.Text = Nothing
 Me.REQ_O_SEAT_KIBOU1.Top = 13.29685!
 Me.REQ_O_SEAT_KIBOU1.Width = 0.9791338!
 '
-'REQ_O_SEAT_1
-'
-Me.REQ_O_SEAT_1.DataField = "REQ_O_SEAT_1"
-Me.REQ_O_SEAT_1.Height = 0.2!
-Me.REQ_O_SEAT_1.Left = 0.9165352!
-Me.REQ_O_SEAT_1.Name = "REQ_O_SEAT_1"
-Me.REQ_O_SEAT_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_SEAT_1.Text = Nothing
-Me.REQ_O_SEAT_1.Top = 13.29685!
-Me.REQ_O_SEAT_1.Width = 0.9858268!
-'
 'REQ_O_BIN_1
 '
 Me.REQ_O_BIN_1.DataField = "REQ_O_BIN_1"
@@ -5676,17 +6208,6 @@ Me.REQ_O_TIME2_1.Text = Nothing
 Me.REQ_O_TIME2_1.Top = 13.09685!
 Me.REQ_O_TIME2_1.Width = 0.9791338!
 '
-'REQ_O_TIME1_1
-'
-Me.REQ_O_TIME1_1.DataField = "REQ_O_TIME1_1"
-Me.REQ_O_TIME1_1.Height = 0.2!
-Me.REQ_O_TIME1_1.Left = 0.9165352!
-Me.REQ_O_TIME1_1.Name = "REQ_O_TIME1_1"
-Me.REQ_O_TIME1_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_TIME1_1.Text = Nothing
-Me.REQ_O_TIME1_1.Top = 13.09685!
-Me.REQ_O_TIME1_1.Width = 0.9858268!
-'
 'REQ_O_AIRPORT2_1
 '
 Me.REQ_O_AIRPORT2_1.DataField = "REQ_O_AIRPORT2_1"
@@ -5697,17 +6218,6 @@ Me.REQ_O_AIRPORT2_1.Style = "text-align: left; vertical-align: middle"
 Me.REQ_O_AIRPORT2_1.Text = Nothing
 Me.REQ_O_AIRPORT2_1.Top = 12.89685!
 Me.REQ_O_AIRPORT2_1.Width = 0.9688975!
-'
-'REQ_O_AIRPORT1_1
-'
-Me.REQ_O_AIRPORT1_1.DataField = "REQ_O_AIRPORT1_1"
-Me.REQ_O_AIRPORT1_1.Height = 0.2!
-Me.REQ_O_AIRPORT1_1.Left = 0.9165352!
-Me.REQ_O_AIRPORT1_1.Name = "REQ_O_AIRPORT1_1"
-Me.REQ_O_AIRPORT1_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_AIRPORT1_1.Text = Nothing
-Me.REQ_O_AIRPORT1_1.Top = 12.89685!
-Me.REQ_O_AIRPORT1_1.Width = 0.9858268!
 '
 'Label140
 '
@@ -5892,7 +6402,7 @@ Me.OURO4.Width = 0.2291338!
 '
 'Line75
 '
-Me.Line75.Height = 2.200001!
+Me.Line75.Height = 2.2!
 Me.Line75.Left = 0.2291343!
 Me.Line75.LineWeight = 1!
 Me.Line75.Name = "Line75"
@@ -5915,30 +6425,6 @@ Me.Label161.Text = "座席希望"
 Me.Label161.Top = 13.29685!
 Me.Label161.Width = 0.6874014!
 '
-'Label162
-'
-Me.Label162.Height = 0.2!
-Me.Label162.HyperLink = Nothing
-Me.Label162.Left = 0.2291339!
-Me.Label162.Name = "Label162"
-Me.Label162.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label162.Text = "座席区分"
-Me.Label162.Top = 13.29685!
-Me.Label162.Width = 0.6874014!
-'
-'Label163
-'
-Me.Label163.Height = 0.2!
-Me.Label163.HyperLink = Nothing
-Me.Label163.Left = 0.2291339!
-Me.Label163.Name = "Label163"
-Me.Label163.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label163.Text = "列車・便名"
-Me.Label163.Top = 12.69685!
-Me.Label163.Width = 0.6874015!
-'
 'Label164
 '
 Me.Label164.Height = 0.2!
@@ -5950,18 +6436,6 @@ Me.Label164.Style = "background-color: darkgray; font-family: ＭＳ ゴシッ�
 Me.Label164.Text = "到着時間"
 Me.Label164.Top = 13.09685!
 Me.Label164.Width = 0.6874014!
-'
-'Label165
-'
-Me.Label165.Height = 0.2!
-Me.Label165.HyperLink = Nothing
-Me.Label165.Left = 0.2291339!
-Me.Label165.Name = "Label165"
-Me.Label165.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label165.Text = "出発時間"
-Me.Label165.Top = 13.09685!
-Me.Label165.Width = 0.6874014!
 '
 'Label166
 '
@@ -5975,18 +6449,6 @@ Me.Label166.Text = "到着地"
 Me.Label166.Top = 12.89685!
 Me.Label166.Width = 0.6874015!
 '
-'Label167
-'
-Me.Label167.Height = 0.2!
-Me.Label167.HyperLink = Nothing
-Me.Label167.Left = 0.2291339!
-Me.Label167.Name = "Label167"
-Me.Label167.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label167.Text = "出発地"
-Me.Label167.Top = 12.89685!
-Me.Label167.Width = 0.6874015!
-'
 'OURO1
 '
 Me.OURO1.Height = 1.200002!
@@ -5999,18 +6461,6 @@ Me.OURO1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; 
 Me.OURO1.Text = ""
 Me.OURO1.Top = 12.29685!
 Me.OURO1.Width = 0.2291338!
-'
-'Label168
-'
-Me.Label168.Height = 0.1999999!
-Me.Label168.HyperLink = Nothing
-Me.Label168.Left = 0.2291346!
-Me.Label168.Name = "Label168"
-Me.Label168.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label168.Text = "希望する"
-Me.Label168.Top = 12.29685!
-Me.Label168.Width = 0.6874014!
 '
 'Label169
 '
@@ -6035,18 +6485,6 @@ Me.Label170.Style = "background-color: darkgray; font-family: ＭＳ ゴシッ�
 Me.Label170.Text = "交通機関"
 Me.Label170.Top = 12.49685!
 Me.Label170.Width = 0.6874016!
-'
-'Label171
-'
-Me.Label171.Height = 0.2!
-Me.Label171.HyperLink = Nothing
-Me.Label171.Left = 0.2291339!
-Me.Label171.Name = "Label171"
-Me.Label171.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label171.Text = "利用日"
-Me.Label171.Top = 12.49685!
-Me.Label171.Width = 0.6874015!
 '
 'Label176
 '
@@ -6132,17 +6570,6 @@ Me.Label183.Text = "利用日"
 Me.Label183.Top = 16.09685!
 Me.Label183.Width = 0.7436993!
 '
-'REQ_O_TEHAI_1
-'
-Me.REQ_O_TEHAI_1.DataField = "REQ_O_TEHAI_1"
-Me.REQ_O_TEHAI_1.Height = 0.1999998!
-Me.REQ_O_TEHAI_1.Left = 0.9165355!
-Me.REQ_O_TEHAI_1.Name = "REQ_O_TEHAI_1"
-Me.REQ_O_TEHAI_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_TEHAI_1.Text = Nothing
-Me.REQ_O_TEHAI_1.Top = 12.29685!
-Me.REQ_O_TEHAI_1.Width = 0.9858268!
-'
 'REQ_O_IRAINAIYOU_1
 '
 Me.REQ_O_IRAINAIYOU_1.DataField = "REQ_O_IRAINAIYOU_1"
@@ -6164,17 +6591,6 @@ Me.REQ_O_KOTSUKIKAN_1.Style = "text-align: left; vertical-align: middle"
 Me.REQ_O_KOTSUKIKAN_1.Text = Nothing
 Me.REQ_O_KOTSUKIKAN_1.Top = 12.49685!
 Me.REQ_O_KOTSUKIKAN_1.Width = 0.9688978!
-'
-'REQ_O_DATE_1
-'
-Me.REQ_O_DATE_1.DataField = "REQ_O_DATE_1"
-Me.REQ_O_DATE_1.Height = 0.2!
-Me.REQ_O_DATE_1.Left = 0.9165355!
-Me.REQ_O_DATE_1.Name = "REQ_O_DATE_1"
-Me.REQ_O_DATE_1.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_DATE_1.Text = Nothing
-Me.REQ_O_DATE_1.Top = 12.49685!
-Me.REQ_O_DATE_1.Width = 0.9858268!
 '
 'REQ_O_TEHAI_4
 '
@@ -6244,17 +6660,6 @@ Me.REQ_F_SEAT_KIBOU3.Text = Nothing
 Me.REQ_F_SEAT_KIBOU3.Top = 15.69685!
 Me.REQ_F_SEAT_KIBOU3.Width = 0.979134!
 '
-'REQ_F_SEAT_3
-'
-Me.REQ_F_SEAT_3.DataField = "REQ_F_SEAT_3"
-Me.REQ_F_SEAT_3.Height = 0.2!
-Me.REQ_F_SEAT_3.Left = 4.507481!
-Me.REQ_F_SEAT_3.Name = "REQ_F_SEAT_3"
-Me.REQ_F_SEAT_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_SEAT_3.Text = Nothing
-Me.REQ_F_SEAT_3.Top = 15.69685!
-Me.REQ_F_SEAT_3.Width = 0.9779529!
-'
 'REQ_F_BIN_3
 '
 Me.REQ_F_BIN_3.DataField = "REQ_F_BIN_3"
@@ -6265,50 +6670,6 @@ Me.REQ_F_BIN_3.Style = "text-align: left; vertical-align: middle"
 Me.REQ_F_BIN_3.Text = Nothing
 Me.REQ_F_BIN_3.Top = 15.09685!
 Me.REQ_F_BIN_3.Width = 2.644488!
-'
-'REQ_F_TIME2_3
-'
-Me.REQ_F_TIME2_3.DataField = "REQ_F_TIME2_3"
-Me.REQ_F_TIME2_3.Height = 0.2!
-Me.REQ_F_TIME2_3.Left = 6.172835!
-Me.REQ_F_TIME2_3.Name = "REQ_F_TIME2_3"
-Me.REQ_F_TIME2_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TIME2_3.Text = Nothing
-Me.REQ_F_TIME2_3.Top = 15.49685!
-Me.REQ_F_TIME2_3.Width = 0.979134!
-'
-'REQ_F_TIME1_3
-'
-Me.REQ_F_TIME1_3.DataField = "REQ_F_TIME1_3"
-Me.REQ_F_TIME1_3.Height = 0.2!
-Me.REQ_F_TIME1_3.Left = 4.507481!
-Me.REQ_F_TIME1_3.Name = "REQ_F_TIME1_3"
-Me.REQ_F_TIME1_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_TIME1_3.Text = Nothing
-Me.REQ_F_TIME1_3.Top = 15.49685!
-Me.REQ_F_TIME1_3.Width = 0.9779529!
-'
-'REQ_F_AIRPORT2_3
-'
-Me.REQ_F_AIRPORT2_3.DataField = "REQ_F_AIRPORT2_3"
-Me.REQ_F_AIRPORT2_3.Height = 0.2!
-Me.REQ_F_AIRPORT2_3.Left = 6.172835!
-Me.REQ_F_AIRPORT2_3.Name = "REQ_F_AIRPORT2_3"
-Me.REQ_F_AIRPORT2_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_AIRPORT2_3.Text = Nothing
-Me.REQ_F_AIRPORT2_3.Top = 15.29685!
-Me.REQ_F_AIRPORT2_3.Width = 0.979134!
-'
-'REQ_F_AIRPORT1_3
-'
-Me.REQ_F_AIRPORT1_3.DataField = "REQ_F_AIRPORT1_3"
-Me.REQ_F_AIRPORT1_3.Height = 0.2!
-Me.REQ_F_AIRPORT1_3.Left = 4.507481!
-Me.REQ_F_AIRPORT1_3.Name = "REQ_F_AIRPORT1_3"
-Me.REQ_F_AIRPORT1_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_F_AIRPORT1_3.Text = Nothing
-Me.REQ_F_AIRPORT1_3.Top = 15.29685!
-Me.REQ_F_AIRPORT1_3.Width = 0.9779529!
 '
 'REQ_F_DATE_3
 '
@@ -6376,50 +6737,6 @@ Me.REQ_O_BIN_3.Text = Nothing
 Me.REQ_O_BIN_3.Top = 15.09685!
 Me.REQ_O_BIN_3.Width = 2.642126!
 '
-'REQ_O_TIME2_3
-'
-Me.REQ_O_TIME2_3.DataField = "REQ_O_TIME2_3"
-Me.REQ_O_TIME2_3.Height = 0.2!
-Me.REQ_O_TIME2_3.Left = 2.579528!
-Me.REQ_O_TIME2_3.Name = "REQ_O_TIME2_3"
-Me.REQ_O_TIME2_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_TIME2_3.Text = Nothing
-Me.REQ_O_TIME2_3.Top = 15.49685!
-Me.REQ_O_TIME2_3.Width = 0.9791338!
-'
-'REQ_O_TIME1_3
-'
-Me.REQ_O_TIME1_3.DataField = "REQ_O_TIME1_3"
-Me.REQ_O_TIME1_3.Height = 0.2!
-Me.REQ_O_TIME1_3.Left = 0.9165355!
-Me.REQ_O_TIME1_3.Name = "REQ_O_TIME1_3"
-Me.REQ_O_TIME1_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_TIME1_3.Text = Nothing
-Me.REQ_O_TIME1_3.Top = 15.49685!
-Me.REQ_O_TIME1_3.Width = 0.9858269!
-'
-'REQ_O_AIRPORT2_3
-'
-Me.REQ_O_AIRPORT2_3.DataField = "REQ_O_AIRPORT2_3"
-Me.REQ_O_AIRPORT2_3.Height = 0.2!
-Me.REQ_O_AIRPORT2_3.Left = 2.579528!
-Me.REQ_O_AIRPORT2_3.Name = "REQ_O_AIRPORT2_3"
-Me.REQ_O_AIRPORT2_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_AIRPORT2_3.Text = Nothing
-Me.REQ_O_AIRPORT2_3.Top = 15.29685!
-Me.REQ_O_AIRPORT2_3.Width = 0.9791338!
-'
-'REQ_O_AIRPORT1_3
-'
-Me.REQ_O_AIRPORT1_3.DataField = "REQ_O_AIRPORT1_3"
-Me.REQ_O_AIRPORT1_3.Height = 0.2!
-Me.REQ_O_AIRPORT1_3.Left = 0.9165355!
-Me.REQ_O_AIRPORT1_3.Name = "REQ_O_AIRPORT1_3"
-Me.REQ_O_AIRPORT1_3.Style = "text-align: left; vertical-align: middle"
-Me.REQ_O_AIRPORT1_3.Text = Nothing
-Me.REQ_O_AIRPORT1_3.Top = 15.29685!
-Me.REQ_O_AIRPORT1_3.Width = 0.9755906!
-'
 'REQ_O_DATE_3
 '
 Me.REQ_O_DATE_3.DataField = "REQ_O_DATE_3"
@@ -6475,102 +6792,6 @@ Me.REQ_O_TEHAI_3.Text = Nothing
 Me.REQ_O_TEHAI_3.Top = 14.69685!
 Me.REQ_O_TEHAI_3.Width = 0.9755906!
 '
-'Label184
-'
-Me.Label184.Height = 0.2!
-Me.Label184.HyperLink = Nothing
-Me.Label184.Left = 5.485433!
-Me.Label184.Name = "Label184"
-Me.Label184.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label184.Text = "座席希望"
-Me.Label184.Top = 15.69685!
-Me.Label184.Width = 0.6874018!
-'
-'Label185
-'
-Me.Label185.Height = 0.2!
-Me.Label185.HyperLink = Nothing
-Me.Label185.Left = 3.763779!
-Me.Label185.Name = "Label185"
-Me.Label185.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label185.Text = "座席区分"
-Me.Label185.Top = 15.69685!
-Me.Label185.Width = 0.743701!
-'
-'Label186
-'
-Me.Label186.Height = 0.2!
-Me.Label186.HyperLink = Nothing
-Me.Label186.Left = 3.763779!
-Me.Label186.Name = "Label186"
-Me.Label186.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label186.Text = "列車・便名"
-Me.Label186.Top = 15.09685!
-Me.Label186.Width = 0.7437013!
-'
-'Label187
-'
-Me.Label187.Height = 0.2!
-Me.Label187.HyperLink = Nothing
-Me.Label187.Left = 5.485433!
-Me.Label187.Name = "Label187"
-Me.Label187.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label187.Text = "到着時間"
-Me.Label187.Top = 15.49685!
-Me.Label187.Width = 0.6874018!
-'
-'Label188
-'
-Me.Label188.Height = 0.2!
-Me.Label188.HyperLink = Nothing
-Me.Label188.Left = 3.763779!
-Me.Label188.Name = "Label188"
-Me.Label188.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label188.Text = "出発時間"
-Me.Label188.Top = 15.49685!
-Me.Label188.Width = 0.743701!
-'
-'Label189
-'
-Me.Label189.Height = 0.2!
-Me.Label189.HyperLink = Nothing
-Me.Label189.Left = 5.485433!
-Me.Label189.Name = "Label189"
-Me.Label189.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label189.Text = "到着地"
-Me.Label189.Top = 15.29685!
-Me.Label189.Width = 0.6874018!
-'
-'Label190
-'
-Me.Label190.Height = 0.2!
-Me.Label190.HyperLink = Nothing
-Me.Label190.Left = 3.763779!
-Me.Label190.Name = "Label190"
-Me.Label190.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label190.Text = "出発地"
-Me.Label190.Top = 15.29685!
-Me.Label190.Width = 0.743701!
-'
-'Label191
-'
-Me.Label191.Height = 0.2!
-Me.Label191.HyperLink = Nothing
-Me.Label191.Left = 3.763779!
-Me.Label191.Name = "Label191"
-Me.Label191.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label191.Text = "利用日"
-Me.Label191.Top = 14.89685!
-Me.Label191.Width = 0.743701!
-'
 'Label192
 '
 Me.Label192.Height = 0.2!
@@ -6595,21 +6816,9 @@ Me.Label193.Text = "依頼内容"
 Me.Label193.Top = 14.69685!
 Me.Label193.Width = 0.6874018!
 '
-'Label194
-'
-Me.Label194.Height = 0.1999999!
-Me.Label194.HyperLink = Nothing
-Me.Label194.Left = 3.763779!
-Me.Label194.Name = "Label194"
-Me.Label194.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label194.Text = "希望する"
-Me.Label194.Top = 14.69685!
-Me.Label194.Width = 0.743701!
-'
 'Line78
 '
-Me.Line78.Height = 1.599998!
+Me.Line78.Height = 1.6!
 Me.Line78.Left = 0.2291339!
 Me.Line78.LineWeight = 1!
 Me.Line78.Name = "Line78"
@@ -6619,18 +6828,6 @@ Me.Line78.X1 = 0.2291343!
 Me.Line78.X2 = 0.2291339!
 Me.Line78.Y1 = 16.69685!
 Me.Line78.Y2 = 18.29685!
-'
-'Label195
-'
-Me.Label195.Height = 0.2!
-Me.Label195.HyperLink = Nothing
-Me.Label195.Left = 1.892126!
-Me.Label195.Name = "Label195"
-Me.Label195.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label195.Text = "座席希望"
-Me.Label195.Top = 15.69685!
-Me.Label195.Width = 0.6874014!
 '
 'Label196
 '
@@ -6655,54 +6852,6 @@ Me.Label197.Style = "background-color: darkgray; font-family: ＭＳ ゴシッ�
 Me.Label197.Text = "列車・便名"
 Me.Label197.Top = 15.09685!
 Me.Label197.Width = 0.6874015!
-'
-'Label198
-'
-Me.Label198.Height = 0.2!
-Me.Label198.HyperLink = Nothing
-Me.Label198.Left = 1.892126!
-Me.Label198.Name = "Label198"
-Me.Label198.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label198.Text = "到着時間"
-Me.Label198.Top = 15.49685!
-Me.Label198.Width = 0.6874014!
-'
-'Label199
-'
-Me.Label199.Height = 0.2!
-Me.Label199.HyperLink = Nothing
-Me.Label199.Left = 0.229134!
-Me.Label199.Name = "Label199"
-Me.Label199.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label199.Text = "出発時間"
-Me.Label199.Top = 15.49685!
-Me.Label199.Width = 0.6874014!
-'
-'Label200
-'
-Me.Label200.Height = 0.2!
-Me.Label200.HyperLink = Nothing
-Me.Label200.Left = 1.892126!
-Me.Label200.Name = "Label200"
-Me.Label200.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label200.Text = "到着地"
-Me.Label200.Top = 15.29685!
-Me.Label200.Width = 0.6874015!
-'
-'Label201
-'
-Me.Label201.Height = 0.2!
-Me.Label201.HyperLink = Nothing
-Me.Label201.Left = 0.229134!
-Me.Label201.Name = "Label201"
-Me.Label201.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label201.Text = "出発地"
-Me.Label201.Top = 15.29685!
-Me.Label201.Width = 0.6874015!
 '
 'Label202
 '
@@ -7037,39 +7186,6 @@ Me.DR_SHISETSU_ADDRESS2.Text = Nothing
 Me.DR_SHISETSU_ADDRESS2.Top = 11.89685!
 Me.DR_SHISETSU_ADDRESS2.Width = 2.644488!
 '
-'DR_SHISETSU_NAME2
-'
-Me.DR_SHISETSU_NAME2.DataField = "DR_SHISETSU_NAME"
-Me.DR_SHISETSU_NAME2.Height = 0.2!
-Me.DR_SHISETSU_NAME2.Left = 4.507481!
-Me.DR_SHISETSU_NAME2.Name = "DR_SHISETSU_NAME2"
-Me.DR_SHISETSU_NAME2.Style = "vertical-align: middle"
-Me.DR_SHISETSU_NAME2.Text = Nothing
-Me.DR_SHISETSU_NAME2.Top = 11.69685!
-Me.DR_SHISETSU_NAME2.Width = 2.657874!
-'
-'Label206
-'
-Me.Label206.Height = 0.2!
-Me.Label206.HyperLink = Nothing
-Me.Label206.Left = 0!
-Me.Label206.Name = "Label206"
-Me.Label206.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
-Me.Label206.Text = "会合名："
-Me.Label206.Top = 10.69685!
-Me.Label206.Width = 0.6771654!
-'
-'KOUENKAI_NAME2
-'
-Me.KOUENKAI_NAME2.DataField = "KOUENKAI_NAME"
-Me.KOUENKAI_NAME2.Height = 0.2!
-Me.KOUENKAI_NAME2.Left = 0.6771654!
-Me.KOUENKAI_NAME2.Name = "KOUENKAI_NAME2"
-Me.KOUENKAI_NAME2.Style = "font-weight: bold; white-space: nowrap"
-Me.KOUENKAI_NAME2.Text = Nothing
-Me.KOUENKAI_NAME2.Top = 10.69685!
-Me.KOUENKAI_NAME2.Width = 6.474803!
-'
 'Label207
 '
 Me.Label207.Height = 0.2!
@@ -7081,18 +7197,6 @@ Me.Label207.Style = "background-color: darkgray; font-family: ＭＳ ゴシッ�
 Me.Label207.Text = "会合番号"
 Me.Label207.Top = 11.29685!
 Me.Label207.Width = 1.323622!
-'
-'Label208
-'
-Me.Label208.Height = 0.2!
-Me.Label208.HyperLink = Nothing
-Me.Label208.Left = 3.558662!
-Me.Label208.Name = "Label208"
-Me.Label208.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label208.Text = "手配ステータス"
-Me.Label208.Top = 11.29685!
-Me.Label208.Width = 0.9488187!
 '
 'Label209
 '
@@ -7118,18 +7222,6 @@ Me.Label210.Text = "MTP ID(参加者ID)"
 Me.Label210.Top = 11.49685!
 Me.Label210.Width = 1.323622!
 '
-'Label211
-'
-Me.Label211.Height = 0.2!
-Me.Label211.HyperLink = Nothing
-Me.Label211.Left = 3.558662!
-Me.Label211.Name = "Label211"
-Me.Label211.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label211.Text = "DRコード"
-Me.Label211.Top = 11.49685!
-Me.Label211.Width = 0.9488187!
-'
 'Label212
 '
 Me.Label212.Height = 0.2!
@@ -7153,42 +7245,6 @@ Me.Label213.Style = "background-color: darkgray; font-family: ＭＳ ゴシッ�
 Me.Label213.Text = "DR氏名(半角ｶﾀｶﾅ)"
 Me.Label213.Top = 11.89685!
 Me.Label213.Width = 1.323622!
-'
-'Label214
-'
-Me.Label214.Height = 0.2!
-Me.Label214.HyperLink = Nothing
-Me.Label214.Left = 3.558662!
-Me.Label214.Name = "Label214"
-Me.Label214.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label214.Text = "施設名"
-Me.Label214.Top = 11.69685!
-Me.Label214.Width = 0.9488187!
-'
-'Label215
-'
-Me.Label215.Height = 0.2!
-Me.Label215.HyperLink = Nothing
-Me.Label215.Left = 3.558662!
-Me.Label215.Name = "Label215"
-Me.Label215.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label215.Text = "施設住所"
-Me.Label215.Top = 11.89685!
-Me.Label215.Width = 0.9488187!
-'
-'Label216
-'
-Me.Label216.Height = 0.2!
-Me.Label216.HyperLink = Nothing
-Me.Label216.Left = 3.558662!
-Me.Label216.Name = "Label216"
-Me.Label216.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label216.Text = "性別"
-Me.Label216.Top = 12.09685!
-Me.Label216.Width = 0.9488187!
 '
 'Label217
 '
@@ -7358,7 +7414,7 @@ Me.DR_SEX2.Width = 2.644488!
 '
 'Line195
 '
-Me.Line195.Height = 0.2000008!
+Me.Line195.Height = 0.1999998!
 Me.Line195.Left = 4.828347!
 Me.Line195.LineWeight = 1!
 Me.Line195.Name = "Line195"
@@ -7371,7 +7427,7 @@ Me.Line195.Y2 = 11.49685!
 '
 'Line196
 '
-Me.Line196.Height = 0.2000008!
+Me.Line196.Height = 0.1999998!
 Me.Line196.Left = 5.800788!
 Me.Line196.LineWeight = 1!
 Me.Line196.Name = "Line196"
@@ -7381,19 +7437,6 @@ Me.Line196.X1 = 5.800788!
 Me.Line196.X2 = 5.800788!
 Me.Line196.Y1 = 11.29685!
 Me.Line196.Y2 = 11.49685!
-'
-'Line198
-'
-Me.Line198.Height = 7.000001!
-Me.Line198.Left = 4.507481!
-Me.Line198.LineWeight = 1!
-Me.Line198.Name = "Line198"
-Me.Line198.Top = 11.29685!
-Me.Line198.Width = 0!
-Me.Line198.X1 = 4.507481!
-Me.Line198.X2 = 4.507481!
-Me.Line198.Y1 = 11.29685!
-Me.Line198.Y2 = 18.29685!
 '
 'Line199
 '
@@ -7424,7 +7467,7 @@ Me.Line200.Y2 = 12.29685!
 '
 'Line79
 '
-Me.Line79.Height = 7.000001!
+Me.Line79.Height = 7!
 Me.Line79.Left = 0!
 Me.Line79.LineWeight = 1!
 Me.Line79.Name = "Line79"
@@ -7434,19 +7477,6 @@ Me.Line79.X1 = 0!
 Me.Line79.X2 = 0!
 Me.Line79.Y1 = 11.29685!
 Me.Line79.Y2 = 18.29685!
-'
-'Line201
-'
-Me.Line201.Height = 7.000001!
-Me.Line201.Left = 7.151969!
-Me.Line201.LineWeight = 1!
-Me.Line201.Name = "Line201"
-Me.Line201.Top = 11.29685!
-Me.Line201.Width = 0!
-Me.Line201.X1 = 7.151969!
-Me.Line201.X2 = 7.151969!
-Me.Line201.Y1 = 11.29685!
-Me.Line201.Y2 = 18.29685!
 '
 'Line68
 '
@@ -7476,7 +7506,7 @@ Me.Line203.Y2 = 12.29685!
 '
 'Line70
 '
-Me.Line70.Height = 0.4000006!
+Me.Line70.Height = 0.3999996!
 Me.Line70.Left = 1.892126!
 Me.Line70.LineWeight = 1!
 Me.Line70.Name = "Line70"
@@ -7596,19 +7626,6 @@ Me.Line103.X1 = 0.2291339!
 Me.Line103.X2 = 3.558662!
 Me.Line103.Y1 = 15.69685!
 Me.Line103.Y2 = 15.69685!
-'
-'Line77
-'
-Me.Line77.Height = 1.000001!
-Me.Line77.Left = 1.892126!
-Me.Line77.LineWeight = 1!
-Me.Line77.Name = "Line77"
-Me.Line77.Top = 15.29685!
-Me.Line77.Width = 0!
-Me.Line77.X1 = 1.892126!
-Me.Line77.X2 = 1.892126!
-Me.Line77.Y1 = 15.29685!
-Me.Line77.Y2 = 16.29685!
 '
 'Line98
 '
@@ -7765,7 +7782,7 @@ Me.Line134.Y2 = 17.49685!
 '
 'Line135
 '
-Me.Line135.Height = 0.5999985!
+Me.Line135.Height = 0.6000004!
 Me.Line135.Left = 1.892126!
 Me.Line135.LineWeight = 1!
 Me.Line135.Name = "Line135"
@@ -7776,22 +7793,9 @@ Me.Line135.X2 = 1.892126!
 Me.Line135.Y1 = 17.69685!
 Me.Line135.Y2 = 18.29685!
 '
-'Line136
-'
-Me.Line136.Height = 6.000012!
-Me.Line136.Left = 0.916535!
-Me.Line136.LineWeight = 1!
-Me.Line136.Name = "Line136"
-Me.Line136.Top = 12.29685!
-Me.Line136.Width = 4.768372E-07!
-Me.Line136.X1 = 0.9165355!
-Me.Line136.X2 = 0.916535!
-Me.Line136.Y1 = 12.29685!
-Me.Line136.Y2 = 18.29686!
-'
 'Line137
 '
-Me.Line137.Height = 0.4000006!
+Me.Line137.Height = 0.3999996!
 Me.Line137.Left = 2.589764!
 Me.Line137.LineWeight = 1!
 Me.Line137.Name = "Line137"
@@ -7828,19 +7832,6 @@ Me.Line139.X2 = 2.589764!
 Me.Line139.Y1 = 14.09685!
 Me.Line139.Y2 = 15.09685!
 '
-'Line140
-'
-Me.Line140.Height = 1.000001!
-Me.Line140.Left = 2.589764!
-Me.Line140.LineWeight = 1!
-Me.Line140.Name = "Line140"
-Me.Line140.Top = 15.29685!
-Me.Line140.Width = 0!
-Me.Line140.X1 = 2.589764!
-Me.Line140.X2 = 2.589764!
-Me.Line140.Y1 = 15.29685!
-Me.Line140.Y2 = 16.29685!
-'
 'Line141
 '
 Me.Line141.Height = 1!
@@ -7856,7 +7847,7 @@ Me.Line141.Y2 = 17.49685!
 '
 'Line153
 '
-Me.Line153.Height = 0.5999985!
+Me.Line153.Height = 0.6000004!
 Me.Line153.Left = 2.589764!
 Me.Line153.LineWeight = 1!
 Me.Line153.Name = "Line153"
@@ -7880,19 +7871,6 @@ Me.Line84.X1 = 3.76378!
 Me.Line84.X2 = 7.151969!
 Me.Line84.Y1 = 14.49685!
 Me.Line84.Y2 = 14.49685!
-'
-'Line69
-'
-Me.Line69.Height = 7.000001!
-Me.Line69.Left = 3.558661!
-Me.Line69.LineWeight = 1!
-Me.Line69.Name = "Line69"
-Me.Line69.Top = 11.29685!
-Me.Line69.Width = 9.536743E-07!
-Me.Line69.X1 = 3.558661!
-Me.Line69.X2 = 3.558662!
-Me.Line69.Y1 = 11.29685!
-Me.Line69.Y2 = 18.29685!
 '
 'Label180
 '
@@ -7975,19 +7953,6 @@ Me.Line127.X1 = 3.76378!
 Me.Line127.X2 = 7.161418!
 Me.Line127.Y1 = 15.69685!
 Me.Line127.Y2 = 15.69685!
-'
-'Line73
-'
-Me.Line73.Height = 6.000001!
-Me.Line73.Left = 3.76378!
-Me.Line73.LineWeight = 1!
-Me.Line73.Name = "Line73"
-Me.Line73.Top = 12.29685!
-Me.Line73.Width = 0!
-Me.Line73.X1 = 3.76378!
-Me.Line73.X2 = 3.76378!
-Me.Line73.Y1 = 12.29685!
-Me.Line73.Y2 = 18.29685!
 '
 'Line122
 '
@@ -8171,7 +8136,7 @@ Me.Line131.Y2 = 16.89685!
 '
 'Line54
 '
-Me.Line54.Height = 0.4000006!
+Me.Line54.Height = 0.3999996!
 Me.Line54.Left = 5.485434!
 Me.Line54.LineWeight = 1!
 Me.Line54.Name = "Line54"
@@ -8184,7 +8149,7 @@ Me.Line54.Y2 = 12.69685!
 '
 'Line142
 '
-Me.Line142.Height = 0.4000006!
+Me.Line142.Height = 0.3999996!
 Me.Line142.Left = 6.186221!
 Me.Line142.LineWeight = 1!
 Me.Line142.Name = "Line142"
@@ -8220,19 +8185,6 @@ Me.Line144.X1 = 5.485434!
 Me.Line144.X2 = 5.485434!
 Me.Line144.Y1 = 14.09685!
 Me.Line144.Y2 = 15.09685!
-'
-'Line145
-'
-Me.Line145.Height = 1.000001!
-Me.Line145.Left = 5.485434!
-Me.Line145.LineWeight = 1!
-Me.Line145.Name = "Line145"
-Me.Line145.Top = 15.29685!
-Me.Line145.Width = 0!
-Me.Line145.X1 = 5.485434!
-Me.Line145.X2 = 5.485434!
-Me.Line145.Y1 = 15.29685!
-Me.Line145.Y2 = 16.29685!
 '
 'Line146
 '
@@ -8275,7 +8227,7 @@ Me.Line148.Y2 = 15.09685!
 '
 'Line149
 '
-Me.Line149.Height = 1.000001!
+Me.Line149.Height = 1!
 Me.Line149.Left = 6.172835!
 Me.Line149.LineWeight = 1!
 Me.Line149.Name = "Line149"
@@ -8301,7 +8253,7 @@ Me.Line150.Y2 = 17.49685!
 '
 'Line151
 '
-Me.Line151.Height = 0.5999985!
+Me.Line151.Height = 0.6000004!
 Me.Line151.Left = 5.485434!
 Me.Line151.LineWeight = 1!
 Me.Line151.Name = "Line151"
@@ -8314,7 +8266,7 @@ Me.Line151.Y2 = 18.29685!
 '
 'Line157
 '
-Me.Line157.Height = 0.5999985!
+Me.Line157.Height = 0.6000004!
 Me.Line157.Left = 6.186221!
 Me.Line157.LineWeight = 1!
 Me.Line157.Name = "Line157"
@@ -8456,10 +8408,96 @@ Me.KAIJO_NAME.Text = Nothing
 Me.KAIJO_NAME.Top = 0.4740158!
 Me.KAIJO_NAME.Width = 6.488189!
 '
-'PageFooter
+'Line136
 '
-Me.PageFooter.Height = 0!
-Me.PageFooter.Name = "PageFooter"
+Me.Line136.Height = 6.00001!
+Me.Line136.Left = 0.916535!
+Me.Line136.LineWeight = 1!
+Me.Line136.Name = "Line136"
+Me.Line136.Top = 12.29685!
+Me.Line136.Width = 4.768372E-07!
+Me.Line136.X1 = 0.9165355!
+Me.Line136.X2 = 0.916535!
+Me.Line136.Y1 = 12.29685!
+Me.Line136.Y2 = 18.29686!
+'
+'Line69
+'
+Me.Line69.Height = 7!
+Me.Line69.Left = 3.558661!
+Me.Line69.LineWeight = 1!
+Me.Line69.Name = "Line69"
+Me.Line69.Top = 11.29685!
+Me.Line69.Width = 9.536743E-07!
+Me.Line69.X1 = 3.558661!
+Me.Line69.X2 = 3.558662!
+Me.Line69.Y1 = 11.29685!
+Me.Line69.Y2 = 18.29685!
+'
+'Line73
+'
+Me.Line73.Height = 6!
+Me.Line73.Left = 3.76378!
+Me.Line73.LineWeight = 1!
+Me.Line73.Name = "Line73"
+Me.Line73.Top = 12.29685!
+Me.Line73.Width = 0!
+Me.Line73.X1 = 3.76378!
+Me.Line73.X2 = 3.76378!
+Me.Line73.Y1 = 12.29685!
+Me.Line73.Y2 = 18.29685!
+'
+'Line145
+'
+Me.Line145.Height = 1!
+Me.Line145.Left = 5.485434!
+Me.Line145.LineWeight = 1!
+Me.Line145.Name = "Line145"
+Me.Line145.Top = 15.29685!
+Me.Line145.Width = 0!
+Me.Line145.X1 = 5.485434!
+Me.Line145.X2 = 5.485434!
+Me.Line145.Y1 = 15.29685!
+Me.Line145.Y2 = 16.29685!
+'
+'Line198
+'
+Me.Line198.Height = 7!
+Me.Line198.Left = 4.507481!
+Me.Line198.LineWeight = 1!
+Me.Line198.Name = "Line198"
+Me.Line198.Top = 11.29685!
+Me.Line198.Width = 0!
+Me.Line198.X1 = 4.507481!
+Me.Line198.X2 = 4.507481!
+Me.Line198.Y1 = 11.29685!
+Me.Line198.Y2 = 18.29685!
+'
+'Line201
+'
+Me.Line201.Height = 7!
+Me.Line201.Left = 7.151969!
+Me.Line201.LineWeight = 1!
+Me.Line201.Name = "Line201"
+Me.Line201.Top = 11.29685!
+Me.Line201.Width = 0!
+Me.Line201.X1 = 7.151969!
+Me.Line201.X2 = 7.151969!
+Me.Line201.Y1 = 11.29685!
+Me.Line201.Y2 = 18.29685!
+'
+'Line77
+'
+Me.Line77.Height = 1!
+Me.Line77.Left = 1.892126!
+Me.Line77.LineWeight = 1!
+Me.Line77.Name = "Line77"
+Me.Line77.Top = 15.29685!
+Me.Line77.Width = 0!
+Me.Line77.X1 = 1.892126!
+Me.Line77.X2 = 1.892126!
+Me.Line77.Y1 = 15.29685!
+Me.Line77.Y2 = 16.29685!
 '
 'Label221
 '
@@ -8483,49 +8521,6 @@ Me.KAIJO_NAME2.Text = Nothing
 Me.KAIJO_NAME2.Top = 10.89685!
 Me.KAIJO_NAME2.Width = 6.488189!
 '
-'Label222
-'
-Me.Label222.Height = 0.2!
-Me.Label222.HyperLink = Nothing
-Me.Label222.Left = 0!
-Me.Label222.Name = "Label222"
-Me.Label222.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
-Me.Label222.Text = "開催日："
-Me.Label222.Top = 11.09685!
-Me.Label222.Width = 0.6771654!
-'
-'FROM_DATE2
-'
-Me.FROM_DATE2.Height = 0.2!
-Me.FROM_DATE2.Left = 0.6771654!
-Me.FROM_DATE2.Name = "FROM_DATE2"
-Me.FROM_DATE2.Style = "font-weight: normal; white-space: nowrap"
-Me.FROM_DATE2.Text = Nothing
-Me.FROM_DATE2.Top = 11.09685!
-Me.FROM_DATE2.Width = 2.871259!
-'
-'Label223
-'
-Me.Label223.Height = 0.2!
-Me.Label223.HyperLink = Nothing
-Me.Label223.Left = 3.558662!
-Me.Label223.Name = "Label223"
-Me.Label223.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
-Me.Label223.Text = "チケット印字名："
-Me.Label223.Top = 11.09685!
-Me.Label223.Width = 1.269685!
-'
-'TAXI_PRT_NAME2
-'
-Me.TAXI_PRT_NAME2.DataField = "TAXI_PRT_NAME"
-Me.TAXI_PRT_NAME2.Height = 0.2!
-Me.TAXI_PRT_NAME2.Left = 4.828347!
-Me.TAXI_PRT_NAME2.Name = "TAXI_PRT_NAME2"
-Me.TAXI_PRT_NAME2.Style = "vertical-align: middle"
-Me.TAXI_PRT_NAME2.Text = Nothing
-Me.TAXI_PRT_NAME2.Top = 11.09685!
-Me.TAXI_PRT_NAME2.Width = 2.323622!
-'
 'FROM_DATE1
 '
 Me.FROM_DATE1.Height = 0.2!
@@ -8535,6 +8530,11 @@ Me.FROM_DATE1.Style = "font-weight: normal; white-space: nowrap"
 Me.FROM_DATE1.Text = Nothing
 Me.FROM_DATE1.Top = 0.6740158!
 Me.FROM_DATE1.Width = 2.871259!
+'
+'PageFooter
+'
+Me.PageFooter.Height = 0!
+Me.PageFooter.Name = "PageFooter"
 '
 'DrReport
 '
@@ -8582,28 +8582,75 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.TAXI_PRT_NAME2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label223,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FROM_DATE2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label222,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label206,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.KOUENKAI_NAME2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_TIME1_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_SHISETSU_NAME2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label184,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_SEAT_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label187,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TIME1_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_AIRPORT1_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label189,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label155,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label158,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label160,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label156,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label175,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label172,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label185,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label188,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label186,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label191,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label194,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label195,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label198,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label200,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_SEAT_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label162,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_TIME1_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label165,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_AIRPORT1_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label167,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label163,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_DATE_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_TEHAI_1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label171,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label168,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FUKURO2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_TIME2_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_AIRPORT2_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label216,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label215,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label214,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label211,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label208,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label201,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label199,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label190,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_O_AIRPORT1_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_AIRPORT2_3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.REQ_F_TIME2_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TO_DATE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TAXI_PRT_NAME,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label220,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.FROM_DATE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label219,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.FUKURO4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FUKURO3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FUKURO1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_DATE_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_TEHAI_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label175,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label174,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label173,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label172,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label160,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label159,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label158,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label157,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label156,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label155,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label154,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_AIRPORT1_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_AIRPORT2_1,System.ComponentModel.ISupportInitialize).EndInit
@@ -8843,7 +8890,6 @@ CType(Me.Label125,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label126,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label127,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label128,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FUKURO2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label129,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label130,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label131,System.ComponentModel.ISupportInitialize).EndInit
@@ -8864,12 +8910,9 @@ CType(Me.REQ_O_TIME1_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_AIRPORT2_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_AIRPORT1_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_SEAT_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_BIN_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_TIME2_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_TIME1_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_AIRPORT2_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_AIRPORT1_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label140,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label141,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label142,System.ComponentModel.ISupportInitialize).EndInit
@@ -8886,17 +8929,11 @@ CType(Me.Label152,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label153,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.OURO4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label161,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label162,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label163,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label164,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label165,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label166,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label167,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.OURO1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label168,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label169,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label170,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label171,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label176,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label177,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label178,System.ComponentModel.ISupportInitialize).EndInit
@@ -8904,73 +8941,40 @@ CType(Me.Label179,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label181,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label182,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label183,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_TEHAI_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_IRAINAIYOU_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_KOTSUKIKAN_1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_DATE_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_TEHAI_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_IRAINAIYOU_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_KOTSUKIKAN_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_DATE_4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_KIBOU3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_SEAT_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_BIN_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TIME2_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_TIME1_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_AIRPORT2_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_F_AIRPORT1_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_DATE_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_KOTSUKIKAN_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_IRAINAIYOU_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_SEAT_KIBOU3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_SEAT_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_BIN_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_TIME2_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_TIME1_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_AIRPORT2_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.REQ_O_AIRPORT1_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_DATE_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_KOTSUKIKAN_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_IRAINAIYOU_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_TEHAI_3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_O_TEHAI_3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label184,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label185,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label186,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label187,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label188,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label189,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label190,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label191,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label192,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label193,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label194,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label195,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label196,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label197,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label198,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label199,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label200,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label201,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label202,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label203,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label204,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label205,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.OURO3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_SHISETSU_ADDRESS2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.DR_SHISETSU_NAME2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label206,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.KOUENKAI_NAME2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label207,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label208,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label209,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label210,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label211,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label212,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label213,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label214,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label215,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label216,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label217,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.KOUENKAI_NO2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_STATUS_TEHAI2,System.ComponentModel.ISupportInitialize).EndInit
@@ -8986,10 +8990,6 @@ CType(Me.Label218,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.KAIJO_NAME,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label221,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.KAIJO_NAME2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label222,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.FROM_DATE2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label223,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TAXI_PRT_NAME2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.FROM_DATE1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me,System.ComponentModel.ISupportInitialize).EndInit
 

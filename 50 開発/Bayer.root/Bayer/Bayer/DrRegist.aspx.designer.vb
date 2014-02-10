@@ -223,15 +223,6 @@ Partial Public Class DrRegist
     Protected WithEvents DR_KANA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''DR_SEX コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents DR_SEX As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''DR_AGE コントロール。
     '''</summary>
     '''<remarks>
@@ -239,6 +230,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents DR_AGE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DR_SEX コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DR_SEX As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''DR_SANKA コントロール。
@@ -484,15 +484,6 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_MR_F_TEHAI As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''MR_SEX コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents MR_SEX As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''MR_AGE コントロール。
     '''</summary>
     '''<remarks>
@@ -500,6 +491,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents MR_AGE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''MR_SEX コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents MR_SEX As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''DivComment コントロール。

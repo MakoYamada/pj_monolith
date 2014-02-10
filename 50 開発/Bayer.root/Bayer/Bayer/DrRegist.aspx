@@ -171,16 +171,16 @@
 		            </tr>
 	                <tr>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
-			                ê´ï 
-		                </td>
-		                <td align="left" valign="middle">
-							<asp:Label ID="DR_SEX" runat="server" Width="100px"></asp:Label>
-		                </td>
-		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
 			                îNóÓ
 		                </td>
 		                <td align="left" valign="middle">
 							<asp:Label ID="DR_AGE" runat="server" Width="100px"></asp:Label>
+		                </td>
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                ê´ï 
+		                </td>
+		                <td align="left" valign="middle">
+							<asp:Label ID="DR_SEX" runat="server" Width="100px"></asp:Label>
 		                </td>
 		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
 			                âÔçáÇ÷ÇÃéQâ¡
@@ -463,16 +463,16 @@
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleMR">
-                            ê´ï 
-                        </td>
-                        <td align="left" valign="top" class="TdItem">
-							<asp:Label ID="MR_SEX" runat="server" Width="50px"></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleMR">
                             îNóÓ
                         </td>
                         <td align="left" valign="top" class="TdItem">
 							<asp:Label ID="MR_AGE" runat="server" Width="50px"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitleMR">
+                            ê´ï 
+                        </td>
+                        <td align="left" valign="top" class="TdItem">
+							<asp:Label ID="MR_SEX" runat="server" Width="50px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="4">
 							<div style="font-weight: bold; color: #2424f0;" id="DivComment" runat="server">
