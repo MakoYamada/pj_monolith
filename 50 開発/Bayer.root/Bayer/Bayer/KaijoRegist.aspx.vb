@@ -737,6 +737,7 @@ Partial Public Class KaijoRegist
 
         CmnModule.ClearControl(Me.ADDRESS1)
         CmnModule.ClearControl(Me.ADDRESS2)
+        CmnModule.ClearControl(Me.ANS_SHISETSU_NAME)
         CmnModule.ClearControl(Me.ANS_SHISETSU_ZIP)
         CmnModule.ClearControl(Me.ANS_SHISETSU_TEL)
         CmnModule.ClearControl(Me.ANS_SHISETSU_ADDRESS)
