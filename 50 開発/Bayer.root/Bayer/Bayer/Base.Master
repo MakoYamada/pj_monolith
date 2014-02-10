@@ -76,17 +76,15 @@
 						</tr>
 					</table>
 				</div>
-				<div id="content">
-					<table border="0" cellpadding="2" cellspacing="0" style="width: 100%; margin-top: 4px;" id="TblContent">
-						<tr valign="top">
-							<td align="left">
-								<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-								</asp:ContentPlaceHolder>
-							</td>
-						</tr>
-					</table>
-				</div>
 			</div>
+			<table border="0" cellpadding="2" cellspacing="0" style="width: 100%; margin-top: 4px;" id="TblContent">
+				<tr valign="top">
+					<td align="left">
+						<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+						</asp:ContentPlaceHolder>
+					</td>
+				</tr>
+			</table>
 		</form>
 	</body>
 </html>
