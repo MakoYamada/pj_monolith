@@ -108,6 +108,22 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class REQ_MR_TEHAI
+            Public Class Code
+                Public Const RinSeki As String = "1"
+                Public Const BetsuSeki As String = "2"
+                Public Const BetsuBin As String = "3"
+                Public Const Fuyou As String = "4"
+                Public Const Mi As String = ""
+            End Class
+            Public Class Name
+                Public Const RinSeki As String = "隣席希望"
+                Public Const BetsuSeki As String = "別席"
+                Public Const BetsuBin As String = "別便"
+                Public Const Fuyou As String = "不要"
+                Public Const Mi As String = "未指定"
+            End Class
+        End Class
         Public Class TEHAI_HOTEL
             '宿泊手配
             Public Class Code
