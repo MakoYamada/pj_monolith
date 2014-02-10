@@ -41,16 +41,14 @@
 							会合番号
 						</td>
 						<td align="left" class="TdItem" style="width:100px">
-							<asp:Label ID="KOUENKAI_NO" runat="server" Width="120px"></asp:Label>
+							<asp:Label ID="KOUENKAI_NO" runat="server" Width="100px"></asp:Label>
 						</td>
 						<td align="left" class="TdTitleHeader" style="width:100px">
 							開催日
 						</td>
                         <td align="left" class="TdItem">
-							<asp:Label ID="FROM_DATE" runat="server" Width="80px"></asp:Label>
-							～
-							<asp:Label ID="TO_DATE" runat="server" Width="80px"></asp:Label>
-                        </td>
+							<asp:Label ID="FROM_DATE" runat="server" Width="150px"></asp:Label>
+							</td>
 						<td align="left" class="TdTitleHeader" style="width:100px">
 							TimeStamp
 						</td>
@@ -62,7 +60,7 @@
 						<td align="left" class="TdTitleHeader" style="width:120px">
 							会合名
 						</td>
-						<td align="left" class="TdItem" colspan="5">
+						<td align="left" class="TdItem" colspan="3">
                             <asp:TextBox ID="KOUENKAI_NAME" runat="server" MaxLength="80" ReadOnly="True" 
                                 TextMode="MultiLine" Height="30px" Width="427px" tabstop="false" 
                                 BorderStyle="None"></asp:TextBox>
@@ -70,7 +68,7 @@
 						<td align="left" class="TdTitleHeader">
 							チケット印字名
 						</td>
-						<td align="left" class="TdItem">
+						<td align="left" class="TdItem" colspan="3">
 							<asp:Label ID="TAXI_PRT_NAME" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
@@ -477,6 +475,9 @@
 							<asp:Label ID="MR_AGE" runat="server" Width="50px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="4">
+							<div style="font-weight: bold; color: #2424f0;" id="DivComment" runat="server">
+								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
+							</div>
                         </td>
                     </tr>
                     <tr>
@@ -598,7 +599,7 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="5">
                             <asp:TextBox ID="REQ_HOTEL_NOTE" runat="server" MaxLength="255" 
-                                readonly="true" textmode="MultiLine" Height="143px" Width="321px" 
+                                readonly="true" textmode="MultiLine" Height="197px" Width="321px" 
                                  tabstop="false"  BorderStyle="None"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
@@ -657,6 +658,9 @@
                             備考
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3" width="344px">							
+							<div style="font-weight: bold; color: #2424f0;" id="Div1" runat="server">
+								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
+							</div>
                             <asp:TextBox ID="ANS_HOTEL_NOTE" runat="server" MaxLength="255" 
                                 textmode="MultiLine" Height="65px" Width="347px" TabIndex="27"></asp:TextBox>
                         </td>
@@ -2625,6 +2629,9 @@
                                 BorderStyle="None"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="4">
+							<div style="font-weight: bold; color: #2424f0;" id="Div2" runat="server">
+								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
+							</div>
                             <asp:TextBox ID="ANS_KOTSU_BIKO" runat="server" MaxLength="255" 
                                 TextMode="MultiLine" Height="68px" Width="445px" TabIndex="158"></asp:TextBox>                            
                         </td>
@@ -2688,6 +2695,9 @@
 							備考
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
+							<div style="font-weight: bold; color: #2424f0;" id="Div3" runat="server">
+								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
+							</div>
                             <asp:TextBox ID="ANS_TAXI_NOTE" runat="server" MaxLength="255" 
                                 TextMode="MultiLine" Height="68px" Width="344px" TabIndex="162"></asp:TextBox>                            
                         </td>

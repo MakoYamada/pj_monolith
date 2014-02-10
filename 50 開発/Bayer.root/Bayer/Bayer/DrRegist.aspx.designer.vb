@@ -97,15 +97,6 @@ Partial Public Class DrRegist
     Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TO_DATE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents TO_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''TIME_STAMP コントロール。
     '''</summary>
     '''<remarks>
@@ -511,6 +502,15 @@ Partial Public Class DrRegist
     Protected WithEvents MR_AGE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''DivComment コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DivComment As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''REQ_MR_HOTEL_NOTE コントロール。
     '''</summary>
     '''<remarks>
@@ -680,6 +680,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents ANS_HOTEL_SMOKING As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Div1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Div1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''ANS_HOTEL_NOTE コントロール。
@@ -2860,6 +2869,15 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_KOTSU_BIKO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Div2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Div2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''ANS_KOTSU_BIKO コントロール。
     '''</summary>
     '''<remarks>
@@ -2921,6 +2939,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_TAXI_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Div3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Div3 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''ANS_TAXI_NOTE コントロール。
