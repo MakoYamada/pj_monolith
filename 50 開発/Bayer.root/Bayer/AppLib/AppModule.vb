@@ -2927,6 +2927,19 @@ Public Class AppModule
         Return GetMark_REQ_O_TEHAI(REQ_O_TEHAI_5)
     End Function
 
+    'MRéËîz
+    Public Shared Function GetMark_REQ_MR_TEHAI(ByVal REQ_MR_TEHAI As String) As String
+        Select Case REQ_MR_TEHAI
+            Case AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes
+                Return AppConst.KOTSUHOTEL.REQ_O_TEHAI.Mark.Yes
+            Case AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No
+                Return AppConst.KOTSUHOTEL.REQ_O_TEHAI.Mark.No
+
+            Case Else
+                Return ""
+        End Select
+    End Function
+
     'âùòHÅFåí àÀóäì‡óe
     Public Shared Function GetName_REQ_O_IRAINAIYOU(ByVal REQ_O_IRAINAIYOU As String) As String
         Select Case REQ_O_IRAINAIYOU
