@@ -8,7 +8,6 @@ Partial Public Class KouenkaiList
     Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
-        Button1
         BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
@@ -18,6 +17,7 @@ Partial Public Class KouenkaiList
         KOUENKAI_NAME
         TIME_STAMP_BYL
         USER_NAME
+        Button1
         TO_DATE
     End Enum
 

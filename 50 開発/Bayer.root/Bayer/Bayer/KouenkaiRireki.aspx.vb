@@ -10,7 +10,6 @@ Partial Public Class KouenkaiRireki
 
     'グリッド列
     Private Enum CellIndex
-        Button1
         TIME_STAMP
         UPDATE_DATE
         BU
@@ -19,6 +18,7 @@ Partial Public Class KouenkaiRireki
         KIKAKU_TANTO_NAME
         FROM_DATE
         USER_NAME
+        Button1
         KOUENKAI_NO
         TO_DATE
     End Enum
