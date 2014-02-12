@@ -156,14 +156,32 @@ Partial Public Class TaxiPrintCsv
             CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "_" & TAXI_HAKKO_DATE & ".csv"
             sb(wKenshuCnt) = New System.Text.StringBuilder
             sw(wKenshuCnt) = New System.IO.StreamWriter(CsvPath(wKenshuCnt), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
+
+            'ヘッダ
+            sb(wKenshuCnt).Append("利用日,")
+            sb(wKenshuCnt).Append("講演会名,")
+            sb(wKenshuCnt).Append("利用日(月),")
+            sb(wKenshuCnt).Append("利用日(日),")
+            sb(wKenshuCnt).Append("参加者ID,")
+            sb(wKenshuCnt).Append("金額,")
+            sb(wKenshuCnt).Append("発行日,")
+            sb(wKenshuCnt).Append("行番号,")
+            sb(wKenshuCnt).Append("タクシー会社,")
+            sb(wKenshuCnt).Append("講演会番号,")
+            sb(wKenshuCnt).Append("セールスフォースID,")
+            sb(wKenshuCnt).Append("タイムスタンプBYL,")
+            sb(wKenshuCnt).Append("DR名,")
+            sb(wKenshuCnt).Append("QR")
+            sb(wKenshuCnt).Append(vbNewLine)
         Next wKenshuCnt
 
         '交通宿泊テーブル→Csv出力
         For wCnt = LBound(TBL_KOUENKAI) To UBound(TBL_KOUENKAI)
+
             TBL_KOTSUHOTEL = Nothing
             strSQL = SQL.TBL_KOTSUHOTEL.TaxiPrintCsv(TBL_KOUENKAI(wCnt).KOUENKAI_NO)
             RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-            If RsData.Read() Then
+            While RsData.Read()
                 wFlag = True
                 TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
 
@@ -191,7 +209,7 @@ Partial Public Class TaxiPrintCsv
                    (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20 <> "") Then
                     wPrintFlag = True
                 End If
-
+ 
                 If wPrintFlag = True Then
                     '利用日1～20の降順にソートして再設定
                     TBL_KOTSUHOTEL = SortAnsTaxi(TBL_KOTSUHOTEL)
@@ -278,7 +296,7 @@ Partial Public Class TaxiPrintCsv
                         End If
                     Next
                 End If
-            End If
+            End While
             RsData.Close()
         Next wCnt
 
@@ -443,6 +461,12 @@ Partial Public Class TaxiPrintCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.SANKASHA_ID)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_TAXI_KENSHU(ANS_TAXI_KENSHU))))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_TAXI_HAKKO_DATE(TAXI_HAKKO_DATE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TKT_LINE_NO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_TKT_KAISHA(ANS_TAXI_KENSHU))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.KOUENKAI_NO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.SALEFORCE_ID)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.TIME_STAMP_BYL)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.DR_NAME)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_BARCODE(TBL_KOTSUHOTEL.SALEFORCE_ID, _
                                                                    TBL_KOTSUHOTEL.SANKASHA_ID, _
                                                                    TBL_KOTSUHOTEL.KOUENKAI_NO, _

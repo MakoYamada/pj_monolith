@@ -1963,7 +1963,13 @@ Public Class MyModule
                 Public Const SANKASHA_ID As Integer = 4
                 Public Const TAXI_KENSHU As Integer = 5
                 Public Const TAXI_HAKKO_DATE As Integer = 6
-                Public Const BARCODE As Integer = 7
+                Public Const TKT_LINE_NO As Integer = 7
+                Public Const TKT_KAISHA As Integer = 8
+                Public Const KOUENKAI_NO As Integer = 9
+                Public Const SALEFORCE_ID As Integer = 10
+                Public Const TIME_STAMP_BYL As Integer = 11
+                Public Const DR_NAME As Integer = 12
+                Public Const BARCODE As Integer = 13
             End Class
             'バーコード
             Public Class Barcode

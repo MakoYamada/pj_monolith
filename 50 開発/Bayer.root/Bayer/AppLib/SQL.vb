@@ -1871,6 +1871,7 @@ Public Class SQL
             strSQL &= ",TBL_KOTSUHOTEL.KOUENKAI_NO"
             strSQL &= ",TBL_KOTSUHOTEL.TIME_STAMP_BYL"
             strSQL &= ",TBL_KOTSUHOTEL.DR_MPID"
+            strSQL &= ",TBL_KOTSUHOTEL.DR_NAME"
             strSQL &= ",TBL_KOTSUHOTEL.UPDATE_DATE"
             strSQL &= ",TBL_KOTSUHOTEL.ANS_TAXI_DATE_1"
             strSQL &= ",TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_1"
@@ -2784,7 +2785,7 @@ Public Class SQL
             strSQL &= " ON (TBL_KOTSUHOTEL.KOUENKAI_NO=TBL_SANKA.KOUENKAI_NO)"
             strSQL &= " AND (TBL_KOTSUHOTEL.SANKASHA_ID=TBL_SANKA.SANKASHA_ID)"
             strSQL &= " WHERE TBL_KOTSUHOTEL.SANKASHA_ID='" & CmnDb.SqlString(SANKASHA_ID) & "'"
-            strSQL &= " AND TBL_KOTSUHOTEL.ANS_TAXI_NO_" & TKT_LINE_NO & "='" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.ANS_TAXI_NO_" & CInt(TKT_LINE_NO).ToString & "='" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= " ORDER BY TBL_KOTSUHOTEL.UPDATE_DATE DESC"
 
             Return strSQL
