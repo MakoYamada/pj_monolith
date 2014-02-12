@@ -5127,8 +5127,8 @@ Public Class AppModule
     '宿泊日（依頼）
     Public Shared Sub SetForm_REQ_HOTEL_DATE(ByVal REQ_HOTEL_DATE As String, ByRef control As Label)
         Dim wStr As String = ""
-        wStr = CmnModule.Format_Date(Trim(REQ_HOTEL_DATE), CmnModule.DateFormatType.YYYYMD) _
-             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_HOTEL_DATE), CmnModule.DateFormatType.YYYYMD), True)
+        wStr = CmnModule.Format_Date(Trim(REQ_HOTEL_DATE), CmnModule.DateFormatType.YYYYMMDD) _
+             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_HOTEL_DATE), CmnModule.DateFormatType.YYYYMMDD), True)
         control.Text = wStr
     End Sub
 
@@ -5267,8 +5267,8 @@ Public Class AppModule
     '往路：利用日（依頼）
     Public Shared Sub SetForm_REQ_O_DATE(ByVal REQ_O_DATE As String, ByRef control As Label)
         Dim wStr As String = ""
-        wStr = CmnModule.Format_Date(Trim(REQ_O_DATE), CmnModule.DateFormatType.YYYYMD) _
-             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_O_DATE), CmnModule.DateFormatType.YYYYMD), True)
+        wStr = CmnModule.Format_Date(Trim(REQ_O_DATE), CmnModule.DateFormatType.YYYYMMDD) _
+             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_O_DATE), CmnModule.DateFormatType.YYYYMMDD), True)
         control.Text = wStr
     End Sub
     Public Shared Sub SetForm_REQ_O_DATE_1(ByVal REQ_O_DATE_1 As String, ByRef control As Label)
@@ -5489,8 +5489,8 @@ Public Class AppModule
     '復路：利用日（依頼）
     Public Shared Sub SetForm_REQ_F_DATE(ByVal REQ_F_DATE As String, ByRef control As Label)
         Dim wStr As String = ""
-        wStr = CmnModule.Format_Date(Trim(REQ_F_DATE), CmnModule.DateFormatType.YYYYMD) _
-             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_F_DATE), CmnModule.DateFormatType.YYYYMD), True)
+        wStr = CmnModule.Format_Date(Trim(REQ_F_DATE), CmnModule.DateFormatType.YYYYMMDD) _
+             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_F_DATE), CmnModule.DateFormatType.YYYYMMDD), True)
         control.Text = wStr
     End Sub
     Public Shared Sub SetForm_REQ_F_DATE_1(ByVal REQ_F_DATE_1 As String, ByRef control As Label)
@@ -6145,8 +6145,8 @@ Public Class AppModule
     'タクシーチケット：利用日（依頼）
     Public Shared Sub SetForm_REQ_TAXI_DATE(ByVal REQ_TAXI_DATE As String, ByRef control As Label)
         Dim wStr As String = ""
-        wStr = CmnModule.Format_Date(Trim(REQ_TAXI_DATE), CmnModule.DateFormatType.YYYYMD) _
-             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_TAXI_DATE), CmnModule.DateFormatType.YYYYMD), True)
+        wStr = CmnModule.Format_Date(Trim(REQ_TAXI_DATE), CmnModule.DateFormatType.YYYYMMDD) _
+             & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(REQ_TAXI_DATE), CmnModule.DateFormatType.YYYYMMDD), True)
         control.Text = wStr
     End Sub
     Public Shared Sub SetForm_REQ_TAXI_DATE_1(ByVal REQ_TAXI_DATE_1 As String, ByRef control As Label)
