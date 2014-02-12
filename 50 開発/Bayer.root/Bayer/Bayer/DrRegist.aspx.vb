@@ -4024,7 +4024,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_O_DATE_1.Text = Trim(Replace(REQ_O_DATE_1.Text, "/", ""))
+        ANS_O_DATE_1.Text = Format_Date_Normal(REQ_O_DATE_1.Text)
         '出発地
         ANS_O_AIRPORT1_1.Text = Trim(REQ_O_AIRPORT1_1.Text)
         '到着地
@@ -4081,7 +4081,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_O_DATE_2.Text = Trim(Replace(REQ_O_DATE_2.Text, "/", ""))
+        ANS_O_DATE_2.Text = Format_Date_Normal(REQ_O_DATE_2.Text)
         '出発地
         ANS_O_AIRPORT1_2.Text = Trim(REQ_O_AIRPORT1_2.Text)
         '到着地
@@ -4138,7 +4138,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_O_DATE_3.Text = Trim(Replace(REQ_O_DATE_3.Text, "/", ""))
+        ANS_O_DATE_3.Text = Format_Date_Normal(REQ_O_DATE_3.Text)
         '出発地
         ANS_O_AIRPORT1_3.Text = Trim(REQ_O_AIRPORT1_3.Text)
         '到着地
@@ -4195,7 +4195,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_O_DATE_4.Text = Trim(Replace(REQ_O_DATE_4.Text, "/", ""))
+        ANS_O_DATE_4.Text = Format_Date_Normal(REQ_O_DATE_4.Text)
         '出発地
         ANS_O_AIRPORT1_4.Text = Trim(REQ_O_AIRPORT1_4.Text)
         '到着地
@@ -4252,7 +4252,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_O_DATE_5.Text = Trim(Replace(REQ_O_DATE_5.Text, "/", ""))
+        ANS_O_DATE_5.Text = Format_Date_Normal(REQ_O_DATE_5.Text)
         '出発地
         ANS_O_AIRPORT1_5.Text = Trim(REQ_O_AIRPORT1_5.Text)
         '到着地
@@ -4310,7 +4310,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_F_DATE_1.Text = Trim(Replace(REQ_F_DATE_1.Text, "/", ""))
+        ANS_F_DATE_1.Text = Format_Date_Normal(REQ_F_DATE_1.Text)
         '出発地
         ANS_F_AIRPORT1_1.Text = Trim(REQ_F_AIRPORT1_1.Text)
         '到着地
@@ -4367,7 +4367,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_F_DATE_2.Text = Trim(Replace(REQ_F_DATE_2.Text, "/", ""))
+        ANS_F_DATE_2.Text = Format_Date_Normal(REQ_F_DATE_2.Text)
         '出発地
         ANS_F_AIRPORT1_2.Text = Trim(REQ_F_AIRPORT1_2.Text)
         '到着地
@@ -4423,7 +4423,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_F_DATE_3.Text = Trim(Replace(REQ_F_DATE_3.Text, "/", ""))
+        ANS_F_DATE_3.Text = Format_Date_Normal(REQ_F_DATE_3.Text)
         '出発地
         ANS_F_AIRPORT1_3.Text = Trim(REQ_F_AIRPORT1_3.Text)
         '到着地
@@ -4479,7 +4479,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_F_DATE_4.Text = Trim(Replace(REQ_F_DATE_4.Text, "/", ""))
+        ANS_F_DATE_4.Text = Format_Date_Normal(REQ_F_DATE_4.Text)
         '出発地
         ANS_F_AIRPORT1_4.Text = Trim(REQ_F_AIRPORT1_4.Text)
         '到着地
@@ -4535,7 +4535,7 @@ Partial Public Class DrRegist
         Next
 
         '利用日
-        ANS_F_DATE_5.Text = Trim(Replace(REQ_F_DATE_5.Text, "/", ""))
+        ANS_F_DATE_5.Text = Format_Date_Normal(REQ_F_DATE_5.Text)
         '出発地
         ANS_F_AIRPORT1_5.Text = Trim(REQ_F_AIRPORT1_5.Text)
         '到着地
@@ -4983,16 +4983,16 @@ Partial Public Class DrRegist
         End If
 
         '利用日
-        Me.ANS_TAXI_DATE_1.Text = Trim(Replace(Me.REQ_TAXI_DATE_1.Text, "/", ""))
-        Me.ANS_TAXI_DATE_2.Text = Trim(Replace(Me.REQ_TAXI_DATE_2.Text, "/", ""))
-        Me.ANS_TAXI_DATE_3.Text = Trim(Replace(Me.REQ_TAXI_DATE_3.Text, "/", ""))
-        Me.ANS_TAXI_DATE_4.Text = Trim(Replace(Me.REQ_TAXI_DATE_4.Text, "/", ""))
-        Me.ANS_TAXI_DATE_5.Text = Trim(Replace(Me.REQ_TAXI_DATE_5.Text, "/", ""))
-        Me.ANS_TAXI_DATE_6.Text = Trim(Replace(Me.REQ_TAXI_DATE_6.Text, "/", ""))
-        Me.ANS_TAXI_DATE_7.Text = Trim(Replace(Me.REQ_TAXI_DATE_7.Text, "/", ""))
-        Me.ANS_TAXI_DATE_8.Text = Trim(Replace(Me.REQ_TAXI_DATE_8.Text, "/", ""))
-        Me.ANS_TAXI_DATE_9.Text = Trim(Replace(Me.REQ_TAXI_DATE_9.Text, "/", ""))
-        Me.ANS_TAXI_DATE_10.Text = Trim(Replace(Me.REQ_TAXI_DATE_10.Text, "/", ""))
+        Me.ANS_TAXI_DATE_1.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_1.Text)
+        Me.ANS_TAXI_DATE_2.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_2.Text)
+        Me.ANS_TAXI_DATE_3.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_3.Text)
+        Me.ANS_TAXI_DATE_4.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_4.Text)
+        Me.ANS_TAXI_DATE_5.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_5.Text)
+        Me.ANS_TAXI_DATE_6.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_6.Text)
+        Me.ANS_TAXI_DATE_7.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_7.Text)
+        Me.ANS_TAXI_DATE_8.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_8.Text)
+        Me.ANS_TAXI_DATE_9.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_9.Text)
+        Me.ANS_TAXI_DATE_10.Text = Format_Date_Normal(Me.REQ_TAXI_DATE_10.Text)
         SetFocus(Me.ANS_TAXI_DATE_1)
     End Sub
 
@@ -5046,4 +5046,25 @@ Partial Public Class DrRegist
         Me.ANS_KOTSUHOTEL_TESURYO.Text = CmnModule.EditComma(AppModule.GetValue_ANS_KOTSUHOTEL_TESURYO(Me.CHK_KOTSUHOTEL_TESURYO))
         SetFocus(Me.ANS_TAXI_MAISUU)
     End Sub
+
+    '利用日の曜日とスラッシュ除去
+    Private Function Format_Date_Normal(ByVal inDate As String) As String
+        Return Trim( _
+            Replace( _
+            Replace( _
+            Replace( _
+            Replace( _
+            Replace( _
+            Replace( _
+            Replace( _
+            Replace(Replace(Replace(inDate, "/", ""), "(", ""), ")", ""), _
+            "日", ""), _
+            "月", ""), _
+            "火", ""), _
+            "水", ""), _
+            "木", ""), _
+            "金", ""), _
+            "土", "") _
+            )
+    End Function
 End Class
