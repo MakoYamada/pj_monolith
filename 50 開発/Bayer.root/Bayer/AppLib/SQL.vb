@@ -6807,6 +6807,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_URIAGE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_USED_DATE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEISAN_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
