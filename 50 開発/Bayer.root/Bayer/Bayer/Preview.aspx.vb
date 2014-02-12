@@ -208,7 +208,7 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         Dim MS_USER As TableDef.MS_USER.DataStruct = Session.Item(SessionDef.MS_USER)
-        DirectCast(rpt1.Sections("PageHeader").Controls("PRINT_USER"),  _
+        DirectCast(rpt1.Sections("PageFooter").Controls("PRINT_USER"),  _
             DataDynamics.ActiveReports.TextBox).Text = MS_USER.USER_NAME
 
         '旧データ
