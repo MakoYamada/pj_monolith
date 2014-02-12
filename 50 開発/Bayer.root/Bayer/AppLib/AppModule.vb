@@ -4657,6 +4657,21 @@ Public Class AppModule
             End If
         End If
     End Function
+
+    'î≠ëóì˙(ç≈êV)
+    Public Shared Function GetName_ANS_TICKET_SEND_DAY(ByVal ANS_TICKET_SEND_DAY As String, Optional ByVal ShortFormat As Boolean = False) As String
+        If ShortFormat = True Then
+            Return CmnModule.Format_Date(ANS_TICKET_SEND_DAY, CmnModule.DateFormatType.YYYYMD)
+        Else
+            Dim wStr As String = ""
+            wStr = CmnModule.Format_DateJP(Trim(ANS_TICKET_SEND_DAY), CmnModule.DateFormatType.YYYYMD) _
+                 & CmnModule.GetName_Weekday(CmnModule.Format_Date(Trim(ANS_TICKET_SEND_DAY), CmnModule.DateFormatType.YYYYMD), True)
+            wStr = Replace(wStr, "åé0", "åé")
+            wStr = Replace(wStr, "ì˙0", "ì˙")
+            If Mid(wStr, 1, 1) = "0" Then wStr = Mid(wStr, 2, 10)
+            Return wStr
+        End If
+    End Function
 #End Region
 
 #Region "ê∏éZèÓïÒ"
@@ -4829,8 +4844,8 @@ Public Class AppModule
     'ÉGÉìÉ^
     Public Shared Function GetName_TKT_ENTA(ByVal TKT_ENTA As String) As String
         Select Case TKT_ENTA
-            Case AppConST.TAXITICKET_HAKKO.TKT_ENTA.Code.FUSANKA
-                Return AppConST.TAXITICKET_HAKKO.TKT_ENTA.Name.FUSANKA
+            Case AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.FuSanka
+                Return AppConst.TAXITICKET_HAKKO.TKT_ENTA.Name.FuSanka
             Case AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka
                 Return AppConst.TAXITICKET_HAKKO.TKT_ENTA.Name.SeisanFuka
             Case Else
