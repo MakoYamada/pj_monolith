@@ -28,16 +28,22 @@ Public Class DrReport
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '差異のある項目の背景色を変更
         If pRireki = False AndAlso Trim(pOldTBL_KOTSUHOTEL.KOUENKAI_NO) <> "" Then
-            '履歴、新規登録時は除外            SetChangedColor(Me.KOUENKAI_NO, pOldTBL_KOTSUHOTEL.KOUENKAI_NO, Me.KOUENKAI_NO.Text)
-            SetChangedColor(Me.KOUENKAI_NO2, pOldTBL_KOTSUHOTEL.KOUENKAI_NO, Me.KOUENKAI_NO2.Text)
-            SetChangedColor(Me.REQ_STATUS_TEHAI, pOldTBL_KOTSUHOTEL.REQ_STATUS_TEHAI, Me.KOUENKAI_NO.Text)
-            SetChangedColor(Me.REQ_STATUS_TEHAI2, pOldTBL_KOTSUHOTEL.REQ_STATUS_TEHAI, Me.KOUENKAI_NO2.Text)
-            SetChangedColor(Me.TIME_STAMP_BYL, pOldTBL_KOTSUHOTEL.TIME_STAMP_BYL, Me.TIME_STAMP_BYL.Text)
-            SetChangedColor(Me.TIME_STAMP_BYL2, pOldTBL_KOTSUHOTEL.TIME_STAMP_BYL, Me.TIME_STAMP_BYL2.Text)
+            '履歴、新規登録時は除外            SetChangedColor(Me.ANS_TICKET_SEND_DAY, pOldTBL_KOTSUHOTEL.ANS_TICKET_SEND_DAY, Me.ANS_TICKET_SEND_DAY.Text)
+            SetChangedColor(Me.ANS_TICKET_SEND_DAY2, pOldTBL_KOTSUHOTEL.ANS_TICKET_SEND_DAY, Me.ANS_TICKET_SEND_DAY.Text)
+            'SetChangedColor(Me.FROM_DATE1, pOldTBL_KOTSUHOTEL.FROM_DATE, Me.FROM_DATE.Text)
+            'SetChangedColor(Me.FROM_DATE2, pOldTBL_KOTSUHOTEL.FROM_DATE, Me.FROM_DATE.Text)
+            'SetChangedColor(Me.FROM_DATE1, pOldTBL_KOTSUHOTEL.TO_DATE, Me.TO_DATE.Text)
+            'SetChangedColor(Me.FROM_DATE2, pOldTBL_KOTSUHOTEL.TO_DATE, Me.TO_DATE.Text)
+            'SetChangedColor(Me.KOUENKAI_NO, pOldTBL_KOTSUHOTEL.KOUENKAI_NO, Me.KOUENKAI_NO.Text)
+            'SetChangedColor(Me.KOUENKAI_NO2, pOldTBL_KOTSUHOTEL.KOUENKAI_NO, Me.KOUENKAI_NO2.Text)
+            SetChangedColor(Me.REQ_STATUS_TEHAI1, pOldTBL_KOTSUHOTEL.REQ_STATUS_TEHAI, Me.REQ_STATUS_TEHAI.Text)
+            SetChangedColor(Me.REQ_STATUS_TEHAI2, pOldTBL_KOTSUHOTEL.REQ_STATUS_TEHAI, Me.REQ_STATUS_TEHAI.Text)
+            SetChangedColor(Me.TIME_STAMP_BYL1, pOldTBL_KOTSUHOTEL.TIME_STAMP_BYL, Me.TIME_STAMP_BYL.Text)
+            SetChangedColor(Me.TIME_STAMP_BYL2, pOldTBL_KOTSUHOTEL.TIME_STAMP_BYL, Me.TIME_STAMP_BYL.Text)
             SetChangedColor(Me.SANKASHA_ID, pOldTBL_KOTSUHOTEL.SANKASHA_ID, Me.SANKASHA_ID.Text)
             SetChangedColor(Me.SANKASHA_ID2, pOldTBL_KOTSUHOTEL.SANKASHA_ID, Me.SANKASHA_ID.Text)
             SetChangedColor(Me.DR_CD, pOldTBL_KOTSUHOTEL.DR_CD, Me.DR_CD.Text)
-            SetChangedColor(Me.DR_CD2, pOldTBL_KOTSUHOTEL.DR_CD, Me.DR_CD2.Text)            SetChangedColor(Me.DR_NAME, pOldTBL_KOTSUHOTEL.DR_NAME, Me.DR_NAME.Text)
+            SetChangedColor(Me.DR_CD2, pOldTBL_KOTSUHOTEL.DR_CD, Me.DR_CD2.Text)            SetChangedColor(Me.DR_NAME1, pOldTBL_KOTSUHOTEL.DR_NAME, Me.DR_NAME1.Text)
             SetChangedColor(Me.DR_NAME2, pOldTBL_KOTSUHOTEL.DR_NAME, Me.DR_NAME2.Text)
             SetChangedColor(Me.DR_KANA, pOldTBL_KOTSUHOTEL.DR_KANA, Me.DR_KANA.Text)
             SetChangedColor(Me.DR_KANA2, pOldTBL_KOTSUHOTEL.DR_KANA, Me.DR_KANA2.Text)
@@ -54,13 +60,14 @@ Public Class DrReport
             SetChangedColor(Me.SHONIN_DATE, pOldTBL_KOTSUHOTEL.SHONIN_DATE, Me.SHONIN_DATE.Text)
             SetChangedColor(Me.SHITEIGAI_RIYU, pOldTBL_KOTSUHOTEL.SHITEIGAI_RIYU, Me.SHITEIGAI_RIYU.Text)
             SetChangedColor(Me.MR_NAME, pOldTBL_KOTSUHOTEL.MR_NAME, Me.MR_NAME.Text)
+            SetChangedColor(Me.MR_BU, pOldTBL_KOTSUHOTEL.MR_BU, Me.MR_BU.Text)
             SetChangedColor(Me.MR_AREA, pOldTBL_KOTSUHOTEL.MR_AREA, Me.MR_AREA.Text)
             SetChangedColor(Me.MR_EIGYOSHO, pOldTBL_KOTSUHOTEL.MR_EIGYOSHO, Me.MR_EIGYOSHO.Text)
             SetChangedColor(Me.MR_ROMA, pOldTBL_KOTSUHOTEL.MR_ROMA, Me.MR_ROMA.Text)
             SetChangedColor(Me.MR_KANA, pOldTBL_KOTSUHOTEL.MR_KANA, Me.MR_KANA.Text)
             SetChangedColor(Me.COST_CENTER, pOldTBL_KOTSUHOTEL.COST_CENTER, Me.COST_CENTER.Text)
-            SetChangedColor(Me.MR_AGE, pOldTBL_KOTSUHOTEL.MR_AGE, Me.MR_AGE.Text)
-            SetChangedColor(Me.MR_SEX, pOldTBL_KOTSUHOTEL.MR_SEX, Me.MR_SEX.Text)
+            SetChangedColor(Me.MR_SEX, pOldTBL_KOTSUHOTEL.MR_AGE, Me.MR_SEX.Text)
+            SetChangedColor(Me.MR_AGE, pOldTBL_KOTSUHOTEL.MR_SEX, Me.MR_AGE.Text)
             SetChangedColor(Me.MR_KEITAI, pOldTBL_KOTSUHOTEL.MR_KEITAI, Me.MR_KEITAI.Text)
             SetChangedColor(Me.MR_EMAIL_KEITAI, pOldTBL_KOTSUHOTEL.MR_EMAIL_KEITAI, Me.MR_EMAIL_KEITAI.Text)
             SetChangedColor(Me.MR_TEL, pOldTBL_KOTSUHOTEL.MR_TEL, Me.MR_TEL.Text)
@@ -223,19 +230,21 @@ Public Class DrReport
             SetChangedColor(Me.REQ_F_SEAT_5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_5, Me.REQ_F_SEAT_5.Text)
             SetChangedColor(Me.REQ_F_SEAT_KIBOU5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_KIBOU5.Text)
         End If        '項目の編集
+        ANS_TICKET_SEND_DAY.Text = AppModule.GetName_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY.Text, False)
+        ANS_TICKET_SEND_DAY2.Text = AppModule.GetName_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY2.Text, False)
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
         FROM_DATE1.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE.Text, TO_DATE.Text)
         FROM_DATE2.Text = AppModule.GetName_KOUENKAI_DATE(FROM_DATE.Text, TO_DATE.Text)
-        REQ_STATUS_TEHAI.Text = AppModule.GetName_STATUS_TEHAI(REQ_STATUS_TEHAI.Text, False, True)
+        REQ_STATUS_TEHAI1.Text = AppModule.GetName_STATUS_TEHAI(REQ_STATUS_TEHAI1.Text, False, True)
         REQ_STATUS_TEHAI2.Text = AppModule.GetName_STATUS_TEHAI(REQ_STATUS_TEHAI2.Text, False, True)
-        TIME_STAMP_BYL.Text = CmnModule.Format_Date(TIME_STAMP_BYL.Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-        TIME_STAMP_BYL2.Text = CmnModule.Format_Date(TIME_STAMP_BYL2.Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-        If DR_NAME.Text.Length > 19 Then DR_NAME.Text = Left(DR_NAME.Text, 19)
+        TIME_STAMP_BYL1.Text = CmnModule.Format_Date(TIME_STAMP_BYL.Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        TIME_STAMP_BYL2.Text = CmnModule.Format_Date(TIME_STAMP_BYL.Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+        If DR_NAME1.Text.Length > 19 Then DR_NAME1.Text = Left(DR_NAME1.Text, 19)
         If DR_NAME2.Text.Length > 19 Then DR_NAME2.Text = Left(DR_NAME2.Text, 19)
         If DR_KANA.Text.Length > 25 Then DR_KANA.Text = Left(DR_KANA.Text, 25)
         If DR_KANA2.Text.Length > 25 Then DR_KANA2.Text = Left(DR_KANA2.Text, 25)
-        If DR_SHISETSU_NAME.Text.Length > 18 Then DR_SHISETSU_NAME.Text = Left(DR_SHISETSU_NAME.Text, 18)
-        If DR_SHISETSU_NAME2.Text.Length > 18 Then DR_SHISETSU_NAME2.Text = Left(DR_SHISETSU_NAME2.Text, 18)
+        If DR_SHISETSU_NAME.Text.Length > 25 Then DR_SHISETSU_NAME.Text = Left(DR_SHISETSU_NAME.Text, 25)
+        If DR_SHISETSU_NAME2.Text.Length > 25 Then DR_SHISETSU_NAME2.Text = Left(DR_SHISETSU_NAME2.Text, 25)
         If DR_SHISETSU_ADDRESS.Text.Length > 18 Then DR_SHISETSU_ADDRESS.Text = Left(DR_SHISETSU_ADDRESS.Text, 18)
         If DR_SHISETSU_ADDRESS2.Text.Length > 18 Then DR_SHISETSU_ADDRESS2.Text = Left(DR_SHISETSU_ADDRESS2.Text, 18)
         DR_SEX.Text = AppModule.GetName_DR_SEX(DR_SEX.Text)
@@ -244,10 +253,12 @@ Public Class DrReport
         If SHONIN_NAME.Text.Length > 19 Then SHONIN_NAME.Text = Left(SHONIN_NAME.Text, 19)
         SHONIN_DATE.Text = CmnModule.Format_Date(SHONIN_DATE.Text, CmnModule.DateFormatType.YYYYMD)
         If MR_NAME.Text.Length > 15 Then MR_NAME.Text = Left(MR_NAME.Text, 15)
-        If MR_AREA.Text.Length > 5 Then MR_AREA.Text = Left(MR_AREA.Text, 5)
-        If MR_EIGYOSHO.Text.Length > 9 Then MR_EIGYOSHO.Text = Left(MR_EIGYOSHO.Text, 9)
-        If MR_ROMA.Text.Length > 36 Then MR_ROMA.Text = Left(MR_ROMA.Text, 36)
-        If MR_KANA.Text.Length > 52 Then MR_KANA.Text = Left(MR_KANA.Text, 52)
+        If MR_BU.Text.Length > 5 Then MR_BU.Text = Left(MR_BU.Text, 5)
+        If MR_AREA.Text.Length > 25 Then MR_AREA.Text = Left(MR_AREA.Text, 25)
+        If MR_EIGYOSHO.Text.Length > 25 Then MR_EIGYOSHO.Text = Left(MR_EIGYOSHO.Text, 25)
+        If MR_ROMA.Text.Length > 17 Then MR_ROMA.Text = Left(MR_ROMA.Text, 17)
+        If MR_KANA.Text.Length > 15 Then MR_KANA.Text = Left(MR_KANA.Text, 15)
+        MR_AGE.Text = AppModule.GetName_MR_AGE(MR_AGE.Text)
         MR_SEX.Text = AppModule.GetName_MR_SEX(MR_SEX.Text)
         If MR_EMAIL_KEITAI.Text.Length > 34 Then MR_EMAIL_KEITAI.Text = Left(MR_EMAIL_KEITAI.Text, 34)
         If MR_EMAIL_PC.Text.Length > 34 Then MR_EMAIL_PC.Text = Left(MR_EMAIL_PC.Text, 34)
@@ -402,11 +413,16 @@ Public Class DrReport
         REQ_F_SEAT_KIBOU4.Text = AppModule.GetName_REQ_F_SEAT_KIBOU_4(REQ_F_SEAT_KIBOU4.Text)
         REQ_F_SEAT_KIBOU5.Text = AppModule.GetName_REQ_F_SEAT_KIBOU_5(REQ_F_SEAT_KIBOU5.Text)
 
+        ANS_AIR_FARE.Text = CmnModule.EditComma(Me.ANS_AIR_FARE.Text) & " 円"
+        ANS_AIR_CANCELLATION.Text = CmnModule.EditComma(Me.ANS_AIR_CANCELLATION.Text) & " 円"
+        ANS_RAIL_FARE.Text = CmnModule.EditComma(Me.ANS_RAIL_FARE.Text) & " 円"
+        ANS_RAIL_CANCELLATION.Text = CmnModule.EditComma(Me.ANS_RAIL_CANCELLATION.Text) & " 円"
+        ANS_OTHER_FARE.Text = CmnModule.EditComma(Me.ANS_OTHER_FARE.Text) & " 円"
+        ANS_OTHER_CANCELLATION.Text = CmnModule.EditComma(Me.ANS_OTHER_CANCELLATION.Text) & " 円"
+        ANS_MR_HOTELHI.Text = CmnModule.EditComma(Me.ANS_MR_HOTELHI.Text) & " 円"
+        ANS_MR_HOTELHI_TOZEI.Text = CmnModule.EditComma(Me.ANS_MR_HOTELHI_TOZEI.Text) & " 円"
+        ANS_MR_KOTSUHI.Text = CmnModule.EditComma(Me.ANS_MR_KOTSUHI.Text) & " 円"
 
-    End Sub
-
-    Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
-        PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
     End Sub
 
     '差異
@@ -420,7 +436,7 @@ Public Class DrReport
         End With
     End Sub
 
-    Private Sub DrReport_ReportStart(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.ReportStart
-
+    Private Sub PageFooter_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageFooter.Format
+        PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
     End Sub
 End Class

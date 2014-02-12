@@ -517,26 +517,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHotel" colspan="4">
-                            ◆依頼内容
-                        </td>
-                        <td align="left" valign="middle" class="TdTitle" colspan="4">
-                            ◆回答内容
-                        </td>
-                    </tr>
-                    <tr>
                         <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
                             宿泊依頼
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="TEHAI_HOTEL" runat="server" Width="200px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_STATUS_HOTEL" runat="server" TabIndex="16">
-                            </asp:DropDownList>							
+                        <td align="left" valign="middle" class="TdTitle" colspan="4">
+                            ◆回答内容
                         </td>
                     </tr>
                     <tr>
@@ -545,6 +533,29 @@
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="HOTEL_IRAINAIYOU" runat="server" Width="200px"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_STATUS_HOTEL" runat="server" TabIndex="16" 
+                                Width="147px">
+                            </asp:DropDownList>							
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
+                            宿泊日
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+							<asp:Label ID="REQ_HOTEL_DATE" runat="server" Width="130px"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
+                            泊数
+                        </td>
+                        <td align="left" valign="middle" class="TdItem">
+							<asp:Label ID="REQ_HAKUSU" runat="server" Width="30px"></asp:Label>
+							&nbsp;&nbsp;泊
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             施設名
@@ -558,17 +569,10 @@
                     </tr>
                     <tr>
                         <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
-                            宿泊日
+                            喫煙
                         </td>
-                        <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_HOTEL_DATE" runat="server" Width="80px"></asp:Label>
-                        </td>
-                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
-                            泊数
-                        </td>
-                        <td align="left" valign="middle" class="TdItem">
-							<asp:Label ID="REQ_HAKUSU" runat="server" Width="30px"></asp:Label>
-							&nbsp;&nbsp;泊
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
+							<asp:Label ID="REQ_HOTEL_SMOKING" runat="server" Width="200px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             施設住所
@@ -579,11 +583,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px">
-                            喫煙
+                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px" rowspan="6">
+                            備考
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_HOTEL_SMOKING" runat="server" Width="200px" ></asp:Label>
+                        <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="6">
+                            <asp:TextBox ID="REQ_HOTEL_NOTE" runat="server" MaxLength="255" 
+                                readonly="true" textmode="MultiLine" Height="220px" Width="321px" 
+                                 tabstop="false"  BorderStyle="None"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             施設TEL
@@ -594,14 +600,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" valign="middle" class="TdTitleHotel" style="width:100px" rowspan="5">
-                            備考
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3" rowspan="5">
-                            <asp:TextBox ID="REQ_HOTEL_NOTE" runat="server" MaxLength="255" 
-                                readonly="true" textmode="MultiLine" Height="197px" Width="321px" 
-                                 tabstop="false"  BorderStyle="None"></asp:TextBox>
-                        </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             宿泊日
                         </td>
@@ -686,13 +684,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TEHAI_1" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_1" runat="server" TabIndex="29">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -709,9 +700,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_1" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="30" />
+                                CssClass="ButtonList" TabIndex="29" />
             				<asp:Button ID="BtnClear_O_TEHAI_1" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="31" />
+                                CssClass="ButtonList" TabIndex="30" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -719,8 +710,16 @@
                         <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_O_IRAINAIYOU_1" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_O_STATUS_1" runat="server" TabIndex="31" 
+                                Width="147px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -734,7 +733,8 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_1" runat="server" TabIndex="32">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_1" runat="server" TabIndex="32" 
+                                Width="147px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -743,7 +743,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_1" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_O_DATE_1" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -879,13 +879,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TEHAI_2" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_2" runat="server" TabIndex="42">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -903,9 +896,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_2" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="43" />
+                                CssClass="ButtonList" TabIndex="42" />
             				<asp:Button ID="BtnClear_O_TEHAI_2" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="44" />
+                                CssClass="ButtonList" TabIndex="43" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -913,8 +906,16 @@
                         <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_O_IRAINAIYOU_2" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_O_STATUS_2" runat="server" TabIndex="44" 
+                                Width="147px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -928,7 +929,8 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_2" runat="server" TabIndex="45">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_2" runat="server" TabIndex="45" 
+                                Width="147px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -937,7 +939,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_2" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_O_DATE_2" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -1073,13 +1075,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TEHAI_3" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_3" runat="server" TabIndex="55">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -1097,9 +1092,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_3" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="56" />
+                                CssClass="ButtonList" TabIndex="55" />
             				<asp:Button ID="BtnClear_O_TEHAI_3" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="57" />
+                                CssClass="ButtonList" TabIndex="56" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -1108,8 +1103,16 @@
                             width="200">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7" width="200">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_O_IRAINAIYOU_3" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_O_STATUS_3" runat="server" TabIndex="57" 
+                                Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -1123,7 +1126,8 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_3" runat="server" TabIndex="58">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_3" runat="server" TabIndex="58" 
+                                Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1132,7 +1136,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_3" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_O_DATE_3" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -1268,13 +1272,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TEHAI_4" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_4" runat="server" TabIndex="68">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -1292,9 +1289,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_4" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="69" />
+                                CssClass="ButtonList" TabIndex="68" />
             				<asp:Button ID="BtnClear_O_TEHAI_4" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="70" />
+                                CssClass="ButtonList" TabIndex="69" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -1302,8 +1299,15 @@
                         <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_O_IRAINAIYOU_4" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_O_STATUS_4" runat="server" TabIndex="70" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -1317,7 +1321,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_4" runat="server" TabIndex="71">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_4" runat="server" TabIndex="71" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1326,7 +1330,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_4" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_O_DATE_4" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -1462,13 +1466,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_O_TEHAI_5" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_O_STATUS_5" runat="server" TabIndex="81">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -1486,9 +1483,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_O_TEHAI_5" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="82" />
+                                CssClass="ButtonList" TabIndex="81" />
             				<asp:Button ID="BtnClear_O_TEHAI_5" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="83" />
+                                CssClass="ButtonList" TabIndex="82" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -1496,8 +1493,15 @@
                         <td align="left" valign="middle" class="TdTitleOuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_O_IRAINAIYOU_5" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_O_STATUS_5" runat="server" TabIndex="83" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -1511,7 +1515,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_5" runat="server" TabIndex="84">
+                            <asp:DropDownList ID="ANS_O_KOTSUKIKAN_5" runat="server" TabIndex="84" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1520,7 +1524,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_O_DATE_5" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_O_DATE_5" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -1656,13 +1660,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TEHAI_1" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_1" runat="server" TabIndex="94">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -1680,9 +1677,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_1" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="95" />
+                                CssClass="ButtonList" TabIndex="94" />
             				<asp:Button ID="BtnClear_F_TEHAI_1" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="96" />
+                                CssClass="ButtonList" TabIndex="95" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -1690,8 +1687,15 @@
                         <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_F_IRAINAIYOU_1" runat="server" Width="200px"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_F_STATUS_1" runat="server" TabIndex="96" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -1705,7 +1709,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_1" runat="server" TabIndex="97">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_1" runat="server" TabIndex="97" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1714,7 +1718,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_1" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_F_DATE_1" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -1849,13 +1853,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TEHAI_2" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_2" runat="server" TabIndex="107">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -1873,9 +1870,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_2" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="108" />
+                                CssClass="ButtonList" TabIndex="107" />
             				<asp:Button ID="BtnClear_F_TEHAI_2" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="109" />
+                                CssClass="ButtonList" TabIndex="108" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -1883,8 +1880,15 @@
                         <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_F_IRAINAIYOU_2" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_F_STATUS_2" runat="server" TabIndex="109" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -1898,7 +1902,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_2" runat="server" TabIndex="110">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_2" runat="server" TabIndex="110" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1907,7 +1911,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_2" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_F_DATE_2" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -2042,13 +2046,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TEHAI_3" runat="server" Width="200px" ></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_3" runat="server" TabIndex="120">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -2066,9 +2063,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_3" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="121" />
+                                CssClass="ButtonList" TabIndex="120" />
             				<asp:Button ID="BtnClear_F_TEHAI_3" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="122" />
+                                CssClass="ButtonList" TabIndex="121" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -2076,8 +2073,15 @@
                         <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_F_IRAINAIYOU_3" runat="server" Width="200px" ></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_F_STATUS_3" runat="server" TabIndex="122" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -2091,7 +2095,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_3" runat="server" TabIndex="123">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_3" runat="server" TabIndex="123" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2100,7 +2104,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_3" runat="server" Width="80px" ></asp:Label>
+							<asp:Label ID="REQ_F_DATE_3" runat="server" Width="130px" ></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -2235,13 +2239,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TEHAI_4" runat="server" Width="200px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_4" runat="server" TabIndex="133">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -2259,9 +2256,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_4" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="134" />
+                                CssClass="ButtonList" TabIndex="133" />
             				<asp:Button ID="BtnClear_F_TEHAI_4" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="135" />
+                                CssClass="ButtonList" TabIndex="134" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -2269,8 +2266,15 @@
                         <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_F_IRAINAIYOU_4" runat="server" Width="200px"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_F_STATUS_4" runat="server" TabIndex="135" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -2284,7 +2288,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_4" runat="server" TabIndex="136">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_4" runat="server" TabIndex="136" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2293,7 +2297,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_4" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_F_DATE_4" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -2428,13 +2432,6 @@
                         <td align="left" valign="middle" class="TdItem">
 							<asp:Label ID="REQ_F_TEHAI_5" runat="server" Width="200px"></asp:Label>
                         </td>
-                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            回答ステータス
-                        </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:DropDownList ID="ANS_F_STATUS_5" runat="server" TabIndex="146">
-                            </asp:DropDownList>							
-                        </td>
 					</tr>
 				</table>
 		    </td>
@@ -2452,9 +2449,9 @@
                         <td align="left" valign="middle" class="TdTitle" colspan="4">
                             ◆回答内容
             				<asp:Button ID="BtnCopy_F_TEHAI_5" runat="server" Width="55px" Text="コピー" 
-                                CssClass="ButtonList" TabIndex="147" />
+                                CssClass="ButtonList" TabIndex="146" />
             				<asp:Button ID="BtnClear_F_TEHAI_5" runat="server" Width="55px" Text="クリア" 
-                                CssClass="ButtonList" TabIndex="148" />
+                                CssClass="ButtonList" TabIndex="147" />
                             <a style="color: #FF0000; font-weight: bold">※回答欄入力済の場合はコピーできません</a>
                         </td>
                     </tr>
@@ -2462,8 +2459,15 @@
                         <td align="left" valign="middle" class="TdTitleFukuro" style="width:100px">
                             依頼内容
                         </td>
-                        <td align="left" valign="middle" class="TdItem" colspan="7">
+                        <td align="left" valign="middle" class="TdItem" colspan="3">
 							<asp:Label ID="REQ_F_IRAINAIYOU_5" runat="server" Width="200px"></asp:Label>
+                        </td>
+                        <td align="left" valign="middle" class="TdTitle" style="width:100px">
+                            回答ステータス
+                        </td>
+                        <td align="left" valign="middle" class="TdItem" colspan="3">							
+                            <asp:DropDownList ID="ANS_F_STATUS_5" runat="server" TabIndex="148" Width="148px">
+                            </asp:DropDownList>							
                         </td>
                     </tr>
                     <tr>
@@ -2477,7 +2481,7 @@
                             交通機関
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_5" runat="server" TabIndex="149">
+                            <asp:DropDownList ID="ANS_F_KOTSUKIKAN_5" runat="server" TabIndex="149" Width="148px">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -2486,7 +2490,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_F_DATE_5" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_F_DATE_5" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             利用日
@@ -2715,7 +2719,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_1" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_1" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -2791,7 +2795,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_2" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_2" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -2866,7 +2870,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_3" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_3" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -2941,7 +2945,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_4" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_4" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -3016,7 +3020,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_5" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_5" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -3091,7 +3095,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_6" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_6" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -3166,7 +3170,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_7" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_7" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -3241,7 +3245,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_8" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_8" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -3316,7 +3320,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_9" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_9" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行
@@ -3391,7 +3395,7 @@
                             利用日
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
-							<asp:Label ID="REQ_TAXI_DATE_10" runat="server" Width="80px"></asp:Label>
+							<asp:Label ID="REQ_TAXI_DATE_10" runat="server" Width="130px"></asp:Label>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             発行

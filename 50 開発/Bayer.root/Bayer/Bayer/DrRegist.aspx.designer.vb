@@ -538,15 +538,6 @@ Partial Public Class DrRegist
     Protected WithEvents TEHAI_HOTEL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_STATUS_HOTEL コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_STATUS_HOTEL As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''HOTEL_IRAINAIYOU コントロール。
     '''</summary>
     '''<remarks>
@@ -556,22 +547,13 @@ Partial Public Class DrRegist
     Protected WithEvents HOTEL_IRAINAIYOU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_HOTEL_NAME コントロール。
+    '''ANS_STATUS_HOTEL コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_HOTEL_NAME As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''BtnHotelKensaku コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnHotelKensaku As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ANS_STATUS_HOTEL As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_HOTEL_DATE コントロール。
@@ -592,13 +574,22 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_HAKUSU As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_HOTEL_ADDRESS コントロール。
+    '''ANS_HOTEL_NAME コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_HOTEL_ADDRESS As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_HOTEL_NAME As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnHotelKensaku コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnHotelKensaku As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''REQ_HOTEL_SMOKING コントロール。
@@ -610,13 +601,13 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_HOTEL_SMOKING As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_HOTEL_TEL コントロール。
+    '''ANS_HOTEL_ADDRESS コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents ANS_HOTEL_TEL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ANS_HOTEL_ADDRESS As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''REQ_HOTEL_NOTE コントロール。
@@ -626,6 +617,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_HOTEL_NOTE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ANS_HOTEL_TEL コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_HOTEL_TEL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''ANS_HOTEL_DATE コントロール。
@@ -709,15 +709,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_TEHAI_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_O_STATUS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_O_STATUS_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_O_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -752,6 +743,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_O_IRAINAIYOU_1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_O_STATUS_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_O_STATUS_1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_O_KOTSUKIKAN_1 コントロール。
@@ -925,15 +925,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_TEHAI_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_O_STATUS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_O_STATUS_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_O_2 コントロール。
     '''</summary>
     '''<remarks>
@@ -968,6 +959,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_O_IRAINAIYOU_2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_O_STATUS_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_O_STATUS_2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_O_KOTSUKIKAN_2 コントロール。
@@ -1141,15 +1141,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_TEHAI_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_O_STATUS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_O_STATUS_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_O_3 コントロール。
     '''</summary>
     '''<remarks>
@@ -1184,6 +1175,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_O_IRAINAIYOU_3 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_O_STATUS_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_O_STATUS_3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_O_KOTSUKIKAN_3 コントロール。
@@ -1357,15 +1357,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_TEHAI_4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_O_STATUS_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_O_STATUS_4 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_O_4 コントロール。
     '''</summary>
     '''<remarks>
@@ -1400,6 +1391,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_O_IRAINAIYOU_4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_O_STATUS_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_O_STATUS_4 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_O_KOTSUKIKAN_4 コントロール。
@@ -1573,15 +1573,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_O_TEHAI_5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_O_STATUS_5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_O_STATUS_5 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_O_5 コントロール。
     '''</summary>
     '''<remarks>
@@ -1616,6 +1607,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_O_IRAINAIYOU_5 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_O_STATUS_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_O_STATUS_5 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_O_KOTSUKIKAN_5 コントロール。
@@ -1789,15 +1789,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_TEHAI_1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_F_STATUS_1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_F_STATUS_1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_F_1 コントロール。
     '''</summary>
     '''<remarks>
@@ -1832,6 +1823,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_F_IRAINAIYOU_1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_F_STATUS_1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_F_STATUS_1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_F_KOTSUKIKAN_1 コントロール。
@@ -2005,15 +2005,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_TEHAI_2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_F_STATUS_2 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_F_STATUS_2 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_F_2 コントロール。
     '''</summary>
     '''<remarks>
@@ -2048,6 +2039,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_F_IRAINAIYOU_2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_F_STATUS_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_F_STATUS_2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_F_KOTSUKIKAN_2 コントロール。
@@ -2221,15 +2221,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_TEHAI_3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_F_STATUS_3 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_F_STATUS_3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_F_3 コントロール。
     '''</summary>
     '''<remarks>
@@ -2264,6 +2255,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_F_IRAINAIYOU_3 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_F_STATUS_3 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_F_STATUS_3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_F_KOTSUKIKAN_3 コントロール。
@@ -2437,15 +2437,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_TEHAI_4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_F_STATUS_4 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_F_STATUS_4 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_F_4 コントロール。
     '''</summary>
     '''<remarks>
@@ -2480,6 +2471,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_F_IRAINAIYOU_4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_F_STATUS_4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_F_STATUS_4 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_F_KOTSUKIKAN_4 コントロール。
@@ -2653,15 +2653,6 @@ Partial Public Class DrRegist
     Protected WithEvents REQ_F_TEHAI_5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ANS_F_STATUS_5 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents ANS_F_STATUS_5 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''TB_KOTSU_F_5 コントロール。
     '''</summary>
     '''<remarks>
@@ -2696,6 +2687,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents REQ_F_IRAINAIYOU_5 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ANS_F_STATUS_5 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ANS_F_STATUS_5 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''REQ_F_KOTSUKIKAN_5 コントロール。
