@@ -73,9 +73,9 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " ISNULL(TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
             strSQL &= " AND"
-            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO & "='" & KOUENKAI_NO & "'"
+            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO & "=N'" & KOUENKAI_NO & "'"
             strSQL &= " AND"
-            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "<'" & UPDATE_DATE & "'"
+            strSQL &= " TBL_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE & "<N'" & UPDATE_DATE & "'"
 
             strSQL &= " ORDER BY "
             strSQL &= TableDef.TBL_KOUENKAI.Column.UPDATE_DATE
@@ -1957,18 +1957,18 @@ Public Class SQL
             strSQL &= "("
             strSQL &= " SELECT TBL_KOTSUHOTEL_1.* FROM "
             strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL"
-            strSQL &= " WHERE KOUENKAI_NO='" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= " WHERE KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= ") AS TBL_KOTSUHOTEL_1"
             strSQL &= "  ,"
             strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO,SALEFORCE_ID,SANKASHA_ID,DR_MPID FROM TBL_KOTSUHOTEL"
-            strSQL &= "  WHERE KOUENKAI_NO='" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= "  WHERE KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= "  GROUP BY KOUENKAI_NO,SALEFORCE_ID,SANKASHA_ID,DR_MPID) AS TBL_KOTSUHOTEL_2"
             strSQL &= "  WHERE TBL_KOTSUHOTEL_1.TIME_STAMP_BYL=TBL_KOTSUHOTEL_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO=TBL_KOTSUHOTEL_2.KOUENKAI_NO"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.SALEFORCE_ID=TBL_KOTSUHOTEL_2.SALEFORCE_ID"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.SANKASHA_ID=TBL_KOTSUHOTEL_2.SANKASHA_ID"
             strSQL &= "   AND TBL_KOTSUHOTEL_1.DR_MPID=TBL_KOTSUHOTEL_2.DR_MPID"
-            strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO='" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= "   AND TBL_KOTSUHOTEL_1.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= ") AS TBL_KOTSUHOTEL"
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO DESC"
@@ -2042,26 +2042,43 @@ Public Class SQL
             strSQL &= ",TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_19"
             strSQL &= ",TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20"
             strSQL &= " FROM TBL_KOTSUHOTEL"
-            strSQL &= " WHERE TBL_KOTSUHOTEL.ANS_TAXI_NO_1='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_2='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_3='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_4='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_5='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_6='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_7='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_8='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_9='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_10='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_11='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_12='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_13='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_14='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_15='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_16='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_17='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_18='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_19='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_20='" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= " WHERE TBL_KOTSUHOTEL.ANS_TAXI_NO_1=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_2=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_3=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_4=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_5=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_6=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_7=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_8=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_9=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_10=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_11=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_12=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_13=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_14=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_15=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_16=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_17=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_18=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_19=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= "    OR TBL_KOTSUHOTEL.ANS_TAXI_NO_20=N'" & CmnDb.SqlString(TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function TaxiScanCsvCheck(ByVal SALEFORCE_ID As String, ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TIME_STAMP_BYL As String, ByVal DR_MPID As String, ByVal TKT_LINE_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " TBL_KOTSUHOTEL.*"
+            strSQL &= " FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_" & CInt(TKT_LINE_NO).ToString & "=N'1'"
+            strSQL &= "   AND ISNULL(TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_" & CInt(TKT_LINE_NO).ToString & ",N'')<>N''"
+            strSQL &= "   AND TBL_KOTSUHOTEL.SALEFORCE_ID=N'" & CmnDb.SqlString(SALEFORCE_ID) & "'"
+            strSQL &= "   AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= "   AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= "   AND TBL_KOTSUHOTEL.TIME_STAMP_BYL=N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
+            strSQL &= "   AND TBL_KOTSUHOTEL.DR_MPID=N'" & CmnDb.SqlString(DR_MPID) & "'"
 
             Return strSQL
         End Function
@@ -2784,8 +2801,8 @@ Public Class SQL
             strSQL &= " INNER JOIN TBL_SANKA"
             strSQL &= " ON (TBL_KOTSUHOTEL.KOUENKAI_NO=TBL_SANKA.KOUENKAI_NO)"
             strSQL &= " AND (TBL_KOTSUHOTEL.SANKASHA_ID=TBL_SANKA.SANKASHA_ID)"
-            strSQL &= " WHERE TBL_KOTSUHOTEL.SANKASHA_ID='" & CmnDb.SqlString(SANKASHA_ID) & "'"
-            strSQL &= " AND TBL_KOTSUHOTEL.ANS_TAXI_NO_" & CInt(TKT_LINE_NO).ToString & "='" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= " WHERE TBL_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= " AND TBL_KOTSUHOTEL.ANS_TAXI_NO_" & CInt(TKT_LINE_NO).ToString & "=N'" & CmnDb.SqlString(TKT_NO) & "'"
             strSQL &= " ORDER BY TBL_KOTSUHOTEL.UPDATE_DATE DESC"
 
             Return strSQL
@@ -4216,7 +4233,7 @@ Public Class SQL
         = " ORDER BY" _
         & " TBL_KAIJO.KOUENKAI_NO" _
         & ",TBL_KAIJO.TIME_STAMP_BYL"
-          
+
         Public Shared Function byKOUENKAI_NO_TEHAI_ID(ByVal KOUENKAI_NO As String, ByVal TEHAI_ID As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -6147,7 +6164,7 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL &= "SELECT MAX(CONVERT(INT,DATA_ID)) AS DATA_ID FROM MS_CODE"
-            strSQL &= " WHERE CODE='" & CmnDb.SqlString(CODE) & "'"
+            strSQL &= " WHERE CODE=N'" & CmnDb.SqlString(CODE) & "'"
 
             Return strSQL
         End Function
@@ -6564,8 +6581,20 @@ Public Class SQL
 
             strSQL &= "SELECT *"
             strSQL &= " FROM TBL_TAXITICKET_HAKKO"
-            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO='" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= " AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE,'')<>''"
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= " AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE,'')<>N''"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function TaxiScanCsvCheck(ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TKT_LINE_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT *"
+            strSQL &= " FROM TBL_TAXITICKET_HAKKO"
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= "   AND TBL_TAXITICKET_HAKKO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= "   AND CONVERT(INT,TBL_TAXITICKET_HAKKO.TKT_LINE_NO)=N'" & CInt(CmnDb.SqlString(TKT_LINE_NO)).ToString & "'"
 
             Return strSQL
         End Function

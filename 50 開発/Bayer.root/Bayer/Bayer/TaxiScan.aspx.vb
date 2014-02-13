@@ -125,82 +125,73 @@ Partial Public Class TaxiScan
         Dim cReader As New System.IO.StreamReader(CsvPath, System.Text.Encoding.Default)
         Dim wLineCnt As Integer = 0
         Dim ErrorMessage As String = ""
-        Dim wLength As Integer
+        Dim wSplit() As String
 
         '読み込みできる文字がなくなるまで繰り返す
         While (cReader.Peek() >= 0)
             'ファイルを1行ずつ読み込む
             Dim stBuffer As String = cReader.ReadLine()
-
             wLineCnt += 1
 
             If Trim(stBuffer) <> "" Then
-                '文字列数チェック
-                wLength = MyModule.Csv.TaxiScan.Length.SALEFORCE_ID _
-                        + MyModule.Csv.TaxiScan.Length.SANKASHA_ID _
-                        + MyModule.Csv.TaxiScan.Length.KOUENKAI_NO _
-                        + MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL _
-                        + MyModule.Csv.TaxiScan.Length.DR_MPID _
-                        + MyModule.Csv.TaxiScan.Length.TKT_LINE_NO _
-                        + MyModule.Csv.TaxiScan.Length.TKT_NO
-                If CmnModule.LenB(stBuffer) <> wLength Then
-                    ErrorMessage &= "【" & wLineCnt.ToString & "行目】文字数が正しくありません。 " & vbNewLine
+                If InStr(stBuffer, ",") <= 0 Then
+                    'カンマ
+                    ErrorMessage &= "【" & wLineCnt.ToString & "行目】項目数が正しくありません。 " & vbNewLine
                 Else
-                    '項目毎のチェック
-                    Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
-                    wLength = 1
+                    stBuffer = Replace(stBuffer, """", "")  'ダブルクォーテーション除去
 
-                    ScanData.SALEFORCE_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
-                    wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
-                    If ScanData.SALEFORCE_ID = "" Then
+                    '項目数
+                    wSplit = Split(Trim(stBuffer), ",")
+                    If UBound(wSplit) <> 6 Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】項目数が正しくありません。 " & vbNewLine
+                    End If
+
+                    '項目毎のチェック
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SALEFORCE_ID)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】SalesForceIDが記載されていません。" & vbNewLine
                     End If
 
-                    ScanData.SANKASHA_ID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
-                    wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
-                    If ScanData.SANKASHA_ID = "" Then
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】参加者IDが記載されていません。" & vbNewLine
                     End If
 
-                    ScanData.KOUENKAI_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
-                    wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
-                    If ScanData.KOUENKAI_NO = "" Then
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】会合番号が記載されていません。" & vbNewLine
                     End If
 
-                    ScanData.TIME_STAMP_BYL = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
-                    wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
-                    If ScanData.TIME_STAMP_BYL = "" Then
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TIME_STAMP_BYL)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】Timestamp(BYL)が記載されていません。" & vbNewLine
-                    ElseIf Not CmnCheck.IsNumberOnly(ScanData.TIME_STAMP_BYL) Then
+                    ElseIf Not CmnCheck.IsNumberOnly(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TIME_STAMP_BYL))) Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】Timestamp(BYL)に数字以外の文字があります。" & vbNewLine
                     End If
 
-                    ScanData.DR_MPID = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
-                    wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
-                    If ScanData.DR_MPID = "" Then
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.DR_MPID)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】MPIDが記載されていません。" & vbNewLine
                     End If
 
-                    ScanData.TKT_LINE_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
-                    wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
-                    If ScanData.TKT_LINE_NO = "" Then
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】行番号が記載されていません。" & vbNewLine
-                    ElseIf Not CmnCheck.IsNumberOnly(ScanData.TKT_LINE_NO) Then
+                    ElseIf Not CmnCheck.IsNumberOnly(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))) Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】行番号に数字以外の文字があります。" & vbNewLine
-                    ElseIf Val(ScanData.TKT_LINE_NO) < 1 OrElse Val(ScanData.TKT_LINE_NO) > 20 Then
+                    ElseIf Val(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))) < 1 OrElse Val(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))) > 20 Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】行番号に1～20以外の数値が入っています。" & vbNewLine
                     End If
 
-                    ScanData.TKT_NO = Trim(Mid(stBuffer, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
-                    wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
-                    If ScanData.TKT_NO = "" Then
+                    If Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)) = "" Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号が記載されていません。" & vbNewLine
                     End If
 
+                    '該当データ存在チェック
+                    If Not CmnDb.IsExist(SQL.TBL_KOTSUHOTEL.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SALEFORCE_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TIME_STAMP_BYL)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.DR_MPID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))), MyBase.DbConnection) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当する交通・宿泊手配データがありません。" & vbNewLine
+                    End If
+                    If Not CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))), MyBase.DbConnection) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当するタクシーチケット発行データがありません。" & vbNewLine
+                    End If
+
                     '取込み済み チェック
-                    If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(ScanData.TKT_NO), MyBase.DbConnection) Then
-                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & ScanData.TKT_NO & "］はスキャンデータ取込済みです。" & vbNewLine
+                    If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))), MyBase.DbConnection) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)) & "］はスキャンデータ取込済みです。" & vbNewLine
                     End If
                 End If
             End If
@@ -222,28 +213,17 @@ Partial Public Class TaxiScan
     'Csvのデータを構造体にセット
     Private Function SetScanData(ByVal CsvData As String) As MyModule.Csv.TaxiScan.DataStruct
         Dim wCsvData As MyModule.Csv.TaxiScan.DataStruct
-        Dim wLength As Integer = 1
+        Dim wSplit() As String
 
-        wCsvData.SALEFORCE_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SALEFORCE_ID))
-        wLength += MyModule.Csv.TaxiScan.Length.SALEFORCE_ID
+        wSplit = Split(CsvData, ",")
 
-        wCsvData.SANKASHA_ID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.SANKASHA_ID))
-        wLength += MyModule.Csv.TaxiScan.Length.SANKASHA_ID
-
-        wCsvData.KOUENKAI_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.KOUENKAI_NO))
-        wLength += MyModule.Csv.TaxiScan.Length.KOUENKAI_NO
-
-        wCsvData.TIME_STAMP_BYL = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL))
-        wLength += MyModule.Csv.TaxiScan.Length.TIME_STAMP_BYL
-
-        wCsvData.DR_MPID = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.DR_MPID))
-        wLength += MyModule.Csv.TaxiScan.Length.DR_MPID
-
-        wCsvData.TKT_LINE_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_LINE_NO))
-        wLength += MyModule.Csv.TaxiScan.Length.TKT_LINE_NO
-
-        wCsvData.TKT_NO = Trim(Mid(CsvData, wLength, MyModule.Csv.TaxiScan.Length.TKT_NO))
-        wLength += MyModule.Csv.TaxiScan.Length.TKT_NO
+        wCsvData.SALEFORCE_ID = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SALEFORCE_ID))
+        wCsvData.SANKASHA_ID = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID))
+        wCsvData.KOUENKAI_NO = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO))
+        wCsvData.TIME_STAMP_BYL = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TIME_STAMP_BYL))
+        wCsvData.DR_MPID = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.DR_MPID))
+        wCsvData.TKT_LINE_NO = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))
+        wCsvData.TKT_NO = Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))
 
         Return wCsvData
     End Function
@@ -284,11 +264,13 @@ Partial Public Class TaxiScan
         While (CsvData.Peek() >= 0)
             'ファイルを1行ずつ読み込む
             Dim stBuffer As String = CsvData.ReadLine()
-
             wLineCnt += 1
+
             If Trim(stBuffer) <> "" Then
                 wFlag = True
 
+                stBuffer = Replace(stBuffer, """", "")  'ダブルクォーテーション除去
+             
                 ReDim Preserve TBL_TAXITICKET_HAKKO(wCnt)
 
                 Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
@@ -299,7 +281,7 @@ Partial Public Class TaxiScan
                 TBL_TAXITICKET_HAKKO(wCnt).KOUENKAI_NO = Trim(ScanData.KOUENKAI_NO)
                 TBL_TAXITICKET_HAKKO(wCnt).TIME_STAMP_BYL = Trim(ScanData.TIME_STAMP_BYL)
                 TBL_TAXITICKET_HAKKO(wCnt).DR_MPID = Trim(ScanData.DR_MPID)
-                TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO = Trim(ScanData.TKT_LINE_NO)
+                TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO = CInt(ScanData.TKT_LINE_NO).ToString
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_NO = Trim(ScanData.TKT_NO)
 
                 '発行手数料
@@ -313,13 +295,12 @@ Partial Public Class TaxiScan
             End If
         End While
         CsvData.Close()
-
+ 
         'ログ登録
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, wLineCnt.ToString & "件のスキャンデータを読込みました。", MyBase.DbConnection)
 
         '交通宿泊テーブル 読込
-        'タクシー会社、券種取得
-        ReDim TBL_KOTSUHOTEL(UBound(TBL_TAXITICKET_HAKKO))
+        'タクシー会社、券種取得        ReDim TBL_KOTSUHOTEL(UBound(TBL_TAXITICKET_HAKKO))
         For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
             strSQL = SQL.TBL_KOTSUHOTEL.TaxiScanCsv(TBL_TAXITICKET_HAKKO(wCnt))
             RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
