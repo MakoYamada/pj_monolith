@@ -1500,12 +1500,12 @@ Partial Public Class DrRegist
                 SetFocus(Me.ANS_HOTELHI)
                 Return False
             End If
-            'DR宿泊費都税
-            If Val(Me.ANS_HOTELHI_TOZEI.Text.Trim) = 0 Then
-                CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊費東京都税"), Me)
-                SetFocus(Me.ANS_HOTELHI_TOZEI)
-                Return False
-            End If
+            ''DR宿泊費都税
+            'If Val(Me.ANS_HOTELHI_TOZEI.Text.Trim) = 0 Then
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊費東京都税"), Me)
+            '    SetFocus(Me.ANS_HOTELHI_TOZEI)
+            '    Return False
+            'End If
             '登録手数料
             If Not Me.CHK_KOTSUHOTEL_TESURYO.Checked Then
                 CmnModule.AlertMessage(MessageDef.Error.MustSelect("各種代金-登録手数料(交通・宿泊)"), Me)
