@@ -619,7 +619,8 @@ Public Class DrSoufujo
             ANS_O_DATE_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
             'Me.Detail.Controls.Add(Ans_O_Date_3)
 
-            Dim Ans_O_Bin_3_Title As New Label
+            'Dim Ans_O_Bin_3_Title As New Label
+            Ans_O_Bin_3_Title.Visible = True
             Ans_O_Bin_3_Title.Text = "乗車便名："
             Ans_O_Bin_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Bin_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1563,7 +1564,7 @@ Public Class DrSoufujo
             'Me.Detail.Controls.Add(Ans_F_Bin_4_Title)
 
             'Dim Ans_F_Bin_4 As New TextBox
-            'ANS_F_BIN_4.Text = Me.ANS_F_BIN_4.Text
+            ANS_F_BIN_4.Visible = True
             ANS_F_BIN_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_BIN_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_F_BIN_4.CanGrow = True
@@ -1606,7 +1607,7 @@ Public Class DrSoufujo
             'Me.Detail.Controls.Add(Ans_F_Airport2_4_Title)
 
             'Dim Ans_F_Airport2_4 As New TextBox
-            'Ans_F_Airport2_4.Text = Me.ANS_F_AIRPORT2_4
+            ANS_F_AIRPORT2_4.Visible = True
             ANS_F_AIRPORT2_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT2_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_F_AIRPORT2_4.CanGrow = True
