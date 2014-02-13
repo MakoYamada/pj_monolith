@@ -44,6 +44,9 @@ Partial Public Class TaxiNouhinTorikomi
 
     '画面項目 初期化
     Private Sub InitControls()
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
+
         'クリア
         CmnModule.ClearAllControl(Me)
 
@@ -54,6 +57,10 @@ Partial Public Class TaxiNouhinTorikomi
 
     '[取込開始]
     Private Sub BtnTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTorikomi.Click
+        Me.LabelErrorMessage.Text = ""
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
+
         '入力チェック
         If Not Check() Then Exit Sub
 
@@ -76,6 +83,7 @@ Partial Public Class TaxiNouhinTorikomi
         If workFiles.Length = 0 Then
             'ログ登録
             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, "取込対象CSVファイルが存在しません。", MyBase.DbConnection)
+            CmnModule.AlertMessage("取込対象CSVファイルが存在しません。", Me)
             Exit Sub
         End If
 
@@ -119,12 +127,12 @@ Partial Public Class TaxiNouhinTorikomi
 
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
+        Dim ErrorMessage As String = String.Empty
 
         While Not parser.EndOfData
             Dim fileData As String() = parser.ReadFields() ' 1行読み込み
             rowCnt += 1
-
-            If CheckInput(fileData, strFileName, rowCnt.ToString) Then
+            If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
                 insCnt += InsertTable(fileData)
             End If
 
@@ -132,6 +140,18 @@ Partial Public Class TaxiNouhinTorikomi
 
         'インスタンス開放
         parser.Dispose()
+
+        If Trim(ErrorMessage) <> "" Then
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Me.TrError.Visible = False
+            Me.TrEnd.Visible = True
+            Me.LabelUpdatedCount.Text = rowCnt.ToString
+            Return True
+        End If
 
     End Function
 
@@ -145,21 +165,21 @@ Partial Public Class TaxiNouhinTorikomi
     End Function
 
     'CSVデータ内容チェック
-    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String) As Boolean
+    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByVal ErrorMessage As String) As Boolean
 
         Try
             '項目数チェック
             If fileData.Count <> COL_COUNT Then
-                Throw New Exception("項目数が不正です。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
             End If
 
             '必須入力チェック
             If fileData(COL_NO.Field1).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.Field1 & "がセットされていません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field1 & "がセットされていません。" & vbNewLine
             End If
 
             If fileData(COL_NO.Field2).Trim.Equals(String.Empty) Then
-                Throw New Exception(COL_NAME.Field2 & "がセットされていません。")
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field2 & "がセットされていません。" & vbNewLine
             End If
 
             'タクシー会社チェック
@@ -168,18 +188,18 @@ Partial Public Class TaxiNouhinTorikomi
                 fileData(COL_NO.Field2).Trim.Substring(0, 2) = "30" OrElse _
                 fileData(COL_NO.Field2).Trim.Substring(0, 2) = "50" Then
                 If Me.RdoTaxi.SelectedValue <> "DC" Then
-                    Throw New Exception(COL_NAME.Field2 & "がタクシー会社と一致しません。")
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field2 & "がタクシー会社と一致しません。" & vbNewLine
                 End If
             Else
                 If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> Me.RdoTaxi.SelectedValue Then
-                    Throw New Exception(COL_NAME.Field2 & "がタクシー会社と一致しません。")
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field2 & "がタクシー会社と一致しません。" & vbNewLine
                 End If
             End If
 
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
-            Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
+            'Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
             Return False
         End Try
 

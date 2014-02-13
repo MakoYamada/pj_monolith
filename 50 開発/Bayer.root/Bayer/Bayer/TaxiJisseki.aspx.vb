@@ -71,6 +71,10 @@ Partial Public Class TaxiJisseki
 
     '[取込開始]
     Private Sub BtnTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTorikomi.Click
+        Me.LabelErrorMessage.Text = ""
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
+
         '入力チェック
         If Not Check() Then Exit Sub
 
@@ -93,6 +97,7 @@ Partial Public Class TaxiJisseki
         If workFiles.Length = 0 Then
             'ログ登録
             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, "取込対象CSVファイルが存在しません。", MyBase.DbConnection)
+            CmnModule.AlertMessage("取込対象CSVファイルが存在しません。", Me)
             Exit Sub
         End If
 
@@ -164,6 +169,9 @@ Partial Public Class TaxiJisseki
             Me.LabelErrorMessage.Text = ErrorMessage
             Return False
         Else
+            Me.TrError.Visible = False
+            Me.TrEnd.Visible = True
+            Me.LabelUpdatedCount.Text = (rowCnt - 1).ToString
             Return True
         End If
 
@@ -419,6 +427,6 @@ Partial Public Class TaxiJisseki
         TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
         TBL_TAXITICKET_HAKKO.TKT_MIKETSU = "0"
-        'TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM = Now.ToString("yyyyMM")
+        TBL_TAXITICKET_HAKKO.UPDATE_USER = Session.Item(SessionDef.LoginID)
     End Sub
 End Class
