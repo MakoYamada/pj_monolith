@@ -1846,7 +1846,8 @@ Public Class DrSoufujo
             'Me.Detail.Controls.Add(Ans_Taxi_Date_1_Title)
 
             'Dim Ans_Taxi_Date_1 As New TextBox
-            'Ans_Taxi_Date_1.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_1, CmnModule.DateFormatType.MD)
+            ANS_TAXI_DATE_1.Visible = True
+            ANS_TAXI_DATE_1.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_1.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_1.Visible = True
             ANS_TAXI_DATE_1.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
             ANS_TAXI_DATE_1.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX1), Me.CmToInch(StartY + RowHeight * RowNo))

@@ -417,9 +417,10 @@ Public Class MyModule
         ElseIf currentUrl.ToLower.IndexOf(URL.TaxiSoufujoIkkatsu.ToLower) >= 0 Then
             '送付状・確認票一括印刷
             cnt = 0
-            ReDim chkArray(1)
+            ReDim chkArray(2)
             AddChkArray(cnt, chkArray, URL.TaxiMenu)
             AddChkArray(cnt, chkArray, URL.TaxiSoufujoIkkatsu)
+            AddChkArray(cnt, chkArray, URL.Preview)
 
             Return IsReferrer(referreUrl, chkArray)
 

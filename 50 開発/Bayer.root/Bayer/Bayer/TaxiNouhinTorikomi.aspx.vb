@@ -5,16 +5,27 @@ Partial Public Class TaxiNouhinTorikomi
     Inherits WebBase
 
     Private Const COL_COUNT As Integer = 2 'ファイルの項目数
+    Private Const DC_COL_COUNT As Integer = 3 'ファイルの項目数(DC)
     Private Const pDelimiter As String = ","
 
     Private Enum COL_NO
-        Field1 = 0
-        Field2
+        COL_TKT_NO = 0
+        COL_KENSHU
     End Enum
-
     Private Class COL_NAME
-        Public Const Field1 As String = "タクチケ番号"
-        Public Const Field2 As String = "券種"
+        Public Const COL_TKT_NO As String = "タクチケ番号"
+        Public Const COL_KENSHU As String = "券種"
+    End Class
+
+    Private Enum DC_COL_NO
+        COL_KAISHA_CODE = 0
+        COL_TKT_NO
+        COL_KENSHU
+    End Enum
+    Private Class DC_COL_NAME
+        Public Const COL_KAISHA_CODE As String = "会社コード"
+        Public Const COL_TKT_NO As String = "タクチケ番号"
+        Public Const COL_KENSHU As String = "券種"
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -165,41 +176,49 @@ Partial Public Class TaxiNouhinTorikomi
     End Function
 
     'CSVデータ内容チェック
-    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByVal ErrorMessage As String) As Boolean
+    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByRef ErrorMessage As String) As Boolean
 
         Try
-            '項目数チェック
-            If fileData.Count <> COL_COUNT Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
-            End If
-
-            '必須入力チェック
-            If fileData(COL_NO.Field1).Trim.Equals(String.Empty) Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field1 & "がセットされていません。" & vbNewLine
-            End If
-
-            If fileData(COL_NO.Field2).Trim.Equals(String.Empty) Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field2 & "がセットされていません。" & vbNewLine
-            End If
-
-            'タクシー会社チェック
-            If fileData(COL_NO.Field2).Trim.Substring(0, 2) = "10" OrElse _
-                fileData(COL_NO.Field2).Trim.Substring(0, 2) = "20" OrElse _
-                fileData(COL_NO.Field2).Trim.Substring(0, 2) = "30" OrElse _
-                fileData(COL_NO.Field2).Trim.Substring(0, 2) = "50" Then
-                If Me.RdoTaxi.SelectedValue <> "DC" Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field2 & "がタクシー会社と一致しません。" & vbNewLine
+            If Me.RdoTaxi.SelectedValue = "DC" Then
+                '項目数チェック
+                If fileData.Count <> DC_COL_COUNT Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
+                End If
+                '必須入力チェック
+                If fileData(DC_COL_NO.COL_KAISHA_CODE).Trim.Equals(String.Empty) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_KAISHA_CODE & "がセットされていません。" & vbNewLine
+                End If
+                If fileData(DC_COL_NO.COL_TKT_NO).Trim.Equals(String.Empty) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_TKT_NO & "がセットされていません。" & vbNewLine
+                End If
+                If fileData(DC_COL_NO.COL_KENSHU).Trim.Equals(String.Empty) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_KENSHU & "がセットされていません。" & vbNewLine
+                End If
+                '券種チェック
+                If Not ChkKenshu(Me.RdoTaxi.SelectedValue, fileData(DC_COL_NO.COL_KENSHU)) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NO.COL_KENSHU & "が不正です。" & vbNewLine
                 End If
             Else
-                If fileData(COL_NO.Field2).Trim.Substring(0, 2) <> Me.RdoTaxi.SelectedValue Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.Field2 & "がタクシー会社と一致しません。" & vbNewLine
+                '項目数チェック
+                If fileData.Count <> COL_COUNT Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
+                End If
+                '必須入力チェック
+                If fileData(COL_NO.COL_TKT_NO).Trim.Equals(String.Empty) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_TKT_NO & "がセットされていません。" & vbNewLine
+                End If
+
+                If fileData(COL_NO.COL_KENSHU).Trim.Equals(String.Empty) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_KENSHU & "がセットされていません。" & vbNewLine
+                End If
+                '券種チェック
+                If Not ChkKenshu(Me.RdoTaxi.SelectedValue, fileData(COL_NO.COL_KENSHU)) Then
+                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_KENSHU & "が不正です。" & vbNewLine
                 End If
             End If
 
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
-            'Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
             Return False
         End Try
 
@@ -243,17 +262,39 @@ Partial Public Class TaxiNouhinTorikomi
         MS_USER = Session.Item(SessionDef.MS_USER)
 
         TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = Me.RdoTaxi.SelectedValue
-        TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.Field1)
+
         If Me.RdoTaxi.SelectedValue = "DC" Then
-            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(COL_NO.Field2)
+            TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(DC_COL_NO.COL_TKT_NO)
+            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(DC_COL_NO.COL_KENSHU)
         Else
-            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = fileData(COL_NO.Field2)
+            TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.COL_TKT_NO)
+            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(COL_NO.COL_KENSHU)
         End If
+
         TBL_TAXITICKET_HAKKO_Ins.TKT_MIKETSU = CmnConst.Flag.Off
+        TBL_TAXITICKET_HAKKO_Ins.TKT_VOID = CmnConst.Flag.Off
         TBL_TAXITICKET_HAKKO_Ins.INPUT_USER = MS_USER.LOGIN_ID
         TBL_TAXITICKET_HAKKO_Ins.UPDATE_USER = MS_USER.LOGIN_ID
 
         Return TBL_TAXITICKET_HAKKO_Ins
 
+    End Function
+
+    '券種チェック
+    Private Function ChkKenshu(ByVal Kaisha As String, ByVal Kenshu As String) As Boolean
+        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
+        Dim wStr As String = ""
+        Dim wKenshu As String = Kaisha.Trim & Kenshu.Trim
+
+        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_KENSHU Then
+                If wKenshu = MS_CODE(wCnt).DISP_VALUE Then
+                    Return True
+                End If
+            End If
+        Next
+
+        Return False
     End Function
 End Class
