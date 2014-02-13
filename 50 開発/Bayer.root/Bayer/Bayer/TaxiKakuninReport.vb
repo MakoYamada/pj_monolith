@@ -23,7 +23,7 @@ Public Class TaxiKakuninReport
         '項目の編集
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
         If DR_NAME.Text.Length > 19 Then DR_NAME.Text = Left(DR_NAME.Text, 19)
-        If DR_SHISETSU_NAME.Text.Length > 18 Then DR_SHISETSU_NAME.Text = Left(DR_SHISETSU_NAME.Text, 18)
+        If DR_SHISETSU_NAME.Text.Length > 25 Then DR_SHISETSU_NAME.Text = Left(DR_SHISETSU_NAME.Text, 25)
         TEHAI_TAXI.Text = AppModule.GetName_TEHAI_TAXI(TEHAI_TAXI.Text)
         REQ_TAXI_DATE_1.Text = AppModule.GetName_REQ_TAXI_DATE_1(REQ_TAXI_DATE_1.Text)
         REQ_TAXI_DATE_2.Text = AppModule.GetName_REQ_TAXI_DATE_2(REQ_TAXI_DATE_2.Text)

@@ -4779,12 +4779,12 @@ Partial Public Class DrSoufujo
         '
         Me.KAIJO_NAME.DataField = "KAIJO_NAME"
         Me.KAIJO_NAME.Height = 0.1791339!
-        Me.KAIJO_NAME.Left = 1.405512!
+        Me.KAIJO_NAME.Left = 1.416535!
         Me.KAIJO_NAME.Name = "KAIJO_NAME"
         Me.KAIJO_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.KAIJO_NAME.Text = "[KAIJO_NAME]"
-        Me.KAIJO_NAME.Top = 2.735433!
+        Me.KAIJO_NAME.Top = 2.672835!
         Me.KAIJO_NAME.Width = 5.694095!
         '
         'MR_SEND_SAKI_FS
