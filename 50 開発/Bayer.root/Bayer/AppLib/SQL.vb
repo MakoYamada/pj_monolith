@@ -1110,10 +1110,10 @@ Public Class SQL
                 strSQL &= ")"
             End If
 
-            strSQL &= " AND"
-            strSQL &= " WK_SEIKYU."
-            strSQL &= TableDef.TBL_SEIKYU.Column.SHOUNIN_KUBUN
-            strSQL &= "=N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+            'strSQL &= " AND"
+            'strSQL &= " WK_SEIKYU."
+            'strSQL &= TableDef.TBL_SEIKYU.Column.SHOUNIN_KUBUN
+            'strSQL &= "=N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
 
             Return strSQL
         End Function
