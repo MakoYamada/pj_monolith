@@ -9,6 +9,7 @@ Public Class MessageDef
         Public Const MustInput_Joken As String = "検索条件を指定してください。"
         Public Const InvalidTime As String = "時間は半角数字4桁で入力してください。：は不要です。"
         Public Const AnsStatusError As String = "回答ステータスが「新着」の為、NOZOMIへは送信できません。"
+        Public Const TaxiPrtNameError As String = "チケット印字名が未確定の為、タクチケ発行はできません。"
 
         '必須        Public Shared Function MustInput(ByVal ItemName As String) As String
             Return ItemName & "を入力してください。"
