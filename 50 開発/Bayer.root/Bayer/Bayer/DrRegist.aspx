@@ -2696,7 +2696,7 @@
                                 tabstop="false" BorderStyle="None"></asp:TextBox>                            
                         </td>
 						<td align="left" valign="middle" class="TdTitle" style="width:170px">
-							備考
+							NOZOMIへ<br />備考
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">
 							<div style="font-weight: bold; color: #2424f0;" id="Div3" runat="server">
@@ -2775,7 +2775,7 @@
                                 Width="79px" TabIndex="166" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_1" runat="server" MaxLength="10" Height="18px" 
@@ -2850,7 +2850,7 @@
                                 Width="79px" TabIndex="171" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_2" runat="server" MaxLength="10" Height="18px" 
@@ -2925,7 +2925,7 @@
                                 Width="79px" TabIndex="176" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_3" runat="server" MaxLength="10" Height="18px" 
@@ -3000,7 +3000,7 @@
                                 Width="79px" TabIndex="181" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_4" runat="server" MaxLength="10" Height="18px" 
@@ -3075,7 +3075,7 @@
                                 Width="79px" TabIndex="186" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_5" runat="server" MaxLength="10" Height="18px" 
@@ -3150,7 +3150,7 @@
                                 Width="79px" TabIndex="191" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_6" runat="server" MaxLength="10" Height="18px" 
@@ -3225,7 +3225,7 @@
                                 Width="79px" TabIndex="196" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_7" runat="server" MaxLength="10" Height="18px" 
@@ -3300,7 +3300,7 @@
                                 Width="79px" TabIndex="201" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_8" runat="server" MaxLength="10" Height="18px" 
@@ -3375,7 +3375,7 @@
                                 Width="79px" TabIndex="206" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_9" runat="server" MaxLength="10" Height="18px" 
@@ -3450,7 +3450,7 @@
                                 Width="79px" TabIndex="211" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_10" runat="server" MaxLength="10" Height="18px" 
@@ -3503,7 +3503,7 @@
                                 Width="79px" TabIndex="216" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_11" runat="server" MaxLength="10" Height="18px" 
@@ -3554,7 +3554,7 @@
                                 Width="79px" TabIndex="221" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_12" runat="server" MaxLength="10" Height="18px" 
@@ -3605,7 +3605,7 @@
                                 Width="79px" TabIndex="226" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_13" runat="server" MaxLength="10" Height="18px" 
@@ -3656,7 +3656,7 @@
                                 Width="79px" TabIndex="231" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_14" runat="server" MaxLength="10" Height="18px" 
@@ -3707,7 +3707,7 @@
                                 Width="79px" TabIndex="236" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_15" runat="server" MaxLength="10" Height="18px" 
@@ -3758,7 +3758,7 @@
                                 Width="79px" TabIndex="241" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_16" runat="server" MaxLength="10" Height="18px" 
@@ -3809,7 +3809,7 @@
                                 Width="79px" TabIndex="246" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_17" runat="server" MaxLength="10" Height="18px" 
@@ -3860,7 +3860,7 @@
                                 Width="79px" TabIndex="251" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_18" runat="server" MaxLength="10" Height="18px" 
@@ -3911,7 +3911,7 @@
                                 Width="79px" TabIndex="256" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_19" runat="server" MaxLength="10" Height="18px" 
@@ -3962,7 +3962,7 @@
                                 Width="79px" TabIndex="261" Wrap="False"></asp:TextBox>                            
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
-                            備考
+                            トップ社内(備考)
                         </td>
                         <td align="left" valign="middle" class="TdItem">
                             <asp:TextBox ID="ANS_TAXI_RMKS_20" runat="server" MaxLength="10" Height="18px" 

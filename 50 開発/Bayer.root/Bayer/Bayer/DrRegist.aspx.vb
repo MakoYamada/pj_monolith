@@ -1973,18 +1973,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_O_BIN_1)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_O_SEAT_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_O_SEAT_1)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_O_SEAT_KIBOU1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_O_SEAT_KIBOU1)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_O_SEAT_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_1)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_O_SEAT_KIBOU1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路1)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_KIBOU1)
+                '    Return False
+                'End If
             End If
 
             '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2033,18 +2033,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_O_BIN_2)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_O_SEAT_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_O_SEAT_2)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_O_SEAT_KIBOU2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_O_SEAT_KIBOU2)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_O_SEAT_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_2)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_O_SEAT_KIBOU2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路2)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_KIBOU2)
+                '    Return False
+                'End If
             End If
 
             '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2093,18 +2093,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_O_BIN_3)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_O_SEAT_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_O_SEAT_3)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_O_SEAT_KIBOU3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_O_SEAT_KIBOU3)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_O_SEAT_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_3)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_O_SEAT_KIBOU3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路3)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_KIBOU3)
+                '    Return False
+                'End If
             End If
 
             '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2153,18 +2153,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_O_BIN_4)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_O_SEAT_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_O_SEAT_4)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_O_SEAT_KIBOU4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_O_SEAT_KIBOU4)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_O_SEAT_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_4)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_O_SEAT_KIBOU4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路4)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_KIBOU4)
+                '    Return False
+                'End If
             End If
 
             '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2213,18 +2213,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_O_BIN_5)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_O_SEAT_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_O_SEAT_5)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_O_SEAT_KIBOU5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_O_SEAT_KIBOU5)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_O_SEAT_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_5)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_O_SEAT_KIBOU5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(往路5)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_O_SEAT_KIBOU5)
+                '    Return False
+                'End If
             End If
 
             '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2273,18 +2273,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_F_BIN_1)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_F_SEAT_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_F_SEAT_1)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_F_SEAT_KIBOU1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_F_SEAT_KIBOU1)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_F_SEAT_1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_1)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_F_SEAT_KIBOU1.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路1)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_KIBOU1)
+                '    Return False
+                'End If
             End If
 
             '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2333,18 +2333,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_F_BIN_2)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_F_SEAT_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_F_SEAT_2)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_F_SEAT_KIBOU2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_F_SEAT_KIBOU2)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_F_SEAT_2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_2)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_F_SEAT_KIBOU2.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路2)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_KIBOU2)
+                '    Return False
+                'End If
             End If
 
             '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2393,18 +2393,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_F_BIN_3)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_F_SEAT_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_F_SEAT_3)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_F_SEAT_KIBOU3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_F_SEAT_KIBOU3)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_F_SEAT_3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_3)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_F_SEAT_KIBOU3.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路3)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_KIBOU3)
+                '    Return False
+                'End If
             End If
 
             '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2453,18 +2453,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_F_BIN_4)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_F_SEAT_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_F_SEAT_4)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_F_SEAT_KIBOU4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_F_SEAT_KIBOU4)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_F_SEAT_4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_4)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_F_SEAT_KIBOU4.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路4)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_KIBOU4)
+                '    Return False
+                'End If
             End If
 
             '復路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -2513,18 +2513,18 @@ Partial Public Class DrRegist
                     SetFocus(Me.ANS_F_BIN_5)
                     Return False
                 End If
-                '座席区分
-                If Me.ANS_F_SEAT_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-座席区分"), Me)
-                    SetFocus(Me.ANS_F_SEAT_5)
-                    Return False
-                End If
-                '座席位置
-                If Me.ANS_F_SEAT_KIBOU5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
-                    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-座席位置"), Me)
-                    SetFocus(Me.ANS_F_SEAT_KIBOU5)
-                    Return False
-                End If
+                ''座席区分
+                'If Me.ANS_F_SEAT_5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-座席区分"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_5)
+                '    Return False
+                'End If
+                ''座席位置
+                'If Me.ANS_F_SEAT_KIBOU5.SelectedValue = AppConst.KOTSUHOTEL.NotSelect Then
+                '    CmnModule.AlertMessage(MessageDef.Error.MustSelect("交通(復路5)回答-座席位置"), Me)
+                '    SetFocus(Me.ANS_F_SEAT_KIBOU5)
+                '    Return False
+                'End If
             End If
 
             '往路ステータス(回答)が「手配済・代案手配済」の場合、必須
@@ -3483,6 +3483,110 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.MustInput("番号20"), Me)
             SetFocus(Me.ANS_TAXI_NO_20)
             Return False
+        End If
+
+        'タクチケ印字名未確定の場合は「発行フラグ」を立てない
+        If Me.TAXI_PRT_NAME.Text.Trim = "" Then
+            If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_1)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_2)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_3)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_4)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_5)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_6)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_7)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_8)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_9)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_10)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_11)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_12)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_13)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_14)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_15)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_16)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_17)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_18)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_19)
+                Return False
+            End If
+            If Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
+                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+                SetFocus(Me.CHK_ANS_TAXI_HAKKO_20)
+                Return False
+            End If
         End If
 
         'タクチケ関連項目に入力されている場合は、タクチケ発行枚数必須

@@ -1904,7 +1904,7 @@ Partial Public Class TaxiKakuninReport
         Me.DR_SHISETSU_NAME.Height = 0.2!
         Me.DR_SHISETSU_NAME.Left = 4.507481!
         Me.DR_SHISETSU_NAME.Name = "DR_SHISETSU_NAME"
-        Me.DR_SHISETSU_NAME.Style = "font-size: 9pt; vertical-align: middle"
+        Me.DR_SHISETSU_NAME.Style = "font-size: 8pt; vertical-align: middle"
         Me.DR_SHISETSU_NAME.Text = Nothing
         Me.DR_SHISETSU_NAME.Top = 0.6740158!
         Me.DR_SHISETSU_NAME.Width = 2.657874!
