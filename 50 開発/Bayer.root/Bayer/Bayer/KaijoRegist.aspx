@@ -383,36 +383,36 @@
 								</tr>
 								<tr>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
-										—\ŽZŠz(‰ÛÅ)
+										‘—\ŽZ‡Œv
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
-										<asp:Label ID="YOSAN_T" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
+										<asp:Label ID="YOSAN_TOTAL" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
 									</td>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 120px;">
 										—\ŽZŠz(”ñ‰ÛÅ)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
 										<asp:Label ID="YOSAN_TF" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
 									</td>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 110px;">
-										—\ŽZŠz‡Œv
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 120px;">
+										—\ŽZŠz(‰ÛÅ)
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
-										<asp:Label ID="YOSAN_TOTAL" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
+										<asp:Label ID="YOSAN_T" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
-										ˆÔ˜J‰ï—\ŽZ(‰ÛÅ)
-									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
-										<asp:Label ID="IROUKAI_YOSAN_T" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
-									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 135px;">
 										ˆÓŒ©ŒðŠ·‰ï—\ŽZ(‰ÛÅ)
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;" colspan="3">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
 										<asp:Label ID="IKENKOUKAN_YOSAN_T" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
+									</td>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
+										ˆÔ˜J‰ï—\ŽZ(‰ÛÅ)
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;" colspan="3">
+										<asp:Label ID="IROUKAI_YOSAN_T" runat="server" Text="1,234,567,890" Width="100px"></asp:Label>
 									</td>
 								</tr>
 							</table>
@@ -646,38 +646,40 @@
 						<td nowrap="nowrap" align="left">
 							<table cellspacing="2" border="0">
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 180px;">
+										h”‘Šó–]“ú
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
+										<asp:Label ID="REQ_STAY_DATE" runat="server" Text="yyyy/MM/dd" Width="90px"></asp:Label>
+									</td>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 150px;">
 										h”‘Šó–]Žº”
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 120px;">
 										<asp:Label ID="REQ_ROOM_CNT" runat="server" Text="12,345" Width="80px"></asp:Label>
 									</td>
 								</tr>
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
-										h”‘Šó–]“ú
-									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-										<asp:Label ID="REQ_STAY_DATE" runat="server" Text="yyyy/MM/dd" Width="135px"></asp:Label>
-									</td>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 180px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 										Œð’ÊŽè”z—\’èl”(JR/AIR)
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 100px;">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="REQ_KOTSU_CNT" runat="server" Text="12,345" Width="80px"></asp:Label>
 									</td>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp">
 										ƒ^ƒNƒV[Žè”z—\’èl”
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 100px;">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:Label ID="REQ_TAXI_CNT" runat="server" Text="12,345" Width="80px"></asp:Label>
 									</td>
 								</tr>
+							</table>
+							<table cellspacing="2" border="0" style="margin-top: -2px;">
 								<tr>
-									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 140px;">
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 180px;">
 										‚»‚Ì‘¼”õl—“
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="5">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo">
 										<asp:TextBox ID="OTHER_NOTE" runat="server" TextMode="MultiLine" Width="600px" Text="" ReadOnly="true" TabIndex="-1" CssClass="DispMultiLine"></asp:TextBox>
 									</td>
 								</tr>

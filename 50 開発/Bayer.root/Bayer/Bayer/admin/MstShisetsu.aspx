@@ -73,9 +73,7 @@
 							&nbsp;
 						</td>
 						<td align="left" class="TdItem" colspan="4">
-							<asp:TextBox ID="ZIP_1" runat="server" Width="40px" MaxLength="3"></asp:TextBox>
-							－
-							<asp:TextBox ID="ZIP_2" runat="server" Width="50px" MaxLength="4"></asp:TextBox>
+							<asp:TextBox ID="ZIP" runat="server" Width="100px" MaxLength="7"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>
@@ -98,11 +96,7 @@
 							&nbsp;
 						</td>
 						<td align="left" class="TdItem" colspan="4">
-							<asp:TextBox ID="TEL_1" runat="server" Width="50px" MaxLength="4"></asp:TextBox>
-							－
-							<asp:TextBox ID="TEL_2" runat="server" Width="50px" MaxLength="4"></asp:TextBox>
-							－
-							<asp:TextBox ID="TEL_3" runat="server" Width="50px" MaxLength="4"></asp:TextBox>
+							<asp:TextBox ID="TEL" runat="server" Width="160px" MaxLength="15"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>

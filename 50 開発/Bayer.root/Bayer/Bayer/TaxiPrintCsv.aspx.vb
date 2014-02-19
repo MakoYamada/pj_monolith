@@ -328,104 +328,103 @@ Partial Public Class TaxiPrintCsv
             sw(wKenshuCnt).Close()
         Next wKenshuCnt
 
-        'QQQ
-        ''読込み＋DB更新
-        'Dim wCsvDataCnt() As Integer
-        'ReDim wCsvDataCnt(UBound(KENSHU))
+        '読込み＋DB更新
+        Dim wCsvDataCnt() As Integer
+        ReDim wCsvDataCnt(UBound(KENSHU))
 
-        'MyBase.BeginTransaction()
-        'Try
-        '    For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
-        '        Dim cReader As New System.IO.StreamReader(CsvPath(wKenshuCnt), System.Text.Encoding.Default)
-        '        Dim stResult As String = String.Empty
-        '        Dim wSplit() As String
-        '        While (cReader.Peek() >= 0)
-        '            Dim stBuffer As String = cReader.ReadLine()
-        '            If InStr(stBuffer, ",") > 0 Then
-        '                'wSplit = Split(stBuffer, ",")
-        '                wSplit = Split(stBuffer, """,""")
-        '                If UBound(wSplit) < MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE Then
-        '                    'ログ登録
-        '                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, CsvPath(wKenshuCnt) & " 項目数が正しくありません。", MyBase.DbConnection)
-        '                Else
-        '                    '発行日
-        '                    Dim wTAXI_HAKKO_DATE As String = "20" & Mid(TAXI_HAKKO_DATE, 1, 6)
+        MyBase.BeginTransaction()
+        Try
+            For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
+                Dim cReader As New System.IO.StreamReader(CsvPath(wKenshuCnt), System.Text.Encoding.Default)
+                Dim stResult As String = String.Empty
+                Dim wSplit() As String
+                While (cReader.Peek() >= 0)
+                    Dim stBuffer As String = cReader.ReadLine()
+                    If InStr(stBuffer, ",") > 0 Then
+                        'wSplit = Split(stBuffer, ",")
+                        wSplit = Split(stBuffer, """,""")
+                        If UBound(wSplit) < MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE Then
+                            'ログ登録
+                            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, CsvPath(wKenshuCnt) & " 項目数が正しくありません。", MyBase.DbConnection)
+                        Else
+                            '発行日
+                            Dim wTAXI_HAKKO_DATE As String = "20" & Mid(TAXI_HAKKO_DATE, 1, 6)
 
-        '                    'バーコード部分読込み
-        '                    Dim wBarcode As String = Replace(wSplit(MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE), CmnConst.Csv.Delimiter, "")
-        '                    Dim CsvData As MyModule.Csv.TaxiPrintCsv.Barcode.DataStruct
-        '                    Dim wLength As Integer = 1
+                            'バーコード部分読込み
+                            Dim wBarcode As String = Replace(wSplit(MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE), CmnConst.Csv.Delimiter, "")
+                            Dim CsvData As MyModule.Csv.TaxiPrintCsv.Barcode.DataStruct
+                            Dim wLength As Integer = 1
 
-        '                    CsvData.SALEFORCE_ID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID))
-        '                    wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID
+                            CsvData.SALEFORCE_ID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID))
+                            wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.SALEFORCE_ID
 
-        '                    CsvData.SANKASHA_ID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID))
-        '                    wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID
+                            CsvData.SANKASHA_ID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID))
+                            wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.SANKASHA_ID
 
-        '                    CsvData.KOUENKAI_NO = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO))
-        '                    wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO
+                            CsvData.KOUENKAI_NO = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO))
+                            wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.KOUENKAI_NO
 
-        '                    CsvData.TIME_STAMP_BYL = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL))
-        '                    wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL
+                            CsvData.TIME_STAMP_BYL = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL))
+                            wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.TIME_STAMP_BYL
 
-        '                    CsvData.DR_MPID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.DR_MPID))
-        '                    wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.DR_MPID
+                            CsvData.DR_MPID = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.DR_MPID))
+                            wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.DR_MPID
 
-        '                    CsvData.TKT_LINE_NO = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.TKT_LINE_NO))
-        '                    wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.TKT_LINE_NO
+                            CsvData.TKT_LINE_NO = Trim(Mid(wBarcode, wLength, MyModule.Csv.TaxiPrintCsv.Barcode.Length.TKT_LINE_NO))
+                            wLength += MyModule.Csv.TaxiPrintCsv.Barcode.Length.TKT_LINE_NO
 
-        '                    'DB更新
-        '                    Dim wTBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
-        '                    wTBL_KOTSUHOTEL.SALEFORCE_ID = CsvData.SALEFORCE_ID
-        '                    wTBL_KOTSUHOTEL.SANKASHA_ID = CsvData.SANKASHA_ID
-        '                    wTBL_KOTSUHOTEL.KOUENKAI_NO = CsvData.KOUENKAI_NO
-        '                    wTBL_KOTSUHOTEL.TIME_STAMP_BYL = CsvData.TIME_STAMP_BYL
-        '                    wTBL_KOTSUHOTEL.DR_MPID = CsvData.DR_MPID
-        '                    wTBL_KOTSUHOTEL.UPDATE_USER = Session.Item(SessionDef.LoginID)
+                            'DB更新
+                            Dim wTBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
+                            wTBL_KOTSUHOTEL.SALEFORCE_ID = CsvData.SALEFORCE_ID
+                            wTBL_KOTSUHOTEL.SANKASHA_ID = CsvData.SANKASHA_ID
+                            wTBL_KOTSUHOTEL.KOUENKAI_NO = CsvData.KOUENKAI_NO
+                            wTBL_KOTSUHOTEL.TIME_STAMP_BYL = CsvData.TIME_STAMP_BYL
+                            wTBL_KOTSUHOTEL.DR_MPID = CsvData.DR_MPID
+                            wTBL_KOTSUHOTEL.UPDATE_USER = Session.Item(SessionDef.LoginID)
 
-        '                    strSQL = SQL.TBL_KOTSUHOTEL.Update_TaxiPrint(CsvData.TKT_LINE_NO, wTAXI_HAKKO_DATE, wTBL_KOTSUHOTEL)
-        '                    CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                            strSQL = SQL.TBL_KOTSUHOTEL.Update_TaxiPrint(CsvData.TKT_LINE_NO, wTAXI_HAKKO_DATE, wTBL_KOTSUHOTEL)
+                            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-        '                    'ログ登録
-        '                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, _
-        '                                           GetName_TKT_KENSHU(KENSHU(wKenshuCnt)), _
-        '                                           CsvData.KOUENKAI_NO, _
-        '                                           CsvData.SANKASHA_ID, _
-        '                                           CsvData.TKT_LINE_NO, _
-        '                                           CsvData.SALEFORCE_ID, _
-        '                                           CsvData.TIME_STAMP_BYL, _
-        '                                           CsvData.DR_MPID, _
-        '                                           True, _
-        '                                           "", _
-        '                                           MyBase.DbConnection)
-        '                End If
-        '            End If
-        '            wCsvDataCnt(wKenshuCnt) += 1
-        '        End While
-        '        cReader.Close()
+                            'ログ登録
+                            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, _
+                                                   GetName_TKT_KENSHU(KENSHU(wKenshuCnt)), _
+                                                   CsvData.KOUENKAI_NO, _
+                                                   CsvData.SANKASHA_ID, _
+                                                   CsvData.TKT_LINE_NO, _
+                                                   CsvData.SALEFORCE_ID, _
+                                                   CsvData.TIME_STAMP_BYL, _
+                                                   CsvData.DR_MPID, _
+                                                   True, _
+                                                   "", _
+                                                   MyBase.DbConnection)
+                        End If
+                    End If
+                    wCsvDataCnt(wKenshuCnt) += 1
+                End While
+                cReader.Close()
 
-        '        'ログ登録
-        '        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, True, GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "：" & wCsvDataCnt(wKenshuCnt) & "件の参加者データを出力しました。", MyBase.DbConnection)
-        '    Next wKenshuCnt
+                'ログ登録
+                MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, True, GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "：" & wCsvDataCnt(wKenshuCnt) & "件の参加者データを出力しました。", MyBase.DbConnection)
+            Next wKenshuCnt
 
-        '    MyBase.Commit()
-        'Catch ex As Exception
-        '    MyBase.Rollback()
+            MyBase.Commit()
+        Catch ex As Exception
+            MyBase.Rollback()
 
-        '    'ログ登録
-        '    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, Session.Item(SessionDef.DbError) & vbNewLine & strSQL, MyBase.DbConnection)
-        '    Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+            'ログ登録
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, Session.Item(SessionDef.DbError) & vbNewLine & strSQL, MyBase.DbConnection)
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
 
-        '    'Csv削除
-        '    Try
-        '        For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
-        '            System.IO.File.Delete(CsvPath(wKenshuCnt))
-        '        Next wKenshuCnt
-        '    Catch ex2 As Exception
-        '    End Try
+            'Csv削除
+            Try
+                For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
+                    System.IO.File.Delete(CsvPath(wKenshuCnt))
+                Next wKenshuCnt
+            Catch ex2 As Exception
+            End Try
 
-        '    Exit Sub
-        'End Try
+            Exit Sub
+        End Try
 
         'Zipファイル名
         Dim ZipFileName As String = "PrintData_" & TAXI_HAKKO_DATE & ".zip"

@@ -71,7 +71,7 @@
 							&nbsp;
 						</td>
 						<td align="left" class="TdItem">
-							<asp:TextBox ID="PASSWORD" runat="server" Width="200px" MaxLength="20"></asp:TextBox>
+							<asp:TextBox ID="PASSWORD" runat="server" Width="200px" MaxLength="20" TextMode="Password"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>
@@ -145,7 +145,7 @@
 						<asp:BoundField DataField="KENGEN" HeaderText="権限" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="USER_NAME" HeaderText="氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="KENGEN_SEISAN" HeaderText="精算入力" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
-						<asp:BoundField DataField="STOP_FLG" HeaderText="使用停止" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
+						<asp:BoundField DataField="STOP_FLG" HeaderText="利用停止" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" />
 						<asp:BoundField DataField="SYSTEM_ID" />
 					</Columns>
 				</asp:GridView>

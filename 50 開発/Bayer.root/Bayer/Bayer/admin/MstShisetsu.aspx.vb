@@ -87,12 +87,9 @@ Partial Public Class MstShisetsu
         CmnModule.SetIme(Me.JokenSHISETSU_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.SHISETSU_KANA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ZIP_1, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ZIP_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ZIP , CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.TEL_1, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.TEL_2, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.TEL_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.CHECKIN_TIME_1, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.CHECKIN_TIME_2, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.CHECKOUT_TIME_1, CmnModule.ImeType.Disabled)
@@ -305,12 +302,9 @@ Partial Public Class MstShisetsu
         'IME設定
         CmnModule.SetIme(Me.SHISETSU_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.SHISETSU_KANA, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.ZIP_1, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.ZIP_2, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ZIP, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.ADDRESS2, CmnModule.ImeType.Active)
-        CmnModule.SetIme(Me.TEL_1, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.TEL_2, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.TEL_3, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TEL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.CHECKIN_TIME_1, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.CHECKIN_TIME_2, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.CHECKOUT_TIME_1, CmnModule.ImeType.Disabled)
@@ -324,10 +318,10 @@ Partial Public Class MstShisetsu
 
             AppModule.SetForm_SHISETSU_NAME(MS_SHISETSU(SEQ).SHISETSU_NAME, Me.SHISETSU_NAME)
             AppModule.SetForm_SHISETSU_KANA(MS_SHISETSU(SEQ).SHISETSU_KANA, Me.SHISETSU_KANA)
-            AppModule.SetForm_ZIP(MS_SHISETSU(SEQ).ZIP, Me.ZIP_1, Me.ZIP_2)
+            AppModule.SetForm_ZIP(MS_SHISETSU(SEQ).ZIP, Me.ZIP)
             AppModule.SetForm_ADDRESS1(MS_SHISETSU(SEQ).ADDRESS1, Me.ADDRESS1)
             AppModule.SetForm_ADDRESS2(MS_SHISETSU(SEQ).ADDRESS2, Me.ADDRESS2)
-            AppModule.SetForm_TEL(MS_SHISETSU(SEQ).TEL, Me.TEL_1, Me.TEL_2, Me.TEL_3)
+            AppModule.SetForm_TEL(MS_SHISETSU(SEQ).TEL, Me.TEL)
             AppModule.SetForm_CHECKIN_TIME(MS_SHISETSU(SEQ).CHECKIN_TIME, Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2)
             AppModule.SetForm_CHECKOUT_TIME(MS_SHISETSU(SEQ).CHECKOUT_TIME, Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2)
             AppModule.SetForm_URL(MS_SHISETSU(SEQ).URL, Me.SHISETSU_URL)
@@ -399,11 +393,11 @@ Partial Public Class MstShisetsu
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.ZIP_1, Me.ZIP_2) Then
+        If Not CmnCheck.IsInput(Me.ZIP) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.ZIP), Me)
             Return False
         Else
-            If Not CmnCheck.IsValidZip(Me.ZIP_1, Me.ZIP_2) Then
+            If Not CmnCheck.IsValidZip(Me.ZIP) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.ZIP), Me)
                 Return False
             End If
@@ -419,11 +413,11 @@ Partial Public Class MstShisetsu
             Return False
         End If
 
-        If Not CmnCheck.IsInput(Me.TEL_1, Me.TEL_2, Me.TEL_3) Then
+        If Not CmnCheck.IsInput(Me.TEL) Then
             CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.TEL), Me)
             Return False
         Else
-            If Not CmnCheck.IsValidTel(Me.TEL_1, Me.TEL_2, Me.TEL_3) Then
+            If Not CmnCheck.IsValidTel(Me.TEL) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.TEL), Me)
                 Return False
             End If
@@ -446,12 +440,11 @@ Partial Public Class MstShisetsu
         End If
 
         If Not CmnCheck.IsInput(Me.SHISETSU_URL) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.MS_SHISETSU.Name.URL), Me)
-            Return False
-        End If
-        If Not CmnCheck.IsValidUrl(Me.SHISETSU_URL) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.URL), Me)
-            Return False
+        Else
+            If Not CmnCheck.IsValidUrl(Me.SHISETSU_URL) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.MS_SHISETSU.Name.URL), Me)
+                Return False
+            End If
         End If
 
         Return True
@@ -461,10 +454,10 @@ Partial Public Class MstShisetsu
     Private Sub GetValue()
         MS_SHISETSU(SEQ).SHISETSU_NAME = AppModule.GetValue_SHISETSU_NAME(Me.SHISETSU_NAME)
         MS_SHISETSU(SEQ).SHISETSU_KANA = AppModule.GetValue_SHISETSU_KANA(Me.SHISETSU_KANA)
-        MS_SHISETSU(SEQ).ZIP = AppModule.GetValue_ZIP(Me.ZIP_1, Me.ZIP_2)
+        MS_SHISETSU(SEQ).ZIP = AppModule.GetValue_ZIP(Me.ZIP)
         MS_SHISETSU(SEQ).ADDRESS1 = AppModule.GetValue_ADDRESS1(Me.ADDRESS1)
         MS_SHISETSU(SEQ).ADDRESS2 = AppModule.GetValue_ADDRESS2(Me.ADDRESS2)
-        MS_SHISETSU(SEQ).TEL = AppModule.GetValue_TEL(Me.TEL_1, Me.TEL_2, Me.TEL_3)
+        MS_SHISETSU(SEQ).TEL = AppModule.GetValue_TEL(Me.TEL)
         MS_SHISETSU(SEQ).CHECKIN_TIME = AppModule.GetValue_CHECKIN_TIME(Me.CHECKIN_TIME_1, Me.CHECKIN_TIME_2)
         MS_SHISETSU(SEQ).CHECKOUT_TIME = AppModule.GetValue_CHECKOUT_TIME(Me.CHECKOUT_TIME_1, Me.CHECKOUT_TIME_2)
         MS_SHISETSU(SEQ).URL = AppModule.GetValue_URL(Me.SHISETSU_URL)

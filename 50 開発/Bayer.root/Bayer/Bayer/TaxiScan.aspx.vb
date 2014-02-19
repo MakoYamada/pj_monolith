@@ -181,19 +181,26 @@ Partial Public Class TaxiScan
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号が記載されていません。" & vbNewLine
                     End If
 
-                    '該当データ存在チェック
-                    If Not CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.byTKT_NO(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))), MyBase.DbConnection) Then
+                    'DBチェック
+                    Dim strSQL As String = ""
+                    Dim RsData As System.Data.SqlClient.SqlDataReader
+                    'タクシーデータ発行テーブル
+                    strSQL = SQL.TBL_TAXITICKET_HAKKO.byTKT_NO(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)))
+                    RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+                    If RsData.HasRows Then
+                        RsData.Read()
+                        If Trim(CmnDb.DbData(TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE, RsData)) <> "" Then
+                            ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)) & "］はスキャンデータ取込済みです。" & vbNewLine
+                        End If
+                    Else
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当するタクシーチケット発行データがありません。" & vbNewLine
                     End If
+                    RsData.Close()
+                    '宿泊交通テーブル
                     If Not CmnDb.IsExist(SQL.TBL_KOTSUHOTEL.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SALEFORCE_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TIME_STAMP_BYL)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.DR_MPID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))), MyBase.DbConnection) Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当する交通・宿泊手配データがありません。" & vbNewLine
                     End If
-                    
-                    '取込み済み チェック
-                    If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))), MyBase.DbConnection) Then
-                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)) & "］はスキャンデータ取込済みです。" & vbNewLine
-                    End If
-                    End If
+                End If
             End If
         End While
 
@@ -270,7 +277,7 @@ Partial Public Class TaxiScan
                 wFlag = True
 
                 stBuffer = Replace(stBuffer, """", "")  'ダブルクォーテーション除去
-             
+
                 ReDim Preserve TBL_TAXITICKET_HAKKO(wCnt)
 
                 Dim ScanData As MyModule.Csv.TaxiScan.DataStruct
@@ -295,7 +302,7 @@ Partial Public Class TaxiScan
             End If
         End While
         CsvData.Close()
- 
+
         'ログ登録
         MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, wLineCnt.ToString & "件のスキャンデータを読込みました。", MyBase.DbConnection)
 

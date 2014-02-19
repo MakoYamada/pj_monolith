@@ -6593,18 +6593,7 @@ Public Class SQL
             Return strSQL
         End Function
 
-        Public Shared Function TaxiScanCsvCheck(ByVal TKT_NO As String) As String
-            Dim strSQL As String = ""
-
-            strSQL &= "SELECT *"
-            strSQL &= " FROM TBL_TAXITICKET_HAKKO"
-            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO=N'" & CmnDb.SqlString(TKT_NO) & "'"
-            strSQL &= " AND ISNULL(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE,'')<>N''"
-
-            Return strSQL
-        End Function
-
-        Public Shared Function TaxiScanCsvCheck(ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TKT_LINE_NO As String) As String
+         Public Shared Function TaxiScanCsvCheck(ByVal SANKASHA_ID As String, ByVal KOUENKAI_NO As String, ByVal TKT_LINE_NO As String) As String
             Dim strSQL As String = ""
 
             strSQL &= "SELECT *"
