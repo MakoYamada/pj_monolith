@@ -182,18 +182,18 @@ Partial Public Class TaxiScan
                     End If
 
                     '該当データ存在チェック
+                    If Not CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.byTKT_NO(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))), MyBase.DbConnection) Then
+                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当するタクシーチケット発行データがありません。" & vbNewLine
+                    End If
                     If Not CmnDb.IsExist(SQL.TBL_KOTSUHOTEL.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SALEFORCE_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TIME_STAMP_BYL)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.DR_MPID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))), MyBase.DbConnection) Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当する交通・宿泊手配データがありません。" & vbNewLine
                     End If
-                    If Not CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.SANKASHA_ID)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.KOUENKAI_NO)), Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_LINE_NO))), MyBase.DbConnection) Then
-                        ErrorMessage &= "【" & wLineCnt.ToString & "行目】該当するタクシーチケット発行データがありません。" & vbNewLine
-                    End If
-
+                    
                     '取込み済み チェック
                     If CmnDb.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiScanCsvCheck(Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO))), MyBase.DbConnection) Then
                         ErrorMessage &= "【" & wLineCnt.ToString & "行目】タクシーチケット番号［" & Trim(wSplit(MyModule.Csv.TaxiScan.CsvIndex.TKT_NO)) & "］はスキャンデータ取込済みです。" & vbNewLine
                     End If
-                End If
+                    End If
             End If
         End While
 
