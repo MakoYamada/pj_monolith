@@ -312,6 +312,9 @@ Partial Public Class TaxiScan
             strSQL = SQL.TBL_KOTSUHOTEL.TaxiScanCsv(TBL_TAXITICKET_HAKKO(wCnt))
             RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
             If RsData.Read() Then
+                '最新のTIME_STAMP_BYLに置き換える
+                TBL_TAXITICKET_HAKKO(wCnt).TIME_STAMP_BYL = CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL, RsData)
+
                 Select Case Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
                     Case 1
                         TBL_TAXITICKET_HAKKO(wCnt).TKT_KENSHU = GetName_TKT_KENSHU(CmnDb.DbData(TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_KENSHU_1, RsData))
