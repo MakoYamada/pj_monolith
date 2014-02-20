@@ -175,39 +175,18 @@ Partial Public Class SapCsv
 
         'タイトル行1行目
         Dim rowCnt As Integer = 0
-        'ReDim csvData(rowCnt)
-        'csvData(rowCnt).KUBUN = TableDef.SAP_CSV.Name.KUBUN
-        'csvData(rowCnt).KAISHA_CD = TableDef.SAP_CSV.Name.KAISHA_CD
-        'csvData(rowCnt).SEIKYU_YMD = TableDef.SAP_CSV.Name.SEIKYU_YMD
-        'csvData(rowCnt).DENPYO_TYPE = TableDef.SAP_CSV.Name.DENPYO_TYPE
-        'csvData(rowCnt).SEIKYUSHO_NO = TableDef.SAP_CSV.Name.SEIKYUSHO_NO
-        'csvData(rowCnt).DOC_HTEXT = TableDef.SAP_CSV.Name.DOC_HTEXT
-        'csvData(rowCnt).ACCOUNT = TableDef.SAP_CSV.Name.ACCOUNT
-        'csvData(rowCnt).KINGAKU = TableDef.SAP_CSV.Name.KINGAKU
-        'csvData(rowCnt).ZEI_CD = TableDef.SAP_CSV.Name.ZEI_CD
-        'csvData(rowCnt).COST_CENTER = TableDef.SAP_CSV.Name.COST_CENTER
-        'csvData(rowCnt).INTERNAL_ORDER = TableDef.SAP_CSV.Name.INTERNAL_ORDER
-        'csvData(rowCnt).KAIGOU_MEI = TableDef.SAP_CSV.Name.KAIGOU_MEI
-        'csvData(rowCnt).PAYMENT_BLOCK = TableDef.SAP_CSV.Name.PAYMENT_BLOCK
-        'csvData(rowCnt).ZETIA_CD = TableDef.SAP_CSV.Name.ZETIA_CD
-        'csvData(rowCnt).BARCODE = TableDef.SAP_CSV.Name.BARCODE
-        'If isTopTour Then
-        '    csvData(rowCnt).DANTAI_CODE = TableDef.SAP_CSV.Name.DANTAI_CODE
-        '    csvData(rowCnt).FROM_DATE = TableDef.SAP_CSV.Name.FROM_DATE
-        '    csvData(rowCnt).KOUENKAI_NO = TableDef.SAP_CSV.Name.KOUENKAI_NO
-        '    csvData(rowCnt).KOUENKAI_NAME = TableDef.SAP_CSV.Name.KOUENKAI_NAME
-        '    csvData(rowCnt).KIKAKU_TANTO_NAME = TableDef.SAP_CSV.Name.KIKAKU_TANTO_NAME
-        'End If
-
-        'タイトル行2行目
-        'rowCnt += 1
-        ReDim Preserve csvData(rowCnt)
+        ReDim csvData(rowCnt)
         csvData(rowCnt).KUBUN = "BKZ"
         csvData(rowCnt).KAISHA_CD = "BUKRS"
         csvData(rowCnt).SEIKYU_YMD = "BLDAT"
         csvData(rowCnt).DENPYO_TYPE = "BLART"
         csvData(rowCnt).SEIKYUSHO_NO = "XBLNR"
         csvData(rowCnt).DOC_HTEXT = "BKTXT"
+        csvData(rowCnt).WAERS = "WAERS"
+        csvData(rowCnt).ZFBDT = "ZFBDT"
+        csvData(rowCnt).ZTERM = "ZTERM"
+        csvData(rowCnt).XMWST = "XMWST"
+        csvData(rowCnt).NEWBS = "NEWBS"
         csvData(rowCnt).ACCOUNT = "NEWKO"
         csvData(rowCnt).KINGAKU = "WRBTR"
         csvData(rowCnt).ZEI_CD = "MWSKZ"
@@ -243,13 +222,18 @@ Partial Public Class SapCsv
         MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text, "", toDate)
 
         '明細行1行目
-        rowCnt = 2
+        rowCnt = 1
         csvData(rowCnt).KUBUN = "X"
         csvData(rowCnt).KAISHA_CD = "0094"
         csvData(rowCnt).SEIKYU_YMD = AppModule.GetName_SAP_SEIKYU_YMD(toDate)
         csvData(rowCnt).DENPYO_TYPE = "KR"
         csvData(rowCnt).SEIKYUSHO_NO = Me.SEIKYUSHO_NO.Text
         csvData(rowCnt).DOC_HTEXT = "Top tour"
+        csvData(rowCnt).WAERS = "JPY"
+        csvData(rowCnt).ZFBDT = ""
+        csvData(rowCnt).ZTERM = ""
+        csvData(rowCnt).XMWST = "X"
+        csvData(rowCnt).NEWBS = "31"
         csvData(rowCnt).ACCOUNT = "7007466"
         csvData(rowCnt).KINGAKU = lngTotalKingaku.ToString
         csvData(rowCnt).ZEI_CD = "**"
@@ -286,6 +270,11 @@ Partial Public Class SapCsv
             csvData(rowCnt).DENPYO_TYPE = ""
             csvData(rowCnt).SEIKYUSHO_NO = ""
             csvData(rowCnt).DOC_HTEXT = ""
+            csvData(rowCnt).WAERS = ""
+            csvData(rowCnt).ZFBDT = ""
+            csvData(rowCnt).ZTERM = ""
+            csvData(rowCnt).XMWST = ""
+            csvData(rowCnt).NEWBS = "40"
             csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
             csvData(rowCnt).KINGAKU = Kingaku.ToString
             csvData(rowCnt).ZEI_CD = strSapZeiCd
@@ -317,6 +306,11 @@ Partial Public Class SapCsv
             csvData(rowCnt).DENPYO_TYPE = ""
             csvData(rowCnt).SEIKYUSHO_NO = ""
             csvData(rowCnt).DOC_HTEXT = ""
+            csvData(rowCnt).WAERS = ""
+            csvData(rowCnt).ZFBDT = ""
+            csvData(rowCnt).ZTERM = ""
+            csvData(rowCnt).XMWST = ""
+            csvData(rowCnt).NEWBS = "40"
             csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
             csvData(rowCnt).KINGAKU = Kingaku.ToString
             csvData(rowCnt).ZEI_CD = strSapZeiCd
@@ -362,6 +356,11 @@ Partial Public Class SapCsv
                 csvData(rowCnt).DENPYO_TYPE = ""
                 csvData(rowCnt).SEIKYUSHO_NO = ""
                 csvData(rowCnt).DOC_HTEXT = ""
+                csvData(rowCnt).WAERS = ""
+                csvData(rowCnt).ZFBDT = ""
+                csvData(rowCnt).ZTERM = ""
+                csvData(rowCnt).XMWST = ""
+                csvData(rowCnt).NEWBS = "40"
                 csvData(rowCnt).ACCOUNT = "6821200"
                 csvData(rowCnt).KINGAKU = Kingaku.ToString
                 csvData(rowCnt).ZEI_CD = strSapZeiCd
@@ -436,6 +435,11 @@ Partial Public Class SapCsv
                 csvData(rowCnt).DENPYO_TYPE = ""
                 csvData(rowCnt).SEIKYUSHO_NO = ""
                 csvData(rowCnt).DOC_HTEXT = ""
+                csvData(rowCnt).WAERS = ""
+                csvData(rowCnt).ZFBDT = ""
+                csvData(rowCnt).ZTERM = ""
+                csvData(rowCnt).XMWST = ""
+                csvData(rowCnt).NEWBS = "40"
                 csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_T
                 csvData(rowCnt).KINGAKU = Kingaku.ToString
                 csvData(rowCnt).ZEI_CD = strSapZeiCd
