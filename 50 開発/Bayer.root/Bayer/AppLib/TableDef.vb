@@ -2969,6 +2969,11 @@
             Public DENPYO_TYPE As String
             Public SEIKYUSHO_NO As String
             Public DOC_HTEXT As String
+            Public WAERS As String
+            Public ZFBDT As String
+            Public ZTERM As String
+            Public XMWST As String
+            Public NEWBS As String
             Public ACCOUNT As String
             Public KINGAKU As String
             Public ZEI_CD As String
@@ -2992,6 +2997,11 @@
             Public Const DENPYO_TYPE As String = "DENPYO_TYPE"
             Public Const SEIKYUSHO_NO As String = "SEIKYUSHO_NO"
             Public Const DOC_HTEXT As String = "DOC_HTEXT"
+            Public Const WAERS As String = "WAERS"
+            Public Const ZFBDT As String = "ZFBDT"
+            Public Const ZTERM As String = "ZTERM"
+            Public Const XMWST As String = "XMWST"
+            Public Const NEWBS As String = "NEWBS"
             Public Const ACCOUNT As String = "ACCOUNT"
             Public Const KINGAKU As String = "KINGAKU"
             Public Const ZEI_CD As String = "ZEI_CD"
@@ -3015,6 +3025,11 @@
             Public Const DENPYO_TYPE As String = "伝票タイプ"
             Public Const SEIKYUSHO_NO As String = "請求書番号"
             Public Const DOC_HTEXT As String = "ﾄﾞｷｭﾒﾝﾄﾍｯﾀﾞｰﾃｷｽﾄ"
+            Public Const WAERS As String = ""
+            Public Const ZFBDT As String = ""
+            Public Const ZTERM As String = ""
+            Public Const XMWST As String = ""
+            Public Const NEWBS As String = ""
             Public Const ACCOUNT As String = "Account"
             Public Const KINGAKU As String = "金額"
             Public Const ZEI_CD As String = "消費税コード"
