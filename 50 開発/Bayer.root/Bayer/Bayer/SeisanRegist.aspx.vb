@@ -355,11 +355,6 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
-        If Not CmnCheck.IsValidKingaku(Me.MR_JR) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
-            Return False
-        End If
-
         If Not CmnCheck.IsValidKingaku(Me.MR_HOTEL) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL), Me)
             Return False
@@ -367,6 +362,11 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsValidKingaku(Me.MR_HOTEL_TOZEI) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_HOTEL_TOZEI), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsValidKingaku(Me.MR_JR) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.MR_JR), Me)
             Return False
         End If
 
