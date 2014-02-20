@@ -690,7 +690,10 @@ Partial Public Class SeisanRegist
             Exit Sub
         End If
 
-        Dim strSQL As String = SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text)
+        Dim reportJoken As TableDef.Joken.DataStruct
+        reportJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
+        reportJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        Dim strSQL As String = SQL.TBL_SEIKYU.Search(reportJoken)
         Session.Item(SessionDef.SeisanRegistReport_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)

@@ -750,6 +750,7 @@ Public Class SQL
             strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_ROMA"
             strSQL &= ",WK_KOUENKAI.FROM_DATE"
             strSQL &= ",WK_KOUENKAI.TO_DATE"
+            strSQL &= ",WK_KOUENKAI.SRM_HACYU_KBN"
             strSQL &= " FROM"
             strSQL &= " (SELECT "
             strSQL &= "   TSK.KOUENKAI_NO"

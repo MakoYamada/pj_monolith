@@ -26,6 +26,7 @@ Public Class SeisanRegistReport
         Me.SEISAN_YM.Text = AppModule.GetName_SEISAN_YM(Me.SEISAN_YM.Text)
         Me.SHOUNIN_KUBUN.Text = AppModule.GetName_SHOUNIN_KUBUN(Me.SHOUNIN_KUBUN.Text)
         Me.SHOUNIN_DATE.Text = CmnModule.Format_Date(Me.SHOUNIN_DATE.Text, CmnModule.DateFormatType.YYYYMMDD)
+        Me.SRM_HACYU_KBN.Text = AppModule.GetName_SRM_HACYU_KBN(Me.SRM_HACYU_KBN.Text)
 
         Me.KAIJOHI_TF.Text = CmnModule.EditComma(Me.KAIJOHI_TF.Text)
         Me.KIZAIHI_TF.Text = CmnModule.EditComma(Me.KIZAIHI_TF.Text)
