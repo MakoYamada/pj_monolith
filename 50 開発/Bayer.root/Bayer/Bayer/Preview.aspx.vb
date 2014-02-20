@@ -239,9 +239,9 @@ Partial Public Class Preview
         rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
 
         '必要に応じマージン設定
-        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(1.5)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(1.5)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(1.5)
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
         rpt1.KOTSUHOTEL_DATA = RPT_KOTSUHOTEL
