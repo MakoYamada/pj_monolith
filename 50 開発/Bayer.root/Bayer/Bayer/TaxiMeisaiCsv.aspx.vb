@@ -433,46 +433,46 @@ Partial Public Class TaxiMeisaiCsv
                     RsData.Read()
                     TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
 
-                    Select Case CsvData(wCnt).TKT_LINE_NO
-                        Case "0"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_1
+                    Select Case CInt(CsvData(wCnt).TKT_LINE_NO).ToString
                         Case "1"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_2
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_1
                         Case "2"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_3
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_2
                         Case "3"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_4
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_3
                         Case "4"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_5
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_4
                         Case "5"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_6
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_5
                         Case "6"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_7
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_6
                         Case "7"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_8
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_7
                         Case "8"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_9
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_8
                         Case "9"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_10
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_9
                         Case "10"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_11
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_10
                         Case "11"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_12
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_11
                         Case "12"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_13
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_12
                         Case "13"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_14
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_13
                         Case "14"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_15
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_14
                         Case "15"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_16
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_15
                         Case "16"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_17
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_16
                         Case "17"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_18
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_17
                         Case "18"
-                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_19
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_18
                         Case "19"
+                            CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_19
+                        Case "20"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_20
                     End Select
                     CsvData(wCnt).ANS_TAXI_DATE = CmnModule.Format_Date(CsvData(wCnt).ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD)
