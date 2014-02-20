@@ -4663,7 +4663,6 @@ Partial Public Class DrSoufujo
         Me.MR_SEND_SAKI.Left = 0.553937!
         Me.MR_SEND_SAKI.Name = "MR_SEND_SAKI"
         Me.MR_SEND_SAKI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top"
-        Me.MR_SEND_SAKI.Text = "ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
         Me.MR_SEND_SAKI.Top = 0.2!
         Me.MR_SEND_SAKI.Width = 3.380709!
         '
