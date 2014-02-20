@@ -1612,7 +1612,7 @@ Public Class MyModule
                    (strKazeiKbn <> "" AndAlso _
                    strKazeiKbn <> CsvData(wCnt).KAZEI_KBN) Then
 
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計 " & strKazeiKbn)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
@@ -1670,7 +1670,7 @@ Public Class MyModule
                 KAZEIKEI_TKT_SEISAN_FEE += CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_SEISAN_FEE)
             Next wCnt
 
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計 " & strKazeiKbn)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("コストセンター計 " & strKazeiKbn)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strCostCenter)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
