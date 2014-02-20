@@ -25,6 +25,32 @@ Public Class TaxiKakuninReport
         If DR_NAME.Text.Length > 19 Then DR_NAME.Text = Left(DR_NAME.Text, 19)
         If DR_SHISETSU_NAME.Text.Length > 25 Then DR_SHISETSU_NAME.Text = Left(DR_SHISETSU_NAME.Text, 25)
         TEHAI_TAXI.Text = AppModule.GetName_TEHAI_TAXI(TEHAI_TAXI.Text)
+        TEHAI_HOTEL.Text = AppModule.GetName_TEHAI_HOTEL(TEHAI_HOTEL.Text)
+
+        If REQ_O_TEHAI_1.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
+            REQ_O_TEHAI_2.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
+            REQ_O_TEHAI_3.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
+            REQ_O_TEHAI_4.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
+            REQ_O_TEHAI_5.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
+            REQ_F_TEHAI_1.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Or _
+            REQ_F_TEHAI_2.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Or _
+            REQ_F_TEHAI_3.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Or _
+            REQ_F_TEHAI_4.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Or _
+            REQ_F_TEHAI_5.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
+            TEHAI_KOTSU.Text = AppModule.GetName_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+        Else
+            TEHAI_KOTSU.Text = AppModule.GetName_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+        End If
+
+        If REQ_MR_O_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Mi And _
+            REQ_MR_O_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Fuyou Or _
+            REQ_MR_F_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Mi And _
+            REQ_MR_F_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Fuyou Then
+            REQ_MR_TEHAI.Text = "依頼あり"
+        Else
+            REQ_MR_TEHAI.Text = "依頼なし"
+        End If
+
         REQ_TAXI_DATE_1.Text = AppModule.GetName_REQ_TAXI_DATE_1(REQ_TAXI_DATE_1.Text)
         REQ_TAXI_DATE_2.Text = AppModule.GetName_REQ_TAXI_DATE_2(REQ_TAXI_DATE_2.Text)
         REQ_TAXI_DATE_3.Text = AppModule.GetName_REQ_TAXI_DATE_3(REQ_TAXI_DATE_3.Text)

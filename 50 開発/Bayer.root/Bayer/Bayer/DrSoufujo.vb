@@ -62,14 +62,14 @@ Public Class DrSoufujo
 
         '送付先
         If Me.MR_SEND_SAKI_FS.Text.Trim <> "" Then
-            If Me.MR_SEND_SAKI_FS.Text.Trim.Length > 210 Then
-                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_FS.Text, 210)
+            If Me.MR_SEND_SAKI_FS.Text.Trim.Length > 78 Then
+                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_FS.Text, 78)
             Else
                 Me.MR_SEND_SAKI.Text = Me.MR_SEND_SAKI_FS.Text
             End If
         Else
-            If Me.MR_SEND_SAKI_OTHER.Text.Trim.Length > 210 Then
-                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_OTHER.Text, 210)
+            If Me.MR_SEND_SAKI_OTHER.Text.Trim.Length > 78 Then
+                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_OTHER.Text, 78)
             Else
                 Me.MR_SEND_SAKI.Text = Me.MR_SEND_SAKI_OTHER.Text
             End If
@@ -1697,8 +1697,8 @@ Public Class DrSoufujo
             'Me.Detail.Controls.Add(Ans_F_Date_5_Title)
 
             'Dim Ans_F_Date_5 As New TextBox
-            'Ans_F_Date_5.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_5, CmnModule.DateFormatType.MD)
             ANS_F_DATE_5.Visible = True
+            ANS_F_DATE_5.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_5.Text, CmnModule.DateFormatType.MD)
             ANS_F_DATE_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_DATE_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_F_DATE_5.CanGrow = True

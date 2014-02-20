@@ -315,6 +315,7 @@ Partial Public Class DrSoufujo
         Me.Ans_Taxi_No_18_Title = New DataDynamics.ActiveReports.Label
         Me.Ans_Taxi_No_19_Title = New DataDynamics.ActiveReports.Label
         Me.Ans_Taxi_No_20_Title = New DataDynamics.ActiveReports.Label
+        Me.ANS_O_BIN_3_Title = New DataDynamics.ActiveReports.Label
         Me.ReportHeader1 = New DataDynamics.ActiveReports.ReportHeader
         Me.ReportFooter1 = New DataDynamics.ActiveReports.ReportFooter
         Me.GroupHeader1 = New DataDynamics.ActiveReports.GroupHeader
@@ -357,7 +358,6 @@ Partial Public Class DrSoufujo
         Me.FOOTER_SETSUMEI2 = New DataDynamics.ActiveReports.TextBox
         Me.FOOTER_SETSUMEI3 = New DataDynamics.ActiveReports.TextBox
         Me.FOOTER_SETSUMEI4 = New DataDynamics.ActiveReports.TextBox
-        Me.ANS_O_BIN_3_Title = New DataDynamics.ActiveReports.Label
         CType(Me.DetailTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_STATUS_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_O_STATUS_1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -656,6 +656,7 @@ Partial Public Class DrSoufujo
         CType(Me.Ans_Taxi_No_18_Title, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ans_Taxi_No_19_Title, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ans_Taxi_No_20_Title, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ANS_O_BIN_3_Title, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -694,7 +695,6 @@ Partial Public Class DrSoufujo
         CType(Me.FOOTER_SETSUMEI2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FOOTER_SETSUMEI3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FOOTER_SETSUMEI4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ANS_O_BIN_3_Title, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -4578,6 +4578,19 @@ Partial Public Class DrSoufujo
         Me.Ans_Taxi_No_20_Title.Visible = False
         Me.Ans_Taxi_No_20_Title.Width = 0.8744091!
         '
+        'ANS_O_BIN_3_Title
+        '
+        Me.ANS_O_BIN_3_Title.Height = 0.1791339!
+        Me.ANS_O_BIN_3_Title.HyperLink = Nothing
+        Me.ANS_O_BIN_3_Title.Left = 0.0!
+        Me.ANS_O_BIN_3_Title.Name = "ANS_O_BIN_3_Title"
+        Me.ANS_O_BIN_3_Title.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
+            "do-char-set: 1"
+        Me.ANS_O_BIN_3_Title.Text = "ANS_O_BIN_3_Title"
+        Me.ANS_O_BIN_3_Title.Top = 0.4!
+        Me.ANS_O_BIN_3_Title.Visible = False
+        Me.ANS_O_BIN_3_Title.Width = 0.8744091!
+        '
         'ReportHeader1
         '
         Me.ReportHeader1.Height = 0.0!
@@ -4594,7 +4607,7 @@ Partial Public Class DrSoufujo
         Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.MR_NAME, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3})
         Me.GroupHeader1.DataField = "=KOUENKAI_NO + SANKASHA_ID"
         Me.GroupHeader1.GroupKeepTogether = DataDynamics.ActiveReports.GroupKeepTogether.FirstDetail
-        Me.GroupHeader1.Height = 3.604166!
+        Me.GroupHeader1.Height = 2.697916!
         Me.GroupHeader1.Name = "GroupHeader1"
         Me.GroupHeader1.NewPage = DataDynamics.ActiveReports.NewPage.Before
         '
@@ -4628,7 +4641,7 @@ Partial Public Class DrSoufujo
         Me.Label2.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center; ddo" & _
             "-char-set: 128"
         Me.Label2.Text = "チケット類送付状"
-        Me.Label2.Top = 2.056693!
+        Me.Label2.Top = 0.9535434!
         Me.Label2.Width = 7.151965!
         '
         'DR_NAME
@@ -4640,18 +4653,18 @@ Partial Public Class DrSoufujo
         Me.DR_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle; w" & _
             "hite-space: nowrap"
         Me.DR_NAME.Text = "[DR_NAME]"
-        Me.DR_NAME.Top = 0.1999996!
+        Me.DR_NAME.Top = 0.0!
         Me.DR_NAME.Width = 3.495275!
         '
         'MR_SEND_SAKI
         '
         Me.MR_SEND_SAKI.DataField = "MR_SEND_SAKI_FS"
-        Me.MR_SEND_SAKI.Height = 1.044095!
+        Me.MR_SEND_SAKI.Height = 0.4!
         Me.MR_SEND_SAKI.Left = 0.553937!
         Me.MR_SEND_SAKI.Name = "MR_SEND_SAKI"
         Me.MR_SEND_SAKI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top"
-        Me.MR_SEND_SAKI.Text = "[MR_SEND_SAKI]"
-        Me.MR_SEND_SAKI.Top = 0.5165352!
+        Me.MR_SEND_SAKI.Text = "ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
+        Me.MR_SEND_SAKI.Top = 0.2!
         Me.MR_SEND_SAKI.Width = 3.380709!
         '
         'MR_NAME
@@ -4663,7 +4676,7 @@ Partial Public Class DrSoufujo
         Me.MR_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle; w" & _
             "hite-space: nowrap"
         Me.MR_NAME.Text = "[MR_NAME]"
-        Me.MR_NAME.Top = 1.651969!
+        Me.MR_NAME.Top = 0.6511812!
         Me.MR_NAME.Width = 3.495275!
         '
         'Label4
@@ -4675,7 +4688,7 @@ Partial Public Class DrSoufujo
         Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label4.Text = "会合開催日："
-        Me.Label4.Top = 2.377167!
+        Me.Label4.Top = 1.274018!
         Me.Label4.Width = 0.8744091!
         '
         'JISSI_DATE
@@ -4687,7 +4700,7 @@ Partial Public Class DrSoufujo
         Me.JISSI_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.JISSI_DATE.Text = "1234年12月12日(月)～1234年12月12日(月)"
-        Me.JISSI_DATE.Top = 2.377167!
+        Me.JISSI_DATE.Top = 1.274018!
         Me.JISSI_DATE.Width = 2.420866!
         '
         'Label5
@@ -4699,7 +4712,7 @@ Partial Public Class DrSoufujo
         Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label5.Text = "会合名："
-        Me.Label5.Top = 2.556299!
+        Me.Label5.Top = 1.45315!
         Me.Label5.Width = 0.8744097!
         '
         'KOUENKAI_NAME
@@ -4712,7 +4725,7 @@ Partial Public Class DrSoufujo
         Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NAME.Text = "[KOUENKAI_NAME]"
-        Me.KOUENKAI_NAME.Top = 2.556299!
+        Me.KOUENKAI_NAME.Top = 1.45315!
         Me.KOUENKAI_NAME.Width = 5.694095!
         '
         'Label6
@@ -4724,7 +4737,7 @@ Partial Public Class DrSoufujo
         Me.Label6.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label6.Text = "会合ID："
-        Me.Label6.Top = 2.377167!
+        Me.Label6.Top = 1.274018!
         Me.Label6.Width = 0.6354331!
         '
         'KOUENKAI_NO
@@ -4736,7 +4749,7 @@ Partial Public Class DrSoufujo
         Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NO.Text = "[KOUENKAI_NO]"
-        Me.KOUENKAI_NO.Top = 2.377166!
+        Me.KOUENKAI_NO.Top = 1.274017!
         Me.KOUENKAI_NO.Width = 0.9330716!
         '
         'Label7
@@ -4748,7 +4761,7 @@ Partial Public Class DrSoufujo
         Me.Label7.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label7.Text = "参加者ID："
-        Me.Label7.Top = 2.377166!
+        Me.Label7.Top = 1.274017!
         Me.Label7.Width = 0.6665354!
         '
         'SANKASHA_ID
@@ -4760,7 +4773,7 @@ Partial Public Class DrSoufujo
         Me.SANKASHA_ID.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.SANKASHA_ID.Text = "[SANKASHA_ID]"
-        Me.SANKASHA_ID.Top = 2.377166!
+        Me.SANKASHA_ID.Top = 1.274017!
         Me.SANKASHA_ID.Width = 0.9236222!
         '
         'Label8
@@ -4772,7 +4785,7 @@ Partial Public Class DrSoufujo
         Me.Label8.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label8.Text = "会場："
-        Me.Label8.Top = 2.735433!
+        Me.Label8.Top = 1.632284!
         Me.Label8.Width = 0.8854334!
         '
         'KAIJO_NAME
@@ -4784,7 +4797,7 @@ Partial Public Class DrSoufujo
         Me.KAIJO_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.KAIJO_NAME.Text = "[KAIJO_NAME]"
-        Me.KAIJO_NAME.Top = 2.672835!
+        Me.KAIJO_NAME.Top = 1.632284!
         Me.KAIJO_NAME.Width = 5.694095!
         '
         'MR_SEND_SAKI_FS
@@ -4821,7 +4834,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU1.Text = "[AISATSU1]"
-        Me.AISATSU1.Top = 3.016928!
+        Me.AISATSU1.Top = 1.913779!
         Me.AISATSU1.Width = 6.579529!
         '
         'AISATSU2
@@ -4832,7 +4845,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU2.Text = "[AISATSU2]"
-        Me.AISATSU2.Top = 3.196063!
+        Me.AISATSU2.Top = 2.092914!
         Me.AISATSU2.Width = 6.568504!
         '
         'AISATSU3
@@ -4843,7 +4856,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU3.Text = "[AISATSU3]"
-        Me.AISATSU3.Top = 3.375197!
+        Me.AISATSU3.Top = 2.272048!
         Me.AISATSU3.Width = 6.579529!
         '
         'GroupFooter1
@@ -5024,19 +5037,6 @@ Partial Public Class DrSoufujo
         Me.FOOTER_SETSUMEI4.Text = "[FOOTER_SETSUMEI4]"
         Me.FOOTER_SETSUMEI4.Top = 3.696062!
         Me.FOOTER_SETSUMEI4.Width = 7.151965!
-        '
-        'ANS_O_BIN_3_Title
-        '
-        Me.ANS_O_BIN_3_Title.Height = 0.1791339!
-        Me.ANS_O_BIN_3_Title.HyperLink = Nothing
-        Me.ANS_O_BIN_3_Title.Left = 0.0!
-        Me.ANS_O_BIN_3_Title.Name = "ANS_O_BIN_3_Title"
-        Me.ANS_O_BIN_3_Title.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
-            "do-char-set: 1"
-        Me.ANS_O_BIN_3_Title.Text = "ANS_O_BIN_3_Title"
-        Me.ANS_O_BIN_3_Title.Top = 0.4!
-        Me.ANS_O_BIN_3_Title.Visible = False
-        Me.ANS_O_BIN_3_Title.Width = 0.8744091!
         '
         'DrSoufujo
         '
@@ -5352,6 +5352,7 @@ Partial Public Class DrSoufujo
         CType(Me.Ans_Taxi_No_18_Title, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ans_Taxi_No_19_Title, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ans_Taxi_No_20_Title, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ANS_O_BIN_3_Title, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5390,7 +5391,6 @@ Partial Public Class DrSoufujo
         CType(Me.FOOTER_SETSUMEI2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FOOTER_SETSUMEI3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FOOTER_SETSUMEI4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ANS_O_BIN_3_Title, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
