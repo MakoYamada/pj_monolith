@@ -455,6 +455,10 @@ Public Class AppConst
                 Public Const Mi As String = ""
                 Public Const Kanryo As String = "Š®—¹"
             End Class
+            Public Class Mark
+                Public Const Mi As String = "›"
+                Public Const Kanryo As String = "œ"
+            End Class
         End Class
 
         '¸Zˆ—@ŠJn“ú

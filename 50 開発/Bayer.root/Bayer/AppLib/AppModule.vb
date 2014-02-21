@@ -4710,6 +4710,17 @@ Public Class AppModule
                 Return String.Empty
         End Select
     End Function
+    Public Shared Function GetMark_SEISAN_KANRYO(ByVal SEISAN_KANRYO As String) As String
+        Select Case SEISAN_KANRYO
+            Case AppConst.SEISAN.SEISAN_KANRYO.Code.Mi
+                Return AppConst.SEISAN.SEISAN_KANRYO.Mark.Mi
+            Case AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo
+                Return AppConst.SEISAN.SEISAN_KANRYO.Mark.Kanryo
+            Case Else
+                Return String.Empty
+        End Select
+    End Function
+
 
     'SAPCSVÇÃêøãÅîNåéì˙
     Public Shared Function GetName_SAP_SEIKYU_YMD(ByVal strYMD As String) As String
