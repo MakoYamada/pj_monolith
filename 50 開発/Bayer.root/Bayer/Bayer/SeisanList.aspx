@@ -102,7 +102,7 @@
                         <td>
                             <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                                 AllowPaging="True" PageSize="10" DataKeyNames="KOUENKAI_NO"
-                                DataSourceID="SqlDataSource1" Width="1137px">
+                                DataSourceID="SqlDataSource1" Width="1277px">
                                 <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                                 <RowStyle Wrap="false" BackColor="#ffffff" />
                                 <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -110,36 +110,39 @@
                                     FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                                 <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                                 <Columns>
-                                    <asp:BoundField DataField="BU" HeaderText="BYL<br/>Šé‰æ’S“–<br/>BU" ItemStyle-Wrap="false" 
+                                    <asp:BoundField DataField="BU" HeaderText="BU" ItemStyle-Wrap="false" 
                                         HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="70px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="BYL<br/>Šé‰æ’S“–<br/>ƒGƒŠƒA" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                                    <asp:BoundField DataField="KIKAKU_TANTO_AREA" HeaderText="ƒGƒŠƒA" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="70px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="BYL<br/>Šé‰æ’S“–<br/>‰c‹ÆŠ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                                    <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" HeaderText="‰c‹ÆŠ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="80px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="BYL<br/>Šé‰æ’S“–ŽÒ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                                    <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="Šé‰æ’S“–ŽÒ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="85px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="FROM_DATE" HeaderText="ŠJÃ“ú" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                                         ItemStyle-HorizontalAlign="Center">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
-                                        <ItemStyle HorizontalAlign="Center" Wrap="False" Width="90px"></ItemStyle>
+                                        <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="KOUENKAI_NO" HeaderText="‰ï‡”Ô†" >
-                                    <ItemStyle HorizontalAlign="Left" Width="130px" />
+                                        <ItemStyle HorizontalAlign="Left" Width="130px" />
                                     </asp:BoundField>
                                     <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="‰ï‡–¼" ItemStyle-Wrap="false"
                                         HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="250px" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>                                    
+                                    <asp:BoundField DataField="TEHAI_ID" HeaderText="‰ïêŽè”z”Ô†" >
+                                        <ItemStyle HorizontalAlign="Left" Width="130px" />
+                                    </asp:BoundField>
                                     <asp:BoundField DataField="SEIKYU_NO_TOPTOUR" HeaderText="¸ŽZ”Ô†" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="120px" HorizontalAlign="Center"></ItemStyle>

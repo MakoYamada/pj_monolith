@@ -101,6 +101,10 @@ Partial Public Class SeisanListReport
         Me.Line26 = New DataDynamics.ActiveReports.Line
         Me.Line27 = New DataDynamics.ActiveReports.Line
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Label10 = New DataDynamics.ActiveReports.Label
+        Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
+        Me.Line28 = New DataDynamics.ActiveReports.Line
+        Me.Line29 = New DataDynamics.ActiveReports.Line
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,12 +156,14 @@ Partial Public Class SeisanListReport
         CType(Me.SHOUNIN_KUBUN, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Shape1, Me.Label8, Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.PageTotal, Me.PageCount, Me.LabelPage, Me.Label5, Me.JokenTO_DATE, Me.Label19, Me.JokenKOUENKAI_NO, Me.Label22, Me.JokenFROM_DATE, Me.Label18, Me.JokenKIKAKU_TANTO_ROMA, Me.Label6, Me.JokenBU, Me.Label7, Me.JokenKIKAKU_TANTO_AREA, Me.Label9, Me.JokenSEIKYU_NO_TOPTOUR, Me.Label11, Me.JokenSEISAN_YM, Me.Label13, Me.JokenSHOUNIN_KUBUN, Me.Label15, Me.Label16, Me.Label17, Me.Label20, Me.Label21, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Line1, Me.Line2, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15})
-        Me.PageHeader.Height = 2.066929!
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Shape1, Me.Label8, Me.LOGIN_USER_NAME, Me.Label1, Me.Label2, Me.Label3, Me.Label4, Me.PrintDate, Me.PageTotal, Me.PageCount, Me.LabelPage, Me.Label5, Me.JokenTO_DATE, Me.Label19, Me.JokenKOUENKAI_NO, Me.Label22, Me.JokenFROM_DATE, Me.Label18, Me.JokenKIKAKU_TANTO_ROMA, Me.Label6, Me.JokenBU, Me.Label7, Me.JokenKIKAKU_TANTO_AREA, Me.Label9, Me.JokenSEIKYU_NO_TOPTOUR, Me.Label11, Me.JokenSEISAN_YM, Me.Label13, Me.JokenSHOUNIN_KUBUN, Me.Label15, Me.Label16, Me.Label17, Me.Label20, Me.Label21, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.Label28, Me.Line1, Me.Line2, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Label10, Me.Line28})
+        Me.PageHeader.Height = 2.086614!
         Me.PageHeader.Name = "PageHeader"
         '
         'Shape2
@@ -170,7 +176,7 @@ Partial Public Class SeisanListReport
         Me.Shape2.Name = "Shape2"
         Me.Shape2.RoundingRadius = 9.999999!
         Me.Shape2.Top = 1.819685!
-        Me.Shape2.Width = 11.41732!
+        Me.Shape2.Width = 11.81102!
         '
         'Shape1
         '
@@ -180,17 +186,17 @@ Partial Public Class SeisanListReport
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 9.999999!
         Me.Shape1.Top = 0.6480315!
-        Me.Shape1.Width = 11.41732!
+        Me.Shape1.Width = 11.81102!
         '
         'Label8
         '
         Me.Label8.Height = 0.2688977!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 4.823423!
+        Me.Label8.Left = 5.208662!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = resources.GetString("Label8.Style")
         Me.Label8.Text = "検索 精算データ一覧"
-        Me.Label8.Top = 0.668504!
+        Me.Label8.Top = 0.6736221!
         Me.Label8.Width = 1.770473!
         '
         'LOGIN_USER_NAME
@@ -500,40 +506,40 @@ Partial Public Class SeisanListReport
         Me.Label15.HyperLink = Nothing
         Me.Label15.Left = 0.0!
         Me.Label15.Name = "Label15"
-        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label15.Text = "BU"
         Me.Label15.Top = 1.87874!
-        Me.Label15.Width = 0.6822835!
+        Me.Label15.Width = 0.4114174!
         '
         'Label16
         '
         Me.Label16.Height = 0.1771655!
         Me.Label16.HyperLink = Nothing
-        Me.Label16.Left = 0.6822835!
+        Me.Label16.Left = 0.414567!
         Me.Label16.Name = "Label16"
-        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label16.Text = "エリア"
         Me.Label16.Top = 1.87874!
-        Me.Label16.Width = 0.8996065!
+        Me.Label16.Width = 0.7952756!
         '
         'Label17
         '
         Me.Label17.Height = 0.1771654!
         Me.Label17.HyperLink = Nothing
-        Me.Label17.Left = 1.58189!
+        Me.Label17.Left = 1.209843!
         Me.Label17.Name = "Label17"
-        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label17.Text = "営業所"
         Me.Label17.Top = 1.87874!
-        Me.Label17.Width = 0.8401574!
+        Me.Label17.Width = 0.7149607!
         '
         'Label20
         '
         Me.Label20.Height = 0.1771654!
         Me.Label20.HyperLink = Nothing
-        Me.Label20.Left = 2.422047!
+        Me.Label20.Left = 1.924803!
         Me.Label20.Name = "Label20"
-        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label20.Text = "BYL企画担当者"
         Me.Label20.Top = 1.87874!
         Me.Label20.Width = 1.053937!
@@ -542,51 +548,51 @@ Partial Public Class SeisanListReport
         '
         Me.Label21.Height = 0.1771654!
         Me.Label21.HyperLink = Nothing
-        Me.Label21.Left = 3.475985!
+        Me.Label21.Left = 2.97874!
         Me.Label21.Name = "Label21"
-        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label21.Text = "開催日"
         Me.Label21.Top = 1.87874!
-        Me.Label21.Width = 1.617717!
+        Me.Label21.Width = 1.50315!
         '
         'Label23
         '
         Me.Label23.Height = 0.1771655!
         Me.Label23.HyperLink = Nothing
-        Me.Label23.Left = 5.093701!
+        Me.Label23.Left = 4.48189!
         Me.Label23.Name = "Label23"
-        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label23.Text = "会合番号"
         Me.Label23.Top = 1.87874!
-        Me.Label23.Width = 1.065354!
+        Me.Label23.Width = 0.9948817!
         '
         'Label24
         '
         Me.Label24.Height = 0.1771655!
         Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 6.159056!
+        Me.Label24.Left = 5.497244!
         Me.Label24.Name = "Label24"
-        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label24.Text = "会合名"
         Me.Label24.Top = 1.87874!
-        Me.Label24.Width = 2.190158!
+        Me.Label24.Width = 2.307874!
         '
         'Label25
         '
-        Me.Label25.Height = 0.1771655!
+        Me.Label25.Height = 0.1771654!
         Me.Label25.HyperLink = Nothing
-        Me.Label25.Left = 8.349214!
+        Me.Label25.Left = 8.797638!
         Me.Label25.Name = "Label25"
-        Me.Label25.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center"
+        Me.Label25.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label25.Text = "精算番号"
         Me.Label25.Top = 1.87874!
-        Me.Label25.Width = 1.065354!
+        Me.Label25.Width = 0.9925194!
         '
         'Label26
         '
         Me.Label26.Height = 0.1771655!
         Me.Label26.HyperLink = Nothing
-        Me.Label26.Left = 9.414568!
+        Me.Label26.Left = 9.790158!
         Me.Label26.Name = "Label26"
         Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label26.Text = "TOP精算年月"
@@ -597,7 +603,7 @@ Partial Public Class SeisanListReport
         '
         Me.Label27.Height = 0.1771655!
         Me.Label27.HyperLink = Nothing
-        Me.Label27.Left = 10.17717!
+        Me.Label27.Left = 10.57087!
         Me.Label27.Name = "Label27"
         Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label27.Text = "承認区分"
@@ -608,7 +614,7 @@ Partial Public Class SeisanListReport
         '
         Me.Label28.Height = 0.1771654!
         Me.Label28.HyperLink = Nothing
-        Me.Label28.Left = 10.75!
+        Me.Label28.Left = 11.1437!
         Me.Label28.Name = "Label28"
         Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
         Me.Label28.Text = "NOZOMI送信"
@@ -622,9 +628,9 @@ Partial Public Class SeisanListReport
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
         Me.Line1.Top = 1.819685!
-        Me.Line1.Width = 11.41732!
+        Me.Line1.Width = 11.81102!
         Me.Line1.X1 = 0.0!
-        Me.Line1.X2 = 11.41732!
+        Me.Line1.X2 = 11.81102!
         Me.Line1.Y1 = 1.819685!
         Me.Line1.Y2 = 1.819685!
         '
@@ -635,15 +641,15 @@ Partial Public Class SeisanListReport
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
         Me.Line2.Top = 2.070866!
-        Me.Line2.Width = 11.41733!
+        Me.Line2.Width = 11.81102!
         Me.Line2.X1 = 0.0!
-        Me.Line2.X2 = 11.41733!
+        Me.Line2.X2 = 11.81102!
         Me.Line2.Y1 = 2.070866!
         Me.Line2.Y2 = 2.070866!
         '
         'Line4
         '
-        Me.Line4.Height = 0.2511811!
+        Me.Line4.Height = 0.2669291!
         Me.Line4.Left = 0.0!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
@@ -652,155 +658,155 @@ Partial Public Class SeisanListReport
         Me.Line4.X1 = 0.0!
         Me.Line4.X2 = 0.0000002086163!
         Me.Line4.Y1 = 1.819685!
-        Me.Line4.Y2 = 2.070866!
+        Me.Line4.Y2 = 2.086614!
         '
         'Line5
         '
-        Me.Line5.Height = 0.2511821!
-        Me.Line5.Left = 0.6822835!
+        Me.Line5.Height = 0.2669291!
+        Me.Line5.Left = 0.4114174!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
         Me.Line5.Top = 1.819685!
         Me.Line5.Width = 0.0000001788139!
-        Me.Line5.X1 = 0.6822835!
-        Me.Line5.X2 = 0.6822837!
+        Me.Line5.X1 = 0.4114174!
+        Me.Line5.X2 = 0.4114175!
         Me.Line5.Y1 = 1.819685!
-        Me.Line5.Y2 = 2.070867!
+        Me.Line5.Y2 = 2.086614!
         '
         'Line6
         '
-        Me.Line6.Height = 0.2511821!
-        Me.Line6.Left = 1.58189!
+        Me.Line6.Height = 0.2669291!
+        Me.Line6.Left = 1.209843!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
         Me.Line6.Top = 1.819685!
         Me.Line6.Width = 0.0!
-        Me.Line6.X1 = 1.58189!
-        Me.Line6.X2 = 1.58189!
+        Me.Line6.X1 = 1.209843!
+        Me.Line6.X2 = 1.209843!
         Me.Line6.Y1 = 1.819685!
-        Me.Line6.Y2 = 2.070867!
+        Me.Line6.Y2 = 2.086614!
         '
         'Line7
         '
-        Me.Line7.Height = 0.2511821!
-        Me.Line7.Left = 2.422047!
+        Me.Line7.Height = 0.2669291!
+        Me.Line7.Left = 1.924803!
         Me.Line7.LineWeight = 1.0!
         Me.Line7.Name = "Line7"
-        Me.Line7.Top = 1.832284!
+        Me.Line7.Top = 1.819685!
         Me.Line7.Width = 0.0!
-        Me.Line7.X1 = 2.422047!
-        Me.Line7.X2 = 2.422047!
-        Me.Line7.Y1 = 1.832284!
-        Me.Line7.Y2 = 2.083466!
+        Me.Line7.X1 = 1.924803!
+        Me.Line7.X2 = 1.924803!
+        Me.Line7.Y1 = 1.819685!
+        Me.Line7.Y2 = 2.086614!
         '
         'Line8
         '
-        Me.Line8.Height = 0.2511821!
-        Me.Line8.Left = 3.475985!
+        Me.Line8.Height = 0.2669291!
+        Me.Line8.Left = 2.97874!
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
-        Me.Line8.Top = 1.832284!
+        Me.Line8.Top = 1.819685!
         Me.Line8.Width = 0.0!
-        Me.Line8.X1 = 3.475985!
-        Me.Line8.X2 = 3.475985!
-        Me.Line8.Y1 = 1.832284!
-        Me.Line8.Y2 = 2.083466!
+        Me.Line8.X1 = 2.97874!
+        Me.Line8.X2 = 2.97874!
+        Me.Line8.Y1 = 1.819685!
+        Me.Line8.Y2 = 2.086614!
         '
         'Line9
         '
-        Me.Line9.Height = 0.2511821!
-        Me.Line9.Left = 5.093701!
+        Me.Line9.Height = 0.2669291!
+        Me.Line9.Left = 4.48189!
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
         Me.Line9.Top = 1.819685!
         Me.Line9.Width = 0.0!
-        Me.Line9.X1 = 5.093701!
-        Me.Line9.X2 = 5.093701!
+        Me.Line9.X1 = 4.48189!
+        Me.Line9.X2 = 4.48189!
         Me.Line9.Y1 = 1.819685!
-        Me.Line9.Y2 = 2.070867!
+        Me.Line9.Y2 = 2.086614!
         '
         'Line10
         '
-        Me.Line10.Height = 0.2511821!
-        Me.Line10.Left = 6.159056!
+        Me.Line10.Height = 0.2669291!
+        Me.Line10.Left = 5.476772!
         Me.Line10.LineWeight = 1.0!
         Me.Line10.Name = "Line10"
         Me.Line10.Top = 1.819685!
         Me.Line10.Width = 0.0!
-        Me.Line10.X1 = 6.159056!
-        Me.Line10.X2 = 6.159056!
+        Me.Line10.X1 = 5.476772!
+        Me.Line10.X2 = 5.476772!
         Me.Line10.Y1 = 1.819685!
-        Me.Line10.Y2 = 2.070867!
+        Me.Line10.Y2 = 2.086614!
         '
         'Line11
         '
-        Me.Line11.Height = 0.2511821!
-        Me.Line11.Left = 8.349214!
+        Me.Line11.Height = 0.2669291!
+        Me.Line11.Left = 8.797638!
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
-        Me.Line11.Top = 1.832284!
+        Me.Line11.Top = 1.819685!
         Me.Line11.Width = 0.0!
-        Me.Line11.X1 = 8.349214!
-        Me.Line11.X2 = 8.349214!
-        Me.Line11.Y1 = 1.832284!
-        Me.Line11.Y2 = 2.083466!
+        Me.Line11.X1 = 8.797638!
+        Me.Line11.X2 = 8.797638!
+        Me.Line11.Y1 = 1.819685!
+        Me.Line11.Y2 = 2.086614!
         '
         'Line12
         '
-        Me.Line12.Height = 0.2511821!
-        Me.Line12.Left = 9.414568!
+        Me.Line12.Height = 0.2669291!
+        Me.Line12.Left = 9.790158!
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
         Me.Line12.Top = 1.819685!
         Me.Line12.Width = 0.0!
-        Me.Line12.X1 = 9.414568!
-        Me.Line12.X2 = 9.414568!
+        Me.Line12.X1 = 9.790158!
+        Me.Line12.X2 = 9.790158!
         Me.Line12.Y1 = 1.819685!
-        Me.Line12.Y2 = 2.070867!
+        Me.Line12.Y2 = 2.086614!
         '
         'Line13
         '
-        Me.Line13.Height = 0.2511821!
-        Me.Line13.Left = 10.17717!
+        Me.Line13.Height = 0.2669291!
+        Me.Line13.Left = 10.57087!
         Me.Line13.LineWeight = 1.0!
         Me.Line13.Name = "Line13"
         Me.Line13.Top = 1.819685!
         Me.Line13.Width = 0.0!
-        Me.Line13.X1 = 10.17717!
-        Me.Line13.X2 = 10.17717!
+        Me.Line13.X1 = 10.57087!
+        Me.Line13.X2 = 10.57087!
         Me.Line13.Y1 = 1.819685!
-        Me.Line13.Y2 = 2.070867!
+        Me.Line13.Y2 = 2.086614!
         '
         'Line14
         '
-        Me.Line14.Height = 0.2511821!
-        Me.Line14.Left = 10.75!
+        Me.Line14.Height = 0.2669291!
+        Me.Line14.Left = 11.1437!
         Me.Line14.LineWeight = 1.0!
         Me.Line14.Name = "Line14"
-        Me.Line14.Top = 1.832284!
+        Me.Line14.Top = 1.819685!
         Me.Line14.Width = 0.0!
-        Me.Line14.X1 = 10.75!
-        Me.Line14.X2 = 10.75!
-        Me.Line14.Y1 = 1.832284!
-        Me.Line14.Y2 = 2.083466!
+        Me.Line14.X1 = 11.1437!
+        Me.Line14.X2 = 11.1437!
+        Me.Line14.Y1 = 1.819685!
+        Me.Line14.Y2 = 2.086614!
         '
         'Line15
         '
-        Me.Line15.Height = 0.2511821!
-        Me.Line15.Left = 11.41732!
+        Me.Line15.Height = 0.2669291!
+        Me.Line15.Left = 11.81102!
         Me.Line15.LineWeight = 1.0!
         Me.Line15.Name = "Line15"
         Me.Line15.Top = 1.819685!
         Me.Line15.Width = 0.0!
-        Me.Line15.X1 = 11.41732!
-        Me.Line15.X2 = 11.41732!
+        Me.Line15.X1 = 11.81102!
+        Me.Line15.X2 = 11.81102!
         Me.Line15.Y1 = 1.819685!
-        Me.Line15.Y2 = 2.070867!
+        Me.Line15.Y2 = 2.086614!
         '
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.KIKAKU_TANTO_NAME, Me.KOUENKAI_NAME, Me.FROM_DATE, Me.KOUENKAI_NO, Me.SEIKYU_NO_TOPTOUR, Me.SEISAN_YM, Me.SHOUNIN_KUBUN, Me.SEND_FLAG, Me.TO_DATE, Me.Line3, Me.Line17, Me.Line16, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.BU, Me.KIKAKU_TANTO_AREA, Me.KIKAKU_TANTO_EIGYOSHO, Me.KIKAKU_TANTO_NAME, Me.KOUENKAI_NAME, Me.FROM_DATE, Me.KOUENKAI_NO, Me.SEIKYU_NO_TOPTOUR, Me.SEISAN_YM, Me.SHOUNIN_KUBUN, Me.SEND_FLAG, Me.TO_DATE, Me.Line17, Me.Line16, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.TextBox1, Me.Line29, Me.Line3})
         Me.Detail.Height = 0.2204724!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
@@ -813,46 +819,46 @@ Partial Public Class SeisanListReport
         Me.BU.Left = 0.0!
         Me.BU.Name = "BU"
         Me.BU.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.BU.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.BU.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.BU.Text = "ABC"
         Me.BU.Top = 0.0!
-        Me.BU.Width = 0.6822835!
+        Me.BU.Width = 0.4114174!
         '
         'KIKAKU_TANTO_AREA
         '
         Me.KIKAKU_TANTO_AREA.CanGrow = False
         Me.KIKAKU_TANTO_AREA.DataField = "KIKAKU_TANTO_AREA"
         Me.KIKAKU_TANTO_AREA.Height = 0.2165354!
-        Me.KIKAKU_TANTO_AREA.Left = 0.6822835!
+        Me.KIKAKU_TANTO_AREA.Left = 0.414567!
         Me.KIKAKU_TANTO_AREA.Name = "KIKAKU_TANTO_AREA"
         Me.KIKAKU_TANTO_AREA.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.KIKAKU_TANTO_AREA.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.KIKAKU_TANTO_AREA.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.KIKAKU_TANTO_AREA.Text = "中国・四国"
         Me.KIKAKU_TANTO_AREA.Top = 0.0!
-        Me.KIKAKU_TANTO_AREA.Width = 0.8996065!
+        Me.KIKAKU_TANTO_AREA.Width = 0.7952756!
         '
         'KIKAKU_TANTO_EIGYOSHO
         '
         Me.KIKAKU_TANTO_EIGYOSHO.CanGrow = False
         Me.KIKAKU_TANTO_EIGYOSHO.DataField = "KIKAKU_TANTO_EIGYOSHO"
         Me.KIKAKU_TANTO_EIGYOSHO.Height = 0.2165354!
-        Me.KIKAKU_TANTO_EIGYOSHO.Left = 1.58189!
+        Me.KIKAKU_TANTO_EIGYOSHO.Left = 1.209843!
         Me.KIKAKU_TANTO_EIGYOSHO.Name = "KIKAKU_TANTO_EIGYOSHO"
         Me.KIKAKU_TANTO_EIGYOSHO.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.KIKAKU_TANTO_EIGYOSHO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.KIKAKU_TANTO_EIGYOSHO.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.KIKAKU_TANTO_EIGYOSHO.Text = "高松営業所"
         Me.KIKAKU_TANTO_EIGYOSHO.Top = 0.0!
-        Me.KIKAKU_TANTO_EIGYOSHO.Width = 0.8401574!
+        Me.KIKAKU_TANTO_EIGYOSHO.Width = 0.7149607!
         '
         'KIKAKU_TANTO_NAME
         '
         Me.KIKAKU_TANTO_NAME.CanGrow = False
         Me.KIKAKU_TANTO_NAME.DataField = "KIKAKU_TANTO_NAME"
         Me.KIKAKU_TANTO_NAME.Height = 0.2165354!
-        Me.KIKAKU_TANTO_NAME.Left = 2.422047!
+        Me.KIKAKU_TANTO_NAME.Left = 1.924803!
         Me.KIKAKU_TANTO_NAME.Name = "KIKAKU_TANTO_NAME"
         Me.KIKAKU_TANTO_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.KIKAKU_TANTO_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.KIKAKU_TANTO_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.KIKAKU_TANTO_NAME.Text = "バイエル　太郎"
         Me.KIKAKU_TANTO_NAME.Top = 0.0!
         Me.KIKAKU_TANTO_NAME.Width = 1.053937!
@@ -862,63 +868,63 @@ Partial Public Class SeisanListReport
         Me.KOUENKAI_NAME.CanGrow = False
         Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Height = 0.2165354!
-        Me.KOUENKAI_NAME.Left = 6.159056!
+        Me.KOUENKAI_NAME.Left = 5.497244!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NAME.Text = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Top = 0.0!
-        Me.KOUENKAI_NAME.Width = 2.190158!
+        Me.KOUENKAI_NAME.Width = 2.307874!
         '
         'FROM_DATE
         '
         Me.FROM_DATE.CanGrow = False
         Me.FROM_DATE.DataField = "FROM_DATE"
         Me.FROM_DATE.Height = 0.2165354!
-        Me.FROM_DATE.Left = 3.475985!
+        Me.FROM_DATE.Left = 2.97874!
         Me.FROM_DATE.Name = "FROM_DATE"
         Me.FROM_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.FROM_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.FROM_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.FROM_DATE.Text = "2013/12/12～2013/12/13"
         Me.FROM_DATE.Top = 0.0!
-        Me.FROM_DATE.Width = 1.617717!
+        Me.FROM_DATE.Width = 1.50315!
         '
         'KOUENKAI_NO
         '
         Me.KOUENKAI_NO.CanGrow = False
         Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Height = 0.2165354!
-        Me.KOUENKAI_NO.Left = 5.093701!
+        Me.KOUENKAI_NO.Left = 4.48189!
         Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.KOUENKAI_NO.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NO.Text = "12345678901234"
         Me.KOUENKAI_NO.Top = 0.0!
-        Me.KOUENKAI_NO.Width = 1.065354!
+        Me.KOUENKAI_NO.Width = 0.9948817!
         '
         'SEIKYU_NO_TOPTOUR
         '
         Me.SEIKYU_NO_TOPTOUR.CanGrow = False
         Me.SEIKYU_NO_TOPTOUR.DataField = "SEIKYU_NO_TOPTOUR"
         Me.SEIKYU_NO_TOPTOUR.Height = 0.2165354!
-        Me.SEIKYU_NO_TOPTOUR.Left = 8.349214!
+        Me.SEIKYU_NO_TOPTOUR.Left = 8.797638!
         Me.SEIKYU_NO_TOPTOUR.Name = "SEIKYU_NO_TOPTOUR"
         Me.SEIKYU_NO_TOPTOUR.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.SEIKYU_NO_TOPTOUR.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
+        Me.SEIKYU_NO_TOPTOUR.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
         Me.SEIKYU_NO_TOPTOUR.Text = "12345678901234"
         Me.SEIKYU_NO_TOPTOUR.Top = 0.0!
-        Me.SEIKYU_NO_TOPTOUR.Width = 1.065354!
+        Me.SEIKYU_NO_TOPTOUR.Width = 0.9925194!
         '
         'SEISAN_YM
         '
         Me.SEISAN_YM.CanGrow = False
         Me.SEISAN_YM.DataField = "SEISAN_YM"
         Me.SEISAN_YM.Height = 0.2165354!
-        Me.SEISAN_YM.Left = 9.414568!
+        Me.SEISAN_YM.Left = 9.808269!
         Me.SEISAN_YM.Name = "SEISAN_YM"
         Me.SEISAN_YM.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.SEISAN_YM.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; white-space: nowrap; d" & _
-            "do-char-set: 1"
+        Me.SEISAN_YM.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; white-space: nowrap; dd" & _
+            "o-char-set: 1"
         Me.SEISAN_YM.Text = "2013年12月"
         Me.SEISAN_YM.Top = 0.0!
         Me.SEISAN_YM.Width = 0.7625971!
@@ -928,11 +934,11 @@ Partial Public Class SeisanListReport
         Me.SHOUNIN_KUBUN.CanGrow = False
         Me.SHOUNIN_KUBUN.DataField = "SHOUNIN_KUBUN"
         Me.SHOUNIN_KUBUN.Height = 0.2165354!
-        Me.SHOUNIN_KUBUN.Left = 10.17717!
+        Me.SHOUNIN_KUBUN.Left = 10.57087!
         Me.SHOUNIN_KUBUN.Name = "SHOUNIN_KUBUN"
         Me.SHOUNIN_KUBUN.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.SHOUNIN_KUBUN.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; white-space: nowrap; d" & _
-            "do-char-set: 1"
+        Me.SHOUNIN_KUBUN.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; white-space: nowrap; dd" & _
+            "o-char-set: 1"
         Me.SHOUNIN_KUBUN.Text = Nothing
         Me.SHOUNIN_KUBUN.Top = 0.0!
         Me.SHOUNIN_KUBUN.Width = 0.572835!
@@ -942,26 +948,26 @@ Partial Public Class SeisanListReport
         Me.SEND_FLAG.CanGrow = False
         Me.SEND_FLAG.DataField = "SEND_FLAG"
         Me.SEND_FLAG.Height = 0.2165354!
-        Me.SEND_FLAG.Left = 10.88032!
+        Me.SEND_FLAG.Left = 11.19056!
         Me.SEND_FLAG.Name = "SEND_FLAG"
         Me.SEND_FLAG.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
-        Me.SEND_FLAG.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: center; white-space: nowrap; d" & _
-            "do-char-set: 1"
+        Me.SEND_FLAG.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; white-space: nowrap; ddo" & _
+            "-char-set: 1"
         Me.SEND_FLAG.Text = "SEND_FLAG"
-        Me.SEND_FLAG.Top = 0.0!
-        Me.SEND_FLAG.Width = 0.4066935!
+        Me.SEND_FLAG.Top = 0.0000003576279!
+        Me.SEND_FLAG.Width = 0.380704!
         '
         'TO_DATE
         '
         Me.TO_DATE.CanGrow = False
         Me.TO_DATE.DataField = "TO_DATE"
         Me.TO_DATE.Height = 0.2165354!
-        Me.TO_DATE.Left = 11.26102!
+        Me.TO_DATE.Left = 11.57126!
         Me.TO_DATE.Name = "TO_DATE"
         Me.TO_DATE.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
         Me.TO_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; white-space: nowrap; ddo-char-set: 1"
         Me.TO_DATE.Text = "TO"
-        Me.TO_DATE.Top = 0.0!
+        Me.TO_DATE.Top = 0.0000003576279!
         Me.TO_DATE.Visible = False
         Me.TO_DATE.Width = 0.1271648!
         '
@@ -972,9 +978,9 @@ Partial Public Class SeisanListReport
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
         Me.Line3.Top = 0.2165354!
-        Me.Line3.Width = 11.41733!
+        Me.Line3.Width = 11.81102!
         Me.Line3.X1 = 0.0!
-        Me.Line3.X2 = 11.41733!
+        Me.Line3.X2 = 11.81102!
         Me.Line3.Y1 = 0.2165354!
         Me.Line3.Y2 = 0.2165354!
         '
@@ -994,143 +1000,143 @@ Partial Public Class SeisanListReport
         'Line16
         '
         Me.Line16.Height = 0.2165354!
-        Me.Line16.Left = 0.6822835!
+        Me.Line16.Left = 0.4114174!
         Me.Line16.LineWeight = 1.0!
         Me.Line16.Name = "Line16"
         Me.Line16.Top = 0.0!
         Me.Line16.Width = 0.0000002980232!
-        Me.Line16.X1 = 0.6822835!
-        Me.Line16.X2 = 0.6822838!
+        Me.Line16.X1 = 0.4114174!
+        Me.Line16.X2 = 0.4114177!
         Me.Line16.Y1 = 0.0!
         Me.Line16.Y2 = 0.2165354!
         '
         'Line18
         '
         Me.Line18.Height = 0.2165354!
-        Me.Line18.Left = 1.58189!
+        Me.Line18.Left = 1.209843!
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
         Me.Line18.Top = 0.0!
         Me.Line18.Width = 0.0!
-        Me.Line18.X1 = 1.58189!
-        Me.Line18.X2 = 1.58189!
+        Me.Line18.X1 = 1.209843!
+        Me.Line18.X2 = 1.209843!
         Me.Line18.Y1 = 0.0!
         Me.Line18.Y2 = 0.2165354!
         '
         'Line19
         '
         Me.Line19.Height = 0.2165354!
-        Me.Line19.Left = 2.422047!
+        Me.Line19.Left = 1.924803!
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
         Me.Line19.Top = 0.0!
         Me.Line19.Width = 0.000001192093!
-        Me.Line19.X1 = 2.422047!
-        Me.Line19.X2 = 2.422048!
+        Me.Line19.X1 = 1.924803!
+        Me.Line19.X2 = 1.924804!
         Me.Line19.Y1 = 0.0!
         Me.Line19.Y2 = 0.2165354!
         '
         'Line20
         '
         Me.Line20.Height = 0.2165354!
-        Me.Line20.Left = 3.475985!
+        Me.Line20.Left = 2.97874!
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
         Me.Line20.Top = 0.0!
         Me.Line20.Width = 0.0!
-        Me.Line20.X1 = 3.475985!
-        Me.Line20.X2 = 3.475985!
+        Me.Line20.X1 = 2.97874!
+        Me.Line20.X2 = 2.97874!
         Me.Line20.Y1 = 0.0!
         Me.Line20.Y2 = 0.2165354!
         '
         'Line21
         '
         Me.Line21.Height = 0.2165354!
-        Me.Line21.Left = 5.093701!
+        Me.Line21.Left = 4.48189!
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
         Me.Line21.Top = 0.0!
         Me.Line21.Width = 0.0000009536743!
-        Me.Line21.X1 = 5.093701!
-        Me.Line21.X2 = 5.093702!
+        Me.Line21.X1 = 4.48189!
+        Me.Line21.X2 = 4.481891!
         Me.Line21.Y1 = 0.0!
         Me.Line21.Y2 = 0.2165354!
         '
         'Line22
         '
         Me.Line22.Height = 0.2165354!
-        Me.Line22.Left = 6.159056!
+        Me.Line22.Left = 5.476772!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
         Me.Line22.Top = 0.0!
         Me.Line22.Width = 0.0!
-        Me.Line22.X1 = 6.159056!
-        Me.Line22.X2 = 6.159056!
+        Me.Line22.X1 = 5.476772!
+        Me.Line22.X2 = 5.476772!
         Me.Line22.Y1 = 0.0!
         Me.Line22.Y2 = 0.2165354!
         '
         'Line23
         '
         Me.Line23.Height = 0.2165354!
-        Me.Line23.Left = 8.349214!
+        Me.Line23.Left = 8.797638!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
         Me.Line23.Top = 0.0!
         Me.Line23.Width = 0.0!
-        Me.Line23.X1 = 8.349214!
-        Me.Line23.X2 = 8.349214!
+        Me.Line23.X1 = 8.797638!
+        Me.Line23.X2 = 8.797638!
         Me.Line23.Y1 = 0.0!
         Me.Line23.Y2 = 0.2165354!
         '
         'Line24
         '
         Me.Line24.Height = 0.2165354!
-        Me.Line24.Left = 9.414568!
+        Me.Line24.Left = 9.790158!
         Me.Line24.LineWeight = 1.0!
         Me.Line24.Name = "Line24"
         Me.Line24.Top = 0.0!
         Me.Line24.Width = 0.0!
-        Me.Line24.X1 = 9.414568!
-        Me.Line24.X2 = 9.414568!
+        Me.Line24.X1 = 9.790158!
+        Me.Line24.X2 = 9.790158!
         Me.Line24.Y1 = 0.0!
         Me.Line24.Y2 = 0.2165354!
         '
         'Line25
         '
         Me.Line25.Height = 0.2165354!
-        Me.Line25.Left = 10.17717!
+        Me.Line25.Left = 10.57087!
         Me.Line25.LineWeight = 1.0!
         Me.Line25.Name = "Line25"
         Me.Line25.Top = 0.0!
         Me.Line25.Width = 0.0!
-        Me.Line25.X1 = 10.17717!
-        Me.Line25.X2 = 10.17717!
+        Me.Line25.X1 = 10.57087!
+        Me.Line25.X2 = 10.57087!
         Me.Line25.Y1 = 0.0!
         Me.Line25.Y2 = 0.2165354!
         '
         'Line26
         '
         Me.Line26.Height = 0.2165354!
-        Me.Line26.Left = 10.75!
+        Me.Line26.Left = 11.1437!
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
         Me.Line26.Top = 0.0!
         Me.Line26.Width = 0.0!
-        Me.Line26.X1 = 10.75!
-        Me.Line26.X2 = 10.75!
+        Me.Line26.X1 = 11.1437!
+        Me.Line26.X2 = 11.1437!
         Me.Line26.Y1 = 0.0!
         Me.Line26.Y2 = 0.2165354!
         '
         'Line27
         '
         Me.Line27.Height = 0.2165354!
-        Me.Line27.Left = 11.41732!
+        Me.Line27.Left = 11.81102!
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
         Me.Line27.Top = 0.0!
         Me.Line27.Width = 0.0!
-        Me.Line27.X1 = 11.41732!
-        Me.Line27.X2 = 11.41732!
+        Me.Line27.X1 = 11.81102!
+        Me.Line27.X2 = 11.81102!
         Me.Line27.Y1 = 0.0!
         Me.Line27.Y2 = 0.2165354!
         '
@@ -1139,12 +1145,62 @@ Partial Public Class SeisanListReport
         Me.PageFooter.Height = 0.0!
         Me.PageFooter.Name = "PageFooter"
         '
+        'Label10
+        '
+        Me.Label10.Height = 0.1771654!
+        Me.Label10.HyperLink = Nothing
+        Me.Label10.Left = 7.805119!
+        Me.Label10.Name = "Label10"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center"
+        Me.Label10.Text = "会場手配番号"
+        Me.Label10.Top = 1.87874!
+        Me.Label10.Width = 0.9925194!
+        '
+        'TextBox1
+        '
+        Me.TextBox1.CanGrow = False
+        Me.TextBox1.DataField = "TEHAI_ID"
+        Me.TextBox1.Height = 0.2165354!
+        Me.TextBox1.Left = 7.805119!
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 1, 1)
+        Me.TextBox1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap; ddo-char-set: 1"
+        Me.TextBox1.Text = "12345678901234"
+        Me.TextBox1.Top = 0.0!
+        Me.TextBox1.Width = 0.9925194!
+        '
+        'Line28
+        '
+        Me.Line28.Height = 0.2669291!
+        Me.Line28.Left = 7.805119!
+        Me.Line28.LineWeight = 1.0!
+        Me.Line28.Name = "Line28"
+        Me.Line28.Top = 1.819685!
+        Me.Line28.Width = 0.0!
+        Me.Line28.X1 = 7.805119!
+        Me.Line28.X2 = 7.805119!
+        Me.Line28.Y1 = 1.819685!
+        Me.Line28.Y2 = 2.086614!
+        '
+        'Line29
+        '
+        Me.Line29.Height = 0.2165354!
+        Me.Line29.Left = 7.805119!
+        Me.Line29.LineWeight = 1.0!
+        Me.Line29.Name = "Line29"
+        Me.Line29.Top = 0.0!
+        Me.Line29.Width = 0.0!
+        Me.Line29.X1 = 7.805119!
+        Me.Line29.X2 = 7.805119!
+        Me.Line29.Y1 = 0.0!
+        Me.Line29.Y2 = 0.2165354!
+        '
         'SeisanListReport
         '
         Me.MasterReport = False
         Me.PageSettings.PaperHeight = 11.0!
         Me.PageSettings.PaperWidth = 8.5!
-        Me.PrintWidth = 11.43701!
+        Me.PrintWidth = 11.85039!
         Me.Sections.Add(Me.PageHeader)
         Me.Sections.Add(Me.Detail)
         Me.Sections.Add(Me.PageFooter)
@@ -1204,6 +1260,8 @@ Partial Public Class SeisanListReport
         CType(Me.SHOUNIN_KUBUN, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -1287,4 +1345,8 @@ Partial Public Class SeisanListReport
     Private WithEvents Line25 As DataDynamics.ActiveReports.Line
     Private WithEvents Line26 As DataDynamics.ActiveReports.Line
     Private WithEvents Line27 As DataDynamics.ActiveReports.Line
+    Private WithEvents Label10 As DataDynamics.ActiveReports.Label
+    Private WithEvents TextBox1 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Line28 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line29 As DataDynamics.ActiveReports.Line
 End Class

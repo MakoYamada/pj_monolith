@@ -10,11 +10,13 @@ Partial Public Class SeisanKensaku
         BU
         KIKAKU_TANTO_AREA
         KIKAKU_TANTO_EIGYOSHO
+        KIKAKU_TANTO_NAME
         FROM_DATE
+        KOUENKAI_NO
         KOUENKAI_NAME
+        SEISAN_KANRYO
         USER_NAME
         btnSeisan
-        KOUENKAI_NO
         TO_DATE
     End Enum
 
@@ -209,16 +211,16 @@ Partial Public Class SeisanKensaku
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
+            e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppModule.GetMark_SEISAN_KANRYO(e.Row.Cells(CellIndex.SEISAN_KANRYO).Text)
         End If
     End Sub
 
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.KOUENKAI_NO).Visible = False
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
-            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 1
             Me.GrvList.BorderStyle = BorderStyle.None
             Dim PagerTableCell As TableCell = e.Row.Cells(0)
             PagerTableCell.BorderStyle = BorderStyle.None

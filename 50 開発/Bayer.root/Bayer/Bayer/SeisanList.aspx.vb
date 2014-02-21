@@ -16,6 +16,7 @@ Partial Public Class SeisanList
         FROM_DATE
         KOUENKAI_NO
         KOUENKAI_NAME
+        TEHAI_ID
         SEIKYU_NO_TOPTOUR
         SEISAN_YM
         SHOUNIN_KUBUN
@@ -229,7 +230,7 @@ Partial Public Class SeisanList
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
-            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 2
+            CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 1
             Me.GrvList.BorderStyle = BorderStyle.None
             Dim PagerTableCell As TableCell = e.Row.Cells(0)
             PagerTableCell.BorderStyle = BorderStyle.None
