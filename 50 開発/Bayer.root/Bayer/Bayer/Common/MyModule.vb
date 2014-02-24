@@ -1136,19 +1136,20 @@ Public Class MyModule
             Dim KEI_OTHER_FARE As Long = 0
             Dim KEI_OTHER_CANCELLATION As Long = 0 'その他鉄道取消料
             Dim KEI_OTHER_TOTAL As Long = 0 'その他鉄道等費用+その他鉄道取消料
-            Dim KEI_TAXI_TESURYO As Long = 0
             Dim KEI_KOTSUHOTEL_TESURYO As Long = 0
+            Dim KEI_TAXI_TESURYO As Long = 0
+            Dim KEI_SANKASHA_TOTAL As Long = 0
 
             '税率取得
             Dim strZeiRate As String = AppModule.GetZeiRate(CsvData(wCnt).FROM_DATE, DbConn)
 
             'ヘッダ列
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催日")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名（カナ）")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名(カナ)")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("出欠状況")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊費")))
@@ -1164,15 +1165,17 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道等費用")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道取消料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("その他鉄道等費用+その他鉄道取消料")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ発券手数料")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録手数料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ発行手数料")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者旅費合計")))
+
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRのエリア名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRの営業所名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRの氏名")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Account Code")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(" Cost Center")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(" Internal order")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(" zetia Code")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Cost Center")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Internal order")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("zetia Code")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("宿泊日")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("泊数")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("往路１乗車日")))
@@ -1223,6 +1226,7 @@ Public Class MyModule
                 Dim RAIL_TOTAL As Long = 0 'JR代+JR取消料
                 Dim AIR_TOTAL As Long = 0 '航空券代+航空券取消料
                 Dim OTHER_TOTAL As Long = 0 'その他鉄道等費用+その他鉄道取消料
+                Dim SANKASHA_TOTAL As Long = 0 '参加者旅費合計
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).FROM_DATE)))
@@ -1261,8 +1265,16 @@ Public Class MyModule
                               CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_CANCELLATION)
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(OTHER_TOTAL)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO))))
+
+                SANKASHA_TOTAL = HOTELHI_TOTAL + RAIL_TOTAL + AIR_TOTAL + OTHER_TOTAL + _
+                                 CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO) + _
+                                 CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO) + _
+                                 CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_HOTELHI_TOZEI)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SANKASHA_TOTAL)))
+
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_AREA)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EIGYOSHO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
@@ -1327,8 +1339,8 @@ Public Class MyModule
                 KEI_OTHER_FARE += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_FARE)
                 KEI_OTHER_CANCELLATION += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_OTHER_CANCELLATION)
                 KEI_OTHER_TOTAL += OTHER_TOTAL
-                KEI_TAXI_TESURYO += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO)
                 KEI_KOTSUHOTEL_TESURYO += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO)
+                KEI_TAXI_TESURYO += CmnModule.DbVal_Kingaku(CsvData(wCnt).ANS_TAXI_TESURYO)
             Next wCnt
 
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(込)")))
@@ -1352,8 +1364,15 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_OTHER_FARE)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_OTHER_CANCELLATION)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_OTHER_TOTAL)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_TAXI_TESURYO)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_KOTSUHOTEL_TESURYO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_TAXI_TESURYO)))
+
+            KEI_SANKASHA_TOTAL = KEI_HOTELHI_TOTAL + KEI_RAIL_TOTAL + KEI_AIR_TOTAL + KEI_OTHER_TOTAL + _
+                                 KEI_KOTSUHOTEL_TESURYO + _
+                                 KEI_TAXI_TESURYO + _
+                                 KEI_HOTELHI_TOZEI
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_SANKASHA_TOTAL)))
+
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
@@ -1426,8 +1445,24 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_FARE, strZeiRate))))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_CANCELLATION, strZeiRate))))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_TOTAL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_TAXI_TESURYO, strZeiRate))))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_KOTSUHOTEL_TESURYO, strZeiRate))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_TAXI_TESURYO, strZeiRate))))
+
+            'TODO:要確認
+            Dim lngZeinuki_KEI_SANKASHA_TOTAL As Long = _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_HOTELHI, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_HOTELHI_CANCEL, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_RAIL_FARE, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_RAIL_CANCELLATION, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_AIR_FARE, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_AIR_CANCELLATION, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_OTHER_FARE, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_OTHER_CANCELLATION, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_KOTSUHOTEL_TESURYO, strZeiRate)) + _
+                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_TAXI_TESURYO, strZeiRate)) + _
+                                             KEI_HOTELHI_TOZEI
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(lngZeinuki_KEI_SANKASHA_TOTAL)))
+
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
