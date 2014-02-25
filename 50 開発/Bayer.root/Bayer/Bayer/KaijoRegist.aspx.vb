@@ -217,6 +217,7 @@ Partial Public Class KaijoRegist
     Private Sub SetForm()
         '依頼(表示)
         Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KAIJO(SEQ).KOUENKAI_NO)
+        Me.TEHAI_ID.Text = AppModule.GetName_TEHAI_ID(TBL_KAIJO(SEQ).TEHAI_ID)
         Me.REQ_STATUS_TEHAI.Text = AppModule.GetName_REQ_STATUS_TEHAI(TBL_KAIJO(SEQ).REQ_STATUS_TEHAI, True)
         Me.USER_NAME.Text = AppModule.GetName_USER_NAME(TBL_KAIJO(SEQ).USER_NAME)
         If Trim(TBL_KAIJO(SEQ).USER_NAME) = "" Then Me.USER_NAME.Text = StrDup(6, "　").ToString

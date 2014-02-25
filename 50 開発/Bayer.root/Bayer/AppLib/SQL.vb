@@ -2094,7 +2094,7 @@ Public Class SQL
             strSQL &= " WHERE TBL_KOTSUHOTEL.SALEFORCE_ID=N'" & TBL_TAXITICKET_HAKKO.SALEFORCE_ID & "'"
             strSQL &= "   AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "'"
             strSQL &= "   AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & "'"
-            strSQL &= "   AND TBL_KOTSUHOTEL.DR_MPID=N'" & TBL_TAXITICKET_HAKKO.DR_MPID & "'"
+            strSQL &= "   AND LTRIM(RTRIM(TBL_KOTSUHOTEL.DR_MPID))=N'" & Trim(TBL_TAXITICKET_HAKKO.DR_MPID) & "'"
             strSQL &= ") AS TBL_KOTSUHOTEL_1"
             strSQL &= ","
             strSQL &= "(SELECT"
@@ -2107,7 +2107,7 @@ Public Class SQL
             strSQL &= " WHERE TBL_KOTSUHOTEL.SALEFORCE_ID=N'" & TBL_TAXITICKET_HAKKO.SALEFORCE_ID & "'"
             strSQL &= "   AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "'"
             strSQL &= "   AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & "'"
-            strSQL &= "   AND TBL_KOTSUHOTEL.DR_MPID=N'" & TBL_TAXITICKET_HAKKO.DR_MPID & "'"
+            strSQL &= "   AND LTRIM(RTRIM(TBL_KOTSUHOTEL.DR_MPID))=N'" & Trim(TBL_TAXITICKET_HAKKO.DR_MPID) & "'"
             strSQL &= " GROUP BY SALEFORCE_ID"
             strSQL &= ",SANKASHA_ID"
             strSQL &= ",DR_MPID"
@@ -2209,7 +2209,7 @@ Public Class SQL
             strSQL &= "   AND TBL_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
             strSQL &= "   AND TBL_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= "   AND TBL_KOTSUHOTEL.TIME_STAMP_BYL=N'" & CmnDb.SqlString(TIME_STAMP_BYL) & "'"
-            strSQL &= "   AND TBL_KOTSUHOTEL.DR_MPID=N'" & CmnDb.SqlString(DR_MPID) & "'"
+            strSQL &= "   AND LTRIM(RTRIM(TBL_KOTSUHOTEL.DR_MPID))=N'" & CmnDb.SqlString(Trim(DR_MPID)) & "'"
 
             Return strSQL
         End Function
@@ -4334,7 +4334,7 @@ Public Class SQL
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TIME_STAMP_BYL) & "'"
-            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.DR_MPID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DR_MPID) & "'"
+            strSQL &= " AND LTRIM(RTRIM(" & TableDef.TBL_KOTSUHOTEL.Column.DR_MPID & "))=N'" & CmnDb.SqlString(Trim(TBL_KOTSUHOTEL.DR_MPID)) & "'"
 
             Return strSQL
         End Function
@@ -4666,17 +4666,23 @@ Public Class SQL
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND ("
-                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
-                strSQL_WHERE_KOUENKAI &= "      OR "
                 strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+            If Trim(Joken.KIKAKU_TANTO_NAME) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.KIKAKU_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_NAME) & "%'"
                 strSQL_WHERE_KOUENKAI &= ")"
             End If
 
             If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND ("
-                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
-                strSQL_WHERE_KOUENKAI &= "      OR "
                 strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_ROMA LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+                strSQL_WHERE_KOUENKAI &= ")"
+            End If
+            If Trim(Joken.TEHAI_TANTO_NAME) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND ("
+                strSQL_WHERE_KOUENKAI &= "      TBL_KOUENKAI.TEHAI_TANTO_NAME LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_NAME) & "%'"
                 strSQL_WHERE_KOUENKAI &= ")"
             End If
 

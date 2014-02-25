@@ -124,6 +124,15 @@ Partial Public Class KaijoRegist
     Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''TEHAI_ID コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TEHAI_ID As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''REQ_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>

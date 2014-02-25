@@ -77,6 +77,14 @@
 										<asp:Label ID="KOUENKAI_NO" runat="server" Text="12345678901234"></asp:Label>
 									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
+										âÔçáéËîzId
+									</td>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="3">
+										<asp:Label ID="TEHAI_ID" runat="server" Text="12345678901234" Width="100px"></asp:Label>
+									</td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
 										àÀóäì‡óe
 									</td>
 									<td nowrap="nowrap" align="left" class="TdItemKaijo">
@@ -85,7 +93,7 @@
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 115px;">
 										Timestamp
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo">
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" colspan="3">
 										<asp:Label ID="TIME_STAMP_BYL" runat="server" Text="8888/88/88 88:88:88" Width="150px"></asp:Label>
 									</td>
 								</tr>

@@ -814,10 +814,10 @@ Partial Public Class Preview
         rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Landscape
 
         '必要に応じマージン設定
-        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.8)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.8)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.8)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.8)
 
         'ログイン者名
         rpt1.MS_USER = Session.Item(SessionDef.MS_USER)

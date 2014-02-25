@@ -2861,7 +2861,9 @@
             Public KUBUN As String
             Public SEIHIN_NAME As String
             Public KIKAKU_TANTO_ROMA As String
+            Public KIKAKU_TANTO_NAME As String
             Public TEHAI_TANTO_ROMA As String
+            Public TEHAI_TANTO_NAME As String
             Public REQ_STATUS_TEHAI As String
             Public ANS_STATUS_TEHAI As String
             Public ADDRESS1 As String

@@ -90,7 +90,9 @@ Partial Public Class KaijoList
         AppModule.SetDropDownList_USER_NAME(Me.JoKenTTANTO_ID, MyBase.DbConnection)
 
         'IME設定
+        CmnModule.SetIme(Me.JokenKIKAKU_TANTO_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenKIKAKU_TANTO_ROMA, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.JokenTEHAI_TANTO_NAME, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.JokenTEHAI_TANTO_ROMA, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenKOUENKAI_NAME, CmnModule.ImeType.Active)
@@ -107,18 +109,7 @@ Partial Public Class KaijoList
 
     '画面項目 表示
     Private Sub SetForm()
-        'If InStr(Request.UrlReferrer.AbsolutePath.ToLower, "/menu.aspx") > 0 Then
-        '    'メニューからの遷移時
-        '    Me.LabelNoData.Visible = False
-        '    Me.GrvList.Visible = False
-        '    Me.TblButton1.Visible = False
-        '    Me.SpnBtnKaijoListPrint2.Visible = False
-        'Else
-        '条件表示
-        Me.JokenKIKAKU_TANTO_ROMA.Text = Trim(Joken.KIKAKU_TANTO_ROMA)
-        Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
-        Me.JokenKOUENKAI_NO.Text = Trim(Joken.KOUENKAI_NO)
-        Me.JokenKOUENKAI_NAME.Text = Trim(Joken.KOUENKAI_NAME)
+        '条件
         If Trim(Joken.FROM_DATE) <> "" Then
             Me.JokenFROM_DATE_YYYY.Text = Mid(Joken.FROM_DATE, 1, 4)
             Me.JokenFROM_DATE_MM.Text = Mid(Joken.FROM_DATE, 5, 2)
@@ -129,9 +120,15 @@ Partial Public Class KaijoList
             Me.JokenTO_DATE_MM.Text = Mid(Joken.TO_DATE, 5, 2)
             Me.JokenTO_DATE_DD.Text = Mid(Joken.TO_DATE, 7, 2)
         End If
-        Me.JokenSEIHIN.SelectedIndex = CmnModule.GetSelectedIndex(Joken.SEIHIN_NAME, Me.JokenSEIHIN)
         Me.JokenBU.SelectedIndex = CmnModule.GetSelectedIndex(Joken.BU, Me.JokenBU)
         Me.JokenKIKAKU_TANTO_AREA.SelectedIndex = CmnModule.GetSelectedIndex(Joken.AREA, Me.JokenKIKAKU_TANTO_AREA)
+        Me.JokenKOUENKAI_NO.Text = Trim(Joken.KOUENKAI_NO)
+        Me.JokenKOUENKAI_NAME.Text = Trim(Joken.KOUENKAI_NAME)
+        Me.JokenSEIHIN.SelectedIndex = CmnModule.GetSelectedIndex(Joken.SEIHIN_NAME, Me.JokenSEIHIN)
+        Me.JokenKIKAKU_TANTO_ROMA.Text = Trim(Joken.KIKAKU_TANTO_ROMA)
+        Me.JokenKIKAKU_TANTO_NAME.Text = Trim(Joken.KIKAKU_TANTO_NAME)
+        Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
+        Me.JokenTEHAI_TANTO_NAME.Text = Trim(Joken.TEHAI_TANTO_NAME)
         Me.JoKenTTANTO_ID.SelectedIndex = CmnModule.GetSelectedIndex(Joken.TTANTO_ID, Me.JoKenTTANTO_ID)
 
         'データ取得
@@ -259,15 +256,17 @@ Partial Public Class KaijoList
         If Not Check() Then Exit Sub
 
         Joken = Nothing
-        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
-        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
-        Joken.SEIHIN_NAME = CmnModule.GetSelectedItemValue(Me.JokenSEIHIN)
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NAME = Trim(Me.JokenKOUENKAI_NAME.Text)
         Joken.BU = CmnModule.GetSelectedItemValue(Me.JokenBU)
         Joken.AREA = CmnModule.GetSelectedItemValue(Me.JokenKIKAKU_TANTO_AREA)
-        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
-        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.SEIHIN_NAME = CmnModule.GetSelectedItemValue(Me.JokenSEIHIN)
+        Joken.KIKAKU_TANTO_NAME = Trim(Me.JokenKIKAKU_TANTO_NAME.Text)
+        Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
+        Joken.TEHAI_TANTO_NAME = Trim(Me.JokenTEHAI_TANTO_NAME.Text)
+        Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
         Joken.TTANTO_ID = CmnModule.GetSelectedItemValue(Me.JoKenTTANTO_ID)
         Joken.USER_NAME = CmnModule.GetSelectedItemText(Me.JoKenTTANTO_ID)
 

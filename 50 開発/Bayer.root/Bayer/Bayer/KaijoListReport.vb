@@ -23,7 +23,9 @@ Public Class KaijoListReport
         Me.PrintDate.Text = CmnModule.Format_Date(Now(), CmnModule.DateFormatType.YYYYMMDDHHMMSS)
         Me.LOGIN_USER_NAME.Text = pMS_USER.USER_NAME
         '条件
+        Me.JokenKIKAKU_TANTO_NAME.Text = pJoken.KIKAKU_TANTO_NAME
         Me.JokenKIKAKU_TANTO_ROMA.Text = pJoken.KIKAKU_TANTO_ROMA
+        Me.JokenTEHAI_TANTO_NAME.Text = pJoken.TEHAI_TANTO_NAME
         Me.JokenTEHAI_TANTO_ROMA.Text = pJoken.TEHAI_TANTO_ROMA
         Me.JokenSEIHIN.Text = pJoken.SEIHIN_NAME
         Me.JokenKOUENKAI_NO.Text = pJoken.KOUENKAI_NO

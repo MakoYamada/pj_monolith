@@ -43,7 +43,16 @@
 					<tr>
 						<td align="left" colspan="2">
 							BYL企画担当者(漢字)
+							<asp:TextBox ID="JokenKIKAKU_TANTO_NAME" runat="server" Width="170px"></asp:TextBox>
+							&nbsp;&nbsp;&nbsp;
+							BYL企画担当者(ローマ字/半角)
 							<asp:TextBox ID="JokenKIKAKU_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" colspan="2">
+							BYL手配担当者(漢字)
+							<asp:TextBox ID="JokenTEHAI_TANTO_NAME" runat="server" Width="170px"></asp:TextBox>
 							&nbsp;&nbsp;&nbsp;
 							BYL手配担当者(ローマ字/半角)
 							<asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="170px"></asp:TextBox>
