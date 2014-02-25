@@ -657,8 +657,8 @@
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 180px;">
 										h”‘Šó–]“ú
 									</td>
-									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 140px;">
-										<asp:Label ID="REQ_STAY_DATE" runat="server" Text="yyyy/MM/dd" Width="90px"></asp:Label>
+									<td nowrap="nowrap" align="left" class="TdItemKaijo" style="width: 170px;">
+										<asp:Label ID="REQ_STAY_DATE" runat="server" Text="yyyy/MM/dd" Width="150px"></asp:Label>
 									</td>
 									<td nowrap="nowrap" align="left" class="TdTitleKaijoDisp" style="width: 150px;">
 										h”‘Šó–]Žº”
