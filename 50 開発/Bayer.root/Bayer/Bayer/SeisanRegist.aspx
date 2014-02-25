@@ -227,7 +227,7 @@
 										            <asp:TextBox ID="OTHER_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
 									            </td>
 									            <td nowrap="nowrap" align="left" class="TdTitleSeisan2">
-								                    TOP手数料
+								                    管理費
 							                    </td>
 							                    <td nowrap="nowrap" align="left" class="TdItemSeisan1">
 										            <asp:TextBox ID="KANRIHI_TF" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
@@ -348,7 +348,7 @@
 					                        </tr>
 					                        <tr>
 					                            <td nowrap="nowrap" align="left" class="TdTitleSeisan2">
-					                                TOP手数料
+					                                管理費
 					                            </td>
 					                            <td nowrap="nowrap" align="left" class="TdItemSeisan1" colspan="1">
 										            <asp:TextBox ID="KANRIHI_T" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
