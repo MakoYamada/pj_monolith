@@ -1424,96 +1424,6 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""), True))
             sb.Append(vbNewLine)
 
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(抜)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_HOTELHI, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_HOTELHI_CANCEL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_HOTELHI_TOTAL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_RAIL_FARE, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_RAIL_CANCELLATION, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_RAIL_TOTAL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_AIR_FARE, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_AIR_CANCELLATION, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_AIR_TOTAL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_FARE, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_CANCELLATION, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_OTHER_TOTAL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_KOTSUHOTEL_TESURYO, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_TAXI_TESURYO, strZeiRate))))
-
-            'TODO:要確認
-            Dim lngZeinuki_KEI_SANKASHA_TOTAL As Long = _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_HOTELHI, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_HOTELHI_CANCEL, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_RAIL_FARE, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_RAIL_CANCELLATION, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_AIR_FARE, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_AIR_CANCELLATION, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_OTHER_FARE, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_OTHER_CANCELLATION, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_KOTSUHOTEL_TESURYO, strZeiRate)) + _
-                                             CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_TAXI_TESURYO, strZeiRate)) + _
-                                             KEI_HOTELHI_TOZEI
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(lngZeinuki_KEI_SANKASHA_TOTAL)))
-
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""), True))
-            sb.Append(vbNewLine)
-
             Return sb.ToString
         End Function
 
@@ -1614,23 +1524,6 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_HOTEL_TOZEI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_JR)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_MR_HOTEL + KEI_MR_HOTEL_TOZEI + KEI_MR_JR), True))
-            sb.Append(vbNewLine)
-
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(抜)")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_MR_HOTEL, strZeiRate))))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(KEI_MR_JR, strZeiRate))))
-
-            'TODO:要確認
-            Dim lngZeinukiKei As Long = _
-            CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_MR_HOTEL, strZeiRate)) + _
-            CmnModule.DbVal_Kingaku(AppModule.GetZeinukiGaku(KEI_MR_JR, strZeiRate))
-
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(lngZeinukiKei + KEI_MR_HOTEL_TOZEI), True))
             sb.Append(vbNewLine)
 
             Return sb.ToString
