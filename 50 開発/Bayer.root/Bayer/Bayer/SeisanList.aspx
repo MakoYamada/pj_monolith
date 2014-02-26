@@ -102,7 +102,7 @@
                         <td>
                             <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
                                 AllowPaging="True" PageSize="10" DataKeyNames="KOUENKAI_NO"
-                                DataSourceID="SqlDataSource1" Width="1277px">
+                                DataSourceID="SqlDataSource1" Width="1367px">
                                 <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                                 <RowStyle Wrap="false" BackColor="#ffffff" />
                                 <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -148,6 +148,10 @@
                                         <ItemStyle Wrap="False" Width="120px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="SEISAN_YM" HeaderText="TOP<br/>¸ŽZ”NŒŽ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
+                                        <HeaderStyle Wrap="False"></HeaderStyle>
+                                        <ItemStyle Wrap="False" Width="90px" HorizontalAlign="Center"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="UPDATE_DATE" HeaderText="TOP‘—M“úŽž" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
                                         <ItemStyle Wrap="False" Width="90px" HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>

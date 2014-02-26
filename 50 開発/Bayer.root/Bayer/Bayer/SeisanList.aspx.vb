@@ -19,6 +19,7 @@ Partial Public Class SeisanList
         TEHAI_ID
         SEIKYU_NO_TOPTOUR
         SEISAN_YM
+        UPDATE_DATE
         SHOUNIN_KUBUN
         SEND_FLAG
         Button1
@@ -220,6 +221,7 @@ Partial Public Class SeisanList
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
             e.Row.Cells(CellIndex.SEISAN_YM).Text = AppModule.GetName_SEISAN_YM(e.Row.Cells(CellIndex.SEISAN_YM).Text)
+            e.Row.Cells(CellIndex.UPDATE_DATE).Text = AppModule.GetName_UPDATE_DATE(e.Row.Cells(CellIndex.UPDATE_DATE).Text)
             e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
             e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
