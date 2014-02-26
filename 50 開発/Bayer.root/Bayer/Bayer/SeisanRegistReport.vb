@@ -69,5 +69,16 @@ Public Class SeisanRegistReport
 
         Me.SEISAN_KANRYO.Text = AppModule.GetName_SEISAN_KANRYO(Me.SEISAN_KANRYO.Text)
 
+        '総合計金額
+        Dim lngTotalKingaku As Long = CmnModule.DbVal_Kingaku(Me.KEI_TF.Text.Replace(",", "")) + _
+                                      CmnModule.DbVal_Kingaku(Me.KEI_T.Text.Replace(",", "")) + _
+                                      CmnModule.DbVal_Kingaku(Me.MR_HOTEL.Text.Replace(",", "")) + _
+                                      CmnModule.DbVal_Kingaku(Me.MR_HOTEL_TOZEI.Text.Replace(",", "")) + _
+                                      CmnModule.DbVal_Kingaku(Me.MR_JR.Text.Replace(",", "")) + _
+                                      CmnModule.DbVal_Kingaku(Me.TAXI_T.Text.Replace(",", "")) + _
+                                      CmnModule.DbVal_Kingaku(Me.TAXI_SEISAN_T.Text.Replace(",", ""))
+
+        Me.txtTotalKingaku.Text = CmnModule.EditComma(lngTotalKingaku)
+
     End Sub
 End Class

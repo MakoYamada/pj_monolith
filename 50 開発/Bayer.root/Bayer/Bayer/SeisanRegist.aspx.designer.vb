@@ -205,15 +205,6 @@ Partial Public Class SeisanRegist
     Protected WithEvents HOTELHI_TOZEI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JR_TF コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents JR_TF As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''AIR_TF コントロール。
     '''</summary>
     '''<remarks>
@@ -221,6 +212,15 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents AIR_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''JR_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents JR_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''OTHER_TRAFFIC_TF コントロール。
@@ -232,13 +232,22 @@ Partial Public Class SeisanRegist
     Protected WithEvents OTHER_TRAFFIC_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''TAXI_COMMISSION_TF コントロール。
+    '''JINKENHI_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TAXI_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents JINKENHI_TF As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''KANRIHI_TF コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KANRIHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''HOTEL_COMMISSION_TF コントロール。
@@ -250,13 +259,13 @@ Partial Public Class SeisanRegist
     Protected WithEvents HOTEL_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JINKENHI_TF コントロール。
+    '''TAXI_COMMISSION_TF コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JINKENHI_TF As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TAXI_COMMISSION_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''OTHER_TF コントロール。
@@ -266,15 +275,6 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents OTHER_TF As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''KANRIHI_TF コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KANRIHI_TF As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TAXI_TF コントロール。
@@ -358,15 +358,6 @@ Partial Public Class SeisanRegist
     Protected WithEvents JINKENHI_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''OTHER_T コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents OTHER_T As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''KANRIHI_T コントロール。
     '''</summary>
     '''<remarks>
@@ -374,6 +365,15 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents KANRIHI_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''OTHER_T コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents OTHER_T As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''KEI_41120200_T コントロール。
@@ -437,6 +437,15 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents TAXI_SEISAN_T As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblTotalKingaku コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents lblTotalKingaku As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''BtnDrCsv コントロール。
