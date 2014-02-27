@@ -13,7 +13,7 @@ Public Class DrSoufujo
     Private HotelItemTitleX2 As Single = 8.572
     Private HotelItemTitleWidth = 2.433
     Private HotelItemX1 As Single = 3.57
-    Private HotelItemX2 As Single = 10.555
+    Private HotelItemX2 As Single = 10.8
     Private HotelItemWidth1 = 4.974
     Private HotelItemWidth2 = 7.478
     Private HotelItemWidthMax = 14.463
@@ -42,6 +42,7 @@ Public Class DrSoufujo
     Private TaxiItemWidth2 As Single = 2.06
     Private TaxiItemWidth3 As Single = 1.534
     Private TaxiItemWidth4 As Single = 4.415
+    Private NotesWidth As Single = 16.712
 
     Private pKOTSUHOTEL_DATA As TableDef.TBL_KOTSUHOTEL.DataStruct
     Public WriteOnly Property KOTSUHOTEL_DATA() As TableDef.TBL_KOTSUHOTEL.DataStruct
@@ -104,6 +105,8 @@ Public Class DrSoufujo
                 Me.MR_EIGYOSHO.Text = Me.MR_EIGYOSHO.Text
             End If
         End If
+
+        Me.MR_SHOZOKU.Text = Me.MR_BU.Text.Trim & Space(1) & Me.MR_AREA.Text.Trim & Space(1) & Me.MR_EIGYOSHO.Text.Trim
 
         'MR氏名
         If Me.MR_NAME.Text.Trim <> "" Then
@@ -193,7 +196,7 @@ Public Class DrSoufujo
             HotelAddrTitle.Text = "住所："
             HotelAddrTitle.Height = RowHeight
             HotelAddrTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
-            HotelAddrTitle.Alignment = TextAlignment.Left
+            HotelAddrTitle.Alignment = TextAlignment.Right
             HotelAddrTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
 
             ANS_HOTEL_ADDRESS.Visible = True
@@ -274,7 +277,7 @@ Public Class DrSoufujo
 
             HOTEL_NOTES1.Visible = True
             HOTEL_NOTES1.Text = "※ 宿泊クーポンはございませんので、フロントでお名前をお伝えください。"
-            HOTEL_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            HOTEL_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             HOTEL_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
             HOTEL_NOTES1.CanGrow = True
             HOTEL_NOTES1.CanShrink = True
@@ -286,7 +289,7 @@ Public Class DrSoufujo
 
             HOTEL_NOTES2.Visible = True
             HOTEL_NOTES2.Text = "※ 1泊朝食代金以外の個人ご利用分は、チェックアウト時にご本人様でお支払いをお願いします。"
-            HOTEL_NOTES2.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            HOTEL_NOTES2.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             HOTEL_NOTES2.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
             HOTEL_NOTES2.CanGrow = True
             HOTEL_NOTES2.CanShrink = True
@@ -1533,27 +1536,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_1.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_1_Title As New Label
             Ans_Taxi_Date_1_Title.Visible = True
             Ans_Taxi_Date_1_Title.Text = "利用日："
             Ans_Taxi_Date_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_1_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_1_Title)
 
-            'Dim Ans_Taxi_Date_1 As New TextBox
             ANS_TAXI_DATE_1.Visible = True
             ANS_TAXI_DATE_1.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_1.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_1.Visible = True
@@ -1564,9 +1562,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_1.WordWrap = False
             ANS_TAXI_DATE_1.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_1)
 
-            'Dim Ans_Taxi_Kenshu_1 As New TextBox
             ANS_TAXI_KENSHU_1.Visible = True
             ANS_TAXI_KENSHU_1.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_1.Text)
             ANS_TAXI_KENSHU_1.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -1576,19 +1572,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_1.WordWrap = False
             ANS_TAXI_KENSHU_1.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_1)
 
-            'Dim Ans_Taxi_No_1_Title As New Label
             Ans_Taxi_No_1_Title.Visible = True
             Ans_Taxi_No_1_Title.Text = "チケット番号："
             Ans_Taxi_No_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_1_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_1_Title)
 
-            'Dim ANS_TAXI_NO_1 As New TextBox
-            'ANS_TAXI_NO_1.Text = Me.ANS_TAXI_NO_1
             ANS_TAXI_NO_1.Visible = True
             ANS_TAXI_NO_1.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_1.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1597,28 +1588,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_1.WordWrap = False
             ANS_TAXI_NO_1.Alignment = TextAlignment.Left
             ANS_TAXI_NO_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_1)
-
-            'Dim Ans_Taxi_Rmks_1_Title As New Label
-            Ans_Taxi_Rmks_1_Title.Visible = True
-            Ans_Taxi_Rmks_1_Title.Text = "備考："
-            Ans_Taxi_Rmks_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_1_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_1_Title)
-
-            'Dim Ans_Taxi_Rmks_1 As New TextBox
-            'Ans_Taxi_Rmks_1.Text = Me.ANS_TAXI_RMKS_1
-            ANS_TAXI_RMKS_1.Visible = True
-            ANS_TAXI_RMKS_1.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_1.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_1.CanGrow = True
-            ANS_TAXI_RMKS_1.CanShrink = True
-            ANS_TAXI_RMKS_1.WordWrap = False
-            ANS_TAXI_RMKS_1.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_1)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1628,27 +1597,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_2.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_2_Title As New Label
             Ans_Taxi_Date_2_Title.Visible = True
             Ans_Taxi_Date_2_Title.Text = "利用日："
             Ans_Taxi_Date_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_2_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_2_Title)
 
-            'Dim Ans_Taxi_Date_2 As New TextBox
             ANS_TAXI_DATE_2.Visible = True
             ANS_TAXI_DATE_2.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_2.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_2.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -1658,9 +1622,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_2.WordWrap = False
             ANS_TAXI_DATE_2.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_2)
 
-            'Dim Ans_Taxi_Kenshu_2 As New TextBox
             ANS_TAXI_KENSHU_2.Visible = True
             ANS_TAXI_KENSHU_2.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_2.Text)
             ANS_TAXI_KENSHU_2.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -1670,19 +1632,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_2.WordWrap = False
             ANS_TAXI_KENSHU_2.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_2)
 
-            'Dim Ans_Taxi_No_2_Title As New Label
             Ans_Taxi_No_2_Title.Visible = True
             Ans_Taxi_No_2_Title.Text = "チケット番号："
             Ans_Taxi_No_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_2_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_2_Title)
 
-            'Dim ANS_TAXI_NO_2 As New TextBox
-            'ANS_TAXI_NO_2.Text = Me.ANS_TAXI_NO_2
             ANS_TAXI_NO_2.Visible = True
             ANS_TAXI_NO_2.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_2.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1691,28 +1648,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_2.WordWrap = False
             ANS_TAXI_NO_2.Alignment = TextAlignment.Left
             ANS_TAXI_NO_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_2)
-
-            'Dim Ans_Taxi_Rmks_2_Title As New Label
-            Ans_Taxi_Rmks_2_Title.Visible = True
-            Ans_Taxi_Rmks_2_Title.Text = "備考："
-            Ans_Taxi_Rmks_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_2_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_2_Title)
-
-            'Dim Ans_Taxi_Rmks_2 As New TextBox
-            'Ans_Taxi_Rmks_2.Text = Me.ANS_TAXI_RMKS_2
-            ANS_TAXI_RMKS_2.Visible = True
-            ANS_TAXI_RMKS_2.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_2.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_2.CanGrow = True
-            ANS_TAXI_RMKS_2.CanShrink = True
-            ANS_TAXI_RMKS_2.WordWrap = False
-            ANS_TAXI_RMKS_2.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_2)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1722,27 +1657,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_3.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_3_Title As New Label
             Ans_Taxi_Date_3_Title.Visible = True
             Ans_Taxi_Date_3_Title.Text = "利用日："
             Ans_Taxi_Date_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_3_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_3_Title)
 
-            'Dim Ans_Taxi_Date_3 As New TextBox
             ANS_TAXI_DATE_3.Visible = True
             ANS_TAXI_DATE_3.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_3.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_3.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -1752,9 +1682,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_3.WordWrap = False
             ANS_TAXI_DATE_3.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_3)
 
-            'Dim Ans_Taxi_Kenshu_3 As New TextBox
             ANS_TAXI_KENSHU_3.Visible = True
             ANS_TAXI_KENSHU_3.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_3.Text)
             ANS_TAXI_KENSHU_3.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -1764,19 +1692,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_3.WordWrap = False
             ANS_TAXI_KENSHU_3.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_3)
 
-            'Dim Ans_Taxi_No_3_Title As New Label
             Ans_Taxi_No_3_Title.Visible = True
             Ans_Taxi_No_3_Title.Text = "チケット番号："
             Ans_Taxi_No_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_3_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_3_Title)
 
-            'Dim ANS_TAXI_NO_3 As New TextBox
-            'ANS_TAXI_NO_3.Text = Me.ANS_TAXI_NO_3
             ANS_TAXI_NO_3.Visible = True
             ANS_TAXI_NO_3.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_3.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1785,28 +1708,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_3.WordWrap = False
             ANS_TAXI_NO_3.Alignment = TextAlignment.Left
             ANS_TAXI_NO_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_3)
-
-            'Dim Ans_Taxi_Rmks_3_Title As New Label
-            Ans_Taxi_Rmks_3_Title.Visible = True
-            Ans_Taxi_Rmks_3_Title.Text = "備考："
-            Ans_Taxi_Rmks_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_3_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_3_Title)
-
-            'Dim Ans_Taxi_Rmks_3 As New TextBox
-            'Ans_Taxi_Rmks_3.Text = Me.ANS_TAXI_RMKS_3
-            ANS_TAXI_RMKS_3.Visible = True
-            ANS_TAXI_RMKS_3.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_3.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_3.CanGrow = True
-            ANS_TAXI_RMKS_3.CanShrink = True
-            ANS_TAXI_RMKS_3.WordWrap = False
-            ANS_TAXI_RMKS_3.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_3)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1816,27 +1717,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_4.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_4_Title As New Label
             Ans_Taxi_Date_4_Title.Visible = True
             Ans_Taxi_Date_4_Title.Text = "利用日："
             Ans_Taxi_Date_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_4_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_4_Title)
 
-            'Dim Ans_Taxi_Date_4 As New TextBox
             ANS_TAXI_DATE_4.Visible = True
             ANS_TAXI_DATE_4.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_4.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_4.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -1846,9 +1742,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_4.WordWrap = False
             ANS_TAXI_DATE_4.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_4)
 
-            'Dim Ans_Taxi_Kenshu_4 As New TextBox
             ANS_TAXI_KENSHU_4.Visible = True
             ANS_TAXI_KENSHU_4.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_4.Text)
             ANS_TAXI_KENSHU_4.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -1858,19 +1752,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_4.WordWrap = False
             ANS_TAXI_KENSHU_4.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_4)
 
-            'Dim Ans_Taxi_No_4_Title As New Label
             Ans_Taxi_No_4_Title.Visible = True
             Ans_Taxi_No_4_Title.Text = "チケット番号："
             Ans_Taxi_No_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_4_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_4_Title)
 
-            'Dim ANS_TAXI_NO_4 As New TextBox
-            'ANS_TAXI_NO_4.Text = Me.ANS_TAXI_NO_4
             ANS_TAXI_NO_4.Visible = True
             ANS_TAXI_NO_4.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_4.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1879,28 +1768,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_4.WordWrap = False
             ANS_TAXI_NO_4.Alignment = TextAlignment.Left
             ANS_TAXI_NO_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_4)
-
-            'Dim Ans_Taxi_Rmks_4_Title As New Label
-            Ans_Taxi_Rmks_4_Title.Visible = True
-            Ans_Taxi_Rmks_4_Title.Text = "備考："
-            Ans_Taxi_Rmks_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_4_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_4_Title)
-
-            'Dim Ans_Taxi_Rmks_4 As New TextBox
-            'Ans_Taxi_Rmks_4.Text = Me.ANS_TAXI_RMKS_4
-            ANS_TAXI_RMKS_4.Visible = True
-            ANS_TAXI_RMKS_4.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_4.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_4.CanGrow = True
-            ANS_TAXI_RMKS_4.CanShrink = True
-            ANS_TAXI_RMKS_4.WordWrap = False
-            ANS_TAXI_RMKS_4.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_4)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1910,27 +1777,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_5.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_5_Title As New Label
             Ans_Taxi_Date_5_Title.Visible = True
             Ans_Taxi_Date_5_Title.Text = "利用日："
             Ans_Taxi_Date_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_5_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_5_Title)
 
-            'Dim Ans_Taxi_Date_5 As New TextBox
             ANS_TAXI_DATE_5.Visible = True
             ANS_TAXI_DATE_5.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_5.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_5.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -1940,9 +1802,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_5.WordWrap = False
             ANS_TAXI_DATE_5.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_5)
 
-            'Dim Ans_Taxi_Kenshu_5 As New TextBox
             ANS_TAXI_KENSHU_5.Visible = True
             ANS_TAXI_KENSHU_5.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_5.Text)
             ANS_TAXI_KENSHU_5.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -1952,19 +1812,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_5.WordWrap = False
             ANS_TAXI_KENSHU_5.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_5)
 
-            'Dim Ans_Taxi_No_5_Title As New Label
             Ans_Taxi_No_5_Title.Visible = True
             Ans_Taxi_No_5_Title.Text = "チケット番号："
             Ans_Taxi_No_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_5_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_5_Title)
 
-            'Dim ANS_TAXI_NO_5 As New TextBox
-            'ANS_TAXI_NO_5.Text = Me.ANS_TAXI_NO_5
             ANS_TAXI_NO_5.Visible = True
             ANS_TAXI_NO_5.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_5.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1973,28 +1828,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_5.WordWrap = False
             ANS_TAXI_NO_5.Alignment = TextAlignment.Left
             ANS_TAXI_NO_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_5)
-
-            'Dim Ans_Taxi_Rmks_5_Title As New Label
-            Ans_Taxi_Rmks_5_Title.Visible = True
-            Ans_Taxi_Rmks_5_Title.Text = "備考："
-            Ans_Taxi_Rmks_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_5_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_5_Title)
-
-            'Dim Ans_Taxi_Rmks_5 As New TextBox
-            'Ans_Taxi_Rmks_5.Text = Me.ANS_TAXI_RMKS_5
-            ANS_TAXI_RMKS_5.Visible = True
-            ANS_TAXI_RMKS_5.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_5.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_5.CanGrow = True
-            ANS_TAXI_RMKS_5.CanShrink = True
-            ANS_TAXI_RMKS_5.WordWrap = False
-            ANS_TAXI_RMKS_5.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_5)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2005,27 +1838,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_6.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_6_Title As New Label
             Ans_Taxi_Date_6_Title.Visible = True
             Ans_Taxi_Date_6_Title.Text = "利用日："
             Ans_Taxi_Date_6_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_6_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_6_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_6_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_6_Title)
 
-            'Dim Ans_Taxi_Date_6 As New TextBox
             ANS_TAXI_DATE_6.Visible = True
             ANS_TAXI_DATE_6.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_6.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_6.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2035,9 +1863,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_6.WordWrap = False
             ANS_TAXI_DATE_6.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_6.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_6)
 
-            'Dim Ans_Taxi_Kenshu_6 As New TextBox
             ANS_TAXI_KENSHU_6.Visible = True
             ANS_TAXI_KENSHU_6.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_6.Text)
             ANS_TAXI_KENSHU_6.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2047,19 +1873,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_6.WordWrap = False
             ANS_TAXI_KENSHU_6.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_6.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_6)
 
-            'Dim Ans_Taxi_No_6_Title As New Label
             Ans_Taxi_No_6_Title.Visible = True
             Ans_Taxi_No_6_Title.Text = "チケット番号："
             Ans_Taxi_No_6_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_6_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_6_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_6_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_6_Title)
 
-            'Dim ANS_TAXI_NO_6 As New TextBox
-            'ANS_TAXI_NO_6.Text = Me.ANS_TAXI_NO_6
             ANS_TAXI_NO_6.Visible = True
             ANS_TAXI_NO_6.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_6.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2068,28 +1889,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_6.WordWrap = False
             ANS_TAXI_NO_6.Alignment = TextAlignment.Left
             ANS_TAXI_NO_6.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_6)
-
-            'Dim Ans_Taxi_Rmks_6_Title As New Label
-            Ans_Taxi_Rmks_6_Title.Visible = True
-            Ans_Taxi_Rmks_6_Title.Text = "備考："
-            Ans_Taxi_Rmks_6_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_6_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_6_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_6_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_6_Title)
-
-            'Dim Ans_Taxi_Rmks_6 As New TextBox
-            'Ans_Taxi_Rmks_6.Text = Me.ANS_TAXI_RMKS_6
-            ANS_TAXI_RMKS_6.Visible = True
-            ANS_TAXI_RMKS_6.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_6.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_6.CanGrow = True
-            ANS_TAXI_RMKS_6.CanShrink = True
-            ANS_TAXI_RMKS_6.WordWrap = False
-            ANS_TAXI_RMKS_6.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_6.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_6)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2099,27 +1898,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_7.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_7_Title As New Label
             Ans_Taxi_Date_7_Title.Visible = True
             Ans_Taxi_Date_7_Title.Text = "利用日："
             Ans_Taxi_Date_7_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_7_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_7_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_7_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_7_Title)
 
-            'Dim Ans_Taxi_Date_7 As New TextBox
             ANS_TAXI_DATE_7.Visible = True
             ANS_TAXI_DATE_7.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_7.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_7.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2129,9 +1923,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_7.WordWrap = False
             ANS_TAXI_DATE_7.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_7.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_7)
 
-            'Dim Ans_Taxi_Kenshu_7 As New TextBox
             ANS_TAXI_KENSHU_7.Visible = True
             ANS_TAXI_KENSHU_7.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_7.Text)
             ANS_TAXI_KENSHU_7.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2141,19 +1933,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_7.WordWrap = False
             ANS_TAXI_KENSHU_7.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_7.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_7)
 
-            'Dim Ans_Taxi_No_7_Title As New Label
             Ans_Taxi_No_7_Title.Visible = True
             Ans_Taxi_No_7_Title.Text = "チケット番号："
             Ans_Taxi_No_7_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_7_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_7_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_7_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_7_Title)
 
-            'Dim ANS_TAXI_NO_7 As New TextBox
-            'ANS_TAXI_NO_7.Text = Me.ANS_TAXI_NO_7
             ANS_TAXI_NO_7.Visible = True
             ANS_TAXI_NO_7.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_7.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2162,28 +1949,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_7.WordWrap = False
             ANS_TAXI_NO_7.Alignment = TextAlignment.Left
             ANS_TAXI_NO_7.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_7)
-
-            'Dim Ans_Taxi_Rmks_7_Title As New Label
-            Ans_Taxi_Rmks_7_Title.Visible = True
-            Ans_Taxi_Rmks_7_Title.Text = "備考："
-            Ans_Taxi_Rmks_7_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_7_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_7_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_7_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_7_Title)
-
-            'Dim Ans_Taxi_Rmks_7 As New TextBox
-            'Ans_Taxi_Rmks_7.Text = Me.ANS_TAXI_RMKS_7
-            ANS_TAXI_RMKS_7.Visible = True
-            ANS_TAXI_RMKS_7.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_7.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_7.CanGrow = True
-            ANS_TAXI_RMKS_7.CanShrink = True
-            ANS_TAXI_RMKS_7.WordWrap = False
-            ANS_TAXI_RMKS_7.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_7.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_7)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2193,27 +1958,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_8.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_8_Title As New Label
             Ans_Taxi_Date_8_Title.Visible = True
             Ans_Taxi_Date_8_Title.Text = "利用日："
             Ans_Taxi_Date_8_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_8_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_8_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_8_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_8_Title)
 
-            'Dim Ans_Taxi_Date_8 As New TextBox
             ANS_TAXI_DATE_8.Visible = True
             ANS_TAXI_DATE_8.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_8.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_8.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2223,9 +1983,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_8.WordWrap = False
             ANS_TAXI_DATE_8.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_8.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_8)
 
-            'Dim Ans_Taxi_Kenshu_8 As New TextBox
             ANS_TAXI_KENSHU_8.Visible = True
             ANS_TAXI_KENSHU_8.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_8.Text)
             ANS_TAXI_KENSHU_8.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2235,19 +1993,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_8.WordWrap = False
             ANS_TAXI_KENSHU_8.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_8.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_8)
 
-            'Dim Ans_Taxi_No_8_Title As New Label
             Ans_Taxi_No_8_Title.Visible = True
             Ans_Taxi_No_8_Title.Text = "チケット番号："
             Ans_Taxi_No_8_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_8_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_8_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_8_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_8_Title)
 
-            'Dim ANS_TAXI_NO_8 As New TextBox
-            'ANS_TAXI_NO_8.Text = Me.ANS_TAXI_NO_8
             ANS_TAXI_NO_8.Visible = True
             ANS_TAXI_NO_8.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_8.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2256,28 +2009,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_8.WordWrap = False
             ANS_TAXI_NO_8.Alignment = TextAlignment.Left
             ANS_TAXI_NO_8.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_8)
-
-            'Dim Ans_Taxi_Rmks_8_Title As New Label
-            Ans_Taxi_Rmks_8_Title.Visible = True
-            Ans_Taxi_Rmks_8_Title.Text = "備考："
-            Ans_Taxi_Rmks_8_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_8_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_8_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_8_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_8_Title)
-
-            'Dim Ans_Taxi_Rmks_8 As New TextBox
-            'Ans_Taxi_Rmks_8.Text = Me.ANS_TAXI_RMKS_8
-            ANS_TAXI_RMKS_8.Visible = True
-            ANS_TAXI_RMKS_8.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_8.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_8.CanGrow = True
-            ANS_TAXI_RMKS_8.CanShrink = True
-            ANS_TAXI_RMKS_8.WordWrap = False
-            ANS_TAXI_RMKS_8.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_8.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_8)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2287,27 +2018,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_9.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_9_Title As New Label
             Ans_Taxi_Date_9_Title.Visible = True
             Ans_Taxi_Date_9_Title.Text = "利用日："
             Ans_Taxi_Date_9_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_9_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_9_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_9_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_9_Title)
 
-            'Dim Ans_Taxi_Date_9 As New TextBox
             ANS_TAXI_DATE_9.Visible = True
             ANS_TAXI_DATE_9.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_9.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_9.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2317,9 +2043,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_9.WordWrap = False
             ANS_TAXI_DATE_9.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_9.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_9)
 
-            'Dim Ans_Taxi_Kenshu_9 As New TextBox
             ANS_TAXI_KENSHU_9.Visible = True
             ANS_TAXI_KENSHU_9.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_9.Text)
             ANS_TAXI_KENSHU_9.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2329,19 +2053,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_9.WordWrap = False
             ANS_TAXI_KENSHU_9.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_9.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_9)
 
-            'Dim Ans_Taxi_No_9_Title As New Label
             Ans_Taxi_No_9_Title.Visible = True
             Ans_Taxi_No_9_Title.Text = "チケット番号："
             Ans_Taxi_No_9_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_9_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_9_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_9_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_9_Title)
 
-            'Dim ANS_TAXI_NO_9 As New TextBox
-            'ANS_TAXI_NO_9.Text = Me.ANS_TAXI_NO_9
             ANS_TAXI_NO_9.Visible = True
             ANS_TAXI_NO_9.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_9.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2350,28 +2069,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_9.WordWrap = False
             ANS_TAXI_NO_9.Alignment = TextAlignment.Left
             ANS_TAXI_NO_9.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_9)
-
-            'Dim Ans_Taxi_Rmks_9_Title As New Label
-            Ans_Taxi_Rmks_9_Title.Visible = True
-            Ans_Taxi_Rmks_9_Title.Text = "備考："
-            Ans_Taxi_Rmks_9_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_9_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_9_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_9_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_9_Title)
-
-            'Dim Ans_Taxi_Rmks_9 As New TextBox
-            'Ans_Taxi_Rmks_9.Text = Me.ANS_TAXI_RMKS_9
-            ANS_TAXI_RMKS_9.Visible = True
-            ANS_TAXI_RMKS_9.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_9.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_9.CanGrow = True
-            ANS_TAXI_RMKS_9.CanShrink = True
-            ANS_TAXI_RMKS_9.WordWrap = False
-            ANS_TAXI_RMKS_9.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_9.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_9)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2381,27 +2078,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_10.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_10_Title As New Label
             Ans_Taxi_Date_10_Title.Visible = True
             Ans_Taxi_Date_10_Title.Text = "利用日："
             Ans_Taxi_Date_10_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_10_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_10_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_10_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_10_Title)
 
-            'Dim Ans_Taxi_Date_10 As New TextBox
             ANS_TAXI_DATE_10.Visible = True
             ANS_TAXI_DATE_10.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_10.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_10.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2411,9 +2103,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_10.WordWrap = False
             ANS_TAXI_DATE_10.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_10.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_10)
 
-            'Dim Ans_Taxi_Kenshu_10 As New TextBox
             ANS_TAXI_KENSHU_10.Visible = True
             ANS_TAXI_KENSHU_10.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_10.Text)
             ANS_TAXI_KENSHU_10.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2423,19 +2113,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_10.WordWrap = False
             ANS_TAXI_KENSHU_10.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_10.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_10)
 
-            'Dim Ans_Taxi_No_10_Title As New Label
             Ans_Taxi_No_10_Title.Visible = True
             Ans_Taxi_No_10_Title.Text = "チケット番号："
             Ans_Taxi_No_10_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_10_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_10_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_10_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_10_Title)
 
-            'Dim ANS_TAXI_NO_10 As New TextBox
-            'ANS_TAXI_NO_10.Text = Me.ANS_TAXI_NO_10
             ANS_TAXI_NO_10.Visible = True
             ANS_TAXI_NO_10.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_10.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2444,28 +2129,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_10.WordWrap = False
             ANS_TAXI_NO_10.Alignment = TextAlignment.Left
             ANS_TAXI_NO_10.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_10)
-
-            'Dim Ans_Taxi_Rmks_10_Title As New Label
-            Ans_Taxi_Rmks_10_Title.Visible = True
-            Ans_Taxi_Rmks_10_Title.Text = "備考："
-            Ans_Taxi_Rmks_10_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_10_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_10_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_10_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_10_Title)
-
-            'Dim Ans_Taxi_Rmks_10 As New TextBox
-            'Ans_Taxi_Rmks_10.Text = Me.ANS_TAXI_RMKS_10
-            ANS_TAXI_RMKS_10.Visible = True
-            ANS_TAXI_RMKS_10.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_10.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_10.CanGrow = True
-            ANS_TAXI_RMKS_10.CanShrink = True
-            ANS_TAXI_RMKS_10.WordWrap = False
-            ANS_TAXI_RMKS_10.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_10.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_10)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2475,27 +2138,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_11.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_11_Title As New Label
             Ans_Taxi_Date_11_Title.Visible = True
             Ans_Taxi_Date_11_Title.Text = "利用日："
             Ans_Taxi_Date_11_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_11_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_11_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_11_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_11_Title)
 
-            'Dim Ans_Taxi_Date_11 As New TextBox
             ANS_TAXI_DATE_11.Visible = True
             ANS_TAXI_DATE_11.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_11.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_11.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2505,9 +2163,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_11.WordWrap = False
             ANS_TAXI_DATE_11.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_11.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_11)
 
-            'Dim Ans_Taxi_Kenshu_11 As New TextBox
             ANS_TAXI_KENSHU_11.Visible = True
             ANS_TAXI_KENSHU_11.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_11.Text)
             ANS_TAXI_KENSHU_11.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2517,19 +2173,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_11.WordWrap = False
             ANS_TAXI_KENSHU_11.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_11.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_11)
 
-            'Dim Ans_Taxi_No_11_Title As New Label
             Ans_Taxi_No_11_Title.Visible = True
             Ans_Taxi_No_11_Title.Text = "チケット番号："
             Ans_Taxi_No_11_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_11_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_11_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_11_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_11_Title)
 
-            'Dim ANS_TAXI_NO_11 As New TextBox
-            'ANS_TAXI_NO_11.Text = Me.ANS_TAXI_NO_11
             ANS_TAXI_NO_11.Visible = True
             ANS_TAXI_NO_11.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_11.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2538,28 +2189,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_11.WordWrap = False
             ANS_TAXI_NO_11.Alignment = TextAlignment.Left
             ANS_TAXI_NO_11.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_11)
-
-            'Dim Ans_Taxi_Rmks_11_Title As New Label
-            Ans_Taxi_Rmks_11_Title.Visible = True
-            Ans_Taxi_Rmks_11_Title.Text = "備考："
-            Ans_Taxi_Rmks_11_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_11_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_11_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_11_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_11_Title)
-
-            'Dim Ans_Taxi_Rmks_11 As New TextBox
-            'Ans_Taxi_Rmks_11.Text = Me.ANS_TAXI_RMKS_11
-            ANS_TAXI_RMKS_11.Visible = True
-            ANS_TAXI_RMKS_11.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_11.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_11.CanGrow = True
-            ANS_TAXI_RMKS_11.CanShrink = True
-            ANS_TAXI_RMKS_11.WordWrap = False
-            ANS_TAXI_RMKS_11.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_11.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_11)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2569,27 +2198,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_12.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_12_Title As New Label
             Ans_Taxi_Date_12_Title.Visible = True
             Ans_Taxi_Date_12_Title.Text = "利用日："
             Ans_Taxi_Date_12_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_12_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_12_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_12_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_12_Title)
 
-            'Dim Ans_Taxi_Date_12 As New TextBox
             ANS_TAXI_DATE_12.Visible = True
             ANS_TAXI_DATE_12.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_12.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_12.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2599,9 +2223,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_12.WordWrap = False
             ANS_TAXI_DATE_12.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_12.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_12)
 
-            'Dim Ans_Taxi_Kenshu_12 As New TextBox
             ANS_TAXI_KENSHU_12.Visible = True
             ANS_TAXI_KENSHU_12.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_12.Text)
             ANS_TAXI_KENSHU_12.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2611,19 +2233,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_12.WordWrap = False
             ANS_TAXI_KENSHU_12.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_12.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_12)
 
-            'Dim Ans_Taxi_No_12_Title As New Label
             Ans_Taxi_No_12_Title.Visible = True
             Ans_Taxi_No_12_Title.Text = "チケット番号："
             Ans_Taxi_No_12_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_12_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_12_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_12_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_12_Title)
 
-            'Dim ANS_TAXI_NO_12 As New TextBox
-            'ANS_TAXI_NO_12.Text = Me.ANS_TAXI_NO_12
             ANS_TAXI_NO_12.Visible = True
             ANS_TAXI_NO_12.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_12.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2632,28 +2249,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_12.WordWrap = False
             ANS_TAXI_NO_12.Alignment = TextAlignment.Left
             ANS_TAXI_NO_12.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_12)
-
-            'Dim Ans_Taxi_Rmks_12_Title As New Label
-            Ans_Taxi_Rmks_12_Title.Visible = True
-            Ans_Taxi_Rmks_12_Title.Text = "備考："
-            Ans_Taxi_Rmks_12_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_12_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_12_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_12_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_12_Title)
-
-            'Dim Ans_Taxi_Rmks_12 As New TextBox
-            'Ans_Taxi_Rmks_12.Text = Me.ANS_TAXI_RMKS_12
-            ANS_TAXI_RMKS_12.Visible = True
-            ANS_TAXI_RMKS_12.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_12.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_12.CanGrow = True
-            ANS_TAXI_RMKS_12.CanShrink = True
-            ANS_TAXI_RMKS_12.WordWrap = False
-            ANS_TAXI_RMKS_12.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_12.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_12)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2663,27 +2258,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_13.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_13_Title As New Label
             Ans_Taxi_Date_13_Title.Visible = True
             Ans_Taxi_Date_13_Title.Text = "利用日："
             Ans_Taxi_Date_13_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_13_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_13_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_13_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_13_Title)
 
-            'Dim Ans_Taxi_Date_13 As New TextBox
             ANS_TAXI_DATE_13.Visible = True
             ANS_TAXI_DATE_13.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_13.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_13.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2693,9 +2283,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_13.WordWrap = False
             ANS_TAXI_DATE_13.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_13.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_13)
 
-            'Dim Ans_Taxi_Kenshu_13 As New TextBox
             ANS_TAXI_KENSHU_13.Visible = True
             ANS_TAXI_KENSHU_13.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_13.Text)
             ANS_TAXI_KENSHU_13.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2705,19 +2293,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_13.WordWrap = False
             ANS_TAXI_KENSHU_13.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_13.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_13)
 
-            'Dim Ans_Taxi_No_13_Title As New Label
             Ans_Taxi_No_13_Title.Visible = True
             Ans_Taxi_No_13_Title.Text = "チケット番号："
             Ans_Taxi_No_13_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_13_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_13_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_13_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_13_Title)
 
-            'Dim ANS_TAXI_NO_13 As New TextBox
-            'ANS_TAXI_NO_13.Text = Me.ANS_TAXI_NO_13
             ANS_TAXI_NO_13.Visible = True
             ANS_TAXI_NO_13.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_13.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2726,28 +2309,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_13.WordWrap = False
             ANS_TAXI_NO_13.Alignment = TextAlignment.Left
             ANS_TAXI_NO_13.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_13)
-
-            'Dim Ans_Taxi_Rmks_13_Title As New Label
-            Ans_Taxi_Rmks_13_Title.Visible = True
-            Ans_Taxi_Rmks_13_Title.Text = "備考："
-            Ans_Taxi_Rmks_13_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_13_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_13_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_13_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_13_Title)
-
-            'Dim Ans_Taxi_Rmks_13 As New TextBox
-            'Ans_Taxi_Rmks_13.Text = Me.ANS_TAXI_RMKS_13
-            ANS_TAXI_RMKS_13.Visible = True
-            ANS_TAXI_RMKS_13.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_13.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_13.CanGrow = True
-            ANS_TAXI_RMKS_13.CanShrink = True
-            ANS_TAXI_RMKS_13.WordWrap = False
-            ANS_TAXI_RMKS_13.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_13.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_13)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2757,27 +2318,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_14.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_14_Title As New Label
             Ans_Taxi_Date_14_Title.Visible = True
             Ans_Taxi_Date_14_Title.Text = "利用日："
             Ans_Taxi_Date_14_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_14_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_14_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_14_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_14_Title)
 
-            'Dim Ans_Taxi_Date_14 As New TextBox
             ANS_TAXI_DATE_14.Visible = True
             ANS_TAXI_DATE_14.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_14.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_14.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2787,9 +2343,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_14.WordWrap = False
             ANS_TAXI_DATE_14.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_14.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_14)
 
-            'Dim Ans_Taxi_Kenshu_14 As New TextBox
             ANS_TAXI_KENSHU_14.Visible = True
             ANS_TAXI_KENSHU_14.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_14.Text)
             ANS_TAXI_KENSHU_14.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2799,19 +2353,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_14.WordWrap = False
             ANS_TAXI_KENSHU_14.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_14.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_14)
 
-            'Dim Ans_Taxi_No_14_Title As New Label
             Ans_Taxi_No_14_Title.Visible = True
             Ans_Taxi_No_14_Title.Text = "チケット番号："
             Ans_Taxi_No_14_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_14_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_14_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_14_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_14_Title)
 
-            'Dim ANS_TAXI_NO_14 As New TextBox
-            'ANS_TAXI_NO_14.Text = Me.ANS_TAXI_NO_14
             ANS_TAXI_NO_14.Visible = True
             ANS_TAXI_NO_14.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_14.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2820,28 +2369,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_14.WordWrap = False
             ANS_TAXI_NO_14.Alignment = TextAlignment.Left
             ANS_TAXI_NO_14.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_14)
-
-            'Dim Ans_Taxi_Rmks_14_Title As New Label
-            Ans_Taxi_Rmks_14_Title.Visible = True
-            Ans_Taxi_Rmks_14_Title.Text = "備考："
-            Ans_Taxi_Rmks_14_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_14_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_14_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_14_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_14_Title)
-
-            'Dim Ans_Taxi_Rmks_14 As New TextBox
-            'Ans_Taxi_Rmks_14.Text = Me.ANS_TAXI_RMKS_14
-            ANS_TAXI_RMKS_14.Visible = True
-            ANS_TAXI_RMKS_14.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_14.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_14.CanGrow = True
-            ANS_TAXI_RMKS_14.CanShrink = True
-            ANS_TAXI_RMKS_14.WordWrap = False
-            ANS_TAXI_RMKS_14.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_14.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_14)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2851,27 +2378,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_15.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_15_Title As New Label
             Ans_Taxi_Date_15_Title.Visible = True
             Ans_Taxi_Date_15_Title.Text = "利用日："
             Ans_Taxi_Date_15_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_15_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_15_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_15_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_15_Title)
 
-            'Dim Ans_Taxi_Date_15 As New TextBox
             ANS_TAXI_DATE_15.Visible = True
             ANS_TAXI_DATE_15.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_15.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_15.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2881,9 +2403,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_15.WordWrap = False
             ANS_TAXI_DATE_15.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_15.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_15)
 
-            'Dim Ans_Taxi_Kenshu_15 As New TextBox
             ANS_TAXI_KENSHU_15.Visible = True
             ANS_TAXI_KENSHU_15.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_15.Text)
             ANS_TAXI_KENSHU_15.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2893,19 +2413,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_15.WordWrap = False
             ANS_TAXI_KENSHU_15.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_15.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_15)
 
-            'Dim Ans_Taxi_No_15_Title As New Label
             Ans_Taxi_No_15_Title.Visible = True
             Ans_Taxi_No_15_Title.Text = "チケット番号："
             Ans_Taxi_No_15_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_15_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_15_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_15_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_15_Title)
 
-            'Dim ANS_TAXI_NO_15 As New TextBox
-            'ANS_TAXI_NO_15.Text = Me.ANS_TAXI_NO_15
             ANS_TAXI_NO_15.Visible = True
             ANS_TAXI_NO_15.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_15.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -2914,28 +2429,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_15.WordWrap = False
             ANS_TAXI_NO_15.Alignment = TextAlignment.Left
             ANS_TAXI_NO_15.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_15)
-
-            'Dim Ans_Taxi_Rmks_15_Title As New Label
-            Ans_Taxi_Rmks_15_Title.Visible = True
-            Ans_Taxi_Rmks_15_Title.Text = "備考："
-            Ans_Taxi_Rmks_15_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_15_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_15_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_15_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_15_Title)
-
-            'Dim Ans_Taxi_Rmks_15 As New TextBox
-            'Ans_Taxi_Rmks_15.Text = Me.ANS_TAXI_RMKS_15
-            ANS_TAXI_RMKS_15.Visible = True
-            ANS_TAXI_RMKS_15.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_15.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_15.CanGrow = True
-            ANS_TAXI_RMKS_15.CanShrink = True
-            ANS_TAXI_RMKS_15.WordWrap = False
-            ANS_TAXI_RMKS_15.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_15.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_15)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -2945,27 +2438,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_16.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_16_Title As New Label
             Ans_Taxi_Date_16_Title.Visible = True
             Ans_Taxi_Date_16_Title.Text = "利用日："
             Ans_Taxi_Date_16_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_16_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_16_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_16_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_16_Title)
 
-            'Dim Ans_Taxi_Date_16 As New TextBox
             ANS_TAXI_DATE_16.Visible = True
             ANS_TAXI_DATE_16.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_16.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_16.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -2975,9 +2463,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_16.WordWrap = False
             ANS_TAXI_DATE_16.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_16.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_16)
 
-            'Dim Ans_Taxi_Kenshu_16 As New TextBox
             ANS_TAXI_KENSHU_16.Visible = True
             ANS_TAXI_KENSHU_16.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_16.Text)
             ANS_TAXI_KENSHU_16.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -2987,19 +2473,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_16.WordWrap = False
             ANS_TAXI_KENSHU_16.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_16.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_16)
 
-            'Dim Ans_Taxi_No_16_Title As New Label
             Ans_Taxi_No_16_Title.Visible = True
             Ans_Taxi_No_16_Title.Text = "チケット番号："
             Ans_Taxi_No_16_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_16_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_16_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_16_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_16_Title)
 
-            'Dim ANS_TAXI_NO_16 As New TextBox
-            'ANS_TAXI_NO_16.Text = Me.ANS_TAXI_NO_16
             ANS_TAXI_NO_16.Visible = True
             ANS_TAXI_NO_16.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_16.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -3008,28 +2489,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_16.WordWrap = False
             ANS_TAXI_NO_16.Alignment = TextAlignment.Left
             ANS_TAXI_NO_16.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_16)
-
-            'Dim Ans_Taxi_Rmks_16_Title As New Label
-            Ans_Taxi_Rmks_16_Title.Visible = True
-            Ans_Taxi_Rmks_16_Title.Text = "備考："
-            Ans_Taxi_Rmks_16_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_16_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_16_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_16_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_16_Title)
-
-            'Dim Ans_Taxi_Rmks_16 As New TextBox
-            'Ans_Taxi_Rmks_16.Text = Me.ANS_TAXI_RMKS_16
-            ANS_TAXI_RMKS_16.Visible = True
-            ANS_TAXI_RMKS_16.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_16.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_16.CanGrow = True
-            ANS_TAXI_RMKS_16.CanShrink = True
-            ANS_TAXI_RMKS_16.WordWrap = False
-            ANS_TAXI_RMKS_16.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_16.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_16)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -3039,27 +2498,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_17.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_17_Title As New Label
             Ans_Taxi_Date_17_Title.Visible = True
             Ans_Taxi_Date_17_Title.Text = "利用日："
             Ans_Taxi_Date_17_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_17_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_17_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_17_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_17_Title)
 
-            'Dim Ans_Taxi_Date_17 As New TextBox
             ANS_TAXI_DATE_17.Visible = True
             ANS_TAXI_DATE_17.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_17.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_17.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -3069,9 +2523,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_17.WordWrap = False
             ANS_TAXI_DATE_17.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_17.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_17)
 
-            'Dim Ans_Taxi_Kenshu_17 As New TextBox
             ANS_TAXI_KENSHU_17.Visible = True
             ANS_TAXI_KENSHU_17.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_17.Text)
             ANS_TAXI_KENSHU_17.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -3081,19 +2533,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_17.WordWrap = False
             ANS_TAXI_KENSHU_17.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_17.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_17)
 
-            'Dim Ans_Taxi_No_17_Title As New Label
             Ans_Taxi_No_17_Title.Visible = True
             Ans_Taxi_No_17_Title.Text = "チケット番号："
             Ans_Taxi_No_17_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_17_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_17_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_17_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_17_Title)
 
-            'Dim ANS_TAXI_NO_17 As New TextBox
-            'ANS_TAXI_NO_17.Text = Me.ANS_TAXI_NO_17
             ANS_TAXI_NO_17.Visible = True
             ANS_TAXI_NO_17.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_17.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -3102,28 +2549,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_17.WordWrap = False
             ANS_TAXI_NO_17.Alignment = TextAlignment.Left
             ANS_TAXI_NO_17.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_17)
-
-            'Dim Ans_Taxi_Rmks_17_Title As New Label
-            Ans_Taxi_Rmks_17_Title.Visible = True
-            Ans_Taxi_Rmks_17_Title.Text = "備考："
-            Ans_Taxi_Rmks_17_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_17_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_17_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_17_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_17_Title)
-
-            'Dim Ans_Taxi_Rmks_17 As New TextBox
-            'Ans_Taxi_Rmks_17.Text = Me.ANS_TAXI_RMKS_17
-            ANS_TAXI_RMKS_17.Visible = True
-            ANS_TAXI_RMKS_17.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_17.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_17.CanGrow = True
-            ANS_TAXI_RMKS_17.CanShrink = True
-            ANS_TAXI_RMKS_17.WordWrap = False
-            ANS_TAXI_RMKS_17.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_17.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_17)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -3133,27 +2558,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_18.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_18_Title As New Label
             Ans_Taxi_Date_18_Title.Visible = True
             Ans_Taxi_Date_18_Title.Text = "利用日："
             Ans_Taxi_Date_18_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_18_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_18_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_18_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_18_Title)
 
-            'Dim Ans_Taxi_Date_18 As New TextBox
             ANS_TAXI_DATE_18.Visible = True
             ANS_TAXI_DATE_18.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_18.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_18.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -3163,9 +2583,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_18.WordWrap = False
             ANS_TAXI_DATE_18.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_18.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_18)
 
-            'Dim Ans_Taxi_Kenshu_18 As New TextBox
             ANS_TAXI_KENSHU_18.Visible = True
             ANS_TAXI_KENSHU_18.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_18.Text)
             ANS_TAXI_KENSHU_18.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -3175,19 +2593,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_18.WordWrap = False
             ANS_TAXI_KENSHU_18.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_18.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_18)
 
-            'Dim Ans_Taxi_No_18_Title As New Label
             Ans_Taxi_No_18_Title.Visible = True
             Ans_Taxi_No_18_Title.Text = "チケット番号："
             Ans_Taxi_No_18_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_18_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_18_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_18_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_18_Title)
 
-            'Dim ANS_TAXI_NO_18 As New TextBox
-            'ANS_TAXI_NO_18.Text = Me.ANS_TAXI_NO_18
             ANS_TAXI_NO_18.Visible = True
             ANS_TAXI_NO_18.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_18.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -3196,28 +2609,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_18.WordWrap = False
             ANS_TAXI_NO_18.Alignment = TextAlignment.Left
             ANS_TAXI_NO_18.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_18)
-
-            'Dim Ans_Taxi_Rmks_18_Title As New Label
-            Ans_Taxi_Rmks_18_Title.Visible = True
-            Ans_Taxi_Rmks_18_Title.Text = "備考："
-            Ans_Taxi_Rmks_18_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_18_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_18_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_18_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_18_Title)
-
-            'Dim Ans_Taxi_Rmks_18 As New TextBox
-            'Ans_Taxi_Rmks_18.Text = Me.ANS_TAXI_RMKS_18
-            ANS_TAXI_RMKS_18.Visible = True
-            ANS_TAXI_RMKS_18.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_18.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_18.CanGrow = True
-            ANS_TAXI_RMKS_18.CanShrink = True
-            ANS_TAXI_RMKS_18.WordWrap = False
-            ANS_TAXI_RMKS_18.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_18.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_18)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -3227,27 +2618,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_19.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_19_Title As New Label
             Ans_Taxi_Date_19_Title.Visible = True
             Ans_Taxi_Date_19_Title.Text = "利用日："
             Ans_Taxi_Date_19_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_19_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_19_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_19_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_19_Title)
 
-            'Dim Ans_Taxi_Date_19 As New TextBox
             ANS_TAXI_DATE_19.Visible = True
             ANS_TAXI_DATE_19.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_19.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_19.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -3257,9 +2643,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_19.WordWrap = False
             ANS_TAXI_DATE_19.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_19.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_19)
 
-            'Dim Ans_Taxi_Kenshu_19 As New TextBox
             ANS_TAXI_KENSHU_19.Visible = True
             ANS_TAXI_KENSHU_19.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_19.Text)
             ANS_TAXI_KENSHU_19.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -3269,19 +2653,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_19.WordWrap = False
             ANS_TAXI_KENSHU_19.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_19.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_19)
 
-            'Dim Ans_Taxi_No_19_Title As New Label
             Ans_Taxi_No_19_Title.Visible = True
             Ans_Taxi_No_19_Title.Text = "チケット番号："
             Ans_Taxi_No_19_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_19_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_19_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_19_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_19_Title)
 
-            'Dim ANS_TAXI_NO_19 As New TextBox
-            'ANS_TAXI_NO_19.Text = Me.ANS_TAXI_NO_19
             ANS_TAXI_NO_19.Visible = True
             ANS_TAXI_NO_19.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_19.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -3290,28 +2669,6 @@ Public Class DrSoufujo
             ANS_TAXI_NO_19.WordWrap = False
             ANS_TAXI_NO_19.Alignment = TextAlignment.Left
             ANS_TAXI_NO_19.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_19)
-
-            'Dim Ans_Taxi_Rmks_19_Title As New Label
-            Ans_Taxi_Rmks_19_Title.Visible = True
-            Ans_Taxi_Rmks_19_Title.Text = "備考："
-            Ans_Taxi_Rmks_19_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_19_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_19_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_19_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_19_Title)
-
-            'Dim Ans_Taxi_Rmks_19 As New TextBox
-            'Ans_Taxi_Rmks_19.Text = Me.ANS_TAXI_RMKS_19
-            ANS_TAXI_RMKS_19.Visible = True
-            ANS_TAXI_RMKS_19.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_19.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_19.CanGrow = True
-            ANS_TAXI_RMKS_19.CanShrink = True
-            ANS_TAXI_RMKS_19.WordWrap = False
-            ANS_TAXI_RMKS_19.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_19.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_19)
 
             RowNo += 1
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -3321,27 +2678,22 @@ Public Class DrSoufujo
         If Me.ANS_TAXI_DATE_20.Text.Trim <> "" Then
             If Not TaxiFlg Then
                 TaxiFlg = True
-                'Dim TaxiTitle As New Label
                 TaxiTitle.Visible = True
                 TaxiTitle.Text = "【タクシーチケット】"
                 TaxiTitle.Size = New System.Drawing.SizeF(Me.CmToInch(4), Me.CmToInch(RowHeight))
                 TaxiTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 TaxiTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(TaxiTitle)
 
                 RowNo += 1
             End If
 
-            'Dim Ans_Taxi_Date_20_Title As New Label
             Ans_Taxi_Date_20_Title.Visible = True
             Ans_Taxi_Date_20_Title.Text = "利用日："
             Ans_Taxi_Date_20_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth1), Me.CmToInch(RowHeight))
             Ans_Taxi_Date_20_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_Date_20_Title.Alignment = TextAlignment.Left
             Ans_Taxi_Date_20_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_20_Title)
 
-            'Dim Ans_Taxi_Date_20 As New TextBox
             ANS_TAXI_DATE_20.Visible = True
             ANS_TAXI_DATE_20.Text = CmnModule.Format_DateJP(Me.ANS_TAXI_DATE_20.Text, CmnModule.DateFormatType.MD)
             ANS_TAXI_DATE_20.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth1), Me.CmToInch(RowHeight))
@@ -3351,9 +2703,7 @@ Public Class DrSoufujo
             ANS_TAXI_DATE_20.WordWrap = False
             ANS_TAXI_DATE_20.Alignment = TextAlignment.Left
             ANS_TAXI_DATE_20.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Date_20)
 
-            'Dim Ans_Taxi_Kenshu_20 As New TextBox
             ANS_TAXI_KENSHU_20.Visible = True
             ANS_TAXI_KENSHU_20.Text = AppModule.GetName_ANS_TAXI_KENSHU(Me.ANS_TAXI_KENSHU_20.Text)
             ANS_TAXI_KENSHU_20.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth2), Me.CmToInch(RowHeight))
@@ -3363,19 +2713,14 @@ Public Class DrSoufujo
             ANS_TAXI_KENSHU_20.WordWrap = False
             ANS_TAXI_KENSHU_20.Alignment = TextAlignment.Left
             ANS_TAXI_KENSHU_20.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Kenshu_20)
 
-            'Dim Ans_Taxi_No_20_Title As New Label
             Ans_Taxi_No_20_Title.Visible = True
             Ans_Taxi_No_20_Title.Text = "チケット番号："
             Ans_Taxi_No_20_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_Taxi_No_20_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_Taxi_No_20_Title.Alignment = TextAlignment.Left
             Ans_Taxi_No_20_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_No_20_Title)
 
-            'Dim ANS_TAXI_NO_20 As New TextBox
-            'ANS_TAXI_NO_20.Text = Me.ANS_TAXI_NO_20
             ANS_TAXI_NO_20.Visible = True
             ANS_TAXI_NO_20.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth3), Me.CmToInch(RowHeight))
             ANS_TAXI_NO_20.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -3384,96 +2729,83 @@ Public Class DrSoufujo
             ANS_TAXI_NO_20.WordWrap = False
             ANS_TAXI_NO_20.Alignment = TextAlignment.Left
             ANS_TAXI_NO_20.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(ANS_TAXI_NO_20)
-
-            'Dim Ans_Taxi_Rmks_20_Title As New Label
-            Ans_Taxi_Rmks_20_Title.Visible = True
-            Ans_Taxi_Rmks_20_Title.Text = "備考："
-            Ans_Taxi_Rmks_20_Title.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemTitleWidth3), Me.CmToInch(RowHeight))
-            Ans_Taxi_Rmks_20_Title.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
-            Ans_Taxi_Rmks_20_Title.Alignment = TextAlignment.Left
-            Ans_Taxi_Rmks_20_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_20_Title)
-
-            'Dim Ans_Taxi_Rmks_20 As New TextBox
-            'Ans_Taxi_Rmks_20.Text = Me.ANS_TAXI_RMKS_20
-            ANS_TAXI_RMKS_20.Visible = True
-            ANS_TAXI_RMKS_20.Size = New System.Drawing.SizeF(Me.CmToInch(TaxiItemWidth4), Me.CmToInch(RowHeight))
-            ANS_TAXI_RMKS_20.Location = New System.Drawing.PointF(Me.CmToInch(TaxiItemX4), Me.CmToInch(StartY + RowHeight * RowNo))
-            ANS_TAXI_RMKS_20.CanGrow = True
-            ANS_TAXI_RMKS_20.CanShrink = True
-            ANS_TAXI_RMKS_20.WordWrap = False
-            ANS_TAXI_RMKS_20.Alignment = TextAlignment.Left
-            ANS_TAXI_RMKS_20.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_Taxi_Rmks_20)
 
             RowNo += 1
-
-            TAXI_NOTES1.Visible = True
-            TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。"
-            TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
-            TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
-            TAXI_NOTES1.CanGrow = True
-            TAXI_NOTES1.CanShrink = True
-            TAXI_NOTES1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            '部分的に下線を引く
-            Dim currentSelectionStart1 As Integer = TAXI_NOTES1.SelectionStart
-            Dim currentSelectionLength1 As Integer = TAXI_NOTES1.SelectionLength
-            TAXI_NOTES1.SelectionStart = 14
-            TAXI_NOTES1.SelectionLength = 13
-            Dim baseFont1 As Font = TAXI_NOTES1.SelectionFont
-            Dim fnt1 As New Font(baseFont1.FontFamily, _
-                                baseFont1.Size, _
-                                baseFont1.Style Or FontStyle.Underline)
-            TAXI_NOTES1.SelectionFont = fnt1
-            baseFont1.Dispose()
-            fnt1.Dispose()
-            TAXI_NOTES1.SelectionStart = currentSelectionStart1
-            TAXI_NOTES1.SelectionLength = currentSelectionLength1
-
-
-            RowNo += 1
-
-            TAXI_NOTES2.Visible = True
-            TAXI_NOTES2.Text = "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。"
-            TAXI_NOTES2.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
-            TAXI_NOTES2.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
-            TAXI_NOTES2.CanGrow = True
-            TAXI_NOTES2.CanShrink = True
-            TAXI_NOTES2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-
-            RowNo += 1
-
-            TAXI_NOTES3.Visible = True
-            TAXI_NOTES3.Text = "重ねてご了承いただきますようお願い申し上げます。"
-            TAXI_NOTES3.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
-            TAXI_NOTES3.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
-            TAXI_NOTES3.CanGrow = True
-            TAXI_NOTES3.CanShrink = True
-            TAXI_NOTES3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-
-            RowNo += 2
 
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
         End If
+
+        If TaxiFlg Then
+            RowNo += 1
+            TAXI_NOTES_TITLE.Visible = TaxiFlg
+            TAXI_NOTES_TITLE.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
+            RowNo += 1
+
+            TAXI_NOTES1.Visible = True
+            TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
+                                & "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
+                                & "重ねてご了承いただきますようお願い申し上げます。"
+            TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
+            TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(NotesWidth), Me.CmToInch(RowHeight * 3))
+            Me.TAXI_NOTES1.SelectionStart = 0
+            Me.TAXI_NOTES1.SelectionLength = Me.TAXI_NOTES1.Text.Length
+            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+            '部分的に下線を引く
+            TAXI_NOTES1.SelectionStart = 14
+            TAXI_NOTES1.SelectionLength = 13
+            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+            TAXI_NOTES1.SelectionStart = 0
+            TAXI_NOTES1.SelectionLength = 0
+            RowNo += 3
+        End If
+
+        Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
     End Sub
 
     Private Sub GroupFooter1_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles GroupFooter1.Format
-        Me.JR_SETSUMEI1.Text = WebConfig.Site.JR_SETSUMEI1
-        Me.JR_SETSUMEI2.Text = WebConfig.Site.JR_SETSUMEI2
-        Me.JR_SETSUMEI3.Text = WebConfig.Site.JR_SETSUMEI3
-        Me.JR_SETSUMEI4.Text = WebConfig.Site.JR_SETSUMEI4
-        Me.AIR_SETSUMEI1.Text = WebConfig.Site.AIR_SETSUMEI1
-        Me.AIR_SETSUMEI2.Text = WebConfig.Site.AIR_SETSUMEI2
-        Me.AIR_SETSUMEI3.Text = WebConfig.Site.AIR_SETSUMEI3
-        Me.AIR_SETSUMEI4.Text = WebConfig.Site.AIR_SETSUMEI4
-        Me.AIR_SETSUMEI5.Text = WebConfig.Site.AIR_SETSUMEI5
-        Me.AIR_SETSUMEI6.Text = WebConfig.Site.AIR_SETSUMEI6
-        Me.OTHER_SETSUMEI1.Text = WebConfig.Site.OTHER_SETSUMEI1
-        Me.OTHER_SETSUMEI2.Text = WebConfig.Site.OTHER_SETSUMEI2
-        Me.FOOTER_SETSUMEI1.Text = WebConfig.Site.FOOTER_SETSUMEI1
-        Me.FOOTER_SETSUMEI2.Text = WebConfig.Site.FOOTER_SETSUMEI2
-        Me.FOOTER_SETSUMEI3.Text = WebConfig.Site.FOOTER_SETSUMEI3
-        Me.FOOTER_SETSUMEI4.Text = WebConfig.Site.FOOTER_SETSUMEI4
+        Me.JR_HENKOU.Text = "列車運行前、1回に限り無料で変更が可能です。但し、変更は原券がないと出来ません。お手数ですが、バイエル薬品担当者へお渡しいただくか、最寄のＪＲ「みどりの窓口」にてお手続き願います。" & vbNewLine _
+                            & "※乗車予定時間を過ぎた場合は、当日限り後続列車の自由席にご乗車いただけます。"
+        Me.JR_HENKOU.CanGrow = True
+        Me.JR_HENKOU.SelectionStart = 0
+        Me.JR_HENKOU.SelectionLength = Me.JR_HENKOU.Text.Length
+        Me.JR_HENKOU.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.JR_HENKOU.SelectionStart = 0
+        Me.JR_HENKOU.SelectionLength = 0
+
+        Me.JR_TORIKESHI.Text = "列車運行前までに、「みどりの窓口」で『取消手続』を行なった後、バイエル薬品担当者へチケットをお渡しください。その際は「みどりの窓口」では直接現金の払戻しは行なわず、『取消手続』のみを受けてください。列車発車後は利用便の変更、取消は出来ませんのでご注意ください。"
+        Me.JR_TORIKESHI.CanGrow = True
+        Me.JR_TORIKESHI.SelectionStart = 0
+        Me.JR_TORIKESHI.SelectionLength = Me.JR_TORIKESHI.Text.Length
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        '部分的に下線を引く
+        Me.JR_TORIKESHI.SelectionStart = 54
+        Me.JR_TORIKESHI.SelectionLength = 76
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.JR_TORIKESHI.SelectionStart = 0
+        Me.JR_TORIKESHI.SelectionLength = 0
+
+        Me.AIR_HENKO.Text = "便発着前、同じ区間の変更は何度でも可能です。" & vbNewLine _
+                            & "下記、航空会社への直接変更・取消のご連絡でも可能です。その際に係員がご案内する取消番号や予約番号はお控えください。"
+        Me.AIR_HENKO.CanGrow = True
+        Me.AIR_HENKO.SelectionStart = 0
+        Me.AIR_HENKO.SelectionLength = Me.AIR_HENKO.Text.Length
+        Me.AIR_HENKO.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.AIR_HENKO.SelectionStart = 0
+        Me.AIR_HENKO.SelectionLength = 0
+
+
+        Me.OTHER_NOTES.Text = "※ 取消し後のチケットは、ご利用日から5日以内にバイエル薬品担当者へお渡しください。"
+        Me.OTHER_NOTES.CanGrow = True
+        Me.OTHER_NOTES.SelectionStart = 0
+        Me.OTHER_NOTES.SelectionLength = Me.OTHER_NOTES.Text.Length
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.OTHER_NOTES.SelectionStart = 0
+        Me.OTHER_NOTES.SelectionLength = 0
+        '部分的に下線を引く
+        Me.OTHER_NOTES.SelectionStart = 19
+        Me.OTHER_NOTES.SelectionLength = 23
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.OTHER_NOTES.SelectionStart = 0
+        Me.OTHER_NOTES.SelectionLength = 0
     End Sub
 End Class

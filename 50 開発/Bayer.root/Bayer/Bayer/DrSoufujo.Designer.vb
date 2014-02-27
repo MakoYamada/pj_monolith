@@ -342,30 +342,54 @@ Partial Public Class DrSoufujo
         Me.AISATSU3 = New DataDynamics.ActiveReports.TextBox
         Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
         Me.Label9 = New DataDynamics.ActiveReports.Label
-        Me.JR_SETSUMEI1 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_SETSUMEI1 = New DataDynamics.ActiveReports.TextBox
-        Me.OTHER_SETSUMEI1 = New DataDynamics.ActiveReports.TextBox
-        Me.FOOTER_SETSUMEI1 = New DataDynamics.ActiveReports.TextBox
-        Me.JR_SETSUMEI2 = New DataDynamics.ActiveReports.TextBox
-        Me.JR_SETSUMEI3 = New DataDynamics.ActiveReports.TextBox
-        Me.JR_SETSUMEI4 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_SETSUMEI2 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_SETSUMEI3 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_SETSUMEI4 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_SETSUMEI5 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_SETSUMEI6 = New DataDynamics.ActiveReports.TextBox
-        Me.OTHER_SETSUMEI2 = New DataDynamics.ActiveReports.TextBox
-        Me.FOOTER_SETSUMEI2 = New DataDynamics.ActiveReports.TextBox
-        Me.FOOTER_SETSUMEI3 = New DataDynamics.ActiveReports.TextBox
-        Me.FOOTER_SETSUMEI4 = New DataDynamics.ActiveReports.TextBox
         Me.MR_BU = New DataDynamics.ActiveReports.TextBox
         Me.MR_AREA = New DataDynamics.ActiveReports.TextBox
         Me.MR_EIGYOSHO = New DataDynamics.ActiveReports.TextBox
         Me.HOTEL_NOTES1 = New DataDynamics.ActiveReports.TextBox
         Me.HOTEL_NOTES2 = New DataDynamics.ActiveReports.TextBox
+        Me.MR_SHOZOKU = New DataDynamics.ActiveReports.TextBox
         Me.TAXI_NOTES1 = New DataDynamics.ActiveReports.RichTextBox
-        Me.TAXI_NOTES2 = New DataDynamics.ActiveReports.RichTextBox
-        Me.TAXI_NOTES3 = New DataDynamics.ActiveReports.RichTextBox
+        Me.TAXI_NOTES_TITLE = New DataDynamics.ActiveReports.Label
+        Me.JR_SETSUMEI = New DataDynamics.ActiveReports.Label
+        Me.JR_HENKO_TITLE = New DataDynamics.ActiveReports.Label
+        Me.JR_HENKOU = New DataDynamics.ActiveReports.RichTextBox
+        Me.JR_TORIKESHI_TITLE = New DataDynamics.ActiveReports.Label
+        Me.JR_TORIKESHI = New DataDynamics.ActiveReports.RichTextBox
+        Me.AIR_SETSUMEI = New DataDynamics.ActiveReports.Label
+        Me.AIR_TITLE = New DataDynamics.ActiveReports.Label
+        Me.AIR_HENKO = New DataDynamics.ActiveReports.RichTextBox
+        Me.Label3 = New DataDynamics.ActiveReports.Label
+        Me.Label10 = New DataDynamics.ActiveReports.Label
+        Me.Label11 = New DataDynamics.ActiveReports.Label
+        Me.Label12 = New DataDynamics.ActiveReports.Label
+        Me.Label13 = New DataDynamics.ActiveReports.Label
+        Me.Label14 = New DataDynamics.ActiveReports.Label
+        Me.Label15 = New DataDynamics.ActiveReports.Label
+        Me.Label16 = New DataDynamics.ActiveReports.Label
+        Me.Label17 = New DataDynamics.ActiveReports.Label
+        Me.Label18 = New DataDynamics.ActiveReports.Label
+        Me.Label19 = New DataDynamics.ActiveReports.Label
+        Me.Label20 = New DataDynamics.ActiveReports.Label
+        Me.Label21 = New DataDynamics.ActiveReports.Label
+        Me.Label22 = New DataDynamics.ActiveReports.Label
+        Me.Label23 = New DataDynamics.ActiveReports.Label
+        Me.Label24 = New DataDynamics.ActiveReports.Label
+        Me.Label25 = New DataDynamics.ActiveReports.Label
+        Me.Label26 = New DataDynamics.ActiveReports.Label
+        Me.Label27 = New DataDynamics.ActiveReports.Label
+        Me.OTHER_NOTES = New DataDynamics.ActiveReports.RichTextBox
+        Me.Label28 = New DataDynamics.ActiveReports.Label
+        Me.Label29 = New DataDynamics.ActiveReports.Label
+        Me.Label30 = New DataDynamics.ActiveReports.Label
+        Me.Label31 = New DataDynamics.ActiveReports.Label
+        Me.Label32 = New DataDynamics.ActiveReports.Label
+        Me.Label33 = New DataDynamics.ActiveReports.Label
+        Me.Label34 = New DataDynamics.ActiveReports.Label
+        Me.Label35 = New DataDynamics.ActiveReports.Label
+        Me.Label36 = New DataDynamics.ActiveReports.Label
+        Me.Shape1 = New DataDynamics.ActiveReports.Shape
+        Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         CType(Me.DetailTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_STATUS_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_O_STATUS_1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -687,35 +711,55 @@ Partial Public Class DrSoufujo
         CType(Me.AISATSU2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AISATSU3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JR_SETSUMEI1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AIR_SETSUMEI1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OTHER_SETSUMEI1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FOOTER_SETSUMEI1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JR_SETSUMEI2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JR_SETSUMEI3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JR_SETSUMEI4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AIR_SETSUMEI2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AIR_SETSUMEI3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AIR_SETSUMEI4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AIR_SETSUMEI5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AIR_SETSUMEI6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OTHER_SETSUMEI2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FOOTER_SETSUMEI2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FOOTER_SETSUMEI3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FOOTER_SETSUMEI4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MR_BU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MR_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MR_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HOTEL_NOTES1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HOTEL_NOTES2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MR_SHOZOKU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TAXI_NOTES_TITLE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JR_SETSUMEI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JR_HENKO_TITLE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JR_TORIKESHI_TITLE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AIR_SETSUMEI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AIR_TITLE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label26, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label27, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label29, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label30, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label31, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label35, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
         Me.Detail.CanShrink = True
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.DetailTitle, Me.ANS_STATUS_HOTEL, Me.ANS_O_STATUS_1, Me.ANS_O_STATUS_2, Me.ANS_O_STATUS_3, Me.ANS_O_STATUS_4, Me.ANS_O_STATUS_5, Me.ANS_F_STATUS_1, Me.ANS_F_STATUS_2, Me.ANS_F_STATUS_3, Me.ANS_F_STATUS_4, Me.ANS_F_STATUS_5, Me.ANS_TAXI_DATE_1, Me.ANS_TAXI_DATE_2, Me.ANS_TAXI_DATE_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_DATE_20, Me.ANS_HOTEL_DATE, Me.ANS_HOTEL_NAME, Me.ANS_HOTEL_ADDRESS, Me.ANS_HOTEL_TEL, Me.ANS_ROOM_TYPE, Me.ANS_CHECKIN_TIME, Me.ANS_CHECKOUT_TIME, Me.ANS_O_DATE_1, Me.ANS_O_DATE_2, Me.ANS_O_DATE_3, Me.ANS_O_DATE_4, Me.ANS_O_DATE_5, Me.ANS_F_DATE_1, Me.ANS_F_DATE_2, Me.ANS_F_DATE_3, Me.ANS_F_DATE_4, Me.ANS_F_DATE_5, Me.ANS_HOTEL_SMOKING, Me.ANS_O_BIN_1, Me.ANS_O_BIN_2, Me.ANS_O_BIN_3, Me.ANS_O_BIN_4, Me.ANS_O_BIN_5, Me.ANS_F_BIN_1, Me.ANS_F_BIN_2, Me.ANS_F_BIN_3, Me.ANS_F_BIN_4, Me.ANS_F_BIN_5, Me.ANS_O_AIRPORT1_1, Me.ANS_O_AIRPORT2_1, Me.ANS_O_AIRPORT1_2, Me.ANS_O_AIRPORT2_2, Me.ANS_O_AIRPORT1_3, Me.ANS_O_AIRPORT2_3, Me.ANS_O_AIRPORT1_4, Me.ANS_O_AIRPORT2_4, Me.ANS_O_AIRPORT1_5, Me.ANS_O_AIRPORT2_5, Me.ANS_F_AIRPORT1_1, Me.ANS_F_AIRPORT2_1, Me.ANS_F_AIRPORT1_2, Me.ANS_F_AIRPORT2_2, Me.ANS_F_AIRPORT1_3, Me.ANS_F_AIRPORT2_3, Me.ANS_F_AIRPORT1_4, Me.ANS_F_AIRPORT2_4, Me.ANS_F_AIRPORT1_5, Me.ANS_F_AIRPORT2_5, Me.ANS_O_TIME1_1, Me.ANS_O_TIME2_1, Me.ANS_O_TIME2_2, Me.ANS_O_TIME1_2, Me.ANS_O_TIME1_3, Me.ANS_O_TIME2_3, Me.ANS_O_TIME1_4, Me.ANS_O_TIME2_4, Me.ANS_O_TIME1_5, Me.ANS_O_TIME2_5, Me.ANS_F_TIME1_1, Me.ANS_F_TIME2_1, Me.ANS_F_TIME2_2, Me.ANS_F_TIME1_3, Me.ANS_F_TIME2_3, Me.ANS_F_TIME1_4, Me.ANS_F_TIME2_4, Me.ANS_F_TIME1_5, Me.ANS_F_TIME2_5, Me.ANS_F_TIME1_2, Me.ANS_TAXI_KENSHU_1, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_NO_2, Me.ANS_TAXI_NO_3, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_NO_12, Me.ANS_TAXI_NO_13, Me.ANS_TAXI_NO_14, Me.ANS_TAXI_NO_15, Me.ANS_TAXI_NO_16, Me.ANS_TAXI_NO_17, Me.ANS_TAXI_NO_18, Me.ANS_TAXI_NO_19, Me.ANS_TAXI_NO_20, Me.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_20, Me.HotelTitle, Me.HotelDateTitle, Me.HotelNameTitle, Me.HotelAddrTitle, Me.HotelTelTitle, Me.RoomTypeTitle, Me.CheckinTitle, Me.KotsuTitle, Me.Ouro1Title, Me.Ans_O_Date_1_Title, Me.Ans_O_Bin_1_Title, Me.Ans_O_Airport1_1_Title, Me.Ans_O_Airport2_1_Title, Me.Ans_O_Time1_1_Title, Me.Ans_O_Time2_1_Title, Me.Ouro2Title, Me.Ans_O_Date_2_Title, Me.Ans_O_Bin_2_Title, Me.Ans_O_Airport1_2_Title, Me.Ans_O_Airport2_2_Title, Me.Ans_O_Time1_2_Title, Me.Ans_O_Time2_2_Title, Me.Ouro3Title, Me.Ans_O_Date_3_Title, Me.Ans_O_Airport1_3_Title, Me.Ans_O_Airport2_3_Title, Me.Ans_O_Time1_3_Title, Me.Ans_O_Time2_3_Title, Me.Ouro4Title, Me.Ans_O_Date_4_Title, Me.Ans_O_Bin_4_Title, Me.Ans_O_Airport1_4_Title, Me.Ans_O_Time1_4_Title, Me.Ans_O_Time2_4_Title, Me.Ouro5Title, Me.Ans_O_Date_5_Title, Me.Ans_O_Bin_5_Title, Me.Ans_O_Airport1_5_Title, Me.Ans_O_Airport2_5_Title, Me.Ans_F_Airport2_4_Title, Me.Ans_F_Time1_4_Title, Me.Ans_F_Time2_4_Title, Me.Fukuro1Title, Me.Ans_F_Date_1_Title, Me.Ans_F_Bin_1_Title, Me.Ans_F_Airport1_1_Title, Me.Ans_F_Airport2_1_Title, Me.Ans_F_Time1_1_Title, Me.Ans_F_Time2_1_Title, Me.Fukuro2Title, Me.Ans_F_Date_2_Title, Me.Ans_F_Bin_2_Title, Me.Ans_F_Airport1_2_Title, Me.Ans_F_Airport2_2_Title, Me.Ans_F_Time1_2_Title, Me.Ans_F_Time2_2_Title, Me.Fukuro3Title, Me.Ans_F_Date_3_Title, Me.Ans_F_Bin_3_Title, Me.Ans_F_Airport1_3_Title, Me.Ans_F_Airport2_3_Title, Me.Ans_F_Time1_3_Title, Me.Ans_F_Time2_3_Title, Me.Fukuro4Title, Me.Ans_F_Date_4_Title, Me.Ans_F_Bin_4_Title, Me.Ans_F_Airport1_4_Title, Me.Fukuro5Title, Me.Ans_F_Date_5_Title, Me.Ans_F_Bin_5_Title, Me.Ans_F_Airport1_5_Title, Me.Ans_F_Airport2_5_Title, Me.Ans_F_Time1_5_Title, Me.Ans_F_Time2_5_Title, Me.TaxiTitle, Me.Ans_Taxi_Date_1_Title, Me.Ans_Taxi_No_1_Title, Me.Ans_Taxi_Rmks_1_Title, Me.Ans_Taxi_Date_2_Title, Me.Ans_O_Airport2_4_Title, Me.Ans_O_Time1_5_Title, Me.Ans_O_Time2_5_Title, Me.Ans_Taxi_Rmks_2_Title, Me.Ans_Taxi_No_2_Title, Me.Ans_Taxi_No_3_Title, Me.Ans_Taxi_Rmks_3_Title, Me.Ans_Taxi_Date_3_Title, Me.Ans_Taxi_Date_4_Title, Me.Ans_Taxi_No_4_Title, Me.Ans_Taxi_Rmks_4_Title, Me.Ans_Taxi_Date_5_Title, Me.Ans_Taxi_No_5_Title, Me.Ans_Taxi_Rmks_5_Title, Me.Ans_Taxi_Date_6_Title, Me.Ans_Taxi_Date_7_Title, Me.Ans_Taxi_Date_8_Title, Me.Ans_Taxi_Date_9_Title, Me.Ans_Taxi_Date_10_Title, Me.Ans_Taxi_Date_11_Title, Me.Ans_Taxi_Date_12_Title, Me.Ans_Taxi_Date_13_Title, Me.Ans_Taxi_Date_14_Title, Me.Ans_Taxi_Date_15_Title, Me.Ans_Taxi_Date_16_Title, Me.Ans_Taxi_Date_17_Title, Me.Ans_Taxi_Date_18_Title, Me.Ans_Taxi_Date_19_Title, Me.Ans_Taxi_Date_20_Title, Me.Ans_Taxi_No_6_Title, Me.Ans_Taxi_No_7_Title, Me.Ans_Taxi_No_8_Title, Me.Ans_Taxi_No_9_Title, Me.Ans_Taxi_No_10_Title, Me.Ans_Taxi_No_11_Title, Me.Ans_Taxi_No_12_Title, Me.Ans_Taxi_No_13_Title, Me.Ans_Taxi_No_14_Title, Me.Ans_Taxi_No_15_Title, Me.Ans_Taxi_Rmks_6_Title, Me.Ans_Taxi_Rmks_7_Title, Me.Ans_Taxi_Rmks_8_Title, Me.Ans_Taxi_Rmks_9_Title, Me.Ans_Taxi_Rmks_10_Title, Me.Ans_Taxi_Rmks_11_Title, Me.Ans_Taxi_Rmks_12_Title, Me.Ans_Taxi_Rmks_13_Title, Me.Ans_Taxi_Rmks_14_Title, Me.Ans_Taxi_Rmks_16_Title, Me.Ans_Taxi_Rmks_17_Title, Me.Ans_Taxi_Rmks_18_Title, Me.Ans_Taxi_Rmks_19_Title, Me.Ans_Taxi_Rmks_20_Title, Me.Ans_Taxi_Rmks_15_Title, Me.Ans_Taxi_No_16_Title, Me.Ans_Taxi_No_17_Title, Me.Ans_Taxi_No_18_Title, Me.Ans_Taxi_No_19_Title, Me.Ans_Taxi_No_20_Title, Me.ANS_O_BIN_3_Title, Me.HOTEL_NOTES1, Me.HOTEL_NOTES2, Me.TAXI_NOTES1, Me.TAXI_NOTES2, Me.TAXI_NOTES3})
-        Me.Detail.Height = 1.322999!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.DetailTitle, Me.ANS_STATUS_HOTEL, Me.ANS_O_STATUS_1, Me.ANS_O_STATUS_2, Me.ANS_O_STATUS_3, Me.ANS_O_STATUS_4, Me.ANS_O_STATUS_5, Me.ANS_F_STATUS_1, Me.ANS_F_STATUS_2, Me.ANS_F_STATUS_3, Me.ANS_F_STATUS_4, Me.ANS_F_STATUS_5, Me.ANS_TAXI_DATE_1, Me.ANS_TAXI_DATE_2, Me.ANS_TAXI_DATE_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_DATE_20, Me.ANS_HOTEL_DATE, Me.ANS_HOTEL_NAME, Me.ANS_HOTEL_ADDRESS, Me.ANS_HOTEL_TEL, Me.ANS_ROOM_TYPE, Me.ANS_CHECKIN_TIME, Me.ANS_CHECKOUT_TIME, Me.ANS_O_DATE_1, Me.ANS_O_DATE_2, Me.ANS_O_DATE_3, Me.ANS_O_DATE_4, Me.ANS_O_DATE_5, Me.ANS_F_DATE_1, Me.ANS_F_DATE_2, Me.ANS_F_DATE_3, Me.ANS_F_DATE_4, Me.ANS_F_DATE_5, Me.ANS_HOTEL_SMOKING, Me.ANS_O_BIN_1, Me.ANS_O_BIN_2, Me.ANS_O_BIN_3, Me.ANS_O_BIN_4, Me.ANS_O_BIN_5, Me.ANS_F_BIN_1, Me.ANS_F_BIN_2, Me.ANS_F_BIN_3, Me.ANS_F_BIN_4, Me.ANS_F_BIN_5, Me.ANS_O_AIRPORT1_1, Me.ANS_O_AIRPORT2_1, Me.ANS_O_AIRPORT1_2, Me.ANS_O_AIRPORT2_2, Me.ANS_O_AIRPORT1_3, Me.ANS_O_AIRPORT2_3, Me.ANS_O_AIRPORT1_4, Me.ANS_O_AIRPORT2_4, Me.ANS_O_AIRPORT1_5, Me.ANS_O_AIRPORT2_5, Me.ANS_F_AIRPORT1_1, Me.ANS_F_AIRPORT2_1, Me.ANS_F_AIRPORT1_2, Me.ANS_F_AIRPORT2_2, Me.ANS_F_AIRPORT1_3, Me.ANS_F_AIRPORT2_3, Me.ANS_F_AIRPORT1_4, Me.ANS_F_AIRPORT2_4, Me.ANS_F_AIRPORT1_5, Me.ANS_F_AIRPORT2_5, Me.ANS_O_TIME1_1, Me.ANS_O_TIME2_1, Me.ANS_O_TIME2_2, Me.ANS_O_TIME1_2, Me.ANS_O_TIME1_3, Me.ANS_O_TIME2_3, Me.ANS_O_TIME1_4, Me.ANS_O_TIME2_4, Me.ANS_O_TIME1_5, Me.ANS_O_TIME2_5, Me.ANS_F_TIME1_1, Me.ANS_F_TIME2_1, Me.ANS_F_TIME2_2, Me.ANS_F_TIME1_3, Me.ANS_F_TIME2_3, Me.ANS_F_TIME1_4, Me.ANS_F_TIME2_4, Me.ANS_F_TIME1_5, Me.ANS_F_TIME2_5, Me.ANS_F_TIME1_2, Me.ANS_TAXI_KENSHU_1, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_NO_2, Me.ANS_TAXI_NO_3, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_NO_12, Me.ANS_TAXI_NO_13, Me.ANS_TAXI_NO_14, Me.ANS_TAXI_NO_15, Me.ANS_TAXI_NO_16, Me.ANS_TAXI_NO_17, Me.ANS_TAXI_NO_18, Me.ANS_TAXI_NO_19, Me.ANS_TAXI_NO_20, Me.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_20, Me.HotelTitle, Me.HotelDateTitle, Me.HotelNameTitle, Me.HotelAddrTitle, Me.HotelTelTitle, Me.RoomTypeTitle, Me.CheckinTitle, Me.KotsuTitle, Me.Ouro1Title, Me.Ans_O_Date_1_Title, Me.Ans_O_Bin_1_Title, Me.Ans_O_Airport1_1_Title, Me.Ans_O_Airport2_1_Title, Me.Ans_O_Time1_1_Title, Me.Ans_O_Time2_1_Title, Me.Ouro2Title, Me.Ans_O_Date_2_Title, Me.Ans_O_Bin_2_Title, Me.Ans_O_Airport1_2_Title, Me.Ans_O_Airport2_2_Title, Me.Ans_O_Time1_2_Title, Me.Ans_O_Time2_2_Title, Me.Ouro3Title, Me.Ans_O_Date_3_Title, Me.Ans_O_Airport1_3_Title, Me.Ans_O_Airport2_3_Title, Me.Ans_O_Time1_3_Title, Me.Ans_O_Time2_3_Title, Me.Ouro4Title, Me.Ans_O_Date_4_Title, Me.Ans_O_Bin_4_Title, Me.Ans_O_Airport1_4_Title, Me.Ans_O_Time1_4_Title, Me.Ans_O_Time2_4_Title, Me.Ouro5Title, Me.Ans_O_Date_5_Title, Me.Ans_O_Bin_5_Title, Me.Ans_O_Airport1_5_Title, Me.Ans_O_Airport2_5_Title, Me.Ans_F_Airport2_4_Title, Me.Ans_F_Time1_4_Title, Me.Ans_F_Time2_4_Title, Me.Fukuro1Title, Me.Ans_F_Date_1_Title, Me.Ans_F_Bin_1_Title, Me.Ans_F_Airport1_1_Title, Me.Ans_F_Airport2_1_Title, Me.Ans_F_Time1_1_Title, Me.Ans_F_Time2_1_Title, Me.Fukuro2Title, Me.Ans_F_Date_2_Title, Me.Ans_F_Bin_2_Title, Me.Ans_F_Airport1_2_Title, Me.Ans_F_Airport2_2_Title, Me.Ans_F_Time1_2_Title, Me.Ans_F_Time2_2_Title, Me.Fukuro3Title, Me.Ans_F_Date_3_Title, Me.Ans_F_Bin_3_Title, Me.Ans_F_Airport1_3_Title, Me.Ans_F_Airport2_3_Title, Me.Ans_F_Time1_3_Title, Me.Ans_F_Time2_3_Title, Me.Fukuro4Title, Me.Ans_F_Date_4_Title, Me.Ans_F_Bin_4_Title, Me.Ans_F_Airport1_4_Title, Me.Fukuro5Title, Me.Ans_F_Date_5_Title, Me.Ans_F_Bin_5_Title, Me.Ans_F_Airport1_5_Title, Me.Ans_F_Airport2_5_Title, Me.Ans_F_Time1_5_Title, Me.Ans_F_Time2_5_Title, Me.TaxiTitle, Me.Ans_Taxi_Date_1_Title, Me.Ans_Taxi_No_1_Title, Me.Ans_Taxi_Rmks_1_Title, Me.Ans_Taxi_Date_2_Title, Me.Ans_O_Airport2_4_Title, Me.Ans_O_Time1_5_Title, Me.Ans_O_Time2_5_Title, Me.Ans_Taxi_Rmks_2_Title, Me.Ans_Taxi_No_2_Title, Me.Ans_Taxi_No_3_Title, Me.Ans_Taxi_Rmks_3_Title, Me.Ans_Taxi_Date_3_Title, Me.Ans_Taxi_Date_4_Title, Me.Ans_Taxi_No_4_Title, Me.Ans_Taxi_Rmks_4_Title, Me.Ans_Taxi_Date_5_Title, Me.Ans_Taxi_No_5_Title, Me.Ans_Taxi_Rmks_5_Title, Me.Ans_Taxi_Date_6_Title, Me.Ans_Taxi_Date_7_Title, Me.Ans_Taxi_Date_8_Title, Me.Ans_Taxi_Date_9_Title, Me.Ans_Taxi_Date_10_Title, Me.Ans_Taxi_Date_11_Title, Me.Ans_Taxi_Date_12_Title, Me.Ans_Taxi_Date_13_Title, Me.Ans_Taxi_Date_14_Title, Me.Ans_Taxi_Date_15_Title, Me.Ans_Taxi_Date_16_Title, Me.Ans_Taxi_Date_17_Title, Me.Ans_Taxi_Date_18_Title, Me.Ans_Taxi_Date_19_Title, Me.Ans_Taxi_Date_20_Title, Me.Ans_Taxi_No_6_Title, Me.Ans_Taxi_No_7_Title, Me.Ans_Taxi_No_8_Title, Me.Ans_Taxi_No_9_Title, Me.Ans_Taxi_No_10_Title, Me.Ans_Taxi_No_11_Title, Me.Ans_Taxi_No_12_Title, Me.Ans_Taxi_No_13_Title, Me.Ans_Taxi_No_14_Title, Me.Ans_Taxi_No_15_Title, Me.Ans_Taxi_Rmks_6_Title, Me.Ans_Taxi_Rmks_7_Title, Me.Ans_Taxi_Rmks_8_Title, Me.Ans_Taxi_Rmks_9_Title, Me.Ans_Taxi_Rmks_10_Title, Me.Ans_Taxi_Rmks_11_Title, Me.Ans_Taxi_Rmks_12_Title, Me.Ans_Taxi_Rmks_13_Title, Me.Ans_Taxi_Rmks_14_Title, Me.Ans_Taxi_Rmks_16_Title, Me.Ans_Taxi_Rmks_17_Title, Me.Ans_Taxi_Rmks_18_Title, Me.Ans_Taxi_Rmks_19_Title, Me.Ans_Taxi_Rmks_20_Title, Me.Ans_Taxi_Rmks_15_Title, Me.Ans_Taxi_No_16_Title, Me.Ans_Taxi_No_17_Title, Me.Ans_Taxi_No_18_Title, Me.Ans_Taxi_No_19_Title, Me.Ans_Taxi_No_20_Title, Me.ANS_O_BIN_3_Title, Me.HOTEL_NOTES1, Me.HOTEL_NOTES2, Me.TAXI_NOTES1, Me.TAXI_NOTES_TITLE})
+        Me.Detail.Height = 1.333169!
         Me.Detail.Name = "Detail"
         '
         'DetailTitle
@@ -4617,10 +4661,10 @@ Partial Public Class DrSoufujo
         '
         'GroupHeader1
         '
-        Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.MR_NAME, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3, Me.MR_BU, Me.MR_AREA, Me.MR_EIGYOSHO})
+        Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3, Me.MR_BU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_SHOZOKU, Me.MR_NAME})
         Me.GroupHeader1.DataField = "=KOUENKAI_NO + SANKASHA_ID"
         Me.GroupHeader1.GroupKeepTogether = DataDynamics.ActiveReports.GroupKeepTogether.FirstDetail
-        Me.GroupHeader1.Height = 2.698032!
+        Me.GroupHeader1.Height = 2.968866!
         Me.GroupHeader1.Name = "GroupHeader1"
         Me.GroupHeader1.NewPage = DataDynamics.ActiveReports.NewPage.Before
         '
@@ -4654,7 +4698,7 @@ Partial Public Class DrSoufujo
         Me.Label2.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center; ddo" & _
             "-char-set: 128"
         Me.Label2.Text = "チケット送付状"
-        Me.Label2.Top = 1.259449!
+        Me.Label2.Top = 1.561024!
         Me.Label2.Width = 7.151965!
         '
         'DR_NAME
@@ -4677,7 +4721,7 @@ Partial Public Class DrSoufujo
         Me.MR_SEND_SAKI.Name = "MR_SEND_SAKI"
         Me.MR_SEND_SAKI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top"
         Me.MR_SEND_SAKI.Text = "[MR_SEND_SAKI]"
-        Me.MR_SEND_SAKI.Top = 0.4!
+        Me.MR_SEND_SAKI.Top = 0.2838583!
         Me.MR_SEND_SAKI.Width = 3.380709!
         '
         'MR_NAME
@@ -4689,7 +4733,7 @@ Partial Public Class DrSoufujo
         Me.MR_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle; w" & _
             "hite-space: nowrap"
         Me.MR_NAME.Text = "[MR_NAME]"
-        Me.MR_NAME.Top = 0.9003938!
+        Me.MR_NAME.Top = 0.7503937!
         Me.MR_NAME.Width = 3.380709!
         '
         'Label4
@@ -4701,7 +4745,7 @@ Partial Public Class DrSoufujo
         Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label4.Text = "開催日："
-        Me.Label4.Top = 1.520868!
+        Me.Label4.Top = 1.791735!
         Me.Label4.Width = 0.5618111!
         '
         'JISSI_DATE
@@ -4713,7 +4757,7 @@ Partial Public Class DrSoufujo
         Me.JISSI_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.JISSI_DATE.Text = "1234年12月12日(月)～1234年12月12日(月)"
-        Me.JISSI_DATE.Top = 1.520866!
+        Me.JISSI_DATE.Top = 1.791732!
         Me.JISSI_DATE.Width = 2.420866!
         '
         'Label5
@@ -4725,7 +4769,7 @@ Partial Public Class DrSoufujo
         Me.Label5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label5.Text = "会合名："
-        Me.Label5.Top = 1.7!
+        Me.Label5.Top = 1.970867!
         Me.Label5.Width = 0.561811!
         '
         'KOUENKAI_NAME
@@ -4738,7 +4782,7 @@ Partial Public Class DrSoufujo
         Me.KOUENKAI_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.KOUENKAI_NAME.Text = "[KOUENKAI_NAME]"
-        Me.KOUENKAI_NAME.Top = 1.7!
+        Me.KOUENKAI_NAME.Top = 1.970866!
         Me.KOUENKAI_NAME.Width = 5.694095!
         '
         'Label6
@@ -4798,7 +4842,7 @@ Partial Public Class DrSoufujo
         Me.Label8.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: top; white-space: nowrap; d" & _
             "do-char-set: 1"
         Me.Label8.Text = "会場："
-        Me.Label8.Top = 1.879134!
+        Me.Label8.Top = 2.15!
         Me.Label8.Width = 0.561811!
         '
         'KAIJO_NAME
@@ -4810,7 +4854,7 @@ Partial Public Class DrSoufujo
         Me.KAIJO_NAME.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.KAIJO_NAME.Text = "[KAIJO_NAME]"
-        Me.KAIJO_NAME.Top = 1.879134!
+        Me.KAIJO_NAME.Top = 2.15!
         Me.KAIJO_NAME.Width = 5.694095!
         '
         'MR_SEND_SAKI_FS
@@ -4847,7 +4891,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU1.Text = "上記、会合ご参加賜りまして誠にありがとうございます。"
-        Me.AISATSU1.Top = 2.160629!
+        Me.AISATSU1.Top = 2.431495!
         Me.AISATSU1.Width = 6.579529!
         '
         'AISATSU2
@@ -4858,7 +4902,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU2.Text = "お申込みいただきましたチケット等を送付させていただきますので、"
-        Me.AISATSU2.Top = 2.339765!
+        Me.AISATSU2.Top = 2.610631!
         Me.AISATSU2.Width = 6.568504!
         '
         'AISATSU3
@@ -4869,14 +4913,14 @@ Partial Public Class DrSoufujo
         Me.AISATSU3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
         Me.AISATSU3.Text = "ご査収賜りますようお願い申し上げます。"
-        Me.AISATSU3.Top = 2.518898!
+        Me.AISATSU3.Top = 2.789765!
         Me.AISATSU3.Width = 6.579529!
         '
         'GroupFooter1
         '
         Me.GroupFooter1.CanShrink = True
-        Me.GroupFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label9, Me.JR_SETSUMEI1, Me.AIR_SETSUMEI1, Me.OTHER_SETSUMEI1, Me.FOOTER_SETSUMEI1, Me.JR_SETSUMEI2, Me.JR_SETSUMEI3, Me.JR_SETSUMEI4, Me.AIR_SETSUMEI2, Me.AIR_SETSUMEI3, Me.AIR_SETSUMEI4, Me.AIR_SETSUMEI5, Me.AIR_SETSUMEI6, Me.OTHER_SETSUMEI2, Me.FOOTER_SETSUMEI2, Me.FOOTER_SETSUMEI3, Me.FOOTER_SETSUMEI4})
-        Me.GroupFooter1.Height = 4.65625!
+        Me.GroupFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape1, Me.Label9, Me.JR_SETSUMEI, Me.JR_HENKO_TITLE, Me.JR_HENKOU, Me.JR_TORIKESHI_TITLE, Me.JR_TORIKESHI, Me.AIR_SETSUMEI, Me.AIR_TITLE, Me.AIR_HENKO, Me.Label3, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.OTHER_NOTES, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Label34, Me.Label35, Me.Label36, Me.Shape2, Me.TextBox1})
+        Me.GroupFooter1.Height = 8.50018!
         Me.GroupFooter1.Name = "GroupFooter1"
         '
         'Label9
@@ -4891,182 +4935,6 @@ Partial Public Class DrSoufujo
         Me.Label9.Top = 0.3484252!
         Me.Label9.Width = 7.151965!
         '
-        'JR_SETSUMEI1
-        '
-        Me.JR_SETSUMEI1.Height = 0.1791339!
-        Me.JR_SETSUMEI1.Left = 0.0!
-        Me.JR_SETSUMEI1.Name = "JR_SETSUMEI1"
-        Me.JR_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.JR_SETSUMEI1.Text = "[JR_SETSUMEI1]"
-        Me.JR_SETSUMEI1.Top = 0.5787402!
-        Me.JR_SETSUMEI1.Visible = False
-        Me.JR_SETSUMEI1.Width = 7.151965!
-        '
-        'AIR_SETSUMEI1
-        '
-        Me.AIR_SETSUMEI1.Height = 0.1791339!
-        Me.AIR_SETSUMEI1.Left = 0.0!
-        Me.AIR_SETSUMEI1.Name = "AIR_SETSUMEI1"
-        Me.AIR_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.AIR_SETSUMEI1.Text = "[AIR_SETSUMEI1]"
-        Me.AIR_SETSUMEI1.Top = 1.295275!
-        Me.AIR_SETSUMEI1.Visible = False
-        Me.AIR_SETSUMEI1.Width = 7.151965!
-        '
-        'OTHER_SETSUMEI1
-        '
-        Me.OTHER_SETSUMEI1.Height = 0.2!
-        Me.OTHER_SETSUMEI1.Left = 0.0!
-        Me.OTHER_SETSUMEI1.Name = "OTHER_SETSUMEI1"
-        Me.OTHER_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.OTHER_SETSUMEI1.Text = "[OTHER_SETSUMEI1]"
-        Me.OTHER_SETSUMEI1.Top = 2.677165!
-        Me.OTHER_SETSUMEI1.Visible = False
-        Me.OTHER_SETSUMEI1.Width = 7.151965!
-        '
-        'FOOTER_SETSUMEI1
-        '
-        Me.FOOTER_SETSUMEI1.Height = 0.1791339!
-        Me.FOOTER_SETSUMEI1.Left = 0.0!
-        Me.FOOTER_SETSUMEI1.Name = "FOOTER_SETSUMEI1"
-        Me.FOOTER_SETSUMEI1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.FOOTER_SETSUMEI1.Text = "[FOOTER_SETSUMEI1]"
-        Me.FOOTER_SETSUMEI1.Top = 3.15866!
-        Me.FOOTER_SETSUMEI1.Visible = False
-        Me.FOOTER_SETSUMEI1.Width = 7.151965!
-        '
-        'JR_SETSUMEI2
-        '
-        Me.JR_SETSUMEI2.Height = 0.1791338!
-        Me.JR_SETSUMEI2.Left = 0.0!
-        Me.JR_SETSUMEI2.Name = "JR_SETSUMEI2"
-        Me.JR_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.JR_SETSUMEI2.Text = "[JR_SETSUMEI2]"
-        Me.JR_SETSUMEI2.Top = 0.7578741!
-        Me.JR_SETSUMEI2.Visible = False
-        Me.JR_SETSUMEI2.Width = 7.151965!
-        '
-        'JR_SETSUMEI3
-        '
-        Me.JR_SETSUMEI3.Height = 0.1791339!
-        Me.JR_SETSUMEI3.Left = 0.0!
-        Me.JR_SETSUMEI3.Name = "JR_SETSUMEI3"
-        Me.JR_SETSUMEI3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.JR_SETSUMEI3.Text = "[JR_SETSUMEI3]"
-        Me.JR_SETSUMEI3.Top = 0.937008!
-        Me.JR_SETSUMEI3.Visible = False
-        Me.JR_SETSUMEI3.Width = 7.151965!
-        '
-        'JR_SETSUMEI4
-        '
-        Me.JR_SETSUMEI4.Height = 0.1791339!
-        Me.JR_SETSUMEI4.Left = 0.0!
-        Me.JR_SETSUMEI4.Name = "JR_SETSUMEI4"
-        Me.JR_SETSUMEI4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.JR_SETSUMEI4.Text = "[JR_SETSUMEI4]"
-        Me.JR_SETSUMEI4.Top = 1.116141!
-        Me.JR_SETSUMEI4.Visible = False
-        Me.JR_SETSUMEI4.Width = 7.151965!
-        '
-        'AIR_SETSUMEI2
-        '
-        Me.AIR_SETSUMEI2.Height = 0.1791339!
-        Me.AIR_SETSUMEI2.Left = 0.0!
-        Me.AIR_SETSUMEI2.Name = "AIR_SETSUMEI2"
-        Me.AIR_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.AIR_SETSUMEI2.Text = "[AIR_SETSUMEI2]"
-        Me.AIR_SETSUMEI2.Top = 1.474409!
-        Me.AIR_SETSUMEI2.Visible = False
-        Me.AIR_SETSUMEI2.Width = 7.151965!
-        '
-        'AIR_SETSUMEI3
-        '
-        Me.AIR_SETSUMEI3.Height = 0.1791339!
-        Me.AIR_SETSUMEI3.Left = 0.0!
-        Me.AIR_SETSUMEI3.Name = "AIR_SETSUMEI3"
-        Me.AIR_SETSUMEI3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.AIR_SETSUMEI3.Text = "[AIR_SETSUMEI3]"
-        Me.AIR_SETSUMEI3.Top = 1.755905!
-        Me.AIR_SETSUMEI3.Visible = False
-        Me.AIR_SETSUMEI3.Width = 7.151965!
-        '
-        'AIR_SETSUMEI4
-        '
-        Me.AIR_SETSUMEI4.Height = 0.1791339!
-        Me.AIR_SETSUMEI4.Left = 0.0!
-        Me.AIR_SETSUMEI4.Name = "AIR_SETSUMEI4"
-        Me.AIR_SETSUMEI4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.AIR_SETSUMEI4.Text = "[AIR_SETSUMEI4]"
-        Me.AIR_SETSUMEI4.Top = 1.935039!
-        Me.AIR_SETSUMEI4.Visible = False
-        Me.AIR_SETSUMEI4.Width = 7.151965!
-        '
-        'AIR_SETSUMEI5
-        '
-        Me.AIR_SETSUMEI5.Height = 0.1791339!
-        Me.AIR_SETSUMEI5.Left = 0.0!
-        Me.AIR_SETSUMEI5.Name = "AIR_SETSUMEI5"
-        Me.AIR_SETSUMEI5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.AIR_SETSUMEI5.Text = "[AIR_SETSUMEI5]"
-        Me.AIR_SETSUMEI5.Top = 2.216535!
-        Me.AIR_SETSUMEI5.Visible = False
-        Me.AIR_SETSUMEI5.Width = 7.151965!
-        '
-        'AIR_SETSUMEI6
-        '
-        Me.AIR_SETSUMEI6.Height = 0.1791339!
-        Me.AIR_SETSUMEI6.Left = 0.0!
-        Me.AIR_SETSUMEI6.Name = "AIR_SETSUMEI6"
-        Me.AIR_SETSUMEI6.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.AIR_SETSUMEI6.Text = "[AIR_SETSUMEI6]"
-        Me.AIR_SETSUMEI6.Top = 2.395669!
-        Me.AIR_SETSUMEI6.Visible = False
-        Me.AIR_SETSUMEI6.Width = 7.151965!
-        '
-        'OTHER_SETSUMEI2
-        '
-        Me.OTHER_SETSUMEI2.Height = 0.1791339!
-        Me.OTHER_SETSUMEI2.Left = 0.0!
-        Me.OTHER_SETSUMEI2.Name = "OTHER_SETSUMEI2"
-        Me.OTHER_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.OTHER_SETSUMEI2.Text = "[OTHER_SETSUMEI2]"
-        Me.OTHER_SETSUMEI2.Top = 2.877164!
-        Me.OTHER_SETSUMEI2.Visible = False
-        Me.OTHER_SETSUMEI2.Width = 7.151965!
-        '
-        'FOOTER_SETSUMEI2
-        '
-        Me.FOOTER_SETSUMEI2.Height = 0.1791339!
-        Me.FOOTER_SETSUMEI2.Left = 0.0!
-        Me.FOOTER_SETSUMEI2.Name = "FOOTER_SETSUMEI2"
-        Me.FOOTER_SETSUMEI2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.FOOTER_SETSUMEI2.Text = "[FOOTER_SETSUMEI2]"
-        Me.FOOTER_SETSUMEI2.Top = 3.337794!
-        Me.FOOTER_SETSUMEI2.Visible = False
-        Me.FOOTER_SETSUMEI2.Width = 7.151965!
-        '
-        'FOOTER_SETSUMEI3
-        '
-        Me.FOOTER_SETSUMEI3.Height = 0.1791339!
-        Me.FOOTER_SETSUMEI3.Left = 0.0!
-        Me.FOOTER_SETSUMEI3.Name = "FOOTER_SETSUMEI3"
-        Me.FOOTER_SETSUMEI3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.FOOTER_SETSUMEI3.Text = "[FOOTER_SETSUMEI3]"
-        Me.FOOTER_SETSUMEI3.Top = 3.516928!
-        Me.FOOTER_SETSUMEI3.Visible = False
-        Me.FOOTER_SETSUMEI3.Width = 7.151965!
-        '
-        'FOOTER_SETSUMEI4
-        '
-        Me.FOOTER_SETSUMEI4.Height = 0.1791339!
-        Me.FOOTER_SETSUMEI4.Left = 0.0!
-        Me.FOOTER_SETSUMEI4.Name = "FOOTER_SETSUMEI4"
-        Me.FOOTER_SETSUMEI4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.FOOTER_SETSUMEI4.Text = "[FOOTER_SETSUMEI4]"
-        Me.FOOTER_SETSUMEI4.Top = 3.696062!
-        Me.FOOTER_SETSUMEI4.Visible = False
-        Me.FOOTER_SETSUMEI4.Width = 7.151965!
-        '
         'MR_BU
         '
         Me.MR_BU.DataField = "MR_BU"
@@ -5077,6 +4945,7 @@ Partial Public Class DrSoufujo
             "hite-space: nowrap"
         Me.MR_BU.Text = "[MR_BU]"
         Me.MR_BU.Top = 0.7003937!
+        Me.MR_BU.Visible = False
         Me.MR_BU.Width = 0.4433072!
         '
         'MR_AREA
@@ -5088,7 +4957,8 @@ Partial Public Class DrSoufujo
         Me.MR_AREA.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-justify: auto; verti" & _
             "cal-align: middle; white-space: nowrap"
         Me.MR_AREA.Text = "[MR_AREA]"
-        Me.MR_AREA.Top = 0.7003937!
+        Me.MR_AREA.Top = 0.6251969!
+        Me.MR_AREA.Visible = False
         Me.MR_AREA.Width = 1.349606!
         '
         'MR_EIGYOSHO
@@ -5100,7 +4970,8 @@ Partial Public Class DrSoufujo
         Me.MR_EIGYOSHO.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-justify: auto; verti" & _
             "cal-align: middle; white-space: nowrap"
         Me.MR_EIGYOSHO.Text = "[MR_EIGYOSHO]"
-        Me.MR_EIGYOSHO.Top = 0.7003937!
+        Me.MR_EIGYOSHO.Top = 0.6251969!
+        Me.MR_EIGYOSHO.Visible = False
         Me.MR_EIGYOSHO.Width = 1.349606!
         '
         'HOTEL_NOTES1
@@ -5127,41 +4998,486 @@ Partial Public Class DrSoufujo
         Me.HOTEL_NOTES2.Visible = False
         Me.HOTEL_NOTES2.Width = 6.579529!
         '
+        'MR_SHOZOKU
+        '
+        Me.MR_SHOZOKU.DataField = "MR_NAME"
+        Me.MR_SHOZOKU.Height = 0.1968504!
+        Me.MR_SHOZOKU.Left = 0.553937!
+        Me.MR_SHOZOKU.Name = "MR_SHOZOKU"
+        Me.MR_SHOZOKU.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle; w" & _
+            "hite-space: nowrap"
+        Me.MR_SHOZOKU.Text = "[MR_NAME]"
+        Me.MR_SHOZOKU.Top = 0.584252!
+        Me.MR_SHOZOKU.Width = 3.380709!
+        '
         'TAXI_NOTES1
         '
         Me.TAXI_NOTES1.AutoReplaceFields = True
         Me.TAXI_NOTES1.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.TAXI_NOTES1.Height = 0.2!
-        Me.TAXI_NOTES1.Left = 0.5200788!
-        Me.TAXI_NOTES1.Multiline = False
+        Me.TAXI_NOTES1.Height = 0.239764!
+        Me.TAXI_NOTES1.Left = 0.4374016!
         Me.TAXI_NOTES1.Name = "TAXI_NOTES1"
         Me.TAXI_NOTES1.RTF = resources.GetString("TAXI_NOTES1.RTF")
-        Me.TAXI_NOTES1.Top = 0.9374017!
-        Me.TAXI_NOTES1.Width = 6.579527!
+        Me.TAXI_NOTES1.Top = 0.8956693!
+        Me.TAXI_NOTES1.Width = 3.0!
         '
-        'TAXI_NOTES2
+        'TAXI_NOTES_TITLE
         '
-        Me.TAXI_NOTES2.AutoReplaceFields = True
-        Me.TAXI_NOTES2.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.TAXI_NOTES2.Height = 0.2!
-        Me.TAXI_NOTES2.Left = 0.5311024!
-        Me.TAXI_NOTES2.Multiline = False
-        Me.TAXI_NOTES2.Name = "TAXI_NOTES2"
-        Me.TAXI_NOTES2.RTF = resources.GetString("TAXI_NOTES2.RTF")
-        Me.TAXI_NOTES2.Top = 0.9374017!
-        Me.TAXI_NOTES2.Width = 6.579527!
+        Me.TAXI_NOTES_TITLE.Height = 0.230315!
+        Me.TAXI_NOTES_TITLE.HyperLink = Nothing
+        Me.TAXI_NOTES_TITLE.Left = 0.0!
+        Me.TAXI_NOTES_TITLE.Name = "TAXI_NOTES_TITLE"
+        Me.TAXI_NOTES_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10.5pt; font-weight: normal; text-align: left; d" & _
+            "do-char-set: 1"
+        Me.TAXI_NOTES_TITLE.Text = "～　タクシーチケット使用についてのお願い　～"
+        Me.TAXI_NOTES_TITLE.Top = 0.7582678!
+        Me.TAXI_NOTES_TITLE.Visible = False
+        Me.TAXI_NOTES_TITLE.Width = 7.151965!
         '
-        'TAXI_NOTES3
+        'JR_SETSUMEI
         '
-        Me.TAXI_NOTES3.AutoReplaceFields = True
-        Me.TAXI_NOTES3.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.TAXI_NOTES3.Height = 0.2!
-        Me.TAXI_NOTES3.Left = 0.5311024!
-        Me.TAXI_NOTES3.Multiline = False
-        Me.TAXI_NOTES3.Name = "TAXI_NOTES3"
-        Me.TAXI_NOTES3.RTF = resources.GetString("TAXI_NOTES3.RTF")
-        Me.TAXI_NOTES3.Top = 0.9374017!
-        Me.TAXI_NOTES3.Width = 6.579527!
+        Me.JR_SETSUMEI.Height = 0.2!
+        Me.JR_SETSUMEI.HyperLink = Nothing
+        Me.JR_SETSUMEI.Left = 0.0!
+        Me.JR_SETSUMEI.Name = "JR_SETSUMEI"
+        Me.JR_SETSUMEI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle"
+        Me.JR_SETSUMEI.Text = "【JR券】"
+        Me.JR_SETSUMEI.Top = 0.646063!
+        Me.JR_SETSUMEI.Width = 0.6866142!
+        '
+        'JR_HENKO_TITLE
+        '
+        Me.JR_HENKO_TITLE.Height = 0.2!
+        Me.JR_HENKO_TITLE.HyperLink = Nothing
+        Me.JR_HENKO_TITLE.Left = 0.6866142!
+        Me.JR_HENKO_TITLE.Name = "JR_HENKO_TITLE"
+        Me.JR_HENKO_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; vertical-align: middle"
+        Me.JR_HENKO_TITLE.Text = "変更・・・"
+        Me.JR_HENKO_TITLE.Top = 0.646063!
+        Me.JR_HENKO_TITLE.Width = 1.062205!
+        '
+        'JR_HENKOU
+        '
+        Me.JR_HENKOU.AutoReplaceFields = True
+        Me.JR_HENKOU.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.JR_HENKOU.Height = 0.511811!
+        Me.JR_HENKOU.Left = 1.748819!
+        Me.JR_HENKOU.Name = "JR_HENKOU"
+        Me.JR_HENKOU.RTF = resources.GetString("JR_HENKOU.RTF")
+        Me.JR_HENKOU.Top = 0.646063!
+        Me.JR_HENKOU.Width = 5.40315!
+        '
+        'JR_TORIKESHI_TITLE
+        '
+        Me.JR_TORIKESHI_TITLE.Height = 0.2!
+        Me.JR_TORIKESHI_TITLE.HyperLink = Nothing
+        Me.JR_TORIKESHI_TITLE.Left = 0.6866142!
+        Me.JR_TORIKESHI_TITLE.Name = "JR_TORIKESHI_TITLE"
+        Me.JR_TORIKESHI_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; vertical-align: middle"
+        Me.JR_TORIKESHI_TITLE.Text = "取消・・・"
+        Me.JR_TORIKESHI_TITLE.Top = 1.260236!
+        Me.JR_TORIKESHI_TITLE.Width = 1.062205!
+        '
+        'JR_TORIKESHI
+        '
+        Me.JR_TORIKESHI.AutoReplaceFields = True
+        Me.JR_TORIKESHI.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.JR_TORIKESHI.Height = 0.5905512!
+        Me.JR_TORIKESHI.Left = 1.748819!
+        Me.JR_TORIKESHI.Name = "JR_TORIKESHI"
+        Me.JR_TORIKESHI.RTF = resources.GetString("JR_TORIKESHI.RTF")
+        Me.JR_TORIKESHI.Top = 1.260236!
+        Me.JR_TORIKESHI.Width = 5.40315!
+        '
+        'AIR_SETSUMEI
+        '
+        Me.AIR_SETSUMEI.Height = 0.2!
+        Me.AIR_SETSUMEI.HyperLink = Nothing
+        Me.AIR_SETSUMEI.Left = 0.0!
+        Me.AIR_SETSUMEI.Name = "AIR_SETSUMEI"
+        Me.AIR_SETSUMEI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle"
+        Me.AIR_SETSUMEI.Text = "【航空券】"
+        Me.AIR_SETSUMEI.Top = 1.95315!
+        Me.AIR_SETSUMEI.Width = 0.6866142!
+        '
+        'AIR_TITLE
+        '
+        Me.AIR_TITLE.Height = 0.2!
+        Me.AIR_TITLE.HyperLink = Nothing
+        Me.AIR_TITLE.Left = 0.6866142!
+        Me.AIR_TITLE.Name = "AIR_TITLE"
+        Me.AIR_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; vertical-align: middle"
+        Me.AIR_TITLE.Text = "変更・取消・・・"
+        Me.AIR_TITLE.Top = 1.95315!
+        Me.AIR_TITLE.Width = 1.062205!
+        '
+        'AIR_HENKO
+        '
+        Me.AIR_HENKO.AutoReplaceFields = True
+        Me.AIR_HENKO.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.AIR_HENKO.Height = 0.5165356!
+        Me.AIR_HENKO.Left = 1.748819!
+        Me.AIR_HENKO.Name = "AIR_HENKO"
+        Me.AIR_HENKO.RTF = resources.GetString("AIR_HENKO.RTF")
+        Me.AIR_HENKO.Top = 1.95315!
+        Me.AIR_HENKO.Width = 5.40315!
+        '
+        'Label3
+        '
+        Me.Label3.Height = 0.2!
+        Me.Label3.HyperLink = Nothing
+        Me.Label3.Left = 1.748819!
+        Me.Label3.Name = "Label3"
+        Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label3.Text = "JALオンラインデスク"
+        Me.Label3.Top = 2.573622!
+        Me.Label3.Width = 1.334252!
+        '
+        'Label10
+        '
+        Me.Label10.Height = 0.2!
+        Me.Label10.HyperLink = Nothing
+        Me.Label10.Left = 1.748819!
+        Me.Label10.Name = "Label10"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label10.Text = "TEL："
+        Me.Label10.Top = 2.773622!
+        Me.Label10.Width = 0.8039372!
+        '
+        'Label11
+        '
+        Me.Label11.Height = 0.2!
+        Me.Label11.HyperLink = Nothing
+        Me.Label11.Left = 2.552756!
+        Me.Label11.Name = "Label11"
+        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
+            "e; vertical-align: middle"
+        Me.Label11.Text = "0120-25-2852"
+        Me.Label11.Top = 2.773622!
+        Me.Label11.Width = 0.8759842!
+        '
+        'Label12
+        '
+        Me.Label12.Height = 0.2!
+        Me.Label12.HyperLink = Nothing
+        Me.Label12.Left = 1.748819!
+        Me.Label12.Name = "Label12"
+        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label12.Text = "携帯電話用："
+        Me.Label12.Top = 2.973622!
+        Me.Label12.Width = 0.8039372!
+        '
+        'Label13
+        '
+        Me.Label13.Height = 0.2!
+        Me.Label13.HyperLink = Nothing
+        Me.Label13.Left = 2.561418!
+        Me.Label13.Name = "Label13"
+        Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
+            "e; vertical-align: middle"
+        Me.Label13.Text = "03-6720-8612"
+        Me.Label13.Top = 2.973622!
+        Me.Label13.Width = 0.875984!
+        '
+        'Label14
+        '
+        Me.Label14.Height = 0.2!
+        Me.Label14.HyperLink = Nothing
+        Me.Label14.Left = 1.748819!
+        Me.Label14.Name = "Label14"
+        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label14.Text = "(受付時間　9:00-18:00　年中無休)"
+        Me.Label14.Top = 3.173622!
+        Me.Label14.Width = 2.088583!
+        '
+        'Label15
+        '
+        Me.Label15.Height = 0.2!
+        Me.Label15.HyperLink = Nothing
+        Me.Label15.Left = 1.748819!
+        Me.Label15.Name = "Label15"
+        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label15.Text = "もしくは　JAL国内線一般窓口TEL："
+        Me.Label15.Top = 3.373622!
+        Me.Label15.Width = 2.036221!
+        '
+        'Label16
+        '
+        Me.Label16.Height = 0.2!
+        Me.Label16.HyperLink = Nothing
+        Me.Label16.Left = 3.78504!
+        Me.Label16.Name = "Label16"
+        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
+            "e; vertical-align: middle"
+        Me.Label16.Text = "0570-025-071"
+        Me.Label16.Top = 3.373622!
+        Me.Label16.Width = 0.875984!
+        '
+        'Label17
+        '
+        Me.Label17.Height = 0.2!
+        Me.Label17.HyperLink = Nothing
+        Me.Label17.Left = 4.661024!
+        Me.Label17.Name = "Label17"
+        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label17.Text = "(受付時間　07:00～20:00　年中無休)"
+        Me.Label17.Top = 3.373622!
+        Me.Label17.Width = 2.188583!
+        '
+        'Label18
+        '
+        Me.Label18.Height = 0.2!
+        Me.Label18.HyperLink = Nothing
+        Me.Label18.Left = 1.748819!
+        Me.Label18.Name = "Label18"
+        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label18.Text = "ANA国内線予約・案内センター"
+        Me.Label18.Top = 3.675985!
+        Me.Label18.Width = 2.036221!
+        '
+        'Label19
+        '
+        Me.Label19.Height = 0.2!
+        Me.Label19.HyperLink = Nothing
+        Me.Label19.Left = 1.748819!
+        Me.Label19.Name = "Label19"
+        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label19.Text = "TEL："
+        Me.Label19.Top = 3.875984!
+        Me.Label19.Width = 0.8039376!
+        '
+        'Label20
+        '
+        Me.Label20.Height = 0.2!
+        Me.Label20.HyperLink = Nothing
+        Me.Label20.Left = 2.552757!
+        Me.Label20.Name = "Label20"
+        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
+            "e; vertical-align: middle"
+        Me.Label20.Text = "0570-029-222"
+        Me.Label20.Top = 3.875984!
+        Me.Label20.Width = 0.875984!
+        '
+        'Label21
+        '
+        Me.Label21.Height = 0.2!
+        Me.Label21.HyperLink = Nothing
+        Me.Label21.Left = 3.437402!
+        Me.Label21.Name = "Label21"
+        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label21.Text = "(係員応答時間　6:30～22:00　年中無休)"
+        Me.Label21.Top = 3.875984!
+        Me.Label21.Width = 2.411812!
+        '
+        'Label22
+        '
+        Me.Label22.Height = 0.2!
+        Me.Label22.HyperLink = Nothing
+        Me.Label22.Left = 1.748819!
+        Me.Label22.Name = "Label22"
+        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label22.Text = "または、自動音声システム　TEL："
+        Me.Label22.Top = 4.075985!
+        Me.Label22.Width = 2.036221!
+        '
+        'Label23
+        '
+        Me.Label23.Height = 0.2!
+        Me.Label23.HyperLink = Nothing
+        Me.Label23.Left = 3.78504!
+        Me.Label23.Name = "Label23"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
+            "e; vertical-align: middle"
+        Me.Label23.Text = "0570-029-770"
+        Me.Label23.Top = 4.075985!
+        Me.Label23.Width = 0.875984!
+        '
+        'Label24
+        '
+        Me.Label24.Height = 0.2!
+        Me.Label24.HyperLink = Nothing
+        Me.Label24.Left = 4.661024!
+        Me.Label24.Name = "Label24"
+        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label24.Text = "(受付時間 24時間　年中無休)"
+        Me.Label24.Top = 4.075985!
+        Me.Label24.Width = 2.188583!
+        '
+        'Label25
+        '
+        Me.Label25.Height = 0.3460631!
+        Me.Label25.HyperLink = Nothing
+        Me.Label25.Left = 1.748819!
+        Me.Label25.Name = "Label25"
+        Me.Label25.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top"
+        Me.Label25.Text = "※区間・クラスが変更になった場合はチケットの差し替えが必要となります。バイエル薬品担当者へご連絡をお願い致します。"
+        Me.Label25.Top = 4.378346!
+        Me.Label25.Width = 5.40315!
+        '
+        'Label26
+        '
+        Me.Label26.Height = 0.2!
+        Me.Label26.HyperLink = Nothing
+        Me.Label26.Left = 0.0!
+        Me.Label26.Name = "Label26"
+        Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle"
+        Me.Label26.Text = "【その他】"
+        Me.Label26.Top = 4.826772!
+        Me.Label26.Width = 0.6866142!
+        '
+        'Label27
+        '
+        Me.Label27.Height = 0.2!
+        Me.Label27.HyperLink = Nothing
+        Me.Label27.Left = 0.6866142!
+        Me.Label27.Name = "Label27"
+        Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label27.Text = "取消、変更はバイエル薬品担当者へご連絡下さい。"
+        Me.Label27.Top = 4.826772!
+        Me.Label27.Width = 6.465354!
+        '
+        'OTHER_NOTES
+        '
+        Me.OTHER_NOTES.AutoReplaceFields = True
+        Me.OTHER_NOTES.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.OTHER_NOTES.Height = 0.2!
+        Me.OTHER_NOTES.Left = 0.0!
+        Me.OTHER_NOTES.Name = "OTHER_NOTES"
+        Me.OTHER_NOTES.RTF = resources.GetString("OTHER_NOTES.RTF")
+        Me.OTHER_NOTES.Top = 5.026772!
+        Me.OTHER_NOTES.Width = 7.151969!
+        '
+        'Label28
+        '
+        Me.Label28.Height = 0.2!
+        Me.Label28.HyperLink = Nothing
+        Me.Label28.Left = 0.0!
+        Me.Label28.Name = "Label28"
+        Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label28.Text = "ご不明な点がございましたら、バイエル薬品担当者又は、下記サポートデスクまでお問い合わせください。"
+        Me.Label28.Top = 5.380315!
+        Me.Label28.Width = 7.151969!
+        '
+        'Label29
+        '
+        Me.Label29.Height = 0.2!
+        Me.Label29.HyperLink = Nothing
+        Me.Label29.Left = 0.1330709!
+        Me.Label29.Name = "Label29"
+        Me.Label29.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label29.Text = "〒530-0004　大阪市北区堂島浜2丁目2-28 (堂島アクシスビル7F)"
+        Me.Label29.Top = 6.005512!
+        Me.Label29.Width = 6.849607!
+        '
+        'Label30
+        '
+        Me.Label30.Height = 0.2!
+        Me.Label30.HyperLink = Nothing
+        Me.Label30.Left = 0.1330709!
+        Me.Label30.Name = "Label30"
+        Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label30.Text = "トップツアー株式会社　メディカルカンファレンスセンター内"
+        Me.Label30.Top = 6.205512!
+        Me.Label30.Width = 6.849607!
+        '
+        'Label31
+        '
+        Me.Label31.Height = 0.2!
+        Me.Label31.HyperLink = Nothing
+        Me.Label31.Left = 0.1330709!
+        Me.Label31.Name = "Label31"
+        Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label31.Text = "バイエル薬品株式会社　サポートデスク"
+        Me.Label31.Top = 6.405512!
+        Me.Label31.Width = 6.849607!
+        '
+        'Label32
+        '
+        Me.Label32.Height = 0.2!
+        Me.Label32.HyperLink = Nothing
+        Me.Label32.Left = 0.1330709!
+        Me.Label32.Name = "Label32"
+        Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label32.Text = "TEL：06-4799-0110　FAX：06-4799-0128"
+        Me.Label32.Top = 6.605512!
+        Me.Label32.Width = 6.849607!
+        '
+        'Label33
+        '
+        Me.Label33.Height = 0.2!
+        Me.Label33.HyperLink = Nothing
+        Me.Label33.Left = 0.1330709!
+        Me.Label33.Name = "Label33"
+        Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label33.Text = "営業時間：平日09:00～18:00 (土・日・祝　定休)"
+        Me.Label33.Top = 6.805512!
+        Me.Label33.Width = 6.849607!
+        '
+        'Label34
+        '
+        Me.Label34.Height = 0.2!
+        Me.Label34.HyperLink = Nothing
+        Me.Label34.Left = 0.1330709!
+        Me.Label34.Name = "Label34"
+        Me.Label34.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label34.Text = "＜バイエル薬品担当者へのお願い＞"
+        Me.Label34.Top = 7.189764!
+        Me.Label34.Width = 6.849607!
+        '
+        'Label35
+        '
+        Me.Label35.Height = 0.2!
+        Me.Label35.HyperLink = Nothing
+        Me.Label35.Left = 0.1330709!
+        Me.Label35.Name = "Label35"
+        Me.Label35.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label35.Text = "※取消後のチケットは必ずご利用日から1週間以内にトップツアーへ宅配便にてご返送ください。"
+        Me.Label35.Top = 7.389764!
+        Me.Label35.Width = 6.849607!
+        '
+        'Label36
+        '
+        Me.Label36.Height = 0.3980319!
+        Me.Label36.HyperLink = Nothing
+        Me.Label36.Left = 0.1330709!
+        Me.Label36.Name = "Label36"
+        Me.Label36.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label36.Text = "※ご利用日の直近のお取消で、トップツアー営業時間外は、航空会社や宿泊ホテルに直接、キャンセルのご連絡をしていただき、その旨、NOZOMIよりご連絡お願いいたします" & _
+            "。"
+        Me.Label36.Top = 7.76378!
+        Me.Label36.Width = 6.849607!
+        '
+        'Shape1
+        '
+        Me.Shape1.Height = 2.510237!
+        Me.Shape1.Left = 0.0!
+        Me.Shape1.Name = "Shape1"
+        Me.Shape1.RoundingRadius = 20.0!
+        Me.Shape1.Style = DataDynamics.ActiveReports.ShapeType.RoundRect
+        Me.Shape1.Top = 5.791733!
+        Me.Shape1.Width = 7.165355!
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Height = 0.2!
+        Me.TextBox1.Left = 2.487402!
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Style = "background-color: GhostWhite; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: c" & _
+            "enter; vertical-align: middle"
+        Me.TextBox1.Text = "【お問合せ・チケットご返送先】"
+        Me.TextBox1.Top = 5.718111!
+        Me.TextBox1.Width = 2.020473!
+        '
+        'Shape2
+        '
+        Me.Shape2.BackColor = System.Drawing.Color.GhostWhite
+        Me.Shape2.Height = 0.2!
+        Me.Shape2.Left = 2.487402!
+        Me.Shape2.LineStyle = DataDynamics.ActiveReports.LineStyle.Transparent
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 10.0!
+        Me.Shape2.Top = 5.713386!
+        Me.Shape2.Width = 2.020473!
         '
         'DrSoufujo
         '
@@ -5500,27 +5816,47 @@ Partial Public Class DrSoufujo
         CType(Me.AISATSU2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AISATSU3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JR_SETSUMEI1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AIR_SETSUMEI1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OTHER_SETSUMEI1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FOOTER_SETSUMEI1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JR_SETSUMEI2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JR_SETSUMEI3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JR_SETSUMEI4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AIR_SETSUMEI2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AIR_SETSUMEI3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AIR_SETSUMEI4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AIR_SETSUMEI5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AIR_SETSUMEI6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OTHER_SETSUMEI2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FOOTER_SETSUMEI2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FOOTER_SETSUMEI3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FOOTER_SETSUMEI4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MR_BU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MR_AREA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MR_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HOTEL_NOTES1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HOTEL_NOTES2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MR_SHOZOKU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TAXI_NOTES_TITLE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JR_SETSUMEI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JR_HENKO_TITLE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JR_TORIKESHI_TITLE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AIR_SETSUMEI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AIR_TITLE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label26, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label27, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label29, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label30, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label31, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label35, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -5551,22 +5887,6 @@ Partial Public Class DrSoufujo
     Private WithEvents AISATSU2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents AISATSU3 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label9 As DataDynamics.ActiveReports.Label
-    Private WithEvents JR_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents OTHER_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents FOOTER_SETSUMEI1 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents JR_SETSUMEI2 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents JR_SETSUMEI3 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents JR_SETSUMEI4 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI2 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI3 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI4 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI5 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents AIR_SETSUMEI6 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents OTHER_SETSUMEI2 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents FOOTER_SETSUMEI2 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents FOOTER_SETSUMEI3 As DataDynamics.ActiveReports.TextBox
-    Private WithEvents FOOTER_SETSUMEI4 As DataDynamics.ActiveReports.TextBox
     Private WithEvents ANS_STATUS_HOTEL As DataDynamics.ActiveReports.TextBox
     Private WithEvents ANS_O_STATUS_1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents ANS_O_STATUS_2 As DataDynamics.ActiveReports.TextBox
@@ -5870,7 +6190,47 @@ Partial Public Class DrSoufujo
     Private WithEvents MR_EIGYOSHO As DataDynamics.ActiveReports.TextBox
     Private WithEvents HOTEL_NOTES1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents HOTEL_NOTES2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents MR_SHOZOKU As DataDynamics.ActiveReports.TextBox
     Private WithEvents TAXI_NOTES1 As DataDynamics.ActiveReports.RichTextBox
-    Private WithEvents TAXI_NOTES2 As DataDynamics.ActiveReports.RichTextBox
-    Private WithEvents TAXI_NOTES3 As DataDynamics.ActiveReports.RichTextBox
+    Private WithEvents TAXI_NOTES_TITLE As DataDynamics.ActiveReports.Label
+    Private WithEvents JR_SETSUMEI As DataDynamics.ActiveReports.Label
+    Private WithEvents JR_HENKO_TITLE As DataDynamics.ActiveReports.Label
+    Private WithEvents JR_HENKOU As DataDynamics.ActiveReports.RichTextBox
+    Private WithEvents JR_TORIKESHI_TITLE As DataDynamics.ActiveReports.Label
+    Private WithEvents JR_TORIKESHI As DataDynamics.ActiveReports.RichTextBox
+    Private WithEvents AIR_SETSUMEI As DataDynamics.ActiveReports.Label
+    Private WithEvents AIR_TITLE As DataDynamics.ActiveReports.Label
+    Private WithEvents AIR_HENKO As DataDynamics.ActiveReports.RichTextBox
+    Private WithEvents Label3 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label10 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label11 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label12 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label13 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label14 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label15 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label16 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label17 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label18 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label19 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label20 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label21 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label22 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label23 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label24 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label25 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label26 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label27 As DataDynamics.ActiveReports.Label
+    Private WithEvents OTHER_NOTES As DataDynamics.ActiveReports.RichTextBox
+    Private WithEvents Label28 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label29 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label30 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label31 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label32 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label33 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label34 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label35 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label36 As DataDynamics.ActiveReports.Label
+    Private WithEvents Shape1 As DataDynamics.ActiveReports.Shape
+    Private WithEvents TextBox1 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Shape2 As DataDynamics.ActiveReports.Shape
 End Class
