@@ -2,6 +2,7 @@
 Imports DataDynamics.ActiveReports.Document 
 Imports AppLib
 Imports CommonLib
+Imports System.Drawing
 
 Public Class DrSoufujo
     Private Const RowHeight As Single = 0.455
@@ -18,9 +19,11 @@ Public Class DrSoufujo
     Private HotelItemWidthMax = 14.463
     Private KotsuItemTitleX1 As Single = 1.349
     Private KotsuItemTitleX2 As Single = 3.57
-    Private KotsuItemTitleX3 As Single = 10.708
+    Private KotsuItemTitleX3 As Single = 8.572
+    'Private KotsuItemTitleX3 As Single = 10.708
     Private KotsuItemX2 As Single = 4.971
-    Private KotsuItemX3 As Single = 12.374
+    Private KotsuItemX3 As Single = 10.555
+    'Private KotsuItemX3 As Single = 12.374
     Private KotsuItemTitleWidth2 = 1.401
     Private KotsuItemTitleWidth3 = 1.666
     Private KotsuItemWidth2 = 5.659
@@ -53,8 +56,8 @@ Public Class DrSoufujo
 
         'DR氏名
         If Me.DR_NAME.Text.Trim <> "" Then
-            If Me.DR_NAME.Text.Trim.Length > 27 Then
-                Me.DR_NAME.Text = Left(Me.DR_NAME.Text, 27) & "　先生"
+            If Me.DR_NAME.Text.Trim.Length > 18 Then
+                Me.DR_NAME.Text = Left(Me.DR_NAME.Text, 18) & "　先生"
             Else
                 Me.DR_NAME.Text = Me.DR_NAME.Text & "　先生"
             End If
@@ -62,22 +65,49 @@ Public Class DrSoufujo
 
         '送付先
         If Me.MR_SEND_SAKI_FS.Text.Trim <> "" Then
-            If Me.MR_SEND_SAKI_FS.Text.Trim.Length > 78 Then
-                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_FS.Text, 78)
+            If Me.MR_SEND_SAKI_FS.Text.Trim.Length > 52 Then
+                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_FS.Text, 52)
             Else
                 Me.MR_SEND_SAKI.Text = Me.MR_SEND_SAKI_FS.Text
             End If
         Else
-            If Me.MR_SEND_SAKI_OTHER.Text.Trim.Length > 78 Then
-                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_OTHER.Text, 78)
+            If Me.MR_SEND_SAKI_OTHER.Text.Trim.Length > 52 Then
+                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_OTHER.Text, 52)
             Else
                 Me.MR_SEND_SAKI.Text = Me.MR_SEND_SAKI_OTHER.Text
             End If
         End If
 
+        'MR BU
+        If Me.MR_BU.Text.Trim <> "" Then
+            If Me.MR_BU.Text.Trim.Length > 3 Then
+                Me.MR_BU.Text = Left(Me.MR_BU.Text, 3)
+            Else
+                Me.MR_BU.Text = Me.MR_BU.Text
+            End If
+        End If
+
+        'MRエリア
+        If Me.MR_AREA.Text.Trim <> "" Then
+            If Me.MR_AREA.Text.Trim.Length > 10 Then
+                Me.MR_AREA.Text = Left(Me.MR_AREA.Text, 10)
+            Else
+                Me.MR_AREA.Text = Me.MR_AREA.Text
+            End If
+        End If
+
+        'MR営業所
+        If Me.MR_EIGYOSHO.Text.Trim <> "" Then
+            If Me.MR_EIGYOSHO.Text.Trim.Length > 10 Then
+                Me.MR_EIGYOSHO.Text = Left(Me.MR_EIGYOSHO.Text, 10)
+            Else
+                Me.MR_EIGYOSHO.Text = Me.MR_EIGYOSHO.Text
+            End If
+        End If
+
         'MR氏名
         If Me.MR_NAME.Text.Trim <> "" Then
-            Me.MR_NAME.Text = Me.MR_NAME.Text & "　様"
+            Me.MR_NAME.Text = Me.MR_NAME.Text
         End If
 
         '開催日
@@ -115,24 +145,19 @@ Public Class DrSoufujo
 
         '宿泊手配済
         If Me.ANS_STATUS_HOTEL.Text = AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.OK Then
-            'Dim HotelTitle As New Label
             HotelTitle.Visible = True
             HotelTitle.Text = "【宿泊】"
             HotelTitle.Height = RowHeight
             HotelTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY))
             HotelTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelTitle)
 
-            'Dim HotelDateTitle As New Label
             HotelDateTitle.Visible = True
             HotelDateTitle.Text = "利用日："
             HotelDateTitle.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             HotelDateTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY))
             HotelDateTitle.Alignment = TextAlignment.Left
             HotelDateTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelDateTitle)
 
-            'Dim HotelDate As New TextBox
             ANS_HOTEL_DATE.Visible = True
             ANS_HOTEL_DATE.Text = CmnModule.Format_DateJP(Me.ANS_HOTEL_DATE.Text, CmnModule.DateFormatType.YYYYMD)
             ANS_HOTEL_DATE.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidth1), Me.CmToInch(RowHeight))
@@ -142,65 +167,59 @@ Public Class DrSoufujo
             ANS_HOTEL_DATE.WordWrap = False
             ANS_HOTEL_DATE.Alignment = TextAlignment.Left
             ANS_HOTEL_DATE.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelDate)
 
-            'Dim HotelNameTitle As New Label
+            RowNo += 1
+
             HotelNameTitle.Visible = True
             HotelNameTitle.Text = "宿泊施設名："
             HotelNameTitle.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
-            HotelNameTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX2), Me.CmToInch(StartY))
+            HotelNameTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             HotelNameTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelNameTitle)
 
-            'Dim HotelName As New TextBox
             ANS_HOTEL_NAME.Visible = True
             If Me.ANS_HOTEL_NAME.Text.Trim.Length > 25 Then
                 ANS_HOTEL_NAME.Text = Left(Me.ANS_HOTEL_NAME.Text.Trim, 25)
             Else
                 ANS_HOTEL_NAME.Text = Me.ANS_HOTEL_NAME.Text.Trim
             End If
-            ANS_HOTEL_NAME.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX2), Me.CmToInch(StartY))
+            ANS_HOTEL_NAME.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_HOTEL_NAME.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidth2), Me.CmToInch(RowHeight))
             ANS_HOTEL_NAME.CanGrow = True
             ANS_HOTEL_NAME.CanShrink = True
             ANS_HOTEL_NAME.WordWrap = False
             ANS_HOTEL_NAME.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelName)
 
-            'Dim HotelAddrTitle As New Label
             HotelAddrTitle.Visible = True
             HotelAddrTitle.Text = "住所："
             HotelAddrTitle.Height = RowHeight
-            HotelAddrTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            HotelAddrTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             HotelAddrTitle.Alignment = TextAlignment.Left
             HotelAddrTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelAddrTitle)
 
-            'Dim HotelAddress As New TextBox
-            'HotelAddress.Text = Me.ANS_HOTEL_ADDRESS.Text.Trim
             ANS_HOTEL_ADDRESS.Visible = True
+            If Me.ANS_HOTEL_ADDRESS.Text.Trim.Length > 25 Then
+                ANS_HOTEL_ADDRESS.Text = Left(Me.ANS_HOTEL_ADDRESS.Text.Trim, 25)
+            Else
+                ANS_HOTEL_ADDRESS.Text = Me.ANS_HOTEL_ADDRESS.Text.Trim
+            End If
             ANS_HOTEL_ADDRESS.Height = RowHeight
-            ANS_HOTEL_ADDRESS.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            ANS_HOTEL_ADDRESS.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_HOTEL_ADDRESS.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
             ANS_HOTEL_ADDRESS.CanGrow = True
             ANS_HOTEL_ADDRESS.CanShrink = True
             ANS_HOTEL_ADDRESS.WordWrap = False
             ANS_HOTEL_ADDRESS.Alignment = TextAlignment.Left
             ANS_HOTEL_ADDRESS.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelAddress)
 
             RowNo += 1
 
-            'Dim HotelTelTitle As New Label
             HotelTelTitle.Visible = True
             HotelTelTitle.Text = "電話番号："
             HotelTelTitle.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             HotelTelTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             HotelTelTitle.Alignment = TextAlignment.Left
             HotelTelTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelTelTitle)
 
-            'Dim HotelTel As New TextBox
             ANS_HOTEL_TEL.Visible = True
             ANS_HOTEL_TEL.Text = Me.ANS_HOTEL_TEL.Text.Trim
             ANS_HOTEL_TEL.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -210,23 +229,19 @@ Public Class DrSoufujo
             ANS_HOTEL_TEL.WordWrap = False
             ANS_HOTEL_TEL.Alignment = TextAlignment.Left
             ANS_HOTEL_TEL.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(HotelTel)
 
             RowNo += 1
 
-            'Dim RoomTypeTitle As New Label
             RoomTypeTitle.Visible = True
             RoomTypeTitle.Text = "部屋タイプ："
             RoomTypeTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             RoomTypeTitle.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             RoomTypeTitle.Alignment = TextAlignment.Left
             RoomTypeTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(RoomTypeTitle)
 
-            'Dim RoomType As New TextBox
             ANS_ROOM_TYPE.Visible = True
             ANS_ROOM_TYPE.Text = Me.ANS_ROOM_TYPE.Text.Trim & _
-                "　　　喫煙：" & AppModule.GetName_ANS_HOTEL_SMOKING(Me.ANS_HOTEL_SMOKING.Text)
+                "　　　　　　" & AppModule.GetName_ANS_HOTEL_SMOKING(Me.ANS_HOTEL_SMOKING.Text)
             ANS_ROOM_TYPE.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_ROOM_TYPE.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
             ANS_ROOM_TYPE.CanGrow = True
@@ -234,20 +249,16 @@ Public Class DrSoufujo
             ANS_ROOM_TYPE.WordWrap = False
             ANS_ROOM_TYPE.Alignment = TextAlignment.Left
             ANS_ROOM_TYPE.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(RoomType)
 
             RowNo += 1
 
-            'Dim CheckinTitle As New Label
             CheckinTitle.Visible = True
             CheckinTitle.Text = "チェックイン："
             CheckinTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             CheckinTitle.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             CheckinTitle.Alignment = TextAlignment.Left
             CheckinTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(CheckinTitle)
 
-            'Dim Checkin As New TextBox
             ANS_CHECKIN_TIME.Visible = True
             ANS_CHECKIN_TIME.Text = Me.ANS_CHECKIN_TIME.Text.Trim & _
                 "　　　チェックアウト：" & Me.ANS_CHECKOUT_TIME.Text.Trim
@@ -258,9 +269,33 @@ Public Class DrSoufujo
             ANS_CHECKIN_TIME.WordWrap = False
             ANS_CHECKIN_TIME.Alignment = TextAlignment.Left
             ANS_CHECKIN_TIME.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Checkin)
 
             RowNo += 2
+
+            HOTEL_NOTES1.Visible = True
+            HOTEL_NOTES1.Text = "※ 宿泊クーポンはございませんので、フロントでお名前をお伝えください。"
+            HOTEL_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            HOTEL_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
+            HOTEL_NOTES1.CanGrow = True
+            HOTEL_NOTES1.CanShrink = True
+            HOTEL_NOTES1.WordWrap = False
+            HOTEL_NOTES1.Alignment = TextAlignment.Left
+            HOTEL_NOTES1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
+
+            RowNo += 1
+
+            HOTEL_NOTES2.Visible = True
+            HOTEL_NOTES2.Text = "※ 1泊朝食代金以外の個人ご利用分は、チェックアウト時にご本人様でお支払いをお願いします。"
+            HOTEL_NOTES2.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            HOTEL_NOTES2.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
+            HOTEL_NOTES2.CanGrow = True
+            HOTEL_NOTES2.CanShrink = True
+            HOTEL_NOTES2.WordWrap = False
+            HOTEL_NOTES2.Alignment = TextAlignment.Left
+            HOTEL_NOTES2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
+
+            RowNo += 2
+
         End If
 
         '【交通】
@@ -269,33 +304,26 @@ Public Class DrSoufujo
         If Me.ANS_O_STATUS_1.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or Me.ANS_O_STATUS_1.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             KotsuFlg = True
 
-            'Dim KotsuTitle As New Label
             KotsuTitle.Visible = True
             KotsuTitle.Text = "【交通】"
             KotsuTitle.Height = RowHeight
             KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
             KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(KotsuTitle)
 
-            'Dim Ouro1Title As New Label
             Ouro1Title.Visible = True
             Ouro1Title.Text = "＜往路１＞"
             Ouro1Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Ouro1Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ouro1Title.Alignment = TextAlignment.Left
             Ouro1Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ouro1Title)
 
-            'Dim Ans_O_Date_1_Title As New Label
             Ans_O_Date_1_Title.Visible = True
             Ans_O_Date_1_Title.Text = "利用日："
             Ans_O_Date_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Date_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Date_1_Title.Alignment = TextAlignment.Left
             Ans_O_Date_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_1_Title)
 
-            'Dim Ans_O_Date_1 As New TextBox
             ANS_O_DATE_1.Visible = True
             ANS_O_DATE_1.Text = CmnModule.Format_DateJP(Me.ANS_O_DATE_1.Text, CmnModule.DateFormatType.MD)
             ANS_O_DATE_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -305,19 +333,14 @@ Public Class DrSoufujo
             ANS_O_DATE_1.WordWrap = False
             ANS_O_DATE_1.Alignment = TextAlignment.Left
             ANS_O_DATE_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_1)
 
-            'Dim Ans_O_Bin_1_Title As New Label
             Ans_O_Bin_1_Title.Visible = True
             Ans_O_Bin_1_Title.Text = "乗車便名："
             Ans_O_Bin_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Bin_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Bin_1_Title.Alignment = TextAlignment.Left
             Ans_O_Bin_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_1_Title)
 
-            'Dim Ans_O_Bin_1 As New TextBox
-            'ANS_O_BIN_1.Text = Me.ANS_O_BIN_1.Text
             ANS_O_BIN_1.Visible = True
             ANS_O_BIN_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_BIN_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -326,21 +349,16 @@ Public Class DrSoufujo
             ANS_O_BIN_1.WordWrap = False
             ANS_O_BIN_1.Alignment = TextAlignment.Left
             ANS_O_BIN_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_1)
 
             RowNo += 1
 
-            'Dim Ans_O_Airport1_1_Title As New Label
             Ans_O_Airport1_1_Title.Visible = True
             Ans_O_Airport1_1_Title.Text = "発地："
             Ans_O_Airport1_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Airport1_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport1_1_Title.Alignment = TextAlignment.Left
             Ans_O_Airport1_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_1_Title)
 
-            'Dim Ans_O_Airport1_1 As New TextBox
-            'ANS_O_AIRPORT1_1.Text = Me.ANS_O_AIRPORT1_1.Text
             ANS_O_AIRPORT1_1.Visible = True
             ANS_O_AIRPORT1_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT1_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -349,19 +367,14 @@ Public Class DrSoufujo
             ANS_O_AIRPORT1_1.WordWrap = False
             ANS_O_AIRPORT1_1.Alignment = TextAlignment.Left
             ANS_O_AIRPORT1_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_1)
 
-            'Dim Ans_O_Airport2_1_Title As New Label
             Ans_O_Airport2_1_Title.Visible = True
             Ans_O_Airport2_1_Title.Text = "着地："
             Ans_O_Airport2_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Airport2_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport2_1_Title.Alignment = TextAlignment.Left
             Ans_O_Airport2_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_1_Title)
 
-            'Dim Ans_O_Airport2_1 As New TextBox
-            'ANS_O_AIRPORT2_1.Text = Me.ANS_O_AIRPORT2_1.Text
             ANS_O_AIRPORT2_1.Visible = True
             ANS_O_AIRPORT2_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT2_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -370,21 +383,16 @@ Public Class DrSoufujo
             ANS_O_AIRPORT2_1.WordWrap = False
             ANS_O_AIRPORT2_1.Alignment = TextAlignment.Left
             ANS_O_AIRPORT2_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_1)
 
             RowNo += 1
 
-            'Dim Ans_O_Time1_1_Title As New Label
             Ans_O_Time1_1_Title.Visible = True
             Ans_O_Time1_1_Title.Text = "発時間："
             Ans_O_Time1_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Time1_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time1_1_Title.Alignment = TextAlignment.Left
             Ans_O_Time1_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_1_Title)
 
-            'Dim Ans_O_Time1_1 As New TextBox
-            'ANS_O_TIME1_1.Text = Me.ANS_O_TIME1_1.Text
             ANS_O_TIME1_1.Visible = True
             ANS_O_TIME1_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_TIME1_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -393,19 +401,14 @@ Public Class DrSoufujo
             ANS_O_TIME1_1.WordWrap = False
             ANS_O_TIME1_1.Alignment = TextAlignment.Left
             ANS_O_TIME1_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_1)
 
-            'Dim Ans_O_Time2_1_Title As New Label
             Ans_O_Time2_1_Title.Visible = True
             Ans_O_Time2_1_Title.Text = "着時間："
             Ans_O_Time2_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Time2_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time2_1_Title.Alignment = TextAlignment.Left
             Ans_O_Time2_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_1_Title)
 
-            'Dim Ans_O_Time2_1 As New TextBox
-            'ANS_O_TIME2_1.Text = Me.ANS_O_TIME2_1.Text
             ANS_O_TIME2_1.Visible = True
             ANS_O_TIME2_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_TIME2_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -414,7 +417,6 @@ Public Class DrSoufujo
             ANS_O_TIME2_1.WordWrap = False
             ANS_O_TIME2_1.Alignment = TextAlignment.Left
             ANS_O_TIME2_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_1)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -424,34 +426,27 @@ Public Class DrSoufujo
         If Me.ANS_O_STATUS_2.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or Me.ANS_O_STATUS_2.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Ouro2Title As New Label
             Ouro2Title.Visible = True
             Ouro2Title.Text = "＜往路２＞"
             Ouro2Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Ouro2Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ouro2Title.Alignment = TextAlignment.Left
             Ouro2Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ouro1Title)
 
-            'Dim Ans_O_Date_2_Title As New Label
             Ans_O_Date_2_Title.Visible = True
             Ans_O_Date_2_Title.Text = "利用日："
             Ans_O_Date_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Date_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Date_2_Title.Alignment = TextAlignment.Left
             Ans_O_Date_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_2_Title)
 
-            'Dim Ans_O_Date_2 As New TextBox
             ANS_O_DATE_2.Visible = True
             ANS_O_DATE_2.Text = CmnModule.Format_DateJP(Me.ANS_O_DATE_2.Text, CmnModule.DateFormatType.MD)
             ANS_O_DATE_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -461,19 +456,14 @@ Public Class DrSoufujo
             ANS_O_DATE_2.WordWrap = False
             ANS_O_DATE_2.Alignment = TextAlignment.Left
             ANS_O_DATE_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_2)
 
-            'Dim Ans_O_Bin_2_Title As New Label
             Ans_O_Bin_2_Title.Visible = True
             Ans_O_Bin_2_Title.Text = "乗車便名："
             Ans_O_Bin_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Bin_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Bin_2_Title.Alignment = TextAlignment.Left
             Ans_O_Bin_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_2_Title)
 
-            'Dim Ans_O_Bin_2 As New TextBox
-            'Ans_O_Bin_2.Text = Me.ANS_O_BIN_2.Text
             ANS_O_BIN_2.Visible = True
             ANS_O_BIN_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_BIN_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -482,21 +472,16 @@ Public Class DrSoufujo
             ANS_O_BIN_2.WordWrap = False
             ANS_O_BIN_2.Alignment = TextAlignment.Left
             ANS_O_BIN_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_2)
 
             RowNo += 1
 
-            'Dim Ans_O_Airport1_2_Title As New Label
             Ans_O_Airport1_2_Title.Visible = True
             Ans_O_Airport1_2_Title.Text = "発地："
             Ans_O_Airport1_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Airport1_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport1_2_Title.Alignment = TextAlignment.Left
             Ans_O_Airport1_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_2_Title)
 
-            'Dim Ans_O_Airport1_2 As New TextBox
-            'Ans_O_Airport1_2.Text = Me.ANS_O_AIRPORT1_2.Text
             ANS_O_AIRPORT1_2.Visible = True
             ANS_O_AIRPORT1_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT1_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -505,19 +490,14 @@ Public Class DrSoufujo
             ANS_O_AIRPORT1_2.WordWrap = False
             ANS_O_AIRPORT1_2.Alignment = TextAlignment.Left
             ANS_O_AIRPORT1_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_2)
 
-            'Dim Ans_O_Airport2_2_Title As New Label
             Ans_O_Airport2_2_Title.Visible = True
             Ans_O_Airport2_2_Title.Text = "着地："
             Ans_O_Airport2_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Airport2_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport2_2_Title.Alignment = TextAlignment.Left
             Ans_O_Airport2_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_2_Title)
 
-            'Dim Ans_O_Airport2_2 As New TextBox
-            'Ans_O_Airport2_2.Text = Me.ANS_O_AIRPORT2_2.Text
             ANS_O_AIRPORT2_2.Visible = True
             ANS_O_AIRPORT2_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT2_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -526,21 +506,16 @@ Public Class DrSoufujo
             ANS_O_AIRPORT2_2.WordWrap = False
             ANS_O_AIRPORT2_2.Alignment = TextAlignment.Left
             ANS_O_AIRPORT2_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_2)
 
             RowNo += 1
 
-            'Dim Ans_O_Time1_2_Title As New Label
             Ans_O_Time1_2_Title.Visible = True
             Ans_O_Time1_2_Title.Text = "発時間："
             Ans_O_Time1_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Time1_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time1_2_Title.Alignment = TextAlignment.Left
             Ans_O_Time1_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_2_Title)
 
-            'Dim Ans_O_Time1_2 As New TextBox
-            'Ans_O_Time1_2.Text = Me.ANS_O_TIME1_2.Text
             ANS_O_TIME1_2.Visible = True
             ANS_O_TIME1_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_TIME1_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -549,19 +524,14 @@ Public Class DrSoufujo
             ANS_O_TIME1_2.WordWrap = False
             ANS_O_TIME1_2.Alignment = TextAlignment.Left
             ANS_O_TIME1_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_2)
 
-            'Dim Ans_O_Time2_2_Title As New Label
             Ans_O_Time2_2_Title.Visible = True
             Ans_O_Time2_2_Title.Text = "着時間："
             Ans_O_Time2_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Time2_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time2_2_Title.Alignment = TextAlignment.Left
             Ans_O_Time2_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_2_Title)
 
-            'Dim Ans_O_Time2_2 As New TextBox
-            'Ans_O_Time2_2.Text = Me.ANS_O_TIME2_2.Text
             ANS_O_TIME2_2.Visible = True
             ANS_O_TIME2_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_TIME2_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -570,7 +540,6 @@ Public Class DrSoufujo
             ANS_O_TIME2_2.WordWrap = False
             ANS_O_TIME2_2.Alignment = TextAlignment.Left
             ANS_O_TIME2_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_2)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -580,34 +549,27 @@ Public Class DrSoufujo
         If Me.ANS_O_STATUS_3.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or Me.ANS_O_STATUS_3.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Ouro3Title As New Label
             Ouro3Title.Visible = True
             Ouro3Title.Text = "＜往路３＞"
             Ouro3Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Ouro3Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ouro3Title.Alignment = TextAlignment.Left
             Ouro3Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ouro1Title)
 
-            'Dim Ans_O_Date_3_Title As New Label
             Ans_O_Date_3_Title.Visible = True
             Ans_O_Date_3_Title.Text = "利用日："
             Ans_O_Date_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Date_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Date_3_Title.Alignment = TextAlignment.Left
             Ans_O_Date_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_3_Title)
 
-            'Dim Ans_O_Date_3 As New TextBox
             ANS_O_DATE_3.Visible = True
             ANS_O_DATE_3.Text = CmnModule.Format_DateJP(Me.ANS_O_DATE_3.Text, CmnModule.DateFormatType.MD)
             ANS_O_DATE_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -617,19 +579,14 @@ Public Class DrSoufujo
             ANS_O_DATE_3.WordWrap = False
             ANS_O_DATE_3.Alignment = TextAlignment.Left
             ANS_O_DATE_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_3)
 
-            'Dim Ans_O_Bin_3_Title As New Label
-            Ans_O_Bin_3_Title.Visible = True
+            ANS_O_BIN_3_Title.Visible = True
             Ans_O_Bin_3_Title.Text = "乗車便名："
             Ans_O_Bin_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Bin_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Bin_3_Title.Alignment = TextAlignment.Left
             Ans_O_Bin_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_3_Title)
 
-            'Dim Ans_O_Bin_3 As New TextBox
-            'ANS_O_BIN_3.Text = Me.ANS_O_BIN_3.Text
             ANS_O_BIN_3.Visible = True
             ANS_O_BIN_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_BIN_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -638,21 +595,16 @@ Public Class DrSoufujo
             ANS_O_BIN_3.WordWrap = False
             ANS_O_BIN_3.Alignment = TextAlignment.Left
             ANS_O_BIN_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_3)
 
             RowNo += 1
 
-            'Dim Ans_O_Airport1_3_Title As New Label
             Ans_O_Airport1_3_Title.Visible = True
             Ans_O_Airport1_3_Title.Text = "発地："
             Ans_O_Airport1_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Airport1_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport1_3_Title.Alignment = TextAlignment.Left
             Ans_O_Airport1_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_3_Title)
 
-            'Dim Ans_O_Airport1_3 As New TextBox
-            'ANS_O_AIRPORT1_3.Text = Me.ANS_O_AIRPORT1_3.Text
             ANS_O_AIRPORT1_3.Visible = True
             ANS_O_AIRPORT1_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT1_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -661,19 +613,14 @@ Public Class DrSoufujo
             ANS_O_AIRPORT1_3.WordWrap = False
             ANS_O_AIRPORT1_3.Alignment = TextAlignment.Left
             ANS_O_AIRPORT1_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_3)
 
-            'Dim Ans_O_Airport2_3_Title As New Label
             Ans_O_Airport2_3_Title.Visible = True
             Ans_O_Airport2_3_Title.Text = "着地："
             Ans_O_Airport2_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Airport2_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport2_3_Title.Alignment = TextAlignment.Left
             Ans_O_Airport2_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_3_Title)
 
-            'Dim Ans_O_Airport2_3 As New TextBox
-            'ANS_O_AIRPORT2_3.Text = Me.ANS_O_AIRPORT2_3.Text
             ANS_O_AIRPORT2_3.Visible = True
             ANS_O_AIRPORT2_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT2_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -682,21 +629,16 @@ Public Class DrSoufujo
             ANS_O_AIRPORT2_3.WordWrap = False
             ANS_O_AIRPORT2_3.Alignment = TextAlignment.Left
             ANS_O_AIRPORT2_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_3)
 
             RowNo += 1
 
-            'Dim Ans_O_Time1_3_Title As New Label
             Ans_O_Time1_3_Title.Visible = True
             Ans_O_Time1_3_Title.Text = "発時間："
             Ans_O_Time1_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Time1_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time1_3_Title.Alignment = TextAlignment.Left
             Ans_O_Time1_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_3_Title)
 
-            'Dim Ans_O_Time1_3 As New TextBox
-            'ANS_O_TIME1_3.Text = Me.ANS_O_TIME1_3.Text
             ANS_O_TIME1_3.Visible = True
             ANS_O_TIME1_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_TIME1_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -705,19 +647,14 @@ Public Class DrSoufujo
             ANS_O_TIME1_3.WordWrap = False
             ANS_O_TIME1_3.Alignment = TextAlignment.Left
             ANS_O_TIME1_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_3)
 
-            'Dim Ans_O_Time2_3_Title As New Label
             Ans_O_Time2_3_Title.Visible = True
             Ans_O_Time2_3_Title.Text = "着時間："
             Ans_O_Time2_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Time2_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time2_3_Title.Alignment = TextAlignment.Left
             Ans_O_Time2_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_3_Title)
 
-            'Dim Ans_O_Time2_3 As New TextBox
-            'ANS_O_TIME2_3.Text = Me.ANS_O_TIME2_3.Text
             ANS_O_TIME2_3.Visible = True
             ANS_O_TIME2_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_TIME2_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -726,7 +663,6 @@ Public Class DrSoufujo
             ANS_O_TIME2_3.WordWrap = False
             ANS_O_TIME2_3.Alignment = TextAlignment.Left
             ANS_O_TIME2_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_3)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -736,34 +672,27 @@ Public Class DrSoufujo
         If Me.ANS_O_STATUS_4.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or Me.ANS_O_STATUS_4.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Ouro4Title As New Label
             Ouro4Title.Visible = True
             Ouro4Title.Text = "＜往路４＞"
             Ouro4Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Ouro4Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ouro4Title.Alignment = TextAlignment.Left
             Ouro4Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ouro1Title)
 
-            'Dim Ans_O_Date_4_Title As New Label
             Ans_O_Date_4_Title.Visible = True
             Ans_O_Date_4_Title.Text = "利用日："
             Ans_O_Date_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Date_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Date_4_Title.Alignment = TextAlignment.Left
             Ans_O_Date_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_4_Title)
 
-            'Dim Ans_O_Date_4 As New TextBox
             ANS_O_DATE_4.Visible = True
             ANS_O_DATE_4.Text = CmnModule.Format_DateJP(Me.ANS_O_DATE_4.Text, CmnModule.DateFormatType.MD)
             ANS_O_DATE_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -773,19 +702,14 @@ Public Class DrSoufujo
             ANS_O_DATE_4.WordWrap = False
             ANS_O_DATE_4.Alignment = TextAlignment.Left
             ANS_O_DATE_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_4)
 
-            'Dim Ans_O_Bin_4_Title As New Label
             Ans_O_Bin_4_Title.Visible = True
             Ans_O_Bin_4_Title.Text = "乗車便名："
             Ans_O_Bin_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Bin_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Bin_4_Title.Alignment = TextAlignment.Left
             Ans_O_Bin_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_4_Title)
 
-            'Dim Ans_O_Bin_4 As New TextBox
-            'ANS_O_BIN_4.Text = Me.ANS_O_BIN_4.Text
             ANS_O_BIN_4.Visible = True
             ANS_O_BIN_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_BIN_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -794,21 +718,16 @@ Public Class DrSoufujo
             ANS_O_BIN_4.WordWrap = False
             ANS_O_BIN_4.Alignment = TextAlignment.Left
             ANS_O_BIN_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_4)
 
             RowNo += 1
 
-            'Dim Ans_O_Airport1_4_Title As New Label
             Ans_O_Airport1_4_Title.Visible = True
             Ans_O_Airport1_4_Title.Text = "発地："
             Ans_O_Airport1_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Airport1_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport1_4_Title.Alignment = TextAlignment.Left
             Ans_O_Airport1_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_4_Title)
 
-            'Dim Ans_O_Airport1_4 As New TextBox
-            'ANS_O_AIRPORT1_4.Text = Me.ANS_O_AIRPORT1_4.Text
             ANS_O_AIRPORT1_4.Visible = True
             ANS_O_AIRPORT1_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT1_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -817,19 +736,14 @@ Public Class DrSoufujo
             ANS_O_AIRPORT1_4.WordWrap = False
             ANS_O_AIRPORT1_4.Alignment = TextAlignment.Left
             ANS_O_AIRPORT1_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_4)
 
-            'Dim Ans_O_Airport2_4_Title As New Label
             Ans_O_Airport2_4_Title.Visible = True
             Ans_O_Airport2_4_Title.Text = "着地："
             Ans_O_Airport2_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Airport2_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport2_4_Title.Alignment = TextAlignment.Left
             Ans_O_Airport2_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_4_Title)
 
-            'Dim Ans_O_Airport2_4 As New TextBox
-            'ANS_O_AIRPORT2_4.Text = Me.ANS_O_AIRPORT2_4.Text
             ANS_O_AIRPORT2_4.Visible = True
             ANS_O_AIRPORT2_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT2_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -838,21 +752,16 @@ Public Class DrSoufujo
             ANS_O_AIRPORT2_4.WordWrap = False
             ANS_O_AIRPORT2_4.Alignment = TextAlignment.Left
             ANS_O_AIRPORT2_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_4)
 
             RowNo += 1
 
-            'Dim Ans_O_Time1_4_Title As New Label
             Ans_O_Time1_4_Title.Visible = True
             Ans_O_Time1_4_Title.Text = "発時間："
             Ans_O_Time1_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Time1_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time1_4_Title.Alignment = TextAlignment.Left
             Ans_O_Time1_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_4_Title)
 
-            'Dim Ans_O_Time1_4 As New TextBox
-            'ANS_O_TIME1_4.Text = Me.ANS_O_TIME1_4.Text
             ANS_O_TIME1_4.Visible = True
             ANS_O_TIME1_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_TIME1_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -861,19 +770,14 @@ Public Class DrSoufujo
             ANS_O_TIME1_4.WordWrap = False
             ANS_O_TIME1_4.Alignment = TextAlignment.Left
             ANS_O_TIME1_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_4)
 
-            'Dim Ans_O_Time2_4_Title As New Label
             Ans_O_Time2_4_Title.Visible = True
             Ans_O_Time2_4_Title.Text = "着時間："
             Ans_O_Time2_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Time2_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time2_4_Title.Alignment = TextAlignment.Left
             Ans_O_Time2_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_4_Title)
 
-            'Dim Ans_O_Time2_4 As New TextBox
-            'ANS_O_TIME2_4.Text = Me.ANS_O_TIME2_4.Text
             ANS_O_TIME2_4.Visible = True
             ANS_O_TIME2_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_TIME2_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -882,7 +786,6 @@ Public Class DrSoufujo
             ANS_O_TIME2_4.WordWrap = False
             ANS_O_TIME2_4.Alignment = TextAlignment.Left
             ANS_O_TIME2_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_4)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -892,34 +795,27 @@ Public Class DrSoufujo
         If Me.ANS_O_STATUS_5.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.OK Or Me.ANS_O_STATUS_5.Text = AppConst.KOTSUHOTEL.ANS_O_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Ouro5Title As New Label
             Ouro5Title.Visible = True
             Ouro5Title.Text = "＜往路５＞"
             Ouro5Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Ouro5Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Ouro5Title.Alignment = TextAlignment.Left
             Ouro5Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ouro1Title)
 
-            'Dim Ans_O_Date_5_Title As New Label
             Ans_O_Date_5_Title.Visible = True
             Ans_O_Date_5_Title.Text = "利用日："
             Ans_O_Date_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Date_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Date_5_Title.Alignment = TextAlignment.Left
             Ans_O_Date_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_5_Title)
 
-            'Dim Ans_O_Date_5 As New TextBox
             ANS_O_DATE_5.Visible = True
             ANS_O_DATE_5.Text = CmnModule.Format_DateJP(Me.ANS_O_DATE_5.Text, CmnModule.DateFormatType.MD)
             ANS_O_DATE_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -929,19 +825,14 @@ Public Class DrSoufujo
             ANS_O_DATE_5.WordWrap = False
             ANS_O_DATE_5.Alignment = TextAlignment.Left
             ANS_O_DATE_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Date_5)
 
-            'Dim Ans_O_Bin_5_Title As New Label
             Ans_O_Bin_5_Title.Visible = True
             Ans_O_Bin_5_Title.Text = "乗車便名："
             Ans_O_Bin_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Bin_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Bin_5_Title.Alignment = TextAlignment.Left
             Ans_O_Bin_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_5_Title)
 
-            'Dim Ans_O_Bin_5 As New TextBox
-            'ANS_O_BIN_5.Text = Me.ANS_O_BIN_5.Text
             ANS_O_BIN_5.Visible = True
             ANS_O_BIN_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_BIN_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -950,21 +841,16 @@ Public Class DrSoufujo
             ANS_O_BIN_5.WordWrap = False
             ANS_O_BIN_5.Alignment = TextAlignment.Left
             ANS_O_BIN_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Bin_5)
 
             RowNo += 1
 
-            'Dim Ans_O_Airport1_5_Title As New Label
             Ans_O_Airport1_5_Title.Visible = True
             Ans_O_Airport1_5_Title.Text = "発地："
             Ans_O_Airport1_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Airport1_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport1_5_Title.Alignment = TextAlignment.Left
             Ans_O_Airport1_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_5_Title)
 
-            'Dim Ans_O_Airport1_5 As New TextBox
-            'ANS_O_AIRPORT1_5.Text = Me.ANS_O_AIRPORT1_5.Text
             ANS_O_AIRPORT1_5.Visible = True
             ANS_O_AIRPORT1_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT1_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -973,19 +859,14 @@ Public Class DrSoufujo
             ANS_O_AIRPORT1_5.WordWrap = False
             ANS_O_AIRPORT1_5.Alignment = TextAlignment.Left
             ANS_O_AIRPORT1_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport1_5)
 
-            'Dim Ans_O_Airport2_5_Title As New Label
             Ans_O_Airport2_5_Title.Visible = True
             Ans_O_Airport2_5_Title.Text = "着地："
             Ans_O_Airport2_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Airport2_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Airport2_5_Title.Alignment = TextAlignment.Left
             Ans_O_Airport2_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_5_Title)
 
-            'Dim Ans_O_Airport2_5 As New TextBox
-            'ANS_O_AIRPORT2_5.Text = Me.ANS_O_AIRPORT2_5.Text
             ANS_O_AIRPORT2_5.Visible = True
             ANS_O_AIRPORT2_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_AIRPORT2_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -994,21 +875,16 @@ Public Class DrSoufujo
             ANS_O_AIRPORT2_5.WordWrap = False
             ANS_O_AIRPORT2_5.Alignment = TextAlignment.Left
             ANS_O_AIRPORT2_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Airport2_5)
 
             RowNo += 1
 
-            'Dim Ans_O_Time1_5_Title As New Label
             Ans_O_Time1_5_Title.Visible = True
             Ans_O_Time1_5_Title.Text = "発時間："
             Ans_O_Time1_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_O_Time1_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time1_5_Title.Alignment = TextAlignment.Left
             Ans_O_Time1_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_5_Title)
 
-            'Dim Ans_O_Time1_5 As New TextBox
-            'ANS_O_TIME1_5.Text = Me.ANS_O_TIME1_5.Text
             ANS_O_TIME1_5.Visible = True
             ANS_O_TIME1_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_O_TIME1_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1017,19 +893,14 @@ Public Class DrSoufujo
             ANS_O_TIME1_5.WordWrap = False
             ANS_O_TIME1_5.Alignment = TextAlignment.Left
             ANS_O_TIME1_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time1_5)
 
-            'Dim Ans_O_Time2_5_Title As New Label
             Ans_O_Time2_5_Title.Visible = True
             Ans_O_Time2_5_Title.Text = "着時間："
             Ans_O_Time2_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_O_Time2_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_O_Time2_5_Title.Alignment = TextAlignment.Left
             Ans_O_Time2_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_5_Title)
 
-            'Dim Ans_O_Time2_5 As New TextBox
-            'ANS_O_TIME2_5.Text = Me.ANS_O_TIME2_5.Text
             ANS_O_TIME2_5.Visible = True
             ANS_O_TIME2_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_O_TIME2_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1038,7 +909,6 @@ Public Class DrSoufujo
             ANS_O_TIME2_5.WordWrap = False
             ANS_O_TIME2_5.Alignment = TextAlignment.Left
             ANS_O_TIME2_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_O_Time2_5)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1047,34 +917,27 @@ Public Class DrSoufujo
         If Me.ANS_F_STATUS_1.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or Me.ANS_F_STATUS_1.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Fukuro1Title As New Label
             Fukuro1Title.Visible = True
             Fukuro1Title.Text = "＜復路１＞"
             Fukuro1Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Fukuro1Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Fukuro1Title.Alignment = TextAlignment.Left
             Fukuro1Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Fukuro1Title)
 
-            'Dim Ans_F_Date_1_Title As New Label
             Ans_F_Date_1_Title.Visible = True
             Ans_F_Date_1_Title.Text = "利用日："
             Ans_F_Date_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Date_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Date_1_Title.Alignment = TextAlignment.Left
             Ans_F_Date_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_1_Title)
 
-            'Dim Ans_F_Date_1 As New TextBox
             ANS_F_DATE_1.Visible = True
             ANS_F_DATE_1.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_1.Text, CmnModule.DateFormatType.MD)
             ANS_F_DATE_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -1084,19 +947,14 @@ Public Class DrSoufujo
             ANS_F_DATE_1.WordWrap = False
             ANS_F_DATE_1.Alignment = TextAlignment.Left
             ANS_F_DATE_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_1)
 
-            'Dim Ans_F_Bin_1_Title As New Label
             Ans_F_Bin_1_Title.Visible = True
             Ans_F_Bin_1_Title.Text = "乗車便名："
             Ans_F_Bin_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Bin_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Bin_1_Title.Alignment = TextAlignment.Left
             Ans_F_Bin_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_1_Title)
 
-            'Dim Ans_F_Bin_1 As New TextBox
-            'ANS_F_BIN_1.Text = Me.ANS_F_BIN_1.Text
             ANS_F_BIN_1.Visible = True
             ANS_F_BIN_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_BIN_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1105,21 +963,16 @@ Public Class DrSoufujo
             ANS_F_BIN_1.WordWrap = False
             ANS_F_BIN_1.Alignment = TextAlignment.Left
             ANS_F_BIN_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_1)
 
             RowNo += 1
 
-            'Dim Ans_F_Airport1_1_Title As New Label
             Ans_F_Airport1_1_Title.Visible = True
             Ans_F_Airport1_1_Title.Text = "発地："
             Ans_F_Airport1_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Airport1_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport1_1_Title.Alignment = TextAlignment.Left
             Ans_F_Airport1_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_1_Title)
 
-            'Dim Ans_F_Airport1_1 As New TextBox
-            'ANS_F_AIRPORT1_1.Text = Me.ANS_F_AIRPORT1_1.Text
             ANS_F_AIRPORT1_1.Visible = True
             ANS_F_AIRPORT1_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT1_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1128,19 +981,14 @@ Public Class DrSoufujo
             ANS_F_AIRPORT1_1.WordWrap = False
             ANS_F_AIRPORT1_1.Alignment = TextAlignment.Left
             ANS_F_AIRPORT1_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_1)
 
-            'Dim Ans_F_Airport2_1_Title As New Label
             Ans_F_Airport2_1_Title.Visible = True
             Ans_F_Airport2_1_Title.Text = "着地："
             Ans_F_Airport2_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Airport2_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport2_1_Title.Alignment = TextAlignment.Left
             Ans_F_Airport2_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_1_Title)
 
-            'Dim Ans_F_Airport2_1 As New TextBox
-            'ANS_F_AIRPORT2_1.Text = Me.ANS_F_AIRPORT2_1.Text
             ANS_F_AIRPORT2_1.Visible = True
             ANS_F_AIRPORT2_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT2_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1149,21 +997,16 @@ Public Class DrSoufujo
             ANS_F_AIRPORT2_1.WordWrap = False
             ANS_F_AIRPORT2_1.Alignment = TextAlignment.Left
             ANS_F_AIRPORT2_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_1)
 
             RowNo += 1
 
-            'Dim Ans_F_Time1_1_Title As New Label
             Ans_F_Time1_1_Title.Visible = True
             Ans_F_Time1_1_Title.Text = "発時間："
             Ans_F_Time1_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Time1_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time1_1_Title.Alignment = TextAlignment.Left
             Ans_F_Time1_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_1_Title)
 
-            'Dim Ans_F_Time1_1 As New TextBox
-            'ANS_F_TIME1_1.Text = Me.ANS_F_TIME1_1.Text
             ANS_F_TIME1_1.Visible = True
             ANS_F_TIME1_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_TIME1_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1172,19 +1015,14 @@ Public Class DrSoufujo
             ANS_F_TIME1_1.WordWrap = False
             ANS_F_TIME1_1.Alignment = TextAlignment.Left
             ANS_F_TIME1_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_1)
 
-            'Dim Ans_F_Time2_1_Title As New Label
             Ans_F_Time2_1_Title.Visible = True
             Ans_F_Time2_1_Title.Text = "着時間："
             Ans_F_Time2_1_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Time2_1_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time2_1_Title.Alignment = TextAlignment.Left
             Ans_F_Time2_1_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_1_Title)
 
-            'Dim Ans_F_Time2_1 As New TextBox
-            'ANS_F_TIME2_1.Text = Me.ANS_F_TIME2_1.Text
             ANS_F_TIME2_1.Visible = True
             ANS_F_TIME2_1.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_TIME2_1.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1193,7 +1031,6 @@ Public Class DrSoufujo
             ANS_F_TIME2_1.WordWrap = False
             ANS_F_TIME2_1.Alignment = TextAlignment.Left
             ANS_F_TIME2_1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_1)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1203,34 +1040,27 @@ Public Class DrSoufujo
         If Me.ANS_F_STATUS_2.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or Me.ANS_F_STATUS_2.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Fukuro2Title As New Label
             Fukuro2Title.Visible = True
             Fukuro2Title.Text = "＜復路２＞"
             Fukuro2Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Fukuro2Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Fukuro2Title.Alignment = TextAlignment.Left
             Fukuro2Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Fukuro2Title)
 
-            'Dim Ans_F_Date_2_Title As New Label
             Ans_F_Date_2_Title.Visible = True
             Ans_F_Date_2_Title.Text = "利用日："
             Ans_F_Date_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Date_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Date_2_Title.Alignment = TextAlignment.Left
             Ans_F_Date_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_2_Title)
 
-            'Dim Ans_F_Date_2 As New TextBox
             ANS_F_DATE_2.Visible = True
             ANS_F_DATE_2.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_2.Text, CmnModule.DateFormatType.MD)
             ANS_F_DATE_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -1240,19 +1070,14 @@ Public Class DrSoufujo
             ANS_F_DATE_2.WordWrap = False
             ANS_F_DATE_2.Alignment = TextAlignment.Left
             ANS_F_DATE_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_2)
 
-            'Dim Ans_F_Bin_2_Title As New Label
             Ans_F_Bin_2_Title.Visible = True
             Ans_F_Bin_2_Title.Text = "乗車便名："
             Ans_F_Bin_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Bin_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Bin_2_Title.Alignment = TextAlignment.Left
             Ans_F_Bin_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_2_Title)
 
-            'Dim Ans_F_Bin_2 As New TextBox
-            'ANS_F_BIN_2.Text = Me.ANS_F_BIN_2.Text
             ANS_F_BIN_2.Visible = True
             ANS_F_BIN_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_BIN_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1261,21 +1086,16 @@ Public Class DrSoufujo
             ANS_F_BIN_2.WordWrap = False
             ANS_F_BIN_2.Alignment = TextAlignment.Left
             ANS_F_BIN_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_2)
 
             RowNo += 1
 
-            'Dim Ans_F_Airport1_2_Title As New Label
             Ans_F_Airport1_2_Title.Visible = True
             Ans_F_Airport1_2_Title.Text = "発地："
             Ans_F_Airport1_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Airport1_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport1_2_Title.Alignment = TextAlignment.Left
             Ans_F_Airport1_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_2_Title)
 
-            'Dim Ans_F_Airport1_2 As New TextBox
-            'ANS_F_AIRPORT1_2.Text = Me.ANS_F_AIRPORT1_2.Text
             ANS_F_AIRPORT1_2.Visible = True
             ANS_F_AIRPORT1_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT1_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1284,19 +1104,14 @@ Public Class DrSoufujo
             ANS_F_AIRPORT1_2.WordWrap = False
             ANS_F_AIRPORT1_2.Alignment = TextAlignment.Left
             ANS_F_AIRPORT1_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_2)
 
-            'Dim Ans_F_Airport2_2_Title As New Label
             Ans_F_Airport2_2_Title.Visible = True
             Ans_F_Airport2_2_Title.Text = "着地："
             Ans_F_Airport2_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Airport2_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport2_2_Title.Alignment = TextAlignment.Left
             Ans_F_Airport2_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_2_Title)
 
-            'Dim Ans_F_Airport2_2 As New TextBox
-            'ANS_F_AIRPORT2_2.Text = Me.ANS_F_AIRPORT2_2.Text
             ANS_F_AIRPORT2_2.Visible = True
             ANS_F_AIRPORT2_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT2_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1305,21 +1120,16 @@ Public Class DrSoufujo
             ANS_F_AIRPORT2_2.WordWrap = False
             ANS_F_AIRPORT2_2.Alignment = TextAlignment.Left
             ANS_F_AIRPORT2_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_2)
 
             RowNo += 1
 
-            'Dim Ans_F_Time1_2_Title As New Label
             Ans_F_Time1_2_Title.Visible = True
             Ans_F_Time1_2_Title.Text = "発時間："
             Ans_F_Time1_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Time1_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time1_2_Title.Alignment = TextAlignment.Left
             Ans_F_Time1_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_2_Title)
 
-            'Dim Ans_F_Time1_2 As New TextBox
-            'Ans_F_Time1_2.Text = Me.ANS_F_TIME1_2.text
             ANS_F_TIME1_2.Visible = True
             ANS_F_TIME1_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_TIME1_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1328,19 +1138,14 @@ Public Class DrSoufujo
             ANS_F_TIME1_2.WordWrap = False
             ANS_F_TIME1_2.Alignment = TextAlignment.Left
             ANS_F_TIME1_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_2)
 
-            'Dim Ans_F_Time2_2_Title As New Label
             Ans_F_Time2_2_Title.Visible = True
             Ans_F_Time2_2_Title.Text = "着時間："
             Ans_F_Time2_2_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Time2_2_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time2_2_Title.Alignment = TextAlignment.Left
             Ans_F_Time2_2_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_2_Title)
 
-            'Dim Ans_F_Time2_2 As New TextBox
-            'ANS_F_TIME2_2.Text = Me.ANS_F_TIME2_2.Text
             ANS_F_TIME2_2.Visible = True
             ANS_F_TIME2_2.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_TIME2_2.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1349,7 +1154,6 @@ Public Class DrSoufujo
             ANS_F_TIME2_2.WordWrap = False
             ANS_F_TIME2_2.Alignment = TextAlignment.Left
             ANS_F_TIME2_2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_2)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1359,34 +1163,27 @@ Public Class DrSoufujo
         If Me.ANS_F_STATUS_3.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or Me.ANS_F_STATUS_3.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Fukuro3Title As New Label
             Fukuro3Title.Visible = True
             Fukuro3Title.Text = "＜復路３＞"
             Fukuro3Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Fukuro3Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Fukuro3Title.Alignment = TextAlignment.Left
             Fukuro3Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Fukuro3Title)
 
-            'Dim Ans_F_Date_3_Title As New Label
             Ans_F_Date_3_Title.Visible = True
             Ans_F_Date_3_Title.Text = "利用日："
             Ans_F_Date_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Date_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Date_3_Title.Alignment = TextAlignment.Left
             Ans_F_Date_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_3_Title)
 
-            'Dim Ans_F_Date_3 As New TextBox
             ANS_F_DATE_3.Visible = True
             ANS_F_DATE_3.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_3.Text, CmnModule.DateFormatType.MD)
             ANS_F_DATE_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -1396,19 +1193,14 @@ Public Class DrSoufujo
             ANS_F_DATE_3.WordWrap = False
             ANS_F_DATE_3.Alignment = TextAlignment.Left
             ANS_F_DATE_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_3)
 
-            'Dim Ans_F_Bin_3_Title As New Label
             Ans_F_Bin_3_Title.Visible = True
             Ans_F_Bin_3_Title.Text = "乗車便名："
             Ans_F_Bin_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Bin_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Bin_3_Title.Alignment = TextAlignment.Left
             Ans_F_Bin_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_3_Title)
 
-            'Dim Ans_F_Bin_3 As New TextBox
-            'ANS_F_BIN_3.Text = Me.ANS_F_BIN_3.Text
             ANS_F_BIN_3.Visible = True
             ANS_F_BIN_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_BIN_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1417,21 +1209,16 @@ Public Class DrSoufujo
             ANS_F_BIN_3.WordWrap = False
             ANS_F_BIN_3.Alignment = TextAlignment.Left
             ANS_F_BIN_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_3)
 
             RowNo += 1
 
-            'Dim Ans_F_Airport1_3_Title As New Label
             Ans_F_Airport1_3_Title.Visible = True
             Ans_F_Airport1_3_Title.Text = "発地："
             Ans_F_Airport1_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Airport1_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport1_3_Title.Alignment = TextAlignment.Left
             Ans_F_Airport1_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_3_Title)
 
-            'Dim Ans_F_Airport1_3 As New TextBox
-            'ANS_F_AIRPORT1_3.Text = Me.ANS_F_AIRPORT1_3.Text
             ANS_F_AIRPORT1_3.Visible = True
             ANS_F_AIRPORT1_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT1_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1440,19 +1227,14 @@ Public Class DrSoufujo
             ANS_F_AIRPORT1_3.WordWrap = False
             ANS_F_AIRPORT1_3.Alignment = TextAlignment.Left
             ANS_F_AIRPORT1_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_3)
 
-            'Dim Ans_F_Airport2_3_Title As New Label
             Ans_F_Airport2_3_Title.Visible = True
             Ans_F_Airport2_3_Title.Text = "着地："
             Ans_F_Airport2_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Airport2_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport2_3_Title.Alignment = TextAlignment.Left
             Ans_F_Airport2_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_3_Title)
 
-            'Dim Ans_F_Airport2_3 As New TextBox
-            'ANS_F_AIRPORT2_3.Text = Me.ANS_F_AIRPORT2_3.Text
             ANS_F_AIRPORT2_3.Visible = True
             ANS_F_AIRPORT2_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT2_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1461,21 +1243,16 @@ Public Class DrSoufujo
             ANS_F_AIRPORT2_3.WordWrap = False
             ANS_F_AIRPORT2_3.Alignment = TextAlignment.Left
             ANS_F_AIRPORT2_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_3)
 
             RowNo += 1
 
-            'Dim Ans_F_Time1_3_Title As New Label
             Ans_F_Time1_3_Title.Visible = True
             Ans_F_Time1_3_Title.Text = "発時間："
             Ans_F_Time1_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Time1_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time1_3_Title.Alignment = TextAlignment.Left
             Ans_F_Time1_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_3_Title)
 
-            'Dim Ans_F_Time1_3 As New TextBox
-            'ANS_F_TIME1_3.Text = Me.ANS_F_TIME1_3.Text
             ANS_F_TIME1_3.Visible = True
             ANS_F_TIME1_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_TIME1_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1484,19 +1261,14 @@ Public Class DrSoufujo
             ANS_F_TIME1_3.WordWrap = False
             ANS_F_TIME1_3.Alignment = TextAlignment.Left
             ANS_F_TIME1_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_3)
 
-            'Dim Ans_F_Time2_3_Title As New Label
             Ans_F_Time2_3_Title.Visible = True
             Ans_F_Time2_3_Title.Text = "着時間："
             Ans_F_Time2_3_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Time2_3_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time2_3_Title.Alignment = TextAlignment.Left
             Ans_F_Time2_3_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_3_Title)
 
-            'Dim Ans_F_Time2_3 As New TextBox
-            'ANS_F_TIME2_3.Text = Me.ANS_F_TIME2_3.Text
             ANS_F_TIME2_3.Visible = True
             ANS_F_TIME2_3.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_TIME2_3.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1505,7 +1277,6 @@ Public Class DrSoufujo
             ANS_F_TIME2_3.WordWrap = False
             ANS_F_TIME2_3.Alignment = TextAlignment.Left
             ANS_F_TIME2_3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_3)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1515,34 +1286,27 @@ Public Class DrSoufujo
         If Me.ANS_F_STATUS_4.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or Me.ANS_F_STATUS_4.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Fukuro4Title As New Label
             Fukuro4Title.Visible = True
             Fukuro4Title.Text = "＜復路４＞"
             Fukuro4Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Fukuro4Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Fukuro4Title.Alignment = TextAlignment.Left
             Fukuro4Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Fukuro4Title)
 
-            'Dim Ans_F_Date_4_Title As New Label
             Ans_F_Date_4_Title.Visible = True
             Ans_F_Date_4_Title.Text = "利用日："
             Ans_F_Date_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Date_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Date_4_Title.Alignment = TextAlignment.Left
             Ans_F_Date_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_4_Title)
 
-            'Dim Ans_F_Date_4 As New TextBox
             ANS_F_DATE_4.Visible = True
             ANS_F_DATE_4.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_4.Text, CmnModule.DateFormatType.MD)
             ANS_F_DATE_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -1552,18 +1316,14 @@ Public Class DrSoufujo
             ANS_F_DATE_4.WordWrap = False
             ANS_F_DATE_4.Alignment = TextAlignment.Left
             ANS_F_DATE_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_4)
 
-            'Dim Ans_F_Bin_4_Title As New Label
             Ans_F_Bin_4_Title.Visible = True
             Ans_F_Bin_4_Title.Text = "乗車便名："
             Ans_F_Bin_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Bin_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Bin_4_Title.Alignment = TextAlignment.Left
             Ans_F_Bin_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_4_Title)
 
-            'Dim Ans_F_Bin_4 As New TextBox
             ANS_F_BIN_4.Visible = True
             ANS_F_BIN_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_BIN_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1572,21 +1332,16 @@ Public Class DrSoufujo
             ANS_F_BIN_4.WordWrap = False
             ANS_F_BIN_4.Alignment = TextAlignment.Left
             ANS_F_BIN_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_4)
 
             RowNo += 1
 
-            'Dim Ans_F_Airport1_4_Title As New Label
             Ans_F_Airport1_4_Title.Visible = True
             Ans_F_Airport1_4_Title.Text = "発地："
             Ans_F_Airport1_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Airport1_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport1_4_Title.Alignment = TextAlignment.Left
             Ans_F_Airport1_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_4_Title)
 
-            'Dim Ans_F_Airport1_4 As New TextBox
-            'ANS_F_AIRPORT1_4.Text = Me.ANS_F_AIRPORT1_4.Text
             ANS_F_AIRPORT1_4.Visible = True
             ANS_F_AIRPORT1_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT1_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1595,18 +1350,14 @@ Public Class DrSoufujo
             ANS_F_AIRPORT1_4.WordWrap = False
             ANS_F_AIRPORT1_4.Alignment = TextAlignment.Left
             ANS_F_AIRPORT1_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_4)
 
-            'Dim Ans_F_Airport2_4_Title As New Label
             Ans_F_Airport2_4_Title.Visible = True
             Ans_F_Airport2_4_Title.Text = "着地："
             Ans_F_Airport2_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Airport2_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport2_4_Title.Alignment = TextAlignment.Left
             Ans_F_Airport2_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_4_Title)
 
-            'Dim Ans_F_Airport2_4 As New TextBox
             ANS_F_AIRPORT2_4.Visible = True
             ANS_F_AIRPORT2_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT2_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1615,21 +1366,16 @@ Public Class DrSoufujo
             ANS_F_AIRPORT2_4.WordWrap = False
             ANS_F_AIRPORT2_4.Alignment = TextAlignment.Left
             ANS_F_AIRPORT2_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_4)
 
             RowNo += 1
 
-            'Dim Ans_F_Time1_4_Title As New Label
             Ans_F_Time1_4_Title.Visible = True
             Ans_F_Time1_4_Title.Text = "発時間："
             Ans_F_Time1_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Time1_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time1_4_Title.Alignment = TextAlignment.Left
             Ans_F_Time1_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_4_Title)
 
-            'Dim Ans_F_Time1_4 As New TextBox
-            'Ans_F_Time1_4.Text = Me.ANS_F_TIME1_4
             ANS_F_TIME1_4.Visible = True
             ANS_F_TIME1_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_TIME1_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1638,19 +1384,14 @@ Public Class DrSoufujo
             ANS_F_TIME1_4.WordWrap = False
             ANS_F_TIME1_4.Alignment = TextAlignment.Left
             ANS_F_TIME1_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_4)
 
-            'Dim Ans_F_Time2_4_Title As New Label
             Ans_F_Time2_4_Title.Visible = True
             Ans_F_Time2_4_Title.Text = "着時間："
             Ans_F_Time2_4_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Time2_4_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time2_4_Title.Alignment = TextAlignment.Left
             Ans_F_Time2_4_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_4_Title)
 
-            'Dim Ans_F_Time2_4 As New TextBox
-            'Ans_F_Time2_4.Text = Me.ANS_F_TIME2_4
             ANS_F_TIME2_4.Visible = True
             ANS_F_TIME2_4.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_TIME2_4.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1659,7 +1400,6 @@ Public Class DrSoufujo
             ANS_F_TIME2_4.WordWrap = False
             ANS_F_TIME2_4.Alignment = TextAlignment.Left
             ANS_F_TIME2_4.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_4)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -1669,34 +1409,27 @@ Public Class DrSoufujo
         If Me.ANS_F_STATUS_5.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.OK Or Me.ANS_F_STATUS_5.Text = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
             If Not KotsuFlg Then
                 KotsuFlg = True
-                'Dim KotsuTitle As New Label
                 KotsuTitle.Visible = True
                 KotsuTitle.Text = "【交通】"
                 KotsuTitle.Height = RowHeight
                 KotsuTitle.Location = New System.Drawing.PointF(Me.CmToInch(ItemTitleX), Me.CmToInch(StartY + RowHeight * RowNo))
                 KotsuTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-                'Me.Detail.Controls.Add(KotsuTitle)
             End If
 
-            'Dim Fukuro5Title As New Label
             Fukuro5Title.Visible = True
             Fukuro5Title.Text = "＜復路５＞"
             Fukuro5Title.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemTitleWidth), Me.CmToInch(RowHeight))
             Fukuro5Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
             Fukuro5Title.Alignment = TextAlignment.Left
             Fukuro5Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Fukuro5Title)
 
-            'Dim Ans_F_Date_5_Title As New Label
             Ans_F_Date_5_Title.Visible = True
             Ans_F_Date_5_Title.Text = "利用日："
             Ans_F_Date_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Date_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Date_5_Title.Alignment = TextAlignment.Left
             Ans_F_Date_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_5_Title)
 
-            'Dim Ans_F_Date_5 As New TextBox
             ANS_F_DATE_5.Visible = True
             ANS_F_DATE_5.Text = CmnModule.Format_DateJP(Me.ANS_F_DATE_5.Text, CmnModule.DateFormatType.MD)
             ANS_F_DATE_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
@@ -1706,19 +1439,14 @@ Public Class DrSoufujo
             ANS_F_DATE_5.WordWrap = False
             ANS_F_DATE_5.Alignment = TextAlignment.Left
             ANS_F_DATE_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Date_5)
 
-            'Dim Ans_F_Bin_5_Title As New Label
             Ans_F_Bin_5_Title.Visible = True
             Ans_F_Bin_5_Title.Text = "乗車便名："
             Ans_F_Bin_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Bin_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Bin_5_Title.Alignment = TextAlignment.Left
             Ans_F_Bin_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_5_Title)
 
-            'Dim Ans_F_Bin_5 As New TextBox
-            'Ans_F_Bin_5.Text = Me.ANS_F_BIN_5
             ANS_F_BIN_5.Visible = True
             ANS_F_BIN_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_BIN_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1727,21 +1455,16 @@ Public Class DrSoufujo
             ANS_F_BIN_5.WordWrap = False
             ANS_F_BIN_5.Alignment = TextAlignment.Left
             ANS_F_BIN_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Bin_5)
 
             RowNo += 1
 
-            'Dim Ans_F_Airport1_5_Title As New Label
             Ans_F_Airport1_5_Title.Visible = True
             Ans_F_Airport1_5_Title.Text = "発地："
             Ans_F_Airport1_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Airport1_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport1_5_Title.Alignment = TextAlignment.Left
             Ans_F_Airport1_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_5_Title)
 
-            'Dim Ans_F_Airport1_5 As New TextBox
-            'Ans_F_Airport1_5.Text = Me.ANS_F_AIRPORT1_5
             ANS_F_AIRPORT1_5.Visible = True
             ANS_F_AIRPORT1_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT1_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1750,19 +1473,14 @@ Public Class DrSoufujo
             ANS_F_AIRPORT1_5.WordWrap = False
             ANS_F_AIRPORT1_5.Alignment = TextAlignment.Left
             ANS_F_AIRPORT1_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport1_5)
 
-            'Dim Ans_F_Airport2_5_Title As New Label
             Ans_F_Airport2_5_Title.Visible = True
             Ans_F_Airport2_5_Title.Text = "着地："
             Ans_F_Airport2_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Airport2_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Airport2_5_Title.Alignment = TextAlignment.Left
             Ans_F_Airport2_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_5_Title)
 
-            'Dim Ans_F_Airport2_5 As New TextBox
-            'Ans_F_Airport2_5.Text = Me.ANS_F_AIRPORT2_5
             ANS_F_AIRPORT2_5.Visible = True
             ANS_F_AIRPORT2_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_AIRPORT2_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1771,21 +1489,16 @@ Public Class DrSoufujo
             ANS_F_AIRPORT2_5.WordWrap = False
             ANS_F_AIRPORT2_5.Alignment = TextAlignment.Left
             ANS_F_AIRPORT2_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Airport2_5)
 
             RowNo += 1
 
-            'Dim Ans_F_Time1_5_Title As New Label
             Ans_F_Time1_5_Title.Visible = True
             Ans_F_Time1_5_Title.Text = "発時間："
             Ans_F_Time1_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth2), Me.CmToInch(RowHeight))
             Ans_F_Time1_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time1_5_Title.Alignment = TextAlignment.Left
             Ans_F_Time1_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_5_Title)
 
-            'Dim Ans_F_Time1_5 As New TextBox
-            'Ans_F_Time1_5.Text = Me.ANS_F_TIME1_5
             ANS_F_TIME1_5.Visible = True
             ANS_F_TIME1_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemWidth2), Me.CmToInch(RowHeight))
             ANS_F_TIME1_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1794,19 +1507,14 @@ Public Class DrSoufujo
             ANS_F_TIME1_5.WordWrap = False
             ANS_F_TIME1_5.Alignment = TextAlignment.Left
             ANS_F_TIME1_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time1_5)
 
-            'Dim Ans_F_Time2_5_Title As New Label
             Ans_F_Time2_5_Title.Visible = True
             Ans_F_Time2_5_Title.Text = "着時間："
             Ans_F_Time2_5_Title.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleWidth3), Me.CmToInch(RowHeight))
             Ans_F_Time2_5_Title.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(StartY + RowHeight * RowNo))
             Ans_F_Time2_5_Title.Alignment = TextAlignment.Left
             Ans_F_Time2_5_Title.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_5_Title)
 
-            'Dim Ans_F_Time2_5 As New TextBox
-            'Ans_F_Time2_5.Text = Me.ANS_F_TIME2_5
             ANS_F_TIME2_5.Visible = True
             ANS_F_TIME2_5.Size = New System.Drawing.SizeF(Me.CmToInch(KotsuItemTitleX3), Me.CmToInch(RowHeight))
             ANS_F_TIME2_5.Location = New System.Drawing.PointF(Me.CmToInch(KotsuItemX3), Me.CmToInch(StartY + RowHeight * RowNo))
@@ -1815,7 +1523,6 @@ Public Class DrSoufujo
             ANS_F_TIME2_5.WordWrap = False
             ANS_F_TIME2_5.Alignment = TextAlignment.Left
             ANS_F_TIME2_5.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
-            'Me.Detail.Controls.Add(Ans_F_Time2_5)
 
             RowNo += 2
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
@@ -3701,6 +3408,52 @@ Public Class DrSoufujo
             'Me.Detail.Controls.Add(Ans_Taxi_Rmks_20)
 
             RowNo += 1
+
+            TAXI_NOTES1.Visible = True
+            TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。"
+            TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
+            TAXI_NOTES1.CanGrow = True
+            TAXI_NOTES1.CanShrink = True
+            TAXI_NOTES1.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
+            '部分的に下線を引く
+            Dim currentSelectionStart1 As Integer = TAXI_NOTES1.SelectionStart
+            Dim currentSelectionLength1 As Integer = TAXI_NOTES1.SelectionLength
+            TAXI_NOTES1.SelectionStart = 14
+            TAXI_NOTES1.SelectionLength = 13
+            Dim baseFont1 As Font = TAXI_NOTES1.SelectionFont
+            Dim fnt1 As New Font(baseFont1.FontFamily, _
+                                baseFont1.Size, _
+                                baseFont1.Style Or FontStyle.Underline)
+            TAXI_NOTES1.SelectionFont = fnt1
+            baseFont1.Dispose()
+            fnt1.Dispose()
+            TAXI_NOTES1.SelectionStart = currentSelectionStart1
+            TAXI_NOTES1.SelectionLength = currentSelectionLength1
+
+
+            RowNo += 1
+
+            TAXI_NOTES2.Visible = True
+            TAXI_NOTES2.Text = "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。"
+            TAXI_NOTES2.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            TAXI_NOTES2.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
+            TAXI_NOTES2.CanGrow = True
+            TAXI_NOTES2.CanShrink = True
+            TAXI_NOTES2.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
+
+            RowNo += 1
+
+            TAXI_NOTES3.Visible = True
+            TAXI_NOTES3.Text = "重ねてご了承いただきますようお願い申し上げます。"
+            TAXI_NOTES3.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            TAXI_NOTES3.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
+            TAXI_NOTES3.CanGrow = True
+            TAXI_NOTES3.CanShrink = True
+            TAXI_NOTES3.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
+
+            RowNo += 2
+
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
         End If
     End Sub
