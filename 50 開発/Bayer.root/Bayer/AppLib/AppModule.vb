@@ -4906,6 +4906,11 @@ Public Class AppModule
         control.Text = KAIJO_NAME
     End Sub
 
+    '団体コード
+    Public Shared Sub SetForm_DANTAI_CODE(ByVal DANTAI_CODE As String, ByRef control As Label)
+        control.Text = DANTAI_CODE
+    End Sub
+
     '会合基本情報TimeStamp
     Public Shared Sub SetForm_KOUENKAI_TIME_STAMP(ByVal KOUENKAI_TIME_STAMP As String, ByRef control As Label)
         control.Text = CmnModule.Format_Date(KOUENKAI_TIME_STAMP, CmnModule.DateFormatType.YYYYMMDDHHMMSS)

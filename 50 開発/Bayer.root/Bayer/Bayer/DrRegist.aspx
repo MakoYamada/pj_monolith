@@ -1,7 +1,7 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="DrRegist.aspx.vb" Inherits="Bayer.DrRegist" MaintainScrollPositionOnPostback="true" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table border="0" cellpadding="4" cellspacing="0" style="width:900px">
+    <table border="0" cellpadding="4" cellspacing="0" style="width:900px">
 			<tr style="height: 36px; width:100%">
 				<td align="left" style="width:100%">
                     <a name="PageTopLink"></a>				    
@@ -62,7 +62,7 @@
 						</td>
 						<td align="left" class="TdItem" colspan="3">
                             <asp:TextBox ID="KOUENKAI_NAME" runat="server" MaxLength="80" ReadOnly="True" 
-                                TextMode="MultiLine" Height="30px" Width="427px" tabstop="false" 
+                                TextMode="MultiLine" Height="30px" Width="500px" tabstop="false" 
                                 BorderStyle="None"></asp:TextBox>
 						</td>
 						<td align="left" class="TdTitleHeader">
@@ -76,10 +76,16 @@
 						<td align="left" class="TdTitleHeader" style="width:120px">
 							âÔèÍñº
 						</td>
-						<td align="left" class="TdItem" colspan="7">
+						<td align="left" class="TdItem" colspan="3">
                             <asp:TextBox ID="KAIJO_NAME" runat="server" MaxLength="80" ReadOnly="True" 
-                                TextMode="MultiLine" Height="30px" Width="731px" tabstop="false" 
+                                TextMode="MultiLine" Height="30px" Width="500px" tabstop="false" 
                                 BorderStyle="None"></asp:TextBox>
+						</td>
+						<td align="left" class="TdTitleHeader">
+							ícëÃÉRÅ[Éh
+						</td>
+						<td align="left" class="TdItem" colspan="3">
+							<asp:Label ID="DANTAI_CODE" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
 				</table>
@@ -207,7 +213,7 @@
 		                </td>
 		                <td align="left" valign="middle" colspan="5">
                             <asp:TextBox ID="DR_SHISETSU_NAME" runat="server" MaxLength="80" ReadOnly="True" 
-                                TextMode="MultiLine" Height="30px" Width="341px"  tabstop="false" 
+                                TextMode="MultiLine" Height="30px" Width="533px"  tabstop="false" 
                                 BorderStyle="None"></asp:TextBox>
 		                </td>
 		            </tr>
