@@ -428,6 +428,7 @@ Partial Public Class DrRegist
         AppModule.SetForm_KOUENKAI_NAME(TBL_KOUENKAI(0).KOUENKAI_NAME, Me.KOUENKAI_NAME)
         AppModule.SetForm_TAXI_PRT_NAME(TBL_KOUENKAI(0).TAXI_PRT_NAME, Me.TAXI_PRT_NAME)
         AppModule.SetForm_KAIJO_NAME(TBL_KOUENKAI(0).KAIJO_NAME, Me.KAIJO_NAME)
+        AppModule.SetForm_DANTAI_CODE(TBL_KOUENKAI(0).DANTAI_CODE, Me.DANTAI_CODE)
 
         'DR情報
         AppModule.SetForm_REQ_STATUS_TEHAI(DSP_KOTSUHOTEL(DSP_SEQ).REQ_STATUS_TEHAI, Me.REQ_STATUS_TEHAI)
@@ -1300,10 +1301,12 @@ Partial Public Class DrRegist
     End Sub
 
     '入力チェック
-    Private Function Check(ByVal Nozomi As Boolean) As Boolean
+    Private Function Check(ByVal Nozomi As Boolean) As Boolean        
         'セキュリティチェック
-        If Not CmnCheck.IsSecurityOK(Me) Then
+        Dim errControl As Control
+        If Not IsSecurityOK(Me, errControl) Then
             CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            SetFocus(errControl)
             Return False
         End If
 
@@ -1371,7 +1374,7 @@ Partial Public Class DrRegist
                 Me.ANS_MR_F_TEHAI.SelectedValue = AppConst.KOTSUHOTEL.ANS_MR_O_TEHAI.Code.Daian OrElse _
                 Me.ANS_MR_O_TEHAI.SelectedValue = AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.OK OrElse _
                 Me.ANS_MR_O_TEHAI.SelectedValue = AppConst.KOTSUHOTEL.ANS_MR_F_TEHAI.Code.Daian) AndAlso _
-                Val(Me.ANS_MR_KOTSUHI.Text) = 0 Then
+                Me.ANS_MR_KOTSUHI.Text.Trim = "" Then
 
                 CmnModule.AlertMessage(MessageDef.Error.MustInput("MR交通費(税込)"), Me)
                 SetFocus(Me.ANS_MR_KOTSUHI)
@@ -1495,7 +1498,7 @@ Partial Public Class DrRegist
                 Return False
             End If
             'DR宿泊費（税込)
-            If Val(Me.ANS_HOTELHI.Text.Trim) = 0 Then
+            If Me.ANS_HOTELHI.Text.Trim = "" Then
                 CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊費(税込)"), Me)
                 SetFocus(Me.ANS_HOTELHI)
                 Return False
@@ -1517,7 +1520,7 @@ Partial Public Class DrRegist
         'Nozomiへボタン押下時で宿泊手配(回答)=取消済の場合 必須
         If Nozomi And Me.ANS_STATUS_HOTEL.SelectedValue = AppConst.KOTSUHOTEL.ANS_STATUS_HOTEL.Code.Canceled Then
             'DR宿泊取消料(税込)
-            If Val(Me.ANS_HOTELHI_CANCEL.Text.Trim) = 0 Then
+            If Me.ANS_HOTELHI_CANCEL.Text.Trim = "" Then
                 CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-DR宿泊取消料(税込)"), Me)
                 SetFocus(Me.ANS_HOTELHI_CANCEL)
                 Return False
@@ -2550,7 +2553,8 @@ Partial Public Class DrRegist
                 Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Daian Then
 
                 '航空券代・JR券代・その他鉄道代の何れか必須
-                If Double.Parse(Val(Me.ANS_AIR_FARE.Text)) = 0.0 And Double.Parse(Val(Me.ANS_RAIL_FARE.Text)) = 0.0 And Double.Parse(Val(Me.ANS_OTHER_FARE.Text)) = 0.0 Then
+                'If Double.Parse(Val(Me.ANS_AIR_FARE.Text)) = 0.0 And Double.Parse(Val(Me.ANS_RAIL_FARE.Text)) = 0.0 And Double.Parse(Val(Me.ANS_OTHER_FARE.Text)) = 0.0 Then
+                If Me.ANS_AIR_FARE.Text.Trim = "" And Me.ANS_RAIL_FARE.Text.Trim = "" And Me.ANS_OTHER_FARE.Text.Trim = "" Then
                     CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-航空券代(税込)・JR券代(税込)・その他鉄道代等(税込)の何れか"), Me)
                     SetFocus(Me.ANS_AIR_FARE)
                     Return False
@@ -2577,7 +2581,8 @@ Partial Public Class DrRegist
                  Me.ANS_F_STATUS_5.SelectedValue = AppConst.KOTSUHOTEL.ANS_F_STATUS.Code.Canceled Then
 
                 '航空券取消料・JR券取消料・その他鉄道代取消料の何れか必須
-                If Double.Parse(Val(Me.ANS_AIR_CANCELLATION.Text)) = 0.0 And Double.Parse(Val(Me.ANS_RAIL_CANCELLATION.Text)) = 0.0 And Double.Parse(Val(Me.ANS_OTHER_CANCELLATION.Text)) = 0.0 Then
+                'If Double.Parse(Val(Me.ANS_AIR_CANCELLATION.Text)) = 0.0 And Double.Parse(Val(Me.ANS_RAIL_CANCELLATION.Text)) = 0.0 And Double.Parse(Val(Me.ANS_OTHER_CANCELLATION.Text)) = 0.0 Then
+                If Me.ANS_AIR_CANCELLATION.Text.Trim = "" And Me.ANS_RAIL_CANCELLATION.Text.Trim = "" And Me.ANS_OTHER_CANCELLATION.Text.Trim = "" Then
                     CmnModule.AlertMessage(MessageDef.Error.MustInput("各種代金-航空券取消料(税込)・JR券取消料(税込)・その他鉄道代等取消料(税込)の何れか"), Me)
                     SetFocus(Me.ANS_AIR_CANCELLATION)
                     Return False
@@ -2625,14 +2630,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号1"), Me)
             SetFocus(Me.ANS_TAXI_NO_1)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_1.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_1.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号1"), Me)
-            SetFocus(Me.ANS_TAXI_NO_1)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号1"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_1)
+            '    Return False
         End If
 
         '利用日2
@@ -2670,14 +2675,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号2"), Me)
             SetFocus(Me.ANS_TAXI_NO_2)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_2.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_2.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_2.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_2.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号2"), Me)
-            SetFocus(Me.ANS_TAXI_NO_2)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号2"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_2)
+            '    Return False
         End If
 
         '利用日3
@@ -2715,14 +2720,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号3"), Me)
             SetFocus(Me.ANS_TAXI_NO_3)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_3.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_3.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_3.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_3.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号3"), Me)
-            SetFocus(Me.ANS_TAXI_NO_3)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号3"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_3)
+            '    Return False
         End If
 
         '利用日4
@@ -2760,14 +2765,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号4"), Me)
             SetFocus(Me.ANS_TAXI_NO_4)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_4.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_4.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_4.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_4.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号4"), Me)
-            SetFocus(Me.ANS_TAXI_NO_4)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号4"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_4)
+            '    Return False
         End If
 
         '利用日5
@@ -2805,14 +2810,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号5"), Me)
             SetFocus(Me.ANS_TAXI_NO_5)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_5.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_5.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_5.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_5.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号5"), Me)
-            SetFocus(Me.ANS_TAXI_NO_5)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号5"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_5)
+            '    Return False
         End If
 
         '利用日6
@@ -2850,14 +2855,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号6"), Me)
             SetFocus(Me.ANS_TAXI_NO_6)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_6.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_6.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_6.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_6.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号6"), Me)
-            SetFocus(Me.ANS_TAXI_NO_6)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号6"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_6)
+            '    Return False
         End If
 
         '利用日7
@@ -2895,14 +2900,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号7"), Me)
             SetFocus(Me.ANS_TAXI_NO_7)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_7.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_7.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_7.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_7.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号7"), Me)
-            SetFocus(Me.ANS_TAXI_NO_7)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号7"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_7)
+            '    Return False
         End If
 
         '利用日8
@@ -2940,14 +2945,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号8"), Me)
             SetFocus(Me.ANS_TAXI_NO_8)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_8.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_8.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_8.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_8.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号8"), Me)
-            SetFocus(Me.ANS_TAXI_NO_8)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号8"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_8)
+            '    Return False
         End If
 
         '利用日9
@@ -2985,14 +2990,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号9"), Me)
             SetFocus(Me.ANS_TAXI_NO_9)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_9.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_9.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_9.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_9.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号9"), Me)
-            SetFocus(Me.ANS_TAXI_NO_9)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号9"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_9)
+            '    Return False
         End If
 
         '利用日10
@@ -3030,14 +3035,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号10"), Me)
             SetFocus(Me.ANS_TAXI_NO_10)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_10.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_10.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_10.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_10.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号10"), Me)
-            SetFocus(Me.ANS_TAXI_NO_10)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号10"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_10)
+            '    Return False
         End If
 
         '利用日11
@@ -3075,14 +3080,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号11"), Me)
             SetFocus(Me.ANS_TAXI_NO_11)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_11.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_11.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_11.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_11.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号11"), Me)
-            SetFocus(Me.ANS_TAXI_NO_11)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号11"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_11)
+            '    Return False
         End If
 
         '利用日12
@@ -3120,14 +3125,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号12"), Me)
             SetFocus(Me.ANS_TAXI_NO_12)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_12.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_12.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_12.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_12.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号12"), Me)
-            SetFocus(Me.ANS_TAXI_NO_12)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号12"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_12)
+            '    Return False
         End If
 
         '利用日13
@@ -3165,14 +3170,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号13"), Me)
             SetFocus(Me.ANS_TAXI_NO_13)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_13.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_13.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_13.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_13.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号13"), Me)
-            SetFocus(Me.ANS_TAXI_NO_13)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号13"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_13)
+            '    Return False
         End If
 
         '利用日14
@@ -3210,14 +3215,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号14"), Me)
             SetFocus(Me.ANS_TAXI_NO_14)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_14.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_14.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_14.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_14.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号14"), Me)
-            SetFocus(Me.ANS_TAXI_NO_14)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号14"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_14)
+            '    Return False
         End If
 
         '利用日15
@@ -3255,15 +3260,16 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号15"), Me)
             SetFocus(Me.ANS_TAXI_NO_15)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_15.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_15.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_15.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_15.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号15"), Me)
-            SetFocus(Me.ANS_TAXI_NO_15)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号15"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_15)
+            '    Return False
         End If
+
         '利用日16
         If Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_16) Then
@@ -3299,15 +3305,16 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号16"), Me)
             SetFocus(Me.ANS_TAXI_NO_16)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_16.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_16.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_16.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_16.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号16"), Me)
-            SetFocus(Me.ANS_TAXI_NO_16)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号16"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_16)
+            '    Return False
         End If
+
         '利用日17
         If Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_17) Then
@@ -3343,15 +3350,16 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号17"), Me)
             SetFocus(Me.ANS_TAXI_NO_17)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_17.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_17.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_17.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_17.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号17"), Me)
-            SetFocus(Me.ANS_TAXI_NO_17)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号17"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_17)
+            '    Return False
         End If
+
         '利用日18
         If Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_18) Then
@@ -3387,15 +3395,16 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号18"), Me)
             SetFocus(Me.ANS_TAXI_NO_18)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_18.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_18.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_18.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_18.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号18"), Me)
-            SetFocus(Me.ANS_TAXI_NO_18)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号18"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_18)
+            '    Return False
         End If
+
         '利用日19
         If Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_19) Then
@@ -3431,15 +3440,16 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号19"), Me)
             SetFocus(Me.ANS_TAXI_NO_19)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_19.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_19.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_19.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_19.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号19"), Me)
-            SetFocus(Me.ANS_TAXI_NO_19)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号19"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_19)
+            '    Return False
         End If
+
         '利用日20
         If Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty AndAlso _
             Not CmnCheck.IsValidDateYMD(Me.ANS_TAXI_DATE_20) Then
@@ -3475,14 +3485,14 @@ Partial Public Class DrRegist
             CmnModule.AlertMessage(MessageDef.Error.HankakuOnly("番号20"), Me)
             SetFocus(Me.ANS_TAXI_NO_20)
             Return False
-        ElseIf Nozomi AndAlso _
-            Me.ANS_TAXI_NO_20.Text.Trim = String.Empty AndAlso _
-            (Me.ANS_TAXI_KENSHU_20.SelectedValue <> String.Empty Or _
-            Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty) Then
+            'ElseIf Nozomi AndAlso _
+            '    Me.ANS_TAXI_NO_20.Text.Trim = String.Empty AndAlso _
+            '    (Me.ANS_TAXI_KENSHU_20.SelectedValue <> String.Empty Or _
+            '    Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty) Then
 
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("番号20"), Me)
-            SetFocus(Me.ANS_TAXI_NO_20)
-            Return False
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("番号20"), Me)
+            '    SetFocus(Me.ANS_TAXI_NO_20)
+            '    Return False
         End If
 
         'タクチケ印字名未確定の場合は「発行フラグ」を立てない
@@ -3765,6 +3775,39 @@ Partial Public Class DrRegist
         Return True
     End Function
 
+    'フォームの全テキストボックスの値をチェック(セキュリティ対策)
+    Private Function IsSecurityOK(ByVal WebForm As Control, ByRef errControl As Control) As Boolean
+        Dim wFlag As Boolean = True
+
+        Call IsSecurityOK2(WebForm, wFlag, errControl)
+        Return wFlag
+    End Function
+
+    '禁則文字チェック
+    Private Sub IsSecurityOK2(ByVal wControl As Control, ByRef wFlag As Boolean, ByRef errControl As Control)
+        If wFlag = False Then Exit Sub
+        If wControl.HasControls Then
+            For Each wChildControl As Control In wControl.Controls
+                IsSecurityOK2(wChildControl, wFlag, errControl)        '再帰的に繰り返す
+                If TypeOf wChildControl Is WebControls.TextBox Then
+                    If CType(wChildControl, WebControls.TextBox).ReadOnly = False AndAlso CType(wChildControl, WebControls.TextBox).Enabled = True Then
+                        '入力禁止文字チェック
+                        If InStr(CType(wChildControl, WebControls.TextBox).Text, """") > 0 Then
+                            errControl = wChildControl
+                            wFlag = False
+                            Exit Sub
+                        End If
+                        If CType(wChildControl, WebControls.TextBox).Text.Contains(Environment.NewLine) Then
+                            errControl = wChildControl
+                            wFlag = False
+                            Exit Sub
+                        End If
+                    End If
+                End If
+            Next wChildControl
+        End If
+    End Sub
+
     '入力値を取得
     Private Sub GetValue(ByVal SEND_FLAG As String)
         'DR手配
@@ -4042,7 +4085,7 @@ Partial Public Class DrRegist
         DSP_KOTSUHOTEL(SEQ).ANS_TAXI_RMKS_20 = AppModule.GetValue_ANS_TAXI_RMKS_20(Me.ANS_TAXI_RMKS_20)
 
         'MR手配
-        DSP_KOTSUHOTEL(SEQ).ANS_MR_O_TEHAI = AppModule.getvalue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
+        DSP_KOTSUHOTEL(SEQ).ANS_MR_O_TEHAI = AppModule.GetValue_ANS_MR_O_TEHAI(Me.ANS_MR_O_TEHAI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_F_TEHAI = AppModule.GetValue_ANS_MR_F_TEHAI(Me.ANS_MR_F_TEHAI)
         DSP_KOTSUHOTEL(SEQ).ANS_MR_HOTEL_NOTE = AppModule.GetValue_ANS_MR_HOTEL_NOTE(Me.ANS_MR_HOTEL_NOTE)
 
@@ -4206,9 +4249,9 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_O_SEAT_kibou2.Items.Count - 1
-            If REQ_O_SEAT_kibou2.Text = ANS_O_SEAT_kibou2.Items(i).Text Then
-                ANS_O_SEAT_kibou2.SelectedIndex = i
+        For i As Integer = 0 To ANS_O_SEAT_KIBOU2.Items.Count - 1
+            If REQ_O_SEAT_KIBOU2.Text = ANS_O_SEAT_KIBOU2.Items(i).Text Then
+                ANS_O_SEAT_KIBOU2.SelectedIndex = i
                 Exit For
             End If
         Next
@@ -4263,9 +4306,9 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_O_SEAT_kibou3.Items.Count - 1
-            If REQ_O_SEAT_kibou3.Text = ANS_O_SEAT_kibou3.Items(i).Text Then
-                ANS_O_SEAT_kibou3.SelectedIndex = i
+        For i As Integer = 0 To ANS_O_SEAT_KIBOU3.Items.Count - 1
+            If REQ_O_SEAT_KIBOU3.Text = ANS_O_SEAT_KIBOU3.Items(i).Text Then
+                ANS_O_SEAT_KIBOU3.SelectedIndex = i
                 Exit For
             End If
         Next
@@ -4320,7 +4363,7 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_O_SEAT_kibou4.Items.Count - 1
+        For i As Integer = 0 To ANS_O_SEAT_KIBOU4.Items.Count - 1
             If REQ_O_SEAT_KIBOU4.Text = ANS_O_SEAT_KIBOU4.Items(i).Text Then
                 ANS_O_SEAT_KIBOU4.SelectedIndex = i
                 Exit For
@@ -4492,9 +4535,9 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_F_SEAT_kibou2.Items.Count - 1
-            If REQ_F_SEAT_kibou2.Text = ANS_F_SEAT_kibou2.Items(i).Text Then
-                ANS_F_SEAT_kibou2.SelectedIndex = i
+        For i As Integer = 0 To ANS_F_SEAT_KIBOU2.Items.Count - 1
+            If REQ_F_SEAT_KIBOU2.Text = ANS_F_SEAT_KIBOU2.Items(i).Text Then
+                ANS_F_SEAT_KIBOU2.SelectedIndex = i
                 Exit For
             End If
         Next
@@ -4548,9 +4591,9 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_F_SEAT_kibou3.Items.Count - 1
-            If REQ_F_SEAT_kibou3.Text = ANS_F_SEAT_kibou3.Items(i).Text Then
-                ANS_F_SEAT_kibou3.SelectedIndex = i
+        For i As Integer = 0 To ANS_F_SEAT_KIBOU3.Items.Count - 1
+            If REQ_F_SEAT_KIBOU3.Text = ANS_F_SEAT_KIBOU3.Items(i).Text Then
+                ANS_F_SEAT_KIBOU3.SelectedIndex = i
                 Exit For
             End If
         Next
@@ -4604,9 +4647,9 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_F_SEAT_kibou4.Items.Count - 1
-            If REQ_F_SEAT_kibou4.Text = ANS_F_SEAT_kibou4.Items(i).Text Then
-                ANS_F_SEAT_kibou4.SelectedIndex = i
+        For i As Integer = 0 To ANS_F_SEAT_KIBOU4.Items.Count - 1
+            If REQ_F_SEAT_KIBOU4.Text = ANS_F_SEAT_KIBOU4.Items(i).Text Then
+                ANS_F_SEAT_KIBOU4.SelectedIndex = i
                 Exit For
             End If
         Next
@@ -4660,9 +4703,9 @@ Partial Public Class DrRegist
         Next
 
         '座席希望
-        For i As Integer = 0 To ANS_F_SEAT_kibou4.Items.Count - 1
-            If REQ_F_SEAT_kibou4.Text = ANS_F_SEAT_kibou4.Items(i).Text Then
-                ANS_F_SEAT_kibou4.SelectedIndex = i
+        For i As Integer = 0 To ANS_F_SEAT_KIBOU4.Items.Count - 1
+            If REQ_F_SEAT_KIBOU4.Text = ANS_F_SEAT_KIBOU4.Items(i).Text Then
+                ANS_F_SEAT_KIBOU4.SelectedIndex = i
                 Exit For
             End If
         Next
