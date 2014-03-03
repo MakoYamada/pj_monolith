@@ -24,8 +24,8 @@ Public Class TaxiKakuninReport
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
         If DR_NAME.Text.Length > 19 Then DR_NAME.Text = Left(DR_NAME.Text, 19)
         If DR_SHISETSU_NAME.Text.Length > 25 Then DR_SHISETSU_NAME.Text = Left(DR_SHISETSU_NAME.Text, 25)
-        TEHAI_TAXI.Text = AppModule.GetName_TEHAI_TAXI(TEHAI_TAXI.Text)
-        TEHAI_HOTEL.Text = AppModule.GetName_TEHAI_HOTEL(TEHAI_HOTEL.Text)
+        TEHAI_TAXI.Text = AppModule.GetMark_TEHAI_TAXI(TEHAI_TAXI.Text)
+        TEHAI_HOTEL.Text = AppModule.GetMark_TEHAI_HOTEL(TEHAI_HOTEL.Text)
 
         If REQ_O_TEHAI_1.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
             REQ_O_TEHAI_2.Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Or _
@@ -37,18 +37,18 @@ Public Class TaxiKakuninReport
             REQ_F_TEHAI_3.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Or _
             REQ_F_TEHAI_4.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Or _
             REQ_F_TEHAI_5.Text = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
-            TEHAI_KOTSU.Text = AppModule.GetName_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+            TEHAI_KOTSU.Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
         Else
-            TEHAI_KOTSU.Text = AppModule.GetName_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+            TEHAI_KOTSU.Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
         End If
 
         If REQ_MR_O_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Mi And _
             REQ_MR_O_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Fuyou Or _
             REQ_MR_F_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Mi And _
             REQ_MR_F_TEHAI.Text <> AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.Fuyou Then
-            REQ_MR_TEHAI.Text = "依頼あり"
+            REQ_MR_TEHAI.Text = "●"
         Else
-            REQ_MR_TEHAI.Text = "依頼なし"
+            REQ_MR_TEHAI.Text = "○"
         End If
 
         REQ_TAXI_DATE_1.Text = AppModule.GetName_REQ_TAXI_DATE_1(REQ_TAXI_DATE_1.Text)
@@ -141,9 +141,17 @@ Public Class TaxiKakuninReport
         ANS_TAXI_HAKKO_DATE_18.Text = AppModule.GetName_ANS_TAXI_HAKKO_DATE_18(ANS_TAXI_HAKKO_DATE_18.Text)
         ANS_TAXI_HAKKO_DATE_19.Text = AppModule.GetName_ANS_TAXI_HAKKO_DATE_19(ANS_TAXI_HAKKO_DATE_19.Text)
         ANS_TAXI_HAKKO_DATE_20.Text = AppModule.GetName_ANS_TAXI_HAKKO_DATE_20(ANS_TAXI_HAKKO_DATE_20.Text)
+
+        If REQ_TAXI_NOTE.Text.Trim.Length > 288 Then
+            REQ_TAXI_NOTE.Text = Left(REQ_TAXI_NOTE.Text.Trim, 288)
+        End If
+        If ANS_TAXI_NOTE.Text.Trim.Length > 288 Then
+            ANS_TAXI_NOTE.Text = Left(ANS_TAXI_NOTE.Text.Trim, 288)
+        End If
+
     End Sub
 
-    Private Sub PageHeader_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageHeader.Format
+    Private Sub PageFooter_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageFooter.Format
         Me.PRINT_USER.Text = pMS_USER.USER_NAME
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
     End Sub

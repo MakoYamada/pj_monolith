@@ -2753,7 +2753,7 @@ Public Class DrSoufujo
             '部分的に下線を引く
             TAXI_NOTES1.SelectionStart = 14
             TAXI_NOTES1.SelectionLength = 13
-            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold Or FontStyle.Italic)
             TAXI_NOTES1.SelectionStart = 0
             TAXI_NOTES1.SelectionLength = 0
             RowNo += 3
@@ -2780,7 +2780,7 @@ Public Class DrSoufujo
         '部分的に下線を引く
         Me.JR_TORIKESHI.SelectionStart = 54
         Me.JR_TORIKESHI.SelectionLength = 76
-        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold Or FontStyle.Italic)
         Me.JR_TORIKESHI.SelectionStart = 0
         Me.JR_TORIKESHI.SelectionLength = 0
 
@@ -2804,7 +2804,7 @@ Public Class DrSoufujo
         '部分的に下線を引く
         Me.OTHER_NOTES.SelectionStart = 19
         Me.OTHER_NOTES.SelectionLength = 23
-        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold Or FontStyle.Italic)
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0
     End Sub
