@@ -91,7 +91,7 @@ Public Class SQL
             strSQL &= ", USER_NAME"
             strSQL &= " FROM"
             strSQL &= " (SELECT *,"
-            strSQL &= " ROW_NUMBER() OVERr( PARTITION BY "
+            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
             strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
             strSQL &= " ORDER BY "
             strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
