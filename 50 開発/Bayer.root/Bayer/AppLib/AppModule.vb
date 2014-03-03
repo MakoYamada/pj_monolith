@@ -188,6 +188,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.BU.ToUpper Then TBL_SEIKYU.BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_AREA.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_EIGYOSHO.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_ID.ToUpper Then TBL_SEIKYU.TEHAI_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_SEIKYU

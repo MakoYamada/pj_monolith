@@ -324,6 +324,7 @@
             Public BU As String
             Public KIKAKU_TANTO_AREA As String
             Public KIKAKU_TANTO_EIGYOSHO As String
+            Public TEHAI_ID As String
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -394,6 +395,7 @@
             Public Const BU As String = "BU"
             Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
+            Public Const TEHAI_ID As String = "TEHAI_ID"
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
