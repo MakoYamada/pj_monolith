@@ -31,6 +31,15 @@ Partial Public Class KaijoReport
         Me.PageCount = New DataDynamics.ActiveReports.TextBox
         Me.Label8 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.Label16 = New DataDynamics.ActiveReports.Label
+        Me.OTHER_NOTE = New DataDynamics.ActiveReports.TextBox
+        Me.Label36 = New DataDynamics.ActiveReports.Label
+        Me.Label41 = New DataDynamics.ActiveReports.Label
+        Me.TEHAI_TANTO_EIGYOSHO = New DataDynamics.ActiveReports.TextBox
+        Me.Label46 = New DataDynamics.ActiveReports.Label
+        Me.Label42 = New DataDynamics.ActiveReports.Label
+        Me.Label13 = New DataDynamics.ActiveReports.Label
+        Me.Line34 = New DataDynamics.ActiveReports.Line
         Me.Label32 = New DataDynamics.ActiveReports.Label
         Me.KAISAI_KIBOU_ADDRESS2 = New DataDynamics.ActiveReports.TextBox
         Me.KOUSHI_ROOM_CNT = New DataDynamics.ActiveReports.TextBox
@@ -44,8 +53,6 @@ Partial Public Class KaijoReport
         Me.Label69 = New DataDynamics.ActiveReports.Label
         Me.Label77 = New DataDynamics.ActiveReports.Label
         Me.Label76 = New DataDynamics.ActiveReports.Label
-        Me.OTHER_NOTE = New DataDynamics.ActiveReports.TextBox
-        Me.Label36 = New DataDynamics.ActiveReports.Label
         Me.KAISAI_KIBOU_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.KAISAI_DATE_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.Label31 = New DataDynamics.ActiveReports.Label
@@ -85,17 +92,12 @@ Partial Public Class KaijoReport
         Me.KIKAKU_TANTO_AREA = New DataDynamics.ActiveReports.TextBox
         Me.BU = New DataDynamics.ActiveReports.TextBox
         Me.Label47 = New DataDynamics.ActiveReports.Label
-        Me.Label46 = New DataDynamics.ActiveReports.Label
-        Me.Label42 = New DataDynamics.ActiveReports.Label
-        Me.Label41 = New DataDynamics.ActiveReports.Label
         Me.Label18 = New DataDynamics.ActiveReports.Label
         Me.Label17 = New DataDynamics.ActiveReports.Label
-        Me.Label13 = New DataDynamics.ActiveReports.Label
         Me.Label44 = New DataDynamics.ActiveReports.Label
         Me.Label45 = New DataDynamics.ActiveReports.Label
         Me.SHONIN_NAME = New DataDynamics.ActiveReports.TextBox
         Me.SHONIN_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.Label16 = New DataDynamics.ActiveReports.Label
         Me.TAXI_PRT_NAME = New DataDynamics.ActiveReports.TextBox
         Me.TIME_STAMP_BYL = New DataDynamics.ActiveReports.TextBox
         Me.Label37 = New DataDynamics.ActiveReports.Label
@@ -104,7 +106,6 @@ Partial Public Class KaijoReport
         Me.TEHAI_ID = New DataDynamics.ActiveReports.TextBox
         Me.Label9 = New DataDynamics.ActiveReports.Label
         Me.KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
-        Me.Line2 = New DataDynamics.ActiveReports.Line
         Me.SEND_FLAG = New DataDynamics.ActiveReports.TextBox
         Me.Label6 = New DataDynamics.ActiveReports.Label
         Me.Label7 = New DataDynamics.ActiveReports.Label
@@ -116,7 +117,6 @@ Partial Public Class KaijoReport
         Me.Line30 = New DataDynamics.ActiveReports.Line
         Me.Line40 = New DataDynamics.ActiveReports.Line
         Me.Line43 = New DataDynamics.ActiveReports.Line
-        Me.Line45 = New DataDynamics.ActiveReports.Line
         Me.Line3 = New DataDynamics.ActiveReports.Line
         Me.Line4 = New DataDynamics.ActiveReports.Line
         Me.Line5 = New DataDynamics.ActiveReports.Line
@@ -124,11 +124,6 @@ Partial Public Class KaijoReport
         Me.Line14 = New DataDynamics.ActiveReports.Line
         Me.Line46 = New DataDynamics.ActiveReports.Line
         Me.Line47 = New DataDynamics.ActiveReports.Line
-        Me.Line49 = New DataDynamics.ActiveReports.Line
-        Me.Line50 = New DataDynamics.ActiveReports.Line
-        Me.Line51 = New DataDynamics.ActiveReports.Line
-        Me.Line52 = New DataDynamics.ActiveReports.Line
-        Me.Line53 = New DataDynamics.ActiveReports.Line
         Me.Line54 = New DataDynamics.ActiveReports.Line
         Me.Line55 = New DataDynamics.ActiveReports.Line
         Me.TEHAI_TANTO_EMAIL_PC = New DataDynamics.ActiveReports.TextBox
@@ -140,7 +135,6 @@ Partial Public Class KaijoReport
         Me.Label5 = New DataDynamics.ActiveReports.Label
         Me.Label51 = New DataDynamics.ActiveReports.Label
         Me.Label52 = New DataDynamics.ActiveReports.Label
-        Me.TEHAI_TANTO_EIGYOSHO = New DataDynamics.ActiveReports.TextBox
         Me.TEHAI_TANTO_AREA = New DataDynamics.ActiveReports.TextBox
         Me.TEHAI_TANTO_BU = New DataDynamics.ActiveReports.TextBox
         Me.Label53 = New DataDynamics.ActiveReports.Label
@@ -154,7 +148,6 @@ Partial Public Class KaijoReport
         Me.Line61 = New DataDynamics.ActiveReports.Line
         Me.Line62 = New DataDynamics.ActiveReports.Line
         Me.Line63 = New DataDynamics.ActiveReports.Line
-        Me.Line48 = New DataDynamics.ActiveReports.Line
         Me.Label15 = New DataDynamics.ActiveReports.Label
         Me.Label19 = New DataDynamics.ActiveReports.Label
         Me.SANKA_YOTEI_CNT_NMBR = New DataDynamics.ActiveReports.TextBox
@@ -182,7 +175,6 @@ Partial Public Class KaijoReport
         Me.Line65 = New DataDynamics.ActiveReports.Line
         Me.Line64 = New DataDynamics.ActiveReports.Line
         Me.Label29 = New DataDynamics.ActiveReports.Label
-        Me.Line58 = New DataDynamics.ActiveReports.Line
         Me.Line16 = New DataDynamics.ActiveReports.Line
         Me.KAISAI_KIBOU_ADDRESS1 = New DataDynamics.ActiveReports.TextBox
         Me.Line38 = New DataDynamics.ActiveReports.Line
@@ -213,10 +205,6 @@ Partial Public Class KaijoReport
         Me.Line83 = New DataDynamics.ActiveReports.Line
         Me.Line84 = New DataDynamics.ActiveReports.Line
         Me.Line85 = New DataDynamics.ActiveReports.Line
-        Me.Line7 = New DataDynamics.ActiveReports.Line
-        Me.Line15 = New DataDynamics.ActiveReports.Line
-        Me.Line26 = New DataDynamics.ActiveReports.Line
-        Me.Line27 = New DataDynamics.ActiveReports.Line
         Me.Label75 = New DataDynamics.ActiveReports.Label
         Me.MANAGER_KAIJO_TEHAI_No = New DataDynamics.ActiveReports.TextBox
         Me.KOUSHI_ROOM_TEHAI_No = New DataDynamics.ActiveReports.TextBox
@@ -224,19 +212,14 @@ Partial Public Class KaijoReport
         Me.IKENKOUKAN_KAIJO_TEHAI_No = New DataDynamics.ActiveReports.TextBox
         Me.Label78 = New DataDynamics.ActiveReports.Label
         Me.Line67 = New DataDynamics.ActiveReports.Line
-        Me.Line34 = New DataDynamics.ActiveReports.Line
         Me.Line76 = New DataDynamics.ActiveReports.Line
         Me.Line77 = New DataDynamics.ActiveReports.Line
         Me.Line78 = New DataDynamics.ActiveReports.Line
         Me.Line79 = New DataDynamics.ActiveReports.Line
-        Me.Line29 = New DataDynamics.ActiveReports.Line
         Me.Line75 = New DataDynamics.ActiveReports.Line
         Me.Line69 = New DataDynamics.ActiveReports.Line
         Me.Line73 = New DataDynamics.ActiveReports.Line
-        Me.Line17 = New DataDynamics.ActiveReports.Line
-        Me.Line80 = New DataDynamics.ActiveReports.Line
         Me.Line68 = New DataDynamics.ActiveReports.Line
-        Me.Line8 = New DataDynamics.ActiveReports.Line
         Me.Line32 = New DataDynamics.ActiveReports.Line
         Me.Line13 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
@@ -249,8 +232,25 @@ Partial Public Class KaijoReport
         Me.Line41 = New DataDynamics.ActiveReports.Line
         Me.Line28 = New DataDynamics.ActiveReports.Line
         Me.Line36 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Line53 = New DataDynamics.ActiveReports.Line
+        Me.Line52 = New DataDynamics.ActiveReports.Line
+        Me.Line51 = New DataDynamics.ActiveReports.Line
+        Me.Line50 = New DataDynamics.ActiveReports.Line
+        Me.Line49 = New DataDynamics.ActiveReports.Line
+        Me.Line29 = New DataDynamics.ActiveReports.Line
         Me.Line33 = New DataDynamics.ActiveReports.Line
+        Me.Line7 = New DataDynamics.ActiveReports.Line
+        Me.Line2 = New DataDynamics.ActiveReports.Line
+        Me.Line45 = New DataDynamics.ActiveReports.Line
+        Me.Line48 = New DataDynamics.ActiveReports.Line
+        Me.Line58 = New DataDynamics.ActiveReports.Line
+        Me.Line17 = New DataDynamics.ActiveReports.Line
+        Me.Line8 = New DataDynamics.ActiveReports.Line
+        Me.Line80 = New DataDynamics.ActiveReports.Line
+        Me.Line26 = New DataDynamics.ActiveReports.Line
+        Me.Line27 = New DataDynamics.ActiveReports.Line
+        Me.Line15 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.LabelPage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LOGIN_USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,6 +261,14 @@ Partial Public Class KaijoReport
         CType(Me.PageTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PageCount, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OTHER_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label41, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TEHAI_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label46, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KAISAI_KIBOU_ADDRESS2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUSHI_ROOM_CNT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,8 +282,6 @@ Partial Public Class KaijoReport
         CType(Me.Label69, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label77, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label76, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OTHER_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KAISAI_KIBOU_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KAISAI_DATE_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label31, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -315,17 +321,12 @@ Partial Public Class KaijoReport
         CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label47, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label46, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label42, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label44, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label45, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SHONIN_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SHONIN_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TAXI_PRT_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label37, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -350,7 +351,6 @@ Partial Public Class KaijoReport
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label51, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label52, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TEHAI_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TEHAI_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TEHAI_TANTO_BU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label53, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -540,11 +540,128 @@ Partial Public Class KaijoReport
         Me.Detail.Name = "Detail"
         Me.Detail.NewPage = DataDynamics.ActiveReports.NewPage.After
         '
+        'Label16
+        '
+        Me.Label16.Height = 0.2559055!
+        Me.Label16.HyperLink = Nothing
+        Me.Label16.Left = 0.0!
+        Me.Label16.Name = "Label16"
+        Me.Label16.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
+        Me.Label16.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
+            " middle"
+        Me.Label16.Text = "Zetia Code"
+        Me.Label16.Top = 1.437008!
+        Me.Label16.Width = 1.728346!
+        '
+        'OTHER_NOTE
+        '
+        Me.OTHER_NOTE.CanGrow = False
+        Me.OTHER_NOTE.DataField = "OTHER_NOTE"
+        Me.OTHER_NOTE.Height = 0.7480315!
+        Me.OTHER_NOTE.Left = 1.729921!
+        Me.OTHER_NOTE.Name = "OTHER_NOTE"
+        Me.OTHER_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 0, 0)
+        Me.OTHER_NOTE.Style = "font-family: ＭＳ ゴシック"
+        Me.OTHER_NOTE.Text = "OTHER_NOTE"
+        Me.OTHER_NOTE.Top = 9.611811!
+        Me.OTHER_NOTE.Width = 6.294882!
+        '
+        'Label36
+        '
+        Me.Label36.Height = 0.7480315!
+        Me.Label36.HyperLink = Nothing
+        Me.Label36.Left = 0.0!
+        Me.Label36.Name = "Label36"
+        Me.Label36.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
+        Me.Label36.Style = "background-color: #C3C3C3; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
+            " middle"
+        Me.Label36.Text = "その他備考欄"
+        Me.Label36.Top = 9.611811!
+        Me.Label36.Width = 1.728346!
+        '
+        'Label41
+        '
+        Me.Label41.Height = 0.2559055!
+        Me.Label41.HyperLink = Nothing
+        Me.Label41.Left = 0.001574803!
+        Me.Label41.Name = "Label41"
+        Me.Label41.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
+        Me.Label41.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
+            " middle"
+        Me.Label41.Text = "携帯アドレス"
+        Me.Label41.Top = 2.716536!
+        Me.Label41.Width = 1.728346!
+        '
+        'TEHAI_TANTO_EIGYOSHO
+        '
+        Me.TEHAI_TANTO_EIGYOSHO.CanGrow = False
+        Me.TEHAI_TANTO_EIGYOSHO.DataField = "TEHAI_TANTO_EIGYOSHO"
+        Me.TEHAI_TANTO_EIGYOSHO.Height = 0.2559055!
+        Me.TEHAI_TANTO_EIGYOSHO.Left = 6.064174!
+        Me.TEHAI_TANTO_EIGYOSHO.Name = "TEHAI_TANTO_EIGYOSHO"
+        Me.TEHAI_TANTO_EIGYOSHO.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 0, 0, 0)
+        Me.TEHAI_TANTO_EIGYOSHO.Style = "font-family: ＭＳ ゴシック; vertical-align: middle; white-space: nowrap"
+        Me.TEHAI_TANTO_EIGYOSHO.Text = "TEHAI_TANTO_EIGYOSHO"
+        Me.TEHAI_TANTO_EIGYOSHO.Top = 2.972441!
+        Me.TEHAI_TANTO_EIGYOSHO.Width = 1.968504!
+        '
+        'Label46
+        '
+        Me.Label46.Height = 0.2559055!
+        Me.Label46.HyperLink = Nothing
+        Me.Label46.Left = 3.050394!
+        Me.Label46.Name = "Label46"
+        Me.Label46.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
+        Me.Label46.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
+            " middle"
+        Me.Label46.Text = "エリア"
+        Me.Label46.Top = 1.948819!
+        Me.Label46.Width = 0.5905512!
+        '
+        'Label42
+        '
+        Me.Label42.Height = 0.2559055!
+        Me.Label42.HyperLink = Nothing
+        Me.Label42.Left = 1.731102!
+        Me.Label42.Name = "Label42"
+        Me.Label42.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
+        Me.Label42.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
+            " middle"
+        Me.Label42.Text = "BU"
+        Me.Label42.Top = 1.948819!
+        Me.Label42.Width = 0.3334646!
+        '
+        'Label13
+        '
+        Me.Label13.Height = 0.2559055!
+        Me.Label13.HyperLink = Nothing
+        Me.Label13.Left = 0.0!
+        Me.Label13.Name = "Label13"
+        Me.Label13.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 0, 0)
+        Me.Label13.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
+            " middle"
+        Me.Label13.Text = "■会合 企画担当者"
+        Me.Label13.Top = 1.948819!
+        Me.Label13.Width = 1.728346!
+        '
+        'Line34
+        '
+        Me.Line34.Height = 1.112599!
+        Me.Line34.Left = 1.729921!
+        Me.Line34.LineWeight = 1.0!
+        Me.Line34.Name = "Line34"
+        Me.Line34.Top = 0.6692914!
+        Me.Line34.Width = 0.0!
+        Me.Line34.X1 = 1.729921!
+        Me.Line34.X2 = 1.729921!
+        Me.Line34.Y1 = 0.6692914!
+        Me.Line34.Y2 = 1.78189!
+        '
         'Label32
         '
         Me.Label32.Height = 0.2559055!
         Me.Label32.HyperLink = Nothing
-        Me.Label32.Left = 3.232284!
+        Me.Label32.Left = 3.409055!
         Me.Label32.Name = "Label32"
         Me.Label32.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
         Me.Label32.Style = "background-color: #EAEAEA; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
@@ -557,14 +674,14 @@ Partial Public Class KaijoReport
         '
         Me.KAISAI_KIBOU_ADDRESS2.CanGrow = False
         Me.KAISAI_KIBOU_ADDRESS2.DataField = "KAISAI_KIBOU_ADDRESS2"
-        Me.KAISAI_KIBOU_ADDRESS2.Height = 0.2559055!
-        Me.KAISAI_KIBOU_ADDRESS2.Left = 3.791337!
+        Me.KAISAI_KIBOU_ADDRESS2.Height = 0.2559056!
+        Me.KAISAI_KIBOU_ADDRESS2.Left = 3.968111!
         Me.KAISAI_KIBOU_ADDRESS2.Name = "KAISAI_KIBOU_ADDRESS2"
         Me.KAISAI_KIBOU_ADDRESS2.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 0, 0, 0)
         Me.KAISAI_KIBOU_ADDRESS2.Style = "font-family: ＭＳ ゴシック; vertical-align: middle; white-space: nowrap"
         Me.KAISAI_KIBOU_ADDRESS2.Text = "KAISAI_KIBOU_ADDRESS2"
         Me.KAISAI_KIBOU_ADDRESS2.Top = 5.033465!
-        Me.KAISAI_KIBOU_ADDRESS2.Width = 4.225593!
+        Me.KAISAI_KIBOU_ADDRESS2.Width = 4.059055!
         '
         'KOUSHI_ROOM_CNT
         '
@@ -710,32 +827,6 @@ Partial Public Class KaijoReport
         Me.Label76.Text = "要"
         Me.Label76.Top = 7.041339!
         Me.Label76.Width = 0.446063!
-        '
-        'OTHER_NOTE
-        '
-        Me.OTHER_NOTE.CanGrow = False
-        Me.OTHER_NOTE.DataField = "OTHER_NOTE"
-        Me.OTHER_NOTE.Height = 0.7480315!
-        Me.OTHER_NOTE.Left = 1.729921!
-        Me.OTHER_NOTE.Name = "OTHER_NOTE"
-        Me.OTHER_NOTE.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 0, 0)
-        Me.OTHER_NOTE.Style = "font-family: ＭＳ ゴシック"
-        Me.OTHER_NOTE.Text = "OTHER_NOTE"
-        Me.OTHER_NOTE.Top = 9.611811!
-        Me.OTHER_NOTE.Width = 6.294882!
-        '
-        'Label36
-        '
-        Me.Label36.Height = 0.7480315!
-        Me.Label36.HyperLink = Nothing
-        Me.Label36.Left = 0.0!
-        Me.Label36.Name = "Label36"
-        Me.Label36.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
-        Me.Label36.Style = "background-color: #C3C3C3; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
-            " middle"
-        Me.Label36.Text = "その他備考欄"
-        Me.Label36.Top = 9.611811!
-        Me.Label36.Width = 1.728346!
         '
         'KAISAI_KIBOU_NOTE
         '
@@ -1244,45 +1335,6 @@ Partial Public Class KaijoReport
         Me.Label47.Top = 1.948819!
         Me.Label47.Width = 0.5708662!
         '
-        'Label46
-        '
-        Me.Label46.Height = 0.2559055!
-        Me.Label46.HyperLink = Nothing
-        Me.Label46.Left = 3.050394!
-        Me.Label46.Name = "Label46"
-        Me.Label46.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
-        Me.Label46.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
-            " middle"
-        Me.Label46.Text = "エリア"
-        Me.Label46.Top = 1.948819!
-        Me.Label46.Width = 0.5905512!
-        '
-        'Label42
-        '
-        Me.Label42.Height = 0.2559055!
-        Me.Label42.HyperLink = Nothing
-        Me.Label42.Left = 1.731102!
-        Me.Label42.Name = "Label42"
-        Me.Label42.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
-        Me.Label42.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
-            " middle"
-        Me.Label42.Text = "BU"
-        Me.Label42.Top = 1.948819!
-        Me.Label42.Width = 0.3334646!
-        '
-        'Label41
-        '
-        Me.Label41.Height = 0.2559055!
-        Me.Label41.HyperLink = Nothing
-        Me.Label41.Left = 0.001574803!
-        Me.Label41.Name = "Label41"
-        Me.Label41.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
-        Me.Label41.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
-            " middle"
-        Me.Label41.Text = "携帯アドレス"
-        Me.Label41.Top = 2.716536!
-        Me.Label41.Width = 1.728346!
-        '
         'Label18
         '
         Me.Label18.Height = 0.2559055!
@@ -1308,19 +1360,6 @@ Partial Public Class KaijoReport
         Me.Label17.Text = "企画担当者 氏名"
         Me.Label17.Top = 2.204725!
         Me.Label17.Width = 1.728346!
-        '
-        'Label13
-        '
-        Me.Label13.Height = 0.2559055!
-        Me.Label13.HyperLink = Nothing
-        Me.Label13.Left = 0.0!
-        Me.Label13.Name = "Label13"
-        Me.Label13.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 1, 0, 0)
-        Me.Label13.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
-            " middle"
-        Me.Label13.Text = "■会合 企画担当者"
-        Me.Label13.Top = 1.948819!
-        Me.Label13.Width = 1.728346!
         '
         'Label44
         '
@@ -1373,19 +1412,6 @@ Partial Public Class KaijoReport
         Me.SHONIN_DATE.Text = "SHONIN_DATE"
         Me.SHONIN_DATE.Top = 1.692914!
         Me.SHONIN_DATE.Width = 2.413386!
-        '
-        'Label16
-        '
-        Me.Label16.Height = 0.2559055!
-        Me.Label16.HyperLink = Nothing
-        Me.Label16.Left = 0.0!
-        Me.Label16.Name = "Label16"
-        Me.Label16.Padding = New DataDynamics.ActiveReports.PaddingEx(2, 1, 0, 0)
-        Me.Label16.Style = "background-color: #B5B5B5; font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align:" & _
-            " middle"
-        Me.Label16.Text = "Zetia Code"
-        Me.Label16.Top = 1.437008!
-        Me.Label16.Width = 1.728346!
         '
         'TAXI_PRT_NAME
         '
@@ -1489,20 +1515,6 @@ Partial Public Class KaijoReport
         Me.KOUENKAI_NAME.Top = 0.01023622!
         Me.KOUENKAI_NAME.Width = 5.612598!
         '
-        'Line2
-        '
-        Me.Line2.Height = 0.0!
-        Me.Line2.Left = 0.0!
-        Me.Line2.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line2.LineWeight = 3.0!
-        Me.Line2.Name = "Line2"
-        Me.Line2.Top = 1.692914!
-        Me.Line2.Width = 8.035432!
-        Me.Line2.X1 = 0.0!
-        Me.Line2.X2 = 8.035432!
-        Me.Line2.Y1 = 1.692914!
-        Me.Line2.Y2 = 1.692914!
-        '
         'SEND_FLAG
         '
         Me.SEND_FLAG.CanGrow = False
@@ -1605,7 +1617,7 @@ Partial Public Class KaijoReport
         '
         'Line30
         '
-        Me.Line30.Height = 0.7677165!
+        Me.Line30.Height = 0.7677166!
         Me.Line30.Left = 5.611812!
         Me.Line30.LineWeight = 1.0!
         Me.Line30.Name = "Line30"
@@ -1642,20 +1654,6 @@ Partial Public Class KaijoReport
         Me.Line43.Y1 = 1.437008!
         Me.Line43.Y2 = 1.437008!
         '
-        'Line45
-        '
-        Me.Line45.Height = 0.0!
-        Me.Line45.Left = 0.0!
-        Me.Line45.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line45.LineWeight = 3.0!
-        Me.Line45.Name = "Line45"
-        Me.Line45.Top = 1.948819!
-        Me.Line45.Width = 8.035432!
-        Me.Line45.X1 = 0.0!
-        Me.Line45.X2 = 8.035432!
-        Me.Line45.Y1 = 1.948819!
-        Me.Line45.Y2 = 1.948819!
-        '
         'Line3
         '
         Me.Line3.Height = 0.0!
@@ -1671,7 +1669,7 @@ Partial Public Class KaijoReport
         '
         'Line4
         '
-        Me.Line4.Height = 0.2559053!
+        Me.Line4.Height = 0.255905!
         Me.Line4.Left = 4.144882!
         Me.Line4.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line4.LineWeight = 3.0!
@@ -1685,7 +1683,7 @@ Partial Public Class KaijoReport
         '
         'Line5
         '
-        Me.Line5.Height = 0.2559053!
+        Me.Line5.Height = 0.255905!
         Me.Line5.Left = 5.618505!
         Me.Line5.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line5.LineWeight = 3.0!
@@ -1699,7 +1697,7 @@ Partial Public Class KaijoReport
         '
         'Line6
         '
-        Me.Line6.Height = 0.2559053!
+        Me.Line6.Height = 0.255905!
         Me.Line6.Left = 1.729921!
         Me.Line6.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line6.LineWeight = 3.0!
@@ -1713,7 +1711,7 @@ Partial Public Class KaijoReport
         '
         'Line14
         '
-        Me.Line14.Height = 0.7677165!
+        Me.Line14.Height = 0.7677166!
         Me.Line14.Left = 4.144882!
         Me.Line14.LineWeight = 1.0!
         Me.Line14.Name = "Line14"
@@ -1750,74 +1748,9 @@ Partial Public Class KaijoReport
         Me.Line47.Y1 = 2.716536!
         Me.Line47.Y2 = 2.716536!
         '
-        'Line49
-        '
-        Me.Line49.Height = 0.2559053!
-        Me.Line49.Left = 2.066142!
-        Me.Line49.LineWeight = 1.0!
-        Me.Line49.Name = "Line49"
-        Me.Line49.Top = 1.948819!
-        Me.Line49.Width = 0.0!
-        Me.Line49.X1 = 2.066142!
-        Me.Line49.X2 = 2.066142!
-        Me.Line49.Y1 = 1.948819!
-        Me.Line49.Y2 = 2.204724!
-        '
-        'Line50
-        '
-        Me.Line50.Height = 0.2559053!
-        Me.Line50.Left = 3.050394!
-        Me.Line50.LineWeight = 1.0!
-        Me.Line50.Name = "Line50"
-        Me.Line50.Top = 1.948819!
-        Me.Line50.Width = 0.00006604195!
-        Me.Line50.X1 = 3.050394!
-        Me.Line50.X2 = 3.05046!
-        Me.Line50.Y1 = 1.948819!
-        Me.Line50.Y2 = 2.204724!
-        '
-        'Line51
-        '
-        Me.Line51.Height = 0.2559053!
-        Me.Line51.Left = 3.640158!
-        Me.Line51.LineWeight = 1.0!
-        Me.Line51.Name = "Line51"
-        Me.Line51.Top = 1.948819!
-        Me.Line51.Width = 0.00006699562!
-        Me.Line51.X1 = 3.640158!
-        Me.Line51.X2 = 3.640225!
-        Me.Line51.Y1 = 1.948819!
-        Me.Line51.Y2 = 2.204724!
-        '
-        'Line52
-        '
-        Me.Line52.Height = 0.2559053!
-        Me.Line52.Left = 5.491339!
-        Me.Line52.LineWeight = 1.0!
-        Me.Line52.Name = "Line52"
-        Me.Line52.Top = 1.948819!
-        Me.Line52.Width = 0.00006389618!
-        Me.Line52.X1 = 5.491339!
-        Me.Line52.X2 = 5.491403!
-        Me.Line52.Y1 = 1.948819!
-        Me.Line52.Y2 = 2.204724!
-        '
-        'Line53
-        '
-        Me.Line53.Height = 0.2559053!
-        Me.Line53.Left = 6.062205!
-        Me.Line53.LineWeight = 1.0!
-        Me.Line53.Name = "Line53"
-        Me.Line53.Top = 1.948819!
-        Me.Line53.Width = 0.00006389618!
-        Me.Line53.X1 = 6.062205!
-        Me.Line53.X2 = 6.062269!
-        Me.Line53.Y1 = 1.948819!
-        Me.Line53.Y2 = 2.204724!
-        '
         'Line54
         '
-        Me.Line54.Height = 0.7677164!
+        Me.Line54.Height = 0.7677159!
         Me.Line54.Left = 4.144882!
         Me.Line54.LineWeight = 1.0!
         Me.Line54.Name = "Line54"
@@ -1830,7 +1763,7 @@ Partial Public Class KaijoReport
         '
         'Line55
         '
-        Me.Line55.Height = 0.7677164!
+        Me.Line55.Height = 0.7677159!
         Me.Line55.Left = 5.618505!
         Me.Line55.LineWeight = 1.0!
         Me.Line55.Name = "Line55"
@@ -1957,19 +1890,6 @@ Partial Public Class KaijoReport
         Me.Label52.Text = "手配担当者(ローマ字)"
         Me.Label52.Top = 3.227559!
         Me.Label52.Width = 1.466929!
-        '
-        'TEHAI_TANTO_EIGYOSHO
-        '
-        Me.TEHAI_TANTO_EIGYOSHO.CanGrow = False
-        Me.TEHAI_TANTO_EIGYOSHO.DataField = "TEHAI_TANTO_EIGYOSHO"
-        Me.TEHAI_TANTO_EIGYOSHO.Height = 0.2559055!
-        Me.TEHAI_TANTO_EIGYOSHO.Left = 6.064174!
-        Me.TEHAI_TANTO_EIGYOSHO.Name = "TEHAI_TANTO_EIGYOSHO"
-        Me.TEHAI_TANTO_EIGYOSHO.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 0, 0, 0)
-        Me.TEHAI_TANTO_EIGYOSHO.Style = "font-family: ＭＳ ゴシック; vertical-align: middle; white-space: nowrap"
-        Me.TEHAI_TANTO_EIGYOSHO.Text = "TEHAI_TANTO_EIGYOSHO"
-        Me.TEHAI_TANTO_EIGYOSHO.Top = 2.972441!
-        Me.TEHAI_TANTO_EIGYOSHO.Width = 1.968504!
         '
         'TEHAI_TANTO_AREA
         '
@@ -2139,20 +2059,6 @@ Partial Public Class KaijoReport
         Me.Line63.X2 = 6.064174!
         Me.Line63.Y1 = 2.972441!
         Me.Line63.Y2 = 3.228346!
-        '
-        'Line48
-        '
-        Me.Line48.Height = 0.0!
-        Me.Line48.Left = 0.0!
-        Me.Line48.LineStyle = DataDynamics.ActiveReports.LineStyle.DashDot
-        Me.Line48.LineWeight = 3.0!
-        Me.Line48.Name = "Line48"
-        Me.Line48.Top = 2.972441!
-        Me.Line48.Width = 8.035432!
-        Me.Line48.X1 = 0.0!
-        Me.Line48.X2 = 8.035432!
-        Me.Line48.Y1 = 2.972441!
-        Me.Line48.Y2 = 2.972441!
         '
         'Label15
         '
@@ -2364,7 +2270,7 @@ Partial Public Class KaijoReport
         '
         'Line18
         '
-        Me.Line18.Height = 0.2559056!
+        Me.Line18.Height = 0.2559047!
         Me.Line18.Left = 2.518898!
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
@@ -2390,12 +2296,12 @@ Partial Public Class KaijoReport
         '
         'Line20
         '
-        Me.Line20.Height = 0.2559056!
+        Me.Line20.Height = 0.2559047!
         Me.Line20.Left = 3.688189!
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
         Me.Line20.Top = 4.521654!
-        Me.Line20.Width = 0.00006484985!
+        Me.Line20.Width = 0.00006508827!
         Me.Line20.X1 = 3.688189!
         Me.Line20.X2 = 3.688254!
         Me.Line20.Y1 = 4.521654!
@@ -2403,12 +2309,12 @@ Partial Public Class KaijoReport
         '
         'Line21
         '
-        Me.Line21.Height = 0.2559056!
+        Me.Line21.Height = 0.2559047!
         Me.Line21.Left = 4.75!
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
         Me.Line21.Top = 4.521654!
-        Me.Line21.Width = 0.00006961823!
+        Me.Line21.Width = 0.00007009506!
         Me.Line21.X1 = 4.75!
         Me.Line21.X2 = 4.75007!
         Me.Line21.Y1 = 4.521654!
@@ -2416,7 +2322,7 @@ Partial Public Class KaijoReport
         '
         'Line22
         '
-        Me.Line22.Height = 0.2559056!
+        Me.Line22.Height = 0.2559047!
         Me.Line22.Left = 5.925197!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
@@ -2429,12 +2335,12 @@ Partial Public Class KaijoReport
         '
         'Line23
         '
-        Me.Line23.Height = 0.2559056!
+        Me.Line23.Height = 0.2559047!
         Me.Line23.Left = 6.8563!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
         Me.Line23.Top = 4.521654!
-        Me.Line23.Width = 0.00006771088!
+        Me.Line23.Width = 0.00006818771!
         Me.Line23.X1 = 6.8563!
         Me.Line23.X2 = 6.856368!
         Me.Line23.Y1 = 4.521654!
@@ -2447,7 +2353,7 @@ Partial Public Class KaijoReport
         Me.Line24.LineWeight = 1.0!
         Me.Line24.Name = "Line24"
         Me.Line24.Top = 4.777559!
-        Me.Line24.Width = 0.00006580353!
+        Me.Line24.Width = 0.00006484985!
         Me.Line24.X1 = 6.279922!
         Me.Line24.X2 = 6.279987!
         Me.Line24.Y1 = 4.777559!
@@ -2505,20 +2411,6 @@ Partial Public Class KaijoReport
         Me.Label29.Top = 5.033465!
         Me.Label29.Width = 1.728346!
         '
-        'Line58
-        '
-        Me.Line58.Height = 0.0!
-        Me.Line58.Left = 0.0!
-        Me.Line58.LineStyle = DataDynamics.ActiveReports.LineStyle.DashDot
-        Me.Line58.LineWeight = 3.0!
-        Me.Line58.Name = "Line58"
-        Me.Line58.Top = 3.996063!
-        Me.Line58.Width = 8.035432!
-        Me.Line58.X1 = 0.0!
-        Me.Line58.X2 = 8.035432!
-        Me.Line58.Y1 = 3.996063!
-        Me.Line58.Y2 = 3.996063!
-        '
         'Line16
         '
         Me.Line16.Height = 0.0!
@@ -2537,25 +2429,25 @@ Partial Public Class KaijoReport
         Me.KAISAI_KIBOU_ADDRESS1.CanGrow = False
         Me.KAISAI_KIBOU_ADDRESS1.DataField = "KAISAI_KIBOU_ADDRESS1"
         Me.KAISAI_KIBOU_ADDRESS1.Height = 0.2559055!
-        Me.KAISAI_KIBOU_ADDRESS1.Left = 2.408662!
+        Me.KAISAI_KIBOU_ADDRESS1.Left = 2.509449!
         Me.KAISAI_KIBOU_ADDRESS1.Name = "KAISAI_KIBOU_ADDRESS1"
         Me.KAISAI_KIBOU_ADDRESS1.Padding = New DataDynamics.ActiveReports.PaddingEx(1, 0, 0, 0)
         Me.KAISAI_KIBOU_ADDRESS1.Style = "font-family: ＭＳ ゴシック; vertical-align: middle; white-space: nowrap"
         Me.KAISAI_KIBOU_ADDRESS1.Text = "KAISAI_KIBOU_ADDRESS1"
         Me.KAISAI_KIBOU_ADDRESS1.Top = 5.033465!
-        Me.KAISAI_KIBOU_ADDRESS1.Width = 0.8267716!
+        Me.KAISAI_KIBOU_ADDRESS1.Width = 0.8996063!
         '
         'Line38
         '
-        Me.Line38.Height = 0.2559056!
-        Me.Line38.Left = 3.232284!
+        Me.Line38.Height = 0.2559061!
+        Me.Line38.Left = 3.409055!
         Me.Line38.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line38.LineWeight = 1.0!
         Me.Line38.Name = "Line38"
         Me.Line38.Top = 5.033465!
         Me.Line38.Width = 0.00006389618!
-        Me.Line38.X1 = 3.232284!
-        Me.Line38.X2 = 3.232348!
+        Me.Line38.X1 = 3.409055!
+        Me.Line38.X2 = 3.409119!
         Me.Line38.Y1 = 5.033465!
         Me.Line38.Y2 = 5.289371!
         '
@@ -2574,7 +2466,7 @@ Partial Public Class KaijoReport
         '
         'Line70
         '
-        Me.Line70.Height = 0.2559052!
+        Me.Line70.Height = 0.2559047!
         Me.Line70.Left = 3.748032!
         Me.Line70.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line70.LineWeight = 1.0!
@@ -2601,7 +2493,7 @@ Partial Public Class KaijoReport
         '
         'Line71
         '
-        Me.Line71.Height = 0.2559052!
+        Me.Line71.Height = 0.2559047!
         Me.Line71.Left = 4.766142!
         Me.Line71.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line71.LineWeight = 1.0!
@@ -2917,58 +2809,6 @@ Partial Public Class KaijoReport
         Me.Line85.Y1 = 9.606299!
         Me.Line85.Y2 = 9.606299!
         '
-        'Line7
-        '
-        Me.Line7.Height = 0.0!
-        Me.Line7.Left = -0.003937008!
-        Me.Line7.LineWeight = 3.0!
-        Me.Line7.Name = "Line7"
-        Me.Line7.Top = 0.6692908!
-        Me.Line7.Width = 8.046062!
-        Me.Line7.X1 = -0.003937008!
-        Me.Line7.X2 = 8.042126!
-        Me.Line7.Y1 = 0.6692908!
-        Me.Line7.Y2 = 0.6692908!
-        '
-        'Line15
-        '
-        Me.Line15.Height = 9.699057!
-        Me.Line15.Left = 8.039371!
-        Me.Line15.LineWeight = 3.0!
-        Me.Line15.Name = "Line15"
-        Me.Line15.Top = 0.6678734!
-        Me.Line15.Width = 0.0!
-        Me.Line15.X1 = 8.039371!
-        Me.Line15.X2 = 8.039371!
-        Me.Line15.Y1 = 0.6678734!
-        Me.Line15.Y2 = 10.36693!
-        '
-        'Line26
-        '
-        Me.Line26.Height = 0.0!
-        Me.Line26.Left = -0.003937008!
-        Me.Line26.LineWeight = 3.0!
-        Me.Line26.Name = "Line26"
-        Me.Line26.Top = 10.36299!
-        Me.Line26.Width = 8.046062!
-        Me.Line26.X1 = -0.003937008!
-        Me.Line26.X2 = 8.042126!
-        Me.Line26.Y1 = 10.36299!
-        Me.Line26.Y2 = 10.36299!
-        '
-        'Line27
-        '
-        Me.Line27.Height = 9.699213!
-        Me.Line27.Left = 0.003937055!
-        Me.Line27.LineWeight = 3.0!
-        Me.Line27.Name = "Line27"
-        Me.Line27.Top = 0.6677166!
-        Me.Line27.Width = 0.0!
-        Me.Line27.X1 = 0.003937055!
-        Me.Line27.X2 = 0.003937055!
-        Me.Line27.Y1 = 0.6677166!
-        Me.Line27.Y2 = 10.36693!
-        '
         'Label75
         '
         Me.Label75.Height = 0.2559055!
@@ -3049,34 +2889,21 @@ Partial Public Class KaijoReport
             " middle"
         Me.Label78.Text = "都道府県"
         Me.Label78.Top = 5.033465!
-        Me.Label78.Width = 0.6771654!
+        Me.Label78.Width = 0.7795276!
         '
         'Line67
         '
-        Me.Line67.Height = 0.2559056!
-        Me.Line67.Left = 2.408662!
+        Me.Line67.Height = 0.2559061!
+        Me.Line67.Left = 2.509449!
         Me.Line67.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line67.LineWeight = 1.0!
         Me.Line67.Name = "Line67"
         Me.Line67.Top = 5.033465!
         Me.Line67.Width = 0.00006484985!
-        Me.Line67.X1 = 2.408662!
-        Me.Line67.X2 = 2.408727!
+        Me.Line67.X1 = 2.509449!
+        Me.Line67.X2 = 2.509514!
         Me.Line67.Y1 = 5.033465!
         Me.Line67.Y2 = 5.289371!
-        '
-        'Line34
-        '
-        Me.Line34.Height = 1.112599!
-        Me.Line34.Left = 1.729921!
-        Me.Line34.LineWeight = 1.0!
-        Me.Line34.Name = "Line34"
-        Me.Line34.Top = 0.6692914!
-        Me.Line34.Width = 0.0!
-        Me.Line34.X1 = 1.729921!
-        Me.Line34.X2 = 1.729921!
-        Me.Line34.Y1 = 0.6692914!
-        Me.Line34.Y2 = 1.78189!
         '
         'Line76
         '
@@ -3094,13 +2921,13 @@ Partial Public Class KaijoReport
         '
         'Line77
         '
-        Me.Line77.Height = 0.2559052!
+        Me.Line77.Height = 0.2559047!
         Me.Line77.Left = 2.748032!
         Me.Line77.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line77.LineWeight = 1.0!
         Me.Line77.Name = "Line77"
         Me.Line77.Top = 6.037402!
-        Me.Line77.Width = 0.00006604195!
+        Me.Line77.Width = 0.00006580353!
         Me.Line77.X1 = 2.748032!
         Me.Line77.X2 = 2.748098!
         Me.Line77.Y1 = 6.037402!
@@ -3108,7 +2935,7 @@ Partial Public Class KaijoReport
         '
         'Line78
         '
-        Me.Line78.Height = 0.2559052!
+        Me.Line78.Height = 0.2559047!
         Me.Line78.Left = 5.766142!
         Me.Line78.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line78.LineWeight = 1.0!
@@ -3122,7 +2949,7 @@ Partial Public Class KaijoReport
         '
         'Line79
         '
-        Me.Line79.Height = 0.2559052!
+        Me.Line79.Height = 0.2559047!
         Me.Line79.Left = 6.614567!
         Me.Line79.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line79.LineWeight = 1.0!
@@ -3134,19 +2961,6 @@ Partial Public Class KaijoReport
         Me.Line79.Y1 = 6.037402!
         Me.Line79.Y2 = 6.293307!
         '
-        'Line29
-        '
-        Me.Line29.Height = 8.412203!
-        Me.Line29.Left = 1.729921!
-        Me.Line29.LineWeight = 1.0!
-        Me.Line29.Name = "Line29"
-        Me.Line29.Top = 1.948819!
-        Me.Line29.Width = 0.0!
-        Me.Line29.X1 = 1.729921!
-        Me.Line29.X2 = 1.729921!
-        Me.Line29.Y1 = 1.948819!
-        Me.Line29.Y2 = 10.36102!
-        '
         'Line75
         '
         Me.Line75.Height = 0.0!
@@ -3155,7 +2969,7 @@ Partial Public Class KaijoReport
         Me.Line75.LineWeight = 1.0!
         Me.Line75.Name = "Line75"
         Me.Line75.Top = 5.289371!
-        Me.Line75.Width = 6.305511!
+        Me.Line75.Width = 6.305512!
         Me.Line75.X1 = 1.729921!
         Me.Line75.X2 = 8.035433!
         Me.Line75.Y1 = 5.289371!
@@ -3177,7 +2991,7 @@ Partial Public Class KaijoReport
         '
         'Line73
         '
-        Me.Line73.Height = 0.7480316!
+        Me.Line73.Height = 0.7480321!
         Me.Line73.Left = 2.509449!
         Me.Line73.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line73.LineWeight = 1.0!
@@ -3189,62 +3003,23 @@ Partial Public Class KaijoReport
         Me.Line73.Y1 = 6.293307!
         Me.Line73.Y2 = 7.041339!
         '
-        'Line17
-        '
-        Me.Line17.Height = 0.0!
-        Me.Line17.Left = 0.0!
-        Me.Line17.LineWeight = 3.0!
-        Me.Line17.Name = "Line17"
-        Me.Line17.Top = 5.033465!
-        Me.Line17.Width = 8.035432!
-        Me.Line17.X1 = 0.0!
-        Me.Line17.X2 = 8.035432!
-        Me.Line17.Y1 = 5.033465!
-        Me.Line17.Y2 = 5.033465!
-        '
-        'Line80
-        '
-        Me.Line80.Height = 0.001180649!
-        Me.Line80.Left = 0.0!
-        Me.Line80.LineWeight = 3.0!
-        Me.Line80.Name = "Line80"
-        Me.Line80.Top = 8.576773!
-        Me.Line80.Width = 8.035433!
-        Me.Line80.X1 = 0.0!
-        Me.Line80.X2 = 8.035433!
-        Me.Line80.Y1 = 8.577953!
-        Me.Line80.Y2 = 8.576773!
-        '
         'Line68
         '
-        Me.Line68.Height = 0.2559056!
-        Me.Line68.Left = 3.791337!
+        Me.Line68.Height = 0.2559061!
+        Me.Line68.Left = 3.968111!
         Me.Line68.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line68.LineWeight = 1.0!
         Me.Line68.Name = "Line68"
         Me.Line68.Top = 5.033465!
-        Me.Line68.Width = 0.00006604195!
-        Me.Line68.X1 = 3.791337!
-        Me.Line68.X2 = 3.791403!
+        Me.Line68.Width = 0.00006628036!
+        Me.Line68.X1 = 3.968111!
+        Me.Line68.X2 = 3.968177!
         Me.Line68.Y1 = 5.033465!
         Me.Line68.Y2 = 5.289371!
         '
-        'Line8
-        '
-        Me.Line8.Height = 0.0!
-        Me.Line8.Left = 0.0!
-        Me.Line8.LineWeight = 3.0!
-        Me.Line8.Name = "Line8"
-        Me.Line8.Top = 7.041339!
-        Me.Line8.Width = 8.035433!
-        Me.Line8.X1 = 0.0!
-        Me.Line8.X2 = 8.035433!
-        Me.Line8.Y1 = 7.041339!
-        Me.Line8.Y2 = 7.041339!
-        '
         'Line32
         '
-        Me.Line32.Height = 1.535438!
+        Me.Line32.Height = 1.535439!
         Me.Line32.Left = 3.640945!
         Me.Line32.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line32.LineWeight = 1.0!
@@ -3258,7 +3033,7 @@ Partial Public Class KaijoReport
         '
         'Line13
         '
-        Me.Line13.Height = 1.535438!
+        Me.Line13.Height = 1.535439!
         Me.Line13.Left = 3.194095!
         Me.Line13.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line13.LineWeight = 1.0!
@@ -3272,7 +3047,7 @@ Partial Public Class KaijoReport
         '
         'Line12
         '
-        Me.Line12.Height = 1.535438!
+        Me.Line12.Height = 1.535439!
         Me.Line12.Left = 2.748032!
         Me.Line12.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line12.LineWeight = 1.0!
@@ -3356,7 +3131,7 @@ Partial Public Class KaijoReport
         '
         'Line35
         '
-        Me.Line35.Height = 1.023626!
+        Me.Line35.Height = 1.023627!
         Me.Line35.Left = 5.214961!
         Me.Line35.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line35.LineWeight = 1.0!
@@ -3384,7 +3159,7 @@ Partial Public Class KaijoReport
         '
         'Line28
         '
-        Me.Line28.Height = 0.2559052!
+        Me.Line28.Height = 0.2559061!
         Me.Line28.Left = 7.220474!
         Me.Line28.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line28.LineWeight = 1.0!
@@ -3398,7 +3173,7 @@ Partial Public Class KaijoReport
         '
         'Line36
         '
-        Me.Line36.Height = 1.023626!
+        Me.Line36.Height = 1.023627!
         Me.Line36.Left = 5.994489!
         Me.Line36.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line36.LineWeight = 1.0!
@@ -3410,14 +3185,87 @@ Partial Public Class KaijoReport
         Me.Line36.Y1 = 7.55315!
         Me.Line36.Y2 = 8.576777!
         '
-        'PageFooter
+        'Line53
         '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
+        Me.Line53.Height = 0.255905!
+        Me.Line53.Left = 6.062205!
+        Me.Line53.LineWeight = 1.0!
+        Me.Line53.Name = "Line53"
+        Me.Line53.Top = 1.948819!
+        Me.Line53.Width = 0.00006437302!
+        Me.Line53.X1 = 6.062205!
+        Me.Line53.X2 = 6.062269!
+        Me.Line53.Y1 = 1.948819!
+        Me.Line53.Y2 = 2.204724!
+        '
+        'Line52
+        '
+        Me.Line52.Height = 0.255905!
+        Me.Line52.Left = 5.491339!
+        Me.Line52.LineWeight = 1.0!
+        Me.Line52.Name = "Line52"
+        Me.Line52.Top = 1.948819!
+        Me.Line52.Width = 0.00006389618!
+        Me.Line52.X1 = 5.491339!
+        Me.Line52.X2 = 5.491403!
+        Me.Line52.Y1 = 1.948819!
+        Me.Line52.Y2 = 2.204724!
+        '
+        'Line51
+        '
+        Me.Line51.Height = 0.255905!
+        Me.Line51.Left = 3.640158!
+        Me.Line51.LineWeight = 1.0!
+        Me.Line51.Name = "Line51"
+        Me.Line51.Top = 1.948819!
+        Me.Line51.Width = 0.00006699562!
+        Me.Line51.X1 = 3.640158!
+        Me.Line51.X2 = 3.640225!
+        Me.Line51.Y1 = 1.948819!
+        Me.Line51.Y2 = 2.204724!
+        '
+        'Line50
+        '
+        Me.Line50.Height = 0.255905!
+        Me.Line50.Left = 3.050394!
+        Me.Line50.LineWeight = 1.0!
+        Me.Line50.Name = "Line50"
+        Me.Line50.Top = 1.948819!
+        Me.Line50.Width = 0.00006604195!
+        Me.Line50.X1 = 3.050394!
+        Me.Line50.X2 = 3.05046!
+        Me.Line50.Y1 = 1.948819!
+        Me.Line50.Y2 = 2.204724!
+        '
+        'Line49
+        '
+        Me.Line49.Height = 0.255905!
+        Me.Line49.Left = 2.066142!
+        Me.Line49.LineWeight = 1.0!
+        Me.Line49.Name = "Line49"
+        Me.Line49.Top = 1.948819!
+        Me.Line49.Width = 0.0!
+        Me.Line49.X1 = 2.066142!
+        Me.Line49.X2 = 2.066142!
+        Me.Line49.Y1 = 1.948819!
+        Me.Line49.Y2 = 2.204724!
+        '
+        'Line29
+        '
+        Me.Line29.Height = 8.412201!
+        Me.Line29.Left = 1.729921!
+        Me.Line29.LineWeight = 1.0!
+        Me.Line29.Name = "Line29"
+        Me.Line29.Top = 1.948819!
+        Me.Line29.Width = 0.0!
+        Me.Line29.X1 = 1.729921!
+        Me.Line29.X2 = 1.729921!
+        Me.Line29.Y1 = 1.948819!
+        Me.Line29.Y2 = 10.36102!
         '
         'Line33
         '
-        Me.Line33.Height = 1.023622!
+        Me.Line33.Height = 1.023623!
         Me.Line33.Left = 1.729921!
         Me.Line33.LineWeight = 1.0!
         Me.Line33.Name = "Line33"
@@ -3427,6 +3275,158 @@ Partial Public Class KaijoReport
         Me.Line33.X2 = 1.729921!
         Me.Line33.Y1 = 0.6692914!
         Me.Line33.Y2 = 1.692914!
+        '
+        'Line7
+        '
+        Me.Line7.Height = 0.0!
+        Me.Line7.Left = -0.003937008!
+        Me.Line7.LineWeight = 3.0!
+        Me.Line7.Name = "Line7"
+        Me.Line7.Top = 0.6692908!
+        Me.Line7.Width = 8.046062!
+        Me.Line7.X1 = -0.003937008!
+        Me.Line7.X2 = 8.042126!
+        Me.Line7.Y1 = 0.6692908!
+        Me.Line7.Y2 = 0.6692908!
+        '
+        'Line2
+        '
+        Me.Line2.Height = 0.0!
+        Me.Line2.Left = 0.0!
+        Me.Line2.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line2.LineWeight = 3.0!
+        Me.Line2.Name = "Line2"
+        Me.Line2.Top = 1.692914!
+        Me.Line2.Width = 8.035432!
+        Me.Line2.X1 = 0.0!
+        Me.Line2.X2 = 8.035432!
+        Me.Line2.Y1 = 1.692914!
+        Me.Line2.Y2 = 1.692914!
+        '
+        'Line45
+        '
+        Me.Line45.Height = 0.0!
+        Me.Line45.Left = 0.0!
+        Me.Line45.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line45.LineWeight = 3.0!
+        Me.Line45.Name = "Line45"
+        Me.Line45.Top = 1.948819!
+        Me.Line45.Width = 8.035432!
+        Me.Line45.X1 = 0.0!
+        Me.Line45.X2 = 8.035432!
+        Me.Line45.Y1 = 1.948819!
+        Me.Line45.Y2 = 1.948819!
+        '
+        'Line48
+        '
+        Me.Line48.Height = 0.0!
+        Me.Line48.Left = 0.0!
+        Me.Line48.LineStyle = DataDynamics.ActiveReports.LineStyle.DashDot
+        Me.Line48.LineWeight = 3.0!
+        Me.Line48.Name = "Line48"
+        Me.Line48.Top = 2.972441!
+        Me.Line48.Width = 8.035432!
+        Me.Line48.X1 = 0.0!
+        Me.Line48.X2 = 8.035432!
+        Me.Line48.Y1 = 2.972441!
+        Me.Line48.Y2 = 2.972441!
+        '
+        'Line58
+        '
+        Me.Line58.Height = 0.0!
+        Me.Line58.Left = 0.0!
+        Me.Line58.LineStyle = DataDynamics.ActiveReports.LineStyle.DashDot
+        Me.Line58.LineWeight = 3.0!
+        Me.Line58.Name = "Line58"
+        Me.Line58.Top = 3.996063!
+        Me.Line58.Width = 8.035432!
+        Me.Line58.X1 = 0.0!
+        Me.Line58.X2 = 8.035432!
+        Me.Line58.Y1 = 3.996063!
+        Me.Line58.Y2 = 3.996063!
+        '
+        'Line17
+        '
+        Me.Line17.Height = 0.0!
+        Me.Line17.Left = 0.0!
+        Me.Line17.LineWeight = 3.0!
+        Me.Line17.Name = "Line17"
+        Me.Line17.Top = 5.033465!
+        Me.Line17.Width = 8.035432!
+        Me.Line17.X1 = 0.0!
+        Me.Line17.X2 = 8.035432!
+        Me.Line17.Y1 = 5.033465!
+        Me.Line17.Y2 = 5.033465!
+        '
+        'Line8
+        '
+        Me.Line8.Height = 0.0!
+        Me.Line8.Left = 0.0!
+        Me.Line8.LineWeight = 3.0!
+        Me.Line8.Name = "Line8"
+        Me.Line8.Top = 7.041339!
+        Me.Line8.Width = 8.035433!
+        Me.Line8.X1 = 0.0!
+        Me.Line8.X2 = 8.035433!
+        Me.Line8.Y1 = 7.041339!
+        Me.Line8.Y2 = 7.041339!
+        '
+        'Line80
+        '
+        Me.Line80.Height = 0.001180649!
+        Me.Line80.Left = 0.0!
+        Me.Line80.LineWeight = 3.0!
+        Me.Line80.Name = "Line80"
+        Me.Line80.Top = 8.576773!
+        Me.Line80.Width = 8.035433!
+        Me.Line80.X1 = 0.0!
+        Me.Line80.X2 = 8.035433!
+        Me.Line80.Y1 = 8.577953!
+        Me.Line80.Y2 = 8.576773!
+        '
+        'Line26
+        '
+        Me.Line26.Height = 0.0!
+        Me.Line26.Left = -0.003937008!
+        Me.Line26.LineWeight = 3.0!
+        Me.Line26.Name = "Line26"
+        Me.Line26.Top = 10.36299!
+        Me.Line26.Width = 8.046062!
+        Me.Line26.X1 = -0.003937008!
+        Me.Line26.X2 = 8.042126!
+        Me.Line26.Y1 = 10.36299!
+        Me.Line26.Y2 = 10.36299!
+        '
+        'Line27
+        '
+        Me.Line27.Height = 9.699213!
+        Me.Line27.Left = 0.003937055!
+        Me.Line27.LineWeight = 3.0!
+        Me.Line27.Name = "Line27"
+        Me.Line27.Top = 0.6677166!
+        Me.Line27.Width = 0.0!
+        Me.Line27.X1 = 0.003937055!
+        Me.Line27.X2 = 0.003937055!
+        Me.Line27.Y1 = 0.6677166!
+        Me.Line27.Y2 = 10.36693!
+        '
+        'Line15
+        '
+        Me.Line15.Height = 9.699057!
+        Me.Line15.Left = 8.039371!
+        Me.Line15.LineWeight = 3.0!
+        Me.Line15.Name = "Line15"
+        Me.Line15.Top = 0.6678734!
+        Me.Line15.Width = 0.0!
+        Me.Line15.X1 = 8.039371!
+        Me.Line15.X2 = 8.039371!
+        Me.Line15.Y1 = 0.6678734!
+        Me.Line15.Y2 = 10.36693!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'KaijoReport
         '
@@ -3452,6 +3452,14 @@ Partial Public Class KaijoReport
         CType(Me.PageTotal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PageCount, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OTHER_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TEHAI_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label46, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KAISAI_KIBOU_ADDRESS2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUSHI_ROOM_CNT, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3465,8 +3473,6 @@ Partial Public Class KaijoReport
         CType(Me.Label69, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label77, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label76, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OTHER_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KAISAI_KIBOU_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KAISAI_DATE_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label31, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3506,17 +3512,12 @@ Partial Public Class KaijoReport
         CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label47, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label46, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label42, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label44, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label45, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SHONIN_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SHONIN_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TAXI_PRT_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TIME_STAMP_BYL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label37, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3541,7 +3542,6 @@ Partial Public Class KaijoReport
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label51, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label52, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TEHAI_TANTO_EIGYOSHO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TEHAI_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TEHAI_TANTO_BU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label53, System.ComponentModel.ISupportInitialize).EndInit()
