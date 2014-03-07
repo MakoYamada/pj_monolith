@@ -66,14 +66,14 @@ Public Class DrSoufujo
 
         '送付先
         If Me.MR_SEND_SAKI_FS.Text.Trim <> "" Then
-            If Me.MR_SEND_SAKI_FS.Text.Trim.Length > 52 Then
-                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_FS.Text, 52)
+            If Me.MR_SEND_SAKI_FS.Text.Trim.Length > 24 Then
+                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_FS.Text, 24)
             Else
                 Me.MR_SEND_SAKI.Text = Me.MR_SEND_SAKI_FS.Text
             End If
         Else
-            If Me.MR_SEND_SAKI_OTHER.Text.Trim.Length > 52 Then
-                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_OTHER.Text, 52)
+            If Me.MR_SEND_SAKI_OTHER.Text.Trim.Length > 24 Then
+                Me.MR_SEND_SAKI.Text = Left(Me.MR_SEND_SAKI_OTHER.Text, 24)
             Else
                 Me.MR_SEND_SAKI.Text = Me.MR_SEND_SAKI_OTHER.Text
             End If
@@ -2753,7 +2753,7 @@ Public Class DrSoufujo
             '部分的に下線を引く
             TAXI_NOTES1.SelectionStart = 14
             TAXI_NOTES1.SelectionLength = 13
-            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold Or FontStyle.Italic)
+            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
             TAXI_NOTES1.SelectionStart = 0
             TAXI_NOTES1.SelectionLength = 0
             RowNo += 3
@@ -2780,12 +2780,13 @@ Public Class DrSoufujo
         '部分的に下線を引く
         Me.JR_TORIKESHI.SelectionStart = 54
         Me.JR_TORIKESHI.SelectionLength = 76
-        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold Or FontStyle.Italic)
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         Me.JR_TORIKESHI.SelectionStart = 0
         Me.JR_TORIKESHI.SelectionLength = 0
 
-        Me.AIR_HENKO.Text = "便発着前、同じ区間の変更は何度でも可能です。" & vbNewLine _
-                            & "下記、航空会社への直接変更・取消のご連絡でも可能です。その際に係員がご案内する取消番号や予約番号はお控えください。"
+        Me.AIR_HENKO.Text = "出発時刻前までは、同航空会社間（ＪＡＬ⇔ＪＡＬ、ＡＮＡ⇔ＡＮＡ）で同じ区間・クラスでの変更、及び取消は、下記航空会社へのご連絡でも可能です。" & vbNewLine _
+           & "その際に航空会社の係員がご案内する取消番号や予約番号はお控えください。予約番号は、チェックイン時必要となります。"
+
         Me.AIR_HENKO.CanGrow = True
         Me.AIR_HENKO.SelectionStart = 0
         Me.AIR_HENKO.SelectionLength = Me.AIR_HENKO.Text.Length
@@ -2804,7 +2805,7 @@ Public Class DrSoufujo
         '部分的に下線を引く
         Me.OTHER_NOTES.SelectionStart = 19
         Me.OTHER_NOTES.SelectionLength = 23
-        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold Or FontStyle.Italic)
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0
     End Sub

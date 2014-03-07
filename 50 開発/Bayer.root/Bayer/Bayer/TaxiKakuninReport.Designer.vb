@@ -46,9 +46,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_TAXI_FROM_1 = New DataDynamics.ActiveReports.TextBox
         Me.DANTAI_CODE = New DataDynamics.ActiveReports.TextBox
         Me.Label200 = New DataDynamics.ActiveReports.Label
-        Me.Label197 = New DataDynamics.ActiveReports.Label
         Me.Label8 = New DataDynamics.ActiveReports.Label
-        Me.Label4 = New DataDynamics.ActiveReports.Label
         Me.Label185 = New DataDynamics.ActiveReports.Label
         Me.REQ_MR_TEHAI = New DataDynamics.ActiveReports.TextBox
         Me.Label178 = New DataDynamics.ActiveReports.Label
@@ -109,7 +107,6 @@ Partial Public Class TaxiKakuninReport
         Me.TAXI_YOTEIKINGAKU_1 = New DataDynamics.ActiveReports.TextBox
         Me.Label71 = New DataDynamics.ActiveReports.Label
         Me.TEHAI_TAXI = New DataDynamics.ActiveReports.TextBox
-        Me.Line38 = New DataDynamics.ActiveReports.Line
         Me.DR_SHISETSU_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label14 = New DataDynamics.ActiveReports.Label
         Me.Line62 = New DataDynamics.ActiveReports.Line
@@ -250,7 +247,6 @@ Partial Public Class TaxiKakuninReport
         Me.Label112 = New DataDynamics.ActiveReports.Label
         Me.Label118 = New DataDynamics.ActiveReports.Label
         Me.Line28 = New DataDynamics.ActiveReports.Line
-        Me.Line31 = New DataDynamics.ActiveReports.Line
         Me.Line36 = New DataDynamics.ActiveReports.Line
         Me.Line104 = New DataDynamics.ActiveReports.Line
         Me.Label181 = New DataDynamics.ActiveReports.Label
@@ -271,18 +267,6 @@ Partial Public Class TaxiKakuninReport
         Me.Line37 = New DataDynamics.ActiveReports.Line
         Me.Line6 = New DataDynamics.ActiveReports.Line
         Me.Line7 = New DataDynamics.ActiveReports.Line
-        Me.Line10 = New DataDynamics.ActiveReports.Line
-        Me.Line46 = New DataDynamics.ActiveReports.Line
-        Me.Line47 = New DataDynamics.ActiveReports.Line
-        Me.Line48 = New DataDynamics.ActiveReports.Line
-        Me.Line50 = New DataDynamics.ActiveReports.Line
-        Me.Line52 = New DataDynamics.ActiveReports.Line
-        Me.Line53 = New DataDynamics.ActiveReports.Line
-        Me.Line55 = New DataDynamics.ActiveReports.Line
-        Me.Line56 = New DataDynamics.ActiveReports.Line
-        Me.Line57 = New DataDynamics.ActiveReports.Line
-        Me.Line108 = New DataDynamics.ActiveReports.Line
-        Me.Line113 = New DataDynamics.ActiveReports.Line
         Me.Line114 = New DataDynamics.ActiveReports.Line
         Me.Line4 = New DataDynamics.ActiveReports.Line
         Me.Line152 = New DataDynamics.ActiveReports.Line
@@ -292,12 +276,10 @@ Partial Public Class TaxiKakuninReport
         Me.Line107 = New DataDynamics.ActiveReports.Line
         Me.Line109 = New DataDynamics.ActiveReports.Line
         Me.Line18 = New DataDynamics.ActiveReports.Line
-        Me.Line39 = New DataDynamics.ActiveReports.Line
         Me.Line85 = New DataDynamics.ActiveReports.Line
         Me.Label46 = New DataDynamics.ActiveReports.Label
         Me.Line110 = New DataDynamics.ActiveReports.Line
         Me.Line66 = New DataDynamics.ActiveReports.Line
-        Me.Line115 = New DataDynamics.ActiveReports.Line
         Me.Label50 = New DataDynamics.ActiveReports.Label
         Me.Line135 = New DataDynamics.ActiveReports.Line
         Me.Label203 = New DataDynamics.ActiveReports.Label
@@ -373,14 +355,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line14 = New DataDynamics.ActiveReports.Line
         Me.Line16 = New DataDynamics.ActiveReports.Line
         Me.Line41 = New DataDynamics.ActiveReports.Line
-        Me.Line112 = New DataDynamics.ActiveReports.Line
         Me.Line111 = New DataDynamics.ActiveReports.Line
         Me.Line136 = New DataDynamics.ActiveReports.Line
         Me.Line106 = New DataDynamics.ActiveReports.Line
         Me.Line138 = New DataDynamics.ActiveReports.Line
         Me.Line11 = New DataDynamics.ActiveReports.Line
         Me.Line139 = New DataDynamics.ActiveReports.Line
-        Me.Line12 = New DataDynamics.ActiveReports.Line
         Me.Line140 = New DataDynamics.ActiveReports.Line
         Me.Line105 = New DataDynamics.ActiveReports.Line
         Me.Line143 = New DataDynamics.ActiveReports.Line
@@ -407,11 +387,6 @@ Partial Public Class TaxiKakuninReport
         Me.Line68 = New DataDynamics.ActiveReports.Line
         Me.Line69 = New DataDynamics.ActiveReports.Line
         Me.Line87 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Label2 = New DataDynamics.ActiveReports.Label
-        Me.Label1 = New DataDynamics.ActiveReports.Label
-        Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
         Me.Label109 = New DataDynamics.ActiveReports.Label
         Me.Label110 = New DataDynamics.ActiveReports.Label
         Me.Label111 = New DataDynamics.ActiveReports.Label
@@ -484,46 +459,27 @@ Partial Public Class TaxiKakuninReport
         Me.Label173 = New DataDynamics.ActiveReports.Label
         Me.Line44 = New DataDynamics.ActiveReports.Line
         Me.Line74 = New DataDynamics.ActiveReports.Line
+        Me.Line112 = New DataDynamics.ActiveReports.Line
         Me.Line9 = New DataDynamics.ActiveReports.Line
         Me.Line45 = New DataDynamics.ActiveReports.Line
         Me.Line75 = New DataDynamics.ActiveReports.Line
         Me.Line76 = New DataDynamics.ActiveReports.Line
-        Me.Line77 = New DataDynamics.ActiveReports.Line
-        Me.Line78 = New DataDynamics.ActiveReports.Line
         Me.Line79 = New DataDynamics.ActiveReports.Line
-        Me.Line80 = New DataDynamics.ActiveReports.Line
-        Me.Line81 = New DataDynamics.ActiveReports.Line
-        Me.Line82 = New DataDynamics.ActiveReports.Line
-        Me.Line83 = New DataDynamics.ActiveReports.Line
-        Me.Line84 = New DataDynamics.ActiveReports.Line
-        Me.Line86 = New DataDynamics.ActiveReports.Line
-        Me.Line88 = New DataDynamics.ActiveReports.Line
-        Me.Line89 = New DataDynamics.ActiveReports.Line
-        Me.Line90 = New DataDynamics.ActiveReports.Line
-        Me.Line91 = New DataDynamics.ActiveReports.Line
-        Me.Line92 = New DataDynamics.ActiveReports.Line
-        Me.Line93 = New DataDynamics.ActiveReports.Line
-        Me.Line94 = New DataDynamics.ActiveReports.Line
-        Me.Line95 = New DataDynamics.ActiveReports.Line
-        Me.Line96 = New DataDynamics.ActiveReports.Line
-        Me.Line97 = New DataDynamics.ActiveReports.Line
-        Me.Line98 = New DataDynamics.ActiveReports.Line
-        Me.Line116 = New DataDynamics.ActiveReports.Line
-        Me.Line117 = New DataDynamics.ActiveReports.Line
-        Me.Line118 = New DataDynamics.ActiveReports.Line
-        Me.Line119 = New DataDynamics.ActiveReports.Line
-        Me.Line120 = New DataDynamics.ActiveReports.Line
-        Me.Line121 = New DataDynamics.ActiveReports.Line
-        Me.Line122 = New DataDynamics.ActiveReports.Line
-        Me.Line123 = New DataDynamics.ActiveReports.Line
-        Me.Line124 = New DataDynamics.ActiveReports.Line
-        Me.Line125 = New DataDynamics.ActiveReports.Line
-        Me.Line126 = New DataDynamics.ActiveReports.Line
-        Me.Line127 = New DataDynamics.ActiveReports.Line
-        Me.Line128 = New DataDynamics.ActiveReports.Line
-        Me.Line129 = New DataDynamics.ActiveReports.Line
-        Me.Line130 = New DataDynamics.ActiveReports.Line
-        Me.Line131 = New DataDynamics.ActiveReports.Line
+        Me.Line47 = New DataDynamics.ActiveReports.Line
+        Me.Line48 = New DataDynamics.ActiveReports.Line
+        Me.Line50 = New DataDynamics.ActiveReports.Line
+        Me.Line52 = New DataDynamics.ActiveReports.Line
+        Me.Line53 = New DataDynamics.ActiveReports.Line
+        Me.Line55 = New DataDynamics.ActiveReports.Line
+        Me.Line56 = New DataDynamics.ActiveReports.Line
+        Me.Line57 = New DataDynamics.ActiveReports.Line
+        Me.Line38 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
+        Me.Label2 = New DataDynamics.ActiveReports.Label
+        Me.Label1 = New DataDynamics.ActiveReports.Label
+        Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
+        Me.Line10 = New DataDynamics.ActiveReports.Line
         CType(Me.Label198, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label199, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label201, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -547,9 +503,7 @@ Partial Public Class TaxiKakuninReport
         CType(Me.REQ_TAXI_FROM_1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DANTAI_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label200, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label197, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label185, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_MR_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label178, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -824,10 +778,6 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label89, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label107, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label108, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label109, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label110, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label111, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -882,6 +832,10 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label170, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label171, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label173, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -931,7 +885,7 @@ Partial Public Class TaxiKakuninReport
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 9.999999!
         Me.Shape1.Top = 0.0!
-        Me.Shape1.Width = 7.151969!
+        Me.Shape1.Width = 7.649607!
         '
         'Label5
         '
@@ -957,7 +911,7 @@ Partial Public Class TaxiKakuninReport
         '
         'Label6
         '
-        Me.Label6.Height = 0.2!
+        Me.Label6.Height = 0.2255906!
         Me.Label6.HyperLink = Nothing
         Me.Label6.Left = 0.0000004768372!
         Me.Label6.Name = "Label6"
@@ -969,7 +923,7 @@ Partial Public Class TaxiKakuninReport
         '
         'Label9
         '
-        Me.Label9.Height = 0.2!
+        Me.Label9.Height = 0.2255906!
         Me.Label9.HyperLink = Nothing
         Me.Label9.Left = 2.155512!
         Me.Label9.Name = "Label9"
@@ -981,7 +935,7 @@ Partial Public Class TaxiKakuninReport
         '
         'Label10
         '
-        Me.Label10.Height = 0.2!
+        Me.Label10.Height = 0.2255906!
         Me.Label10.HyperLink = Nothing
         Me.Label10.Left = 4.942126!
         Me.Label10.Name = "Label10"
@@ -993,20 +947,20 @@ Partial Public Class TaxiKakuninReport
         '
         'Label11
         '
-        Me.Label11.Height = 0.2!
+        Me.Label11.Height = 0.2255906!
         Me.Label11.HyperLink = Nothing
         Me.Label11.Left = 0.0!
         Me.Label11.Name = "Label11"
         Me.Label11.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label11.Text = "DR氏名"
-        Me.Label11.Top = 0.6740158!
+        Me.Label11.Top = 0.6996064!
         Me.Label11.Width = 1.323622!
         '
         'KOUENKAI_NO
         '
         Me.KOUENKAI_NO.DataField = "KOUENKAI_NO"
-        Me.KOUENKAI_NO.Height = 0.2!
+        Me.KOUENKAI_NO.Height = 0.2255906!
         Me.KOUENKAI_NO.Left = 0.6570867!
         Me.KOUENKAI_NO.Name = "KOUENKAI_NO"
         Me.KOUENKAI_NO.Style = "vertical-align: middle"
@@ -1017,7 +971,7 @@ Partial Public Class TaxiKakuninReport
         'SANKASHA_ID
         '
         Me.SANKASHA_ID.DataField = "SANKASHA_ID"
-        Me.SANKASHA_ID.Height = 0.2!
+        Me.SANKASHA_ID.Height = 0.2255906!
         Me.SANKASHA_ID.Left = 3.237402!
         Me.SANKASHA_ID.Name = "SANKASHA_ID"
         Me.SANKASHA_ID.Style = "vertical-align: middle"
@@ -1028,7 +982,7 @@ Partial Public Class TaxiKakuninReport
         'DR_CD
         '
         Me.DR_CD.DataField = "DR_CD"
-        Me.DR_CD.Height = 0.2!
+        Me.DR_CD.Height = 0.2255906!
         Me.DR_CD.Left = 5.646851!
         Me.DR_CD.Name = "DR_CD"
         Me.DR_CD.Style = "vertical-align: middle"
@@ -1039,12 +993,12 @@ Partial Public Class TaxiKakuninReport
         'DR_NAME
         '
         Me.DR_NAME.DataField = "DR_NAME"
-        Me.DR_NAME.Height = 0.2!
+        Me.DR_NAME.Height = 0.2255906!
         Me.DR_NAME.Left = 1.313386!
         Me.DR_NAME.Name = "DR_NAME"
         Me.DR_NAME.Style = "vertical-align: middle"
         Me.DR_NAME.Text = Nothing
-        Me.DR_NAME.Top = 0.6740158!
+        Me.DR_NAME.Top = 0.6996063!
         Me.DR_NAME.Width = 2.23504!
         '
         'Line3
@@ -1054,12 +1008,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line3.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line3.LineWeight = 1.0!
         Me.Line3.Name = "Line3"
-        Me.Line3.Top = 0.674015!
-        Me.Line3.Width = 7.165353!
+        Me.Line3.Top = 0.6996063!
+        Me.Line3.Width = 7.649606!
         Me.Line3.X1 = 0.0000004768372!
-        Me.Line3.X2 = 7.165354!
-        Me.Line3.Y1 = 0.674015!
-        Me.Line3.Y2 = 0.674015!
+        Me.Line3.X2 = 7.649607!
+        Me.Line3.Y1 = 0.6996063!
+        Me.Line3.Y2 = 0.6996063!
         '
         'Line51
         '
@@ -1068,9 +1022,9 @@ Partial Public Class TaxiKakuninReport
         Me.Line51.LineWeight = 1.0!
         Me.Line51.Name = "Line51"
         Me.Line51.Top = 0.4740158!
-        Me.Line51.Width = 7.165355!
+        Me.Line51.Width = 7.649607!
         Me.Line51.X1 = 5.684342E-14!
-        Me.Line51.X2 = 7.165355!
+        Me.Line51.X2 = 7.649607!
         Me.Line51.Y1 = 0.4740158!
         Me.Line51.Y2 = 0.4740158!
         '
@@ -1083,242 +1037,220 @@ Partial Public Class TaxiKakuninReport
         Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center"
         Me.Label3.Text = "タクチケ手配確認票"
         Me.Label3.Top = 0.0330711!
-        Me.Label3.Width = 7.151969!
+        Me.Label3.Width = 7.649607!
         '
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label53, Me.Label49, Me.Label45, Me.Label12, Me.Label202, Me.Label24, Me.REQ_TAXI_FROM_1, Me.Label5, Me.KOUENKAI_NAME, Me.DANTAI_CODE, Me.Label200, Me.Label197, Me.Label8, Me.Label4, Me.Label185, Me.REQ_MR_TEHAI, Me.Label178, Me.Label184, Me.TEHAI_HOTEL, Me.Label183, Me.TEHAI_KOTSU, Me.Label182, Me.ANS_TAXI_NOTE, Me.REQ_TAXI_NOTE, Me.Label180, Me.Label124, Me.Label90, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.TAXI_YOTEIKINGAKU_2, Me.KOUTEI_1, Me.REQ_TAXI_DATE_1, Me.Label73, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label71, Me.TEHAI_TAXI, Me.Line38, Me.Shape1, Me.DR_SHISETSU_NAME, Me.Label6, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.KOUENKAI_NO, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.Line3, Me.Line51, Me.Label3, Me.Line62, Me.Line63, Me.Line163, Me.Line164, Me.Line1, Me.Line2, Me.Line5, Me.Line42, Me.Line23, Me.Line26, Me.Label21, Me.ANS_TAXI_DATE_1, Me.Label22, Me.ANS_TAXI_KENSHU_1, Me.Label23, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_HAKKO_DATE_1, Me.Label25, Me.ANS_TAXI_RMKS_1, Me.Label27, Me.ANS_TAXI_DATE_2, Me.Label28, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_NO_2, Me.Label30, Me.ANS_TAXI_HAKKO_DATE_2, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_DATE_3, Me.Label34, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_NO_3, Me.Label36, Me.ANS_TAXI_HAKKO_DATE_3, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_HAKKO_DATE_4, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_HAKKO_DATE_5, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_HAKKO_DATE_6, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_HAKKO_DATE_7, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_HAKKO_DATE_8, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_HAKKO_DATE_9, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_HAKKO_DATE_10, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_HAKKO_DATE_11, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_HAKKO_DATE_12, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_NO_12, Me.Label130, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_HAKKO_DATE_13, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_NO_13, Me.Label136, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_HAKKO_DATE_14, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_NO_14, Me.Label142, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_HAKKO_DATE_15, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_NO_15, Me.Label148, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_HAKKO_DATE_16, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_NO_16, Me.Label154, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_HAKKO_DATE_17, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_NO_17, Me.Label160, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_HAKKO_DATE_18, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_NO_18, Me.Label166, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_HAKKO_DATE_19, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_NO_19, Me.Label172, Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_HAKKO_DATE_20, Me.ANS_TAXI_DATE_20, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_20, Me.Label20, Me.Label26, Me.Label32, Me.Label38, Me.Label69, Me.Label94, Me.Label100, Me.Label106, Me.Label112, Me.Label118, Me.Line28, Me.Line36, Me.Line104, Me.Label181, Me.REQ_O_TEHAI_1, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.Line32, Me.Label7, Me.Line37, Me.Line6, Me.Line7, Me.Line10, Me.Line46, Me.Line108, Me.Line113, Me.Line114, Me.Line4, Me.Line152, Me.Line153, Me.Line155, Me.Line17, Me.Line107, Me.Line109, Me.Line18, Me.Line39, Me.Line85, Me.Label46, Me.Line110, Me.Line66, Me.Line115, Me.Label50, Me.Line135, Me.Label203, Me.Label204, Me.Label31, Me.Label205, Me.Label13, Me.Label33, Me.Label35, Me.Label37, Me.Label54, Me.Label206, Me.Label207, Me.Label15, Me.Label16, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label55, Me.Label59, Me.Label62, Me.Label63, Me.Label64, Me.Label67, Me.Label68, Me.Label70, Me.Label17, Me.Label75, Me.Label91, Me.Label92, Me.Label93, Me.Label95, Me.Label208, Me.Label209, Me.Label210, Me.Label18, Me.Label66, Me.Label76, Me.Label77, Me.Label79, Me.Label80, Me.Label81, Me.Label96, Me.Label97, Me.Label98, Me.Label99, Me.Label101, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label19, Me.Label29, Me.Label83, Me.Label84, Me.Label85, Me.Label102, Me.Label103, Me.Label104, Me.Label105, Me.Label72, Me.Label87, Me.Label88, Me.Label89, Me.Label107, Me.Label108, Me.Line13, Me.Line14, Me.Line16, Me.Line41, Me.Line111, Me.Line136, Me.Line106, Me.Line138, Me.Line11, Me.Line139, Me.Line12, Me.Line140, Me.Line105, Me.Line143, Me.Line102, Me.Line144, Me.Line101, Me.Line145, Me.Line100, Me.Line15, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line35, Me.Line49, Me.Line54, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line64, Me.Line65, Me.Line67, Me.Line68, Me.Line69, Me.Line87, Me.Label109, Me.Label110, Me.Label111, Me.Label113, Me.Label114, Me.Label115, Me.Line99, Me.Line103, Me.Label116, Me.Label117, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Line8, Me.Line24, Me.Label123, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Label129, Me.Line25, Me.Line29, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label137, Me.Line27, Me.Line30, Me.Label138, Me.Label139, Me.Label140, Me.Label141, Me.Label143, Me.Label144, Me.Line33, Me.Line70, Me.Label145, Me.Label146, Me.Label147, Me.Label149, Me.Label150, Me.Label151, Me.Line34, Me.Line71, Me.Label152, Me.Label153, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Line40, Me.Line72, Me.Label159, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Line43, Me.Line73, Me.Label167, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label173, Me.Line44, Me.Line74, Me.Line112, Me.Line31, Me.Line9, Me.Line45, Me.Line75, Me.Line76, Me.Line77, Me.Line78, Me.Line79, Me.Line80, Me.Line81, Me.Line82, Me.Line83, Me.Line84, Me.Line86, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line97, Me.Line98, Me.Line116, Me.Line47, Me.Line48, Me.Line50, Me.Line52, Me.Line53, Me.Line55, Me.Line56, Me.Line57, Me.Line117, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line122, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line128, Me.Line129, Me.Line130, Me.Line131})
-        Me.Detail.Height = 9.085584!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_HAKKO_DATE_16, Me.Label144, Me.Label53, Me.Label49, Me.Label45, Me.Label12, Me.Label202, Me.Label24, Me.REQ_TAXI_FROM_1, Me.Label5, Me.KOUENKAI_NAME, Me.DANTAI_CODE, Me.Label200, Me.Label8, Me.Label185, Me.REQ_MR_TEHAI, Me.Label178, Me.Label184, Me.TEHAI_HOTEL, Me.Label183, Me.TEHAI_KOTSU, Me.Label182, Me.ANS_TAXI_NOTE, Me.REQ_TAXI_NOTE, Me.Label180, Me.Label124, Me.Label90, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.TAXI_YOTEIKINGAKU_2, Me.KOUTEI_1, Me.REQ_TAXI_DATE_1, Me.Label73, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label71, Me.TEHAI_TAXI, Me.Shape1, Me.DR_SHISETSU_NAME, Me.Label6, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.KOUENKAI_NO, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.Line3, Me.Line51, Me.Label3, Me.Line62, Me.Line63, Me.Line163, Me.Line164, Me.Line1, Me.Line2, Me.Line5, Me.Line42, Me.Line23, Me.Line26, Me.Label21, Me.ANS_TAXI_DATE_1, Me.Label22, Me.ANS_TAXI_KENSHU_1, Me.Label23, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_HAKKO_DATE_1, Me.Label25, Me.ANS_TAXI_RMKS_1, Me.Label27, Me.ANS_TAXI_DATE_2, Me.Label28, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_NO_2, Me.Label30, Me.ANS_TAXI_HAKKO_DATE_2, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_DATE_3, Me.Label34, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_NO_3, Me.Label36, Me.ANS_TAXI_HAKKO_DATE_3, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_HAKKO_DATE_4, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_HAKKO_DATE_5, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_HAKKO_DATE_6, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_HAKKO_DATE_7, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_HAKKO_DATE_8, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_HAKKO_DATE_9, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_HAKKO_DATE_10, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_HAKKO_DATE_11, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_HAKKO_DATE_12, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_NO_12, Me.Label130, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_HAKKO_DATE_13, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_NO_13, Me.Label136, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_HAKKO_DATE_14, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_NO_14, Me.Label142, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_HAKKO_DATE_15, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_NO_15, Me.Label148, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_NO_16, Me.Label154, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_HAKKO_DATE_17, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_NO_17, Me.Label160, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_HAKKO_DATE_18, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_NO_18, Me.Label166, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_HAKKO_DATE_19, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_NO_19, Me.Label172, Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_HAKKO_DATE_20, Me.ANS_TAXI_DATE_20, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_20, Me.Label20, Me.Label26, Me.Label32, Me.Label38, Me.Label69, Me.Label94, Me.Label100, Me.Label106, Me.Label112, Me.Label118, Me.Line28, Me.Line36, Me.Line104, Me.Label181, Me.REQ_O_TEHAI_1, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.Line32, Me.Label7, Me.Line37, Me.Line6, Me.Line7, Me.Line114, Me.Line4, Me.Line152, Me.Line153, Me.Line155, Me.Line17, Me.Line107, Me.Line109, Me.Line18, Me.Line85, Me.Label46, Me.Line110, Me.Label50, Me.Line135, Me.Label203, Me.Label204, Me.Label31, Me.Label205, Me.Label13, Me.Label33, Me.Label35, Me.Label37, Me.Label54, Me.Label206, Me.Label207, Me.Label15, Me.Label16, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label55, Me.Label59, Me.Label62, Me.Label63, Me.Label64, Me.Label67, Me.Label68, Me.Label70, Me.Label17, Me.Label75, Me.Label91, Me.Label92, Me.Label93, Me.Label95, Me.Label208, Me.Label209, Me.Label210, Me.Label18, Me.Label66, Me.Label76, Me.Label77, Me.Label79, Me.Label80, Me.Label81, Me.Label96, Me.Label97, Me.Label98, Me.Label99, Me.Label101, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label19, Me.Label29, Me.Label83, Me.Label84, Me.Label85, Me.Label102, Me.Label103, Me.Label104, Me.Label105, Me.Label72, Me.Label87, Me.Label88, Me.Label89, Me.Label107, Me.Label108, Me.Line13, Me.Line16, Me.Line41, Me.Line111, Me.Line136, Me.Line106, Me.Line138, Me.Line11, Me.Line139, Me.Line140, Me.Line105, Me.Line143, Me.Line102, Me.Line144, Me.Line101, Me.Line145, Me.Line100, Me.Line15, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line35, Me.Line49, Me.Line54, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line64, Me.Line65, Me.Line67, Me.Line68, Me.Line69, Me.Line87, Me.Label109, Me.Label110, Me.Label111, Me.Label113, Me.Label114, Me.Label115, Me.Line99, Me.Line103, Me.Label116, Me.Label117, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Line8, Me.Label123, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Label129, Me.Line25, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label137, Me.Line27, Me.Label138, Me.Label139, Me.Label140, Me.Label141, Me.Label143, Me.Line33, Me.Label145, Me.Label146, Me.Label147, Me.Label149, Me.Label150, Me.Label151, Me.Line34, Me.Label152, Me.Label153, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Line40, Me.Label159, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Line43, Me.Label167, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label173, Me.Line44, Me.Line74, Me.Line112, Me.Line9, Me.Line45, Me.Line75, Me.Line79, Me.Line47, Me.Line48, Me.Line50, Me.Line52, Me.Line53, Me.Line55, Me.Line56, Me.Line57, Me.Line38, Me.Line10, Me.Line66, Me.Line14, Me.Line24, Me.Line29, Me.Line76, Me.Line30, Me.Line70, Me.Line71, Me.Line72, Me.Line73})
+        Me.Detail.Height = 10.19524!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
         '
         'Label53
         '
-        Me.Label53.Height = 0.2!
+        Me.Label53.Height = 0.2255906!
         Me.Label53.HyperLink = Nothing
         Me.Label53.Left = 1.612992!
         Me.Label53.Name = "Label53"
         Me.Label53.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label53.Text = "依頼金額"
-        Me.Label53.Top = 2.270079!
+        Me.Label53.Top = 2.504331!
         Me.Label53.Width = 0.5811024!
         '
         'Label49
         '
-        Me.Label49.Height = 0.2!
+        Me.Label49.Height = 0.2255906!
         Me.Label49.HyperLink = Nothing
         Me.Label49.Left = 1.612992!
         Me.Label49.Name = "Label49"
         Me.Label49.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label49.Text = "依頼金額"
-        Me.Label49.Top = 1.870079!
+        Me.Label49.Top = 2.05315!
         Me.Label49.Width = 0.5811025!
         '
         'Label45
         '
-        Me.Label45.Height = 0.2!
+        Me.Label45.Height = 0.2255906!
         Me.Label45.HyperLink = Nothing
         Me.Label45.Left = 1.612992!
         Me.Label45.Name = "Label45"
         Me.Label45.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label45.Text = "依頼金額"
-        Me.Label45.Top = 1.474016!
+        Me.Label45.Top = 1.612599!
         Me.Label45.Width = 0.5811026!
         '
         'Label12
         '
-        Me.Label12.Height = 0.2!
+        Me.Label12.Height = 0.2255906!
         Me.Label12.HyperLink = Nothing
-        Me.Label12.Left = 5.966536!
+        Me.Label12.Left = 4.378346!
         Me.Label12.Name = "Label12"
         Me.Label12.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label12.Text = "利用者名"
-        Me.Label12.Top = 1.674016!
+        Me.Label12.Top = 1.827559!
         Me.Label12.Width = 0.5464572!
         '
         'Label202
         '
-        Me.Label202.Height = 0.2!
+        Me.Label202.Height = 0.2255906!
         Me.Label202.HyperLink = Nothing
-        Me.Label202.Left = 4.378347!
+        Me.Label202.Left = 5.966536!
         Me.Label202.Name = "Label202"
         Me.Label202.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label202.Text = "備考"
-        Me.Label202.Top = 1.674016!
-        Me.Label202.Width = 0.2988189!
+        Me.Label202.Top = 1.827559!
+        Me.Label202.Width = 0.3948819!
         '
         'Label24
         '
-        Me.Label24.Height = 0.2!
+        Me.Label24.Height = 0.2255906!
         Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 5.571654!
+        Me.Label24.Left = 5.966536!
         Me.Label24.Name = "Label24"
         Me.Label24.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label24.Text = "発行日"
-        Me.Label24.Top = 1.074016!
+        Me.Label24.Top = 1.150787!
         Me.Label24.Width = 0.3948817!
         '
         'REQ_TAXI_FROM_1
         '
         Me.REQ_TAXI_FROM_1.DataField = "REQ_TAXI_FROM_1"
-        Me.REQ_TAXI_FROM_1.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_1.Height = 0.2255906!
         Me.REQ_TAXI_FROM_1.Left = 0.8437009!
         Me.REQ_TAXI_FROM_1.Name = "REQ_TAXI_FROM_1"
         Me.REQ_TAXI_FROM_1.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_1.Text = Nothing
-        Me.REQ_TAXI_FROM_1.Top = 1.274016!
+        Me.REQ_TAXI_FROM_1.Top = 1.376378!
         Me.REQ_TAXI_FROM_1.Width = 1.943701!
         '
         'DANTAI_CODE
         '
         Me.DANTAI_CODE.DataField = "DANTAI_CODE"
-        Me.DANTAI_CODE.Height = 0.2!
+        Me.DANTAI_CODE.Height = 0.2255906!
         Me.DANTAI_CODE.Left = 5.083071!
         Me.DANTAI_CODE.Name = "DANTAI_CODE"
+        Me.DANTAI_CODE.Style = "vertical-align: middle"
         Me.DANTAI_CODE.Text = Nothing
-        Me.DANTAI_CODE.Top = 0.8740158!
+        Me.DANTAI_CODE.Top = 0.9251968!
         Me.DANTAI_CODE.Width = 0.7925197!
         '
         'Label200
         '
-        Me.Label200.Height = 0.2!
+        Me.Label200.Height = 0.2255906!
         Me.Label200.HyperLink = Nothing
         Me.Label200.Left = 4.378346!
         Me.Label200.Name = "Label200"
         Me.Label200.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label200.Text = "団体コード"
-        Me.Label200.Top = 0.8740158!
+        Me.Label200.Top = 0.9251968!
         Me.Label200.Width = 0.7047244!
-        '
-        'Label197
-        '
-        Me.Label197.Height = 0.2!
-        Me.Label197.HyperLink = Nothing
-        Me.Label197.Left = 1.612992!
-        Me.Label197.Name = "Label197"
-        Me.Label197.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
-        Me.Label197.Text = ""
-        Me.Label197.Top = 1.084252!
-        Me.Label197.Width = 0.5811024!
         '
         'Label8
         '
-        Me.Label8.Height = 0.2!
+        Me.Label8.Height = 0.2255906!
         Me.Label8.HyperLink = Nothing
         Me.Label8.Left = 3.236221!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label8.Text = "番号"
-        Me.Label8.Top = 1.674016!
+        Me.Label8.Top = 1.827559!
         Me.Label8.Width = 0.381496!
-        '
-        'Label4
-        '
-        Me.Label4.Height = 3.985827!
-        Me.Label4.HyperLink = Nothing
-        Me.Label4.Left = 0.4488189!
-        Me.Label4.Name = "Label4"
-        Me.Label4.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
-        Me.Label4.Text = ""
-        Me.Label4.Top = 1.084252!
-        Me.Label4.Width = 0.3948818!
         '
         'Label185
         '
-        Me.Label185.Height = 0.2!
+        Me.Label185.Height = 0.2255906!
         Me.Label185.HyperLink = Nothing
-        Me.Label185.Left = 5.966536!
+        Me.Label185.Left = 4.378347!
         Me.Label185.Name = "Label185"
         Me.Label185.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label185.Text = "利用者名"
-        Me.Label185.Top = 1.274016!
+        Me.Label185.Top = 1.376378!
         Me.Label185.Width = 0.5464572!
         '
         'REQ_MR_TEHAI
         '
-        Me.REQ_MR_TEHAI.Height = 0.2!
+        Me.REQ_MR_TEHAI.Height = 0.2255906!
         Me.REQ_MR_TEHAI.Left = 3.910237!
         Me.REQ_MR_TEHAI.Name = "REQ_MR_TEHAI"
+        Me.REQ_MR_TEHAI.Style = "vertical-align: middle"
         Me.REQ_MR_TEHAI.Text = Nothing
-        Me.REQ_MR_TEHAI.Top = 0.8740158!
+        Me.REQ_MR_TEHAI.Top = 0.9251968!
         Me.REQ_MR_TEHAI.Width = 0.2893701!
         '
         'Label178
         '
-        Me.Label178.Height = 0.4!
+        Me.Label178.Height = 0.4511811!
         Me.Label178.HyperLink = Nothing
         Me.Label178.Left = 2.787402!
         Me.Label178.Name = "Label178"
         Me.Label178.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label178.Text = "ﾀｸﾁｹ20"
-        Me.Label178.Top = 8.670078!
+        Me.Label178.Top = 9.723228!
         Me.Label178.Width = 0.4488189!
         '
         'Label184
         '
-        Me.Label184.Height = 0.2!
+        Me.Label184.Height = 0.2255906!
         Me.Label184.HyperLink = Nothing
         Me.Label184.Left = 3.329134!
         Me.Label184.Name = "Label184"
-        Me.Label184.Style = "background-color: darkgray; white-space: nowrap"
+        Me.Label184.Style = "background-color: darkgray; vertical-align: middle; white-space: nowrap"
         Me.Label184.Text = "MR手配"
-        Me.Label184.Top = 0.8740158!
+        Me.Label184.Top = 0.9251968!
         Me.Label184.Width = 0.5811024!
         '
         'TEHAI_HOTEL
         '
         Me.TEHAI_HOTEL.DataField = "TEHAI_HOTEL"
-        Me.TEHAI_HOTEL.Height = 0.2!
+        Me.TEHAI_HOTEL.Height = 0.2255906!
         Me.TEHAI_HOTEL.Left = 3.064567!
         Me.TEHAI_HOTEL.Name = "TEHAI_HOTEL"
-        Me.TEHAI_HOTEL.Style = "text-align: center"
+        Me.TEHAI_HOTEL.Style = "text-align: center; vertical-align: middle"
         Me.TEHAI_HOTEL.Text = Nothing
-        Me.TEHAI_HOTEL.Top = 0.8740158!
+        Me.TEHAI_HOTEL.Top = 0.9251968!
         Me.TEHAI_HOTEL.Width = 0.2893701!
         '
         'Label183
         '
-        Me.Label183.Height = 0.2!
+        Me.Label183.Height = 0.2255906!
         Me.Label183.HyperLink = Nothing
         Me.Label183.Left = 2.483465!
         Me.Label183.Name = "Label183"
-        Me.Label183.Style = "background-color: darkgray; white-space: nowrap"
+        Me.Label183.Style = "background-color: darkgray; vertical-align: middle; white-space: nowrap"
         Me.Label183.Text = "宿泊手配"
-        Me.Label183.Top = 0.8740158!
+        Me.Label183.Top = 0.9251968!
         Me.Label183.Width = 0.5811024!
         '
         'TEHAI_KOTSU
         '
-        Me.TEHAI_KOTSU.Height = 0.2!
+        Me.TEHAI_KOTSU.Height = 0.2255906!
         Me.TEHAI_KOTSU.Left = 2.194095!
         Me.TEHAI_KOTSU.Name = "TEHAI_KOTSU"
-        Me.TEHAI_KOTSU.Style = "text-align: center"
+        Me.TEHAI_KOTSU.Style = "text-align: center; vertical-align: middle"
         Me.TEHAI_KOTSU.Text = Nothing
-        Me.TEHAI_KOTSU.Top = 0.8740158!
+        Me.TEHAI_KOTSU.Top = 0.9251968!
         Me.TEHAI_KOTSU.Width = 0.2893701!
         '
         'Label182
         '
-        Me.Label182.Height = 0.2!
+        Me.Label182.Height = 0.2255906!
         Me.Label182.HyperLink = Nothing
         Me.Label182.Left = 1.612992!
         Me.Label182.Name = "Label182"
-        Me.Label182.Style = "background-color: darkgray; white-space: nowrap"
+        Me.Label182.Style = "background-color: darkgray; vertical-align: middle; white-space: nowrap"
         Me.Label182.Text = "交通手配"
-        Me.Label182.Top = 0.8740158!
+        Me.Label182.Top = 0.9251968!
         Me.Label182.Width = 0.5811024!
         '
         'ANS_TAXI_NOTE
@@ -1329,7 +1261,7 @@ Partial Public Class TaxiKakuninReport
         Me.ANS_TAXI_NOTE.Name = "ANS_TAXI_NOTE"
         Me.ANS_TAXI_NOTE.Style = "vertical-align: top"
         Me.ANS_TAXI_NOTE.Text = Nothing
-        Me.ANS_TAXI_NOTE.Top = 7.270079!
+        Me.ANS_TAXI_NOTE.Top = 8.144094!
         Me.ANS_TAXI_NOTE.Width = 2.787402!
         '
         'REQ_TAXI_NOTE
@@ -1339,617 +1271,605 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_TAXI_NOTE.Left = 0.008661415!
         Me.REQ_TAXI_NOTE.Name = "REQ_TAXI_NOTE"
         Me.REQ_TAXI_NOTE.Style = "vertical-align: top"
-        Me.REQ_TAXI_NOTE.Top = 5.270079!
+        Me.REQ_TAXI_NOTE.Text = Nothing
+        Me.REQ_TAXI_NOTE.Top = 5.888189!
         Me.REQ_TAXI_NOTE.Width = 2.787402!
         '
         'Label180
         '
-        Me.Label180.Height = 0.2000001!
+        Me.Label180.Height = 0.2255906!
         Me.Label180.HyperLink = Nothing
-        Me.Label180.Left = 0.0!
+        Me.Label180.Left = 2.842171E-14!
         Me.Label180.Name = "Label180"
         Me.Label180.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label180.Text = "備考（依頼）"
-        Me.Label180.Top = 5.070079!
+        Me.Label180.Top = 5.662599!
         Me.Label180.Width = 2.787402!
         '
         'Label124
         '
-        Me.Label124.Height = 0.4!
+        Me.Label124.Height = 0.4511811!
         Me.Label124.HyperLink = Nothing
         Me.Label124.Left = 2.787402!
         Me.Label124.Name = "Label124"
         Me.Label124.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label124.Text = "ﾀｸﾁｹ11"
-        Me.Label124.Top = 5.070079!
+        Me.Label124.Top = 5.662599!
         Me.Label124.Width = 0.4488189!
         '
         'Label90
         '
-        Me.Label90.Height = 0.4!
+        Me.Label90.Height = 0.4511811!
         Me.Label90.HyperLink = Nothing
-        Me.Label90.Left = 0.0!
+        Me.Label90.Left = 2.842171E-14!
         Me.Label90.Name = "Label90"
         Me.Label90.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label90.Text = "行程10"
-        Me.Label90.Top = 4.670079!
+        Me.Label90.Top = 5.211418!
         Me.Label90.Width = 0.448819!
         '
         'REQ_TAXI_DATE_10
         '
         Me.REQ_TAXI_DATE_10.DataField = "REQ_TAXI_DATE_10"
-        Me.REQ_TAXI_DATE_10.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_10.Height = 0.2255906!
         Me.REQ_TAXI_DATE_10.Left = 0.8437008!
         Me.REQ_TAXI_DATE_10.Name = "REQ_TAXI_DATE_10"
         Me.REQ_TAXI_DATE_10.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_10.Text = Nothing
-        Me.REQ_TAXI_DATE_10.Top = 4.670079!
+        Me.REQ_TAXI_DATE_10.Top = 5.211418!
         Me.REQ_TAXI_DATE_10.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_10
         '
         Me.REQ_TAXI_FROM_10.DataField = "REQ_TAXI_FROM_10"
-        Me.REQ_TAXI_FROM_10.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_10.Height = 0.2255906!
         Me.REQ_TAXI_FROM_10.Left = 0.8437009!
         Me.REQ_TAXI_FROM_10.Name = "REQ_TAXI_FROM_10"
         Me.REQ_TAXI_FROM_10.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_10.Text = Nothing
-        Me.REQ_TAXI_FROM_10.Top = 4.870079!
+        Me.REQ_TAXI_FROM_10.Top = 5.437008!
         Me.REQ_TAXI_FROM_10.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_10
         '
         Me.TAXI_YOTEIKINGAKU_10.DataField = "TAXI_YOTEIKINGAKU_10"
-        Me.TAXI_YOTEIKINGAKU_10.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_10.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_10.Left = 2.194094!
         Me.TAXI_YOTEIKINGAKU_10.Name = "TAXI_YOTEIKINGAKU_10"
         Me.TAXI_YOTEIKINGAKU_10.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_10.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_10.Top = 4.670079!
+        Me.TAXI_YOTEIKINGAKU_10.Top = 5.211418!
         Me.TAXI_YOTEIKINGAKU_10.Width = 0.5933071!
         '
         'Label86
         '
-        Me.Label86.Height = 0.4!
+        Me.Label86.Height = 0.4511811!
         Me.Label86.HyperLink = Nothing
         Me.Label86.Left = 0.0000001788139!
         Me.Label86.Name = "Label86"
         Me.Label86.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label86.Text = "行程9"
-        Me.Label86.Top = 4.270079!
+        Me.Label86.Top = 4.760236!
         Me.Label86.Width = 0.4488189!
         '
         'REQ_TAXI_DATE_9
         '
         Me.REQ_TAXI_DATE_9.DataField = "REQ_TAXI_DATE_9"
-        Me.REQ_TAXI_DATE_9.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_9.Height = 0.2255906!
         Me.REQ_TAXI_DATE_9.Left = 0.8437008!
         Me.REQ_TAXI_DATE_9.Name = "REQ_TAXI_DATE_9"
         Me.REQ_TAXI_DATE_9.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_9.Text = Nothing
-        Me.REQ_TAXI_DATE_9.Top = 4.270079!
+        Me.REQ_TAXI_DATE_9.Top = 4.760236!
         Me.REQ_TAXI_DATE_9.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_9
         '
         Me.REQ_TAXI_FROM_9.DataField = "REQ_TAXI_FROM_9"
-        Me.REQ_TAXI_FROM_9.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_9.Height = 0.2255906!
         Me.REQ_TAXI_FROM_9.Left = 0.8437009!
         Me.REQ_TAXI_FROM_9.Name = "REQ_TAXI_FROM_9"
         Me.REQ_TAXI_FROM_9.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_9.Text = Nothing
-        Me.REQ_TAXI_FROM_9.Top = 4.470079!
+        Me.REQ_TAXI_FROM_9.Top = 4.985826!
         Me.REQ_TAXI_FROM_9.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_9
         '
         Me.TAXI_YOTEIKINGAKU_9.DataField = "TAXI_YOTEIKINGAKU_9"
-        Me.TAXI_YOTEIKINGAKU_9.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_9.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_9.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_9.Name = "TAXI_YOTEIKINGAKU_9"
         Me.TAXI_YOTEIKINGAKU_9.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_9.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_9.Top = 4.270079!
+        Me.TAXI_YOTEIKINGAKU_9.Top = 4.760236!
         Me.TAXI_YOTEIKINGAKU_9.Width = 0.5933071!
         '
         'Label82
         '
-        Me.Label82.Height = 0.4!
+        Me.Label82.Height = 0.4511811!
         Me.Label82.HyperLink = Nothing
         Me.Label82.Left = 0.0000001788139!
         Me.Label82.Name = "Label82"
         Me.Label82.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label82.Text = "行程8"
-        Me.Label82.Top = 3.870079!
+        Me.Label82.Top = 4.309055!
         Me.Label82.Width = 0.448819!
         '
         'REQ_TAXI_DATE_8
         '
         Me.REQ_TAXI_DATE_8.DataField = "REQ_TAXI_DATE_8"
-        Me.REQ_TAXI_DATE_8.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_8.Height = 0.2255906!
         Me.REQ_TAXI_DATE_8.Left = 0.8437008!
         Me.REQ_TAXI_DATE_8.Name = "REQ_TAXI_DATE_8"
         Me.REQ_TAXI_DATE_8.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_8.Text = Nothing
-        Me.REQ_TAXI_DATE_8.Top = 3.870079!
+        Me.REQ_TAXI_DATE_8.Top = 4.309055!
         Me.REQ_TAXI_DATE_8.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_8
         '
         Me.REQ_TAXI_FROM_8.DataField = "REQ_TAXI_FROM_8"
-        Me.REQ_TAXI_FROM_8.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_8.Height = 0.2255906!
         Me.REQ_TAXI_FROM_8.Left = 0.8437008!
         Me.REQ_TAXI_FROM_8.Name = "REQ_TAXI_FROM_8"
         Me.REQ_TAXI_FROM_8.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_8.Text = Nothing
-        Me.REQ_TAXI_FROM_8.Top = 4.070079!
+        Me.REQ_TAXI_FROM_8.Top = 4.534646!
         Me.REQ_TAXI_FROM_8.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_8
         '
         Me.TAXI_YOTEIKINGAKU_8.DataField = "TAXI_YOTEIKINGAKU_8"
-        Me.TAXI_YOTEIKINGAKU_8.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_8.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_8.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_8.Name = "TAXI_YOTEIKINGAKU_8"
         Me.TAXI_YOTEIKINGAKU_8.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_8.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_8.Top = 3.870079!
+        Me.TAXI_YOTEIKINGAKU_8.Top = 4.309055!
         Me.TAXI_YOTEIKINGAKU_8.Width = 0.5933071!
         '
         'Label78
         '
-        Me.Label78.Height = 0.4!
+        Me.Label78.Height = 0.4511811!
         Me.Label78.HyperLink = Nothing
-        Me.Label78.Left = 0.0!
+        Me.Label78.Left = 2.842171E-14!
         Me.Label78.Name = "Label78"
         Me.Label78.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label78.Text = "行程7"
-        Me.Label78.Top = 3.470079!
+        Me.Label78.Top = 3.857874!
         Me.Label78.Width = 0.448819!
         '
         'REQ_TAXI_DATE_7
         '
         Me.REQ_TAXI_DATE_7.DataField = "REQ_TAXI_DATE_7"
-        Me.REQ_TAXI_DATE_7.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_7.Height = 0.2255906!
         Me.REQ_TAXI_DATE_7.Left = 0.8437008!
         Me.REQ_TAXI_DATE_7.Name = "REQ_TAXI_DATE_7"
         Me.REQ_TAXI_DATE_7.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_7.Text = Nothing
-        Me.REQ_TAXI_DATE_7.Top = 3.470079!
+        Me.REQ_TAXI_DATE_7.Top = 3.857874!
         Me.REQ_TAXI_DATE_7.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_7
         '
         Me.REQ_TAXI_FROM_7.DataField = "REQ_TAXI_FROM_7"
-        Me.REQ_TAXI_FROM_7.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_7.Height = 0.2255906!
         Me.REQ_TAXI_FROM_7.Left = 0.8437009!
         Me.REQ_TAXI_FROM_7.Name = "REQ_TAXI_FROM_7"
         Me.REQ_TAXI_FROM_7.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_7.Text = Nothing
-        Me.REQ_TAXI_FROM_7.Top = 3.670079!
+        Me.REQ_TAXI_FROM_7.Top = 4.083465!
         Me.REQ_TAXI_FROM_7.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_7
         '
         Me.TAXI_YOTEIKINGAKU_7.DataField = "TAXI_YOTEIKINGAKU_7"
-        Me.TAXI_YOTEIKINGAKU_7.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_7.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_7.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_7.Name = "TAXI_YOTEIKINGAKU_7"
         Me.TAXI_YOTEIKINGAKU_7.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_7.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_7.Top = 3.470079!
+        Me.TAXI_YOTEIKINGAKU_7.Top = 3.857874!
         Me.TAXI_YOTEIKINGAKU_7.Width = 0.5933071!
         '
         'Label65
         '
-        Me.Label65.Height = 0.4!
+        Me.Label65.Height = 0.4511811!
         Me.Label65.HyperLink = Nothing
         Me.Label65.Left = 0.0000001788139!
         Me.Label65.Name = "Label65"
         Me.Label65.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label65.Text = "行程6"
-        Me.Label65.Top = 3.070079!
+        Me.Label65.Top = 3.406693!
         Me.Label65.Width = 0.448819!
         '
         'REQ_TAXI_DATE_6
         '
         Me.REQ_TAXI_DATE_6.DataField = "REQ_TAXI_DATE_6"
-        Me.REQ_TAXI_DATE_6.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_6.Height = 0.2255906!
         Me.REQ_TAXI_DATE_6.Left = 0.8437008!
         Me.REQ_TAXI_DATE_6.Name = "REQ_TAXI_DATE_6"
         Me.REQ_TAXI_DATE_6.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_6.Text = Nothing
-        Me.REQ_TAXI_DATE_6.Top = 3.070079!
+        Me.REQ_TAXI_DATE_6.Top = 3.406693!
         Me.REQ_TAXI_DATE_6.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_6
         '
         Me.REQ_TAXI_FROM_6.DataField = "REQ_TAXI_FROM_6"
-        Me.REQ_TAXI_FROM_6.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_6.Height = 0.2255906!
         Me.REQ_TAXI_FROM_6.Left = 0.8437009!
         Me.REQ_TAXI_FROM_6.Name = "REQ_TAXI_FROM_6"
         Me.REQ_TAXI_FROM_6.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_6.Text = Nothing
-        Me.REQ_TAXI_FROM_6.Top = 3.270079!
+        Me.REQ_TAXI_FROM_6.Top = 3.632283!
         Me.REQ_TAXI_FROM_6.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_6
         '
         Me.TAXI_YOTEIKINGAKU_6.DataField = "TAXI_YOTEIKINGAKU_6"
-        Me.TAXI_YOTEIKINGAKU_6.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_6.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_6.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_6.Name = "TAXI_YOTEIKINGAKU_6"
         Me.TAXI_YOTEIKINGAKU_6.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_6.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_6.Top = 3.070079!
+        Me.TAXI_YOTEIKINGAKU_6.Top = 3.406693!
         Me.TAXI_YOTEIKINGAKU_6.Width = 0.5933071!
         '
         'Label61
         '
-        Me.Label61.Height = 0.4!
+        Me.Label61.Height = 0.4511811!
         Me.Label61.HyperLink = Nothing
         Me.Label61.Left = 0.0000001788139!
         Me.Label61.Name = "Label61"
         Me.Label61.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label61.Text = "行程5"
-        Me.Label61.Top = 2.670079!
+        Me.Label61.Top = 2.955512!
         Me.Label61.Width = 0.448819!
         '
         'Label60
         '
-        Me.Label60.Height = 0.2!
+        Me.Label60.Height = 0.2255906!
         Me.Label60.HyperLink = Nothing
         Me.Label60.Left = 0.4488192!
         Me.Label60.Name = "Label60"
         Me.Label60.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label60.Text = "利用日"
-        Me.Label60.Top = 2.670079!
+        Me.Label60.Top = 2.955512!
         Me.Label60.Width = 0.3948819!
         '
         'REQ_TAXI_DATE_5
         '
         Me.REQ_TAXI_DATE_5.DataField = "REQ_TAXI_DATE_5"
-        Me.REQ_TAXI_DATE_5.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_5.Height = 0.2255906!
         Me.REQ_TAXI_DATE_5.Left = 0.8437008!
         Me.REQ_TAXI_DATE_5.Name = "REQ_TAXI_DATE_5"
         Me.REQ_TAXI_DATE_5.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_5.Text = Nothing
-        Me.REQ_TAXI_DATE_5.Top = 2.670079!
+        Me.REQ_TAXI_DATE_5.Top = 2.955512!
         Me.REQ_TAXI_DATE_5.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_5
         '
         Me.REQ_TAXI_FROM_5.DataField = "REQ_TAXI_FROM_5"
-        Me.REQ_TAXI_FROM_5.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_5.Height = 0.2255906!
         Me.REQ_TAXI_FROM_5.Left = 0.8437008!
         Me.REQ_TAXI_FROM_5.Name = "REQ_TAXI_FROM_5"
         Me.REQ_TAXI_FROM_5.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_5.Text = Nothing
-        Me.REQ_TAXI_FROM_5.Top = 2.870079!
+        Me.REQ_TAXI_FROM_5.Top = 3.181102!
         Me.REQ_TAXI_FROM_5.Width = 1.943701!
         '
         'Label58
         '
-        Me.Label58.Height = 0.2!
+        Me.Label58.Height = 0.2255906!
         Me.Label58.HyperLink = Nothing
         Me.Label58.Left = 1.612992!
         Me.Label58.Name = "Label58"
         Me.Label58.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label58.Text = "依頼金額"
-        Me.Label58.Top = 2.670079!
+        Me.Label58.Top = 2.955512!
         Me.Label58.Width = 0.5811024!
         '
         'TAXI_YOTEIKINGAKU_5
         '
         Me.TAXI_YOTEIKINGAKU_5.DataField = "TAXI_YOTEIKINGAKU_5"
-        Me.TAXI_YOTEIKINGAKU_5.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_5.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_5.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_5.Name = "TAXI_YOTEIKINGAKU_5"
         Me.TAXI_YOTEIKINGAKU_5.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_5.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_5.Top = 2.670079!
+        Me.TAXI_YOTEIKINGAKU_5.Top = 2.955512!
         Me.TAXI_YOTEIKINGAKU_5.Width = 0.5933071!
         '
         'Label57
         '
-        Me.Label57.Height = 0.4!
+        Me.Label57.Height = 0.4511811!
         Me.Label57.HyperLink = Nothing
-        Me.Label57.Left = -2.842171E-14!
+        Me.Label57.Left = 0.0!
         Me.Label57.Name = "Label57"
         Me.Label57.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label57.Text = "行程4"
-        Me.Label57.Top = 2.270079!
+        Me.Label57.Top = 2.504331!
         Me.Label57.Width = 0.448819!
         '
         'Label56
         '
-        Me.Label56.Height = 0.2!
+        Me.Label56.Height = 0.2255906!
         Me.Label56.HyperLink = Nothing
         Me.Label56.Left = 0.4488189!
         Me.Label56.Name = "Label56"
         Me.Label56.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label56.Text = "利用日"
-        Me.Label56.Top = 2.270079!
+        Me.Label56.Top = 2.504331!
         Me.Label56.Width = 0.3948819!
         '
         'REQ_TAXI_DATE_4
         '
         Me.REQ_TAXI_DATE_4.DataField = "REQ_TAXI_DATE_4"
-        Me.REQ_TAXI_DATE_4.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_4.Height = 0.2255906!
         Me.REQ_TAXI_DATE_4.Left = 0.8437008!
         Me.REQ_TAXI_DATE_4.Name = "REQ_TAXI_DATE_4"
         Me.REQ_TAXI_DATE_4.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_4.Text = Nothing
-        Me.REQ_TAXI_DATE_4.Top = 2.270079!
+        Me.REQ_TAXI_DATE_4.Top = 2.504331!
         Me.REQ_TAXI_DATE_4.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_4
         '
         Me.REQ_TAXI_FROM_4.DataField = "REQ_TAXI_FROM_4"
-        Me.REQ_TAXI_FROM_4.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_4.Height = 0.2255906!
         Me.REQ_TAXI_FROM_4.Left = 0.8437008!
         Me.REQ_TAXI_FROM_4.Name = "REQ_TAXI_FROM_4"
         Me.REQ_TAXI_FROM_4.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_4.Text = Nothing
-        Me.REQ_TAXI_FROM_4.Top = 2.470079!
+        Me.REQ_TAXI_FROM_4.Top = 2.729921!
         Me.REQ_TAXI_FROM_4.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_4
         '
         Me.TAXI_YOTEIKINGAKU_4.DataField = "TAXI_YOTEIKINGAKU_4"
-        Me.TAXI_YOTEIKINGAKU_4.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_4.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_4.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_4.Name = "TAXI_YOTEIKINGAKU_4"
         Me.TAXI_YOTEIKINGAKU_4.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_4.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_4.Top = 2.270079!
+        Me.TAXI_YOTEIKINGAKU_4.Top = 2.504331!
         Me.TAXI_YOTEIKINGAKU_4.Width = 0.5933071!
         '
         'Label52
         '
-        Me.Label52.Height = 0.4!
+        Me.Label52.Height = 0.4511811!
         Me.Label52.HyperLink = Nothing
         Me.Label52.Left = 0.0000001788139!
         Me.Label52.Name = "Label52"
         Me.Label52.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label52.Text = "行程3"
-        Me.Label52.Top = 1.870079!
+        Me.Label52.Top = 2.05315!
         Me.Label52.Width = 0.448819!
         '
         'Label51
         '
-        Me.Label51.Height = 0.2!
+        Me.Label51.Height = 0.2255906!
         Me.Label51.HyperLink = Nothing
         Me.Label51.Left = 0.4488189!
         Me.Label51.Name = "Label51"
         Me.Label51.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label51.Text = "利用日"
-        Me.Label51.Top = 1.870079!
+        Me.Label51.Top = 2.05315!
         Me.Label51.Width = 0.3948819!
         '
         'REQ_TAXI_DATE_3
         '
         Me.REQ_TAXI_DATE_3.DataField = "REQ_TAXI_DATE_3"
-        Me.REQ_TAXI_DATE_3.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_3.Height = 0.2255906!
         Me.REQ_TAXI_DATE_3.Left = 0.8437008!
         Me.REQ_TAXI_DATE_3.Name = "REQ_TAXI_DATE_3"
         Me.REQ_TAXI_DATE_3.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_3.Text = Nothing
-        Me.REQ_TAXI_DATE_3.Top = 1.870079!
+        Me.REQ_TAXI_DATE_3.Top = 2.05315!
         Me.REQ_TAXI_DATE_3.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_3
         '
         Me.REQ_TAXI_FROM_3.DataField = "REQ_TAXI_FROM_3"
-        Me.REQ_TAXI_FROM_3.Height = 0.1999997!
+        Me.REQ_TAXI_FROM_3.Height = 0.2255906!
         Me.REQ_TAXI_FROM_3.Left = 0.8437009!
         Me.REQ_TAXI_FROM_3.Name = "REQ_TAXI_FROM_3"
         Me.REQ_TAXI_FROM_3.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_3.Text = Nothing
-        Me.REQ_TAXI_FROM_3.Top = 2.070079!
+        Me.REQ_TAXI_FROM_3.Top = 2.27874!
         Me.REQ_TAXI_FROM_3.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_3
         '
         Me.TAXI_YOTEIKINGAKU_3.DataField = "TAXI_YOTEIKINGAKU_3"
-        Me.TAXI_YOTEIKINGAKU_3.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_3.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_3.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_3.Name = "TAXI_YOTEIKINGAKU_3"
         Me.TAXI_YOTEIKINGAKU_3.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_3.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_3.Top = 1.870079!
+        Me.TAXI_YOTEIKINGAKU_3.Top = 2.05315!
         Me.TAXI_YOTEIKINGAKU_3.Width = 0.5933071!
         '
         'Label48
         '
-        Me.Label48.Height = 0.4!
+        Me.Label48.Height = 0.4511811!
         Me.Label48.HyperLink = Nothing
-        Me.Label48.Left = 0.0!
+        Me.Label48.Left = 2.842171E-14!
         Me.Label48.Name = "Label48"
         Me.Label48.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label48.Text = "行程2"
-        Me.Label48.Top = 1.474016!
+        Me.Label48.Top = 1.612599!
         Me.Label48.Width = 0.448819!
         '
         'Label47
         '
-        Me.Label47.Height = 0.2!
+        Me.Label47.Height = 0.2255906!
         Me.Label47.HyperLink = Nothing
         Me.Label47.Left = 0.4488189!
         Me.Label47.Name = "Label47"
         Me.Label47.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label47.Text = "利用日"
-        Me.Label47.Top = 1.474016!
+        Me.Label47.Top = 1.612599!
         Me.Label47.Width = 0.3948819!
         '
         'REQ_TAXI_DATE_2
         '
         Me.REQ_TAXI_DATE_2.DataField = "REQ_TAXI_DATE_2"
-        Me.REQ_TAXI_DATE_2.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_2.Height = 0.2255906!
         Me.REQ_TAXI_DATE_2.Left = 0.8437008!
         Me.REQ_TAXI_DATE_2.Name = "REQ_TAXI_DATE_2"
         Me.REQ_TAXI_DATE_2.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_2.Text = Nothing
-        Me.REQ_TAXI_DATE_2.Top = 1.474016!
+        Me.REQ_TAXI_DATE_2.Top = 1.612599!
         Me.REQ_TAXI_DATE_2.Width = 0.7692917!
         '
         'REQ_TAXI_FROM_2
         '
         Me.REQ_TAXI_FROM_2.DataField = "REQ_TAXI_FROM_2"
-        Me.REQ_TAXI_FROM_2.Height = 0.1999998!
+        Me.REQ_TAXI_FROM_2.Height = 0.2255906!
         Me.REQ_TAXI_FROM_2.Left = 0.8437008!
         Me.REQ_TAXI_FROM_2.Name = "REQ_TAXI_FROM_2"
         Me.REQ_TAXI_FROM_2.Style = "vertical-align: middle"
         Me.REQ_TAXI_FROM_2.Text = Nothing
-        Me.REQ_TAXI_FROM_2.Top = 1.672047!
+        Me.REQ_TAXI_FROM_2.Top = 1.827559!
         Me.REQ_TAXI_FROM_2.Width = 1.943701!
         '
         'TAXI_YOTEIKINGAKU_2
         '
         Me.TAXI_YOTEIKINGAKU_2.DataField = "TAXI_YOTEIKINGAKU_2"
-        Me.TAXI_YOTEIKINGAKU_2.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_2.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_2.Left = 2.194095!
         Me.TAXI_YOTEIKINGAKU_2.Name = "TAXI_YOTEIKINGAKU_2"
         Me.TAXI_YOTEIKINGAKU_2.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_2.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_2.Top = 1.474016!
+        Me.TAXI_YOTEIKINGAKU_2.Top = 1.612599!
         Me.TAXI_YOTEIKINGAKU_2.Width = 0.5933071!
         '
         'KOUTEI_1
         '
-        Me.KOUTEI_1.Height = 0.4!
+        Me.KOUTEI_1.Height = 0.4511811!
         Me.KOUTEI_1.HyperLink = Nothing
-        Me.KOUTEI_1.Left = 0.0!
+        Me.KOUTEI_1.Left = 2.842171E-14!
         Me.KOUTEI_1.Name = "KOUTEI_1"
         Me.KOUTEI_1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.KOUTEI_1.Text = "行程1"
-        Me.KOUTEI_1.Top = 1.074016!
+        Me.KOUTEI_1.Top = 1.150787!
         Me.KOUTEI_1.Width = 0.4488189!
         '
         'REQ_TAXI_DATE_1
         '
         Me.REQ_TAXI_DATE_1.DataField = "REQ_TAXI_DATE_1"
-        Me.REQ_TAXI_DATE_1.Height = 0.1999998!
+        Me.REQ_TAXI_DATE_1.Height = 0.2255906!
         Me.REQ_TAXI_DATE_1.Left = 0.8437008!
         Me.REQ_TAXI_DATE_1.Name = "REQ_TAXI_DATE_1"
         Me.REQ_TAXI_DATE_1.Style = "vertical-align: middle"
         Me.REQ_TAXI_DATE_1.Text = Nothing
-        Me.REQ_TAXI_DATE_1.Top = 1.074016!
+        Me.REQ_TAXI_DATE_1.Top = 1.150787!
         Me.REQ_TAXI_DATE_1.Width = 0.7692915!
         '
         'Label73
         '
-        Me.Label73.Height = 0.2!
+        Me.Label73.Height = 0.2255906!
         Me.Label73.HyperLink = Nothing
         Me.Label73.Left = 0.4488189!
         Me.Label73.Name = "Label73"
         Me.Label73.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label73.Text = "発地"
-        Me.Label73.Top = 1.274016!
+        Me.Label73.Top = 1.376378!
         Me.Label73.Width = 0.3948819!
         '
         'Label74
         '
-        Me.Label74.Height = 0.2!
+        Me.Label74.Height = 0.2255906!
         Me.Label74.HyperLink = Nothing
         Me.Label74.Left = 1.612992!
         Me.Label74.Name = "Label74"
         Me.Label74.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label74.Text = "依頼金額"
-        Me.Label74.Top = 1.074016!
+        Me.Label74.Top = 1.150787!
         Me.Label74.Width = 0.5811025!
         '
         'TAXI_YOTEIKINGAKU_1
         '
         Me.TAXI_YOTEIKINGAKU_1.DataField = "TAXI_YOTEIKINGAKU_1"
-        Me.TAXI_YOTEIKINGAKU_1.Height = 0.2!
+        Me.TAXI_YOTEIKINGAKU_1.Height = 0.2255906!
         Me.TAXI_YOTEIKINGAKU_1.Left = 2.194094!
         Me.TAXI_YOTEIKINGAKU_1.Name = "TAXI_YOTEIKINGAKU_1"
         Me.TAXI_YOTEIKINGAKU_1.Style = "vertical-align: middle"
         Me.TAXI_YOTEIKINGAKU_1.Text = Nothing
-        Me.TAXI_YOTEIKINGAKU_1.Top = 1.074016!
+        Me.TAXI_YOTEIKINGAKU_1.Top = 1.150787!
         Me.TAXI_YOTEIKINGAKU_1.Width = 0.5933079!
         '
         'Label71
         '
-        Me.Label71.Height = 0.2!
+        Me.Label71.Height = 0.2255906!
         Me.Label71.HyperLink = Nothing
-        Me.Label71.Left = 0.0!
+        Me.Label71.Left = 2.842171E-14!
         Me.Label71.Name = "Label71"
         Me.Label71.Style = "background-color: darkgray; white-space: nowrap"
         Me.Label71.Text = "タクシーチケット手配"
-        Me.Label71.Top = 0.8740158!
+        Me.Label71.Top = 0.9251968!
         Me.Label71.Width = 1.323622!
         '
         'TEHAI_TAXI
         '
         Me.TEHAI_TAXI.DataField = "TEHAI_TAXI"
-        Me.TEHAI_TAXI.Height = 0.2!
+        Me.TEHAI_TAXI.Height = 0.2255906!
         Me.TEHAI_TAXI.Left = 1.323622!
         Me.TEHAI_TAXI.Name = "TEHAI_TAXI"
-        Me.TEHAI_TAXI.Style = "text-align: center"
+        Me.TEHAI_TAXI.Style = "text-align: center; vertical-align: middle"
         Me.TEHAI_TAXI.Text = Nothing
-        Me.TEHAI_TAXI.Top = 0.8740158!
+        Me.TEHAI_TAXI.Top = 0.9251968!
         Me.TEHAI_TAXI.Width = 0.2893703!
-        '
-        'Line38
-        '
-        Me.Line38.Height = 0.0!
-        Me.Line38.Left = 0.0!
-        Me.Line38.LineWeight = 1.0!
-        Me.Line38.Name = "Line38"
-        Me.Line38.Top = 0.8740158!
-        Me.Line38.Width = 7.165353!
-        Me.Line38.X1 = 0.0!
-        Me.Line38.X2 = 7.165353!
-        Me.Line38.Y1 = 0.8740158!
-        Me.Line38.Y2 = 0.8740158!
         '
         'DR_SHISETSU_NAME
         '
         Me.DR_SHISETSU_NAME.DataField = "DR_SHISETSU_NAME"
-        Me.DR_SHISETSU_NAME.Height = 0.2!
+        Me.DR_SHISETSU_NAME.Height = 0.2255906!
         Me.DR_SHISETSU_NAME.Left = 4.507481!
         Me.DR_SHISETSU_NAME.Name = "DR_SHISETSU_NAME"
         Me.DR_SHISETSU_NAME.Style = "font-size: 8pt; vertical-align: middle"
         Me.DR_SHISETSU_NAME.Text = Nothing
-        Me.DR_SHISETSU_NAME.Top = 0.6740158!
+        Me.DR_SHISETSU_NAME.Top = 0.6996063!
         Me.DR_SHISETSU_NAME.Width = 2.657874!
         '
         'Label14
         '
-        Me.Label14.Height = 0.2!
+        Me.Label14.Height = 0.2255906!
         Me.Label14.HyperLink = Nothing
         Me.Label14.Left = 3.558662!
         Me.Label14.Name = "Label14"
         Me.Label14.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: nowrap"
         Me.Label14.Text = "施設名"
-        Me.Label14.Top = 0.6740158!
+        Me.Label14.Top = 0.6996063!
         Me.Label14.Width = 0.9488189!
         '
         'Line62
         '
-        Me.Line62.Height = 0.2000001!
+        Me.Line62.Height = 0.2255905!
         Me.Line62.Left = 4.928741!
         Me.Line62.LineWeight = 1.0!
         Me.Line62.Name = "Line62"
@@ -1958,11 +1878,11 @@ Partial Public Class TaxiKakuninReport
         Me.Line62.X1 = 4.928741!
         Me.Line62.X2 = 4.928741!
         Me.Line62.Y1 = 0.4740158!
-        Me.Line62.Y2 = 0.6740159!
+        Me.Line62.Y2 = 0.6996063!
         '
         'Line63
         '
-        Me.Line63.Height = 0.2000001!
+        Me.Line63.Height = 0.2255905!
         Me.Line63.Left = 5.646851!
         Me.Line63.LineWeight = 1.0!
         Me.Line63.Name = "Line63"
@@ -1971,11 +1891,11 @@ Partial Public Class TaxiKakuninReport
         Me.Line63.X1 = 5.646851!
         Me.Line63.X2 = 5.646851!
         Me.Line63.Y1 = 0.4740158!
-        Me.Line63.Y2 = 0.6740159!
+        Me.Line63.Y2 = 0.6996063!
         '
         'Line163
         '
-        Me.Line163.Height = 0.2000001!
+        Me.Line163.Height = 0.2255905!
         Me.Line163.Left = 2.155512!
         Me.Line163.LineWeight = 1.0!
         Me.Line163.Name = "Line163"
@@ -1984,11 +1904,11 @@ Partial Public Class TaxiKakuninReport
         Me.Line163.X1 = 2.155512!
         Me.Line163.X2 = 2.155512!
         Me.Line163.Y1 = 0.4740158!
-        Me.Line163.Y2 = 0.6740159!
+        Me.Line163.Y2 = 0.6996063!
         '
         'Line164
         '
-        Me.Line164.Height = 0.2000001!
+        Me.Line164.Height = 0.2255905!
         Me.Line164.Left = 3.237402!
         Me.Line164.LineWeight = 1.0!
         Me.Line164.Name = "Line164"
@@ -1997,50 +1917,50 @@ Partial Public Class TaxiKakuninReport
         Me.Line164.X1 = 3.237402!
         Me.Line164.X2 = 3.237402!
         Me.Line164.Y1 = 0.4740158!
-        Me.Line164.Y2 = 0.6740159!
+        Me.Line164.Y2 = 0.6996063!
         '
         'Line1
         '
-        Me.Line1.Height = 0.4000002!
+        Me.Line1.Height = 0.4511807!
         Me.Line1.Left = 1.323622!
         Me.Line1.LineWeight = 1.0!
         Me.Line1.Name = "Line1"
-        Me.Line1.Top = 0.6740158!
+        Me.Line1.Top = 0.6996063!
         Me.Line1.Width = 0.0!
         Me.Line1.X1 = 1.323622!
         Me.Line1.X2 = 1.323622!
-        Me.Line1.Y1 = 0.6740158!
-        Me.Line1.Y2 = 1.074016!
+        Me.Line1.Y1 = 0.6996063!
+        Me.Line1.Y2 = 1.150787!
         '
         'Line2
         '
-        Me.Line2.Height = 0.2000002!
+        Me.Line2.Height = 0.2255905!
         Me.Line2.Left = 3.548425!
         Me.Line2.LineWeight = 1.0!
         Me.Line2.Name = "Line2"
-        Me.Line2.Top = 0.6740158!
+        Me.Line2.Top = 0.6996063!
         Me.Line2.Width = 0.0!
         Me.Line2.X1 = 3.548425!
         Me.Line2.X2 = 3.548425!
-        Me.Line2.Y1 = 0.6740158!
-        Me.Line2.Y2 = 0.874016!
+        Me.Line2.Y1 = 0.6996063!
+        Me.Line2.Y2 = 0.9251968!
         '
         'Line5
         '
-        Me.Line5.Height = 0.2000002!
+        Me.Line5.Height = 0.2255905!
         Me.Line5.Left = 4.507481!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
-        Me.Line5.Top = 0.6740158!
+        Me.Line5.Top = 0.6996063!
         Me.Line5.Width = 0.0!
         Me.Line5.X1 = 4.507481!
         Me.Line5.X2 = 4.507481!
-        Me.Line5.Y1 = 0.6740158!
-        Me.Line5.Y2 = 0.874016!
+        Me.Line5.Y1 = 0.6996063!
+        Me.Line5.Y2 = 0.9251968!
         '
         'Line42
         '
-        Me.Line42.Height = 8.596063!
+        Me.Line42.Height = 9.700394!
         Me.Line42.Left = 0.0!
         Me.Line42.LineWeight = 1.0!
         Me.Line42.Name = "Line42"
@@ -2049,1529 +1969,1516 @@ Partial Public Class TaxiKakuninReport
         Me.Line42.X1 = 0.0!
         Me.Line42.X2 = 0.0!
         Me.Line42.Y1 = 0.4740158!
-        Me.Line42.Y2 = 9.070079!
+        Me.Line42.Y2 = 10.17441!
         '
         'Line23
         '
-        Me.Line23.Height = 0.4000003!
+        Me.Line23.Height = 0.4511812!
         Me.Line23.Left = 1.612992!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
-        Me.Line23.Top = 0.8740157!
+        Me.Line23.Top = 0.9251968!
         Me.Line23.Width = 0.0!
         Me.Line23.X1 = 1.612992!
         Me.Line23.X2 = 1.612992!
-        Me.Line23.Y1 = 0.8740157!
-        Me.Line23.Y2 = 1.274016!
+        Me.Line23.Y1 = 0.9251968!
+        Me.Line23.Y2 = 1.376378!
         '
         'Line26
         '
-        Me.Line26.Height = 0.4000003!
+        Me.Line26.Height = 0.4511812!
         Me.Line26.Left = 2.194095!
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
-        Me.Line26.Top = 0.8740157!
+        Me.Line26.Top = 0.9251968!
         Me.Line26.Width = 0.0!
         Me.Line26.X1 = 2.194095!
         Me.Line26.X2 = 2.194095!
-        Me.Line26.Y1 = 0.8740157!
-        Me.Line26.Y2 = 1.274016!
+        Me.Line26.Y1 = 0.9251968!
+        Me.Line26.Y2 = 1.376378!
         '
         'Label21
         '
-        Me.Label21.Height = 0.2!
+        Me.Label21.Height = 0.2255906!
         Me.Label21.HyperLink = Nothing
         Me.Label21.Left = 3.236221!
         Me.Label21.Name = "Label21"
         Me.Label21.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label21.Text = "利用日"
-        Me.Label21.Top = 1.074016!
+        Me.Label21.Top = 1.150787!
         Me.Label21.Width = 0.3948819!
         '
         'ANS_TAXI_DATE_1
         '
         Me.ANS_TAXI_DATE_1.DataField = "ANS_TAXI_DATE_1"
-        Me.ANS_TAXI_DATE_1.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_1.Height = 0.2255906!
         Me.ANS_TAXI_DATE_1.Left = 3.631102!
         Me.ANS_TAXI_DATE_1.Name = "ANS_TAXI_DATE_1"
         Me.ANS_TAXI_DATE_1.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_1.Text = Nothing
-        Me.ANS_TAXI_DATE_1.Top = 1.074016!
+        Me.ANS_TAXI_DATE_1.Top = 1.150787!
         Me.ANS_TAXI_DATE_1.Width = 0.7472441!
         '
         'Label22
         '
-        Me.Label22.Height = 0.2!
+        Me.Label22.Height = 0.2255906!
         Me.Label22.HyperLink = Nothing
         Me.Label22.Left = 4.378346!
         Me.Label22.Name = "Label22"
         Me.Label22.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label22.Text = "券種"
-        Me.Label22.Top = 1.074016!
-        Me.Label22.Width = 0.2988192!
+        Me.Label22.Top = 1.150787!
+        Me.Label22.Width = 0.5464567!
         '
         'ANS_TAXI_KENSHU_1
         '
         Me.ANS_TAXI_KENSHU_1.DataField = "ANS_TAXI_KENSHU_1"
-        Me.ANS_TAXI_KENSHU_1.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_1.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_1.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_1.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_1.Name = "ANS_TAXI_KENSHU_1"
         Me.ANS_TAXI_KENSHU_1.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_1.Text = Nothing
-        Me.ANS_TAXI_KENSHU_1.Top = 1.074016!
+        Me.ANS_TAXI_KENSHU_1.Top = 1.150787!
         Me.ANS_TAXI_KENSHU_1.Width = 0.8944882!
         '
         'Label23
         '
-        Me.Label23.Height = 0.2!
+        Me.Label23.Height = 0.2255906!
         Me.Label23.HyperLink = Nothing
         Me.Label23.Left = 3.236221!
         Me.Label23.Name = "Label23"
         Me.Label23.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label23.Text = "番号"
-        Me.Label23.Top = 1.274016!
+        Me.Label23.Top = 1.376378!
         Me.Label23.Width = 0.3948819!
         '
         'ANS_TAXI_NO_1
         '
         Me.ANS_TAXI_NO_1.DataField = "ANS_TAXI_NO_1"
-        Me.ANS_TAXI_NO_1.Height = 0.1999998!
+        Me.ANS_TAXI_NO_1.Height = 0.2255906!
         Me.ANS_TAXI_NO_1.Left = 3.631102!
         Me.ANS_TAXI_NO_1.Name = "ANS_TAXI_NO_1"
         Me.ANS_TAXI_NO_1.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_1.Text = Nothing
-        Me.ANS_TAXI_NO_1.Top = 1.274016!
+        Me.ANS_TAXI_NO_1.Top = 1.376378!
         Me.ANS_TAXI_NO_1.Width = 0.7472441!
         '
         'ANS_TAXI_HAKKO_DATE_1
         '
         Me.ANS_TAXI_HAKKO_DATE_1.DataField = "ANS_TAXI_HAKKO_DATE_1"
-        Me.ANS_TAXI_HAKKO_DATE_1.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_1.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_1.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_1.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_1.Name = "ANS_TAXI_HAKKO_DATE_1"
         Me.ANS_TAXI_HAKKO_DATE_1.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_1.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_1.Top = 1.074016!
+        Me.ANS_TAXI_HAKKO_DATE_1.Top = 1.150787!
         Me.ANS_TAXI_HAKKO_DATE_1.Width = 0.7472441!
         '
         'Label25
         '
-        Me.Label25.Height = 0.2!
+        Me.Label25.Height = 0.2255906!
         Me.Label25.HyperLink = Nothing
-        Me.Label25.Left = 4.378347!
+        Me.Label25.Left = 5.966536!
         Me.Label25.Name = "Label25"
         Me.Label25.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label25.Text = "備考"
-        Me.Label25.Top = 1.274016!
-        Me.Label25.Width = 0.2988189!
+        Me.Label25.Top = 1.376378!
+        Me.Label25.Width = 0.3948819!
         '
         'ANS_TAXI_RMKS_1
         '
         Me.ANS_TAXI_RMKS_1.DataField = "ANS_TAXI_RMKS_1"
-        Me.ANS_TAXI_RMKS_1.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_1.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_1.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_1.Left = 6.361418!
         Me.ANS_TAXI_RMKS_1.Name = "ANS_TAXI_RMKS_1"
         Me.ANS_TAXI_RMKS_1.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_1.Text = Nothing
-        Me.ANS_TAXI_RMKS_1.Top = 1.274016!
-        Me.ANS_TAXI_RMKS_1.Width = 1.289371!
+        Me.ANS_TAXI_RMKS_1.Top = 1.387008!
+        Me.ANS_TAXI_RMKS_1.Width = 1.170079!
         '
         'Label27
         '
-        Me.Label27.Height = 0.2!
+        Me.Label27.Height = 0.2255906!
         Me.Label27.HyperLink = Nothing
         Me.Label27.Left = 3.236221!
         Me.Label27.Name = "Label27"
         Me.Label27.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label27.Text = "利用日"
-        Me.Label27.Top = 1.474016!
+        Me.Label27.Top = 1.612599!
         Me.Label27.Width = 0.3948819!
         '
         'ANS_TAXI_DATE_2
         '
         Me.ANS_TAXI_DATE_2.DataField = "ANS_TAXI_DATE_2"
-        Me.ANS_TAXI_DATE_2.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_2.Height = 0.2255906!
         Me.ANS_TAXI_DATE_2.Left = 3.631103!
         Me.ANS_TAXI_DATE_2.Name = "ANS_TAXI_DATE_2"
         Me.ANS_TAXI_DATE_2.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_2.Text = Nothing
-        Me.ANS_TAXI_DATE_2.Top = 1.474016!
+        Me.ANS_TAXI_DATE_2.Top = 1.612599!
         Me.ANS_TAXI_DATE_2.Width = 0.7472441!
         '
         'Label28
         '
-        Me.Label28.Height = 0.2!
+        Me.Label28.Height = 0.2255906!
         Me.Label28.HyperLink = Nothing
         Me.Label28.Left = 4.378346!
         Me.Label28.Name = "Label28"
         Me.Label28.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label28.Text = "券種"
-        Me.Label28.Top = 1.474016!
-        Me.Label28.Width = 0.2988189!
+        Me.Label28.Top = 1.612599!
+        Me.Label28.Width = 0.5464567!
         '
         'ANS_TAXI_KENSHU_2
         '
         Me.ANS_TAXI_KENSHU_2.DataField = "ANS_TAXI_KENSHU_2"
-        Me.ANS_TAXI_KENSHU_2.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_2.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_2.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_2.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_2.Name = "ANS_TAXI_KENSHU_2"
         Me.ANS_TAXI_KENSHU_2.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_2.Text = Nothing
-        Me.ANS_TAXI_KENSHU_2.Top = 1.474016!
+        Me.ANS_TAXI_KENSHU_2.Top = 1.612599!
         Me.ANS_TAXI_KENSHU_2.Width = 0.8944882!
         '
         'ANS_TAXI_NO_2
         '
         Me.ANS_TAXI_NO_2.DataField = "ANS_TAXI_NO_2"
-        Me.ANS_TAXI_NO_2.Height = 0.1999998!
+        Me.ANS_TAXI_NO_2.Height = 0.2255906!
         Me.ANS_TAXI_NO_2.Left = 3.631103!
         Me.ANS_TAXI_NO_2.Name = "ANS_TAXI_NO_2"
         Me.ANS_TAXI_NO_2.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_2.Text = Nothing
-        Me.ANS_TAXI_NO_2.Top = 1.674016!
+        Me.ANS_TAXI_NO_2.Top = 1.827559!
         Me.ANS_TAXI_NO_2.Width = 0.7472441!
         '
         'Label30
         '
-        Me.Label30.Height = 0.2102361!
+        Me.Label30.Height = 0.2255906!
         Me.Label30.HyperLink = Nothing
-        Me.Label30.Left = 5.571654!
+        Me.Label30.Left = 5.966536!
         Me.Label30.Name = "Label30"
         Me.Label30.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label30.Text = "発行日"
-        Me.Label30.Top = 1.474016!
+        Me.Label30.Top = 1.612599!
         Me.Label30.Width = 0.3948819!
         '
         'ANS_TAXI_HAKKO_DATE_2
         '
         Me.ANS_TAXI_HAKKO_DATE_2.DataField = "ANS_TAXI_HAKKO_DATE_2"
-        Me.ANS_TAXI_HAKKO_DATE_2.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_2.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_2.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_2.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_2.Name = "ANS_TAXI_HAKKO_DATE_2"
         Me.ANS_TAXI_HAKKO_DATE_2.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_2.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_2.Top = 1.474016!
+        Me.ANS_TAXI_HAKKO_DATE_2.Top = 1.612599!
         Me.ANS_TAXI_HAKKO_DATE_2.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_2
         '
         Me.ANS_TAXI_RMKS_2.DataField = "ANS_TAXI_RMKS_2"
-        Me.ANS_TAXI_RMKS_2.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_2.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_2.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_2.Left = 6.299212!
         Me.ANS_TAXI_RMKS_2.Name = "ANS_TAXI_RMKS_2"
         Me.ANS_TAXI_RMKS_2.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_2.Text = Nothing
-        Me.ANS_TAXI_RMKS_2.Top = 1.674016!
+        Me.ANS_TAXI_RMKS_2.Top = 1.827559!
         Me.ANS_TAXI_RMKS_2.Width = 1.28937!
         '
         'ANS_TAXI_DATE_3
         '
         Me.ANS_TAXI_DATE_3.DataField = "ANS_TAXI_DATE_3"
-        Me.ANS_TAXI_DATE_3.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_3.Height = 0.2255906!
         Me.ANS_TAXI_DATE_3.Left = 3.631103!
         Me.ANS_TAXI_DATE_3.Name = "ANS_TAXI_DATE_3"
         Me.ANS_TAXI_DATE_3.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_3.Text = Nothing
-        Me.ANS_TAXI_DATE_3.Top = 1.870079!
+        Me.ANS_TAXI_DATE_3.Top = 2.05315!
         Me.ANS_TAXI_DATE_3.Width = 0.7472441!
         '
         'Label34
         '
-        Me.Label34.Height = 0.2!
+        Me.Label34.Height = 0.2255906!
         Me.Label34.HyperLink = Nothing
         Me.Label34.Left = 4.378347!
         Me.Label34.Name = "Label34"
         Me.Label34.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label34.Text = "券種"
-        Me.Label34.Top = 1.870079!
-        Me.Label34.Width = 0.2988189!
+        Me.Label34.Top = 2.05315!
+        Me.Label34.Width = 0.5464567!
         '
         'ANS_TAXI_KENSHU_3
         '
         Me.ANS_TAXI_KENSHU_3.DataField = "ANS_TAXI_KENSHU_3"
-        Me.ANS_TAXI_KENSHU_3.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_3.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_3.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_3.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_3.Name = "ANS_TAXI_KENSHU_3"
         Me.ANS_TAXI_KENSHU_3.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_3.Text = Nothing
-        Me.ANS_TAXI_KENSHU_3.Top = 1.870079!
+        Me.ANS_TAXI_KENSHU_3.Top = 2.05315!
         Me.ANS_TAXI_KENSHU_3.Width = 0.8944882!
         '
         'ANS_TAXI_NO_3
         '
         Me.ANS_TAXI_NO_3.DataField = "ANS_TAXI_NO_3"
-        Me.ANS_TAXI_NO_3.Height = 0.1999998!
+        Me.ANS_TAXI_NO_3.Height = 0.2255906!
         Me.ANS_TAXI_NO_3.Left = 3.631103!
         Me.ANS_TAXI_NO_3.Name = "ANS_TAXI_NO_3"
         Me.ANS_TAXI_NO_3.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_3.Text = Nothing
-        Me.ANS_TAXI_NO_3.Top = 2.074016!
+        Me.ANS_TAXI_NO_3.Top = 2.27874!
         Me.ANS_TAXI_NO_3.Width = 0.7472441!
         '
         'Label36
         '
-        Me.Label36.Height = 0.2!
+        Me.Label36.Height = 0.2255906!
         Me.Label36.HyperLink = Nothing
-        Me.Label36.Left = 5.571654!
+        Me.Label36.Left = 5.966536!
         Me.Label36.Name = "Label36"
         Me.Label36.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label36.Text = "発行日"
-        Me.Label36.Top = 1.870079!
+        Me.Label36.Top = 2.05315!
         Me.Label36.Width = 0.3948819!
         '
         'ANS_TAXI_HAKKO_DATE_3
         '
         Me.ANS_TAXI_HAKKO_DATE_3.DataField = "ANS_TAXI_HAKKO_DATE_3"
-        Me.ANS_TAXI_HAKKO_DATE_3.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_3.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_3.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_3.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_3.Name = "ANS_TAXI_HAKKO_DATE_3"
         Me.ANS_TAXI_HAKKO_DATE_3.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_3.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_3.Top = 1.870079!
+        Me.ANS_TAXI_HAKKO_DATE_3.Top = 2.05315!
         Me.ANS_TAXI_HAKKO_DATE_3.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_3
         '
         Me.ANS_TAXI_RMKS_3.DataField = "ANS_TAXI_RMKS_3"
-        Me.ANS_TAXI_RMKS_3.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_3.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_3.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_3.Left = 6.299212!
         Me.ANS_TAXI_RMKS_3.Name = "ANS_TAXI_RMKS_3"
         Me.ANS_TAXI_RMKS_3.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_3.Text = Nothing
-        Me.ANS_TAXI_RMKS_3.Top = 2.070079!
+        Me.ANS_TAXI_RMKS_3.Top = 2.27874!
         Me.ANS_TAXI_RMKS_3.Width = 1.28937!
         '
         'ANS_TAXI_DATE_4
         '
         Me.ANS_TAXI_DATE_4.DataField = "ANS_TAXI_DATE_4"
-        Me.ANS_TAXI_DATE_4.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_4.Height = 0.2255906!
         Me.ANS_TAXI_DATE_4.Left = 3.631102!
         Me.ANS_TAXI_DATE_4.Name = "ANS_TAXI_DATE_4"
         Me.ANS_TAXI_DATE_4.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_4.Text = Nothing
-        Me.ANS_TAXI_DATE_4.Top = 2.270079!
+        Me.ANS_TAXI_DATE_4.Top = 2.504331!
         Me.ANS_TAXI_DATE_4.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_4
         '
         Me.ANS_TAXI_KENSHU_4.DataField = "ANS_TAXI_KENSHU_4"
-        Me.ANS_TAXI_KENSHU_4.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_4.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_4.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_4.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_4.Name = "ANS_TAXI_KENSHU_4"
         Me.ANS_TAXI_KENSHU_4.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_4.Text = Nothing
-        Me.ANS_TAXI_KENSHU_4.Top = 2.270079!
+        Me.ANS_TAXI_KENSHU_4.Top = 2.504331!
         Me.ANS_TAXI_KENSHU_4.Width = 0.8944882!
         '
         'ANS_TAXI_NO_4
         '
         Me.ANS_TAXI_NO_4.DataField = "ANS_TAXI_NO_4"
-        Me.ANS_TAXI_NO_4.Height = 0.1999998!
+        Me.ANS_TAXI_NO_4.Height = 0.2255906!
         Me.ANS_TAXI_NO_4.Left = 3.650787!
         Me.ANS_TAXI_NO_4.Name = "ANS_TAXI_NO_4"
         Me.ANS_TAXI_NO_4.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_4.Text = Nothing
-        Me.ANS_TAXI_NO_4.Top = 2.470079!
+        Me.ANS_TAXI_NO_4.Top = 2.729921!
         Me.ANS_TAXI_NO_4.Width = 0.7472437!
         '
         'ANS_TAXI_HAKKO_DATE_4
         '
         Me.ANS_TAXI_HAKKO_DATE_4.DataField = "ANS_TAXI_HAKKO_DATE_4"
-        Me.ANS_TAXI_HAKKO_DATE_4.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_4.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_4.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_4.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_4.Name = "ANS_TAXI_HAKKO_DATE_4"
         Me.ANS_TAXI_HAKKO_DATE_4.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_4.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_4.Top = 2.270079!
+        Me.ANS_TAXI_HAKKO_DATE_4.Top = 2.504331!
         Me.ANS_TAXI_HAKKO_DATE_4.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_4
         '
         Me.ANS_TAXI_RMKS_4.DataField = "ANS_TAXI_RMKS_4"
-        Me.ANS_TAXI_RMKS_4.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_4.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_4.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_4.Left = 6.299212!
         Me.ANS_TAXI_RMKS_4.Name = "ANS_TAXI_RMKS_4"
         Me.ANS_TAXI_RMKS_4.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_4.Text = Nothing
-        Me.ANS_TAXI_RMKS_4.Top = 2.470079!
+        Me.ANS_TAXI_RMKS_4.Top = 2.729921!
         Me.ANS_TAXI_RMKS_4.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_5
         '
         Me.ANS_TAXI_HAKKO_DATE_5.DataField = "ANS_TAXI_HAKKO_DATE_5"
-        Me.ANS_TAXI_HAKKO_DATE_5.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_5.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_5.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_5.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_5.Name = "ANS_TAXI_HAKKO_DATE_5"
         Me.ANS_TAXI_HAKKO_DATE_5.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_5.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_5.Top = 2.670079!
+        Me.ANS_TAXI_HAKKO_DATE_5.Top = 2.955512!
         Me.ANS_TAXI_HAKKO_DATE_5.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_5
         '
         Me.ANS_TAXI_DATE_5.DataField = "ANS_TAXI_DATE_5"
-        Me.ANS_TAXI_DATE_5.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_5.Height = 0.2255906!
         Me.ANS_TAXI_DATE_5.Left = 3.631103!
         Me.ANS_TAXI_DATE_5.Name = "ANS_TAXI_DATE_5"
         Me.ANS_TAXI_DATE_5.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_5.Text = Nothing
-        Me.ANS_TAXI_DATE_5.Top = 2.670079!
+        Me.ANS_TAXI_DATE_5.Top = 2.955512!
         Me.ANS_TAXI_DATE_5.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_5
         '
         Me.ANS_TAXI_KENSHU_5.DataField = "ANS_TAXI_KENSHU_5"
-        Me.ANS_TAXI_KENSHU_5.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_5.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_5.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_5.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_5.Name = "ANS_TAXI_KENSHU_5"
         Me.ANS_TAXI_KENSHU_5.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_5.Text = Nothing
-        Me.ANS_TAXI_KENSHU_5.Top = 2.670079!
+        Me.ANS_TAXI_KENSHU_5.Top = 2.955512!
         Me.ANS_TAXI_KENSHU_5.Width = 0.8944882!
         '
         'ANS_TAXI_NO_5
         '
         Me.ANS_TAXI_NO_5.DataField = "ANS_TAXI_NO_5"
-        Me.ANS_TAXI_NO_5.Height = 0.1999998!
+        Me.ANS_TAXI_NO_5.Height = 0.2255906!
         Me.ANS_TAXI_NO_5.Left = 3.631102!
         Me.ANS_TAXI_NO_5.Name = "ANS_TAXI_NO_5"
         Me.ANS_TAXI_NO_5.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_5.Text = Nothing
-        Me.ANS_TAXI_NO_5.Top = 2.870079!
+        Me.ANS_TAXI_NO_5.Top = 3.181102!
         Me.ANS_TAXI_NO_5.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_5
         '
         Me.ANS_TAXI_RMKS_5.DataField = "ANS_TAXI_RMKS_5"
-        Me.ANS_TAXI_RMKS_5.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_5.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_5.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_5.Left = 6.361418!
         Me.ANS_TAXI_RMKS_5.Name = "ANS_TAXI_RMKS_5"
         Me.ANS_TAXI_RMKS_5.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_5.Text = Nothing
-        Me.ANS_TAXI_RMKS_5.Top = 2.870079!
+        Me.ANS_TAXI_RMKS_5.Top = 3.181102!
         Me.ANS_TAXI_RMKS_5.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_6
         '
         Me.ANS_TAXI_HAKKO_DATE_6.DataField = "ANS_TAXI_HAKKO_DATE_6"
-        Me.ANS_TAXI_HAKKO_DATE_6.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_6.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_6.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_6.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_6.Name = "ANS_TAXI_HAKKO_DATE_6"
         Me.ANS_TAXI_HAKKO_DATE_6.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_6.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_6.Top = 3.070079!
+        Me.ANS_TAXI_HAKKO_DATE_6.Top = 3.406693!
         Me.ANS_TAXI_HAKKO_DATE_6.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_6
         '
         Me.ANS_TAXI_DATE_6.DataField = "ANS_TAXI_DATE_6"
-        Me.ANS_TAXI_DATE_6.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_6.Height = 0.2255906!
         Me.ANS_TAXI_DATE_6.Left = 3.631103!
         Me.ANS_TAXI_DATE_6.Name = "ANS_TAXI_DATE_6"
         Me.ANS_TAXI_DATE_6.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_6.Text = Nothing
-        Me.ANS_TAXI_DATE_6.Top = 3.070079!
+        Me.ANS_TAXI_DATE_6.Top = 3.406693!
         Me.ANS_TAXI_DATE_6.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_6
         '
         Me.ANS_TAXI_KENSHU_6.DataField = "ANS_TAXI_KENSHU_6"
-        Me.ANS_TAXI_KENSHU_6.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_6.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_6.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_6.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_6.Name = "ANS_TAXI_KENSHU_6"
         Me.ANS_TAXI_KENSHU_6.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_6.Text = Nothing
-        Me.ANS_TAXI_KENSHU_6.Top = 3.070079!
+        Me.ANS_TAXI_KENSHU_6.Top = 3.406693!
         Me.ANS_TAXI_KENSHU_6.Width = 0.8944882!
         '
         'ANS_TAXI_NO_6
         '
         Me.ANS_TAXI_NO_6.DataField = "ANS_TAXI_NO_6"
-        Me.ANS_TAXI_NO_6.Height = 0.1999998!
+        Me.ANS_TAXI_NO_6.Height = 0.2255906!
         Me.ANS_TAXI_NO_6.Left = 3.631103!
         Me.ANS_TAXI_NO_6.Name = "ANS_TAXI_NO_6"
         Me.ANS_TAXI_NO_6.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_6.Text = Nothing
-        Me.ANS_TAXI_NO_6.Top = 3.270079!
+        Me.ANS_TAXI_NO_6.Top = 3.632283!
         Me.ANS_TAXI_NO_6.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_6
         '
         Me.ANS_TAXI_RMKS_6.DataField = "ANS_TAXI_RMKS_6"
-        Me.ANS_TAXI_RMKS_6.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_6.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_6.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_6.Left = 6.361418!
         Me.ANS_TAXI_RMKS_6.Name = "ANS_TAXI_RMKS_6"
         Me.ANS_TAXI_RMKS_6.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_6.Text = Nothing
-        Me.ANS_TAXI_RMKS_6.Top = 3.270079!
+        Me.ANS_TAXI_RMKS_6.Top = 3.632283!
         Me.ANS_TAXI_RMKS_6.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_7
         '
         Me.ANS_TAXI_HAKKO_DATE_7.DataField = "ANS_TAXI_HAKKO_DATE_7"
-        Me.ANS_TAXI_HAKKO_DATE_7.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_7.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_7.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_7.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_7.Name = "ANS_TAXI_HAKKO_DATE_7"
         Me.ANS_TAXI_HAKKO_DATE_7.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_7.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_7.Top = 3.470079!
+        Me.ANS_TAXI_HAKKO_DATE_7.Top = 3.857874!
         Me.ANS_TAXI_HAKKO_DATE_7.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_7
         '
         Me.ANS_TAXI_DATE_7.DataField = "ANS_TAXI_DATE_7"
-        Me.ANS_TAXI_DATE_7.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_7.Height = 0.2255906!
         Me.ANS_TAXI_DATE_7.Left = 3.631103!
         Me.ANS_TAXI_DATE_7.Name = "ANS_TAXI_DATE_7"
         Me.ANS_TAXI_DATE_7.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_7.Text = Nothing
-        Me.ANS_TAXI_DATE_7.Top = 3.470079!
+        Me.ANS_TAXI_DATE_7.Top = 3.857874!
         Me.ANS_TAXI_DATE_7.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_7
         '
         Me.ANS_TAXI_KENSHU_7.DataField = "ANS_TAXI_KENSHU_7"
-        Me.ANS_TAXI_KENSHU_7.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_7.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_7.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_7.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_7.Name = "ANS_TAXI_KENSHU_7"
         Me.ANS_TAXI_KENSHU_7.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_7.Text = Nothing
-        Me.ANS_TAXI_KENSHU_7.Top = 3.470079!
+        Me.ANS_TAXI_KENSHU_7.Top = 3.857874!
         Me.ANS_TAXI_KENSHU_7.Width = 0.8944882!
         '
         'ANS_TAXI_NO_7
         '
         Me.ANS_TAXI_NO_7.DataField = "ANS_TAXI_NO_7"
-        Me.ANS_TAXI_NO_7.Height = 0.1999998!
+        Me.ANS_TAXI_NO_7.Height = 0.2255906!
         Me.ANS_TAXI_NO_7.Left = 3.631103!
         Me.ANS_TAXI_NO_7.Name = "ANS_TAXI_NO_7"
         Me.ANS_TAXI_NO_7.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_7.Text = Nothing
-        Me.ANS_TAXI_NO_7.Top = 3.670079!
+        Me.ANS_TAXI_NO_7.Top = 4.083465!
         Me.ANS_TAXI_NO_7.Width = 0.7692917!
         '
         'ANS_TAXI_RMKS_7
         '
         Me.ANS_TAXI_RMKS_7.DataField = "ANS_TAXI_RMKS_7"
-        Me.ANS_TAXI_RMKS_7.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_7.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_7.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_7.Left = 6.361418!
         Me.ANS_TAXI_RMKS_7.Name = "ANS_TAXI_RMKS_7"
         Me.ANS_TAXI_RMKS_7.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_7.Text = Nothing
-        Me.ANS_TAXI_RMKS_7.Top = 3.670079!
+        Me.ANS_TAXI_RMKS_7.Top = 4.083465!
         Me.ANS_TAXI_RMKS_7.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_8
         '
         Me.ANS_TAXI_HAKKO_DATE_8.DataField = "ANS_TAXI_HAKKO_DATE_8"
-        Me.ANS_TAXI_HAKKO_DATE_8.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_8.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_8.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_8.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_8.Name = "ANS_TAXI_HAKKO_DATE_8"
         Me.ANS_TAXI_HAKKO_DATE_8.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_8.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_8.Top = 3.870079!
+        Me.ANS_TAXI_HAKKO_DATE_8.Top = 4.309055!
         Me.ANS_TAXI_HAKKO_DATE_8.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_8
         '
         Me.ANS_TAXI_DATE_8.DataField = "ANS_TAXI_DATE_8"
-        Me.ANS_TAXI_DATE_8.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_8.Height = 0.2255906!
         Me.ANS_TAXI_DATE_8.Left = 3.631103!
         Me.ANS_TAXI_DATE_8.Name = "ANS_TAXI_DATE_8"
         Me.ANS_TAXI_DATE_8.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_8.Text = Nothing
-        Me.ANS_TAXI_DATE_8.Top = 3.870079!
+        Me.ANS_TAXI_DATE_8.Top = 4.309055!
         Me.ANS_TAXI_DATE_8.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_8
         '
         Me.ANS_TAXI_KENSHU_8.DataField = "ANS_TAXI_KENSHU_8"
-        Me.ANS_TAXI_KENSHU_8.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_8.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_8.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_8.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_8.Name = "ANS_TAXI_KENSHU_8"
         Me.ANS_TAXI_KENSHU_8.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_8.Text = Nothing
-        Me.ANS_TAXI_KENSHU_8.Top = 3.870079!
+        Me.ANS_TAXI_KENSHU_8.Top = 4.309055!
         Me.ANS_TAXI_KENSHU_8.Width = 0.8944882!
         '
         'ANS_TAXI_NO_8
         '
         Me.ANS_TAXI_NO_8.DataField = "ANS_TAXI_NO_8"
-        Me.ANS_TAXI_NO_8.Height = 0.1999998!
+        Me.ANS_TAXI_NO_8.Height = 0.2255906!
         Me.ANS_TAXI_NO_8.Left = 3.631103!
         Me.ANS_TAXI_NO_8.Name = "ANS_TAXI_NO_8"
         Me.ANS_TAXI_NO_8.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_8.Text = Nothing
-        Me.ANS_TAXI_NO_8.Top = 4.070079!
+        Me.ANS_TAXI_NO_8.Top = 4.534646!
         Me.ANS_TAXI_NO_8.Width = 0.7692917!
         '
         'ANS_TAXI_RMKS_8
         '
         Me.ANS_TAXI_RMKS_8.DataField = "ANS_TAXI_RMKS_8"
-        Me.ANS_TAXI_RMKS_8.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_8.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_8.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_8.Left = 6.361418!
         Me.ANS_TAXI_RMKS_8.Name = "ANS_TAXI_RMKS_8"
         Me.ANS_TAXI_RMKS_8.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_8.Text = Nothing
-        Me.ANS_TAXI_RMKS_8.Top = 4.070079!
+        Me.ANS_TAXI_RMKS_8.Top = 4.534646!
         Me.ANS_TAXI_RMKS_8.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_9
         '
         Me.ANS_TAXI_HAKKO_DATE_9.DataField = "ANS_TAXI_HAKKO_DATE_9"
-        Me.ANS_TAXI_HAKKO_DATE_9.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_9.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_9.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_9.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_9.Name = "ANS_TAXI_HAKKO_DATE_9"
         Me.ANS_TAXI_HAKKO_DATE_9.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_9.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_9.Top = 4.270079!
+        Me.ANS_TAXI_HAKKO_DATE_9.Top = 4.760236!
         Me.ANS_TAXI_HAKKO_DATE_9.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_9
         '
         Me.ANS_TAXI_DATE_9.DataField = "ANS_TAXI_DATE_9"
-        Me.ANS_TAXI_DATE_9.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_9.Height = 0.2255906!
         Me.ANS_TAXI_DATE_9.Left = 3.631103!
         Me.ANS_TAXI_DATE_9.Name = "ANS_TAXI_DATE_9"
         Me.ANS_TAXI_DATE_9.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_9.Text = Nothing
-        Me.ANS_TAXI_DATE_9.Top = 4.270079!
+        Me.ANS_TAXI_DATE_9.Top = 4.760236!
         Me.ANS_TAXI_DATE_9.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_9
         '
         Me.ANS_TAXI_KENSHU_9.DataField = "ANS_TAXI_KENSHU_9"
-        Me.ANS_TAXI_KENSHU_9.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_9.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_9.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_9.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_9.Name = "ANS_TAXI_KENSHU_9"
         Me.ANS_TAXI_KENSHU_9.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_9.Text = Nothing
-        Me.ANS_TAXI_KENSHU_9.Top = 4.270079!
+        Me.ANS_TAXI_KENSHU_9.Top = 4.760236!
         Me.ANS_TAXI_KENSHU_9.Width = 0.8944882!
         '
         'ANS_TAXI_NO_9
         '
         Me.ANS_TAXI_NO_9.DataField = "ANS_TAXI_NO_9"
-        Me.ANS_TAXI_NO_9.Height = 0.1999998!
+        Me.ANS_TAXI_NO_9.Height = 0.2255906!
         Me.ANS_TAXI_NO_9.Left = 3.631102!
         Me.ANS_TAXI_NO_9.Name = "ANS_TAXI_NO_9"
         Me.ANS_TAXI_NO_9.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_9.Text = Nothing
-        Me.ANS_TAXI_NO_9.Top = 4.470079!
+        Me.ANS_TAXI_NO_9.Top = 4.985826!
         Me.ANS_TAXI_NO_9.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_9
         '
         Me.ANS_TAXI_RMKS_9.DataField = "ANS_TAXI_RMKS_9"
-        Me.ANS_TAXI_RMKS_9.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_9.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_9.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_9.Left = 6.361418!
         Me.ANS_TAXI_RMKS_9.Name = "ANS_TAXI_RMKS_9"
         Me.ANS_TAXI_RMKS_9.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_9.Text = Nothing
-        Me.ANS_TAXI_RMKS_9.Top = 4.470079!
+        Me.ANS_TAXI_RMKS_9.Top = 4.985826!
         Me.ANS_TAXI_RMKS_9.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_10
         '
         Me.ANS_TAXI_HAKKO_DATE_10.DataField = "ANS_TAXI_HAKKO_DATE_10"
-        Me.ANS_TAXI_HAKKO_DATE_10.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_10.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_10.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_10.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_10.Name = "ANS_TAXI_HAKKO_DATE_10"
         Me.ANS_TAXI_HAKKO_DATE_10.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_10.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_10.Top = 4.670079!
+        Me.ANS_TAXI_HAKKO_DATE_10.Top = 5.211418!
         Me.ANS_TAXI_HAKKO_DATE_10.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_10
         '
         Me.ANS_TAXI_DATE_10.DataField = "ANS_TAXI_DATE_10"
-        Me.ANS_TAXI_DATE_10.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_10.Height = 0.2255906!
         Me.ANS_TAXI_DATE_10.Left = 3.631103!
         Me.ANS_TAXI_DATE_10.Name = "ANS_TAXI_DATE_10"
         Me.ANS_TAXI_DATE_10.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_10.Text = Nothing
-        Me.ANS_TAXI_DATE_10.Top = 4.670079!
+        Me.ANS_TAXI_DATE_10.Top = 5.211418!
         Me.ANS_TAXI_DATE_10.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_10
         '
         Me.ANS_TAXI_KENSHU_10.DataField = "ANS_TAXI_KENSHU_10"
-        Me.ANS_TAXI_KENSHU_10.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_10.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_10.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_10.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_10.Name = "ANS_TAXI_KENSHU_10"
         Me.ANS_TAXI_KENSHU_10.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_10.Text = Nothing
-        Me.ANS_TAXI_KENSHU_10.Top = 4.670079!
+        Me.ANS_TAXI_KENSHU_10.Top = 5.211418!
         Me.ANS_TAXI_KENSHU_10.Width = 0.8944882!
         '
         'ANS_TAXI_NO_10
         '
         Me.ANS_TAXI_NO_10.DataField = "ANS_TAXI_NO_10"
-        Me.ANS_TAXI_NO_10.Height = 0.1999998!
+        Me.ANS_TAXI_NO_10.Height = 0.2255906!
         Me.ANS_TAXI_NO_10.Left = 3.631103!
         Me.ANS_TAXI_NO_10.Name = "ANS_TAXI_NO_10"
         Me.ANS_TAXI_NO_10.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_10.Text = Nothing
-        Me.ANS_TAXI_NO_10.Top = 4.870079!
+        Me.ANS_TAXI_NO_10.Top = 5.437008!
         Me.ANS_TAXI_NO_10.Width = 0.7472441!
         '
         'ANS_TAXI_RMKS_10
         '
         Me.ANS_TAXI_RMKS_10.DataField = "ANS_TAXI_RMKS_10"
-        Me.ANS_TAXI_RMKS_10.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_10.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_10.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_10.Left = 6.361418!
         Me.ANS_TAXI_RMKS_10.Name = "ANS_TAXI_RMKS_10"
         Me.ANS_TAXI_RMKS_10.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_10.Text = Nothing
-        Me.ANS_TAXI_RMKS_10.Top = 4.870079!
+        Me.ANS_TAXI_RMKS_10.Top = 5.437008!
         Me.ANS_TAXI_RMKS_10.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_11
         '
         Me.ANS_TAXI_HAKKO_DATE_11.DataField = "ANS_TAXI_HAKKO_DATE_11"
-        Me.ANS_TAXI_HAKKO_DATE_11.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_11.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_11.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_11.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_11.Name = "ANS_TAXI_HAKKO_DATE_11"
         Me.ANS_TAXI_HAKKO_DATE_11.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_11.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_11.Top = 5.070079!
+        Me.ANS_TAXI_HAKKO_DATE_11.Top = 5.662599!
         Me.ANS_TAXI_HAKKO_DATE_11.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_11
         '
         Me.ANS_TAXI_DATE_11.DataField = "ANS_TAXI_DATE_11"
-        Me.ANS_TAXI_DATE_11.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_11.Height = 0.2255906!
         Me.ANS_TAXI_DATE_11.Left = 3.631103!
         Me.ANS_TAXI_DATE_11.Name = "ANS_TAXI_DATE_11"
         Me.ANS_TAXI_DATE_11.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_11.Text = Nothing
-        Me.ANS_TAXI_DATE_11.Top = 5.070079!
+        Me.ANS_TAXI_DATE_11.Top = 5.662599!
         Me.ANS_TAXI_DATE_11.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_11
         '
         Me.ANS_TAXI_KENSHU_11.DataField = "ANS_TAXI_KENSHU_11"
-        Me.ANS_TAXI_KENSHU_11.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_11.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_11.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_11.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_11.Name = "ANS_TAXI_KENSHU_11"
         Me.ANS_TAXI_KENSHU_11.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_11.Text = Nothing
-        Me.ANS_TAXI_KENSHU_11.Top = 5.070079!
+        Me.ANS_TAXI_KENSHU_11.Top = 5.662599!
         Me.ANS_TAXI_KENSHU_11.Width = 0.8944882!
         '
         'ANS_TAXI_NO_11
         '
         Me.ANS_TAXI_NO_11.DataField = "ANS_TAXI_NO_11"
-        Me.ANS_TAXI_NO_11.Height = 0.1999998!
+        Me.ANS_TAXI_NO_11.Height = 0.2255906!
         Me.ANS_TAXI_NO_11.Left = 3.631103!
         Me.ANS_TAXI_NO_11.Name = "ANS_TAXI_NO_11"
         Me.ANS_TAXI_NO_11.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_11.Text = Nothing
-        Me.ANS_TAXI_NO_11.Top = 5.270079!
+        Me.ANS_TAXI_NO_11.Top = 5.888189!
         Me.ANS_TAXI_NO_11.Width = 0.7692917!
         '
         'ANS_TAXI_RMKS_11
         '
         Me.ANS_TAXI_RMKS_11.DataField = "ANS_TAXI_RMKS_11"
-        Me.ANS_TAXI_RMKS_11.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_11.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_11.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_11.Left = 6.361418!
         Me.ANS_TAXI_RMKS_11.Name = "ANS_TAXI_RMKS_11"
         Me.ANS_TAXI_RMKS_11.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_11.Text = Nothing
-        Me.ANS_TAXI_RMKS_11.Top = 5.270079!
+        Me.ANS_TAXI_RMKS_11.Top = 5.888189!
         Me.ANS_TAXI_RMKS_11.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_12
         '
         Me.ANS_TAXI_HAKKO_DATE_12.DataField = "ANS_TAXI_HAKKO_DATE_12"
-        Me.ANS_TAXI_HAKKO_DATE_12.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_12.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_12.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_12.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_12.Name = "ANS_TAXI_HAKKO_DATE_12"
         Me.ANS_TAXI_HAKKO_DATE_12.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_12.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_12.Top = 5.470079!
+        Me.ANS_TAXI_HAKKO_DATE_12.Top = 6.11378!
         Me.ANS_TAXI_HAKKO_DATE_12.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_12
         '
         Me.ANS_TAXI_DATE_12.DataField = "ANS_TAXI_DATE_12"
-        Me.ANS_TAXI_DATE_12.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_12.Height = 0.2255906!
         Me.ANS_TAXI_DATE_12.Left = 3.631102!
         Me.ANS_TAXI_DATE_12.Name = "ANS_TAXI_DATE_12"
         Me.ANS_TAXI_DATE_12.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_12.Text = Nothing
-        Me.ANS_TAXI_DATE_12.Top = 5.470079!
+        Me.ANS_TAXI_DATE_12.Top = 6.11378!
         Me.ANS_TAXI_DATE_12.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_12
         '
         Me.ANS_TAXI_KENSHU_12.DataField = "ANS_TAXI_KENSHU_12"
-        Me.ANS_TAXI_KENSHU_12.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_12.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_12.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_12.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_12.Name = "ANS_TAXI_KENSHU_12"
         Me.ANS_TAXI_KENSHU_12.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_12.Text = Nothing
-        Me.ANS_TAXI_KENSHU_12.Top = 5.470079!
+        Me.ANS_TAXI_KENSHU_12.Top = 6.11378!
         Me.ANS_TAXI_KENSHU_12.Width = 0.8944882!
         '
         'ANS_TAXI_NO_12
         '
         Me.ANS_TAXI_NO_12.DataField = "ANS_TAXI_NO_12"
-        Me.ANS_TAXI_NO_12.Height = 0.1999998!
+        Me.ANS_TAXI_NO_12.Height = 0.2255906!
         Me.ANS_TAXI_NO_12.Left = 3.631102!
         Me.ANS_TAXI_NO_12.Name = "ANS_TAXI_NO_12"
         Me.ANS_TAXI_NO_12.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_12.Text = Nothing
-        Me.ANS_TAXI_NO_12.Top = 5.670079!
+        Me.ANS_TAXI_NO_12.Top = 6.33937!
         Me.ANS_TAXI_NO_12.Width = 0.7692917!
         '
         'Label130
         '
-        Me.Label130.Height = 0.4!
+        Me.Label130.Height = 0.4511811!
         Me.Label130.HyperLink = Nothing
         Me.Label130.Left = 2.787402!
         Me.Label130.Name = "Label130"
         Me.Label130.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label130.Text = "ﾀｸﾁｹ12"
-        Me.Label130.Top = 5.470079!
+        Me.Label130.Top = 6.11378!
         Me.Label130.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_12
         '
         Me.ANS_TAXI_RMKS_12.DataField = "ANS_TAXI_RMKS_12"
-        Me.ANS_TAXI_RMKS_12.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_12.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_12.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_12.Left = 6.361418!
         Me.ANS_TAXI_RMKS_12.Name = "ANS_TAXI_RMKS_12"
         Me.ANS_TAXI_RMKS_12.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_12.Text = Nothing
-        Me.ANS_TAXI_RMKS_12.Top = 5.670079!
+        Me.ANS_TAXI_RMKS_12.Top = 6.33937!
         Me.ANS_TAXI_RMKS_12.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_13
         '
         Me.ANS_TAXI_HAKKO_DATE_13.DataField = "ANS_TAXI_HAKKO_DATE_13"
-        Me.ANS_TAXI_HAKKO_DATE_13.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_13.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_13.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_13.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_13.Name = "ANS_TAXI_HAKKO_DATE_13"
         Me.ANS_TAXI_HAKKO_DATE_13.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_13.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_13.Top = 5.870079!
+        Me.ANS_TAXI_HAKKO_DATE_13.Top = 6.56496!
         Me.ANS_TAXI_HAKKO_DATE_13.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_13
         '
         Me.ANS_TAXI_DATE_13.DataField = "ANS_TAXI_DATE_13"
-        Me.ANS_TAXI_DATE_13.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_13.Height = 0.2255906!
         Me.ANS_TAXI_DATE_13.Left = 3.631102!
         Me.ANS_TAXI_DATE_13.Name = "ANS_TAXI_DATE_13"
         Me.ANS_TAXI_DATE_13.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_13.Text = Nothing
-        Me.ANS_TAXI_DATE_13.Top = 5.870079!
+        Me.ANS_TAXI_DATE_13.Top = 6.56496!
         Me.ANS_TAXI_DATE_13.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_13
         '
         Me.ANS_TAXI_KENSHU_13.DataField = "ANS_TAXI_KENSHU_13"
-        Me.ANS_TAXI_KENSHU_13.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_13.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_13.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_13.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_13.Name = "ANS_TAXI_KENSHU_13"
         Me.ANS_TAXI_KENSHU_13.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_13.Text = Nothing
-        Me.ANS_TAXI_KENSHU_13.Top = 5.870079!
+        Me.ANS_TAXI_KENSHU_13.Top = 6.56496!
         Me.ANS_TAXI_KENSHU_13.Width = 0.8944882!
         '
         'ANS_TAXI_NO_13
         '
         Me.ANS_TAXI_NO_13.DataField = "ANS_TAXI_NO_13"
-        Me.ANS_TAXI_NO_13.Height = 0.1999998!
+        Me.ANS_TAXI_NO_13.Height = 0.2255906!
         Me.ANS_TAXI_NO_13.Left = 3.631103!
         Me.ANS_TAXI_NO_13.Name = "ANS_TAXI_NO_13"
         Me.ANS_TAXI_NO_13.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_13.Text = Nothing
-        Me.ANS_TAXI_NO_13.Top = 6.070079!
+        Me.ANS_TAXI_NO_13.Top = 6.790551!
         Me.ANS_TAXI_NO_13.Width = 0.7692917!
         '
         'Label136
         '
-        Me.Label136.Height = 0.4!
+        Me.Label136.Height = 0.4511811!
         Me.Label136.HyperLink = Nothing
         Me.Label136.Left = 2.787402!
         Me.Label136.Name = "Label136"
         Me.Label136.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label136.Text = "ﾀｸﾁｹ13"
-        Me.Label136.Top = 5.870079!
+        Me.Label136.Top = 6.56496!
         Me.Label136.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_13
         '
         Me.ANS_TAXI_RMKS_13.DataField = "ANS_TAXI_RMKS_13"
-        Me.ANS_TAXI_RMKS_13.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_13.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_13.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_13.Left = 6.361418!
         Me.ANS_TAXI_RMKS_13.Name = "ANS_TAXI_RMKS_13"
         Me.ANS_TAXI_RMKS_13.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_13.Text = Nothing
-        Me.ANS_TAXI_RMKS_13.Top = 6.070079!
+        Me.ANS_TAXI_RMKS_13.Top = 6.790551!
         Me.ANS_TAXI_RMKS_13.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_14
         '
         Me.ANS_TAXI_HAKKO_DATE_14.DataField = "ANS_TAXI_HAKKO_DATE_14"
-        Me.ANS_TAXI_HAKKO_DATE_14.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_14.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_14.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_14.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_14.Name = "ANS_TAXI_HAKKO_DATE_14"
         Me.ANS_TAXI_HAKKO_DATE_14.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_14.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_14.Top = 6.270079!
+        Me.ANS_TAXI_HAKKO_DATE_14.Top = 7.016141!
         Me.ANS_TAXI_HAKKO_DATE_14.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_14
         '
         Me.ANS_TAXI_DATE_14.DataField = "ANS_TAXI_DATE_14"
-        Me.ANS_TAXI_DATE_14.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_14.Height = 0.2255906!
         Me.ANS_TAXI_DATE_14.Left = 3.631103!
         Me.ANS_TAXI_DATE_14.Name = "ANS_TAXI_DATE_14"
         Me.ANS_TAXI_DATE_14.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_14.Text = Nothing
-        Me.ANS_TAXI_DATE_14.Top = 6.270079!
+        Me.ANS_TAXI_DATE_14.Top = 7.016141!
         Me.ANS_TAXI_DATE_14.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_14
         '
         Me.ANS_TAXI_KENSHU_14.DataField = "ANS_TAXI_KENSHU_14"
-        Me.ANS_TAXI_KENSHU_14.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_14.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_14.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_14.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_14.Name = "ANS_TAXI_KENSHU_14"
         Me.ANS_TAXI_KENSHU_14.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_14.Text = Nothing
-        Me.ANS_TAXI_KENSHU_14.Top = 6.270079!
+        Me.ANS_TAXI_KENSHU_14.Top = 7.016141!
         Me.ANS_TAXI_KENSHU_14.Width = 0.8944882!
         '
         'ANS_TAXI_NO_14
         '
         Me.ANS_TAXI_NO_14.DataField = "ANS_TAXI_NO_14"
-        Me.ANS_TAXI_NO_14.Height = 0.1999998!
+        Me.ANS_TAXI_NO_14.Height = 0.2255906!
         Me.ANS_TAXI_NO_14.Left = 3.631103!
         Me.ANS_TAXI_NO_14.Name = "ANS_TAXI_NO_14"
         Me.ANS_TAXI_NO_14.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_14.Text = Nothing
-        Me.ANS_TAXI_NO_14.Top = 6.470079!
+        Me.ANS_TAXI_NO_14.Top = 7.241732!
         Me.ANS_TAXI_NO_14.Width = 0.7692917!
         '
         'Label142
         '
-        Me.Label142.Height = 0.4!
+        Me.Label142.Height = 0.4511811!
         Me.Label142.HyperLink = Nothing
         Me.Label142.Left = 2.787402!
         Me.Label142.Name = "Label142"
         Me.Label142.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label142.Text = "ﾀｸﾁｹ14"
-        Me.Label142.Top = 6.270079!
+        Me.Label142.Top = 7.016141!
         Me.Label142.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_14
         '
         Me.ANS_TAXI_RMKS_14.DataField = "ANS_TAXI_RMKS_14"
-        Me.ANS_TAXI_RMKS_14.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_14.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_14.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_14.Left = 6.361418!
         Me.ANS_TAXI_RMKS_14.Name = "ANS_TAXI_RMKS_14"
         Me.ANS_TAXI_RMKS_14.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_14.Text = Nothing
-        Me.ANS_TAXI_RMKS_14.Top = 6.470079!
+        Me.ANS_TAXI_RMKS_14.Top = 7.241732!
         Me.ANS_TAXI_RMKS_14.Width = 1.28937!
         '
         'ANS_TAXI_RMKS_15
         '
         Me.ANS_TAXI_RMKS_15.DataField = "ANS_TAXI_RMKS_15"
-        Me.ANS_TAXI_RMKS_15.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_15.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_15.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_15.Left = 6.361418!
         Me.ANS_TAXI_RMKS_15.Name = "ANS_TAXI_RMKS_15"
         Me.ANS_TAXI_RMKS_15.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_15.Text = Nothing
-        Me.ANS_TAXI_RMKS_15.Top = 6.870079!
+        Me.ANS_TAXI_RMKS_15.Top = 7.692914!
         Me.ANS_TAXI_RMKS_15.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_15
         '
         Me.ANS_TAXI_HAKKO_DATE_15.DataField = "ANS_TAXI_HAKKO_DATE_15"
-        Me.ANS_TAXI_HAKKO_DATE_15.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_15.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_15.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_15.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_15.Name = "ANS_TAXI_HAKKO_DATE_15"
         Me.ANS_TAXI_HAKKO_DATE_15.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_15.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_15.Top = 6.670079!
+        Me.ANS_TAXI_HAKKO_DATE_15.Top = 7.467322!
         Me.ANS_TAXI_HAKKO_DATE_15.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_15
         '
         Me.ANS_TAXI_DATE_15.DataField = "ANS_TAXI_DATE_15"
-        Me.ANS_TAXI_DATE_15.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_15.Height = 0.2255906!
         Me.ANS_TAXI_DATE_15.Left = 3.631103!
         Me.ANS_TAXI_DATE_15.Name = "ANS_TAXI_DATE_15"
         Me.ANS_TAXI_DATE_15.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_15.Text = Nothing
-        Me.ANS_TAXI_DATE_15.Top = 6.670079!
+        Me.ANS_TAXI_DATE_15.Top = 7.467322!
         Me.ANS_TAXI_DATE_15.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_15
         '
         Me.ANS_TAXI_KENSHU_15.DataField = "ANS_TAXI_KENSHU_15"
-        Me.ANS_TAXI_KENSHU_15.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_15.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_15.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_15.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_15.Name = "ANS_TAXI_KENSHU_15"
         Me.ANS_TAXI_KENSHU_15.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_15.Text = Nothing
-        Me.ANS_TAXI_KENSHU_15.Top = 6.670079!
+        Me.ANS_TAXI_KENSHU_15.Top = 7.467322!
         Me.ANS_TAXI_KENSHU_15.Width = 0.8944882!
         '
         'ANS_TAXI_NO_15
         '
         Me.ANS_TAXI_NO_15.DataField = "ANS_TAXI_NO_15"
-        Me.ANS_TAXI_NO_15.Height = 0.1999998!
+        Me.ANS_TAXI_NO_15.Height = 0.2255906!
         Me.ANS_TAXI_NO_15.Left = 3.631103!
         Me.ANS_TAXI_NO_15.Name = "ANS_TAXI_NO_15"
         Me.ANS_TAXI_NO_15.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_15.Text = Nothing
-        Me.ANS_TAXI_NO_15.Top = 6.870079!
+        Me.ANS_TAXI_NO_15.Top = 7.692914!
         Me.ANS_TAXI_NO_15.Width = 0.7692917!
         '
         'Label148
         '
-        Me.Label148.Height = 0.4!
+        Me.Label148.Height = 0.4511811!
         Me.Label148.HyperLink = Nothing
         Me.Label148.Left = 2.787402!
         Me.Label148.Name = "Label148"
         Me.Label148.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label148.Text = "ﾀｸﾁｹ15"
-        Me.Label148.Top = 6.670079!
+        Me.Label148.Top = 7.467322!
         Me.Label148.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_16
         '
         Me.ANS_TAXI_RMKS_16.DataField = "ANS_TAXI_RMKS_16"
-        Me.ANS_TAXI_RMKS_16.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_16.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_16.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_16.Left = 6.361418!
         Me.ANS_TAXI_RMKS_16.Name = "ANS_TAXI_RMKS_16"
         Me.ANS_TAXI_RMKS_16.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_16.Text = Nothing
-        Me.ANS_TAXI_RMKS_16.Top = 7.270079!
+        Me.ANS_TAXI_RMKS_16.Top = 8.144094!
         Me.ANS_TAXI_RMKS_16.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_16
         '
         Me.ANS_TAXI_HAKKO_DATE_16.DataField = "ANS_TAXI_HAKKO_DATE_16"
-        Me.ANS_TAXI_HAKKO_DATE_16.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_16.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_16.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_16.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_16.Name = "ANS_TAXI_HAKKO_DATE_16"
         Me.ANS_TAXI_HAKKO_DATE_16.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_16.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_16.Top = 7.070079!
+        Me.ANS_TAXI_HAKKO_DATE_16.Top = 7.918504!
         Me.ANS_TAXI_HAKKO_DATE_16.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_16
         '
         Me.ANS_TAXI_DATE_16.DataField = "ANS_TAXI_DATE_16"
-        Me.ANS_TAXI_DATE_16.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_16.Height = 0.2255906!
         Me.ANS_TAXI_DATE_16.Left = 3.631103!
         Me.ANS_TAXI_DATE_16.Name = "ANS_TAXI_DATE_16"
         Me.ANS_TAXI_DATE_16.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_16.Text = Nothing
-        Me.ANS_TAXI_DATE_16.Top = 7.070079!
+        Me.ANS_TAXI_DATE_16.Top = 7.918504!
         Me.ANS_TAXI_DATE_16.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_16
         '
         Me.ANS_TAXI_KENSHU_16.DataField = "ANS_TAXI_KENSHU_16"
-        Me.ANS_TAXI_KENSHU_16.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_16.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_16.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_16.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_16.Name = "ANS_TAXI_KENSHU_16"
         Me.ANS_TAXI_KENSHU_16.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_16.Text = Nothing
-        Me.ANS_TAXI_KENSHU_16.Top = 7.070079!
+        Me.ANS_TAXI_KENSHU_16.Top = 7.918504!
         Me.ANS_TAXI_KENSHU_16.Width = 0.8944882!
         '
         'ANS_TAXI_NO_16
         '
         Me.ANS_TAXI_NO_16.DataField = "ANS_TAXI_NO_16"
-        Me.ANS_TAXI_NO_16.Height = 0.1999998!
+        Me.ANS_TAXI_NO_16.Height = 0.2255906!
         Me.ANS_TAXI_NO_16.Left = 3.631103!
         Me.ANS_TAXI_NO_16.Name = "ANS_TAXI_NO_16"
         Me.ANS_TAXI_NO_16.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_16.Text = Nothing
-        Me.ANS_TAXI_NO_16.Top = 7.270079!
+        Me.ANS_TAXI_NO_16.Top = 8.144094!
         Me.ANS_TAXI_NO_16.Width = 0.7692917!
         '
         'Label154
         '
-        Me.Label154.Height = 0.4!
+        Me.Label154.Height = 0.4511811!
         Me.Label154.HyperLink = Nothing
         Me.Label154.Left = 2.787402!
         Me.Label154.Name = "Label154"
         Me.Label154.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label154.Text = "ﾀｸﾁｹ16"
-        Me.Label154.Top = 7.070079!
+        Me.Label154.Top = 7.918504!
         Me.Label154.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_17
         '
         Me.ANS_TAXI_RMKS_17.DataField = "ANS_TAXI_RMKS_17"
-        Me.ANS_TAXI_RMKS_17.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_17.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_17.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_17.Left = 6.361418!
         Me.ANS_TAXI_RMKS_17.Name = "ANS_TAXI_RMKS_17"
         Me.ANS_TAXI_RMKS_17.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_17.Text = Nothing
-        Me.ANS_TAXI_RMKS_17.Top = 7.670079!
+        Me.ANS_TAXI_RMKS_17.Top = 8.595276!
         Me.ANS_TAXI_RMKS_17.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_17
         '
         Me.ANS_TAXI_HAKKO_DATE_17.DataField = "ANS_TAXI_HAKKO_DATE_17"
-        Me.ANS_TAXI_HAKKO_DATE_17.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_17.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_17.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_17.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_17.Name = "ANS_TAXI_HAKKO_DATE_17"
         Me.ANS_TAXI_HAKKO_DATE_17.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_17.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_17.Top = 7.470079!
+        Me.ANS_TAXI_HAKKO_DATE_17.Top = 8.369685!
         Me.ANS_TAXI_HAKKO_DATE_17.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_17
         '
         Me.ANS_TAXI_DATE_17.DataField = "ANS_TAXI_DATE_17"
-        Me.ANS_TAXI_DATE_17.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_17.Height = 0.2255906!
         Me.ANS_TAXI_DATE_17.Left = 3.631103!
         Me.ANS_TAXI_DATE_17.Name = "ANS_TAXI_DATE_17"
         Me.ANS_TAXI_DATE_17.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_17.Text = Nothing
-        Me.ANS_TAXI_DATE_17.Top = 7.470079!
+        Me.ANS_TAXI_DATE_17.Top = 8.369685!
         Me.ANS_TAXI_DATE_17.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_17
         '
         Me.ANS_TAXI_KENSHU_17.DataField = "ANS_TAXI_KENSHU_17"
-        Me.ANS_TAXI_KENSHU_17.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_17.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_17.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_17.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_17.Name = "ANS_TAXI_KENSHU_17"
         Me.ANS_TAXI_KENSHU_17.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_17.Text = Nothing
-        Me.ANS_TAXI_KENSHU_17.Top = 7.470079!
+        Me.ANS_TAXI_KENSHU_17.Top = 8.369685!
         Me.ANS_TAXI_KENSHU_17.Width = 0.8944882!
         '
         'ANS_TAXI_NO_17
         '
         Me.ANS_TAXI_NO_17.DataField = "ANS_TAXI_NO_17"
-        Me.ANS_TAXI_NO_17.Height = 0.1999998!
+        Me.ANS_TAXI_NO_17.Height = 0.2255906!
         Me.ANS_TAXI_NO_17.Left = 3.631103!
         Me.ANS_TAXI_NO_17.Name = "ANS_TAXI_NO_17"
         Me.ANS_TAXI_NO_17.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_17.Text = Nothing
-        Me.ANS_TAXI_NO_17.Top = 7.670079!
+        Me.ANS_TAXI_NO_17.Top = 8.595276!
         Me.ANS_TAXI_NO_17.Width = 0.7692917!
         '
         'Label160
         '
-        Me.Label160.Height = 0.4!
+        Me.Label160.Height = 0.4511811!
         Me.Label160.HyperLink = Nothing
         Me.Label160.Left = 2.787402!
         Me.Label160.Name = "Label160"
         Me.Label160.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label160.Text = "ﾀｸﾁｹ17"
-        Me.Label160.Top = 7.470079!
+        Me.Label160.Top = 8.369685!
         Me.Label160.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_18
         '
         Me.ANS_TAXI_RMKS_18.DataField = "ANS_TAXI_RMKS_18"
-        Me.ANS_TAXI_RMKS_18.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_18.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_18.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_18.Left = 6.361418!
         Me.ANS_TAXI_RMKS_18.Name = "ANS_TAXI_RMKS_18"
         Me.ANS_TAXI_RMKS_18.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_18.Text = Nothing
-        Me.ANS_TAXI_RMKS_18.Top = 8.070079!
+        Me.ANS_TAXI_RMKS_18.Top = 9.046457!
         Me.ANS_TAXI_RMKS_18.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_18
         '
         Me.ANS_TAXI_HAKKO_DATE_18.DataField = "ANS_TAXI_HAKKO_DATE_18"
-        Me.ANS_TAXI_HAKKO_DATE_18.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_18.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_18.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_18.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_18.Name = "ANS_TAXI_HAKKO_DATE_18"
         Me.ANS_TAXI_HAKKO_DATE_18.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_18.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_18.Top = 7.87008!
+        Me.ANS_TAXI_HAKKO_DATE_18.Top = 8.820867!
         Me.ANS_TAXI_HAKKO_DATE_18.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_18
         '
         Me.ANS_TAXI_DATE_18.DataField = "ANS_TAXI_DATE_18"
-        Me.ANS_TAXI_DATE_18.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_18.Height = 0.2255906!
         Me.ANS_TAXI_DATE_18.Left = 3.631103!
         Me.ANS_TAXI_DATE_18.Name = "ANS_TAXI_DATE_18"
         Me.ANS_TAXI_DATE_18.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_18.Text = Nothing
-        Me.ANS_TAXI_DATE_18.Top = 7.87008!
+        Me.ANS_TAXI_DATE_18.Top = 8.820867!
         Me.ANS_TAXI_DATE_18.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_18
         '
         Me.ANS_TAXI_KENSHU_18.DataField = "ANS_TAXI_KENSHU_18"
-        Me.ANS_TAXI_KENSHU_18.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_18.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_18.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_18.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_18.Name = "ANS_TAXI_KENSHU_18"
         Me.ANS_TAXI_KENSHU_18.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_18.Text = Nothing
-        Me.ANS_TAXI_KENSHU_18.Top = 7.87008!
+        Me.ANS_TAXI_KENSHU_18.Top = 8.820867!
         Me.ANS_TAXI_KENSHU_18.Width = 0.8944882!
         '
         'ANS_TAXI_NO_18
         '
         Me.ANS_TAXI_NO_18.DataField = "ANS_TAXI_NO_18"
-        Me.ANS_TAXI_NO_18.Height = 0.1999998!
+        Me.ANS_TAXI_NO_18.Height = 0.2255906!
         Me.ANS_TAXI_NO_18.Left = 3.631103!
         Me.ANS_TAXI_NO_18.Name = "ANS_TAXI_NO_18"
         Me.ANS_TAXI_NO_18.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_18.Text = Nothing
-        Me.ANS_TAXI_NO_18.Top = 8.070079!
+        Me.ANS_TAXI_NO_18.Top = 9.046457!
         Me.ANS_TAXI_NO_18.Width = 0.7692917!
         '
         'Label166
         '
-        Me.Label166.Height = 0.4!
+        Me.Label166.Height = 0.4511811!
         Me.Label166.HyperLink = Nothing
         Me.Label166.Left = 2.787402!
         Me.Label166.Name = "Label166"
         Me.Label166.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label166.Text = "ﾀｸﾁｹ18"
-        Me.Label166.Top = 7.870079!
+        Me.Label166.Top = 8.820867!
         Me.Label166.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_19
         '
         Me.ANS_TAXI_RMKS_19.DataField = "ANS_TAXI_RMKS_19"
-        Me.ANS_TAXI_RMKS_19.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_19.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_19.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_19.Left = 6.361418!
         Me.ANS_TAXI_RMKS_19.Name = "ANS_TAXI_RMKS_19"
         Me.ANS_TAXI_RMKS_19.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_19.Text = Nothing
-        Me.ANS_TAXI_RMKS_19.Top = 8.470079!
+        Me.ANS_TAXI_RMKS_19.Top = 9.497638!
         Me.ANS_TAXI_RMKS_19.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_19
         '
         Me.ANS_TAXI_HAKKO_DATE_19.DataField = "ANS_TAXI_HAKKO_DATE_19"
-        Me.ANS_TAXI_HAKKO_DATE_19.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_19.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_19.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_19.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_19.Name = "ANS_TAXI_HAKKO_DATE_19"
         Me.ANS_TAXI_HAKKO_DATE_19.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_19.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_19.Top = 8.27008!
+        Me.ANS_TAXI_HAKKO_DATE_19.Top = 9.272048!
         Me.ANS_TAXI_HAKKO_DATE_19.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_19
         '
         Me.ANS_TAXI_DATE_19.DataField = "ANS_TAXI_DATE_19"
-        Me.ANS_TAXI_DATE_19.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_19.Height = 0.2255906!
         Me.ANS_TAXI_DATE_19.Left = 3.631103!
         Me.ANS_TAXI_DATE_19.Name = "ANS_TAXI_DATE_19"
         Me.ANS_TAXI_DATE_19.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_19.Text = Nothing
-        Me.ANS_TAXI_DATE_19.Top = 8.27008!
+        Me.ANS_TAXI_DATE_19.Top = 9.272048!
         Me.ANS_TAXI_DATE_19.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_19
         '
         Me.ANS_TAXI_KENSHU_19.DataField = "ANS_TAXI_KENSHU_19"
-        Me.ANS_TAXI_KENSHU_19.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_19.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_19.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_19.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_19.Name = "ANS_TAXI_KENSHU_19"
         Me.ANS_TAXI_KENSHU_19.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_19.Text = Nothing
-        Me.ANS_TAXI_KENSHU_19.Top = 8.27008!
+        Me.ANS_TAXI_KENSHU_19.Top = 9.272048!
         Me.ANS_TAXI_KENSHU_19.Width = 0.8944882!
         '
         'ANS_TAXI_NO_19
         '
         Me.ANS_TAXI_NO_19.DataField = "ANS_TAXI_NO_19"
-        Me.ANS_TAXI_NO_19.Height = 0.1999998!
+        Me.ANS_TAXI_NO_19.Height = 0.2255906!
         Me.ANS_TAXI_NO_19.Left = 3.631103!
         Me.ANS_TAXI_NO_19.Name = "ANS_TAXI_NO_19"
         Me.ANS_TAXI_NO_19.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_19.Text = Nothing
-        Me.ANS_TAXI_NO_19.Top = 8.470079!
+        Me.ANS_TAXI_NO_19.Top = 9.497638!
         Me.ANS_TAXI_NO_19.Width = 0.7692917!
         '
         'Label172
         '
-        Me.Label172.Height = 0.4!
+        Me.Label172.Height = 0.4511811!
         Me.Label172.HyperLink = Nothing
         Me.Label172.Left = 2.787402!
         Me.Label172.Name = "Label172"
         Me.Label172.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label172.Text = "ﾀｸﾁｹ19"
-        Me.Label172.Top = 8.270079!
+        Me.Label172.Top = 9.272048!
         Me.Label172.Width = 0.4488189!
         '
         'ANS_TAXI_RMKS_20
         '
         Me.ANS_TAXI_RMKS_20.DataField = "ANS_TAXI_RMKS_20"
-        Me.ANS_TAXI_RMKS_20.Height = 0.1999998!
-        Me.ANS_TAXI_RMKS_20.Left = 4.677166!
+        Me.ANS_TAXI_RMKS_20.Height = 0.2255906!
+        Me.ANS_TAXI_RMKS_20.Left = 6.361418!
         Me.ANS_TAXI_RMKS_20.Name = "ANS_TAXI_RMKS_20"
         Me.ANS_TAXI_RMKS_20.Style = "vertical-align: middle"
         Me.ANS_TAXI_RMKS_20.Text = Nothing
-        Me.ANS_TAXI_RMKS_20.Top = 8.870079!
+        Me.ANS_TAXI_RMKS_20.Top = 9.948819!
         Me.ANS_TAXI_RMKS_20.Width = 1.28937!
         '
         'ANS_TAXI_HAKKO_DATE_20
         '
         Me.ANS_TAXI_HAKKO_DATE_20.DataField = "ANS_TAXI_HAKKO_DATE_20"
-        Me.ANS_TAXI_HAKKO_DATE_20.Height = 0.1999998!
-        Me.ANS_TAXI_HAKKO_DATE_20.Left = 5.966536!
+        Me.ANS_TAXI_HAKKO_DATE_20.Height = 0.2255906!
+        Me.ANS_TAXI_HAKKO_DATE_20.Left = 6.361418!
         Me.ANS_TAXI_HAKKO_DATE_20.Name = "ANS_TAXI_HAKKO_DATE_20"
         Me.ANS_TAXI_HAKKO_DATE_20.Style = "vertical-align: middle"
         Me.ANS_TAXI_HAKKO_DATE_20.Text = Nothing
-        Me.ANS_TAXI_HAKKO_DATE_20.Top = 8.670079!
+        Me.ANS_TAXI_HAKKO_DATE_20.Top = 9.723228!
         Me.ANS_TAXI_HAKKO_DATE_20.Width = 0.7472441!
         '
         'ANS_TAXI_DATE_20
         '
         Me.ANS_TAXI_DATE_20.DataField = "ANS_TAXI_DATE_20"
-        Me.ANS_TAXI_DATE_20.Height = 0.1999998!
+        Me.ANS_TAXI_DATE_20.Height = 0.2255906!
         Me.ANS_TAXI_DATE_20.Left = 3.631103!
         Me.ANS_TAXI_DATE_20.Name = "ANS_TAXI_DATE_20"
         Me.ANS_TAXI_DATE_20.Style = "vertical-align: middle"
         Me.ANS_TAXI_DATE_20.Text = Nothing
-        Me.ANS_TAXI_DATE_20.Top = 8.670079!
+        Me.ANS_TAXI_DATE_20.Top = 9.723228!
         Me.ANS_TAXI_DATE_20.Width = 0.7472441!
         '
         'ANS_TAXI_KENSHU_20
         '
         Me.ANS_TAXI_KENSHU_20.DataField = "ANS_TAXI_KENSHU_20"
-        Me.ANS_TAXI_KENSHU_20.Height = 0.1999998!
-        Me.ANS_TAXI_KENSHU_20.Left = 4.677166!
+        Me.ANS_TAXI_KENSHU_20.Height = 0.2255906!
+        Me.ANS_TAXI_KENSHU_20.Left = 4.924803!
         Me.ANS_TAXI_KENSHU_20.Name = "ANS_TAXI_KENSHU_20"
         Me.ANS_TAXI_KENSHU_20.Style = "vertical-align: middle"
         Me.ANS_TAXI_KENSHU_20.Text = Nothing
-        Me.ANS_TAXI_KENSHU_20.Top = 8.670079!
+        Me.ANS_TAXI_KENSHU_20.Top = 9.723228!
         Me.ANS_TAXI_KENSHU_20.Width = 0.8944882!
         '
         'ANS_TAXI_NO_20
         '
         Me.ANS_TAXI_NO_20.DataField = "ANS_TAXI_NO_20"
-        Me.ANS_TAXI_NO_20.Height = 0.1999998!
+        Me.ANS_TAXI_NO_20.Height = 0.2255906!
         Me.ANS_TAXI_NO_20.Left = 3.631103!
         Me.ANS_TAXI_NO_20.Name = "ANS_TAXI_NO_20"
         Me.ANS_TAXI_NO_20.Style = "vertical-align: middle"
         Me.ANS_TAXI_NO_20.Text = Nothing
-        Me.ANS_TAXI_NO_20.Top = 8.870079!
+        Me.ANS_TAXI_NO_20.Top = 9.948819!
         Me.ANS_TAXI_NO_20.Width = 0.7692917!
         '
         'Label20
         '
-        Me.Label20.Height = 0.4!
+        Me.Label20.Height = 0.4511811!
         Me.Label20.HyperLink = Nothing
         Me.Label20.Left = 2.787402!
         Me.Label20.Name = "Label20"
         Me.Label20.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label20.Text = "ﾀｸﾁｹ1"
-        Me.Label20.Top = 1.074016!
+        Me.Label20.Top = 1.150787!
         Me.Label20.Width = 0.4488189!
         '
         'Label26
         '
-        Me.Label26.Height = 0.4!
+        Me.Label26.Height = 0.4511811!
         Me.Label26.HyperLink = Nothing
         Me.Label26.Left = 2.787402!
         Me.Label26.Name = "Label26"
         Me.Label26.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label26.Text = "ﾀｸﾁｹ2"
-        Me.Label26.Top = 1.474016!
+        Me.Label26.Top = 1.612599!
         Me.Label26.Width = 0.4488189!
         '
         'Label32
         '
-        Me.Label32.Height = 0.4!
+        Me.Label32.Height = 0.4511811!
         Me.Label32.HyperLink = Nothing
         Me.Label32.Left = 2.787402!
         Me.Label32.Name = "Label32"
         Me.Label32.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label32.Text = "ﾀｸﾁｹ3"
-        Me.Label32.Top = 1.870079!
+        Me.Label32.Top = 2.05315!
         Me.Label32.Width = 0.4488189!
         '
         'Label38
         '
-        Me.Label38.Height = 0.4!
+        Me.Label38.Height = 0.4511811!
         Me.Label38.HyperLink = Nothing
         Me.Label38.Left = 2.787402!
         Me.Label38.Name = "Label38"
         Me.Label38.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label38.Text = "ﾀｸﾁｹ4"
-        Me.Label38.Top = 2.270079!
+        Me.Label38.Top = 2.504331!
         Me.Label38.Width = 0.4488189!
         '
         'Label69
         '
-        Me.Label69.Height = 0.4!
+        Me.Label69.Height = 0.4511811!
         Me.Label69.HyperLink = Nothing
         Me.Label69.Left = 2.787402!
         Me.Label69.Name = "Label69"
         Me.Label69.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label69.Text = "ﾀｸﾁｹ5"
-        Me.Label69.Top = 2.670079!
+        Me.Label69.Top = 2.955512!
         Me.Label69.Width = 0.4488189!
         '
         'Label94
         '
-        Me.Label94.Height = 0.4!
+        Me.Label94.Height = 0.4511811!
         Me.Label94.HyperLink = Nothing
         Me.Label94.Left = 2.787402!
         Me.Label94.Name = "Label94"
         Me.Label94.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label94.Text = "ﾀｸﾁｹ6"
-        Me.Label94.Top = 3.070079!
+        Me.Label94.Top = 3.406693!
         Me.Label94.Width = 0.4488189!
         '
         'Label100
         '
-        Me.Label100.Height = 0.4!
+        Me.Label100.Height = 0.4511811!
         Me.Label100.HyperLink = Nothing
         Me.Label100.Left = 2.787402!
         Me.Label100.Name = "Label100"
         Me.Label100.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label100.Text = "ﾀｸﾁｹ7"
-        Me.Label100.Top = 3.470079!
+        Me.Label100.Top = 3.857874!
         Me.Label100.Width = 0.4488189!
         '
         'Label106
         '
-        Me.Label106.Height = 0.4!
+        Me.Label106.Height = 0.4511811!
         Me.Label106.HyperLink = Nothing
         Me.Label106.Left = 2.787402!
         Me.Label106.Name = "Label106"
         Me.Label106.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label106.Text = "ﾀｸﾁｹ8"
-        Me.Label106.Top = 3.870079!
+        Me.Label106.Top = 4.309055!
         Me.Label106.Width = 0.4488189!
         '
         'Label112
         '
-        Me.Label112.Height = 0.4!
+        Me.Label112.Height = 0.4511811!
         Me.Label112.HyperLink = Nothing
         Me.Label112.Left = 2.787402!
         Me.Label112.Name = "Label112"
         Me.Label112.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label112.Text = "ﾀｸﾁｹ9"
-        Me.Label112.Top = 4.270079!
+        Me.Label112.Top = 4.760236!
         Me.Label112.Width = 0.4488189!
         '
         'Label118
         '
-        Me.Label118.Height = 0.4!
+        Me.Label118.Height = 0.4511811!
         Me.Label118.HyperLink = Nothing
         Me.Label118.Left = 2.787402!
         Me.Label118.Name = "Label118"
         Me.Label118.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
             " middle; white-space: inherit; ddo-font-vertical: none"
         Me.Label118.Text = "ﾀｸﾁｹ10"
-        Me.Label118.Top = 4.670079!
+        Me.Label118.Top = 5.211418!
         Me.Label118.Width = 0.4488189!
         '
         'Line28
         '
-        Me.Line28.Height = 7.996063!
+        Me.Line28.Height = 9.023623!
         Me.Line28.Left = 2.787402!
         Me.Line28.LineWeight = 1.0!
         Me.Line28.Name = "Line28"
-        Me.Line28.Top = 1.074016!
+        Me.Line28.Top = 1.150787!
         Me.Line28.Width = 0.0!
         Me.Line28.X1 = 2.787402!
         Me.Line28.X2 = 2.787402!
-        Me.Line28.Y1 = 1.074016!
-        Me.Line28.Y2 = 9.070079!
-        '
-        'Line31
-        '
-        Me.Line31.Height = 7.996063!
-        Me.Line31.Left = 4.677166!
-        Me.Line31.LineWeight = 1.0!
-        Me.Line31.Name = "Line31"
-        Me.Line31.Top = 1.074016!
-        Me.Line31.Width = 0.0!
-        Me.Line31.X1 = 4.677166!
-        Me.Line31.X2 = 4.677166!
-        Me.Line31.Y1 = 1.074016!
-        Me.Line31.Y2 = 9.070079!
+        Me.Line28.Y1 = 1.150787!
+        Me.Line28.Y2 = 10.17441!
         '
         'Line36
         '
-        Me.Line36.Height = 8.596064!
-        Me.Line36.Left = 7.165355!
+        Me.Line36.Height = 9.700394!
+        Me.Line36.Left = 7.641732!
         Me.Line36.LineWeight = 1.0!
         Me.Line36.Name = "Line36"
         Me.Line36.Top = 0.4740157!
         Me.Line36.Width = 0.0!
-        Me.Line36.X1 = 7.165355!
-        Me.Line36.X2 = 7.165355!
+        Me.Line36.X1 = 7.641732!
+        Me.Line36.X2 = 7.641732!
         Me.Line36.Y1 = 0.4740157!
-        Me.Line36.Y2 = 9.070079!
+        Me.Line36.Y2 = 10.17441!
         '
         'Line104
         '
         Me.Line104.Height = 0.0!
-        Me.Line104.Left = 0.0!
+        Me.Line104.Left = 2.842171E-14!
         Me.Line104.LineWeight = 1.0!
         Me.Line104.Name = "Line104"
-        Me.Line104.Top = 5.270079!
+        Me.Line104.Top = 5.888189!
         Me.Line104.Width = 2.787402!
-        Me.Line104.X1 = 0.0!
+        Me.Line104.X1 = 2.842171E-14!
         Me.Line104.X2 = 2.787402!
-        Me.Line104.Y1 = 5.270079!
-        Me.Line104.Y2 = 5.270079!
+        Me.Line104.Y1 = 5.888189!
+        Me.Line104.Y2 = 5.888189!
         '
         'Label181
         '
-        Me.Label181.Height = 0.2000001!
+        Me.Label181.Height = 0.2255906!
         Me.Label181.HyperLink = Nothing
-        Me.Label181.Left = 0.0!
+        Me.Label181.Left = 2.842171E-14!
         Me.Label181.Name = "Label181"
         Me.Label181.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label181.Text = "備考（回答）"
-        Me.Label181.Top = 7.070079!
+        Me.Label181.Top = 7.918504!
         Me.Label181.Width = 2.787402!
         '
         'REQ_O_TEHAI_1
         '
         Me.REQ_O_TEHAI_1.Height = 0.2!
-        Me.REQ_O_TEHAI_1.Left = 1.110223E-16!
+        Me.REQ_O_TEHAI_1.Left = 0.0!
         Me.REQ_O_TEHAI_1.Name = "REQ_O_TEHAI_1"
         Me.REQ_O_TEHAI_1.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_1.Top = 9.07008!
+        Me.REQ_O_TEHAI_1.Top = 10.27205!
         Me.REQ_O_TEHAI_1.Visible = False
         Me.REQ_O_TEHAI_1.Width = 1.0!
         '
@@ -3579,10 +3486,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_2.DataField = "REQ_O_TEHAI_2"
         Me.REQ_O_TEHAI_2.Height = 0.2!
-        Me.REQ_O_TEHAI_2.Left = 1.110223E-16!
+        Me.REQ_O_TEHAI_2.Left = 0.0!
         Me.REQ_O_TEHAI_2.Name = "REQ_O_TEHAI_2"
         Me.REQ_O_TEHAI_2.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_2.Top = 9.07008!
+        Me.REQ_O_TEHAI_2.Top = 10.27205!
         Me.REQ_O_TEHAI_2.Visible = False
         Me.REQ_O_TEHAI_2.Width = 1.0!
         '
@@ -3590,10 +3497,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_3.DataField = "REQ_O_TEHAI_3"
         Me.REQ_O_TEHAI_3.Height = 0.2!
-        Me.REQ_O_TEHAI_3.Left = 1.110223E-16!
+        Me.REQ_O_TEHAI_3.Left = 0.0!
         Me.REQ_O_TEHAI_3.Name = "REQ_O_TEHAI_3"
         Me.REQ_O_TEHAI_3.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_3.Top = 9.07008!
+        Me.REQ_O_TEHAI_3.Top = 10.27205!
         Me.REQ_O_TEHAI_3.Visible = False
         Me.REQ_O_TEHAI_3.Width = 1.0!
         '
@@ -3601,10 +3508,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_4.DataField = "REQ_O_TEHAI_4"
         Me.REQ_O_TEHAI_4.Height = 0.2!
-        Me.REQ_O_TEHAI_4.Left = 1.110223E-16!
+        Me.REQ_O_TEHAI_4.Left = 0.0!
         Me.REQ_O_TEHAI_4.Name = "REQ_O_TEHAI_4"
         Me.REQ_O_TEHAI_4.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_4.Top = 9.07008!
+        Me.REQ_O_TEHAI_4.Top = 10.27205!
         Me.REQ_O_TEHAI_4.Visible = False
         Me.REQ_O_TEHAI_4.Width = 1.0!
         '
@@ -3612,10 +3519,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_5.DataField = "REQ_O_TEHAI_5"
         Me.REQ_O_TEHAI_5.Height = 0.2!
-        Me.REQ_O_TEHAI_5.Left = 1.110223E-16!
+        Me.REQ_O_TEHAI_5.Left = 0.0!
         Me.REQ_O_TEHAI_5.Name = "REQ_O_TEHAI_5"
         Me.REQ_O_TEHAI_5.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_5.Top = 9.07008!
+        Me.REQ_O_TEHAI_5.Top = 10.27205!
         Me.REQ_O_TEHAI_5.Visible = False
         Me.REQ_O_TEHAI_5.Width = 1.0!
         '
@@ -3623,10 +3530,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_1.DataField = "REQ_F_TEHAI_1"
         Me.REQ_F_TEHAI_1.Height = 0.2!
-        Me.REQ_F_TEHAI_1.Left = 1.110223E-16!
+        Me.REQ_F_TEHAI_1.Left = 0.0!
         Me.REQ_F_TEHAI_1.Name = "REQ_F_TEHAI_1"
         Me.REQ_F_TEHAI_1.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_1.Top = 9.07008!
+        Me.REQ_F_TEHAI_1.Top = 10.27205!
         Me.REQ_F_TEHAI_1.Visible = False
         Me.REQ_F_TEHAI_1.Width = 1.0!
         '
@@ -3634,10 +3541,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_2.DataField = "REQ_F_TEHAI_2"
         Me.REQ_F_TEHAI_2.Height = 0.2!
-        Me.REQ_F_TEHAI_2.Left = 1.110223E-16!
+        Me.REQ_F_TEHAI_2.Left = 0.0!
         Me.REQ_F_TEHAI_2.Name = "REQ_F_TEHAI_2"
         Me.REQ_F_TEHAI_2.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_2.Top = 9.07008!
+        Me.REQ_F_TEHAI_2.Top = 10.27205!
         Me.REQ_F_TEHAI_2.Visible = False
         Me.REQ_F_TEHAI_2.Width = 1.0!
         '
@@ -3645,10 +3552,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_3.DataField = "REQ_F_TEHAI_3"
         Me.REQ_F_TEHAI_3.Height = 0.2!
-        Me.REQ_F_TEHAI_3.Left = 1.110223E-16!
+        Me.REQ_F_TEHAI_3.Left = 0.0!
         Me.REQ_F_TEHAI_3.Name = "REQ_F_TEHAI_3"
         Me.REQ_F_TEHAI_3.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_3.Top = 9.07008!
+        Me.REQ_F_TEHAI_3.Top = 10.27205!
         Me.REQ_F_TEHAI_3.Visible = False
         Me.REQ_F_TEHAI_3.Width = 1.0!
         '
@@ -3659,7 +3566,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_F_TEHAI_4.Left = 0.008661419!
         Me.REQ_F_TEHAI_4.Name = "REQ_F_TEHAI_4"
         Me.REQ_F_TEHAI_4.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_4.Top = 9.07008!
+        Me.REQ_F_TEHAI_4.Top = 10.27205!
         Me.REQ_F_TEHAI_4.Visible = False
         Me.REQ_F_TEHAI_4.Width = 1.0!
         '
@@ -3667,10 +3574,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_5.DataField = "REQ_F_TEHAI_5"
         Me.REQ_F_TEHAI_5.Height = 0.2!
-        Me.REQ_F_TEHAI_5.Left = 1.110223E-16!
+        Me.REQ_F_TEHAI_5.Left = 0.0!
         Me.REQ_F_TEHAI_5.Name = "REQ_F_TEHAI_5"
         Me.REQ_F_TEHAI_5.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_5.Top = 9.07008!
+        Me.REQ_F_TEHAI_5.Top = 10.27205!
         Me.REQ_F_TEHAI_5.Visible = False
         Me.REQ_F_TEHAI_5.Width = 1.0!
         '
@@ -3678,10 +3585,10 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_MR_O_TEHAI.DataField = "REQ_MR_O_TEHAI"
         Me.REQ_MR_O_TEHAI.Height = 0.2!
-        Me.REQ_MR_O_TEHAI.Left = 1.110223E-16!
+        Me.REQ_MR_O_TEHAI.Left = 0.0!
         Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
         Me.REQ_MR_O_TEHAI.Text = "REQ_O_TEHAI_1"
-        Me.REQ_MR_O_TEHAI.Top = 9.07008!
+        Me.REQ_MR_O_TEHAI.Top = 10.27205!
         Me.REQ_MR_O_TEHAI.Visible = False
         Me.REQ_MR_O_TEHAI.Width = 1.0!
         '
@@ -3692,7 +3599,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_MR_F_TEHAI.Left = 1.862645E-9!
         Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
         Me.REQ_MR_F_TEHAI.Text = "REQ_O_TEHAI_1"
-        Me.REQ_MR_F_TEHAI.Top = 9.07008!
+        Me.REQ_MR_F_TEHAI.Top = 10.27205!
         Me.REQ_MR_F_TEHAI.Visible = False
         Me.REQ_MR_F_TEHAI.Width = 1.0!
         '
@@ -3703,242 +3610,77 @@ Partial Public Class TaxiKakuninReport
         Me.Line32.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line32.LineWeight = 1.0!
         Me.Line32.Name = "Line32"
-        Me.Line32.Top = 1.274016!
-        Me.Line32.Width = 3.929133!
+        Me.Line32.Top = 1.376378!
+        Me.Line32.Width = 4.413385!
         Me.Line32.X1 = 3.236221!
-        Me.Line32.X2 = 7.165354!
-        Me.Line32.Y1 = 1.274016!
-        Me.Line32.Y2 = 1.274016!
+        Me.Line32.X2 = 7.649607!
+        Me.Line32.Y1 = 1.376378!
+        Me.Line32.Y2 = 1.376378!
         '
         'Label7
         '
-        Me.Label7.Height = 0.2!
+        Me.Label7.Height = 0.2255906!
         Me.Label7.HyperLink = Nothing
         Me.Label7.Left = 0.4488189!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label7.Text = "利用日"
-        Me.Label7.Top = 1.074016!
+        Me.Label7.Top = 1.150787!
         Me.Label7.Width = 0.3948819!
         '
         'Line37
         '
         Me.Line37.Height = 0.0!
-        Me.Line37.Left = 0.0!
+        Me.Line37.Left = 2.842171E-14!
         Me.Line37.LineWeight = 1.0!
         Me.Line37.Name = "Line37"
-        Me.Line37.Top = 1.074016!
-        Me.Line37.Width = 7.165353!
-        Me.Line37.X1 = 0.0!
-        Me.Line37.X2 = 7.165353!
-        Me.Line37.Y1 = 1.074016!
-        Me.Line37.Y2 = 1.074016!
+        Me.Line37.Top = 1.612599!
+        Me.Line37.Width = 7.649607!
+        Me.Line37.X1 = 2.842171E-14!
+        Me.Line37.X2 = 7.649607!
+        Me.Line37.Y1 = 1.612599!
+        Me.Line37.Y2 = 1.612599!
         '
         'Line6
         '
         Me.Line6.Height = 0.0!
-        Me.Line6.Left = 0.0!
+        Me.Line6.Left = 2.842171E-14!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
-        Me.Line6.Top = 7.070079!
+        Me.Line6.Top = 7.918504!
         Me.Line6.Width = 2.787402!
-        Me.Line6.X1 = 0.0!
+        Me.Line6.X1 = 2.842171E-14!
         Me.Line6.X2 = 2.787402!
-        Me.Line6.Y1 = 7.070079!
-        Me.Line6.Y2 = 7.070079!
+        Me.Line6.Y1 = 7.918504!
+        Me.Line6.Y2 = 7.918504!
         '
         'Line7
         '
         Me.Line7.Height = 0.0!
-        Me.Line7.Left = 0.0!
+        Me.Line7.Left = 2.842171E-14!
         Me.Line7.LineWeight = 1.0!
         Me.Line7.Name = "Line7"
-        Me.Line7.Top = 7.270079!
+        Me.Line7.Top = 8.144094!
         Me.Line7.Width = 2.787402!
-        Me.Line7.X1 = 0.0!
+        Me.Line7.X1 = 2.842171E-14!
         Me.Line7.X2 = 2.787402!
-        Me.Line7.Y1 = 7.270079!
-        Me.Line7.Y2 = 7.270079!
-        '
-        'Line10
-        '
-        Me.Line10.Height = 0.1999998!
-        Me.Line10.Left = 5.571654!
-        Me.Line10.LineWeight = 1.0!
-        Me.Line10.Name = "Line10"
-        Me.Line10.Top = 1.474016!
-        Me.Line10.Width = 0.0!
-        Me.Line10.X1 = 5.571654!
-        Me.Line10.X2 = 5.571654!
-        Me.Line10.Y1 = 1.474016!
-        Me.Line10.Y2 = 1.674016!
-        '
-        'Line46
-        '
-        Me.Line46.Height = 0.0!
-        Me.Line46.Left = 3.786614!
-        Me.Line46.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line46.LineWeight = 1.0!
-        Me.Line46.Name = "Line46"
-        Me.Line46.Top = 1.874016!
-        Me.Line46.Width = 3.378741!
-        Me.Line46.X1 = 3.786614!
-        Me.Line46.X2 = 7.165355!
-        Me.Line46.Y1 = 1.874016!
-        Me.Line46.Y2 = 1.874016!
-        '
-        'Line47
-        '
-        Me.Line47.Height = 0.0!
-        Me.Line47.Left = 3.236221!
-        Me.Line47.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line47.LineWeight = 1.0!
-        Me.Line47.Name = "Line47"
-        Me.Line47.Top = 2.070079!
-        Me.Line47.Width = 3.929133!
-        Me.Line47.X1 = 3.236221!
-        Me.Line47.X2 = 7.165354!
-        Me.Line47.Y1 = 2.070079!
-        Me.Line47.Y2 = 2.070079!
-        '
-        'Line48
-        '
-        Me.Line48.Height = 0.0!
-        Me.Line48.Left = 3.236221!
-        Me.Line48.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line48.LineWeight = 1.0!
-        Me.Line48.Name = "Line48"
-        Me.Line48.Top = 2.470079!
-        Me.Line48.Width = 3.929133!
-        Me.Line48.X1 = 3.236221!
-        Me.Line48.X2 = 7.165354!
-        Me.Line48.Y1 = 2.470079!
-        Me.Line48.Y2 = 2.470079!
-        '
-        'Line50
-        '
-        Me.Line50.Height = 0.0!
-        Me.Line50.Left = 3.236221!
-        Me.Line50.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line50.LineWeight = 1.0!
-        Me.Line50.Name = "Line50"
-        Me.Line50.Top = 2.870079!
-        Me.Line50.Width = 3.929133!
-        Me.Line50.X1 = 3.236221!
-        Me.Line50.X2 = 7.165354!
-        Me.Line50.Y1 = 2.870079!
-        Me.Line50.Y2 = 2.870079!
-        '
-        'Line52
-        '
-        Me.Line52.Height = 0.0!
-        Me.Line52.Left = 3.236221!
-        Me.Line52.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line52.LineWeight = 1.0!
-        Me.Line52.Name = "Line52"
-        Me.Line52.Top = 3.270079!
-        Me.Line52.Width = 3.929133!
-        Me.Line52.X1 = 3.236221!
-        Me.Line52.X2 = 7.165354!
-        Me.Line52.Y1 = 3.270079!
-        Me.Line52.Y2 = 3.270079!
-        '
-        'Line53
-        '
-        Me.Line53.Height = 0.0!
-        Me.Line53.Left = 3.236221!
-        Me.Line53.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line53.LineWeight = 1.0!
-        Me.Line53.Name = "Line53"
-        Me.Line53.Top = 3.670079!
-        Me.Line53.Width = 3.929133!
-        Me.Line53.X1 = 3.236221!
-        Me.Line53.X2 = 7.165354!
-        Me.Line53.Y1 = 3.670079!
-        Me.Line53.Y2 = 3.670079!
-        '
-        'Line55
-        '
-        Me.Line55.Height = 0.0!
-        Me.Line55.Left = 3.236221!
-        Me.Line55.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line55.LineWeight = 1.0!
-        Me.Line55.Name = "Line55"
-        Me.Line55.Top = 4.070079!
-        Me.Line55.Width = 3.929133!
-        Me.Line55.X1 = 3.236221!
-        Me.Line55.X2 = 7.165354!
-        Me.Line55.Y1 = 4.070079!
-        Me.Line55.Y2 = 4.070079!
-        '
-        'Line56
-        '
-        Me.Line56.Height = 0.0!
-        Me.Line56.Left = 3.236221!
-        Me.Line56.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line56.LineWeight = 1.0!
-        Me.Line56.Name = "Line56"
-        Me.Line56.Top = 4.470079!
-        Me.Line56.Width = 3.929133!
-        Me.Line56.X1 = 3.236221!
-        Me.Line56.X2 = 7.165354!
-        Me.Line56.Y1 = 4.470079!
-        Me.Line56.Y2 = 4.470079!
-        '
-        'Line57
-        '
-        Me.Line57.Height = 0.0!
-        Me.Line57.Left = 3.236221!
-        Me.Line57.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line57.LineWeight = 1.0!
-        Me.Line57.Name = "Line57"
-        Me.Line57.Top = 4.870079!
-        Me.Line57.Width = 3.929133!
-        Me.Line57.X1 = 3.236221!
-        Me.Line57.X2 = 7.165354!
-        Me.Line57.Y1 = 4.870079!
-        Me.Line57.Y2 = 4.870079!
-        '
-        'Line108
-        '
-        Me.Line108.Height = 0.0!
-        Me.Line108.Left = 0.0!
-        Me.Line108.LineWeight = 1.0!
-        Me.Line108.Name = "Line108"
-        Me.Line108.Top = 0.0!
-        Me.Line108.Width = 7.165354!
-        Me.Line108.X1 = 0.0!
-        Me.Line108.X2 = 7.165354!
-        Me.Line108.Y1 = 0.0!
-        Me.Line108.Y2 = 0.0!
-        '
-        'Line113
-        '
-        Me.Line113.Height = 0.0!
-        Me.Line113.Left = 0.0!
-        Me.Line113.LineWeight = 1.0!
-        Me.Line113.Name = "Line113"
-        Me.Line113.Top = 1.474016!
-        Me.Line113.Width = 7.165354!
-        Me.Line113.X1 = 0.0!
-        Me.Line113.X2 = 7.165354!
-        Me.Line113.Y1 = 1.474016!
-        Me.Line113.Y2 = 1.474016!
+        Me.Line7.Y1 = 8.144094!
+        Me.Line7.Y2 = 8.144094!
         '
         'Line114
         '
         Me.Line114.Height = 0.0!
-        Me.Line114.Left = 0.0000004768372!
+        Me.Line114.Left = 0.0000004768373!
         Me.Line114.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line114.LineWeight = 1.0!
         Me.Line114.Name = "Line114"
-        Me.Line114.Top = 0.874015!
-        Me.Line114.Width = 7.165353!
-        Me.Line114.X1 = 0.0000004768372!
-        Me.Line114.X2 = 7.165354!
-        Me.Line114.Y1 = 0.874015!
-        Me.Line114.Y2 = 0.874015!
+        Me.Line114.Top = 0.9251968!
+        Me.Line114.Width = 7.649606!
+        Me.Line114.X1 = 0.0000004768373!
+        Me.Line114.X2 = 7.649607!
+        Me.Line114.Y1 = 0.9251968!
+        Me.Line114.Y2 = 0.9251968!
         '
         'Line4
         '
@@ -3947,16 +3689,16 @@ Partial Public Class TaxiKakuninReport
         Me.Line4.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
-        Me.Line4.Top = 1.670079!
+        Me.Line4.Top = 1.827559!
         Me.Line4.Width = 2.338583!
         Me.Line4.X1 = 0.4488189!
         Me.Line4.X2 = 2.787402!
-        Me.Line4.Y1 = 1.670079!
-        Me.Line4.Y2 = 1.670079!
+        Me.Line4.Y1 = 1.827559!
+        Me.Line4.Y2 = 1.827559!
         '
         'Line152
         '
-        Me.Line152.Height = 0.2!
+        Me.Line152.Height = 0.2255905!
         Me.Line152.Left = 0.6570867!
         Me.Line152.LineWeight = 1.0!
         Me.Line152.Name = "Line152"
@@ -3965,72 +3707,72 @@ Partial Public Class TaxiKakuninReport
         Me.Line152.X1 = 0.6570867!
         Me.Line152.X2 = 0.6570867!
         Me.Line152.Y1 = 0.4740158!
-        Me.Line152.Y2 = 0.6740158!
+        Me.Line152.Y2 = 0.6996063!
         '
         'Line153
         '
-        Me.Line153.Height = 0.2000002!
+        Me.Line153.Height = 0.2255902!
         Me.Line153.Left = 5.083071!
         Me.Line153.LineWeight = 1.0!
         Me.Line153.Name = "Line153"
-        Me.Line153.Top = 0.8740158!
+        Me.Line153.Top = 0.9251968!
         Me.Line153.Width = 0.0!
         Me.Line153.X1 = 5.083071!
         Me.Line153.X2 = 5.083071!
-        Me.Line153.Y1 = 0.8740158!
-        Me.Line153.Y2 = 1.074016!
+        Me.Line153.Y1 = 0.9251968!
+        Me.Line153.Y2 = 1.150787!
         '
         'Line155
         '
-        Me.Line155.Height = 0.2000002!
+        Me.Line155.Height = 0.2255902!
         Me.Line155.Left = 2.483465!
         Me.Line155.LineWeight = 1.0!
         Me.Line155.Name = "Line155"
-        Me.Line155.Top = 0.8740158!
+        Me.Line155.Top = 0.9251968!
         Me.Line155.Width = 0.0!
         Me.Line155.X1 = 2.483465!
         Me.Line155.X2 = 2.483465!
-        Me.Line155.Y1 = 0.8740158!
-        Me.Line155.Y2 = 1.074016!
+        Me.Line155.Y1 = 0.9251968!
+        Me.Line155.Y2 = 1.150787!
         '
         'Line17
         '
-        Me.Line17.Height = 0.2000002!
+        Me.Line17.Height = 0.2255902!
         Me.Line17.Left = 3.064567!
         Me.Line17.LineWeight = 1.0!
         Me.Line17.Name = "Line17"
-        Me.Line17.Top = 0.8740158!
+        Me.Line17.Top = 0.9251968!
         Me.Line17.Width = 0.0!
         Me.Line17.X1 = 3.064567!
         Me.Line17.X2 = 3.064567!
-        Me.Line17.Y1 = 0.8740158!
-        Me.Line17.Y2 = 1.074016!
+        Me.Line17.Y1 = 0.9251968!
+        Me.Line17.Y2 = 1.150787!
         '
         'Line107
         '
-        Me.Line107.Height = 0.2000002!
+        Me.Line107.Height = 0.2255902!
         Me.Line107.Left = 3.333465!
         Me.Line107.LineWeight = 1.0!
         Me.Line107.Name = "Line107"
-        Me.Line107.Top = 0.8740158!
+        Me.Line107.Top = 0.9251968!
         Me.Line107.Width = 0.0!
         Me.Line107.X1 = 3.333465!
         Me.Line107.X2 = 3.333465!
-        Me.Line107.Y1 = 0.8740158!
-        Me.Line107.Y2 = 1.074016!
+        Me.Line107.Y1 = 0.9251968!
+        Me.Line107.Y2 = 1.150787!
         '
         'Line109
         '
-        Me.Line109.Height = 0.2000002!
+        Me.Line109.Height = 0.2255902!
         Me.Line109.Left = 3.910237!
         Me.Line109.LineWeight = 1.0!
         Me.Line109.Name = "Line109"
-        Me.Line109.Top = 0.8740158!
+        Me.Line109.Top = 0.9251968!
         Me.Line109.Width = 0.0!
         Me.Line109.X1 = 3.910237!
         Me.Line109.X2 = 3.910237!
-        Me.Line109.Y1 = 0.8740158!
-        Me.Line109.Y2 = 1.074016!
+        Me.Line109.Y1 = 0.9251968!
+        Me.Line109.Y2 = 1.150787!
         '
         'Line18
         '
@@ -4039,25 +3781,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line18.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line18.LineWeight = 1.0!
         Me.Line18.Name = "Line18"
-        Me.Line18.Top = 1.274016!
+        Me.Line18.Top = 1.376378!
         Me.Line18.Width = 2.338583!
         Me.Line18.X1 = 0.4488189!
         Me.Line18.X2 = 2.787402!
-        Me.Line18.Y1 = 1.274016!
-        Me.Line18.Y2 = 1.274016!
-        '
-        'Line39
-        '
-        Me.Line39.Height = 0.2!
-        Me.Line39.Left = 5.571654!
-        Me.Line39.LineWeight = 1.0!
-        Me.Line39.Name = "Line39"
-        Me.Line39.Top = 1.074016!
-        Me.Line39.Width = 0.0!
-        Me.Line39.X1 = 5.571654!
-        Me.Line39.X2 = 5.571654!
-        Me.Line39.Y1 = 1.074016!
-        Me.Line39.Y2 = 1.274016!
+        Me.Line18.Y1 = 1.376378!
+        Me.Line18.Y2 = 1.376378!
         '
         'Line85
         '
@@ -4065,23 +3794,23 @@ Partial Public Class TaxiKakuninReport
         Me.Line85.Left = 5.966536!
         Me.Line85.LineWeight = 1.0!
         Me.Line85.Name = "Line85"
-        Me.Line85.Top = 1.084252!
+        Me.Line85.Top = 2.084252!
         Me.Line85.Width = 0.0!
         Me.Line85.X1 = 5.966536!
         Me.Line85.X2 = 5.966536!
-        Me.Line85.Y1 = 1.084252!
-        Me.Line85.Y2 = 1.482283!
+        Me.Line85.Y1 = 2.084252!
+        Me.Line85.Y2 = 2.482283!
         '
         'Label46
         '
-        Me.Label46.Height = 0.2!
+        Me.Label46.Height = 0.2255906!
         Me.Label46.HyperLink = Nothing
         Me.Label46.Left = 0.4488189!
         Me.Label46.Name = "Label46"
         Me.Label46.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label46.Text = "発地"
-        Me.Label46.Top = 1.674016!
+        Me.Label46.Top = 1.827559!
         Me.Label46.Width = 0.3948819!
         '
         'Line110
@@ -4091,49 +3820,36 @@ Partial Public Class TaxiKakuninReport
         Me.Line110.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line110.LineWeight = 1.0!
         Me.Line110.Name = "Line110"
-        Me.Line110.Top = 1.674016!
-        Me.Line110.Width = 3.929133!
+        Me.Line110.Top = 1.827559!
+        Me.Line110.Width = 4.413385!
         Me.Line110.X1 = 3.236221!
-        Me.Line110.X2 = 7.165354!
-        Me.Line110.Y1 = 1.674016!
-        Me.Line110.Y2 = 1.674016!
+        Me.Line110.X2 = 7.649607!
+        Me.Line110.Y1 = 1.827559!
+        Me.Line110.Y2 = 1.827559!
         '
         'Line66
         '
-        Me.Line66.Height = 0.1999999!
-        Me.Line66.Left = 6.512992!
+        Me.Line66.Height = 9.023623!
+        Me.Line66.Left = 6.361418!
         Me.Line66.LineWeight = 1.0!
         Me.Line66.Name = "Line66"
-        Me.Line66.Top = 1.274016!
+        Me.Line66.Top = 1.150787!
         Me.Line66.Width = 0.0!
-        Me.Line66.X1 = 6.512992!
-        Me.Line66.X2 = 6.512992!
-        Me.Line66.Y1 = 1.274016!
-        Me.Line66.Y2 = 1.474016!
-        '
-        'Line115
-        '
-        Me.Line115.Height = 0.2!
-        Me.Line115.Left = 6.512992!
-        Me.Line115.LineWeight = 1.0!
-        Me.Line115.Name = "Line115"
-        Me.Line115.Top = 1.674016!
-        Me.Line115.Width = 0.0!
-        Me.Line115.X1 = 6.512992!
-        Me.Line115.X2 = 6.512992!
-        Me.Line115.Y1 = 1.674016!
-        Me.Line115.Y2 = 1.874016!
+        Me.Line66.X1 = 6.361418!
+        Me.Line66.X2 = 6.361418!
+        Me.Line66.Y1 = 1.150787!
+        Me.Line66.Y2 = 10.17441!
         '
         'Label50
         '
-        Me.Label50.Height = 0.2!
+        Me.Label50.Height = 0.2255906!
         Me.Label50.HyperLink = Nothing
         Me.Label50.Left = 0.4488189!
         Me.Label50.Name = "Label50"
         Me.Label50.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label50.Text = "発地"
-        Me.Label50.Top = 2.070079!
+        Me.Label50.Top = 2.27874!
         Me.Label50.Width = 0.3948819!
         '
         'Line135
@@ -4143,839 +3859,839 @@ Partial Public Class TaxiKakuninReport
         Me.Line135.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line135.LineWeight = 1.0!
         Me.Line135.Name = "Line135"
-        Me.Line135.Top = 2.070079!
+        Me.Line135.Top = 2.27874!
         Me.Line135.Width = 2.338582!
         Me.Line135.X1 = 0.4488189!
         Me.Line135.X2 = 2.787401!
-        Me.Line135.Y1 = 2.070079!
-        Me.Line135.Y2 = 2.070079!
+        Me.Line135.Y1 = 2.27874!
+        Me.Line135.Y2 = 2.27874!
         '
         'Label203
         '
-        Me.Label203.Height = 0.2!
+        Me.Label203.Height = 0.2255906!
         Me.Label203.HyperLink = Nothing
         Me.Label203.Left = 3.236221!
         Me.Label203.Name = "Label203"
         Me.Label203.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label203.Text = "利用日"
-        Me.Label203.Top = 1.870079!
+        Me.Label203.Top = 2.05315!
         Me.Label203.Width = 0.3948819!
         '
         'Label204
         '
-        Me.Label204.Height = 0.2!
+        Me.Label204.Height = 0.2255906!
         Me.Label204.HyperLink = Nothing
         Me.Label204.Left = 3.236221!
         Me.Label204.Name = "Label204"
         Me.Label204.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label204.Text = "番号"
-        Me.Label204.Top = 2.070079!
+        Me.Label204.Top = 2.27874!
         Me.Label204.Width = 0.381496!
         '
         'Label31
         '
-        Me.Label31.Height = 0.2!
+        Me.Label31.Height = 0.2255906!
         Me.Label31.HyperLink = Nothing
-        Me.Label31.Left = 4.378347!
+        Me.Label31.Left = 5.966536!
         Me.Label31.Name = "Label31"
         Me.Label31.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label31.Text = "備考"
-        Me.Label31.Top = 2.070079!
-        Me.Label31.Width = 0.2988189!
+        Me.Label31.Top = 2.27874!
+        Me.Label31.Width = 0.3948819!
         '
         'Label205
         '
-        Me.Label205.Height = 0.2!
+        Me.Label205.Height = 0.2255906!
         Me.Label205.HyperLink = Nothing
-        Me.Label205.Left = 5.966536!
+        Me.Label205.Left = 4.378346!
         Me.Label205.Name = "Label205"
         Me.Label205.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label205.Text = "利用者名"
-        Me.Label205.Top = 2.070079!
+        Me.Label205.Top = 2.27874!
         Me.Label205.Width = 0.5464572!
         '
         'Label13
         '
-        Me.Label13.Height = 0.2!
+        Me.Label13.Height = 0.2255906!
         Me.Label13.HyperLink = Nothing
         Me.Label13.Left = 0.4488189!
         Me.Label13.Name = "Label13"
         Me.Label13.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label13.Text = "発地"
-        Me.Label13.Top = 2.470079!
+        Me.Label13.Top = 2.729921!
         Me.Label13.Width = 0.3948819!
         '
         'Label33
         '
-        Me.Label33.Height = 0.2!
+        Me.Label33.Height = 0.2255906!
         Me.Label33.HyperLink = Nothing
         Me.Label33.Left = 3.236221!
         Me.Label33.Name = "Label33"
         Me.Label33.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label33.Text = "利用日"
-        Me.Label33.Top = 2.270079!
+        Me.Label33.Top = 2.504331!
         Me.Label33.Width = 0.3948819!
         '
         'Label35
         '
-        Me.Label35.Height = 0.2!
+        Me.Label35.Height = 0.2255906!
         Me.Label35.HyperLink = Nothing
         Me.Label35.Left = 3.236221!
         Me.Label35.Name = "Label35"
         Me.Label35.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label35.Text = "番号"
-        Me.Label35.Top = 2.470079!
+        Me.Label35.Top = 2.729921!
         Me.Label35.Width = 0.381496!
         '
         'Label37
         '
-        Me.Label37.Height = 0.2!
+        Me.Label37.Height = 0.2255906!
         Me.Label37.HyperLink = Nothing
         Me.Label37.Left = 4.378347!
         Me.Label37.Name = "Label37"
         Me.Label37.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label37.Text = "券種"
-        Me.Label37.Top = 2.270079!
-        Me.Label37.Width = 0.2988189!
+        Me.Label37.Top = 2.504331!
+        Me.Label37.Width = 0.5464567!
         '
         'Label54
         '
-        Me.Label54.Height = 0.2!
+        Me.Label54.Height = 0.2255906!
         Me.Label54.HyperLink = Nothing
-        Me.Label54.Left = 4.378347!
+        Me.Label54.Left = 5.966536!
         Me.Label54.Name = "Label54"
         Me.Label54.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label54.Text = "備考"
-        Me.Label54.Top = 2.470079!
-        Me.Label54.Width = 0.2988189!
+        Me.Label54.Top = 2.729921!
+        Me.Label54.Width = 0.3948819!
         '
         'Label206
         '
-        Me.Label206.Height = 0.2!
+        Me.Label206.Height = 0.2255906!
         Me.Label206.HyperLink = Nothing
-        Me.Label206.Left = 5.571654!
+        Me.Label206.Left = 5.966536!
         Me.Label206.Name = "Label206"
         Me.Label206.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label206.Text = "発行日"
-        Me.Label206.Top = 2.270079!
+        Me.Label206.Top = 2.504331!
         Me.Label206.Width = 0.3948819!
         '
         'Label207
         '
-        Me.Label207.Height = 0.2!
+        Me.Label207.Height = 0.2255906!
         Me.Label207.HyperLink = Nothing
-        Me.Label207.Left = 5.966536!
+        Me.Label207.Left = 4.378346!
         Me.Label207.Name = "Label207"
         Me.Label207.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label207.Text = "利用者名"
-        Me.Label207.Top = 2.470079!
+        Me.Label207.Top = 2.729921!
         Me.Label207.Width = 0.5464572!
         '
         'Label15
         '
-        Me.Label15.Height = 0.2!
+        Me.Label15.Height = 0.2255906!
         Me.Label15.HyperLink = Nothing
         Me.Label15.Left = 0.4488189!
         Me.Label15.Name = "Label15"
         Me.Label15.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label15.Text = "発地"
-        Me.Label15.Top = 2.870079!
+        Me.Label15.Top = 3.181102!
         Me.Label15.Width = 0.3948819!
         '
         'Label16
         '
-        Me.Label16.Height = 0.2!
+        Me.Label16.Height = 0.2255906!
         Me.Label16.HyperLink = Nothing
         Me.Label16.Left = 3.236221!
         Me.Label16.Name = "Label16"
         Me.Label16.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label16.Text = "利用日"
-        Me.Label16.Top = 2.670079!
+        Me.Label16.Top = 2.955512!
         Me.Label16.Width = 0.3948819!
         '
         'Label39
         '
-        Me.Label39.Height = 0.2!
+        Me.Label39.Height = 0.2255906!
         Me.Label39.HyperLink = Nothing
         Me.Label39.Left = 3.236221!
         Me.Label39.Name = "Label39"
         Me.Label39.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label39.Text = "番号"
-        Me.Label39.Top = 2.870079!
+        Me.Label39.Top = 3.181102!
         Me.Label39.Width = 0.381496!
         '
         'Label40
         '
-        Me.Label40.Height = 0.2!
+        Me.Label40.Height = 0.2255906!
         Me.Label40.HyperLink = Nothing
         Me.Label40.Left = 4.378347!
         Me.Label40.Name = "Label40"
         Me.Label40.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label40.Text = "券種"
-        Me.Label40.Top = 2.670079!
-        Me.Label40.Width = 0.2988189!
+        Me.Label40.Top = 2.955512!
+        Me.Label40.Width = 0.5464567!
         '
         'Label41
         '
-        Me.Label41.Height = 0.2!
+        Me.Label41.Height = 0.2255906!
         Me.Label41.HyperLink = Nothing
-        Me.Label41.Left = 4.378347!
+        Me.Label41.Left = 5.966536!
         Me.Label41.Name = "Label41"
         Me.Label41.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label41.Text = "備考"
-        Me.Label41.Top = 2.870079!
-        Me.Label41.Width = 0.2988189!
+        Me.Label41.Top = 3.181102!
+        Me.Label41.Width = 0.3948819!
         '
         'Label42
         '
-        Me.Label42.Height = 0.2!
+        Me.Label42.Height = 0.2255906!
         Me.Label42.HyperLink = Nothing
-        Me.Label42.Left = 5.571654!
+        Me.Label42.Left = 5.966536!
         Me.Label42.Name = "Label42"
         Me.Label42.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label42.Text = "発行日"
-        Me.Label42.Top = 2.670079!
+        Me.Label42.Top = 2.955512!
         Me.Label42.Width = 0.3948819!
         '
         'Label43
         '
-        Me.Label43.Height = 0.2!
+        Me.Label43.Height = 0.2255906!
         Me.Label43.HyperLink = Nothing
-        Me.Label43.Left = 5.966536!
+        Me.Label43.Left = 4.377953!
         Me.Label43.Name = "Label43"
         Me.Label43.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label43.Text = "利用者名"
-        Me.Label43.Top = 2.870079!
+        Me.Label43.Top = 3.181102!
         Me.Label43.Width = 0.5464572!
         '
         'Label44
         '
-        Me.Label44.Height = 0.2!
+        Me.Label44.Height = 0.2255906!
         Me.Label44.HyperLink = Nothing
         Me.Label44.Left = 0.4488192!
         Me.Label44.Name = "Label44"
         Me.Label44.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label44.Text = "利用日"
-        Me.Label44.Top = 3.070079!
+        Me.Label44.Top = 3.406693!
         Me.Label44.Width = 0.3948819!
         '
         'Label55
         '
-        Me.Label55.Height = 0.2!
+        Me.Label55.Height = 0.2255906!
         Me.Label55.HyperLink = Nothing
         Me.Label55.Left = 0.4488189!
         Me.Label55.Name = "Label55"
         Me.Label55.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label55.Text = "発地"
-        Me.Label55.Top = 3.270079!
+        Me.Label55.Top = 3.632283!
         Me.Label55.Width = 0.3948819!
         '
         'Label59
         '
-        Me.Label59.Height = 0.2!
+        Me.Label59.Height = 0.2255906!
         Me.Label59.HyperLink = Nothing
         Me.Label59.Left = 1.612992!
         Me.Label59.Name = "Label59"
         Me.Label59.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label59.Text = "依頼金額"
-        Me.Label59.Top = 3.070079!
+        Me.Label59.Top = 3.406693!
         Me.Label59.Width = 0.5811024!
         '
         'Label62
         '
-        Me.Label62.Height = 0.2!
+        Me.Label62.Height = 0.2255906!
         Me.Label62.HyperLink = Nothing
         Me.Label62.Left = 3.236221!
         Me.Label62.Name = "Label62"
         Me.Label62.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label62.Text = "利用日"
-        Me.Label62.Top = 3.070079!
+        Me.Label62.Top = 3.406693!
         Me.Label62.Width = 0.3948819!
         '
         'Label63
         '
-        Me.Label63.Height = 0.2!
+        Me.Label63.Height = 0.2255906!
         Me.Label63.HyperLink = Nothing
         Me.Label63.Left = 3.236221!
         Me.Label63.Name = "Label63"
         Me.Label63.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label63.Text = "番号"
-        Me.Label63.Top = 3.270079!
+        Me.Label63.Top = 3.632283!
         Me.Label63.Width = 0.381496!
         '
         'Label64
         '
-        Me.Label64.Height = 0.2!
+        Me.Label64.Height = 0.2255906!
         Me.Label64.HyperLink = Nothing
         Me.Label64.Left = 4.378347!
         Me.Label64.Name = "Label64"
         Me.Label64.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label64.Text = "券種"
-        Me.Label64.Top = 3.070079!
-        Me.Label64.Width = 0.2988189!
+        Me.Label64.Top = 3.406693!
+        Me.Label64.Width = 0.5464567!
         '
         'Label67
         '
-        Me.Label67.Height = 0.2!
+        Me.Label67.Height = 0.2255906!
         Me.Label67.HyperLink = Nothing
-        Me.Label67.Left = 4.378347!
+        Me.Label67.Left = 5.966536!
         Me.Label67.Name = "Label67"
         Me.Label67.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label67.Text = "備考"
-        Me.Label67.Top = 3.270079!
-        Me.Label67.Width = 0.2988189!
+        Me.Label67.Top = 3.632283!
+        Me.Label67.Width = 0.3948819!
         '
         'Label68
         '
-        Me.Label68.Height = 0.2!
+        Me.Label68.Height = 0.2255906!
         Me.Label68.HyperLink = Nothing
-        Me.Label68.Left = 5.571654!
+        Me.Label68.Left = 5.966536!
         Me.Label68.Name = "Label68"
         Me.Label68.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label68.Text = "発行日"
-        Me.Label68.Top = 3.070079!
+        Me.Label68.Top = 3.406693!
         Me.Label68.Width = 0.3948819!
         '
         'Label70
         '
-        Me.Label70.Height = 0.2!
+        Me.Label70.Height = 0.2255906!
         Me.Label70.HyperLink = Nothing
-        Me.Label70.Left = 5.966536!
+        Me.Label70.Left = 4.378346!
         Me.Label70.Name = "Label70"
         Me.Label70.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label70.Text = "利用者名"
-        Me.Label70.Top = 3.270079!
+        Me.Label70.Top = 3.632283!
         Me.Label70.Width = 0.5464572!
         '
         'Label17
         '
-        Me.Label17.Height = 0.2!
+        Me.Label17.Height = 0.2255906!
         Me.Label17.HyperLink = Nothing
         Me.Label17.Left = 0.4488192!
         Me.Label17.Name = "Label17"
         Me.Label17.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label17.Text = "利用日"
-        Me.Label17.Top = 3.470079!
+        Me.Label17.Top = 3.857874!
         Me.Label17.Width = 0.3948819!
         '
         'Label75
         '
-        Me.Label75.Height = 0.2!
+        Me.Label75.Height = 0.2255906!
         Me.Label75.HyperLink = Nothing
         Me.Label75.Left = 0.4488189!
         Me.Label75.Name = "Label75"
         Me.Label75.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label75.Text = "発地"
-        Me.Label75.Top = 3.670079!
+        Me.Label75.Top = 4.083465!
         Me.Label75.Width = 0.3948819!
         '
         'Label91
         '
-        Me.Label91.Height = 0.2!
+        Me.Label91.Height = 0.2255906!
         Me.Label91.HyperLink = Nothing
         Me.Label91.Left = 1.612992!
         Me.Label91.Name = "Label91"
         Me.Label91.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label91.Text = "依頼金額"
-        Me.Label91.Top = 3.470079!
+        Me.Label91.Top = 3.857874!
         Me.Label91.Width = 0.5811024!
         '
         'Label92
         '
-        Me.Label92.Height = 0.2!
+        Me.Label92.Height = 0.2255906!
         Me.Label92.HyperLink = Nothing
         Me.Label92.Left = 3.236221!
         Me.Label92.Name = "Label92"
         Me.Label92.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label92.Text = "利用日"
-        Me.Label92.Top = 3.470079!
+        Me.Label92.Top = 3.857874!
         Me.Label92.Width = 0.3948819!
         '
         'Label93
         '
-        Me.Label93.Height = 0.2!
+        Me.Label93.Height = 0.2255906!
         Me.Label93.HyperLink = Nothing
         Me.Label93.Left = 3.236221!
         Me.Label93.Name = "Label93"
         Me.Label93.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label93.Text = "番号"
-        Me.Label93.Top = 3.670079!
+        Me.Label93.Top = 4.083465!
         Me.Label93.Width = 0.381496!
         '
         'Label95
         '
-        Me.Label95.Height = 0.2!
+        Me.Label95.Height = 0.2255906!
         Me.Label95.HyperLink = Nothing
         Me.Label95.Left = 4.378347!
         Me.Label95.Name = "Label95"
         Me.Label95.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label95.Text = "券種"
-        Me.Label95.Top = 3.470079!
-        Me.Label95.Width = 0.2988189!
+        Me.Label95.Top = 3.857874!
+        Me.Label95.Width = 0.5464567!
         '
         'Label208
         '
-        Me.Label208.Height = 0.2!
+        Me.Label208.Height = 0.2255906!
         Me.Label208.HyperLink = Nothing
-        Me.Label208.Left = 4.378347!
+        Me.Label208.Left = 5.966536!
         Me.Label208.Name = "Label208"
         Me.Label208.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label208.Text = "備考"
-        Me.Label208.Top = 3.670079!
-        Me.Label208.Width = 0.2988189!
+        Me.Label208.Top = 4.083465!
+        Me.Label208.Width = 0.3948819!
         '
         'Label209
         '
-        Me.Label209.Height = 0.2!
+        Me.Label209.Height = 0.2255906!
         Me.Label209.HyperLink = Nothing
-        Me.Label209.Left = 5.571654!
+        Me.Label209.Left = 5.966536!
         Me.Label209.Name = "Label209"
         Me.Label209.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label209.Text = "発行日"
-        Me.Label209.Top = 3.470079!
+        Me.Label209.Top = 3.857874!
         Me.Label209.Width = 0.3948819!
         '
         'Label210
         '
-        Me.Label210.Height = 0.2!
+        Me.Label210.Height = 0.2255906!
         Me.Label210.HyperLink = Nothing
-        Me.Label210.Left = 5.966536!
+        Me.Label210.Left = 4.378346!
         Me.Label210.Name = "Label210"
         Me.Label210.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label210.Text = "利用者名"
-        Me.Label210.Top = 3.670079!
+        Me.Label210.Top = 4.083465!
         Me.Label210.Width = 0.5464572!
         '
         'Label18
         '
-        Me.Label18.Height = 0.2!
+        Me.Label18.Height = 0.2255906!
         Me.Label18.HyperLink = Nothing
         Me.Label18.Left = 0.4488192!
         Me.Label18.Name = "Label18"
         Me.Label18.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label18.Text = "利用日"
-        Me.Label18.Top = 3.870079!
+        Me.Label18.Top = 4.309055!
         Me.Label18.Width = 0.3948819!
         '
         'Label66
         '
-        Me.Label66.Height = 0.2!
+        Me.Label66.Height = 0.2255906!
         Me.Label66.HyperLink = Nothing
         Me.Label66.Left = 1.612992!
         Me.Label66.Name = "Label66"
         Me.Label66.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label66.Text = "依頼金額"
-        Me.Label66.Top = 3.870079!
+        Me.Label66.Top = 4.309055!
         Me.Label66.Width = 0.5811024!
         '
         'Label76
         '
-        Me.Label76.Height = 0.2!
+        Me.Label76.Height = 0.2255906!
         Me.Label76.HyperLink = Nothing
         Me.Label76.Left = 0.4488189!
         Me.Label76.Name = "Label76"
         Me.Label76.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label76.Text = "発地"
-        Me.Label76.Top = 4.070079!
+        Me.Label76.Top = 4.534646!
         Me.Label76.Width = 0.3948819!
         '
         'Label77
         '
-        Me.Label77.Height = 0.2!
+        Me.Label77.Height = 0.2255906!
         Me.Label77.HyperLink = Nothing
         Me.Label77.Left = 3.236221!
         Me.Label77.Name = "Label77"
         Me.Label77.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label77.Text = "利用日"
-        Me.Label77.Top = 3.870079!
+        Me.Label77.Top = 4.309055!
         Me.Label77.Width = 0.3948819!
         '
         'Label79
         '
-        Me.Label79.Height = 0.2!
+        Me.Label79.Height = 0.2255906!
         Me.Label79.HyperLink = Nothing
         Me.Label79.Left = 3.236221!
         Me.Label79.Name = "Label79"
         Me.Label79.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label79.Text = "番号"
-        Me.Label79.Top = 4.070079!
+        Me.Label79.Top = 4.534646!
         Me.Label79.Width = 0.381496!
         '
         'Label80
         '
-        Me.Label80.Height = 0.2!
+        Me.Label80.Height = 0.2255906!
         Me.Label80.HyperLink = Nothing
         Me.Label80.Left = 4.378347!
         Me.Label80.Name = "Label80"
         Me.Label80.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label80.Text = "券種"
-        Me.Label80.Top = 3.870079!
-        Me.Label80.Width = 0.2988189!
+        Me.Label80.Top = 4.309055!
+        Me.Label80.Width = 0.5464567!
         '
         'Label81
         '
-        Me.Label81.Height = 0.2!
+        Me.Label81.Height = 0.2255906!
         Me.Label81.HyperLink = Nothing
-        Me.Label81.Left = 4.378347!
+        Me.Label81.Left = 5.966536!
         Me.Label81.Name = "Label81"
         Me.Label81.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label81.Text = "備考"
-        Me.Label81.Top = 4.070079!
-        Me.Label81.Width = 0.2988189!
+        Me.Label81.Top = 4.534646!
+        Me.Label81.Width = 0.3948819!
         '
         'Label96
         '
-        Me.Label96.Height = 0.2!
+        Me.Label96.Height = 0.2255906!
         Me.Label96.HyperLink = Nothing
-        Me.Label96.Left = 5.571654!
+        Me.Label96.Left = 5.966536!
         Me.Label96.Name = "Label96"
         Me.Label96.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label96.Text = "発行日"
-        Me.Label96.Top = 3.870079!
+        Me.Label96.Top = 4.309055!
         Me.Label96.Width = 0.3948819!
         '
         'Label97
         '
-        Me.Label97.Height = 0.2!
+        Me.Label97.Height = 0.2255906!
         Me.Label97.HyperLink = Nothing
-        Me.Label97.Left = 5.966536!
+        Me.Label97.Left = 4.378346!
         Me.Label97.Name = "Label97"
         Me.Label97.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label97.Text = "利用者名"
-        Me.Label97.Top = 4.070079!
+        Me.Label97.Top = 4.534646!
         Me.Label97.Width = 0.5464572!
         '
         'Label98
         '
-        Me.Label98.Height = 0.2!
+        Me.Label98.Height = 0.2255906!
         Me.Label98.HyperLink = Nothing
         Me.Label98.Left = 0.4488192!
         Me.Label98.Name = "Label98"
         Me.Label98.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label98.Text = "利用日"
-        Me.Label98.Top = 4.270079!
+        Me.Label98.Top = 4.760236!
         Me.Label98.Width = 0.3948819!
         '
         'Label99
         '
-        Me.Label99.Height = 0.2!
+        Me.Label99.Height = 0.2255906!
         Me.Label99.HyperLink = Nothing
         Me.Label99.Left = 0.4488189!
         Me.Label99.Name = "Label99"
         Me.Label99.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label99.Text = "発地"
-        Me.Label99.Top = 4.470079!
+        Me.Label99.Top = 4.985826!
         Me.Label99.Width = 0.3948819!
         '
         'Label101
         '
-        Me.Label101.Height = 0.2!
+        Me.Label101.Height = 0.2255906!
         Me.Label101.HyperLink = Nothing
         Me.Label101.Left = 1.612992!
         Me.Label101.Name = "Label101"
         Me.Label101.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label101.Text = "依頼金額"
-        Me.Label101.Top = 4.270079!
+        Me.Label101.Top = 4.760236!
         Me.Label101.Width = 0.5811024!
         '
         'Label211
         '
-        Me.Label211.Height = 0.2!
+        Me.Label211.Height = 0.2255906!
         Me.Label211.HyperLink = Nothing
         Me.Label211.Left = 3.236221!
         Me.Label211.Name = "Label211"
         Me.Label211.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label211.Text = "利用日"
-        Me.Label211.Top = 4.270079!
+        Me.Label211.Top = 4.760236!
         Me.Label211.Width = 0.3948819!
         '
         'Label212
         '
-        Me.Label212.Height = 0.2!
+        Me.Label212.Height = 0.2255906!
         Me.Label212.HyperLink = Nothing
         Me.Label212.Left = 3.236221!
         Me.Label212.Name = "Label212"
         Me.Label212.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label212.Text = "番号"
-        Me.Label212.Top = 4.470079!
+        Me.Label212.Top = 4.985826!
         Me.Label212.Width = 0.381496!
         '
         'Label213
         '
-        Me.Label213.Height = 0.2!
+        Me.Label213.Height = 0.2255906!
         Me.Label213.HyperLink = Nothing
         Me.Label213.Left = 4.378347!
         Me.Label213.Name = "Label213"
         Me.Label213.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label213.Text = "券種"
-        Me.Label213.Top = 4.270079!
-        Me.Label213.Width = 0.2988189!
+        Me.Label213.Top = 4.760236!
+        Me.Label213.Width = 0.5464567!
         '
         'Label214
         '
-        Me.Label214.Height = 0.2!
+        Me.Label214.Height = 0.2255906!
         Me.Label214.HyperLink = Nothing
-        Me.Label214.Left = 4.378347!
+        Me.Label214.Left = 5.966536!
         Me.Label214.Name = "Label214"
         Me.Label214.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label214.Text = "備考"
-        Me.Label214.Top = 4.470079!
-        Me.Label214.Width = 0.2988189!
+        Me.Label214.Top = 4.985826!
+        Me.Label214.Width = 0.3948819!
         '
         'Label215
         '
-        Me.Label215.Height = 0.2!
+        Me.Label215.Height = 0.2255906!
         Me.Label215.HyperLink = Nothing
-        Me.Label215.Left = 5.571654!
+        Me.Label215.Left = 5.966536!
         Me.Label215.Name = "Label215"
         Me.Label215.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label215.Text = "発行日"
-        Me.Label215.Top = 4.270079!
+        Me.Label215.Top = 4.760236!
         Me.Label215.Width = 0.3948819!
         '
         'Label216
         '
-        Me.Label216.Height = 0.2!
+        Me.Label216.Height = 0.2255906!
         Me.Label216.HyperLink = Nothing
-        Me.Label216.Left = 5.966536!
+        Me.Label216.Left = 4.378346!
         Me.Label216.Name = "Label216"
         Me.Label216.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label216.Text = "利用者名"
-        Me.Label216.Top = 4.470079!
+        Me.Label216.Top = 4.985826!
         Me.Label216.Width = 0.5464572!
         '
         'Label19
         '
-        Me.Label19.Height = 0.2!
+        Me.Label19.Height = 0.2255906!
         Me.Label19.HyperLink = Nothing
         Me.Label19.Left = 0.4488192!
         Me.Label19.Name = "Label19"
         Me.Label19.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label19.Text = "利用日"
-        Me.Label19.Top = 4.670078!
+        Me.Label19.Top = 5.211418!
         Me.Label19.Width = 0.3948819!
         '
         'Label29
         '
-        Me.Label29.Height = 0.2!
+        Me.Label29.Height = 0.2255906!
         Me.Label29.HyperLink = Nothing
         Me.Label29.Left = 0.4488189!
         Me.Label29.Name = "Label29"
         Me.Label29.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label29.Text = "発地"
-        Me.Label29.Top = 4.870079!
+        Me.Label29.Top = 5.437008!
         Me.Label29.Width = 0.3948819!
         '
         'Label83
         '
-        Me.Label83.Height = 0.2!
+        Me.Label83.Height = 0.2255906!
         Me.Label83.HyperLink = Nothing
         Me.Label83.Left = 1.612992!
         Me.Label83.Name = "Label83"
         Me.Label83.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label83.Text = "依頼金額"
-        Me.Label83.Top = 4.670078!
+        Me.Label83.Top = 5.211418!
         Me.Label83.Width = 0.5811024!
         '
         'Label84
         '
-        Me.Label84.Height = 0.2!
+        Me.Label84.Height = 0.2255906!
         Me.Label84.HyperLink = Nothing
         Me.Label84.Left = 3.236221!
         Me.Label84.Name = "Label84"
         Me.Label84.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label84.Text = "利用日"
-        Me.Label84.Top = 4.670079!
+        Me.Label84.Top = 5.211418!
         Me.Label84.Width = 0.3948819!
         '
         'Label85
         '
-        Me.Label85.Height = 0.2!
+        Me.Label85.Height = 0.2255906!
         Me.Label85.HyperLink = Nothing
         Me.Label85.Left = 3.236221!
         Me.Label85.Name = "Label85"
         Me.Label85.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label85.Text = "番号"
-        Me.Label85.Top = 4.870079!
+        Me.Label85.Top = 5.437008!
         Me.Label85.Width = 0.381496!
         '
         'Label102
         '
-        Me.Label102.Height = 0.2!
+        Me.Label102.Height = 0.2255906!
         Me.Label102.HyperLink = Nothing
         Me.Label102.Left = 4.378347!
         Me.Label102.Name = "Label102"
         Me.Label102.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label102.Text = "券種"
-        Me.Label102.Top = 4.670079!
-        Me.Label102.Width = 0.2988189!
+        Me.Label102.Top = 5.211418!
+        Me.Label102.Width = 0.5464567!
         '
         'Label103
         '
-        Me.Label103.Height = 0.2!
+        Me.Label103.Height = 0.2255906!
         Me.Label103.HyperLink = Nothing
-        Me.Label103.Left = 4.378347!
+        Me.Label103.Left = 5.966536!
         Me.Label103.Name = "Label103"
         Me.Label103.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label103.Text = "備考"
-        Me.Label103.Top = 4.870079!
-        Me.Label103.Width = 0.2988189!
+        Me.Label103.Top = 5.437008!
+        Me.Label103.Width = 0.3948819!
         '
         'Label104
         '
-        Me.Label104.Height = 0.2!
+        Me.Label104.Height = 0.2255906!
         Me.Label104.HyperLink = Nothing
-        Me.Label104.Left = 5.571654!
+        Me.Label104.Left = 5.966536!
         Me.Label104.Name = "Label104"
         Me.Label104.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label104.Text = "発行日"
-        Me.Label104.Top = 4.670079!
+        Me.Label104.Top = 5.211418!
         Me.Label104.Width = 0.3948819!
         '
         'Label105
         '
-        Me.Label105.Height = 0.2!
+        Me.Label105.Height = 0.2255906!
         Me.Label105.HyperLink = Nothing
-        Me.Label105.Left = 5.966536!
+        Me.Label105.Left = 4.378346!
         Me.Label105.Name = "Label105"
         Me.Label105.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label105.Text = "利用者名"
-        Me.Label105.Top = 4.870079!
+        Me.Label105.Top = 5.437008!
         Me.Label105.Width = 0.5464572!
         '
         'Label72
         '
-        Me.Label72.Height = 0.2!
+        Me.Label72.Height = 0.2255906!
         Me.Label72.HyperLink = Nothing
         Me.Label72.Left = 3.236221!
         Me.Label72.Name = "Label72"
         Me.Label72.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label72.Text = "利用日"
-        Me.Label72.Top = 5.070078!
+        Me.Label72.Top = 5.662599!
         Me.Label72.Width = 0.3948819!
         '
         'Label87
         '
-        Me.Label87.Height = 0.2!
+        Me.Label87.Height = 0.2255906!
         Me.Label87.HyperLink = Nothing
         Me.Label87.Left = 3.236221!
         Me.Label87.Name = "Label87"
         Me.Label87.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label87.Text = "番号"
-        Me.Label87.Top = 5.270078!
+        Me.Label87.Top = 5.888189!
         Me.Label87.Width = 0.381496!
         '
         'Label88
         '
-        Me.Label88.Height = 0.2!
+        Me.Label88.Height = 0.2255906!
         Me.Label88.HyperLink = Nothing
         Me.Label88.Left = 4.378347!
         Me.Label88.Name = "Label88"
         Me.Label88.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label88.Text = "券種"
-        Me.Label88.Top = 5.070078!
-        Me.Label88.Width = 0.2988189!
+        Me.Label88.Top = 5.662599!
+        Me.Label88.Width = 0.5464567!
         '
         'Label89
         '
-        Me.Label89.Height = 0.2!
+        Me.Label89.Height = 0.2255906!
         Me.Label89.HyperLink = Nothing
-        Me.Label89.Left = 4.378347!
+        Me.Label89.Left = 5.966536!
         Me.Label89.Name = "Label89"
         Me.Label89.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label89.Text = "備考"
-        Me.Label89.Top = 5.270078!
-        Me.Label89.Width = 0.2988189!
+        Me.Label89.Top = 5.888189!
+        Me.Label89.Width = 0.3948819!
         '
         'Label107
         '
-        Me.Label107.Height = 0.2!
+        Me.Label107.Height = 0.2255906!
         Me.Label107.HyperLink = Nothing
-        Me.Label107.Left = 5.571654!
+        Me.Label107.Left = 5.966536!
         Me.Label107.Name = "Label107"
         Me.Label107.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label107.Text = "発行日"
-        Me.Label107.Top = 5.070078!
+        Me.Label107.Top = 5.662599!
         Me.Label107.Width = 0.3948819!
         '
         'Label108
         '
-        Me.Label108.Height = 0.2!
+        Me.Label108.Height = 0.2255906!
         Me.Label108.HyperLink = Nothing
-        Me.Label108.Left = 5.966536!
+        Me.Label108.Left = 4.378346!
         Me.Label108.Name = "Label108"
         Me.Label108.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
             "nter; vertical-align: middle; white-space: nowrap"
         Me.Label108.Text = "利用者名"
-        Me.Label108.Top = 5.270078!
+        Me.Label108.Top = 5.888189!
         Me.Label108.Width = 0.5464572!
         '
         'Line13
@@ -4985,12 +4701,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line13.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line13.LineWeight = 1.0!
         Me.Line13.Name = "Line13"
-        Me.Line13.Top = 5.270079!
-        Me.Line13.Width = 3.929133!
+        Me.Line13.Top = 5.888189!
+        Me.Line13.Width = 4.413385!
         Me.Line13.X1 = 3.236221!
-        Me.Line13.X2 = 7.165354!
-        Me.Line13.Y1 = 5.270079!
-        Me.Line13.Y2 = 5.270079!
+        Me.Line13.X2 = 7.649607!
+        Me.Line13.Y1 = 5.888189!
+        Me.Line13.Y2 = 5.888189!
         '
         'Line14
         '
@@ -4998,64 +4714,51 @@ Partial Public Class TaxiKakuninReport
         Me.Line14.Left = 2.787402!
         Me.Line14.LineWeight = 1.0!
         Me.Line14.Name = "Line14"
-        Me.Line14.Top = 5.470079!
-        Me.Line14.Width = 4.377952!
+        Me.Line14.Top = 6.11378!
+        Me.Line14.Width = 4.862205!
         Me.Line14.X1 = 2.787402!
-        Me.Line14.X2 = 7.165354!
-        Me.Line14.Y1 = 5.470079!
-        Me.Line14.Y2 = 5.470079!
+        Me.Line14.X2 = 7.649607!
+        Me.Line14.Y1 = 6.11378!
+        Me.Line14.Y2 = 6.11378!
         '
         'Line16
         '
-        Me.Line16.Height = 3.985827!
+        Me.Line16.Height = 4.511812!
         Me.Line16.Left = 0.4488189!
         Me.Line16.LineWeight = 1.0!
         Me.Line16.Name = "Line16"
-        Me.Line16.Top = 1.084252!
+        Me.Line16.Top = 1.150787!
         Me.Line16.Width = 0.0!
         Me.Line16.X1 = 0.4488189!
         Me.Line16.X2 = 0.4488189!
-        Me.Line16.Y1 = 1.084252!
-        Me.Line16.Y2 = 5.070079!
+        Me.Line16.Y1 = 1.150787!
+        Me.Line16.Y2 = 5.662599!
         '
         'Line41
         '
-        Me.Line41.Height = 3.985827!
+        Me.Line41.Height = 4.511812!
         Me.Line41.Left = 0.8437008!
         Me.Line41.LineWeight = 1.0!
         Me.Line41.Name = "Line41"
-        Me.Line41.Top = 1.084252!
+        Me.Line41.Top = 1.150787!
         Me.Line41.Width = 0.0!
         Me.Line41.X1 = 0.8437008!
         Me.Line41.X2 = 0.8437008!
-        Me.Line41.Y1 = 1.084252!
-        Me.Line41.Y2 = 5.070079!
-        '
-        'Line112
-        '
-        Me.Line112.Height = 0.0!
-        Me.Line112.Left = 0.0!
-        Me.Line112.LineWeight = 1.0!
-        Me.Line112.Name = "Line112"
-        Me.Line112.Top = 1.870079!
-        Me.Line112.Width = 7.165354!
-        Me.Line112.X1 = 0.0!
-        Me.Line112.X2 = 7.165354!
-        Me.Line112.Y1 = 1.870079!
-        Me.Line112.Y2 = 1.870079!
+        Me.Line41.Y1 = 1.150787!
+        Me.Line41.Y2 = 5.662599!
         '
         'Line111
         '
         Me.Line111.Height = 0.0!
-        Me.Line111.Left = 0.0!
+        Me.Line111.Left = 2.842171E-14!
         Me.Line111.LineWeight = 1.0!
         Me.Line111.Name = "Line111"
-        Me.Line111.Top = 2.270079!
-        Me.Line111.Width = 7.165354!
-        Me.Line111.X1 = 0.0!
-        Me.Line111.X2 = 7.165354!
-        Me.Line111.Y1 = 2.270079!
-        Me.Line111.Y2 = 2.270079!
+        Me.Line111.Top = 2.504331!
+        Me.Line111.Width = 7.649607!
+        Me.Line111.X1 = 2.842171E-14!
+        Me.Line111.X2 = 7.649607!
+        Me.Line111.Y1 = 2.504331!
+        Me.Line111.Y2 = 2.504331!
         '
         'Line136
         '
@@ -5064,25 +4767,25 @@ Partial Public Class TaxiKakuninReport
         Me.Line136.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line136.LineWeight = 1.0!
         Me.Line136.Name = "Line136"
-        Me.Line136.Top = 2.470079!
+        Me.Line136.Top = 2.729921!
         Me.Line136.Width = 2.338583!
         Me.Line136.X1 = 0.4488189!
         Me.Line136.X2 = 2.787402!
-        Me.Line136.Y1 = 2.470079!
-        Me.Line136.Y2 = 2.470079!
+        Me.Line136.Y1 = 2.729921!
+        Me.Line136.Y2 = 2.729921!
         '
         'Line106
         '
         Me.Line106.Height = 0.0!
-        Me.Line106.Left = 0.0!
+        Me.Line106.Left = 2.842171E-14!
         Me.Line106.LineWeight = 1.0!
         Me.Line106.Name = "Line106"
-        Me.Line106.Top = 2.670079!
-        Me.Line106.Width = 7.165354!
-        Me.Line106.X1 = 0.0!
-        Me.Line106.X2 = 7.165354!
-        Me.Line106.Y1 = 2.670079!
-        Me.Line106.Y2 = 2.670079!
+        Me.Line106.Top = 2.955512!
+        Me.Line106.Width = 7.649607!
+        Me.Line106.X1 = 2.842171E-14!
+        Me.Line106.X2 = 7.649607!
+        Me.Line106.Y1 = 2.955512!
+        Me.Line106.Y2 = 2.955512!
         '
         'Line138
         '
@@ -5091,12 +4794,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line138.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line138.LineWeight = 1.0!
         Me.Line138.Name = "Line138"
-        Me.Line138.Top = 2.870079!
+        Me.Line138.Top = 3.181102!
         Me.Line138.Width = 2.338583!
         Me.Line138.X1 = 0.4488189!
         Me.Line138.X2 = 2.787402!
-        Me.Line138.Y1 = 2.870079!
-        Me.Line138.Y2 = 2.870079!
+        Me.Line138.Y1 = 3.181102!
+        Me.Line138.Y2 = 3.181102!
         '
         'Line11
         '
@@ -5104,12 +4807,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line11.Left = 0.0!
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
-        Me.Line11.Top = 3.070079!
-        Me.Line11.Width = 7.165354!
+        Me.Line11.Top = 3.406693!
+        Me.Line11.Width = 7.649607!
         Me.Line11.X1 = 0.0!
-        Me.Line11.X2 = 7.165354!
-        Me.Line11.Y1 = 3.070079!
-        Me.Line11.Y2 = 3.070079!
+        Me.Line11.X2 = 7.649607!
+        Me.Line11.Y1 = 3.406693!
+        Me.Line11.Y2 = 3.406693!
         '
         'Line139
         '
@@ -5118,25 +4821,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line139.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line139.LineWeight = 1.0!
         Me.Line139.Name = "Line139"
-        Me.Line139.Top = 3.270079!
+        Me.Line139.Top = 3.632283!
         Me.Line139.Width = 2.338583!
         Me.Line139.X1 = 0.4488189!
         Me.Line139.X2 = 2.787402!
-        Me.Line139.Y1 = 3.270079!
-        Me.Line139.Y2 = 3.270079!
-        '
-        'Line12
-        '
-        Me.Line12.Height = 0.0!
-        Me.Line12.Left = 0.0!
-        Me.Line12.LineWeight = 1.0!
-        Me.Line12.Name = "Line12"
-        Me.Line12.Top = 3.470079!
-        Me.Line12.Width = 7.165354!
-        Me.Line12.X1 = 0.0!
-        Me.Line12.X2 = 7.165354!
-        Me.Line12.Y1 = 3.470079!
-        Me.Line12.Y2 = 3.470079!
+        Me.Line139.Y1 = 3.632283!
+        Me.Line139.Y2 = 3.632283!
         '
         'Line140
         '
@@ -5145,25 +4835,25 @@ Partial Public Class TaxiKakuninReport
         Me.Line140.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line140.LineWeight = 1.0!
         Me.Line140.Name = "Line140"
-        Me.Line140.Top = 3.670079!
+        Me.Line140.Top = 4.083465!
         Me.Line140.Width = 2.338583!
         Me.Line140.X1 = 0.4488189!
         Me.Line140.X2 = 2.787402!
-        Me.Line140.Y1 = 3.670079!
-        Me.Line140.Y2 = 3.670079!
+        Me.Line140.Y1 = 4.083465!
+        Me.Line140.Y2 = 4.083465!
         '
         'Line105
         '
         Me.Line105.Height = 0.0!
-        Me.Line105.Left = 0.0!
+        Me.Line105.Left = 2.842171E-14!
         Me.Line105.LineWeight = 1.0!
         Me.Line105.Name = "Line105"
-        Me.Line105.Top = 3.870079!
-        Me.Line105.Width = 7.165354!
-        Me.Line105.X1 = 0.0!
-        Me.Line105.X2 = 7.165354!
-        Me.Line105.Y1 = 3.870079!
-        Me.Line105.Y2 = 3.870079!
+        Me.Line105.Top = 4.309055!
+        Me.Line105.Width = 7.649607!
+        Me.Line105.X1 = 2.842171E-14!
+        Me.Line105.X2 = 7.649607!
+        Me.Line105.Y1 = 4.309055!
+        Me.Line105.Y2 = 4.309055!
         '
         'Line143
         '
@@ -5172,25 +4862,25 @@ Partial Public Class TaxiKakuninReport
         Me.Line143.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line143.LineWeight = 1.0!
         Me.Line143.Name = "Line143"
-        Me.Line143.Top = 4.070079!
+        Me.Line143.Top = 4.534646!
         Me.Line143.Width = 2.338583!
         Me.Line143.X1 = 0.4488189!
         Me.Line143.X2 = 2.787402!
-        Me.Line143.Y1 = 4.070079!
-        Me.Line143.Y2 = 4.070079!
+        Me.Line143.Y1 = 4.534646!
+        Me.Line143.Y2 = 4.534646!
         '
         'Line102
         '
         Me.Line102.Height = 0.0!
-        Me.Line102.Left = 0.0!
+        Me.Line102.Left = 2.842171E-14!
         Me.Line102.LineWeight = 1.0!
         Me.Line102.Name = "Line102"
-        Me.Line102.Top = 4.270079!
-        Me.Line102.Width = 7.165354!
-        Me.Line102.X1 = 0.0!
-        Me.Line102.X2 = 7.165354!
-        Me.Line102.Y1 = 4.270079!
-        Me.Line102.Y2 = 4.270079!
+        Me.Line102.Top = 4.760236!
+        Me.Line102.Width = 7.649607!
+        Me.Line102.X1 = 2.842171E-14!
+        Me.Line102.X2 = 7.649607!
+        Me.Line102.Y1 = 4.760236!
+        Me.Line102.Y2 = 4.760236!
         '
         'Line144
         '
@@ -5199,25 +4889,25 @@ Partial Public Class TaxiKakuninReport
         Me.Line144.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line144.LineWeight = 1.0!
         Me.Line144.Name = "Line144"
-        Me.Line144.Top = 4.470079!
+        Me.Line144.Top = 4.985826!
         Me.Line144.Width = 2.338583!
         Me.Line144.X1 = 0.4488189!
         Me.Line144.X2 = 2.787402!
-        Me.Line144.Y1 = 4.470079!
-        Me.Line144.Y2 = 4.470079!
+        Me.Line144.Y1 = 4.985826!
+        Me.Line144.Y2 = 4.985826!
         '
         'Line101
         '
         Me.Line101.Height = 0.0!
-        Me.Line101.Left = 0.0!
+        Me.Line101.Left = 2.842171E-14!
         Me.Line101.LineWeight = 1.0!
         Me.Line101.Name = "Line101"
-        Me.Line101.Top = 4.670079!
-        Me.Line101.Width = 7.165354!
-        Me.Line101.X1 = 0.0!
-        Me.Line101.X2 = 7.165354!
-        Me.Line101.Y1 = 4.670079!
-        Me.Line101.Y2 = 4.670079!
+        Me.Line101.Top = 5.211418!
+        Me.Line101.Width = 7.649607!
+        Me.Line101.X1 = 2.842171E-14!
+        Me.Line101.X2 = 7.649607!
+        Me.Line101.Y1 = 5.211418!
+        Me.Line101.Y2 = 5.211418!
         '
         'Line145
         '
@@ -5226,259 +4916,1353 @@ Partial Public Class TaxiKakuninReport
         Me.Line145.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line145.LineWeight = 1.0!
         Me.Line145.Name = "Line145"
-        Me.Line145.Top = 4.870079!
+        Me.Line145.Top = 5.437008!
         Me.Line145.Width = 2.338583!
         Me.Line145.X1 = 0.4488189!
         Me.Line145.X2 = 2.787402!
-        Me.Line145.Y1 = 4.870079!
-        Me.Line145.Y2 = 4.870079!
+        Me.Line145.Y1 = 5.437008!
+        Me.Line145.Y2 = 5.437008!
         '
         'Line100
         '
         Me.Line100.Height = 0.0!
-        Me.Line100.Left = 0.0!
+        Me.Line100.Left = 2.842171E-14!
         Me.Line100.LineWeight = 1.0!
         Me.Line100.Name = "Line100"
-        Me.Line100.Top = 5.070079!
-        Me.Line100.Width = 7.165354!
-        Me.Line100.X1 = 0.0!
-        Me.Line100.X2 = 7.165354!
-        Me.Line100.Y1 = 5.070079!
-        Me.Line100.Y2 = 5.070079!
+        Me.Line100.Top = 5.662599!
+        Me.Line100.Width = 7.649607!
+        Me.Line100.X1 = 2.842171E-14!
+        Me.Line100.X2 = 7.649607!
+        Me.Line100.Y1 = 5.662599!
+        Me.Line100.Y2 = 5.662599!
         '
         'Line15
         '
-        Me.Line15.Height = 0.2!
+        Me.Line15.Height = 0.21496!
         Me.Line15.Left = 1.612992!
         Me.Line15.LineWeight = 1.0!
         Me.Line15.Name = "Line15"
-        Me.Line15.Top = 1.474016!
+        Me.Line15.Top = 1.612599!
         Me.Line15.Width = 0.0!
         Me.Line15.X1 = 1.612992!
         Me.Line15.X2 = 1.612992!
-        Me.Line15.Y1 = 1.474016!
-        Me.Line15.Y2 = 1.674016!
+        Me.Line15.Y1 = 1.612599!
+        Me.Line15.Y2 = 1.827559!
         '
         'Line19
         '
-        Me.Line19.Height = 0.2!
+        Me.Line19.Height = 0.22559!
         Me.Line19.Left = 1.612992!
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
-        Me.Line19.Top = 1.870079!
+        Me.Line19.Top = 2.05315!
         Me.Line19.Width = 0.0!
         Me.Line19.X1 = 1.612992!
         Me.Line19.X2 = 1.612992!
-        Me.Line19.Y1 = 1.870079!
-        Me.Line19.Y2 = 2.070079!
+        Me.Line19.Y1 = 2.05315!
+        Me.Line19.Y2 = 2.27874!
         '
         'Line20
         '
-        Me.Line20.Height = 0.2!
+        Me.Line20.Height = 0.2255905!
         Me.Line20.Left = 1.612992!
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
-        Me.Line20.Top = 2.270079!
+        Me.Line20.Top = 2.504331!
         Me.Line20.Width = 0.0!
         Me.Line20.X1 = 1.612992!
         Me.Line20.X2 = 1.612992!
-        Me.Line20.Y1 = 2.270079!
-        Me.Line20.Y2 = 2.470079!
+        Me.Line20.Y1 = 2.504331!
+        Me.Line20.Y2 = 2.729921!
         '
         'Line21
         '
-        Me.Line21.Height = 0.2!
+        Me.Line21.Height = 0.2255905!
         Me.Line21.Left = 1.612992!
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
-        Me.Line21.Top = 2.670079!
+        Me.Line21.Top = 2.955512!
         Me.Line21.Width = 0.0!
         Me.Line21.X1 = 1.612992!
         Me.Line21.X2 = 1.612992!
-        Me.Line21.Y1 = 2.670079!
-        Me.Line21.Y2 = 2.870079!
+        Me.Line21.Y1 = 2.955512!
+        Me.Line21.Y2 = 3.181102!
         '
         'Line22
         '
-        Me.Line22.Height = 0.1999998!
+        Me.Line22.Height = 0.2255905!
         Me.Line22.Left = 1.612992!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
-        Me.Line22.Top = 3.070079!
+        Me.Line22.Top = 3.406693!
         Me.Line22.Width = 0.0!
         Me.Line22.X1 = 1.612992!
         Me.Line22.X2 = 1.612992!
-        Me.Line22.Y1 = 3.070079!
-        Me.Line22.Y2 = 3.270079!
+        Me.Line22.Y1 = 3.406693!
+        Me.Line22.Y2 = 3.632283!
         '
         'Line35
         '
-        Me.Line35.Height = 0.2!
+        Me.Line35.Height = 0.2255907!
         Me.Line35.Left = 1.612992!
         Me.Line35.LineWeight = 1.0!
         Me.Line35.Name = "Line35"
-        Me.Line35.Top = 3.470079!
+        Me.Line35.Top = 3.857874!
         Me.Line35.Width = 0.0!
         Me.Line35.X1 = 1.612992!
         Me.Line35.X2 = 1.612992!
-        Me.Line35.Y1 = 3.470079!
-        Me.Line35.Y2 = 3.670079!
+        Me.Line35.Y1 = 3.857874!
+        Me.Line35.Y2 = 4.083465!
         '
         'Line49
         '
-        Me.Line49.Height = 0.1999998!
+        Me.Line49.Height = 0.2255907!
         Me.Line49.Left = 1.612992!
         Me.Line49.LineWeight = 1.0!
         Me.Line49.Name = "Line49"
-        Me.Line49.Top = 3.870079!
+        Me.Line49.Top = 4.309055!
         Me.Line49.Width = 0.0!
         Me.Line49.X1 = 1.612992!
         Me.Line49.X2 = 1.612992!
-        Me.Line49.Y1 = 3.870079!
-        Me.Line49.Y2 = 4.070079!
+        Me.Line49.Y1 = 4.309055!
+        Me.Line49.Y2 = 4.534646!
         '
         'Line54
         '
-        Me.Line54.Height = 0.1999989!
+        Me.Line54.Height = 0.2255902!
         Me.Line54.Left = 1.612992!
         Me.Line54.LineWeight = 1.0!
         Me.Line54.Name = "Line54"
-        Me.Line54.Top = 4.270079!
+        Me.Line54.Top = 4.760236!
         Me.Line54.Width = 0.0!
         Me.Line54.X1 = 1.612992!
         Me.Line54.X2 = 1.612992!
-        Me.Line54.Y1 = 4.270079!
-        Me.Line54.Y2 = 4.470078!
+        Me.Line54.Y1 = 4.760236!
+        Me.Line54.Y2 = 4.985826!
         '
         'Line58
         '
-        Me.Line58.Height = 0.2000003!
+        Me.Line58.Height = 0.2255902!
         Me.Line58.Left = 1.612992!
         Me.Line58.LineWeight = 1.0!
         Me.Line58.Name = "Line58"
-        Me.Line58.Top = 4.670078!
+        Me.Line58.Top = 5.211418!
         Me.Line58.Width = 0.0!
         Me.Line58.X1 = 1.612992!
         Me.Line58.X2 = 1.612992!
-        Me.Line58.Y1 = 4.670078!
-        Me.Line58.Y2 = 4.870078!
+        Me.Line58.Y1 = 5.211418!
+        Me.Line58.Y2 = 5.437008!
         '
         'Line59
         '
-        Me.Line59.Height = 0.2!
+        Me.Line59.Height = 0.21496!
         Me.Line59.Left = 2.194095!
         Me.Line59.LineWeight = 1.0!
         Me.Line59.Name = "Line59"
-        Me.Line59.Top = 1.474016!
+        Me.Line59.Top = 1.612599!
         Me.Line59.Width = 0.0!
         Me.Line59.X1 = 2.194095!
         Me.Line59.X2 = 2.194095!
-        Me.Line59.Y1 = 1.474016!
-        Me.Line59.Y2 = 1.674016!
+        Me.Line59.Y1 = 1.612599!
+        Me.Line59.Y2 = 1.827559!
         '
         'Line60
         '
-        Me.Line60.Height = 0.2!
+        Me.Line60.Height = 0.22559!
         Me.Line60.Left = 2.194095!
         Me.Line60.LineWeight = 1.0!
         Me.Line60.Name = "Line60"
-        Me.Line60.Top = 1.870079!
+        Me.Line60.Top = 2.05315!
         Me.Line60.Width = 0.0!
         Me.Line60.X1 = 2.194095!
         Me.Line60.X2 = 2.194095!
-        Me.Line60.Y1 = 1.870079!
-        Me.Line60.Y2 = 2.070079!
+        Me.Line60.Y1 = 2.05315!
+        Me.Line60.Y2 = 2.27874!
         '
         'Line61
         '
-        Me.Line61.Height = 0.2!
+        Me.Line61.Height = 0.2255905!
         Me.Line61.Left = 2.194095!
         Me.Line61.LineWeight = 1.0!
         Me.Line61.Name = "Line61"
-        Me.Line61.Top = 2.270079!
+        Me.Line61.Top = 2.504331!
         Me.Line61.Width = 0.0!
         Me.Line61.X1 = 2.194095!
         Me.Line61.X2 = 2.194095!
-        Me.Line61.Y1 = 2.270079!
-        Me.Line61.Y2 = 2.470079!
+        Me.Line61.Y1 = 2.504331!
+        Me.Line61.Y2 = 2.729921!
         '
         'Line64
         '
-        Me.Line64.Height = 0.2!
+        Me.Line64.Height = 0.2255905!
         Me.Line64.Left = 2.194095!
         Me.Line64.LineWeight = 1.0!
         Me.Line64.Name = "Line64"
-        Me.Line64.Top = 2.670079!
+        Me.Line64.Top = 2.955512!
         Me.Line64.Width = 0.0!
         Me.Line64.X1 = 2.194095!
         Me.Line64.X2 = 2.194095!
-        Me.Line64.Y1 = 2.670079!
-        Me.Line64.Y2 = 2.870079!
+        Me.Line64.Y1 = 2.955512!
+        Me.Line64.Y2 = 3.181102!
         '
         'Line65
         '
-        Me.Line65.Height = 0.1999998!
+        Me.Line65.Height = 0.2255905!
         Me.Line65.Left = 2.194095!
         Me.Line65.LineWeight = 1.0!
         Me.Line65.Name = "Line65"
-        Me.Line65.Top = 3.070079!
+        Me.Line65.Top = 3.406693!
         Me.Line65.Width = 0.0!
         Me.Line65.X1 = 2.194095!
         Me.Line65.X2 = 2.194095!
-        Me.Line65.Y1 = 3.070079!
-        Me.Line65.Y2 = 3.270079!
+        Me.Line65.Y1 = 3.406693!
+        Me.Line65.Y2 = 3.632283!
         '
         'Line67
         '
-        Me.Line67.Height = 0.2!
+        Me.Line67.Height = 0.2255907!
         Me.Line67.Left = 2.194095!
         Me.Line67.LineWeight = 1.0!
         Me.Line67.Name = "Line67"
-        Me.Line67.Top = 3.470079!
+        Me.Line67.Top = 3.857874!
         Me.Line67.Width = 0.0!
         Me.Line67.X1 = 2.194095!
         Me.Line67.X2 = 2.194095!
-        Me.Line67.Y1 = 3.470079!
-        Me.Line67.Y2 = 3.670079!
+        Me.Line67.Y1 = 3.857874!
+        Me.Line67.Y2 = 4.083465!
         '
         'Line68
         '
-        Me.Line68.Height = 0.1999998!
+        Me.Line68.Height = 0.2255907!
         Me.Line68.Left = 2.194095!
         Me.Line68.LineWeight = 1.0!
         Me.Line68.Name = "Line68"
-        Me.Line68.Top = 3.870079!
+        Me.Line68.Top = 4.309055!
         Me.Line68.Width = 0.0!
         Me.Line68.X1 = 2.194095!
         Me.Line68.X2 = 2.194095!
-        Me.Line68.Y1 = 3.870079!
-        Me.Line68.Y2 = 4.070079!
+        Me.Line68.Y1 = 4.309055!
+        Me.Line68.Y2 = 4.534646!
         '
         'Line69
         '
-        Me.Line69.Height = 0.1999989!
+        Me.Line69.Height = 0.2255902!
         Me.Line69.Left = 2.194095!
         Me.Line69.LineWeight = 1.0!
         Me.Line69.Name = "Line69"
-        Me.Line69.Top = 4.270079!
+        Me.Line69.Top = 4.760236!
         Me.Line69.Width = 0.0!
         Me.Line69.X1 = 2.194095!
         Me.Line69.X2 = 2.194095!
-        Me.Line69.Y1 = 4.270079!
-        Me.Line69.Y2 = 4.470078!
+        Me.Line69.Y1 = 4.760236!
+        Me.Line69.Y2 = 4.985826!
         '
         'Line87
         '
-        Me.Line87.Height = 0.2000003!
+        Me.Line87.Height = 0.2255902!
         Me.Line87.Left = 2.194095!
         Me.Line87.LineWeight = 1.0!
         Me.Line87.Name = "Line87"
-        Me.Line87.Top = 4.670078!
+        Me.Line87.Top = 5.211418!
         Me.Line87.Width = 0.0!
         Me.Line87.X1 = 2.194095!
         Me.Line87.X2 = 2.194095!
-        Me.Line87.Y1 = 4.670078!
-        Me.Line87.Y2 = 4.870078!
+        Me.Line87.Y1 = 5.211418!
+        Me.Line87.Y2 = 5.437008!
+        '
+        'Label109
+        '
+        Me.Label109.Height = 0.2255906!
+        Me.Label109.HyperLink = Nothing
+        Me.Label109.Left = 3.236221!
+        Me.Label109.Name = "Label109"
+        Me.Label109.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label109.Text = "利用日"
+        Me.Label109.Top = 6.11378!
+        Me.Label109.Width = 0.3948819!
+        '
+        'Label110
+        '
+        Me.Label110.Height = 0.2255906!
+        Me.Label110.HyperLink = Nothing
+        Me.Label110.Left = 4.378347!
+        Me.Label110.Name = "Label110"
+        Me.Label110.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label110.Text = "券種"
+        Me.Label110.Top = 6.11378!
+        Me.Label110.Width = 0.5464567!
+        '
+        'Label111
+        '
+        Me.Label111.Height = 0.2255906!
+        Me.Label111.HyperLink = Nothing
+        Me.Label111.Left = 5.966536!
+        Me.Label111.Name = "Label111"
+        Me.Label111.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label111.Text = "発行日"
+        Me.Label111.Top = 6.11378!
+        Me.Label111.Width = 0.3948819!
+        '
+        'Label113
+        '
+        Me.Label113.Height = 0.2255906!
+        Me.Label113.HyperLink = Nothing
+        Me.Label113.Left = 3.236221!
+        Me.Label113.Name = "Label113"
+        Me.Label113.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label113.Text = "番号"
+        Me.Label113.Top = 6.33937!
+        Me.Label113.Width = 0.381496!
+        '
+        'Label114
+        '
+        Me.Label114.Height = 0.2255906!
+        Me.Label114.HyperLink = Nothing
+        Me.Label114.Left = 5.966536!
+        Me.Label114.Name = "Label114"
+        Me.Label114.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label114.Text = "備考"
+        Me.Label114.Top = 6.33937!
+        Me.Label114.Width = 0.3948819!
+        '
+        'Label115
+        '
+        Me.Label115.Height = 0.2255906!
+        Me.Label115.HyperLink = Nothing
+        Me.Label115.Left = 4.378346!
+        Me.Label115.Name = "Label115"
+        Me.Label115.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label115.Text = "利用者名"
+        Me.Label115.Top = 6.33937!
+        Me.Label115.Width = 0.5464572!
+        '
+        'Line99
+        '
+        Me.Line99.Height = 0.0!
+        Me.Line99.Left = 3.236221!
+        Me.Line99.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line99.LineWeight = 1.0!
+        Me.Line99.Name = "Line99"
+        Me.Line99.Top = 6.33937!
+        Me.Line99.Width = 4.413385!
+        Me.Line99.X1 = 3.236221!
+        Me.Line99.X2 = 7.649607!
+        Me.Line99.Y1 = 6.33937!
+        Me.Line99.Y2 = 6.33937!
+        '
+        'Line103
+        '
+        Me.Line103.Height = 0.0!
+        Me.Line103.Left = 2.787402!
+        Me.Line103.LineWeight = 1.0!
+        Me.Line103.Name = "Line103"
+        Me.Line103.Top = 6.56496!
+        Me.Line103.Width = 4.862205!
+        Me.Line103.X1 = 2.787402!
+        Me.Line103.X2 = 7.649607!
+        Me.Line103.Y1 = 6.56496!
+        Me.Line103.Y2 = 6.56496!
+        '
+        'Label116
+        '
+        Me.Label116.Height = 0.2255906!
+        Me.Label116.HyperLink = Nothing
+        Me.Label116.Left = 3.236221!
+        Me.Label116.Name = "Label116"
+        Me.Label116.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label116.Text = "利用日"
+        Me.Label116.Top = 6.56496!
+        Me.Label116.Width = 0.3948819!
+        '
+        'Label117
+        '
+        Me.Label117.Height = 0.2255906!
+        Me.Label117.HyperLink = Nothing
+        Me.Label117.Left = 3.236221!
+        Me.Label117.Name = "Label117"
+        Me.Label117.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label117.Text = "番号"
+        Me.Label117.Top = 6.790551!
+        Me.Label117.Width = 0.381496!
+        '
+        'Label119
+        '
+        Me.Label119.Height = 0.2255906!
+        Me.Label119.HyperLink = Nothing
+        Me.Label119.Left = 4.378347!
+        Me.Label119.Name = "Label119"
+        Me.Label119.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label119.Text = "券種"
+        Me.Label119.Top = 6.56496!
+        Me.Label119.Width = 0.5464567!
+        '
+        'Label120
+        '
+        Me.Label120.Height = 0.2255906!
+        Me.Label120.HyperLink = Nothing
+        Me.Label120.Left = 5.966536!
+        Me.Label120.Name = "Label120"
+        Me.Label120.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label120.Text = "備考"
+        Me.Label120.Top = 6.790551!
+        Me.Label120.Width = 0.3948819!
+        '
+        'Label121
+        '
+        Me.Label121.Height = 0.2255906!
+        Me.Label121.HyperLink = Nothing
+        Me.Label121.Left = 5.966536!
+        Me.Label121.Name = "Label121"
+        Me.Label121.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label121.Text = "発行日"
+        Me.Label121.Top = 6.56496!
+        Me.Label121.Width = 0.3948819!
+        '
+        'Label122
+        '
+        Me.Label122.Height = 0.2255906!
+        Me.Label122.HyperLink = Nothing
+        Me.Label122.Left = 4.378346!
+        Me.Label122.Name = "Label122"
+        Me.Label122.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label122.Text = "利用者名"
+        Me.Label122.Top = 6.790551!
+        Me.Label122.Width = 0.5464572!
+        '
+        'Line8
+        '
+        Me.Line8.Height = 0.0!
+        Me.Line8.Left = 3.236221!
+        Me.Line8.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line8.LineWeight = 1.0!
+        Me.Line8.Name = "Line8"
+        Me.Line8.Top = 6.790551!
+        Me.Line8.Width = 4.413385!
+        Me.Line8.X1 = 3.236221!
+        Me.Line8.X2 = 7.649607!
+        Me.Line8.Y1 = 6.790551!
+        Me.Line8.Y2 = 6.790551!
+        '
+        'Line24
+        '
+        Me.Line24.Height = 0.0!
+        Me.Line24.Left = 2.787402!
+        Me.Line24.LineWeight = 1.0!
+        Me.Line24.Name = "Line24"
+        Me.Line24.Top = 7.016141!
+        Me.Line24.Width = 4.862205!
+        Me.Line24.X1 = 2.787402!
+        Me.Line24.X2 = 7.649607!
+        Me.Line24.Y1 = 7.016141!
+        Me.Line24.Y2 = 7.016141!
+        '
+        'Label123
+        '
+        Me.Label123.Height = 0.2255906!
+        Me.Label123.HyperLink = Nothing
+        Me.Label123.Left = 3.236221!
+        Me.Label123.Name = "Label123"
+        Me.Label123.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label123.Text = "利用日"
+        Me.Label123.Top = 7.016141!
+        Me.Label123.Width = 0.3948819!
+        '
+        'Label125
+        '
+        Me.Label125.Height = 0.2255906!
+        Me.Label125.HyperLink = Nothing
+        Me.Label125.Left = 3.236221!
+        Me.Label125.Name = "Label125"
+        Me.Label125.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label125.Text = "番号"
+        Me.Label125.Top = 7.241732!
+        Me.Label125.Width = 0.381496!
+        '
+        'Label126
+        '
+        Me.Label126.Height = 0.2255906!
+        Me.Label126.HyperLink = Nothing
+        Me.Label126.Left = 4.378347!
+        Me.Label126.Name = "Label126"
+        Me.Label126.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label126.Text = "券種"
+        Me.Label126.Top = 7.016141!
+        Me.Label126.Width = 0.5464567!
+        '
+        'Label127
+        '
+        Me.Label127.Height = 0.2255906!
+        Me.Label127.HyperLink = Nothing
+        Me.Label127.Left = 5.966536!
+        Me.Label127.Name = "Label127"
+        Me.Label127.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label127.Text = "備考"
+        Me.Label127.Top = 7.241732!
+        Me.Label127.Width = 0.3948819!
+        '
+        'Label128
+        '
+        Me.Label128.Height = 0.2255906!
+        Me.Label128.HyperLink = Nothing
+        Me.Label128.Left = 5.966536!
+        Me.Label128.Name = "Label128"
+        Me.Label128.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label128.Text = "発行日"
+        Me.Label128.Top = 7.016141!
+        Me.Label128.Width = 0.3948819!
+        '
+        'Label129
+        '
+        Me.Label129.Height = 0.2255906!
+        Me.Label129.HyperLink = Nothing
+        Me.Label129.Left = 4.378346!
+        Me.Label129.Name = "Label129"
+        Me.Label129.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label129.Text = "利用者名"
+        Me.Label129.Top = 7.241732!
+        Me.Label129.Width = 0.5464572!
+        '
+        'Line25
+        '
+        Me.Line25.Height = 0.0!
+        Me.Line25.Left = 3.236221!
+        Me.Line25.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line25.LineWeight = 1.0!
+        Me.Line25.Name = "Line25"
+        Me.Line25.Top = 7.241732!
+        Me.Line25.Width = 4.413385!
+        Me.Line25.X1 = 3.236221!
+        Me.Line25.X2 = 7.649607!
+        Me.Line25.Y1 = 7.241732!
+        Me.Line25.Y2 = 7.241732!
+        '
+        'Line29
+        '
+        Me.Line29.Height = 0.0!
+        Me.Line29.Left = 2.787402!
+        Me.Line29.LineWeight = 1.0!
+        Me.Line29.Name = "Line29"
+        Me.Line29.Top = 7.467322!
+        Me.Line29.Width = 4.862205!
+        Me.Line29.X1 = 2.787402!
+        Me.Line29.X2 = 7.649607!
+        Me.Line29.Y1 = 7.467322!
+        Me.Line29.Y2 = 7.467322!
+        '
+        'Label131
+        '
+        Me.Label131.Height = 0.2255906!
+        Me.Label131.HyperLink = Nothing
+        Me.Label131.Left = 3.236221!
+        Me.Label131.Name = "Label131"
+        Me.Label131.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label131.Text = "利用日"
+        Me.Label131.Top = 7.467322!
+        Me.Label131.Width = 0.3948819!
+        '
+        'Label132
+        '
+        Me.Label132.Height = 0.2255906!
+        Me.Label132.HyperLink = Nothing
+        Me.Label132.Left = 3.236221!
+        Me.Label132.Name = "Label132"
+        Me.Label132.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label132.Text = "番号"
+        Me.Label132.Top = 7.692914!
+        Me.Label132.Width = 0.381496!
+        '
+        'Label133
+        '
+        Me.Label133.Height = 0.2255906!
+        Me.Label133.HyperLink = Nothing
+        Me.Label133.Left = 4.378347!
+        Me.Label133.Name = "Label133"
+        Me.Label133.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label133.Text = "券種"
+        Me.Label133.Top = 7.467322!
+        Me.Label133.Width = 0.5464567!
+        '
+        'Label134
+        '
+        Me.Label134.Height = 0.2255906!
+        Me.Label134.HyperLink = Nothing
+        Me.Label134.Left = 5.966536!
+        Me.Label134.Name = "Label134"
+        Me.Label134.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label134.Text = "備考"
+        Me.Label134.Top = 7.692914!
+        Me.Label134.Width = 0.3948819!
+        '
+        'Label135
+        '
+        Me.Label135.Height = 0.2255906!
+        Me.Label135.HyperLink = Nothing
+        Me.Label135.Left = 5.966536!
+        Me.Label135.Name = "Label135"
+        Me.Label135.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label135.Text = "発行日"
+        Me.Label135.Top = 7.467322!
+        Me.Label135.Width = 0.3948819!
+        '
+        'Label137
+        '
+        Me.Label137.Height = 0.2255906!
+        Me.Label137.HyperLink = Nothing
+        Me.Label137.Left = 4.378346!
+        Me.Label137.Name = "Label137"
+        Me.Label137.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label137.Text = "利用者名"
+        Me.Label137.Top = 7.692914!
+        Me.Label137.Width = 0.5464572!
+        '
+        'Line27
+        '
+        Me.Line27.Height = 0.0!
+        Me.Line27.Left = 3.236221!
+        Me.Line27.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line27.LineWeight = 1.0!
+        Me.Line27.Name = "Line27"
+        Me.Line27.Top = 7.692914!
+        Me.Line27.Width = 4.413385!
+        Me.Line27.X1 = 3.236221!
+        Me.Line27.X2 = 7.649607!
+        Me.Line27.Y1 = 7.692914!
+        Me.Line27.Y2 = 7.692914!
+        '
+        'Line30
+        '
+        Me.Line30.Height = 0.0!
+        Me.Line30.Left = 2.787402!
+        Me.Line30.LineWeight = 1.0!
+        Me.Line30.Name = "Line30"
+        Me.Line30.Top = 7.918504!
+        Me.Line30.Width = 4.862205!
+        Me.Line30.X1 = 2.787402!
+        Me.Line30.X2 = 7.649607!
+        Me.Line30.Y1 = 7.918504!
+        Me.Line30.Y2 = 7.918504!
+        '
+        'Label138
+        '
+        Me.Label138.Height = 0.2255906!
+        Me.Label138.HyperLink = Nothing
+        Me.Label138.Left = 3.236221!
+        Me.Label138.Name = "Label138"
+        Me.Label138.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label138.Text = "利用日"
+        Me.Label138.Top = 7.918504!
+        Me.Label138.Width = 0.3948819!
+        '
+        'Label139
+        '
+        Me.Label139.Height = 0.2255906!
+        Me.Label139.HyperLink = Nothing
+        Me.Label139.Left = 3.236221!
+        Me.Label139.Name = "Label139"
+        Me.Label139.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label139.Text = "番号"
+        Me.Label139.Top = 8.144094!
+        Me.Label139.Width = 0.381496!
+        '
+        'Label140
+        '
+        Me.Label140.Height = 0.2255906!
+        Me.Label140.HyperLink = Nothing
+        Me.Label140.Left = 4.378347!
+        Me.Label140.Name = "Label140"
+        Me.Label140.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label140.Text = "券種"
+        Me.Label140.Top = 7.918504!
+        Me.Label140.Width = 0.5464567!
+        '
+        'Label141
+        '
+        Me.Label141.Height = 0.2255906!
+        Me.Label141.HyperLink = Nothing
+        Me.Label141.Left = 5.966536!
+        Me.Label141.Name = "Label141"
+        Me.Label141.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label141.Text = "備考"
+        Me.Label141.Top = 8.144094!
+        Me.Label141.Width = 0.3948819!
+        '
+        'Label143
+        '
+        Me.Label143.Height = 0.2255906!
+        Me.Label143.HyperLink = Nothing
+        Me.Label143.Left = 5.966536!
+        Me.Label143.Name = "Label143"
+        Me.Label143.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label143.Text = "発行日"
+        Me.Label143.Top = 7.918504!
+        Me.Label143.Width = 0.3948819!
+        '
+        'Label144
+        '
+        Me.Label144.Height = 0.2255906!
+        Me.Label144.HyperLink = Nothing
+        Me.Label144.Left = 4.378346!
+        Me.Label144.Name = "Label144"
+        Me.Label144.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label144.Text = "利用者名"
+        Me.Label144.Top = 8.144094!
+        Me.Label144.Width = 0.5464572!
+        '
+        'Line33
+        '
+        Me.Line33.Height = 0.0!
+        Me.Line33.Left = 3.236221!
+        Me.Line33.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line33.LineWeight = 1.0!
+        Me.Line33.Name = "Line33"
+        Me.Line33.Top = 8.144094!
+        Me.Line33.Width = 4.413385!
+        Me.Line33.X1 = 3.236221!
+        Me.Line33.X2 = 7.649607!
+        Me.Line33.Y1 = 8.144094!
+        Me.Line33.Y2 = 8.144094!
+        '
+        'Line70
+        '
+        Me.Line70.Height = 0.0!
+        Me.Line70.Left = 2.787402!
+        Me.Line70.LineWeight = 1.0!
+        Me.Line70.Name = "Line70"
+        Me.Line70.Top = 8.369685!
+        Me.Line70.Width = 4.862205!
+        Me.Line70.X1 = 2.787402!
+        Me.Line70.X2 = 7.649607!
+        Me.Line70.Y1 = 8.369685!
+        Me.Line70.Y2 = 8.369685!
+        '
+        'Label145
+        '
+        Me.Label145.Height = 0.2255906!
+        Me.Label145.HyperLink = Nothing
+        Me.Label145.Left = 3.236221!
+        Me.Label145.Name = "Label145"
+        Me.Label145.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label145.Text = "利用日"
+        Me.Label145.Top = 8.369685!
+        Me.Label145.Width = 0.3948819!
+        '
+        'Label146
+        '
+        Me.Label146.Height = 0.2255906!
+        Me.Label146.HyperLink = Nothing
+        Me.Label146.Left = 3.236221!
+        Me.Label146.Name = "Label146"
+        Me.Label146.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label146.Text = "番号"
+        Me.Label146.Top = 8.595276!
+        Me.Label146.Width = 0.381496!
+        '
+        'Label147
+        '
+        Me.Label147.Height = 0.2255906!
+        Me.Label147.HyperLink = Nothing
+        Me.Label147.Left = 4.378347!
+        Me.Label147.Name = "Label147"
+        Me.Label147.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label147.Text = "券種"
+        Me.Label147.Top = 8.369685!
+        Me.Label147.Width = 0.5464567!
+        '
+        'Label149
+        '
+        Me.Label149.Height = 0.2255906!
+        Me.Label149.HyperLink = Nothing
+        Me.Label149.Left = 5.966536!
+        Me.Label149.Name = "Label149"
+        Me.Label149.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label149.Text = "備考"
+        Me.Label149.Top = 8.595276!
+        Me.Label149.Width = 0.3948819!
+        '
+        'Label150
+        '
+        Me.Label150.Height = 0.2255906!
+        Me.Label150.HyperLink = Nothing
+        Me.Label150.Left = 5.966536!
+        Me.Label150.Name = "Label150"
+        Me.Label150.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label150.Text = "発行日"
+        Me.Label150.Top = 8.369685!
+        Me.Label150.Width = 0.3948819!
+        '
+        'Label151
+        '
+        Me.Label151.Height = 0.2255906!
+        Me.Label151.HyperLink = Nothing
+        Me.Label151.Left = 4.378346!
+        Me.Label151.Name = "Label151"
+        Me.Label151.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label151.Text = "利用者名"
+        Me.Label151.Top = 8.595276!
+        Me.Label151.Width = 0.5464572!
+        '
+        'Line34
+        '
+        Me.Line34.Height = 0.0!
+        Me.Line34.Left = 3.236221!
+        Me.Line34.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line34.LineWeight = 1.0!
+        Me.Line34.Name = "Line34"
+        Me.Line34.Top = 8.595276!
+        Me.Line34.Width = 4.413385!
+        Me.Line34.X1 = 3.236221!
+        Me.Line34.X2 = 7.649607!
+        Me.Line34.Y1 = 8.595276!
+        Me.Line34.Y2 = 8.595276!
+        '
+        'Line71
+        '
+        Me.Line71.Height = 0.0!
+        Me.Line71.Left = 2.787402!
+        Me.Line71.LineWeight = 1.0!
+        Me.Line71.Name = "Line71"
+        Me.Line71.Top = 8.820867!
+        Me.Line71.Width = 4.862205!
+        Me.Line71.X1 = 2.787402!
+        Me.Line71.X2 = 7.649607!
+        Me.Line71.Y1 = 8.820867!
+        Me.Line71.Y2 = 8.820867!
+        '
+        'Label152
+        '
+        Me.Label152.Height = 0.2255906!
+        Me.Label152.HyperLink = Nothing
+        Me.Label152.Left = 3.236221!
+        Me.Label152.Name = "Label152"
+        Me.Label152.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label152.Text = "利用日"
+        Me.Label152.Top = 8.820867!
+        Me.Label152.Width = 0.3948819!
+        '
+        'Label153
+        '
+        Me.Label153.Height = 0.2255906!
+        Me.Label153.HyperLink = Nothing
+        Me.Label153.Left = 3.236221!
+        Me.Label153.Name = "Label153"
+        Me.Label153.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label153.Text = "番号"
+        Me.Label153.Top = 9.046457!
+        Me.Label153.Width = 0.381496!
+        '
+        'Label155
+        '
+        Me.Label155.Height = 0.2255906!
+        Me.Label155.HyperLink = Nothing
+        Me.Label155.Left = 4.378347!
+        Me.Label155.Name = "Label155"
+        Me.Label155.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label155.Text = "券種"
+        Me.Label155.Top = 8.820867!
+        Me.Label155.Width = 0.5464567!
+        '
+        'Label156
+        '
+        Me.Label156.Height = 0.2255906!
+        Me.Label156.HyperLink = Nothing
+        Me.Label156.Left = 5.966536!
+        Me.Label156.Name = "Label156"
+        Me.Label156.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label156.Text = "備考"
+        Me.Label156.Top = 9.046457!
+        Me.Label156.Width = 0.3948819!
+        '
+        'Label157
+        '
+        Me.Label157.Height = 0.2255906!
+        Me.Label157.HyperLink = Nothing
+        Me.Label157.Left = 5.966536!
+        Me.Label157.Name = "Label157"
+        Me.Label157.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label157.Text = "発行日"
+        Me.Label157.Top = 8.820867!
+        Me.Label157.Width = 0.3948819!
+        '
+        'Label158
+        '
+        Me.Label158.Height = 0.2255906!
+        Me.Label158.HyperLink = Nothing
+        Me.Label158.Left = 4.378346!
+        Me.Label158.Name = "Label158"
+        Me.Label158.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label158.Text = "利用者名"
+        Me.Label158.Top = 9.046457!
+        Me.Label158.Width = 0.5464572!
+        '
+        'Line40
+        '
+        Me.Line40.Height = 0.0!
+        Me.Line40.Left = 3.236221!
+        Me.Line40.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line40.LineWeight = 1.0!
+        Me.Line40.Name = "Line40"
+        Me.Line40.Top = 9.046457!
+        Me.Line40.Width = 4.413385!
+        Me.Line40.X1 = 3.236221!
+        Me.Line40.X2 = 7.649607!
+        Me.Line40.Y1 = 9.046457!
+        Me.Line40.Y2 = 9.046457!
+        '
+        'Line72
+        '
+        Me.Line72.Height = 0.0!
+        Me.Line72.Left = 2.787402!
+        Me.Line72.LineWeight = 1.0!
+        Me.Line72.Name = "Line72"
+        Me.Line72.Top = 9.272048!
+        Me.Line72.Width = 4.862205!
+        Me.Line72.X1 = 2.787402!
+        Me.Line72.X2 = 7.649607!
+        Me.Line72.Y1 = 9.272048!
+        Me.Line72.Y2 = 9.272048!
+        '
+        'Label159
+        '
+        Me.Label159.Height = 0.2255906!
+        Me.Label159.HyperLink = Nothing
+        Me.Label159.Left = 3.236221!
+        Me.Label159.Name = "Label159"
+        Me.Label159.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label159.Text = "利用日"
+        Me.Label159.Top = 9.272048!
+        Me.Label159.Width = 0.3948819!
+        '
+        'Label161
+        '
+        Me.Label161.Height = 0.2255906!
+        Me.Label161.HyperLink = Nothing
+        Me.Label161.Left = 3.236221!
+        Me.Label161.Name = "Label161"
+        Me.Label161.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label161.Text = "番号"
+        Me.Label161.Top = 9.497638!
+        Me.Label161.Width = 0.381496!
+        '
+        'Label162
+        '
+        Me.Label162.Height = 0.2255906!
+        Me.Label162.HyperLink = Nothing
+        Me.Label162.Left = 4.378347!
+        Me.Label162.Name = "Label162"
+        Me.Label162.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label162.Text = "券種"
+        Me.Label162.Top = 9.272048!
+        Me.Label162.Width = 0.5464567!
+        '
+        'Label163
+        '
+        Me.Label163.Height = 0.2255906!
+        Me.Label163.HyperLink = Nothing
+        Me.Label163.Left = 5.966536!
+        Me.Label163.Name = "Label163"
+        Me.Label163.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label163.Text = "備考"
+        Me.Label163.Top = 9.497638!
+        Me.Label163.Width = 0.3948819!
+        '
+        'Label164
+        '
+        Me.Label164.Height = 0.2255906!
+        Me.Label164.HyperLink = Nothing
+        Me.Label164.Left = 5.966536!
+        Me.Label164.Name = "Label164"
+        Me.Label164.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label164.Text = "発行日"
+        Me.Label164.Top = 9.272048!
+        Me.Label164.Width = 0.3948819!
+        '
+        'Label165
+        '
+        Me.Label165.Height = 0.2255906!
+        Me.Label165.HyperLink = Nothing
+        Me.Label165.Left = 4.378346!
+        Me.Label165.Name = "Label165"
+        Me.Label165.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label165.Text = "利用者名"
+        Me.Label165.Top = 9.497638!
+        Me.Label165.Width = 0.5464572!
+        '
+        'Line43
+        '
+        Me.Line43.Height = 0.0!
+        Me.Line43.Left = 3.236221!
+        Me.Line43.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line43.LineWeight = 1.0!
+        Me.Line43.Name = "Line43"
+        Me.Line43.Top = 9.497638!
+        Me.Line43.Width = 4.413385!
+        Me.Line43.X1 = 3.236221!
+        Me.Line43.X2 = 7.649607!
+        Me.Line43.Y1 = 9.497638!
+        Me.Line43.Y2 = 9.497638!
+        '
+        'Line73
+        '
+        Me.Line73.Height = 0.0!
+        Me.Line73.Left = 2.787402!
+        Me.Line73.LineWeight = 1.0!
+        Me.Line73.Name = "Line73"
+        Me.Line73.Top = 9.723228!
+        Me.Line73.Width = 4.862205!
+        Me.Line73.X1 = 2.787402!
+        Me.Line73.X2 = 7.649607!
+        Me.Line73.Y1 = 9.723228!
+        Me.Line73.Y2 = 9.723228!
+        '
+        'Label167
+        '
+        Me.Label167.Height = 0.2255906!
+        Me.Label167.HyperLink = Nothing
+        Me.Label167.Left = 3.236221!
+        Me.Label167.Name = "Label167"
+        Me.Label167.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label167.Text = "利用日"
+        Me.Label167.Top = 9.723228!
+        Me.Label167.Width = 0.3948819!
+        '
+        'Label168
+        '
+        Me.Label168.Height = 0.2255906!
+        Me.Label168.HyperLink = Nothing
+        Me.Label168.Left = 3.236221!
+        Me.Label168.Name = "Label168"
+        Me.Label168.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label168.Text = "番号"
+        Me.Label168.Top = 9.948819!
+        Me.Label168.Width = 0.381496!
+        '
+        'Label169
+        '
+        Me.Label169.Height = 0.2255906!
+        Me.Label169.HyperLink = Nothing
+        Me.Label169.Left = 4.378347!
+        Me.Label169.Name = "Label169"
+        Me.Label169.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label169.Text = "券種"
+        Me.Label169.Top = 9.723228!
+        Me.Label169.Width = 0.5464567!
+        '
+        'Label170
+        '
+        Me.Label170.Height = 0.2255906!
+        Me.Label170.HyperLink = Nothing
+        Me.Label170.Left = 5.966536!
+        Me.Label170.Name = "Label170"
+        Me.Label170.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label170.Text = "備考"
+        Me.Label170.Top = 9.948819!
+        Me.Label170.Width = 0.3948819!
+        '
+        'Label171
+        '
+        Me.Label171.Height = 0.2255906!
+        Me.Label171.HyperLink = Nothing
+        Me.Label171.Left = 5.966536!
+        Me.Label171.Name = "Label171"
+        Me.Label171.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label171.Text = "発行日"
+        Me.Label171.Top = 9.723228!
+        Me.Label171.Width = 0.3948819!
+        '
+        'Label173
+        '
+        Me.Label173.Height = 0.2255906!
+        Me.Label173.HyperLink = Nothing
+        Me.Label173.Left = 4.378346!
+        Me.Label173.Name = "Label173"
+        Me.Label173.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label173.Text = "利用者名"
+        Me.Label173.Top = 9.948819!
+        Me.Label173.Width = 0.5464572!
+        '
+        'Line44
+        '
+        Me.Line44.Height = 0.0!
+        Me.Line44.Left = 3.236221!
+        Me.Line44.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line44.LineWeight = 1.0!
+        Me.Line44.Name = "Line44"
+        Me.Line44.Top = 9.948819!
+        Me.Line44.Width = 4.413385!
+        Me.Line44.X1 = 3.236221!
+        Me.Line44.X2 = 7.649607!
+        Me.Line44.Y1 = 9.948819!
+        Me.Line44.Y2 = 9.948819!
+        '
+        'Line74
+        '
+        Me.Line74.Height = 0.0!
+        Me.Line74.Left = 0.0!
+        Me.Line74.LineWeight = 1.0!
+        Me.Line74.Name = "Line74"
+        Me.Line74.Top = 10.17441!
+        Me.Line74.Width = 7.649607!
+        Me.Line74.X1 = 0.0!
+        Me.Line74.X2 = 7.649607!
+        Me.Line74.Y1 = 10.17441!
+        Me.Line74.Y2 = 10.17441!
+        '
+        'Line112
+        '
+        Me.Line112.Height = 0.0!
+        Me.Line112.Left = 2.842171E-14!
+        Me.Line112.LineWeight = 1.0!
+        Me.Line112.Name = "Line112"
+        Me.Line112.Top = 2.05315!
+        Me.Line112.Width = 7.649607!
+        Me.Line112.X1 = 2.842171E-14!
+        Me.Line112.X2 = 7.649607!
+        Me.Line112.Y1 = 2.05315!
+        Me.Line112.Y2 = 2.05315!
+        '
+        'Line9
+        '
+        Me.Line9.Height = 9.023623!
+        Me.Line9.Left = 3.631103!
+        Me.Line9.LineWeight = 1.0!
+        Me.Line9.Name = "Line9"
+        Me.Line9.Top = 1.150787!
+        Me.Line9.Width = 0.0!
+        Me.Line9.X1 = 3.631103!
+        Me.Line9.X2 = 3.631103!
+        Me.Line9.Y1 = 1.150787!
+        Me.Line9.Y2 = 10.17441!
+        '
+        'Line45
+        '
+        Me.Line45.Height = 9.023623!
+        Me.Line45.Left = 3.236221!
+        Me.Line45.LineWeight = 1.0!
+        Me.Line45.Name = "Line45"
+        Me.Line45.Top = 1.150787!
+        Me.Line45.Width = 0.0!
+        Me.Line45.X1 = 3.236221!
+        Me.Line45.X2 = 3.236221!
+        Me.Line45.Y1 = 1.150787!
+        Me.Line45.Y2 = 10.17441!
+        '
+        'Line75
+        '
+        Me.Line75.Height = 9.249213!
+        Me.Line75.Left = 4.378346!
+        Me.Line75.LineWeight = 1.0!
+        Me.Line75.Name = "Line75"
+        Me.Line75.Top = 0.9251968!
+        Me.Line75.Width = 0.0!
+        Me.Line75.X1 = 4.378346!
+        Me.Line75.X2 = 4.378346!
+        Me.Line75.Y1 = 0.9251968!
+        Me.Line75.Y2 = 10.17441!
+        '
+        'Line76
+        '
+        Me.Line76.Height = 9.023623!
+        Me.Line76.Left = 5.966536!
+        Me.Line76.LineWeight = 1.0!
+        Me.Line76.Name = "Line76"
+        Me.Line76.Top = 1.150787!
+        Me.Line76.Width = 0.0!
+        Me.Line76.X1 = 5.966536!
+        Me.Line76.X2 = 5.966536!
+        Me.Line76.Y1 = 1.150787!
+        Me.Line76.Y2 = 10.17441!
+        '
+        'Line79
+        '
+        Me.Line79.Height = 9.023623!
+        Me.Line79.Left = 4.924803!
+        Me.Line79.LineWeight = 1.0!
+        Me.Line79.Name = "Line79"
+        Me.Line79.Top = 1.150788!
+        Me.Line79.Width = 0.0!
+        Me.Line79.X1 = 4.924803!
+        Me.Line79.X2 = 4.924803!
+        Me.Line79.Y1 = 1.150788!
+        Me.Line79.Y2 = 10.17441!
+        '
+        'Line47
+        '
+        Me.Line47.Height = 0.0!
+        Me.Line47.Left = 3.236221!
+        Me.Line47.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line47.LineWeight = 1.0!
+        Me.Line47.Name = "Line47"
+        Me.Line47.Top = 2.27874!
+        Me.Line47.Width = 4.413385!
+        Me.Line47.X1 = 3.236221!
+        Me.Line47.X2 = 7.649607!
+        Me.Line47.Y1 = 2.27874!
+        Me.Line47.Y2 = 2.27874!
+        '
+        'Line48
+        '
+        Me.Line48.Height = 0.0!
+        Me.Line48.Left = 3.236221!
+        Me.Line48.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line48.LineWeight = 1.0!
+        Me.Line48.Name = "Line48"
+        Me.Line48.Top = 2.729921!
+        Me.Line48.Width = 4.413385!
+        Me.Line48.X1 = 3.236221!
+        Me.Line48.X2 = 7.649607!
+        Me.Line48.Y1 = 2.729921!
+        Me.Line48.Y2 = 2.729921!
+        '
+        'Line50
+        '
+        Me.Line50.Height = 0.0!
+        Me.Line50.Left = 3.236221!
+        Me.Line50.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line50.LineWeight = 1.0!
+        Me.Line50.Name = "Line50"
+        Me.Line50.Top = 3.181102!
+        Me.Line50.Width = 4.413385!
+        Me.Line50.X1 = 3.236221!
+        Me.Line50.X2 = 7.649607!
+        Me.Line50.Y1 = 3.181102!
+        Me.Line50.Y2 = 3.181102!
+        '
+        'Line52
+        '
+        Me.Line52.Height = 0.0!
+        Me.Line52.Left = 3.236221!
+        Me.Line52.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line52.LineWeight = 1.0!
+        Me.Line52.Name = "Line52"
+        Me.Line52.Top = 3.632283!
+        Me.Line52.Width = 4.413385!
+        Me.Line52.X1 = 3.236221!
+        Me.Line52.X2 = 7.649607!
+        Me.Line52.Y1 = 3.632283!
+        Me.Line52.Y2 = 3.632283!
+        '
+        'Line53
+        '
+        Me.Line53.Height = 0.0!
+        Me.Line53.Left = 3.236221!
+        Me.Line53.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line53.LineWeight = 1.0!
+        Me.Line53.Name = "Line53"
+        Me.Line53.Top = 4.083465!
+        Me.Line53.Width = 4.413385!
+        Me.Line53.X1 = 3.236221!
+        Me.Line53.X2 = 7.649607!
+        Me.Line53.Y1 = 4.083465!
+        Me.Line53.Y2 = 4.083465!
+        '
+        'Line55
+        '
+        Me.Line55.Height = 0.0!
+        Me.Line55.Left = 3.236221!
+        Me.Line55.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line55.LineWeight = 1.0!
+        Me.Line55.Name = "Line55"
+        Me.Line55.Top = 4.534646!
+        Me.Line55.Width = 4.413385!
+        Me.Line55.X1 = 3.236221!
+        Me.Line55.X2 = 7.649607!
+        Me.Line55.Y1 = 4.534646!
+        Me.Line55.Y2 = 4.534646!
+        '
+        'Line56
+        '
+        Me.Line56.Height = 0.0!
+        Me.Line56.Left = 3.236221!
+        Me.Line56.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line56.LineWeight = 1.0!
+        Me.Line56.Name = "Line56"
+        Me.Line56.Top = 4.985826!
+        Me.Line56.Width = 4.413385!
+        Me.Line56.X1 = 3.236221!
+        Me.Line56.X2 = 7.649607!
+        Me.Line56.Y1 = 4.985826!
+        Me.Line56.Y2 = 4.985826!
+        '
+        'Line57
+        '
+        Me.Line57.Height = 0.0!
+        Me.Line57.Left = 3.236221!
+        Me.Line57.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+        Me.Line57.LineWeight = 1.0!
+        Me.Line57.Name = "Line57"
+        Me.Line57.Top = 5.437008!
+        Me.Line57.Width = 4.413385!
+        Me.Line57.X1 = 3.236221!
+        Me.Line57.X2 = 7.649607!
+        Me.Line57.Y1 = 5.437008!
+        Me.Line57.Y2 = 5.437008!
+        '
+        'Line38
+        '
+        Me.Line38.Height = 0.0!
+        Me.Line38.Left = 2.842171E-14!
+        Me.Line38.LineWeight = 1.0!
+        Me.Line38.Name = "Line38"
+        Me.Line38.Top = 1.150787!
+        Me.Line38.Width = 7.649607!
+        Me.Line38.X1 = 2.842171E-14!
+        Me.Line38.X2 = 7.649607!
+        Me.Line38.Y1 = 1.150787!
+        Me.Line38.Y2 = 1.150787!
         '
         'PageFooter
         '
@@ -5490,1461 +6274,63 @@ Partial Public Class TaxiKakuninReport
         '
         Me.Label2.Height = 0.2!
         Me.Label2.HyperLink = Nothing
-        Me.Label2.Left = 5.104725!
+        Me.Label2.Left = 5.494883!
         Me.Label2.Name = "Label2"
         Me.Label2.Style = "text-align: right"
         Me.Label2.Text = "出力担当："
-        Me.Label2.Top = 0.2!
+        Me.Label2.Top = 0.2000002!
         Me.Label2.Width = 0.7291334!
         '
         'Label1
         '
         Me.Label1.Height = 0.2!
         Me.Label1.HyperLink = Nothing
-        Me.Label1.Left = 5.250393!
+        Me.Label1.Left = 5.640551!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = "text-align: right"
         Me.Label1.Text = "出力日："
-        Me.Label1.Top = 0.0!
+        Me.Label1.Top = 0.0000002235174!
         Me.Label1.Width = 0.5834652!
         '
         'PRINT_DATE
         '
         Me.PRINT_DATE.Height = 0.2!
-        Me.PRINT_DATE.Left = 5.833858!
+        Me.PRINT_DATE.Left = 6.224016!
         Me.PRINT_DATE.Name = "PRINT_DATE"
         Me.PRINT_DATE.Style = "white-space: nowrap"
         Me.PRINT_DATE.Text = "1234/56/78 12:34:56"
-        Me.PRINT_DATE.Top = 0.0!
+        Me.PRINT_DATE.Top = 0.0000002235174!
         Me.PRINT_DATE.Width = 1.364567!
         '
         'PRINT_USER
         '
         Me.PRINT_USER.Height = 0.2!
-        Me.PRINT_USER.Left = 5.833858!
+        Me.PRINT_USER.Left = 6.224016!
         Me.PRINT_USER.Name = "PRINT_USER"
         Me.PRINT_USER.Style = "white-space: nowrap"
         Me.PRINT_USER.Text = Nothing
-        Me.PRINT_USER.Top = 0.1999998!
+        Me.PRINT_USER.Top = 0.2!
         Me.PRINT_USER.Width = 1.364567!
         '
-        'Label109
-        '
-        Me.Label109.Height = 0.2!
-        Me.Label109.HyperLink = Nothing
-        Me.Label109.Left = 3.236221!
-        Me.Label109.Name = "Label109"
-        Me.Label109.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label109.Text = "利用日"
-        Me.Label109.Top = 5.470078!
-        Me.Label109.Width = 0.3948819!
-        '
-        'Label110
-        '
-        Me.Label110.Height = 0.2!
-        Me.Label110.HyperLink = Nothing
-        Me.Label110.Left = 4.378347!
-        Me.Label110.Name = "Label110"
-        Me.Label110.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label110.Text = "券種"
-        Me.Label110.Top = 5.470078!
-        Me.Label110.Width = 0.2988189!
-        '
-        'Label111
-        '
-        Me.Label111.Height = 0.2!
-        Me.Label111.HyperLink = Nothing
-        Me.Label111.Left = 5.571654!
-        Me.Label111.Name = "Label111"
-        Me.Label111.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label111.Text = "発行日"
-        Me.Label111.Top = 5.470078!
-        Me.Label111.Width = 0.3948819!
-        '
-        'Label113
-        '
-        Me.Label113.Height = 0.2!
-        Me.Label113.HyperLink = Nothing
-        Me.Label113.Left = 3.236221!
-        Me.Label113.Name = "Label113"
-        Me.Label113.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label113.Text = "番号"
-        Me.Label113.Top = 5.670078!
-        Me.Label113.Width = 0.381496!
-        '
-        'Label114
-        '
-        Me.Label114.Height = 0.2!
-        Me.Label114.HyperLink = Nothing
-        Me.Label114.Left = 4.378347!
-        Me.Label114.Name = "Label114"
-        Me.Label114.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label114.Text = "備考"
-        Me.Label114.Top = 5.670078!
-        Me.Label114.Width = 0.2988189!
-        '
-        'Label115
-        '
-        Me.Label115.Height = 0.2!
-        Me.Label115.HyperLink = Nothing
-        Me.Label115.Left = 5.966536!
-        Me.Label115.Name = "Label115"
-        Me.Label115.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label115.Text = "利用者名"
-        Me.Label115.Top = 5.670078!
-        Me.Label115.Width = 0.5464572!
-        '
-        'Line99
-        '
-        Me.Line99.Height = 0.0!
-        Me.Line99.Left = 3.236221!
-        Me.Line99.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line99.LineWeight = 1.0!
-        Me.Line99.Name = "Line99"
-        Me.Line99.Top = 5.670079!
-        Me.Line99.Width = 3.929133!
-        Me.Line99.X1 = 3.236221!
-        Me.Line99.X2 = 7.165354!
-        Me.Line99.Y1 = 5.670079!
-        Me.Line99.Y2 = 5.670079!
-        '
-        'Line103
-        '
-        Me.Line103.Height = 0.0!
-        Me.Line103.Left = 2.787402!
-        Me.Line103.LineWeight = 1.0!
-        Me.Line103.Name = "Line103"
-        Me.Line103.Top = 5.870079!
-        Me.Line103.Width = 4.377953!
-        Me.Line103.X1 = 2.787402!
-        Me.Line103.X2 = 7.165355!
-        Me.Line103.Y1 = 5.870079!
-        Me.Line103.Y2 = 5.870079!
-        '
-        'Label116
-        '
-        Me.Label116.Height = 0.2!
-        Me.Label116.HyperLink = Nothing
-        Me.Label116.Left = 3.236221!
-        Me.Label116.Name = "Label116"
-        Me.Label116.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label116.Text = "利用日"
-        Me.Label116.Top = 5.870077!
-        Me.Label116.Width = 0.3948819!
-        '
-        'Label117
-        '
-        Me.Label117.Height = 0.2!
-        Me.Label117.HyperLink = Nothing
-        Me.Label117.Left = 3.236221!
-        Me.Label117.Name = "Label117"
-        Me.Label117.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label117.Text = "番号"
-        Me.Label117.Top = 6.070077!
-        Me.Label117.Width = 0.381496!
-        '
-        'Label119
-        '
-        Me.Label119.Height = 0.2!
-        Me.Label119.HyperLink = Nothing
-        Me.Label119.Left = 4.378347!
-        Me.Label119.Name = "Label119"
-        Me.Label119.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label119.Text = "券種"
-        Me.Label119.Top = 5.870077!
-        Me.Label119.Width = 0.2988189!
-        '
-        'Label120
-        '
-        Me.Label120.Height = 0.2!
-        Me.Label120.HyperLink = Nothing
-        Me.Label120.Left = 4.378347!
-        Me.Label120.Name = "Label120"
-        Me.Label120.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label120.Text = "備考"
-        Me.Label120.Top = 6.070077!
-        Me.Label120.Width = 0.2988189!
-        '
-        'Label121
-        '
-        Me.Label121.Height = 0.2!
-        Me.Label121.HyperLink = Nothing
-        Me.Label121.Left = 5.571654!
-        Me.Label121.Name = "Label121"
-        Me.Label121.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label121.Text = "発行日"
-        Me.Label121.Top = 5.870077!
-        Me.Label121.Width = 0.3948819!
-        '
-        'Label122
-        '
-        Me.Label122.Height = 0.2!
-        Me.Label122.HyperLink = Nothing
-        Me.Label122.Left = 5.966536!
-        Me.Label122.Name = "Label122"
-        Me.Label122.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label122.Text = "利用者名"
-        Me.Label122.Top = 6.070077!
-        Me.Label122.Width = 0.5464572!
-        '
-        'Line8
-        '
-        Me.Line8.Height = 0.0!
-        Me.Line8.Left = 3.236221!
-        Me.Line8.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line8.LineWeight = 1.0!
-        Me.Line8.Name = "Line8"
-        Me.Line8.Top = 6.070079!
-        Me.Line8.Width = 3.929133!
-        Me.Line8.X1 = 3.236221!
-        Me.Line8.X2 = 7.165354!
-        Me.Line8.Y1 = 6.070079!
-        Me.Line8.Y2 = 6.070079!
-        '
-        'Line24
-        '
-        Me.Line24.Height = 0.0!
-        Me.Line24.Left = 2.787402!
-        Me.Line24.LineWeight = 1.0!
-        Me.Line24.Name = "Line24"
-        Me.Line24.Top = 6.270079!
-        Me.Line24.Width = 4.377953!
-        Me.Line24.X1 = 2.787402!
-        Me.Line24.X2 = 7.165354!
-        Me.Line24.Y1 = 6.270079!
-        Me.Line24.Y2 = 6.270079!
-        '
-        'Label123
-        '
-        Me.Label123.Height = 0.2!
-        Me.Label123.HyperLink = Nothing
-        Me.Label123.Left = 3.236221!
-        Me.Label123.Name = "Label123"
-        Me.Label123.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label123.Text = "利用日"
-        Me.Label123.Top = 6.270077!
-        Me.Label123.Width = 0.3948819!
-        '
-        'Label125
-        '
-        Me.Label125.Height = 0.2!
-        Me.Label125.HyperLink = Nothing
-        Me.Label125.Left = 3.236221!
-        Me.Label125.Name = "Label125"
-        Me.Label125.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label125.Text = "番号"
-        Me.Label125.Top = 6.470077!
-        Me.Label125.Width = 0.381496!
-        '
-        'Label126
-        '
-        Me.Label126.Height = 0.2!
-        Me.Label126.HyperLink = Nothing
-        Me.Label126.Left = 4.378347!
-        Me.Label126.Name = "Label126"
-        Me.Label126.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label126.Text = "券種"
-        Me.Label126.Top = 6.270077!
-        Me.Label126.Width = 0.2988189!
-        '
-        'Label127
-        '
-        Me.Label127.Height = 0.2!
-        Me.Label127.HyperLink = Nothing
-        Me.Label127.Left = 4.378347!
-        Me.Label127.Name = "Label127"
-        Me.Label127.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label127.Text = "備考"
-        Me.Label127.Top = 6.470077!
-        Me.Label127.Width = 0.2988189!
-        '
-        'Label128
-        '
-        Me.Label128.Height = 0.2!
-        Me.Label128.HyperLink = Nothing
-        Me.Label128.Left = 5.571654!
-        Me.Label128.Name = "Label128"
-        Me.Label128.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label128.Text = "発行日"
-        Me.Label128.Top = 6.270077!
-        Me.Label128.Width = 0.3948819!
-        '
-        'Label129
-        '
-        Me.Label129.Height = 0.2!
-        Me.Label129.HyperLink = Nothing
-        Me.Label129.Left = 5.966536!
-        Me.Label129.Name = "Label129"
-        Me.Label129.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label129.Text = "利用者名"
-        Me.Label129.Top = 6.470077!
-        Me.Label129.Width = 0.5464572!
-        '
-        'Line25
-        '
-        Me.Line25.Height = 0.0!
-        Me.Line25.Left = 3.236221!
-        Me.Line25.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line25.LineWeight = 1.0!
-        Me.Line25.Name = "Line25"
-        Me.Line25.Top = 6.470079!
-        Me.Line25.Width = 3.929133!
-        Me.Line25.X1 = 3.236221!
-        Me.Line25.X2 = 7.165354!
-        Me.Line25.Y1 = 6.470079!
-        Me.Line25.Y2 = 6.470079!
-        '
-        'Line29
-        '
-        Me.Line29.Height = 0.0!
-        Me.Line29.Left = 2.787402!
-        Me.Line29.LineWeight = 1.0!
-        Me.Line29.Name = "Line29"
-        Me.Line29.Top = 6.670079!
-        Me.Line29.Width = 4.377953!
-        Me.Line29.X1 = 2.787402!
-        Me.Line29.X2 = 7.165354!
-        Me.Line29.Y1 = 6.670079!
-        Me.Line29.Y2 = 6.670079!
-        '
-        'Label131
-        '
-        Me.Label131.Height = 0.2!
-        Me.Label131.HyperLink = Nothing
-        Me.Label131.Left = 3.236221!
-        Me.Label131.Name = "Label131"
-        Me.Label131.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label131.Text = "利用日"
-        Me.Label131.Top = 6.670076!
-        Me.Label131.Width = 0.3948819!
-        '
-        'Label132
-        '
-        Me.Label132.Height = 0.2!
-        Me.Label132.HyperLink = Nothing
-        Me.Label132.Left = 3.236221!
-        Me.Label132.Name = "Label132"
-        Me.Label132.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label132.Text = "番号"
-        Me.Label132.Top = 6.870077!
-        Me.Label132.Width = 0.381496!
-        '
-        'Label133
-        '
-        Me.Label133.Height = 0.2!
-        Me.Label133.HyperLink = Nothing
-        Me.Label133.Left = 4.378347!
-        Me.Label133.Name = "Label133"
-        Me.Label133.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label133.Text = "券種"
-        Me.Label133.Top = 6.670076!
-        Me.Label133.Width = 0.2988189!
-        '
-        'Label134
-        '
-        Me.Label134.Height = 0.2!
-        Me.Label134.HyperLink = Nothing
-        Me.Label134.Left = 4.378347!
-        Me.Label134.Name = "Label134"
-        Me.Label134.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label134.Text = "備考"
-        Me.Label134.Top = 6.870077!
-        Me.Label134.Width = 0.2988189!
-        '
-        'Label135
-        '
-        Me.Label135.Height = 0.2!
-        Me.Label135.HyperLink = Nothing
-        Me.Label135.Left = 5.571654!
-        Me.Label135.Name = "Label135"
-        Me.Label135.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label135.Text = "発行日"
-        Me.Label135.Top = 6.670076!
-        Me.Label135.Width = 0.3948819!
-        '
-        'Label137
-        '
-        Me.Label137.Height = 0.2!
-        Me.Label137.HyperLink = Nothing
-        Me.Label137.Left = 5.966536!
-        Me.Label137.Name = "Label137"
-        Me.Label137.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label137.Text = "利用者名"
-        Me.Label137.Top = 6.870077!
-        Me.Label137.Width = 0.5464572!
-        '
-        'Line27
-        '
-        Me.Line27.Height = 0.0!
-        Me.Line27.Left = 3.236221!
-        Me.Line27.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line27.LineWeight = 1.0!
-        Me.Line27.Name = "Line27"
-        Me.Line27.Top = 6.870079!
-        Me.Line27.Width = 3.929133!
-        Me.Line27.X1 = 3.236221!
-        Me.Line27.X2 = 7.165354!
-        Me.Line27.Y1 = 6.870079!
-        Me.Line27.Y2 = 6.870079!
-        '
-        'Line30
-        '
-        Me.Line30.Height = 0.0!
-        Me.Line30.Left = 2.787402!
-        Me.Line30.LineWeight = 1.0!
-        Me.Line30.Name = "Line30"
-        Me.Line30.Top = 7.070079!
-        Me.Line30.Width = 4.377953!
-        Me.Line30.X1 = 2.787402!
-        Me.Line30.X2 = 7.165354!
-        Me.Line30.Y1 = 7.070079!
-        Me.Line30.Y2 = 7.070079!
-        '
-        'Label138
-        '
-        Me.Label138.Height = 0.2!
-        Me.Label138.HyperLink = Nothing
-        Me.Label138.Left = 3.236221!
-        Me.Label138.Name = "Label138"
-        Me.Label138.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label138.Text = "利用日"
-        Me.Label138.Top = 7.070076!
-        Me.Label138.Width = 0.3948819!
-        '
-        'Label139
-        '
-        Me.Label139.Height = 0.2!
-        Me.Label139.HyperLink = Nothing
-        Me.Label139.Left = 3.236221!
-        Me.Label139.Name = "Label139"
-        Me.Label139.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label139.Text = "番号"
-        Me.Label139.Top = 7.270076!
-        Me.Label139.Width = 0.381496!
-        '
-        'Label140
-        '
-        Me.Label140.Height = 0.2!
-        Me.Label140.HyperLink = Nothing
-        Me.Label140.Left = 4.378347!
-        Me.Label140.Name = "Label140"
-        Me.Label140.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label140.Text = "券種"
-        Me.Label140.Top = 7.070076!
-        Me.Label140.Width = 0.2988189!
-        '
-        'Label141
-        '
-        Me.Label141.Height = 0.2!
-        Me.Label141.HyperLink = Nothing
-        Me.Label141.Left = 4.378347!
-        Me.Label141.Name = "Label141"
-        Me.Label141.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label141.Text = "備考"
-        Me.Label141.Top = 7.270076!
-        Me.Label141.Width = 0.2988189!
-        '
-        'Label143
-        '
-        Me.Label143.Height = 0.2!
-        Me.Label143.HyperLink = Nothing
-        Me.Label143.Left = 5.571654!
-        Me.Label143.Name = "Label143"
-        Me.Label143.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label143.Text = "発行日"
-        Me.Label143.Top = 7.070076!
-        Me.Label143.Width = 0.3948819!
-        '
-        'Label144
-        '
-        Me.Label144.Height = 0.2!
-        Me.Label144.HyperLink = Nothing
-        Me.Label144.Left = 5.966536!
-        Me.Label144.Name = "Label144"
-        Me.Label144.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label144.Text = "利用者名"
-        Me.Label144.Top = 7.270076!
-        Me.Label144.Width = 0.5464572!
-        '
-        'Line33
-        '
-        Me.Line33.Height = 0.0!
-        Me.Line33.Left = 3.236221!
-        Me.Line33.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line33.LineWeight = 1.0!
-        Me.Line33.Name = "Line33"
-        Me.Line33.Top = 7.270079!
-        Me.Line33.Width = 3.929133!
-        Me.Line33.X1 = 3.236221!
-        Me.Line33.X2 = 7.165354!
-        Me.Line33.Y1 = 7.270079!
-        Me.Line33.Y2 = 7.270079!
-        '
-        'Line70
-        '
-        Me.Line70.Height = 0.0!
-        Me.Line70.Left = 2.787402!
-        Me.Line70.LineWeight = 1.0!
-        Me.Line70.Name = "Line70"
-        Me.Line70.Top = 7.470079!
-        Me.Line70.Width = 4.377953!
-        Me.Line70.X1 = 2.787402!
-        Me.Line70.X2 = 7.165354!
-        Me.Line70.Y1 = 7.470079!
-        Me.Line70.Y2 = 7.470079!
-        '
-        'Label145
-        '
-        Me.Label145.Height = 0.2!
-        Me.Label145.HyperLink = Nothing
-        Me.Label145.Left = 3.236221!
-        Me.Label145.Name = "Label145"
-        Me.Label145.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label145.Text = "利用日"
-        Me.Label145.Top = 7.470076!
-        Me.Label145.Width = 0.3948819!
-        '
-        'Label146
-        '
-        Me.Label146.Height = 0.2!
-        Me.Label146.HyperLink = Nothing
-        Me.Label146.Left = 3.236221!
-        Me.Label146.Name = "Label146"
-        Me.Label146.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label146.Text = "番号"
-        Me.Label146.Top = 7.670076!
-        Me.Label146.Width = 0.381496!
-        '
-        'Label147
-        '
-        Me.Label147.Height = 0.2!
-        Me.Label147.HyperLink = Nothing
-        Me.Label147.Left = 4.378347!
-        Me.Label147.Name = "Label147"
-        Me.Label147.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label147.Text = "券種"
-        Me.Label147.Top = 7.470076!
-        Me.Label147.Width = 0.2988189!
-        '
-        'Label149
-        '
-        Me.Label149.Height = 0.2!
-        Me.Label149.HyperLink = Nothing
-        Me.Label149.Left = 4.378347!
-        Me.Label149.Name = "Label149"
-        Me.Label149.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label149.Text = "備考"
-        Me.Label149.Top = 7.670076!
-        Me.Label149.Width = 0.2988189!
-        '
-        'Label150
-        '
-        Me.Label150.Height = 0.2!
-        Me.Label150.HyperLink = Nothing
-        Me.Label150.Left = 5.571654!
-        Me.Label150.Name = "Label150"
-        Me.Label150.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label150.Text = "発行日"
-        Me.Label150.Top = 7.470076!
-        Me.Label150.Width = 0.3948819!
-        '
-        'Label151
-        '
-        Me.Label151.Height = 0.2!
-        Me.Label151.HyperLink = Nothing
-        Me.Label151.Left = 5.966536!
-        Me.Label151.Name = "Label151"
-        Me.Label151.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label151.Text = "利用者名"
-        Me.Label151.Top = 7.670076!
-        Me.Label151.Width = 0.5464572!
-        '
-        'Line34
-        '
-        Me.Line34.Height = 0.0!
-        Me.Line34.Left = 3.236221!
-        Me.Line34.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line34.LineWeight = 1.0!
-        Me.Line34.Name = "Line34"
-        Me.Line34.Top = 7.670079!
-        Me.Line34.Width = 3.929133!
-        Me.Line34.X1 = 3.236221!
-        Me.Line34.X2 = 7.165354!
-        Me.Line34.Y1 = 7.670079!
-        Me.Line34.Y2 = 7.670079!
-        '
-        'Line71
-        '
-        Me.Line71.Height = 0.0!
-        Me.Line71.Left = 2.787402!
-        Me.Line71.LineWeight = 1.0!
-        Me.Line71.Name = "Line71"
-        Me.Line71.Top = 7.87008!
-        Me.Line71.Width = 4.377953!
-        Me.Line71.X1 = 2.787402!
-        Me.Line71.X2 = 7.165354!
-        Me.Line71.Y1 = 7.87008!
-        Me.Line71.Y2 = 7.87008!
-        '
-        'Label152
-        '
-        Me.Label152.Height = 0.2!
-        Me.Label152.HyperLink = Nothing
-        Me.Label152.Left = 3.236221!
-        Me.Label152.Name = "Label152"
-        Me.Label152.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label152.Text = "利用日"
-        Me.Label152.Top = 7.870075!
-        Me.Label152.Width = 0.3948819!
-        '
-        'Label153
-        '
-        Me.Label153.Height = 0.2!
-        Me.Label153.HyperLink = Nothing
-        Me.Label153.Left = 3.236221!
-        Me.Label153.Name = "Label153"
-        Me.Label153.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label153.Text = "番号"
-        Me.Label153.Top = 8.070076!
-        Me.Label153.Width = 0.381496!
-        '
-        'Label155
-        '
-        Me.Label155.Height = 0.2!
-        Me.Label155.HyperLink = Nothing
-        Me.Label155.Left = 4.378347!
-        Me.Label155.Name = "Label155"
-        Me.Label155.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label155.Text = "券種"
-        Me.Label155.Top = 7.870075!
-        Me.Label155.Width = 0.2988189!
-        '
-        'Label156
-        '
-        Me.Label156.Height = 0.2!
-        Me.Label156.HyperLink = Nothing
-        Me.Label156.Left = 4.378347!
-        Me.Label156.Name = "Label156"
-        Me.Label156.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label156.Text = "備考"
-        Me.Label156.Top = 8.070076!
-        Me.Label156.Width = 0.2988189!
-        '
-        'Label157
-        '
-        Me.Label157.Height = 0.2!
-        Me.Label157.HyperLink = Nothing
-        Me.Label157.Left = 5.571654!
-        Me.Label157.Name = "Label157"
-        Me.Label157.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label157.Text = "発行日"
-        Me.Label157.Top = 7.870075!
-        Me.Label157.Width = 0.3948819!
-        '
-        'Label158
-        '
-        Me.Label158.Height = 0.2!
-        Me.Label158.HyperLink = Nothing
-        Me.Label158.Left = 5.966536!
-        Me.Label158.Name = "Label158"
-        Me.Label158.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label158.Text = "利用者名"
-        Me.Label158.Top = 8.070076!
-        Me.Label158.Width = 0.5464572!
-        '
-        'Line40
-        '
-        Me.Line40.Height = 0.0!
-        Me.Line40.Left = 3.236221!
-        Me.Line40.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line40.LineWeight = 1.0!
-        Me.Line40.Name = "Line40"
-        Me.Line40.Top = 8.070079!
-        Me.Line40.Width = 3.929133!
-        Me.Line40.X1 = 3.236221!
-        Me.Line40.X2 = 7.165354!
-        Me.Line40.Y1 = 8.070079!
-        Me.Line40.Y2 = 8.070079!
-        '
-        'Line72
-        '
-        Me.Line72.Height = 0.0!
-        Me.Line72.Left = 2.787402!
-        Me.Line72.LineWeight = 1.0!
-        Me.Line72.Name = "Line72"
-        Me.Line72.Top = 8.27008!
-        Me.Line72.Width = 4.377953!
-        Me.Line72.X1 = 2.787402!
-        Me.Line72.X2 = 7.165354!
-        Me.Line72.Y1 = 8.27008!
-        Me.Line72.Y2 = 8.27008!
-        '
-        'Label159
-        '
-        Me.Label159.Height = 0.2!
-        Me.Label159.HyperLink = Nothing
-        Me.Label159.Left = 3.236221!
-        Me.Label159.Name = "Label159"
-        Me.Label159.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label159.Text = "利用日"
-        Me.Label159.Top = 8.270075!
-        Me.Label159.Width = 0.3948819!
-        '
-        'Label161
-        '
-        Me.Label161.Height = 0.2!
-        Me.Label161.HyperLink = Nothing
-        Me.Label161.Left = 3.236221!
-        Me.Label161.Name = "Label161"
-        Me.Label161.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label161.Text = "番号"
-        Me.Label161.Top = 8.470076!
-        Me.Label161.Width = 0.381496!
-        '
-        'Label162
-        '
-        Me.Label162.Height = 0.2!
-        Me.Label162.HyperLink = Nothing
-        Me.Label162.Left = 4.378347!
-        Me.Label162.Name = "Label162"
-        Me.Label162.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label162.Text = "券種"
-        Me.Label162.Top = 8.270075!
-        Me.Label162.Width = 0.2988189!
-        '
-        'Label163
-        '
-        Me.Label163.Height = 0.2!
-        Me.Label163.HyperLink = Nothing
-        Me.Label163.Left = 4.378347!
-        Me.Label163.Name = "Label163"
-        Me.Label163.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label163.Text = "備考"
-        Me.Label163.Top = 8.470076!
-        Me.Label163.Width = 0.2988189!
-        '
-        'Label164
-        '
-        Me.Label164.Height = 0.2!
-        Me.Label164.HyperLink = Nothing
-        Me.Label164.Left = 5.571654!
-        Me.Label164.Name = "Label164"
-        Me.Label164.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label164.Text = "発行日"
-        Me.Label164.Top = 8.270075!
-        Me.Label164.Width = 0.3948819!
-        '
-        'Label165
-        '
-        Me.Label165.Height = 0.2!
-        Me.Label165.HyperLink = Nothing
-        Me.Label165.Left = 5.966536!
-        Me.Label165.Name = "Label165"
-        Me.Label165.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label165.Text = "利用者名"
-        Me.Label165.Top = 8.470076!
-        Me.Label165.Width = 0.5464572!
-        '
-        'Line43
-        '
-        Me.Line43.Height = 0.0!
-        Me.Line43.Left = 3.236221!
-        Me.Line43.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line43.LineWeight = 1.0!
-        Me.Line43.Name = "Line43"
-        Me.Line43.Top = 8.470079!
-        Me.Line43.Width = 3.929133!
-        Me.Line43.X1 = 3.236221!
-        Me.Line43.X2 = 7.165354!
-        Me.Line43.Y1 = 8.470079!
-        Me.Line43.Y2 = 8.470079!
-        '
-        'Line73
-        '
-        Me.Line73.Height = 0.0!
-        Me.Line73.Left = 2.787402!
-        Me.Line73.LineWeight = 1.0!
-        Me.Line73.Name = "Line73"
-        Me.Line73.Top = 8.670079!
-        Me.Line73.Width = 4.377953!
-        Me.Line73.X1 = 2.787402!
-        Me.Line73.X2 = 7.165354!
-        Me.Line73.Y1 = 8.670079!
-        Me.Line73.Y2 = 8.670079!
-        '
-        'Label167
-        '
-        Me.Label167.Height = 0.2!
-        Me.Label167.HyperLink = Nothing
-        Me.Label167.Left = 3.236221!
-        Me.Label167.Name = "Label167"
-        Me.Label167.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label167.Text = "利用日"
-        Me.Label167.Top = 8.670074!
-        Me.Label167.Width = 0.3948819!
-        '
-        'Label168
-        '
-        Me.Label168.Height = 0.2!
-        Me.Label168.HyperLink = Nothing
-        Me.Label168.Left = 3.236221!
-        Me.Label168.Name = "Label168"
-        Me.Label168.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label168.Text = "番号"
-        Me.Label168.Top = 8.870075!
-        Me.Label168.Width = 0.381496!
-        '
-        'Label169
-        '
-        Me.Label169.Height = 0.2!
-        Me.Label169.HyperLink = Nothing
-        Me.Label169.Left = 4.378347!
-        Me.Label169.Name = "Label169"
-        Me.Label169.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label169.Text = "券種"
-        Me.Label169.Top = 8.670074!
-        Me.Label169.Width = 0.2988189!
-        '
-        'Label170
-        '
-        Me.Label170.Height = 0.2!
-        Me.Label170.HyperLink = Nothing
-        Me.Label170.Left = 4.378347!
-        Me.Label170.Name = "Label170"
-        Me.Label170.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label170.Text = "備考"
-        Me.Label170.Top = 8.870075!
-        Me.Label170.Width = 0.2988189!
-        '
-        'Label171
-        '
-        Me.Label171.Height = 0.2!
-        Me.Label171.HyperLink = Nothing
-        Me.Label171.Left = 5.571654!
-        Me.Label171.Name = "Label171"
-        Me.Label171.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label171.Text = "発行日"
-        Me.Label171.Top = 8.670074!
-        Me.Label171.Width = 0.3948819!
-        '
-        'Label173
-        '
-        Me.Label173.Height = 0.2!
-        Me.Label173.HyperLink = Nothing
-        Me.Label173.Left = 5.966536!
-        Me.Label173.Name = "Label173"
-        Me.Label173.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
-        Me.Label173.Text = "利用者名"
-        Me.Label173.Top = 8.870075!
-        Me.Label173.Width = 0.5464572!
-        '
-        'Line44
-        '
-        Me.Line44.Height = 0.0!
-        Me.Line44.Left = 3.236221!
-        Me.Line44.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-        Me.Line44.LineWeight = 1.0!
-        Me.Line44.Name = "Line44"
-        Me.Line44.Top = 8.870079!
-        Me.Line44.Width = 3.929133!
-        Me.Line44.X1 = 3.236221!
-        Me.Line44.X2 = 7.165354!
-        Me.Line44.Y1 = 8.870079!
-        Me.Line44.Y2 = 8.870079!
-        '
-        'Line74
-        '
-        Me.Line74.Height = 0.0!
-        Me.Line74.Left = 0.0!
-        Me.Line74.LineWeight = 1.0!
-        Me.Line74.Name = "Line74"
-        Me.Line74.Top = 9.07008!
-        Me.Line74.Width = 7.165354!
-        Me.Line74.X1 = 0.0!
-        Me.Line74.X2 = 7.165354!
-        Me.Line74.Y1 = 9.07008!
-        Me.Line74.Y2 = 9.07008!
-        '
-        'Line9
-        '
-        Me.Line9.Height = 7.996063!
-        Me.Line9.Left = 3.631103!
-        Me.Line9.LineWeight = 1.0!
-        Me.Line9.Name = "Line9"
-        Me.Line9.Top = 1.074016!
-        Me.Line9.Width = 0.0!
-        Me.Line9.X1 = 3.631103!
-        Me.Line9.X2 = 3.631103!
-        Me.Line9.Y1 = 1.074016!
-        Me.Line9.Y2 = 9.070079!
-        '
-        'Line45
-        '
-        Me.Line45.Height = 7.996063!
-        Me.Line45.Left = 3.236221!
-        Me.Line45.LineWeight = 1.0!
-        Me.Line45.Name = "Line45"
-        Me.Line45.Top = 1.074016!
-        Me.Line45.Width = 0.0!
-        Me.Line45.X1 = 3.236221!
-        Me.Line45.X2 = 3.236221!
-        Me.Line45.Y1 = 1.074016!
-        Me.Line45.Y2 = 9.070079!
-        '
-        'Line75
-        '
-        Me.Line75.Height = 8.196063!
-        Me.Line75.Left = 4.378346!
-        Me.Line75.LineWeight = 1.0!
-        Me.Line75.Name = "Line75"
-        Me.Line75.Top = 0.8740157!
-        Me.Line75.Width = 0.0!
-        Me.Line75.X1 = 4.378346!
-        Me.Line75.X2 = 4.378346!
-        Me.Line75.Y1 = 0.8740157!
-        Me.Line75.Y2 = 9.070079!
-        '
-        'Line76
-        '
-        Me.Line76.Height = 7.996063!
-        Me.Line76.Left = 5.966536!
-        Me.Line76.LineWeight = 1.0!
-        Me.Line76.Name = "Line76"
-        Me.Line76.Top = 1.074016!
-        Me.Line76.Width = 0.0!
-        Me.Line76.X1 = 5.966536!
-        Me.Line76.X2 = 5.966536!
-        Me.Line76.Y1 = 1.074016!
-        Me.Line76.Y2 = 9.070079!
-        '
-        'Line77
-        '
-        Me.Line77.Height = 0.1999999!
-        Me.Line77.Left = 5.571654!
-        Me.Line77.LineWeight = 1.0!
-        Me.Line77.Name = "Line77"
-        Me.Line77.Top = 1.874016!
-        Me.Line77.Width = 0.0!
-        Me.Line77.X1 = 5.571654!
-        Me.Line77.X2 = 5.571654!
-        Me.Line77.Y1 = 1.874016!
-        Me.Line77.Y2 = 2.074016!
-        '
-        'Line78
-        '
-        Me.Line78.Height = 0.2!
-        Me.Line78.Left = 5.571654!
-        Me.Line78.LineWeight = 1.0!
-        Me.Line78.Name = "Line78"
-        Me.Line78.Top = 2.270079!
-        Me.Line78.Width = 0.0!
-        Me.Line78.X1 = 5.571654!
-        Me.Line78.X2 = 5.571654!
-        Me.Line78.Y1 = 2.270079!
-        Me.Line78.Y2 = 2.470079!
-        '
-        'Line79
-        '
-        Me.Line79.Height = 0.1999998!
-        Me.Line79.Left = 5.571654!
-        Me.Line79.LineWeight = 1.0!
-        Me.Line79.Name = "Line79"
-        Me.Line79.Top = 2.670079!
-        Me.Line79.Width = 0.0!
-        Me.Line79.X1 = 5.571654!
-        Me.Line79.X2 = 5.571654!
-        Me.Line79.Y1 = 2.670079!
-        Me.Line79.Y2 = 2.870079!
-        '
-        'Line80
-        '
-        Me.Line80.Height = 0.1999998!
-        Me.Line80.Left = 5.571654!
-        Me.Line80.LineWeight = 1.0!
-        Me.Line80.Name = "Line80"
-        Me.Line80.Top = 3.070079!
-        Me.Line80.Width = 0.0!
-        Me.Line80.X1 = 5.571654!
-        Me.Line80.X2 = 5.571654!
-        Me.Line80.Y1 = 3.070079!
-        Me.Line80.Y2 = 3.270079!
-        '
-        'Line81
-        '
-        Me.Line81.Height = 0.1999991!
-        Me.Line81.Left = 5.571654!
-        Me.Line81.LineWeight = 1.0!
-        Me.Line81.Name = "Line81"
-        Me.Line81.Top = 3.470079!
-        Me.Line81.Width = 0.0!
-        Me.Line81.X1 = 5.571654!
-        Me.Line81.X2 = 5.571654!
-        Me.Line81.Y1 = 3.470079!
-        Me.Line81.Y2 = 3.670078!
-        '
-        'Line82
-        '
-        Me.Line82.Height = 0.1999993!
-        Me.Line82.Left = 5.571654!
-        Me.Line82.LineWeight = 1.0!
-        Me.Line82.Name = "Line82"
-        Me.Line82.Top = 3.870079!
-        Me.Line82.Width = 0.0!
-        Me.Line82.X1 = 5.571654!
-        Me.Line82.X2 = 5.571654!
-        Me.Line82.Y1 = 3.870079!
-        Me.Line82.Y2 = 4.070078!
-        '
-        'Line83
-        '
-        Me.Line83.Height = 0.1999993!
-        Me.Line83.Left = 5.571654!
-        Me.Line83.LineWeight = 1.0!
-        Me.Line83.Name = "Line83"
-        Me.Line83.Top = 4.270079!
-        Me.Line83.Width = 0.0!
-        Me.Line83.X1 = 5.571654!
-        Me.Line83.X2 = 5.571654!
-        Me.Line83.Y1 = 4.270079!
-        Me.Line83.Y2 = 4.470078!
-        '
-        'Line84
-        '
-        Me.Line84.Height = 0.1999993!
-        Me.Line84.Left = 5.571654!
-        Me.Line84.LineWeight = 1.0!
-        Me.Line84.Name = "Line84"
-        Me.Line84.Top = 4.670079!
-        Me.Line84.Width = 0.0!
-        Me.Line84.X1 = 5.571654!
-        Me.Line84.X2 = 5.571654!
-        Me.Line84.Y1 = 4.670079!
-        Me.Line84.Y2 = 4.870079!
-        '
-        'Line86
-        '
-        Me.Line86.Height = 0.1999993!
-        Me.Line86.Left = 5.571654!
-        Me.Line86.LineWeight = 1.0!
-        Me.Line86.Name = "Line86"
-        Me.Line86.Top = 5.070079!
-        Me.Line86.Width = 0.0!
-        Me.Line86.X1 = 5.571654!
-        Me.Line86.X2 = 5.571654!
-        Me.Line86.Y1 = 5.070079!
-        Me.Line86.Y2 = 5.270079!
-        '
-        'Line88
-        '
-        Me.Line88.Height = 0.1999993!
-        Me.Line88.Left = 5.571654!
-        Me.Line88.LineWeight = 1.0!
-        Me.Line88.Name = "Line88"
-        Me.Line88.Top = 5.470079!
-        Me.Line88.Width = 0.0!
-        Me.Line88.X1 = 5.571654!
-        Me.Line88.X2 = 5.571654!
-        Me.Line88.Y1 = 5.470079!
-        Me.Line88.Y2 = 5.670078!
-        '
-        'Line89
-        '
-        Me.Line89.Height = 0.1999993!
-        Me.Line89.Left = 5.571654!
-        Me.Line89.LineWeight = 1.0!
-        Me.Line89.Name = "Line89"
-        Me.Line89.Top = 5.870079!
-        Me.Line89.Width = 0.0!
-        Me.Line89.X1 = 5.571654!
-        Me.Line89.X2 = 5.571654!
-        Me.Line89.Y1 = 5.870079!
-        Me.Line89.Y2 = 6.070078!
-        '
-        'Line90
-        '
-        Me.Line90.Height = 0.1999993!
-        Me.Line90.Left = 5.571654!
-        Me.Line90.LineWeight = 1.0!
-        Me.Line90.Name = "Line90"
-        Me.Line90.Top = 6.270079!
-        Me.Line90.Width = 0.0!
-        Me.Line90.X1 = 5.571654!
-        Me.Line90.X2 = 5.571654!
-        Me.Line90.Y1 = 6.270079!
-        Me.Line90.Y2 = 6.470078!
-        '
-        'Line91
-        '
-        Me.Line91.Height = 0.1999993!
-        Me.Line91.Left = 5.571654!
-        Me.Line91.LineWeight = 1.0!
-        Me.Line91.Name = "Line91"
-        Me.Line91.Top = 6.670079!
-        Me.Line91.Width = 0.0!
-        Me.Line91.X1 = 5.571654!
-        Me.Line91.X2 = 5.571654!
-        Me.Line91.Y1 = 6.670079!
-        Me.Line91.Y2 = 6.870079!
-        '
-        'Line92
-        '
-        Me.Line92.Height = 0.1999993!
-        Me.Line92.Left = 5.571654!
-        Me.Line92.LineWeight = 1.0!
-        Me.Line92.Name = "Line92"
-        Me.Line92.Top = 7.070079!
-        Me.Line92.Width = 0.0!
-        Me.Line92.X1 = 5.571654!
-        Me.Line92.X2 = 5.571654!
-        Me.Line92.Y1 = 7.070079!
-        Me.Line92.Y2 = 7.270079!
-        '
-        'Line93
-        '
-        Me.Line93.Height = 0.1999998!
-        Me.Line93.Left = 5.571654!
-        Me.Line93.LineWeight = 1.0!
-        Me.Line93.Name = "Line93"
-        Me.Line93.Top = 7.470079!
-        Me.Line93.Width = 0.0!
-        Me.Line93.X1 = 5.571654!
-        Me.Line93.X2 = 5.571654!
-        Me.Line93.Y1 = 7.470079!
-        Me.Line93.Y2 = 7.670079!
-        '
-        'Line94
-        '
-        Me.Line94.Height = 0.2000003!
-        Me.Line94.Left = 5.571654!
-        Me.Line94.LineWeight = 1.0!
-        Me.Line94.Name = "Line94"
-        Me.Line94.Top = 7.87008!
-        Me.Line94.Width = 0.0!
-        Me.Line94.X1 = 5.571654!
-        Me.Line94.X2 = 5.571654!
-        Me.Line94.Y1 = 7.87008!
-        Me.Line94.Y2 = 8.07008!
-        '
-        'Line95
-        '
-        Me.Line95.Height = 0.2000074!
-        Me.Line95.Left = 5.571654!
-        Me.Line95.LineWeight = 1.0!
-        Me.Line95.Name = "Line95"
-        Me.Line95.Top = 8.27008!
-        Me.Line95.Width = 0.0!
-        Me.Line95.X1 = 5.571654!
-        Me.Line95.X2 = 5.571654!
-        Me.Line95.Y1 = 8.27008!
-        Me.Line95.Y2 = 8.470087!
-        '
-        'Line96
-        '
-        Me.Line96.Height = 0.2000065!
-        Me.Line96.Left = 5.571654!
-        Me.Line96.LineWeight = 1.0!
-        Me.Line96.Name = "Line96"
-        Me.Line96.Top = 8.670079!
-        Me.Line96.Width = 0.0!
-        Me.Line96.X1 = 5.571654!
-        Me.Line96.X2 = 5.571654!
-        Me.Line96.Y1 = 8.670079!
-        Me.Line96.Y2 = 8.870086!
-        '
-        'Line97
-        '
-        Me.Line97.Height = 0.1999998!
-        Me.Line97.Left = 6.512992!
-        Me.Line97.LineWeight = 1.0!
-        Me.Line97.Name = "Line97"
-        Me.Line97.Top = 2.070079!
-        Me.Line97.Width = 0.0!
-        Me.Line97.X1 = 6.512992!
-        Me.Line97.X2 = 6.512992!
-        Me.Line97.Y1 = 2.070079!
-        Me.Line97.Y2 = 2.270079!
-        '
-        'Line98
-        '
-        Me.Line98.Height = 0.1999991!
-        Me.Line98.Left = 6.512992!
-        Me.Line98.LineWeight = 1.0!
-        Me.Line98.Name = "Line98"
-        Me.Line98.Top = 2.470079!
-        Me.Line98.Width = 0.0!
-        Me.Line98.X1 = 6.512992!
-        Me.Line98.X2 = 6.512992!
-        Me.Line98.Y1 = 2.470079!
-        Me.Line98.Y2 = 2.670078!
-        '
-        'Line116
-        '
-        Me.Line116.Height = 0.1999986!
-        Me.Line116.Left = 6.512992!
-        Me.Line116.LineWeight = 1.0!
-        Me.Line116.Name = "Line116"
-        Me.Line116.Top = 2.870079!
-        Me.Line116.Width = 0.0!
-        Me.Line116.X1 = 6.512992!
-        Me.Line116.X2 = 6.512992!
-        Me.Line116.Y1 = 2.870079!
-        Me.Line116.Y2 = 3.070078!
-        '
-        'Line117
-        '
-        Me.Line117.Height = 0.1999986!
-        Me.Line117.Left = 6.512992!
-        Me.Line117.LineWeight = 1.0!
-        Me.Line117.Name = "Line117"
-        Me.Line117.Top = 3.270079!
-        Me.Line117.Width = 0.0!
-        Me.Line117.X1 = 6.512992!
-        Me.Line117.X2 = 6.512992!
-        Me.Line117.Y1 = 3.270079!
-        Me.Line117.Y2 = 3.470078!
-        '
-        'Line118
-        '
-        Me.Line118.Height = 0.1999986!
-        Me.Line118.Left = 6.512992!
-        Me.Line118.LineWeight = 1.0!
-        Me.Line118.Name = "Line118"
-        Me.Line118.Top = 3.670078!
-        Me.Line118.Width = 0.0!
-        Me.Line118.X1 = 6.512992!
-        Me.Line118.X2 = 6.512992!
-        Me.Line118.Y1 = 3.670078!
-        Me.Line118.Y2 = 3.870076!
-        '
-        'Line119
-        '
-        Me.Line119.Height = 0.1999986!
-        Me.Line119.Left = 6.512992!
-        Me.Line119.LineWeight = 1.0!
-        Me.Line119.Name = "Line119"
-        Me.Line119.Top = 4.070076!
-        Me.Line119.Width = 0.0!
-        Me.Line119.X1 = 6.512992!
-        Me.Line119.X2 = 6.512992!
-        Me.Line119.Y1 = 4.070076!
-        Me.Line119.Y2 = 4.270075!
-        '
-        'Line120
-        '
-        Me.Line120.Height = 0.1999993!
-        Me.Line120.Left = 6.512992!
-        Me.Line120.LineWeight = 1.0!
-        Me.Line120.Name = "Line120"
-        Me.Line120.Top = 4.470075!
-        Me.Line120.Width = 0.0!
-        Me.Line120.X1 = 6.512992!
-        Me.Line120.X2 = 6.512992!
-        Me.Line120.Y1 = 4.470075!
-        Me.Line120.Y2 = 4.670074!
-        '
-        'Line121
-        '
-        Me.Line121.Height = 0.1999993!
-        Me.Line121.Left = 6.512992!
-        Me.Line121.LineWeight = 1.0!
-        Me.Line121.Name = "Line121"
-        Me.Line121.Top = 4.870074!
-        Me.Line121.Width = 0.0!
-        Me.Line121.X1 = 6.512992!
-        Me.Line121.X2 = 6.512992!
-        Me.Line121.Y1 = 4.870074!
-        Me.Line121.Y2 = 5.070073!
-        '
-        'Line122
-        '
-        Me.Line122.Height = 0.1999993!
-        Me.Line122.Left = 6.512992!
-        Me.Line122.LineWeight = 1.0!
-        Me.Line122.Name = "Line122"
-        Me.Line122.Top = 5.270073!
-        Me.Line122.Width = 0.0!
-        Me.Line122.X1 = 6.512992!
-        Me.Line122.X2 = 6.512992!
-        Me.Line122.Y1 = 5.270073!
-        Me.Line122.Y2 = 5.470072!
-        '
-        'Line123
-        '
-        Me.Line123.Height = 0.1999993!
-        Me.Line123.Left = 6.512992!
-        Me.Line123.LineWeight = 1.0!
-        Me.Line123.Name = "Line123"
-        Me.Line123.Top = 5.670072!
-        Me.Line123.Width = 0.0!
-        Me.Line123.X1 = 6.512992!
-        Me.Line123.X2 = 6.512992!
-        Me.Line123.Y1 = 5.670072!
-        Me.Line123.Y2 = 5.870071!
-        '
-        'Line124
-        '
-        Me.Line124.Height = 0.1999989!
-        Me.Line124.Left = 6.512992!
-        Me.Line124.LineWeight = 1.0!
-        Me.Line124.Name = "Line124"
-        Me.Line124.Top = 6.070071!
-        Me.Line124.Width = 0.0!
-        Me.Line124.X1 = 6.512992!
-        Me.Line124.X2 = 6.512992!
-        Me.Line124.Y1 = 6.070071!
-        Me.Line124.Y2 = 6.27007!
-        '
-        'Line125
-        '
-        Me.Line125.Height = 0.1999993!
-        Me.Line125.Left = 6.512992!
-        Me.Line125.LineWeight = 1.0!
-        Me.Line125.Name = "Line125"
-        Me.Line125.Top = 6.47007!
-        Me.Line125.Width = 0.0!
-        Me.Line125.X1 = 6.512992!
-        Me.Line125.X2 = 6.512992!
-        Me.Line125.Y1 = 6.47007!
-        Me.Line125.Y2 = 6.670069!
-        '
-        'Line126
-        '
-        Me.Line126.Height = 0.1999993!
-        Me.Line126.Left = 6.512992!
-        Me.Line126.LineWeight = 1.0!
-        Me.Line126.Name = "Line126"
-        Me.Line126.Top = 6.870069!
-        Me.Line126.Width = 0.0!
-        Me.Line126.X1 = 6.512992!
-        Me.Line126.X2 = 6.512992!
-        Me.Line126.Y1 = 6.870069!
-        Me.Line126.Y2 = 7.070068!
-        '
-        'Line127
-        '
-        Me.Line127.Height = 0.2000008!
-        Me.Line127.Left = 6.512992!
-        Me.Line127.LineWeight = 1.0!
-        Me.Line127.Name = "Line127"
-        Me.Line127.Top = 7.270068!
-        Me.Line127.Width = 0.0!
-        Me.Line127.X1 = 6.512992!
-        Me.Line127.X2 = 6.512992!
-        Me.Line127.Y1 = 7.270068!
-        Me.Line127.Y2 = 7.470069!
-        '
-        'Line128
-        '
-        Me.Line128.Height = 0.2000003!
-        Me.Line128.Left = 6.512992!
-        Me.Line128.LineWeight = 1.0!
-        Me.Line128.Name = "Line128"
-        Me.Line128.Top = 7.670069!
-        Me.Line128.Width = 0.0!
-        Me.Line128.X1 = 6.512992!
-        Me.Line128.X2 = 6.512992!
-        Me.Line128.Y1 = 7.670069!
-        Me.Line128.Y2 = 7.870069!
-        '
-        'Line129
-        '
-        Me.Line129.Height = 0.1999998!
-        Me.Line129.Left = 6.512992!
-        Me.Line129.LineWeight = 1.0!
-        Me.Line129.Name = "Line129"
-        Me.Line129.Top = 8.070069!
-        Me.Line129.Width = 0.0!
-        Me.Line129.X1 = 6.512992!
-        Me.Line129.X2 = 6.512992!
-        Me.Line129.Y1 = 8.070069!
-        Me.Line129.Y2 = 8.270069!
-        '
-        'Line130
-        '
-        Me.Line130.Height = 0.2000008!
-        Me.Line130.Left = 6.512992!
-        Me.Line130.LineWeight = 1.0!
-        Me.Line130.Name = "Line130"
-        Me.Line130.Top = 8.470069!
-        Me.Line130.Width = 0.0!
-        Me.Line130.X1 = 6.512992!
-        Me.Line130.X2 = 6.512992!
-        Me.Line130.Y1 = 8.470069!
-        Me.Line130.Y2 = 8.67007!
-        '
-        'Line131
-        '
-        Me.Line131.Height = 0.1999998!
-        Me.Line131.Left = 6.512992!
-        Me.Line131.LineWeight = 1.0!
-        Me.Line131.Name = "Line131"
-        Me.Line131.Top = 8.87007!
-        Me.Line131.Width = 0.0!
-        Me.Line131.X1 = 6.512992!
-        Me.Line131.X2 = 6.512992!
-        Me.Line131.Y1 = 8.87007!
-        Me.Line131.Y2 = 9.070069!
+        'Line10
+        '
+        Me.Line10.Height = 0.0!
+        Me.Line10.Left = 0.0!
+        Me.Line10.LineWeight = 1.0!
+        Me.Line10.Name = "Line10"
+        Me.Line10.Top = 3.857874!
+        Me.Line10.Width = 7.649607!
+        Me.Line10.X1 = 0.0!
+        Me.Line10.X2 = 7.649607!
+        Me.Line10.Y1 = 3.857874!
+        Me.Line10.Y2 = 3.857874!
         '
         'TaxiKakuninReport
         '
         Me.MasterReport = False
         Me.PageSettings.PaperHeight = 11.0!
         Me.PageSettings.PaperWidth = 8.5!
-        Me.PrintWidth = 7.198426!
+        Me.PrintWidth = 7.649607!
         Me.Sections.Add(Me.PageHeader)
         Me.Sections.Add(Me.Detail)
         Me.Sections.Add(Me.PageFooter)
@@ -6976,9 +6362,7 @@ Partial Public Class TaxiKakuninReport
         CType(Me.REQ_TAXI_FROM_1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DANTAI_CODE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label200, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label197, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label185, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_MR_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label178, System.ComponentModel.ISupportInitialize).EndInit()
@@ -7253,10 +6637,6 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label89, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label107, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label108, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label109, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label110, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label111, System.ComponentModel.ISupportInitialize).EndInit()
@@ -7311,6 +6691,10 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label170, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label171, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label173, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -7528,7 +6912,6 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents ANS_TAXI_NO_20 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label178 As DataDynamics.ActiveReports.Label
     Private WithEvents Line28 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line31 As DataDynamics.ActiveReports.Line
     Private WithEvents Line36 As DataDynamics.ActiveReports.Line
     Private WithEvents Label180 As DataDynamics.ActiveReports.Label
     Private WithEvents Line104 As DataDynamics.ActiveReports.Line
@@ -7559,9 +6942,6 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents Label8 As DataDynamics.ActiveReports.Label
     Private WithEvents Line6 As DataDynamics.ActiveReports.Line
     Private WithEvents Line7 As DataDynamics.ActiveReports.Line
-    Private WithEvents Label197 As DataDynamics.ActiveReports.Label
-    Private WithEvents Line10 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line46 As DataDynamics.ActiveReports.Line
     Private WithEvents Line47 As DataDynamics.ActiveReports.Line
     Private WithEvents Line50 As DataDynamics.ActiveReports.Line
     Private WithEvents Line52 As DataDynamics.ActiveReports.Line
@@ -7574,10 +6954,8 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents Line102 As DataDynamics.ActiveReports.Line
     Private WithEvents Line105 As DataDynamics.ActiveReports.Line
     Private WithEvents Line106 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line108 As DataDynamics.ActiveReports.Line
     Private WithEvents Line111 As DataDynamics.ActiveReports.Line
     Private WithEvents Line112 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line113 As DataDynamics.ActiveReports.Line
     Private WithEvents Line114 As DataDynamics.ActiveReports.Line
     Private WithEvents Line4 As DataDynamics.ActiveReports.Line
     Private WithEvents Line136 As DataDynamics.ActiveReports.Line
@@ -7602,15 +6980,12 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents Label198 As DataDynamics.ActiveReports.Label
     Private WithEvents Label199 As DataDynamics.ActiveReports.Label
     Private WithEvents Label201 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label4 As DataDynamics.ActiveReports.Label
-    Private WithEvents Line39 As DataDynamics.ActiveReports.Line
     Private WithEvents Line85 As DataDynamics.ActiveReports.Line
     Private WithEvents Label46 As DataDynamics.ActiveReports.Label
     Private WithEvents Line110 As DataDynamics.ActiveReports.Line
     Private WithEvents Label12 As DataDynamics.ActiveReports.Label
     Private WithEvents Label202 As DataDynamics.ActiveReports.Label
     Private WithEvents Line66 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line115 As DataDynamics.ActiveReports.Line
     Private WithEvents Label50 As DataDynamics.ActiveReports.Label
     Private WithEvents Line135 As DataDynamics.ActiveReports.Line
     Private WithEvents Label203 As DataDynamics.ActiveReports.Label
@@ -7633,7 +7008,6 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents Label42 As DataDynamics.ActiveReports.Label
     Private WithEvents Label43 As DataDynamics.ActiveReports.Label
     Private WithEvents Line11 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line12 As DataDynamics.ActiveReports.Line
     Private WithEvents Label44 As DataDynamics.ActiveReports.Label
     Private WithEvents Label55 As DataDynamics.ActiveReports.Label
     Private WithEvents Label59 As DataDynamics.ActiveReports.Label
@@ -7781,40 +7155,6 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents Line45 As DataDynamics.ActiveReports.Line
     Private WithEvents Line75 As DataDynamics.ActiveReports.Line
     Private WithEvents Line76 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line77 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line78 As DataDynamics.ActiveReports.Line
     Private WithEvents Line79 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line80 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line81 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line82 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line83 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line84 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line86 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line88 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line89 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line90 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line91 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line92 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line93 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line94 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line95 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line96 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line97 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line98 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line116 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line117 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line118 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line119 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line120 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line121 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line122 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line123 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line124 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line125 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line126 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line127 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line128 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line129 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line130 As DataDynamics.ActiveReports.Line
-    Private WithEvents Line131 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line10 As DataDynamics.ActiveReports.Line
 End Class

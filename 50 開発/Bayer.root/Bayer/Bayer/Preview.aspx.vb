@@ -269,10 +269,10 @@ Partial Public Class Preview
         rpt1.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
 
         '必要に応じマージン設定
-        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
-        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+        rpt1.PageSettings.Margins.Top = ActiveReport.CmToInch(0.6)
+        rpt1.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.6)
+        rpt1.PageSettings.Margins.Left = ActiveReport.CmToInch(0.6)
+        rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.6)
 
         rpt1.KOTSUHOTEL_DATA = RPT_KOTSUHOTEL
 
@@ -317,11 +317,11 @@ Partial Public Class Preview
         Dim wCnt As Integer = 0
         Dim wFlag As Boolean = False
 
-        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        'If RsData.Read() Then
-        '    RPT_KOTSUHOTEL = AppModule.SetRsData(RsData, RPT_KOTSUHOTEL)
-        'End If
-        'RsData.Close()
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            RPT_KOTSUHOTEL = AppModule.SetRsData(RsData, RPT_KOTSUHOTEL)
+        End If
+        RsData.Close()
 
         Dim arguments As New DataSourceSelectArguments()
         'select 
