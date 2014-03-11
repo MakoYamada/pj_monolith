@@ -288,7 +288,14 @@ Public Class Proc
 
         TBL_KOUENKAI_Ins.KOUENKAI_TITLE = fileData(COL_NO.Field4)
         TBL_KOUENKAI_Ins.KOUENKAI_NAME = fileData(COL_NO.Field4)
-        TBL_KOUENKAI_Ins.TAXI_PRT_NAME = fileData(COL_NO.Field5)
+
+        If fileData(COL_NO.Field5).Trim = "" Then
+            'チケット印字名が未設定の場合は、講演会名頭10文字をセットする。
+            TBL_KOUENKAI_Ins.TAXI_PRT_NAME = Mid(fileData(COL_NO.Field4), 1, 10)
+        Else
+            TBL_KOUENKAI_Ins.TAXI_PRT_NAME = fileData(COL_NO.Field5)
+        End If
+
         TBL_KOUENKAI_Ins.FROM_DATE = fileData(COL_NO.Field6)
         TBL_KOUENKAI_Ins.TO_DATE = fileData(COL_NO.Field7)
         TBL_KOUENKAI_Ins.KAIJO_NAME = fileData(COL_NO.Field8)
