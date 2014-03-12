@@ -53,11 +53,11 @@ Partial Public Class KouenkaiRegist
                 URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
                 BtnSubmit1.Visible = True
                 BtnSubmit2.Visible = True
-                '''BtnNozomi.Visible = True
+                'BtnNozomi.Visible = True
             Else
                 BtnSubmit1.Visible = False
                 BtnSubmit2.Visible = False
-                '''BtnNozomi.Visible = False
+                'BtnNozomi.Visible = False
             End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
@@ -65,12 +65,12 @@ Partial Public Class KouenkaiRegist
                 BtnRireki.Visible = False
                 BtnSubmit1.Visible = False
                 BtnSubmit2.Visible = False
-                '''BtnNozomi.Visible = False
+                'BtnNozomi.Visible = False
             Else
                 BtnRireki.Visible = True
                 BtnSubmit1.Visible = True
                 BtnSubmit2.Visible = True
-                '''BtnNozomi.Visible = True
+                'BtnNozomi.Visible = True
             End If
 
             '' ''表示対象より新しい会合基本情報がある場合はNOZOMIボタンは使用不可
@@ -179,7 +179,9 @@ Partial Public Class KouenkaiRegist
 
         If Not Popup Then
             SetChangedColor(Me.TORIKESHI_FLG, DSP_KOUENKAI(DSP_SEQ).TORIKESHI_FLG, OldTBL_KOUENKAI.TORIKESHI_FLG)
+            SetChangedColor(Me.TIME_STAMP, DSP_KOUENKAI(DSP_SEQ).TIME_STAMP, OldTBL_KOUENKAI.TIME_STAMP)
             SetChangedColor(Me.KOUENKAI_NAME, DSP_KOUENKAI(DSP_SEQ).KOUENKAI_NAME, OldTBL_KOUENKAI.KOUENKAI_NAME)
+            SetChangedColor(Me.TAXI_PRT_NAME, DSP_KOUENKAI(DSP_SEQ).TAXI_PRT_NAME, OldTBL_KOUENKAI.TAXI_PRT_NAME)
             SetChangedColor(Me.FROM_DATE, DSP_KOUENKAI(DSP_SEQ).FROM_DATE, OldTBL_KOUENKAI.FROM_DATE)
             SetChangedColor(Me.KAIJO_NAME, DSP_KOUENKAI(DSP_SEQ).KAIJO_NAME, OldTBL_KOUENKAI.KAIJO_NAME)
             SetChangedColor(Me.SEIHIN_NAME, DSP_KOUENKAI(DSP_SEQ).SEIHIN_NAME, OldTBL_KOUENKAI.SEIHIN_NAME)

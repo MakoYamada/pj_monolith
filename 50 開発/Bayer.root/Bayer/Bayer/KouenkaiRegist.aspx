@@ -44,7 +44,7 @@
 							TimeStamp(BYL)
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
-							<asp:Label ID="TIME_STAMP" runat="server" Width="120px"></asp:Label>
+							<asp:Label ID="TIME_STAMP" runat="server" Width="140px"></asp:Label>
 						</td>
 					</tr>
 					<tr>
