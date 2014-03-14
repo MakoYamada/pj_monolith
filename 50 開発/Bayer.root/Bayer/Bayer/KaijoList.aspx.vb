@@ -87,7 +87,7 @@ Partial Public Class KaijoList
         AppModule.SetDropDownList_BU(Me.JokenBU, MyBase.DbConnection)
         AppModule.SetDropDownList_AREA(Me.JokenKIKAKU_TANTO_AREA, MyBase.DbConnection)
         AppModule.SetDropDownList_SEIHIN(Me.JokenSEIHIN, MyBase.DbConnection)
-        AppModule.SetDropDownList_USER_NAME(Me.JoKenTTANTO_ID, MyBase.DbConnection)
+        AppModule.SetDropDownList_USER_NAME(Me.JoKenTTEHAI_TANTO, MyBase.DbConnection)
 
         'IME設定
         CmnModule.SetIme(Me.JokenKIKAKU_TANTO_NAME, CmnModule.ImeType.Active)
@@ -129,7 +129,7 @@ Partial Public Class KaijoList
         Me.JokenKIKAKU_TANTO_NAME.Text = Trim(Joken.KIKAKU_TANTO_NAME)
         Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
         Me.JokenTEHAI_TANTO_NAME.Text = Trim(Joken.TEHAI_TANTO_NAME)
-        Me.JoKenTTANTO_ID.SelectedIndex = CmnModule.GetSelectedIndex(Joken.TTANTO_ID, Me.JoKenTTANTO_ID)
+        Me.JoKenTTEHAI_TANTO.SelectedIndex = CmnModule.GetSelectedIndex(Joken.TTEHAI_TANTO, Me.JoKenTTEHAI_TANTO)
 
         'データ取得
         If Not GetData() Then
@@ -267,8 +267,8 @@ Partial Public Class KaijoList
         Joken.KIKAKU_TANTO_ROMA = Trim(Me.JokenKIKAKU_TANTO_ROMA.Text)
         Joken.TEHAI_TANTO_NAME = Trim(Me.JokenTEHAI_TANTO_NAME.Text)
         Joken.TEHAI_TANTO_ROMA = Trim(Me.JokenTEHAI_TANTO_ROMA.Text)
-        Joken.TTANTO_ID = CmnModule.GetSelectedItemValue(Me.JoKenTTANTO_ID)
-        Joken.USER_NAME = CmnModule.GetSelectedItemText(Me.JoKenTTANTO_ID)
+        Joken.TTEHAI_TANTO = CmnModule.GetSelectedItemValue(Me.JoKenTTEHAI_TANTO)
+        Joken.USER_NAME = CmnModule.GetSelectedItemText(Me.JoKenTTEHAI_TANTO)
 
         '画面項目表示
         SetForm()

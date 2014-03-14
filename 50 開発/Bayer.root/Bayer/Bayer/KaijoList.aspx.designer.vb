@@ -151,13 +151,13 @@ Partial Public Class KaijoList
     Protected WithEvents JokenTEHAI_TANTO_ROMA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''JoKenTTANTO_ID コントロール。
+    '''JoKenTTEHAI_TANTO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents JoKenTTANTO_ID As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents JoKenTTEHAI_TANTO As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''BtnSearch コントロール。

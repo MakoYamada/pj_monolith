@@ -331,7 +331,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_TAXITICKET_HAKKO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= "   AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= "   AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
                 strSQL &= " AND ("
@@ -445,7 +445,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_TAXITICKET_HAKKO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= "   AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= "   AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
                 strSQL &= " AND ("
@@ -493,6 +493,10 @@ Public Class SQL
 
             If Trim(Joken.TTANTO_ID) <> "" Then
                 strSQL &= " AND TBL_KOUENKAI.TTANTO_ID=N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            If Trim(Joken.TTEHAI_TANTO) <> "" Then
+                strSQL &= " AND TBL_KOUENKAI.TTEHAI_TANTO=N'" & CmnDb.SqlString(Joken.TTEHAI_TANTO) & "'"
             End If
 
             If Trim(Joken.TKT_ENTA) = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.N_Igai Then
@@ -4448,6 +4452,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.TTEHAI_TANTO"
             strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
             strSQL &= ",MS_USER.USER_NAME"
@@ -4483,7 +4488,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
@@ -4551,6 +4556,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.TTEHAI_TANTO"
             strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
             strSQL &= ",MS_USER.USER_NAME"
@@ -4586,7 +4592,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
@@ -4661,8 +4667,8 @@ Public Class SQL
                 strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO LIKE N'%" & CmnDb.SqlString(Joken.EIGYOSHO) & "%'"
             End If
 
-            If Trim(Joken.TTANTO_ID) <> "" Then
-                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.TTANTO_ID=N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            If Trim(Joken.TTEHAI_TANTO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.TTEHAI_TANTO=N'" & CmnDb.SqlString(Joken.TTEHAI_TANTO) & "'"
             End If
 
             If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
@@ -4747,6 +4753,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.TTEHAI_TANTO"
             strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
             strSQL &= ",MS_USER.USER_NAME"
@@ -4782,7 +4789,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
@@ -4849,6 +4856,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.TTEHAI_TANTO"
             strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
             strSQL &= ",MS_USER.USER_NAME"
@@ -4872,7 +4880,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
             strSQL &= strSQL_WHERE_KAIJO
 
             strSQL &= " ORDER BY"
@@ -4956,6 +4964,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.TTEHAI_TANTO"
             strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
             strSQL &= ",MS_USER.USER_NAME"
@@ -4990,7 +4999,7 @@ Public Class SQL
             strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
 
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KAIJO.TIME_STAMP_BYL DESC"
@@ -5045,6 +5054,7 @@ Public Class SQL
             strSQL &= ",TBL_KOUENKAI.YOSAN_TF"
             strSQL &= ",TBL_KOUENKAI.YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.TTANTO_ID"
+            strSQL &= ",TBL_KOUENKAI.TTEHAI_TANTO"
             strSQL &= ",TBL_KOUENKAI.IROUKAI_YOSAN_T"
             strSQL &= ",TBL_KOUENKAI.IKENKOUKAN_YOSAN_T"
             strSQL &= ",MS_USER.USER_NAME"
@@ -5074,7 +5084,7 @@ Public Class SQL
             strSQL &= ",USER_NAME"
             strSQL &= " FROM MS_USER) AS MS_USER"
             strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
-            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTANTO_ID,N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND ISNULL(TBL_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
             strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"

@@ -61,7 +61,7 @@
 					<tr>
 						<td align="left">
 							TOP担当者
-							<asp:DropDownList ID="JoKenTTANTO_ID" runat="server" Width="200px"></asp:DropDownList>
+							<asp:DropDownList ID="JoKenTTEHAI_TANTO" runat="server" Width="200px"></asp:DropDownList>
 						</td>
 						<td align="right">
 							<asp:Button ID="BtnSearch" runat="server" Text="検索" Width="130px" CssClass="Button" />
