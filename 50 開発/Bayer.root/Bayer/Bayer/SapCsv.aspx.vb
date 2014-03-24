@@ -60,7 +60,7 @@ Partial Public Class SapCsv
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
             Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "Sap.csv")
-            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
 
             Response.Write(MyModule.Csv.SapCsv(CsvData))
             Response.End()
