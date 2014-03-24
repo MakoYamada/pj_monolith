@@ -43,7 +43,7 @@ Partial Public Class TaxiPrintCsv
             SetForm()
         End If
 
-        'マステーページ設定
+        'マスターページ設定
         With Me.Master
             .DispTaxiMenu = True
             .PageTitle = "タクシーチケット印刷データ作成"

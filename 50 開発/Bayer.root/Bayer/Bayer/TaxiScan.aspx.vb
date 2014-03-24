@@ -28,10 +28,10 @@ Partial Public Class TaxiScan
             SetForm()
         End If
 
-        'マステーページ設定
+        'マスターページ設定
         With Me.Master
             .DispTaxiMenu = True
-            .PageTitle = "タクシーチケスットキャンデータ取込"
+            .PageTitle = "タクシーチケットスキャンデータ取込"
         End With
     End Sub
 
