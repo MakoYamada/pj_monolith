@@ -179,43 +179,43 @@ Partial Public Class TaxiNouhinTorikomi
     Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByRef ErrorMessage As String) As Boolean
 
         Try
-            If Me.RdoTaxi.SelectedValue = "DC" Then
-                '項目数チェック
-                If fileData.Count <> DC_COL_COUNT Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
-                End If
-                '必須入力チェック
-                If fileData(DC_COL_NO.COL_KAISHA_CODE).Trim.Equals(String.Empty) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_KAISHA_CODE & "がセットされていません。" & vbNewLine
-                End If
-                If fileData(DC_COL_NO.COL_TKT_NO).Trim.Equals(String.Empty) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_TKT_NO & "がセットされていません。" & vbNewLine
-                End If
-                If fileData(DC_COL_NO.COL_KENSHU).Trim.Equals(String.Empty) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_KENSHU & "がセットされていません。" & vbNewLine
-                End If
-                '券種チェック
-                If Not ChkKenshu(Me.RdoTaxi.SelectedValue, fileData(DC_COL_NO.COL_KENSHU)) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NO.COL_KENSHU & "が不正です。" & vbNewLine
-                End If
-            Else
-                '項目数チェック
-                If fileData.Count <> COL_COUNT Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
-                End If
-                '必須入力チェック
-                If fileData(COL_NO.COL_TKT_NO).Trim.Equals(String.Empty) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_TKT_NO & "がセットされていません。" & vbNewLine
-                End If
-
-                If fileData(COL_NO.COL_KENSHU).Trim.Equals(String.Empty) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_KENSHU & "がセットされていません。" & vbNewLine
-                End If
-                '券種チェック
-                If Not ChkKenshu(Me.RdoTaxi.SelectedValue, fileData(COL_NO.COL_KENSHU)) Then
-                    ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_KENSHU & "が不正です。" & vbNewLine
-                End If
+            'If Me.RdoTaxi.SelectedValue = "DC" Then
+            '    '項目数チェック
+            '    If fileData.Count <> DC_COL_COUNT Then
+            '        ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
+            '    End If
+            '    '必須入力チェック
+            '    If fileData(DC_COL_NO.COL_KAISHA_CODE).Trim.Equals(String.Empty) Then
+            '        ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_KAISHA_CODE & "がセットされていません。" & vbNewLine
+            '    End If
+            '    If fileData(DC_COL_NO.COL_TKT_NO).Trim.Equals(String.Empty) Then
+            '        ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_TKT_NO & "がセットされていません。" & vbNewLine
+            '    End If
+            '    If fileData(DC_COL_NO.COL_KENSHU).Trim.Equals(String.Empty) Then
+            '        ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NAME.COL_KENSHU & "がセットされていません。" & vbNewLine
+            '    End If
+            '    '券種チェック
+            '    If Not ChkKenshu(Me.RdoTaxi.SelectedValue, fileData(DC_COL_NO.COL_KENSHU)) Then
+            '        ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & DC_COL_NO.COL_KENSHU & "が不正です。" & vbNewLine
+            '    End If
+            'Else
+            '項目数チェック
+            If fileData.Count <> COL_COUNT Then
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
             End If
+            '必須入力チェック
+            If fileData(COL_NO.COL_TKT_NO).Trim.Equals(String.Empty) Then
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_TKT_NO & "がセットされていません。" & vbNewLine
+            End If
+
+            If fileData(COL_NO.COL_KENSHU).Trim.Equals(String.Empty) Then
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_KENSHU & "がセットされていません。" & vbNewLine
+            End If
+            '券種チェック
+            If Not ChkKenshu(Me.RdoTaxi.SelectedValue, fileData(COL_NO.COL_KENSHU)) Then
+                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.COL_KENSHU & "が不正です。" & vbNewLine
+            End If
+            'End If
 
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
@@ -263,13 +263,13 @@ Partial Public Class TaxiNouhinTorikomi
 
         TBL_TAXITICKET_HAKKO_Ins.TKT_KAISHA = Me.RdoTaxi.SelectedValue
 
-        If Me.RdoTaxi.SelectedValue = "DC" Then
-            TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(DC_COL_NO.COL_TKT_NO)
-            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(DC_COL_NO.COL_KENSHU)
-        Else
-            TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.COL_TKT_NO)
-            TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(COL_NO.COL_KENSHU)
-        End If
+        'If Me.RdoTaxi.SelectedValue = "DC" Then
+        '    TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(DC_COL_NO.COL_TKT_NO)
+        '    TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(DC_COL_NO.COL_KENSHU)
+        'Else
+        TBL_TAXITICKET_HAKKO_Ins.TKT_NO = fileData(COL_NO.COL_TKT_NO)
+        TBL_TAXITICKET_HAKKO_Ins.TKT_KENSHU = Me.RdoTaxi.SelectedValue & fileData(COL_NO.COL_KENSHU)
+        'End If
 
         TBL_TAXITICKET_HAKKO_Ins.TKT_MIKETSU = CmnConst.Flag.Off
         TBL_TAXITICKET_HAKKO_Ins.TKT_VOID = CmnConst.Flag.Off
