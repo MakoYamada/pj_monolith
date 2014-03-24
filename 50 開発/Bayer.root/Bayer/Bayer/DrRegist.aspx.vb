@@ -3496,108 +3496,108 @@ Partial Public Class DrRegist
         End If
 
         'タクチケ印字名未確定の場合は「発行フラグ」を立てない
-        If Me.TAXI_PRT_NAME.Text.Trim = "" Then
-            If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_1)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_2)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_3)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_4)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_5)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_6)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_7)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_8)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_9)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_10)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_11)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_12)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_13)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_14)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_15)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_16)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_17)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_18)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_19)
-                Return False
-            End If
-            If Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
-                CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
-                SetFocus(Me.CHK_ANS_TAXI_HAKKO_20)
-                Return False
-            End If
-        End If
+        'If Me.TAXI_PRT_NAME.Text.Trim = "" Then
+        '    If Me.CHK_ANS_TAXI_HAKKO_1.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_1)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_2.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_2)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_3.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_3)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_4.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_4)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_5.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_5)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_6.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_6)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_7.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_7)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_8.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_8)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_9.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_9)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_10.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_10)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_11.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_11)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_12.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_12)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_13.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_13)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_14.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_14)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_15.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_15)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_16.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_16)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_17.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_17)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_18.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_18)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_19.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_19)
+        '        Return False
+        '    End If
+        '    If Me.CHK_ANS_TAXI_HAKKO_20.Checked Then
+        '        CmnModule.AlertMessage(MessageDef.Error.TaxiPrtNameError, Me)
+        '        SetFocus(Me.CHK_ANS_TAXI_HAKKO_20)
+        '        Return False
+        '    End If
+        'End If
 
         'タクチケ関連項目に入力されている場合は、タクチケ発行枚数必須
         If Nozomi And Val(Me.ANS_TAXI_MAISUU.Text) = 0 Then
