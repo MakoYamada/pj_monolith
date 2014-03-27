@@ -387,6 +387,8 @@ Partial Public Class DrSoufujo
         Me.Label33 = New DataDynamics.ActiveReports.Label
         Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
+        Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
+        Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         CType(Me.DetailTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_STATUS_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_O_STATUS_1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -746,6 +748,8 @@ Partial Public Class DrSoufujo
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -4703,7 +4707,7 @@ Partial Public Class DrSoufujo
         '
         'GroupHeader1
         '
-        Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3, Me.MR_BU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_SHOZOKU, Me.MR_NAME})
+        Me.GroupHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.PRINT_DATE, Me.Label1, Me.Label2, Me.DR_NAME, Me.MR_SEND_SAKI, Me.Label4, Me.JISSI_DATE, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.KOUENKAI_NO, Me.Label7, Me.SANKASHA_ID, Me.Label8, Me.KAIJO_NAME, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.AISATSU1, Me.AISATSU2, Me.AISATSU3, Me.MR_BU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_SHOZOKU, Me.MR_NAME, Me.FROM_DATE, Me.TO_DATE})
         Me.GroupHeader1.DataField = "=KOUENKAI_NO + SANKASHA_ID"
         Me.GroupHeader1.GroupKeepTogether = DataDynamics.ActiveReports.GroupKeepTogether.FirstDetail
         Me.GroupHeader1.Height = 3.104283!
@@ -4920,7 +4924,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU1.Name = "AISATSU1"
         Me.AISATSU1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
-        Me.AISATSU1.Text = "上記、会合ご参加賜りまして誠にありがとうございます。"
+        Me.AISATSU1.Text = "この度は上記講演会にご参加賜りまして誠にありがとうございます。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.AISATSU1.Top = 2.533857!
         Me.AISATSU1.Width = 6.579529!
         '
@@ -4931,7 +4935,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU2.Name = "AISATSU2"
         Me.AISATSU2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
-        Me.AISATSU2.Text = "お申込みいただきましたチケット等を送付させていただきますので、"
+        Me.AISATSU2.Text = "ご依頼いただきました手配内容は以下の通りでございますので、ご確認賜りますようお願い申し上げます。"
         Me.AISATSU2.Top = 2.712993!
         Me.AISATSU2.Width = 6.568504!
         '
@@ -4942,7 +4946,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU3.Name = "AISATSU3"
         Me.AISATSU3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
-        Me.AISATSU3.Text = "ご査収賜りますようお願い申し上げます。"
+        Me.AISATSU3.Text = "お申込みいただきました交通チケット等を送付させていただきますので、ご査収賜りますようお願い申し上げます。"
         Me.AISATSU3.Top = 2.892127!
         Me.AISATSU3.Width = 6.579529!
         '
@@ -5439,6 +5443,32 @@ Partial Public Class DrSoufujo
         Me.TextBox1.Top = 6.702363!
         Me.TextBox1.Width = 2.020473!
         '
+        'FROM_DATE
+        '
+        Me.FROM_DATE.DataField = "FROM_DATE"
+        Me.FROM_DATE.Height = 0.1791339!
+        Me.FROM_DATE.Left = 4.180709!
+        Me.FROM_DATE.Name = "FROM_DATE"
+        Me.FROM_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
+            "e-space: nowrap; ddo-char-set: 1"
+        Me.FROM_DATE.Text = "[FROM_DATE]"
+        Me.FROM_DATE.Top = 1.863386!
+        Me.FROM_DATE.Visible = False
+        Me.FROM_DATE.Width = 0.9330716!
+        '
+        'TO_DATE
+        '
+        Me.TO_DATE.DataField = "TO_DATE"
+        Me.TO_DATE.Height = 0.1791339!
+        Me.TO_DATE.Left = 5.236615!
+        Me.TO_DATE.Name = "TO_DATE"
+        Me.TO_DATE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
+            "e-space: nowrap; ddo-char-set: 1"
+        Me.TO_DATE.Text = "[TO_DATE]"
+        Me.TO_DATE.Top = 1.863386!
+        Me.TO_DATE.Visible = False
+        Me.TO_DATE.Width = 0.9330716!
+        '
         'DrSoufujo
         '
         Me.MasterReport = False
@@ -5814,6 +5844,8 @@ Partial Public Class DrSoufujo
         CType(Me.Label32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FROM_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -6187,4 +6219,6 @@ Partial Public Class DrSoufujo
     Private WithEvents Shape1 As DataDynamics.ActiveReports.Shape
     Private WithEvents TextBox1 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Shape2 As DataDynamics.ActiveReports.Shape
+    Private WithEvents FROM_DATE As DataDynamics.ActiveReports.TextBox
+    Private WithEvents TO_DATE As DataDynamics.ActiveReports.TextBox
 End Class

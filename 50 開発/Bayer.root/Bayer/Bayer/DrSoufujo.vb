@@ -114,7 +114,8 @@ Public Class DrSoufujo
         End If
 
         '開催日
-        Me.JISSI_DATE.Text = AppModule.GetName_KOUENKAI_DATE(pKOTSUHOTEL_DATA.FROM_DATE, pKOTSUHOTEL_DATA.TO_DATE)
+        'Me.JISSI_DATE.Text = AppModule.GetName_KOUENKAI_DATE(pKOTSUHOTEL_DATA.FROM_DATE, pKOTSUHOTEL_DATA.TO_DATE)
+        Me.JISSI_DATE.Text = AppModule.GetName_KOUENKAI_DATE(Me.FROM_DATE.Text, Me.TO_DATE.Text)
 
         '会合名
         If Me.KOUENKAI_NAME.Text.Trim.Length > 50 Then
