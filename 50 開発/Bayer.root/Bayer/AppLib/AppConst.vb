@@ -50,6 +50,21 @@ Public Class AppConst
             End Class
         End Class
 
+        Public Class REQ_EMERGENCY
+            '緊急フラグ
+            Public Class Code
+                Public Const Yes As String = "1"
+                Public Const No As String = "0"
+            End Class
+            Public Class Name
+                Public Const Yes As String = "緊急"
+                Public Const No As String = ""
+            End Class
+            Public Class Mark
+                Public Const Yes As String = "●"
+                Public Const No As String = "○"
+            End Class
+        End Class
         Public Class STATUS_TEHAI
             '手配ステータス
             Public Class Request

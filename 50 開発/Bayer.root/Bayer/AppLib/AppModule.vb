@@ -2458,6 +2458,21 @@ Public Class AppModule
             End Select
         End If
     End Function
+    '緊急フラグ
+    Public Shared Function GetName_REQ_EMERGENCY(ByVal REQ_EMERGENCY As String) As String
+        If REQ_EMERGENCY = AppConst.KOTSUHOTEL.REQ_EMERGENCY.Code.Yes Then
+            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Name.Yes
+        Else
+            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Name.No
+        End If
+    End Function
+    Public Shared Function GetMark_REQ_EMERGENCY(ByVal REQ_EMERGENCY As String) As String
+        If REQ_EMERGENCY = AppConst.KOTSUHOTEL.REQ_EMERGENCY.Code.Yes Then
+            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Mark.Yes
+        Else
+            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Mark.No
+        End If
+    End Function
 
     '【依頼】手配ステータス
     Public Shared Function GetName_REQ_STATUS_TEHAI(ByVal REQ_STATUS_TEHAI As String, Optional ByVal KAIJO As Boolean = False, Optional ByVal ShortName As Boolean = False) As String
