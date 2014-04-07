@@ -22,6 +22,7 @@ Partial Public Class DrList
         TEHAI_KOTSU
         TEHAI_TAXI
         TEHAI_MR
+        TEHAI_EMERGENCY
         SEND_FLAG
         Button1
         SALESFORCE_ID
@@ -291,6 +292,8 @@ Partial Public Class DrList
             Else
                 e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
             End If
+            '緊急
+            e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text = AppModule.GetMark_KINKYU_FLAG(e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text)
 
             'NOZOMI送信ステータス
             e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)

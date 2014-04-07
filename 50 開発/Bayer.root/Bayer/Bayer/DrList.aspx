@@ -239,6 +239,7 @@
                         <HeaderStyle HorizontalAlign="Center" />
                         <ItemStyle HorizontalAlign="Center" Width="30px" />
                         </asp:BoundField>
+                        <asp:BoundField HeaderText="緊急" DataField="KINKYU_FLAG" />
                         <asp:BoundField DataField="SEND_FLAG" HeaderText="NOZOMI送信">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>

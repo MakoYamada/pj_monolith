@@ -21,6 +21,7 @@ Partial Public Class NewDrList
         REQ_KOTSU
         REQ_TAXI
         REQ_MR
+        REQ_EMERGENCY
         Button1
         SALESFORCE_ID
         TO_DATE
@@ -256,6 +257,8 @@ Partial Public Class NewDrList
             End If
             'タクチケ
             e.Row.Cells(CellIndex.REQ_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.REQ_TAXI).Text)
+            '緊急
+            e.Row.Cells(CellIndex.REQ_EMERGENCY).Text = AppModule.GetMark_KINKYU_FLAG(e.Row.Cells(CellIndex.REQ_EMERGENCY).Text)
             'MR手配
             If e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
                 e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _

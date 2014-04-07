@@ -50,7 +50,7 @@ Public Class AppConst
             End Class
         End Class
 
-        Public Class REQ_EMERGENCY
+        Public Class KINKYU_FLAG
             '‹Ù‹}ƒtƒ‰ƒO
             Public Class Code
                 Public Const Yes As String = "1"

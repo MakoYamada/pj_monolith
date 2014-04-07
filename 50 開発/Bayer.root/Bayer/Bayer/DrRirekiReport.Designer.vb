@@ -53,7 +53,16 @@ Partial Public Class DrRirekiReport
         Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Line26 = New DataDynamics.ActiveReports.Line
         Me.Line27 = New DataDynamics.ActiveReports.Line
+        Me.Label10 = New DataDynamics.ActiveReports.Label
+        Me.Label11 = New DataDynamics.ActiveReports.Label
+        Me.Line30 = New DataDynamics.ActiveReports.Line
+        Me.Label12 = New DataDynamics.ActiveReports.Label
+        Me.Label14 = New DataDynamics.ActiveReports.Label
+        Me.Line28 = New DataDynamics.ActiveReports.Line
+        Me.Line32 = New DataDynamics.ActiveReports.Line
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.TEHAI_EMERGENCY = New DataDynamics.ActiveReports.TextBox
+        Me.TEHAI_MR = New DataDynamics.ActiveReports.TextBox
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.REQ_STATUS_TEHAI = New DataDynamics.ActiveReports.TextBox
@@ -85,11 +94,14 @@ Partial Public Class DrRirekiReport
         Me.Line10 = New DataDynamics.ActiveReports.Line
         Me.Line11 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Line28 = New DataDynamics.ActiveReports.Line
         Me.Line29 = New DataDynamics.ActiveReports.Line
-        Me.Label10 = New DataDynamics.ActiveReports.Label
         Me.SEND_FLAG = New DataDynamics.ActiveReports.TextBox
+        Me.Line31 = New DataDynamics.ActiveReports.Line
+        Me.REQ_MR_O_TEHAI = New DataDynamics.ActiveReports.TextBox
+        Me.REQ_MR_F_TEHAI = New DataDynamics.ActiveReports.TextBox
+        Me.REQ_MR_HOTEL_NOTE = New DataDynamics.ActiveReports.TextBox
+        Me.Line33 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +118,12 @@ Partial Public Class DrRirekiReport
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TEHAI_EMERGENCY, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TEHAI_MR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,14 +144,16 @@ Partial Public Class DrRirekiReport
         CType(Me.REQ_F_TEHAI_4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_F_TEHAI_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_MR_O_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.REQ_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.ReportInfo1, Me.Shape1, Me.Label1, Me.Line3, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Label13, Me.PRINT_USER, Me.Label19, Me.Label20, Me.Label21, Me.Line13, Me.Line15, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Line28, Me.Label10})
-        Me.PageHeader.Height = 1.338583!
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.ReportInfo1, Me.Shape1, Me.Label1, Me.Line3, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Label13, Me.PRINT_USER, Me.Label19, Me.Label20, Me.Label21, Me.Line13, Me.Line15, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Label10, Me.Label11, Me.Line30, Me.Label12, Me.Label14, Me.Line28, Me.Line32})
+        Me.PageHeader.Height = 1.366836!
         Me.PageHeader.Name = "PageHeader"
         '
         'Shape2
@@ -171,7 +191,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label3.Height = 0.2!
         Me.Label3.HyperLink = Nothing
-        Me.Label3.Left = 8.323623!
+        Me.Label3.Left = 8.057874!
         Me.Label3.Name = "Label3"
         Me.Label3.Style = "font-family: ＭＳ ゴシック"
         Me.Label3.Text = "TOP担当者"
@@ -182,7 +202,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label4.Height = 0.2!
         Me.Label4.HyperLink = Nothing
-        Me.Label4.Left = 9.875985!
+        Me.Label4.Left = 9.537008!
         Me.Label4.Name = "Label4"
         Me.Label4.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label4.Text = "区分"
@@ -193,7 +213,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label5.Height = 0.2!
         Me.Label5.HyperLink = Nothing
-        Me.Label5.Left = 10.32283!
+        Me.Label5.Left = 9.890944!
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label5.Text = "宿泊"
@@ -215,7 +235,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label7.Height = 0.2!
         Me.Label7.HyperLink = Nothing
-        Me.Label7.Left = 1.696457!
+        Me.Label7.Left = 0.8204725!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
         Me.Label7.Text = "会合名"
@@ -226,7 +246,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label8.Height = 0.2!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 6.614567!
+        Me.Label8.Left = 6.443307!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = "font-family: ＭＳ ゴシック"
         Me.Label8.Text = "TimeStamp(BYL)"
@@ -355,7 +375,7 @@ Partial Public Class DrRirekiReport
         '
         'Line19
         '
-        Me.Line19.Height = 0.2818899!
+        Me.Line19.Height = 0.28189!
         Me.Line19.Left = 12.16535!
         Me.Line19.LineWeight = 1.0!
         Me.Line19.Name = "Line19"
@@ -368,7 +388,7 @@ Partial Public Class DrRirekiReport
         '
         'Line20
         '
-        Me.Line20.Height = 0.281889!
+        Me.Line20.Height = 0.2818891!
         Me.Line20.Left = 0.0!
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
@@ -404,7 +424,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label19.Height = 0.2!
         Me.Label19.HyperLink = Nothing
-        Me.Label19.Left = 4.154725!
+        Me.Label19.Left = 4.07874!
         Me.Label19.Name = "Label19"
         Me.Label19.Style = "font-family: ＭＳ ゴシック"
         Me.Label19.Text = "DR氏名"
@@ -415,7 +435,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label20.Height = 0.2!
         Me.Label20.HyperLink = Nothing
-        Me.Label20.Left = 10.77087!
+        Me.Label20.Left = 10.24488!
         Me.Label20.Name = "Label20"
         Me.Label20.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label20.Text = "交通"
@@ -426,124 +446,230 @@ Partial Public Class DrRirekiReport
         '
         Me.Label21.Height = 0.2!
         Me.Label21.HyperLink = Nothing
-        Me.Label21.Left = 11.19803!
+        Me.Label21.Left = 10.59882!
         Me.Label21.Name = "Label21"
         Me.Label21.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label21.Text = "ﾀｸﾁｹ"
         Me.Label21.Top = 1.098032!
-        Me.Label21.Width = 0.3330725!
+        Me.Label21.Width = 0.353937!
         '
         'Line13
         '
         Me.Line13.Height = 0.2818911!
-        Me.Line13.Left = 11.16732!
+        Me.Line13.Left = 10.59882!
         Me.Line13.LineWeight = 1.0!
         Me.Line13.Name = "Line13"
         Me.Line13.Top = 1.057087!
         Me.Line13.Width = 0.0!
-        Me.Line13.X1 = 11.16732!
-        Me.Line13.X2 = 11.16732!
+        Me.Line13.X1 = 10.59882!
+        Me.Line13.X2 = 10.59882!
         Me.Line13.Y1 = 1.057087!
         Me.Line13.Y2 = 1.338978!
         '
         'Line15
         '
         Me.Line15.Height = 0.2818911!
-        Me.Line15.Left = 10.71969!
+        Me.Line15.Left = 10.24488!
         Me.Line15.LineWeight = 1.0!
         Me.Line15.Name = "Line15"
         Me.Line15.Top = 1.057087!
         Me.Line15.Width = 0.0!
-        Me.Line15.X1 = 10.71969!
-        Me.Line15.X2 = 10.71969!
+        Me.Line15.X1 = 10.24488!
+        Me.Line15.X2 = 10.24488!
         Me.Line15.Y1 = 1.057087!
         Me.Line15.Y2 = 1.338978!
         '
         'Line22
         '
         Me.Line22.Height = 0.2818911!
-        Me.Line22.Left = 10.28189!
+        Me.Line22.Left = 9.890944!
         Me.Line22.LineWeight = 1.0!
         Me.Line22.Name = "Line22"
         Me.Line22.Top = 1.057087!
         Me.Line22.Width = 0.0!
-        Me.Line22.X1 = 10.28189!
-        Me.Line22.X2 = 10.28189!
+        Me.Line22.X1 = 9.890944!
+        Me.Line22.X2 = 9.890944!
         Me.Line22.Y1 = 1.057087!
         Me.Line22.Y2 = 1.338978!
         '
         'Line23
         '
         Me.Line23.Height = 0.2818911!
-        Me.Line23.Left = 9.83504!
+        Me.Line23.Left = 9.537008!
         Me.Line23.LineWeight = 1.0!
         Me.Line23.Name = "Line23"
         Me.Line23.Top = 1.057087!
         Me.Line23.Width = 0.0!
-        Me.Line23.X1 = 9.83504!
-        Me.Line23.X2 = 9.83504!
+        Me.Line23.X1 = 9.537008!
+        Me.Line23.X2 = 9.537008!
         Me.Line23.Y1 = 1.057087!
         Me.Line23.Y2 = 1.338978!
         '
         'Line24
         '
         Me.Line24.Height = 0.2818911!
-        Me.Line24.Left = 8.280315!
+        Me.Line24.Left = 8.057874!
         Me.Line24.LineWeight = 1.0!
         Me.Line24.Name = "Line24"
         Me.Line24.Top = 1.057087!
         Me.Line24.Width = 0.0!
-        Me.Line24.X1 = 8.280315!
-        Me.Line24.X2 = 8.280315!
+        Me.Line24.X1 = 8.057874!
+        Me.Line24.X2 = 8.057874!
         Me.Line24.Y1 = 1.057087!
         Me.Line24.Y2 = 1.338978!
         '
         'Line25
         '
         Me.Line25.Height = 0.2818911!
-        Me.Line25.Left = 6.563386!
+        Me.Line25.Left = 6.443307!
         Me.Line25.LineWeight = 1.0!
         Me.Line25.Name = "Line25"
         Me.Line25.Top = 1.057087!
         Me.Line25.Width = 0.0!
-        Me.Line25.X1 = 6.563386!
-        Me.Line25.X2 = 6.563386!
+        Me.Line25.X1 = 6.443307!
+        Me.Line25.X2 = 6.443307!
         Me.Line25.Y1 = 1.057087!
         Me.Line25.Y2 = 1.338978!
         '
         'Line26
         '
         Me.Line26.Height = 0.2818911!
-        Me.Line26.Left = 4.11378!
+        Me.Line26.Left = 4.07874!
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
         Me.Line26.Top = 1.057087!
         Me.Line26.Width = 0.0!
-        Me.Line26.X1 = 4.11378!
-        Me.Line26.X2 = 4.11378!
+        Me.Line26.X1 = 4.07874!
+        Me.Line26.X2 = 4.07874!
         Me.Line26.Y1 = 1.057087!
         Me.Line26.Y2 = 1.338978!
         '
         'Line27
         '
         Me.Line27.Height = 0.2818911!
-        Me.Line27.Left = 1.65315!
+        Me.Line27.Left = 0.8204725!
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
         Me.Line27.Top = 1.057087!
         Me.Line27.Width = 0.0!
-        Me.Line27.X1 = 1.65315!
-        Me.Line27.X2 = 1.65315!
+        Me.Line27.X1 = 0.8204725!
+        Me.Line27.X2 = 0.8204725!
         Me.Line27.Y1 = 1.057087!
         Me.Line27.Y2 = 1.338978!
+        '
+        'Label10
+        '
+        Me.Label10.Height = 0.2!
+        Me.Label10.HyperLink = Nothing
+        Me.Label10.Left = 11.66063!
+        Me.Label10.Name = "Label10"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; text-align: center"
+        Me.Label10.Text = "NOZOMI"
+        Me.Label10.Top = 1.098032!
+        Me.Label10.Width = 0.5047243!
+        '
+        'Label11
+        '
+        Me.Label11.Height = 0.2!
+        Me.Label11.HyperLink = Nothing
+        Me.Label11.Left = 10.95276!
+        Me.Label11.Name = "Label11"
+        Me.Label11.Style = "font-family: ＭＳ ゴシック; text-align: center"
+        Me.Label11.Text = "MR"
+        Me.Label11.Top = 1.098032!
+        Me.Label11.Width = 0.353937!
+        '
+        'Line30
+        '
+        Me.Line30.Height = 0.2818911!
+        Me.Line30.Left = 10.95276!
+        Me.Line30.LineWeight = 1.0!
+        Me.Line30.Name = "Line30"
+        Me.Line30.Top = 1.057087!
+        Me.Line30.Width = 0.0!
+        Me.Line30.X1 = 10.95276!
+        Me.Line30.X2 = 10.95276!
+        Me.Line30.Y1 = 1.057087!
+        Me.Line30.Y2 = 1.338978!
+        '
+        'Label12
+        '
+        Me.Label12.Height = 0.2!
+        Me.Label12.HyperLink = Nothing
+        Me.Label12.Left = 0.0!
+        Me.Label12.Name = "Label12"
+        Me.Label12.Style = "font-family: ＭＳ ゴシック; text-align: center"
+        Me.Label12.Text = "MR"
+        Me.Label12.Top = 0.0!
+        Me.Label12.Width = 0.353937!
+        '
+        'Label14
+        '
+        Me.Label14.Height = 0.2!
+        Me.Label14.HyperLink = Nothing
+        Me.Label14.Left = 11.30669!
+        Me.Label14.Name = "Label14"
+        Me.Label14.Style = "font-family: ＭＳ ゴシック; text-align: center"
+        Me.Label14.Text = "緊急"
+        Me.Label14.Top = 1.098032!
+        Me.Label14.Width = 0.353937!
+        '
+        'Line28
+        '
+        Me.Line28.Height = 0.2818911!
+        Me.Line28.Left = 11.30669!
+        Me.Line28.LineWeight = 1.0!
+        Me.Line28.Name = "Line28"
+        Me.Line28.Top = 1.057087!
+        Me.Line28.Width = 0.0!
+        Me.Line28.X1 = 11.30669!
+        Me.Line28.X2 = 11.30669!
+        Me.Line28.Y1 = 1.057087!
+        Me.Line28.Y2 = 1.338978!
+        '
+        'Line32
+        '
+        Me.Line32.Height = 0.2818891!
+        Me.Line32.Left = 11.66063!
+        Me.Line32.LineWeight = 1.0!
+        Me.Line32.Name = "Line32"
+        Me.Line32.Top = 1.057087!
+        Me.Line32.Width = 0.0!
+        Me.Line32.X1 = 11.66063!
+        Me.Line32.X2 = 11.66063!
+        Me.Line32.Y1 = 1.057087!
+        Me.Line32.Y2 = 1.338976!
         '
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TO_DATE, Me.USER_NAME, Me.REQ_STATUS_TEHAI, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.Line6, Me.TIME_STAMP, Me.Line14, Me.Line21, Me.DR_NAME, Me.REQ_KOTSU, Me.REQ_O_TEHAI_1, Me.TEHAI_HOTEL, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.TEHAI_TAXI, Me.Line4, Me.Line5, Me.Line7, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line29, Me.SEND_FLAG})
-        Me.Detail.Height = 0.2401575!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TEHAI_EMERGENCY, Me.TEHAI_MR, Me.TO_DATE, Me.USER_NAME, Me.REQ_STATUS_TEHAI, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.Line6, Me.TIME_STAMP, Me.Line14, Me.Line21, Me.DR_NAME, Me.REQ_KOTSU, Me.REQ_O_TEHAI_1, Me.TEHAI_HOTEL, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.TEHAI_TAXI, Me.Line4, Me.Line5, Me.Line7, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line29, Me.SEND_FLAG, Me.Line31, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.REQ_MR_HOTEL_NOTE, Me.Line33})
+        Me.Detail.Height = 0.2466372!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
+        '
+        'TEHAI_EMERGENCY
+        '
+        Me.TEHAI_EMERGENCY.CanGrow = False
+        Me.TEHAI_EMERGENCY.DataField = "KINKYU_FLAG"
+        Me.TEHAI_EMERGENCY.Height = 0.2!
+        Me.TEHAI_EMERGENCY.Left = 11.30669!
+        Me.TEHAI_EMERGENCY.Name = "TEHAI_EMERGENCY"
+        Me.TEHAI_EMERGENCY.Style = "text-align: center; white-space: nowrap"
+        Me.TEHAI_EMERGENCY.Text = Nothing
+        Me.TEHAI_EMERGENCY.Top = 0.0!
+        Me.TEHAI_EMERGENCY.Width = 0.353937!
+        '
+        'TEHAI_MR
+        '
+        Me.TEHAI_MR.CanGrow = False
+        Me.TEHAI_MR.Height = 0.2!
+        Me.TEHAI_MR.Left = 10.95276!
+        Me.TEHAI_MR.Name = "TEHAI_MR"
+        Me.TEHAI_MR.Style = "text-align: center; white-space: nowrap"
+        Me.TEHAI_MR.Text = Nothing
+        Me.TEHAI_MR.Top = 0.0!
+        Me.TEHAI_MR.Width = 0.353937!
         '
         'TO_DATE
         '
@@ -563,7 +689,7 @@ Partial Public Class DrRirekiReport
         Me.USER_NAME.CanGrow = False
         Me.USER_NAME.DataField = "USER_NAME"
         Me.USER_NAME.Height = 0.2!
-        Me.USER_NAME.Left = 8.323623!
+        Me.USER_NAME.Left = 8.057874!
         Me.USER_NAME.Name = "USER_NAME"
         Me.USER_NAME.Style = "white-space: nowrap"
         Me.USER_NAME.Text = Nothing
@@ -575,7 +701,7 @@ Partial Public Class DrRirekiReport
         Me.REQ_STATUS_TEHAI.CanGrow = False
         Me.REQ_STATUS_TEHAI.DataField = "REQ_STATUS_TEHAI"
         Me.REQ_STATUS_TEHAI.Height = 0.2!
-        Me.REQ_STATUS_TEHAI.Left = 9.875985!
+        Me.REQ_STATUS_TEHAI.Left = 9.537008!
         Me.REQ_STATUS_TEHAI.Name = "REQ_STATUS_TEHAI"
         Me.REQ_STATUS_TEHAI.Style = "text-align: center; white-space: nowrap"
         Me.REQ_STATUS_TEHAI.Text = Nothing
@@ -592,14 +718,14 @@ Partial Public Class DrRirekiReport
         Me.FROM_DATE.Style = "white-space: nowrap"
         Me.FROM_DATE.Text = Nothing
         Me.FROM_DATE.Top = 0.0!
-        Me.FROM_DATE.Width = 1.614567!
+        Me.FROM_DATE.Width = 0.8125985!
         '
         'KOUENKAI_NAME
         '
         Me.KOUENKAI_NAME.CanGrow = False
         Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Height = 0.2!
-        Me.KOUENKAI_NAME.Left = 1.696457!
+        Me.KOUENKAI_NAME.Left = 0.8204725!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Style = "white-space: nowrap"
         Me.KOUENKAI_NAME.Text = Nothing
@@ -624,7 +750,7 @@ Partial Public Class DrRirekiReport
         Me.TIME_STAMP.CanGrow = False
         Me.TIME_STAMP.DataField = "TIME_STAMP"
         Me.TIME_STAMP.Height = 0.2!
-        Me.TIME_STAMP.Left = 6.614567!
+        Me.TIME_STAMP.Left = 6.443307!
         Me.TIME_STAMP.Name = "TIME_STAMP"
         Me.TIME_STAMP.Style = "white-space: nowrap"
         Me.TIME_STAMP.Text = Nothing
@@ -662,7 +788,7 @@ Partial Public Class DrRirekiReport
         Me.DR_NAME.CanGrow = False
         Me.DR_NAME.DataField = "DR_NAME"
         Me.DR_NAME.Height = 0.2!
-        Me.DR_NAME.Left = 4.154725!
+        Me.DR_NAME.Left = 4.07874!
         Me.DR_NAME.Name = "DR_NAME"
         Me.DR_NAME.Style = "white-space: nowrap"
         Me.DR_NAME.Text = Nothing
@@ -673,7 +799,7 @@ Partial Public Class DrRirekiReport
         '
         Me.REQ_KOTSU.CanGrow = False
         Me.REQ_KOTSU.Height = 0.2!
-        Me.REQ_KOTSU.Left = 10.77087!
+        Me.REQ_KOTSU.Left = 10.24488!
         Me.REQ_KOTSU.Name = "REQ_KOTSU"
         Me.REQ_KOTSU.Style = "text-align: center; white-space: nowrap"
         Me.REQ_KOTSU.Text = Nothing
@@ -698,7 +824,7 @@ Partial Public Class DrRirekiReport
         Me.TEHAI_HOTEL.CanGrow = False
         Me.TEHAI_HOTEL.DataField = "TEHAI_HOTEL"
         Me.TEHAI_HOTEL.Height = 0.2!
-        Me.TEHAI_HOTEL.Left = 10.32283!
+        Me.TEHAI_HOTEL.Left = 9.890944!
         Me.TEHAI_HOTEL.Name = "TEHAI_HOTEL"
         Me.TEHAI_HOTEL.Style = "white-space: nowrap"
         Me.TEHAI_HOTEL.Text = Nothing
@@ -827,7 +953,7 @@ Partial Public Class DrRirekiReport
         Me.TEHAI_TAXI.CanGrow = False
         Me.TEHAI_TAXI.DataField = "TEHAI_TAXI"
         Me.TEHAI_TAXI.Height = 0.2!
-        Me.TEHAI_TAXI.Left = 11.19803!
+        Me.TEHAI_TAXI.Left = 10.59882!
         Me.TEHAI_TAXI.Name = "TEHAI_TAXI"
         Me.TEHAI_TAXI.Style = "text-align: center; white-space: nowrap"
         Me.TEHAI_TAXI.Text = Nothing
@@ -837,160 +963,201 @@ Partial Public Class DrRirekiReport
         'Line4
         '
         Me.Line4.Height = 0.2362205!
-        Me.Line4.Left = 1.65315!
+        Me.Line4.Left = 0.8204725!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
         Me.Line4.Top = 0.007086615!
         Me.Line4.Width = 0.0!
-        Me.Line4.X1 = 1.65315!
-        Me.Line4.X2 = 1.65315!
+        Me.Line4.X1 = 0.8204725!
+        Me.Line4.X2 = 0.8204725!
         Me.Line4.Y1 = 0.007086615!
         Me.Line4.Y2 = 0.2433071!
         '
         'Line5
         '
         Me.Line5.Height = 0.2362205!
-        Me.Line5.Left = 4.11378!
+        Me.Line5.Left = 4.07874!
         Me.Line5.LineWeight = 1.0!
         Me.Line5.Name = "Line5"
         Me.Line5.Top = 0.0!
         Me.Line5.Width = 0.0!
-        Me.Line5.X1 = 4.11378!
-        Me.Line5.X2 = 4.11378!
+        Me.Line5.X1 = 4.07874!
+        Me.Line5.X2 = 4.07874!
         Me.Line5.Y1 = 0.0!
         Me.Line5.Y2 = 0.2362205!
         '
         'Line7
         '
         Me.Line7.Height = 0.2362205!
-        Me.Line7.Left = 6.563386!
+        Me.Line7.Left = 6.443307!
         Me.Line7.LineWeight = 1.0!
         Me.Line7.Name = "Line7"
         Me.Line7.Top = 0.007086615!
         Me.Line7.Width = 0.0!
-        Me.Line7.X1 = 6.563386!
-        Me.Line7.X2 = 6.563386!
+        Me.Line7.X1 = 6.443307!
+        Me.Line7.X2 = 6.443307!
         Me.Line7.Y1 = 0.007086615!
         Me.Line7.Y2 = 0.2433071!
         '
         'Line8
         '
         Me.Line8.Height = 0.2362205!
-        Me.Line8.Left = 8.280315!
+        Me.Line8.Left = 8.057874!
         Me.Line8.LineWeight = 1.0!
         Me.Line8.Name = "Line8"
         Me.Line8.Top = 0.0!
         Me.Line8.Width = 0.0!
-        Me.Line8.X1 = 8.280315!
-        Me.Line8.X2 = 8.280315!
+        Me.Line8.X1 = 8.057874!
+        Me.Line8.X2 = 8.057874!
         Me.Line8.Y1 = 0.0!
         Me.Line8.Y2 = 0.2362205!
         '
         'Line9
         '
         Me.Line9.Height = 0.2362205!
-        Me.Line9.Left = 9.83504!
+        Me.Line9.Left = 9.537008!
         Me.Line9.LineWeight = 1.0!
         Me.Line9.Name = "Line9"
         Me.Line9.Top = 0.007086615!
         Me.Line9.Width = 0.0!
-        Me.Line9.X1 = 9.83504!
-        Me.Line9.X2 = 9.83504!
+        Me.Line9.X1 = 9.537008!
+        Me.Line9.X2 = 9.537008!
         Me.Line9.Y1 = 0.007086615!
         Me.Line9.Y2 = 0.2433071!
         '
         'Line10
         '
         Me.Line10.Height = 0.2362205!
-        Me.Line10.Left = 10.28189!
+        Me.Line10.Left = 9.890944!
         Me.Line10.LineWeight = 1.0!
         Me.Line10.Name = "Line10"
         Me.Line10.Top = 0.007086615!
         Me.Line10.Width = 0.0!
-        Me.Line10.X1 = 10.28189!
-        Me.Line10.X2 = 10.28189!
+        Me.Line10.X1 = 9.890944!
+        Me.Line10.X2 = 9.890944!
         Me.Line10.Y1 = 0.007086615!
         Me.Line10.Y2 = 0.2433071!
         '
         'Line11
         '
         Me.Line11.Height = 0.2362205!
-        Me.Line11.Left = 10.71969!
+        Me.Line11.Left = 10.24488!
         Me.Line11.LineWeight = 1.0!
         Me.Line11.Name = "Line11"
         Me.Line11.Top = 0.0!
         Me.Line11.Width = 0.0!
-        Me.Line11.X1 = 10.71969!
-        Me.Line11.X2 = 10.71969!
+        Me.Line11.X1 = 10.24488!
+        Me.Line11.X2 = 10.24488!
         Me.Line11.Y1 = 0.0!
         Me.Line11.Y2 = 0.2362205!
         '
         'Line12
         '
         Me.Line12.Height = 0.2362205!
-        Me.Line12.Left = 11.16732!
+        Me.Line12.Left = 10.59882!
         Me.Line12.LineWeight = 1.0!
         Me.Line12.Name = "Line12"
         Me.Line12.Top = 0.0!
         Me.Line12.Width = 0.0!
-        Me.Line12.X1 = 11.16732!
-        Me.Line12.X2 = 11.16732!
+        Me.Line12.X1 = 10.59882!
+        Me.Line12.X2 = 10.59882!
         Me.Line12.Y1 = 0.0!
         Me.Line12.Y2 = 0.2362205!
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'Line28
-        '
-        Me.Line28.Height = 0.281891!
-        Me.Line28.Left = 11.59488!
-        Me.Line28.LineWeight = 1.0!
-        Me.Line28.Name = "Line28"
-        Me.Line28.Top = 1.057087!
-        Me.Line28.Width = 0.0!
-        Me.Line28.X1 = 11.59488!
-        Me.Line28.X2 = 11.59488!
-        Me.Line28.Y1 = 1.057087!
-        Me.Line28.Y2 = 1.338978!
         '
         'Line29
         '
         Me.Line29.Height = 0.2362205!
-        Me.Line29.Left = 11.59488!
+        Me.Line29.Left = 11.30669!
         Me.Line29.LineWeight = 1.0!
         Me.Line29.Name = "Line29"
         Me.Line29.Top = 0.007086605!
         Me.Line29.Width = 0.0!
-        Me.Line29.X1 = 11.59488!
-        Me.Line29.X2 = 11.59488!
+        Me.Line29.X1 = 11.30669!
+        Me.Line29.X2 = 11.30669!
         Me.Line29.Y1 = 0.007086605!
         Me.Line29.Y2 = 0.2433071!
-        '
-        'Label10
-        '
-        Me.Label10.Height = 0.2!
-        Me.Label10.HyperLink = Nothing
-        Me.Label10.Left = 11.62126!
-        Me.Label10.Name = "Label10"
-        Me.Label10.Style = "font-family: ＭＳ ゴシック; text-align: center"
-        Me.Label10.Text = "NOZOMI"
-        Me.Label10.Top = 1.098032!
-        Me.Label10.Width = 0.5047243!
         '
         'SEND_FLAG
         '
         Me.SEND_FLAG.CanGrow = False
         Me.SEND_FLAG.DataField = "SEND_FLAG"
         Me.SEND_FLAG.Height = 0.2!
-        Me.SEND_FLAG.Left = 11.7189!
+        Me.SEND_FLAG.Left = 11.66063!
         Me.SEND_FLAG.Name = "SEND_FLAG"
         Me.SEND_FLAG.Style = "text-align: center; white-space: nowrap"
         Me.SEND_FLAG.Text = Nothing
         Me.SEND_FLAG.Top = 0.007086614!
-        Me.SEND_FLAG.Width = 0.353937!
+        Me.SEND_FLAG.Width = 0.5047244!
+        '
+        'Line31
+        '
+        Me.Line31.Height = 0.2362205!
+        Me.Line31.Left = 10.95276!
+        Me.Line31.LineWeight = 1.0!
+        Me.Line31.Name = "Line31"
+        Me.Line31.Top = 0.0!
+        Me.Line31.Width = 0.0!
+        Me.Line31.X1 = 10.95276!
+        Me.Line31.X2 = 10.95276!
+        Me.Line31.Y1 = 0.0!
+        Me.Line31.Y2 = 0.2362205!
+        '
+        'REQ_MR_O_TEHAI
+        '
+        Me.REQ_MR_O_TEHAI.CanGrow = False
+        Me.REQ_MR_O_TEHAI.DataField = "REQ_MR_O_TEHAI"
+        Me.REQ_MR_O_TEHAI.Height = 0.2!
+        Me.REQ_MR_O_TEHAI.Left = 10.41299!
+        Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
+        Me.REQ_MR_O_TEHAI.Style = "text-align: center; white-space: nowrap"
+        Me.REQ_MR_O_TEHAI.Text = Nothing
+        Me.REQ_MR_O_TEHAI.Top = 0.3956693!
+        Me.REQ_MR_O_TEHAI.Visible = False
+        Me.REQ_MR_O_TEHAI.Width = 0.353937!
+        '
+        'REQ_MR_F_TEHAI
+        '
+        Me.REQ_MR_F_TEHAI.CanGrow = False
+        Me.REQ_MR_F_TEHAI.DataField = "REQ_MR_F_TEHAI"
+        Me.REQ_MR_F_TEHAI.Height = 0.2!
+        Me.REQ_MR_F_TEHAI.Left = 10.87126!
+        Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
+        Me.REQ_MR_F_TEHAI.Style = "text-align: center; white-space: nowrap"
+        Me.REQ_MR_F_TEHAI.Text = Nothing
+        Me.REQ_MR_F_TEHAI.Top = 0.3956693!
+        Me.REQ_MR_F_TEHAI.Visible = False
+        Me.REQ_MR_F_TEHAI.Width = 0.353937!
+        '
+        'REQ_MR_HOTEL_NOTE
+        '
+        Me.REQ_MR_HOTEL_NOTE.CanGrow = False
+        Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
+        Me.REQ_MR_HOTEL_NOTE.Height = 0.2!
+        Me.REQ_MR_HOTEL_NOTE.Left = 11.36496!
+        Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"
+        Me.REQ_MR_HOTEL_NOTE.Style = "text-align: center; white-space: nowrap"
+        Me.REQ_MR_HOTEL_NOTE.Text = Nothing
+        Me.REQ_MR_HOTEL_NOTE.Top = 0.3956693!
+        Me.REQ_MR_HOTEL_NOTE.Visible = False
+        Me.REQ_MR_HOTEL_NOTE.Width = 0.353937!
+        '
+        'Line33
+        '
+        Me.Line33.Height = 0.2362205!
+        Me.Line33.Left = 11.66063!
+        Me.Line33.LineWeight = 1.0!
+        Me.Line33.Name = "Line33"
+        Me.Line33.Top = 0.0!
+        Me.Line33.Width = 0.0!
+        Me.Line33.X1 = 11.66063!
+        Me.Line33.X2 = 11.66063!
+        Me.Line33.Y1 = 0.0!
+        Me.Line33.Y2 = 0.2362205!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'DrRirekiReport
         '
@@ -1022,6 +1189,12 @@ Partial Public Class DrRirekiReport
         CType(Me.Label19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TEHAI_EMERGENCY, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TEHAI_MR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_STATUS_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1042,8 +1215,10 @@ Partial Public Class DrRirekiReport
         CType(Me.REQ_F_TEHAI_4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_F_TEHAI_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TEHAI_TAXI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_MR_O_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.REQ_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -1116,4 +1291,16 @@ Partial Public Class DrRirekiReport
     Private WithEvents Label10 As DataDynamics.ActiveReports.Label
     Private WithEvents Line29 As DataDynamics.ActiveReports.Line
     Private WithEvents SEND_FLAG As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Line30 As DataDynamics.ActiveReports.Line
+    Private WithEvents Label11 As DataDynamics.ActiveReports.Label
+    Private WithEvents Line31 As DataDynamics.ActiveReports.Line
+    Private WithEvents TEHAI_MR As DataDynamics.ActiveReports.TextBox
+    Private WithEvents REQ_MR_O_TEHAI As DataDynamics.ActiveReports.TextBox
+    Private WithEvents REQ_MR_F_TEHAI As DataDynamics.ActiveReports.TextBox
+    Private WithEvents REQ_MR_HOTEL_NOTE As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Label12 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label14 As DataDynamics.ActiveReports.Label
+    Private WithEvents Line32 As DataDynamics.ActiveReports.Line
+    Private WithEvents TEHAI_EMERGENCY As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Line33 As DataDynamics.ActiveReports.Line
 End Class

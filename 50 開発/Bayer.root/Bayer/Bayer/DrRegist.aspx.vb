@@ -420,6 +420,14 @@ Partial Public Class DrRegist
         If Not GetKouenkaiData() Then Exit Sub
 
         '画面項目表示
+
+        '緊急フラグ
+        If DSP_KOTSUHOTEL(DSP_SEQ).KINKYU_FLAG = CmnConst.Flag.On Then
+            msg_emergency.Visible = True
+        Else
+            msg_emergency.Visible = False
+        End If
+
         '会合情報
         AppModule.SetForm_KOUENKAI_NO(TBL_KOUENKAI(0).KOUENKAI_NO, Me.KOUENKAI_NO)
         AppModule.SetForm_KOUENKAI_DATE(TBL_KOUENKAI(0).FROM_DATE, TBL_KOUENKAI(0).TO_DATE, Me.FROM_DATE)

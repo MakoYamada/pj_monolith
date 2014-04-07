@@ -19,9 +19,19 @@
                         CssClass="Button" TabIndex="6" />
 				</td>
 			</tr>
-			<tr style="height: 36px; width:100%">
-			    <td align="right" style="width:100%">
-				    <a href="#TaxiTehaiLink" tabindex="7">タクチケ手配へ</a>
+			<tr>
+			    <td colspan="2" style="width:100%">
+				    <table style="border-collapse: collapse; width:900px" cellspacing="0" 
+                        cellpadding="2">
+			            <tr>
+			                <td align="left" style="width:50%">
+				                <a class="Emergency" id="msg_emergency" runat="server">【 緊急！ 】</a>
+			                </td>
+			                <td align="right" style="width:50%">
+				                <a href="#TaxiTehaiLink" tabindex="7">タクチケ手配へ</a>
+			                </td>
+			            </tr>
+			        </table>
 			    </td>
 			</tr>
 		<tr>

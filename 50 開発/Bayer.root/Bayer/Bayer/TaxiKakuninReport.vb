@@ -51,6 +51,12 @@ Public Class TaxiKakuninReport
             REQ_MR_TEHAI.Text = "○"
         End If
 
+        If KINKYU_FLAG.Text = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
+            KINKYU_FLAG.Text = AppModule.GetMark_KINKYU_FLAG(AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes)
+        Else
+            KINKYU_FLAG.Text = AppModule.GetMark_KINKYU_FLAG(AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.No)
+        End If
+
         REQ_TAXI_DATE_1.Text = AppModule.GetName_REQ_TAXI_DATE_1(REQ_TAXI_DATE_1.Text)
         REQ_TAXI_DATE_2.Text = AppModule.GetName_REQ_TAXI_DATE_2(REQ_TAXI_DATE_2.Text)
         REQ_TAXI_DATE_3.Text = AppModule.GetName_REQ_TAXI_DATE_3(REQ_TAXI_DATE_3.Text)

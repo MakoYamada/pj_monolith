@@ -70,6 +70,15 @@ Partial Public Class DrRegist
     Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''msg_emergency コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents msg_emergency As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''BtnKihon コントロール。
     '''</summary>
     '''<remarks>

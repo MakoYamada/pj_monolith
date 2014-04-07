@@ -2459,18 +2459,18 @@ Public Class AppModule
         End If
     End Function
     '‹Ù‹}ƒtƒ‰ƒO
-    Public Shared Function GetName_REQ_EMERGENCY(ByVal REQ_EMERGENCY As String) As String
-        If REQ_EMERGENCY = AppConst.KOTSUHOTEL.REQ_EMERGENCY.Code.Yes Then
-            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Name.Yes
+    Public Shared Function GetName_KINKYU_FLAG(ByVal KINKYU_FLAG As String) As String
+        If KINKYU_FLAG = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
+            Return AppConst.KOTSUHOTEL.KINKYU_FLAG.Name.Yes
         Else
-            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Name.No
+            Return AppConst.KOTSUHOTEL.KINKYU_FLAG.Name.No
         End If
     End Function
-    Public Shared Function GetMark_REQ_EMERGENCY(ByVal REQ_EMERGENCY As String) As String
-        If REQ_EMERGENCY = AppConst.KOTSUHOTEL.REQ_EMERGENCY.Code.Yes Then
-            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Mark.Yes
+    Public Shared Function GetMark_KINKYU_FLAG(ByVal KINKYU_FLAG As String) As String
+        If KINKYU_FLAG = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
+            Return AppConst.KOTSUHOTEL.KINKYU_FLAG.Mark.Yes
         Else
-            Return AppConst.KOTSUHOTEL.REQ_EMERGENCY.Mark.No
+            Return AppConst.KOTSUHOTEL.KINKYU_FLAG.Mark.No
         End If
     End Function
 

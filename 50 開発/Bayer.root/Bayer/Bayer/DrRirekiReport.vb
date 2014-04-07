@@ -30,6 +30,21 @@ Public Class DrRirekiReport
         End If
         'タクチケ
         TEHAI_TAXI.Text = AppModule.GetMark_TEHAI_TAXI(TEHAI_TAXI.Text)
+        '緊急
+        TEHAI_EMERGENCY.Text = AppModule.GetMark_KINKYU_FLAG(TEHAI_EMERGENCY.Text)
+        'MR手配
+        If REQ_MR_O_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+            REQ_MR_O_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+            REQ_MR_O_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+            REQ_MR_F_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+            REQ_MR_F_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+            REQ_MR_F_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+            REQ_MR_HOTEL_NOTE.Text.Trim <> "&nbsp;" Then
+
+            TEHAI_MR.Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+        Else
+            TEHAI_MR.Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+        End If
         'NOZOMI送信ステータス
         SEND_FLAG.Text = AppModule.GetName_SEND_FLAG(SEND_FLAG.Text, True)
 

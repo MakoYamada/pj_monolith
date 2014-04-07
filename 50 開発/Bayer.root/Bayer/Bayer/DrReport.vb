@@ -229,7 +229,14 @@ Public Class DrReport
             SetChangedColor(Me.REQ_F_TIME2_5, pOldTBL_KOTSUHOTEL.REQ_F_TIME2_5, Me.REQ_F_TIME2_5.Text)
             SetChangedColor(Me.REQ_F_SEAT_5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_5, Me.REQ_F_SEAT_5.Text)
             SetChangedColor(Me.REQ_F_SEAT_KIBOU5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_KIBOU5.Text)
-        End If        '項目の編集
+            SetChangedColor(Me.REQ_KOTSU_BIKO, pOldTBL_KOTSUHOTEL.REQ_KOTSU_BIKO, Me.REQ_KOTSU_BIKO.Text)        End If        '項目の編集
+        If Me.KINKYU_FLAG.Text = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
+            Me.TITLE1.Text = "【 緊急！ 】交通宿泊タクチケ手配依頼"
+            Me.TITLE2.Text = "【 緊急！ 】交通宿泊タクチケ手配依頼"
+        Else
+            Me.TITLE1.Text = "交通宿泊タクチケ手配依頼"
+            Me.TITLE2.Text = "交通宿泊タクチケ手配依頼"
+        End If
         ANS_TICKET_SEND_DAY.Text = AppModule.GetName_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY.Text, False)
         ANS_TICKET_SEND_DAY2.Text = AppModule.GetName_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY2.Text, False)
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
@@ -422,6 +429,7 @@ Public Class DrReport
         ANS_MR_HOTELHI.Text = CmnModule.EditComma(Me.ANS_MR_HOTELHI.Text) & " 円"
         ANS_MR_HOTELHI_TOZEI.Text = CmnModule.EditComma(Me.ANS_MR_HOTELHI_TOZEI.Text) & " 円"
         ANS_MR_KOTSUHI.Text = CmnModule.EditComma(Me.ANS_MR_KOTSUHI.Text) & " 円"
+        If REQ_KOTSU_BIKO.Text.Length > 346 Then REQ_KOTSU_BIKO.Text = Left(REQ_KOTSU_BIKO.Text, 346)
 
     End Sub
 
@@ -438,5 +446,9 @@ Public Class DrReport
 
     Private Sub PageFooter_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageFooter.Format
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
+    End Sub
+
+    Private Sub DrReport_ReportStart(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.ReportStart
+
     End Sub
 End Class
