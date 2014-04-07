@@ -99,6 +99,9 @@ Public Class Proc
             Dim sb As New System.Text.StringBuilder
             For wCnt As Integer = 0 To UBound(CsvData)
 
+                '税率取得
+                Dim strZeiRate As String = AppModule.GetZeiRate(CsvData(wCnt).FROM_DATE, MyBase.DbConnection, MyBase.DbTransaction)
+
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SALEFORCE_ID))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).KOUENKAI_NAME))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).KOUENKAI_NO))))
@@ -120,8 +123,8 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_ROOM_TYPE))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_HOTEL_SMOKING))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_HOTEL_NOTE))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_HOTELHI))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_HOTELHI_CANCEL))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_HOTELHI), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_HOTELHI_CANCEL), strZeiRate))))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_O_STATUS_1))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_O_KOTSUKIKAN_1))))
@@ -235,14 +238,14 @@ Public Class Proc
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_KOTSU_BIKO))))
 
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_RAIL_FARE))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_RAIL_CANCELLATION))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_OTHER_FARE))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_OTHER_CANCELLATION))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_AIR_FARE))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_AIR_CANCELLATION))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_TAXI_TESURYO))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_RAIL_FARE), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_RAIL_CANCELLATION), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_OTHER_FARE), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_OTHER_CANCELLATION), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_AIR_FARE), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_AIR_CANCELLATION), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_KOTSUHOTEL_TESURYO), strZeiRate))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_TAXI_TESURYO), strZeiRate))))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_TICKET_SEND_DAY))))
 
@@ -330,8 +333,8 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(GetName_ANS_MR_O_TEHAI(CsvData(wCnt).ANS_MR_O_TEHAI, MS_CODE)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(GetName_ANS_MR_F_TEHAI(CsvData(wCnt).ANS_MR_F_TEHAI, MS_CODE)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_HOTEL_NOTE))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_KOTSUHI))))
-                sb.Append(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_HOTELHI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_KOTSUHI), strZeiRate))))
+                sb.Append(CmnCsv.Quotes(AppModule.GetZeinukiGaku(CmnCsv.EscapeQuotes(CsvData(wCnt).ANS_MR_HOTELHI), strZeiRate)))
                 sb.Append(vbNewLine)
             Next wCnt
 
