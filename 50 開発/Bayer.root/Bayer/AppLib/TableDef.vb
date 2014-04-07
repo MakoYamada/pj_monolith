@@ -916,6 +916,12 @@
             Public TTANTO_ID As String
             Public SEIKYU_NO_TOPTOUR As String
             Public SCAN_IMPORT_DATE As String
+            Public KINKYU_FLAG As String
+            Public YOBI1 As String
+            Public YOBI2 As String
+            Public YOBI3 As String
+            Public YOBI4 As String
+            Public YOBI5 As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
             Public UPDATE_DATE As String
@@ -1403,6 +1409,12 @@
             Public Const TTANTO_ID As String = "TTANTO_ID"
             Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
             Public Const SCAN_IMPORT_DATE As String = "SCAN_IMPORT_DATE"
+            Public Const KINKYU_FLAG As String = "KINKYU_FLAG"
+            Public Const YOBI1 As String = "YOBI1"
+            Public Const YOBI2 As String = "YOBI2"
+            Public Const YOBI3 As String = "YOBI3"
+            Public Const YOBI4 As String = "YOBI4"
+            Public Const YOBI5 As String = "YOBI5"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
@@ -1868,6 +1880,12 @@
             Public Const TTANTO_ID As String = "トップツアー担当者ID"
             Public Const SEIKYU_NO_TOPTOUR As String = "トップツアー請求番号"
             Public Const SCAN_IMPORT_DATE As String = "スキャンデータ取込日"
+            Public Const KINKYU_FLAG As String = "緊急対応フラグ"
+            Public Const YOBI1 As String = "予備1"
+            Public Const YOBI2 As String = "予備2"
+            Public Const YOBI3 As String = "予備3"
+            Public Const YOBI4 As String = "予備4"
+            Public Const YOBI5 As String = "予備5"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
