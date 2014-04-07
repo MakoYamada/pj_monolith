@@ -103,7 +103,10 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIZAIHI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INSHOKUHI_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KEI_991330401_TF)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).HOTELHI_TF)))
+
+                Dim lngHotelHi As Long = CmnModule.DbVal_Kingaku(CsvData(wCnt).HOTELHI_TF) + _
+                                         CmnModule.DbVal_Kingaku(CsvData(wCnt).HOTELHI_TOZEI)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(lngHotelHi.ToString)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).JR_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).AIR_TF)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).OTHER_TRAFFIC_TF)))
@@ -133,7 +136,10 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CsvData(wCnt).SEISAN_KANRYO))))
 
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_JR)))
-                sb.Append(CmnCsv.Quotes(CsvData(wCnt).MR_HOTEL))
+
+                Dim lngMrHotelHi As Long = CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_HOTEL) + _
+                                           CmnModule.DbVal_Kingaku(CsvData(wCnt).MR_HOTEL_TOZEI)
+                sb.Append(CmnCsv.Quotes(lngMrHotelHi.ToString))
                 sb.Append(vbNewLine)
             Next
 
