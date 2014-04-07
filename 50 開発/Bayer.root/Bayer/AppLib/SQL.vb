@@ -3518,6 +3518,12 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.TTANTO_ID
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEIKYU_NO_TOPTOUR
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SCAN_IMPORT_DATE
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.KINKYU_FLAG
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.YOBI1
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.YOBI2
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.YOBI3
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.YOBI4
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.YOBI5
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.INPUT_DATE
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.INPUT_USER
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
@@ -3971,6 +3977,12 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TTANTO_ID) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEIKYU_NO_TOPTOUR) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SCAN_IMPORT_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KINKYU_FLAG) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.YOBI1) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.YOBI2) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.YOBI3) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.YOBI4) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.YOBI5) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
