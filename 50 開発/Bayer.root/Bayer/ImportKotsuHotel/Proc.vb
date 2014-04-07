@@ -9,7 +9,7 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    Private Const COL_COUNT As Integer = 187 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 193 'ファイルの項目数
 
     Private Enum COL_NO
         Field1 = 0
@@ -199,6 +199,12 @@ Public Class Proc
         Field185
         Field186
         Field187
+        Field188
+        Field189
+        Field190
+        Field191
+        Field192
+        Field193
     End Enum
 
     Private Class COL_NAME
@@ -389,6 +395,12 @@ Public Class Proc
         Public Const Field185 As String = "MR性別 (航空券の場合)"
         Public Const Field186 As String = "MR年齢 (航空券の場合)"
         Public Const Field187 As String = "社員用交通・宿泊備考"
+        Public Const Field188 As String = "緊急対応フラグ"
+        Public Const Field189 As String = "予備1"
+        Public Const Field190 As String = "予備2"
+        Public Const Field191 As String = "予備3"
+        Public Const Field192 As String = "予備4"
+        Public Const Field193 As String = "予備5"
     End Class
 #End Region
 
@@ -794,7 +806,14 @@ Public Class Proc
         TBL_KOTSUHOTEL_Ins.MR_SEX = fileData(COL_NO.Field185)
         TBL_KOTSUHOTEL_Ins.MR_AGE = fileData(COL_NO.Field186)
         TBL_KOTSUHOTEL_Ins.REQ_MR_HOTEL_NOTE = fileData(COL_NO.Field187)
-        
+
+        TBL_KOTSUHOTEL_Ins.KINKYU_FLAG = fileData(COL_NO.Field188)
+        TBL_KOTSUHOTEL_Ins.YOBI1 = fileData(COL_NO.Field189)
+        TBL_KOTSUHOTEL_Ins.YOBI2 = fileData(COL_NO.Field190)
+        TBL_KOTSUHOTEL_Ins.YOBI3 = fileData(COL_NO.Field191)
+        TBL_KOTSUHOTEL_Ins.YOBI4 = fileData(COL_NO.Field192)
+        TBL_KOTSUHOTEL_Ins.YOBI5 = fileData(COL_NO.Field193)
+
         TBL_KOTSUHOTEL_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
 
         TBL_KOTSUHOTEL_Ins.INPUT_USER = pbatchID
