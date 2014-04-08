@@ -422,7 +422,7 @@ Partial Public Class DrRegist
         '画面項目表示
 
         '緊急フラグ
-        If DSP_KOTSUHOTEL(DSP_SEQ).KINKYU_FLAG = CmnConst.Flag.On Then
+        If DSP_KOTSUHOTEL(DSP_SEQ).KINKYU_FLAG = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
             msg_emergency.Visible = True
         Else
             msg_emergency.Visible = False

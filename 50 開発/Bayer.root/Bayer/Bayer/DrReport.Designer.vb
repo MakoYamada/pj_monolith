@@ -679,12 +679,12 @@ Me.Line172 = New DataDynamics.ActiveReports.Line
 Me.Line174 = New DataDynamics.ActiveReports.Line
 Me.Line175 = New DataDynamics.ActiveReports.Line
 Me.Line176 = New DataDynamics.ActiveReports.Line
+Me.KINKYU_FLAG = New DataDynamics.ActiveReports.TextBox
 Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 Me.Label1 = New DataDynamics.ActiveReports.Label
 Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
-Me.KINKYU_FLAG = New DataDynamics.ActiveReports.TextBox
 CType(Me.DR_SHISETSU_ADDRESS,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SHISETSU_NAME,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label5,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1155,11 +1155,11 @@ CType(Me.Label221,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.KAIJO_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label236,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DANTAI_CODE,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_USER,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
 '
 'PageHeader
@@ -1960,6 +1960,7 @@ Me.REQ_TAXI_NOTE.Height = 2.2!
 Me.REQ_TAXI_NOTE.Left = 4.919291!
 Me.REQ_TAXI_NOTE.Name = "REQ_TAXI_NOTE"
 Me.REQ_TAXI_NOTE.Style = "font-size: 9pt"
+Me.REQ_TAXI_NOTE.Text = Nothing
 Me.REQ_TAXI_NOTE.Top = 7.302756!
 Me.REQ_TAXI_NOTE.Width = 2.246064!
 '
@@ -4720,12 +4721,12 @@ Me.Line23.Left = 0!
 Me.Line23.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
 Me.Line23.LineWeight = 1!
 Me.Line23.Name = "Line23"
-Me.Line23.Top = 4.915355!
+Me.Line23.Top = 4.977953!
 Me.Line23.Width = 7.165353!
 Me.Line23.X1 = 0!
 Me.Line23.X2 = 7.165353!
-Me.Line23.Y1 = 4.915355!
-Me.Line23.Y2 = 4.915355!
+Me.Line23.Y1 = 4.977953!
+Me.Line23.Y2 = 4.977953!
 '
 'Line26
 '
@@ -9091,6 +9092,17 @@ Me.Line176.X2 = 5.485434!
 Me.Line176.Y1 = 16.89685!
 Me.Line176.Y2 = 17.49685!
 '
+'KINKYU_FLAG
+'
+Me.KINKYU_FLAG.DataField = "KINKYU_FLAG"
+Me.KINKYU_FLAG.Height = 0.2!
+Me.KINKYU_FLAG.Left = 1.416535!
+Me.KINKYU_FLAG.Name = "KINKYU_FLAG"
+Me.KINKYU_FLAG.Text = "[KINKYU_FLAG]"
+Me.KINKYU_FLAG.Top = 19.65158!
+Me.KINKYU_FLAG.Visible = false
+Me.KINKYU_FLAG.Width = 1!
+'
 'PageFooter
 '
 Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label1, Me.PRINT_USER, Me.Label2, Me.PRINT_DATE})
@@ -9138,17 +9150,6 @@ Me.PRINT_DATE.Style = "white-space: nowrap"
 Me.PRINT_DATE.Text = "1234/56/78 12:34:56"
 Me.PRINT_DATE.Top = 0!
 Me.PRINT_DATE.Width = 1.364567!
-'
-'KINKYU_FLAG
-'
-Me.KINKYU_FLAG.DataField = "KINKYU_FLAG"
-Me.KINKYU_FLAG.Height = 0.2!
-Me.KINKYU_FLAG.Left = 1.416535!
-Me.KINKYU_FLAG.Name = "KINKYU_FLAG"
-Me.KINKYU_FLAG.Text = "[KINKYU_FLAG]"
-Me.KINKYU_FLAG.Top = 19.65158!
-Me.KINKYU_FLAG.Visible = false
-Me.KINKYU_FLAG.Width = 1!
 '
 'DrReport
 '
@@ -9634,11 +9635,11 @@ CType(Me.Label221,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.KAIJO_NAME2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label236,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DANTAI_CODE,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.PRINT_USER,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me,System.ComponentModel.ISupportInitialize).EndInit
 
 End Sub

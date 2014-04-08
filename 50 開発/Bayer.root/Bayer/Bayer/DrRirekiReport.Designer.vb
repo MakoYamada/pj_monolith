@@ -235,7 +235,7 @@ Partial Public Class DrRirekiReport
         '
         Me.Label7.Height = 0.2!
         Me.Label7.HyperLink = Nothing
-        Me.Label7.Left = 0.8204725!
+        Me.Label7.Left = 1.683465!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ ゴシック"
         Me.Label7.Text = "会合名"
@@ -547,13 +547,13 @@ Partial Public Class DrRirekiReport
         'Line27
         '
         Me.Line27.Height = 0.2818911!
-        Me.Line27.Left = 0.8204725!
+        Me.Line27.Left = 1.683465!
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
         Me.Line27.Top = 1.057087!
         Me.Line27.Width = 0.0!
-        Me.Line27.X1 = 0.8204725!
-        Me.Line27.X2 = 0.8204725!
+        Me.Line27.X1 = 1.683465!
+        Me.Line27.X2 = 1.683465!
         Me.Line27.Y1 = 1.057087!
         Me.Line27.Y2 = 1.338978!
         '
@@ -716,16 +716,15 @@ Partial Public Class DrRirekiReport
         Me.FROM_DATE.Left = 0.007874016!
         Me.FROM_DATE.Name = "FROM_DATE"
         Me.FROM_DATE.Style = "white-space: nowrap"
-        Me.FROM_DATE.Text = Nothing
         Me.FROM_DATE.Top = 0.0!
-        Me.FROM_DATE.Width = 0.8125985!
+        Me.FROM_DATE.Width = 1.675591!
         '
         'KOUENKAI_NAME
         '
         Me.KOUENKAI_NAME.CanGrow = False
         Me.KOUENKAI_NAME.DataField = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Height = 0.2!
-        Me.KOUENKAI_NAME.Left = 0.8204725!
+        Me.KOUENKAI_NAME.Left = 1.683465!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Style = "white-space: nowrap"
         Me.KOUENKAI_NAME.Text = Nothing
@@ -963,13 +962,13 @@ Partial Public Class DrRirekiReport
         'Line4
         '
         Me.Line4.Height = 0.2362205!
-        Me.Line4.Left = 0.8204725!
+        Me.Line4.Left = 1.683465!
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
         Me.Line4.Top = 0.007086615!
         Me.Line4.Width = 0.0!
-        Me.Line4.X1 = 0.8204725!
-        Me.Line4.X2 = 0.8204725!
+        Me.Line4.X1 = 1.683465!
+        Me.Line4.X2 = 1.683465!
         Me.Line4.Y1 = 0.007086615!
         Me.Line4.Y2 = 0.2433071!
         '

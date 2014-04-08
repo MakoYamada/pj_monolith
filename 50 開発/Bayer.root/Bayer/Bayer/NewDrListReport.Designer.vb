@@ -929,7 +929,7 @@ Partial Public Class NewDrListReport
         'TIME_STAMP
         '
         Me.TIME_STAMP.CanGrow = False
-        Me.TIME_STAMP.DataField = "TIME_STAMP"
+        Me.TIME_STAMP.DataField = "TIME_STAMP_BYL"
         Me.TIME_STAMP.Height = 0.2!
         Me.TIME_STAMP.Left = 6.614567!
         Me.TIME_STAMP.Name = "TIME_STAMP"
