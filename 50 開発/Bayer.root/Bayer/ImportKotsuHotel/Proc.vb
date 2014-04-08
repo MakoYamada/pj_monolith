@@ -9,7 +9,8 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    Private Const COL_COUNT As Integer = 193 'ファイルの項目数
+    Private Const COL_COUNT1 As Integer = 187 'ファイルの項目数(改修前Ver)
+    Private Const COL_COUNT2 As Integer = 193 'ファイルの項目数(改修後Ver)
 
     Private Enum COL_NO
         Field1 = 0
@@ -505,7 +506,8 @@ Public Class Proc
 
         Try
             '項目数チェック
-            If fileData.Count <> COL_COUNT Then
+            If fileData.Count <> COL_COUNT1 AndAlso _
+               fileData.Count <> COL_COUNT2 Then
                 Throw New Exception("項目数が不正です。")
             End If
 
@@ -807,12 +809,23 @@ Public Class Proc
         TBL_KOTSUHOTEL_Ins.MR_AGE = fileData(COL_NO.Field186)
         TBL_KOTSUHOTEL_Ins.REQ_MR_HOTEL_NOTE = fileData(COL_NO.Field187)
 
-        TBL_KOTSUHOTEL_Ins.KINKYU_FLAG = fileData(COL_NO.Field188)
-        TBL_KOTSUHOTEL_Ins.YOBI1 = fileData(COL_NO.Field189)
-        TBL_KOTSUHOTEL_Ins.YOBI2 = fileData(COL_NO.Field190)
-        TBL_KOTSUHOTEL_Ins.YOBI3 = fileData(COL_NO.Field191)
-        TBL_KOTSUHOTEL_Ins.YOBI4 = fileData(COL_NO.Field192)
-        TBL_KOTSUHOTEL_Ins.YOBI5 = fileData(COL_NO.Field193)
+        If fileData.Count = COL_COUNT1 Then
+            '改修前Verのファイルを受信した場合
+            TBL_KOTSUHOTEL_Ins.KINKYU_FLAG = ""
+            TBL_KOTSUHOTEL_Ins.YOBI1 = ""
+            TBL_KOTSUHOTEL_Ins.YOBI2 = ""
+            TBL_KOTSUHOTEL_Ins.YOBI3 = ""
+            TBL_KOTSUHOTEL_Ins.YOBI4 = ""
+            TBL_KOTSUHOTEL_Ins.YOBI5 = ""
+        ElseIf fileData.Count = COL_COUNT2 Then
+            '改修後Verのファイルを受信した場合
+            TBL_KOTSUHOTEL_Ins.KINKYU_FLAG = fileData(COL_NO.Field188)
+            TBL_KOTSUHOTEL_Ins.YOBI1 = fileData(COL_NO.Field189)
+            TBL_KOTSUHOTEL_Ins.YOBI2 = fileData(COL_NO.Field190)
+            TBL_KOTSUHOTEL_Ins.YOBI3 = fileData(COL_NO.Field191)
+            TBL_KOTSUHOTEL_Ins.YOBI4 = fileData(COL_NO.Field192)
+            TBL_KOTSUHOTEL_Ins.YOBI5 = fileData(COL_NO.Field193)
+        End If
 
         TBL_KOTSUHOTEL_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
 
