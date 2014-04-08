@@ -230,13 +230,6 @@ Public Class DrReport
             SetChangedColor(Me.REQ_F_SEAT_5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_5, Me.REQ_F_SEAT_5.Text)
             SetChangedColor(Me.REQ_F_SEAT_KIBOU5, pOldTBL_KOTSUHOTEL.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_KIBOU5.Text)
             SetChangedColor(Me.REQ_KOTSU_BIKO, pOldTBL_KOTSUHOTEL.REQ_KOTSU_BIKO, Me.REQ_KOTSU_BIKO.Text)        End If        '項目の編集
-        If Me.KINKYU_FLAG.Text = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
-            Me.TITLE1.Text = "【 緊急！ 】交通宿泊タクチケ手配依頼"
-            Me.TITLE2.Text = "【 緊急！ 】交通宿泊タクチケ手配依頼"
-        Else
-            Me.TITLE1.Text = "交通宿泊タクチケ手配依頼"
-            Me.TITLE2.Text = "交通宿泊タクチケ手配依頼"
-        End If
         ANS_TICKET_SEND_DAY.Text = AppModule.GetName_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY.Text, False)
         ANS_TICKET_SEND_DAY2.Text = AppModule.GetName_ANS_TICKET_SEND_DAY(Me.ANS_TICKET_SEND_DAY2.Text, False)
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
@@ -450,5 +443,15 @@ Public Class DrReport
 
     Private Sub DrReport_ReportStart(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.ReportStart
 
+    End Sub
+
+    Private Sub PageHeader_Format(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PageHeader.Format
+        If Me.KINKYU_FLAG.Text = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
+            Me.LBL_KINKYU.Visible = True
+            Me.SHP_KINKYU.Visible = True
+        Else
+            Me.LBL_KINKYU.Visible = False
+            Me.SHP_KINKYU.Visible = False
+        End If
     End Sub
 End Class
