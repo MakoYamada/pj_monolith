@@ -2,38 +2,40 @@
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table border="0" cellpadding="4" cellspacing="0" style="width:900px">
-			<tr style="height: 36px; width:100%">
-				<td align="left" style="width:100%">
-                    <a name="PageTopLink"></a>				    
-					<asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="手配書印刷" 
-                        CssClass="Button" TabIndex="1" />
-					<asp:Button ID="BtnSoufujo1" runat="server" Width="130px" Text="送付状印刷" 
-                        CssClass="Button" TabIndex="2" />
-					<asp:Button ID="BtnTaxiKakunin1" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
-                        CssClass="Button" TabIndex="3" />
-				    <asp:Button ID="BtnSubmit1" runat="server" Width="130px" Text="登録" 
-                        CssClass="Button" TabIndex="4" />
-				    <asp:Button ID="BtnNozomi1" runat="server" Width="130px" Text="NOZOMIへ" 
-                        CssClass="Button" TabIndex="5" />
-					<asp:Button ID="BtnBack1" runat="server" Width="130px" Text="戻る" 
-                        CssClass="Button" TabIndex="6" />
-				</td>
-			</tr>
-			<tr>
-			    <td colspan="2" style="width:100%">
-				    <table style="border-collapse: collapse; width:900px" cellspacing="0" 
-                        cellpadding="2">
-			            <tr>
-			                <td align="left" style="width:50%">
-				                <a class="Emergency" id="msg_emergency" runat="server">【 緊急！ 】</a>
-			                </td>
-			                <td align="right" style="width:50%">
-				                <a href="#TaxiTehaiLink" tabindex="7">タクチケ手配へ</a>
-			                </td>
-			            </tr>
-			        </table>
-			    </td>
-			</tr>
+		<tr style="height: 36px; width:100%">
+			<td align="left" style="width:100%">
+                <a name="PageTopLink"></a>				    
+				<asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="手配書印刷" 
+                    CssClass="Button" TabIndex="1" />
+				<asp:Button ID="BtnSoufujo1" runat="server" Width="130px" Text="送付状印刷" 
+                    CssClass="Button" TabIndex="2" />
+				<asp:Button ID="BtnTaxiKakunin1" runat="server" Width="150px" Text="タクチケ手配確認票印刷" 
+                    CssClass="Button" TabIndex="3" />
+			    <asp:Button ID="BtnSubmit1" runat="server" Width="130px" Text="登録" 
+                    CssClass="Button" TabIndex="4" />
+			    <asp:Button ID="BtnNozomi1" runat="server" Width="130px" Text="NOZOMIへ" 
+                    CssClass="Button" TabIndex="5" />
+				<asp:Button ID="BtnBack1" runat="server" Width="130px" Text="戻る" 
+                    CssClass="Button" TabIndex="6" />
+			</td>
+		</tr>
+		<tr>
+		    <td colspan="2" style="width:100%">
+			    <table style="border-collapse: collapse; " cellspacing="0" 
+                    cellpadding="2" class="style1">
+		            <tr>
+		                <td id="TdEmergency" runat="server" align="center" 
+                            style="border: thin solid #FF0000; width:10%; font-weight: bold; color: #FF0000;">
+			                <a id="msg_emergency" runat="server" 
+                                style="font-size: x-large; font-weight: bold; color: #FF0000">緊　急</a>
+		                </td>
+		                <td align="right" style="width:90%">
+			                <a href="#TaxiTehaiLink" tabindex="7">タクチケ手配へ</a>
+		                </td>
+		            </tr>
+		        </table>
+		    </td>
+		</tr>
 		<tr>
 			<td align="left" colspan="2">
 			    <!-- 会合情報 -->
@@ -4155,3 +4157,14 @@
 		</table>
 	</table>
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+
+		<style type="text/css">
+            .style1
+            {
+                width: 900px;
+            }
+        </style>
+
+</asp:Content>
+

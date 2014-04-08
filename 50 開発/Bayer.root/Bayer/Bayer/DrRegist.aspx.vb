@@ -424,8 +424,10 @@ Partial Public Class DrRegist
         '緊急フラグ
         If DSP_KOTSUHOTEL(DSP_SEQ).KINKYU_FLAG = AppConst.KOTSUHOTEL.KINKYU_FLAG.Code.Yes Then
             msg_emergency.Visible = True
+            TdEmergency.Visible = True
         Else
             msg_emergency.Visible = False
+            TdEmergency.Visible = False
         End If
 
         '会合情報
