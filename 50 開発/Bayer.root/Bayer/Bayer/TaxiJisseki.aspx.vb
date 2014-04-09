@@ -139,9 +139,9 @@ Partial Public Class TaxiJisseki
         'ダブルクォート囲み、ダブルクォートのエスケープ対応
         parser.HasFieldsEnclosedInQuotes = True
 
-        '手数料取得
-        HAKKO_TESURYO = GetTesuryo(AppConst.MS_CODE.TAXI_TESURYO)
-        SEISAN_TESURYO = GetTesuryo(AppConst.MS_CODE.TAXI_SEISAN_TESURYO)
+        ''手数料取得
+        'HAKKO_TESURYO = GetTesuryo(AppConst.MS_CODE.TAXI_TESURYO)
+        'SEISAN_TESURYO = GetTesuryo(AppConst.MS_CODE.TAXI_SEISAN_TESURYO)
 
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
@@ -260,6 +260,10 @@ Partial Public Class TaxiJisseki
 
                     '交通宿泊テーブル最新レコード取得
                     If GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_TAXITICKET_HAKKO.SANKASHA_ID) Then
+                        '会合の開催日に基づいて、発行手数料と精算手数料を取得
+                        TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = AppModule.GetName_TAXI_TESURYO(TBL_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
+                        TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = AppModule.GetName_TAXI_SEISAN_TESURYO(TBL_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
+
                         '実績CSVに利用日・金額が設定されているが、DRが不参加の場合エンタ="E"
                         If fileData(COL_NO.USED_DATE).Trim <> "" And _
                             Val(fileData(COL_NO.URIAGE).Trim) <> 0 And _

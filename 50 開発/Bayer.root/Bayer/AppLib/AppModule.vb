@@ -4028,13 +4028,14 @@ Public Class AppModule
     End Function
 
     '手数料単価（交通・宿泊）
-    Public Shared Function GetName_TESURYO() As String
+    Public Shared Function GetName_TESURYO(ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
             If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TESURYO Then
-                wStr = MS_CODE(wCnt).DISP_TEXT
+                Dim strZeiRate As String = AppModule.GetZeiRate(FROM_DATE, dbConn)
+                wStr = (Double.Parse(MS_CODE(wCnt).DISP_TEXT) * (1 + Double.Parse(strZeiRate))).ToString
                 Exit For
             End If
         Next
@@ -4532,13 +4533,14 @@ Public Class AppModule
     End Function
 
     'タクチケ発券手数料単価
-    Public Shared Function GetName_TAXI_TESURYO() As String
+    Public Shared Function GetName_TAXI_TESURYO(ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
             If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_TESURYO Then
-                wStr = MS_CODE(wCnt).DISP_TEXT
+                Dim strZeiRate As String = AppModule.GetZeiRate(FROM_DATE, dbConn)
+                wStr = (Double.Parse(MS_CODE(wCnt).DISP_TEXT) * Double.Parse(1 + Double.Parse(strZeiRate))).ToString()
                 Exit For
             End If
         Next
@@ -4546,13 +4548,14 @@ Public Class AppModule
     End Function
 
     'タクチケ精算手数料
-    Public Shared Function GetName_TAXI_SEISAN_TESURYO() As String
+    Public Shared Function GetName_TAXI_SEISAN_TESURYO(ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection) As String
         Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
         Dim wStr As String = ""
         MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
         For wCnt As Integer = 0 To MS_CODE.Count - 1
             If MS_CODE(wCnt).CODE = AppConst.MS_CODE.TAXI_SEISAN_TESURYO Then
-                wStr = MS_CODE(wCnt).DISP_TEXT
+                Dim strZeiRate As String = AppModule.GetZeiRate(FROM_DATE, dbConn)
+                wStr = (Double.Parse(MS_CODE(wCnt).DISP_TEXT) * Double.Parse(1 + Double.Parse(strZeiRate))).ToString()
                 Exit For
             End If
         Next
@@ -6148,12 +6151,12 @@ Public Class AppModule
     End Sub
 
     'タクチケ発行枚数
-    Public Shared Sub SetForm_ANS_TAXI_MAISUU(ByVal ANS_TAXI_TESURYO As String, ByRef control As TextBox)
-        If Double.Parse(GetName_TAXI_TESURYO()) = 0 OrElse Val(ANS_TAXI_TESURYO) = 0 Then
+    Public Shared Sub SetForm_ANS_TAXI_MAISUU(ByVal ANS_TAXI_TESURYO As String, ByRef control As TextBox, ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection)
+        If Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn)) = 0 OrElse Val(ANS_TAXI_TESURYO) = 0 Then
             control.Text = String.Empty
         Else
             'タクチケ発券手数料÷タクチケ発券手数料単価を切り上げ
-            control.Text = Math.Ceiling(Double.Parse(ANS_TAXI_TESURYO) / Double.Parse(GetName_TAXI_TESURYO())).ToString
+            control.Text = Math.Ceiling(Double.Parse(ANS_TAXI_TESURYO) / Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn))).ToString
         End If
     End Sub
 
@@ -8416,22 +8419,23 @@ Public Class AppModule
     End Function
 
     '【回答】手数料(交通・宿泊)
-    Public Shared Function GetValue_ANS_KOTSUHOTEL_TESURYO(ByVal ANS_KOTSUHOTEL_TESURYO As CheckBox) As String
+    Public Shared Function GetValue_ANS_KOTSUHOTEL_TESURYO(ByVal ANS_KOTSUHOTEL_TESURYO As CheckBox, ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection) As String
         If ANS_KOTSUHOTEL_TESURYO.Checked Then
-            Return GetName_TESURYO()
+            Return GetName_TESURYO(FROM_DATE, dbConn)
         Else
             Return "0"
         End If
     End Function
 
     '【回答】手数料(タクチケ発券手数料)
-    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_MAISUU As TextBox) As String
+    Public Shared Function GetValue_ANS_TAXI_TESURYO(ByVal ANS_TAXI_MAISUU As TextBox, ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection) As String
         If ANS_TAXI_MAISUU.Text.Trim = String.Empty OrElse ANS_TAXI_MAISUU.Text.Trim = "0" Then
             Return "0"
             Exit Function
         End If
 
-        Return (Double.Parse(ANS_TAXI_MAISUU.Text) * Double.Parse(AppModule.GetName_TAXI_TESURYO())).ToString
+        Dim strZeiRate As String = AppModule.GetZeiRate(FROM_DATE, dbConn)
+        Return (Double.Parse(Val(ANS_TAXI_MAISUU.Text)) * Double.Parse(AppModule.GetName_TAXI_TESURYO(FROM_DATE, dbConn))).ToString
     End Function
 
     '【回答】MR　交通費
