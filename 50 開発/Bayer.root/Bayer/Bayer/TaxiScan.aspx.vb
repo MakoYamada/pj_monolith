@@ -58,8 +58,7 @@ Partial Public Class TaxiScan
         'ファイルチェック
         If Not Check_File() Then Exit Sub
 
-        '指定されたファイルをアップロードする
-        Dim CsvFileName As String = CmnModule.GetSysDateTime() & "_" & System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName)
+        '指定されたファイルをアップロードする        Dim CsvFileName As String = CmnModule.GetSysDateTime() & "_" & System.IO.Path.GetFileName(Me.FileUpload1.PostedFile.FileName)
         Dim CsvPath As String
         CsvPath = WebConfig.Site.SCAN_CSV & CsvFileName
         Me.FileUpload1.PostedFile.SaveAs(CsvPath)
@@ -246,25 +245,9 @@ Partial Public Class TaxiScan
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
         Dim wStr As String = ""
-        Dim TKT_HAKKO_FEE As String = "0"
         Dim wUpdateCntTAXI As Integer = 0
         Dim wUpdateCntKOTSUHOTEL As Integer = 0
         Dim wTKT_IMPORT_DATE As String = CmnModule.GetSysDate()
-
-        '発行手数料
-        wFlag = False
-        strSQL = SQL.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_TESURYO)
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        If RsData.Read() Then
-            wFlag = True
-            TKT_HAKKO_FEE = CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)
-        End If
-        RsData.Close()
-
-        If wFlag = False Then
-            CmnModule.AlertMessage("タクシーチケット発行手数料の設定が正しくありません。コードマスタを再確認してください。", Me)
-            Return False
-        End If
 
         '読み込みできる文字がなくなるまで繰り返す
         wFlag = False
@@ -291,12 +274,10 @@ Partial Public Class TaxiScan
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO = CInt(ScanData.TKT_LINE_NO).ToString
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_NO = Trim(ScanData.TKT_NO)
 
-                '発行手数料
-                TBL_TAXITICKET_HAKKO(wCnt).TKT_HAKKO_FEE = TKT_HAKKO_FEE
+                '発行手数料(開催日で消費税率を取得、税込金額をセットする)                TBL_TAXITICKET_HAKKO(wCnt).TKT_HAKKO_FEE = GetTKT_HAKKO_FEE(TBL_TAXITICKET_HAKKO(wCnt).KOUENKAI_NO)
                 '取込日
                 TBL_TAXITICKET_HAKKO(wCnt).TKT_IMPORT_DATE = wTKT_IMPORT_DATE
-                '使用者
-                TBL_TAXITICKET_HAKKO(wCnt).UPDATE_USER = Session.Item(SessionDef.LoginID)
+                '使用者                TBL_TAXITICKET_HAKKO(wCnt).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
                 wCnt += 1
             End If
@@ -523,6 +504,28 @@ Partial Public Class TaxiScan
             Else
                 Return Left(TAXI_KENSHU, 2)
             End If
+        End If
+    End Function
+
+    Private Function GetTKT_HAKKO_FEE(ByVal KOUENKAI_NO As String) As String
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFLag As Boolean = False
+        Dim wFROM_DATE As String = ""
+
+        strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(KOUENKAI_NO)
+        strSQL &= " DESC"
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlag = True
+            wFROM_DATE = CmnDb.DbData(TableDef.TBL_KOUENKAI.Column.FROM_DATE, RsData)
+        End If
+        RsData.Close()
+
+        If wFLag = False Then
+            Return "0"
+        Else
+            Return AppModule.GetName_TAXI_TESURYO(wFROM_DATE, MyBase.DbConnection)
         End If
     End Function
 

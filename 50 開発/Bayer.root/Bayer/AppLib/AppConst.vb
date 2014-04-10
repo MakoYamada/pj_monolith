@@ -335,7 +335,7 @@ Public Class AppConst
             End Class
             Public Class Name
                 Public Const Mitsumori As String = "Œ©ÏˆË—Š"
-                Public Const NewRequest As String = "V‹Kè”zˆË—Š"
+                Public Const NewRequest As String = " –{—\–ñè”zˆË—Š"
                 Public Const Change As String = "•ÏXˆË—Š"
                 Public Const Cancel As String = "æÁˆË—Š"
                 Public Const After As String = "–Œã“o˜^"
