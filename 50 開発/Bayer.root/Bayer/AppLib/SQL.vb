@@ -4715,7 +4715,8 @@ Public Class SQL
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
             End If
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                'strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
             End If
             If Trim(Joken.TEHAI_ID) <> "" Then
                 strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"
@@ -4763,6 +4764,10 @@ Public Class SQL
 
             If Trim(Joken.SEIHIN_NAME) <> "" Then
                 strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.SEIHIN_NAME=N'" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL_WHERE_KOUENKAI &= " AND TBL_KOUENKAI.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
