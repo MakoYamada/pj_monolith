@@ -91,7 +91,30 @@ Partial Public Class SapCsv
 
     End Sub
 
-    '入力チェック
+    '[エビデンス用CSV出力]
+    Protected Sub BtnEvidenceCSV_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnEvidenceCSV.Click
+
+        '入力チェック
+        If Not CheckEvidence() Then Exit Sub
+
+        Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
+        If GetEvidenceData(CsvData) Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("Sap_エビデンス用.csv"))
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(MyModule.Csv.SapEvidenceCsv(CsvData))
+            Response.End()
+        End If
+
+    End Sub
+
+#Region "入力チェック"
+
+    'SAP用CSV出力入力時のチェック
     Private Function Check() As Boolean
 
         'セキュリティチェック
@@ -133,6 +156,53 @@ Partial Public Class SapCsv
 
         Return True
     End Function
+
+    'エビデンス用CSV出力時の入力チェック
+    Private Function CheckEvidence() As Boolean
+
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        '必須入力
+        If Not CmnCheck.IsInput(Me.JokenSHOUNIN_Y_Evi) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("承認年月(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.JokenSHOUNIN_M_Evi) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("承認年月(月)"), Me)
+            Return False
+        End If
+
+        '数値
+        If Not CmnCheck.IsNumberOnly(Me.JokenSHOUNIN_Y_Evi) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("承認年月(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.JokenSHOUNIN_M_Evi) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("承認年月(月)"), Me)
+            Return False
+        End If
+
+        '日付妥当性
+        If CmnCheck.IsInput(Me.JokenSHOUNIN_Y_Evi) OrElse CmnCheck.IsInput(Me.JokenSHOUNIN_M_Evi) Then
+            Dim wStr As String = StrConv(Trim(Me.JokenSHOUNIN_Y_Evi.Text) & "/" & Trim(Me.JokenSHOUNIN_M_Evi.Text) & "/01", VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("承認年月"), Me)
+                Return False
+            End If
+        End If
+
+        Return True
+    End Function
+
+#End Region
+
+#Region "SAP用CSV　処理"
 
     'CSV用データ取得
     Private Function GetData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
@@ -490,5 +560,44 @@ Partial Public Class SapCsv
         Return wFlag
 
     End Function
+
+#End Region
+
+#Region "エビデンス用CSV　処理"
+
+    'CSV用データ取得
+    Private Function GetEvidenceData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+
+        ReDim CsvData(wCnt)
+
+        Dim fromDate As String = ""
+        Dim toDate As String = ""
+        MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y_Evi.Text, Me.JokenSHOUNIN_M_Evi.Text, fromDate, toDate)
+
+        strSQL = SQL.TBL_SEIKYU.SapEvidenceCsv(fromDate, toDate)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve CsvData(wCnt)
+            CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        If wFlag = False Then
+            CmnModule.AlertMessage("対象データがありません。", Me)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+#End Region
+
 
 End Class
