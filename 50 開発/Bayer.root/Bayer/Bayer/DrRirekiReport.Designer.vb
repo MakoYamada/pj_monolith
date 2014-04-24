@@ -601,6 +601,7 @@ Partial Public Class DrRirekiReport
         Me.Label12.Style = "font-family: ＭＳ ゴシック; text-align: center"
         Me.Label12.Text = "MR"
         Me.Label12.Top = 0.0!
+        Me.Label12.Visible = False
         Me.Label12.Width = 0.353937!
         '
         'Label14
@@ -716,6 +717,7 @@ Partial Public Class DrRirekiReport
         Me.FROM_DATE.Left = 0.007874016!
         Me.FROM_DATE.Name = "FROM_DATE"
         Me.FROM_DATE.Style = "white-space: nowrap"
+        Me.FROM_DATE.Text = Nothing
         Me.FROM_DATE.Top = 0.0!
         Me.FROM_DATE.Width = 1.675591!
         '

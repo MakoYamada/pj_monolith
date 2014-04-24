@@ -97,25 +97,25 @@ Partial Public Class DrRegist
 
             '発行済のタクチケがある場合は、タクチケコピー・クリアボタンは使用不可
             If Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" OrElse _
-                Me.ANS_TAXI_HAKKO_DATE_1.Text.Trim <> "" Then
+                Me.ANS_TAXI_HAKKO_DATE_2.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_3.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_4.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_5.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_6.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_7.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_8.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_9.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_10.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_11.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_12.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_13.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_14.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_15.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_16.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_17.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_18.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_19.Text.Trim <> "" OrElse _
+                Me.ANS_TAXI_HAKKO_DATE_20.Text.Trim <> "" Then
 
                 BtnTicketCopy.Visible = False
                 BtnTicketClear.Visible = False
