@@ -887,7 +887,7 @@ Partial Public Class SeisanRegist
     'MR一覧CSV出力
     Private Sub OutputMrCsv()
 
-        Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
+        Dim CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct
         If GetMrCsvData(CsvData) Then
             'CSV出力
             Response.Clear()
@@ -902,7 +902,7 @@ Partial Public Class SeisanRegist
     End Sub
 
     'MR一覧CSV用データ取得
-    Private Function GetMrCsvData(ByRef CsvData() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
+    Private Function GetMrCsvData(ByRef CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
