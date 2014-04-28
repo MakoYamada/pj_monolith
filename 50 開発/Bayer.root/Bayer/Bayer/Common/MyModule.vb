@@ -1714,8 +1714,8 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員宿泊費都税(非課税)(-)")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("社員交通費(非課税)(込)")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名(カナ)")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("医師名(カナ)")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名"), True))
             sb.Append(vbNewLine)
 
