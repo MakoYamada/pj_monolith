@@ -4866,30 +4866,36 @@ Public Class SQL
 
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
-            Dim strSQL_WHERE_KAIJO As String = ""
+            Dim strSQL_WHERE_KAIJO1 As String = ""
+            Dim strSQL_WHERE_KAIJO2 As String = ""
             Dim strSQL_WHERE_KOUENKAI As String = ""
 
             'WHERE
             '会場手配テーブル
-            strSQL_WHERE_KAIJO &= " WHERE 1=1"
+            strSQL_WHERE_KAIJO1 &= " WHERE 1=1"
+            strSQL_WHERE_KAIJO2 &= " WHERE 1=1"
             If NewData = True Then
-                strSQL_WHERE_KAIJO &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,N'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
+                strSQL_WHERE_KAIJO1 &= " AND ISNULL(TBL_KAIJO.ANS_STATUS_TEHAI,N'')=N'" & AppConst.KAIJO.ANS_STATUS_TEHAI.Code.NewTehai & "'"
             End If
             If Trim(Joken.REQ_STATUS_TEHAI) <> "" Then
-                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
+                strSQL_WHERE_KAIJO1 &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
+                strSQL_WHERE_KAIJO2 &= " AND TBL_KAIJO.REQ_STATUS_TEHAI=N'" & CmnDb.SqlString(Joken.REQ_STATUS_TEHAI) & "'"
             End If
             If Trim(Joken.UPDATE_DATE) <> "" Then
-                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.UPDATE_DATE=N'" & CmnDb.SqlString(Joken.UPDATE_DATE) & "'"
+                strSQL_WHERE_KAIJO1 &= " AND TBL_KAIJO.UPDATE_DATE=N'" & CmnDb.SqlString(Joken.UPDATE_DATE) & "'"
+                strSQL_WHERE_KAIJO2 &= " AND TBL_KAIJO.UPDATE_DATE=N'" & CmnDb.SqlString(Joken.UPDATE_DATE) & "'"
             End If
             If Trim(Joken.TIME_STAMP_BYL) <> "" Then
-                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
+                strSQL_WHERE_KAIJO1 &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
+                strSQL_WHERE_KAIJO2 &= " AND TBL_KAIJO.TIME_STAMP_BYL=N'" & CmnDb.SqlString(Joken.TIME_STAMP_BYL) & "'"
             End If
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                'strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+                strSQL_WHERE_KAIJO1 &= " AND TBL_KAIJO.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+                strSQL_WHERE_KAIJO2 &= " AND TBL_KAIJO.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
             End If
             If Trim(Joken.TEHAI_ID) <> "" Then
-                strSQL_WHERE_KAIJO &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"
+                strSQL_WHERE_KAIJO1 &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"
+                strSQL_WHERE_KAIJO2 &= " AND TBL_KAIJO.TEHAI_ID=N'" & CmnDb.SqlString(Joken.TEHAI_ID) & "'"
             End If
 
             '会合テーブル
@@ -5016,11 +5022,11 @@ Public Class SQL
             strSQL &= "("
             strSQL &= " SELECT TBL_KAIJO_1.* FROM "
             strSQL &= " (SELECT * FROM TBL_KAIJO"
-            strSQL &= strSQL_WHERE_KAIJO
+            strSQL &= strSQL_WHERE_KAIJO1
             strSQL &= ") AS TBL_KAIJO_1"
             strSQL &= "  ,"
             strSQL &= " (SELECT MAX(TIME_STAMP_BYL) AS TIME_STAMP_BYL,KOUENKAI_NO,TEHAI_ID FROM TBL_KAIJO"
-            strSQL &= strSQL_WHERE_KAIJO
+            strSQL &= strSQL_WHERE_KAIJO2
             strSQL &= " GROUP BY KOUENKAI_NO,TEHAI_ID) AS TBL_KAIJO_2"
             strSQL &= "  WHERE TBL_KAIJO_1.TIME_STAMP_BYL=TBL_KAIJO_2.TIME_STAMP_BYL"
             strSQL &= "   AND TBL_KAIJO_1.KOUENKAI_NO=TBL_KAIJO_2.KOUENKAI_NO"
