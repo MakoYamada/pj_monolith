@@ -2398,6 +2398,7 @@ Public Class SQL
             strSQL &= ",WK2.MR_AREA"
             strSQL &= ",WK2.MR_EIGYOSHO"
             strSQL &= ",WK2.MR_NAME"
+            strSQL &= ",WK2.MR_KANA"
             strSQL &= ",WK2.ACCOUNT_CD"
             strSQL &= ",WK2.COST_CENTER"
             strSQL &= ",WK2.INTERNAL_ORDER"
