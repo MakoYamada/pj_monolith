@@ -2736,34 +2736,51 @@ Public Class DrSoufujo
             Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
         End If
 
-        If TaxiFlg Then
-            RowNo += 1
-            TAXI_NOTES_TITLE.Visible = TaxiFlg
-            TAXI_NOTES_TITLE.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
-            RowNo += 1
+        'If TaxiFlg Then
+        '    RowNo += 1
+        '    TAXI_NOTES_TITLE.Visible = TaxiFlg
+        '    TAXI_NOTES_TITLE.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
+        '    RowNo += 1
 
-            TAXI_NOTES1.Visible = True
-            TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
-                                & "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
-                                & "重ねてご了承いただきますようお願い申し上げます。"
-            TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
-            TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(NotesWidth), Me.CmToInch(RowHeight * 3))
-            Me.TAXI_NOTES1.SelectionStart = 0
-            Me.TAXI_NOTES1.SelectionLength = Me.TAXI_NOTES1.Text.Length
-            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
-            '部分的に下線を引く
-            TAXI_NOTES1.SelectionStart = 14
-            TAXI_NOTES1.SelectionLength = 13
-            Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
-            TAXI_NOTES1.SelectionStart = 0
-            TAXI_NOTES1.SelectionLength = 0
-            RowNo += 3
-        End If
+        '    TAXI_NOTES1.Visible = True
+        '    TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
+        '                        & "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
+        '                        & "重ねてご了承いただきますようお願い申し上げます。"
+        '    TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
+        '    TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(NotesWidth), Me.CmToInch(RowHeight * 3))
+        '    Me.TAXI_NOTES1.SelectionStart = 0
+        '    Me.TAXI_NOTES1.SelectionLength = Me.TAXI_NOTES1.Text.Length
+        '    Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        '    '部分的に下線を引く
+        '    TAXI_NOTES1.SelectionStart = 14
+        '    TAXI_NOTES1.SelectionLength = 13
+        '    Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        '    TAXI_NOTES1.SelectionStart = 0
+        '    TAXI_NOTES1.SelectionLength = 0
+        '    RowNo += 3
+        'End If
 
         Me.Detail.Height = Me.CmToInch(StartY + RowHeight * RowNo)
     End Sub
 
     Private Sub GroupFooter1_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles GroupFooter1.Format
+        Me.TAXI_NOTES_TITLE.Visible = True
+        Me.TAXI_NOTES1.Visible = True
+        Me.TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
+                            & "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
+                            & "重ねてご了承いただきますようお願い申し上げます。"
+        'TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
+        TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(NotesWidth), Me.CmToInch(RowHeight * 3))
+        Me.TAXI_NOTES1.SelectionStart = 0
+        Me.TAXI_NOTES1.SelectionLength = Me.TAXI_NOTES1.Text.Length
+        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        '部分的に下線を引く
+        TAXI_NOTES1.SelectionStart = 14
+        TAXI_NOTES1.SelectionLength = 13
+        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        TAXI_NOTES1.SelectionStart = 0
+        TAXI_NOTES1.SelectionLength = 0
+
         Me.JR_HENKOU.Text = "列車運行前、1回に限り無料で変更が可能です。但し、変更は原券がないと出来ません。お手数ですが、バイエル薬品担当者へお渡しいただくか、最寄のＪＲ「みどりの窓口」にてお手続き願います。" & vbNewLine _
                             & "※乗車予定時間を過ぎた場合は、当日限り後続列車の自由席にご乗車いただけます。"
         Me.JR_HENKOU.CanGrow = True
