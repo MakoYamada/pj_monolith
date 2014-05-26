@@ -2628,10 +2628,11 @@ Partial Public Class DrRegist
                 SetFocus(Me.ANS_TAXI_KENSHU_1)
                 Return False
             End If
-        ElseIf Nozomi And Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty And Integer.Parse(Val(Me.ANS_TAXI_MAISUU.Text)) = 0.0 Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ発行枚数"), Me)
-            SetFocus(Me.ANS_TAXI_MAISUU)
-            Return False
+            '<2014/05/26 DELETE TOPTOUR四方様依頼による>
+            'ElseIf Nozomi And Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty And Integer.Parse(Val(Me.ANS_TAXI_MAISUU.Text)) = 0.0 Then
+            '    CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ発行枚数"), Me)
+            '    SetFocus(Me.ANS_TAXI_MAISUU)
+            '    Return False
         End If
 
         '番号1
@@ -3609,74 +3610,75 @@ Partial Public Class DrRegist
         '    End If
         'End If
 
-        'タクチケ関連項目に入力されている場合は、タクチケ発行枚数必須
-        If Nozomi And Val(Me.ANS_TAXI_MAISUU.Text) = 0 Then
-            If Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_2.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_3.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_4.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_5.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_6.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_7.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_8.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_9.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_10.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_11.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_12.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_13.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_14.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_15.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_16.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_17.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_18.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_19.SelectedValue <> String.Empty OrElse _
-                Me.ANS_TAXI_KENSHU_20.SelectedValue <> String.Empty Then
+        '<2014/05/26 DELETE TOPTOUR四方様依頼による>
+        ''タクチケ関連項目に入力されている場合は、タクチケ発行枚数必須
+        'If Nozomi And Val(Me.ANS_TAXI_MAISUU.Text) = 0 Then
+        '    If Me.ANS_TAXI_DATE_1.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_2.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_3.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_4.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_5.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_6.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_7.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_8.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_9.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_10.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_11.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_12.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_13.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_14.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_15.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_16.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_17.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_18.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_19.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_DATE_20.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_1.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_2.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_3.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_4.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_5.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_6.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_7.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_8.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_9.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_10.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_11.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_12.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_13.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_14.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_15.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_16.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_17.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_18.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_19.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_NO_20.Text.Trim <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_1.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_2.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_3.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_4.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_5.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_6.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_7.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_8.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_9.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_10.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_11.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_12.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_13.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_14.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_15.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_16.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_17.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_18.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_19.SelectedValue <> String.Empty OrElse _
+        '        Me.ANS_TAXI_KENSHU_20.SelectedValue <> String.Empty Then
 
-                CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ発行枚数"), Me)
-                SetFocus(Me.ANS_TAXI_MAISUU)
-                Return False
-            End If
-        End If
+        '        CmnModule.AlertMessage(MessageDef.Error.MustInput("タクチケ発行枚数"), Me)
+        '        SetFocus(Me.ANS_TAXI_MAISUU)
+        '        Return False
+        '    End If
+        'End If
 
         '宿泊費（税込)
         If Me.ANS_HOTELHI.Text.Trim <> String.Empty AndAlso _

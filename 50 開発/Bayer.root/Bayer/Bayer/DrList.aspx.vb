@@ -68,7 +68,7 @@ Partial Public Class DrList
             InitControls()
 
             If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
-                SetForm()
+                'SetForm()
             Else
                 SetJoken()
                 SetForm()
@@ -119,6 +119,11 @@ Partial Public Class DrList
         CmnModule.SetIme(Me.JokenUPDATE_DATE_MM, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenUPDATE_DATE_DD, CmnModule.ImeType.InActive)
 
+        Me.LabelNoData.Visible = False
+        Me.BtnPrint1.Visible = False
+        Me.BtnPrint2.Visible = False
+        Me.BtnBack2.Visible = False
+
         'クリア
         CmnModule.ClearAllControl(Me)
     End Sub
@@ -134,6 +139,9 @@ Partial Public Class DrList
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.BtnBack2.Visible = True
+            Me.BtnPrint1.Visible = True
+            Me.BtnPrint2.Visible = True
             CmnModule.SetEnabled(Me.BtnPrint1, True)
             CmnModule.SetEnabled(Me.BtnPrint2, True)
 
@@ -218,6 +226,7 @@ Partial Public Class DrList
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.BtnBack2.Visible = True
             Me.BtnPrint1.Visible = True
             Me.BtnPrint2.Visible = True
 
