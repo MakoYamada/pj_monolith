@@ -1,0 +1,155 @@
+(添付ファイル：Nozomi 一括請求02月分.xls)
+
+送信元:	Keisuke Saeki <keisuke.saeki@bayer.com>
+宛先:	四方未映 <mie_shikata@toptour.co.jp>
+Cc:	橋本智子 <tomoko_hashimoto@toptour.co.jp>, "TOORU TAKAHASHI (ttakahashi@ml.keiwa-biz.co.jp)" <ttakahashi@ml.keiwa-biz.co.jp>, 山田保男 <yasuo_yamada@toptour.co.jp>, Takuto Sumi <takuto.sumi@bayer.com>, "Yoshihide Sakagami" <yoshihide.sakagami@bayer.com>, "ta_yorozu@actis.co.jp" <ta_yorozu@actis.co.jp>, "ozaki_sck@actis.co.jp" <ozaki_sck@actis.co.jp>, "kazuhiro.seino.fm@hitachi.com" <kazuhiro.seino.fm@hitachi.com>, "yoshinao.matsushiba.rf@hitachi.com" <yoshinao.matsushiba.rf@hitachi.com>, 相賀克己 <katsumi_aiga@toptour.co.jp>
+日付:	2014/02/19 10:37
+件名:	RE: Nozomi⇔Top Tour 連携テスト
+
+
+
+四方様
+ 
+お世話になっております。
+佐伯です。
+ 
+SAP取込用データについて、以下フィードバックがあります。
+対応の検討をお願いできますでしょうか。
+ 
+１．ファイル形式をCSVではなくExcelにしたい。 
+２．1行目の日本語のヘッダは不要
+３．添付ファイルのレイアウトで以下の項目を追加
+WAERS：JPY固定
+ZFBDT、ZTERM：NULL固定
+XMWST：X固定
+NEWBS：ヘッダ行は31固定、明細行は40固定
+ 
+なお添付ファイルでのSAPへの取込を確認できました。
+ 
+以上よろしくお願い致します。
+ 
+From: 四方未映 [mailto:mie_shikata@toptour.co.jp] 
+Sent: Friday, February 14, 2014 6:59 PM
+To: Keisuke Saeki
+Cc: 橋本智子; TOORU TAKAHASHI (ttakahashi@ml.keiwa-biz.co.jp); 山田保男; Takuto Sumi; Yoshihide Sakagami; ta_yorozu@actis.co.jp; ozaki_sck@actis.co.jp; kazuhiro.seino.fm@hitachi.com; yoshinao.matsushiba.rf@hitachi.com; 相賀克己
+Subject: Re: Nozomi⇔Top Tour 連携テスト
+ 
+佐伯様
+お世話になっております。
+
+本日はお打合せありがとうございました。
+また、早々のご確認ありがとうございます。
+
+SAPデータの対象額のない行は削除させていただきます。
+
+引き続きよろしくお願いいたします。
+
+------------------------------------------------------------------------
+トップツアー株式会社
+メディカルカンファレンスセンター
+四方未映
+〒530-0004
+大阪市北区堂島浜2-2-28　堂島アクシスビル7F
+TEL：06-4799-0118
+FAX：06-4799-0128
+------------------------------------------------------------------------
+ 
+ 
+ 
+2014年2月14日 17:56 Keisuke Saeki <keisuke.saeki@bayer.com>:
+四方様
+ 
+お世話になっております。
+ 
+確認事項については対象額がない場合には行は削除して頂くようにお願い致します。
+ 
+交通手配の回答、ありがとうございました。
+助かりました。
+ 
+佐伯
+ 
+From: 四方未映 [mailto:mie_shikata@toptour.co.jp] 
+Sent: Thursday, February 13, 2014 6:36 PM
+To: Keisuke Saeki
+Cc: 橋本智子; TOORU TAKAHASHI (ttakahashi@ml.keiwa-biz.co.jp); 山田保男; Takuto Sumi; Yoshihide Sakagami; ta_yorozu@actis.co.jp; ozaki_sck@actis.co.jp; kazuhiro.seino.fm@hitachi.com; yoshinao.matsushiba.rf@hitachi.com; 相賀克己
+Subject: Re: Nozomi⇔Top Tour 連携テスト
+ 
+佐伯様
+お世話になっております。
+
+対応に時間を要しまして申し訳ありません。
+
+1. SAPデータ作成
+　添付にてデータをお送りいたします。
+　ご確認よろしくお願いいたします。
+
+　１点確認ですが、講演会費用（課税）の対象額がない場合も値「0」にて行を作成しております。
+　このままでよいか、行を削除する必要があるかご教示いただけますでしょうか。
+
+
+
+2.会合番号：MTG14-00012218
+   会合参加Id：MTP14-00005297
+　お電話にてご連絡しましたが、交通手配回答を入力いたしております。
+
+
+では、明日よろしくお願いいたします。
+
+------------------------------------------------------------------------
+トップツアー株式会社
+メディカルカンファレンスセンター
+四方未映
+〒530-0004
+大阪市北区堂島浜2-2-28　堂島アクシスビル7F
+TEL：06-4799-0118
+FAX：06-4799-0128
+------------------------------------------------------------------------
+ 
+ 
+ 
+2014年2月13日 0:33 Keisuke Saeki <keisuke.saeki@bayer.com>:
+四方様、橋本様、高橋様、
+ 
+お世話になっております。
+佐伯です。
+ 
+先週実施した連携テストですが、SAP用ファイルの作成を
+除いて完了しています。
+ご協力ありがとうございました。
+引続き以下2点お願いと確認事項があります。
+ 
+１．SAP用ファイル作成
+P1-2,P2,P3,P4に対応したSAP用のファイル作成をお願いしたいと
+思うのですが、一点T2NのPaymentについてMTG14-00011783で送って
+頂いた、P2とP3のデータが、上書きされてしまうという
+不具合が発生し、P3のPAY番号がP2と同じになってしまっています。
+不具合はこちらで対応予定ですが、P3に御社側で適当なPAY番号を振って
+承認された状態にしてSAP用データを作成頂くことは可能でしょうか？
+ 
+２．帳票テスト用の交通・宿泊手配回答のご依頼
+以下の交通宿泊手配を連携したのですが、帳票テスト用に交通経路がフルで
+入った回答を返して頂けないでしょうか。
+会合番号：MTG14-00012218
+会合参加Id：MTP14-00005297
+ 
+また上記１の不具合対応に関連して確認ですが、PaymentのTOP請求書番号は
+同会合、同月で一意になりますでしょうか。気になるケースは初月にタクチケ実車が
+発生した際です。
+誤りの訂正を加味すると、講演会番号、トップツアー精算年月、TOP請求書番号で
+一意になるのであればそれをキーに更新しても良いのでは、という話も出ているため。
+ 
+以上よろしくお願い致します。
+ 
+Best Regards,
+ 
+Keisuke Saeki (佐伯　啓介)
+Specialized Function Systems - Information Technology
+ 
+
+ 
+Bayer Holding Ltd.
+2-4-9, Umeda, Kita-ku
+Osaka 530-0001
+Office:  +81 6 6133 7127
+E-mail: keisuke.saeki@bayer.com
+ 
