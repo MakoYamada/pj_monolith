@@ -354,7 +354,7 @@ Public Class SQL
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
@@ -468,7 +468,7 @@ Public Class SQL
             End If
 
             If Trim(Joken.KOUENKAI_NO) <> "" Then
-                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO=N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL &= " AND TBL_KOUENKAI.KOUENKAI_NO LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then

@@ -600,7 +600,7 @@ Partial Public Class TaxiMeisaiCsv
     Private Function GetName_STATUS(ByVal TKT_SEIKYU_YM As String, ByVal TKT_VOID As String) As String
         If Trim(TKT_SEIKYU_YM) <> "" Then
             Return "請求済"
-        ElseIf Trim(TKT_VOID) <> "" Then
+        ElseIf Trim(TKT_VOID) <> CmnConst.Flag.Off Then
             Return "破棄済"
         Else
             Return "未請求"
