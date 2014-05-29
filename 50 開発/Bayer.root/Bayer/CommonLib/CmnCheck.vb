@@ -31,11 +31,17 @@ Public Class CmnCheck
     End Function
 
     '金額チェック(数字、ハイフン、カンマOK)
-    Public Shared Function IsValidKingaku(ByVal str As String) As Boolean
+    '任意でピリオドもOK
+    Public Shared Function IsValidKingaku(ByVal str As String, Optional ByVal Period As Boolean = False) As Boolean
         If Trim(str) = "" Then
             Return True
         Else
-            Const KINGAKU_LETTER As String = "0123456789,- "
+            Dim KINGAKU_LETTER As String
+            If Period = True Then
+                KINGAKU_LETTER = "0123456789,- "
+            Else
+                KINGAKU_LETTER = "0123456789.,- "
+            End If
             Dim wCnt As Integer = 0
             Dim buff As String
 
@@ -100,7 +106,7 @@ Public Class CmnCheck
 
     '半角英数ハイフンチェック
     Public Shared Function IsAlphanumericHyphen(ByVal str As String) As Boolean
-        Const HAN_ALPHANUMERIC As String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
+        Const HAN_ALPHANUMERIC As String = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
         Dim wCnt As Integer = 0
         Dim buff As String
         If str.Length = 0 Then

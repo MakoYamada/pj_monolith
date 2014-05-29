@@ -524,7 +524,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KAIJOUHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KAIJOUHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KAIJOUHI_TF), Me)
             Return False
         End If
@@ -533,7 +533,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_INSHOKUHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_INSHOKUHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_TF), Me)
             Return False
         End If
@@ -542,7 +542,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KIZAIHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_TF), Me)
             Return False
         End If
@@ -551,7 +551,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_HOTELHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_HOTELHI_TF), Me)
             Return False
         End If
@@ -560,7 +560,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KOTSUHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KOTSUHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KOTSUHI_TF), Me)
             Return False
         End If
@@ -569,7 +569,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_TAXI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_TAXI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TAXI_TF), Me)
             Return False
         End If
@@ -578,7 +578,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_TEHAI_TESURYO_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_TEHAI_TESURYO_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TEHAI_TESURYO_TF), Me)
             Return False
         End If
@@ -587,7 +587,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_TAXI_HAKKEN_TESURYO_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_TAXI_HAKKEN_TESURYO_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TAXI_HAKKEN_TESURYO_TF), Me)
             Return False
         End If
@@ -596,7 +596,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_TAXI_SEISAN_TESURYO_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_TAXI_SEISAN_TESURYO_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_TAXI_SEISAN_TESURYO_TF), Me)
             Return False
         End If
@@ -605,7 +605,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_JINKENHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_JINKENHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_JINKENHI_TF), Me)
             Return False
         End If
@@ -614,7 +614,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KANRIHI_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KANRIHI_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_TF), Me)
             Return False
         End If
@@ -623,7 +623,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_TF) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_OTHER_TF) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_TF), Me)
             Return False
         End If
@@ -632,7 +632,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KAIJOUHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KAIJOUHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KAIJOUHI_T), Me)
             Return False
         End If
@@ -641,7 +641,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_INSHOKUHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_INSHOKUHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_INSHOKUHI_T), Me)
             Return False
         End If
@@ -650,7 +650,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KIZAIHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KIZAIHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KIZAIHI_T), Me)
             Return False
         End If
@@ -659,7 +659,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_JINKENHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_JINKENHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_JINKENHI_T), Me)
             Return False
         End If
@@ -668,7 +668,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_KANRIHI_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_KANRIHI_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_KANRIHI_T), Me)
             Return False
         End If
@@ -677,7 +677,7 @@ Partial Public Class KaijoRegist
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_T) Then
+        If Not CmnCheck.IsValidKingaku(Me.ANS_OTHER_T) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_KAIJO.Name.ANS_OTHER_T), Me)
             Return False
         End If
@@ -873,11 +873,11 @@ Partial Public Class KaijoRegist
         Dim wANS_KIZAIHI_TF As String = Trim(Replace(StrConv(Me.ANS_KIZAIHI_TF.Text, VbStrConv.Narrow), ",", ""))
         Dim wANS_INSHOKUHI_TF As String = Trim(Replace(StrConv(Me.ANS_INSHOKUHI_TF.Text, VbStrConv.Narrow), ",", ""))
 
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KAIJOUHI_TF)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KIZAIHI_TF)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_INSHOKUHI_TF)) Then
+        If CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KAIJOUHI_TF)) AndAlso CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KIZAIHI_TF)) AndAlso CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_INSHOKUHI_TF)) Then
             wANS_991330401_TF = CmnModule.DbVal(wANS_KAIJOUHI_TF) + CmnModule.DbVal(wANS_KIZAIHI_TF) + CmnModule.DbVal(wANS_INSHOKUHI_TF)
             wANS_TOTAL_TF += wANS_991330401_TF
         End If
-    
+
         '41120200
         Dim WANS_41120200_TF As Long = 0
         Dim wANS_HOTELHI_TF As String = Trim(Replace(StrConv(Me.ANS_HOTELHI_TF.Text, VbStrConv.Narrow), ",", ""))
@@ -890,15 +890,15 @@ Partial Public Class KaijoRegist
         Dim wANS_OTHER_TF As String = Trim(Replace(StrConv(Me.ANS_OTHER_TF.Text, VbStrConv.Narrow), ",", ""))
         Dim wANS_KANRIHI_TF As String = Trim(Replace(StrConv(Me.ANS_KANRIHI_TF.Text, VbStrConv.Narrow), ",", ""))
 
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_HOTELHI_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KOTSUHI_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_TAXI_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_TEHAI_TESURYO_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_TAXI_HAKKEN_TESURYO_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_TAXI_SEISAN_TESURYO_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_JINKENHI_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_OTHER_TF)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KANRIHI_TF)) Then
+        If CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_HOTELHI_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KOTSUHI_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_TAXI_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_TEHAI_TESURYO_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_TAXI_HAKKEN_TESURYO_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_TAXI_SEISAN_TESURYO_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_JINKENHI_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_OTHER_TF)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KANRIHI_TF)) Then
             WANS_41120200_TF = CmnModule.DbVal(wANS_HOTELHI_TF) + CmnModule.DbVal(wANS_KOTSUHI_TF) + CmnModule.DbVal(wANS_TAXI_TF) + CmnModule.DbVal(wANS_TEHAI_TESURYO_TF) + CmnModule.DbVal(wANS_TAXI_HAKKEN_TESURYO_TF) + CmnModule.DbVal(wANS_TAXI_SEISAN_TESURYO_TF) + CmnModule.DbVal(wANS_JINKENHI_TF) + CmnModule.DbVal(wANS_OTHER_TF) + CmnModule.DbVal(wANS_KANRIHI_TF)
             wANS_TOTAL_TF += WANS_41120200_TF
         End If
@@ -907,7 +907,7 @@ Partial Public Class KaijoRegist
         Me.ANS_41120200_TF.Text = AppModule.GetName_ANS_41120200_TF(WANS_41120200_TF) & "円"
         Me.ANS_TOTAL_TF.Text = AppModule.GetName_ANS_TOTAL_TF(wANS_TOTAL_TF) & "円"
     End Sub
- 
+
     Protected Sub BtnCalc_ANS_TOTAL_T_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCalc_ANS_TOTAL_T.Click
         Calc_ANS_TOTAL_T()
         Calc_ANS_MITSUMORI_TOTAL()
@@ -922,20 +922,20 @@ Partial Public Class KaijoRegist
         Dim wANS_KIZAIHI_T As String = Trim(Replace(StrConv(Me.ANS_KIZAIHI_T.Text, VbStrConv.Narrow), ",", ""))
         Dim wANS_INSHOKUHI_T As String = Trim(Replace(StrConv(Me.ANS_INSHOKUHI_T.Text, VbStrConv.Narrow), ",", ""))
 
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KAIJOUHI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KIZAIHI_T)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_INSHOKUHI_T)) Then
+        If CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KAIJOUHI_T)) AndAlso CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KIZAIHI_T)) AndAlso CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_INSHOKUHI_T)) Then
             wANS_991330401_T = CmnModule.DbVal(wANS_KAIJOUHI_T) + CmnModule.DbVal(wANS_KIZAIHI_T) + CmnModule.DbVal(wANS_INSHOKUHI_T)
             wANS_TOTAL_T += wANS_991330401_T
         End If
-    
+
         '41120200
         Dim wANS_41120200_T As Long = 0
         Dim wANS_JINKENHI_T As String = Trim(Replace(StrConv(Me.ANS_JINKENHI_T.Text, VbStrConv.Narrow), ",", ""))
         Dim wANS_OTHER_T As String = Trim(Replace(StrConv(Me.ANS_OTHER_T.Text, VbStrConv.Narrow), ",", ""))
         Dim wANS_KANRIHI_T As String = Trim(Replace(StrConv(Me.ANS_KANRIHI_T.Text, VbStrConv.Narrow), ",", ""))
 
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_JINKENHI_T)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_OTHER_T)) AndAlso _
-           CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_KANRIHI_T)) Then
+        If CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_JINKENHI_T)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_OTHER_T)) AndAlso _
+           CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_KANRIHI_T)) Then
             wANS_41120200_T = CmnModule.DbVal(wANS_JINKENHI_T) + CmnModule.DbVal(wANS_OTHER_T) + CmnModule.DbVal(wANS_KANRIHI_T)
             wANS_TOTAL_T += wANS_41120200_T
         End If
@@ -950,7 +950,7 @@ Partial Public Class KaijoRegist
         Calc_ANS_TOTAL_T()
         Calc_ANS_MITSUMORI_TOTAL()
         SetFocus(Me.BtnCalc_ANS_MITSUMORI)
-       End Sub
+    End Sub
     Private Sub Calc_ANS_MITSUMORI_TOTAL()
         '概算見積合計(非課税)
         Me.ANS_MITSUMORI_TF.Text = Me.ANS_TOTAL_TF.Text
@@ -958,11 +958,12 @@ Partial Public Class KaijoRegist
         '概算見積合計(課税)
         Me.ANS_MITSUMORI_T.Text = Me.ANS_TOTAL_T.Text
 
-        '利用額合計
+        '利用額合計
+
         Dim wANS_MITSUMORI_TOTAL As Long = 0
         Dim wANS_MITSUMORI_TF As String = Trim(Replace(Replace(StrConv(Me.ANS_MITSUMORI_TF.Text, VbStrConv.Narrow), ",", ""), "円", ""))
         Dim wANS_MITSUMORI_T As String = Trim(Replace(Replace(StrConv(Me.ANS_MITSUMORI_T.Text, VbStrConv.Narrow), ",", ""), "円", ""))
-        If CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_MITSUMORI_TF)) AndAlso CmnCheck.IsNumberOnly(CmnModule.DbVal(wANS_MITSUMORI_T)) Then
+        If CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_MITSUMORI_TF)) AndAlso CmnCheck.IsValidKingaku(CmnModule.DbVal(wANS_MITSUMORI_T)) Then
             wANS_MITSUMORI_TOTAL = CmnModule.DbVal(wANS_MITSUMORI_TF) + CmnModule.DbVal(wANS_MITSUMORI_T)
         End If
 

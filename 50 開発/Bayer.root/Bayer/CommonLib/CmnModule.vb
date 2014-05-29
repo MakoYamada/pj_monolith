@@ -43,17 +43,18 @@ Public Class CmnModule
         Else
             If in_Str.ToString.IndexOf(".") < 0 Then
                 '®”
-                If CmnCheck.IsNumberOnly(in_Str) = False Then
+                If CmnCheck.IsValidKingaku(in_Str) = False Then
                     Return 0
                 Else
-                    Return Long.Parse(in_Str)
+                    'Return Long.Parse(in_Str)
+                    Return Long.Parse(in_Str.ToString.Replace(",", ""))
                 End If
             Else
                 '¬”“_
-                If CmnCheck.IsNumberOnly(in_Str, True) = False Then
+                If CmnCheck.IsValidKingaku(in_Str, True) = False Then
                     Return 0.0
                 Else
-                    Return Single.Parse(in_Str)
+                    Return Single.Parse(in_Str.ToString.Replace(",", ""))
                 End If
             End If
         End If
@@ -65,7 +66,7 @@ Public Class CmnModule
             If CmnCheck.IsValidKingaku(in_Str) = False Then
                 Return 0
             Else
-                Return Long.Parse(in_Str)
+                Return Long.Parse(in_Str.ToString.Replace(",", ""))
             End If
         End If
     End Function
@@ -281,7 +282,7 @@ Public Class CmnModule
     End Sub
     Public Shared Sub ClearControl(ByRef control As System.Web.UI.WebControls.DropDownList)
         Try
-             control.SelectedIndex = 0
+            control.SelectedIndex = 0
         Catch ex As Exception
         End Try
     End Sub
