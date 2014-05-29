@@ -506,46 +506,46 @@ Partial Public Class SeisanRegist
         TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
         TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
 
-        TBL_SEIKYU(SEQ).KAIJOHI_TF = Me.KAIJOHI_TF.Text
-        TBL_SEIKYU(SEQ).KIZAIHI_TF = Me.KIZAIHI_TF.Text
-        TBL_SEIKYU(SEQ).INSHOKUHI_TF = Me.INSHOKUHI_TF.Text
+        TBL_SEIKYU(SEQ).KAIJOHI_TF = Me.KAIJOHI_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).KIZAIHI_TF = Me.KIZAIHI_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).INSHOKUHI_TF = Me.INSHOKUHI_TF.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KEI_991330401_TF = Me.KEI_991330401_TF.Text.Replace(",", "")
 
-        TBL_SEIKYU(SEQ).HOTELHI_TF = Me.HOTELHI_TF.Text
-        TBL_SEIKYU(SEQ).HOTELHI_TOZEI = Me.HOTELHI_TOZEI.Text
-        TBL_SEIKYU(SEQ).JR_TF = Me.JR_TF.Text
-        TBL_SEIKYU(SEQ).AIR_TF = Me.AIR_TF.Text
-        TBL_SEIKYU(SEQ).OTHER_TRAFFIC_TF = Me.OTHER_TRAFFIC_TF.Text
-        TBL_SEIKYU(SEQ).TAXI_TF = Me.TAXI_TF.Text
-        TBL_SEIKYU(SEQ).HOTEL_COMMISSION_TF = Me.HOTEL_COMMISSION_TF.Text
-        TBL_SEIKYU(SEQ).TAXI_COMMISSION_TF = Me.TAXI_COMMISSION_TF.Text
-        TBL_SEIKYU(SEQ).TAXI_SEISAN_TF = Me.TAXI_SEISAN_TF.Text
-        TBL_SEIKYU(SEQ).JINKENHI_TF = Me.JINKENHI_TF.Text
-        TBL_SEIKYU(SEQ).OTHER_TF = Me.OTHER_TF.Text
-        TBL_SEIKYU(SEQ).KANRIHI_TF = Me.KANRIHI_TF.Text
+        TBL_SEIKYU(SEQ).HOTELHI_TF = Me.HOTELHI_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).HOTELHI_TOZEI = Me.HOTELHI_TOZEI.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).JR_TF = Me.JR_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).AIR_TF = Me.AIR_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).OTHER_TRAFFIC_TF = Me.OTHER_TRAFFIC_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).TAXI_TF = Me.TAXI_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).HOTEL_COMMISSION_TF = Me.HOTEL_COMMISSION_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).TAXI_COMMISSION_TF = Me.TAXI_COMMISSION_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).TAXI_SEISAN_TF = Me.TAXI_SEISAN_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).JINKENHI_TF = Me.JINKENHI_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).OTHER_TF = Me.OTHER_TF.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).KANRIHI_TF = Me.KANRIHI_TF.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KEI_41120200_TF = Me.KEI_41120200_TF.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KEI_TF = Me.KEI_TF.Text.Replace(",", "")
 
-        TBL_SEIKYU(SEQ).KAIJOUHI_T = Me.KAIJOUHI_T.Text
-        TBL_SEIKYU(SEQ).KIZAIHI_T = Me.KIZAIHI_T.Text
-        TBL_SEIKYU(SEQ).INSHOKUHI_T = Me.INSHOKUHI_T.Text
+        TBL_SEIKYU(SEQ).KAIJOUHI_T = Me.KAIJOUHI_T.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).KIZAIHI_T = Me.KIZAIHI_T.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).INSHOKUHI_T = Me.INSHOKUHI_T.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KEI_991330401_T = Me.KEI_991330401_T.Text.Replace(",", "")
 
-        TBL_SEIKYU(SEQ).JINKENHI_T = Me.JINKENHI_T.Text
-        TBL_SEIKYU(SEQ).OTHER_T = Me.OTHER_T.Text
-        TBL_SEIKYU(SEQ).KANRIHI_T = Me.KANRIHI_T.Text
+        TBL_SEIKYU(SEQ).JINKENHI_T = Me.JINKENHI_T.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).OTHER_T = Me.OTHER_T.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).KANRIHI_T = Me.KANRIHI_T.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KEI_41120200_T = Me.KEI_41120200_T.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KEI_T = Me.KEI_T.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
-        TBL_SEIKYU(SEQ).TAXI_T = Me.TAXI_T.Text
-        TBL_SEIKYU(SEQ).TAXI_SEISAN_T = Me.TAXI_SEISAN_T.Text
+        TBL_SEIKYU(SEQ).TAXI_T = Me.TAXI_T.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).TAXI_SEISAN_T = Me.TAXI_SEISAN_T.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).SEISANSHO_URL = Me.SEISANSHO_URL.Text
         TBL_SEIKYU(SEQ).TAXI_TICKET_URL = Me.TAXI_TICKET_URL.Text
         TBL_SEIKYU(SEQ).SEISAN_KANRYO = AppModule.GetValue_SEISAN_KANRYO(Me.SEISAN_KANRYO)
-        TBL_SEIKYU(SEQ).MR_JR = Me.MR_JR.Text
-        TBL_SEIKYU(SEQ).MR_HOTEL = Me.MR_HOTEL.Text
-        TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI = Me.MR_HOTEL_TOZEI.Text
+        TBL_SEIKYU(SEQ).MR_JR = Me.MR_JR.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).MR_HOTEL = Me.MR_HOTEL.Text.Replace(",", "")
+        TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI = Me.MR_HOTEL_TOZEI.Text.Replace(",", "")
 
         TBL_SEIKYU(SEQ).SEND_FLAG = SEND_FLAG
         TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
