@@ -38,9 +38,9 @@ Public Class CmnCheck
         Else
             Dim KINGAKU_LETTER As String
             If Period = True Then
-                KINGAKU_LETTER = "0123456789,- "
-            Else
                 KINGAKU_LETTER = "0123456789.,- "
+            Else
+                KINGAKU_LETTER = "0123456789,- "
             End If
             Dim wCnt As Integer = 0
             Dim buff As String
