@@ -123,6 +123,12 @@
 }
 </value>
   </data>
+  <data name="AIR_NOTES.RTF" xml:space="preserve">
+    <value>{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\nowidctlpar\sl240\slmult0\lang1041\fs20 RichTextBox1\par
+}
+</value>
+  </data>
   <data name="JR_HENKOU.RTF" xml:space="preserve">
     <value>{\rtf1{\fonttbl{\f0\fnil\fcharset0 Arial;}}{\stylesheet{\ql\li0\ri0\nowidctlpar\sl240\slmult\faauto\fs20\f0 Normal;}}\pard\plain\s0\li0\ri0\ql\nowidctlpar\sl240\slmult\faauto\f0\fs20{\f0 RichTextBox1\par}}</value>
   </data>
@@ -139,14 +145,6 @@
     <value>{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
 \viewkind4\uc1\pard\nowidctlpar\sl240\slmult0\lang1041\fs20 RichTextBox1\par
 }
-</value>
-  </data>
-  <data name="Label25.Text" xml:space="preserve">
-    <value>※ご案内：別航空会社への変更（JAL⇒ANA、ANA⇒JAL）、区間変更、クラス変更をご希望される場合は、同封の予約確認書（eチケット）ではご利用出来ないので予めご了承願います。また、空港カウンター及び航空会社の電話窓口においても受け付け出来ません。 
-
-航空会社・区間・クラスの変更を希望される場合は、バイエル薬品担当者にご連絡いただきますようお願い致します。変更予約後、新たな予約確認書（eチケット）をご用意させていただきます。
-
-尚、空港カウンターでの払い戻し返金はございません。
 </value>
   </data>
   <data name="OTHER_NOTES.RTF" xml:space="preserve">

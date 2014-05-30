@@ -377,7 +377,6 @@ Partial Public Class DrSoufujo
         Me.Label22 = New DataDynamics.ActiveReports.Label
         Me.Label23 = New DataDynamics.ActiveReports.Label
         Me.Label24 = New DataDynamics.ActiveReports.Label
-        Me.Label25 = New DataDynamics.ActiveReports.Label
         Me.Label26 = New DataDynamics.ActiveReports.Label
         Me.Label27 = New DataDynamics.ActiveReports.Label
         Me.OTHER_NOTES = New DataDynamics.ActiveReports.RichTextBox
@@ -389,6 +388,7 @@ Partial Public Class DrSoufujo
         Me.Label33 = New DataDynamics.ActiveReports.Label
         Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
+        Me.AIR_NOTES = New DataDynamics.ActiveReports.RichTextBox
         CType(Me.DetailTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_STATUS_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_O_STATUS_1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -740,7 +740,6 @@ Partial Public Class DrSoufujo
         CType(Me.Label22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label27, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label28, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -5042,7 +5041,7 @@ Partial Public Class DrSoufujo
         'GroupFooter1
         '
         Me.GroupFooter1.CanShrink = True
-        Me.GroupFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape1, Me.Label9, Me.JR_SETSUMEI, Me.JR_HENKO_TITLE, Me.JR_HENKOU, Me.JR_TORIKESHI_TITLE, Me.JR_TORIKESHI, Me.AIR_SETSUMEI, Me.AIR_TITLE, Me.AIR_HENKO, Me.Label3, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label25, Me.Label26, Me.Label27, Me.OTHER_NOTES, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Shape2, Me.TextBox1, Me.TAXI_NOTES_TITLE, Me.TAXI_NOTES1})
+        Me.GroupFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.AIR_NOTES, Me.Shape1, Me.Label9, Me.JR_SETSUMEI, Me.JR_HENKO_TITLE, Me.JR_HENKOU, Me.JR_TORIKESHI_TITLE, Me.JR_TORIKESHI, Me.AIR_SETSUMEI, Me.AIR_TITLE, Me.AIR_HENKO, Me.Label3, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.OTHER_NOTES, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Shape2, Me.TextBox1, Me.TAXI_NOTES_TITLE, Me.TAXI_NOTES1})
         Me.GroupFooter1.Height = 8.925197!
         Me.GroupFooter1.KeepTogether = True
         Me.GroupFooter1.Name = "GroupFooter1"
@@ -5339,17 +5338,6 @@ Partial Public Class DrSoufujo
         Me.Label24.Top = 4.825985!
         Me.Label24.Width = 2.188583!
         '
-        'Label25
-        '
-        Me.Label25.Height = 1.241733!
-        Me.Label25.HyperLink = Nothing
-        Me.Label25.Left = 1.748819!
-        Me.Label25.Name = "Label25"
-        Me.Label25.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top"
-        Me.Label25.Text = resources.GetString("Label25.Text")
-        Me.Label25.Top = 5.128346!
-        Me.Label25.Width = 5.40315!
-        '
         'Label26
         '
         Me.Label26.Height = 0.2!
@@ -5412,7 +5400,7 @@ Partial Public Class DrSoufujo
         Me.Label30.Left = 1.566142!
         Me.Label30.Name = "Label30"
         Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.Label30.Text = "トップツアー株式会社　メディカルカンファレンスセンター内"
+        Me.Label30.Text = "トップツアー株式会社　MCC大阪 内"
         Me.Label30.Top = 7.939764!
         Me.Label30.Width = 3.937008!
         '
@@ -5423,7 +5411,7 @@ Partial Public Class DrSoufujo
         Me.Label31.Left = 1.566142!
         Me.Label31.Name = "Label31"
         Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
-        Me.Label31.Text = "バイエル薬品株式会社　バイエルトラベルデスク"
+        Me.Label31.Text = "バイエルトラベルデスク　交通宿泊担当"
         Me.Label31.Top = 8.139763!
         Me.Label31.Width = 3.937008!
         '
@@ -5470,6 +5458,17 @@ Partial Public Class DrSoufujo
         Me.TextBox1.Text = "【お問合せ・チケットご返送先】"
         Me.TextBox1.Top = 7.452363!
         Me.TextBox1.Width = 2.020473!
+        '
+        'AIR_NOTES
+        '
+        Me.AIR_NOTES.AutoReplaceFields = True
+        Me.AIR_NOTES.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.AIR_NOTES.Height = 1.241732!
+        Me.AIR_NOTES.Left = 1.748819!
+        Me.AIR_NOTES.Name = "AIR_NOTES"
+        Me.AIR_NOTES.RTF = resources.GetString("AIR_NOTES.RTF")
+        Me.AIR_NOTES.Top = 5.128347!
+        Me.AIR_NOTES.Width = 5.40315!
         '
         'DrSoufujo
         '
@@ -5838,7 +5837,6 @@ Partial Public Class DrSoufujo
         CType(Me.Label22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label27, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label28, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6208,7 +6206,6 @@ Partial Public Class DrSoufujo
     Private WithEvents Label22 As DataDynamics.ActiveReports.Label
     Private WithEvents Label23 As DataDynamics.ActiveReports.Label
     Private WithEvents Label24 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label25 As DataDynamics.ActiveReports.Label
     Private WithEvents Label26 As DataDynamics.ActiveReports.Label
     Private WithEvents Label27 As DataDynamics.ActiveReports.Label
     Private WithEvents OTHER_NOTES As DataDynamics.ActiveReports.RichTextBox
@@ -6223,4 +6220,5 @@ Partial Public Class DrSoufujo
     Private WithEvents Shape2 As DataDynamics.ActiveReports.Shape
     Private WithEvents FROM_DATE As DataDynamics.ActiveReports.TextBox
     Private WithEvents TO_DATE As DataDynamics.ActiveReports.TextBox
+    Private WithEvents AIR_NOTES As DataDynamics.ActiveReports.RichTextBox
 End Class

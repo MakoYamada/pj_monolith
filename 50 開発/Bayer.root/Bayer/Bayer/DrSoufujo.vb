@@ -181,8 +181,8 @@ Public Class DrSoufujo
             HotelNameTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
 
             ANS_HOTEL_NAME.Visible = True
-            If Me.ANS_HOTEL_NAME.Text.Trim.Length > 25 Then
-                ANS_HOTEL_NAME.Text = Left(Me.ANS_HOTEL_NAME.Text.Trim, 25)
+            If Me.ANS_HOTEL_NAME.Text.Trim.Length > 45 Then
+                ANS_HOTEL_NAME.Text = Left(Me.ANS_HOTEL_NAME.Text.Trim, 45)
             Else
                 ANS_HOTEL_NAME.Text = Me.ANS_HOTEL_NAME.Text.Trim
             End If
@@ -193,21 +193,23 @@ Public Class DrSoufujo
             ANS_HOTEL_NAME.WordWrap = False
             ANS_HOTEL_NAME.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
 
+            RowNo += 1
+
             HotelAddrTitle.Visible = True
             HotelAddrTitle.Text = "住所："
             HotelAddrTitle.Height = RowHeight
-            HotelAddrTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX2), Me.CmToInch(StartY + RowHeight * RowNo))
-            HotelAddrTitle.Alignment = TextAlignment.Right
+            HotelAddrTitle.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemTitleX1), Me.CmToInch(StartY + RowHeight * RowNo))
+            HotelAddrTitle.Alignment = TextAlignment.Left
             HotelAddrTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
 
             ANS_HOTEL_ADDRESS.Visible = True
-            If Me.ANS_HOTEL_ADDRESS.Text.Trim.Length > 25 Then
-                ANS_HOTEL_ADDRESS.Text = Left(Me.ANS_HOTEL_ADDRESS.Text.Trim, 25)
+            If Me.ANS_HOTEL_ADDRESS.Text.Trim.Length > 45 Then
+                ANS_HOTEL_ADDRESS.Text = Left(Me.ANS_HOTEL_ADDRESS.Text.Trim, 45)
             Else
                 ANS_HOTEL_ADDRESS.Text = Me.ANS_HOTEL_ADDRESS.Text.Trim
             End If
             ANS_HOTEL_ADDRESS.Height = RowHeight
-            ANS_HOTEL_ADDRESS.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX2), Me.CmToInch(StartY + RowHeight * RowNo))
+            ANS_HOTEL_ADDRESS.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY + RowHeight * RowNo))
             ANS_HOTEL_ADDRESS.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidthMax), Me.CmToInch(RowHeight))
             ANS_HOTEL_ADDRESS.CanGrow = True
             ANS_HOTEL_ADDRESS.CanShrink = True
@@ -2803,7 +2805,8 @@ Public Class DrSoufujo
         Me.JR_TORIKESHI.SelectionLength = 0
 
         Me.AIR_HENKO.Text = "出発時刻前までは、同航空会社間（ＪＡＬ⇔ＪＡＬ、ＡＮＡ⇔ＡＮＡ）で同じ区間・クラスでの変更、及び取消は、下記航空会社へのご連絡でも可能です。" & vbNewLine _
-           & "その際に航空会社の係員がご案内する取消番号や予約番号はお控えください。予約番号は、チェックイン時必要となります。"
+           & "変更の場合は、航空会社の係員がご案内する予約番号をお控えください。チェックイン時必要となります。" & vbNewLine _
+           & "取消の場合は、バイエル薬品担当MRへご連絡いただき、お手元の「予約確認書(ｅチケット)」は、バイエル薬品担当MRへご返却ください。"
 
         Me.AIR_HENKO.CanGrow = True
         Me.AIR_HENKO.SelectionStart = 0
@@ -2812,6 +2815,20 @@ Public Class DrSoufujo
         Me.AIR_HENKO.SelectionStart = 0
         Me.AIR_HENKO.SelectionLength = 0
 
+        Me.AIR_NOTES.Text = "※ご注意：別航空会社への変更（ＪＡＬ⇒ＡＮＡ、ＡＮＡ⇒ＪＡＬ）、同一航空会社間を含む区間変更・クラス変更をご希望される場合は、お手元の予約確認書(ｅチケット)では、変更ができません。" & vbNewLine _
+            & "また、空港カウンター及び航空会社の電話窓口においても受付できませんので、予めご了承願います。" & vbNewLine _
+            & "上記の変更を希望される場合は、バイエル薬品担当者にご連絡いただきますようお願い致します。変更予約後、新たな予約確認書（ｅチケット）をご用意させていただきます。" & vbNewLine _
+            & "尚、空港カウンターでの払い戻し返金はございません。"
+        Me.AIR_NOTES.CanGrow = True
+        Me.AIR_NOTES.SelectionStart = 0
+        Me.AIR_NOTES.SelectionLength = Me.AIR_NOTES.Text.Length
+        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        '部分的に下線を引く
+        Me.AIR_NOTES.SelectionStart = 5
+        Me.AIR_NOTES.SelectionLength = 85
+        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.AIR_NOTES.SelectionStart = 0
+        Me.AIR_NOTES.SelectionLength = 0
 
         Me.OTHER_NOTES.Text = "※ 取消し後のチケットは、ご利用日から5日以内にバイエル薬品担当者へお渡しください。"
         Me.OTHER_NOTES.CanGrow = True
