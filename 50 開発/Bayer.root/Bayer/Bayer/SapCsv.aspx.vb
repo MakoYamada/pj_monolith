@@ -3,6 +3,8 @@ Imports AppLib
 Partial Public Class SapCsv
     Inherits WebBase
 
+    Private Const ZEI_CD_HIKAZEI As String = "V0" '消費税コード(非課税)
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '遷移元チェック
         If Not Page.IsPostBack Then
@@ -327,8 +329,22 @@ Partial Public Class SapCsv
 
         Dim Kingaku As Long = 0
 
-        '非課税金額レコード
-        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.KEI_TF)
+        '非課税金額レコード(都税以外)
+        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.KAIJOHI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.INSHOKUHI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.KIZAIHI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.HOTELHI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.AIR_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.JR_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.OTHER_TRAFFIC_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.JINKENHI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.KANRIHI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.HOTEL_COMMISSION_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.TAXI_COMMISSION_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.OTHER_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.TAXI_TF) + _
+                  CmnModule.DbVal_Kingaku(SeikyuData.TAXI_SEISAN_TF)
+
         If Kingaku <> 0 Then
             lngTotalKingaku += Kingaku '金額加算
 
@@ -348,6 +364,42 @@ Partial Public Class SapCsv
             csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
             csvData(rowCnt).KINGAKU = Kingaku.ToString
             csvData(rowCnt).ZEI_CD = strSapZeiCd
+            csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
+            csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
+            csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+            csvData(rowCnt).PAYMENT_BLOCK = ""
+            csvData(rowCnt).ZETIA_CD = SeikyuData.ZETIA_CD
+            csvData(rowCnt).BARCODE = ""
+            If isTopTour Then
+                csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+                csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+                csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+                csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+                csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+            End If
+        End If
+
+        '非課税金額レコード(都税のみ)
+        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.HOTELHI_TOZEI)
+        If Kingaku <> 0 Then
+            lngTotalKingaku += Kingaku '金額加算
+
+            rowCnt += 1
+            ReDim Preserve csvData(rowCnt)
+            csvData(rowCnt).KUBUN = ""
+            csvData(rowCnt).KAISHA_CD = ""
+            csvData(rowCnt).SEIKYU_YMD = ""
+            csvData(rowCnt).DENPYO_TYPE = ""
+            csvData(rowCnt).SEIKYUSHO_NO = ""
+            csvData(rowCnt).DOC_HTEXT = ""
+            csvData(rowCnt).WAERS = ""
+            csvData(rowCnt).ZFBDT = ""
+            csvData(rowCnt).ZTERM = ""
+            csvData(rowCnt).XMWST = ""
+            csvData(rowCnt).NEWBS = "40"
+            csvData(rowCnt).ACCOUNT = SeikyuData.ACCOUNT_CD_TF
+            csvData(rowCnt).KINGAKU = Kingaku.ToString
+            csvData(rowCnt).ZEI_CD = ZEI_CD_HIKAZEI
             csvData(rowCnt).COST_CENTER = SeikyuData.COST_CENTER
             csvData(rowCnt).INTERNAL_ORDER = SeikyuData.INTERNAL_ORDER_TF
             csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
@@ -415,38 +467,81 @@ Partial Public Class SapCsv
 
             For wCnt As Integer = 0 To UBound(MrData)
 
-                Dim Kingaku As Long = CmnModule.DbVal_Kingaku(MrData(wCnt).ANS_MR_HOTELHI)
-                lngTotalKingaku += Kingaku
+                Dim Kingaku As Long = 0
 
-                rowCnt += 1
-                ReDim Preserve csvData(rowCnt)
-                csvData(rowCnt).KUBUN = ""
-                csvData(rowCnt).KAISHA_CD = ""
-                csvData(rowCnt).SEIKYU_YMD = ""
-                csvData(rowCnt).DENPYO_TYPE = ""
-                csvData(rowCnt).SEIKYUSHO_NO = ""
-                csvData(rowCnt).DOC_HTEXT = ""
-                csvData(rowCnt).WAERS = ""
-                csvData(rowCnt).ZFBDT = ""
-                csvData(rowCnt).ZTERM = ""
-                csvData(rowCnt).XMWST = ""
-                csvData(rowCnt).NEWBS = "40"
-                csvData(rowCnt).ACCOUNT = "6821200"
-                csvData(rowCnt).KINGAKU = Kingaku.ToString
-                csvData(rowCnt).ZEI_CD = strSapZeiCd
-                csvData(rowCnt).COST_CENTER = MrData(wCnt).COST_CENTER
-                csvData(rowCnt).INTERNAL_ORDER = MrData(wCnt).INTERNAL_ORDER
-                csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
-                csvData(rowCnt).PAYMENT_BLOCK = ""
-                csvData(rowCnt).ZETIA_CD = MrData(wCnt).ZETIA_CD
-                csvData(rowCnt).BARCODE = ""
+                '社員宿泊費+社員交通費
+                Kingaku = CmnModule.DbVal_Kingaku(MrData(wCnt).ANS_MR_HOTELHI)
+                If Kingaku <> 0 Then
+                    lngTotalKingaku += Kingaku
 
-                If isTopTour Then
-                    csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
-                    csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
-                    csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
-                    csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
-                    csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+                    rowCnt += 1
+                    ReDim Preserve csvData(rowCnt)
+                    csvData(rowCnt).KUBUN = ""
+                    csvData(rowCnt).KAISHA_CD = ""
+                    csvData(rowCnt).SEIKYU_YMD = ""
+                    csvData(rowCnt).DENPYO_TYPE = ""
+                    csvData(rowCnt).SEIKYUSHO_NO = ""
+                    csvData(rowCnt).DOC_HTEXT = ""
+                    csvData(rowCnt).WAERS = ""
+                    csvData(rowCnt).ZFBDT = ""
+                    csvData(rowCnt).ZTERM = ""
+                    csvData(rowCnt).XMWST = ""
+                    csvData(rowCnt).NEWBS = "40"
+                    csvData(rowCnt).ACCOUNT = "6821200"
+                    csvData(rowCnt).KINGAKU = Kingaku.ToString
+                    csvData(rowCnt).ZEI_CD = strSapZeiCd
+                    csvData(rowCnt).COST_CENTER = MrData(wCnt).COST_CENTER
+                    csvData(rowCnt).INTERNAL_ORDER = MrData(wCnt).INTERNAL_ORDER
+                    csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+                    csvData(rowCnt).PAYMENT_BLOCK = ""
+                    csvData(rowCnt).ZETIA_CD = MrData(wCnt).ZETIA_CD
+                    csvData(rowCnt).BARCODE = ""
+
+                    If isTopTour Then
+                        csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+                        csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+                        csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+                        csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+                        csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+                    End If
+                End If
+
+                '社員宿泊費都税のみ
+                Kingaku = CmnModule.DbVal_Kingaku(MrData(wCnt).ANS_MR_HOTELHI_TOZEI)
+                If Kingaku <> 0 Then
+                    '都税が0円以外のときのみレコード作成
+                    lngTotalKingaku += Kingaku
+
+                    rowCnt += 1
+                    ReDim Preserve csvData(rowCnt)
+                    csvData(rowCnt).KUBUN = ""
+                    csvData(rowCnt).KAISHA_CD = ""
+                    csvData(rowCnt).SEIKYU_YMD = ""
+                    csvData(rowCnt).DENPYO_TYPE = ""
+                    csvData(rowCnt).SEIKYUSHO_NO = ""
+                    csvData(rowCnt).DOC_HTEXT = ""
+                    csvData(rowCnt).WAERS = ""
+                    csvData(rowCnt).ZFBDT = ""
+                    csvData(rowCnt).ZTERM = ""
+                    csvData(rowCnt).XMWST = ""
+                    csvData(rowCnt).NEWBS = "40"
+                    csvData(rowCnt).ACCOUNT = "6821200"
+                    csvData(rowCnt).KINGAKU = Kingaku.ToString
+                    csvData(rowCnt).ZEI_CD = ZEI_CD_HIKAZEI
+                    csvData(rowCnt).COST_CENTER = MrData(wCnt).COST_CENTER
+                    csvData(rowCnt).INTERNAL_ORDER = MrData(wCnt).INTERNAL_ORDER
+                    csvData(rowCnt).KAIGOU_MEI = SeikyuData.SHIHARAI_NO
+                    csvData(rowCnt).PAYMENT_BLOCK = ""
+                    csvData(rowCnt).ZETIA_CD = MrData(wCnt).ZETIA_CD
+                    csvData(rowCnt).BARCODE = ""
+
+                    If isTopTour Then
+                        csvData(rowCnt).DANTAI_CODE = SeikyuData.DANTAI_CODE
+                        csvData(rowCnt).FROM_DATE = AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True)
+                        csvData(rowCnt).KOUENKAI_NO = SeikyuData.KOUENKAI_NO
+                        csvData(rowCnt).KOUENKAI_NAME = SeikyuData.KOUENKAI_NAME
+                        csvData(rowCnt).KIKAKU_TANTO_NAME = SeikyuData.KIKAKU_TANTO_NAME
+                    End If
                 End If
             Next
         End If
