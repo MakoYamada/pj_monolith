@@ -351,6 +351,7 @@ Partial Public Class DrSoufujo
         Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
+        Me.AIR_NOTES = New DataDynamics.ActiveReports.RichTextBox
         Me.Shape1 = New DataDynamics.ActiveReports.Shape
         Me.Label9 = New DataDynamics.ActiveReports.Label
         Me.JR_SETSUMEI = New DataDynamics.ActiveReports.Label
@@ -388,7 +389,6 @@ Partial Public Class DrSoufujo
         Me.Label33 = New DataDynamics.ActiveReports.Label
         Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
-        Me.AIR_NOTES = New DataDynamics.ActiveReports.RichTextBox
         CType(Me.DetailTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_STATUS_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_O_STATUS_1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -4673,8 +4673,8 @@ Partial Public Class DrSoufujo
         '
         Me.TAXI_NOTES1.AutoReplaceFields = True
         Me.TAXI_NOTES1.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.TAXI_NOTES1.Height = 0.5000001!
-        Me.TAXI_NOTES1.Left = 0.08307087!
+        Me.TAXI_NOTES1.Height = 0.8311024!
+        Me.TAXI_NOTES1.Left = 0.0!
         Me.TAXI_NOTES1.Name = "TAXI_NOTES1"
         Me.TAXI_NOTES1.RTF = resources.GetString("TAXI_NOTES1.RTF")
         Me.TAXI_NOTES1.Top = 0.3346457!
@@ -4923,7 +4923,7 @@ Partial Public Class DrSoufujo
         Me.AISATSU1.Name = "AISATSU1"
         Me.AISATSU1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
-        Me.AISATSU1.Text = "この度は上記講演会にご参加賜りまして誠にありがとうございます。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.AISATSU1.Text = "この度は上記会合にご参加賜りまして誠にありがとうございます。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.AISATSU1.Top = 2.533857!
         Me.AISATSU1.Width = 6.579529!
         '
@@ -5042,10 +5042,21 @@ Partial Public Class DrSoufujo
         '
         Me.GroupFooter1.CanShrink = True
         Me.GroupFooter1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.AIR_NOTES, Me.Shape1, Me.Label9, Me.JR_SETSUMEI, Me.JR_HENKO_TITLE, Me.JR_HENKOU, Me.JR_TORIKESHI_TITLE, Me.JR_TORIKESHI, Me.AIR_SETSUMEI, Me.AIR_TITLE, Me.AIR_HENKO, Me.Label3, Me.Label10, Me.Label11, Me.Label12, Me.Label13, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.Label19, Me.Label20, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.OTHER_NOTES, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label32, Me.Label33, Me.Shape2, Me.TextBox1, Me.TAXI_NOTES_TITLE, Me.TAXI_NOTES1})
-        Me.GroupFooter1.Height = 8.925197!
+        Me.GroupFooter1.Height = 9.789781!
         Me.GroupFooter1.KeepTogether = True
         Me.GroupFooter1.Name = "GroupFooter1"
         Me.GroupFooter1.NewPage = DataDynamics.ActiveReports.NewPage.Before
+        '
+        'AIR_NOTES
+        '
+        Me.AIR_NOTES.AutoReplaceFields = True
+        Me.AIR_NOTES.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.AIR_NOTES.Height = 1.569291!
+        Me.AIR_NOTES.Left = 1.155906!
+        Me.AIR_NOTES.Name = "AIR_NOTES"
+        Me.AIR_NOTES.RTF = resources.GetString("AIR_NOTES.RTF")
+        Me.AIR_NOTES.Top = 5.661418!
+        Me.AIR_NOTES.Width = 5.915749!
         '
         'Shape1
         '
@@ -5054,7 +5065,7 @@ Partial Public Class DrSoufujo
         Me.Shape1.Name = "Shape1"
         Me.Shape1.RoundingRadius = 20.0!
         Me.Shape1.Style = DataDynamics.ActiveReports.ShapeType.RoundRect
-        Me.Shape1.Top = 7.539764!
+        Me.Shape1.Top = 8.373227!
         Me.Shape1.Width = 7.165355!
         '
         'Label9
@@ -5066,7 +5077,7 @@ Partial Public Class DrSoufujo
         Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10.5pt; font-weight: normal; text-align: left; d" & _
             "do-char-set: 1"
         Me.Label9.Text = "～　チケットの変更、取消について　～"
-        Me.Label9.Top = 1.098425!
+        Me.Label9.Top = 1.165748!
         Me.Label9.Width = 7.151965!
         '
         'JR_SETSUMEI
@@ -5075,7 +5086,7 @@ Partial Public Class DrSoufujo
         Me.JR_SETSUMEI.HyperLink = Nothing
         Me.JR_SETSUMEI.Left = 0.0!
         Me.JR_SETSUMEI.Name = "JR_SETSUMEI"
-        Me.JR_SETSUMEI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle"
+        Me.JR_SETSUMEI.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align: middle"
         Me.JR_SETSUMEI.Text = "【JR券】"
         Me.JR_SETSUMEI.Top = 1.396063!
         Me.JR_SETSUMEI.Width = 0.6866142!
@@ -5084,45 +5095,45 @@ Partial Public Class DrSoufujo
         '
         Me.JR_HENKO_TITLE.Height = 0.2!
         Me.JR_HENKO_TITLE.HyperLink = Nothing
-        Me.JR_HENKO_TITLE.Left = 0.6866142!
+        Me.JR_HENKO_TITLE.Left = 0.0!
         Me.JR_HENKO_TITLE.Name = "JR_HENKO_TITLE"
-        Me.JR_HENKO_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; vertical-align: middle"
+        Me.JR_HENKO_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.JR_HENKO_TITLE.Text = "変更・・・"
-        Me.JR_HENKO_TITLE.Top = 1.396063!
+        Me.JR_HENKO_TITLE.Top = 1.596063!
         Me.JR_HENKO_TITLE.Width = 1.062205!
         '
         'JR_HENKOU
         '
         Me.JR_HENKOU.AutoReplaceFields = True
         Me.JR_HENKOU.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.JR_HENKOU.Height = 0.511811!
-        Me.JR_HENKOU.Left = 1.748819!
+        Me.JR_HENKOU.Height = 0.6653543!
+        Me.JR_HENKOU.Left = 1.155906!
         Me.JR_HENKOU.Name = "JR_HENKOU"
         Me.JR_HENKOU.RTF = resources.GetString("JR_HENKOU.RTF")
-        Me.JR_HENKOU.Top = 1.396063!
-        Me.JR_HENKOU.Width = 5.40315!
+        Me.JR_HENKOU.Top = 1.596063!
+        Me.JR_HENKOU.Width = 5.996063!
         '
         'JR_TORIKESHI_TITLE
         '
         Me.JR_TORIKESHI_TITLE.Height = 0.2!
         Me.JR_TORIKESHI_TITLE.HyperLink = Nothing
-        Me.JR_TORIKESHI_TITLE.Left = 0.6866142!
+        Me.JR_TORIKESHI_TITLE.Left = 0.0!
         Me.JR_TORIKESHI_TITLE.Name = "JR_TORIKESHI_TITLE"
-        Me.JR_TORIKESHI_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; vertical-align: middle"
+        Me.JR_TORIKESHI_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.JR_TORIKESHI_TITLE.Text = "取消・・・"
-        Me.JR_TORIKESHI_TITLE.Top = 2.010236!
+        Me.JR_TORIKESHI_TITLE.Top = 2.261417!
         Me.JR_TORIKESHI_TITLE.Width = 1.062205!
         '
         'JR_TORIKESHI
         '
         Me.JR_TORIKESHI.AutoReplaceFields = True
         Me.JR_TORIKESHI.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.JR_TORIKESHI.Height = 0.5905512!
-        Me.JR_TORIKESHI.Left = 1.748819!
+        Me.JR_TORIKESHI.Height = 0.7748034!
+        Me.JR_TORIKESHI.Left = 1.155906!
         Me.JR_TORIKESHI.Name = "JR_TORIKESHI"
         Me.JR_TORIKESHI.RTF = resources.GetString("JR_TORIKESHI.RTF")
-        Me.JR_TORIKESHI.Top = 2.010236!
-        Me.JR_TORIKESHI.Width = 5.40315!
+        Me.JR_TORIKESHI.Top = 2.261417!
+        Me.JR_TORIKESHI.Width = 5.996063!
         '
         'AIR_SETSUMEI
         '
@@ -5130,213 +5141,213 @@ Partial Public Class DrSoufujo
         Me.AIR_SETSUMEI.HyperLink = Nothing
         Me.AIR_SETSUMEI.Left = 0.0!
         Me.AIR_SETSUMEI.Name = "AIR_SETSUMEI"
-        Me.AIR_SETSUMEI.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle"
+        Me.AIR_SETSUMEI.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align: middle"
         Me.AIR_SETSUMEI.Text = "【航空券】"
-        Me.AIR_SETSUMEI.Top = 2.70315!
-        Me.AIR_SETSUMEI.Width = 0.6866142!
+        Me.AIR_SETSUMEI.Top = 3.036221!
+        Me.AIR_SETSUMEI.Width = 0.9972442!
         '
         'AIR_TITLE
         '
         Me.AIR_TITLE.Height = 0.2!
         Me.AIR_TITLE.HyperLink = Nothing
-        Me.AIR_TITLE.Left = 0.6866142!
+        Me.AIR_TITLE.Left = 0.0!
         Me.AIR_TITLE.Name = "AIR_TITLE"
-        Me.AIR_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: right; vertical-align: middle"
+        Me.AIR_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: right; vertical-align: middle"
         Me.AIR_TITLE.Text = "変更・取消・・・"
-        Me.AIR_TITLE.Top = 2.70315!
-        Me.AIR_TITLE.Width = 1.062205!
+        Me.AIR_TITLE.Top = 3.236221!
+        Me.AIR_TITLE.Width = 1.155906!
         '
         'AIR_HENKO
         '
         Me.AIR_HENKO.AutoReplaceFields = True
         Me.AIR_HENKO.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.AIR_HENKO.Height = 0.5165356!
-        Me.AIR_HENKO.Left = 1.748819!
+        Me.AIR_HENKO.Height = 0.5582678!
+        Me.AIR_HENKO.Left = 1.155906!
         Me.AIR_HENKO.Name = "AIR_HENKO"
         Me.AIR_HENKO.RTF = resources.GetString("AIR_HENKO.RTF")
-        Me.AIR_HENKO.Top = 2.70315!
-        Me.AIR_HENKO.Width = 5.40315!
+        Me.AIR_HENKO.Top = 3.236221!
+        Me.AIR_HENKO.Width = 6.009449!
         '
         'Label3
         '
         Me.Label3.Height = 0.2!
         Me.Label3.HyperLink = Nothing
-        Me.Label3.Left = 1.748819!
+        Me.Label3.Left = 1.155906!
         Me.Label3.Name = "Label3"
-        Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label3.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label3.Text = "JALオンラインデスク"
-        Me.Label3.Top = 3.323622!
-        Me.Label3.Width = 1.334252!
+        Me.Label3.Top = 3.856693!
+        Me.Label3.Width = 1.827953!
         '
         'Label10
         '
         Me.Label10.Height = 0.2!
         Me.Label10.HyperLink = Nothing
-        Me.Label10.Left = 1.748819!
+        Me.Label10.Left = 1.155906!
         Me.Label10.Name = "Label10"
-        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label10.Text = "TEL："
-        Me.Label10.Top = 3.523622!
-        Me.Label10.Width = 0.8039372!
+        Me.Label10.Top = 4.056692!
+        Me.Label10.Width = 0.9748032!
         '
         'Label11
         '
         Me.Label11.Height = 0.2!
         Me.Label11.HyperLink = Nothing
-        Me.Label11.Left = 2.552756!
+        Me.Label11.Left = 2.130709!
         Me.Label11.Name = "Label11"
-        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
-            "e; vertical-align: middle"
+        Me.Label11.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
+            "ne; vertical-align: middle"
         Me.Label11.Text = "0120-25-2852"
-        Me.Label11.Top = 3.523622!
-        Me.Label11.Width = 0.8759842!
+        Me.Label11.Top = 4.056693!
+        Me.Label11.Width = 0.9594488!
         '
         'Label12
         '
         Me.Label12.Height = 0.2!
         Me.Label12.HyperLink = Nothing
-        Me.Label12.Left = 1.748819!
+        Me.Label12.Left = 1.155906!
         Me.Label12.Name = "Label12"
-        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label12.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label12.Text = "携帯電話用："
-        Me.Label12.Top = 3.723622!
-        Me.Label12.Width = 0.8039372!
+        Me.Label12.Top = 4.256693!
+        Me.Label12.Width = 0.9748032!
         '
         'Label13
         '
         Me.Label13.Height = 0.2!
         Me.Label13.HyperLink = Nothing
-        Me.Label13.Left = 2.561418!
+        Me.Label13.Left = 2.139371!
         Me.Label13.Name = "Label13"
-        Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
-            "e; vertical-align: middle"
+        Me.Label13.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
+            "ne; vertical-align: middle"
         Me.Label13.Text = "03-6720-8612"
-        Me.Label13.Top = 3.723622!
-        Me.Label13.Width = 0.875984!
+        Me.Label13.Top = 4.256693!
+        Me.Label13.Width = 0.9507869!
         '
         'Label14
         '
         Me.Label14.Height = 0.2!
         Me.Label14.HyperLink = Nothing
-        Me.Label14.Left = 1.748819!
+        Me.Label14.Left = 1.155906!
         Me.Label14.Name = "Label14"
-        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label14.Text = "(受付時間　9:00-18:00　年中無休)"
-        Me.Label14.Top = 3.923622!
-        Me.Label14.Width = 2.088583!
+        Me.Label14.Top = 4.456693!
+        Me.Label14.Width = 2.327165!
         '
         'Label15
         '
         Me.Label15.Height = 0.2!
         Me.Label15.HyperLink = Nothing
-        Me.Label15.Left = 1.748819!
+        Me.Label15.Left = 1.155906!
         Me.Label15.Name = "Label15"
-        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label15.Text = "もしくは　JAL国内線一般窓口TEL："
-        Me.Label15.Top = 4.123622!
-        Me.Label15.Width = 2.036221!
+        Me.Label15.Top = 4.656693!
+        Me.Label15.Width = 2.327165!
         '
         'Label16
         '
         Me.Label16.Height = 0.2!
         Me.Label16.HyperLink = Nothing
-        Me.Label16.Left = 3.78504!
+        Me.Label16.Left = 3.358662!
         Me.Label16.Name = "Label16"
-        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
-            "e; vertical-align: middle"
+        Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
+            "ne; vertical-align: middle"
         Me.Label16.Text = "0570-025-071"
-        Me.Label16.Top = 4.123622!
-        Me.Label16.Width = 0.875984!
+        Me.Label16.Top = 4.959055!
+        Me.Label16.Width = 0.9381893!
         '
         'Label17
         '
         Me.Label17.Height = 0.2!
         Me.Label17.HyperLink = Nothing
-        Me.Label17.Left = 4.661024!
+        Me.Label17.Left = 4.327559!
         Me.Label17.Name = "Label17"
-        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label17.Text = "(受付時間　07:00～20:00　年中無休)"
-        Me.Label17.Top = 4.123622!
-        Me.Label17.Width = 2.188583!
+        Me.Label17.Top = 4.959055!
+        Me.Label17.Width = 2.650394!
         '
         'Label18
         '
         Me.Label18.Height = 0.2!
         Me.Label18.HyperLink = Nothing
-        Me.Label18.Left = 1.748819!
+        Me.Label18.Left = 1.155906!
         Me.Label18.Name = "Label18"
-        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label18.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label18.Text = "ANA国内線予約・案内センター"
-        Me.Label18.Top = 4.425985!
+        Me.Label18.Top = 4.959055!
         Me.Label18.Width = 2.036221!
         '
         'Label19
         '
         Me.Label19.Height = 0.2!
         Me.Label19.HyperLink = Nothing
-        Me.Label19.Left = 1.748819!
+        Me.Label19.Left = 1.155906!
         Me.Label19.Name = "Label19"
-        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label19.Text = "TEL："
-        Me.Label19.Top = 4.625984!
-        Me.Label19.Width = 0.8039376!
+        Me.Label19.Top = 5.159055!
+        Me.Label19.Width = 0.43937!
         '
         'Label20
         '
         Me.Label20.Height = 0.2!
         Me.Label20.HyperLink = Nothing
-        Me.Label20.Left = 2.552757!
+        Me.Label20.Left = 1.595276!
         Me.Label20.Name = "Label20"
-        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
-            "e; vertical-align: middle"
+        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
+            "ne; vertical-align: middle"
         Me.Label20.Text = "0570-029-222"
-        Me.Label20.Top = 4.625984!
-        Me.Label20.Width = 0.875984!
+        Me.Label20.Top = 5.159055!
+        Me.Label20.Width = 0.940945!
         '
         'Label21
         '
         Me.Label21.Height = 0.2!
         Me.Label21.HyperLink = Nothing
-        Me.Label21.Left = 3.437402!
+        Me.Label21.Left = 2.536221!
         Me.Label21.Name = "Label21"
-        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label21.Text = "(係員応答時間　6:30～22:00　年中無休)"
-        Me.Label21.Top = 4.625984!
-        Me.Label21.Width = 2.411812!
+        Me.Label21.Top = 5.159055!
+        Me.Label21.Width = 2.74252!
         '
         'Label22
         '
         Me.Label22.Height = 0.2!
         Me.Label22.HyperLink = Nothing
-        Me.Label22.Left = 1.748819!
+        Me.Label22.Left = 1.155906!
         Me.Label22.Name = "Label22"
-        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label22.Text = "または、自動音声システム　TEL："
-        Me.Label22.Top = 4.825985!
-        Me.Label22.Width = 2.036221!
+        Me.Label22.Top = 5.359056!
+        Me.Label22.Width = 2.202756!
         '
         'Label23
         '
         Me.Label23.Height = 0.2!
         Me.Label23.HyperLink = Nothing
-        Me.Label23.Left = 3.78504!
+        Me.Label23.Left = 3.358662!
         Me.Label23.Name = "Label23"
-        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; text-decoration: underlin" & _
-            "e; vertical-align: middle"
+        Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
+            "ne; vertical-align: middle"
         Me.Label23.Text = "0570-029-770"
-        Me.Label23.Top = 4.825985!
-        Me.Label23.Width = 0.875984!
+        Me.Label23.Top = 5.359056!
+        Me.Label23.Width = 0.938189!
         '
         'Label24
         '
-        Me.Label24.Height = 0.2!
+        Me.Label24.Height = 0.1999998!
         Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 4.661024!
+        Me.Label24.Left = 4.327559!
         Me.Label24.Name = "Label24"
-        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label24.Text = "(受付時間 24時間　年中無休)"
-        Me.Label24.Top = 4.825985!
-        Me.Label24.Width = 2.188583!
+        Me.Label24.Top = 5.359056!
+        Me.Label24.Width = 1.980315!
         '
         'Label26
         '
@@ -5344,98 +5355,98 @@ Partial Public Class DrSoufujo
         Me.Label26.HyperLink = Nothing
         Me.Label26.Left = 0.0!
         Me.Label26.Name = "Label26"
-        Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle"
+        Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align: middle"
         Me.Label26.Text = "【その他】"
-        Me.Label26.Top = 6.574803!
-        Me.Label26.Width = 0.6866142!
+        Me.Label26.Top = 7.230709!
+        Me.Label26.Width = 0.8744095!
         '
         'Label27
         '
-        Me.Label27.Height = 0.2!
+        Me.Label27.Height = 0.1999998!
         Me.Label27.HyperLink = Nothing
-        Me.Label27.Left = 0.6866142!
+        Me.Label27.Left = 0.8744095!
         Me.Label27.Name = "Label27"
-        Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label27.Text = "取消、変更はバイエル薬品担当者へご連絡下さい。"
-        Me.Label27.Top = 6.574803!
-        Me.Label27.Width = 6.465354!
+        Me.Label27.Top = 7.230709!
+        Me.Label27.Width = 6.277558!
         '
         'OTHER_NOTES
         '
         Me.OTHER_NOTES.AutoReplaceFields = True
         Me.OTHER_NOTES.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.OTHER_NOTES.Height = 0.2!
+        Me.OTHER_NOTES.Height = 0.2106299!
         Me.OTHER_NOTES.Left = 0.0!
         Me.OTHER_NOTES.Name = "OTHER_NOTES"
         Me.OTHER_NOTES.RTF = resources.GetString("OTHER_NOTES.RTF")
-        Me.OTHER_NOTES.Top = 6.774803!
+        Me.OTHER_NOTES.Top = 7.649607!
         Me.OTHER_NOTES.Width = 7.151969!
         '
         'Label28
         '
-        Me.Label28.Height = 0.2!
+        Me.Label28.Height = 0.3665363!
         Me.Label28.HyperLink = Nothing
         Me.Label28.Left = 0.0!
         Me.Label28.Name = "Label28"
-        Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label28.Text = "ご不明な点がございましたら、バイエル薬品担当者又は、下記バイエルトラベルデスクまでお問い合わせください。"
-        Me.Label28.Top = 7.128346!
+        Me.Label28.Top = 7.860237!
         Me.Label28.Width = 7.151969!
         '
         'Label29
         '
         Me.Label29.Height = 0.2!
         Me.Label29.HyperLink = Nothing
-        Me.Label29.Left = 1.566142!
+        Me.Label29.Left = 1.220079!
         Me.Label29.Name = "Label29"
-        Me.Label29.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label29.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label29.Text = "〒530-0004　大阪市北区堂島浜2丁目2-28 (堂島アクシスビル7F)"
-        Me.Label29.Top = 7.739765!
-        Me.Label29.Width = 3.937008!
+        Me.Label29.Top = 8.562992!
+        Me.Label29.Width = 4.283071!
         '
         'Label30
         '
         Me.Label30.Height = 0.2!
         Me.Label30.HyperLink = Nothing
-        Me.Label30.Left = 1.566142!
+        Me.Label30.Left = 1.220079!
         Me.Label30.Name = "Label30"
-        Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label30.Text = "トップツアー株式会社　MCC大阪 内"
-        Me.Label30.Top = 7.939764!
-        Me.Label30.Width = 3.937008!
+        Me.Label30.Top = 8.762991!
+        Me.Label30.Width = 4.283071!
         '
         'Label31
         '
         Me.Label31.Height = 0.2!
         Me.Label31.HyperLink = Nothing
-        Me.Label31.Left = 1.566142!
+        Me.Label31.Left = 1.220079!
         Me.Label31.Name = "Label31"
-        Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label31.Text = "バイエルトラベルデスク　交通宿泊担当"
-        Me.Label31.Top = 8.139763!
-        Me.Label31.Width = 3.937008!
+        Me.Label31.Top = 8.96299!
+        Me.Label31.Width = 4.283071!
         '
         'Label32
         '
         Me.Label32.Height = 0.2!
         Me.Label32.HyperLink = Nothing
-        Me.Label32.Left = 1.566142!
+        Me.Label32.Left = 1.220079!
         Me.Label32.Name = "Label32"
-        Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label32.Text = "TEL：06-4799-0110　FAX：06-4799-0128"
-        Me.Label32.Top = 8.339765!
-        Me.Label32.Width = 3.937008!
+        Me.Label32.Top = 9.162992!
+        Me.Label32.Width = 4.283071!
         '
         'Label33
         '
         Me.Label33.Height = 0.2!
         Me.Label33.HyperLink = Nothing
-        Me.Label33.Left = 1.566142!
+        Me.Label33.Left = 1.220079!
         Me.Label33.Name = "Label33"
-        Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle"
+        Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label33.Text = "営業時間：平日09:00～18:00 (土・日・祝　定休)"
-        Me.Label33.Top = 8.539764!
-        Me.Label33.Width = 3.937008!
+        Me.Label33.Top = 9.362991!
+        Me.Label33.Width = 4.283071!
         '
         'Shape2
         '
@@ -5445,30 +5456,19 @@ Partial Public Class DrSoufujo
         Me.Shape2.LineStyle = DataDynamics.ActiveReports.LineStyle.Transparent
         Me.Shape2.Name = "Shape2"
         Me.Shape2.RoundingRadius = 9.999999!
-        Me.Shape2.Top = 7.451182!
+        Me.Shape2.Top = 8.284646!
         Me.Shape2.Width = 2.020473!
         '
         'TextBox1
         '
         Me.TextBox1.Height = 0.2!
-        Me.TextBox1.Left = 2.487402!
+        Me.TextBox1.Left = 2.109449!
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Style = "background-color: GhostWhite; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: c" & _
-            "enter; vertical-align: middle"
+        Me.TextBox1.Style = "background-color: GhostWhite; font-family: ＭＳ ゴシック; font-size: 10pt; text-align: " & _
+            "center; vertical-align: middle"
         Me.TextBox1.Text = "【お問合せ・チケットご返送先】"
-        Me.TextBox1.Top = 7.452363!
-        Me.TextBox1.Width = 2.020473!
-        '
-        'AIR_NOTES
-        '
-        Me.AIR_NOTES.AutoReplaceFields = True
-        Me.AIR_NOTES.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.AIR_NOTES.Height = 1.241732!
-        Me.AIR_NOTES.Left = 1.748819!
-        Me.AIR_NOTES.Name = "AIR_NOTES"
-        Me.AIR_NOTES.RTF = resources.GetString("AIR_NOTES.RTF")
-        Me.AIR_NOTES.Top = 5.128347!
-        Me.AIR_NOTES.Width = 5.40315!
+        Me.TextBox1.Top = 8.284644!
+        Me.TextBox1.Width = 2.551575!
         '
         'DrSoufujo
         '

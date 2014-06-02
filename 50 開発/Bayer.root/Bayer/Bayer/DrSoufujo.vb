@@ -2768,18 +2768,18 @@ Public Class DrSoufujo
     Private Sub GroupFooter1_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles GroupFooter1.Format
         Me.TAXI_NOTES_TITLE.Visible = True
         Me.TAXI_NOTES1.Visible = True
-        Me.TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当該会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
+        Me.TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
                             & "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
                             & "重ねてご了承いただきますようお願い申し上げます。"
         'TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
         TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(NotesWidth), Me.CmToInch(RowHeight * 3))
         Me.TAXI_NOTES1.SelectionStart = 0
         Me.TAXI_NOTES1.SelectionLength = Me.TAXI_NOTES1.Text.Length
-        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F)
         '部分的に下線を引く
         TAXI_NOTES1.SelectionStart = 14
-        TAXI_NOTES1.SelectionLength = 13
-        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        TAXI_NOTES1.SelectionLength = 34
+        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
         TAXI_NOTES1.SelectionStart = 0
         TAXI_NOTES1.SelectionLength = 0
 
@@ -2788,19 +2788,20 @@ Public Class DrSoufujo
         Me.JR_HENKOU.CanGrow = True
         Me.JR_HENKOU.SelectionStart = 0
         Me.JR_HENKOU.SelectionLength = Me.JR_HENKOU.Text.Length
-        Me.JR_HENKOU.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.JR_HENKOU.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F)
         Me.JR_HENKOU.SelectionStart = 0
         Me.JR_HENKOU.SelectionLength = 0
 
-        Me.JR_TORIKESHI.Text = "列車運行前までに、「みどりの窓口」で『取消手続』を行なった後、バイエル薬品担当者へチケットをお渡しください。その際は「みどりの窓口」では直接現金の払戻しは行なわず、『取消手続』のみを受けてください。列車発車後は利用便の変更、取消は出来ませんのでご注意ください。"
+        Me.JR_TORIKESHI.Text = "列車運行前までに、「みどりの窓口」で『取消手続』を行なった後、バイエル薬品担当者へチケットをお渡しください。" & vbNewLine _
+                            & "※「みどりの窓口」では直接現金の払戻しは行なわず、『取消手続』のみを受けてください。列車発車後は利用便の変更、取消は出来ませんのでご注意ください。"
         Me.JR_TORIKESHI.CanGrow = True
         Me.JR_TORIKESHI.SelectionStart = 0
         Me.JR_TORIKESHI.SelectionLength = Me.JR_TORIKESHI.Text.Length
-        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F)
         '部分的に下線を引く
         Me.JR_TORIKESHI.SelectionStart = 54
-        Me.JR_TORIKESHI.SelectionLength = 76
-        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.JR_TORIKESHI.SelectionLength = 127
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
         Me.JR_TORIKESHI.SelectionStart = 0
         Me.JR_TORIKESHI.SelectionLength = 0
 
@@ -2811,36 +2812,37 @@ Public Class DrSoufujo
         Me.AIR_HENKO.CanGrow = True
         Me.AIR_HENKO.SelectionStart = 0
         Me.AIR_HENKO.SelectionLength = Me.AIR_HENKO.Text.Length
-        Me.AIR_HENKO.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.AIR_HENKO.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F)
         Me.AIR_HENKO.SelectionStart = 0
         Me.AIR_HENKO.SelectionLength = 0
 
         Me.AIR_NOTES.Text = "※ご注意：別航空会社への変更（ＪＡＬ⇒ＡＮＡ、ＡＮＡ⇒ＪＡＬ）、同一航空会社間を含む区間変更・クラス変更をご希望される場合は、お手元の予約確認書(ｅチケット)では、変更ができません。" & vbNewLine _
             & "また、空港カウンター及び航空会社の電話窓口においても受付できませんので、予めご了承願います。" & vbNewLine _
-            & "上記の変更を希望される場合は、バイエル薬品担当者にご連絡いただきますようお願い致します。変更予約後、新たな予約確認書（ｅチケット）をご用意させていただきます。" & vbNewLine _
+            & "上記の変更を希望される場合は、バイエル薬品担当者にご連絡いただきますようお願い致します。" & vbNewLine _
+            & "変更予約後、新たな予約確認書（ｅチケット）をご用意させていただきます。" & vbNewLine _
             & "尚、空港カウンターでの払い戻し返金はございません。"
         Me.AIR_NOTES.CanGrow = True
         Me.AIR_NOTES.SelectionStart = 0
         Me.AIR_NOTES.SelectionLength = Me.AIR_NOTES.Text.Length
-        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F)
         '部分的に下線を引く
         Me.AIR_NOTES.SelectionStart = 5
         Me.AIR_NOTES.SelectionLength = 85
-        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
         Me.AIR_NOTES.SelectionStart = 0
         Me.AIR_NOTES.SelectionLength = 0
 
-        Me.OTHER_NOTES.Text = "※ 取消し後のチケットは、ご利用日から5日以内にバイエル薬品担当者へお渡しください。"
+        Me.OTHER_NOTES.Text = "取消し後のチケットは、ご利用日から5日以内にバイエル薬品担当者へお渡しください。"
         Me.OTHER_NOTES.CanGrow = True
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = Me.OTHER_NOTES.Text.Length
-        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 9.0F)
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F)
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0
         '部分的に下線を引く
         Me.OTHER_NOTES.SelectionStart = 19
         Me.OTHER_NOTES.SelectionLength = 23
-        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0
     End Sub
