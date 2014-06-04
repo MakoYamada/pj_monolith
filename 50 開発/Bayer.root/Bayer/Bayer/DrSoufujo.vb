@@ -90,19 +90,19 @@ Public Class DrSoufujo
 
         'MRエリア
         If Me.MR_AREA.Text.Trim <> "" Then
-            If Me.MR_AREA.Text.Trim.Length > 10 Then
-                Me.MR_AREA.Text = Left(Me.MR_AREA.Text, 10)
+            If Me.MR_AREA.Text.Trim.Length > 7 Then
+                Me.MR_AREA.Text = Left(Me.MR_AREA.Text, 7) & "エリア"
             Else
-                Me.MR_AREA.Text = Me.MR_AREA.Text
+                Me.MR_AREA.Text = Me.MR_AREA.Text.Trim & "エリア"
             End If
         End If
 
         'MR営業所
         If Me.MR_EIGYOSHO.Text.Trim <> "" Then
-            If Me.MR_EIGYOSHO.Text.Trim.Length > 10 Then
-                Me.MR_EIGYOSHO.Text = Left(Me.MR_EIGYOSHO.Text, 10)
+            If Me.MR_EIGYOSHO.Text.Trim.Length > 7 Then
+                Me.MR_EIGYOSHO.Text = Left(Me.MR_EIGYOSHO.Text, 7) & "営業所"
             Else
-                Me.MR_EIGYOSHO.Text = Me.MR_EIGYOSHO.Text
+                Me.MR_EIGYOSHO.Text = Me.MR_EIGYOSHO.Text.Trim & "営業所"
             End If
         End If
 
@@ -110,7 +110,7 @@ Public Class DrSoufujo
 
         'MR氏名
         If Me.MR_NAME.Text.Trim <> "" Then
-            Me.MR_NAME.Text = Me.MR_NAME.Text
+            Me.MR_NAME.Text = "担当者：" & Me.MR_NAME.Text
         End If
 
         '開催日
@@ -2769,7 +2769,7 @@ Public Class DrSoufujo
         Me.TAXI_NOTES_TITLE.Visible = True
         Me.TAXI_NOTES1.Visible = True
         Me.TAXI_NOTES1.Text = "公正競争規約遵守の観点から、当会合のご出席の目的のみにご使用いただきますようお願い申し上げます。" & vbNewLine _
-                            & "なお、ご欠席のため使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
+                            & "なお、使用されなかったチケットは、後日、バイエル薬品担当者より回収させて戴きます。" & vbNewLine _
                             & "重ねてご了承いただきますようお願い申し上げます。"
         'TAXI_NOTES1.Location = New System.Drawing.PointF(Me.CmToInch(0), Me.CmToInch(StartY + RowHeight * RowNo))
         TAXI_NOTES1.Size = New System.Drawing.SizeF(Me.CmToInch(NotesWidth), Me.CmToInch(RowHeight * 3))
@@ -2779,7 +2779,7 @@ Public Class DrSoufujo
         '部分的に下線を引く
         TAXI_NOTES1.SelectionStart = 14
         TAXI_NOTES1.SelectionLength = 34
-        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
+        Me.TAXI_NOTES1.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         TAXI_NOTES1.SelectionStart = 0
         TAXI_NOTES1.SelectionLength = 0
 
@@ -2801,13 +2801,13 @@ Public Class DrSoufujo
         '部分的に下線を引く
         Me.JR_TORIKESHI.SelectionStart = 54
         Me.JR_TORIKESHI.SelectionLength = 127
-        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
+        Me.JR_TORIKESHI.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         Me.JR_TORIKESHI.SelectionStart = 0
         Me.JR_TORIKESHI.SelectionLength = 0
 
-        Me.AIR_HENKO.Text = "出発時刻前までは、同航空会社間（ＪＡＬ⇔ＪＡＬ、ＡＮＡ⇔ＡＮＡ）で同じ区間・クラスでの変更、及び取消は、下記航空会社へのご連絡でも可能です。" & vbNewLine _
+        Me.AIR_HENKO.Text = "出発時刻前までは、同航空会社間（ＪＡＬ⇔ＪＡＬ、ＡＮＡ⇔ＡＮＡ）で同じ区間・クラスでの変更は、下記航空会社へのご連絡でも可能です。" & vbNewLine _
            & "変更の場合は、航空会社の係員がご案内する予約番号をお控えください。チェックイン時必要となります。" & vbNewLine _
-           & "取消の場合は、バイエル薬品担当MRへご連絡いただき、お手元の「予約確認書(ｅチケット)」は、バイエル薬品担当MRへご返却ください。"
+           & "取消の場合は、バイエル薬品担当者へご連絡いただき、お手元の「予約確認書(ｅチケット)」は、バイエル薬品担当者へご返却ください。"
 
         Me.AIR_HENKO.CanGrow = True
         Me.AIR_HENKO.SelectionStart = 0
@@ -2818,8 +2818,8 @@ Public Class DrSoufujo
 
         Me.AIR_NOTES.Text = "※ご注意：別航空会社への変更（ＪＡＬ⇒ＡＮＡ、ＡＮＡ⇒ＪＡＬ）、同一航空会社間を含む区間変更・クラス変更をご希望される場合は、お手元の予約確認書(ｅチケット)では、変更ができません。" & vbNewLine _
             & "また、空港カウンター及び航空会社の電話窓口においても受付できませんので、予めご了承願います。" & vbNewLine _
-            & "上記の変更を希望される場合は、バイエル薬品担当者にご連絡いただきますようお願い致します。" & vbNewLine _
-            & "変更予約後、新たな予約確認書（ｅチケット）をご用意させていただきます。" & vbNewLine _
+            & "上記変更を希望される場合は、バイエル薬品担当者にご連絡頂きますようお願い致します。" & vbNewLine _
+            & "変更予約後、新たな予約確認書（ｅチケット）をご用意させて頂きます。" & vbNewLine _
             & "尚、空港カウンターでの払い戻し返金はございません。"
         Me.AIR_NOTES.CanGrow = True
         Me.AIR_NOTES.SelectionStart = 0
@@ -2828,7 +2828,7 @@ Public Class DrSoufujo
         '部分的に下線を引く
         Me.AIR_NOTES.SelectionStart = 5
         Me.AIR_NOTES.SelectionLength = 85
-        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
+        Me.AIR_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         Me.AIR_NOTES.SelectionStart = 0
         Me.AIR_NOTES.SelectionLength = 0
 
@@ -2840,9 +2840,9 @@ Public Class DrSoufujo
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0
         '部分的に下線を引く
-        Me.OTHER_NOTES.SelectionStart = 19
-        Me.OTHER_NOTES.SelectionLength = 23
-        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 11.0F, FontStyle.Bold)
+        Me.OTHER_NOTES.SelectionStart = 17
+        Me.OTHER_NOTES.SelectionLength = 25
+        Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0
     End Sub

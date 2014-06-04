@@ -6,6 +6,7 @@ Partial Public Class NewDrList
 
     Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private Joken As TableDef.Joken.DataStruct
+    Private grv_selected() As String
 
     'グリッド列    Private Enum CellIndex
         CHK_PRINT
@@ -167,6 +168,7 @@ Partial Public Class NewDrList
 
         strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+
         While RsData.Read()
             wFlag = True
 
@@ -176,6 +178,7 @@ Partial Public Class NewDrList
             wCnt += 1
         End While
         RsData.Close()
+        ReDim Preserve grv_selected(wCnt - 1)
 
         Return wFlag
     End Function
@@ -307,6 +310,7 @@ Partial Public Class NewDrList
     'グリッドビュー ページ移動時
     Protected Sub GrvList_PageIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles GrvList.PageIndexChanged
         With Me.GrvList
+
             '選択行をキャンセル
             .SelectedIndex = -1
             'カレントページを変更
@@ -365,13 +369,15 @@ Partial Public Class NewDrList
     '[手配書一括印刷]
     Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
         Dim UPD_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
-        Dim seq As Integer
+        Dim seq As Integer = 0
+        Dim nowrow As Integer = 0
         Dim PrintSeq As Integer = 0
         Dim TEHAISHO_JOKEN() As TableDef.TehaishoJoken.DataStruct
 
         '送信フラグ→送信対象
         For Each row As GridViewRow In Me.GrvList.Rows
             If DirectCast(row.FindControl("chkPrint"), CheckBox).Checked Then
+                seq = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + nowrow
                 '回答ステータス・送信フラグON
                 If Not ExecuteTransaction(seq) Then
                     Exit Sub
@@ -382,9 +388,11 @@ Partial Public Class NewDrList
                 TEHAISHO_JOKEN(PrintSeq).SALEFORCE_ID = TBL_KOTSUHOTEL(seq).SALEFORCE_ID
                 TEHAISHO_JOKEN(PrintSeq).TIME_STAMP_BYL = TBL_KOTSUHOTEL(seq).TIME_STAMP_BYL
                 TEHAISHO_JOKEN(PrintSeq).DR_MPID = TBL_KOTSUHOTEL(seq).DR_MPID
+
                 PrintSeq += 1
             End If
-            seq += 1
+            'seq += 1
+            nowrow += 1
         Next
 
         Dim strSQL As String = ""

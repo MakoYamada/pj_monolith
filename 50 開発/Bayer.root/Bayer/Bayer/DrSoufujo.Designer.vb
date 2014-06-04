@@ -4672,13 +4672,13 @@ Partial Public Class DrSoufujo
         'TAXI_NOTES1
         '
         Me.TAXI_NOTES1.AutoReplaceFields = True
-        Me.TAXI_NOTES1.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.TAXI_NOTES1.Height = 0.8311024!
+        Me.TAXI_NOTES1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TAXI_NOTES1.Height = 0.9657481!
         Me.TAXI_NOTES1.Left = 0.0!
         Me.TAXI_NOTES1.Name = "TAXI_NOTES1"
         Me.TAXI_NOTES1.RTF = resources.GetString("TAXI_NOTES1.RTF")
-        Me.TAXI_NOTES1.Top = 0.3346457!
-        Me.TAXI_NOTES1.Width = 7.02756!
+        Me.TAXI_NOTES1.Top = 0.230315!
+        Me.TAXI_NOTES1.Width = 7.165355!
         '
         'TAXI_NOTES_TITLE
         '
@@ -4689,7 +4689,7 @@ Partial Public Class DrSoufujo
         Me.TAXI_NOTES_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10.5pt; font-weight: normal; text-align: left; d" & _
             "do-char-set: 1"
         Me.TAXI_NOTES_TITLE.Text = "～　タクシーチケット使用についてのお願い　～"
-        Me.TAXI_NOTES_TITLE.Top = 0.1043307!
+        Me.TAXI_NOTES_TITLE.Top = 0.0!
         Me.TAXI_NOTES_TITLE.Visible = False
         Me.TAXI_NOTES_TITLE.Width = 7.151965!
         '
@@ -5070,14 +5070,14 @@ Partial Public Class DrSoufujo
         '
         'Label9
         '
-        Me.Label9.Height = 0.230315!
+        Me.Label9.Height = 0.2!
         Me.Label9.HyperLink = Nothing
         Me.Label9.Left = 0.0!
         Me.Label9.Name = "Label9"
-        Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10.5pt; font-weight: normal; text-align: left; d" & _
-            "do-char-set: 1"
+        Me.Label9.Style = "font-family: ＭＳ ゴシック; font-size: 10.5pt; font-weight: normal; text-align: left; v" & _
+            "ertical-align: bottom; ddo-char-set: 1"
         Me.Label9.Text = "～　チケットの変更、取消について　～"
-        Me.Label9.Top = 1.165748!
+        Me.Label9.Top = 1.196063!
         Me.Label9.Width = 7.151965!
         '
         'JR_SETSUMEI
@@ -5098,9 +5098,9 @@ Partial Public Class DrSoufujo
         Me.JR_HENKO_TITLE.Left = 0.0!
         Me.JR_HENKO_TITLE.Name = "JR_HENKO_TITLE"
         Me.JR_HENKO_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
-        Me.JR_HENKO_TITLE.Text = "変更・・・"
+        Me.JR_HENKO_TITLE.Text = "変更・・・・・・"
         Me.JR_HENKO_TITLE.Top = 1.596063!
-        Me.JR_HENKO_TITLE.Width = 1.062205!
+        Me.JR_HENKO_TITLE.Width = 1.155906!
         '
         'JR_HENKOU
         '
@@ -5120,9 +5120,9 @@ Partial Public Class DrSoufujo
         Me.JR_TORIKESHI_TITLE.Left = 0.0!
         Me.JR_TORIKESHI_TITLE.Name = "JR_TORIKESHI_TITLE"
         Me.JR_TORIKESHI_TITLE.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
-        Me.JR_TORIKESHI_TITLE.Text = "取消・・・"
+        Me.JR_TORIKESHI_TITLE.Text = "取消・・・・・・"
         Me.JR_TORIKESHI_TITLE.Top = 2.261417!
-        Me.JR_TORIKESHI_TITLE.Width = 1.062205!
+        Me.JR_TORIKESHI_TITLE.Width = 1.155906!
         '
         'JR_TORIKESHI
         '
@@ -5251,23 +5251,23 @@ Partial Public Class DrSoufujo
         '
         Me.Label16.Height = 0.2!
         Me.Label16.HyperLink = Nothing
-        Me.Label16.Left = 3.358662!
+        Me.Label16.Left = 3.483465!
         Me.Label16.Name = "Label16"
         Me.Label16.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
             "ne; vertical-align: middle"
         Me.Label16.Text = "0570-025-071"
-        Me.Label16.Top = 4.959055!
+        Me.Label16.Top = 4.656693!
         Me.Label16.Width = 0.9381893!
         '
         'Label17
         '
         Me.Label17.Height = 0.2!
         Me.Label17.HyperLink = Nothing
-        Me.Label17.Left = 4.327559!
+        Me.Label17.Left = 4.452362!
         Me.Label17.Name = "Label17"
         Me.Label17.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label17.Text = "(受付時間　07:00～20:00　年中無休)"
-        Me.Label17.Top = 4.959055!
+        Me.Label17.Top = 4.656693!
         Me.Label17.Width = 2.650394!
         '
         'Label18
@@ -5322,15 +5322,15 @@ Partial Public Class DrSoufujo
         Me.Label22.Left = 1.155906!
         Me.Label22.Name = "Label22"
         Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
-        Me.Label22.Text = "または、自動音声システム　TEL："
+        Me.Label22.Text = "または、自動音声システム　 TEL："
         Me.Label22.Top = 5.359056!
-        Me.Label22.Width = 2.202756!
+        Me.Label22.Width = 2.327165!
         '
         'Label23
         '
         Me.Label23.Height = 0.2!
         Me.Label23.HyperLink = Nothing
-        Me.Label23.Left = 3.358662!
+        Me.Label23.Left = 3.483465!
         Me.Label23.Name = "Label23"
         Me.Label23.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; text-decoration: underli" & _
             "ne; vertical-align: middle"
@@ -5342,7 +5342,7 @@ Partial Public Class DrSoufujo
         '
         Me.Label24.Height = 0.1999998!
         Me.Label24.HyperLink = Nothing
-        Me.Label24.Left = 4.327559!
+        Me.Label24.Left = 4.452363!
         Me.Label24.Name = "Label24"
         Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label24.Text = "(受付時間 24時間　年中無休)"
@@ -5356,20 +5356,20 @@ Partial Public Class DrSoufujo
         Me.Label26.Left = 0.0!
         Me.Label26.Name = "Label26"
         Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; vertical-align: middle"
-        Me.Label26.Text = "【その他】"
-        Me.Label26.Top = 7.230709!
-        Me.Label26.Width = 0.8744095!
+        Me.Label26.Text = "【その他チケット】"
+        Me.Label26.Top = 7.28189!
+        Me.Label26.Width = 1.338977!
         '
         'Label27
         '
         Me.Label27.Height = 0.1999998!
         Me.Label27.HyperLink = Nothing
-        Me.Label27.Left = 0.8744095!
+        Me.Label27.Left = 1.338977!
         Me.Label27.Name = "Label27"
         Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label27.Text = "取消、変更はバイエル薬品担当者へご連絡下さい。"
-        Me.Label27.Top = 7.230709!
-        Me.Label27.Width = 6.277558!
+        Me.Label27.Top = 7.28189!
+        Me.Label27.Width = 3.265748!
         '
         'OTHER_NOTES
         '
@@ -5384,12 +5384,12 @@ Partial Public Class DrSoufujo
         '
         'Label28
         '
-        Me.Label28.Height = 0.3665363!
+        Me.Label28.Height = 0.2!
         Me.Label28.HyperLink = Nothing
         Me.Label28.Left = 0.0!
         Me.Label28.Name = "Label28"
         Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
-        Me.Label28.Text = "ご不明な点がございましたら、バイエル薬品担当者又は、下記バイエルトラベルデスクまでお問い合わせください。"
+        Me.Label28.Text = "ご不明な点がございましたら、バイエル薬品担当者又は、下記バイエルトラベルデスクまでお問合わせください。"
         Me.Label28.Top = 7.860237!
         Me.Label28.Width = 7.151969!
         '
