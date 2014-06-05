@@ -93,6 +93,11 @@ Partial Public Class TaxiMaintenance
         CmnModule.SetIme(Me.JokenTO_DATE_DD, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenTKT_NO, CmnModule.ImeType.InActive)
         CmnModule.SetIme(Me.JokenSANKASHA_ID, CmnModule.ImeType.InActive)
+        Me.BtnCsv1.Visible = False
+        Me.BtnCsv2.Visible = False
+        Me.BtnBack2.Visible = False
+        Me.LabelNoData.Visible = False
+
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -110,9 +115,16 @@ Partial Public Class TaxiMaintenance
             Me.GrvList.Visible = False
             CmnModule.SetEnabled(Me.BtnCsv1, False)
             CmnModule.SetEnabled(Me.BtnCsv2, False)
+            Me.BtnCsv1.Visible = False
+            Me.BtnCsv2.Visible = False
+            Me.BtnBack2.Visible = False
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
+            Me.BtnCsv1.Visible = True
+            Me.BtnCsv2.Visible = True
+            Me.BtnBack1.Visible = True
+            Me.BtnBack2.Visible = True
             CmnModule.SetEnabled(Me.BtnCsv1, True)
             CmnModule.SetEnabled(Me.BtnCsv2, True)
 
@@ -162,12 +174,17 @@ Partial Public Class TaxiMaintenance
             Me.GrvList.Visible = False
             Me.BtnCsv1.Visible = False
             Me.BtnCsv2.Visible = False
+            Me.BtnBack2.Visible = False
 
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
             Me.BtnCsv1.Visible = True
             Me.BtnCsv2.Visible = True
+            Me.BtnBack1.Visible = True
+            Me.BtnBack2.Visible = True
+            CmnModule.SetEnabled(Me.BtnCsv1, True)
+            CmnModule.SetEnabled(Me.BtnCsv2, True)
 
             'グリッドビュー表示
             SetGridView()
