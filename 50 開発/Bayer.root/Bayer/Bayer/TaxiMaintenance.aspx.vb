@@ -53,8 +53,8 @@ Partial Public Class TaxiMaintenance
             '画面項目 初期化
             InitControls()
 
-            '画面項目表示
-            SetForm()
+            '画面項目表示 2014/06/06 Delete
+            'SetForm()
         End If
 
         'マスターページ設定

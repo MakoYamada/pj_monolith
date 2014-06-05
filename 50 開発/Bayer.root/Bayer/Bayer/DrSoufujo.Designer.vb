@@ -4930,7 +4930,7 @@ Partial Public Class DrSoufujo
         'AISATSU2
         '
         Me.AISATSU2.Height = 0.1791339!
-        Me.AISATSU2.Left = 0.5311024!
+        Me.AISATSU2.Left = 0.5200787!
         Me.AISATSU2.Name = "AISATSU2"
         Me.AISATSU2.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: top; whit" & _
             "e-space: nowrap; ddo-char-set: 1"
