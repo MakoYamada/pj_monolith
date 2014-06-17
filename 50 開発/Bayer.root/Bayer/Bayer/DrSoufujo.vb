@@ -91,7 +91,7 @@ Public Class DrSoufujo
         'MRエリア
         If Me.MR_AREA.Text.Trim <> "" Then
             If Me.MR_AREA.Text.Trim.Length > 7 Then
-                Me.MR_AREA.Text = Left(Me.MR_AREA.Text, 7) & "エリア"
+                Me.MR_AREA.Text = Left(Me.MR_AREA.Text.Trim, 7) & "エリア"
             Else
                 Me.MR_AREA.Text = Me.MR_AREA.Text.Trim & "エリア"
             End If
@@ -100,7 +100,7 @@ Public Class DrSoufujo
         'MR営業所
         If Me.MR_EIGYOSHO.Text.Trim <> "" Then
             If Me.MR_EIGYOSHO.Text.Trim.Length > 7 Then
-                Me.MR_EIGYOSHO.Text = Left(Me.MR_EIGYOSHO.Text, 7) & "営業所"
+                Me.MR_EIGYOSHO.Text = Left(Me.MR_EIGYOSHO.Text.Trim, 7) & "営業所"
             Else
                 Me.MR_EIGYOSHO.Text = Me.MR_EIGYOSHO.Text.Trim & "営業所"
             End If
@@ -2818,8 +2818,8 @@ Public Class DrSoufujo
 
         Me.AIR_NOTES.Text = "※ご注意：別航空会社への変更（ＪＡＬ⇒ＡＮＡ、ＡＮＡ⇒ＪＡＬ）、同一航空会社間を含む区間変更・クラス変更をご希望される場合は、お手元の予約確認書(ｅチケット)では、変更ができません。" & vbNewLine _
             & "また、空港カウンター及び航空会社の電話窓口においても受付できませんので、予めご了承願います。" & vbNewLine _
-            & "上記変更を希望される場合は、バイエル薬品担当者にご連絡頂きますようお願い致します。" & vbNewLine _
-            & "変更予約後、新たな予約確認書（ｅチケット）をご用意させて頂きます。" & vbNewLine _
+            & "上記変更を希望される場合は、バイエル薬品担当者にご連絡いただきますようお願い致します。" & vbNewLine _
+            & "変更予約後、新たな予約確認書（ｅチケット）をご用意させていただきます。" & vbNewLine & vbNewLine _
             & "尚、空港カウンターでの払い戻し返金はございません。"
         Me.AIR_NOTES.CanGrow = True
         Me.AIR_NOTES.SelectionStart = 0
@@ -2841,7 +2841,7 @@ Public Class DrSoufujo
         Me.OTHER_NOTES.SelectionLength = 0
         '部分的に下線を引く
         Me.OTHER_NOTES.SelectionStart = 17
-        Me.OTHER_NOTES.SelectionLength = 25
+        Me.OTHER_NOTES.SelectionLength = 23
         Me.OTHER_NOTES.SelectionFont = New System.Drawing.Font("ＭＳ ゴシック", 10.0F, FontStyle.Bold)
         Me.OTHER_NOTES.SelectionStart = 0
         Me.OTHER_NOTES.SelectionLength = 0

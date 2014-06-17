@@ -5056,7 +5056,7 @@ Partial Public Class DrSoufujo
         Me.AIR_NOTES.Name = "AIR_NOTES"
         Me.AIR_NOTES.RTF = resources.GetString("AIR_NOTES.RTF")
         Me.AIR_NOTES.Top = 5.661418!
-        Me.AIR_NOTES.Width = 5.915749!
+        Me.AIR_NOTES.Width = 6.009449!
         '
         'Shape1
         '
@@ -5379,7 +5379,7 @@ Partial Public Class DrSoufujo
         Me.OTHER_NOTES.Left = 0.0!
         Me.OTHER_NOTES.Name = "OTHER_NOTES"
         Me.OTHER_NOTES.RTF = resources.GetString("OTHER_NOTES.RTF")
-        Me.OTHER_NOTES.Top = 7.649607!
+        Me.OTHER_NOTES.Top = 7.80315!
         Me.OTHER_NOTES.Width = 7.151969!
         '
         'Label28
@@ -5390,7 +5390,7 @@ Partial Public Class DrSoufujo
         Me.Label28.Name = "Label28"
         Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 10pt; text-align: left; vertical-align: middle"
         Me.Label28.Text = "ご不明な点がございましたら、バイエル薬品担当者又は、下記バイエルトラベルデスクまでお問合わせください。"
-        Me.Label28.Top = 7.860237!
+        Me.Label28.Top = 8.013781!
         Me.Label28.Width = 7.151969!
         '
         'Label29
