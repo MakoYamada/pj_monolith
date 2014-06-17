@@ -274,97 +274,97 @@ Partial Public Class TaxiJisseki
                             TBL_KOTSUHOTEL.SANKA_FLAG = String.Empty) Then
                             TBL_TAXITICKET_HAKKO.TKT_ENTA = "E"
                         End If
-                    End If
-                    '実績CSVの利用日(実車日)と、交通宿泊テーブルの利用日(予定日)が異なる場合
-                    Dim wDate As Date = fileData(COL_NO.USED_DATE)
-                    Dim wDateStr As String = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
 
-                    Select Case Val(TBL_TAXITICKET_HAKKO.TKT_LINE_NO)
-                        Case 1
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 2
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 3
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 4
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 5
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 6
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 7
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 8
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 9
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 10
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 11
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 12
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 13
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 14
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 15
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 16
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 17
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 18
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 19
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                        Case 20
-                            If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 Then
-                                TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                            End If
-                    End Select
+                        '実績CSVの利用日(実車日)と、交通宿泊テーブルの利用日(予定日)が異なる場合
+                        Dim wDate As Date = fileData(COL_NO.USED_DATE)
+                        Dim wDateStr As String = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
+
+                        Select Case Val(TBL_TAXITICKET_HAKKO.TKT_LINE_NO)
+                            Case 1
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 2
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 3
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 4
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 5
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 6
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 7
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 8
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 9
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 10
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 11
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 12
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 13
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 14
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 15
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 16
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 17
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 18
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 19
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                            Case 20
+                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 Then
+                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                End If
+                        End Select
                     Else
-                    Throw New Exception("交通宿泊テーブルに登録されていません。[会合番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
-                End If
+                        Throw New Exception("交通宿泊テーブルに登録されていません。[会合番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
                     End If
+                End If
             Else
                     Throw New Exception("タクチケ発行テーブルに登録されていません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
             End If
