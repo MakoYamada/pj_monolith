@@ -14,6 +14,7 @@ Partial Public Class DrRegist
     Private Const IMG_OPEN = "~/Images/button-tick-alt.png"
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
+
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.TBL_KOTSUHOTEL) = TBL_KOTSUHOTEL
         Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
@@ -27,7 +28,7 @@ Partial Public Class DrRegist
                 Session.Abandon()
                 Response.Redirect(URL.SorryPage)
             End If
-        End If
+        End If        
 
         '共通チェック
         If Not Session.Item(SessionDef.DrRireki) Then
@@ -125,6 +126,10 @@ Partial Public Class DrRegist
             End If
 
         Else
+
+            '会合最新情報取得
+            If Not GetKouenkaiData() Then Exit Sub
+
             If Trim(Session.Item(SessionDef.DrRireki)) = Session.SessionID Then
             Else
                 If Trim(Session.Item(SessionDef.HotelKensaku_Back)) = CmnConst.Flag.On Then
@@ -413,7 +418,8 @@ Partial Public Class DrRegist
             DSP_KOTSUHOTEL = Session.Item(SessionDef.DrRireki_TBL_KOTSUHOTEL)
             DSP_SEQ = Session.Item(SessionDef.DrRireki_SEQ)
         Else
-            DSP_SEQ = SEQ
+            'DSP_SEQ = SEQ
+            DSP_SEQ = Session.Item(SessionDef.SEQ)
         End If
 
         '会合最新情報取得
@@ -1256,17 +1262,16 @@ Partial Public Class DrRegist
     '会合基本情報ボタン
     Private Sub BtnKihon_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKihon.Click
         '選択レコード情報をセッション変数にセット
-        Session.Item(SessionDef.SEQ) = 0
+        'Session.Item(SessionDef.SEQ) = SEQ
         TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
         'Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
-        'Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
         '履歴画面用セッション変数をクリア
         Session.Item(SessionDef.KouenkaiRireki) = True
         Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
         Session.Item(SessionDef.KouenkaiRireki_SEQ) = 0
-        'Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = TBL_KOUENKAI
 
         Dim scriptStr As String
         scriptStr = "<script type='text/javascript'>"
