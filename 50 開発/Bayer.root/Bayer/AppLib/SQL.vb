@@ -2391,6 +2391,7 @@ Public Class SQL
             strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
             strSQL &= ",WK1.SANKASHA_ID"
             strSQL &= ",WK2.DR_CD"
+            strSQL &= ",WK2.DR_YAKUWARI"
             strSQL &= ",WK2.DR_NAME"
             strSQL &= ",WK2.DR_KANA"
             strSQL &= ",WK2.DR_SHISETSU_NAME"
