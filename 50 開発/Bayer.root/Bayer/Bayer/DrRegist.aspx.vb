@@ -4142,11 +4142,11 @@ Partial Public Class DrRegist
             'データ更新
             strSQL = SQL.TBL_KOTSUHOTEL.Update(DSP_KOTSUHOTEL(SEQ))
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            MyBase.Commit()
 
             'ログ登録
             MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.DrRegist, DSP_KOTSUHOTEL(SEQ), True, "", MyBase.DbConnection)
 
-            MyBase.Commit()
             Return True
         Catch ex As Exception
             MyBase.Rollback()
