@@ -283,82 +283,102 @@ Partial Public Class TaxiJisseki
                             Case 1
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 2
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 3
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 4
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 5
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 6
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 7
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 8
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 9
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 10
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 11
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 12
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 13
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 14
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 15
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 16
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 17
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 18
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 19
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                             Case 20
                                 If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 Then
                                     TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
+                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
                                 End If
                         End Select
                     Else
