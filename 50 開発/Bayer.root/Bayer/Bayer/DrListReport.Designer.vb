@@ -951,6 +951,7 @@ Partial Public Class DrListReport
         Me.FROM_DATE.Left = 0.007874016!
         Me.FROM_DATE.Name = "FROM_DATE"
         Me.FROM_DATE.Style = "white-space: nowrap"
+        Me.FROM_DATE.Text = Nothing
         Me.FROM_DATE.Top = 0.0!
         Me.FROM_DATE.Width = 1.73189!
         '
@@ -962,6 +963,7 @@ Partial Public Class DrListReport
         Me.KOUENKAI_NAME.Left = 1.739764!
         Me.KOUENKAI_NAME.Name = "KOUENKAI_NAME"
         Me.KOUENKAI_NAME.Style = "white-space: nowrap"
+        Me.KOUENKAI_NAME.Text = Nothing
         Me.KOUENKAI_NAME.Top = 0.0!
         Me.KOUENKAI_NAME.Width = 2.337008!
         '
@@ -1300,7 +1302,6 @@ Partial Public Class DrListReport
         'TEHAI_MR
         '
         Me.TEHAI_MR.CanGrow = False
-        Me.TEHAI_MR.DataField = "TEHAI_TAXI"
         Me.TEHAI_MR.Height = 0.2!
         Me.TEHAI_MR.Left = 10.93898!
         Me.TEHAI_MR.Name = "TEHAI_MR"
@@ -1363,7 +1364,7 @@ Partial Public Class DrListReport
         'REQ_MR_O_TEHAI
         '
         Me.REQ_MR_O_TEHAI.CanGrow = False
-        Me.REQ_MR_O_TEHAI.DataField = "TO_DATE"
+        Me.REQ_MR_O_TEHAI.DataField = "REQ_MR_O_TEHAI"
         Me.REQ_MR_O_TEHAI.Height = 0.2!
         Me.REQ_MR_O_TEHAI.Left = 1.156299!
         Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
@@ -1376,7 +1377,7 @@ Partial Public Class DrListReport
         'REQ_MR_F_TEHAI
         '
         Me.REQ_MR_F_TEHAI.CanGrow = False
-        Me.REQ_MR_F_TEHAI.DataField = "TO_DATE"
+        Me.REQ_MR_F_TEHAI.DataField = "REQ_MR_F_TEHAI"
         Me.REQ_MR_F_TEHAI.Height = 0.2!
         Me.REQ_MR_F_TEHAI.Left = 1.646063!
         Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
@@ -1389,7 +1390,7 @@ Partial Public Class DrListReport
         'REQ_MR_HOTEL_NOTE
         '
         Me.REQ_MR_HOTEL_NOTE.CanGrow = False
-        Me.REQ_MR_HOTEL_NOTE.DataField = "TO_DATE"
+        Me.REQ_MR_HOTEL_NOTE.DataField = "REQ_MR_HOTEL_NOTE"
         Me.REQ_MR_HOTEL_NOTE.Height = 0.2!
         Me.REQ_MR_HOTEL_NOTE.Left = 2.114961!
         Me.REQ_MR_HOTEL_NOTE.Name = "REQ_MR_HOTEL_NOTE"

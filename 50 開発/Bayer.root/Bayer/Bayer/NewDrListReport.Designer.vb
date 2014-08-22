@@ -848,7 +848,7 @@ Partial Public Class NewDrListReport
         '
         Me.Detail.ColumnSpacing = 0.0!
         Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TO_DATE, Me.USER_NAME, Me.REQ_STATUS_TEHAI, Me.FROM_DATE, Me.KOUENKAI_NAME, Me.Line6, Me.TIME_STAMP, Me.Line14, Me.Line21, Me.DR_NAME, Me.REQ_KOTSU, Me.REQ_O_TEHAI_1, Me.TEHAI_HOTEL, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.TEHAI_TAXI, Me.Line4, Me.Line5, Me.Line7, Me.Line8, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.TEHAI_MR, Me.Line29, Me.TEHAI_EMERGENCY, Me.Line31, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.REQ_MR_HOTEL_NOTE})
-        Me.Detail.Height = 0.2437008!
+        Me.Detail.Height = 0.2541174!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
         '
@@ -1248,7 +1248,6 @@ Partial Public Class NewDrListReport
         'TEHAI_MR
         '
         Me.TEHAI_MR.CanGrow = False
-        Me.TEHAI_MR.DataField = "TEHAI_TAXI"
         Me.TEHAI_MR.Height = 0.2!
         Me.TEHAI_MR.Left = 11.33583!
         Me.TEHAI_MR.Name = "TEHAI_MR"

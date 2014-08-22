@@ -39,7 +39,8 @@ Public Class NewDrListReport
             REQ_MR_F_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
             REQ_MR_F_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
             REQ_MR_F_TEHAI.Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
-            REQ_MR_HOTEL_NOTE.Text.Trim <> "&nbsp;" Then
+            REQ_MR_HOTEL_NOTE.Text.Trim <> "&nbsp;" AndAlso _
+            REQ_MR_HOTEL_NOTE.Text.Trim <> "" Then
 
             TEHAI_MR.Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
         Else
