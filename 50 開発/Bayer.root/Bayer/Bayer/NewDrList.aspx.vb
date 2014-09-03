@@ -66,8 +66,14 @@ Partial Public Class NewDrList
             '画面項目 初期化
             InitControls()
 
-            '画面項目表示
-            SetForm()
+            ''画面項目表示(データ量多く、起動時間が掛かる為初期表示無しに変更 2014/9/3)
+            'SetForm()
+
+            If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
+
+            Else
+                SetForm()
+            End If
         End If
 
         'マスターページ設定
@@ -107,6 +113,15 @@ Partial Public Class NewDrList
         'クリア
         CmnModule.ClearAllControl(Me)
         AppModule.SetDropDownList_KUBUN(Me.JokenKUBUN, True)
+
+        Me.LabelNoData.Visible = False
+        Me.BtnPrint1.Visible = False
+        Me.BtnPrint2.Visible = False
+        Me.BtnIchiranPrint1.Visible = False
+        Me.BtnIchiranPrint2.Visible = False
+        Me.BtnBack2.Visible = False
+        Me.lnkCheck.Visible = False
+        Me.lnkNoCheck.Visible = False
     End Sub
 
     '画面項目 表示
@@ -125,17 +140,22 @@ Partial Public Class NewDrList
         If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
-            CmnModule.SetEnabled(Me.BtnIchiranPrint1, False)
-            CmnModule.SetEnabled(Me.BtnIchiranPrint2, False)
-            CmnModule.SetEnabled(Me.BtnPrint1, False)
-            CmnModule.SetEnabled(Me.BtnPrint2, False)
+            Me.BtnBack2.Visible = False
+            Me.BtnPrint1.Visible = False
+            Me.BtnPrint2.Visible = False
+            Me.BtnIchiranPrint1.Visible = False
+            Me.BtnIchiranPrint2.Visible = False
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
-            CmnModule.SetEnabled(Me.BtnIchiranPrint1, True)
-            CmnModule.SetEnabled(Me.BtnIchiranPrint2, True)
-            CmnModule.SetEnabled(Me.BtnPrint1, True)
-            CmnModule.SetEnabled(Me.BtnPrint2, True)
+            Me.BtnBack1.Visible = True
+            Me.BtnBack2.Visible = True
+            Me.BtnPrint1.Visible = True
+            Me.BtnPrint2.Visible = True
+            Me.BtnIchiranPrint1.Visible = True
+            Me.BtnIchiranPrint2.Visible = True
+            Me.lnkCheck.Visible = True
+            Me.lnkNoCheck.Visible = True
 
             'グリッドビュー表示
             SetGridView()
@@ -193,6 +213,7 @@ Partial Public Class NewDrList
             Me.BtnPrint2.Visible = False
             Me.BtnIchiranPrint1.Visible = False
             Me.BtnIchiranPrint2.Visible = False
+            Me.BtnBack2.Visible = False
             Me.lnkCheck.Visible = False
             Me.lnkNoCheck.Visible = False
 
@@ -203,6 +224,8 @@ Partial Public Class NewDrList
             Me.BtnPrint2.Visible = True
             Me.BtnIchiranPrint1.Visible = True
             Me.BtnIchiranPrint2.Visible = True
+            Me.BtnBack1.Visible = True
+            Me.BtnBack2.Visible = True
             Me.lnkCheck.Visible = True
             Me.lnkNoCheck.Visible = True
 
