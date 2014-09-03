@@ -301,7 +301,9 @@ Public Class SQL
             strSQL &= ") AS TBL_KOTSUHOTEL"
             strSQL &= " WHERE TBL_KOTSUHOTEL.KOUENKAI_NO=TBL_KOUENKAI.KOUENKAI_NO"
             strSQL &= " ORDER BY"
+            '14.9.3 tanaka
             strSQL &= " TBL_KOUENKAI.KOUENKAI_NO DESC"
+            'strSQL &= " TBL_KOUENKAI.KOUENKAI_NO ASC"
 
             Return strSQL
         End Function
@@ -2140,6 +2142,9 @@ Public Class SQL
             strSQL &= " ORDER BY"
             strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO DESC"
             strSQL &= ",TBL_KOTSUHOTEL.SANKASHA_ID DESC"
+            '14.9.3 tanaka
+            'strSQL &= " TBL_KOTSUHOTEL.KOUENKAI_NO ASC"
+            'strSQL &= ",TBL_KOTSUHOTEL.SANKASHA_ID ASC"
 
             Return strSQL
         End Function
