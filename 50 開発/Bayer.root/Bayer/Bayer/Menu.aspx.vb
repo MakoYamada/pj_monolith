@@ -4,6 +4,40 @@ Partial Public Class Menu1
     Inherits WebBase
 
     Private MS_USER As TableDef.MS_USER.DataStruct
+    Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private Joken As TableDef.Joken.DataStruct
+
+    '新着交通・宿泊CSV列定義    Private Enum CellIndex
+        JISSHI_DATE
+        KOUENKAI_NO
+        KOUENKAI_NAME
+        DR_NAME
+        MR_NAME
+        TIME_STAMP
+        USER_NAME
+        KUBUN
+        REQ_HOTEL
+        REQ_KOTSU
+        REQ_TAXI
+        REQ_MR
+        REQ_EMERGENCY
+        SALESFORCE_ID
+        TO_DATE
+        REQ_O_TEHAI_1
+        REQ_O_TEHAI_2
+        REQ_O_TEHAI_3
+        REQ_O_TEHAI_4
+        REQ_O_TEHAI_5
+        REQ_F_TEHAI_1
+        REQ_F_TEHAI_2
+        REQ_F_TEHAI_3
+        REQ_F_TEHAI_4
+        REQ_F_TEHAI_5
+        REQ_MR_O_TEHAI
+        REQ_MR_F_TEHAI
+        REQ_MR_HOTEL_NOTE
+        ANS_MR_HOTEL_NOTE
+    End Enum
 
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
     End Sub
@@ -151,6 +185,11 @@ Partial Public Class Menu1
         Response.Redirect(URL.NewDrList)
     End Sub
 
+    '[新着 交通・宿泊CSV出力]
+    Private Sub BtnNewKotsuCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNewKotsuCsv.Click
+        Call OutputDrCsv()
+    End Sub
+
     '[検索 交通・宿泊]
     Protected Sub BtnKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKotsuList.Click
         Response.Redirect(URL.DrList)
@@ -176,4 +215,49 @@ Partial Public Class Menu1
         Response.Redirect(URL.TaxiMenu)
     End Sub
 
+    '新着交通・宿泊一覧CSV出力
+    Private Sub OutputDrCsv()
+
+        Dim CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct
+        If GetDrCsvData(CsvData) Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "NewDrList_" & Now.ToString("yyyyMMddHHmmss") & ".csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(MyModule.Csv.NewDrCsv(CsvData, MyBase.DbConnection))
+            Response.End()
+        End If
+    End Sub
+
+    '新着交通・宿泊CSV用データ取得
+    Private Function GetDrCsvData(ByRef CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+
+        ReDim CsvData(wCnt)
+
+        Dim csvJoken As TableDef.Joken.DataStruct
+        strSQL = SQL.TBL_KOTSUHOTEL.Search(csvJoken, True)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve CsvData(wCnt)
+            CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        If wFlag = False Then
+            CmnModule.AlertMessage("対象データがありません。", Me)
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class

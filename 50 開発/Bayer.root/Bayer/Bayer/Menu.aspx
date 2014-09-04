@@ -27,6 +27,18 @@
 							<asp:Button ID="BtnNewBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
 						</td>
 					</tr>
+					<tr valign="top">
+						<td align="center" style="width: 210px;">
+						</td>
+						<td align="center" style="width: 210px;">
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnNewKotsuCsv" runat="server" Text="【新着】交通・手配CSV出力" Width="200px" 
+                                CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+						</td>
+					</tr>
 					<tr>
 						<td colspan="4"></td>
 					</tr>

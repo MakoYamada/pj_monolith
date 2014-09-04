@@ -3553,4 +3553,64 @@
         End Class
     End Class
 
+    Public Class NEW_DR_CSV
+        <Serializable()> Public Structure DataStruct
+            Public FROM_DATE As String
+            Public TO_DATE As String
+            Public KOUENKAI_NO As String
+            Public KOUENKAI_NAME As String
+            Public SANKASHA_ID As String
+            Public DR_NAME As String
+            Public DR_KANA As String
+            Public MR_NAME As String
+            Public TIME_STAMP_BYL As String
+            Public INPUT_DATE As String
+            Public USER_NAME As String
+            Public REQ_STATUS_TEHAI As String
+            Public TEHAI_HOTEL As String
+            Public TEHAI_KOTSU As String
+            Public TEHAI_TAXI As String
+            Public TEHAI_MR As String
+            Public KINKYU_FLAG As String
+        End Structure
+        Public Class Column
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const TO_DATE As String = "TO_DATE"
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const SANKASHA_ID As String = "SANKASHA_ID"
+            Public Const DR_NAME As String = "DR_NAME"
+            Public Const DR_KANA As String = "DR_KANA"
+            Public Const MR_NAME As String = "MR_NAME"
+            Public Const TIME_STAMP_BYL As String = "TIME_STAMP_BYL"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const USER_NAME As String = "USER_NAME"
+            Public Const REQ_STATUS_TEHAI As String = "REQ_STATUS_TEHAI"
+            Public Const TEHAI_HOTEL As String = "TEHAI_HOTEL"
+            Public Const TEHAI_KOTSU As String = "TEHAI_KOTSU"
+            Public Const TEHAI_TAXI As String = "TEHAI_TAXI"
+            Public Const TEHAI_MR As String = "TEHAI_MR"
+            Public Const KINKYU_FLAG As String = "KINKYU_FLAG"
+        End Class
+        Public Class Name
+            Public Const FROM_DATE As String = "開催日FROM"
+            Public Const TO_DATE As String = "開催日TO"
+            Public Const KOUENKAI_NO As String = "会合番号"
+            Public Const KOUENKAI_NAME As String = "会合名"
+            Public Const SANKASHA_ID As String = "参加者番号"
+            Public Const DR_NAME As String = "DR氏名"
+            Public Const DR_KANA As String = "DR氏名カナ"
+            Public Const MR_NAME As String = "DR担当MR"
+            Public Const TIME_STAMP_BYL As String = "BYL Timestamp"
+            Public Const INPUT_DATE As String = "TOP受信日時"
+            Public Const USER_NAME As String = "TOP担当"
+            Public Const REQ_STATUS_TEHAI As String = "依頼内容"
+            Public Const TEHAI_HOTEL As String = "宿泊"
+            Public Const TEHAI_KOTSU As String = "交通"
+            Public Const TEHAI_TAXI As String = "タク"
+            Public Const TEHAI_MR As String = "MR手配"
+            Public Const KINKYU_FLAG As String = "緊急"
+        End Class
+    End Class
+
 End Class
