@@ -66,14 +66,14 @@ Partial Public Class NewDrList
             '画面項目 初期化
             InitControls()
 
-            ''画面項目表示(データ量多く、起動時間が掛かる為初期表示無しに変更 2014/9/3)
-            'SetForm()
+            '画面項目表示(データ量多く、起動時間が掛かる為初期表示無しに変更 2014/9/3)
+            SetForm()
 
-            If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
+            'If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
 
-            Else
-                SetForm()
-            End If
+            'Else
+            '    SetForm()
+            'End If
         End If
 
         'マスターページ設定
