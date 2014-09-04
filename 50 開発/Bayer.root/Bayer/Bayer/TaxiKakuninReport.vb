@@ -148,12 +148,23 @@ Public Class TaxiKakuninReport
         ANS_TAXI_HAKKO_DATE_19.Text = AppModule.GetName_ANS_TAXI_HAKKO_DATE_19(ANS_TAXI_HAKKO_DATE_19.Text)
         ANS_TAXI_HAKKO_DATE_20.Text = AppModule.GetName_ANS_TAXI_HAKKO_DATE_20(ANS_TAXI_HAKKO_DATE_20.Text)
 
-        If REQ_TAXI_NOTE.Text.Trim.Length > 288 Then
-            REQ_TAXI_NOTE.Text = Left(REQ_TAXI_NOTE.Text.Trim, 288)
+        If REQ_TAXI_NOTE.Text.Trim.Length > 200 Then
+            REQ_TAXI_NOTE.Text = Left(REQ_TAXI_NOTE.Text.Trim, 200)
         End If
-        If ANS_TAXI_NOTE.Text.Trim.Length > 288 Then
-            ANS_TAXI_NOTE.Text = Left(ANS_TAXI_NOTE.Text.Trim, 288)
+        If ANS_TAXI_NOTE.Text.Trim.Length > 200 Then
+            ANS_TAXI_NOTE.Text = Left(ANS_TAXI_NOTE.Text.Trim, 200)
         End If
+        If MR_SEND_SAKI_OTHER.Text.Trim.Length > 200 Then
+            MR_SEND_SAKI_OTHER.Text = Left(MR_SEND_SAKI_OTHER.Text.Trim, 200)
+        End If
+
+        ''チケット送付先(その他)出力するため、備考の出力文字数削減(2014/9/4)
+        'If REQ_TAXI_NOTE.Text.Trim.Length > 288 Then
+        '    REQ_TAXI_NOTE.Text = Left(REQ_TAXI_NOTE.Text.Trim, 288)
+        'End If
+        'If ANS_TAXI_NOTE.Text.Trim.Length > 288 Then
+        '    ANS_TAXI_NOTE.Text = Left(ANS_TAXI_NOTE.Text.Trim, 288)
+        'End If
 
     End Sub
 

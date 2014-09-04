@@ -482,6 +482,10 @@ Partial Public Class TaxiKakuninReport
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
         Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
+        Me.Label174 = New DataDynamics.ActiveReports.Label
+        Me.MR_SEND_SAKI_OTHER = New DataDynamics.ActiveReports.TextBox
+        Me.Line12 = New DataDynamics.ActiveReports.Line
+        Me.Line31 = New DataDynamics.ActiveReports.Line
         CType(Me.Label198, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label199, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label201, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -840,6 +844,8 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label174, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MR_SEND_SAKI_OTHER, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -1046,8 +1052,8 @@ Partial Public Class TaxiKakuninReport
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.KINKYU_FLAG, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_HAKKO_DATE_16, Me.Label144, Me.Label53, Me.Label49, Me.Label45, Me.Label12, Me.Label202, Me.Label24, Me.REQ_TAXI_FROM_1, Me.Label5, Me.KOUENKAI_NAME, Me.DANTAI_CODE, Me.Label200, Me.Label8, Me.Label185, Me.REQ_MR_TEHAI, Me.Label178, Me.Label184, Me.TEHAI_HOTEL, Me.Label183, Me.TEHAI_KOTSU, Me.Label182, Me.ANS_TAXI_NOTE, Me.REQ_TAXI_NOTE, Me.Label180, Me.Label124, Me.Label90, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.TAXI_YOTEIKINGAKU_2, Me.KOUTEI_1, Me.REQ_TAXI_DATE_1, Me.Label73, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label71, Me.TEHAI_TAXI, Me.Shape1, Me.DR_SHISETSU_NAME, Me.Label6, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.KOUENKAI_NO, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.Line3, Me.Line51, Me.Label3, Me.Line62, Me.Line63, Me.Line163, Me.Line164, Me.Line1, Me.Line2, Me.Line5, Me.Line42, Me.Line23, Me.Line26, Me.Label21, Me.ANS_TAXI_DATE_1, Me.Label22, Me.ANS_TAXI_KENSHU_1, Me.Label23, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_HAKKO_DATE_1, Me.Label25, Me.ANS_TAXI_RMKS_1, Me.Label27, Me.ANS_TAXI_DATE_2, Me.Label28, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_NO_2, Me.Label30, Me.ANS_TAXI_HAKKO_DATE_2, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_DATE_3, Me.Label34, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_NO_3, Me.Label36, Me.ANS_TAXI_HAKKO_DATE_3, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_HAKKO_DATE_4, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_HAKKO_DATE_5, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_HAKKO_DATE_6, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_HAKKO_DATE_7, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_HAKKO_DATE_8, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_HAKKO_DATE_9, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_HAKKO_DATE_10, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_HAKKO_DATE_11, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_HAKKO_DATE_12, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_NO_12, Me.Label130, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_HAKKO_DATE_13, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_NO_13, Me.Label136, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_HAKKO_DATE_14, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_NO_14, Me.Label142, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_HAKKO_DATE_15, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_NO_15, Me.Label148, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_NO_16, Me.Label154, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_HAKKO_DATE_17, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_NO_17, Me.Label160, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_HAKKO_DATE_18, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_NO_18, Me.Label166, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_HAKKO_DATE_19, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_NO_19, Me.Label172, Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_HAKKO_DATE_20, Me.ANS_TAXI_DATE_20, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_20, Me.Label20, Me.Label26, Me.Label32, Me.Label38, Me.Label69, Me.Label94, Me.Label100, Me.Label106, Me.Label112, Me.Label118, Me.Line36, Me.Line104, Me.Label181, Me.REQ_O_TEHAI_1, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.Line32, Me.Label7, Me.Line37, Me.Line6, Me.Line7, Me.Line4, Me.Line152, Me.Line153, Me.Line155, Me.Line17, Me.Line107, Me.Line109, Me.Line18, Me.Line85, Me.Label46, Me.Line110, Me.Label50, Me.Line135, Me.Label203, Me.Label204, Me.Label31, Me.Label205, Me.Label13, Me.Label33, Me.Label35, Me.Label37, Me.Label54, Me.Label206, Me.Label207, Me.Label15, Me.Label16, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label55, Me.Label59, Me.Label62, Me.Label63, Me.Label64, Me.Label67, Me.Label68, Me.Label70, Me.Label17, Me.Label75, Me.Label91, Me.Label92, Me.Label93, Me.Label95, Me.Label208, Me.Label209, Me.Label210, Me.Label18, Me.Label66, Me.Label76, Me.Label77, Me.Label79, Me.Label80, Me.Label81, Me.Label96, Me.Label97, Me.Label98, Me.Label99, Me.Label101, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label19, Me.Label29, Me.Label83, Me.Label84, Me.Label85, Me.Label102, Me.Label103, Me.Label104, Me.Label105, Me.Label72, Me.Label87, Me.Label88, Me.Label89, Me.Label107, Me.Label108, Me.Line13, Me.Line16, Me.Line41, Me.Line111, Me.Line136, Me.Line106, Me.Line138, Me.Line11, Me.Line139, Me.Line140, Me.Line105, Me.Line143, Me.Line102, Me.Line144, Me.Line101, Me.Line145, Me.Line100, Me.Line15, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line35, Me.Line49, Me.Line54, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line64, Me.Line65, Me.Line67, Me.Line68, Me.Line69, Me.Line87, Me.Label109, Me.Label110, Me.Label111, Me.Label113, Me.Label114, Me.Label115, Me.Line99, Me.Line103, Me.Label116, Me.Label117, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Line8, Me.Label123, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Label129, Me.Line25, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label137, Me.Line27, Me.Label138, Me.Label139, Me.Label140, Me.Label141, Me.Label143, Me.Line33, Me.Label145, Me.Label146, Me.Label147, Me.Label149, Me.Label150, Me.Label151, Me.Line34, Me.Label152, Me.Label153, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Line40, Me.Label159, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Line43, Me.Label167, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label173, Me.Line44, Me.Line74, Me.Line112, Me.Line9, Me.Line45, Me.Line47, Me.Line48, Me.Line50, Me.Line52, Me.Line53, Me.Line55, Me.Line56, Me.Line57, Me.Line10, Me.Line66, Me.Line14, Me.Line24, Me.Line29, Me.Line76, Me.Line30, Me.Line70, Me.Line71, Me.Line72, Me.Line73, Me.Line28, Me.Label4, Me.Line75, Me.Line79, Me.Line38, Me.Line114})
-        Me.Detail.Height = 10.19685!
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.MR_SEND_SAKI_OTHER, Me.Label174, Me.KINKYU_FLAG, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_HAKKO_DATE_16, Me.Label144, Me.Label53, Me.Label49, Me.Label45, Me.Label12, Me.Label202, Me.Label24, Me.REQ_TAXI_FROM_1, Me.Label5, Me.KOUENKAI_NAME, Me.DANTAI_CODE, Me.Label200, Me.Label8, Me.Label185, Me.REQ_MR_TEHAI, Me.Label178, Me.Label184, Me.TEHAI_HOTEL, Me.Label183, Me.TEHAI_KOTSU, Me.Label182, Me.ANS_TAXI_NOTE, Me.REQ_TAXI_NOTE, Me.Label180, Me.Label124, Me.Label90, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.TAXI_YOTEIKINGAKU_2, Me.KOUTEI_1, Me.REQ_TAXI_DATE_1, Me.Label73, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label71, Me.TEHAI_TAXI, Me.Shape1, Me.DR_SHISETSU_NAME, Me.Label6, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.KOUENKAI_NO, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.Line3, Me.Line51, Me.Label3, Me.Line62, Me.Line63, Me.Line163, Me.Line164, Me.Line1, Me.Line2, Me.Line5, Me.Line42, Me.Line23, Me.Line26, Me.Label21, Me.ANS_TAXI_DATE_1, Me.Label22, Me.ANS_TAXI_KENSHU_1, Me.Label23, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_HAKKO_DATE_1, Me.Label25, Me.ANS_TAXI_RMKS_1, Me.Label27, Me.ANS_TAXI_DATE_2, Me.Label28, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_NO_2, Me.Label30, Me.ANS_TAXI_HAKKO_DATE_2, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_DATE_3, Me.Label34, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_NO_3, Me.Label36, Me.ANS_TAXI_HAKKO_DATE_3, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_HAKKO_DATE_4, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_HAKKO_DATE_5, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_HAKKO_DATE_6, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_HAKKO_DATE_7, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_HAKKO_DATE_8, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_HAKKO_DATE_9, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_HAKKO_DATE_10, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_HAKKO_DATE_11, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_HAKKO_DATE_12, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_NO_12, Me.Label130, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_HAKKO_DATE_13, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_NO_13, Me.Label136, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_HAKKO_DATE_14, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_NO_14, Me.Label142, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_HAKKO_DATE_15, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_NO_15, Me.Label148, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_NO_16, Me.Label154, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_HAKKO_DATE_17, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_NO_17, Me.Label160, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_HAKKO_DATE_18, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_NO_18, Me.Label166, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_HAKKO_DATE_19, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_NO_19, Me.Label172, Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_HAKKO_DATE_20, Me.ANS_TAXI_DATE_20, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_20, Me.Label20, Me.Label26, Me.Label32, Me.Label38, Me.Label69, Me.Label94, Me.Label100, Me.Label106, Me.Label112, Me.Label118, Me.Line36, Me.Line104, Me.Label181, Me.REQ_O_TEHAI_1, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.Line32, Me.Label7, Me.Line37, Me.Line6, Me.Line7, Me.Line4, Me.Line152, Me.Line153, Me.Line155, Me.Line17, Me.Line107, Me.Line109, Me.Line18, Me.Line85, Me.Label46, Me.Line110, Me.Label50, Me.Line135, Me.Label203, Me.Label204, Me.Label31, Me.Label205, Me.Label13, Me.Label33, Me.Label35, Me.Label37, Me.Label54, Me.Label206, Me.Label207, Me.Label15, Me.Label16, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label55, Me.Label59, Me.Label62, Me.Label63, Me.Label64, Me.Label67, Me.Label68, Me.Label70, Me.Label17, Me.Label75, Me.Label91, Me.Label92, Me.Label93, Me.Label95, Me.Label208, Me.Label209, Me.Label210, Me.Label18, Me.Label66, Me.Label76, Me.Label77, Me.Label79, Me.Label80, Me.Label81, Me.Label96, Me.Label97, Me.Label98, Me.Label99, Me.Label101, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label19, Me.Label29, Me.Label83, Me.Label84, Me.Label85, Me.Label102, Me.Label103, Me.Label104, Me.Label105, Me.Label72, Me.Label87, Me.Label88, Me.Label89, Me.Label107, Me.Label108, Me.Line13, Me.Line16, Me.Line41, Me.Line111, Me.Line136, Me.Line106, Me.Line138, Me.Line11, Me.Line139, Me.Line140, Me.Line105, Me.Line143, Me.Line102, Me.Line144, Me.Line101, Me.Line145, Me.Line100, Me.Line15, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line35, Me.Line49, Me.Line54, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line64, Me.Line65, Me.Line67, Me.Line68, Me.Line69, Me.Line87, Me.Label109, Me.Label110, Me.Label111, Me.Label113, Me.Label114, Me.Label115, Me.Line99, Me.Line103, Me.Label116, Me.Label117, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Line8, Me.Label123, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Label129, Me.Line25, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label137, Me.Line27, Me.Label138, Me.Label139, Me.Label140, Me.Label141, Me.Label143, Me.Line33, Me.Label145, Me.Label146, Me.Label147, Me.Label149, Me.Label150, Me.Label151, Me.Line34, Me.Label152, Me.Label153, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Line40, Me.Label159, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Line43, Me.Label167, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label173, Me.Line44, Me.Line74, Me.Line112, Me.Line9, Me.Line45, Me.Line47, Me.Line48, Me.Line50, Me.Line52, Me.Line53, Me.Line55, Me.Line56, Me.Line57, Me.Line10, Me.Line66, Me.Line14, Me.Line24, Me.Line29, Me.Line76, Me.Line30, Me.Line70, Me.Line71, Me.Line72, Me.Line73, Me.Line28, Me.Label4, Me.Line75, Me.Line79, Me.Line38, Me.Line114, Me.Line12, Me.Line31})
+        Me.Detail.Height = 10.21198!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
         '
@@ -1305,22 +1311,20 @@ Partial Public Class TaxiKakuninReport
         'ANS_TAXI_NOTE
         '
         Me.ANS_TAXI_NOTE.DataField = "ANS_TAXI_NOTE"
-        Me.ANS_TAXI_NOTE.Height = 1.8!
-        Me.ANS_TAXI_NOTE.Left = 0.008661417!
+        Me.ANS_TAXI_NOTE.Height = 1.279134!
+        Me.ANS_TAXI_NOTE.Left = 0.0!
         Me.ANS_TAXI_NOTE.Name = "ANS_TAXI_NOTE"
         Me.ANS_TAXI_NOTE.Style = "vertical-align: top"
-        Me.ANS_TAXI_NOTE.Text = Nothing
-        Me.ANS_TAXI_NOTE.Top = 8.144094!
+        Me.ANS_TAXI_NOTE.Top = 7.403544!
         Me.ANS_TAXI_NOTE.Width = 2.787402!
         '
         'REQ_TAXI_NOTE
         '
         Me.REQ_TAXI_NOTE.DataField = "REQ_TAXI_NOTE"
-        Me.REQ_TAXI_NOTE.Height = 1.800001!
+        Me.REQ_TAXI_NOTE.Height = 1.289764!
         Me.REQ_TAXI_NOTE.Left = 0.008661415!
         Me.REQ_TAXI_NOTE.Name = "REQ_TAXI_NOTE"
         Me.REQ_TAXI_NOTE.Style = "vertical-align: top"
-        Me.REQ_TAXI_NOTE.Text = Nothing
         Me.REQ_TAXI_NOTE.Top = 5.888189!
         Me.REQ_TAXI_NOTE.Width = 2.787402!
         '
@@ -3478,21 +3482,21 @@ Partial Public Class TaxiKakuninReport
         '
         Me.Label181.Height = 0.2255906!
         Me.Label181.HyperLink = Nothing
-        Me.Label181.Left = 2.842171E-14!
+        Me.Label181.Left = 1.862645E-9!
         Me.Label181.Name = "Label181"
-        Me.Label181.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+        Me.Label181.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
             "ter; vertical-align: middle; white-space: nowrap"
         Me.Label181.Text = "備考（回答）"
-        Me.Label181.Top = 7.918504!
+        Me.Label181.Top = 7.177953!
         Me.Label181.Width = 2.787402!
         '
         'REQ_O_TEHAI_1
         '
+        Me.REQ_O_TEHAI_1.DataField = "REQ_O_TEHAI_1"
         Me.REQ_O_TEHAI_1.Height = 0.2!
         Me.REQ_O_TEHAI_1.Left = 0.0!
         Me.REQ_O_TEHAI_1.Name = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_1.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_1.Top = 10.27205!
+        Me.REQ_O_TEHAI_1.Top = 10.86614!
         Me.REQ_O_TEHAI_1.Visible = False
         Me.REQ_O_TEHAI_1.Width = 1.0!
         '
@@ -3500,10 +3504,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_2.DataField = "REQ_O_TEHAI_2"
         Me.REQ_O_TEHAI_2.Height = 0.2!
-        Me.REQ_O_TEHAI_2.Left = 0.0!
+        Me.REQ_O_TEHAI_2.Left = 4.064567!
         Me.REQ_O_TEHAI_2.Name = "REQ_O_TEHAI_2"
-        Me.REQ_O_TEHAI_2.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_2.Top = 10.27205!
+        Me.REQ_O_TEHAI_2.Top = 11.17874!
         Me.REQ_O_TEHAI_2.Visible = False
         Me.REQ_O_TEHAI_2.Width = 1.0!
         '
@@ -3513,8 +3516,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_O_TEHAI_3.Height = 0.2!
         Me.REQ_O_TEHAI_3.Left = 0.0!
         Me.REQ_O_TEHAI_3.Name = "REQ_O_TEHAI_3"
-        Me.REQ_O_TEHAI_3.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_3.Top = 10.27205!
+        Me.REQ_O_TEHAI_3.Top = 11.17874!
         Me.REQ_O_TEHAI_3.Visible = False
         Me.REQ_O_TEHAI_3.Width = 1.0!
         '
@@ -3522,10 +3524,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_4.DataField = "REQ_O_TEHAI_4"
         Me.REQ_O_TEHAI_4.Height = 0.2!
-        Me.REQ_O_TEHAI_4.Left = 0.0!
+        Me.REQ_O_TEHAI_4.Left = 3.064567!
         Me.REQ_O_TEHAI_4.Name = "REQ_O_TEHAI_4"
-        Me.REQ_O_TEHAI_4.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_4.Top = 10.27205!
+        Me.REQ_O_TEHAI_4.Top = 11.17874!
         Me.REQ_O_TEHAI_4.Visible = False
         Me.REQ_O_TEHAI_4.Width = 1.0!
         '
@@ -3533,10 +3534,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_O_TEHAI_5.DataField = "REQ_O_TEHAI_5"
         Me.REQ_O_TEHAI_5.Height = 0.2!
-        Me.REQ_O_TEHAI_5.Left = 0.0!
+        Me.REQ_O_TEHAI_5.Left = 2.064567!
         Me.REQ_O_TEHAI_5.Name = "REQ_O_TEHAI_5"
-        Me.REQ_O_TEHAI_5.Text = "REQ_O_TEHAI_1"
-        Me.REQ_O_TEHAI_5.Top = 10.27205!
+        Me.REQ_O_TEHAI_5.Top = 11.17874!
         Me.REQ_O_TEHAI_5.Visible = False
         Me.REQ_O_TEHAI_5.Width = 1.0!
         '
@@ -3544,10 +3544,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_1.DataField = "REQ_F_TEHAI_1"
         Me.REQ_F_TEHAI_1.Height = 0.2!
-        Me.REQ_F_TEHAI_1.Left = 0.0!
+        Me.REQ_F_TEHAI_1.Left = 1.0!
         Me.REQ_F_TEHAI_1.Name = "REQ_F_TEHAI_1"
-        Me.REQ_F_TEHAI_1.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_1.Top = 10.27205!
+        Me.REQ_F_TEHAI_1.Top = 11.17874!
         Me.REQ_F_TEHAI_1.Visible = False
         Me.REQ_F_TEHAI_1.Width = 1.0!
         '
@@ -3555,10 +3554,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_2.DataField = "REQ_F_TEHAI_2"
         Me.REQ_F_TEHAI_2.Height = 0.2!
-        Me.REQ_F_TEHAI_2.Left = 0.0!
+        Me.REQ_F_TEHAI_2.Left = 0.9165355!
         Me.REQ_F_TEHAI_2.Name = "REQ_F_TEHAI_2"
-        Me.REQ_F_TEHAI_2.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_2.Top = 10.27205!
+        Me.REQ_F_TEHAI_2.Top = 10.86614!
         Me.REQ_F_TEHAI_2.Visible = False
         Me.REQ_F_TEHAI_2.Width = 1.0!
         '
@@ -3566,10 +3564,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_3.DataField = "REQ_F_TEHAI_3"
         Me.REQ_F_TEHAI_3.Height = 0.2!
-        Me.REQ_F_TEHAI_3.Left = 0.0!
+        Me.REQ_F_TEHAI_3.Left = 6.039764!
         Me.REQ_F_TEHAI_3.Name = "REQ_F_TEHAI_3"
-        Me.REQ_F_TEHAI_3.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_3.Top = 10.27205!
+        Me.REQ_F_TEHAI_3.Top = 10.86614!
         Me.REQ_F_TEHAI_3.Visible = False
         Me.REQ_F_TEHAI_3.Width = 1.0!
         '
@@ -3577,10 +3574,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_4.DataField = "REQ_F_TEHAI_4"
         Me.REQ_F_TEHAI_4.Height = 0.2!
-        Me.REQ_F_TEHAI_4.Left = 0.008661419!
+        Me.REQ_F_TEHAI_4.Left = 5.039764!
         Me.REQ_F_TEHAI_4.Name = "REQ_F_TEHAI_4"
-        Me.REQ_F_TEHAI_4.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_4.Top = 10.27205!
+        Me.REQ_F_TEHAI_4.Top = 10.86614!
         Me.REQ_F_TEHAI_4.Visible = False
         Me.REQ_F_TEHAI_4.Width = 1.0!
         '
@@ -3588,10 +3584,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_F_TEHAI_5.DataField = "REQ_F_TEHAI_5"
         Me.REQ_F_TEHAI_5.Height = 0.2!
-        Me.REQ_F_TEHAI_5.Left = 0.0!
+        Me.REQ_F_TEHAI_5.Left = 3.942126!
         Me.REQ_F_TEHAI_5.Name = "REQ_F_TEHAI_5"
-        Me.REQ_F_TEHAI_5.Text = "REQ_O_TEHAI_1"
-        Me.REQ_F_TEHAI_5.Top = 10.27205!
+        Me.REQ_F_TEHAI_5.Top = 10.86614!
         Me.REQ_F_TEHAI_5.Visible = False
         Me.REQ_F_TEHAI_5.Width = 1.0!
         '
@@ -3599,10 +3594,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_MR_O_TEHAI.DataField = "REQ_MR_O_TEHAI"
         Me.REQ_MR_O_TEHAI.Height = 0.2!
-        Me.REQ_MR_O_TEHAI.Left = 0.0!
+        Me.REQ_MR_O_TEHAI.Left = 2.910236!
         Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
-        Me.REQ_MR_O_TEHAI.Text = "REQ_O_TEHAI_1"
-        Me.REQ_MR_O_TEHAI.Top = 10.27205!
+        Me.REQ_MR_O_TEHAI.Top = 10.86614!
         Me.REQ_MR_O_TEHAI.Visible = False
         Me.REQ_MR_O_TEHAI.Width = 1.0!
         '
@@ -3610,10 +3604,9 @@ Partial Public Class TaxiKakuninReport
         '
         Me.REQ_MR_F_TEHAI.DataField = "REQ_MR_F_TEHAI"
         Me.REQ_MR_F_TEHAI.Height = 0.2!
-        Me.REQ_MR_F_TEHAI.Left = 1.862645E-9!
+        Me.REQ_MR_F_TEHAI.Left = 1.787402!
         Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
-        Me.REQ_MR_F_TEHAI.Text = "REQ_O_TEHAI_1"
-        Me.REQ_MR_F_TEHAI.Top = 10.27205!
+        Me.REQ_MR_F_TEHAI.Top = 10.86614!
         Me.REQ_MR_F_TEHAI.Visible = False
         Me.REQ_MR_F_TEHAI.Width = 1.0!
         '
@@ -3659,28 +3652,28 @@ Partial Public Class TaxiKakuninReport
         'Line6
         '
         Me.Line6.Height = 0.0!
-        Me.Line6.Left = 2.842171E-14!
+        Me.Line6.Left = 1.862645E-9!
         Me.Line6.LineWeight = 1.0!
         Me.Line6.Name = "Line6"
-        Me.Line6.Top = 7.918504!
+        Me.Line6.Top = 7.177953!
         Me.Line6.Width = 2.787402!
-        Me.Line6.X1 = 2.842171E-14!
+        Me.Line6.X1 = 1.862645E-9!
         Me.Line6.X2 = 2.787402!
-        Me.Line6.Y1 = 7.918504!
-        Me.Line6.Y2 = 7.918504!
+        Me.Line6.Y1 = 7.177953!
+        Me.Line6.Y2 = 7.177953!
         '
         'Line7
         '
         Me.Line7.Height = 0.0!
-        Me.Line7.Left = 2.842171E-14!
+        Me.Line7.Left = 1.862645E-9!
         Me.Line7.LineWeight = 1.0!
         Me.Line7.Name = "Line7"
-        Me.Line7.Top = 8.144094!
+        Me.Line7.Top = 7.408268!
         Me.Line7.Width = 2.787402!
-        Me.Line7.X1 = 2.842171E-14!
+        Me.Line7.X1 = 1.862645E-9!
         Me.Line7.X2 = 2.787402!
-        Me.Line7.Y1 = 8.144094!
-        Me.Line7.Y2 = 8.144094!
+        Me.Line7.Y1 = 7.408268!
+        Me.Line7.Y2 = 7.408268!
         '
         'Line4
         '
@@ -6307,50 +6300,98 @@ Partial Public Class TaxiKakuninReport
         'PageFooter
         '
         Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label2, Me.Label1, Me.PRINT_DATE, Me.PRINT_USER})
-        Me.PageFooter.Height = 0.40625!
+        Me.PageFooter.Height = 0.4271984!
         Me.PageFooter.Name = "PageFooter"
         '
         'Label2
         '
         Me.Label2.Height = 0.2!
         Me.Label2.HyperLink = Nothing
-        Me.Label2.Left = 5.494883!
+        Me.Label2.Left = 5.548032!
         Me.Label2.Name = "Label2"
         Me.Label2.Style = "text-align: right"
         Me.Label2.Text = "出力担当："
-        Me.Label2.Top = 0.2000002!
+        Me.Label2.Top = 0.2070866!
         Me.Label2.Width = 0.7291334!
         '
         'Label1
         '
         Me.Label1.Height = 0.2!
         Me.Label1.HyperLink = Nothing
-        Me.Label1.Left = 5.640551!
+        Me.Label1.Left = 5.693701!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = "text-align: right"
         Me.Label1.Text = "出力日："
-        Me.Label1.Top = 0.0000002235174!
+        Me.Label1.Top = 0.0!
         Me.Label1.Width = 0.5834652!
         '
         'PRINT_DATE
         '
         Me.PRINT_DATE.Height = 0.2!
-        Me.PRINT_DATE.Left = 6.224016!
+        Me.PRINT_DATE.Left = 6.277166!
         Me.PRINT_DATE.Name = "PRINT_DATE"
         Me.PRINT_DATE.Style = "white-space: nowrap"
         Me.PRINT_DATE.Text = "1234/56/78 12:34:56"
-        Me.PRINT_DATE.Top = 0.0000002235174!
+        Me.PRINT_DATE.Top = 0.0!
         Me.PRINT_DATE.Width = 1.364567!
         '
         'PRINT_USER
         '
         Me.PRINT_USER.Height = 0.2!
-        Me.PRINT_USER.Left = 6.224016!
+        Me.PRINT_USER.Left = 6.277165!
         Me.PRINT_USER.Name = "PRINT_USER"
         Me.PRINT_USER.Style = "white-space: nowrap"
         Me.PRINT_USER.Text = Nothing
-        Me.PRINT_USER.Top = 0.2!
+        Me.PRINT_USER.Top = 0.2070864!
         Me.PRINT_USER.Width = 1.364567!
+        '
+        'Label174
+        '
+        Me.Label174.Height = 0.2255906!
+        Me.Label174.HyperLink = Nothing
+        Me.Label174.Left = 0.008661418!
+        Me.Label174.Name = "Label174"
+        Me.Label174.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label174.Text = "チケット送付先(その他)"
+        Me.Label174.Top = 8.682678!
+        Me.Label174.Width = 2.77874!
+        '
+        'MR_SEND_SAKI_OTHER
+        '
+        Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
+        Me.MR_SEND_SAKI_OTHER.Height = 1.261024!
+        Me.MR_SEND_SAKI_OTHER.Left = 0.0!
+        Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
+        Me.MR_SEND_SAKI_OTHER.Style = "font-size: 9pt; vertical-align: top"
+        Me.MR_SEND_SAKI_OTHER.Top = 8.913386!
+        Me.MR_SEND_SAKI_OTHER.Width = 2.787402!
+        '
+        'Line12
+        '
+        Me.Line12.Height = 0.0!
+        Me.Line12.Left = 1.862645E-9!
+        Me.Line12.LineWeight = 1.0!
+        Me.Line12.Name = "Line12"
+        Me.Line12.Top = 8.682678!
+        Me.Line12.Width = 2.787402!
+        Me.Line12.X1 = 1.862645E-9!
+        Me.Line12.X2 = 2.787402!
+        Me.Line12.Y1 = 8.682678!
+        Me.Line12.Y2 = 8.682678!
+        '
+        'Line31
+        '
+        Me.Line31.Height = 0.0!
+        Me.Line31.Left = 0.0!
+        Me.Line31.LineWeight = 1.0!
+        Me.Line31.Name = "Line31"
+        Me.Line31.Top = 8.913386!
+        Me.Line31.Width = 2.787402!
+        Me.Line31.X1 = 0.0!
+        Me.Line31.X2 = 2.787402!
+        Me.Line31.Y1 = 8.913386!
+        Me.Line31.Y2 = 8.913386!
         '
         'TaxiKakuninReport
         '
@@ -6724,6 +6765,8 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label174, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MR_SEND_SAKI_OTHER, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -7188,4 +7231,8 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents Line10 As DataDynamics.ActiveReports.Line
     Private WithEvents KINKYU_FLAG As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label4 As DataDynamics.ActiveReports.Label
+    Private WithEvents Label174 As DataDynamics.ActiveReports.Label
+    Private WithEvents MR_SEND_SAKI_OTHER As DataDynamics.ActiveReports.TextBox
+    Private WithEvents Line12 As DataDynamics.ActiveReports.Line
+    Private WithEvents Line31 As DataDynamics.ActiveReports.Line
 End Class
