@@ -93,7 +93,7 @@ Partial Public Class TaxiNouhinTorikomi
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
         If workFiles.Length = 0 Then
             'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, "取込対象CSVファイルが存在しません。", MyBase.DbConnection)
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, "取込対象CSVファイルが存在しません。", MyBase.DbConnection)
             CmnModule.AlertMessage("取込対象CSVファイルが存在しません。", Me)
             Exit Sub
         End If
@@ -101,7 +101,9 @@ Partial Public Class TaxiNouhinTorikomi
         Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.NOUHIN_CSV) & FileUpload1.FileName
         ImportData(filePath, insCnt)
 
-        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, True, (insCnt * -1).ToString & "件のデータを登録しました。", MyBase.DbConnection)
+        Me.LabelErrorMessage.Text &= (insCnt * -1).ToString & "件のデータを登録しました。" & vbNewLine
+
+        'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, True, (insCnt * -1).ToString & "件のデータを登録しました。", MyBase.DbConnection)
 
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
@@ -125,7 +127,8 @@ Partial Public Class TaxiNouhinTorikomi
             'CSVファイルをTextFieldParserクラスを使用して読み込む
             parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("SHIFT-JIS"))
         Else
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strFilePath & "が見つかりません。", MyBase.DbConnection)
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_LOG, False, strFilePath & "が見つかりません。", MyBase.DbConnection)
+            Me.LabelErrorMessage.Text &= strFilePath & "が見つかりません。" & vbNewLine
             Exit Function
         End If
 
@@ -244,7 +247,8 @@ Partial Public Class TaxiNouhinTorikomi
             MyBase.Rollback()
 
             'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_TAXITICKET_HAKKO, False, "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL, MyBase.DbConnection)
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiNouhinTorikomi, TBL_TAXITICKET_HAKKO, False, "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL, MyBase.DbConnection)
+            Me.LabelErrorMessage.Text &= "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
             Return False
         End Try
 
