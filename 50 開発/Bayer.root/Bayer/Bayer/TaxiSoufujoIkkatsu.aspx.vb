@@ -106,6 +106,7 @@ Partial Public Class TaxiSoufujoIkkatsu
         Joken = Nothing
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
 
         ReDim TBL_KOTSUHOTEL(wCnt)
 
@@ -291,6 +292,7 @@ Partial Public Class TaxiSoufujoIkkatsu
         Joken = Nothing
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
         strSQL = SQL.TBL_KOTSUHOTEL.Soufujo(Joken)
 
         Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
@@ -306,6 +308,7 @@ Partial Public Class TaxiSoufujoIkkatsu
         Joken = Nothing
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
         strSQL = SQL.TBL_KOTSUHOTEL.Soufujo(Joken)
 
         Session.Item(SessionDef.TehaishoPrint_SQL) = strSQL
@@ -324,6 +327,9 @@ Partial Public Class TaxiSoufujoIkkatsu
             Me.JokenTO_DATE_YYYY.Text = Joken.TO_DATE.Substring(0, 4)
             Me.JokenTO_DATE_MM.Text = Joken.TO_DATE.Substring(4, 2)
             Me.JokenTO_DATE_DD.Text = Joken.TO_DATE.Substring(6, 2)
+        End If
+        If Joken.KOUENKAI_NO <> Nothing AndAlso Joken.KOUENKAI_NO.Trim <> "" Then
+            Me.JokenKOUENKAI_NO.Text = Joken.KOUENKAI_NO
         End If
     End Sub
 End Class

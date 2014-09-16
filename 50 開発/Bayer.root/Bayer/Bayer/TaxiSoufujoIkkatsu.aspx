@@ -1,4 +1,4 @@
-Ôªø<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master"
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master"
     CodeBehind="TaxiSoufujoIkkatsu.aspx.vb" Inherits="Bayer.TaxiSoufujoIkkatsu" %>
 
 <%@ MasterType VirtualPath="~/Base.Master" %>
@@ -14,30 +14,39 @@
                             <table cellpadding="2" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="width:140px">
-                                        „Çπ„Ç≠„É£„É≥„Éá„Éº„ÇøÂèñËæºÊó•
+                                        ÉXÉLÉÉÉìÉfÅ[É^éÊçûì˙
                                     </td>
                                     <td align="left" valign="middle" colspan="5">
 							            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="3"></asp:TextBox>Âπ¥
+                                            TabIndex="3"></asp:TextBox>îN
 							            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="4"></asp:TextBox>Êúà
+                                            TabIndex="4"></asp:TextBox>åé
 
 							            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="5"></asp:TextBox>Êó•
-							            ÔΩû
+                                            TabIndex="5"></asp:TextBox>ì˙
+							            Å`
 
 							            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
-                                            TabIndex="6"></asp:TextBox>Âπ¥
+                                            TabIndex="6"></asp:TextBox>îN
 							            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="7"></asp:TextBox>Êúà
+                                            TabIndex="7"></asp:TextBox>åé
 
 							            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                            TabIndex="8"></asp:TextBox>Êó•
+                                            TabIndex="8"></asp:TextBox>ì˙
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:140px">
+                                        âÔçáî‘çÜ
+                                    </td>
+                                    <td align="left" valign="middle" colspan="5">
+							            <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="125px" MaxLength="14" 
+                                            TabIndex="9"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr style="width:100%">
                                     <td align="right" valign="bottom" colspan="6" style="width:100%">
-                                        <asp:Button ID="BtnSearch" runat="server" Text="Ê§úÁ¥¢" Width="130px" 
+                                        <asp:Button ID="BtnSearch" runat="server" Text="åüçı" Width="130px" 
                                             CssClass="Button" TabIndex="12" />
                                     </td>
                                 </tr>
@@ -53,11 +62,11 @@
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
                         <td style="width:100%">
-                            <asp:Button ID="BtnSoufujo1" runat="server" Text="ÈÄÅ‰ªòÁä∂Âç∞Âà∑" Width="170px" 
+                            <asp:Button ID="BtnSoufujo1" runat="server" Text="ëóïtèÛàÛç¸" Width="170px" 
                                 CssClass="Button" tabindex="13"/>
-                            <asp:Button ID="BtnKakuninhyo1" runat="server" Text="Á¢∫Ë™çÁ•®Âç∞Âà∑" Width="170px" 
+                            <asp:Button ID="BtnKakuninhyo1" runat="server" Text="ämîFï[àÛç¸" Width="170px" 
                                 CssClass="Button" tabindex="13"/>
-                            <asp:Button ID="BtnBack1" runat="server" Text="Êàª„Çã" Width="130px" 
+                            <asp:Button ID="BtnBack1" runat="server" Text="ñﬂÇÈ" Width="130px" 
                                 CssClass="Button" TabIndex="14" />
                         </td>
                     </tr>
@@ -66,15 +75,15 @@
         </tr>
         <tr>
             <td align="left">
-                <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">ÂØæË±°„Éá„Éº„Çø„Åå„ÅÇ„Çä„Åæ„Åõ„Çì„ÄÇ</asp:Label>
+                <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">ëŒè€ÉfÅ[É^Ç™Ç†ÇËÇ‹ÇπÇÒÅB</asp:Label>
                 <br />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" AutoGenerateColumns="False"
-                    AllowPaging="True" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
+                <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" 
+                    AutoGenerateColumns="False" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
                     DataSourceID="SqlDataSource1" Width="972px">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                     <RowStyle Wrap="false" BackColor="#ffffff" />
@@ -83,35 +92,35 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="MTG ‚Ññ" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="MTG áÇ" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="‰ºöÂêàÂêç" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="âÔçáñº" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="ÈñãÂÇ¨Êó•" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField DataField="FROM_DATE" HeaderText="äJç√ì˙" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="SANKASHA_ID" HeaderText="ÂèÇÂä†ËÄÖID" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="SANKASHA_ID" HeaderText="éQâ¡é“ID" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="DR_NAME" HeaderText="Ôº§Ôº≤Ê∞èÂêç" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="DR_NAME" HeaderText="ÇcÇqéÅñº" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="SCAN_IMPORT_DATE" HeaderText="„Çπ„Ç≠„É£„É≥„Éá„Éº„ÇøÂèñËæºÊó•" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                        <asp:BoundField DataField="SCAN_IMPORT_DATE" HeaderText="ÉXÉLÉÉÉìÉfÅ[É^éÊçûì˙" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="ÈñãÂÇ¨Êó•FROM" />
-                        <asp:BoundField DataField="TO_DATE" HeaderText="ÈñãÂÇ¨Êó•TO" />
+                        <asp:BoundField DataField="FROM_DATE" HeaderText="äJç√ì˙FROM" />
+                        <asp:BoundField DataField="TO_DATE" HeaderText="äJç√ì˙TO" />
                     </Columns>
                 </asp:GridView>
             </td>
@@ -121,11 +130,11 @@
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
                         <td style="width:100%">
-                            <asp:Button ID="BtnSoufujo2" runat="server" Text="ÈÄÅ‰ªòÁä∂Âç∞Âà∑" Width="170px" 
+                            <asp:Button ID="BtnSoufujo2" runat="server" Text="ëóïtèÛàÛç¸" Width="170px" 
                                 CssClass="Button" tabindex="13"/>
-                            <asp:Button ID="BtnKakuninhyo2" runat="server" Text="Á¢∫Ë™çÁ•®Âç∞Âà∑" Width="170px" 
+                            <asp:Button ID="BtnKakuninhyo2" runat="server" Text="ämîFï[àÛç¸" Width="170px" 
                                 CssClass="Button" tabindex="13"/>
-                            <asp:Button ID="BtnBack2" runat="server" Text="Êàª„Çã" Width="130px" 
+                            <asp:Button ID="BtnBack2" runat="server" Text="ñﬂÇÈ" Width="130px" 
                                 CssClass="Button" TabIndex="17" />
                         </td>
                     </tr>

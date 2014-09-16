@@ -3277,6 +3277,11 @@ Public Class SQL
                 strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
             End If
 
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+            End If
             strSQL &= " ORDER BY WK_KOTSUHOTEL."
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
             strSQL &= " ,WK_KOTSUHOTEL."
