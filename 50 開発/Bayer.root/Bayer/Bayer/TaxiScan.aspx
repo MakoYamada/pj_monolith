@@ -22,7 +22,6 @@
 		<tr id="TrError" runat="server">
 			<td align="left" colspan="2" style="font-weight: bold; color: #cb1a1a;">
 				エラーがありました。<br />
-				詳細は操作ログ照会でご確認ください。
 				<br />
 				&nbsp;&nbsp;
 				<asp:TextBox ID="LabelErrorMessage" runat="server" Width="900px" Height="350px" TextMode="MultiLine" ForeColor="#cb1a1a" TabIndex="-1" ReadOnly="true"></asp:TextBox>
@@ -34,6 +33,8 @@
 				<br />
 				処理件数：
 				<asp:Label ID="LabelUpdatedCount" runat="server"></asp:Label>件
+				&nbsp;&nbsp;
+				<asp:TextBox ID="LabelEndMessage" runat="server" Width="900px" Height="350px" TextMode="MultiLine" ForeColor="#404040" TabIndex="-1" ReadOnly="true" Visible="false"></asp:TextBox>
 			</td>
 		</tr>
 	</table>

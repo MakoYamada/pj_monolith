@@ -75,8 +75,8 @@ Partial Public Class TaxiScan
             Exit Sub
         End If
 
-        'ログ登録
-        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "アップロードファイル：" & Me.FileUpload1.PostedFile.FileName, MyBase.DbConnection)
+        ''ログ登録
+        'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "アップロードファイル：" & Me.FileUpload1.PostedFile.FileName, MyBase.DbConnection)
 
         'DB
         Dim UpdatedCount As Integer = 0
@@ -244,10 +244,11 @@ Partial Public Class TaxiScan
         Dim TBL_TAXITICKET_HAKKO() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
         Dim wFlag As Boolean = False
         Dim wCnt As Integer = 0
-        Dim wStr As String = ""
         Dim wUpdateCntTAXI As Integer = 0
         Dim wUpdateCntKOTSUHOTEL As Integer = 0
         Dim wTKT_IMPORT_DATE As String = CmnModule.GetSysDate()
+        Dim wErrorMessage As String = ""
+        Dim wEndMessage As String = ""
 
         '読み込みできる文字がなくなるまで繰り返す
         wFlag = False
@@ -284,8 +285,9 @@ Partial Public Class TaxiScan
         End While
         CsvData.Close()
 
-        'ログ登録
-        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, wLineCnt.ToString & "件のスキャンデータを読込みました。", MyBase.DbConnection)
+        ''ログ登録
+        'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, wLineCnt.ToString & "件のスキャンデータを読込みました。", MyBase.DbConnection)
+        wEndMessage &= wLineCnt.ToString & "件のスキャンデータを読込みました。" & vbNewLine
 
         '交通宿泊テーブル 読込
         'タクシー会社、券種取得        ReDim TBL_KOTSUHOTEL(UBound(TBL_TAXITICKET_HAKKO))
@@ -419,7 +421,7 @@ Partial Public Class TaxiScan
         Next
 
         'データ更新
-        wStr = ""
+        wErrorMessage = ""
         UpdatedCount = 0
         Dim RtnTBL_TAXITICKET_HAKKO As Integer
         Dim RtnTBL_KOTSUHOTEL As Integer
@@ -431,13 +433,13 @@ Partial Public Class TaxiScan
                 RtnTBL_TAXITICKET_HAKKO = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_TAXITICKET_HAKKO = 0 Then
-                    wStr &= CsvFileName & "【" & wCnt + 1.ToString & "行目】タクシーチケット発行テーブル 該当データなし" & vbNewLine
-                    'ログ登録
-                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】タクシーチケット発行テーブル 該当データなし", MyBase.DbConnection, MyBase.DbTransaction)
+                    wErrorMessage &= CsvFileName & "【" & wCnt + 1.ToString & "行目】タクシーチケット発行テーブル 該当データなし" & vbNewLine
+                    ''ログ登録
+                    'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】タクシーチケット発行テーブル 該当データなし", MyBase.DbConnection, MyBase.DbTransaction)
                 Else
                     wUpdateCntTAXI += 1
-                    'ログ登録
-                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_TAXITICKET_HAKKO", MyBase.DbConnection, MyBase.DbTransaction)
+                    ''ログ登録
+                    'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_TAXITICKET_HAKKO", MyBase.DbConnection, MyBase.DbTransaction)
                 End If
 
                 '交通宿泊手配テーブル
@@ -445,13 +447,13 @@ Partial Public Class TaxiScan
                 RtnTBL_KOTSUHOTEL = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 If RtnTBL_KOTSUHOTEL = 0 Then
-                    wStr &= CsvFileName & "【" & wCnt + 1.ToString & "行目】交通宿泊手配テーブル 該当データなし" & vbNewLine
-                    'ログ登録
-                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】交通宿泊手配テーブル 該当データなし", MyBase.DbConnection, MyBase.DbTransaction)
+                    wErrorMessage &= CsvFileName & "【" & wCnt + 1.ToString & "行目】交通宿泊手配テーブル 該当データなし" & vbNewLine
+                    ''ログ登録
+                    'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】交通宿泊手配テーブル 該当データなし", MyBase.DbConnection, MyBase.DbTransaction)
                 Else
                     wUpdateCntKOTSUHOTEL += 1
-                    'ログ登録
-                    MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_KOTSUHOTEL", MyBase.DbConnection, MyBase.DbTransaction)
+                    ''ログ登録
+                    'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, TBL_TAXITICKET_HAKKO(wCnt), TBL_KOTSUHOTEL(wCnt), True, "", "TBL_KOTSUHOTEL", MyBase.DbConnection, MyBase.DbTransaction)
                 End If
 
                 If RtnTBL_TAXITICKET_HAKKO = 1 AndAlso RtnTBL_KOTSUHOTEL = 1 Then
@@ -463,21 +465,23 @@ Partial Public Class TaxiScan
         Catch ex As Exception
             MyBase.Rollback()
 
-            'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】" & Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            ''ログ登録
+            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, False, CsvFileName & "【" & wCnt + 1.ToString & "行目】" & Session.Item(SessionDef.DbError), MyBase.DbConnection)
 
             Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
 
             Return False
         End Try
 
-        'ログ登録
-        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "タクシーチケット発行テーブル：" & wUpdateCntTAXI.ToString & "件、交通宿泊手配テーブル：" & wUpdateCntKOTSUHOTEL.ToString & "件を登録しました。", MyBase.DbConnection)
+        ''ログ登録
+        'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiScan, True, "タクシーチケット発行テーブル：" & wUpdateCntTAXI.ToString & "件、交通宿泊手配テーブル：" & wUpdateCntKOTSUHOTEL.ToString & "件を登録しました。", MyBase.DbConnection)
+        'wEndMessage &= "タクシーチケット発行テーブル：" & wUpdateCntTAXI.ToString & "件、交通宿泊手配テーブル：" & wUpdateCntKOTSUHOTEL.ToString & "件を登録しました。" & vbNewLine
 
         If TBL_TAXITICKET_HAKKO.Length <> wUpdateCntTAXI OrElse TBL_KOTSUHOTEL.Length <> wUpdateCntKOTSUHOTEL Then
-            Me.LabelErrorMessage.Text = wStr
+            Me.LabelErrorMessage.Text = wErrorMessage
             Return False
         Else
+            Me.LabelEndMessage.Text = wEndMessage
             Return True
         End If
     End Function
