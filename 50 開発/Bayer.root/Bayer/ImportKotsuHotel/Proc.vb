@@ -462,7 +462,9 @@ Public Class Proc
 
             '受信フォルダからファイルを削除
             For Each motofile As String In receiveFiles
-                File.Delete(motofile)
+                If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
+                    File.Delete(motofile)
+                End If
             Next
 
         Catch ex As Exception
