@@ -31,60 +31,66 @@ Public Class Proc
 
     Public Overrides Sub run()
 
-        '受信フォルダの処理対象ファイル名を保持する
-        Dim receiveFiles() As String = Directory.GetFiles(My.Settings.PATH_RECEIVE)
+        Try
+            '受信フォルダの処理対象ファイル名を保持する
+            Dim receiveFiles() As String = Directory.GetFiles(My.Settings.PATH_RECEIVE)
 
-        'コピー先フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
-        If Not Directory.Exists(My.Settings.PATH_RECEIVE_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_RECEIVE_BKUP)
+            'コピー先フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+            If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
+            If Not Directory.Exists(My.Settings.PATH_RECEIVE_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_RECEIVE_BKUP)
 
-        '作業フォルダを空にする'2013/11/05Add
-        Dim workFiles() As String = Directory.GetFiles(My.Settings.PATH_WORK)
-        For Each workFile As String In workFiles
-            File.Delete(workFile)
-        Next
+            '作業フォルダを空にする'2013/11/05Add
+            Dim workFiles() As String = Directory.GetFiles(My.Settings.PATH_WORK)
+            For Each workFile As String In workFiles
+                File.Delete(workFile)
+            Next
 
-        '受信フォルダ→作業フォルダへコピー
-        '受信フォルダ→バックアップフォルダへコピー
-        For Each motofile As String In receiveFiles
-            If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
-                File.Copy(motofile, My.Settings.PATH_WORK & "\" & Path.GetFileName(motofile))
+            '受信フォルダ→作業フォルダへコピー
+            '受信フォルダ→バックアップフォルダへコピー
+            For Each motofile As String In receiveFiles
+                If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
+                    File.Copy(motofile, My.Settings.PATH_WORK & "\" & Path.GetFileName(motofile))
 
-                Try
-                    File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileName(motofile))
-                Catch ex As Exception
-                    '同名ファイルが存在した場合は、ファイル名にyyyyMMddHHmmssを付加
-                    File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileNameWithoutExtension(motofile) _
-                                                                            & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(motofile))
-                End Try
+                    Try
+                        File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileName(motofile))
+                    Catch ex As Exception
+                        '同名ファイルが存在した場合は、ファイル名にyyyyMMddHHmmssを付加
+                        File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileNameWithoutExtension(motofile) _
+                                                                                & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(motofile))
+                    End Try
+                End If
+            Next
+
+            workFiles = Directory.GetFiles(My.Settings.PATH_WORK)
+            If workFiles.Length = 0 Then
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "処理対象ファイルがありません。")
+                Exit Sub
             End If
-        Next
 
-        workFiles = Directory.GetFiles(My.Settings.PATH_WORK)
-        If workFiles.Length = 0 Then
-            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "処理対象ファイルがありません。")
-            Exit Sub
-        End If
+            Dim updCnt As Integer = 0  '取込み件数カウント
+            For Each filePath As String In workFiles
+                'データ取り込み
+                ImportData(filePath, updCnt)
+            Next
 
-        Dim updCnt As Integer = 0  '取込み件数カウント
-        For Each filePath As String In workFiles
-            'データ取り込み
-            ImportData(filePath, updCnt)
-        Next
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, updCnt.ToString & "件のデータを更新しました。")
 
-        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, updCnt.ToString & "件のデータを更新しました。")
+            '作業フォルダからファイルを削除
+            For Each filePath As String In workFiles
+                File.Delete(filePath)
+            Next
 
-        '作業フォルダからファイルを削除
-        For Each filePath As String In workFiles
-            File.Delete(filePath)
-        Next
+            '受信フォルダからファイルを削除
+            For Each motofile As String In receiveFiles
+                If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
+                    File.Delete(motofile)
+                End If
+            Next
 
-        '受信フォルダからファイルを削除
-        For Each motofile As String In receiveFiles
-            If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
-                File.Delete(motofile)
-            End If
-        Next
+        Catch ex As Exception
+            'ログファイル出力(想定外のエラー発生時はここでログファイルに書き込む)
+            MyBase.WriteInfoLog(ex.Message)
+        End Try
 
     End Sub
 
