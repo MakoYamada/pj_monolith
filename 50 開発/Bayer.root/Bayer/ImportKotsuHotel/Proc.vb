@@ -436,7 +436,7 @@ Public Class Proc
                     Catch ex As Exception
                         '同名ファイルが存在した場合は、ファイル名にyyyyMMddHHmmssを付加
                         File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileNameWithoutExtension(motofile) _
-                                                                                & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
+                                                                                & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(motofile))
                     End Try
                 End If
             Next
