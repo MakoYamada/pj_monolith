@@ -31,9 +31,10 @@ Public Class Proc
 
     Public Overrides Sub run()
 
+        '受信フォルダの処理対象ファイル名を保持する
         Dim receiveFiles() As String = Directory.GetFiles(My.Settings.PATH_RECEIVE)
 
-        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        'コピー先フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
         If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
         If Not Directory.Exists(My.Settings.PATH_RECEIVE_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_RECEIVE_BKUP)
 
@@ -44,11 +45,18 @@ Public Class Proc
         Next
 
         '受信フォルダ→作業フォルダへコピー
-        '受信フォルダからファイルを削除
+        '受信フォルダ→バックアップフォルダへコピー
         For Each motofile As String In receiveFiles
             If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
                 File.Copy(motofile, My.Settings.PATH_WORK & "\" & Path.GetFileName(motofile))
-                File.Delete(motofile)
+
+                Try
+                    File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileName(motofile))
+                Catch ex As Exception
+                    '同名ファイルが存在した場合は、ファイル名にyyyyMMddHHmmssを付加
+                    File.Copy(motofile, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileNameWithoutExtension(motofile) _
+                                                                            & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(motofile))
+                End Try
             End If
         Next
 
@@ -60,21 +68,22 @@ Public Class Proc
 
         Dim updCnt As Integer = 0  '取込み件数カウント
         For Each filePath As String In workFiles
+            'データ取り込み
             ImportData(filePath, updCnt)
         Next
 
         InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, updCnt.ToString & "件のデータを更新しました。")
 
-        '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
         For Each filePath As String In workFiles
-            Try
-                File.Copy(filePath, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileName(filePath))
-            Catch ex As Exception
-                File.Copy(filePath, My.Settings.PATH_RECEIVE_BKUP & "\" & Path.GetFileNameWithoutExtension(filePath) _
-                                                                        & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
-            End Try
             File.Delete(filePath)
+        Next
+
+        '受信フォルダからファイルを削除
+        For Each motofile As String In receiveFiles
+            If motofile.ToLower.IndexOf(My.Settings.FILE_NAME.ToLower) >= 0 Then
+                File.Delete(motofile)
+            End If
         Next
 
     End Sub
