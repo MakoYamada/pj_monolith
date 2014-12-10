@@ -144,6 +144,7 @@
       <DependentUpon>Base.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Common\Common.vb" />
     <Compile Include="Common\MyModule.vb" />
     <Compile Include="Common\URL.vb" />
     <Compile Include="Common\WebConfig.vb" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="KaigouHiyouCsv.aspx.designer.vb">
+      <DependentUpon>KaigouHiyouCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaigouHiyouCsv.aspx.vb">
+      <DependentUpon>KaigouHiyouCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="KaijoList.aspx.designer.vb">
       <DependentUpon>KaijoList.aspx</DependentUpon>
@@ -208,6 +216,13 @@
     </Compile>
     <Compile Include="KaijoRirekiReport.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MRRyohiCsv.aspx.designer.vb">
+      <DependentUpon>MRRyohiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MRRyohiCsv.aspx.vb">
+      <DependentUpon>MRRyohiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewDrList.aspx.designer.vb">
       <DependentUpon>NewDrList.aspx</DependentUpon>
@@ -318,6 +333,13 @@
       <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SankashaRyohiCsv.aspx.designer.vb">
+      <DependentUpon>SankashaRyohiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SankashaRyohiCsv.aspx.vb">
+      <DependentUpon>SankashaRyohiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SapCsv.aspx.designer.vb">
       <DependentUpon>SapCsv.aspx</DependentUpon>
     </Compile>
@@ -406,6 +428,13 @@
     </Compile>
     <Compile Include="MishuHoukoku.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TaxiJissekiCsv.aspx.designer.vb">
+      <DependentUpon>TaxiJissekiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiJissekiCsv.aspx.vb">
+      <DependentUpon>TaxiJissekiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TaxiMeisaiCsv.aspx.designer.vb">
       <DependentUpon>TaxiMeisaiCsv.aspx</DependentUpon>
@@ -596,10 +625,12 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\logout.gif" />
     <Content Include="Images\spacer.gif" />
+    <Content Include="KaigouHiyouCsv.aspx" />
     <Content Include="KaijoList.aspx" />
     <Content Include="KaijoRegist.aspx" />
     <Content Include="KaijoRireki.aspx" />
     <Content Include="KaijoStatus.html" />
+    <Content Include="MRRyohiCsv.aspx" />
     <Content Include="NewDrList.aspx" />
     <Content Include="DrRegist.aspx" />
     <Content Include="HotelKensaku.aspx" />
@@ -607,6 +638,7 @@
     <Content Include="Menu.aspx" />
     <Content Include="NewKaijoList.aspx" />
     <Content Include="Preview.aspx" />
+    <Content Include="SankashaRyohiCsv.aspx" />
     <Content Include="SapCsv.aspx" />
     <Content Include="SeisanKensaku.aspx" />
     <Content Include="SeisanList.aspx" />
@@ -614,6 +646,7 @@
     <Content Include="ShisetsuKensaku.aspx" />
     <Content Include="Sorry.html" />
     <Content Include="Styles.css" />
+    <Content Include="TaxiJissekiCsv.aspx" />
     <Content Include="TaxiMeisaiCsv.aspx" />
     <Content Include="TaxiMenu.aspx" />
     <Content Include="TaxiPrintCsv.aspx" />
