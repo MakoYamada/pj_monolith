@@ -15,9 +15,10 @@ Partial Public Class TaxiSoufujoIkkatsu
         JISSHI_DATE
         SANKASHA_ID
         DR_NAME
-        SCAN_IMPORT_DATE
-        FROM_DATE
-        TO_DATE
+        IMPORT_DATE
+        SALESFORCE_ID
+        TIME_STAMP_BYL
+        DR_MPID
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -46,6 +47,8 @@ Partial Public Class TaxiSoufujoIkkatsu
             InitControls()
 
             Me.LabelNoData.Visible = False
+            Me.LabelCountTitle.Visible = False
+            Me.LabelCount.Visible = False
             Me.GrvList.Visible = False
             Me.BtnSoufujo1.Visible = False
             Me.BtnSoufujo2.Visible = False
@@ -110,7 +113,7 @@ Partial Public Class TaxiSoufujoIkkatsu
 
         ReDim TBL_KOTSUHOTEL(wCnt)
 
-        strSQL = SQL.TBL_KOTSUHOTEL.Soufujo(Joken)
+        strSQL = SQL.TBL_KOTSUHOTEL.Soufujo_Disp(Joken)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -119,6 +122,34 @@ Partial Public Class TaxiSoufujoIkkatsu
             TBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL(wCnt))
 
             wCnt += 1
+        End While
+        RsData.Close()
+        Me.LabelCount.Text = wCnt.ToString & " 件"
+        Return wFlag
+    End Function
+
+    'グリッドビュー表示項目取得
+
+    Private Function GetGridData(ByVal whereData As StringDictionary, ByRef GRID_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim SearchKey As TableDef.Joken.DataStruct
+
+        SearchKey = Nothing
+        SearchKey.SALESFORCE_ID = whereData(TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID)
+        SearchKey.KOUENKAI_NO = whereData(TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO)
+        SearchKey.SANKASHA_ID = whereData(TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID)
+        SearchKey.TIME_STAMP_BYL = whereData(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL)
+        SearchKey.DR_MPID = whereData(TableDef.TBL_KOTSUHOTEL.Column.DR_MPID)
+
+        strSQL = SQL.TBL_KOTSUHOTEL.byKEY(SearchKey)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            GRID_KOTSUHOTEL = AppModule.SetRsData(RsData, GRID_KOTSUHOTEL)
+
+            Exit While
         End While
         RsData.Close()
 
@@ -130,6 +161,8 @@ Partial Public Class TaxiSoufujoIkkatsu
 
         'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
+            Me.LabelCountTitle.Visible = False
+            Me.LabelCount.Visible = False
             Me.GrvList.Visible = False
             Me.BtnSoufujo1.Visible = False
             Me.BtnSoufujo2.Visible = False
@@ -138,6 +171,8 @@ Partial Public Class TaxiSoufujoIkkatsu
 
         Else
             Me.LabelNoData.Visible = False
+            Me.LabelCountTitle.Visible = True
+            Me.LabelCount.Visible = True
             Me.GrvList.Visible = True
             Me.BtnSoufujo1.Visible = True
             Me.BtnSoufujo2.Visible = True
@@ -174,17 +209,34 @@ Partial Public Class TaxiSoufujoIkkatsu
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
 
         If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim whereData As New StringDictionary
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID, e.Row.Cells(CellIndex.SALESFORCE_ID).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO, e.Row.Cells(CellIndex.KOUENKAI_NO).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID, e.Row.Cells(CellIndex.SANKASHA_ID).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL, e.Row.Cells(CellIndex.TIME_STAMP_BYL).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.DR_MPID, e.Row.Cells(CellIndex.DR_MPID).Text)
 
-            e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
-            e.Row.Cells(CellIndex.SCAN_IMPORT_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.SCAN_IMPORT_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
+            Dim GRID_KOTSUHOTEL As New TableDef.TBL_KOTSUHOTEL.DataStruct
+            If Not GetGridData(whereData, GRID_KOTSUHOTEL) Then Exit Sub
+            e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(GRID_KOTSUHOTEL.FROM_DATE, GRID_KOTSUHOTEL.TO_DATE, True)
+            e.Row.Cells(CellIndex.KOUENKAI_NAME).Text = GRID_KOTSUHOTEL.KOUENKAI_NAME
+            e.Row.Cells(CellIndex.DR_NAME).Text = GRID_KOTSUHOTEL.DR_NAME
+            e.Row.Cells(CellIndex.IMPORT_DATE).Text = CmnModule.Format_Date(GRID_KOTSUHOTEL.SCAN_IMPORT_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
         End If
     End Sub
 
     'グリッドビュー列の表示設定
     Protected Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
-            e.Row.Cells(CellIndex.FROM_DATE).Visible = False
-            e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            Me.GrvList.BorderStyle = BorderStyle.NotSet
+            '@@@ Phase2
+            e.Row.Cells(CellIndex.SALESFORCE_ID).Visible = False
+            e.Row.Cells(CellIndex.TIME_STAMP_BYL).Visible = False
+            e.Row.Cells(CellIndex.DR_MPID).Visible = False
+            e.Row.Cells(CellIndex.IMPORT_DATE).Visible = False
+            'e.Row.Cells(CellIndex.FROM_DATE).Visible = False
+            'e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            '@@@ Phase2
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None

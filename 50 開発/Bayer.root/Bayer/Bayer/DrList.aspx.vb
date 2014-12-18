@@ -5,6 +5,7 @@ Partial Public Class DrList
     Inherits WebBase
 
     Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private TBL_KOTSUHOTEL_KEY() As TableDef.TBL_KOTSUHOTEL_KEY.DataStruct
     Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
@@ -15,6 +16,7 @@ Partial Public Class DrList
         DR_NAME
         MR_NAME
         TIME_STAMP
+        INPUT_DATE
         UPDATE_DATE
         USER_NAME
         ANS_STATUS_TEHAI
@@ -26,20 +28,22 @@ Partial Public Class DrList
         SEND_FLAG
         Button1
         SALESFORCE_ID
-        TO_DATE
-        REQ_O_TEHAI_1
-        REQ_O_TEHAI_2
-        REQ_O_TEHAI_3
-        REQ_O_TEHAI_4
-        REQ_O_TEHAI_5
-        REQ_F_TEHAI_1
-        REQ_F_TEHAI_2
-        REQ_F_TEHAI_3
-        REQ_F_TEHAI_4
-        REQ_F_TEHAI_5
-        REQ_MR_O_TEHAI
-        REQ_MR_F_TEHAI
-        REQ_MR_HOTEL_NOTE
+        DR_MPID
+        TIME_STAMP_BYL
+        'TO_DATE
+        'REQ_O_TEHAI_1
+        'REQ_O_TEHAI_2
+        'REQ_O_TEHAI_3
+        'REQ_O_TEHAI_4
+        'REQ_O_TEHAI_5
+        'REQ_F_TEHAI_1
+        'REQ_F_TEHAI_2
+        'REQ_F_TEHAI_3
+        'REQ_F_TEHAI_4
+        'REQ_F_TEHAI_5
+        'REQ_MR_O_TEHAI
+        'REQ_MR_F_TEHAI
+        'REQ_MR_HOTEL_NOTE
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -67,12 +71,20 @@ Partial Public Class DrList
             '画面項目 初期化
             InitControls()
 
-            If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
+            '@@@ Phase2
+            'If UBound(TBL_KOTSUHOTEL) = 0 And TBL_KOTSUHOTEL(0).SALEFORCE_ID Is Nothing Then
+            If Session.Item(SessionDef.SALESFORCE_ID) Is Nothing Then
                 'SetForm()
             Else
                 SetJoken()
-                SetForm()
+                'SetForm()
             End If
+            Me.LabelNoData.Visible = False
+            Me.LabelCountTitle.Visible = False
+            Me.LabelCount.Visible = False
+            Me.GrvList.Visible = False
+            CmnModule.SetEnabled(Me.BtnPrint1, False)
+            CmnModule.SetEnabled(Me.BtnPrint2, False)
         End If
 
         'マスターページ設定
@@ -120,6 +132,8 @@ Partial Public Class DrList
         CmnModule.SetIme(Me.JokenUPDATE_DATE_DD, CmnModule.ImeType.InActive)
 
         Me.LabelNoData.Visible = False
+        Me.LabelCountTitle.Visible = False
+        Me.LabelCount.Visible = False
         Me.BtnPrint1.Visible = False
         Me.BtnPrint2.Visible = False
         Me.BtnBack2.Visible = False
@@ -133,11 +147,15 @@ Partial Public Class DrList
         'データ取得
         If Not GetData() Then
             Me.LabelNoData.Visible = True
+            Me.LabelCountTitle.Visible = False
+            Me.LabelCount.Visible = False
             Me.GrvList.Visible = False
             CmnModule.SetEnabled(Me.BtnPrint1, False)
             CmnModule.SetEnabled(Me.BtnPrint2, False)
         Else
             Me.LabelNoData.Visible = False
+            Me.LabelCountTitle.Visible = True
+            Me.LabelCount.Visible = True
             Me.GrvList.Visible = True
             Me.BtnBack2.Visible = True
             Me.BtnPrint1.Visible = True
@@ -146,6 +164,7 @@ Partial Public Class DrList
             CmnModule.SetEnabled(Me.BtnPrint2, True)
 
             'グリッドビュー表示
+            Session.Item(SessionDef.PageIndex) = 0
             SetGridView()
         End If
     End Sub
@@ -190,6 +209,7 @@ Partial Public Class DrList
         Joken.DR_SANKA = Me.JokenDR_SANKA.SelectedValue
         Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
         Joken.KOUENKAI_NAME = Me.JokenKOUENKAI_NAME.Text.Trim
+        Joken.SANKASHA_ID = Me.JokenSANKASHA_ID.Text.Trim
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
         If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.ToString
@@ -197,48 +217,63 @@ Partial Public Class DrList
         If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
         Joken.UPDATE_DATE = CmnModule.Format_DateToString(Me.JokenUPDATE_DATE_YYYY.Text, Me.JokenUPDATE_DATE_MM.Text, Me.JokenUPDATE_DATE_DD.Text)
 
-        ReDim TBL_KOTSUHOTEL(wCnt)
-
-        strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False)
+        '@@@ Phase2
+        ReDim TBL_KOTSUHOTEL_KEY(wCnt)
+        strSQL = SQL.TBL_KOTSUHOTEL.Search_KeyItem(Joken, False)
+        'ReDim TBL_KOTSUHOTEL(wCnt)
+        'strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False)
+        '@@@ Phase2
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
 
-            ReDim Preserve TBL_KOTSUHOTEL(wCnt)
-            TBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL(wCnt))
+            '@@@ Phase2
+            ReDim Preserve TBL_KOTSUHOTEL_KEY(wCnt)
+            TBL_KOTSUHOTEL_KEY(wCnt) = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL_KEY(wCnt))
+            'ReDim Preserve TBL_KOTSUHOTEL(wCnt)
+            'TBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL(wCnt))
+            '@@@ Phase2
 
             wCnt += 1
+        End While
+        RsData.Close()
+        Me.LabelCount.Text = wCnt.ToString & " 件"
+
+        Return wFlag
+    End Function
+
+    'グリッドビュー表示項目取得
+
+    Private Function GetGridData(ByVal whereData As StringDictionary, ByRef GRID_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim SearchKey As TableDef.Joken.DataStruct
+
+        SearchKey = Nothing
+        SearchKey.SALESFORCE_ID = whereData(TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID)
+        SearchKey.KOUENKAI_NO = whereData(TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO)
+        SearchKey.SANKASHA_ID = whereData(TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID)
+        SearchKey.TIME_STAMP_BYL = whereData(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL)
+        SearchKey.DR_MPID = whereData(TableDef.TBL_KOTSUHOTEL.Column.DR_MPID)
+
+        strSQL = SQL.TBL_KOTSUHOTEL.byKEY(SearchKey)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            GRID_KOTSUHOTEL = AppModule.SetRsData(RsData, GRID_KOTSUHOTEL)
+
+            Exit While
         End While
         RsData.Close()
 
         Return wFlag
     End Function
 
-    '一覧 表示
-    Private Sub DispList()
-
-        'データ取得        If Not GetData() Then
-            Me.LabelNoData.Visible = True
-            Me.GrvList.Visible = False
-            Me.BtnPrint1.Visible = False
-            Me.BtnPrint2.Visible = False
-
-        Else
-            Me.LabelNoData.Visible = False
-            Me.GrvList.Visible = True
-            Me.BtnBack2.Visible = True
-            Me.BtnPrint1.Visible = True
-            Me.BtnPrint2.Visible = True
-
-            'グリッドビュー表示
-            SetGridView()
-        End If
-    End Sub
-
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定
-        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.Search(Joken, False)
+        'データソース設定
+        Dim strSQL As String = SQL.TBL_KOTSUHOTEL.Search_KeyItem(Joken, False)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -259,53 +294,111 @@ Partial Public Class DrList
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
 
         If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim whereData As New StringDictionary
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID, e.Row.Cells(CellIndex.SALESFORCE_ID).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO, e.Row.Cells(CellIndex.KOUENKAI_NO).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID, e.Row.Cells(CellIndex.SANKASHA_ID).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL, e.Row.Cells(CellIndex.TIME_STAMP).Text)
+            whereData.Add(TableDef.TBL_KOTSUHOTEL.Column.DR_MPID, e.Row.Cells(CellIndex.DR_MPID).Text)
 
-            '開催日
-            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
-            'TimeStamp
-            e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-            '更新日
-            e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
-            'TOPステータス
-            e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text = AppModule.GetName_ANS_STATUS_TEHAI(e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text)
-            '宿泊
-            e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetMark_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
+            Dim GRID_KOTSUHOTEL As New TableDef.TBL_KOTSUHOTEL.DataStruct
+            If Not GetGridData(whereData, GRID_KOTSUHOTEL) Then Exit Sub
+            e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(GRID_KOTSUHOTEL.FROM_DATE, GRID_KOTSUHOTEL.TO_DATE, True)
+            e.Row.Cells(CellIndex.KOUENKAI_NAME).Text = GRID_KOTSUHOTEL.KOUENKAI_NAME
+            e.Row.Cells(CellIndex.DR_NAME).Text = GRID_KOTSUHOTEL.DR_NAME
+            e.Row.Cells(CellIndex.MR_NAME).Text = GRID_KOTSUHOTEL.MR_NAME
+            e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(GRID_KOTSUHOTEL.TIME_STAMP_BYL, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            e.Row.Cells(CellIndex.INPUT_DATE).Text = CmnModule.Format_Date(GRID_KOTSUHOTEL.INPUT_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(GRID_KOTSUHOTEL.UPDATE_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            e.Row.Cells(CellIndex.USER_NAME).Text = CmnModule.Format_Date(GRID_KOTSUHOTEL.USER_NAME, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text = AppModule.GetName_ANS_STATUS_TEHAI(GRID_KOTSUHOTEL.ANS_STATUS_TEHAI)
+            e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetMark_TEHAI_HOTEL(GRID_KOTSUHOTEL.TEHAI_HOTEL)
             '交通
-            If e.Row.Cells(CellIndex.REQ_O_TEHAI_1).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_O_TEHAI_2).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_O_TEHAI_3).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_O_TEHAI_4).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_O_TEHAI_5).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
-                e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+            If GRID_KOTSUHOTEL.REQ_O_TEHAI_1 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_O_TEHAI_2 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_O_TEHAI_3 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_O_TEHAI_4 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_O_TEHAI_5 = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_F_TEHAI_1 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_F_TEHAI_2 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_F_TEHAI_3 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_F_TEHAI_4 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes OrElse _
+                GRID_KOTSUHOTEL.REQ_F_TEHAI_5 = AppConst.KOTSUHOTEL.REQ_F_TEHAI.Code.Yes Then
 
                 e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
             Else
                 e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
             End If
             'タクチケ
-            e.Row.Cells(CellIndex.TEHAI_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
+            e.Row.Cells(CellIndex.TEHAI_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(GRID_KOTSUHOTEL.TEHAI_TAXI)
             'MR手配
-            If e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
-                e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
-                e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
-                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
-                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
-                e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
-                e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Text.Trim <> "&nbsp;" Then
+            If GRID_KOTSUHOTEL.REQ_MR_O_TEHAI = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+                GRID_KOTSUHOTEL.REQ_MR_O_TEHAI = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+                GRID_KOTSUHOTEL.REQ_MR_O_TEHAI = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+                GRID_KOTSUHOTEL.REQ_MR_F_TEHAI = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+                GRID_KOTSUHOTEL.REQ_MR_F_TEHAI = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+                GRID_KOTSUHOTEL.REQ_MR_F_TEHAI = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+                GRID_KOTSUHOTEL.REQ_MR_HOTEL_NOTE <> "" OrElse _
+                GRID_KOTSUHOTEL.ANS_MR_HOTEL_NOTE <> "" Then
 
                 e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
             Else
                 e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
             End If
             '緊急
-            e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text = AppModule.GetMark_KINKYU_FLAG(e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text)
-
+            e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text = AppModule.GetMark_KINKYU_FLAG(GRID_KOTSUHOTEL.KINKYU_FLAG)
             'NOZOMI送信ステータス
-            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
+            e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(GRID_KOTSUHOTEL.SEND_FLAG, True)
+
+
+
+
+            ''開催日
+            'e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
+            ''TimeStamp
+            'e.Row.Cells(CellIndex.TIME_STAMP).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.TIME_STAMP).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            ''更新日
+            'e.Row.Cells(CellIndex.UPDATE_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.UPDATE_DATE).Text, CmnModule.DateFormatType.YYYYMMDDHHMMSS)
+            ''TOPステータス
+            'e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text = AppModule.GetName_ANS_STATUS_TEHAI(e.Row.Cells(CellIndex.ANS_STATUS_TEHAI).Text)
+            ''宿泊
+            'e.Row.Cells(CellIndex.TEHAI_HOTEL).Text = AppModule.GetMark_TEHAI_HOTEL(e.Row.Cells(CellIndex.TEHAI_HOTEL).Text)
+            ''交通
+            'If e.Row.Cells(CellIndex.REQ_O_TEHAI_1).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_O_TEHAI_2).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_O_TEHAI_3).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_O_TEHAI_4).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_O_TEHAI_5).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes OrElse _
+            '    e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Text = AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes Then
+
+            '    e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+            'Else
+            '    e.Row.Cells(CellIndex.TEHAI_KOTSU).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+            'End If
+            ''タクチケ
+            'e.Row.Cells(CellIndex.TEHAI_TAXI).Text = AppModule.GetMark_TEHAI_TAXI(e.Row.Cells(CellIndex.TEHAI_TAXI).Text)
+            ''MR手配
+            'If e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+            '    e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+            '    e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+            '    e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.RinSeki OrElse _
+            '    e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuSeki OrElse _
+            '    e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Text = AppConst.KOTSUHOTEL.REQ_MR_TEHAI.Code.BetsuBin OrElse _
+            '    e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Text.Trim <> "&nbsp;" Then
+
+            '    e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.Yes)
+            'Else
+            '    e.Row.Cells(CellIndex.TEHAI_MR).Text = AppModule.GetMark_REQ_O_TEHAI(AppConst.KOTSUHOTEL.REQ_O_TEHAI.Code.No)
+            'End If
+            ''緊急
+            'e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text = AppModule.GetMark_KINKYU_FLAG(e.Row.Cells(CellIndex.TEHAI_EMERGENCY).Text)
+
+            ''NOZOMI送信ステータス
+            'e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
         End If
     End Sub
 
@@ -314,20 +407,22 @@ Partial Public Class DrList
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             Me.GrvList.BorderStyle = BorderStyle.NotSet
             e.Row.Cells(CellIndex.SALESFORCE_ID).Visible = False
-            e.Row.Cells(CellIndex.TO_DATE).Visible = False
-            e.Row.Cells(CellIndex.REQ_O_TEHAI_1).Visible = False
-            e.Row.Cells(CellIndex.REQ_O_TEHAI_2).Visible = False
-            e.Row.Cells(CellIndex.REQ_O_TEHAI_3).Visible = False
-            e.Row.Cells(CellIndex.REQ_O_TEHAI_4).Visible = False
-            e.Row.Cells(CellIndex.REQ_O_TEHAI_5).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
-            e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
-            e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Visible = False
-            e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Visible = False
-            e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Visible = False
+            e.Row.Cells(CellIndex.DR_MPID).Visible = False
+            e.Row.Cells(CellIndex.TIME_STAMP_BYL).Visible = False
+            'e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            'e.Row.Cells(CellIndex.REQ_O_TEHAI_1).Visible = False
+            'e.Row.Cells(CellIndex.REQ_O_TEHAI_2).Visible = False
+            'e.Row.Cells(CellIndex.REQ_O_TEHAI_3).Visible = False
+            'e.Row.Cells(CellIndex.REQ_O_TEHAI_4).Visible = False
+            'e.Row.Cells(CellIndex.REQ_O_TEHAI_5).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_1).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_2).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_3).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_4).Visible = False
+            'e.Row.Cells(CellIndex.REQ_F_TEHAI_5).Visible = False
+            'e.Row.Cells(CellIndex.REQ_MR_O_TEHAI).Visible = False
+            'e.Row.Cells(CellIndex.REQ_MR_F_TEHAI).Visible = False
+            'e.Row.Cells(CellIndex.REQ_MR_HOTEL_NOTE).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
@@ -360,6 +455,15 @@ Partial Public Class DrList
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
                 Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
 
+                '@@@ Phase2
+                Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+                Dim row As GridViewRow = GrvList.Rows(index)
+                Session.Item(SessionDef.SALESFORCE_ID) = DirectCast(GrvList.Rows(index).Controls(CellIndex.SALESFORCE_ID), DataControlFieldCell).Text()
+                Session.Item(SessionDef.KOUENKAI_NO) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NO), DataControlFieldCell).Text()
+                Session.Item(SessionDef.SANKASHA_ID) = DirectCast(GrvList.Rows(index).Controls(CellIndex.SANKASHA_ID), DataControlFieldCell).Text()
+                Session.Item(SessionDef.TIME_STAMP_BYL) = DirectCast(GrvList.Rows(index).Controls(CellIndex.TIME_STAMP_BYL), DataControlFieldCell).Text()
+                Session.Item(SessionDef.DR_MPID) = DirectCast(GrvList.Rows(index).Controls(CellIndex.DR_MPID), DataControlFieldCell).Text()
+
                 '履歴画面用セッション変数をクリア
                 Session.Remove(SessionDef.KaijoRireki)
                 Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
@@ -376,7 +480,7 @@ Partial Public Class DrList
         If Not Check() Then Exit Sub
 
         '一覧 表示
-        DispList()
+        SetForm()
 
     End Sub
 
@@ -400,6 +504,11 @@ Partial Public Class DrList
 
         If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
             CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("会合番号"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenSANKASHA_ID) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("参加者番号"), Me)
             Return False
         End If
 
@@ -494,6 +603,7 @@ Partial Public Class DrList
         Joken.DR_SANKA = Me.JokenDR_SANKA.SelectedValue
         Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
         Joken.KOUENKAI_NAME = Me.JokenKOUENKAI_NAME.Text.Trim
+        Joken.SANKASHA_ID = Me.JokenSANKASHA_ID.Text.Trim
         Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
         Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
         If Me.JokenBU.SelectedIndex <> 0 Then
@@ -519,6 +629,7 @@ Partial Public Class DrList
         If Joken.DR_SANKA.Trim = "" Then Joken.DR_SANKA = "指定なし"
         If Joken.KOUENKAI_NO.Trim = "" Then Joken.KOUENKAI_NO = "指定なし"
         If Joken.KOUENKAI_NAME.Trim = "" Then Joken.KOUENKAI_NAME = "指定なし"
+        If Joken.SANKASHA_ID.Trim = "" Then Joken.SANKASHA_ID = "指定なし"
         If Joken.FROM_DATE.Trim = "" OrElse Joken.FROM_DATE Is Nothing Then Joken.FROM_DATE = "指定なし"
         If Joken.TO_DATE.Trim = "" OrElse Joken.TO_DATE Is Nothing Then Joken.TO_DATE = "指定なし"
         If Joken.BU.Trim = "" Then Joken.BU = "指定なし"
@@ -538,7 +649,77 @@ Partial Public Class DrList
         BtnPrint1_Click(sender, e)
     End Sub
 
-    Protected Sub GrvList_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles GrvList.SelectedIndexChanged
+    '[CSV出力]
+    Private Sub BtnCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCsv1.Click, BtnCsv2.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
 
+        '一覧 表示
+        SetForm()
+
+        Dim CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct
+        If GetDrCsvData(CsvData) Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "DrList_" & Now.ToString("yyyyMMddHHmmss") & ".csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(MyModule.Csv.DrKensakuCsv(CsvData, MyBase.DbConnection))
+            Response.End()
+        End If
     End Sub
+
+    '検索交通・宿泊CSV用データ取得
+    Private Function GetDrCsvData(ByRef CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
+        Dim wFlag As Boolean = False
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        Joken.MR_ROMA = Me.JokenMR_ROMA.Text.Trim
+        Joken.DR_KANA = Me.JokenDR_KANA.Text.Trim
+        Joken.DR_SANKA = Me.JokenDR_SANKA.SelectedValue
+        Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
+        Joken.KOUENKAI_NAME = Me.JokenKOUENKAI_NAME.Text.Trim
+        Joken.SANKASHA_ID = Me.JokenSANKASHA_ID.Text.Trim
+        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        If Me.JokenBU.SelectedIndex <> 0 Then
+            Joken.BU = Me.JokenBU.SelectedItem.ToString
+        Else
+            Joken.BU = ""
+        End If
+        If Me.JokenTEHAI_TANTO_AREA.SelectedIndex <> 0 Then
+            Joken.AREA = Me.JokenTEHAI_TANTO_AREA.SelectedItem.ToString
+        Else
+            Joken.AREA = ""
+        End If
+        If Me.JokenTTEHAI_TANTO.SelectedIndex <> 0 Then
+            Joken.TTANTO_ID = Me.JokenTTEHAI_TANTO.SelectedValue
+        Else
+            Joken.TTANTO_ID = ""
+        End If
+        Joken.UPDATE_DATE = CmnModule.Format_DateToString(Me.JokenUPDATE_DATE_YYYY.Text, Me.JokenUPDATE_DATE_MM.Text, Me.JokenUPDATE_DATE_DD.Text)
+
+        strSQL = SQL.TBL_KOTSUHOTEL.Search(Joken, False)
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve CsvData(wCnt)
+            CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        If wFlag = False Then
+            CmnModule.AlertMessage("対象データがありません。", Me)
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class

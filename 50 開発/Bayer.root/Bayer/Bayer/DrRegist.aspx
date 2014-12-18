@@ -503,7 +503,7 @@
                             備考
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="3">
-                            <asp:TextBox ID="REQ_MR_HOTEL_NOTE" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="REQ_MR_HOTEL_NOTE" runat="server" MaxLength="510" 
                                 TextMode="MultiLine" Height="47px" Width="344px" Tabstop="False" 
                                 BorderStyle="None" ReadOnly="True"></asp:TextBox>                            
                         </td>
@@ -511,7 +511,7 @@
                             備考
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="3">
-                            <asp:TextBox ID="ANS_MR_HOTEL_NOTE" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="ANS_MR_HOTEL_NOTE" runat="server" MaxLength="510" 
                                 TextMode="MultiLine" Height="47px" Width="344px" TabIndex="14"></asp:TextBox>                            
                         </td>
                     </tr>
@@ -579,7 +579,7 @@
                             施設名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_HOTEL_NAME" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_HOTEL_NAME" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="267px" TabIndex="17"></asp:TextBox>
             				<asp:Button ID="BtnHotelKensaku" runat="server" Width="55px" Text="検索" 
                                 CssClass="ButtonList" TabIndex="18" />
@@ -596,7 +596,7 @@
                             施設住所
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_HOTEL_ADDRESS" runat="server" MaxLength="128" 
+                            <asp:TextBox ID="ANS_HOTEL_ADDRESS" runat="server" MaxLength="256" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="19"></asp:TextBox>
                         </td>
                     </tr>
@@ -677,7 +677,7 @@
 							<div style="font-weight: bold; color: #2424f0;" id="Div1" runat="server">
 								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
 							</div>
-                            <asp:TextBox ID="ANS_HOTEL_NOTE" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="ANS_HOTEL_NOTE" runat="server" MaxLength="510" 
                                 textmode="MultiLine" Height="65px" Width="347px" TabIndex="27"></asp:TextBox>
                         </td>
                     </tr>
@@ -792,14 +792,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_1" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT1_1" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="34"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_1" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT2_1" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="35"></asp:TextBox>
                         </td>
                     </tr>
@@ -844,7 +844,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_BIN_1" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_O_BIN_1" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="38"></asp:TextBox>
                         </td>
                     </tr>
@@ -988,14 +988,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_2" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT1_2" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="47"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_2" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT2_2" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="48"></asp:TextBox>
                         </td>
                     </tr>
@@ -1040,7 +1040,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_BIN_2" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_O_BIN_2" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="51"></asp:TextBox>
                         </td>
                     </tr>
@@ -1185,14 +1185,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_3" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT1_3" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="60"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_3" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT2_3" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="61"></asp:TextBox>
                         </td>
                     </tr>
@@ -1237,7 +1237,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_BIN_3" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_O_BIN_3" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="64"></asp:TextBox>
                         </td>
                     </tr>
@@ -1379,14 +1379,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_4" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT1_4" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="73"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_4" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT2_4" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="74"></asp:TextBox>
                         </td>
                     </tr>
@@ -1431,7 +1431,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_BIN_4" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_O_BIN_4" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="77"></asp:TextBox>
                         </td>
                     </tr>
@@ -1573,14 +1573,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT1_5" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT1_5" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="86"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_O_AIRPORT2_5" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_O_AIRPORT2_5" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="87"></asp:TextBox>
                         </td>
                     </tr>
@@ -1625,7 +1625,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_O_BIN_5" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_O_BIN_5" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="90"></asp:TextBox>
                         </td>
                     </tr>
@@ -1767,14 +1767,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_1" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT1_1" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="99"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_1" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT2_1" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="100"></asp:TextBox>
                         </td>
                     </tr>
@@ -1819,7 +1819,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_BIN_1" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_F_BIN_1" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="103"></asp:TextBox>
                         </td>
                     </tr>
@@ -1960,14 +1960,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_2" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT1_2" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="112"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_2" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT2_2" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="113"></asp:TextBox>
                         </td>
                     </tr>
@@ -2012,7 +2012,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_BIN_2" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_F_BIN_2" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="116"></asp:TextBox>
                         </td>
                     </tr>
@@ -2153,14 +2153,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_3" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT1_3" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="125"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_3" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT2_3" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="126"></asp:TextBox>
                         </td>
                     </tr>
@@ -2205,7 +2205,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_BIN_3" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_F_BIN_3" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="129"></asp:TextBox>
                         </td>
                     </tr>
@@ -2346,14 +2346,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_4" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT1_4" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="138"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_4" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT2_4" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="139"></asp:TextBox>
                         </td>
                     </tr>
@@ -2398,7 +2398,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_BIN_4" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_F_BIN_4" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="142"></asp:TextBox>
                         </td>
                     </tr>
@@ -2539,14 +2539,14 @@
                             出発地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT1_5" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT1_5" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="151"></asp:TextBox>
                         </td>
                         <td align="left" valign="middle" class="TdTitle" style="width:100px">
                             到着地
                         </td>
                         <td align="left" valign="middle" class="TdItem">							
-                            <asp:TextBox ID="ANS_F_AIRPORT2_5" runat="server" MaxLength="80" 
+                            <asp:TextBox ID="ANS_F_AIRPORT2_5" runat="server" MaxLength="160" 
                                 textmode="MultiLine" Height="30px" Width="148px" TabIndex="152"></asp:TextBox>
                         </td>
                     </tr>
@@ -2591,7 +2591,7 @@
                             列車・便名
                         </td>
                         <td align="left" valign="middle" class="TdItem" colspan="3">							
-                            <asp:TextBox ID="ANS_F_BIN_5" runat="server" MaxLength="100" 
+                            <asp:TextBox ID="ANS_F_BIN_5" runat="server" MaxLength="160" 
                                 TextMode="MultiLine" Height="30px" Width="344px" TabIndex="155"></asp:TextBox>
                         </td>
                     </tr>
@@ -2654,7 +2654,7 @@
 							<div style="font-weight: bold; color: #2424f0;" id="Div2" runat="server">
 								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
 							</div>
-                            <asp:TextBox ID="ANS_KOTSU_BIKO" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="ANS_KOTSU_BIKO" runat="server" MaxLength="510" 
                                 TextMode="MultiLine" Height="68px" Width="445px" TabIndex="158"></asp:TextBox>                            
                         </td>
                     </tr>
@@ -2720,7 +2720,7 @@
 							<div style="font-weight: bold; color: #2424f0;" id="Div3" runat="server">
 								ダブルクォーテーション「”」・改行(Enterキー)は入力できません。
 							</div>
-                            <asp:TextBox ID="ANS_TAXI_NOTE" runat="server" MaxLength="255" 
+                            <asp:TextBox ID="ANS_TAXI_NOTE" runat="server" MaxLength="510" 
                                 TextMode="MultiLine" Height="68px" Width="344px" TabIndex="162"></asp:TextBox>                            
                         </td>
 					</tr>
@@ -4107,7 +4107,8 @@
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="2">
                             <asp:TextBox ID="ANS_MR_HOTELHI" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="276" AutoPostBack="True"></asp:TextBox>円                            
+                                Height="18px" Width="85px" TabIndex="276" AutoPostBack="True" 
+                                Enabled="False"></asp:TextBox>円                            
                         </td>
                         <td align="left" valign="middle" class="TdTitleMR">
                             MR交通費(税込)
@@ -4123,7 +4124,7 @@
                         </td>
                         <td align="left" valign="top" class="TdItem" colspan="5">
                             <asp:TextBox ID="ANS_MR_HOTELHI_TOZEI" runat="server" MaxLength="10" 
-                                Height="18px" Width="85px" TabIndex="277"></asp:TextBox>円                            
+                                Height="18px" Width="85px" TabIndex="277" Enabled="False"></asp:TextBox>円                            
                         </td>
                     </tr>
 				</table>

@@ -51,6 +51,8 @@ Partial Public Class Menu1
             End If
         End If
 
+        'Me.BUNSEKI_TR.Visible = False
+
         '共通チェック
         MyModule.IsPageOK(True, Session.Item(SessionDef.LoginID), Me)
 
@@ -242,7 +244,8 @@ Partial Public Class Menu1
         ReDim CsvData(wCnt)
 
         Dim csvJoken As TableDef.Joken.DataStruct
-        strSQL = SQL.TBL_KOTSUHOTEL.Search(csvJoken, True)
+        strSQL = SQL.TBL_KOTSUHOTEL.NewDrCsv(csvJoken, True)
+        'strSQL = SQL.TBL_KOTSUHOTEL.Search(csvJoken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -260,4 +263,24 @@ Partial Public Class Menu1
 
         Return True
     End Function
+
+    '[会合費用総合一覧CSV]
+    Protected Sub BtnKaigouHiyouCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKaigouHiyouCsv.Click
+        Response.Redirect(URL.KaigouHiyouCsv)
+    End Sub
+
+    '[参加者旅費一覧CSV]
+    Private Sub BtnSankashaRyohiCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSankashaRyohiCsv.Click
+        Response.Redirect(URL.SankashaRyohiCsv)
+    End Sub
+
+    '[社員旅費一覧CSV]
+    Private Sub BtnMRRyohiCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnMRRyohiCsv.Click
+        Response.Redirect(URL.MRRyohiCsv)
+    End Sub
+
+    '[タクチケ実績取込一覧CSV]
+    Private Sub BtnTaxiJissekiCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTaxiJissekiCsv.Click
+        Response.Redirect(URL.TaxiJissekiCsv)
+    End Sub
 End Class

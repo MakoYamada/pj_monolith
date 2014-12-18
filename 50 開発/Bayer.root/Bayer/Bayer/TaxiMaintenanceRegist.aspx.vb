@@ -147,8 +147,11 @@ Partial Public Class TaxiMaintenanceRegist
 
     '[登録]
     Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
-        '入力チェック
-        If Not Check() Then Exit Sub
+        ''入力チェック
+        'If Not Check() Then Exit Sub
+
+        '参加者存在チェック
+        Call BtnSankasha_Click(sender, e)
 
         'データ更新
         If ExecuteTransaction() Then

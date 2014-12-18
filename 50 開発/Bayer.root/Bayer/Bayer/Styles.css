@@ -313,6 +313,11 @@ img
 	background-repeat: repeat-x;
 	border: 1px #2c628b solid;
 }
+.ButtonHidden
+{
+	/* visibility: hidden ; */
+	display:none;
+}
 .ButtonList 
 {
 	background-image: url('Images/btnlist01.png');

@@ -51,7 +51,16 @@ Partial Public Class KaijoList
             InitControls()
 
             '画面項目表示
-            SetForm()
+            '@@@ Phase2
+            SetJoken()
+            Me.LabelNoData.Visible = False
+            Me.GrvList.Visible = False
+            Me.TblButton1.Visible = False
+            Me.SpnBtnKaijoListPrint2.Visible = False
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint1, False)
+            CmnModule.SetEnabled(Me.BtnKaijoListPrint2, False)
+            'SetForm()
+            '@@@ Phase2
         End If
 
         Session.Remove(SessionDef.KaijoPrint_SQL)
@@ -107,8 +116,8 @@ Partial Public Class KaijoList
         CmnModule.ClearAllControl(Me)
     End Sub
 
-    '画面項目 表示
-    Private Sub SetForm()
+    '抽出条件 表示
+    Private Sub SetJoken()
         '条件
         If Trim(Joken.FROM_DATE) <> "" Then
             Me.JokenFROM_DATE_YYYY.Text = Mid(Joken.FROM_DATE, 1, 4)
@@ -130,6 +139,10 @@ Partial Public Class KaijoList
         Me.JokenTEHAI_TANTO_ROMA.Text = Trim(Joken.TEHAI_TANTO_ROMA)
         Me.JokenTEHAI_TANTO_NAME.Text = Trim(Joken.TEHAI_TANTO_NAME)
         Me.JoKenTTEHAI_TANTO.SelectedIndex = CmnModule.GetSelectedIndex(Joken.TTEHAI_TANTO, Me.JoKenTTEHAI_TANTO)
+    End Sub
+
+    '画面項目 表示
+    Private Sub SetForm()
 
         'データ取得
         If Not GetData() Then

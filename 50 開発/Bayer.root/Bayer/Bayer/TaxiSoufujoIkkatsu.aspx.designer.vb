@@ -124,6 +124,24 @@ Partial Public Class TaxiSoufujoIkkatsu
     Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''LabelCountTitle コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelCountTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LabelCount コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelCount As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''SqlDataSource1 コントロール。
     '''</summary>
     '''<remarks>

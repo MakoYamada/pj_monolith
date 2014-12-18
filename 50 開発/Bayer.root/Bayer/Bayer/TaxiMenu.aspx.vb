@@ -99,4 +99,9 @@ Partial Public Class TaxiMenu
     Protected Sub BtnTaxiSoufujoIkkatsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSoufujoIkkatsu.Click
         Response.Redirect(URL.TaxiSoufujoIkkatsu)
     End Sub
+
+    '[その他実績データ取込]
+    Protected Sub BtnTaxiJissekiOTH_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiJissekiOTH.Click
+        Response.Redirect(URL.TaxiJissekiOTH)
+    End Sub
 End Class

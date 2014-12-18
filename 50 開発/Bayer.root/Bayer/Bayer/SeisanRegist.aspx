@@ -400,7 +400,8 @@
                                         社員宿泊費
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdItem">
-							            <asp:TextBox ID="MR_HOTEL" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
+							            <asp:TextBox ID="MR_HOTEL" runat="server" Text="1234567890" Width="100px" 
+                                            MaxLength="10" Enabled="False"></asp:TextBox>円
 						            </td>
                                 </tr>
                                 <tr>
@@ -408,7 +409,8 @@
                                         社員東京都宿泊税
                                     </td>
                                     <td nowrap="nowrap" align="left" class="TdItem">
-							            <asp:TextBox ID="MR_HOTEL_TOZEI" runat="server" Text="1234567890" Width="100px" MaxLength="10"></asp:TextBox>円
+							            <asp:TextBox ID="MR_HOTEL_TOZEI" runat="server" Text="1234567890" Width="100px" 
+                                            MaxLength="10" Enabled="False"></asp:TextBox>円
 						            </td>
                                 </tr>
                                 <tr>

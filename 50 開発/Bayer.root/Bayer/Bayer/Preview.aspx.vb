@@ -7,7 +7,7 @@ Partial Public Class Preview
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
-    Private DSP_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private DSP_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private RPT_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private Joken As TableDef.Joken.DataStruct
     Private SEQ As Integer
@@ -132,7 +132,7 @@ Partial Public Class Preview
             End If
         ElseIf URL.DrRegist.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
             TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
-            TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+            DSP_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
             If Trim(Session.Item(SessionDef.TehaishoPrint_SQL)) = "" Then
                 Return False
             End If

@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table cellspacing="0" cellpadding="2" border="0">
+    <table cellspacing="0" cellpadding="2" border="0">
         <tr>
             <td align="left">
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">
@@ -76,6 +76,8 @@
         <tr>
             <td align="left">
                 <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データがありません。</asp:Label>
+                <asp:Label ID="LabelCountTitle" runat="server">検索結果件数：</asp:Label>
+                <asp:Label ID="LabelCount" runat="server"></asp:Label>
                 <br />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </td>
@@ -83,8 +85,8 @@
         <tr>
             <td>
                 <asp:GridView ID="GrvList" runat="server" TabIndex="15" CellPadding="2" 
-                    AutoGenerateColumns="False" PageSize="13" DataKeyNames="KOUENKAI_NO,DR_MPID" 
-                    DataSourceID="SqlDataSource1" Width="972px">
+                    AutoGenerateColumns="False" PageSize="30" DataKeyNames="KOUENKAI_NO,DR_MPID" 
+                    DataSourceID="SqlDataSource1" Width="972px" AllowPaging="True">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
                     <RowStyle Wrap="false" BackColor="#ffffff" />
                     <HeaderStyle Wrap="false" HorizontalAlign="Center" CssClass="TdTitle" />
@@ -92,35 +94,61 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="MTG №" ItemStyle-Wrap="false"
+                        <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
-                            HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False"></ItemStyle>
-                        </asp:BoundField>
+                        <asp:TemplateField HeaderText="会合名">
+                            <ItemTemplate>
+                                <asp:Label ID="KOUENKAI_NAME" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="開催日">
+                            <ItemTemplate>
+                                <asp:Label ID="JISSI_DATE" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Wrap="False" />
+                        </asp:TemplateField>
                         <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者ID" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="DR_NAME" HeaderText="ＤＲ氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
+                        <asp:TemplateField HeaderText="ＤＲ氏名">
+                            <ItemTemplate>
+                                <asp:Label ID="DR_NAME" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="スキャンデータ取込日">
+                            <ItemTemplate>
+                                <asp:Label ID="SCAN_DATE" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALESFORCE_ID" />
+                        <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="TIME_STAMP_BYL" />
+                        <asp:BoundField DataField="DR_MPID" HeaderText="DR_MPID" ItemStyle-Wrap="false"
+                            HeaderStyle-Wrap="false">
+<HeaderStyle Wrap="False"></HeaderStyle>
+
+<ItemStyle Wrap="False"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="SCAN_IMPORT_DATE" HeaderText="スキャンデータ取込日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" HorizontalAlign="Left"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日FROM" />
-                        <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" />
+                        <asp:TemplateField HeaderText="SCAN_IMPORT_DATE">
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                            </EditItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle Wrap="False" />
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </td>

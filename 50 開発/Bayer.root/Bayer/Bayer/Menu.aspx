@@ -125,6 +125,21 @@
 						</td>
 						<td></td>
 					</tr>
+					<tr valign="top" runat="server" id="BUNSEKI_TR">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnKaigouHiyouCsv" runat="server" Text="会合費用総合一覧CSV" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSankashaRyohiCsv" runat="server" Text="参加者旅費一覧CSV" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnMRRyohiCsv" runat="server" Text="社員旅費一覧CSV" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiJissekiCsv" runat="server" Text="タクチケ一覧CSV" 
+                                Width="200px" CssClass="Button" />
+						</td>
+					</tr>
 					<tr>
 						<td colspan="4"></td>
 					</tr>

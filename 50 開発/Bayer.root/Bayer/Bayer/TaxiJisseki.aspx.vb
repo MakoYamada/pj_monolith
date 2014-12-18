@@ -216,7 +216,14 @@ Partial Public Class TaxiJisseki
             Return False
         End Try
 
-        Return True
+        If Trim(ErrorMessage) <> "" Then
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Return True
+        End If
 
     End Function
 

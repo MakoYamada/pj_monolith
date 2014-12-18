@@ -3,29 +3,7 @@
 
 <%@ MasterType VirtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<style type="text/css">
-        .style1
-        {
-            width: 327px;
-        }
-        .style2
-        {
-            width: 230px;
-        }
-        .style4
-        {
-            margin-top: 0px;
-        }
-        .style5
-        {
-            width: 429px;
-        }
-        .style6
-        {
-            width: 210px;
-        }
-    </style>
-</asp:Content>
+	</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table cellspacing="0" cellpadding="2" border="0">
         <tr>
@@ -89,7 +67,7 @@
                                     </td>
                                     <td colspan="3">
                                         <asp:TextBox ID="JokenTEHAI_TANTO_ROMA" runat="server" Width="350px" MaxLength="300" 
-                                            TabIndex="7"></asp:TextBox>                                        
+                                            TabIndex="7" Height="26px"></asp:TextBox>                                        
                                     </td>
                                 </tr>
                                <tr>
@@ -136,6 +114,8 @@
         <tr>
             <td align="left">
                 <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
+                <asp:Label ID="LabelCountTitle" runat="server">検索結果件数：</asp:Label>
+                <asp:Label ID="LabelCount" runat="server"></asp:Label>
                 <br />
                 <asp:LinkButton ID="lnkCheck" runat="server" TabIndex="14">全てにチェック</asp:LinkButton>&nbsp;&nbsp;
                 <asp:LinkButton ID="lnkNoCheck" runat="server" TabIndex="15">全てのチェックを解除</asp:LinkButton>
@@ -161,62 +141,94 @@
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Center" Width="50px" />
                         </asp:TemplateField>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
-                        </asp:BoundField>
+                        <asp:TemplateField HeaderText="開催日">
+                            <ItemTemplate>
+                                <asp:Label ID="FROM_DATE" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Center" Width="100px" Wrap="False" />
+                        </asp:TemplateField>
                         <asp:BoundField DataField="KOUENKAI_NO" HeaderText="会合番号" />
-                        <asp:BoundField DataField="KOUENKAI_NAME" HeaderText="会合名" ItemStyle-Wrap="false"
-                            HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="300px" HorizontalAlign="Left"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="DR_NAME" HeaderText="ＤＲ氏名" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="100px" HorizontalAlign="Left"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="MR_NAME" HeaderText="DR担当MR">
-                        <ItemStyle Width="100px" Wrap="False" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="Timestamp" ItemStyle-Wrap="false"
-                            HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Left" Wrap="False" Width="100px"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="REQ_STATUS_TEHAI" HeaderText="区分" ItemStyle-Wrap="false"
-                            HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False"></ItemStyle>
-                        <HeaderStyle Wrap="False" />
-                        <ItemStyle HorizontalAlign="Center" Width="30px" Wrap="False" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="TEHAI_HOTEL" HeaderText="宿泊" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
-                            ItemStyle-HorizontalAlign="Center">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="交通" ItemStyle-Wrap="false"
-                            HeaderStyle-Wrap="false">
-<HeaderStyle Wrap="False"></HeaderStyle>
-
-<ItemStyle Wrap="False" HorizontalAlign="Center"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="TEHAI_TAXI" HeaderText="ﾀｸﾁｹ" ItemStyle-Wrap="false" 
-                            HeaderStyle-Wrap="false">
-                            <HeaderStyle Wrap="False"></HeaderStyle>
-                            <ItemStyle Wrap="False" Width="30px" HorizontalAlign="Center"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="MR&lt;br /&gt;手配" HtmlEncode="False">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <ItemStyle HorizontalAlign="Center" Width="30px" />
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="緊急" DataField="KINKYU_FLAG" />
+                        <asp:TemplateField HeaderText="会合名">
+                            <ItemTemplate>
+                                <asp:Label ID="KOUENKAI_NAME" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Width="300px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="SANKASHA_ID" HeaderText="参加者番号" />
+                        <asp:TemplateField HeaderText="ＤＲ氏名">
+                            <ItemTemplate>
+                                <asp:Label ID="DR_NAME" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Width="100px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="DR担当MR">
+                            <ItemTemplate>
+                                <asp:Label ID="MR_NAME" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <ItemStyle Width="100px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="BYL Timestamp" />
+                        <asp:TemplateField HeaderText="TOP受信日時">
+                            <ItemTemplate>
+                                <asp:Label ID="INPUT_DATE" runat="server"></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="TOP担当">
+                            <EditItemTemplate>
+                                <br />
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="USER_NAME" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Left" Width="100px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="依頼内容">
+                            <ItemTemplate>
+                                <asp:Label ID="REQ_STATUS_TEHAI" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Center" Width="30px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="宿&lt;br /&gt;泊">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Center" Width="30px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="交&lt;br /&gt;通">
+                            <ItemTemplate>
+                                <asp:Label ID="REQ_KOTSU_TEHAI" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="タ&lt;br /&gt;ク">
+                            <ItemTemplate>
+                                <asp:Label ID="REQ_TAXI_TEHAI" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle Wrap="False" />
+                            <ItemStyle HorizontalAlign="Center" Width="30px" Wrap="False" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="MR&lt;br /&gt;手配">
+                            <ItemTemplate>
+                                <asp:Label ID="REQ_MR_TEHAI" runat="server"></asp:Label>
+                            </ItemTemplate>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <ItemStyle HorizontalAlign="Center" Width="30px" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="緊&lt;br /&gt;急">
+                            <ItemTemplate>
+                                <asp:Label ID="KINKYU_FLAG" runat="server"></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center" CommandName="Detail" ControlStyle-CssClass="ButtonList"
                             ControlStyle-Width="46px" ItemStyle-Width="52px" ItemStyle-BackColor="#e4e9d1">
@@ -226,20 +238,12 @@
                             </ItemStyle>
                         </asp:ButtonField>
                         <asp:BoundField DataField="SALEFORCE_ID" HeaderText="SALESFORCE_ID" />
-                        <asp:BoundField DataField="TO_DATE" HeaderText="TO_DATE" />
-                        <asp:BoundField DataField="REQ_O_TEHAI_1" HeaderText="REQ_O_TEHAI_1" />
-                        <asp:BoundField DataField="REQ_O_TEHAI_2" HeaderText="REQ_O_TEHAI_2" />
-                        <asp:BoundField DataField="REQ_O_TEHAI_3" HeaderText="REQ_O_TEHAI_3" />
-                        <asp:BoundField DataField="REQ_O_TEHAI_4" HeaderText="REQ_O_TEHAI_4" />
-                        <asp:BoundField DataField="REQ_O_TEHAI_5" HeaderText="REQ_O_TEHAI_5" />
-                        <asp:BoundField DataField="REQ_F_TEHAI_1" HeaderText="REQ_F_TEHAI_1" />
-                        <asp:BoundField DataField="REQ_F_TEHAI_2" HeaderText="REQ_F_TEHAI_2" />
-                        <asp:BoundField DataField="REQ_F_TEHAI_3" HeaderText="REQ_F_TEHAI_3" />
-                        <asp:BoundField DataField="REQ_F_TEHAI_4" HeaderText="REQ_F_TEHAI_4" />
-                        <asp:BoundField DataField="REQ_F_TEHAI_5" HeaderText="REQ_F_TEHAI_5" />
-                        <asp:BoundField DataField="REQ_MR_O_TEHAI" HeaderText="REQ_MR_O_TEHAI" />
-                        <asp:BoundField DataField="REQ_MR_F_TEHAI" HeaderText="REQ_MR_F_TEHAI" />
-                        <asp:BoundField DataField="REQ_MR_HOTEL_NOTE" HeaderText="REQ_MR_HOTEL_NOTE" />
+                        <asp:BoundField DataField="TIME_STAMP_BYL" HeaderText="TIME_STAMP_BYL" ItemStyle-Wrap="false"
+                            HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="150px"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="DR_MPID" DataField="DR_MPID" />
                     </Columns>
                 </asp:GridView>
             </td>

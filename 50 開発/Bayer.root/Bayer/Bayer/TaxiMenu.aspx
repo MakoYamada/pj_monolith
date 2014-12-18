@@ -39,6 +39,15 @@
 						</td>
 						<td></td>
 					</tr>
+					<tr valign="top" visible="false">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiJissekiOTH" runat="server" Text="その他タクチケ実績データ取込" 
+                                Width="200px" CssClass="Button" Visible="False" />
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiMeisaiCsv" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
