@@ -647,6 +647,7 @@ Public Class AppConst
                     Public Const TaxiScan As String = "タクチケスキャンデータ取込"
                     Public Const TaxiMaintenance As String = "タクチケメンテナンス"
                     Public Const TaxiJisseki As String = "タクチケ実績データ取込"
+                    Public Const TaxiJissekiOTH As String = "その他タクチケ実績データ取込"
                     Public Const TaxiSeisanMikanryou As String = "精算未完了CSV"
                     Public Const TaxiMiketsu As String = "タクチケ未決登録"
                     Public Const TaxiMeisaiCsv As String = "タクチケ管理台帳"
@@ -667,6 +668,7 @@ Public Class AppConst
                     TaxiMaintenance
                     TaxiMaintenanceRegist
                     TaxiJisseki
+                    TaxiJissekiOTH
                     TaxiSeisanMikanryou
                     TaxiMiketsu
                     TaxiMeisaiCsv

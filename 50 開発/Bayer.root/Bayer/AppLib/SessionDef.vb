@@ -80,4 +80,17 @@
     Public Const MstUser As String = "MstUser"
     Public Const OldTBL_KAIJO As String = "OldTBL_KAIJO"
     Public Const OldTBL_KOTSUHOTEL As String = "OldTBL_KOTSUHOTEL"
+
+    Public Const SALESFORCE_ID As String = "SALESFORCE_ID"
+    Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+    Public Const SANKASHA_ID As String = "SANKASHA_ID"
+    Public Const TIME_STAMP_BYL As String = "TIME_STAMP_BYL"
+    Public Const DR_MPID As String = "DR_MPID"
+
+    Public Const POPUP_SALESFORCE_ID As String = "POPUP_SALESFORCE_ID"
+    Public Const POPUP_KOUENKAI_NO As String = "POPUP_KOUENKAI_NO"
+    Public Const POPUP_SANKASHA_ID As String = "POPUP_SANKASHA_ID"
+    Public Const POPUP_TIME_STAMP_BYL As String = "POPUP_TIME_STAMP_BYL"
+    Public Const POPUP_DR_MPID As String = "POPUP_DR_MPID"
+
 End Class

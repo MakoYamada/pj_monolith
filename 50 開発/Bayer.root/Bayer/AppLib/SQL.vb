@@ -1,5 +1,7 @@
 ﻿Imports CommonLib
 Imports AppLib
+Imports System.Collections.Specialized
+
 Public Class SQL
 
     Public Class GetValue
@@ -1219,6 +1221,97 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function KaigouEvidenceCsv(ByVal fromDate As String, ByVal toDate As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " WK_SEIKYU.*"
+            strSQL &= ",WK_KOUENKAI.*"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT"
+            strSQL &= "   TSK.KOUENKAI_NO"
+            strSQL &= "  ,TSK.SEISAN_YM"
+            strSQL &= "  ,TSK.KAIJOHI_TF"
+            strSQL &= "  ,TSK.KIZAIHI_TF"
+            strSQL &= "  ,TSK.INSHOKUHI_TF"
+            strSQL &= "  ,TSK.KEI_991330401_TF"
+            strSQL &= "  ,TSK.HOTELHI_TF"
+            strSQL &= "  ,TSK.HOTELHI_TOZEI"
+            strSQL &= "  ,TSK.JR_TF"
+            strSQL &= "  ,TSK.AIR_TF"
+            strSQL &= "  ,TSK.OTHER_TRAFFIC_TF"
+            strSQL &= "  ,TSK.TAXI_TF"
+            strSQL &= "  ,TSK.HOTEL_COMMISSION_TF"
+            strSQL &= "  ,TSK.TAXI_COMMISSION_TF"
+            strSQL &= "  ,TSK.TAXI_SEISAN_TF"
+            strSQL &= "  ,TSK.JINKENHI_TF"
+            strSQL &= "  ,TSK.OTHER_TF"
+            strSQL &= "  ,TSK.KANRIHI_TF"
+            strSQL &= "  ,TSK.KEI_41120200_TF"
+            strSQL &= "  ,TSK.KEI_TF"
+            strSQL &= "  ,TSK.KAIJOUHI_T"
+            strSQL &= "  ,TSK.KIZAIHI_T"
+            strSQL &= "  ,TSK.INSHOKUHI_T"
+            strSQL &= "  ,TSK.KEI_991330401_T"
+            strSQL &= "  ,TSK.JINKENHI_T"
+            strSQL &= "  ,TSK.OTHER_T"
+            strSQL &= "  ,TSK.KANRIHI_T"
+            strSQL &= "  ,TSK.KEI_41120200_T"
+            strSQL &= "  ,TSK.KEI_T"
+            strSQL &= "  ,TSK.SEIKYU_NO_TOPTOUR"
+            strSQL &= "  ,TSK.TAXI_T"
+            strSQL &= "  ,TSK.TAXI_SEISAN_T"
+            strSQL &= "  ,TSK.SEISANSHO_URL"
+            strSQL &= "  ,TSK.TAXI_TICKET_URL"
+            strSQL &= "  ,TSK.SEISAN_KANRYO"
+            strSQL &= "  ,TSK.MR_JR"
+            strSQL &= "  ,TSK.MR_HOTEL"
+            strSQL &= "  ,TSK.MR_HOTEL_TOZEI"
+            strSQL &= "  ,TSK.SEND_FLAG"
+            strSQL &= "  ,TSK.UPDATE_DATE"
+            strSQL &= "  ,TSN.SHIHARAI_NO"
+            strSQL &= "  ,TSN.SHOUNIN_KUBUN"
+            strSQL &= "  ,TSN.SHOUNIN_DATE"
+            strSQL &= "  FROM TBL_SEIKYU TSK"
+            strSQL &= "  LEFT JOIN TBL_SHOUNIN TSN"
+            strSQL &= "   ON TSK.KOUENKAI_NO = TSN.KOUENKAI_NO"
+            strSQL &= "   AND TSK.SEIKYU_NO_TOPTOUR = TSN.SEIKYU_NO_TOPTOUR"
+            strSQL &= "  WHERE TSN.SHOUNIN_DATE BETWEEN N'" & CmnDb.SqlString(fromDate) & "' AND N'" & CmnDb.SqlString(toDate) & "'"
+            strSQL &= "  AND TSN.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+            strSQL &= " ) WK_SEIKYU"
+            strSQL &= " LEFT JOIN"
+            strSQL &= "  (SELECT "
+            strSQL &= "    WK1.KOUENKAI_NO"
+            strSQL &= "   ,WK1.KOUENKAI_NAME"
+            strSQL &= "   ,WK1.FROM_DATE"
+            strSQL &= "   ,WK1.KAIJO_NAME"
+            strSQL &= "   ,WK1.SEIHIN_NAME"
+            strSQL &= "   ,WK1.INTERNAL_ORDER_T"
+            strSQL &= "   ,WK1.INTERNAL_ORDER_TF"
+            strSQL &= "   ,WK1.ACCOUNT_CD_T"
+            strSQL &= "   ,WK1.ACCOUNT_CD_TF"
+            strSQL &= "   ,WK1.COST_CENTER"
+            strSQL &= "   ,WK1.ZETIA_CD"
+            strSQL &= "   ,WK1.SRM_HACYU_KBN"
+            strSQL &= "   ,WK1.BU"
+            strSQL &= "   ,WK1.KIKAKU_TANTO_AREA"
+            strSQL &= "   ,WK1.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= "   ,WK1.KIKAKU_TANTO_NAME"
+            strSQL &= "   ,WK1.TEHAI_TANTO_BU"
+            strSQL &= "   ,WK1.TEHAI_TANTO_AREA"
+            strSQL &= "   ,WK1.TEHAI_TANTO_EIGYOSHO"
+            strSQL &= "   ,WK1.TEHAI_TANTO_NAME"
+            strSQL &= "    FROM TBL_KOUENKAI WK1"
+            strSQL &= "    WHERE  WK1.TIME_STAMP = "
+            strSQL &= "     (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "       WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
+            strSQL &= "      )WK_KOUENKAI"
+            strSQL &= " ON WK_SEIKYU.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ORDER BY WK_SEIKYU.KOUENKAI_NO,WK_SEIKYU.SHIHARAI_NO"
+
+            Return strSQL
+        End Function
+
         Public Shared Function MishuHoukoku(ByVal MISHU_JOKEN() As TableDef.MISHU_JOKEN.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -1624,6 +1717,124 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byKEY(ByVal SearchKey As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = String.Empty
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.SALEFORCE_ID"
+            strSQL &= ", WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= ", WK_KOTSUHOTEL.DR_NAME"
+            strSQL &= ", WK_KOTSUHOTEL.MR_NAME"
+            strSQL &= ", WK_KOTSUHOTEL.TIME_STAMP_BYL"
+            strSQL &= ", WK_KOTSUHOTEL.INPUT_DATE"
+            strSQL &= ", WK_KOTSUHOTEL.UPDATE_DATE"
+            strSQL &= ", WK_KOTSUHOTEL.ANS_STATUS_TEHAI"
+            strSQL &= ", WK_KOTSUHOTEL.TEHAI_HOTEL"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_1"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_2"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_3"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_4"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_5"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_1"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_2"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_3"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_4"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_5"
+            strSQL &= ", WK_KOTSUHOTEL.TEHAI_TAXI"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_MR_O_TEHAI"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_MR_F_TEHAI"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_MR_HOTEL_NOTE"
+            strSQL &= ", WK_KOTSUHOTEL.ANS_MR_HOTEL_NOTE"
+            strSQL &= ", WK_KOTSUHOTEL.KINKYU_FLAG"
+            strSQL &= ", WK_KOTSUHOTEL.SEND_FLAG"
+            strSQL &= ", WK_KOTSUHOTEL.SCAN_IMPORT_DATE"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.KAIJO_NAME"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            '検索
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+            strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
+            strSQL &= " AND WK_KOTSUHOTEL."
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+            strSQL &= " ='" & CmnDb.SqlString(SearchKey.KOUENKAI_NO) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.SALEFORCE_ID=N'" & CmnDb.SqlString(SearchKey.SALESFORCE_ID) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(SearchKey.KOUENKAI_NO) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SearchKey.SANKASHA_ID) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.TIME_STAMP_BYL=N'" & CmnDb.SqlString(SearchKey.TIME_STAMP_BYL) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.DR_MPID=N'" & CmnDb.SqlString(SearchKey.DR_MPID) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byKEY_AllItem(ByVal SearchKey As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = String.Empty
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            '検索
+            strSQL &= " AND WK_KOTSUHOTEL.SALEFORCE_ID=N'" & CmnDb.SqlString(SearchKey.SALESFORCE_ID) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.KOUENKAI_NO=N'" & CmnDb.SqlString(SearchKey.KOUENKAI_NO) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SearchKey.SANKASHA_ID) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.TIME_STAMP_BYL=N'" & CmnDb.SqlString(SearchKey.TIME_STAMP_BYL) & "'"
+            strSQL &= " AND WK_KOTSUHOTEL.DR_MPID=N'" & CmnDb.SqlString(SearchKey.DR_MPID) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function byKOUENKAI_NO_DR_MPID(ByVal KOUENKAI_NO As String, ByVal DR_MPID As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -1842,12 +2053,15 @@ Public Class SQL
 
             strSQL &= "SELECT DISTINCT"
             strSQL &= " WK_KOTSUHOTEL.*"
-            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
-            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_BU"
-            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_AREA"
-            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_ROMA"
-            strSQL &= ", WK_KOUENKAI.FROM_DATE"
-            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= " ,WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= " ,WK_KOUENKAI.KAIJO_NAME"
+            strSQL &= " ,WK_KOUENKAI.TAXI_PRT_NAME"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= " ,WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= " ,WK_KOUENKAI.FROM_DATE"
+            strSQL &= " ,WK_KOUENKAI.TO_DATE"
+            strSQL &= " ,WK_KOUENKAI.DANTAI_CODE"
             strSQL &= ", MS_USER.USER_NAME"
             strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
             strSQL &= " FROM (("
@@ -1946,6 +2160,12 @@ Public Class SQL
                 'strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             End If
 
+            If Trim(Joken.SANKASHA_ID) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.SANKASHA_ID) & "%'"
+            End If
+
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
@@ -2025,6 +2245,392 @@ Public Class SQL
                 strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
                 strSQL &= " DESC"
             End If
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Search_KeyItem(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean, Optional ByVal TEHAISHO_JOKEN() As TableDef.TehaishoJoken.DataStruct = Nothing) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO"
+            strSQL &= ", WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= ", WK_KOTSUHOTEL.SALEFORCE_ID"
+            strSQL &= ", WK_KOTSUHOTEL.DR_MPID"
+            strSQL &= ", WK_KOTSUHOTEL.TIME_STAMP_BYL"
+            strSQL &= ", WK_KOTSUHOTEL.UPDATE_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            If NewData = True Then
+                '新着
+                strSQL &= " AND"
+                strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
+                strSQL &= " AND"
+                strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+                strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+                strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
+            Else
+                If TEHAISHO_JOKEN Is Nothing Then
+                    '検索
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+                    strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+                    strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
+                End If
+            End If
+
+            If Trim(Joken.KUBUN) = "A" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai & "'"
+            ElseIf Trim(Joken.KUBUN) = "U" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change & "'"
+            ElseIf Trim(Joken.KUBUN) = "C" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel & "'"
+            End If
+
+            If Trim(Joken.MR_ROMA) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.MR_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.MR_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.DR_KANA) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_KANA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.DR_KANA) & "%'"
+            End If
+
+            If Trim(Joken.DR_SANKA) <> "" Then
+                strSQL &= " AND TBL_SANKA.DR_SANKA"
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            If Trim(Joken.SANKASHA_ID) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.SANKASHA_ID) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.UPDATE_DATE) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.UPDATE_DATE) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
+                strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            If Joken.TTEHAI_MITOUROKU = CmnConst.Flag.On Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
+                strSQL &= "=N''"
+            End If
+
+            If Not TEHAISHO_JOKEN Is Nothing Then
+                Dim i As Integer = 0
+                For i = 0 To UBound(TEHAISHO_JOKEN)
+                    If i = 0 Then
+                        strSQL &= " AND ("
+                    Else
+                        strSQL &= " OR"
+                    End If
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).KOUENKAI_NO & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).SANKASHA_ID & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).TIME_STAMP_BYL & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).SALEFORCE_ID & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_MPID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).DR_MPID & "'"
+                Next i
+                strSQL &= ")"
+            End If
+
+            strSQL &= " ORDER BY WK_KOTSUHOTEL."
+            If NewData Then
+                '新着
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+                strSQL &= " DESC"
+            Else
+                '検索
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
+                strSQL &= " DESC"
+            End If
+
+            Return strSQL
+        End Function
+
+        Public Shared Function NewDrCsv(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean, Optional ByVal TEHAISHO_JOKEN() As TableDef.TehaishoJoken.DataStruct = Nothing) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO"
+            strSQL &= ", WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= ", WK_KOTSUHOTEL.DR_NAME"
+            strSQL &= ", WK_KOTSUHOTEL.DR_KANA"
+            strSQL &= ", WK_KOTSUHOTEL.MR_NAME"
+            strSQL &= ", WK_KOTSUHOTEL.TIME_STAMP_BYL"
+            strSQL &= ", WK_KOTSUHOTEL.INPUT_DATE"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_STATUS_TEHAI"
+            strSQL &= ", WK_KOTSUHOTEL.TEHAI_HOTEL"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_1"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_2"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_3"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_4"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_O_TEHAI_5"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_1"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_2"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_3"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_4"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_F_TEHAI_5"
+            strSQL &= ", WK_KOTSUHOTEL.TEHAI_TAXI"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_MR_O_TEHAI"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_MR_F_TEHAI"
+            strSQL &= ", WK_KOTSUHOTEL.REQ_MR_HOTEL_NOTE"
+            strSQL &= ", WK_KOTSUHOTEL.ANS_MR_HOTEL_NOTE"
+            strSQL &= ", WK_KOTSUHOTEL.KINKYU_FLAG"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & " =N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.NewTehai & "'"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=("
+            strSQL &= " SELECT MAX(" & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & ") FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE WK_KOTSUHOTEL." & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=" & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & " )"
+
+            If Trim(Joken.KUBUN) = "A" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Tehai & "'"
+            ElseIf Trim(Joken.KUBUN) = "U" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Change & "'"
+            ElseIf Trim(Joken.KUBUN) = "C" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.REQ_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Request.Code.Cancel & "'"
+            End If
+
+            If Trim(Joken.MR_ROMA) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.MR_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.MR_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_BU
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_AREA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.TEHAI_TANTO_ROMA) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TEHAI_TANTO_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.TEHAI_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.DR_KANA) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_KANA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.DR_KANA) & "%'"
+            End If
+
+            If Trim(Joken.DR_SANKA) <> "" Then
+                strSQL &= " AND TBL_SANKA.DR_SANKA"
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.DR_SANKA) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            '@@@ 月次参加者CSV出力用
+            ' ''strSQL &= " AND WK_KOUENKAI."
+            ' ''strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+            ' ''strSQL &= " BETWEEN N'20140921' AND N'20141020'"
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.UPDATE_DATE) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.UPDATE_DATE) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
+                strSQL &= " = N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            If Joken.TTEHAI_MITOUROKU = CmnConst.Flag.On Then
+                strSQL &= " AND WK_KOUENKAI."
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
+                strSQL &= "=N''"
+            End If
+
+            If Not TEHAISHO_JOKEN Is Nothing Then
+                Dim i As Integer = 0
+                For i = 0 To UBound(TEHAISHO_JOKEN)
+                    If i = 0 Then
+                        strSQL &= " AND ("
+                    Else
+                        strSQL &= " OR"
+                    End If
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).KOUENKAI_NO & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).SANKASHA_ID & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).TIME_STAMP_BYL & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).SALEFORCE_ID & "'"
+                    strSQL &= " AND"
+                    strSQL &= " WK_KOTSUHOTEL."
+                    strSQL &= TableDef.TBL_KOTSUHOTEL.Column.DR_MPID
+                    strSQL &= "=N'" & TEHAISHO_JOKEN(i).DR_MPID & "'"
+                Next i
+                strSQL &= ")"
+            End If
+
+            strSQL &= " ORDER BY WK_KOTSUHOTEL."
+            '新着
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL
+            strSQL &= " DESC"
 
             Return strSQL
         End Function
@@ -3218,6 +3824,77 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Soufujo_Disp(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+            Dim wFlag As Boolean = False
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.SALEFORCE_ID"
+            strSQL &= " ,WK_KOTSUHOTEL.KOUENKAI_NO"
+            strSQL &= " ,WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= " ,WK_KOTSUHOTEL.TIME_STAMP_BYL"
+            strSQL &= " ,WK_KOTSUHOTEL.DR_MPID"
+            'strSQL &= " ,WK_KOTSUHOTEL.DR_NAME"
+            'strSQL &= " ,WK_KOTSUHOTEL.SCAN_IMPORT_DATE"
+            strSQL &= " ,USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
+            strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"
+            strSQL &= " ,"
+            strSQL &= " (SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= " SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= " ) AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.TIME_STAMP_BYL=("
+            strSQL &= " SELECT MAX(TIME_STAMP_BYL)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID=SANKASHA_ID"
+            strSQL &= " )"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOUENKAI.KOUENKAI_NO"
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SCAN_IMPORT_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SCAN_IMPORT_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SCAN_IMPORT_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND WK_KOTSUHOTEL."
+                strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+            End If
+            strSQL &= " ORDER BY WK_KOTSUHOTEL."
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
+            strSQL &= " ,WK_KOTSUHOTEL."
+            strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+
+            Return strSQL
+        End Function
+
         Public Shared Function Soufujo(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
             Dim wFlag As Boolean = False
@@ -3286,6 +3963,295 @@ Public Class SQL
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO
             strSQL &= " ,WK_KOTSUHOTEL."
             strSQL &= TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID
+
+            Return strSQL
+        End Function
+
+        Public Shared Function DrHiyouCsv(ByVal fromDate As String, ByVal toDate As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " WK1.KOUENKAI_NO"
+            strSQL &= ",WK_KOUENKAI.FROM_DATE"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK_KOUENKAI.KAIJO_NAME"
+            strSQL &= ",WK_KOUENKAI.SRM_HACYU_KBN"
+            strSQL &= ",TBL_SEIKYU.SEISAN_YM"
+            strSQL &= ",TBL_SEIKYU.SEIKYU_NO_TOPTOUR"
+            strSQL &= ",TBL_SHOUNIN.SHIHARAI_NO"
+            strSQL &= ",WK_KOUENKAI.BU"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_NAME"
+            strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_ROMA"
+            strSQL &= ",WK_KOUENKAI.ACCOUNT_CD_TF AS KIHON_ACCOUNT_CD_TF"
+            strSQL &= ",WK_KOUENKAI.ACCOUNT_CD_T AS KIHON_ACCOUNT_CD_T"
+            strSQL &= ",WK_KOUENKAI.COST_CENTER AS KIHON_COST_CENTER"
+            strSQL &= ",WK_KOUENKAI.SRM_HACYU_KBN"
+            strSQL &= ",WK1.SANKASHA_ID"
+            strSQL &= ",WK2.SEIKYU_NO_TOPTOUR"
+            strSQL &= ",WK2.DR_CD"
+            strSQL &= ",WK2.DR_NAME"
+            strSQL &= ",WK2.DR_KANA"
+            strSQL &= ",WK2.DR_SHISETSU_NAME"
+            strSQL &= ",WK2.DR_YAKUWARI"
+            strSQL &= ",WK2.SHITEIGAI_RIYU"
+            strSQL &= ",TBL_SANKA.DR_SANKA"
+            strSQL &= ",WK2.ANS_HOTELHI"
+            strSQL &= ",WK2.ANS_HOTELHI_CANCEL"
+            strSQL &= ",WK2.ANS_HOTELHI_TOZEI"
+            strSQL &= ",WK2.ANS_RAIL_FARE"
+            strSQL &= ",WK2.ANS_RAIL_CANCELLATION"
+            strSQL &= ",WK2.ANS_AIR_FARE"
+            strSQL &= ",WK2.ANS_AIR_CANCELLATION"
+            strSQL &= ",WK2.ANS_OTHER_FARE"
+            strSQL &= ",WK2.ANS_OTHER_CANCELLATION"
+            strSQL &= ",WK2.ANS_TAXI_TESURYO"
+            strSQL &= ",WK2.ANS_KOTSUHOTEL_TESURYO"
+            strSQL &= ",WK2.MR_BU"
+            strSQL &= ",WK2.MR_AREA"
+            strSQL &= ",WK2.MR_EIGYOSHO"
+            strSQL &= ",WK2.MR_NAME"
+            strSQL &= ",WK2.MR_KANA"
+            strSQL &= ",WK2.MR_KEITAI"
+            strSQL &= ",WK2.MR_SEND_SAKI_FS"
+            strSQL &= ",WK2.MR_SEND_SAKI_OTHER"
+            strSQL &= ",WK2.SHONIN_NAME"
+            strSQL &= ",WK2.ACCOUNT_CD AS KOTSU_ACCOUNT_CD"
+            strSQL &= ",WK2.COST_CENTER AS KOTSU_COST_CENTER"
+            strSQL &= ",WK2.INTERNAL_ORDER AS KOTSU_INTERNAL_ORDER"
+            strSQL &= ",WK2.ZETIA_CD AS KOTSU_ZETIA_CD"
+            strSQL &= ",WK2.REQ_STATUS_TEHAI"
+            strSQL &= ",WK2.TIME_STAMP_BYL"
+            strSQL &= ",WK2.TEHAI_HOTEL"
+            strSQL &= ",WK2.HOTEL_IRAINAIYOU"
+            strSQL &= ",WK2.REQ_HOTEL_DATE"
+            strSQL &= ",WK2.REQ_HAKUSU"
+            strSQL &= ",WK2.REQ_HOTEL_SMOKING"
+            strSQL &= ",WK2.REQ_HOTEL_NOTE"
+            strSQL &= ",WK2.UPDATE_DATE"
+            strSQL &= ",WK2.ANS_STATUS_TEHAI"
+            strSQL &= ",WK2.ANS_STATUS_HOTEL"
+            strSQL &= ",WK2.ANS_HOTEL_DATE"
+            strSQL &= ",WK2.ANS_HAKUSU"
+            strSQL &= ",WK2.ANS_HOTEL_NAME"
+            strSQL &= ",WK2.ANS_ROOM_TYPE"
+            strSQL &= ",WK2.ANS_HOTEL_SMOKING"
+            strSQL &= ",WK2.ANS_HOTEL_NOTE"
+            strSQL &= ",WK2.ANS_HOTEL_TEL"
+            strSQL &= ",WK2.REQ_KOTSU_BIKO"
+            strSQL &= ",WK2.REQ_TAXI_NOTE"
+            strSQL &= ",WK2.ANS_KOTSU_BIKO"
+            strSQL &= ",WK2.ANS_TAXI_NOTE"
+            strSQL &= ",WK2.REQ_MR_O_TEHAI"
+            strSQL &= ",WK2.REQ_MR_F_TEHAI"
+            strSQL &= ",WK2.ANS_MR_O_TEHAI"
+            strSQL &= ",WK2.ANS_MR_F_TEHAI"
+            strSQL &= ",WK2.ANS_MR_HOTEL_NOTE"
+            strSQL &= ",WK2.ANS_O_STATUS_1"
+            strSQL &= ",WK2.ANS_O_KOTSUKIKAN_1"
+            strSQL &= ",WK2.ANS_O_DATE_1"
+            strSQL &= ",WK2.ANS_O_AIRPORT1_1"
+            strSQL &= ",WK2.ANS_O_AIRPORT2_1"
+            strSQL &= ",WK2.ANS_O_BIN_1"
+            strSQL &= ",WK2.ANS_O_TIME1_1"
+            strSQL &= ",WK2.ANS_O_TIME2_1"
+            strSQL &= ",WK2.ANS_O_SEAT_1"
+            strSQL &= ",WK2.ANS_O_SEAT_KIBOU1"
+            strSQL &= ",WK2.ANS_F_STATUS_1"
+            strSQL &= ",WK2.ANS_F_KOTSUKIKAN_1"
+            strSQL &= ",WK2.ANS_F_DATE_1"
+            strSQL &= ",WK2.ANS_F_AIRPORT1_1"
+            strSQL &= ",WK2.ANS_F_AIRPORT2_1"
+            strSQL &= ",WK2.ANS_F_BIN_1"
+            strSQL &= ",WK2.ANS_F_TIME1_1"
+            strSQL &= ",WK2.ANS_F_TIME2_1"
+            strSQL &= ",WK2.ANS_F_SEAT_1"
+            strSQL &= ",WK2.ANS_F_SEAT_KIBOU1"
+            strSQL &= ",WK2.ANS_O_STATUS_2"
+            strSQL &= ",WK2.ANS_O_KOTSUKIKAN_2"
+            strSQL &= ",WK2.ANS_O_DATE_2"
+            strSQL &= ",WK2.ANS_O_AIRPORT1_2"
+            strSQL &= ",WK2.ANS_O_AIRPORT2_2"
+            strSQL &= ",WK2.ANS_O_BIN_2"
+            strSQL &= ",WK2.ANS_O_TIME1_2"
+            strSQL &= ",WK2.ANS_O_TIME2_2"
+            strSQL &= ",WK2.ANS_O_SEAT_2"
+            strSQL &= ",WK2.ANS_O_SEAT_KIBOU2"
+            strSQL &= ",WK2.ANS_F_STATUS_2"
+            strSQL &= ",WK2.ANS_F_KOTSUKIKAN_2"
+            strSQL &= ",WK2.ANS_F_DATE_2"
+            strSQL &= ",WK2.ANS_F_AIRPORT1_2"
+            strSQL &= ",WK2.ANS_F_AIRPORT2_2"
+            strSQL &= ",WK2.ANS_F_BIN_2"
+            strSQL &= ",WK2.ANS_F_TIME1_2"
+            strSQL &= ",WK2.ANS_F_TIME2_2"
+            strSQL &= ",WK2.ANS_F_SEAT_2"
+            strSQL &= ",WK2.ANS_F_SEAT_KIBOU2"
+            strSQL &= ",WK2.ANS_O_STATUS_3"
+            strSQL &= ",WK2.ANS_O_KOTSUKIKAN_3"
+            strSQL &= ",WK2.ANS_O_DATE_3"
+            strSQL &= ",WK2.ANS_O_AIRPORT1_3"
+            strSQL &= ",WK2.ANS_O_AIRPORT2_3"
+            strSQL &= ",WK2.ANS_O_BIN_3"
+            strSQL &= ",WK2.ANS_O_TIME1_3"
+            strSQL &= ",WK2.ANS_O_TIME2_3"
+            strSQL &= ",WK2.ANS_O_SEAT_3"
+            strSQL &= ",WK2.ANS_O_SEAT_KIBOU3"
+            strSQL &= ",WK2.ANS_F_STATUS_3"
+            strSQL &= ",WK2.ANS_F_KOTSUKIKAN_3"
+            strSQL &= ",WK2.ANS_F_DATE_3"
+            strSQL &= ",WK2.ANS_F_AIRPORT1_3"
+            strSQL &= ",WK2.ANS_F_AIRPORT2_3"
+            strSQL &= ",WK2.ANS_F_BIN_3"
+            strSQL &= ",WK2.ANS_F_TIME1_3"
+            strSQL &= ",WK2.ANS_F_TIME2_3"
+            strSQL &= ",WK2.ANS_F_SEAT_3"
+            strSQL &= ",WK2.ANS_F_SEAT_KIBOU3"
+            strSQL &= ",WK2.ANS_O_STATUS_4"
+            strSQL &= ",WK2.ANS_O_KOTSUKIKAN_4"
+            strSQL &= ",WK2.ANS_O_DATE_4"
+            strSQL &= ",WK2.ANS_O_AIRPORT1_4"
+            strSQL &= ",WK2.ANS_O_AIRPORT2_4"
+            strSQL &= ",WK2.ANS_O_BIN_4"
+            strSQL &= ",WK2.ANS_O_TIME1_4"
+            strSQL &= ",WK2.ANS_O_TIME2_4"
+            strSQL &= ",WK2.ANS_O_SEAT_4"
+            strSQL &= ",WK2.ANS_O_SEAT_KIBOU4"
+            strSQL &= ",WK2.ANS_F_STATUS_4"
+            strSQL &= ",WK2.ANS_F_KOTSUKIKAN_4"
+            strSQL &= ",WK2.ANS_F_DATE_4"
+            strSQL &= ",WK2.ANS_F_AIRPORT1_4"
+            strSQL &= ",WK2.ANS_F_AIRPORT2_4"
+            strSQL &= ",WK2.ANS_F_BIN_4"
+            strSQL &= ",WK2.ANS_F_TIME1_4"
+            strSQL &= ",WK2.ANS_F_TIME2_4"
+            strSQL &= ",WK2.ANS_F_SEAT_4"
+            strSQL &= ",WK2.ANS_F_SEAT_KIBOU4"
+            strSQL &= ",WK2.ANS_O_STATUS_5"
+            strSQL &= ",WK2.ANS_O_KOTSUKIKAN_5"
+            strSQL &= ",WK2.ANS_O_DATE_5"
+            strSQL &= ",WK2.ANS_O_AIRPORT1_5"
+            strSQL &= ",WK2.ANS_O_AIRPORT2_5"
+            strSQL &= ",WK2.ANS_O_BIN_5"
+            strSQL &= ",WK2.ANS_O_TIME1_5"
+            strSQL &= ",WK2.ANS_O_TIME2_5"
+            strSQL &= ",WK2.ANS_O_SEAT_5"
+            strSQL &= ",WK2.ANS_O_SEAT_KIBOU5"
+            strSQL &= ",WK2.ANS_F_STATUS_5"
+            strSQL &= ",WK2.ANS_F_KOTSUKIKAN_5"
+            strSQL &= ",WK2.ANS_F_DATE_5"
+            strSQL &= ",WK2.ANS_F_AIRPORT1_5"
+            strSQL &= ",WK2.ANS_F_AIRPORT2_5"
+            strSQL &= ",WK2.ANS_F_BIN_5"
+            strSQL &= ",WK2.ANS_F_TIME1_5"
+            strSQL &= ",WK2.ANS_F_TIME2_5"
+            strSQL &= ",WK2.ANS_F_SEAT_5"
+            strSQL &= ",WK2.ANS_F_SEAT_KIBOU5"
+            strSQL &= ",WK2.ANS_MR_HOTELHI"
+            strSQL &= ",WK2.ANS_MR_HOTELHI_TOZEI"
+            strSQL &= ",WK2.ANS_MR_KOTSUHI"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
+            strSQL &= "  FROM TBL_KOTSUHOTEL TKH"
+            strSQL &= "  GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
+            strSQL &= "  ) WK1"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL)WK2"
+            strSQL &= "   ON (WK1.SALEFORCE_ID = WK2.SALEFORCE_ID)"
+            strSQL &= "  AND (WK1.KOUENKAI_NO = WK2.KOUENKAI_NO)"
+            strSQL &= "  AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID)"
+            strSQL &= "  AND (WK1.DR_MPID = WK2.DR_MPID)"
+            strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK3"
+            strSQL &= "  WHERE  WK3.TIME_STAMP = "
+            strSQL &= "  (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "   WHERE TBL_KOUENKAI.KOUENKAI_NO = WK3.KOUENKAI_NO)"
+            strSQL &= "  )WK_KOUENKAI"
+            strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " TBL_SANKA "
+            strSQL &= " ON WK1.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " AND WK1.SANKASHA_ID = TBL_SANKA.SANKASHA_ID  "
+            strSQL &= " LEFT JOIN"
+            strSQL &= " TBL_SHOUNIN "
+            strSQL &= " ON WK2.KOUENKAI_NO = TBL_SHOUNIN.KOUENKAI_NO"
+            strSQL &= " AND "
+            strSQL &= " WK2.SEIKYU_NO_TOPTOUR = TBL_SHOUNIN.SEIKYU_NO_TOPTOUR"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " TBL_SEIKYU "
+            strSQL &= " ON WK2.KOUENKAI_NO = TBL_SEIKYU.KOUENKAI_NO"
+            strSQL &= " AND "
+            strSQL &= " WK2.SEIKYU_NO_TOPTOUR = TBL_SEIKYU.SEIKYU_NO_TOPTOUR"
+            strSQL &= " WHERE"
+            strSQL &= " TBL_SHOUNIN.SHOUNIN_DATE BETWEEN N'" & CmnDb.SqlString(fromDate) & "' AND N'" & CmnDb.SqlString(toDate) & "'"
+            ' ''strSQL &= " TBL_SHOUNIN.SHOUNIN_DATE BETWEEN N'20141116' AND N'20141125'"
+            strSQL &= " AND TBL_SHOUNIN.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+            strSQL &= " ORDER BY WK1.KOUENKAI_NO,WK1.SANKASHA_ID"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function MrHiyouCsv(ByVal fromDate As String, ByVal toDate As String) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT WK4.* FROM"
+            strSQL &= " (SELECT "
+            strSQL &= " WK1.KOUENKAI_NO"
+            strSQL &= ",WK2.SEIKYU_NO_TOPTOUR"
+            strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK_KOUENKAI.FROM_DATE"
+            strSQL &= ",WK_KOUENKAI.TO_DATE"
+            strSQL &= ",WK_KOUENKAI.KAIJO_NAME"
+            strSQL &= ",WK2.COST_CENTER"
+            strSQL &= ",WK2.MR_BU"
+            strSQL &= ",WK2.MR_AREA"
+            strSQL &= ",WK2.MR_EIGYOSHO"
+            strSQL &= ",WK2.MR_NAME"
+            strSQL &= ",WK2.MR_KANA"
+            strSQL &= ",WK2.REQ_MR_HOTEL_NOTE"
+            strSQL &= ",WK2.ANS_MR_O_TEHAI"
+            strSQL &= ",WK2.ANS_MR_F_TEHAI"
+            strSQL &= ",WK2.ANS_MR_HOTEL_NOTE"
+            strSQL &= ",WK2.SANKASHA_ID"
+            strSQL &= ",WK2.DR_NAME"
+            strSQL &= ",WK2.DR_KANA"
+            strSQL &= ",WK2.DR_SHISETSU_NAME"
+            strSQL &= ",WK2.DR_YAKUWARI"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_MR_HOTELHI,'0') AS BIGINT) AS ANS_MR_HOTELHI"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_MR_HOTELHI_TOZEI,'0') AS BIGINT) AS ANS_MR_HOTELHI_TOZEI"
+            strSQL &= ",CAST(ISNULL(WK2.ANS_MR_KOTSUHI,'0') AS BIGINT) AS ANS_MR_KOTSUHI"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
+            strSQL &= "  FROM TBL_KOTSUHOTEL TKH"
+            strSQL &= "  GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
+            strSQL &= "  ) WK1"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOTSUHOTEL)WK2"
+            strSQL &= "  ON  (WK1.SALEFORCE_ID = WK2.SALEFORCE_ID)"
+            strSQL &= "  AND (WK1.KOUENKAI_NO = WK2.KOUENKAI_NO)"
+            strSQL &= "  AND (WK1.SANKASHA_ID = WK2.SANKASHA_ID)"
+            strSQL &= "  AND (WK1.DR_MPID = WK2.DR_MPID)"
+            strSQL &= "  AND (WK1.TIME_STAMP_BYL = WK2.TIME_STAMP_BYL)"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK3"
+            strSQL &= "  WHERE  WK3.TIME_STAMP = "
+            strSQL &= "  (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "   WHERE TBL_KOUENKAI.KOUENKAI_NO = WK3.KOUENKAI_NO)"
+            strSQL &= "  )WK_KOUENKAI"
+            strSQL &= "    ON WK1.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " TBL_SHOUNIN "
+            strSQL &= " ON WK1.KOUENKAI_NO = TBL_SHOUNIN.KOUENKAI_NO"
+            strSQL &= " AND "
+            strSQL &= " WK2.SEIKYU_NO_TOPTOUR = TBL_SHOUNIN.SEIKYU_NO_TOPTOUR"
+            strSQL &= " WHERE"
+            strSQL &= " TBL_SHOUNIN.SHOUNIN_DATE BETWEEN N'" & CmnDb.SqlString(fromDate) & "' AND N'" & CmnDb.SqlString(toDate) & "'"
+            strSQL &= " AND TBL_SHOUNIN.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+            strSQL &= ") WK4"
+            strSQL &= " WHERE ((WK4.ANS_MR_HOTELHI <> 0) OR (WK4.ANS_MR_HOTELHI_TOZEI <> 0) OR (WK4.ANS_MR_KOTSUHI <> 0))"
+            strSQL &= " ORDER BY WK4.KOUENKAI_NO,WK4.COST_CENTER"
 
             Return strSQL
         End Function
@@ -4647,6 +5613,22 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Update_IkkatsuTehai(ByVal whereData As StringDictionary, ByVal pLoginID As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_KOTSUHOTEL SET"
+            strSQL &= " " & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & "=N'" & AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.Uketsuke & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "=N'" & AppConst.SEND_FLAG.Code.Taisho & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(pLoginID) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.DR_MPID & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.DR_MPID) & "'"
+
+            Return strSQL
+        End Function
     End Class
 
     Public Class TBL_KAIJO
@@ -7240,6 +8222,154 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function TaxiJissekiCsv(ByVal fromDate As String, ByVal toDate As String) As String
+            Dim strSQL As String = String.Empty
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_SHOUNIN.*"
+            strSQL &= ", WK_TAXITICKET_HAKKO.*"
+            strSQL &= ", WK_KOTSUHOTEL.*"
+            strSQL &= ", WK_SEIKYU.*"
+            strSQL &= ", CASE WK_TAXITICKET_HAKKO.TKT_LINE_NO"
+            strSQL &= "  WHEN N'1' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_1"
+            strSQL &= "  WHEN N'2' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_2"
+            strSQL &= "  WHEN N'3' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_3"
+            strSQL &= "  WHEN N'4' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_4"
+            strSQL &= "  WHEN N'5' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_5"
+            strSQL &= "  WHEN N'6' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_6"
+            strSQL &= "  WHEN N'7' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_7"
+            strSQL &= "  WHEN N'8' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_8"
+            strSQL &= "  WHEN N'9' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_9"
+            strSQL &= "  WHEN N'10' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_10"
+            strSQL &= "  WHEN N'11' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_11"
+            strSQL &= "  WHEN N'12' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_12"
+            strSQL &= "  WHEN N'13' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_13"
+            strSQL &= "  WHEN N'14' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_14"
+            strSQL &= "  WHEN N'15' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_15"
+            strSQL &= "  WHEN N'16' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_16"
+            strSQL &= "  WHEN N'17' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_17"
+            strSQL &= "  WHEN N'18' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_18"
+            strSQL &= "  WHEN N'19' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_19"
+            strSQL &= "  WHEN N'20' THEN WK_KOTSUHOTEL.ANS_TAXI_DATE_20"
+            strSQL &= "  ELSE N'' END AS ANS_TAXI_DATE"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.KAIJO_NAME"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", WK_KOUENKAI.ACCOUNT_CD_TF AS KIHON_ACCOUNT_CD_TF"
+            strSQL &= ", WK_KOUENKAI.ACCOUNT_CD_T AS KIHON_ACCOUNT_CD_T"
+            strSQL &= ", WK_KOUENKAI.COST_CENTER AS KIHON_COST_CENTER"
+            strSQL &= ", WK_KOUENKAI.INTERNAL_ORDER_TF AS KIHON_INTERNAL_ORDER"
+            strSQL &= ", WK_KOUENKAI.ZETIA_CD AS KIHON_ZETIA_CD"
+            strSQL &= ", WK_KOUENKAI.SRM_HACYU_KBN"
+            strSQL &= ", WK_KOUENKAI.BU"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_NAME"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_ROMA"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= ", TBL_SANKA.UPDATE_DATE AS SANKA_UPDATE"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT"
+            strSQL &= " TSN.KOUENKAI_NO"
+            strSQL &= " ,TSN.SHOUNIN_DATE"
+            strSQL &= " ,TSN.SHIHARAI_NO"
+            strSQL &= " ,TSN.SEIKYU_NO_TOPTOUR"
+            strSQL &= " FROM TBL_SHOUNIN TSN"
+            strSQL &= " WHERE TSN.SHOUNIN_DATE BETWEEN N'" & CmnDb.SqlString(fromDate) & "' AND N'" & CmnDb.SqlString(toDate) & "'"
+            strSQL &= " AND TSN.SHOUNIN_KUBUN = N'" & AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN & "'"
+            strSQL &= " ) WK_SHOUNIN "
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM"
+            strSQL &= " TBL_TAXITICKET_HAKKO"
+            strSQL &= " ) WK_TAXITICKET_HAKKO"
+            strSQL &= " ON WK_SHOUNIN.SEIKYU_NO_TOPTOUR=WK_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID,MAX(TKH.TIME_STAMP_BYL) AS TIME_STAMP_BYL"
+            strSQL &= " FROM TBL_KOTSUHOTEL TKH"
+            strSQL &= " GROUP BY TKH.SALEFORCE_ID,TKH.KOUENKAI_NO,TKH.SANKASHA_ID,TKH.DR_MPID"
+            strSQL &= " ) WK1"
+            strSQL &= " ON WK_TAXITICKET_HAKKO.KOUENKAI_NO = WK1.KOUENKAI_NO"
+            strSQL &= " AND WK_TAXITICKET_HAKKO.SANKASHA_ID = WK1.SANKASHA_ID"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT"
+            strSQL &= " KOUENKAI_NO"
+            strSQL &= ", SANKASHA_ID"
+            strSQL &= ", TIME_STAMP_BYL"
+            strSQL &= ", SALEFORCE_ID"
+            strSQL &= ", DR_MPID"
+            strSQL &= ", DR_CD"
+            strSQL &= ", DR_NAME"
+            strSQL &= ", DR_KANA"
+            strSQL &= ", DR_SHISETSU_NAME"
+            strSQL &= ", DR_YAKUWARI"
+            strSQL &= ", SHITEIGAI_RIYU"
+            strSQL &= ", MR_BU"
+            strSQL &= ", MR_AREA"
+            strSQL &= ", MR_EIGYOSHO"
+            strSQL &= ", MR_NAME"
+            strSQL &= ", MR_KANA"
+            strSQL &= ", MR_KEITAI"
+            strSQL &= ", COST_CENTER AS KOTSU_COST_CENTER"
+            strSQL &= ", ACCOUNT_CD AS KOTSU_ACCOUNT_CD"
+            strSQL &= ", INTERNAL_ORDER AS KOTSU_INTERNAL_ORDER"
+            strSQL &= ", ZETIA_CD AS KOTSU_ZETIA_CD"
+            strSQL &= ", ANS_TAXI_DATE_1"
+            strSQL &= ", ANS_TAXI_DATE_2"
+            strSQL &= ", ANS_TAXI_DATE_3"
+            strSQL &= ", ANS_TAXI_DATE_4"
+            strSQL &= ", ANS_TAXI_DATE_5"
+            strSQL &= ", ANS_TAXI_DATE_6"
+            strSQL &= ", ANS_TAXI_DATE_7"
+            strSQL &= ", ANS_TAXI_DATE_8"
+            strSQL &= ", ANS_TAXI_DATE_9"
+            strSQL &= ", ANS_TAXI_DATE_10"
+            strSQL &= ", ANS_TAXI_DATE_11"
+            strSQL &= ", ANS_TAXI_DATE_12"
+            strSQL &= ", ANS_TAXI_DATE_13"
+            strSQL &= ", ANS_TAXI_DATE_14"
+            strSQL &= ", ANS_TAXI_DATE_15"
+            strSQL &= ", ANS_TAXI_DATE_16"
+            strSQL &= ", ANS_TAXI_DATE_17"
+            strSQL &= ", ANS_TAXI_DATE_18"
+            strSQL &= ", ANS_TAXI_DATE_19"
+            strSQL &= ", ANS_TAXI_DATE_20"
+            strSQL &= " FROM TBL_KOTSUHOTEL) WK_KOTSUHOTEL"
+            strSQL &= " ON (WK1.SALEFORCE_ID = WK_KOTSUHOTEL.SALEFORCE_ID)"
+            strSQL &= " AND (WK1.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO)"
+            strSQL &= " AND (WK1.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID)"
+            strSQL &= " AND (WK1.DR_MPID = WK_KOTSUHOTEL.DR_MPID)"
+            strSQL &= " AND (WK1.TIME_STAMP_BYL = WK_KOTSUHOTEL.TIME_STAMP_BYL)"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK3"
+            strSQL &= " WHERE  WK3.TIME_STAMP = "
+            strSQL &= " (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= " WHERE TBL_KOUENKAI.KOUENKAI_NO = WK3.KOUENKAI_NO)"
+            strSQL &= " )WK_KOUENKAI"
+            strSQL &= " ON WK_TAXITICKET_HAKKO.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " LEFT JOIN TBL_SANKA ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " AND "
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " LEFT JOIN"
+            strSQL &= "(SELECT KOUENKAI_NO"
+            strSQL &= ", SEIKYU_NO_TOPTOUR"
+            strSQL &= ",SEISAN_YM"
+            strSQL &= " FROM TBL_SEIKYU) WK_SEIKYU"
+            strSQL &= " ON WK_SEIKYU.KOUENKAI_NO=WK_SHOUNIN.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_SEIKYU.SEIKYU_NO_TOPTOUR=WK_SHOUNIN.SEIKYU_NO_TOPTOUR"
+            strSQL &= " WHERE"
+            strSQL &= " WK_TAXITICKET_HAKKO.TKT_NO<>N''"
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_SHOUNIN.KOUENKAI_NO"
+            strSQL &= ", WK_SHOUNIN.SHIHARAI_NO"
+            strSQL &= ", WK_KOTSUHOTEL.SANKASHA_ID"
+            strSQL &= ", WK_TAXITICKET_HAKKO.TKT_NO"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Insert(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
             Dim strSQL As String = ""
 
@@ -7256,8 +8386,9 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU
-            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_DATE
-            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER
+            '@@@ 2014/10/20 Delete
+            'strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_DATE
+            'strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER
             strSQL &= ")"
@@ -7274,9 +8405,61 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
+            '@@@ 2014/10/20 Delete
+            'strSQL &= ",N'" & GetValue.DATE() & "'"
+            'strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert_OTH(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_TAXITICKET_HAKKO"
+            strSQL &= "(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEISAN_FEE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEIKYU_YM
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SEIKYU_NO_TOPTOUR
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_USED_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_URIAGE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_DATE) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_USER) & "'"
-            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
             strSQL &= ")"
 
@@ -7298,8 +8481,35 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
-            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            '@@@ 2014/10/20 Add Start
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE & "=N'" & CmnModule.GetSysDate() & "'"
+            '@@@ 2014/10/20 Add End
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
+            strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update_OTH(ByVal TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_TAXITICKET_HAKKO SET"
+            strSQL &= " " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KENSHU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KENSHU) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SANKASHA_ID) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_LINE_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_LINE_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_USED_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_URIAGE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEISAN_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HAKKO_FEE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_ENTA) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_VOID & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_VOID) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEIKYU_YM & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
             strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
 
@@ -7464,6 +8674,151 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SHOUNIN.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_SHOUNIN.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_SHOUNIN.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.SEIKYU_NO_TOPTOUR) & "'"
+
+            Return strSQL
+        End Function
+    End Class
+
+    Public Class TBL_DELIGATE
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_DELIGATE.*" _
+        & " FROM TBL_DELIGATE"
+
+        Public Shared Function byLOGIN_ID(ByVal LOGIN_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_DELIGATE.LOGIN_ID=N'" & CmnDb.SqlString(LOGIN_ID) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal TBL_DELIGATE As TableDef.TBL_DELIGATE.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_DELIGATE"
+            strSQL &= " (" & TableDef.TBL_DELIGATE.Column.LOGIN_ID
+            strSQL &= "," & TableDef.TBL_DELIGATE.Column.CNT
+            strSQL &= "," & TableDef.TBL_DELIGATE.Column.MAXCNT
+            strSQL &= "," & TableDef.TBL_DELIGATE.Column.CSVSTRING
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_DELIGATE.LOGIN_ID) & "'"
+            strSQL &= "," & CmnDb.SqlString(TBL_DELIGATE.CNT)
+            strSQL &= "," & CmnDb.SqlString(TBL_DELIGATE.MAXCNT)
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_DELIGATE.CSVSTRING) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_DELIGATE As TableDef.TBL_DELIGATE.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_DELIGATE SET"
+            strSQL &= " " & TableDef.TBL_DELIGATE.Column.CNT & "=" & TBL_DELIGATE.CNT
+            strSQL &= "," & TableDef.TBL_DELIGATE.Column.MAXCNT & "=" & TBL_DELIGATE.MAXCNT
+            strSQL &= "," & TableDef.TBL_DELIGATE.Column.CSVSTRING & "=N'" & CmnDb.SqlString(TBL_DELIGATE.CSVSTRING) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_DELIGATE.Column.LOGIN_ID & "=N'" & CmnDb.SqlString(TBL_DELIGATE.LOGIN_ID) & "'"
+
+            Return strSQL
+        End Function
+    End Class
+
+    Public Class TBL_DELIGATE2
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_DELIGATE2.*" _
+        & " FROM TBL_DELIGATE2"
+
+        Public Shared Function byLOGIN_ID(ByVal LOGIN_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_DELIGATE2.LOGIN_ID=N'" & CmnDb.SqlString(LOGIN_ID) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal TBL_DELIGATE2 As TableDef.TBL_DELIGATE2.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_DELIGATE2"
+            strSQL &= " (" & TableDef.TBL_DELIGATE2.Column.LOGIN_ID
+            strSQL &= "," & TableDef.TBL_DELIGATE2.Column.CNT
+            strSQL &= "," & TableDef.TBL_DELIGATE2.Column.MAXCNT
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_DELIGATE2.LOGIN_ID) & "'"
+            strSQL &= "," & CmnDb.SqlString(TBL_DELIGATE2.CNT)
+            strSQL &= "," & CmnDb.SqlString(TBL_DELIGATE2.MAXCNT)
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_DELIGATE2 As TableDef.TBL_DELIGATE2.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_DELIGATE2 SET"
+            strSQL &= " " & TableDef.TBL_DELIGATE2.Column.CNT & "=" & TBL_DELIGATE2.CNT
+            strSQL &= "," & TableDef.TBL_DELIGATE2.Column.MAXCNT & "=" & TBL_DELIGATE2.MAXCNT
+            strSQL &= " WHERE " & TableDef.TBL_DELIGATE2.Column.LOGIN_ID & "=N'" & CmnDb.SqlString(TBL_DELIGATE2.LOGIN_ID) & "'"
+
+            Return strSQL
+        End Function
+    End Class
+
+    Public Class TBL_BUNSEKICSV
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_BUNSEKICSV.*" _
+        & " FROM TBL_BUNSEKICSV"
+
+        Public Shared Function byLOGIN_ID(ByVal LOGIN_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_BUNSEKICSV.LOGIN_ID=N'" & CmnDb.SqlString(LOGIN_ID) & "'"
+            strSQL &= " ORDER BY LINE_NO"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal TBL_BUNSEKICSV As TableDef.TBL_BUNSEKICSV.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_BUNSEKICSV"
+            strSQL &= " (" & TableDef.TBL_BUNSEKICSV.Column.LOGIN_ID
+            strSQL &= "," & TableDef.TBL_BUNSEKICSV.Column.LINE_NO
+            strSQL &= "," & TableDef.TBL_BUNSEKICSV.Column.LINE_DATA
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_BUNSEKICSV.LOGIN_ID) & "'"
+            strSQL &= "," & CmnDb.SqlString(TBL_BUNSEKICSV.LINE_NO)
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_BUNSEKICSV.LINE_DATA) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_BUNSEKICSV As TableDef.TBL_BUNSEKICSV.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_BUNSEKICSV SET"
+            strSQL &= " " & TableDef.TBL_BUNSEKICSV.Column.LINE_NO & "=" & TBL_BUNSEKICSV.line_no
+            strSQL &= "," & TableDef.TBL_BUNSEKICSV.Column.LINE_DATA & "=N'" & TBL_BUNSEKICSV.LINE_DATA & "'"
+            strSQL &= " WHERE " & TableDef.TBL_BUNSEKICSV.Column.LOGIN_ID & "=N'" & CmnDb.SqlString(TBL_BUNSEKICSV.LOGIN_ID) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Delete(ByVal TBL_BUNSEKICSV As TableDef.TBL_BUNSEKICSV.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_BUNSEKICSV"
+            strSQL &= " WHERE " & TableDef.TBL_BUNSEKICSV.Column.LOGIN_ID & "=N'" & CmnDb.SqlString(TBL_BUNSEKICSV.LOGIN_ID) & "'"
 
             Return strSQL
         End Function
