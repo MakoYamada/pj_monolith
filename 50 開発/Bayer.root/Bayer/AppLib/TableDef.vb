@@ -325,6 +325,15 @@
             Public KIKAKU_TANTO_AREA As String
             Public KIKAKU_TANTO_EIGYOSHO As String
             Public TEHAI_ID As String
+
+            '@@@ Phase2
+            Public KAIJO_NAME As String
+            Public SEIHIN_NAME As String
+            Public TEHAI_TANTO_BU As String
+            Public TEHAI_TANTO_AREA As String
+            Public TEHAI_TANTO_EIGYOSHO As String
+            Public TEHAI_TANTO_NAME As String
+            '@@@ Phase2
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -396,6 +405,15 @@
             Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
             Public Const TEHAI_ID As String = "TEHAI_ID"
+
+            '@@@ Phase2
+            Public Const KAIJO_NAME As String = "KAIJO_NAME"
+            Public Const SEIHIN_NAME As String = "SEIHIN_NAME"
+            Public Const TEHAI_TANTO_BU As String = "TEHAI_TANTO_BU"
+            Public Const TEHAI_TANTO_AREA As String = "TEHAI_TANTO_AREA"
+            Public Const TEHAI_TANTO_EIGYOSHO As String = "TEHAI_TANTO_EIGYOSHO"
+            Public Const TEHAI_TANTO_NAME As String = "TEHAI_TANTO_NAME"
+            '@@@ Phase2
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
@@ -465,6 +483,15 @@
             Public Const BU As String = "企画担当者BU"
             Public Const KIKAKU_TANTO_AREA As String = "企画担当者エリア"
             Public Const KIKAKU_TANTO_EIGYOSHO As String = "企画担当者営業所"
+
+            '@@@ Phase2
+            Public Const KAIJOU_NAME As String = "会場名"
+            Public Const SEIHIN_NAME As String = "製品名"
+            Public Const TEHAI_TANTO_BU As String = "手配担当者BU"
+            Public Const TEHAI_TANTO_AREA As String = "手配担当者エリア"
+            Public Const TEHAI_TANTO_EIGYOSHO As String = "手配担当者営業所"
+            Public Const TEHAI_TANTO_NAME As String = "手配担当者氏名"
+            '@@@ Phase2
         End Class
     End Class
 
@@ -928,6 +955,11 @@
             Public UPDATE_USER As String
             Public SEND_DATE As String
 
+            Public KOTSU_ACCOUNT_CD As String
+            Public KOTSU_COST_CENTER As String
+            Public KOTSU_INTERNAL_ORDER As String
+            Public KOTSU_ZETIA_CD As String
+
             Public KOUENKAI_NAME As String
             Public KOUENKAI_TIME_STAMP As String
             Public TORIKESHI_FLG As String
@@ -938,6 +970,15 @@
             Public USER_NAME As String
             Public SEIHIN_NAME As String
             Public TIME_STAMP As String
+            Public BU As String
+            Public KIKAKU_TANTO_AREA As String
+            Public KIKAKU_TANTO_EIGYOSHO As String
+            Public KIKAKU_TANTO_NAME As String
+            Public KIKAKU_TANTO_ROMA As String
+            Public KIHON_ACCOUNT_CD_TF As String
+            Public KIHON_ACCOUNT_CD_T As String
+            Public KIHON_COST_CENTER As String
+            Public SRM_HACYU_KBN As String
 
             Public TKT_LINE_NO_1 As Integer
             Public TKT_LINE_NO_2 As Integer
@@ -961,6 +1002,10 @@
             Public TKT_LINE_NO_20 As Integer
 
             Public SANKA_FLAG As String
+
+            Public SHIHARAI_NO As String
+            Public SEISAN_YM As String
+
         End Structure
         Public Class Column
             Public Const SALEFORCE_ID As String = "SALEFORCE_ID"
@@ -1421,6 +1466,11 @@
             Public Const UPDATE_USER As String = "UPDATE_USER"
             Public Const SEND_DATE As String = "SEND_DATE"
 
+            Public Const KOTSU_ACCOUNT_CD As String = "KOTSU_ACCOUNT_CD"
+            Public Const KOTSU_COST_CENTER As String = "KOTSU_COST_CENTER"
+            Public Const KOTSU_INTERNAL_ORDER As String = "KOTSU_INTERNAL_ORDER"
+            Public Const KOTSU_ZETIA_CD As String = "KOTSU_ZETIA_CD"
+
             Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
             Public Const KOUENKAI_TIME_STAMP As String = "KOUENKAI_TIME_STAMP"
             Public Const TORIKESHI_FLG As String = "TORIKESHI_FLG"
@@ -1432,6 +1482,18 @@
             Public Const SEIHIN_NAME As String = "SEIHIN_NAME"
             Public Const TIME_STAMP As String = "TIME_STAMP"
             Public Const SANKA_FLAG As String = "SANKA_FLAG"
+            Public Const BU As String = "BU"
+            Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
+            Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
+            Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"
+            Public Const KIKAKU_TANTO_ROMA As String = "KIKAKU_TANTO_ROMA"
+            Public Const KIHON_ACCOUNT_CD_TF As String = "KIHON_ACCOUNT_CD_TF"
+            Public Const KIHON_ACCOUNT_CD_T As String = "KIHON_ACCOUNT_CD_T"
+            Public Const KIHON_COST_CENTER As String = "KIHON_COST_CENTER"
+            Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
+
+            Public Const SHIHARAI_NO As String = "SHIHARAI_NO"
+            Public Const SEISAN_YM As String = "SEISAN_YM"
         End Class
         Public Class Name
             Public Const SALEFORCE_ID As String = "SalesForceID"
@@ -1902,6 +1964,19 @@
             Public Const USER_NAME As String = "トップツアー担当者"
             Public Const SANKA_FLAG As String = "参加/不参加"
         End Class
+    End Class
+
+    Public Class TBL_KOTSUHOTEL_KEY
+        <Serializable()> Public Structure DataStruct
+            Public SALEFORCE_ID As String
+            Public SANKASHA_ID As String
+            Public KOUENKAI_NO As String
+            Public TIME_STAMP_BYL As String
+            Public DR_MPID As String
+            Public UPDATE_DATE As String
+            Public USER_NAME As String
+            Public SANKA_FLAG As String
+        End Structure
     End Class
 
     Public Class TBL_KAIJO
@@ -2924,7 +2999,9 @@
             Public TKT_SEIKYU_YM As String
             Public TKT_ENTA As String
             Public TEHAI_ID As String
-            Public TTEHAI_TANTO As String 
+            Public TTEHAI_TANTO As String
+            Public DR_MPID As String
+            Public SALESFORCE_ID As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
@@ -3101,10 +3178,13 @@
             Public TKT_HAKKO_FEE As String
             Public TKT_ENTA As String
             Public TKT_VOID As String
+            Public TKT_VOID_DATE As String
             Public TKT_MIKETSU As String
             Public TKT_IMPORT_DATE As String
             Public TKT_SEIKYU_YM As String
             Public SEIKYU_NO_TOPTOUR As String
+            Public FURIKAESAKI_SANKASHA_ID As String
+            Public FURIKAESAKI_USED_DATE As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
             Public UPDATE_DATE As String
@@ -3126,6 +3206,7 @@
             Public DR_SEX As String
             Public DR_AGE As String
             Public SHITEIGAI_RIYU As String
+            Public MR_KEITAI As String
             Public DR_SANKA As String
             Public ANS_TAXI_DATE_1 As String
             Public ANS_TAXI_KENSHU_1 As String
@@ -3255,6 +3336,34 @@
             Public KAZEI_KBN As String
             Public COST_CENTER As String
             Public REQ_TAXI_DATE As String
+            Public ANS_TAXI_DATE As String
+
+            Public SRM_HACYU_KBN As String
+            Public KAIJO_NAME As String
+            Public BU As String
+            Public KIKAKU_TANTO_AREA As String
+            Public KIKAKU_TANTO_EIGYOSHO As String
+            Public KIKAKU_TANTO_NAME As String
+            Public KIKAKU_TANTO_ROMA As String
+            Public KIHON_ACCOUNT_CD_TF As String
+            Public KIHON_ACCOUNT_CD_T As String
+            Public KOTSU_ACCOUNT_CD As String
+            Public KIHON_COST_CENTER As String
+            Public KOTSU_COST_CENTER As String
+            Public KIHON_INTERNAL_ORDER As String
+            Public KOTSU_INTERNAL_ORDER As String
+            Public KIHON_ZETIA_CD As String
+            Public KOTSU_ZETIA_CD As String
+            Public SANKA_FLAG As String
+            Public SANKA_UPDATE As String
+            Public MR_BU As String
+            Public MR_AREA As String
+            Public MR_EIGYOSHO As String
+            Public MR_NAME As String
+            Public MR_KANA As String
+
+            Public SHIHARAI_NO As String
+            Public SEISAN_YM As String
         End Structure
         Public Class Column
             Public Const TKT_KAISHA As String = "TKT_KAISHA"
@@ -3269,10 +3378,13 @@
             Public Const TKT_HAKKO_FEE As String = "TKT_HAKKO_FEE"
             Public Const TKT_ENTA As String = "TKT_ENTA"
             Public Const TKT_VOID As String = "TKT_VOID"
+            Public Const TKT_VOID_DATE As String = "TKT_VOID_DATE"
             Public Const TKT_MIKETSU As String = "TKT_MIKETSU"
             Public Const TKT_IMPORT_DATE As String = "TKT_IMPORT_DATE"
             Public Const TKT_SEIKYU_YM As String = "TKT_SEIKYU_YM"
             Public Const SEIKYU_NO_TOPTOUR As String = "SEIKYU_NO_TOPTOUR"
+            Public Const FURIKAESAKI_SANKASHA_ID As String = "FURIKAESAKI_SANKASHA_ID"
+            Public Const FURIKAESAKI_USED_DATE As String = "FURIKAESAKI_USED_DATE"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
@@ -3294,6 +3406,7 @@
             Public Const DR_SEX As String = "DR_SEX"
             Public Const DR_AGE As String = "DR_AGE"
             Public Const SHITEIGAI_RIYU As String = "SHITEIGAI_RIYU"
+            Public Const MR_KEITAI As String = "MR_KEITAI"
             Public Const DR_SANKA As String = "DR_SANKA"
             Public Const ANS_TAXI_DATE_1 As String = "ANS_TAXI_DATE_1"
             Public Const ANS_TAXI_KENSHU_1 As String = "ANS_TAXI_KENSHU_1"
@@ -3420,6 +3533,34 @@
             Public Const KAZEI_KBN As String = "KAZEI_KBN"
             Public Const COST_CENTER As String = "COST_CENTER"
             Public Const REQ_TAXI_DATE As String = "REQ_TAXI_DATE"
+            Public Const ANS_TAXI_DATE As String = "ANS_TAXI_DATE"
+
+            Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
+            Public Const KAIJO_NAME As String = "KAIJO_NAME"
+            Public Const BU As String = "BU"
+            Public Const KIKAKU_TANTO_AREA As String = "KIKAKU_TANTO_AREA"
+            Public Const KIKAKU_TANTO_EIGYOSHO As String = "KIKAKU_TANTO_EIGYOSHO"
+            Public Const KIKAKU_TANTO_NAME As String = "KIKAKU_TANTO_NAME"
+            Public Const KIKAKU_TANTO_ROMA As String = "KIKAKU_TANTO_ROMA"
+            Public Const KIHON_ACCOUNT_CD_TF As String = "KIHON_ACCOUNT_CD_TF"
+            Public Const KIHON_ACCOUNT_CD_T As String = "KIHON_ACCOUNT_CD_T"
+            Public Const KOTSU_ACCOUNT_CD As String = "KOTSU_ACCOUNT_CD"
+            Public Const KIHON_COST_CENTER As String = "KIHON_COST_CENTER"
+            Public Const KOTSU_COST_CENTER As String = "KOTSU_COST_CENTER"
+            Public Const KIHON_INTERNAL_ORDER As String = "KIHON_INTERNAL_ORDER_TF"
+            Public Const KOTSU_INTERNAL_ORDER As String = "KOTSU_INTERNAL_ORDER"
+            Public Const KIHON_ZETIA_CD As String = "KIHON_ZETIA_CD"
+            Public Const KOTSU_ZETIA_CD As String = "KOTSU_ZETIA_CD"
+            Public Const MR_BU As String = "MR_BU"
+            Public Const MR_AREA As String = "MR_AREA"
+            Public Const MR_EIGYOSHO As String = "MR_EIGYOSHO"
+            Public Const MR_NAME As String = "MR_NAME"
+            Public Const MR_KANA As String = "MR_KANA"
+            Public Const SANKA_FLAG As String = "SANKA_FLAG"
+            Public Const SANKA_UPDATE As String = "SANKA_UPDATE"
+
+            Public Const SHIHARAI_NO As String = "SHIHARAI_NO"
+            Public Const SEISAN_YM As String = "SEISAN_YM"
         End Class
         Public Class Name
             Public Const TKT_KAISHA As String = "タクシー会社"
@@ -3434,10 +3575,13 @@
             Public Const TKT_HAKKO_FEE As String = "発行手数料"
             Public Const TKT_ENTA As String = "エンタ"
             Public Const TKT_VOID As String = "VOID"
+            Public Const TKT_VOID_DATE As String = "破棄日"
             Public Const TKT_MIKETSU As String = "未決フラグ"
             Public Const TKT_IMPORT_DATE As String = "取込日"
             Public Const TKT_SEIKYU_YM As String = "請求年月"
             Public Const SEIKYU_NO_TOPTOUR As String = "精算番号"
+            Public Const FURIKAESAKI_SANKASHA_ID As String = "振替先参加者ID"
+            Public Const FURIKAESAKI_USED_DATE As String = "振替先利用日"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
@@ -3610,6 +3754,63 @@
             Public Const TEHAI_TAXI As String = "タク"
             Public Const TEHAI_MR As String = "MR手配"
             Public Const KINKYU_FLAG As String = "緊急"
+        End Class
+    End Class
+
+    Public Class TBL_DELIGATE
+        <Serializable()> Public Structure DataStruct
+            Public LOGIN_ID As String
+            Public CNT As Integer
+            Public MAXCNT As Integer
+            Public CSVSTRING As String
+        End Structure
+        Public Class Column
+            Public Const LOGIN_ID As String = "LOGIN_ID"
+            Public Const CNT As String = "CNT"
+            Public Const MAXCNT As String = "MAXCNT"
+            Public Const CSVSTRING As String = "CSVSTRING"
+        End Class
+        Public Class Name
+            Public Const LOGIN_ID As String = "ログインID"
+            Public Const CNT As String = "処理中件数"
+            Public Const MAXCNT As String = "処理件数"
+            Public Const CSVSTRING As String = "出力内容"
+        End Class
+    End Class
+
+    Public Class TBL_DELIGATE2
+        <Serializable()> Public Structure DataStruct
+            Public LOGIN_ID As String
+            Public CNT As Integer
+            Public MAXCNT As Integer
+        End Structure
+        Public Class Column
+            Public Const LOGIN_ID As String = "LOGIN_ID"
+            Public Const CNT As String = "CNT"
+            Public Const MAXCNT As String = "MAXCNT"
+        End Class
+        Public Class Name
+            Public Const LOGIN_ID As String = "ログインID"
+            Public Const CNT As String = "処理中件数"
+            Public Const MAXCNT As String = "処理件数"
+        End Class
+    End Class
+
+    Public Class TBL_BUNSEKICSV
+        <Serializable()> Public Structure DataStruct
+            Public LOGIN_ID As String
+            Public LINE_NO As Integer
+            Public LINE_DATA As String
+        End Structure
+        Public Class Column
+            Public Const LOGIN_ID As String = "LOGIN_ID"
+            Public Const LINE_NO As String = "LINE_NO"
+            Public Const LINE_DATA As String = "LINE_DATA"
+        End Class
+        Public Class Name
+            Public Const LOGIN_ID As String = "ログインID"
+            Public Const LINE_NO As String = "行№"
+            Public Const LINE_DATA As String = "行データ"
         End Class
     End Class
 

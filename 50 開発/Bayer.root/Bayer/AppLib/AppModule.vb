@@ -189,6 +189,16 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_AREA.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_EIGYOSHO.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_ID.ToUpper Then TBL_SEIKYU.TEHAI_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            '@@@ Phase2
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KAIJO_NAME.ToUpper Then TBL_SEIKYU.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SEIHIN_NAME.ToUpper Then TBL_SEIKYU.SEIHIN_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_BU.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_AREA.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_EIGYOSHO.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_NAME.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            '@@@ Phase2
+
         Next wCnt
 
         Return TBL_SEIKYU
@@ -657,6 +667,12 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE.ToUpper Then TBL_KOTSUHOTEL.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER.ToUpper Then TBL_KOTSUHOTEL.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE.ToUpper Then TBL_KOTSUHOTEL.SEND_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_ACCOUNT_CD.ToUpper Then TBL_KOTSUHOTEL.KOTSU_ACCOUNT_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_COST_CENTER.ToUpper Then TBL_KOTSUHOTEL.KOTSU_COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_INTERNAL_ORDER.ToUpper Then TBL_KOTSUHOTEL.KOTSU_INTERNAL_ORDER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_ZETIA_CD.ToUpper Then TBL_KOTSUHOTEL.KOTSU_ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NAME.ToUpper Then TBL_KOTSUHOTEL.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_TIME_STAMP.ToUpper Then TBL_KOTSUHOTEL.KOUENKAI_TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TORIKESHI_FLG.ToUpper Then TBL_KOTSUHOTEL.TORIKESHI_FLG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -667,6 +683,37 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.USER_NAME.ToUpper Then TBL_KOTSUHOTEL.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEIHIN_NAME.ToUpper Then TBL_KOTSUHOTEL.SEIHIN_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP.ToUpper Then TBL_KOTSUHOTEL.TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.BU.ToUpper Then TBL_KOTSUHOTEL.BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIKAKU_TANTO_AREA.ToUpper Then TBL_KOTSUHOTEL.KIKAKU_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIKAKU_TANTO_EIGYOSHO.ToUpper Then TBL_KOTSUHOTEL.KIKAKU_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIKAKU_TANTO_NAME.ToUpper Then TBL_KOTSUHOTEL.KIKAKU_TANTO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIKAKU_TANTO_ROMA.ToUpper Then TBL_KOTSUHOTEL.KIKAKU_TANTO_ROMA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIHON_ACCOUNT_CD_TF.ToUpper Then TBL_KOTSUHOTEL.KIHON_ACCOUNT_CD_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIHON_ACCOUNT_CD_T.ToUpper Then TBL_KOTSUHOTEL.KIHON_ACCOUNT_CD_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIHON_COST_CENTER.ToUpper Then TBL_KOTSUHOTEL.KIHON_COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SRM_HACYU_KBN.ToUpper Then TBL_KOTSUHOTEL.SRM_HACYU_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKA_FLAG.ToUpper Then TBL_KOTSUHOTEL.SANKA_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SHIHARAI_NO.ToUpper Then TBL_KOTSUHOTEL.SHIHARAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEIKYU_NO_TOPTOUR.ToUpper Then TBL_KOTSUHOTEL.SEIKYU_NO_TOPTOUR = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEISAN_YM.ToUpper Then TBL_KOTSUHOTEL.SEISAN_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_KOTSUHOTEL
+    End Function
+
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL_KEY.DataStruct) As TableDef.TBL_KOTSUHOTEL_KEY.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID.ToUpper Then TBL_KOTSUHOTEL.SALEFORCE_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID.ToUpper Then TBL_KOTSUHOTEL.SANKASHA_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO.ToUpper Then TBL_KOTSUHOTEL.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL.ToUpper Then TBL_KOTSUHOTEL.TIME_STAMP_BYL = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.INPUT_DATE.ToUpper Then TBL_KOTSUHOTEL.DR_MPID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE.ToUpper Then TBL_KOTSUHOTEL.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.USER_NAME.ToUpper Then TBL_KOTSUHOTEL.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKA_FLAG.ToUpper Then TBL_KOTSUHOTEL.SANKA_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
@@ -1071,6 +1118,35 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KAZEI_KBN.ToUpper Then TBL_TAXITICKET_HAKKO.KAZEI_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.COST_CENTER.ToUpper Then TBL_TAXITICKET_HAKKO.COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.REQ_TAXI_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.REQ_TAXI_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SRM_HACYU_KBN.ToUpper Then TBL_TAXITICKET_HAKKO.SRM_HACYU_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KAIJO_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.BU.ToUpper Then TBL_TAXITICKET_HAKKO.BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIKAKU_TANTO_AREA.ToUpper Then TBL_TAXITICKET_HAKKO.KIKAKU_TANTO_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIKAKU_TANTO_EIGYOSHO.ToUpper Then TBL_TAXITICKET_HAKKO.KIKAKU_TANTO_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIKAKU_TANTO_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.KIKAKU_TANTO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIKAKU_TANTO_ROMA.ToUpper Then TBL_TAXITICKET_HAKKO.KIKAKU_TANTO_ROMA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIHON_ACCOUNT_CD_TF.ToUpper Then TBL_TAXITICKET_HAKKO.KIHON_ACCOUNT_CD_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIHON_ACCOUNT_CD_T.ToUpper Then TBL_TAXITICKET_HAKKO.KIHON_ACCOUNT_CD_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KOTSU_ACCOUNT_CD.ToUpper Then TBL_TAXITICKET_HAKKO.KOTSU_ACCOUNT_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIHON_COST_CENTER.ToUpper Then TBL_TAXITICKET_HAKKO.KIHON_COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KOTSU_COST_CENTER.ToUpper Then TBL_TAXITICKET_HAKKO.KOTSU_COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIHON_INTERNAL_ORDER.ToUpper Then TBL_TAXITICKET_HAKKO.KIHON_INTERNAL_ORDER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KOTSU_INTERNAL_ORDER.ToUpper Then TBL_TAXITICKET_HAKKO.KOTSU_INTERNAL_ORDER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KIHON_ZETIA_CD.ToUpper Then TBL_TAXITICKET_HAKKO.KIHON_ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KOTSU_ZETIA_CD.ToUpper Then TBL_TAXITICKET_HAKKO.KOTSU_ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SANKA_FLAG.ToUpper Then TBL_TAXITICKET_HAKKO.SANKA_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SANKA_UPDATE.ToUpper Then TBL_TAXITICKET_HAKKO.SANKA_UPDATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.MR_BU.ToUpper Then TBL_TAXITICKET_HAKKO.MR_BU = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.MR_AREA.ToUpper Then TBL_TAXITICKET_HAKKO.MR_AREA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.MR_EIGYOSHO.ToUpper Then TBL_TAXITICKET_HAKKO.MR_EIGYOSHO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.MR_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.MR_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.MR_KANA.ToUpper Then TBL_TAXITICKET_HAKKO.MR_KANA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.MR_KEITAI.ToUpper Then TBL_TAXITICKET_HAKKO.MR_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SHIHARAI_NO.ToUpper Then TBL_TAXITICKET_HAKKO.SHIHARAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SEISAN_YM.ToUpper Then TBL_TAXITICKET_HAKKO.SEISAN_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_TAXITICKET_HAKKO
@@ -1310,6 +1386,48 @@ Public Class AppModule
     End Function
 #End Region
 
+#Region "デリゲートテーブル"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_DELIGATE As TableDef.TBL_DELIGATE.DataStruct) As TableDef.TBL_DELIGATE.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE.Column.LOGIN_ID.ToUpper Then TBL_DELIGATE.LOGIN_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE.Column.CNT.ToUpper Then TBL_DELIGATE.CNT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE.Column.MAXCNT.ToUpper Then TBL_DELIGATE.MAXCNT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE.Column.CSVSTRING.ToUpper Then TBL_DELIGATE.CSVSTRING = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_DELIGATE
+    End Function
+
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_DELIGATE2 As TableDef.TBL_DELIGATE2.DataStruct) As TableDef.TBL_DELIGATE2.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE2.Column.LOGIN_ID.ToUpper Then TBL_DELIGATE2.LOGIN_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE2.Column.CNT.ToUpper Then TBL_DELIGATE2.CNT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_DELIGATE2.Column.MAXCNT.ToUpper Then TBL_DELIGATE2.MAXCNT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_DELIGATE2
+    End Function
+#End Region
+
+#Region "分析CSV出力用テーブル"
+
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_BUNSEKICSV As TableDef.TBL_BUNSEKICSV.DataStruct) As TableDef.TBL_BUNSEKICSV.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_BUNSEKICSV.Column.LOGIN_ID.ToUpper Then TBL_BUNSEKICSV.LOGIN_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_BUNSEKICSV.Column.LINE_NO.ToUpper Then TBL_BUNSEKICSV.LINE_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_BUNSEKICSV.Column.LINE_DATA.ToUpper Then TBL_BUNSEKICSV.LINE_DATA = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_BUNSEKICSV
+    End Function
+
+#End Region
 #End Region
 
 
@@ -4024,6 +4142,16 @@ Public Class AppModule
             Else
                 Return ANS_TAXI_TESURYO
             End If
+        End If
+    End Function
+
+    'タクチケ発行枚数
+    Public Shared Function GetName_ANS_TAXI_MAISUU(ByVal ANS_TAXI_TESURYO As String, ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection) As String
+        If Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn)) = 0 OrElse Val(ANS_TAXI_TESURYO) = 0 Then
+            Return "0"
+        Else
+            'タクチケ発券手数料÷タクチケ発券手数料単価を切り上げ
+            Return Math.Ceiling(Double.Parse(ANS_TAXI_TESURYO) / Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn))).ToString
         End If
     End Function
 
@@ -7847,6 +7975,17 @@ Public Class AppModule
             .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.Mi, AppConst.SEISAN.SHOUNIN_KUBUN.Code.Mi))
             .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.SHOUNIN, AppConst.SEISAN.SHOUNIN_KUBUN.Code.SHOUNIN))
             .Items.Add(New ListItem(AppConst.SEISAN.SHOUNIN_KUBUN.Name.HININ, AppConst.SEISAN.SHOUNIN_KUBUN.Code.HININ))
+        End With
+    End Sub
+#End Region
+
+#Region "SRM発注区分"
+    Public Shared Sub SetDropDownList_SRM_HACYU_KBN(ByRef SRM_HACYU_KBN As DropDownList)
+        With SRM_HACYU_KBN
+            .Items.Clear()
+            .Items.Add(New ListItem("---", ""))
+            .Items.Add(New ListItem(AppConst.KAIJO.SRM_HACYU_KBN.Name.Yes, AppConst.KAIJO.SRM_HACYU_KBN.Code.Yes))
+            .Items.Add(New ListItem(AppConst.KAIJO.SRM_HACYU_KBN.Name.No, AppConst.KAIJO.SRM_HACYU_KBN.Code.No))
         End With
     End Sub
 #End Region
