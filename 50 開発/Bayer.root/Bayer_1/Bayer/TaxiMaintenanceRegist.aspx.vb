@@ -480,7 +480,11 @@ Partial Public Class TaxiMaintenanceRegist
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(Me.KOUENKAI_NO_FURIKAE.Text, Me.SANKASHA_ID.Text)
+        If DATA_MAINTENANCE Then
+            strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(Me.KOUENKAI_NO_FURIKAE.Text, Me.SANKASHA_ID.Text)
+        Else
+            strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID(Me.KOUENKAI_NO.Text, Me.SANKASHA_ID.Text)
+        End If
         strSQL &= " DESC"
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then

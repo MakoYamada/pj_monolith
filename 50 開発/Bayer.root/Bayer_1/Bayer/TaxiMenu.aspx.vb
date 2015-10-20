@@ -72,7 +72,41 @@ Partial Public Class TaxiMenu
 
     '[タクチケ実績未精算CSV出力]
     Protected Sub BtnTaxiMiseisanCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMiseisanCsv.Click
-        Response.Redirect(URL.TaxiJissekiMiseisanCsv)
+        ' ''Response.Redirect(URL.TaxiJissekiMiseisanCsv)
+
+        '出力対象データ読込み
+        Dim CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+
+        ReDim CsvData(wCnt)
+
+        Dim fromDate As String = ""
+        Dim toDate As String = ""
+
+        strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiJissekiMiseisanCsv()
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            ReDim Preserve CsvData(wCnt)
+            CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        'ファイル名
+        Dim wFileName As String = "タクチケ実績未精算_" & Now.ToString("yyyyMMddHHmmss") & ".csv"
+
+        Response.Clear()
+        Response.ContentType = CmnConst.Csv.ContentType
+        Response.ContentEncoding = Encoding.GetEncoding("Shift_JIS")
+        Response.Charset = CmnConst.Csv.Charset
+        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode(wFileName))
+        Response.Write(CreateCsv(CsvData))
+        Response.End()
+
     End Sub
 
     '[タクチケスキャンデータ取込]
@@ -110,4 +144,59 @@ Partial Public Class TaxiMenu
     Protected Sub BtnTaxiJissekiOTH_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiJissekiOTH.Click
         Response.Redirect(URL.TaxiJissekiOTH)
     End Sub
+
+    'タクチケ未精算csv出力
+    Private Function CreateCsv(ByVal CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
+        Dim wCnt As Integer = 0
+        Dim sb As New System.Text.StringBuilder
+
+        '表題        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシー会社")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクシーチケット番号")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者ID")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("交通手配タクチケ行番号")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("売上金額")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("発行手数料")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("エンタ")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("未決フラグ")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("取込日")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("請求年月")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算番号")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録日時")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録者")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("更新日時")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("更新者"), True))
+        sb.Append(vbNewLine)
+
+        '明細
+        For wCnt = LBound(CsvData) To UBound(CsvData)
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KAISHA)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_NO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_LINE_NO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_DateJP(CsvData(wCnt).TKT_USED_DATE, CmnModule.DateFormatType.YYYYMMDD))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_URIAGE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_SEISAN_FEE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.DbVal_Kingaku(CsvData(wCnt).TKT_HAKKO_FEE))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_ENTA)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_VOID)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_MIKETSU)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_DateJP(CsvData(wCnt).TKT_IMPORT_DATE, CmnModule.DateFormatType.YYYYMMDD))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_DateJP(CsvData(wCnt).TKT_SEIKYU_YM, CmnModule.DateFormatType.YYYYMM))))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYU_NO_TOPTOUR)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INPUT_DATE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INPUT_USER)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_DATE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_USER), True))
+            sb.Append(vbNewLine)
+        Next wCnt
+
+        Return sb.ToString
+    End Function
 End Class

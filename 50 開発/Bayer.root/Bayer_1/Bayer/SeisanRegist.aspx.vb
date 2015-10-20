@@ -563,14 +563,40 @@ Partial Public Class SeisanRegist
     'DB登録処理
     Private Function ExecuteTransaction() As Boolean
 
-        If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
-                                                                            TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
-                                                                            MyBase.DbConnection) Then
-            '更新
-            Return UpdateData()
-        Else
+
+        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+            Dim wRtn As Boolean = True
+            'TOPTOUR請求番号が重複しなくなるまで最大値を取得し続ける
+            Do Until wRtn = False
+                '自動採番
+                TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+                wRtn = AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                                    TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                                    MyBase.DbConnection)
+            Loop
+
             '新規登録
             Return InsertData()
+        Else
+            If AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                                TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                                MyBase.DbConnection) Then
+                '更新
+                Return UpdateData()
+            Else
+                Dim wRtn As Boolean = True
+                'TOPTOUR請求番号が重複しなくなるまで最大値を取得し続ける
+                Do Until wRtn = False
+                    '自動採番
+                    TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+                    wRtn = AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                                        TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                                        MyBase.DbConnection)
+                Loop
+
+                '新規登録
+                Return InsertData()
+            End If
         End If
 
     End Function
@@ -640,16 +666,17 @@ Partial Public Class SeisanRegist
         '入力チェック
         If Not Check() Then Exit Sub
 
-        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
-            '自動採番
-            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
-        End If
+        'If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+        '    '自動採番
+        '    Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+        'End If
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Mi)
 
         'データ更新
         If ExecuteTransaction() Then
+            Me.SEIKYU_NO_TOPTOUR.Text = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
             Response.Redirect(URL.SeisanRegist & "?" & RequestDef.DbInsertEnd & "=" & CmnConst.Flag.On)
         End If
     End Sub
@@ -665,10 +692,10 @@ Partial Public Class SeisanRegist
         '入力チェック
         If Not Check() Then Exit Sub
 
-        If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
-            '自動採番
-            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
-        End If
+        'If Me.SEIKYU_NO_TOPTOUR.Text = "" Then
+        '    '自動採番
+        '    Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+        'End If
 
         '入力値を取得
         GetValue(AppConst.SEND_FLAG.Code.Taisho)
@@ -784,25 +811,42 @@ Partial Public Class SeisanRegist
                 Return False
             End If
 
-            '自動採番
-            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
-
-            MyBase.BeginTransaction()
+            ''自動採番
+            'Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
 
             Try
                 '請求データ(キー項目と送信フラグのみ)を登録する
                 TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
-                TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                'TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
                 TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
                 TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
                 TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
                 TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
+
+                Dim wRtn As Boolean = True
+                'TOPTOUR請求番号が重複しなくなるまで最大値を取得し続ける
+                Do Until wRtn = False
+                    '自動採番
+                    TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+                    wRtn = AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                                        TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                                        MyBase.DbConnection)
+
+                Loop
+
+
+                Me.SEIKYU_NO_TOPTOUR.Text = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
+
+                MyBase.BeginTransaction()
+
                 Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                 '会合番号をキーに交通宿泊データに請求番号を登録(請求番号未設定のデータのみ)
                 strSQL = SQL.TBL_KOTSUHOTEL.Update_SEIKYU_NO(Me.KOUENKAI_NO.Text, Me.SEIKYU_NO_TOPTOUR.Text, Session.Item(SessionDef.LoginID))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                MyBase.Commit()
+
 
                 '更新モードに切り替える
                 Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
@@ -815,7 +859,6 @@ Partial Public Class SeisanRegist
                 MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
                 Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
             End Try
-            MyBase.Commit()
         Else
             Dim kensakuJoken As TableDef.Joken.DataStruct
             kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
@@ -959,19 +1002,30 @@ Partial Public Class SeisanRegist
                 Return False
             End If
 
-            '自動採番
-            Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
-
-            MyBase.BeginTransaction()
+            ''自動採番
+            'Me.SEIKYU_NO_TOPTOUR.Text = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
 
             Try
                 '請求データ(キー項目と送信フラグのみ)を登録する
                 TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
-                TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                'TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
                 TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
                 TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
                 TBL_SEIKYU(SEQ).INPUT_USER = Session.Item(SessionDef.LoginID)
                 TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
+
+                Dim wRtn As Boolean = True
+                'TOPTOUR請求番号が重複しなくなるまで最大値を取得し続ける
+                Do Until wRtn = False
+                    '自動採番
+                    TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = MyModule.GetMaxSEISAN_NO(MyBase.DbConnection)
+                    wRtn = AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
+                                                                                        TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
+                                                                                        MyBase.DbConnection)
+                Loop
+
+                MyBase.BeginTransaction()
+
                 Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
@@ -979,10 +1033,14 @@ Partial Public Class SeisanRegist
                 Dim updateData As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
                 updateData.KOUENKAI_NO = Me.KOUENKAI_NO.Text
                 updateData.TKT_SEIKYU_YM = Me.SEISAN_YM.Text
-                updateData.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                updateData.SEIKYU_NO_TOPTOUR = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
                 updateData.UPDATE_USER = Session.Item(SessionDef.LoginID)
                 strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO_YM(updateData)
                 CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+                MyBase.Commit()
+
+                Me.SEIKYU_NO_TOPTOUR.Text = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
 
                 '更新モードに切り替える
                 Session.Item(SessionDef.RECORD_KUBUN) = AppConst.RECORD_KUBUN.Code.Update
@@ -995,7 +1053,6 @@ Partial Public Class SeisanRegist
                 MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
                 Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
             End Try
-            MyBase.Commit()
         Else
             Dim kensakuJoken As TableDef.Joken.DataStruct
             kensakuJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text

@@ -333,29 +333,29 @@ Partial Public Class TaxiMeisaiCsv
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
         Select Case e.CommandName
             Case "Csv"
-                'データ取得                Joken.KOUENKAI_NO = e.CommandArgument
-                Session.Item(SessionDef.Joken) = Joken
-                Response.Redirect(URL.TaxiMeisaiCsv2)
+                '' ''データ取得                ' ''Joken.KOUENKAI_NO = e.CommandArgument
+                ' ''Session.Item(SessionDef.Joken) = Joken
+                ' ''Response.Redirect(URL.TaxiMeisaiCsv2)
 
-                'Dim CsvData() As TableDef.TaxiMeisaiCsv.DataStruct
-                'CsvData = GetCsvData(e.CommandArgument, Joken.TKT_ENTA, Joken.TKT_SEIKYU_YM, Joken.FROM_DATE)
+                Dim CsvData() As TableDef.TaxiMeisaiCsv.DataStruct
+                CsvData = GetCsvData(e.CommandArgument, Joken.TKT_ENTA, Joken.TKT_SEIKYU_YM, Joken.FROM_DATE)
 
-                ''ファイル名
-                'Dim wFileName As String = ""
-                'wFileName = e.CommandArgument
-                'If Me.JokenTKT_ENTA_N_Only.Checked = True Then
-                '    wFileName &= "_SeikyuFuka"
-                'Else
-                'End If
-                'wFileName &= ".csv"
+                'ファイル名
+                Dim wFileName As String = ""
+                wFileName = e.CommandArgument
+                If Me.JokenTKT_ENTA_N_Only.Checked = True Then
+                    wFileName &= "_SeikyuFuka"
+                Else
+                End If
+                wFileName &= ".csv"
 
-                'Response.Clear()
-                'Response.ContentType = CmnConst.Csv.ContentType
-                'Response.ContentEncoding = Encoding.GetEncoding("Shift_JIS")
-                'Response.Charset = CmnConst.Csv.Charset
-                'Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & wFileName)
-                'Response.Write(CreateCsv(CsvData))
-                'Response.End()
+                Response.Clear()
+                Response.ContentType = CmnConst.Csv.ContentType
+                Response.ContentEncoding = Encoding.GetEncoding("Shift_JIS")
+                Response.Charset = CmnConst.Csv.Charset
+                Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & wFileName)
+                Response.Write(CreateCsv(CsvData))
+                Response.End()
         End Select
     End Sub
 
