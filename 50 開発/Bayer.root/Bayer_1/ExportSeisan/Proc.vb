@@ -16,6 +16,13 @@ Public Class Proc
         If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
         If Not Directory.Exists(My.Settings.PATH_SEND_BKUP) Then Directory.CreateDirectory(My.Settings.PATH_SEND_BKUP)
 
+        '精算№重複存在チェック
+        Dim wCnt As Integer = 0
+        If Not CheckDup(wCnt) Then Exit Sub
+        If wCnt > 0 Then
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "精算№が重複している為、処理を中止します。")
+        End If
+
         '対象データ取得
         Dim TBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct = GetData()
 
@@ -54,6 +61,37 @@ Public Class Proc
             Return Nothing
         End If
 
+    End Function
+
+    '精算№重複チェック
+    Private Function CheckDup(ByRef wCnt As Integer) As Boolean
+
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim strSQL As String _
+            = "select count(*) as dup_count" _
+            & " from (select seikyu_no_toptour, count(*) as w_count from tbl_seikyu group by seikyu_no_toptour) wk_seikyu" _
+            & " where w_count>1"
+
+        Try
+            RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            If RsData.Read() Then
+                wCnt = Integer.Parse(CmnDb.DbData(RsData.GetName(0), RsData))
+            End If
+            RsData.Close()
+            If wCnt > 0 Then
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[ファイル出力失敗(精算番号重複)]")
+                MyBase.SendAlertMail("[ファイル出力失敗(精算番号重複)]")
+                Return False
+            End If
+        Catch ex As Exception
+            RsData.Close()
+            'エラー
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[ファイル出力失敗(精算番号重複)]" & ex.Message)
+            MyBase.SendAlertMail("[ファイル出力失敗(精算番号重複)]" & ex.Message)
+            Return False
+        End Try
+
+        Return True
     End Function
 
     Private Sub ExportData(ByVal outputData() As TableDef.TBL_SEIKYU.DataStruct)
@@ -197,5 +235,4 @@ Public Class Proc
         MyBase.WriteInfoLog(strMsg & " " & strSQL)
 
     End Sub
-
 End Class

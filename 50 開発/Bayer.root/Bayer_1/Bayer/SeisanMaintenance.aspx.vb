@@ -348,7 +348,7 @@ Partial Public Class SeisanMaintenance
         End If
         TBL_SEIKYU(SEQ).SEISAN_YM = Me.SEISAN_YM.Text
 
-        TBL_SEIKYU(SEQ).SEND_FLAG = SEND_FLAG
+        ' ''TBL_SEIKYU(SEQ).SEND_FLAG = SEND_FLAG   'メンテナンスモードの場合は、NOZOMI送信フラグを更新しない(2015/11/09)
         TBL_SEIKYU(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
 
         TBL_SHOUNIN = Nothing
