@@ -981,6 +981,10 @@ Partial Public Class DrRegist
                     wSeikyuNo(i - 1) = ""
                 End If
             Next
+        Else
+            For i As Integer = 0 To 19
+                wSeikyuNo(i) = ""
+            Next
         End If
 
         'タクチケ１

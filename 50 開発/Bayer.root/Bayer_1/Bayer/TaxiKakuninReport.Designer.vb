@@ -20,7 +20,6 @@ Partial Public Class TaxiKakuninReport
         Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(TaxiKakuninReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
         Me.Label198 = New DataDynamics.ActiveReports.Label
-        Me.Label199 = New DataDynamics.ActiveReports.Label
         Me.Label201 = New DataDynamics.ActiveReports.Label
         Me.Shape1 = New DataDynamics.ActiveReports.Shape
         Me.Label5 = New DataDynamics.ActiveReports.Label
@@ -37,6 +36,8 @@ Partial Public Class TaxiKakuninReport
         Me.Line51 = New DataDynamics.ActiveReports.Line
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.Detail = New DataDynamics.ActiveReports.Detail
+        Me.MR_SEND_SAKI_OTHER = New DataDynamics.ActiveReports.TextBox
+        Me.Label174 = New DataDynamics.ActiveReports.Label
         Me.KINKYU_FLAG = New DataDynamics.ActiveReports.TextBox
         Me.ANS_TAXI_KENSHU_16 = New DataDynamics.ActiveReports.TextBox
         Me.ANS_TAXI_HAKKO_DATE_16 = New DataDynamics.ActiveReports.TextBox
@@ -477,17 +478,14 @@ Partial Public Class TaxiKakuninReport
         Me.Line79 = New DataDynamics.ActiveReports.Line
         Me.Line38 = New DataDynamics.ActiveReports.Line
         Me.Line114 = New DataDynamics.ActiveReports.Line
+        Me.Line12 = New DataDynamics.ActiveReports.Line
+        Me.Line31 = New DataDynamics.ActiveReports.Line
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Label2 = New DataDynamics.ActiveReports.Label
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
         Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
-        Me.Label174 = New DataDynamics.ActiveReports.Label
-        Me.MR_SEND_SAKI_OTHER = New DataDynamics.ActiveReports.TextBox
-        Me.Line12 = New DataDynamics.ActiveReports.Line
-        Me.Line31 = New DataDynamics.ActiveReports.Line
         CType(Me.Label198, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label199, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label201, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -500,6 +498,8 @@ Partial Public Class TaxiKakuninReport
         CType(Me.DR_CD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DR_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MR_SEND_SAKI_OTHER, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label174, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KINKYU_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_TAXI_KENSHU_16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_TAXI_HAKKO_DATE_16, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -844,13 +844,11 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label174, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MR_SEND_SAKI_OTHER, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label198, Me.Label199, Me.Label201})
+        Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label198, Me.Label201})
         Me.PageHeader.Height = 0.3976265!
         Me.PageHeader.Name = "PageHeader"
         '
@@ -864,17 +862,6 @@ Partial Public Class TaxiKakuninReport
         Me.Label198.Text = "【予備タクシーチケット担当者様へ】"
         Me.Label198.Top = 0.0!
         Me.Label198.Width = 2.483465!
-        '
-        'Label199
-        '
-        Me.Label199.Height = 0.2!
-        Me.Label199.HyperLink = Nothing
-        Me.Label199.Left = 0.1145669!
-        Me.Label199.Name = "Label199"
-        Me.Label199.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: normal"
-        Me.Label199.Text = "利用者が決まった後は、必ずその利用者をNozomiより登録、備考欄へチケット番号のご入力をお願いいたします。"
-        Me.Label199.Top = 0.2!
-        Me.Label199.Width = 7.033072!
         '
         'Label201
         '
@@ -1056,6 +1043,29 @@ Partial Public Class TaxiKakuninReport
         Me.Detail.Height = 10.21198!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
+        '
+        'MR_SEND_SAKI_OTHER
+        '
+        Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
+        Me.MR_SEND_SAKI_OTHER.Height = 1.261024!
+        Me.MR_SEND_SAKI_OTHER.Left = 0.0!
+        Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
+        Me.MR_SEND_SAKI_OTHER.Style = "font-size: 9pt; vertical-align: top"
+        Me.MR_SEND_SAKI_OTHER.Text = Nothing
+        Me.MR_SEND_SAKI_OTHER.Top = 8.913386!
+        Me.MR_SEND_SAKI_OTHER.Width = 2.787402!
+        '
+        'Label174
+        '
+        Me.Label174.Height = 0.2255906!
+        Me.Label174.HyperLink = Nothing
+        Me.Label174.Left = 0.008661418!
+        Me.Label174.Name = "Label174"
+        Me.Label174.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
+            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label174.Text = "チケット送付先(その他)"
+        Me.Label174.Top = 8.682678!
+        Me.Label174.Width = 2.77874!
         '
         'KINKYU_FLAG
         '
@@ -1315,6 +1325,7 @@ Partial Public Class TaxiKakuninReport
         Me.ANS_TAXI_NOTE.Left = 0.0!
         Me.ANS_TAXI_NOTE.Name = "ANS_TAXI_NOTE"
         Me.ANS_TAXI_NOTE.Style = "vertical-align: top"
+        Me.ANS_TAXI_NOTE.Text = Nothing
         Me.ANS_TAXI_NOTE.Top = 7.403544!
         Me.ANS_TAXI_NOTE.Width = 2.787402!
         '
@@ -1325,6 +1336,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_TAXI_NOTE.Left = 0.008661415!
         Me.REQ_TAXI_NOTE.Name = "REQ_TAXI_NOTE"
         Me.REQ_TAXI_NOTE.Style = "vertical-align: top"
+        Me.REQ_TAXI_NOTE.Text = Nothing
         Me.REQ_TAXI_NOTE.Top = 5.888189!
         Me.REQ_TAXI_NOTE.Width = 2.787402!
         '
@@ -3496,6 +3508,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_O_TEHAI_1.Height = 0.2!
         Me.REQ_O_TEHAI_1.Left = 0.0!
         Me.REQ_O_TEHAI_1.Name = "REQ_O_TEHAI_1"
+        Me.REQ_O_TEHAI_1.Text = Nothing
         Me.REQ_O_TEHAI_1.Top = 10.86614!
         Me.REQ_O_TEHAI_1.Visible = False
         Me.REQ_O_TEHAI_1.Width = 1.0!
@@ -3506,6 +3519,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_O_TEHAI_2.Height = 0.2!
         Me.REQ_O_TEHAI_2.Left = 4.064567!
         Me.REQ_O_TEHAI_2.Name = "REQ_O_TEHAI_2"
+        Me.REQ_O_TEHAI_2.Text = Nothing
         Me.REQ_O_TEHAI_2.Top = 11.17874!
         Me.REQ_O_TEHAI_2.Visible = False
         Me.REQ_O_TEHAI_2.Width = 1.0!
@@ -3516,6 +3530,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_O_TEHAI_3.Height = 0.2!
         Me.REQ_O_TEHAI_3.Left = 0.0!
         Me.REQ_O_TEHAI_3.Name = "REQ_O_TEHAI_3"
+        Me.REQ_O_TEHAI_3.Text = Nothing
         Me.REQ_O_TEHAI_3.Top = 11.17874!
         Me.REQ_O_TEHAI_3.Visible = False
         Me.REQ_O_TEHAI_3.Width = 1.0!
@@ -3526,6 +3541,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_O_TEHAI_4.Height = 0.2!
         Me.REQ_O_TEHAI_4.Left = 3.064567!
         Me.REQ_O_TEHAI_4.Name = "REQ_O_TEHAI_4"
+        Me.REQ_O_TEHAI_4.Text = Nothing
         Me.REQ_O_TEHAI_4.Top = 11.17874!
         Me.REQ_O_TEHAI_4.Visible = False
         Me.REQ_O_TEHAI_4.Width = 1.0!
@@ -3536,6 +3552,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_O_TEHAI_5.Height = 0.2!
         Me.REQ_O_TEHAI_5.Left = 2.064567!
         Me.REQ_O_TEHAI_5.Name = "REQ_O_TEHAI_5"
+        Me.REQ_O_TEHAI_5.Text = Nothing
         Me.REQ_O_TEHAI_5.Top = 11.17874!
         Me.REQ_O_TEHAI_5.Visible = False
         Me.REQ_O_TEHAI_5.Width = 1.0!
@@ -3546,6 +3563,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_F_TEHAI_1.Height = 0.2!
         Me.REQ_F_TEHAI_1.Left = 1.0!
         Me.REQ_F_TEHAI_1.Name = "REQ_F_TEHAI_1"
+        Me.REQ_F_TEHAI_1.Text = Nothing
         Me.REQ_F_TEHAI_1.Top = 11.17874!
         Me.REQ_F_TEHAI_1.Visible = False
         Me.REQ_F_TEHAI_1.Width = 1.0!
@@ -3556,6 +3574,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_F_TEHAI_2.Height = 0.2!
         Me.REQ_F_TEHAI_2.Left = 0.9165355!
         Me.REQ_F_TEHAI_2.Name = "REQ_F_TEHAI_2"
+        Me.REQ_F_TEHAI_2.Text = Nothing
         Me.REQ_F_TEHAI_2.Top = 10.86614!
         Me.REQ_F_TEHAI_2.Visible = False
         Me.REQ_F_TEHAI_2.Width = 1.0!
@@ -3566,6 +3585,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_F_TEHAI_3.Height = 0.2!
         Me.REQ_F_TEHAI_3.Left = 6.039764!
         Me.REQ_F_TEHAI_3.Name = "REQ_F_TEHAI_3"
+        Me.REQ_F_TEHAI_3.Text = Nothing
         Me.REQ_F_TEHAI_3.Top = 10.86614!
         Me.REQ_F_TEHAI_3.Visible = False
         Me.REQ_F_TEHAI_3.Width = 1.0!
@@ -3576,6 +3596,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_F_TEHAI_4.Height = 0.2!
         Me.REQ_F_TEHAI_4.Left = 5.039764!
         Me.REQ_F_TEHAI_4.Name = "REQ_F_TEHAI_4"
+        Me.REQ_F_TEHAI_4.Text = Nothing
         Me.REQ_F_TEHAI_4.Top = 10.86614!
         Me.REQ_F_TEHAI_4.Visible = False
         Me.REQ_F_TEHAI_4.Width = 1.0!
@@ -3586,6 +3607,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_F_TEHAI_5.Height = 0.2!
         Me.REQ_F_TEHAI_5.Left = 3.942126!
         Me.REQ_F_TEHAI_5.Name = "REQ_F_TEHAI_5"
+        Me.REQ_F_TEHAI_5.Text = Nothing
         Me.REQ_F_TEHAI_5.Top = 10.86614!
         Me.REQ_F_TEHAI_5.Visible = False
         Me.REQ_F_TEHAI_5.Width = 1.0!
@@ -3596,6 +3618,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_MR_O_TEHAI.Height = 0.2!
         Me.REQ_MR_O_TEHAI.Left = 2.910236!
         Me.REQ_MR_O_TEHAI.Name = "REQ_MR_O_TEHAI"
+        Me.REQ_MR_O_TEHAI.Text = Nothing
         Me.REQ_MR_O_TEHAI.Top = 10.86614!
         Me.REQ_MR_O_TEHAI.Visible = False
         Me.REQ_MR_O_TEHAI.Width = 1.0!
@@ -3606,6 +3629,7 @@ Partial Public Class TaxiKakuninReport
         Me.REQ_MR_F_TEHAI.Height = 0.2!
         Me.REQ_MR_F_TEHAI.Left = 1.787402!
         Me.REQ_MR_F_TEHAI.Name = "REQ_MR_F_TEHAI"
+        Me.REQ_MR_F_TEHAI.Text = Nothing
         Me.REQ_MR_F_TEHAI.Top = 10.86614!
         Me.REQ_MR_F_TEHAI.Visible = False
         Me.REQ_MR_F_TEHAI.Width = 1.0!
@@ -6297,6 +6321,32 @@ Partial Public Class TaxiKakuninReport
         Me.Line114.Y1 = 0.9251968!
         Me.Line114.Y2 = 0.9251968!
         '
+        'Line12
+        '
+        Me.Line12.Height = 0.0!
+        Me.Line12.Left = 1.862645E-9!
+        Me.Line12.LineWeight = 1.0!
+        Me.Line12.Name = "Line12"
+        Me.Line12.Top = 8.682678!
+        Me.Line12.Width = 2.787402!
+        Me.Line12.X1 = 1.862645E-9!
+        Me.Line12.X2 = 2.787402!
+        Me.Line12.Y1 = 8.682678!
+        Me.Line12.Y2 = 8.682678!
+        '
+        'Line31
+        '
+        Me.Line31.Height = 0.0!
+        Me.Line31.Left = 0.0!
+        Me.Line31.LineWeight = 1.0!
+        Me.Line31.Name = "Line31"
+        Me.Line31.Top = 8.913386!
+        Me.Line31.Width = 2.787402!
+        Me.Line31.X1 = 0.0!
+        Me.Line31.X2 = 2.787402!
+        Me.Line31.Y1 = 8.913386!
+        Me.Line31.Y2 = 8.913386!
+        '
         'PageFooter
         '
         Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label2, Me.Label1, Me.PRINT_DATE, Me.PRINT_USER})
@@ -6345,54 +6395,6 @@ Partial Public Class TaxiKakuninReport
         Me.PRINT_USER.Top = 0.2070864!
         Me.PRINT_USER.Width = 1.364567!
         '
-        'Label174
-        '
-        Me.Label174.Height = 0.2255906!
-        Me.Label174.HyperLink = Nothing
-        Me.Label174.Left = 0.008661418!
-        Me.Label174.Name = "Label174"
-        Me.Label174.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
-        Me.Label174.Text = "チケット送付先(その他)"
-        Me.Label174.Top = 8.682678!
-        Me.Label174.Width = 2.77874!
-        '
-        'MR_SEND_SAKI_OTHER
-        '
-        Me.MR_SEND_SAKI_OTHER.DataField = "MR_SEND_SAKI_OTHER"
-        Me.MR_SEND_SAKI_OTHER.Height = 1.261024!
-        Me.MR_SEND_SAKI_OTHER.Left = 0.0!
-        Me.MR_SEND_SAKI_OTHER.Name = "MR_SEND_SAKI_OTHER"
-        Me.MR_SEND_SAKI_OTHER.Style = "font-size: 9pt; vertical-align: top"
-        Me.MR_SEND_SAKI_OTHER.Top = 8.913386!
-        Me.MR_SEND_SAKI_OTHER.Width = 2.787402!
-        '
-        'Line12
-        '
-        Me.Line12.Height = 0.0!
-        Me.Line12.Left = 1.862645E-9!
-        Me.Line12.LineWeight = 1.0!
-        Me.Line12.Name = "Line12"
-        Me.Line12.Top = 8.682678!
-        Me.Line12.Width = 2.787402!
-        Me.Line12.X1 = 1.862645E-9!
-        Me.Line12.X2 = 2.787402!
-        Me.Line12.Y1 = 8.682678!
-        Me.Line12.Y2 = 8.682678!
-        '
-        'Line31
-        '
-        Me.Line31.Height = 0.0!
-        Me.Line31.Left = 0.0!
-        Me.Line31.LineWeight = 1.0!
-        Me.Line31.Name = "Line31"
-        Me.Line31.Top = 8.913386!
-        Me.Line31.Width = 2.787402!
-        Me.Line31.X1 = 0.0!
-        Me.Line31.X2 = 2.787402!
-        Me.Line31.Y1 = 8.913386!
-        Me.Line31.Y2 = 8.913386!
-        '
         'TaxiKakuninReport
         '
         Me.MasterReport = False
@@ -6408,7 +6410,6 @@ Partial Public Class TaxiKakuninReport
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 14pt; font-weight: bold", "Heading2", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 13pt; font-weight: bold", "Heading3", "Normal"))
         CType(Me.Label198, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label199, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label201, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6421,6 +6422,8 @@ Partial Public Class TaxiKakuninReport
         CType(Me.DR_CD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DR_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MR_SEND_SAKI_OTHER, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label174, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KINKYU_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ANS_TAXI_KENSHU_16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ANS_TAXI_HAKKO_DATE_16, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6765,8 +6768,6 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label174, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MR_SEND_SAKI_OTHER, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -7050,7 +7051,6 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents PRINT_DATE As DataDynamics.ActiveReports.TextBox
     Private WithEvents PRINT_USER As DataDynamics.ActiveReports.TextBox
     Private WithEvents Label198 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label199 As DataDynamics.ActiveReports.Label
     Private WithEvents Label201 As DataDynamics.ActiveReports.Label
     Private WithEvents Line85 As DataDynamics.ActiveReports.Line
     Private WithEvents Label46 As DataDynamics.ActiveReports.Label

@@ -8857,6 +8857,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_MIKETSU & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_MIKETSU) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_IMPORT_DATE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_SEIKYU_YM & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_SEIKYU_YM) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
