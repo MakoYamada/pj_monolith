@@ -980,6 +980,8 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER.ToUpper Then TBL_TAXITICKET_HAKKO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER.ToUpper Then TBL_TAXITICKET_HAKKO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_HATUTI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_CHAKUTI.ToUpper Then TBL_TAXITICKET_HAKKO.TKT_CHAKUTI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TAXI_PRT_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.TAXI_PRT_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.FROM_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -7278,6 +7280,22 @@ Public Class AppModule
     End Sub
     Public Shared Sub SetForm_TKT_USED_DATE(ByVal TKT_USED_DATE As String, ByRef control As TextBox)
         control.Text = TKT_USED_DATE.Trim
+    End Sub
+
+    'é¿é‘î≠ín
+    Public Shared Sub SetForm_TKT_HATUTI(ByVal TKT_HATUTI As String, ByRef control As Label)
+        control.Text = TKT_HATUTI
+    End Sub
+    Public Shared Sub SetForm_TKT_HATUTI(ByVal TKT_HATUTI As String, ByRef control As TextBox)
+        control.Text = TKT_HATUTI
+    End Sub
+
+    'é¿é‘íÖín
+    Public Shared Sub SetForm_TKT_CHAKUTI(ByVal TKT_CHAKUTI As String, ByRef control As Label)
+        control.Text = TKT_CHAKUTI
+    End Sub
+    Public Shared Sub SetForm_TKT_CHAKUTI(ByVal TKT_CHAKUTI As String, ByRef control As TextBox)
+        control.Text = TKT_CHAKUTI
     End Sub
 
     'êøãÅîNåé

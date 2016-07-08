@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase2request\payment</Value>
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3request\payment</Value>
     </Setting>
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">reqpyt</Value>
@@ -12,10 +12,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase2Work\request\payment</Value>
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3Work\request\payment</Value>
     </Setting>
     <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase2requestBkup</Value>
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3requestBkup</Value>
     </Setting>
   </Settings>
 </SettingsFile>

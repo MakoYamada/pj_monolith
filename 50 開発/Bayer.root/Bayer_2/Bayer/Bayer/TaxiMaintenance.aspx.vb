@@ -18,6 +18,8 @@ Partial Public Class TaxiMaintenance
         TKT_NO
         TKT_KENSHU
         TKT_USED_DATE
+        TKT_HATUTI
+        TKT_CHAKUTI
         TKT_SEIKYU_YM
         VOID_DATE
         button

@@ -8788,6 +8788,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.INPUT_USER
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_CHAKUTI
             strSQL &= ")"
             strSQL &= " VALUES"
             strSQL &= "(N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
@@ -8810,6 +8812,8 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.INPUT_USER) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HATUTI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_CHAKUTI) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -8834,6 +8838,10 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_IMPORT_DATE & "=N'" & CmnModule.GetSysDate() & "'"
             '@@@ 2014/10/20 Add End
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            '@@@ 2016/07/07 Add Start
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HATUTI) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_CHAKUTI) & "'"
+            '@@@ 2016/07/07 Add End
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
             strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
 
@@ -8860,6 +8868,8 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_DATE) & "'"
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.UPDATE_USER) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HATUTI) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_CHAKUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_CHAKUTI) & "'"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
             strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
 

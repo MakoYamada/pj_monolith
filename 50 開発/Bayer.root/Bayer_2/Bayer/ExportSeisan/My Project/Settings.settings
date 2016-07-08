@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase2Work\answer\payment</Value>
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3Work\answer\payment</Value>
     </Setting>
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">anspyt</Value>
     </Setting>
     <Setting Name="PATH_SEND_BKUP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase2answerBkup</Value>
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3answerBkup</Value>
     </Setting>
     <Setting Name="PATH_SEND" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase2answer\payment</Value>
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3answer\payment</Value>
     </Setting>
   </Settings>
 </SettingsFile>

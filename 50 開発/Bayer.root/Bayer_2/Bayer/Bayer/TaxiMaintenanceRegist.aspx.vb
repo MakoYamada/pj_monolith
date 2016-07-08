@@ -87,6 +87,9 @@ Partial Public Class TaxiMaintenanceRegist
         CmnModule.SetIme(Me.TKT_SEISAN_FEE, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TKT_HAKKO_FEE, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.SEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.TKT_HATUTI_2, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.TKT_CHAKUTI_2, CmnModule.ImeType.Active)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -120,6 +123,10 @@ Partial Public Class TaxiMaintenanceRegist
         AppModule.SetForm_TKT_KENSHU(TBL_TAXITICKET_HAKKO(SEQ).TKT_KENSHU, Me.TKT_KENSHU_2)
         AppModule.SetForm_TKT_USED_DATE(TBL_TAXITICKET_HAKKO(SEQ).TKT_USED_DATE, Me.TKT_USED_DATE)
         AppModule.SetForm_TKT_USED_DATE(TBL_TAXITICKET_HAKKO(SEQ).TKT_USED_DATE, Me.TKT_USED_DATE_2)
+        AppModule.SetForm_TKT_HATUTI(TBL_TAXITICKET_HAKKO(SEQ).TKT_HATUTI, Me.TKT_HATUTI)
+        AppModule.SetForm_TKT_HATUTI(TBL_TAXITICKET_HAKKO(SEQ).TKT_HATUTI, Me.TKT_HATUTI_2)
+        AppModule.SetForm_TKT_CHAKUTI(TBL_TAXITICKET_HAKKO(SEQ).TKT_CHAKUTI, Me.TKT_CHAKUTI)
+        AppModule.SetForm_TKT_CHAKUTI(TBL_TAXITICKET_HAKKO(SEQ).TKT_CHAKUTI, Me.TKT_CHAKUTI_2)
         AppModule.SetForm_TKT_SEIKYU_YM(TBL_TAXITICKET_HAKKO(SEQ).TKT_SEIKYU_YM, Me.TKT_SEIKYU_YM)
         AppModule.SetForm_TKT_SEIKYU_YM(TBL_TAXITICKET_HAKKO(SEQ).TKT_SEIKYU_YM, Me.TKT_SEIKYU_YM_2)
         AppModule.SetForm_TKT_VOID(TBL_TAXITICKET_HAKKO(SEQ).TKT_VOID, TBL_TAXITICKET_HAKKO(SEQ).UPDATE_DATE, Me.VOID_DATE)
@@ -191,6 +198,8 @@ Partial Public Class TaxiMaintenanceRegist
                 End If
                 TBL_TAXITICKET_HAKKO(SEQ).TKT_SEIKYU_YM = Me.TKT_SEIKYU_YM_2.Text
                 TBL_TAXITICKET_HAKKO(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+                TBL_TAXITICKET_HAKKO(SEQ).TKT_HATUTI = Me.TKT_HATUTI_2.Text
+                TBL_TAXITICKET_HAKKO(SEQ).TKT_CHAKUTI = Me.TKT_CHAKUTI_2.Text
             End If
             TBL_TAXITICKET_HAKKO(SEQ).UPDATE_DATE = SQL.GetValue.DATE
             TBL_TAXITICKET_HAKKO(SEQ).UPDATE_USER = SQL.GetValue.USER

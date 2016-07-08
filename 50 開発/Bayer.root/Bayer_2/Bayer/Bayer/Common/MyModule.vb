@@ -2504,6 +2504,8 @@ Public Class MyModule
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車発地")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車着地")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算年月")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID(日)")))
             sb.Append(vbNewLine)
@@ -2519,6 +2521,8 @@ Public Class MyModule
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_USED_DATE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_HATUTI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_CHAKUTI)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_SEIKYU_YM)))
                 If CsvData(wCnt).TKT_VOID = CmnConst.Flag.On Then
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_DATE.Substring(0, 8))))

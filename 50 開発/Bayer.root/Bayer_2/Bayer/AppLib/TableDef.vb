@@ -3201,6 +3201,8 @@
             Public INPUT_USER As String
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
+            Public TKT_HATUTI As String
+            Public TKT_CHAKUTI As String
 
             Public KOUENKAI_NAME As String
             Public TAXI_PRT_NAME As String
@@ -3401,6 +3403,8 @@
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
+            Public Const TKT_HATUTI As String = "TKT_HATUTI"
+            Public Const TKT_CHAKUTI As String = "TKT_CHAKUTI"
 
             Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
             Public Const TAXI_PRT_NAME As String = "TAXI_PRT_NAME"
@@ -3598,6 +3602,8 @@
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
+            Public Const TKT_HATUTI As String = "実車発地"
+            Public Const TKT_CHAKUTI As String = "実車着地"
         End Class
     End Class
 

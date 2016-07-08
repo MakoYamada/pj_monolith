@@ -9,13 +9,13 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer_Phase2request\traffic</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer_Phase3request\traffic</Value>
     </Setting>
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer_Phase2Work\request\traffic</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer_Phase3Work\request\traffic</Value>
     </Setting>
     <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Keiwa\Bayer_Phase2requestBkup</Value>
+      <Value Profile="(Default)">C:\Keiwa\Bayer_Phase3requestBkup</Value>
     </Setting>
   </Settings>
 </SettingsFile>

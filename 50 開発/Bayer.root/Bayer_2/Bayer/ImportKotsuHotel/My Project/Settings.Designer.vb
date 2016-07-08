@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer_Phase2request\traffic")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer_Phase3request\traffic")>  _
         Public Property PATH_RECEIVE() As String
             Get
                 Return CType(Me("PATH_RECEIVE"),String)
@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer_Phase2Work\request\traffic")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer_Phase3Work\request\traffic")>  _
         Public Property PATH_WORK() As String
             Get
                 Return CType(Me("PATH_WORK"),String)
@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer_Phase2requestBkup")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Keiwa\Bayer_Phase3requestBkup")>  _
         Public Property PATH_RECEIVE_BKUP() As String
             Get
                 Return CType(Me("PATH_RECEIVE_BKUP"),String)

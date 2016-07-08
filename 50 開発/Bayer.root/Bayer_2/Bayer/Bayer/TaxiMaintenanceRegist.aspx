@@ -279,6 +279,20 @@
 						    <asp:CheckBox ID="TKT_VOID" runat="server" />							
 						</td>
 					</tr>
+					<tr>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							実車発地
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
+							<asp:Label ID="TKT_HATUTI" runat="server" Text=""></asp:Label>
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							実車着地
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
+							<asp:Label ID="TKT_CHAKUTI" runat="server" Text=""></asp:Label>
+						</td>
+					</tr>
 			    </table>
 				<table id="TbTaxiMaintenance" runat="server" style="border-collapse: collapse; margin-bottom: 8px;" cellspacing="0" cellpadding="2" border="1" bordercolor="#4f5b61" width="100%">
 					<tr>
@@ -339,6 +353,22 @@
 						</td>
 						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">							
 						    <asp:CheckBox ID="TKT_VOID_2" runat="server" />							
+						</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							実車発地
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="3">
+		                    <asp:TextBox ID="TKT_HATUTI_2" runat="server" Width="350px" 
+                                MaxLength="100"></asp:TextBox>							
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 60px;">
+							実車着地
+						</td>
+						<td nowrap="nowrap" align="left" class="TdItem" colspan="5">
+		                    <asp:TextBox ID="TKT_CHAKUTI_2" runat="server" Width="350px" 
+                                MaxLength="100"></asp:TextBox>							
 						</td>
 					</tr>
 					<tr>

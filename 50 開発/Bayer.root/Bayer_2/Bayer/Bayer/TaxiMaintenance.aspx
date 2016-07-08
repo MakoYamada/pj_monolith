@@ -161,6 +161,16 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
                         </asp:BoundField>
+                        <asp:BoundField DataField="TKT_HATUTI" HeaderText="実車発地" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                            ItemStyle-HorizontalAlign="Center">
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="TKT_CHAKUTI" HeaderText="実車着地" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                            ItemStyle-HorizontalAlign="Center">
+                            <HeaderStyle Wrap="False"></HeaderStyle>
+                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="30px"></ItemStyle>
+                        </asp:BoundField>
                         <asp:BoundField DataField="TKT_SEIKYU_YM"  HeaderText="請求年月" />
                         <asp:BoundField DataField="TKT_VOID" HeaderText="VOID(日)" />
                         <asp:ButtonField ButtonType="Button" Text="詳細" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"

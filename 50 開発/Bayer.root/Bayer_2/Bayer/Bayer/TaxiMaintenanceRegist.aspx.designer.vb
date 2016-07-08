@@ -322,6 +322,24 @@ Partial Public Class TaxiMaintenanceRegist
     Protected WithEvents TKT_VOID As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''TKT_HATUTI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_HATUTI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TKT_CHAKUTI コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_CHAKUTI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''TbTaxiMaintenance コントロール。
     '''</summary>
     '''<remarks>
@@ -401,6 +419,24 @@ Partial Public Class TaxiMaintenanceRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents TKT_VOID_2 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''TKT_HATUTI_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_HATUTI_2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TKT_CHAKUTI_2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TKT_CHAKUTI_2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''TKT_URIAGE コントロール。

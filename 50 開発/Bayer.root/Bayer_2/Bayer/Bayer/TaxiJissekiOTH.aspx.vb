@@ -4,13 +4,13 @@ Imports System.IO
 Partial Public Class TaxiJissekiOTH
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 14 'ファイルの項目数
-    Private Const COL_COUNT_AK As Integer = 14 'ファイルの項目数
-    Private Const COL_COUNT_HW As Integer = 16 'ファイルの項目数
-    Private Const COL_COUNT_OTH As Integer = 15 'ファイルの項目数
-    Private Const COL_COUNT_SM As Integer = 15 'ファイルの項目数
-    Private Const COL_COUNT_TN As Integer = 15 'ファイルの項目数
-    Private Const COL_COUNT_KN As Integer = 15 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 16 'ファイルの項目数
+    'Private Const COL_COUNT_AK As Integer = 14 'ファイルの項目数
+    'Private Const COL_COUNT_HW As Integer = 16 'ファイルの項目数
+    'Private Const COL_COUNT_OTH As Integer = 15 'ファイルの項目数
+    'Private Const COL_COUNT_SM As Integer = 15 'ファイルの項目数
+    'Private Const COL_COUNT_TN As Integer = 15 'ファイルの項目数
+    'Private Const COL_COUNT_KN As Integer = 15 'ファイルの項目数
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "108"
     Private HAKKO_TESURYO As String = "324"
@@ -33,6 +33,8 @@ Partial Public Class TaxiJissekiOTH
         TKT_JISSHA_DATE
         'TKT_VOID
         TKT_OTHER
+        TKT_HATUTI
+        TKT_CHAKUTI
     End Enum
 
     Private Class COL_NAME
@@ -51,6 +53,8 @@ Partial Public Class TaxiJissekiOTH
         Public Const TKT_JISSHA_DATE As String = "実車日"
         'Public Const TKT_VOID As String = "VOID"
         Public Const TKT_OTHER As String = "その他"
+        Public Const TKT_HATUTI As String = "実車発地"
+        Public Const TKT_CHAKUTI As String = "実車着地"
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -391,6 +395,8 @@ Partial Public Class TaxiJissekiOTH
         TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.TKT_URIAGE).Replace(",", "").ToString
         TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = HAKKO_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO
+        TBL_TAXITICKET_HAKKO.TKT_HATUTI = filedata(COL_NO.TKT_HATUTI)
+        TBL_TAXITICKET_HAKKO.TKT_CHAKUTI = filedata(COL_NO.TKT_CHAKUTI)
 
         'CSVの利用日と実車日が異なる場合、エンタ="N"
         TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty

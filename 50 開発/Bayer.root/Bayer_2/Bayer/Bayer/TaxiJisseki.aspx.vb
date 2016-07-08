@@ -4,7 +4,7 @@ Imports System.IO
 Partial Public Class TaxiJisseki
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 9 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 11 'ファイルの項目数
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "0"
     Private HAKKO_TESURYO As String = "0"
@@ -21,6 +21,8 @@ Partial Public Class TaxiJisseki
         USED_DATE
         USED_TAXI
         URIAGE
+        HATUTI
+        CHAKUTI
     End Enum
 
     Private Class COL_NAME
@@ -33,6 +35,8 @@ Partial Public Class TaxiJisseki
         Public Const USED_DATE As String = "使用日付"
         Public Const USED_TAXI As String = "タクシー会社コード"
         Public Const URIAGE As String = "金額"
+        Public Const HATUTI As String = "実車発地"
+        Public Const CHAKUTI As String = "実車着地"
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -465,5 +469,7 @@ Partial Public Class TaxiJisseki
         TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
         TBL_TAXITICKET_HAKKO.TKT_MIKETSU = "0"
         TBL_TAXITICKET_HAKKO.UPDATE_USER = Session.Item(SessionDef.LoginID)
+        TBL_TAXITICKET_HAKKO.TKT_HATUTI = filedata(COL_NO.HATUTI)
+        TBL_TAXITICKET_HAKKO.TKT_CHAKUTI = filedata(COL_NO.CHAKUTI)
     End Sub
 End Class
