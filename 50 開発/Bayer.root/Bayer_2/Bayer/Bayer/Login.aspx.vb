@@ -80,6 +80,12 @@ Partial Public Class Login
             Return False
         End If
 
+        '利用停止フラグ="1"のユーザはログイン不可
+        If MS_USER.STOP_FLG = AppConst.STOP_FLG.Code.Stop Then
+            CmnModule.AlertMessage(MessageDef.Error.StopUser, Me)
+            Return False
+        End If
+
         Return True
     End Function
 

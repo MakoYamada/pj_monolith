@@ -226,20 +226,22 @@ Partial Public Class TaxiMiketsu
     Private Sub SetForm()
 
         'データ取得
-        If Not GetData() Then
-            Me.LabelNoData.Visible = True
-            Me.GrvList.Visible = False
-            CmnModule.SetEnabled(Me.BtnCsv1, False)
-            CmnModule.SetEnabled(Me.BtnCsv2, False)
-        Else
-            Me.LabelNoData.Visible = False
-            Me.GrvList.Visible = True
-            CmnModule.SetEnabled(Me.BtnCsv1, True)
-            CmnModule.SetEnabled(Me.BtnCsv2, True)
+        'If Not GetData() Then
+        Me.tblButton1.Visible = False
+        Me.tblButton2.Visible = False
+        Me.LabelNoData.Visible = False
+        Me.GrvList.Visible = False
+        CmnModule.SetEnabled(Me.BtnCsv1, False)
+        CmnModule.SetEnabled(Me.BtnCsv2, False)
+        'Else
+        '    Me.LabelNoData.Visible = False
+        '    Me.GrvList.Visible = True
+        '    CmnModule.SetEnabled(Me.BtnCsv1, True)
+        '    CmnModule.SetEnabled(Me.BtnCsv2, True)
 
-            'グリッドビュー表示
-            SetGridView()
-        End If
+        '    'グリッドビュー表示
+        '    SetGridView()
+        'End If
     End Sub
 
     'データ取得
@@ -279,14 +281,18 @@ Partial Public Class TaxiMiketsu
         'データ取得        If Not GetData() Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
-            Me.BtnCsv1.Visible = False
-            Me.BtnCsv2.Visible = False
+            Me.tblButton1.Visible = False
+            Me.tblButton2.Visible = False
+            'Me.BtnCsv1.Visible = False
+            'Me.BtnCsv2.Visible = False
 
         Else
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
-            Me.BtnCsv1.Visible = True
-            Me.BtnCsv2.Visible = True
+            Me.tblButton1.Visible = True
+            Me.tblButton2.Visible = True
+            'Me.BtnCsv1.Visible = True
+            'Me.BtnCsv2.Visible = True
 
             'グリッドビュー表示
             SetGridView()

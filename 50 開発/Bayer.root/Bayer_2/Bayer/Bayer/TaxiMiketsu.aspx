@@ -36,13 +36,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right" valign="middle">
+                                    <td valign="middle" align="right">
                                         会合番号
                                     </td>
-                                    <td colspan="5" valign="middle">
+                                    <td colspan="3">
                                         <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Width="126px" MaxLength="14" 
                                             TabIndex="7"></asp:TextBox>&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="right">
                                         会合名&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                    <td colspan="3">
                                         <asp:TextBox ID="JokenKOUENKAI_NAME" runat="server" Width="564px" MaxLength="160" 
                                             TabIndex="8"></asp:TextBox>
                                     </td>
@@ -72,7 +78,7 @@
         </tr>        
         <tr>
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="100%">
+                <table cellpadding="2" cellspacing="0" border="0" width="100%" id="tblButton1" runat="server">
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnCsv1" runat="server" Text="未決一覧CSV" Width="130px" 
@@ -293,7 +299,7 @@
         </tr>
         <tr>
             <td>
-                <table cellpadding="2" cellspacing="0" border="0" width="100%">
+                <table cellpadding="2" cellspacing="0" border="0" width="100%" id="tblButton2" runat="server">
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnCsv2" runat="server" Text="未決一覧CSV" Width="130px" 

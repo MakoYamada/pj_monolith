@@ -12,6 +12,7 @@ Public Class MessageDef
         Public Const TaxiPrtNameError As String = "チケット印字名が未確定の為、タクチケ発行はできません。"
         Public Const TaxiHakkoError As String = "券種が｢その他｣の為、タクチケ発行はできません。"
         Public Const NoNewDrData As String = "新着の交通・宿泊データはありません。"
+        Public Const StopUser As String = "入力されたログインIDは利用停止となっています。"
 
         '必須        Public Shared Function MustInput(ByVal ItemName As String) As String
             Return ItemName & "を入力してください。"
