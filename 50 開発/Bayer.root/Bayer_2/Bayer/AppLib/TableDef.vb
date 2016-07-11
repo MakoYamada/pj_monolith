@@ -254,6 +254,14 @@
         End Class
     End Class
 
+    Public Class TBL_KOUENKAI_KEY
+        <Serializable()> Public Structure DataStruct
+            Public KOUENKAI_NO As String
+            Public TIME_STAMP As String
+            Public KOUENKAI_NAME As String
+        End Structure
+    End Class
+
     Public Class TBL_SEIKYU
         <Serializable()> Public Structure DataStruct
             Public KOUENKAI_NO As String
@@ -2962,6 +2970,7 @@
             Public TANTO_NAME As String
             Public TANTO_KANA As String
             Public KOUENKAI_NAME As String
+            Public KOUENKAI_TITLE As String
             Public FROM_DATE As String
             Public TO_DATE As String
             Public TTANTO_ID As String
@@ -3001,6 +3010,7 @@
             Public SHOUNIN_KUBUN As String
             Public SHOUNIN_YM As String
             Public TIME_STAMP_BYL As String
+            Public TIME_STAMP As String
             Public TTEHAI_MITOUROKU As String
             Public TKT_NO As String
             Public TKT_SEIKYU_YM As String

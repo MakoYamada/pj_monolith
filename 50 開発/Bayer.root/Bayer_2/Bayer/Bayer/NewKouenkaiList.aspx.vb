@@ -5,6 +5,7 @@ Partial Public Class NewKouenkaiList
     Inherits WebBase
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private TBL_KOUENKAI_KEY() As TableDef.TBL_KOUENKAI_KEY.DataStruct
     Private Joken As TableDef.Joken.DataStruct
 
     'グリッド列    Private Enum CellIndex
@@ -20,6 +21,8 @@ Partial Public Class NewKouenkaiList
         Button1
         TO_DATE
         CNT
+        KOUENKAI_TITLE
+        TIME_STAMP2
     End Enum
 
     Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -125,17 +128,45 @@ Partial Public Class NewKouenkaiList
         If Me.JOKEN_BU.SelectedIndex <> 0 Then Joken.BU = Me.JOKEN_BU.SelectedItem.ToString
         If Me.JOKEN_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JOKEN_AREA.SelectedItem.ToString
 
-        ReDim TBL_KOUENKAI(wCnt)
+        'ReDim TBL_KOUENKAI(wCnt)
+        'strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
 
-        strSQL = SQL.TBL_KOUENKAI.Search(Joken, True)
+        ReDim TBL_KOUENKAI_KEY(wCnt)
+        strSQL = SQL.TBL_KOUENKAI.Search_KeyItem(Joken, True)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
 
-            ReDim Preserve TBL_KOUENKAI(wCnt)
-            TBL_KOUENKAI(wCnt) = AppModule.SetRsData(RsData, TBL_KOUENKAI(wCnt))
+            ReDim Preserve TBL_KOUENKAI_KEY(wCnt)
+            TBL_KOUENKAI_KEY(wCnt) = AppModule.SetRsData(RsData, TBL_KOUENKAI_KEY(wCnt))
 
             wCnt += 1
+        End While
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
+    'グリッドビュー表示項目取得
+
+    Private Function GetGridData(ByVal whereData As StringDictionary, ByRef GRID_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As Boolean
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim SearchKey As TableDef.Joken.DataStruct
+
+        SearchKey = Nothing
+        SearchKey.KOUENKAI_NO = whereData(TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO)
+        SearchKey.TIME_STAMP = whereData(TableDef.TBL_KOUENKAI.Column.TIME_STAMP)
+        SearchKey.KOUENKAI_TITLE = whereData(TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE)
+
+        strSQL = SQL.TBL_KOUENKAI.byKEY(SearchKey)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            GRID_KOUENKAI = AppModule.SetRsData(RsData, GRID_KOUENKAI)
+
+            Exit While
         End While
         RsData.Close()
 
@@ -145,7 +176,7 @@ Partial Public Class NewKouenkaiList
     'データソース設定
     Private Sub SetGridView()
         'データソース設定
-        Dim strSQL As String = SQL.TBL_KOUENKAI.Search(Joken, True)
+        Dim strSQL As String = SQL.TBL_KOUENKAI.Search_KeyItem(Joken, True)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -166,9 +197,21 @@ Partial Public Class NewKouenkaiList
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
 
         If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim whereData As New StringDictionary
+            whereData.Add(TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO, e.Row.Cells(CellIndex.KOUENKAI_NO).Text)
+            whereData.Add(TableDef.TBL_KOUENKAI.Column.TIME_STAMP, e.Row.Cells(CellIndex.TIME_STAMP2).Text)
+            whereData.Add(TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE, e.Row.Cells(CellIndex.KOUENKAI_TITLE).Text)
+
+            Dim GRID_KOUENKAI As New TableDef.TBL_KOUENKAI.DataStruct
+            If Not GetGridData(whereData, GRID_KOUENKAI) Then Exit Sub
+
+            e.Row.Cells(CellIndex.BU).Text = GRID_KOUENKAI.BU
+            e.Row.Cells(CellIndex.KIKAKU_TANTO_AREA).Text = GRID_KOUENKAI.KIKAKU_TANTO_AREA
+            e.Row.Cells(CellIndex.KIKAKU_TANTO_EIGYOSHO).Text = GRID_KOUENKAI.KIKAKU_TANTO_EIGYOSHO
+            e.Row.Cells(CellIndex.KIKAKU_TANTO_NAME).Text = GRID_KOUENKAI.KIKAKU_TANTO_NAME
 
             '開催日
-            e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.JISSHI_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
+            e.Row.Cells(CellIndex.JISSHI_DATE).Text = AppModule.GetName_KOUENKAI_DATE(GRID_KOUENKAI.FROM_DATE, GRID_KOUENKAI.TO_DATE, True)
 
             'TimeStamp
             e.Row.Cells(CellIndex.TIME_STAMP).Text = _
@@ -188,6 +231,8 @@ Partial Public Class NewKouenkaiList
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
             e.Row.Cells(CellIndex.CNT).Visible = False
+            e.Row.Cells(CellIndex.KOUENKAI_TITLE).Visible = False
+            e.Row.Cells(CellIndex.TIME_STAMP2).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 0
             Me.GrvList.BorderStyle = BorderStyle.None
@@ -219,6 +264,14 @@ Partial Public Class NewKouenkaiList
                 Session.Item(SessionDef.PageIndex) = Me.GrvList.PageIndex
                 Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
                 Session.Item(SessionDef.BackURL2) = Request.Url.AbsolutePath
+
+                '@@@ Phase2
+                Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+                Dim row As GridViewRow = GrvList.Rows(index)
+                Session.Item(SessionDef.KOUENKAI_NO) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NO), DataControlFieldCell).Text()
+                Session.Item(SessionDef.TIME_STAMP) = DirectCast(GrvList.Rows(index).Controls(CellIndex.TIME_STAMP2), DataControlFieldCell).Text()
+                Session.Item(SessionDef.KOUENKAI_TITLE) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_TITLE), DataControlFieldCell).Text()
+                Session.Item(SessionDef.KOUENKAI_NAME) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NAME), DataControlFieldCell).Text()
 
                 '履歴画面用セッション変数をクリア
                 Session.Remove(SessionDef.KaijoRireki)

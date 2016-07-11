@@ -97,11 +97,257 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function byKey(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT"
+            strSQL &= " WK_KOUENKAI.BU"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_NAME"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.TIME_STAMP"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", WK_KOUENKAI.SEIHIN_NAME"
+            strSQL &= ", WK_KOUENKAI.TTEHAI_TANTO"
+            strSQL &= ", USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT *,"
+            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= " ) CNT"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI)"
+            strSQL &= " WK_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            If Trim(Joken.KUBUN) = "A" Then
+                strSQL &= " AND "
+                strSQL &= " CNT = 1"
+            ElseIf Trim(Joken.KUBUN) = "U" Then
+                strSQL &= " AND "
+                strSQL &= " CNT > 1"
+            End If
+
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= "='" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= "='" & CmnDb.SqlString(Joken.TIME_STAMP) & "'"
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE
+            strSQL &= "='" & CmnDb.SqlString(Joken.KOUENKAI_TITLE) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byKey_AllItem(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT"
+            strSQL &= " WK_KOUENKAI.*"
+            strSQL &= ", USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT *,"
+            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= " ) CNT"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI)"
+            strSQL &= " WK_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            If Trim(Joken.KUBUN) = "A" Then
+                strSQL &= " AND "
+                strSQL &= " CNT = 1"
+            ElseIf Trim(Joken.KUBUN) = "U" Then
+                strSQL &= " AND "
+                strSQL &= " CNT > 1"
+            End If
+
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= "='" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= "='" & CmnDb.SqlString(Joken.TIME_STAMP) & "'"
+            strSQL &= " AND "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE
+            strSQL &= "='" & CmnDb.SqlString(Joken.KOUENKAI_TITLE) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function Search(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
             Dim strSQL As String = ""
 
             strSQL &= " SELECT *"
             strSQL &= ", USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT *,"
+            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= " ) CNT"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI)"
+            strSQL &= " WK_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            If NewData = True Then
+                '新着
+                strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
+                strSQL &= " AND CNT > 1"
+            End If
+
+            If Trim(Joken.KUBUN) = "A" Then
+                strSQL &= " AND "
+                strSQL &= " CNT = 1"
+            ElseIf Trim(Joken.KUBUN) = "U" Then
+                strSQL &= " AND "
+                strSQL &= " CNT > 1"
+            End If
+
+            If Trim(Joken.BU) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.BU
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.BU) & "%'"
+            End If
+
+            If Trim(Joken.AREA) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_AREA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.AREA) & "%'"
+            End If
+
+            If Trim(Joken.KIKAKU_TANTO_ROMA) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KIKAKU_TANTO_ROMA
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KIKAKU_TANTO_ROMA) & "%'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NO) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
+                'strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            End If
+
+            If Trim(Joken.KOUENKAI_NAME) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NAME) & "%'"
+            End If
+
+            If Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " BETWEEN N'" & CmnDb.SqlString(Joken.FROM_DATE) & "' AND N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) <> "" AndAlso Trim(Joken.TO_DATE) = "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            ElseIf Trim(Joken.FROM_DATE) = "" AndAlso Trim(Joken.TO_DATE) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TO_DATE) & "'"
+            End If
+
+            If Trim(Joken.SEIHIN_NAME) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.SEIHIN_NAME
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.SEIHIN_NAME) & "%'"
+            End If
+
+            If Trim(Joken.TTANTO_ID) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.TTANTO_ID) & "'"
+            End If
+
+            strSQL &= " ORDER BY "
+            If NewData Then
+                '新着
+                strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+                strSQL &= " DESC"
+            Else
+                '検索
+                strSQL &= TableDef.TBL_KOUENKAI.Column.UPDATE_DATE
+                strSQL &= " DESC"
+            End If
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Search_KeyItem(ByVal Joken As TableDef.Joken.DataStruct, ByVal NewData As Boolean) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= ", WK_KOUENKAI.TIME_STAMP"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_TITLE"
+            strSQL &= ", WK_KOUENKAI.KIDOKU_FLG"
+            strSQL &= ", WK_KOUENKAI.BU"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.KIKAKU_TANTO_ROMA"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.SEIHIN_NAME"
+            strSQL &= ", WK_KOUENKAI.TTEHAI_TANTO"
+            strSQL &= ", USER_NAME"
+            strSQL &= ", CNT"
             strSQL &= " FROM"
             strSQL &= " (SELECT *,"
             strSQL &= " ROW_NUMBER() OVER( PARTITION BY "

@@ -4,9 +4,17 @@ Imports AppLib
 Partial Public Class KouenkaiRireki
     Inherits WebBase
 
-    Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    Private TBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct
+    'Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private RRK_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
     Private SEQ As Integer
+
+    '@@@ Phase3
+    Private KEY_KOUENKAI_NO As String
+    Private KEY_TIME_STAMP As String
+    Private KEY_KOUENKAI_TITLE As String
+    Private KEY_KOUENKAI_NAME As String
+    '@@@ Phase3
 
     'グリッド列
     Private Enum CellIndex
@@ -22,6 +30,7 @@ Partial Public Class KouenkaiRireki
         KOUENKAI_NO
         TO_DATE
     End Enum
+
 
     Private Sub KouenkaiRireki_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
@@ -62,16 +71,26 @@ Partial Public Class KouenkaiRireki
     'セッションを変数に格納
     Private Function SetSession() As Boolean
         Try
-            TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+            TBL_KOUENKAI = Session.Item(SessionDef.DSP_KOUENKAI)
+
+            KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)
+            KEY_TIME_STAMP = Session.Item(SessionDef.TIME_STAMP)
+            KEY_KOUENKAI_TITLE = Session.Item(SessionDef.KOUENKAI_TITLE)
+            KEY_KOUENKAI_NAME = Session.Item(SessionDef.kouenkai_name)
+
             If IsNothing(TBL_KOUENKAI) Then Return False
+            If IsNothing(KEY_KOUENKAI_NO) Then Return False
+            If IsNothing(KEY_TIME_STAMP) Then Return False
+            If IsNothing(KEY_KOUENKAI_TITLE) Then Return False
+
         Catch ex As Exception
             Return False
         End Try
-        If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
-            Return False
-        Else
-            SEQ = Session.Item(SessionDef.SEQ)
-        End If
+        'If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
+        '    Return False
+        'Else
+        '    SEQ = Session.Item(SessionDef.SEQ)
+        'End If
 
         Session.Item(SessionDef.KouenkaiRireki) = True
         Return True
@@ -95,8 +114,10 @@ Partial Public Class KouenkaiRireki
             Me.LabelNoData.Visible = False
             Me.GrvList.Visible = True
             Me.TrKOUENKAI_NAME.Visible = True
-            Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
-            Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KOUENKAI(SEQ).KOUENKAI_NAME)
+            Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(KEY_KOUENKAI_NO)
+            'Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(key_KOUENKAI_NAME)
+            'Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+            'Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KOUENKAI(SEQ).KOUENKAI_NAME)
 
             'グリッドビュー表示
             SetGridView()
@@ -110,7 +131,7 @@ Partial Public Class KouenkaiRireki
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+        strSQL = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI.KOUENKAI_NO)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         ReDim RRK_KOUENKAI(wCnt)
@@ -130,7 +151,7 @@ Partial Public Class KouenkaiRireki
 
     'データソース設定
     Private Sub SetGridView()
-        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+        'データソース設定        Dim strSQL As String = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI.KOUENKAI_NO)
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
 
@@ -212,7 +233,7 @@ Partial Public Class KouenkaiRireki
     Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
         Dim strSQL As String = ""
 
-        strSQL = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
+        strSQL = SQL.TBL_KOUENKAI.Rireki(TBL_KOUENKAI.KOUENKAI_NO)
         Session.Item(SessionDef.KouenkaiRirekiPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)

@@ -113,6 +113,18 @@ Public Class AppModule
 
         Return TBL_KOUENKAI
     End Function
+
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_KOUENKAI_KEY As TableDef.TBL_KOUENKAI_KEY.DataStruct) As TableDef.TBL_KOUENKAI_KEY.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO.ToUpper Then TBL_KOUENKAI_KEY.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.TIME_STAMP.ToUpper Then TBL_KOUENKAI_KEY.TIME_STAMP = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.KOUENKAI_NAME.ToUpper Then TBL_KOUENKAI_KEY.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_KOUENKAI_KEY
+    End Function
 #End Region
 
 #Region "êøãÅÉeÅ[ÉuÉã"

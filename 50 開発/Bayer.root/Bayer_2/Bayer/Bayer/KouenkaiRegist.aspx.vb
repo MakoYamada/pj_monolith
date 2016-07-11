@@ -4,13 +4,29 @@ Partial Public Class KouenkaiRegist
     Inherits WebBase
 
     Private TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
-    Private DSP_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+
+    '@@@ Phase3
+    Private DSP_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct
+    'Private DSP_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct
+    '@@@ Phase3
     Private OldTBL_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct
     Private SEQ As Integer
     Private Popup As Boolean = False
 
+    '@@@ Phase3
+    Private KEY_KOUENKAI_NO As String
+    Private KEY_TIME_STAMP As String
+    Private KEY_KOUENKAI_TITLE As String
+    Private KEY_KOUENKAI_NAME As String
+
     Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Unload
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.DSP_KOUENKAI) = DSP_KOUENKAI
+
+        Session.Item(SessionDef.KOUENKAI_NO) = KEY_KOUENKAI_NO
+        Session.Item(SessionDef.TIME_STAMP) = KEY_TIME_STAMP
+        Session.Item(SessionDef.KOUENKAI_TITLE) = KEY_KOUENKAI_TITLE
+        Session.Item(SessionDef.KOUENKAI_NAME) = KEY_KOUENKAI_NAME
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -41,6 +57,9 @@ Partial Public Class KouenkaiRegist
         If Not Page.IsPostBack Then
             '画面項目 初期化
             InitControls()
+
+            '表示データ取得
+            GetData()
 
             '旧データ取得
             GetData_Old()
@@ -99,24 +118,37 @@ Partial Public Class KouenkaiRegist
     Private Function SetSession() As Boolean
         Try
             If Popup Then
-                TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
-                DSP_KOUENKAI = Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
+                'TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+                'DSP_KOUENKAI = Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
+
+                KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)
+                KEY_TIME_STAMP = Session.Item(SessionDef.TIME_STAMP)
+                KEY_KOUENKAI_TITLE = Session.Item(SessionDef.KOUENKAI_TITLE)
+                KEY_KOUENKAI_NAME = Session.Item(SessionDef.KOUENKAI_NAME)
+
             Else
                 TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
-                DSP_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+                DSP_KOUENKAI = Session.Item(SessionDef.DSP_KOUENKAI)
+
+                KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)
+                KEY_TIME_STAMP = Session.Item(SessionDef.TIME_STAMP)
+                KEY_KOUENKAI_TITLE = Session.Item(SessionDef.KOUENKAI_TITLE)
+                KEY_KOUENKAI_NAME = Session.Item(SessionDef.KOUENKAI_NAME)
             End If
             If IsNothing(DSP_KOUENKAI) Then Return False
+            If IsNothing(KEY_KOUENKAI_NO) Then Return False
         Catch ex As Exception
             Return False
         End Try
+
         If Not MyModule.IsValidSEQ(Session.Item(SessionDef.SEQ)) Then
             Return False
-        Else
-            If Popup Then
-                SEQ = Session.Item(SessionDef.KouenkaiRireki_SEQ)
-            Else
-                SEQ = Session.Item(SessionDef.SEQ)
-            End If
+            'Else
+            '    If Popup Then
+            '        SEQ = Session.Item(SessionDef.KouenkaiRireki_SEQ)
+            '    Else
+            '        SEQ = Session.Item(SessionDef.SEQ)
+            '    End If
         End If
         Return True
     End Function
@@ -137,78 +169,93 @@ Partial Public Class KouenkaiRegist
         Dim DSP_SEQ As Integer = 0
 
         If Popup Then
-            DSP_KOUENKAI = Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
-            DSP_SEQ = Session.Item(SessionDef.KouenkaiRireki_SEQ)
+            '@@@ Phase3
+            'DSP_KOUENKAI = Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI)
+            'DSP_SEQ = Session.Item(SessionDef.KouenkaiRireki_SEQ)
+            '@@@ Phase3
+
+            KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)
+            KEY_TIME_STAMP = Session.Item(SessionDef.TIME_STAMP)
+            KEY_KOUENKAI_TITLE = Session.Item(SessionDef.KOUENKAI_TITLE)
+            KEY_KOUENKAI_NAME = Session.Item(SessionDef.KOUENKAI_NAME)
         Else
-            DSP_SEQ = SEQ
+            '@@@ Phase3
+            'DSP_SEQ = SEQ
+            '@@@ Phase3
+
+            KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)
+            KEY_TIME_STAMP = Session.Item(SessionDef.TIME_STAMP)
+            KEY_KOUENKAI_TITLE = Session.Item(SessionDef.KOUENKAI_TITLE)
+            KEY_KOUENKAI_NAME = Session.Item(SessionDef.KOUENKAI_NAME)
         End If
-        Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(DSP_KOUENKAI(DSP_SEQ).KOUENKAI_NO)
-        Me.KIDOKU_FLG.SelectedValue = AppModule.GetName_KIDOKU_FLG(DSP_KOUENKAI(DSP_SEQ).KIDOKU_FLG)
-        Me.TORIKESHI_FLG.Text = AppModule.GetName_TORIKESHI_FLG(DSP_KOUENKAI(DSP_SEQ).TORIKESHI_FLG)
-        Me.TIME_STAMP.Text = AppModule.GetName_TIME_STAMP(DSP_KOUENKAI(DSP_SEQ).TIME_STAMP)
-        Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(DSP_KOUENKAI(DSP_SEQ).KOUENKAI_NAME)
-        Me.TAXI_PRT_NAME.Text = AppModule.GetName_TAXI_PRT_NAME(DSP_KOUENKAI(DSP_SEQ).TAXI_PRT_NAME)
-        Me.FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(DSP_KOUENKAI(DSP_SEQ).FROM_DATE, DSP_KOUENKAI(DSP_SEQ).TO_DATE)
-        Me.KAIJO_NAME.Text = AppModule.GetName_KAIJO_NAME(DSP_KOUENKAI(DSP_SEQ).KAIJO_NAME)
-        Me.SEIHIN_NAME.Text = AppModule.GetName_SEIHIN_NAME(DSP_KOUENKAI(DSP_SEQ).SEIHIN_NAME)
-        Me.INTERNAL_ORDER_T.Text = AppModule.GetName_INTERNAL_ORDER_T(DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_T)
-        Me.INTERNAL_ORDER_TF.Text = AppModule.GetName_INTERNAL_ORDER_TF(DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_TF)
-        Me.ACCOUNT_CD_T.Text = AppModule.GetName_ACCOUNT_CD_T(DSP_KOUENKAI(DSP_SEQ).ACCOUNT_CD_T)
-        Me.ACCOUNT_CD_TF.Text = AppModule.GetName_ACCOUNT_CD_TF(DSP_KOUENKAI(DSP_SEQ).ACCOUNT_CD_TF)
-        Me.ZETIA_CD.Text = AppModule.GetName_ZETIA_CD(DSP_KOUENKAI(DSP_SEQ).ZETIA_CD)
-        Me.SANKA_YOTEI_CNT_NMBR.Text = AppModule.GetName_SANKA_YOTEI_CNT_NMBR(DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_NMBR)
-        Me.SANKA_YOTEI_CNT_MBR.Text = AppModule.GetName_SANKA_YOTEI_CNT_MBR(DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_MBR)
-        Dim strSQL As String = "SELECT * FROM MS_USER WHERE " & TableDef.MS_USER.Column.LOGIN_ID & "=N'" & DSP_KOUENKAI(DSP_SEQ).TTEHAI_TANTO & "'"
+
+        Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(DSP_KOUENKAI.KOUENKAI_NO)
+        Me.KIDOKU_FLG.SelectedValue = AppModule.GetName_KIDOKU_FLG(DSP_KOUENKAI.KIDOKU_FLG)
+        Me.TORIKESHI_FLG.Text = AppModule.GetName_TORIKESHI_FLG(DSP_KOUENKAI.TORIKESHI_FLG)
+        Me.TIME_STAMP.Text = AppModule.GetName_TIME_STAMP(DSP_KOUENKAI.TIME_STAMP)
+        Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(DSP_KOUENKAI.KOUENKAI_NAME)
+        Me.TAXI_PRT_NAME.Text = AppModule.GetName_TAXI_PRT_NAME(DSP_KOUENKAI.TAXI_PRT_NAME)
+        Me.FROM_DATE.Text = AppModule.GetName_KOUENKAI_DATE(DSP_KOUENKAI.FROM_DATE, DSP_KOUENKAI.TO_DATE)
+        Me.KAIJO_NAME.Text = AppModule.GetName_KAIJO_NAME(DSP_KOUENKAI.KAIJO_NAME)
+        Me.SEIHIN_NAME.Text = AppModule.GetName_SEIHIN_NAME(DSP_KOUENKAI.SEIHIN_NAME)
+        Me.INTERNAL_ORDER_T.Text = AppModule.GetName_INTERNAL_ORDER_T(DSP_KOUENKAI.INTERNAL_ORDER_T)
+        Me.INTERNAL_ORDER_TF.Text = AppModule.GetName_INTERNAL_ORDER_TF(DSP_KOUENKAI.INTERNAL_ORDER_TF)
+        Me.ACCOUNT_CD_T.Text = AppModule.GetName_ACCOUNT_CD_T(DSP_KOUENKAI.ACCOUNT_CD_T)
+        Me.ACCOUNT_CD_TF.Text = AppModule.GetName_ACCOUNT_CD_TF(DSP_KOUENKAI.ACCOUNT_CD_TF)
+        Me.ZETIA_CD.Text = AppModule.GetName_ZETIA_CD(DSP_KOUENKAI.ZETIA_CD)
+        Me.SANKA_YOTEI_CNT_NMBR.Text = AppModule.GetName_SANKA_YOTEI_CNT_NMBR(DSP_KOUENKAI.SANKA_YOTEI_CNT_NMBR)
+        Me.SANKA_YOTEI_CNT_MBR.Text = AppModule.GetName_SANKA_YOTEI_CNT_MBR(DSP_KOUENKAI.SANKA_YOTEI_CNT_MBR)
+        Dim strSQL As String = "SELECT * FROM MS_USER WHERE " & TableDef.MS_USER.Column.LOGIN_ID & "=N'" & DSP_KOUENKAI.TTEHAI_TANTO & "'"
         Dim MS_USER As TableDef.MS_USER.DataStruct = AppModule.GetOneRecord(AppModule.TableType.MS_USER, strSQL, DbConnection)
         Me.TTEHAI_TANTO.SelectedValue = MS_USER.LOGIN_ID
-        Me.DANTAI_CODE.Text = AppModule.GetName_DANTAI_CODE(DSP_KOUENKAI(DSP_SEQ).DANTAI_CODE)
-        Me.BU.Text = AppModule.GetName_BU(DSP_KOUENKAI(DSP_SEQ).BU)
-        Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_AREA)
-        Me.KIKAKU_TANTO_EIGYOSHO.Text = AppModule.GetName_KIKAKU_TANTO_EIGYOSHO(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EIGYOSHO)
-        Me.COST_CENTER.Text = AppModule.GetName_COST_CENTER(DSP_KOUENKAI(DSP_SEQ).COST_CENTER)
-        Me.KIKAKU_TANTO_NAME.Text = AppModule.GetName_KIKAKU_TANTO_NAME(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_NAME)
-        Me.KIKAKU_TANTO_ROMA.Text = AppModule.GetName_KIKAKU_TANTO_ROMA(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_ROMA)
-        Me.KIKAKU_TANTO_TEL.Text = AppModule.GetName_KIKAKU_TANTO_TEL(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_TEL)
-        Me.KIKAKU_TANTO_KEITAI.Text = AppModule.GetName_KIKAKU_TANTO_KEITAI(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_KEITAI)
-        Me.KIKAKU_TANTO_EMAIL.Text = AppModule.GetName_KIKAKU_TANTO_EMAIL(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EMAIL_PC)
-        Me.KIKAKU_TANTO_EMAIL_KEITAI.Text = AppModule.GetName_KIKAKU_TANTO_EMAIL_KEITAI(DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EMAIL_KEITAI)
-        Me.YOSAN_TF.Text = AppModule.GetName_YOSAN_TF(DSP_KOUENKAI(DSP_SEQ).YOSAN_TF)
-        Me.YOSAN_T.Text = AppModule.GetName_YOSAN_T(DSP_KOUENKAI(DSP_SEQ).YOSAN_T)
-        Me.IROUKAI_YOSAN_T.Text = AppModule.GetName_IROUKAI_YOSAN_T(DSP_KOUENKAI(DSP_SEQ).IROUKAI_YOSAN_T)
-        Me.IKENKOUKAN_YOSAN_T.Text = AppModule.GetName_IKENKOUKAN_YOSAN_T(DSP_KOUENKAI(DSP_SEQ).IKENKOUKAN_YOSAN_T)
+        Me.DANTAI_CODE.Text = AppModule.GetName_DANTAI_CODE(DSP_KOUENKAI.DANTAI_CODE)
+        Me.BU.Text = AppModule.GetName_BU(DSP_KOUENKAI.BU)
+        Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(DSP_KOUENKAI.KIKAKU_TANTO_AREA)
+        Me.KIKAKU_TANTO_EIGYOSHO.Text = AppModule.GetName_KIKAKU_TANTO_EIGYOSHO(DSP_KOUENKAI.KIKAKU_TANTO_EIGYOSHO)
+        Me.COST_CENTER.Text = AppModule.GetName_COST_CENTER(DSP_KOUENKAI.COST_CENTER)
+        Me.KIKAKU_TANTO_NAME.Text = AppModule.GetName_KIKAKU_TANTO_NAME(DSP_KOUENKAI.KIKAKU_TANTO_NAME)
+        Me.KIKAKU_TANTO_ROMA.Text = AppModule.GetName_KIKAKU_TANTO_ROMA(DSP_KOUENKAI.KIKAKU_TANTO_ROMA)
+        Me.KIKAKU_TANTO_TEL.Text = AppModule.GetName_KIKAKU_TANTO_TEL(DSP_KOUENKAI.KIKAKU_TANTO_TEL)
+        Me.KIKAKU_TANTO_KEITAI.Text = AppModule.GetName_KIKAKU_TANTO_KEITAI(DSP_KOUENKAI.KIKAKU_TANTO_KEITAI)
+        Me.KIKAKU_TANTO_EMAIL.Text = AppModule.GetName_KIKAKU_TANTO_EMAIL(DSP_KOUENKAI.KIKAKU_TANTO_EMAIL_PC)
+        Me.KIKAKU_TANTO_EMAIL_KEITAI.Text = AppModule.GetName_KIKAKU_TANTO_EMAIL_KEITAI(DSP_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI)
+        Me.YOSAN_TF.Text = AppModule.GetName_YOSAN_TF(DSP_KOUENKAI.YOSAN_TF)
+        Me.YOSAN_T.Text = AppModule.GetName_YOSAN_T(DSP_KOUENKAI.YOSAN_T)
+        Me.IROUKAI_YOSAN_T.Text = AppModule.GetName_IROUKAI_YOSAN_T(DSP_KOUENKAI.IROUKAI_YOSAN_T)
+        Me.IKENKOUKAN_YOSAN_T.Text = AppModule.GetName_IKENKOUKAN_YOSAN_T(DSP_KOUENKAI.IKENKOUKAN_YOSAN_T)
 
         If Not Popup Then
-            SetChangedColor(Me.TORIKESHI_FLG, DSP_KOUENKAI(DSP_SEQ).TORIKESHI_FLG, OldTBL_KOUENKAI.TORIKESHI_FLG)
-            SetChangedColor(Me.TIME_STAMP, DSP_KOUENKAI(DSP_SEQ).TIME_STAMP, OldTBL_KOUENKAI.TIME_STAMP)
-            SetChangedColor(Me.KOUENKAI_NAME, DSP_KOUENKAI(DSP_SEQ).KOUENKAI_NAME, OldTBL_KOUENKAI.KOUENKAI_NAME)
-            SetChangedColor(Me.TAXI_PRT_NAME, DSP_KOUENKAI(DSP_SEQ).TAXI_PRT_NAME, OldTBL_KOUENKAI.TAXI_PRT_NAME)
-            SetChangedColor(Me.FROM_DATE, DSP_KOUENKAI(DSP_SEQ).FROM_DATE, OldTBL_KOUENKAI.FROM_DATE)
-            SetChangedColor(Me.KAIJO_NAME, DSP_KOUENKAI(DSP_SEQ).KAIJO_NAME, OldTBL_KOUENKAI.KAIJO_NAME)
-            SetChangedColor(Me.SEIHIN_NAME, DSP_KOUENKAI(DSP_SEQ).SEIHIN_NAME, OldTBL_KOUENKAI.SEIHIN_NAME)
-            SetChangedColor(Me.INTERNAL_ORDER_T, DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_T, OldTBL_KOUENKAI.INTERNAL_ORDER_T)
-            SetChangedColor(Me.INTERNAL_ORDER_TF, DSP_KOUENKAI(DSP_SEQ).INTERNAL_ORDER_TF, OldTBL_KOUENKAI.INTERNAL_ORDER_TF)
-            SetChangedColor(Me.ACCOUNT_CD_T, DSP_KOUENKAI(DSP_SEQ).ACCOUNT_CD_T, OldTBL_KOUENKAI.ACCOUNT_CD_T)
-            SetChangedColor(Me.ACCOUNT_CD_TF, DSP_KOUENKAI(DSP_SEQ).ACCOUNT_CD_TF, OldTBL_KOUENKAI.ACCOUNT_CD_TF)
-            SetChangedColor(Me.ZETIA_CD, DSP_KOUENKAI(DSP_SEQ).ZETIA_CD, OldTBL_KOUENKAI.ZETIA_CD)
-            SetChangedColor(Me.SANKA_YOTEI_CNT_MBR, DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_MBR, OldTBL_KOUENKAI.SANKA_YOTEI_CNT_MBR)
-            SetChangedColor(Me.SANKA_YOTEI_CNT_NMBR, DSP_KOUENKAI(DSP_SEQ).SANKA_YOTEI_CNT_NMBR, OldTBL_KOUENKAI.SANKA_YOTEI_CNT_NMBR)
-            SetChangedColor(Me.TTEHAI_TANTO, DSP_KOUENKAI(DSP_SEQ).TTEHAI_TANTO, OldTBL_KOUENKAI.TTEHAI_TANTO)
-            SetChangedColor(Me.DANTAI_CODE, DSP_KOUENKAI(DSP_SEQ).DANTAI_CODE, OldTBL_KOUENKAI.DANTAI_CODE)
-            SetChangedColor(Me.KIKAKU_TANTO_JIGYOUBU, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_JIGYOUBU, OldTBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU)
-            SetChangedColor(Me.BU, DSP_KOUENKAI(DSP_SEQ).BU, OldTBL_KOUENKAI.BU)
-            SetChangedColor(Me.KIKAKU_TANTO_AREA, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_AREA, OldTBL_KOUENKAI.KIKAKU_TANTO_AREA)
-            SetChangedColor(Me.KIKAKU_TANTO_EIGYOSHO, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EIGYOSHO, OldTBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO)
-            SetChangedColor(Me.COST_CENTER, DSP_KOUENKAI(DSP_SEQ).COST_CENTER, OldTBL_KOUENKAI.COST_CENTER)
-            SetChangedColor(Me.KIKAKU_TANTO_NAME, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_NAME, OldTBL_KOUENKAI.KIKAKU_TANTO_NAME)
-            SetChangedColor(Me.KIKAKU_TANTO_ROMA, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_ROMA, OldTBL_KOUENKAI.KIKAKU_TANTO_ROMA)
-            SetChangedColor(Me.KIKAKU_TANTO_TEL, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_TEL, OldTBL_KOUENKAI.KIKAKU_TANTO_TEL)
-            SetChangedColor(Me.KIKAKU_TANTO_KEITAI, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_KEITAI, OldTBL_KOUENKAI.KIKAKU_TANTO_KEITAI)
-            SetChangedColor(Me.KIKAKU_TANTO_EMAIL, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EMAIL_PC, OldTBL_KOUENKAI.KIKAKU_TANTO_EMAIL_PC)
-            SetChangedColor(Me.KIKAKU_TANTO_EMAIL_KEITAI, DSP_KOUENKAI(DSP_SEQ).KIKAKU_TANTO_EMAIL_KEITAI, OldTBL_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI)
-            SetChangedColor(Me.YOSAN_TF, DSP_KOUENKAI(DSP_SEQ).YOSAN_TF, OldTBL_KOUENKAI.YOSAN_TF)
-            SetChangedColor(Me.YOSAN_T, DSP_KOUENKAI(DSP_SEQ).YOSAN_T, OldTBL_KOUENKAI.YOSAN_T)
-            SetChangedColor(Me.IROUKAI_YOSAN_T, DSP_KOUENKAI(DSP_SEQ).IROUKAI_YOSAN_T, OldTBL_KOUENKAI.IROUKAI_YOSAN_T)
-            SetChangedColor(Me.IKENKOUKAN_YOSAN_T, DSP_KOUENKAI(DSP_SEQ).IKENKOUKAN_YOSAN_T, OldTBL_KOUENKAI.IKENKOUKAN_YOSAN_T)
+            SetChangedColor(Me.TORIKESHI_FLG, DSP_KOUENKAI.TORIKESHI_FLG, OldTBL_KOUENKAI.TORIKESHI_FLG)
+            SetChangedColor(Me.TIME_STAMP, DSP_KOUENKAI.TIME_STAMP, OldTBL_KOUENKAI.TIME_STAMP)
+            SetChangedColor(Me.KOUENKAI_NAME, DSP_KOUENKAI.KOUENKAI_NAME, OldTBL_KOUENKAI.KOUENKAI_NAME)
+            SetChangedColor(Me.TAXI_PRT_NAME, DSP_KOUENKAI.TAXI_PRT_NAME, OldTBL_KOUENKAI.TAXI_PRT_NAME)
+            SetChangedColor(Me.FROM_DATE, DSP_KOUENKAI.FROM_DATE, OldTBL_KOUENKAI.FROM_DATE)
+            SetChangedColor(Me.KAIJO_NAME, DSP_KOUENKAI.KAIJO_NAME, OldTBL_KOUENKAI.KAIJO_NAME)
+            SetChangedColor(Me.SEIHIN_NAME, DSP_KOUENKAI.SEIHIN_NAME, OldTBL_KOUENKAI.SEIHIN_NAME)
+            SetChangedColor(Me.INTERNAL_ORDER_T, DSP_KOUENKAI.INTERNAL_ORDER_T, OldTBL_KOUENKAI.INTERNAL_ORDER_T)
+            SetChangedColor(Me.INTERNAL_ORDER_TF, DSP_KOUENKAI.INTERNAL_ORDER_TF, OldTBL_KOUENKAI.INTERNAL_ORDER_TF)
+            SetChangedColor(Me.ACCOUNT_CD_T, DSP_KOUENKAI.ACCOUNT_CD_T, OldTBL_KOUENKAI.ACCOUNT_CD_T)
+            SetChangedColor(Me.ACCOUNT_CD_TF, DSP_KOUENKAI.ACCOUNT_CD_TF, OldTBL_KOUENKAI.ACCOUNT_CD_TF)
+            SetChangedColor(Me.ZETIA_CD, DSP_KOUENKAI.ZETIA_CD, OldTBL_KOUENKAI.ZETIA_CD)
+            SetChangedColor(Me.SANKA_YOTEI_CNT_MBR, DSP_KOUENKAI.SANKA_YOTEI_CNT_MBR, OldTBL_KOUENKAI.SANKA_YOTEI_CNT_MBR)
+            SetChangedColor(Me.SANKA_YOTEI_CNT_NMBR, DSP_KOUENKAI.SANKA_YOTEI_CNT_NMBR, OldTBL_KOUENKAI.SANKA_YOTEI_CNT_NMBR)
+            SetChangedColor(Me.TTEHAI_TANTO, DSP_KOUENKAI.TTEHAI_TANTO, OldTBL_KOUENKAI.TTEHAI_TANTO)
+            SetChangedColor(Me.DANTAI_CODE, DSP_KOUENKAI.DANTAI_CODE, OldTBL_KOUENKAI.DANTAI_CODE)
+            SetChangedColor(Me.KIKAKU_TANTO_JIGYOUBU, DSP_KOUENKAI.KIKAKU_TANTO_JIGYOUBU, OldTBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU)
+            SetChangedColor(Me.BU, DSP_KOUENKAI.BU, OldTBL_KOUENKAI.BU)
+            SetChangedColor(Me.KIKAKU_TANTO_AREA, DSP_KOUENKAI.KIKAKU_TANTO_AREA, OldTBL_KOUENKAI.KIKAKU_TANTO_AREA)
+            SetChangedColor(Me.KIKAKU_TANTO_EIGYOSHO, DSP_KOUENKAI.KIKAKU_TANTO_EIGYOSHO, OldTBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO)
+            SetChangedColor(Me.COST_CENTER, DSP_KOUENKAI.COST_CENTER, OldTBL_KOUENKAI.COST_CENTER)
+            SetChangedColor(Me.KIKAKU_TANTO_NAME, DSP_KOUENKAI.KIKAKU_TANTO_NAME, OldTBL_KOUENKAI.KIKAKU_TANTO_NAME)
+            SetChangedColor(Me.KIKAKU_TANTO_ROMA, DSP_KOUENKAI.KIKAKU_TANTO_ROMA, OldTBL_KOUENKAI.KIKAKU_TANTO_ROMA)
+            SetChangedColor(Me.KIKAKU_TANTO_TEL, DSP_KOUENKAI.KIKAKU_TANTO_TEL, OldTBL_KOUENKAI.KIKAKU_TANTO_TEL)
+            SetChangedColor(Me.KIKAKU_TANTO_KEITAI, DSP_KOUENKAI.KIKAKU_TANTO_KEITAI, OldTBL_KOUENKAI.KIKAKU_TANTO_KEITAI)
+            SetChangedColor(Me.KIKAKU_TANTO_EMAIL, DSP_KOUENKAI.KIKAKU_TANTO_EMAIL_PC, OldTBL_KOUENKAI.KIKAKU_TANTO_EMAIL_PC)
+            SetChangedColor(Me.KIKAKU_TANTO_EMAIL_KEITAI, DSP_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI, OldTBL_KOUENKAI.KIKAKU_TANTO_EMAIL_KEITAI)
+            SetChangedColor(Me.YOSAN_TF, DSP_KOUENKAI.YOSAN_TF, OldTBL_KOUENKAI.YOSAN_TF)
+            SetChangedColor(Me.YOSAN_T, DSP_KOUENKAI.YOSAN_T, OldTBL_KOUENKAI.YOSAN_T)
+            SetChangedColor(Me.IROUKAI_YOSAN_T, DSP_KOUENKAI.IROUKAI_YOSAN_T, OldTBL_KOUENKAI.IROUKAI_YOSAN_T)
+            SetChangedColor(Me.IKENKOUKAN_YOSAN_T, DSP_KOUENKAI.IKENKOUKAN_YOSAN_T, OldTBL_KOUENKAI.IKENKOUKAN_YOSAN_T)
         End If
     End Sub
 
@@ -260,13 +307,13 @@ Partial Public Class KouenkaiRegist
 
     '入力値を取得
     Private Sub GetValue(ByVal SEND_FLAG As String)
-        DSP_KOUENKAI(SEQ).KIDOKU_FLG = Me.KIDOKU_FLG.SelectedValue
-        DSP_KOUENKAI(SEQ).SEND_FLAG = SEND_FLAG
-        DSP_KOUENKAI(SEQ).DANTAI_CODE = Me.DANTAI_CODE.Text
-        DSP_KOUENKAI(SEQ).UPDATE_DATE = DSP_KOUENKAI(SEQ).TIME_STAMP_TOP
-        DSP_KOUENKAI(SEQ).UPDATE_USER = Session.Item(SessionDef.LoginID)
+        DSP_KOUENKAI.KIDOKU_FLG = Me.KIDOKU_FLG.SelectedValue
+        DSP_KOUENKAI.SEND_FLAG = SEND_FLAG
+        DSP_KOUENKAI.DANTAI_CODE = Me.DANTAI_CODE.Text
+        DSP_KOUENKAI.UPDATE_DATE = DSP_KOUENKAI.TIME_STAMP_TOP
+        DSP_KOUENKAI.UPDATE_USER = Session.Item(SessionDef.LoginID)
         If Me.TTEHAI_TANTO.SelectedIndex <> 0 Then
-            DSP_KOUENKAI(SEQ).TTEHAI_TANTO = Me.TTEHAI_TANTO.SelectedValue
+            DSP_KOUENKAI.TTEHAI_TANTO = Me.TTEHAI_TANTO.SelectedValue
         End If
     End Sub
 
@@ -282,19 +329,19 @@ Partial Public Class KouenkaiRegist
         MyBase.BeginTransaction()
         Try
             'データ更新
-            strSQL = SQL.TBL_KOUENKAI.Update(DSP_KOUENKAI(SEQ))
+            strSQL = SQL.TBL_KOUENKAI.Update(DSP_KOUENKAI)
             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
 
             'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist, DSP_KOUENKAI(SEQ), True, "", MyBase.DbConnection)
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist, DSP_KOUENKAI, True, "", MyBase.DbConnection)
 
             Return True
         Catch ex As Exception
             MyBase.Rollback()
 
             'ログ登録
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist, DSP_KOUENKAI(SEQ), False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
+            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.KouenkaiRegist, DSP_KOUENKAI, False, Session.Item(SessionDef.DbError), MyBase.DbConnection)
             Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
 
             Return False
@@ -308,7 +355,7 @@ Partial Public Class KouenkaiRegist
         Dim NewCnt(0) As String
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOUENKAI.byNEW_TIME_STAMP(DSP_KOUENKAI(SEQ).KOUENKAI_NO, DSP_KOUENKAI(SEQ).TIME_STAMP)
+        strSQL = SQL.TBL_KOUENKAI.byNEW_TIME_STAMP(DSP_KOUENKAI.KOUENKAI_NO, DSP_KOUENKAI.TIME_STAMP)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
@@ -323,9 +370,32 @@ Partial Public Class KouenkaiRegist
         End If
     End Function
 
+    '表示データ取得
+    Private Sub GetData()
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim SearchKey As TableDef.Joken.DataStruct
+
+        SearchKey = Nothing
+        SearchKey.KOUENKAI_NO = KEY_KOUENKAI_NO
+        SearchKey.TIME_STAMP = KEY_TIME_STAMP
+        SearchKey.KOUENKAI_TITLE = KEY_KOUENKAI_TITLE
+
+        strSQL = SQL.TBL_KOUENKAI.byKEY_AllItem(SearchKey)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+            DSP_KOUENKAI = AppModule.SetRsData(RsData, DSP_KOUENKAI)
+
+            Exit While
+        End While
+        RsData.Close()
+    End Sub
+
     '旧データ取得
     Private Sub GetData_Old()
-        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO_UPDATE_DATE_DESC(DSP_KOUENKAI(SEQ).KOUENKAI_NO, DSP_KOUENKAI(SEQ).UPDATE_DATE)
+        Dim strSQL As String = SQL.TBL_KOUENKAI.byKOUENKAI_NO_UPDATE_DATE_DESC(DSP_KOUENKAI.KOUENKAI_NO, DSP_KOUENKAI.UPDATE_DATE)
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlAG As Boolean = False
 
@@ -390,6 +460,12 @@ Partial Public Class KouenkaiRegist
         Session.Item(SessionDef.SEQ) = SEQ
         Session.Item(SessionDef.TBL_KOUENKAI) = DSP_KOUENKAI
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+
+        Session.Item(SessionDef.KOUENKAI_NO) = KEY_KOUENKAI_NO
+        Session.Item(SessionDef.TIME_STAMP) = KEY_TIME_STAMP
+        Session.Item(SessionDef.KOUENKAI_TITLE) = KEY_KOUENKAI_TITLE
+        Session.Item(SessionDef.KOUENKAI_NAME) = KEY_KOUENKAI_NAME
+
         Response.Redirect(URL.KouenkaiRireki)
     End Sub
 End Class
