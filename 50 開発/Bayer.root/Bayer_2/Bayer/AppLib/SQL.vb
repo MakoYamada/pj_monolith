@@ -5295,6 +5295,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.WBS_ELEMENT
             strSQL &= ")"
             strSQL &= " VALUES"
             strSQL &= "(N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SALEFORCE_ID) & "'"
@@ -5754,6 +5755,7 @@ Public Class SQL
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.WBS_ELEMENT) & "'"
             strSQL &= ")"
 
             Return strSQL

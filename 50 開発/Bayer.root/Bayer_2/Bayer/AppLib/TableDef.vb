@@ -968,6 +968,7 @@
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
             Public SEND_DATE As String
+            Public WBS_ELEMENT As String
 
             Public KOTSU_ACCOUNT_CD As String
             Public KOTSU_COST_CENTER As String
@@ -1481,6 +1482,7 @@
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
             Public Const SEND_DATE As String = "SEND_DATE"
+            Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
 
             Public Const KOTSU_ACCOUNT_CD As String = "KOTSU_ACCOUNT_CD"
             Public Const KOTSU_COST_CENTER As String = "KOTSU_COST_CENTER"
@@ -1971,6 +1973,7 @@
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
             Public Const SEND_DATE As String = "発送日"
+            Public Const WBS_ELEMENT As String = "WBSElement"
 
             Public Const KOUENKAI_NAME As String = "会合名"
             Public Const KOUENKAI_TIME_STAMP As String = "TimeStamp"

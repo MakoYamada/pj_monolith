@@ -398,7 +398,7 @@ Public Class Proc
         Public Const Field187 As String = "社員用交通・宿泊備考"
         Public Const Field188 As String = "緊急対応フラグ"
         Public Const Field189 As String = "予備1"
-        Public Const Field190 As String = "予備2"
+        Public Const Field190 As String = "WBSElement"  '@@@ Phase3 予備2→WBSElement
         Public Const Field191 As String = "予備3"
         Public Const Field192 As String = "予備4"
         Public Const Field193 As String = "予備5"
@@ -821,7 +821,11 @@ Public Class Proc
             '改修後Verのファイルを受信した場合
             TBL_KOTSUHOTEL_Ins.KINKYU_FLAG = fileData(COL_NO.Field188)
             TBL_KOTSUHOTEL_Ins.YOBI1 = fileData(COL_NO.Field189)
-            TBL_KOTSUHOTEL_Ins.YOBI2 = fileData(COL_NO.Field190)
+            '@@@ Phase3
+            TBL_KOTSUHOTEL_Ins.YOBI2 = ""
+            TBL_KOTSUHOTEL_Ins.WBS_ELEMENT = fileData(COL_NO.Field190)
+            'TBL_KOTSUHOTEL_Ins.YOBI2 = fileData(COL_NO.Field190)
+            '@@@ Phase3
             TBL_KOTSUHOTEL_Ins.YOBI3 = fileData(COL_NO.Field191)
             TBL_KOTSUHOTEL_Ins.YOBI4 = fileData(COL_NO.Field192)
             TBL_KOTSUHOTEL_Ins.YOBI5 = fileData(COL_NO.Field193)
@@ -1131,6 +1135,7 @@ Public Class Proc
             TBL_KOTSUHOTEL_Ins.TTANTO_ID = TBL_KOTSUHOTEL(idx).TTANTO_ID
             TBL_KOTSUHOTEL_Ins.SEIKYU_NO_TOPTOUR = TBL_KOTSUHOTEL(idx).SEIKYU_NO_TOPTOUR
             TBL_KOTSUHOTEL_Ins.SCAN_IMPORT_DATE = TBL_KOTSUHOTEL(idx).SCAN_IMPORT_DATE
+            TBL_KOTSUHOTEL_Ins.WBS_ELEMENT = TBL_KOTSUHOTEL(idx).WBS_ELEMENT
         End If
 
         Return TBL_KOTSUHOTEL_Ins

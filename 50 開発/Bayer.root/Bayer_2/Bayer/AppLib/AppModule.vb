@@ -109,6 +109,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.ANS_SEISANSHO_URL.ToUpper Then TBL_KOUENKAI.ANS_SEISANSHO_URL = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.FROM_DATE_YM.ToUpper Then TBL_KOUENKAI.FROM_DATE_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.SEISAN_KANRYO.ToUpper Then TBL_KOUENKAI.SEISAN_KANRYO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOUENKAI.Column.WBS_ELEMENT.ToUpper Then TBL_KOUENKAI.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_KOUENKAI
@@ -680,6 +681,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE.ToUpper Then TBL_KOTSUHOTEL.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER.ToUpper Then TBL_KOTSUHOTEL.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE.ToUpper Then TBL_KOTSUHOTEL.SEND_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.WBS_ELEMENT.ToUpper Then TBL_KOTSUHOTEL.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_ACCOUNT_CD.ToUpper Then TBL_KOTSUHOTEL.KOTSU_ACCOUNT_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_COST_CENTER.ToUpper Then TBL_KOTSUHOTEL.KOTSU_COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
