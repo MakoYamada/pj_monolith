@@ -160,6 +160,15 @@ Partial Public Class DrRegist
     Protected WithEvents DANTAI_CODE As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''WBS_ELEMENT1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents WBS_ELEMENT1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''REQ_STATUS_TEHAI コントロール。
     '''</summary>
     '''<remarks>
@@ -320,6 +329,15 @@ Partial Public Class DrRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SHITEIGAI_RIYU As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''WBS_ELEMENT コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents WBS_ELEMENT As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TrSEIKYU_NO_TOPTOUR コントロール。

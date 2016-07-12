@@ -60,7 +60,7 @@
 						</td>
                         <td align="left" class="TdItem">
 							<asp:Label ID="FROM_DATE" runat="server" Width="150px"></asp:Label>
-							</td>
+						</td>
 						<td align="left" class="TdTitleHeader" style="width:100px">
 							TimeStamp
 						</td>
@@ -98,6 +98,14 @@
 						</td>
 						<td align="left" class="TdItem" colspan="3">
 							<asp:Label ID="DANTAI_CODE" runat="server" Text=""></asp:Label>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="TdTitleHeader">
+							WBS Element
+						</td>
+						<td align="left" class="TdItem" colspan="7">
+							<asp:Label ID="WBS_ELEMENT1" runat="server" Text=""></asp:Label>
 						</td>
 					</tr>
 				</table>
@@ -247,6 +255,14 @@
                             <asp:TextBox ID="SHITEIGAI_RIYU" runat="server" MaxLength="128" ReadOnly="True" 
                                 TextMode="MultiLine" Height="30px" Width="750px"  tabstop="false" 
                                 BorderStyle="None"></asp:TextBox>
+		                </td>
+		            </tr>
+		            <tr>		                
+		                <td align="left" valign="middle" class="TdTitleHeader" style="width:100px">
+			                WBS Element
+		                </td>
+		                <td align="left" valign="middle" colspan="7">
+							<asp:Label ID="WBS_ELEMENT" runat="server" Width="100px"></asp:Label>
 		                </td>
 		            </tr>
 	                <tr id="TrSEIKYU_NO_TOPTOUR" runat="server">

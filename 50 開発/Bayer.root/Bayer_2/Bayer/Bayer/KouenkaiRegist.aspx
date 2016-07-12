@@ -146,10 +146,16 @@
 						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
 							ícëÃÉRÅ[Éh
 						</td>
-						<td nowrap="nowrap" align="left" colspan="5">
+						<td nowrap="nowrap" align="left">
                             <asp:TextBox ID="DANTAI_CODE" runat="server" Width="62px" 
                                 MaxLength="6" TabIndex="5"></asp:TextBox>                                        
 
+						</td>
+						<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 75px;">
+							WBS Element
+						</td>
+						<td nowrap="nowrap" align="left" colspan="3">
+							<asp:Label ID="WBS_ELEMENT" runat="server" Width="202px"></asp:Label>
 						</td>
 					</tr>
 				</table>

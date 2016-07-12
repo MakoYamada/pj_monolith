@@ -2014,6 +2014,11 @@ Public Class AppModule
         Return DANTAI_CODE
     End Function
 
+    '団体コード
+    Public Shared Function GetName_WBS_ELEMENT(ByVal WBS_ELEMENT As String) As String
+        Return WBS_ELEMENT
+    End Function
+
     'SRM発注区分
     Public Shared Function GetName_SRM_HACYU_KBN(ByVal SRM_HACYU_KBN As String) As String
         Select Case SRM_HACYU_KBN
@@ -5095,6 +5100,11 @@ Public Class AppModule
     '団体コード
     Public Shared Sub SetForm_DANTAI_CODE(ByVal DANTAI_CODE As String, ByRef control As Label)
         control.Text = DANTAI_CODE
+    End Sub
+
+    'WBS Element(Phase3 Add)
+    Public Shared Sub SetForm_WBS_ELEMENT(ByVal WBS_ELEMENT As String, ByRef control As Label)
+        control.Text = WBS_ELEMENT
     End Sub
 
     '会合基本情報TimeStamp
