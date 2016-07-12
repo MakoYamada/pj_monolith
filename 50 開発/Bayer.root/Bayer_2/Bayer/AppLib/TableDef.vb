@@ -3644,6 +3644,8 @@
             Public TKT_LINE_NO As String
             Public ANS_TAXI_DATE As String
             Public TKT_USED_DATE As String
+            Public TKT_HATUTI As String
+            Public TKT_CHAKUTI As String
             Public TKT_ENTA As String
             Public ACCOUNT_CD As String
             Public KIHON_COST_CENTER As String

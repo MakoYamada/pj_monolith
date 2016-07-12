@@ -424,6 +424,8 @@ Partial Public Class TaxiMeisaiCsv
                 CsvData(wCnt).SANKASHA_ID = TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID
                 CsvData(wCnt).FROM_DATE = CmnModule.Format_Date(TBL_TAXITICKET_HAKKO(wCnt).FROM_DATE, CmnModule.DateFormatType.YYYYMMDD)
                 CsvData(wCnt).TKT_USED_DATE = CmnModule.Format_Date(TBL_TAXITICKET_HAKKO(wCnt).TKT_USED_DATE, CmnModule.DateFormatType.YYYYMMDD)
+                CsvData(wCnt).TKT_HATUTI = TBL_TAXITICKET_HAKKO(wCnt).TKT_HATUTI
+                CsvData(wCnt).TKT_CHAKUTI = TBL_TAXITICKET_HAKKO(wCnt).TKT_CHAKUTI
                 CsvData(wCnt).TKT_KAISHA = TBL_TAXITICKET_HAKKO(wCnt).TKT_KAISHA
             Next wCnt
         End If
@@ -537,6 +539,8 @@ Partial Public Class TaxiMeisaiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開始日")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日(依頼)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用年月日")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車発地")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車着地")))
         'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AcountCode")))
         'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Cost Center")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AccountCode(非課税)")))
@@ -580,6 +584,8 @@ Partial Public Class TaxiMeisaiCsv
             sb.Append(CmnCsv.SetData(CsvData(wCnt).FROM_DATE))
             sb.Append(CmnCsv.SetData(CsvData(wCnt).ANS_TAXI_DATE))
             sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_USED_DATE))
+            sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_HATUTI))
+            sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_CHAKUTI))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ACCOUNT_CD)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIHON_COST_CENTER)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INTERNAL_ORDER)))
