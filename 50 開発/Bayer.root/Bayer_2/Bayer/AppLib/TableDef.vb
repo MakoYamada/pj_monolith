@@ -53,6 +53,7 @@
             Public INPUT_USER As String
             Public UPDATE_DATE As String
             Public UPDATE_USER As String
+            Public WBS_ELEMENT As String    '@@@Phase3 ADD
 
             Public TEHAI_ID As String
             Public REQ_STATUS_TEHAI As String
@@ -152,6 +153,7 @@
             Public Const INPUT_USER As String = "INPUT_USER"
             Public Const UPDATE_DATE As String = "UPDATE_DATE"
             Public Const UPDATE_USER As String = "UPDATE_USER"
+            Public Const WBS_ELEMENT As String = "WBS_ELEMENT"    '@@@ Phase3 ADD
 
             Public Const TEHAI_ID As String = "TEHAI_ID"
             Public Const REQ_STATUS_TEHAI As String = "REQ_STATUS_TEHAI"
@@ -251,6 +253,7 @@
             Public Const INPUT_USER As String = "登録者"
             Public Const UPDATE_DATE As String = "更新日時"
             Public Const UPDATE_USER As String = "更新者"
+            Public Const WBS_ELEMENT As String = "WBSElement"   '@@@ Phase3 ADD
         End Class
     End Class
 

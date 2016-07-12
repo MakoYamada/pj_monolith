@@ -10,7 +10,7 @@ Public Class Proc
 
 #Region "ファイル項目"
 
-    Private Const COL_COUNT As Integer = 41 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 42 'ファイルの項目数(Phase3で41→42)
 
     Private Enum COL_NO
         Field1 = 0
@@ -54,6 +54,7 @@ Public Class Proc
         Field39
         Field40
         Field41
+        Field42 '@@@ Phase3 ADD
     End Enum
 
     Private Class COL_NAME
@@ -98,6 +99,7 @@ Public Class Proc
         Public Const Field39 As String = "予算額_課税"
         Public Const Field40 As String = "慰労会予算_課税"
         Public Const Field41 As String = "意見交換会予算_課税"
+        Public Const Field42 As String = "WBSElement"
     End Class
 #End Region
 

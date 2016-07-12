@@ -828,6 +828,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.INPUT_USER
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_DATE
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_USER
+            strSQL &= "," & TableDef.TBL_KOUENKAI.Column.WBS_ELEMENT
             strSQL &= ")"
             strSQL &= " VALUES"
             strSQL &= "(N'" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_NO) & "'"
@@ -881,6 +882,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.UPDATE_USER) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_KOUENKAI.WBS_ELEMENT) & "'"
             strSQL &= ")"
 
             Return strSQL
