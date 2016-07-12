@@ -34,6 +34,7 @@ Partial Public Class KouenkaiRireki
 
     Private Sub KouenkaiRireki_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         Session.Item(SessionDef.TBL_KOUENKAI) = TBL_KOUENKAI
+        Session.Item(SessionDef.DSP_KOUENKAI) = TBL_KOUENKAI
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -115,7 +116,7 @@ Partial Public Class KouenkaiRireki
             Me.GrvList.Visible = True
             Me.TrKOUENKAI_NAME.Visible = True
             Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(KEY_KOUENKAI_NO)
-            'Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(key_KOUENKAI_NAME)
+            Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(KEY_KOUENKAI_NAME)
             'Me.KOUENKAI_NO.Text = AppModule.GetName_KOUENKAI_NO(TBL_KOUENKAI(SEQ).KOUENKAI_NO)
             'Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_KOUENKAI(SEQ).KOUENKAI_NAME)
 

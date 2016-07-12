@@ -127,7 +127,7 @@ Partial Public Class KouenkaiRegist
                 KEY_KOUENKAI_NAME = Session.Item(SessionDef.KOUENKAI_NAME)
 
             Else
-                TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
+                'TBL_KOUENKAI = Session.Item(SessionDef.TBL_KOUENKAI)
                 DSP_KOUENKAI = Session.Item(SessionDef.DSP_KOUENKAI)
 
                 KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)

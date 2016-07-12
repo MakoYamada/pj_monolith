@@ -152,29 +152,29 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:BoundField DataField="BU" HeaderText="BU" 
+                        <asp:BoundField HeaderText="BU" 
                             ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                             <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_AREA" 
+                        <asp:BoundField 
                             HeaderText="エリア" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" HtmlEncode="False">
                             <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_EIGYOSHO" 
+                        <asp:BoundField 
                             HeaderText="営業所" ItemStyle-Wrap="false" 
                             HeaderStyle-Wrap="false" HtmlEncode="False">
                             <HeaderStyle Wrap="true"></HeaderStyle>
                             <ItemStyle Wrap="True" Width="80px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="KIKAKU_TANTO_NAME" HeaderText="企画担当者" 
+                        <asp:BoundField HeaderText="企画担当者" 
                             HtmlEncode="False">
                         <HeaderStyle Wrap="true" />
                         <ItemStyle Width="140px" Wrap="False" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="FROM_DATE" HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
+                        <asp:BoundField HeaderText="開催日" ItemStyle-Wrap="false" HeaderStyle-Wrap="false"
                             ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" Wrap="False" Width="100px"></ItemStyle>
@@ -207,6 +207,8 @@
                             </ItemStyle>
                         </asp:ButtonField>
                         <asp:BoundField DataField="TO_DATE" HeaderText="開催日TO" ReadOnly="True" />
+                        <asp:BoundField DataField="TIME_STAMP" HeaderText="TIME_STAMP2" />
+                        <asp:BoundField DataField="KOUENKAI_TITLE" HeaderText="KOUENKAI_TITLE" />
                     </Columns>
                 </asp:GridView>
             </td>
