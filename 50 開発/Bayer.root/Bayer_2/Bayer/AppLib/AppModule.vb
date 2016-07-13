@@ -709,6 +709,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIHON_INTERNAL_ORDER_TF.ToUpper Then TBL_KOTSUHOTEL.KIHON_INTERNAL_ORDER_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KIHON_ZETIA_CD.ToUpper Then TBL_KOTSUHOTEL.KIHON_ZETIA_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SRM_HACYU_KBN.ToUpper Then TBL_KOTSUHOTEL.SRM_HACYU_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.WBS_ELEMENT_KOUENKAI.ToUpper Then TBL_KOTSUHOTEL.WBS_ELEMENT_KOUENKAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SANKA_FLAG.ToUpper Then TBL_KOTSUHOTEL.SANKA_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 

@@ -3610,6 +3610,7 @@ Public Class SQL
             strSQL &= " ,WK_KOUENKAI.FROM_DATE"
             strSQL &= " ,WK_KOUENKAI.TO_DATE"
             strSQL &= " ,WK_KOUENKAI.DANTAI_CODE"
+            strSQL &= " ,WK_KOUENKAI.WBS_ELEMENT AS WBS_ELEMENT_KOUENKAI"
             strSQL &= " FROM"
             strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL"
             strSQL &= " , TBL_KOUENKAI AS WK_KOUENKAI"

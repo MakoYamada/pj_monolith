@@ -996,6 +996,7 @@
             Public KIHON_INTERNAL_ORDER_TF As String
             Public KIHON_ZETIA_CD As String
             Public SRM_HACYU_KBN As String
+            Public WBS_ELEMENT_KOUENKAI As String
 
             Public TKT_LINE_NO_1 As Integer
             Public TKT_LINE_NO_2 As Integer
@@ -1511,6 +1512,7 @@
             Public Const KIHON_INTERNAL_ORDER_TF As String = "KIHON_INTERNAL_ORDER_TF"
             Public Const KIHON_ZETIA_CD As String = "KIHON_ZETIA_CD"
             Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
+            Public Const WBS_ELEMENT_KOUENKAI As String = "WBS_ELEMENT_KOUENKAI"
 
             Public Const SHIHARAI_NO As String = "SHIHARAI_NO"
             Public Const SEISAN_YM As String = "SEISAN_YM"
