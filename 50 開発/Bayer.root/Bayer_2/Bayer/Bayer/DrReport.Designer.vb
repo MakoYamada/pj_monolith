@@ -1230,9 +1230,11 @@ Me.DR_SHISETSU_ADDRESS.Width = 2.644488!
 '
 'DR_SHISETSU_NAME
 '
+Me.DR_SHISETSU_NAME.CanGrow = false
 Me.DR_SHISETSU_NAME.DataField = "DR_SHISETSU_NAME"
 Me.DR_SHISETSU_NAME.Height = 0.2!
 Me.DR_SHISETSU_NAME.Left = 4.507481!
+Me.DR_SHISETSU_NAME.MultiLine = false
 Me.DR_SHISETSU_NAME.Name = "DR_SHISETSU_NAME"
 Me.DR_SHISETSU_NAME.Style = "font-size: 9pt; vertical-align: middle"
 Me.DR_SHISETSU_NAME.Text = Nothing
@@ -2088,6 +2090,7 @@ Me.TAXI_PRT_NAME2.CanGrow = false
 Me.TAXI_PRT_NAME2.DataField = "TAXI_PRT_NAME"
 Me.TAXI_PRT_NAME2.Height = 0.2!
 Me.TAXI_PRT_NAME2.Left = 5.9563!
+Me.TAXI_PRT_NAME2.MultiLine = false
 Me.TAXI_PRT_NAME2.Name = "TAXI_PRT_NAME2"
 Me.TAXI_PRT_NAME2.Style = "vertical-align: middle"
 Me.TAXI_PRT_NAME2.Text = Nothing
@@ -2161,9 +2164,11 @@ Me.REQ_O_TIME1_3.Width = 0.9858269!
 '
 'DR_SHISETSU_NAME2
 '
+Me.DR_SHISETSU_NAME2.CanGrow = false
 Me.DR_SHISETSU_NAME2.DataField = "DR_SHISETSU_NAME"
 Me.DR_SHISETSU_NAME2.Height = 0.1999998!
 Me.DR_SHISETSU_NAME2.Left = 4.507481!
+Me.DR_SHISETSU_NAME2.MultiLine = false
 Me.DR_SHISETSU_NAME2.Name = "DR_SHISETSU_NAME2"
 Me.DR_SHISETSU_NAME2.Style = "font-size: 9pt; vertical-align: middle"
 Me.DR_SHISETSU_NAME2.Text = Nothing
@@ -2755,8 +2760,9 @@ Me.TAXI_PRT_NAME1.CanGrow = false
 Me.TAXI_PRT_NAME1.DataField = "TAXI_PRT_NAME"
 Me.TAXI_PRT_NAME1.Height = 0.2!
 Me.TAXI_PRT_NAME1.Left = 5.942914!
+Me.TAXI_PRT_NAME1.MultiLine = false
 Me.TAXI_PRT_NAME1.Name = "TAXI_PRT_NAME1"
-Me.TAXI_PRT_NAME1.Style = "vertical-align: top"
+Me.TAXI_PRT_NAME1.Style = "vertical-align: middle"
 Me.TAXI_PRT_NAME1.Text = Nothing
 Me.TAXI_PRT_NAME1.Top = 0.2740158!
 Me.TAXI_PRT_NAME1.Width = 1.209055!
