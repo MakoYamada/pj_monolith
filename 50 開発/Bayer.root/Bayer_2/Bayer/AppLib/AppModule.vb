@@ -213,6 +213,9 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_NAME.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             '@@@ Phase2
 
+            '@@@ Phase3
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.WBS_ELEMENT.ToUpper Then TBL_SEIKYU.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            '@@@ Phase3
         Next wCnt
 
         Return TBL_SEIKYU

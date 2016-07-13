@@ -1624,6 +1624,7 @@ Public Class SQL
             strSQL &= "   ,WK1.TEHAI_TANTO_AREA"
             strSQL &= "   ,WK1.TEHAI_TANTO_EIGYOSHO"
             strSQL &= "   ,WK1.TEHAI_TANTO_NAME"
+            strSQL &= "   ,WK1.WBS_ELEMENT"
             strSQL &= "    FROM TBL_KOUENKAI WK1"
             strSQL &= "    WHERE  WK1.TIME_STAMP = "
             strSQL &= "     (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"

@@ -346,6 +346,10 @@
             Public TEHAI_TANTO_EIGYOSHO As String
             Public TEHAI_TANTO_NAME As String
             '@@@ Phase2
+
+            '@@@ Phase3
+            Public WBS_ELEMENT As String
+            '@@@ Phase3
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -427,6 +431,10 @@
             Public Const TEHAI_TANTO_EIGYOSHO As String = "TEHAI_TANTO_EIGYOSHO"
             Public Const TEHAI_TANTO_NAME As String = "TEHAI_TANTO_NAME"
             '@@@ Phase2
+
+            '@@@ Phase3
+            Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
+            '@@@ Phase3
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
@@ -506,6 +514,10 @@
             Public Const TEHAI_TANTO_EIGYOSHO As String = "手配担当者営業所"
             Public Const TEHAI_TANTO_NAME As String = "手配担当者氏名"
             '@@@ Phase2
+
+            '@@@ Phase3
+            Public Const WBS_ELEMENT As String = "WBS Element"
+            '@@@ Phase3
         End Class
     End Class
 
