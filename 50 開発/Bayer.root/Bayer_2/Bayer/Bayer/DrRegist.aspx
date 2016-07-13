@@ -262,7 +262,7 @@
 			                WBS Element
 		                </td>
 		                <td align="left" valign="middle" colspan="7">
-							<asp:Label ID="WBS_ELEMENT" runat="server" Width="100px"></asp:Label>
+							<asp:Label ID="WBS_ELEMENT" runat="server"></asp:Label>
 		                </td>
 		            </tr>
 	                <tr id="TrSEIKYU_NO_TOPTOUR" runat="server">

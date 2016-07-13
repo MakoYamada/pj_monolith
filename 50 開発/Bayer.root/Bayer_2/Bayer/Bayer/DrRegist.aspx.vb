@@ -20,6 +20,10 @@ Partial Public Class DrRegist
     Private KEY_SANKASHA_ID As String
     Private KEY_TIME_STAMP_BYL As String
     Private KEY_DR_MPID As String
+
+    Private KEY_TIME_STAMP As String
+    Private KEY_KOUENKAI_TITLE As String
+    Private KEY_KOUENKAI_NAME As String
     '@@@ Phase2
 
     Private DATA_MAINTENANCE As String
@@ -38,6 +42,9 @@ Partial Public Class DrRegist
         Session.Item(SessionDef.SANKASHA_ID) = KEY_SANKASHA_ID
         Session.Item(SessionDef.TIME_STAMP_BYL) = KEY_TIME_STAMP_BYL
         Session.Item(SessionDef.DR_MPID) = KEY_DR_MPID
+        Session.Item(SessionDef.TIME_STAMP) = KEY_TIME_STAMP
+        Session.Item(SessionDef.KOUENKAI_TITLE) = KEY_KOUENKAI_TITLE
+        Session.Item(SessionDef.KOUENKAI_NAME) = KEY_KOUENKAI_NAME
         'Session.Item(SessionDef.OldTBL_KOTSUHOTEL) = OldTBL_KOTSUHOTEL
 
         Session.Item(SessionDef.DATA_MAINTENANCE) = DATA_MAINTENANCE
@@ -277,6 +284,11 @@ Partial Public Class DrRegist
                 KEY_TIME_STAMP_BYL = Session.Item(SessionDef.TIME_STAMP_BYL)
                 KEY_DR_MPID = Session.Item(SessionDef.DR_MPID)
             End If
+
+            KEY_TIME_STAMP = Session.Item(SessionDef.TIME_STAMP)
+            KEY_KOUENKAI_TITLE = Session.Item(SessionDef.KOUENKAI_TITLE)
+            KEY_KOUENKAI_NAME = Session.Item(SessionDef.KOUENKAI_NAME)
+
             If IsNothing(KEY_SALESFORCE_ID) Then Return False
             'If IsNothing(DSP_KOTSUHOTEL) Then Return False
         Catch ex As Exception
@@ -601,7 +613,7 @@ Partial Public Class DrRegist
         AppModule.SetForm_DR_SHISETSU_ADDRESS(DSP_KOTSUHOTEL.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_ADDRESS)
         AppModule.SetForm_SHITEIGAI_RIYU(DSP_KOTSUHOTEL.SHITEIGAI_RIYU, Me.SHITEIGAI_RIYU)
         AppModule.SetForm_SEIKYU_NO_TOPTOUR(DSP_KOTSUHOTEL.SEIKYU_NO_TOPTOUR, Me.SEIKYU_NO_TOPTOUR)
-        AppModule.SetForm_WBS_ELEMENT(DSP_KOTSUHOTEL.WBS_ELEMENT, Me.WBS_ELEMENT1)
+        AppModule.SetForm_WBS_ELEMENT(DSP_KOTSUHOTEL.WBS_ELEMENT, Me.WBS_ELEMENT)
 
         '承認者情報
         AppModule.SetForm_SHONIN_NAME(DSP_KOTSUHOTEL.SHONIN_NAME, Me.SHONIN_NAME)
@@ -1393,6 +1405,9 @@ Partial Public Class DrRegist
 
             ReDim Preserve TBL_KOUENKAI(wCnt)
             TBL_KOUENKAI(0) = AppModule.SetRsData(RsData, TBL_KOUENKAI(0))
+            KEY_TIME_STAMP = TBL_KOUENKAI(0).TIME_STAMP
+            KEY_KOUENKAI_TITLE = TBL_KOUENKAI(0).KOUENKAI_TITLE
+            KEY_KOUENKAI_NAME = TBL_KOUENKAI(0).KOUENKAI_NAME
         End If
         RsData.Close()
 
