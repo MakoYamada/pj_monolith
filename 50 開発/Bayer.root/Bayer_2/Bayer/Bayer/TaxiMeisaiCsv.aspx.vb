@@ -404,6 +404,7 @@ Partial Public Class TaxiMeisaiCsv
             For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
                 ReDim Preserve CsvData(wCnt)
                 CsvData(wCnt).KOUENKAI_NAME = TBL_KOUENKAI.KOUENKAI_NAME
+                CsvData(wCnt).WBS_ELEMENT_KOUENKAI = TBL_KOUENKAI.WBS_ELEMENT
                 CsvData(wCnt).KIKAKU_TANTO_JIGYOUBU = TBL_KOUENKAI.KIKAKU_TANTO_JIGYOUBU
                 CsvData(wCnt).KIKAKU_TANTO_AREA = TBL_KOUENKAI.KIKAKU_TANTO_AREA
                 CsvData(wCnt).KIKAKU_TANTO_EIGYOSHO = TBL_KOUENKAI.KIKAKU_TANTO_EIGYOSHO
@@ -497,6 +498,7 @@ Partial Public Class TaxiMeisaiCsv
                     CsvData(wCnt).MR_EIGYOSHO = TBL_KOTSUHOTEL.MR_EIGYOSHO
                     CsvData(wCnt).MR_NAME = TBL_KOTSUHOTEL.MR_NAME
                     CsvData(wCnt).DR_YAKUWARI = appmodule.GetName_DR_YAKUWARI(TBL_KOTSUHOTEL.DR_YAKUWARI)
+                    CsvData(wCnt).WBS_ELEMENT = AppModule.GetName_WBS_ELEMENT(TBL_KOTSUHOTEL.WBS_ELEMENT)
 
                 End If
                 RsData.Close()
@@ -514,8 +516,10 @@ Partial Public Class TaxiMeisaiCsv
         '表題
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG No")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合 WBS Element")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR WBS Element")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("出欠")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ステータス")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種(金額)")))
@@ -560,8 +564,10 @@ Partial Public Class TaxiMeisaiCsv
         For wCnt = LBound(CsvData) To UBound(CsvData)
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).WBS_ELEMENT_KOUENKAI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_NAME)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).WBS_ELEMENT)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SANKA)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).STATUS)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))

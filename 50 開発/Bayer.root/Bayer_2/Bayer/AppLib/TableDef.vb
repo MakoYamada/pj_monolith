@@ -3691,6 +3691,8 @@
             Public TKT_SEIKYU_YM As String
             Public TKT_VOID As String
             Public TKT_MIKETSU As String
+            Public WBS_ELEMENT_KOUENKAI As String
+            Public WBS_ELEMENT As String
         End Structure
     End Class
 
