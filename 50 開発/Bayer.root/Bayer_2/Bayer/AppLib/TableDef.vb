@@ -3408,6 +3408,12 @@
 
             Public SHIHARAI_NO As String
             Public SEISAN_YM As String
+
+            '@@@ Phase3
+            Public WBS_ELEMENT_KOUENKAI As String
+            Public WBS_ELEMENT As String
+            '@@@ Phase3
+
         End Structure
         Public Class Column
             Public Const TKT_KAISHA As String = "TKT_KAISHA"
@@ -3607,6 +3613,11 @@
 
             Public Const SHIHARAI_NO As String = "SHIHARAI_NO"
             Public Const SEISAN_YM As String = "SEISAN_YM"
+
+            '@@@ Phase3
+            Public Const WBS_ELEMENT_KOUENKAI As String = "WBS_ELEMENT_KOUENKAI"
+            Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
+            '@@@ Phase3
         End Class
         Public Class Name
             Public Const TKT_KAISHA As String = "タクシー会社"

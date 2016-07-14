@@ -1170,6 +1170,9 @@ Public Class AppModule
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SHIHARAI_NO.ToUpper Then TBL_TAXITICKET_HAKKO.SHIHARAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SEISAN_YM.ToUpper Then TBL_TAXITICKET_HAKKO.SEISAN_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.WBS_ELEMENT_KOUENKAI.ToUpper Then TBL_TAXITICKET_HAKKO.WBS_ELEMENT_KOUENKAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.WBS_ELEMENT.ToUpper Then TBL_TAXITICKET_HAKKO.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_TAXITICKET_HAKKO
