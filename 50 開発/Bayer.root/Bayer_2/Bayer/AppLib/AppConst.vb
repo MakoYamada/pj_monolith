@@ -688,4 +688,17 @@ Public Class AppConst
         End Class
     End Class
 
+    Public Class MS_SAPKANRI
+        Public Class DATA_ID
+            Public Const AccountCode As String = "01"
+            Public Const CostCenter As String = "02"
+            Public Const DocumentHeader As String = "03"
+        End Class
+    End Class
+
+    Public Class POSTING_KEY
+        Public Const Plus As String = "40"
+        Public Const Minus As String = "50"
+    End Class
+
 End Class

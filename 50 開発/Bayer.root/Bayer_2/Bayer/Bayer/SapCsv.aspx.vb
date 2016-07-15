@@ -33,7 +33,12 @@ Partial Public Class SapCsv
         'IME設定
         CmnModule.SetIme(Me.JokenSHOUNIN_Y, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSHOUNIN_M, CmnModule.ImeType.Disabled)
-        CmnModule.SetIme(Me.SEIKYUSHO_NO, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_Y, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_M, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_D, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.DOCUMENT_HEADER, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ACCOUNT_CODE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.COST_CENTER, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -59,12 +64,6 @@ Partial Public Class SapCsv
 
         '入力チェック
         If Not Check() Then Exit Sub
-
-        '請求書番号必須入力
-        If Not CmnCheck.IsInput(Me.SEIKYUSHO_NO) Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書番号"), Me)
-            Exit Sub
-        End If
 
         BtnSapCSV.Visible = False
 
@@ -169,6 +168,52 @@ Partial Public Class SapCsv
             Return False
         End If
 
+        If Not CmnCheck.IsInput(Me.SEIKYU_Y) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書発行日(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEIKYU_M) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書発行日(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEIKYU_D) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書発行日(日)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.DOCUMENT_HEADER) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("注文番号"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.ACCOUNT_CODE) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("Account Code"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.COST_CENTER) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("Cost Center"), Me)
+            Return False
+        End If
+
+        '桁数
+        If Not CmnCheck.IsLengthEQ(Me.DOCUMENT_HEADER, 10) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("注文番号", 10), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.ACCOUNT_CODE, 7) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("Account Code", 7), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.COST_CENTER, 10) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("Cost Center", 10), Me)
+            Return False
+        End If
+
         '数値
         If Not CmnCheck.IsNumberOnly(Me.JokenSHOUNIN_Y) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("承認年月(年)"), Me)
@@ -180,11 +225,34 @@ Partial Public Class SapCsv
             Return False
         End If
 
+        If Not CmnCheck.IsNumberOnly(Me.SEIKYU_Y) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("請求書発行日(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEIKYU_M) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("請求書発行日(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEIKYU_D) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("請求書発行日(日)"), Me)
+            Return False
+        End If
+
         '日付妥当性
         If CmnCheck.IsInput(Me.JokenSHOUNIN_Y) OrElse CmnCheck.IsInput(Me.JokenSHOUNIN_M) Then
             Dim wStr As String = StrConv(Trim(Me.JokenSHOUNIN_Y.Text) & "/" & Trim(Me.JokenSHOUNIN_M.Text) & "/01", VbStrConv.Narrow)
             If Not IsDate(wStr) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("承認年月"), Me)
+                Return False
+            End If
+        End If
+
+        If CmnCheck.IsInput(Me.SEIKYU_Y) OrElse CmnCheck.IsInput(Me.SEIKYU_M) OrElse CmnCheck.IsInput(Me.SEIKYU_D) Then
+            Dim wStr As String = StrConv(Trim(Me.SEIKYU_Y.Text) & "/" & Trim(Me.SEIKYU_M.Text) & "/" & Trim(Me.SEIKYU_D.Text), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("請求書発行日"), Me)
                 Return False
             End If
         End If
@@ -779,7 +847,7 @@ Partial Public Class SapCsv
         Dim toDate As String = ""
         Dim JokenSeikyuNo As String = ""
         MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text, fromDate, toDate)
-        JokenSeikyuNo = Me.SEIKYUSHO_NO.Text
+        'JokenSeikyuNo = Me.SEIKYUSHO_NO.Text
 
         strSQL2 = SQL.TBL_SEIKYU.SapCsvMain(fromDate, toDate)
         Try

@@ -28,6 +28,12 @@
             timer = clearInterval(timer);
         }
     </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 111px;
+        }
+    </style>
 </head> 
 <body>
     <form id="form1" runat="server">
@@ -88,9 +94,9 @@
             <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #cccccc; width: 100%">
                 <table cellspacing="0" cellpadding="2" border="0" width="100%">
                     <tr align="left"><td style="text-align:left; font-weight:bold" colspan="4">SAP用CSV</td></tr>
-                    <tr><td></td></tr>
+                    <tr><td class="style1"></td></tr>
                     <tr>
-                        <td style="width:70px; text-align:left ">
+                        <td style="text-align:left" class="style1">
                             承認年月
                         </td>
                         <td align="left" style="width:200px">
@@ -101,11 +107,40 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="width:70px; text-align:left">
-                            請求書番号
+                        <td style="text-align:left" class="style1">
+                            請求書発行日
                         </td>
                         <td align="left" style="width:200px">
-                            <asp:TextBox ID="SEIKYUSHO_NO" runat="server" Width="180px" MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="SEIKYU_Y" runat="server" Width="50px" MaxLength="4"></asp:TextBox>
+                            年
+				            <asp:TextBox ID="SEIKYU_M" runat="server" Width="30px" MaxLength="2"></asp:TextBox>
+                            月
+				            <asp:TextBox ID="SEIKYU_D" runat="server" Width="30px" MaxLength="2"></asp:TextBox>
+                            日
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            注文番号
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="DOCUMENT_HEADER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            Account Code
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="ACCOUNT_CODE" runat="server" Width="114px" MaxLength="7"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            Cost Center
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="COST_CENTER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>
                         </td>
                         <td align="left">
                             &nbsp;&nbsp;&nbsp;
