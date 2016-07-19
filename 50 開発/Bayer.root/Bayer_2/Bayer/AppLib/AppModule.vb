@@ -1377,6 +1377,22 @@ Public Class AppModule
     End Function
 #End Region
 
+#Region "SAP管理マスタ"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_SAPKANRI As TableDef.MS_SAPKANRI.DataStruct) As TableDef.MS_SAPKANRI.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SAPKANRI.Column.DATA_ID.ToUpper Then MS_SAPKANRI.DATA_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SAPKANRI.Column.CODE.ToUpper Then MS_SAPKANRI.CODE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SAPKANRI.Column.BIKO.ToUpper Then MS_SAPKANRI.BIKO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SAPKANRI.Column.UPDATE_DATE.ToUpper Then MS_SAPKANRI.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.MS_SAPKANRI.Column.UPDATE_USER.ToUpper Then MS_SAPKANRI.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return MS_SAPKANRI
+    End Function
+#End Region
+
 #Region "コードマスタ"
     Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal MS_CODE As TableDef.MS_CODE.DataStruct) As TableDef.MS_CODE.DataStruct
         Dim wCnt As Integer = 0

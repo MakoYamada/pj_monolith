@@ -31,7 +31,7 @@
     <style type="text/css">
         .style1
         {
-            width: 111px;
+            width: 200px;
         }
     </style>
 </head> 
@@ -121,7 +121,8 @@
                     </tr>
                     <tr>
                         <td style="text-align:left" class="style1">
-                            íçï∂î‘çÜ
+                            íçï∂î‘çÜ &nbsp;
+                            ó·)450000<a style="color:Red">XXXX</a> 
                         </td>
                         <td align="left" style="width:200px">
                             <asp:TextBox ID="DOCUMENT_HEADER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>
@@ -129,7 +130,8 @@
                     </tr>
                     <tr>
                         <td style="text-align:left" class="style1">
-                            Account Code
+                            Account Code &nbsp;
+                            ó·)69<a style="color:Red">XXXXX</a> 
                         </td>
                         <td align="left" style="width:200px">
                             <asp:TextBox ID="ACCOUNT_CODE" runat="server" Width="114px" MaxLength="7"></asp:TextBox>
@@ -137,7 +139,8 @@
                     </tr>
                     <tr>
                         <td style="text-align:left" class="style1">
-                            Cost Center
+                            Cost Center &nbsp;
+                            ó·)YA00627<a style="color:Red">XXX</a> 
                         </td>
                         <td align="left" style="width:200px">
                             <asp:TextBox ID="COST_CENTER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>

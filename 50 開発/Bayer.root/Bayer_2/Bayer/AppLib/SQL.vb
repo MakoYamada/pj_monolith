@@ -1346,6 +1346,7 @@ Public Class SQL
             strSQL &= "  ,TSK.OTHER_TF"
             strSQL &= "  ,TSK.TAXI_TF"
             strSQL &= "  ,TSK.TAXI_SEISAN_TF"
+            strSQL &= "  ,TSK.KEI_TF"
             strSQL &= "  ,TSN.SHIHARAI_NO"
             strSQL &= "  FROM TBL_SEIKYU TSK"
             strSQL &= "  LEFT JOIN TBL_SHOUNIN TSN"
@@ -1369,6 +1370,7 @@ Public Class SQL
             strSQL &= "   ,WK1.SRM_HACYU_KBN"
             strSQL &= "   ,WK1.DANTAI_CODE"
             strSQL &= "   ,WK1.KIKAKU_TANTO_NAME"
+            strSQL &= "   ,WK1.WBS_ELEMENT"
             strSQL &= "    FROM TBL_KOUENKAI WK1"
             strSQL &= "    WHERE  WK1.TIME_STAMP = "
             strSQL &= "     (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
@@ -1414,6 +1416,7 @@ Public Class SQL
             strSQL &= ",WK2.ACCOUNT_CD"
             strSQL &= ",WK2.INTERNAL_ORDER"
             strSQL &= ",WK2.ZETIA_CD"
+            strSQL &= ",WK2.WBS_ELEMENT"
             strSQL &= ",SUM(CAST(ISNULL(WK2.ANS_MR_KOTSUHI,'0') AS BIGINT)) AS ANS_MR_KOTSUHI"
             strSQL &= ",SUM(CAST(ISNULL(WK2.ANS_MR_HOTELHI_TOZEI,'0') AS BIGINT)) AS ANS_MR_HOTELHI_TOZEI"
             strSQL &= " FROM"
@@ -1446,6 +1449,7 @@ Public Class SQL
             strSQL &= " WK2.COST_CENTER"
             strSQL &= ",WK2.ACCOUNT_CD"
             strSQL &= ",WK2.INTERNAL_ORDER"
+            strSQL &= ",WK2.WBS_ELEMENT"
             strSQL &= ",WK2.ZETIA_CD"
             strSQL &= ",SUM(CAST(ISNULL(WK2.ANS_MR_HOTELHI,'0') AS BIGINT)) AS ANS_MR_HOTELHI"
             strSQL &= ",SUM(CAST(ISNULL(WK2.ANS_MR_HOTELHI_TOZEI,'0') AS BIGINT)) AS ANS_MR_HOTELHI_TOZEI"
@@ -1482,7 +1486,7 @@ Public Class SQL
             strSQL &= "   TSK.KOUENKAI_NO"
             strSQL &= "  ,TSK.SEISAN_YM"
             strSQL &= "  ,TSK.KAIJOHI_TF"
-            strSQL &= "  ,TSK.KIZAIHI_TF"
+            strSQL &= "  ,TSK.KIZAIHI_bTF"
             strSQL &= "  ,TSK.INSHOKUHI_TF"
             strSQL &= "  ,TSK.KEI_991330401_TF"
             strSQL &= "  ,TSK.HOTELHI_TF"
@@ -8131,6 +8135,68 @@ Public Class SQL
             Dim strSQL As String = SQL_SELECT
 
             strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+    End Class
+
+    Public Class MS_SAPKANRI
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " MS_SAPKANRI.*" _
+        & " FROM MS_SAPKANRI"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " MS_SAPKANRI.DATA_ID"
+
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byDATA_ID(ByVal DATA_ID As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE MS_SAPKANRI.DATA_ID=N'" & CmnDb.SqlString(DATA_ID) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal MS_SAPKANRI As TableDef.MS_SAPKANRI.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO MS_SAPKANRI"
+            strSQL &= "(" & TableDef.MS_SAPKANRI.Column.DATA_ID
+            strSQL &= "," & TableDef.MS_SAPKANRI.Column.CODE
+            strSQL &= "," & TableDef.MS_SAPKANRI.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.MS_SAPKANRI.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(MS_SAPKANRI.DATA_ID) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_SAPKANRI.CODE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_SAPKANRI.BIKO) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_SAPKANRI.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal MS_SAPKANRI As TableDef.MS_SAPKANRI.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE MS_SAPKANRI SET"
+            strSQL &= " " & TableDef.MS_SAPKANRI.Column.CODE & "=N'" & CmnDb.SqlString(MS_SAPKANRI.CODE) & "'"
+            strSQL &= "," & TableDef.MS_SAPKANRI.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.MS_SAPKANRI.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(MS_SAPKANRI.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.MS_SAPKANRI.Column.DATA_ID & "=N'" & CmnDb.SqlString(MS_SAPKANRI.DATA_ID) & "'"
 
             Return strSQL
         End Function

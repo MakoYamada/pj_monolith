@@ -2924,6 +2924,30 @@
         End Class
     End Class
 
+    Public Class MS_SAPKANRI
+        <Serializable()> Public Structure DataStruct
+            Public DATA_ID As String
+            Public CODE As String
+            Public BIKO As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+        End Structure
+        Public Class Column
+            Public Const DATA_ID As String = "DATA_ID"
+            Public Const CODE As String = "CODE"
+            Public Const BIKO As String = "BIKO"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+        End Class
+        Public Class Name
+            Public Const DATA_ID As String = "ID"
+            Public Const CODE As String = "出力値"
+            Public Const BIKO As String = "備考"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+        End Class
+    End Class
+
     Public Class MS_CODE
         <Serializable()> Public Structure DataStruct
             Public CODE As String
