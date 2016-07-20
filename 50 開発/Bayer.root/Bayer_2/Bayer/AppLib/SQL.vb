@@ -1435,7 +1435,7 @@ Public Class SQL
             strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(kouenkaiNo) & "'"
             strSQL &= " AND WK2.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(seisanNo) & "'"
             strSQL &= " AND (CAST(ISNULL(WK2.ANS_MR_KOTSUHI,'') AS BIGINT)) <> 0"
-            strSQL &= " GROUP BY WK2.COST_CENTER,WK2.ACCOUNT_CD,WK2.INTERNAL_ORDER,WK2.ZETIA_CD"
+            strSQL &= " GROUP BY WK2.COST_CENTER,WK2.ACCOUNT_CD,WK2.INTERNAL_ORDER,WK2.ZETIA_CD,WK2.WBS_ELEMENT"
             strSQL &= " ORDER BY WK2.COST_CENTER"
 
             Return strSQL
@@ -1469,7 +1469,7 @@ Public Class SQL
             strSQL &= " WK1.KOUENKAI_NO = N'" & CmnDb.SqlString(kouenkaiNo) & "'"
             strSQL &= " AND WK2.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(seisanNo) & "'"
             strSQL &= " AND (CAST(ISNULL(WK2.ANS_MR_HOTELHI,'') AS BIGINT) + CAST(ISNULL(WK2.ANS_MR_HOTELHI_TOZEI,'') AS BIGINT)) <> 0"
-            strSQL &= " GROUP BY WK2.COST_CENTER,WK2.ACCOUNT_CD,WK2.INTERNAL_ORDER,WK2.ZETIA_CD"
+            strSQL &= " GROUP BY WK2.COST_CENTER,WK2.ACCOUNT_CD,WK2.INTERNAL_ORDER,WK2.ZETIA_CD,WK2.WBS_ELEMENT"
             strSQL &= " ORDER BY WK2.COST_CENTER"
 
             Return strSQL

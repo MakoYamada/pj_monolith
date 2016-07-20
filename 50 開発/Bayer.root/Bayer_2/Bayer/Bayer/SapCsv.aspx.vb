@@ -1063,7 +1063,7 @@ Partial Public Class SapCsv
         Dim i As Integer = 0
         Dim SeikyuData() As TableDef.TBL_SEIKYU.DataStruct
         Dim csvData() As TableDef.SAP_CSV.DataStruct
-        rowCnt = 1
+        rowCnt = 2
 
         '明細行2行目以降のデータを先に作成
         While RsData2.Read()
@@ -1128,7 +1128,7 @@ Partial Public Class SapCsv
         MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text, "", toDate)
 
         '明細行1行目
-        rowCnt = 1
+        rowCnt = 2
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("50")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SAP_AccountCode)))
