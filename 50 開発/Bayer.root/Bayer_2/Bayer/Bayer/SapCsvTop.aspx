@@ -28,6 +28,12 @@
             timer = clearInterval(timer);
         }
     </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 200px;
+        }
+    </style>
 </head> 
 <body>
     <form id="form1" runat="server">
@@ -98,6 +104,46 @@
                             îN
 				            <asp:TextBox ID="JokenSHOUNIN_M" runat="server" Width="30px" MaxLength="2"></asp:TextBox>
                             åé
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            êøãÅèëî≠çsì˙
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="SEIKYU_Y" runat="server" Width="50px" MaxLength="4"></asp:TextBox>
+                            îN
+				            <asp:TextBox ID="SEIKYU_M" runat="server" Width="30px" MaxLength="2"></asp:TextBox>
+                            åé
+				            <asp:TextBox ID="SEIKYU_D" runat="server" Width="30px" MaxLength="2"></asp:TextBox>
+                            ì˙
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            íçï∂î‘çÜ &nbsp;
+                            ó·)450000<a style="color:Red">XXXX</a> 
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="DOCUMENT_HEADER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            Account Code &nbsp;
+                            ó·)69<a style="color:Red">XXXXX</a> 
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="ACCOUNT_CODE" runat="server" Width="114px" MaxLength="7"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left" class="style1">
+                            Cost Center &nbsp;
+                            ó·)YA00627<a style="color:Red">XXX</a> 
+                        </td>
+                        <td align="left" style="width:200px">
+                            <asp:TextBox ID="COST_CENTER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>
                         </td>
                         <td align="left">
                             &nbsp;&nbsp;&nbsp;

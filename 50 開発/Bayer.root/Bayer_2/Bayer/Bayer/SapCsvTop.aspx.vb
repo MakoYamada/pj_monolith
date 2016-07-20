@@ -4,7 +4,15 @@ Imports System.Runtime.Remoting.Messaging.AsyncResult
 Partial Public Class SapCsvTop
     Inherits WebBase
 
-    Private Const ZEI_CD_HIKAZEI As String = "V0" '消費税コード(非課税)
+    Private Const ZEI_CD_HIKAZEI As String = "98" '消費税コード(非課税)
+
+    Private Const LEN_DocumentHeader As Integer = 6
+    Private Const LEN_AccountCode As Integer = 2
+    Private Const LEN_CostCenter As Integer = 7
+
+    Dim SAP_DocumentHeader As String
+    Dim SAP_AccountCode As String
+    Dim SAP_CostCenter As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '遷移元チェック
@@ -17,6 +25,9 @@ Partial Public Class SapCsvTop
 
         '共通チェック
         IsPageOK(False, Session.Item(SessionDef.LoginID), Me)
+
+        'SAP管理マスタ取得 Phase3 Add
+        Call GetSapKanri()
 
         If Not Page.IsPostBack Then
 
@@ -33,6 +44,12 @@ Partial Public Class SapCsvTop
         'IME設定
         CmnModule.SetIme(Me.JokenSHOUNIN_Y, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSHOUNIN_M, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_Y, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_M, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEIKYU_D, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.DOCUMENT_HEADER, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.ACCOUNT_CODE, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.COST_CENTER, CmnModule.ImeType.Disabled)
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -48,6 +65,11 @@ Partial Public Class SapCsvTop
         Me.TblLoginUser.Visible = True
         Me.LabelLoginUser.Text = MS_USER.LOGIN_ID & "：" & MS_USER.USER_NAME & " 様"
 
+        'SAP管理マスタ登録内容表示
+        Me.DOCUMENT_HEADER.Text = SAP_DocumentHeader
+        Me.ACCOUNT_CODE.Text = SAP_AccountCode
+        Me.COST_CENTER.Text = SAP_CostCenter
+
         'CSVダウンロードボタン非表示(データ生成終了時に表示)
         Me.BtnDL.Visible = False
         BtnSapCSV.Visible = True
@@ -58,6 +80,21 @@ Partial Public Class SapCsvTop
 
         '入力チェック
         If Not Check() Then Exit Sub
+
+        'SAP管理マスタ更新
+        Dim MS_SAPKANRI As TableDef.MS_SAPKANRI.DataStruct
+        MS_SAPKANRI.DATA_ID = AppConst.MS_SAPKANRI.DATA_ID.DocumentHeader
+        MS_SAPKANRI.CODE = Me.DOCUMENT_HEADER.Text
+        MS_SAPKANRI.UPDATE_USER = Session.Item(SessionDef.LoginID)
+        Call UpdateSapKanri(MS_SAPKANRI)
+
+        MS_SAPKANRI.DATA_ID = AppConst.MS_SAPKANRI.DATA_ID.AccountCode
+        MS_SAPKANRI.CODE = Me.ACCOUNT_CODE.Text
+        Call UpdateSapKanri(MS_SAPKANRI)
+
+        MS_SAPKANRI.DATA_ID = AppConst.MS_SAPKANRI.DATA_ID.CostCenter
+        MS_SAPKANRI.CODE = Me.COST_CENTER.Text
+        Call UpdateSapKanri(MS_SAPKANRI)
 
         BtnSapCSV.Visible = False
 
@@ -162,6 +199,52 @@ Partial Public Class SapCsvTop
             Return False
         End If
 
+        If Not CmnCheck.IsInput(Me.SEIKYU_Y) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書発行日(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEIKYU_M) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書発行日(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEIKYU_D) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("請求書発行日(日)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.DOCUMENT_HEADER) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("注文番号"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.ACCOUNT_CODE) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("Account Code"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.COST_CENTER) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("Cost Center"), Me)
+            Return False
+        End If
+
+        '桁数
+        If Not CmnCheck.IsLengthEQ(Me.DOCUMENT_HEADER, 10) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("注文番号", 10), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.ACCOUNT_CODE, 7) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("Account Code", 7), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.COST_CENTER, 10) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("Cost Center", 10), Me)
+            Return False
+        End If
+
         '数値
         If Not CmnCheck.IsNumberOnly(Me.JokenSHOUNIN_Y) Then
             CmnModule.AlertMessage(MessageDef.Error.NumberOnly("承認年月(年)"), Me)
@@ -173,6 +256,21 @@ Partial Public Class SapCsvTop
             Return False
         End If
 
+        If Not CmnCheck.IsNumberOnly(Me.SEIKYU_Y) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("請求書発行日(年)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEIKYU_M) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("請求書発行日(月)"), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEIKYU_D) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("請求書発行日(日)"), Me)
+            Return False
+        End If
+
         '日付妥当性
         If CmnCheck.IsInput(Me.JokenSHOUNIN_Y) OrElse CmnCheck.IsInput(Me.JokenSHOUNIN_M) Then
             Dim wStr As String = StrConv(Trim(Me.JokenSHOUNIN_Y.Text) & "/" & Trim(Me.JokenSHOUNIN_M.Text) & "/01", VbStrConv.Narrow)
@@ -180,6 +278,28 @@ Partial Public Class SapCsvTop
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("承認年月"), Me)
                 Return False
             End If
+        End If
+
+        If CmnCheck.IsInput(Me.SEIKYU_Y) OrElse CmnCheck.IsInput(Me.SEIKYU_M) OrElse CmnCheck.IsInput(Me.SEIKYU_D) Then
+            Dim wStr As String = StrConv(Trim(Me.SEIKYU_Y.Text) & "/" & Trim(Me.SEIKYU_M.Text) & "/" & Trim(Me.SEIKYU_D.Text), VbStrConv.Narrow)
+            If Not IsDate(wStr) Then
+                CmnModule.AlertMessage(MessageDef.Error.Invalid("請求書発行日"), Me)
+                Return False
+            End If
+        End If
+
+        '内容
+        If Left(Me.DOCUMENT_HEADER.Text, Me.LEN_DocumentHeader) <> Left(SAP_DocumentHeader, Me.LEN_DocumentHeader) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("注文番号の形式"), Me)
+            Return False
+        End If
+        If Left(Me.ACCOUNT_CODE.Text, Me.LEN_AccountCode) <> Left(SAP_AccountCode, Me.LEN_AccountCode) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("Account Codeの形式"), Me)
+            Return False
+        End If
+        If Left(Me.COST_CENTER.Text, Me.LEN_CostCenter) <> Left(SAP_CostCenter, Me.LEN_CostCenter) Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid("Cost Centerの形式"), Me)
+            Return False
         End If
 
         Return True
@@ -200,46 +320,52 @@ Partial Public Class SapCsvTop
         Dim Kingaku As Long = 0
 
         '非課税金額レコード(都税以外)
-        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.KAIJOHI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.INSHOKUHI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.KIZAIHI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.HOTELHI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.AIR_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.JR_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.OTHER_TRAFFIC_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.JINKENHI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.KANRIHI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.HOTEL_COMMISSION_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.TAXI_COMMISSION_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.OTHER_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.TAXI_TF) + _
-                  CmnModule.DbVal_Kingaku(SeikyuData.TAXI_SEISAN_TF)
+        'Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.KAIJOHI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.INSHOKUHI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.KIZAIHI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.HOTELHI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.AIR_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.JR_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.OTHER_TRAFFIC_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.JINKENHI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.KANRIHI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.HOTEL_COMMISSION_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.TAXI_COMMISSION_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.OTHER_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.TAXI_TF) + _
+        '          CmnModule.DbVal_Kingaku(SeikyuData.TAXI_SEISAN_TF)
+
+        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.KEI_TF) - _
+                CmnModule.DbVal_Kingaku(SeikyuData.HOTELHI_TOZEI)
 
         If Kingaku <> 0 Then
             lngTotalKingaku += Kingaku '金額加算
 
+            Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+            If Kingaku < 0 Then
+                wPostingKey = AppConst.POSTING_KEY.Minus
+            End If
+
             rowCnt += 1
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ACCOUNT_CD_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.COST_CENTER)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ZETIA_CD)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.WBS_ELEMENT)))
             If isTopTour Then
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -255,28 +381,71 @@ Partial Public Class SapCsvTop
         If Kingaku <> 0 Then
             lngTotalKingaku += Kingaku '金額加算
 
+            Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+            If Kingaku < 0 Then
+                wPostingKey = AppConst.POSTING_KEY.Minus
+            End If
+
             rowCnt += 1
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ACCOUNT_CD_TF)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.COST_CENTER)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ZETIA_CD)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_TF)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.WBS_ELEMENT)))
+            If isTopTour Then
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME), True))
+            End If
+            sb.Append(vbNewLine)
+        End If
+
+        '課税金額(慰労会)レコード
+        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.IROUKAIHI_T)
+        If Kingaku <> 0 Then
+            lngTotalKingaku += Kingaku '金額加算
+
+            Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+            If Kingaku < 0 Then
+                wPostingKey = AppConst.POSTING_KEY.Minus
+            End If
+
+            rowCnt += 1
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ACCOUNT_CD_T)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ENT")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.COST_CENTER)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_T)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.WBS_ELEMENT)))
             If isTopTour Then
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -293,66 +462,31 @@ Partial Public Class SapCsvTop
         If Kingaku <> 0 Then
             lngTotalKingaku += Kingaku '金額加算
 
-            rowCnt += 1
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ACCOUNT_CD_T)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.COST_CENTER)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_T)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ZETIA_CD)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            If isTopTour Then
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NO)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME), True))
+            Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+            If Kingaku < 0 Then
+                wPostingKey = AppConst.POSTING_KEY.Minus
             End If
-            sb.Append(vbNewLine)
-        End If
-
-        '課税金額(慰労会)レコード
-        Kingaku = CmnModule.DbVal_Kingaku(SeikyuData.IROUKAIHI_T)
-        If Kingaku <> 0 Then
-            lngTotalKingaku += Kingaku '金額加算
-
 
             rowCnt += 1
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ACCOUNT_CD_T)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.COST_CENTER)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_T)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ZETIA_CD)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ENT")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_T)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.WBS_ELEMENT)))
             If isTopTour Then
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -388,29 +522,31 @@ Partial Public Class SapCsvTop
                 If Kingaku <> 0 Then
                     lngTotalKingaku += Kingaku
 
+                    Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+                    If Kingaku < 0 Then
+                        wPostingKey = AppConst.POSTING_KEY.Minus
+                    End If
+
                     rowCnt += 1
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
-                    'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6821200")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6829000"))) '2015/1/6 UPDATE
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6829000")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).COST_CENTER)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).ZETIA_CD)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).INTERNAL_ORDER)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).WBS_ELEMENT)))
                     If isTopTour Then
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -485,28 +621,31 @@ Partial Public Class SapCsvTop
                 If Kingaku <> 0 Then
                     lngTotalKingaku += Kingaku
 
+                    Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+                    If Kingaku < 0 Then
+                        wPostingKey = AppConst.POSTING_KEY.Minus
+                    End If
+
                     rowCnt += 1
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6821400")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).COST_CENTER)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).ZETIA_CD)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).INTERNAL_ORDER)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).WBS_ELEMENT)))
                     If isTopTour Then
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -523,29 +662,31 @@ Partial Public Class SapCsvTop
                     '都税が0円以外のときのみレコード作成
                     lngTotalKingaku += Kingaku
 
+                    Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+                    If Kingaku < 0 Then
+                        wPostingKey = AppConst.POSTING_KEY.Minus
+                    End If
+
                     rowCnt += 1
-                    ReDim Preserve csvData(rowCnt)
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6821400")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).COST_CENTER)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).ZETIA_CD)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).INTERNAL_ORDER)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).WBS_ELEMENT)))
                     If isTopTour Then
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -666,31 +807,31 @@ Partial Public Class SapCsvTop
                 Dim Kingaku As Long = CmnModule.DbVal_Kingaku(TaxiData(wCnt).TKT_URIAGE)
                 lngTotalKingaku += Kingaku
 
+                Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
+                If Kingaku < 0 Then
+                    wPostingKey = AppConst.POSTING_KEY.Minus
+                End If
+
                 rowCnt += 1
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("40")))
-                '2015/2/10 UPDATE
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(wPostingKey)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6833200")))
-                'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ACCOUNT_CD_T)))
-                '2015/2/10 UPDATE END
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Kingaku.ToString & ".00")))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TaxiData(wCnt).COST_CENTER)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SHIHARAI_NO)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.ZETIA_CD)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 If isTopTour Then
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.DANTAI_CODE)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
@@ -851,27 +992,25 @@ Partial Public Class SapCsvTop
 
         'タイトル行1行目
         Dim rowCnt As Integer = 0
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("BKZ")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("BUKRS")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("BLDAT")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("BLART")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("XBLNR")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("BKTXT")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("WAERS")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ZFBDT")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ZTERM")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("XMWST")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("NEWBS")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("NEWKO")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("WRBTR")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MWSKZ")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("KOSTL")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AUFNR")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("SGTXT")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ZLSPR")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ZJP1")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("BARCD")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ZUONR"), True))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("R")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi_" & Me.JokenSHOUNIN_M.Text & "_" & Me.JokenSHOUNIN_Y.Text)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi_一括請求" & Me.JokenSHOUNIN_M.Text & "月分")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
         sb.Append(vbNewLine)
 
         If Not Write_TBL_BUNSEKICSV(sb.ToString, rowCnt) Then
@@ -880,10 +1019,41 @@ Partial Public Class SapCsvTop
             Return False
         End If
         sb.Remove(0, sb.Length)
+
+        'タイトル行2行目
+        rowCnt += 1
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("H")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.SEIKYU_D.Text & "." & Me.SEIKYU_M.Text & "." & Me.SEIKYU_Y.Text)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.SEIKYU_D.Text & "." & Me.SEIKYU_M.Text & "." & Me.SEIKYU_Y.Text)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("SA")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JPY")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.DOCUMENT_HEADER.Text)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
+        sb.Append(vbNewLine)
+
+        If Not Write_TBL_BUNSEKICSV(sb.ToString, rowCnt) Then
+            RsData2.Close()
+            CmnModule.AlertMessage("対象データ出力に失敗しました。LINE_NO=" & wCnt.ToString, Me)
+            Exit Function
+        End If
+        sb.Remove(1, sb.Length)
+
         Dim i As Integer = 0
         Dim SeikyuData() As TableDef.TBL_SEIKYU.DataStruct
         Dim csvData() As TableDef.SAP_CSV.DataStruct
-        rowCnt = 1
+        rowCnt = 2
 
         '明細行2行目以降のデータを先に作成
         While RsData2.Read()
@@ -948,29 +1118,26 @@ Partial Public Class SapCsvTop
         MyModule.GetSeisanFromTo(Me.JokenSHOUNIN_Y.Text, Me.JokenSHOUNIN_M.Text, "", toDate)
 
         '明細行1行目
-        rowCnt = 1
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("0094")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SAP_SEIKYU_YMD(toDate))))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("KR")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Top tour")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JPY")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("31")))
-        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("7007466")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6231944")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(lngTotalKingaku.ToString)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("**")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+        rowCnt = 2
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("L")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("50")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SAP_AccountCode)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(lngTotalKingaku.ToString & ".00")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SAP_CostCenter)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text & "月分")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("E")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""), True))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
         sb.Append(vbNewLine)
 
         rtnStr = sb.ToString
@@ -1293,5 +1460,73 @@ Partial Public Class SapCsvTop
 
         BtnDL.Visible = False
         BtnSapCSV.Visible = True
+    End Sub
+
+    ''' <summary>
+    ''' SAP管理マスタデータ取得
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Sub GetSapKanri()
+        Dim MS_SAPKANRI As TableDef.MS_SAPKANRI.DataStruct
+        Dim wFlag As Boolean = False
+
+        Dim wDB As SqlClient.SqlConnection
+        wDB = New SqlClient.SqlConnection(ConfigurationManager.AppSettings("ConnectionString"))
+
+        Dim strSQL As String = SQL.MS_SAPKANRI.AllData
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        SAP_DocumentHeader = String.Empty
+        SAP_AccountCode = String.Empty
+        SAP_CostCenter = String.Empty
+
+        Try
+            CmnDb.DbOpen(wDB)
+            RsData = CmnDb.ReadForDeligate(strSQL, wDB)
+
+            While RsData.Read()
+                wFlag = True
+                MS_SAPKANRI = Nothing
+                MS_SAPKANRI = AppModule.SetRsData(RsData, MS_SAPKANRI)
+                Select Case MS_SAPKANRI.DATA_ID
+                    Case AppConst.MS_SAPKANRI.DATA_ID.DocumentHeader
+                        SAP_DocumentHeader = MS_SAPKANRI.CODE
+                    Case AppConst.MS_SAPKANRI.DATA_ID.AccountCode
+                        SAP_AccountCode = MS_SAPKANRI.CODE
+                    Case AppConst.MS_SAPKANRI.DATA_ID.CostCenter
+                        SAP_CostCenter = MS_SAPKANRI.CODE
+                    Case Else
+                End Select
+            End While
+            RsData.Close()
+
+        Catch ex As Exception
+            CmnDb.DbClose(wDB)
+            wDB.Dispose()
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+        End Try
+
+        CmnDb.DbClose(wDB)
+        wDB.Dispose()
+    End Sub
+
+    Private Sub UpdateSapKanri(ByVal MS_SAPKANRI As TableDef.MS_SAPKANRI.DataStruct)
+
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim strSQL As String = SQL.MS_SAPKANRI.byDATA_ID(AppConst.MS_SAPKANRI.DATA_ID.DocumentHeader)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            strSQL = SQL.MS_SAPKANRI.Update(MS_SAPKANRI)
+        Else
+            strSQL = SQL.MS_SAPKANRI.Insert(MS_SAPKANRI)
+        End If
+        RsData.Close()
+        Try
+            CmnDb.DbOpen(MyBase.DbConnection)
+            CmnDb.Execute(strSQL, MyBase.DbConnection)
+        Catch ex As Exception
+            Throw New Exception(ex.ToString & Session.Item(SessionDef.DbError))
+        End Try
     End Sub
 End Class

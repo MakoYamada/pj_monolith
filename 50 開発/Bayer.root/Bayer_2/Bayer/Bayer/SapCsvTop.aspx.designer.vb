@@ -223,6 +223,60 @@ Partial Public Class SapCsvTop
     Protected WithEvents JokenSHOUNIN_M As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''SEIKYU_Y コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEIKYU_Y As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SEIKYU_M コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEIKYU_M As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''SEIKYU_D コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEIKYU_D As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''DOCUMENT_HEADER コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents DOCUMENT_HEADER As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ACCOUNT_CODE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents ACCOUNT_CODE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''COST_CENTER コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents COST_CENTER As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''BtnSapCSV コントロール。
     '''</summary>
     '''<remarks>
