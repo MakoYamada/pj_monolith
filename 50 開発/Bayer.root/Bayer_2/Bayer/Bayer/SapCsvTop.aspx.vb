@@ -1048,7 +1048,7 @@ Partial Public Class SapCsvTop
             CmnModule.AlertMessage("対象データ出力に失敗しました。LINE_NO=" & wCnt.ToString, Me)
             Exit Function
         End If
-        sb.Remove(1, sb.Length)
+        sb.Remove(0, sb.Length)
 
         Dim i As Integer = 0
         Dim SeikyuData() As TableDef.TBL_SEIKYU.DataStruct
