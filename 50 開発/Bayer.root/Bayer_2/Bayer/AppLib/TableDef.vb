@@ -3397,6 +3397,8 @@
             Public ANS_TAXI_HAKKO_DATE_20 As String
             Public ANS_TAXI_RMKS_20 As String
             Public TAXI_HAKKO_DATE As String
+            Public REQ_TAXI_NOTE As String
+            Public ANS_TAXI_NOTE As String
 
             Public SALEFORCE_ID As String
             Public TIME_STAMP_BYL As String
@@ -3405,6 +3407,7 @@
             Public COST_CENTER As String
             Public REQ_TAXI_DATE As String
             Public ANS_TAXI_DATE As String
+            Public ANS_TAXI_RMKS As String
 
             Public SRM_HACYU_KBN As String
             Public KAIJO_NAME As String
@@ -3610,6 +3613,9 @@
             Public Const COST_CENTER As String = "COST_CENTER"
             Public Const REQ_TAXI_DATE As String = "REQ_TAXI_DATE"
             Public Const ANS_TAXI_DATE As String = "ANS_TAXI_DATE"
+            Public Const ANS_TAXI_RMKS As String = "ANS_TAXI_RMKS"
+            Public Const REQ_TAXI_NOTE As String = "REQ_TAXI_NOTE"
+            Public Const ANS_TAXI_NOTE As String = "ANS_TAXI_NOTE"
 
             Public Const SRM_HACYU_KBN As String = "SRM_HACYU_KBN"
             Public Const KAIJO_NAME As String = "KAIJO_NAME"

@@ -1003,8 +1003,8 @@ Partial Public Class SapCsv
         'タイトル行1行目
         Dim rowCnt As Integer = 0
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("R")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi_" & Me.JokenSHOUNIN_M.Text & "_" & Me.JokenSHOUNIN_Y.Text)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi_一括請求" & Me.JokenSHOUNIN_M.Text & "月分")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi_" & Me.JokenSHOUNIN_M.Text.PadLeft(2, "0") & "_" & Me.JokenSHOUNIN_Y.Text.PadLeft(4, "0"))))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi_一括請求" & Me.JokenSHOUNIN_M.Text.PadLeft(2, "0") & "月分")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1034,8 +1034,8 @@ Partial Public Class SapCsv
         rowCnt += 1
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("H")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.SEIKYU_D.Text & "." & Me.SEIKYU_M.Text & "." & Me.SEIKYU_Y.Text)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.SEIKYU_D.Text & "." & Me.SEIKYU_M.Text & "." & Me.SEIKYU_Y.Text)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.SEIKYU_D.Text.PadLeft(2, "0") & "." & Me.SEIKYU_M.Text.PadLeft(2, "0") & "." & Me.SEIKYU_Y.Text.PadLeft(4, "0"))))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.SEIKYU_D.Text.PadLeft(2, "0") & "." & Me.SEIKYU_M.Text.PadLeft(2, "0") & "." & Me.SEIKYU_Y.Text.PadLeft(4, "0"))))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("SA")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("JPY")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1139,7 +1139,7 @@ Partial Public Class SapCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SAP_CostCenter)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text & "月分")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text.PadLeft(2, "0") & "月分")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))

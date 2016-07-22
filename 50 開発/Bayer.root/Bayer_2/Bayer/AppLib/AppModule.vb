@@ -1142,6 +1142,9 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.COST_CENTER.ToUpper Then TBL_TAXITICKET_HAKKO.COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.REQ_TAXI_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.REQ_TAXI_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_RMKS.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_RMKS = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.REQ_TAXI_NOTE.ToUpper Then TBL_TAXITICKET_HAKKO.REQ_TAXI_NOTE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_NOTE.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_NOTE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.SRM_HACYU_KBN.ToUpper Then TBL_TAXITICKET_HAKKO.SRM_HACYU_KBN = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.KAIJO_NAME.ToUpper Then TBL_TAXITICKET_HAKKO.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
