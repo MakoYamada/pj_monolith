@@ -3723,6 +3723,9 @@
             Public TKT_MIKETSU As String
             Public WBS_ELEMENT_KOUENKAI As String
             Public WBS_ELEMENT As String
+            Public REQ_TAXI_NOTE As String
+            Public ANS_TAXI_NOTE As String
+            Public ANS_TAXI_RMKS As String
         End Structure
     End Class
 

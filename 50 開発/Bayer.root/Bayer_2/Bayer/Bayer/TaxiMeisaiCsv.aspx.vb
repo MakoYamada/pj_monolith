@@ -443,44 +443,64 @@ Partial Public Class TaxiMeisaiCsv
                     Select Case CInt(CsvData(wCnt).TKT_LINE_NO).ToString
                         Case "1"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_1
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_1
                         Case "2"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_2
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_2
                         Case "3"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_3
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_3
                         Case "4"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_4
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_4
                         Case "5"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_5
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_5
                         Case "6"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_6
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_6
                         Case "7"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_7
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_7
                         Case "8"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_8
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_8
                         Case "9"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_9
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_9
                         Case "10"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_10
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_10
                         Case "11"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_11
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_11
                         Case "12"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_12
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_12
                         Case "13"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_13
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_13
                         Case "14"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_14
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_14
                         Case "15"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_15
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_15
                         Case "16"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_16
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_16
                         Case "17"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_17
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_17
                         Case "18"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_18
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_18
                         Case "19"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_19
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_19
                         Case "20"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_20
+                            CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_20
                     End Select
                     CsvData(wCnt).ANS_TAXI_DATE = CmnModule.Format_Date(CsvData(wCnt).ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD)
                     CsvData(wCnt).DR_SHISETSU_NAME = TBL_KOTSUHOTEL.DR_SHISETSU_NAME
@@ -499,7 +519,8 @@ Partial Public Class TaxiMeisaiCsv
                     CsvData(wCnt).MR_NAME = TBL_KOTSUHOTEL.MR_NAME
                     CsvData(wCnt).DR_YAKUWARI = appmodule.GetName_DR_YAKUWARI(TBL_KOTSUHOTEL.DR_YAKUWARI)
                     CsvData(wCnt).WBS_ELEMENT = AppModule.GetName_WBS_ELEMENT(TBL_KOTSUHOTEL.WBS_ELEMENT)
-
+                    CsvData(wCnt).REQ_TAXI_NOTE = AppModule.GetName_REQ_TAXI_NOTE(TBL_KOTSUHOTEL.REQ_TAXI_NOTE)
+                    CsvData(wCnt).ANS_TAXI_NOTE = AppModule.GetName_ANS_TAXI_NOTE(TBL_KOTSUHOTEL.ANS_TAXI_NOTE)
                 End If
                 RsData.Close()
             End If
@@ -513,13 +534,52 @@ Partial Public Class TaxiMeisaiCsv
         Dim wCnt As Integer = 0
         Dim sb As New System.Text.StringBuilder
 
-        '表題
+        '表題
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG No")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合 WBS Element")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR WBS Element")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("出欠")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ステータス")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種(金額)")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ番号")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("売上金額")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("エンタ")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("発行手数料")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("請求額")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算月")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者役割")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合参加者Id")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DRコード")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者BU")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者エリア")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者営業所")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開始日")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日(依頼)")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用年月日")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車発地")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車着地")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AccountCode(非課税)")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当のCost Center")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Internal Order(非課税)")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合のZetia Code")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MR BU")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRエリア名")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MR営業所")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MR氏名")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Account Code(課税)")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRのCost Center")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ会社")))
+
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG No")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合 WBS Element")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("施設名")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR氏名")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR WBS Element")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("出欠")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("ステータス")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("券種(金額)")))
@@ -530,8 +590,6 @@ Partial Public Class TaxiMeisaiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("請求額")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算月")))
-        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID(日)")))
-        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("未決分")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("VOID")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者役割")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合参加者Id")))
@@ -543,13 +601,10 @@ Partial Public Class TaxiMeisaiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合開始日")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用日(依頼)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("利用年月日")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車発地")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車着地")))
-        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AcountCode")))
-        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Cost Center")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("AccountCode(非課税)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当のCost Center")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Internal Order(非課税)")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("WBS Element(非課税)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合のZetia Code")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MR BU")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRエリア名")))
@@ -558,16 +613,19 @@ Partial Public Class TaxiMeisaiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Account Code(課税)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRのCost Center")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ会社")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車発地")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車着地")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケTTT備考")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ備考(依頼)")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ備考(回答)"), True))
         sb.Append(vbNewLine)
 
         '明細
         For wCnt = LBound(CsvData) To UBound(CsvData)
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).WBS_ELEMENT_KOUENKAI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SHISETSU_NAME)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).WBS_ELEMENT)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_SANKA)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).STATUS)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KENSHU)))
@@ -579,7 +637,6 @@ Partial Public Class TaxiMeisaiCsv
             sb.Append(CmnCsv.SetData(CsvData(wCnt).TOTAL_KINGAKU))
             sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_SEIKYU_YM))
             sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_VOID))
-            'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_MIKETSU)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_YAKUWARI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_CD)))
@@ -590,11 +647,10 @@ Partial Public Class TaxiMeisaiCsv
             sb.Append(CmnCsv.SetData(CsvData(wCnt).FROM_DATE))
             sb.Append(CmnCsv.SetData(CsvData(wCnt).ANS_TAXI_DATE))
             sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_USED_DATE))
-            sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_HATUTI))
-            sb.Append(CmnCsv.SetData(CsvData(wCnt).TKT_CHAKUTI))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ACCOUNT_CD)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIHON_COST_CENTER)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INTERNAL_ORDER)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).WBS_ELEMENT_KOUENKAI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ZETIA_CD)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_BU)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_AREA)))
@@ -603,6 +659,11 @@ Partial Public Class TaxiMeisaiCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6833200")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOTSU_COST_CENTER)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KAISHA)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_HATUTI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_CHAKUTI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).REQ_TAXI_NOTE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NOTE)))
             sb.Append(vbNewLine)
         Next wCnt
 

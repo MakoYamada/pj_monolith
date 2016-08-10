@@ -348,9 +348,10 @@ Partial Public Class DrSoufujo
         Me.MR_NAME = New DataDynamics.ActiveReports.TextBox
         Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
         Me.Label3 = New DataDynamics.ActiveReports.Label
         Me.TxtLogin = New DataDynamics.ActiveReports.TextBox
+        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter
+        Me.ANS_HAKUSU = New DataDynamics.ActiveReports.TextBox
         CType(Me.DetailTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_STATUS_HOTEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_O_STATUS_1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -681,13 +682,14 @@ Partial Public Class DrSoufujo
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtLogin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ANS_HAKUSU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
         Me.Detail.CanShrink = True
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.DetailTitle, Me.ANS_STATUS_HOTEL, Me.ANS_O_STATUS_1, Me.ANS_O_STATUS_2, Me.ANS_O_STATUS_3, Me.ANS_O_STATUS_4, Me.ANS_O_STATUS_5, Me.ANS_F_STATUS_1, Me.ANS_F_STATUS_2, Me.ANS_F_STATUS_3, Me.ANS_F_STATUS_4, Me.ANS_F_STATUS_5, Me.ANS_TAXI_DATE_1, Me.ANS_TAXI_DATE_2, Me.ANS_TAXI_DATE_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_DATE_20, Me.ANS_HOTEL_DATE, Me.ANS_HOTEL_NAME, Me.ANS_HOTEL_ADDRESS, Me.ANS_HOTEL_TEL, Me.ANS_ROOM_TYPE, Me.ANS_CHECKIN_TIME, Me.ANS_CHECKOUT_TIME, Me.ANS_O_DATE_1, Me.ANS_O_DATE_2, Me.ANS_O_DATE_3, Me.ANS_O_DATE_4, Me.ANS_O_DATE_5, Me.ANS_F_DATE_1, Me.ANS_F_DATE_2, Me.ANS_F_DATE_3, Me.ANS_F_DATE_4, Me.ANS_F_DATE_5, Me.ANS_HOTEL_SMOKING, Me.ANS_O_BIN_1, Me.ANS_O_BIN_2, Me.ANS_O_BIN_3, Me.ANS_O_BIN_4, Me.ANS_O_BIN_5, Me.ANS_F_BIN_1, Me.ANS_F_BIN_2, Me.ANS_F_BIN_3, Me.ANS_F_BIN_4, Me.ANS_F_BIN_5, Me.ANS_O_AIRPORT1_1, Me.ANS_O_AIRPORT2_1, Me.ANS_O_AIRPORT1_2, Me.ANS_O_AIRPORT2_2, Me.ANS_O_AIRPORT1_3, Me.ANS_O_AIRPORT2_3, Me.ANS_O_AIRPORT1_4, Me.ANS_O_AIRPORT2_4, Me.ANS_O_AIRPORT1_5, Me.ANS_O_AIRPORT2_5, Me.ANS_F_AIRPORT1_1, Me.ANS_F_AIRPORT2_1, Me.ANS_F_AIRPORT1_2, Me.ANS_F_AIRPORT2_2, Me.ANS_F_AIRPORT1_3, Me.ANS_F_AIRPORT2_3, Me.ANS_F_AIRPORT1_4, Me.ANS_F_AIRPORT2_4, Me.ANS_F_AIRPORT1_5, Me.ANS_F_AIRPORT2_5, Me.ANS_O_TIME1_1, Me.ANS_O_TIME2_1, Me.ANS_O_TIME2_2, Me.ANS_O_TIME1_2, Me.ANS_O_TIME1_3, Me.ANS_O_TIME2_3, Me.ANS_O_TIME1_4, Me.ANS_O_TIME2_4, Me.ANS_O_TIME1_5, Me.ANS_O_TIME2_5, Me.ANS_F_TIME1_1, Me.ANS_F_TIME2_1, Me.ANS_F_TIME2_2, Me.ANS_F_TIME1_3, Me.ANS_F_TIME2_3, Me.ANS_F_TIME1_4, Me.ANS_F_TIME2_4, Me.ANS_F_TIME1_5, Me.ANS_F_TIME2_5, Me.ANS_F_TIME1_2, Me.ANS_TAXI_KENSHU_1, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_NO_2, Me.ANS_TAXI_NO_3, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_NO_12, Me.ANS_TAXI_NO_13, Me.ANS_TAXI_NO_14, Me.ANS_TAXI_NO_15, Me.ANS_TAXI_NO_16, Me.ANS_TAXI_NO_17, Me.ANS_TAXI_NO_18, Me.ANS_TAXI_NO_19, Me.ANS_TAXI_NO_20, Me.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_20, Me.HotelTitle, Me.HotelDateTitle, Me.HotelNameTitle, Me.HotelAddrTitle, Me.HotelTelTitle, Me.RoomTypeTitle, Me.CheckinTitle, Me.KotsuTitle, Me.Ouro1Title, Me.Ans_O_Date_1_Title, Me.Ans_O_Bin_1_Title, Me.Ans_O_Airport1_1_Title, Me.Ans_O_Airport2_1_Title, Me.Ans_O_Time1_1_Title, Me.Ans_O_Time2_1_Title, Me.Ouro2Title, Me.Ans_O_Date_2_Title, Me.Ans_O_Bin_2_Title, Me.Ans_O_Airport1_2_Title, Me.Ans_O_Airport2_2_Title, Me.Ans_O_Time1_2_Title, Me.Ans_O_Time2_2_Title, Me.Ouro3Title, Me.Ans_O_Date_3_Title, Me.Ans_O_Airport1_3_Title, Me.Ans_O_Airport2_3_Title, Me.Ans_O_Time1_3_Title, Me.Ans_O_Time2_3_Title, Me.Ouro4Title, Me.Ans_O_Date_4_Title, Me.Ans_O_Bin_4_Title, Me.Ans_O_Airport1_4_Title, Me.Ans_O_Time1_4_Title, Me.Ans_O_Time2_4_Title, Me.Ouro5Title, Me.Ans_O_Date_5_Title, Me.Ans_O_Bin_5_Title, Me.Ans_O_Airport1_5_Title, Me.Ans_O_Airport2_5_Title, Me.Ans_F_Airport2_4_Title, Me.Ans_F_Time1_4_Title, Me.Ans_F_Time2_4_Title, Me.Fukuro1Title, Me.Ans_F_Date_1_Title, Me.Ans_F_Bin_1_Title, Me.Ans_F_Airport1_1_Title, Me.Ans_F_Airport2_1_Title, Me.Ans_F_Time1_1_Title, Me.Ans_F_Time2_1_Title, Me.Fukuro2Title, Me.Ans_F_Date_2_Title, Me.Ans_F_Bin_2_Title, Me.Ans_F_Airport1_2_Title, Me.Ans_F_Airport2_2_Title, Me.Ans_F_Time1_2_Title, Me.Ans_F_Time2_2_Title, Me.Fukuro3Title, Me.Ans_F_Date_3_Title, Me.Ans_F_Bin_3_Title, Me.Ans_F_Airport1_3_Title, Me.Ans_F_Airport2_3_Title, Me.Ans_F_Time1_3_Title, Me.Ans_F_Time2_3_Title, Me.Fukuro4Title, Me.Ans_F_Date_4_Title, Me.Ans_F_Bin_4_Title, Me.Ans_F_Airport1_4_Title, Me.Fukuro5Title, Me.Ans_F_Date_5_Title, Me.Ans_F_Bin_5_Title, Me.Ans_F_Airport1_5_Title, Me.Ans_F_Airport2_5_Title, Me.Ans_F_Time1_5_Title, Me.Ans_F_Time2_5_Title, Me.TaxiTitle, Me.Ans_Taxi_Date_1_Title, Me.Ans_Taxi_No_1_Title, Me.Ans_Taxi_Rmks_1_Title, Me.Ans_Taxi_Date_2_Title, Me.Ans_O_Airport2_4_Title, Me.Ans_O_Time1_5_Title, Me.Ans_O_Time2_5_Title, Me.Ans_Taxi_Rmks_2_Title, Me.Ans_Taxi_No_2_Title, Me.Ans_Taxi_No_3_Title, Me.Ans_Taxi_Rmks_3_Title, Me.Ans_Taxi_Date_3_Title, Me.Ans_Taxi_Date_4_Title, Me.Ans_Taxi_No_4_Title, Me.Ans_Taxi_Rmks_4_Title, Me.Ans_Taxi_Date_5_Title, Me.Ans_Taxi_No_5_Title, Me.Ans_Taxi_Rmks_5_Title, Me.Ans_Taxi_Date_6_Title, Me.Ans_Taxi_Date_7_Title, Me.Ans_Taxi_Date_8_Title, Me.Ans_Taxi_Date_9_Title, Me.Ans_Taxi_Date_10_Title, Me.Ans_Taxi_Date_11_Title, Me.Ans_Taxi_Date_12_Title, Me.Ans_Taxi_Date_13_Title, Me.Ans_Taxi_Date_14_Title, Me.Ans_Taxi_Date_15_Title, Me.Ans_Taxi_Date_16_Title, Me.Ans_Taxi_Date_17_Title, Me.Ans_Taxi_Date_18_Title, Me.Ans_Taxi_Date_19_Title, Me.Ans_Taxi_Date_20_Title, Me.Ans_Taxi_No_6_Title, Me.Ans_Taxi_No_7_Title, Me.Ans_Taxi_No_8_Title, Me.Ans_Taxi_No_9_Title, Me.Ans_Taxi_No_10_Title, Me.Ans_Taxi_No_11_Title, Me.Ans_Taxi_No_12_Title, Me.Ans_Taxi_No_13_Title, Me.Ans_Taxi_No_14_Title, Me.Ans_Taxi_No_15_Title, Me.Ans_Taxi_Rmks_6_Title, Me.Ans_Taxi_Rmks_7_Title, Me.Ans_Taxi_Rmks_8_Title, Me.Ans_Taxi_Rmks_9_Title, Me.Ans_Taxi_Rmks_10_Title, Me.Ans_Taxi_Rmks_11_Title, Me.Ans_Taxi_Rmks_12_Title, Me.Ans_Taxi_Rmks_13_Title, Me.Ans_Taxi_Rmks_14_Title, Me.Ans_Taxi_Rmks_16_Title, Me.Ans_Taxi_Rmks_17_Title, Me.Ans_Taxi_Rmks_18_Title, Me.Ans_Taxi_Rmks_19_Title, Me.Ans_Taxi_Rmks_20_Title, Me.Ans_Taxi_Rmks_15_Title, Me.Ans_Taxi_No_16_Title, Me.Ans_Taxi_No_17_Title, Me.Ans_Taxi_No_18_Title, Me.Ans_Taxi_No_19_Title, Me.Ans_Taxi_No_20_Title, Me.ANS_O_BIN_3_Title, Me.HOTEL_NOTES1, Me.HOTEL_NOTES2})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.DetailTitle, Me.ANS_STATUS_HOTEL, Me.ANS_O_STATUS_1, Me.ANS_O_STATUS_2, Me.ANS_O_STATUS_3, Me.ANS_O_STATUS_4, Me.ANS_O_STATUS_5, Me.ANS_F_STATUS_1, Me.ANS_F_STATUS_2, Me.ANS_F_STATUS_3, Me.ANS_F_STATUS_4, Me.ANS_F_STATUS_5, Me.ANS_TAXI_DATE_1, Me.ANS_TAXI_DATE_2, Me.ANS_TAXI_DATE_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_DATE_20, Me.ANS_HOTEL_DATE, Me.ANS_HOTEL_NAME, Me.ANS_HOTEL_ADDRESS, Me.ANS_HOTEL_TEL, Me.ANS_ROOM_TYPE, Me.ANS_CHECKIN_TIME, Me.ANS_CHECKOUT_TIME, Me.ANS_O_DATE_1, Me.ANS_O_DATE_2, Me.ANS_O_DATE_3, Me.ANS_O_DATE_4, Me.ANS_O_DATE_5, Me.ANS_F_DATE_1, Me.ANS_F_DATE_2, Me.ANS_F_DATE_3, Me.ANS_F_DATE_4, Me.ANS_F_DATE_5, Me.ANS_HOTEL_SMOKING, Me.ANS_O_BIN_1, Me.ANS_O_BIN_2, Me.ANS_O_BIN_3, Me.ANS_O_BIN_4, Me.ANS_O_BIN_5, Me.ANS_F_BIN_1, Me.ANS_F_BIN_2, Me.ANS_F_BIN_3, Me.ANS_F_BIN_4, Me.ANS_F_BIN_5, Me.ANS_O_AIRPORT1_1, Me.ANS_O_AIRPORT2_1, Me.ANS_O_AIRPORT1_2, Me.ANS_O_AIRPORT2_2, Me.ANS_O_AIRPORT1_3, Me.ANS_O_AIRPORT2_3, Me.ANS_O_AIRPORT1_4, Me.ANS_O_AIRPORT2_4, Me.ANS_O_AIRPORT1_5, Me.ANS_O_AIRPORT2_5, Me.ANS_F_AIRPORT1_1, Me.ANS_F_AIRPORT2_1, Me.ANS_F_AIRPORT1_2, Me.ANS_F_AIRPORT2_2, Me.ANS_F_AIRPORT1_3, Me.ANS_F_AIRPORT2_3, Me.ANS_F_AIRPORT1_4, Me.ANS_F_AIRPORT2_4, Me.ANS_F_AIRPORT1_5, Me.ANS_F_AIRPORT2_5, Me.ANS_O_TIME1_1, Me.ANS_O_TIME2_1, Me.ANS_O_TIME2_2, Me.ANS_O_TIME1_2, Me.ANS_O_TIME1_3, Me.ANS_O_TIME2_3, Me.ANS_O_TIME1_4, Me.ANS_O_TIME2_4, Me.ANS_O_TIME1_5, Me.ANS_O_TIME2_5, Me.ANS_F_TIME1_1, Me.ANS_F_TIME2_1, Me.ANS_F_TIME2_2, Me.ANS_F_TIME1_3, Me.ANS_F_TIME2_3, Me.ANS_F_TIME1_4, Me.ANS_F_TIME2_4, Me.ANS_F_TIME1_5, Me.ANS_F_TIME2_5, Me.ANS_F_TIME1_2, Me.ANS_TAXI_KENSHU_1, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_NO_2, Me.ANS_TAXI_NO_3, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_NO_12, Me.ANS_TAXI_NO_13, Me.ANS_TAXI_NO_14, Me.ANS_TAXI_NO_15, Me.ANS_TAXI_NO_16, Me.ANS_TAXI_NO_17, Me.ANS_TAXI_NO_18, Me.ANS_TAXI_NO_19, Me.ANS_TAXI_NO_20, Me.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_20, Me.HotelTitle, Me.HotelDateTitle, Me.HotelNameTitle, Me.HotelAddrTitle, Me.HotelTelTitle, Me.RoomTypeTitle, Me.CheckinTitle, Me.KotsuTitle, Me.Ouro1Title, Me.Ans_O_Date_1_Title, Me.Ans_O_Bin_1_Title, Me.Ans_O_Airport1_1_Title, Me.Ans_O_Airport2_1_Title, Me.Ans_O_Time1_1_Title, Me.Ans_O_Time2_1_Title, Me.Ouro2Title, Me.Ans_O_Date_2_Title, Me.Ans_O_Bin_2_Title, Me.Ans_O_Airport1_2_Title, Me.Ans_O_Airport2_2_Title, Me.Ans_O_Time1_2_Title, Me.Ans_O_Time2_2_Title, Me.Ouro3Title, Me.Ans_O_Date_3_Title, Me.Ans_O_Airport1_3_Title, Me.Ans_O_Airport2_3_Title, Me.Ans_O_Time1_3_Title, Me.Ans_O_Time2_3_Title, Me.Ouro4Title, Me.Ans_O_Date_4_Title, Me.Ans_O_Bin_4_Title, Me.Ans_O_Airport1_4_Title, Me.Ans_O_Time1_4_Title, Me.Ans_O_Time2_4_Title, Me.Ouro5Title, Me.Ans_O_Date_5_Title, Me.Ans_O_Bin_5_Title, Me.Ans_O_Airport1_5_Title, Me.Ans_O_Airport2_5_Title, Me.Ans_F_Airport2_4_Title, Me.Ans_F_Time1_4_Title, Me.Ans_F_Time2_4_Title, Me.Fukuro1Title, Me.Ans_F_Date_1_Title, Me.Ans_F_Bin_1_Title, Me.Ans_F_Airport1_1_Title, Me.Ans_F_Airport2_1_Title, Me.Ans_F_Time1_1_Title, Me.Ans_F_Time2_1_Title, Me.Fukuro2Title, Me.Ans_F_Date_2_Title, Me.Ans_F_Bin_2_Title, Me.Ans_F_Airport1_2_Title, Me.Ans_F_Airport2_2_Title, Me.Ans_F_Time1_2_Title, Me.Ans_F_Time2_2_Title, Me.Fukuro3Title, Me.Ans_F_Date_3_Title, Me.Ans_F_Bin_3_Title, Me.Ans_F_Airport1_3_Title, Me.Ans_F_Airport2_3_Title, Me.Ans_F_Time1_3_Title, Me.Ans_F_Time2_3_Title, Me.Fukuro4Title, Me.Ans_F_Date_4_Title, Me.Ans_F_Bin_4_Title, Me.Ans_F_Airport1_4_Title, Me.Fukuro5Title, Me.Ans_F_Date_5_Title, Me.Ans_F_Bin_5_Title, Me.Ans_F_Airport1_5_Title, Me.Ans_F_Airport2_5_Title, Me.Ans_F_Time1_5_Title, Me.Ans_F_Time2_5_Title, Me.TaxiTitle, Me.Ans_Taxi_Date_1_Title, Me.Ans_Taxi_No_1_Title, Me.Ans_Taxi_Rmks_1_Title, Me.Ans_Taxi_Date_2_Title, Me.Ans_O_Airport2_4_Title, Me.Ans_O_Time1_5_Title, Me.Ans_O_Time2_5_Title, Me.Ans_Taxi_Rmks_2_Title, Me.Ans_Taxi_No_2_Title, Me.Ans_Taxi_No_3_Title, Me.Ans_Taxi_Rmks_3_Title, Me.Ans_Taxi_Date_3_Title, Me.Ans_Taxi_Date_4_Title, Me.Ans_Taxi_No_4_Title, Me.Ans_Taxi_Rmks_4_Title, Me.Ans_Taxi_Date_5_Title, Me.Ans_Taxi_No_5_Title, Me.Ans_Taxi_Rmks_5_Title, Me.Ans_Taxi_Date_6_Title, Me.Ans_Taxi_Date_7_Title, Me.Ans_Taxi_Date_8_Title, Me.Ans_Taxi_Date_9_Title, Me.Ans_Taxi_Date_10_Title, Me.Ans_Taxi_Date_11_Title, Me.Ans_Taxi_Date_12_Title, Me.Ans_Taxi_Date_13_Title, Me.Ans_Taxi_Date_14_Title, Me.Ans_Taxi_Date_15_Title, Me.Ans_Taxi_Date_16_Title, Me.Ans_Taxi_Date_17_Title, Me.Ans_Taxi_Date_18_Title, Me.Ans_Taxi_Date_19_Title, Me.Ans_Taxi_Date_20_Title, Me.Ans_Taxi_No_6_Title, Me.Ans_Taxi_No_7_Title, Me.Ans_Taxi_No_8_Title, Me.Ans_Taxi_No_9_Title, Me.Ans_Taxi_No_10_Title, Me.Ans_Taxi_No_11_Title, Me.Ans_Taxi_No_12_Title, Me.Ans_Taxi_No_13_Title, Me.Ans_Taxi_No_14_Title, Me.Ans_Taxi_No_15_Title, Me.Ans_Taxi_Rmks_6_Title, Me.Ans_Taxi_Rmks_7_Title, Me.Ans_Taxi_Rmks_8_Title, Me.Ans_Taxi_Rmks_9_Title, Me.Ans_Taxi_Rmks_10_Title, Me.Ans_Taxi_Rmks_11_Title, Me.Ans_Taxi_Rmks_12_Title, Me.Ans_Taxi_Rmks_13_Title, Me.Ans_Taxi_Rmks_14_Title, Me.Ans_Taxi_Rmks_16_Title, Me.Ans_Taxi_Rmks_17_Title, Me.Ans_Taxi_Rmks_18_Title, Me.Ans_Taxi_Rmks_19_Title, Me.Ans_Taxi_Rmks_20_Title, Me.Ans_Taxi_Rmks_15_Title, Me.Ans_Taxi_No_16_Title, Me.Ans_Taxi_No_17_Title, Me.Ans_Taxi_No_18_Title, Me.Ans_Taxi_No_19_Title, Me.Ans_Taxi_No_20_Title, Me.ANS_O_BIN_3_Title, Me.HOTEL_NOTES1, Me.HOTEL_NOTES2, Me.ANS_HAKUSU})
         Me.Detail.Height = 1.333169!
         Me.Detail.Name = "Detail"
         '
@@ -4946,14 +4948,6 @@ Partial Public Class DrSoufujo
         Me.TO_DATE.Visible = False
         Me.TO_DATE.Width = 0.9330716!
         '
-        'GroupFooter1
-        '
-        Me.GroupFooter1.CanShrink = True
-        Me.GroupFooter1.Height = 0.0!
-        Me.GroupFooter1.KeepTogether = True
-        Me.GroupFooter1.Name = "GroupFooter1"
-        Me.GroupFooter1.NewPage = DataDynamics.ActiveReports.NewPage.Before
-        '
         'Label3
         '
         Me.Label3.Height = 0.2!
@@ -4971,8 +4965,30 @@ Partial Public Class DrSoufujo
         Me.TxtLogin.Left = 6.075984!
         Me.TxtLogin.Name = "TxtLogin"
         Me.TxtLogin.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap"
+        Me.TxtLogin.Text = Nothing
         Me.TxtLogin.Top = 0.1811024!
         Me.TxtLogin.Width = 0.9637802!
+        '
+        'GroupFooter1
+        '
+        Me.GroupFooter1.CanShrink = True
+        Me.GroupFooter1.Height = 0.0!
+        Me.GroupFooter1.KeepTogether = True
+        Me.GroupFooter1.Name = "GroupFooter1"
+        Me.GroupFooter1.NewPage = DataDynamics.ActiveReports.NewPage.Before
+        '
+        'ANS_HAKUSU
+        '
+        Me.ANS_HAKUSU.DataField = "ANS_HAKUSU"
+        Me.ANS_HAKUSU.Height = 0.2!
+        Me.ANS_HAKUSU.Left = 4.442914!
+        Me.ANS_HAKUSU.Name = "ANS_HAKUSU"
+        Me.ANS_HAKUSU.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: left; vertical-align: middle; w" & _
+            "hite-space: nowrap"
+        Me.ANS_HAKUSU.Text = "[ANS_HAKUSU]"
+        Me.ANS_HAKUSU.Top = 0.4!
+        Me.ANS_HAKUSU.Visible = False
+        Me.ANS_HAKUSU.Width = 1.276378!
         '
         'DrSoufujo
         '
@@ -5320,6 +5336,7 @@ Partial Public Class DrSoufujo
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtLogin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ANS_HAKUSU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -5657,4 +5674,5 @@ Partial Public Class DrSoufujo
     Private WithEvents Label3 As DataDynamics.ActiveReports.Label
     Private WithEvents TxtLogin As DataDynamics.ActiveReports.TextBox
     Private WithEvents GroupFooter1 As DataDynamics.ActiveReports.GroupFooter
+    Private WithEvents ANS_HAKUSU As DataDynamics.ActiveReports.TextBox
 End Class
