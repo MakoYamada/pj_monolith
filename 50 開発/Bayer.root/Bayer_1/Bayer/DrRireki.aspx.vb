@@ -4,7 +4,7 @@ Imports AppLib
 Partial Public Class DrRireki
     Inherits WebBase
 
-    Private TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
+    Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private RRK_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct
     Private SEQ As Integer
 
@@ -90,14 +90,14 @@ Partial Public Class DrRireki
     'セッションを変数に格納
     Private Function SetSession() As Boolean
         Try
-            'TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+            TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
             KEY_SALESFORCE_ID = Session.Item(SessionDef.SALESFORCE_ID)
             KEY_KOUENKAI_NO = Session.Item(SessionDef.KOUENKAI_NO)
             KEY_SANKASHA_ID = Session.Item(SessionDef.SANKASHA_ID)
             KEY_TIME_STAMP_BYL = Session.Item(SessionDef.TIME_STAMP_BYL)
             KEY_DR_MPID = Session.Item(SessionDef.DR_MPID)
 
-            'If IsNothing(TBL_KOTSUHOTEL) Then Return False
+            If IsNothing(TBL_KOTSUHOTEL) Then Return False
             If IsNothing(KEY_SALESFORCE_ID) Then Return False
             If IsNothing(KEY_KOUENKAI_NO) Then Return False
             If IsNothing(KEY_SANKASHA_ID) Then Return False
@@ -328,7 +328,8 @@ Partial Public Class DrRireki
     Private Sub BtnPrint1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
         Dim strSQL As String = ""
 
-        strSQL = SQL.TBL_KOTSUHOTEL.DrRireki(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
+        'strSQL = SQL.TBL_KOTSUHOTEL.DrRireki(TBL_KOTSUHOTEL(SEQ).KOUENKAI_NO, TBL_KOTSUHOTEL(SEQ).SANKASHA_ID)
+        strSQL = SQL.TBL_KOTSUHOTEL.DrRireki(TBL_KOTSUHOTEL.KOUENKAI_NO, TBL_KOTSUHOTEL.SANKASHA_ID)
 
         Session.Item(SessionDef.DrRirekiPrint_SQL) = strSQL
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath

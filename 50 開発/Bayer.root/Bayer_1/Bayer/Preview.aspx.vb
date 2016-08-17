@@ -178,8 +178,8 @@ Partial Public Class Preview
             End Try
         ElseIf URL.DrRireki.IndexOf(Session.Item(SessionDef.BackURL_Print)) > 0 Then
             Try
-                TBL_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
-                If IsNothing(TBL_KOTSUHOTEL) Then Return False
+                DSP_KOTSUHOTEL = Session.Item(SessionDef.TBL_KOTSUHOTEL)
+                If IsNothing(DSP_KOTSUHOTEL) Then Return False
             Catch ex As Exception
                 Return False
             End Try

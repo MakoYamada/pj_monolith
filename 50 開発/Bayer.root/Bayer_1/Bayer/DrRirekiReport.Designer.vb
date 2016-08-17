@@ -153,7 +153,7 @@ Partial Public Class DrRirekiReport
         'PageHeader
         '
         Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.ReportInfo1, Me.Shape1, Me.Label1, Me.Line3, Me.Line16, Me.Line17, Me.Line18, Me.Line19, Me.Line20, Me.Label13, Me.PRINT_USER, Me.Label19, Me.Label20, Me.Label21, Me.Line13, Me.Line15, Me.Line22, Me.Line23, Me.Line24, Me.Line25, Me.Line26, Me.Line27, Me.Label10, Me.Label11, Me.Line30, Me.Label12, Me.Label14, Me.Line28, Me.Line32})
-        Me.PageHeader.Height = 1.366836!
+        Me.PageHeader.Height = 1.325169!
         Me.PageHeader.Name = "PageHeader"
         '
         'Shape2

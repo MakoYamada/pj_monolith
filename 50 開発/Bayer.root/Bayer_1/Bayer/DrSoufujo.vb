@@ -172,8 +172,10 @@ Public Class DrSoufujo
             HotelDateTitle.Alignment = TextAlignment.Left
             HotelDateTitle.Font = New System.Drawing.Font("ＭＳ ゴシック", 9)
 
+            Dim wHakusu As String = ""
+            If Me.ANS_HAKUSU.Text.Trim <> "" Then wHakusu = " ～ " & Me.ANS_HAKUSU.Text.Trim & " 泊"
             ANS_HOTEL_DATE.Visible = True
-            ANS_HOTEL_DATE.Text = CmnModule.Format_DateJP(Me.ANS_HOTEL_DATE.Text, CmnModule.DateFormatType.YYYYMD)
+            ANS_HOTEL_DATE.Text = CmnModule.Format_DateJP(Me.ANS_HOTEL_DATE.Text, CmnModule.DateFormatType.YYYYMD) & wHakusu
             ANS_HOTEL_DATE.Size = New System.Drawing.SizeF(Me.CmToInch(HotelItemWidth1), Me.CmToInch(RowHeight))
             ANS_HOTEL_DATE.Location = New System.Drawing.PointF(Me.CmToInch(HotelItemX1), Me.CmToInch(StartY))
             ANS_HOTEL_DATE.CanGrow = True
