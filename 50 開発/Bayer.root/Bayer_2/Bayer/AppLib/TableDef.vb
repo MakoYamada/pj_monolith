@@ -981,6 +981,26 @@
             Public UPDATE_USER As String
             Public SEND_DATE As String
             Public WBS_ELEMENT As String
+            Public ANS_TAXI_SRMKS_1 As String
+            Public ANS_TAXI_SRMKS_2 As String
+            Public ANS_TAXI_SRMKS_3 As String
+            Public ANS_TAXI_SRMKS_4 As String
+            Public ANS_TAXI_SRMKS_5 As String
+            Public ANS_TAXI_SRMKS_6 As String
+            Public ANS_TAXI_SRMKS_7 As String
+            Public ANS_TAXI_SRMKS_8 As String
+            Public ANS_TAXI_SRMKS_9 As String
+            Public ANS_TAXI_SRMKS_10 As String
+            Public ANS_TAXI_SRMKS_11 As String
+            Public ANS_TAXI_SRMKS_12 As String
+            Public ANS_TAXI_SRMKS_13 As String
+            Public ANS_TAXI_SRMKS_14 As String
+            Public ANS_TAXI_SRMKS_15 As String
+            Public ANS_TAXI_SRMKS_16 As String
+            Public ANS_TAXI_SRMKS_17 As String
+            Public ANS_TAXI_SRMKS_18 As String
+            Public ANS_TAXI_SRMKS_19 As String
+            Public ANS_TAXI_SRMKS_20 As String
 
             Public KOTSU_ACCOUNT_CD As String
             Public KOTSU_COST_CENTER As String
@@ -1496,6 +1516,26 @@
             Public Const UPDATE_USER As String = "UPDATE_USER"
             Public Const SEND_DATE As String = "SEND_DATE"
             Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
+            Public Const ANS_TAXI_SRMKS_1 As String = "ANS_TAXI_SRMKS_1"
+            Public Const ANS_TAXI_SRMKS_2 As String = "ANS_TAXI_SRMKS_2"
+            Public Const ANS_TAXI_SRMKS_3 As String = "ANS_TAXI_SRMKS_3"
+            Public Const ANS_TAXI_SRMKS_4 As String = "ANS_TAXI_SRMKS_4"
+            Public Const ANS_TAXI_SRMKS_5 As String = "ANS_TAXI_SRMKS_5"
+            Public Const ANS_TAXI_SRMKS_6 As String = "ANS_TAXI_SRMKS_6"
+            Public Const ANS_TAXI_SRMKS_7 As String = "ANS_TAXI_SRMKS_7"
+            Public Const ANS_TAXI_SRMKS_8 As String = "ANS_TAXI_SRMKS_8"
+            Public Const ANS_TAXI_SRMKS_9 As String = "ANS_TAXI_SRMKS_9"
+            Public Const ANS_TAXI_SRMKS_10 As String = "ANS_TAXI_SRMKS_10"
+            Public Const ANS_TAXI_SRMKS_11 As String = "ANS_TAXI_SRMKS_11"
+            Public Const ANS_TAXI_SRMKS_12 As String = "ANS_TAXI_SRMKS_12"
+            Public Const ANS_TAXI_SRMKS_13 As String = "ANS_TAXI_SRMKS_13"
+            Public Const ANS_TAXI_SRMKS_14 As String = "ANS_TAXI_SRMKS_14"
+            Public Const ANS_TAXI_SRMKS_15 As String = "ANS_TAXI_SRMKS_15"
+            Public Const ANS_TAXI_SRMKS_16 As String = "ANS_TAXI_SRMKS_16"
+            Public Const ANS_TAXI_SRMKS_17 As String = "ANS_TAXI_SRMKS_17"
+            Public Const ANS_TAXI_SRMKS_18 As String = "ANS_TAXI_SRMKS_18"
+            Public Const ANS_TAXI_SRMKS_19 As String = "ANS_TAXI_SRMKS_19"
+            Public Const ANS_TAXI_SRMKS_20 As String = "ANS_TAXI_SRMKS_20"
 
             Public Const KOTSU_ACCOUNT_CD As String = "KOTSU_ACCOUNT_CD"
             Public Const KOTSU_COST_CENTER As String = "KOTSU_COST_CENTER"
@@ -1988,6 +2028,26 @@
             Public Const UPDATE_USER As String = "更新者"
             Public Const SEND_DATE As String = "発送日"
             Public Const WBS_ELEMENT As String = "WBSElement"
+            Public Const ANS_TAXI_SRMKS_1 As String = "タクチケ精算コメント1"
+            Public Const ANS_TAXI_SRMKS_2 As String = "タクチケ精算コメント2"
+            Public Const ANS_TAXI_SRMKS_3 As String = "タクチケ精算コメント3"
+            Public Const ANS_TAXI_SRMKS_4 As String = "タクチケ精算コメント4"
+            Public Const ANS_TAXI_SRMKS_5 As String = "タクチケ精算コメント5"
+            Public Const ANS_TAXI_SRMKS_6 As String = "タクチケ精算コメント6"
+            Public Const ANS_TAXI_SRMKS_7 As String = "タクチケ精算コメント7"
+            Public Const ANS_TAXI_SRMKS_8 As String = "タクチケ精算コメント8"
+            Public Const ANS_TAXI_SRMKS_9 As String = "タクチケ精算コメント9"
+            Public Const ANS_TAXI_SRMKS_10 As String = "タクチケ精算コメント10"
+            Public Const ANS_TAXI_SRMKS_11 As String = "タクチケ精算コメント11"
+            Public Const ANS_TAXI_SRMKS_12 As String = "タクチケ精算コメント12"
+            Public Const ANS_TAXI_SRMKS_13 As String = "タクチケ精算コメント13"
+            Public Const ANS_TAXI_SRMKS_14 As String = "タクチケ精算コメント14"
+            Public Const ANS_TAXI_SRMKS_15 As String = "タクチケ精算コメント15"
+            Public Const ANS_TAXI_SRMKS_16 As String = "タクチケ精算コメント16"
+            Public Const ANS_TAXI_SRMKS_17 As String = "タクチケ精算コメント17"
+            Public Const ANS_TAXI_SRMKS_18 As String = "タクチケ精算コメント18"
+            Public Const ANS_TAXI_SRMKS_19 As String = "タクチケ精算コメント19"
+            Public Const ANS_TAXI_SRMKS_20 As String = "タクチケ精算コメント20"
 
             Public Const KOUENKAI_NAME As String = "会合名"
             Public Const KOUENKAI_TIME_STAMP As String = "TimeStamp"
@@ -3408,6 +3468,7 @@
             Public REQ_TAXI_DATE As String
             Public ANS_TAXI_DATE As String
             Public ANS_TAXI_RMKS As String
+            Public ANS_TAXI_SRMKS As String
 
             Public SRM_HACYU_KBN As String
             Public KAIJO_NAME As String
@@ -3439,6 +3500,26 @@
             '@@@ Phase3
             Public WBS_ELEMENT_KOUENKAI As String
             Public WBS_ELEMENT As String
+            Public ANS_TAXI_SRMKS_1 As String
+            Public ANS_TAXI_SRMKS_2 As String
+            Public ANS_TAXI_SRMKS_3 As String
+            Public ANS_TAXI_SRMKS_4 As String
+            Public ANS_TAXI_SRMKS_5 As String
+            Public ANS_TAXI_SRMKS_6 As String
+            Public ANS_TAXI_SRMKS_7 As String
+            Public ANS_TAXI_SRMKS_8 As String
+            Public ANS_TAXI_SRMKS_9 As String
+            Public ANS_TAXI_SRMKS_10 As String
+            Public ANS_TAXI_SRMKS_11 As String
+            Public ANS_TAXI_SRMKS_12 As String
+            Public ANS_TAXI_SRMKS_13 As String
+            Public ANS_TAXI_SRMKS_14 As String
+            Public ANS_TAXI_SRMKS_15 As String
+            Public ANS_TAXI_SRMKS_16 As String
+            Public ANS_TAXI_SRMKS_17 As String
+            Public ANS_TAXI_SRMKS_18 As String
+            Public ANS_TAXI_SRMKS_19 As String
+            Public ANS_TAXI_SRMKS_20 As String
             '@@@ Phase3
 
         End Structure
@@ -3614,6 +3695,7 @@
             Public Const REQ_TAXI_DATE As String = "REQ_TAXI_DATE"
             Public Const ANS_TAXI_DATE As String = "ANS_TAXI_DATE"
             Public Const ANS_TAXI_RMKS As String = "ANS_TAXI_RMKS"
+            Public Const ANS_TAXI_SRMKS As String = "ANS_TAXI_SRMKS"
             Public Const REQ_TAXI_NOTE As String = "REQ_TAXI_NOTE"
             Public Const ANS_TAXI_NOTE As String = "ANS_TAXI_NOTE"
 
@@ -3647,6 +3729,26 @@
             '@@@ Phase3
             Public Const WBS_ELEMENT_KOUENKAI As String = "WBS_ELEMENT_KOUENKAI"
             Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
+            Public Const ANS_TAXI_SRMKS_1 As String = "ANS_TAXI_SRMKS_1"
+            Public Const ANS_TAXI_SRMKS_2 As String = "ANS_TAXI_SRMKS_2"
+            Public Const ANS_TAXI_SRMKS_3 As String = "ANS_TAXI_SRMKS_3"
+            Public Const ANS_TAXI_SRMKS_4 As String = "ANS_TAXI_SRMKS_4"
+            Public Const ANS_TAXI_SRMKS_5 As String = "ANS_TAXI_SRMKS_5"
+            Public Const ANS_TAXI_SRMKS_6 As String = "ANS_TAXI_SRMKS_6"
+            Public Const ANS_TAXI_SRMKS_7 As String = "ANS_TAXI_SRMKS_7"
+            Public Const ANS_TAXI_SRMKS_8 As String = "ANS_TAXI_SRMKS_8"
+            Public Const ANS_TAXI_SRMKS_9 As String = "ANS_TAXI_SRMKS_9"
+            Public Const ANS_TAXI_SRMKS_10 As String = "ANS_TAXI_SRMKS_10"
+            Public Const ANS_TAXI_SRMKS_11 As String = "ANS_TAXI_SRMKS_11"
+            Public Const ANS_TAXI_SRMKS_12 As String = "ANS_TAXI_SRMKS_12"
+            Public Const ANS_TAXI_SRMKS_13 As String = "ANS_TAXI_SRMKS_13"
+            Public Const ANS_TAXI_SRMKS_14 As String = "ANS_TAXI_SRMKS_14"
+            Public Const ANS_TAXI_SRMKS_15 As String = "ANS_TAXI_SRMKS_15"
+            Public Const ANS_TAXI_SRMKS_16 As String = "ANS_TAXI_SRMKS_16"
+            Public Const ANS_TAXI_SRMKS_17 As String = "ANS_TAXI_SRMKS_17"
+            Public Const ANS_TAXI_SRMKS_18 As String = "ANS_TAXI_SRMKS_18"
+            Public Const ANS_TAXI_SRMKS_19 As String = "ANS_TAXI_SRMKS_19"
+            Public Const ANS_TAXI_SRMKS_20 As String = "ANS_TAXI_SRMKS_20"
             '@@@ Phase3
         End Class
         Public Class Name
@@ -3726,6 +3828,7 @@
             Public REQ_TAXI_NOTE As String
             Public ANS_TAXI_NOTE As String
             Public ANS_TAXI_RMKS As String
+            Public ANS_TAXI_SRMKS As String
         End Structure
     End Class
 

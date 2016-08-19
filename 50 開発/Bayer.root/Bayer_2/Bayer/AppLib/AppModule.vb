@@ -685,6 +685,26 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER.ToUpper Then TBL_KOTSUHOTEL.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.SEND_DATE.ToUpper Then TBL_KOTSUHOTEL.SEND_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.WBS_ELEMENT.ToUpper Then TBL_KOTSUHOTEL.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_1.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_1 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_2.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_2 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_3.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_3 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_4.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_4 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_5.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_5 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_6.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_6 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_7.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_7 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_8.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_8 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_9.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_9 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_10.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_10 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_11.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_11 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_12.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_12 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_13.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_13 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_14.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_14 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_15.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_15 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_16.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_16 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_17.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_17 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_18.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_18 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_19.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_19 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.ANS_TAXI_SRMKS_20.ToUpper Then TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_20 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_ACCOUNT_CD.ToUpper Then TBL_KOTSUHOTEL.KOTSU_ACCOUNT_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_KOTSUHOTEL.Column.KOTSU_COST_CENTER.ToUpper Then TBL_KOTSUHOTEL.KOTSU_COST_CENTER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -1143,6 +1163,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.REQ_TAXI_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.REQ_TAXI_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_DATE.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_RMKS.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_RMKS = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.REQ_TAXI_NOTE.ToUpper Then TBL_TAXITICKET_HAKKO.REQ_TAXI_NOTE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_NOTE.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_NOTE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 
@@ -1176,6 +1197,26 @@ Public Class AppModule
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.WBS_ELEMENT_KOUENKAI.ToUpper Then TBL_TAXITICKET_HAKKO.WBS_ELEMENT_KOUENKAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.WBS_ELEMENT.ToUpper Then TBL_TAXITICKET_HAKKO.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_1.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_sRMKS_1 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_2.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_2 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_3.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_3 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_4.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_4 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_5.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_5 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_6.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_6 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_7.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_7 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_8.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_8 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_9.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_9 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_10.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_10 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_11.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_11 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_12.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_12 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_13.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_13 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_14.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_14 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_15.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_15 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_16.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_16 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_17.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_17 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_18.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_18 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_19.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_19 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_20.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_20 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_TAXITICKET_HAKKO
@@ -7307,6 +7348,11 @@ Public Class AppModule
         control.Text = ANS_TAXI_RMKS
     End Sub
 
+    'タクチケ精算用備考
+    Public Shared Sub SetForm_ANS_TAXI_SRMKS(ByVal ANS_TAXI_SRMKS As String, ByRef control As TextBox)
+        control.Text = ANS_TAXI_SRMKS
+    End Sub
+
     'タクチケ発行フラグ
     Public Shared Sub SetForm_ANS_TAXI_HAKKO(ByVal ANS_TAXI_HAKKO As String, ByVal ANS_TAXI_HAKKO_DATE As String, ByRef control1 As Label, ByRef control2 As CheckBox)
         If ANS_TAXI_HAKKO_DATE.Trim <> "" Then
@@ -9103,6 +9149,71 @@ Public Class AppModule
     End Function
     Public Shared Function GetValue_ANS_TAXI_RMKS_20(ByVal ANS_TAXI_RMKS_20 As TextBox) As String
         Return GetValue_ANS_TAXI_RMKS(ANS_TAXI_RMKS_20)
+    End Function
+
+    'タクシーチケット：精算コメント
+    Public Shared Function GetValue_ANS_TAXI_SRMKS(ByVal ANS_TAXI_SRMKS As TextBox) As String
+        Return Trim(ANS_TAXI_SRMKS.Text)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_1(ByVal ANS_TAXI_SRMKS_1 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_1)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_2(ByVal ANS_TAXI_SRMKS_2 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_2)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_3(ByVal ANS_TAXI_SRMKS_3 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_3)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_4(ByVal ANS_TAXI_SRMKS_4 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_4)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_5(ByVal ANS_TAXI_SRMKS_5 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_5)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_6(ByVal ANS_TAXI_SRMKS_6 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_6)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_7(ByVal ANS_TAXI_SRMKS_7 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_7)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_8(ByVal ANS_TAXI_SRMKS_8 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_8)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_9(ByVal ANS_TAXI_SRMKS_9 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_9)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_10(ByVal ANS_TAXI_SRMKS_10 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_10)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_11(ByVal ANS_TAXI_SRMKS_11 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_11)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_12(ByVal ANS_TAXI_SRMKS_12 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_12)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_13(ByVal ANS_TAXI_SRMKS_13 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_13)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_14(ByVal ANS_TAXI_SRMKS_14 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_14)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_15(ByVal ANS_TAXI_SRMKS_15 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_15)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_16(ByVal ANS_TAXI_SRMKS_16 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_16)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_17(ByVal ANS_TAXI_SRMKS_17 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_17)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_18(ByVal ANS_TAXI_SRMKS_18 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_18)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_19(ByVal ANS_TAXI_SRMKS_19 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_19)
+    End Function
+    Public Shared Function GetValue_ANS_TAXI_SRMKS_20(ByVal ANS_TAXI_SRMKS_20 As TextBox) As String
+        Return GetValue_ANS_TAXI_SRMKS(ANS_TAXI_SRMKS_20)
     End Function
 
     '社員用往路手配（回答）

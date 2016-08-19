@@ -444,63 +444,83 @@ Partial Public Class TaxiMeisaiCsv
                         Case "1"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_1
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_1
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_1
                         Case "2"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_2
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_2
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_2
                         Case "3"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_3
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_3
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_3
                         Case "4"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_4
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_4
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_4
                         Case "5"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_5
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_5
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_5
                         Case "6"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_6
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_6
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_6
                         Case "7"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_7
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_7
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_7
                         Case "8"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_8
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_8
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_8
                         Case "9"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_9
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_9
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_9
                         Case "10"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_10
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_10
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_10
                         Case "11"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_11
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_11
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_11
                         Case "12"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_12
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_12
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_12
                         Case "13"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_13
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_13
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_13
                         Case "14"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_14
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_14
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_14
                         Case "15"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_15
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_15
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_15
                         Case "16"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_16
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_16
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_16
                         Case "17"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_17
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_17
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_17
                         Case "18"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_18
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_18
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_18
                         Case "19"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_19
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_19
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_19
                         Case "20"
                             CsvData(wCnt).ANS_TAXI_DATE = TBL_KOTSUHOTEL.ANS_TAXI_DATE_20
                             CsvData(wCnt).ANS_TAXI_RMKS = TBL_KOTSUHOTEL.ANS_TAXI_RMKS_20
+                            CsvData(wCnt).ANS_TAXI_SRMKS = TBL_KOTSUHOTEL.ANS_TAXI_SRMKS_20
                     End Select
                     CsvData(wCnt).ANS_TAXI_DATE = CmnModule.Format_Date(CsvData(wCnt).ANS_TAXI_DATE, CmnModule.DateFormatType.YYYYMMDD)
                     CsvData(wCnt).DR_SHISETSU_NAME = TBL_KOTSUHOTEL.DR_SHISETSU_NAME
@@ -613,9 +633,8 @@ Partial Public Class TaxiMeisaiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Account Code(課税)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MRのCost Center")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ会社")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車発地")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車着地")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケTTT備考")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ精算コメント")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ備考(依頼)")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("タクチケ備考(回答)"), True))
         sb.Append(vbNewLine)
@@ -659,9 +678,8 @@ Partial Public Class TaxiMeisaiCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes("6833200")))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOTSU_COST_CENTER)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_KAISHA)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_HATUTI)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TKT_CHAKUTI)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_RMKS)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_SRMKS)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).REQ_TAXI_NOTE)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).ANS_TAXI_NOTE)))
             sb.Append(vbNewLine)
