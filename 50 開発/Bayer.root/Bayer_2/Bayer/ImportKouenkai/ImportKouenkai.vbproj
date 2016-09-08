@@ -24,7 +24,7 @@
     <ManifestCertificateThumbprint>A624FCB2A734120E36FB32AD38C48B5A9F349373</ManifestCertificateThumbprint>
     <ManifestKeyFile>ImportKouenkai_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>

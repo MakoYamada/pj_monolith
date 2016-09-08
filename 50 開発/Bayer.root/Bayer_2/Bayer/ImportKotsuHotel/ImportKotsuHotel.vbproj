@@ -25,7 +25,7 @@
     <ManifestCertificateThumbprint>EAE49CF60533BA0F59799F98A5F2D395C27DB05C</ManifestCertificateThumbprint>
     <ManifestKeyFile>ImportKotsuHotel_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>

@@ -5,9 +5,6 @@
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">reqgnl</Value>
     </Setting>
-    <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\srtFtpData\Top\ttuserbyts\request\general</Value>
-    </Setting>
     <Setting Name="NG_MOJI" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -16,6 +13,9 @@
     </Setting>
     <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\BatchTest\BackUp\request\general</Value>
+    </Setting>
+    <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\BatchTest</Value>
     </Setting>
   </Settings>
 </SettingsFile>

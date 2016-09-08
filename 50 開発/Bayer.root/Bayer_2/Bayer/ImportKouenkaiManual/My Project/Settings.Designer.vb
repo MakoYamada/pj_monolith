@@ -68,18 +68,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\srtFtpData\Top\ttuserbyts\request\general")>  _
-        Public Property PATH_RECEIVE() As String
-            Get
-                Return CType(Me("PATH_RECEIVE"),String)
-            End Get
-            Set
-                Me("PATH_RECEIVE") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property NG_MOJI() As String
             Get
@@ -111,6 +99,18 @@ Namespace My
             End Get
             Set
                 Me("PATH_RECEIVE_BKUP") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\BatchTest")>  _
+        Public Property PATH_RECEIVE() As String
+            Get
+                Return CType(Me("PATH_RECEIVE"),String)
+            End Get
+            Set
+                Me("PATH_RECEIVE") = value
             End Set
         End Property
     End Class

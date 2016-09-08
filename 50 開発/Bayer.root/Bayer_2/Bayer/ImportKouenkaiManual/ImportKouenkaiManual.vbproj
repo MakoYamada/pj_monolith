@@ -20,7 +20,7 @@
     <ManifestCertificateThumbprint>5B6691CAFE9DFF6150DC96C996EF15A6B3A3F6D5</ManifestCertificateThumbprint>
     <ManifestKeyFile>ImportKouenkaiManual_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
