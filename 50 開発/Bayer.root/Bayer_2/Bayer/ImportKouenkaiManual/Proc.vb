@@ -386,6 +386,9 @@ Public Class Proc
             TBL_KOUENKAI_Ins.IKENKOUKAN_YOSAN_T = CLng(fileData(COL_NO.Field41))
         End If
         '2015/6/15 End
+
+        TBL_KOUENKAI_Ins.WBS_ELEMENT = fileData(COL_NO.Field42) '2016/9/13 Add
+
         TBL_KOUENKAI_Ins.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
         TBL_KOUENKAI_Ins.INPUT_USER = pbatchID
         TBL_KOUENKAI_Ins.UPDATE_USER = pbatchID
@@ -394,10 +397,10 @@ Public Class Proc
         Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct = GetData(fileData(COL_NO.Field1))
         If TBL_KOUENKAI Is Nothing Then
             '新規データ
-            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.On
+            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
         Else
             '変更データ
-            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
+            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.On
 
             Dim idx As Integer = GetLastData(TBL_KOUENKAI)
             TBL_KOUENKAI_Ins.DANTAI_CODE = TBL_KOUENKAI(idx).DANTAI_CODE

@@ -874,6 +874,7 @@ Partial Public Class SankashaRyohiCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_ANS_F_TIME2_5(CsvData(wCnt).ANS_F_TIME2_5))))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_F_SEAT_5(CsvData(wCnt).ANS_F_SEAT_5))))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(GetName_ANS_F_SEAT_KIBOU_5(CsvData(wCnt).ANS_F_SEAT_KIBOU5)), True))
+            sb.Append(vbNewLine)
 
             'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
             'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_DateJP(CsvData(wCnt).FROM_DATE, CmnModule.DateFormatType.MMDD))))
@@ -1277,6 +1278,12 @@ Partial Public Class SankashaRyohiCsv
         'sb.Append(CmnCsv.SetData(CmnCsv.Quotes(""), True))
 
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("合計(込)")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))

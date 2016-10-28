@@ -343,10 +343,10 @@ Public Class Proc
         Dim TBL_KOUENKAI() As TableDef.TBL_KOUENKAI.DataStruct = GetData(fileData(COL_NO.Field1))
         If TBL_KOUENKAI Is Nothing Then
             '新規データ
-            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.On
+            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
         Else
             '変更データ
-            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.Off
+            TBL_KOUENKAI_Ins.KIDOKU_FLG = CmnConst.Flag.On
 
             Dim idx As Integer = GetLastData(TBL_KOUENKAI)
             TBL_KOUENKAI_Ins.DANTAI_CODE = TBL_KOUENKAI(idx).DANTAI_CODE

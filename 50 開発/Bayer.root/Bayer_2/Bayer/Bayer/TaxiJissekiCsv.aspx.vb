@@ -500,8 +500,6 @@ Partial Public Class TaxiJissekiCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_1)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_2)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(KEI_3)))

@@ -179,7 +179,7 @@ Partial Public Class KouenkaiList
         'strSQL = SQL.TBL_KOUENKAI.Search(Joken, False)
 
         ReDim TBL_KOUENKAI_KEY(wCnt)
-        strSQL = SQL.TBL_KOUENKAI.Search_KeyItem(Joken, True)
+        strSQL = SQL.TBL_KOUENKAI.Search_KeyItem(Joken, False)
 
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()

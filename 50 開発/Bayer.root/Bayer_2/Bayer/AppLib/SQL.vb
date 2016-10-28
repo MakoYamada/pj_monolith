@@ -377,7 +377,7 @@ Public Class SQL
             If NewData = True Then
                 '新着
                 strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.KIDOKU_FLG & " <>N'" & AppConst.KAIJO.KIDOKU_FLG.Code.Yes & "'"
-                strSQL &= " AND CNT > 1"
+                strSQL &= " AND CNT = 1"
             End If
 
             If Trim(Joken.KUBUN) = "A" Then
@@ -9346,7 +9346,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             '@@@ 2016/07/07 Add Start
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_HATUTI) & "'"
-            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_HATUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_CHAKUTI) & "'"
+            strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_CHAKUTI & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_CHAKUTI) & "'"
             '@@@ 2016/07/07 Add End
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_KAISHA & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_KAISHA) & "'"
             strSQL &= " AND " & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.TKT_NO) & "'"
