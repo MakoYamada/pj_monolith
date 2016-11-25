@@ -54,7 +54,7 @@ Partial Public Class SapCsv
         'クリア
         CmnModule.ClearAllControl(Me)
 
-        Me.LabelPageTitle.Text = "SAP用CSVデータ出力"
+        Me.LabelPageTitle.Text = "WPA用CSVデータ出力"
         Dim MS_USER As TableDef.MS_USER.DataStruct
         Try
             MS_USER = Session.Item(SessionDef.MS_USER)
@@ -344,6 +344,7 @@ Partial Public Class SapCsv
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1  '20161125 ADD(+/-はPostingKeyでのみ判断する)
             End If
 
             rowCnt += 1
@@ -361,6 +362,7 @@ Partial Public Class SapCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -397,6 +399,7 @@ Partial Public Class SapCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.INTERNAL_ORDER_TF)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.WBS_ELEMENT), True))
             sb.Append(vbNewLine)
@@ -427,6 +430,7 @@ Partial Public Class SapCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -461,6 +465,7 @@ Partial Public Class SapCsv
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -538,6 +543,7 @@ Partial Public Class SapCsv
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -656,6 +662,7 @@ Partial Public Class SapCsv
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).INTERNAL_ORDER)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(MrData(wCnt).WBS_ELEMENT), True))
                     sb.Append(vbNewLine)
@@ -711,6 +718,7 @@ Partial Public Class SapCsv
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -879,6 +887,7 @@ Partial Public Class SapCsv
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
                 sb.Append(vbNewLine)
             Next
@@ -1020,6 +1029,7 @@ Partial Public Class SapCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
         sb.Append(vbNewLine)
 
@@ -1043,6 +1053,7 @@ Partial Public Class SapCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.DOCUMENT_HEADER.Text)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1142,7 +1153,8 @@ Partial Public Class SapCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text.PadLeft(2, "0") & "月分")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("V2")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1462,7 +1474,7 @@ Partial Public Class SapCsv
         Response.Clear()
         Response.ContentType = CmnConst.Csv.ContentType
         Response.Charset = CmnConst.Csv.Charset
-        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("SAP用CSV_" & Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text & "_" & Now.ToString("yyyyMMddHHmmss") & ".csv"))
+        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("WPA用CSV_" & Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text & "_" & Now.ToString("yyyyMMddHHmmss") & ".csv"))
         Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8")
 
         Response.Write(csvStr)

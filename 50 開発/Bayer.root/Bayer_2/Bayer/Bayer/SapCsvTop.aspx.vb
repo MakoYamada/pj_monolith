@@ -54,7 +54,7 @@ Partial Public Class SapCsvTop
         'クリア
         CmnModule.ClearAllControl(Me)
 
-        Me.LabelPageTitle.Text = "SAP TOPTOUR用CSVデータ出力"
+        Me.LabelPageTitle.Text = "WPA TOPTOUR用CSVデータ出力"
         Dim MS_USER As TableDef.MS_USER.DataStruct
         Try
             MS_USER = Session.Item(SessionDef.MS_USER)
@@ -1452,7 +1452,7 @@ Partial Public Class SapCsvTop
         Response.Clear()
         Response.ContentType = CmnConst.Csv.ContentType
         Response.Charset = CmnConst.Csv.Charset
-        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("Sap_Toptour用_" & Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text & "_" & Now.ToString("yyyyMMddHHmmss") & ".csv"))
+        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("WPA_Toptour用_" & Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text & "_" & Now.ToString("yyyyMMddHHmmss") & ".csv"))
         Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
 
         Response.Write(csvStr)

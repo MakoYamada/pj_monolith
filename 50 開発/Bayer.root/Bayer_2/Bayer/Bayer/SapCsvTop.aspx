@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-	<title id="Title1" runat="server">SAP TOPTOUR用CSVデータ生成</title>
+	<title id="Title1" runat="server">WPA TOPTOUR用CSVデータ生成</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
 	<meta http-equiv="Pragma" content="no-cache" />
@@ -93,7 +93,7 @@
             </asp:ScriptManager>
             <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #cccccc; width: 100%">
                 <table cellspacing="0" cellpadding="2" border="0" width="100%">
-                    <tr align="left"><td style="text-align:left; font-weight:bold" colspan="4">SAP用CSV</td></tr>
+                    <tr align="left"><td style="text-align:left; font-weight:bold" colspan="4">WPA用CSV</td></tr>
                     <tr><td></td></tr>
                     <tr>
                         <td style="width:70px; text-align:left ">

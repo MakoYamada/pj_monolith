@@ -93,7 +93,7 @@
             </asp:ScriptManager>
             <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #cccccc; width: 100%">
                 <table cellspacing="0" cellpadding="2" border="0" width="100%">
-                    <tr align="left"><td style="text-align:left; font-weight:bold" colspan="4">SAP用CSV</td></tr>
+                    <tr align="left"><td style="text-align:left; font-weight:bold" colspan="4">WPA用CSV</td></tr>
                     <tr><td class="style1"></td></tr>
                     <tr>
                         <td style="text-align:left" class="style1">
@@ -147,7 +147,7 @@
                         </td>
                         <td align="left">
                             &nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="BtnSapCSV" runat="server" Text="SAP用CSV出力" Width="155px" CssClass="Button" />
+                            <asp:Button ID="BtnSapCSV" runat="server" Text="WPA用CSV出力" Width="155px" CssClass="Button" />
                             &nbsp;&nbsp;&nbsp;
                         </td>
                     </tr>

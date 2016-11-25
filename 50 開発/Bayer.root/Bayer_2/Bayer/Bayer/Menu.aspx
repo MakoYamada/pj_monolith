@@ -120,10 +120,12 @@
 							<asp:Button ID="BtnSeisan" runat="server" Text="精算処理" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnSap" runat="server" Text="SAPデータ作成" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnSap" runat="server" Text="WPAデータ作成" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnToptour" runat="server" Text="SAPデータ作成(TOPTOUR用)" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnToptour" runat="server" Text="WPAデータ作成(TOPTOUR用)" 
+                                Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnCost" runat="server" Text="コストセンター別費用入力" Width="200px" CssClass="Button" Visible="false" />
