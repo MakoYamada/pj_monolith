@@ -149,9 +149,6 @@
                             <HeaderStyle Wrap="False"></HeaderStyle>
                             <ItemStyle Wrap="False" Width="250px" HorizontalAlign="Left"></ItemStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="SEISAN_KANRYO" HeaderText="精算完了" >
-                            <ItemStyle HorizontalAlign="Center" Wrap="False" Width="70px"></ItemStyle>
-                        </asp:BoundField>
                         <asp:BoundField DataField="USER_NAME" HeaderText="TOP担当者" ItemStyle-Wrap="false"
                             HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center">
                             <HeaderStyle Wrap="False"></HeaderStyle>

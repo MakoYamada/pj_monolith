@@ -1735,7 +1735,8 @@ Public Class SQL
             strSQL &= " AND"
             strSQL &= " WK_SEIKYU."
             strSQL &= TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
-            strSQL &= "=N'" & CmnConst.Flag.Off & "'"
+            strSQL &= "=N''"
+            'strSQL &= "=N'" & CmnConst.Flag.Off & "'"
 
             strSQL &= " AND"
             strSQL &= " WK_KOUENKAI."

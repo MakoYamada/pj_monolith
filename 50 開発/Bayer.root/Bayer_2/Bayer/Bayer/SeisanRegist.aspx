@@ -62,22 +62,26 @@
                                         精算書<br />保存場所URL
                                     </td>
                                     <td nowrap="nowrap" align="left" colspan="5">
-                                        <asp:TextBox ID="SEISANSHO_URL" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="480px" MaxLength="255"></asp:TextBox>
+                                        <asp:TextBox ID="SEISANSHO_URL" runat="server" 
+                                            Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="730px" 
+                                            MaxLength="255"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" >
                                         タクチケ管理表<br />保存場所URL
                                     </td>
-                                    <td nowrap="nowrap" align="left" colspan="3">
-                                        <asp:TextBox ID="TAXI_TICKET_URL" runat="server" Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="480px" MaxLength="255"></asp:TextBox>
+                                    <td nowrap="nowrap" align="left" colspan="5">
+                                        <asp:TextBox ID="TAXI_TICKET_URL" runat="server" 
+                                            Text="http://WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW@" Width="730px" 
+                                            MaxLength="255"></asp:TextBox>
                                     </td>
-                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
+                                    <%--<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
                                         精算完了
                                     </td>
                                     <td nowrap="nowrap" align="left">
                                         <asp:CheckBox ID="SEISAN_KANRYO" runat="server" />
-                                    </td>
+                                    </td>--%>
                                 </tr>
                                 <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 120px;">
@@ -97,6 +101,15 @@
                                     </td>
                                     <td nowrap="nowrap" align="left" >
                                         <asp:Label ID="SHOUNIN_DATE" runat="server" Text=""></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
+                                        精算完了
+                                    </td>
+                                    <td nowrap="nowrap" align="left" colspan="5">
+							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Width="730px" MaxLength="255" 
+                                            Height="74px" TextMode="MultiLine" ></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>

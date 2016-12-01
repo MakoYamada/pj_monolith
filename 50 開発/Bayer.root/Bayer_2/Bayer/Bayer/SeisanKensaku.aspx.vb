@@ -14,7 +14,6 @@ Partial Public Class SeisanKensaku
         FROM_DATE
         KOUENKAI_NO
         KOUENKAI_NAME
-        SEISAN_KANRYO
         USER_NAME
         btnSeisan
         TO_DATE
@@ -216,7 +215,7 @@ Partial Public Class SeisanKensaku
     Protected Sub GrvList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.FROM_DATE).Text = AppModule.GetName_KOUENKAI_DATE(e.Row.Cells(CellIndex.FROM_DATE).Text, e.Row.Cells(CellIndex.TO_DATE).Text, True)
-            e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppModule.GetMark_SEISAN_KANRYO(e.Row.Cells(CellIndex.SEISAN_KANRYO).Text)
+            'e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppModule.GetMark_SEISAN_KANRYO(e.Row.Cells(CellIndex.SEISAN_KANRYO).Text)
         End If
     End Sub
 

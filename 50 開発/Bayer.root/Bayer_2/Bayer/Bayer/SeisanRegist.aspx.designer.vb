@@ -115,15 +115,6 @@ Partial Public Class SeisanRegist
     Protected WithEvents TAXI_TICKET_URL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SEISAN_KANRYO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEISAN_KANRYO As Global.System.Web.UI.WebControls.CheckBox
-
-    '''<summary>
     '''SHIHARAI_NO コントロール。
     '''</summary>
     '''<remarks>
@@ -149,6 +140,15 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SHOUNIN_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SEISAN_KANRYO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEISAN_KANRYO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''KAIJOHI_TF コントロール。
