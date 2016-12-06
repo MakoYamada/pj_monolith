@@ -379,6 +379,7 @@ Partial Public Class SapCsv
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -413,6 +414,7 @@ Partial Public Class SapCsv
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -448,6 +450,7 @@ Partial Public Class SapCsv
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -526,6 +529,7 @@ Partial Public Class SapCsv
                     Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                     If Kingaku < 0 Then
                         wPostingKey = AppConst.POSTING_KEY.Minus
+                        Kingaku = Kingaku * -1
                     End If
 
                     rowCnt += 1
@@ -642,6 +646,7 @@ Partial Public Class SapCsv
                     Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                     If Kingaku < 0 Then
                         wPostingKey = AppConst.POSTING_KEY.Minus
+                        Kingaku = Kingaku * -1
                     End If
 
                     rowCnt += 1
@@ -701,6 +706,7 @@ Partial Public Class SapCsv
                     Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                     If Kingaku < 0 Then
                         wPostingKey = AppConst.POSTING_KEY.Minus
+                        Kingaku = Kingaku * -1
                     End If
 
                     rowCnt += 1
@@ -866,6 +872,7 @@ Partial Public Class SapCsv
                 Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                 If Kingaku < 0 Then
                     wPostingKey = AppConst.POSTING_KEY.Minus
+                    Kingaku = Kingaku * -1
                 End If
 
                 rowCnt += 1
@@ -1155,6 +1162,7 @@ Partial Public Class SapCsv
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("V2")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))

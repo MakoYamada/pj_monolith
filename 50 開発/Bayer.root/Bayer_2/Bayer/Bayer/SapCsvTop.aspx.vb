@@ -344,6 +344,7 @@ Partial Public Class SapCsvTop
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -361,6 +362,7 @@ Partial Public Class SapCsvTop
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -384,6 +386,7 @@ Partial Public Class SapCsvTop
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -401,6 +404,7 @@ Partial Public Class SapCsvTop
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -424,6 +428,7 @@ Partial Public Class SapCsvTop
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -441,6 +446,7 @@ Partial Public Class SapCsvTop
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -465,6 +471,7 @@ Partial Public Class SapCsvTop
             Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
             If Kingaku < 0 Then
                 wPostingKey = AppConst.POSTING_KEY.Minus
+                Kingaku = Kingaku * -1
             End If
 
             rowCnt += 1
@@ -482,6 +489,7 @@ Partial Public Class SapCsvTop
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -525,6 +533,7 @@ Partial Public Class SapCsvTop
                     Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                     If Kingaku < 0 Then
                         wPostingKey = AppConst.POSTING_KEY.Minus
+                        Kingaku = Kingaku * -1
                     End If
 
                     rowCnt += 1
@@ -542,6 +551,7 @@ Partial Public Class SapCsvTop
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -624,6 +634,7 @@ Partial Public Class SapCsvTop
                     Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                     If Kingaku < 0 Then
                         wPostingKey = AppConst.POSTING_KEY.Minus
+                        Kingaku = Kingaku * -1
                     End If
 
                     rowCnt += 1
@@ -641,6 +652,7 @@ Partial Public Class SapCsvTop
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -665,6 +677,7 @@ Partial Public Class SapCsvTop
                     Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                     If Kingaku < 0 Then
                         wPostingKey = AppConst.POSTING_KEY.Minus
+                        Kingaku = Kingaku * -1
                     End If
 
                     rowCnt += 1
@@ -682,6 +695,7 @@ Partial Public Class SapCsvTop
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(ZEI_CD_HIKAZEI)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -810,6 +824,7 @@ Partial Public Class SapCsvTop
                 Dim wPostingKey As String = AppConst.POSTING_KEY.Plus
                 If Kingaku < 0 Then
                     wPostingKey = AppConst.POSTING_KEY.Minus
+                    Kingaku = Kingaku * -1
                 End If
 
                 rowCnt += 1
@@ -827,6 +842,7 @@ Partial Public Class SapCsvTop
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(strSapZeiCd)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1010,6 +1026,7 @@ Partial Public Class SapCsvTop
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
         sb.Append(vbNewLine)
 
@@ -1033,6 +1050,7 @@ Partial Public Class SapCsvTop
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.DOCUMENT_HEADER.Text)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1132,7 +1150,9 @@ Partial Public Class SapCsvTop
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("Nozomi 一括請求" & Me.JokenSHOUNIN_M.Text.PadLeft(2, "0") & "月分")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("V2")))
+        'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
