@@ -29,6 +29,8 @@ Partial Public Class KouenkaiRireki
         Button1
         KOUENKAI_NO
         TO_DATE
+        KOUENKAI_TITLE
+        TIME_STAMP2
     End Enum
 
 
@@ -210,6 +212,13 @@ Partial Public Class KouenkaiRireki
             Case "Detail"
                 Session.Item(SessionDef.KouenkaiRireki_SEQ) = (Me.GrvList.PageIndex * Me.GrvList.PageSize) + CmnModule.DbVal(e.CommandArgument)
                 Session.Item(SessionDef.KouenkaiRireki_PageIndex) = Me.GrvList.PageIndex
+
+                '@@@ Phase2
+                Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+                Dim row As GridViewRow = GrvList.Rows(index)
+                Session.Item(SessionDef.KOUENKAI_NO) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NO), DataControlFieldCell).Text()
+                Session.Item(SessionDef.TIME_STAMP) = DirectCast(GrvList.Rows(index).Controls(CellIndex.TIME_STAMP2), DataControlFieldCell).Text()
+                Session.Item(SessionDef.KOUENKAI_TITLE) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_TITLE), DataControlFieldCell).Text()
 
                 Dim scriptStr As String
                 scriptStr = "<script type='text/javascript'>"

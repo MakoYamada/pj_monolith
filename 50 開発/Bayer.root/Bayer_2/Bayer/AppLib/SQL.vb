@@ -184,9 +184,9 @@ Public Class SQL
             strSQL &= ") AS MS_USER"
             strSQL &= " WHERE"
             strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
-            strSQL &= " AND"
-            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
-            strSQL &= " SELECT MAX(TIME_STAMP)"
+            'strSQL &= " AND"
+            'strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            'strSQL &= " SELECT MAX(TIME_STAMP)"
             strSQL &= " FROM"
             strSQL &= " TBL_KOUENKAI"
             strSQL &= " WHERE"
@@ -208,9 +208,12 @@ Public Class SQL
             strSQL &= " AND "
             strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
             strSQL &= "='" & CmnDb.SqlString(Joken.TIME_STAMP) & "'"
-            strSQL &= " AND "
-            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE
-            strSQL &= "='" & CmnDb.SqlString(Joken.KOUENKAI_TITLE) & "'"
+
+            If CmnDb.SqlString(Joken.KOUENKAI_TITLE) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE
+                strSQL &= "='" & CmnDb.SqlString(Joken.KOUENKAI_TITLE) & "'"
+            End If
 
             Return strSQL
         End Function
@@ -354,7 +357,7 @@ Public Class SQL
             strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
             strSQL &= " ORDER BY "
             strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
-            strSQL &= " ) CNT"
+            strSQL &= " DESC) CNT"
             strSQL &= " FROM"
             strSQL &= " TBL_KOUENKAI)"
             strSQL &= " WK_KOUENKAI, "

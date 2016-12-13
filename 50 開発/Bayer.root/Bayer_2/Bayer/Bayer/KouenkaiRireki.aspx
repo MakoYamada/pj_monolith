@@ -99,6 +99,8 @@
                         </asp:ButtonField>
 						<asp:BoundField DataField="KOUENKAI_NO" />
 						<asp:BoundField DataField="TO_DATE" />
+						<asp:BoundField DataField="KOUENKAI_TITLE" />
+						<asp:BoundField DataField="TIME_STAMP" />
 					</Columns>
 				</asp:GridView>
 				<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>

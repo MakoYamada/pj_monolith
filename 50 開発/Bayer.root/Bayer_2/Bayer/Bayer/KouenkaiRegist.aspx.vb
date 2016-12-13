@@ -382,7 +382,7 @@ Partial Public Class KouenkaiRegist
         SearchKey = Nothing
         SearchKey.KOUENKAI_NO = KEY_KOUENKAI_NO
         SearchKey.TIME_STAMP = KEY_TIME_STAMP
-        SearchKey.KOUENKAI_TITLE = KEY_KOUENKAI_TITLE
+        SearchKey.KOUENKAI_TITLE = CmnModule.ClearHtmlSpace(KEY_KOUENKAI_TITLE)
 
         strSQL = SQL.TBL_KOUENKAI.byKEY_AllItem(SearchKey)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)

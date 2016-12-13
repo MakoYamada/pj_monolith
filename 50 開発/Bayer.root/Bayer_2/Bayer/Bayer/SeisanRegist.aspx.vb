@@ -331,6 +331,12 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
+        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength, True), Me)
+            SetFocus(Me.SEISAN_KANRYO)
+            Return False
+        End If
+
         '小計、合計金額桁数
         Dim intKetasu As Integer = 10
         If Not CmnCheck.IsLengthLE(Me.KEI_991330401_TF.Text.Replace(",", ""), intKetasu) Then
