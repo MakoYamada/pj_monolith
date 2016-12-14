@@ -115,6 +115,7 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.TAXI_SEISAN_T, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.SEISANSHO_URL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TAXI_TICKET_URL, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEISAN_KANRYO, CmnModule.ImeType.Active)
         CmnModule.SetIme(Me.MR_JR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL_TOZEI, CmnModule.ImeType.Disabled)
@@ -331,8 +332,21 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
+        '桁数チェック
+        If Not CmnCheck.IsLengthLE(Me.SEISANSHO_URL, Me.SEISANSHO_URL.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISANSHO_URL, Me.SEISANSHO_URL.MaxLength), Me)
+            SetFocus(Me.SEISANSHO_URL)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.TAXI_TICKET_URL, Me.TAXI_TICKET_URL.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.TAXI_TICKET_URL, Me.TAXI_TICKET_URL.MaxLength), Me)
+            SetFocus(Me.TAXI_TICKET_URL)
+            Return False
+        End If
+
         If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength, True), Me)
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength * 2, True), Me)
             SetFocus(Me.SEISAN_KANRYO)
             Return False
         End If

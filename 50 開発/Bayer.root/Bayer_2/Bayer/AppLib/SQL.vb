@@ -187,11 +187,11 @@ Public Class SQL
             'strSQL &= " AND"
             'strSQL &= " WK_KOUENKAI.TIME_STAMP=("
             'strSQL &= " SELECT MAX(TIME_STAMP)"
-            strSQL &= " FROM"
-            strSQL &= " TBL_KOUENKAI"
-            strSQL &= " WHERE"
-            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
-            strSQL &= " )"
+            'strSQL &= " FROM"
+            'strSQL &= " TBL_KOUENKAI"
+            'strSQL &= " WHERE"
+            'strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            'strSQL &= " )"
 
             If Trim(Joken.KUBUN) = "A" Then
                 strSQL &= " AND "
