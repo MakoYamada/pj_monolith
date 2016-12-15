@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="PATH_RECEIVE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3request\arrange</Value>
+    </Setting>
+    <Setting Name="FILE_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">reqarg</Value>
+    </Setting>
+    <Setting Name="NG_MOJI" Type="System.String" Scope="User">
+      <Value Profile="(Default)">あ</Value>
+    </Setting>
+    <Setting Name="PATH_WORK" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3Work\request\arrange</Value>
+    </Setting>
+    <Setting Name="PATH_RECEIVE_BKUP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Keiwa/Bayer_Phase3requestBkup</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
