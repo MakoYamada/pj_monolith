@@ -1032,6 +1032,7 @@ Public Class SQL
             strSQL &= "  ,TSK.INPUT_USER"
             strSQL &= "  ,TSK.UPDATE_DATE"
             strSQL &= "  ,TSK.UPDATE_USER"
+            strSQL &= "  ,TSK.SEISAN_DANTAI"
             strSQL &= "  ,TSN.SHIHARAI_NO"
             strSQL &= "  ,TSN.SHOUNIN_KUBUN"
             strSQL &= "  ,TSN.SHOUNIN_DATE"
@@ -1066,6 +1067,7 @@ Public Class SQL
             strSQL &= "SELECT"
             strSQL &= " WK_SEIKYU.*"
             strSQL &= ",WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ",WK_KOUENKAI.SEIHIN_NAME"
             strSQL &= ",WK_KOUENKAI.BU"
             strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_AREA"
             strSQL &= ",WK_KOUENKAI.KIKAKU_TANTO_EIGYOSHO"
@@ -1122,6 +1124,7 @@ Public Class SQL
             strSQL &= "  ,TSK.INPUT_USER"
             strSQL &= "  ,TSK.UPDATE_DATE"
             strSQL &= "  ,TSK.UPDATE_USER"
+            strSQL &= "  ,TSK.SEISAN_DANTAI"
             strSQL &= "  ,TSN.SHIHARAI_NO"
             strSQL &= "  ,TSN.SHOUNIN_KUBUN"
             strSQL &= "  ,TSN.SHOUNIN_DATE"
@@ -1177,6 +1180,18 @@ Public Class SQL
                     strSQL &= " =N''"
                 Else
                     strSQL &= " =N'" & CmnDb.SqlString(Joken.SHOUNIN_KUBUN) & "'"
+                End If
+            End If
+
+            If Trim(Joken.SEND_FLAG) <> "" Then
+                strSQL &= " AND ISNULL(WK_SEIKYU."
+                strSQL &= TableDef.TBL_SEIKYU.Column.SEND_FLAG
+                strSQL &= ",N'')"
+
+                If Joken.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi Then
+                    strSQL &= " =N''"
+                Else
+                    strSQL &= " =N'" & CmnDb.SqlString(Joken.SEND_FLAG) & "'"
                 End If
             End If
 
@@ -1274,7 +1289,8 @@ Public Class SQL
             If Trim(Joken.KOUENKAI_NO) <> "" Then
                 strSQL &= " AND WK_KOUENKAI."
                 strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
-                strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                'strSQL &= " =N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+                strSQL &= " LIKE N'%" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "%'"
             End If
 
             If Trim(Joken.KOUENKAI_NAME) <> "" Then
@@ -1350,6 +1366,7 @@ Public Class SQL
             strSQL &= "  ,TSK.TAXI_TF"
             strSQL &= "  ,TSK.TAXI_SEISAN_TF"
             strSQL &= "  ,TSK.KEI_TF"
+            strSQL &= "  ,TSK.SEISAN_DANTAI"
             strSQL &= "  ,TSN.SHIHARAI_NO"
             strSQL &= "  FROM TBL_SEIKYU TSK"
             strSQL &= "  LEFT JOIN TBL_SHOUNIN TSN"
@@ -1805,6 +1822,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_USER
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_DANTAI
             strSQL &= ")"
             strSQL &= " VALUES"
             strSQL &= "(N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
@@ -1855,6 +1873,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.INPUT_USER) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_DANTAI) & "'"
             strSQL &= ")"
 
             Return strSQL
@@ -1932,6 +1951,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TTANTO_ID & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TTANTO_ID) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_DANTAI & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_DANTAI) & "'"
             strSQL &= " WHERE " & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEIKYU_NO_TOPTOUR) & "'"
 

@@ -350,6 +350,8 @@
             '@@@ Phase3
             Public WBS_ELEMENT As String
             '@@@ Phase3
+
+            Public SEISAN_DANTAI As String  '20161216 ADD
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -435,6 +437,8 @@
             '@@@ Phase3
             Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
             '@@@ Phase3
+
+            Public Const SEISAN_DANTAI As String = "SEISAN_DANTAI"  '20161216 Add
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
@@ -518,6 +522,8 @@
             '@@@ Phase3
             Public Const WBS_ELEMENT As String = "WBS Element"
             '@@@ Phase3
+
+            Public Const SEISAN_DANTAI As String = "精算用団体コード"
         End Class
     End Class
 

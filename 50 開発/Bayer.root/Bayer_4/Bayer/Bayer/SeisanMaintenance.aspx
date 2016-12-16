@@ -67,16 +67,16 @@
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" >
                                         タクチケ管理表<br />保存場所URL
                                     </td>
-                                    <td nowrap="nowrap" align="left" colspan="3">
+                                    <td nowrap="nowrap" align="left" colspan="5">
                                         <asp:TextBox ID="TAXI_TICKET_URL" runat="server" BorderStyle="None" 
                                             Width="480px" ReadOnly="True" TabIndex="-1"></asp:TextBox>
                                     </td>
-                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
+                                    <%--<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
                                         精算完了
                                     </td>
                                     <td nowrap="nowrap" align="left">
                                         <asp:Label ID="SEISAN_KANRYO" runat="server" Text=""></asp:Label>
-                                    </td>
+                                    </td>--%>
                                 </tr>
                                 <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 120px;">
@@ -101,6 +101,15 @@
                                     </td>
                                     <td nowrap="nowrap" align="left" >
                                         <asp:textbox ID="SHOUNIN_DATE" runat="server" Width="80px"></asp:textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
+                                        精算完了
+                                    </td>
+                                    <td nowrap="nowrap" align="left" colspan="5">
+							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Width="730px" readonly="true"
+                                            Height="74px" TextMode="MultiLine" ></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>

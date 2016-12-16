@@ -17,14 +17,25 @@ Partial Public Class SeisanList
         FROM_DATE
         KOUENKAI_NO
         KOUENKAI_NAME
-        TEHAI_ID
+        SEIHIN_NAME
         SEIKYU_NO_TOPTOUR
+        SHIHARAI_NO
+        SEISAN_KINGAKU
+        SEISAN_KANRYO
         SEISAN_YM
         UPDATE_DATE
         SHOUNIN_KUBUN
+        SHOUNIN_DATE
         SEND_FLAG
         Button1
         TO_DATE
+        KEI_TF
+        KEI_T
+        MR_JR
+        MR_HOTEL
+        MR_HOTEL_TOZEI
+        TAXI_T
+        TAXI_SEISAN_T
     End Enum
 
     Private Sub SeisanList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
@@ -112,6 +123,7 @@ Partial Public Class SeisanList
         AppModule.SetDropDownList_SHOUNIN_KUBUN(Me.JokenSHOUNIN_KUBUN)
         AppModule.SetDropDownList_BU(Me.JokenBU, DbConnection)
         AppModule.SetDropDownList_AREA(Me.JokenKIKAKU_TANTO_AREA, DbConnection)
+        AppModule.SetDropDownList_SEND_FLAG(Me.JokenSEND_FLAG)
 
         'IME設定        CmnModule.SetIme(Me.JokenKOUENKAI_NO, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.JokenSEIKYU_NO_TOPTOUR, CmnModule.ImeType.Disabled)
@@ -215,6 +227,7 @@ Partial Public Class SeisanList
         Joken.KIKAKU_TANTO_ROMA = Me.JokenKIKAKU_TANTO_ROMA.Text.Trim
         If Me.JokenBU.SelectedIndex <> 0 Then Joken.BU = Me.JokenBU.SelectedItem.Value
         If Me.JokenKIKAKU_TANTO_AREA.SelectedIndex <> 0 Then Joken.AREA = Me.JokenKIKAKU_TANTO_AREA.SelectedItem.Value
+        If Me.JokenSEND_FLAG.SelectedIndex <> 0 Then Joken.SEND_FLAG = Me.JokenSEND_FLAG.SelectedValue
 
         ReDim TBL_SEIKYU(wCnt)
         strSQL = SQL.TBL_SEIKYU.Search(Joken)
@@ -261,7 +274,15 @@ Partial Public Class SeisanList
             e.Row.Cells(CellIndex.SEISAN_YM).Text = AppModule.GetName_SEISAN_YM(e.Row.Cells(CellIndex.SEISAN_YM).Text)
             e.Row.Cells(CellIndex.UPDATE_DATE).Text = AppModule.GetName_UPDATE_DATE(e.Row.Cells(CellIndex.UPDATE_DATE).Text)
             e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
+            e.Row.Cells(CellIndex.SHOUNIN_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.SHOUNIN_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
             e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
+            e.Row.Cells(CellIndex.SEISAN_KINGAKU).Text = "\" & CmnModule.EditComma(AppModule.GetName_SEISAN_KINGKU(e.Row.Cells(CellIndex.KEI_TF).Text, _
+                                                                                          e.Row.Cells(CellIndex.KEI_T).Text, _
+                                                                                          e.Row.Cells(CellIndex.MR_JR).Text, _
+                                                                                          e.Row.Cells(CellIndex.MR_HOTEL).Text, _
+                                                                                          e.Row.Cells(CellIndex.MR_HOTEL_TOZEI).Text, _
+                                                                                          e.Row.Cells(CellIndex.TAXI_T).Text, _
+                                                                                          e.Row.Cells(CellIndex.TAXI_SEISAN_T).Text))
         End If
     End Sub
 
@@ -269,6 +290,13 @@ Partial Public Class SeisanList
     Private Sub GrvList_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GrvList.RowCreated
         If e.Row.RowType = DataControlRowType.Header OrElse e.Row.RowType = DataControlRowType.Footer OrElse e.Row.RowType = DataControlRowType.DataRow Then
             e.Row.Cells(CellIndex.TO_DATE).Visible = False
+            e.Row.Cells(CellIndex.KEI_TF).Visible = False
+            e.Row.Cells(CellIndex.KEI_T).Visible = False
+            e.Row.Cells(CellIndex.MR_JR).Visible = False
+            e.Row.Cells(CellIndex.MR_HOTEL).Visible = False
+            e.Row.Cells(CellIndex.MR_HOTEL_TOZEI).Visible = False
+            e.Row.Cells(CellIndex.TAXI_T).Visible = False
+            e.Row.Cells(CellIndex.TAXI_SEISAN_T).Visible = False
         ElseIf e.Row.RowType = DataControlRowType.Pager Then
             CType(e.Row.Controls(0), TableCell).ColumnSpan = CType(e.Row.Controls(0), TableCell).ColumnSpan - 1
             Me.GrvList.BorderStyle = BorderStyle.None

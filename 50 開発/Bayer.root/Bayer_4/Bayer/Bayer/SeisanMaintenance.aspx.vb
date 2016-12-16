@@ -118,6 +118,7 @@ Partial Public Class SeisanMaintenance
         CmnModule.SetIme(Me.MR_JR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL_TOZEI, CmnModule.ImeType.Disabled)
+        CmnModule.SetIme(Me.SEISAN_KANRYO, CmnModule.ImeType.Active)
 
         AppModule.SetDropDownList_SEND_FLAG_ForSEISAN(Me.SEND_FLAG)
         CmnModule.SetEnabled(Me.SEND_FLAG, False)
@@ -199,10 +200,11 @@ Partial Public Class SeisanMaintenance
         Me.TAXI_SEISAN_T.Text = CmnModule.EditComma(TBL_SEIKYU(SEQ).TAXI_SEISAN_T)
         Me.SEISANSHO_URL.Text = TBL_SEIKYU(SEQ).SEISANSHO_URL
         Me.TAXI_TICKET_URL.Text = TBL_SEIKYU(SEQ).TAXI_TICKET_URL
-        AppModule.SetForm_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO, Me.SEISAN_KANRYO)
+        'AppModule.SetForm_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO, Me.SEISAN_KANRYO)
         Me.MR_JR.Text = CmnModule.EditComma(TBL_SEIKYU(SEQ).MR_JR)
         Me.MR_HOTEL.Text = CmnModule.EditComma(TBL_SEIKYU(SEQ).MR_HOTEL)
         Me.MR_HOTEL_TOZEI.Text = CmnModule.EditComma(TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI)
+        Me.SEISAN_KANRYO.Text = TBL_SEIKYU(SEQ).SEISAN_KANRYO
 
         '合計金額再計算
         CalculateKingaku()

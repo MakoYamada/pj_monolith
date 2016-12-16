@@ -4975,6 +4975,18 @@ Public Class AppModule
         End Select
     End Function
 
+    'ëççáåvã‡äz
+    Public Shared Function GetName_SEISAN_KINGKU(ByVal KEI_TF As String, ByVal KEI_T As String, _
+                                                    ByVal MR_JR As String, ByVal MR_HOTEL As String, ByVal MR_HOTEL_TOZEI As String, _
+                                                    ByVal TAXI_T As String, ByVal TAXI_SEISAN_T As String)
+        Return CmnModule.DbVal_Kingaku(KEI_TF.Trim) + _
+                CmnModule.DbVal_Kingaku(KEI_T) + _
+                CmnModule.DbVal_Kingaku(MR_JR) + _
+                CmnModule.DbVal_Kingaku(MR_HOTEL) + _
+                CmnModule.DbVal_Kingaku(MR_HOTEL_TOZEI) + _
+                CmnModule.DbVal_Kingaku(TAXI_T) + _
+                CmnModule.DbVal_Kingaku(TAXI_SEISAN_T)
+    End Function
 
     'SAPCSVÇÃêøãÅîNåéì˙
     Public Shared Function GetName_SAP_SEIKYU_YMD(ByVal strYMD As String) As String
