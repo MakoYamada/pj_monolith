@@ -194,11 +194,29 @@ Partial Public Class SeisanRegist
         Me.TAXI_SEISAN_T.Text = TBL_SEIKYU(SEQ).TAXI_SEISAN_T
         Me.SEISANSHO_URL.Text = TBL_SEIKYU(SEQ).SEISANSHO_URL
         Me.TAXI_TICKET_URL.Text = TBL_SEIKYU(SEQ).TAXI_TICKET_URL
-        Me.SEISAN_KANRYO.Text = TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim
+        '精算完了フラグ=0(旧Ver.対応)
+        If TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim = AppConst.SEISAN.SEISAN_KANRYO.Code.Mi Then
+            Me.SEISAN_KANRYO.Text = AppModule.GetName_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO)
+        ElseIf TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim = AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo Then
+            Me.SEISAN_KANRYO.Text = AppModule.GetName_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO)
+        Else
+            Me.SEISAN_KANRYO.Text = TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim
+        End If
         'AppModule.SetForm_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO, Me.SEISAN_KANRYO)
         Me.MR_JR.Text = TBL_SEIKYU(SEQ).MR_JR
         Me.MR_HOTEL.Text = TBL_SEIKYU(SEQ).MR_HOTEL
         Me.MR_HOTEL_TOZEI.Text = TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI
+
+        '基本情報表示 20161219 Add Start
+        Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(TBL_SEIKYU(SEQ).FROM_DATE)
+        Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(TBL_SEIKYU(SEQ).KOUENKAI_NAME)
+        Me.BU.Text = AppModule.GetName_BU(TBL_SEIKYU(SEQ).BU)
+        Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(TBL_SEIKYU(SEQ).KIKAKU_TANTO_AREA)
+        Me.KIKAKU_TANTO_EIGYOSHO.Text = AppModule.GetName_KIKAKU_TANTO_EIGYOSHO(TBL_SEIKYU(SEQ).KIKAKU_TANTO_EIGYOSHO)
+        Me.KIKAKU_TANTO_NAME.Text = AppModule.GetName_KIKAKU_TANTO_NAME(TBL_SEIKYU(SEQ).KIKAKU_TANTO_NAME)
+        Me.SEIHIN_NAME.Text = AppModule.GetName_SEIHIN_NAME(TBL_SEIKYU(SEQ).SEIHIN_NAME)
+        Me.SRM_HACYU_KBN.Text = AppModule.GetName_SRM_HACYU_KBN(TBL_SEIKYU(SEQ).SRM_HACYU_KBN)
+        '20161219 Add End
 
         '合計金額再計算
         If Not CheckCalcItem() Then Exit Sub
@@ -756,7 +774,7 @@ Partial Public Class SeisanRegist
     End Sub
 
     '[印刷]
-    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click, BtnPrint2.Click
+    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnPrint1.Click
 
         If Not CmnCheck.IsInput(Me.SEIKYU_NO_TOPTOUR) Then
             '精算番号が自動採番されていないとき(=DBへ登録されていない)
@@ -774,7 +792,7 @@ Partial Public Class SeisanRegist
     End Sub
 
     '[戻る]
-    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel1.Click, BtnCancel2.Click
+    Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel1.Click
         Session.Remove(SessionDef.SeisanRegistReport_SQL)
         Session.Remove(SessionDef.BackURL_Print)
 
@@ -1156,4 +1174,49 @@ Partial Public Class SeisanRegist
         Return True
     End Function
 
+    '会合基本情報へ
+    Private Sub BtnKihon_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnKihon.Click
+        Dim WK_KOUENKAI As New TableDef.TBL_KOUENKAI.DataStruct
+
+        '選択レコード情報をセッション変数にセット
+        If Not GetKouenkaiData(Me.KOUENKAI_NO.Text, WK_KOUENKAI) Then Exit Sub
+
+        Session.Item(SessionDef.KouenkaiRireki_TBL_KOUENKAI) = WK_KOUENKAI
+        Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
+        Session.Item(SessionDef.KOUENKAI_NO) = WK_KOUENKAI.KOUENKAI_NO
+        Session.Item(SessionDef.TIME_STAMP) = WK_KOUENKAI.TIME_STAMP
+        Session.Item(SessionDef.KOUENKAI_TITLE) = WK_KOUENKAI.KOUENKAI_TITLE
+        Session.Item(SessionDef.KOUENKAI_NAME) = WK_KOUENKAI.KOUENKAI_NAME
+        Session.Item(SessionDef.SEQ) = 0
+
+
+        '履歴画面用セッション変数をクリア
+        Session.Item(SessionDef.KouenkaiRireki) = True
+        Session.Remove(SessionDef.KouenkaiRireki_PageIndex)
+        Session.Item(SessionDef.KouenkaiRireki_SEQ) = 0
+
+        Dim scriptStr As String
+        scriptStr = "<script type='text/javascript'>"
+        scriptStr += "window.open('" & URL.KouenkaiRegist & "','_blank','width=1200,height=800,resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=no');"
+        scriptStr += "</script>"
+        ClientScript.RegisterStartupScript(Me.GetType(), "Detail", scriptStr)
+    End Sub
+
+    '会合最新情報取得
+    Private Function GetKouenkaiData(ByVal KOUENKAI_NO As String, ByRef WK_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As Boolean
+        Dim wFlag As Boolean = False
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(KOUENKAI_NO)
+
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlag = True
+            WK_KOUENKAI = AppModule.SetRsData(RsData, WK_KOUENKAI)
+        End If
+        RsData.Close()
+        Return wFlag
+    End Function
 End Class

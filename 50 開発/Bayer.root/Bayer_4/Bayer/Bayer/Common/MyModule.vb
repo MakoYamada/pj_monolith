@@ -4220,6 +4220,95 @@ Public Class MyModule
             Return sb.ToString
         End Function
 
+        Public Shared Function SeisanListCsv(ByVal CsvData() As TableDef.TBL_SEIKYU.DataStruct, _
+                                     ByVal DbConn As System.Data.SqlClient.SqlConnection) As String
+            Dim wCnt As Integer = 0
+            Dim sb As New System.Text.StringBuilder
+
+            'ヘッダ列
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会場")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP担当者")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当BU")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当エリア")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当営業所")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当者")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当電話番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当携帯番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("企画担当アドレス")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当BU")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当エリア")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当営業所")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当者")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当電話番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当携帯番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("手配担当アドレス")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("製品名")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("SRM発注")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算番号")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("支払番号（PAY）")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("金額（総合計）")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP精算年月")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("TOP送信日時")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("承認区分")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("承認日")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("NOZOMI送信")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算用団体コード【今回追加依頼分】")))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算コメント"), True))
+            sb.Append(vbNewLine)
+
+            For wCnt = 0 To UBound(CsvData)
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_DateJP(CsvData(wCnt).FROM_DATE, CmnModule.DateFormatType.MD))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KOUENKAI_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KAIJO_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).USER_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).BU)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_AREA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_EIGYOSHO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_TEL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_KEITAI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).KIKAKU_TANTO_EMAIL_PC)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_BU)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_AREA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_EIGYOSHO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_TEL)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_KEITAI)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).TEHAI_TANTO_EMAIL_PC)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIHIN_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SRM_HACYU_KBN(CsvData(wCnt).SRM_HACYU_KBN))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEIKYU_NO_TOPTOUR)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SHIHARAI_NO)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SEISAN_KINGKU(CsvData(wCnt).KEI_TF, _
+                                                                                              CsvData(wCnt).KEI_T, _
+                                                                                              CsvData(wCnt).MR_JR, _
+                                                                                              CsvData(wCnt).MR_HOTEL, _
+                                                                                              CsvData(wCnt).MR_HOTEL_TOZEI, _
+                                                                                              CsvData(wCnt).TAXI_T, _
+                                                                                              CsvData(wCnt).TAXI_SEISAN_T))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SEISAN_YM(CsvData(wCnt).SEISAN_YM))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SEND_DATE(CsvData(wCnt).UPDATE_DATE))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SHOUNIN_KUBUN(CsvData(wCnt).SHOUNIN_KUBUN))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_Date(CsvData(wCnt).SHOUNIN_DATE, CmnModule.DateFormatType.YYYYMMDD))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SEND_FLAG(CsvData(wCnt).SEND_FLAG))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISAN_DANTAI)))
+                If CsvData(wCnt).SEISAN_KANRYO.Trim = AppConst.SEISAN.SEISAN_KANRYO.Code.Mi Then
+                    sb.Append(CmnCsv.SetData(AppModule.GetName_SEISAN_KANRYO(CmnCsv.Quotes(CsvData(wCnt).SEISAN_KANRYO)), True))
+                ElseIf CsvData(wCnt).SEISAN_KANRYO.Trim = AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo Then
+                    sb.Append(CmnCsv.SetData(AppModule.GetName_SEISAN_KANRYO(CmnCsv.Quotes(CsvData(wCnt).SEISAN_KANRYO)), True))
+                Else
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SEISAN_KANRYO), True))
+                End If
+                sb.Append(vbNewLine)
+            Next wCnt
+
+            Return sb.ToString
+        End Function
+
     End Class
 
 End Class

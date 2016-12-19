@@ -12,6 +12,8 @@
                                     <td colspan="3">
                                         <asp:Button ID="BtnLockCancel" runat="server" Width="80px" Text="解除" 
                                             CssClass="Button" BackColor="#ececec" />&nbsp;&nbsp;&nbsp;
+						                <asp:Button ID="BtnCalc" runat="server" Width="130px" Text="再計算" 
+                                            CssClass="Button" BackColor="#ececec" />
                                         <asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="印刷" 
                                             CssClass="Button" BackColor="#ececec" />
 							            <asp:Button ID="BtnCancel1" runat="server" Width="130px" Text="戻る" 
@@ -37,6 +39,12 @@
                             </table>
                             <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="100%">
                                 <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" colspan="6">
+                                        <asp:Button ID="BtnKihon" runat="server" Width="150px" Text="基本情報へ" 
+                                            CssClass="Button" BackColor="#ececec" />&nbsp;&nbsp;&nbsp;                                    
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:120px;">
                                         会合番号
                                     </td>
@@ -56,6 +64,21 @@
 							            <asp:TextBox ID="SEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" BorderStyle="None" 
                                             Width="125px" MaxLength="14" ReadOnly="True" TabIndex="-1"></asp:TextBox>
 						            </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
+                                        精算完了
+                                    </td>
+                                    <td nowrap="nowrap" align="left" colspan="3">
+							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Width="492px" MaxLength="255" 
+                                            Height="74px" TextMode="MultiLine" ></asp:TextBox>
+                                    </td>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
+                                        精算用<br />団体コード
+                                    </td>
+                                    <td nowrap="nowrap" align="left">
+							            <asp:TextBox ID="SEISAN_DANTAI" runat="server" Width="100px" MaxLength="6">123456</asp:TextBox>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td nowrap="nowrap" align="left" class="TdTitleHeader">
@@ -103,13 +126,70 @@
                                         <asp:Label ID="SHOUNIN_DATE" runat="server" Text=""></asp:Label>
                                     </td>
                                 </tr>
+                            </table>
+                            <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="100%">
                                 <tr>
-                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
-                                        精算完了
+                                    <td colspan="8">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        開催日
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="FROM_DATE" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        会合名
                                     </td>
                                     <td nowrap="nowrap" align="left" colspan="5">
-							            <asp:TextBox ID="SEISAN_KANRYO" runat="server" Width="730px" MaxLength="255" 
-                                            Height="74px" TextMode="MultiLine" ></asp:TextBox>
+                                        <asp:Label ID="KOUENKAI_NAME" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        企画担当者BU
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="BU" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        エリア
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="KIKAKU_TANTO_AREA" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        営業所
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="KIKAKU_TANTO_EIGYOSHO" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        企画担当者名
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="KIKAKU_TANTO_NAME" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        製品名
+                                    </td>
+                                    <td nowrap="nowrap" align="left" colspan="5">
+                                        <asp:Label ID="SEIHIN_NAME" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                    <td nowrap="nowrap" align="left" class="TdTitleHeader" style="width: 100px;">
+                                        SRM発注区分
+                                    </td>
+                                    <td nowrap="nowrap" align="left" >
+                                        <asp:Label ID="SRM_HACYU_KBN" runat="server" Text=""></asp:Label>
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    <td colspan="8">
+                                        &nbsp;
                                     </td>
                                 </tr>
                             </table>
@@ -482,8 +562,8 @@
 				<div class="FontSize1" style="height: 10px;"></div>
 				<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
 				    <tr style="height: 36px;">
-				        <td nowrap="nowrap" align="center">
-					        <asp:Button ID="BtnDrCsv" runat="server" Width="200px" Text="参加者一覧CSV作成" 
+				        <td nowrap="nowrap" align="left"  colspan="2">
+					        &nbsp;<asp:Button ID="BtnDrCsv" runat="server" Width="200px" Text="参加者一覧CSV作成" 
                                 CssClass="Button" BackColor="#ececec" />
                             <asp:Button ID="BtnDrCsvHid" runat="server" Width="10px" Text="" style="visibility:hidden"
                                 CssClass="Button" />
@@ -500,16 +580,16 @@
 					    </td>
 				    </tr>
 					<tr style="height: 36px;">
-						<td nowrap="nowrap" align="center">
-						    <asp:Button ID="BtnCalc" runat="server" Width="130px" Text="再計算" 
-                                CssClass="Button" BackColor="#ececec" />
+						<td nowrap="nowrap" align="left">
 							<asp:Button ID="BtnSubmit" runat="server" Width="130px" Text="登録" 
                                 CssClass="Button" BackColor="#ececec" />
-							<asp:Button ID="BtnNozomi" runat="server" Width="130px" Text="NOZOMIへ" 
-                                CssClass="Button" BackColor="#ececec" />
-							<asp:Button ID="BtnPrint2" runat="server" Width="130px" Text="印刷" 
+							<%--<asp:Button ID="BtnPrint2" runat="server" Width="130px" Text="印刷" 
                                 CssClass="Button" BackColor="#ececec" />
 							<asp:Button ID="BtnCancel2" runat="server" Width="130px" Text="戻る" 
+                                CssClass="Button" BackColor="#ececec" />--%>
+						</td>
+						<td nowrap="nowrap" align="right">
+							<asp:Button ID="BtnNozomi" runat="server" Width="130px" Text="NOZOMIへ" 
                                 CssClass="Button" BackColor="#ececec" />
 						</td>
 					</tr>
