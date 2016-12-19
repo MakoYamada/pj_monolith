@@ -70,6 +70,8 @@ Partial Public Class SeisanList
                 SetForm()
             Else
                 Me.BtnInsert.Visible = False
+                Me.BtnSeisanListCsv1.Visible = False
+                Me.BtnSeisanListCsv2.Visible = False
                 Me.BtnSeisanListPrint1.Visible = False
                 Me.BtnSeisanListPrint2.Visible = False
                 Me.BtnMishuHoukoku1.Visible = False
@@ -179,11 +181,14 @@ Partial Public Class SeisanList
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
             Me.TblButton1.Visible = False
+            Me.BtnSeisanListCsv1.Visible = False
+            Me.BtnSeisanListCsv2.Visible = False
             Me.BtnSeisanListPrint1.Visible = False
             Me.BtnSeisanListPrint2.Visible = False
             Me.BtnMishuHoukoku1.Visible = False
             Me.BtnMishuHoukoku2.Visible = False
             Me.BtnBack2.Visible = True
+            CmnModule.SetEnabled(Me.BtnSeisanListCsv2, False)
             CmnModule.SetEnabled(Me.BtnSeisanListPrint2, False)
             CmnModule.SetEnabled(Me.BtnMishuHoukoku2, False)
         Else
@@ -191,17 +196,22 @@ Partial Public Class SeisanList
             Me.GrvList.Visible = True
             Me.TblButton1.Visible = True
             If DATA_MAINTENANCE = CmnConst.Flag.Off Then
+                Me.BtnSeisanListCsv1.Visible = True
+                Me.BtnSeisanListCsv2.Visible = True
                 Me.BtnSeisanListPrint1.Visible = True
                 Me.BtnSeisanListPrint2.Visible = True
                 Me.BtnMishuHoukoku1.Visible = True
                 Me.BtnMishuHoukoku2.Visible = True
             Else
+                Me.BtnSeisanListCsv1.Visible = False
+                Me.BtnSeisanListCsv2.Visible = False
                 Me.BtnSeisanListPrint1.Visible = False
                 Me.BtnSeisanListPrint2.Visible = False
                 Me.BtnMishuHoukoku1.Visible = False
                 Me.BtnMishuHoukoku2.Visible = False
             End If
             Me.BtnBack2.Visible = True
+            CmnModule.SetEnabled(Me.BtnSeisanListCsv2, True)
             CmnModule.SetEnabled(Me.BtnSeisanListPrint2, True)
             CmnModule.SetEnabled(Me.BtnMishuHoukoku2, True)
 
@@ -443,6 +453,25 @@ Partial Public Class SeisanList
         Session.Item(SessionDef.BackURL_Print) = Request.Url.AbsolutePath
         Session.Item(SessionDef.BackURL) = Request.Url.AbsolutePath
         Response.Redirect(URL.Preview)
+    End Sub
+
+    '[精算データ一覧CSV出力]
+    Protected Sub BtnSeisanListCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisanListCsv1.Click, BtnSeisanListCsv2.Click
+
+        Dim CsvData() As TableDef.TBL_SEIKYU.DataStruct
+        If GetData() Then
+            CsvData = TBL_SEIKYU
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "SeisanList_" & Now.ToString("yyyyMMddHHmmss") & ".csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(MyModule.Csv.SeisanListCsv(CsvData, MyBase.DbConnection))
+            Response.End()
+        End If
+
     End Sub
 
     '[未収入金滞留理由報告書印刷]

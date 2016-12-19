@@ -351,7 +351,17 @@
             Public WBS_ELEMENT As String
             '@@@ Phase3
 
-            Public SEISAN_DANTAI As String  '20161216 ADD
+            '20161216 Add Start
+            Public SEISAN_DANTAI As String
+            Public USER_NAME As String
+            Public KIKAKU_TANTO_TEL As String
+            Public KIKAKU_TANTO_KEITAI As String
+            Public KIKAKU_TANTO_EMAIL_PC As String
+            Public TEHAI_TANTO_TEL As String
+            Public TEHAI_TANTO_KEITAI As String
+            Public TEHAI_TANTO_EMAIL_PC As String
+            '20161216 Add End
+
         End Structure
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
@@ -438,7 +448,16 @@
             Public Const WBS_ELEMENT As String = "WBS_ELEMENT"
             '@@@ Phase3
 
-            Public Const SEISAN_DANTAI As String = "SEISAN_DANTAI"  '20161216 Add
+            '20161216 Add Start
+            Public Const SEISAN_DANTAI As String = "SEISAN_DANTAI"
+            Public Const USER_NAME As String = "USER_NAME"
+            Public Const KIKAKU_TANTO_TEL As String = "KIKAKU_TANTO_TEL"
+            Public Const KIKAKU_TANTO_KEITAI As String = "KIKAKU_TANTO_KEITAI"
+            Public Const KIKAKU_TANTO_EMAIL_PC As String = "KIKAKU_TANTO_EMAIL_PC"
+            Public Const TEHAI_TANTO_TEL As String = "TEHAI_TANTO_TEL"
+            Public Const TEHAI_TANTO_KEITAI As String = "TEHAI_TANTO_KEITAI"
+            Public Const TEHAI_TANTO_EMAIL_PC As String = "TEHAI_TANTO_EMAIL_PC"
+            '20161216 Add End
         End Class
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
@@ -523,7 +542,16 @@
             Public Const WBS_ELEMENT As String = "WBS Element"
             '@@@ Phase3
 
+            '20161216 Add Start
             Public Const SEISAN_DANTAI As String = "精算用団体コード"
+            Public Const USER_NAME As String = "TOP担当者"
+            Public Const KIKAKU_TANTO_TEL As String = "企画担当電話番号"
+            Public Const KIKAKU_TANTO_KEITAI As String = "企画担当携帯番号"
+            Public Const KIKAKU_TANTO_EMAIL_PC As String = "企画担当アドレス"
+            Public Const TEHAI_TANTO_TEL As String = "手配担当電話番号"
+            Public Const TEHAI_TANTO_KEITAI As String = "手配担当携帯番号"
+            Public Const TEHAI_TANTO_EMAIL_PC As String = "手配担当アドレス"
+            '20161216 Add End
         End Class
     End Class
 

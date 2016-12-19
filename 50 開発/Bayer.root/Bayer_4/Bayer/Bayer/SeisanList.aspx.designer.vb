@@ -196,6 +196,15 @@ Partial Public Class SeisanList
     Protected WithEvents TblButton1 As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
+    '''BtnSeisanListCsv1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSeisanListCsv1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnSeisanListPrint1 コントロール。
     '''</summary>
     '''<remarks>
@@ -230,6 +239,15 @@ Partial Public Class SeisanList
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''BtnSeisanListCsv2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSeisanListCsv2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnSeisanListPrint2 コントロール。

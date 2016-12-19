@@ -177,6 +177,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.MR_HOTEL_TOZEI.ToUpper Then TBL_SEIKYU.MR_HOTEL_TOZEI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SEND_FLAG.ToUpper Then TBL_SEIKYU.SEND_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TTANTO_ID.ToUpper Then TBL_SEIKYU.TTANTO_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.USER_NAME.ToUpper Then TBL_SEIKYU.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.INPUT_DATE.ToUpper Then TBL_SEIKYU.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.INPUT_USER.ToUpper Then TBL_SEIKYU.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.UPDATE_DATE.ToUpper Then TBL_SEIKYU.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -216,6 +217,17 @@ Public Class AppModule
             '@@@ Phase3
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.WBS_ELEMENT.ToUpper Then TBL_SEIKYU.WBS_ELEMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             '@@@ Phase3
+
+            '20161216 Add Start
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SEISAN_DANTAI.ToUpper Then TBL_SEIKYU.SEISAN_DANTAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.USER_NAME.ToUpper Then TBL_SEIKYU.USER_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_TEL.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_TEL = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_KEITAI.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KIKAKU_TANTO_EMAIL_PC.ToUpper Then TBL_SEIKYU.KIKAKU_TANTO_EMAIL_PC = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_TEL.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_TEL = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_KEITAI.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_KEITAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.TEHAI_TANTO_EMAIL_PC.ToUpper Then TBL_SEIKYU.TEHAI_TANTO_EMAIL_PC = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            '20161216 Add End
         Next wCnt
 
         Return TBL_SEIKYU

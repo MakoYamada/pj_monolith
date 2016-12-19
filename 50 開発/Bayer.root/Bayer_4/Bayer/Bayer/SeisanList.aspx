@@ -95,6 +95,7 @@
                             <table cellspacing="0" cellpadding="2" border="0" id="TblButton1" runat="server">
 					            <tr align="center">
 					                <td>
+                                        <asp:Button ID="BtnSeisanListCsv1" runat="server" Text="精算データ一覧CSV出力" Width="160px" CssClass="Button" />
                                         <asp:Button ID="BtnSeisanListPrint1" runat="server" Text="精算データ一覧印刷" Width="130px" CssClass="Button" />
                                         <asp:Button ID="BtnMishuHoukoku1" runat="server" Text="未収入金滞留理由報告書印刷" Width="200px" CssClass="Button" />
                                         <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" CssClass="Button" />
@@ -161,7 +162,7 @@
                                     </asp:BoundField>
                                     <asp:BoundField DataField="" HeaderText="精算金額" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
-                                        <ItemStyle Wrap="False" HorizontalAlign="Center"></ItemStyle>
+                                        <ItemStyle Wrap="False" HorizontalAlign="Right"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="SEISAN_KANRYO" HeaderText="精算コメント" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
@@ -209,6 +210,7 @@
                     </tr>
                     <tr align="left">
                         <td>
+                            <asp:Button ID="BtnSeisanListCsv2" runat="server" Text="精算データ一覧CSV出力" Width="160px" CssClass="Button" />
                             <asp:Button ID="BtnSeisanListPrint2" runat="server" Text="精算データ一覧印刷" Width="130px" CssClass="Button" />
                             <asp:Button ID="BtnMishuHoukoku2" runat="server" Text="未収入金滞留理由報告書印刷" Width="200px" CssClass="Button" />
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" CssClass="Button" />
