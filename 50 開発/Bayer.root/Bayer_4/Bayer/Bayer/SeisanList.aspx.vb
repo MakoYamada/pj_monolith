@@ -286,6 +286,13 @@ Partial Public Class SeisanList
             e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text = AppModule.GetName_SHOUNIN_KUBUN(e.Row.Cells(CellIndex.SHOUNIN_KUBUN).Text)
             e.Row.Cells(CellIndex.SHOUNIN_DATE).Text = CmnModule.Format_Date(e.Row.Cells(CellIndex.SHOUNIN_DATE).Text, CmnModule.DateFormatType.YYYYMMDD)
             e.Row.Cells(CellIndex.SEND_FLAG).Text = AppModule.GetName_SEND_FLAG(e.Row.Cells(CellIndex.SEND_FLAG).Text, True)
+
+            If e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppConst.SEISAN.SEISAN_KANRYO.Code.Mi Then
+                e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppModule.GetName_SEISAN_KANRYO(e.Row.Cells(CellIndex.SEISAN_KANRYO).Text)
+            ElseIf e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo Then
+                e.Row.Cells(CellIndex.SEISAN_KANRYO).Text = AppModule.GetName_SEISAN_KANRYO(e.Row.Cells(CellIndex.SEISAN_KANRYO).Text)
+            End If
+
             e.Row.Cells(CellIndex.SEISAN_KINGAKU).Text = "\" & CmnModule.EditComma(AppModule.GetName_SEISAN_KINGKU(e.Row.Cells(CellIndex.KEI_TF).Text, _
                                                                                           e.Row.Cells(CellIndex.KEI_T).Text, _
                                                                                           e.Row.Cells(CellIndex.MR_JR).Text, _
