@@ -373,7 +373,8 @@ Partial Public Class SapCsvTop
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NAME)))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME), True))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SEISAN_DANTAI), True))
             End If
             sb.Append(vbNewLine)
         End If
@@ -562,7 +563,8 @@ Partial Public Class SapCsvTop
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NO)))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NAME)))
-                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME), True))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SEISAN_DANTAI), True))
                     End If
                     sb.Append(vbNewLine)
                 End If
@@ -663,7 +665,8 @@ Partial Public Class SapCsvTop
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NO)))
                         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NAME)))
-                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME), True))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME)))
+                        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SEISAN_DANTAI), True))
                     End If
                     sb.Append(vbNewLine)
                 End If
@@ -853,7 +856,8 @@ Partial Public Class SapCsvTop
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_KOUENKAI_DATE(SeikyuData.FROM_DATE, SeikyuData.TO_DATE, True))))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NO)))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KOUENKAI_NAME)))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME), True))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.KIKAKU_TANTO_NAME)))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes(SeikyuData.SEISAN_DANTAI), True))
                 End If
                 sb.Append(vbNewLine)
             Next
@@ -1027,6 +1031,7 @@ Partial Public Class SapCsvTop
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty), True))
         sb.Append(vbNewLine)
 
@@ -1050,6 +1055,7 @@ Partial Public Class SapCsvTop
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(Me.DOCUMENT_HEADER.Text)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("X")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
@@ -1152,6 +1158,7 @@ Partial Public Class SapCsvTop
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("V2")))
         'sb.Append(CmnCsv.SetData(CmnCsv.Quotes("98")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes(String.Empty)))
