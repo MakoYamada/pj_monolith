@@ -194,7 +194,7 @@ Partial Public Class SeisanRegist
         Me.TAXI_SEISAN_T.Text = TBL_SEIKYU(SEQ).TAXI_SEISAN_T
         Me.SEISANSHO_URL.Text = TBL_SEIKYU(SEQ).SEISANSHO_URL
         Me.TAXI_TICKET_URL.Text = TBL_SEIKYU(SEQ).TAXI_TICKET_URL
-        '精算完了フラグ=0(旧Ver.対応)
+        '精算完了フラグ=0(旧Ver.対応)   20161219 Update Start
         If TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim = AppConst.SEISAN.SEISAN_KANRYO.Code.Mi Then
             Me.SEISAN_KANRYO.Text = AppModule.GetName_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO)
         ElseIf TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim = AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo Then
@@ -203,6 +203,8 @@ Partial Public Class SeisanRegist
             Me.SEISAN_KANRYO.Text = TBL_SEIKYU(SEQ).SEISAN_KANRYO.Trim
         End If
         'AppModule.SetForm_SEISAN_KANRYO(TBL_SEIKYU(SEQ).SEISAN_KANRYO, Me.SEISAN_KANRYO)
+        '20161219 Update End
+        Me.SEISAN_DANTAI.Text = TBL_SEIKYU(SEQ).SEISAN_DANTAI
         Me.MR_JR.Text = TBL_SEIKYU(SEQ).MR_JR
         Me.MR_HOTEL.Text = TBL_SEIKYU(SEQ).MR_HOTEL
         Me.MR_HOTEL_TOZEI.Text = TBL_SEIKYU(SEQ).MR_HOTEL_TOZEI
@@ -236,8 +238,12 @@ Partial Public Class SeisanRegist
                 CmnModule.SetEnabled(Me.BtnNozomi, True)
             Case AppConst.SEND_FLAG.Code.Taisho
                 CmnModule.SetEnabled(Me.BtnLockCancel, False)
-                CmnModule.SetEnabled(Me.BtnSubmit, False)
-                CmnModule.SetEnabled(Me.BtnNozomi, False)
+                '20161220 Update Start
+                'CmnModule.SetEnabled(Me.BtnSubmit, False)
+                'CmnModule.SetEnabled(Me.BtnNozomi, False)
+                CmnModule.SetEnabled(Me.BtnSubmit, True)
+                CmnModule.SetEnabled(Me.BtnNozomi, True)
+                '20161220 Update End
             Case AppConst.SEND_FLAG.Code.Sumi
                 CmnModule.SetEnabled(Me.BtnLockCancel, True)
                 CmnModule.SetEnabled(Me.BtnSubmit, False)
@@ -347,6 +353,21 @@ Partial Public Class SeisanRegist
 
         If Not CmnCheck.IsValidDateYMD(Me.SEISAN_YM.Text & "01") Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEISAN_DANTAI) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.SEISAN_DANTAI), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEISAN_DANTAI) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.SEISAN_DANTAI), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.SEISAN_DANTAI, Me.SEISAN_DANTAI.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ(TableDef.TBL_SEIKYU.Name.SEISAN_DANTAI, Me.SEISAN_DANTAI.MaxLength), Me)
             Return False
         End If
 
@@ -551,6 +572,7 @@ Partial Public Class SeisanRegist
 
         TBL_SEIKYU(SEQ).KOUENKAI_NO = Me.KOUENKAI_NO.Text
         TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
+        TBL_SEIKYU(SEQ).SEISAN_DANTAI = Me.SEISAN_DANTAI.Text
 
         TBL_SEIKYU(SEQ).KAIJOHI_TF = Me.KAIJOHI_TF.Text.Replace(",", "")
         TBL_SEIKYU(SEQ).KIZAIHI_TF = Me.KIZAIHI_TF.Text.Replace(",", "")

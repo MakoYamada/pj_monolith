@@ -97,6 +97,78 @@ Partial Public Class SeisanRegist
     Protected WithEvents KOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''FROM_DATE コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KOUENKAI_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BU コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BU As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KIKAKU_TANTO_AREA コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KIKAKU_TANTO_EIGYOSHO コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''KIKAKU_TANTO_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents KIKAKU_TANTO_NAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SEIHIN_NAME コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SEIHIN_NAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''SRM_HACYU_KBN コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents SRM_HACYU_KBN As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''SEISAN_YM コントロール。
     '''</summary>
     '''<remarks>
@@ -176,78 +248,6 @@ Partial Public Class SeisanRegist
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents SHOUNIN_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''FROM_DATE コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents FROM_DATE As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''KOUENKAI_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KOUENKAI_NAME As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''BU コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BU As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''KIKAKU_TANTO_AREA コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_AREA As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''KIKAKU_TANTO_EIGYOSHO コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_EIGYOSHO As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''KIKAKU_TANTO_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents KIKAKU_TANTO_NAME As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''SEIHIN_NAME コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SEIHIN_NAME As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''SRM_HACYU_KBN コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SRM_HACYU_KBN As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''KAIJOHI_TF コントロール。
