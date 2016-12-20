@@ -23,6 +23,10 @@ Public Class SeisanRegistReport
 
     Private Sub Detail_Format(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Detail.Format
 
+        '20161220 Add Start
+        Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(Me.FROM_DATE.Text)
+        '20161220 Add End
+
         Me.SEISAN_YM.Text = AppModule.GetName_SEISAN_YM(Me.SEISAN_YM.Text)
         Me.SHOUNIN_KUBUN.Text = AppModule.GetName_SHOUNIN_KUBUN(Me.SHOUNIN_KUBUN.Text)
         Me.SHOUNIN_DATE.Text = CmnModule.Format_Date(Me.SHOUNIN_DATE.Text, CmnModule.DateFormatType.YYYYMMDD)
@@ -80,6 +84,10 @@ Public Class SeisanRegistReport
                                       CmnModule.DbVal_Kingaku(Me.TAXI_SEISAN_T.Text.Replace(",", ""))
 
         Me.txtTotalKingaku.Text = CmnModule.EditComma(lngTotalKingaku)
+
+    End Sub
+
+    Private Sub SeisanRegistReport_ReportStart(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.ReportStart
 
     End Sub
 End Class

@@ -384,7 +384,7 @@ Partial Public Class SeisanRegist
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength) Then
+        If Not CmnCheck.IsLengthLE(Me.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength * 2) Then
             CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, Me.SEISAN_KANRYO.MaxLength * 2, True), Me)
             SetFocus(Me.SEISAN_KANRYO)
             Return False

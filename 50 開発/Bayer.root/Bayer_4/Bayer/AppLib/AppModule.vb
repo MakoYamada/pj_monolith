@@ -184,6 +184,7 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.UPDATE_USER.ToUpper Then TBL_SEIKYU.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
 
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KOUENKAI_NAME.ToUpper Then TBL_SEIKYU.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.KAIJO_NAME.ToUpper Then TBL_SEIKYU.KAIJO_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.FROM_DATE.ToUpper Then TBL_SEIKYU.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.SANKASHA_ID.ToUpper Then TBL_SEIKYU.SANKASHA_ID = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEIKYU.Column.DR_CD.ToUpper Then TBL_SEIKYU.DR_CD = CmnDb.DbData(RsData.GetName(wCnt), RsData)
@@ -4973,7 +4974,7 @@ Public Class AppModule
             Case AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo
                 Return AppConst.SEISAN.SEISAN_KANRYO.Name.Kanryo
             Case Else
-                Return String.Empty
+                Return SEISAN_KANRYO.Trim
         End Select
     End Function
     Public Shared Function GetMark_SEISAN_KANRYO(ByVal SEISAN_KANRYO As String) As String

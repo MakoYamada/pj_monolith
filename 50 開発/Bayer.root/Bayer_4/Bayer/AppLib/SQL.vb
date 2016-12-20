@@ -1087,6 +1087,7 @@ Public Class SQL
             strSQL &= ",WK_KOUENKAI.FROM_DATE"
             strSQL &= ",WK_KOUENKAI.TO_DATE"
             strSQL &= ",WK_KOUENKAI.SRM_HACYU_KBN"
+            strSQL &= ",WK_KOUENKAI.KAIJO_NAME"
             strSQL &= ",WK_KAIJO.TEHAI_ID"
             strSQL &= ",USER_NAME"
             strSQL &= " FROM"

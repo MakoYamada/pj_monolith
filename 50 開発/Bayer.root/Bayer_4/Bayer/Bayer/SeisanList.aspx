@@ -166,7 +166,7 @@
                                     </asp:BoundField>
                                     <asp:BoundField DataField="SEISAN_KANRYO" HeaderText="¸ŽZƒRƒƒ“ƒg" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
-                                        <ItemStyle Wrap="True" HorizontalAlign="Center"></ItemStyle>
+                                        <ItemStyle Wrap="True" HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
                                     <asp:BoundField DataField="SEISAN_YM" HeaderText="TOP<br/>¸ŽZ”NŒŽ" ItemStyle-Wrap="false" HeaderStyle-Wrap="false" HtmlEncode="False">
                                         <HeaderStyle Wrap="False"></HeaderStyle>
