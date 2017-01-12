@@ -215,10 +215,10 @@ Partial Public Class SeisanRegistReport
         Me.Label10 = New DataDynamics.ActiveReports.Label
         Me.Line54 = New DataDynamics.ActiveReports.Line
         Me.Line55 = New DataDynamics.ActiveReports.Line
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Label12 = New DataDynamics.ActiveReports.Label
         Me.IROUKAIHI_T = New DataDynamics.ActiveReports.TextBox
         Me.Label14 = New DataDynamics.ActiveReports.Label
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintDate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1770,37 +1770,35 @@ Partial Public Class SeisanRegistReport
         '
         Me.SEISANSHO_URL.CanGrow = False
         Me.SEISANSHO_URL.DataField = "SEISANSHO_URL"
-        Me.SEISANSHO_URL.Height = 0.1968504!
-        Me.SEISANSHO_URL.Left = 1.979921!
+        Me.SEISANSHO_URL.Height = 0.1968508!
+        Me.SEISANSHO_URL.Left = 2.058661!
         Me.SEISANSHO_URL.Name = "SEISANSHO_URL"
         Me.SEISANSHO_URL.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
         Me.SEISANSHO_URL.Text = Nothing
         Me.SEISANSHO_URL.Top = 8.014175!
-        Me.SEISANSHO_URL.Width = 5.570473!
+        Me.SEISANSHO_URL.Width = 5.491733!
         '
         'TAXI_TICKET_URL
         '
         Me.TAXI_TICKET_URL.CanGrow = False
         Me.TAXI_TICKET_URL.DataField = "TAXI_TICKET_URL"
-        Me.TAXI_TICKET_URL.Height = 0.1968504!
-        Me.TAXI_TICKET_URL.Left = 1.979921!
+        Me.TAXI_TICKET_URL.Height = 0.1968508!
+        Me.TAXI_TICKET_URL.Left = 2.058661!
         Me.TAXI_TICKET_URL.Name = "TAXI_TICKET_URL"
         Me.TAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
         Me.TAXI_TICKET_URL.Text = Nothing
         Me.TAXI_TICKET_URL.Top = 8.987406!
-        Me.TAXI_TICKET_URL.Width = 5.570473!
+        Me.TAXI_TICKET_URL.Width = 5.491733!
         '
         'SEISAN_KANRYO
         '
-        Me.SEISAN_KANRYO.CanGrow = False
         Me.SEISAN_KANRYO.DataField = "SEISAN_KANRYO"
-        Me.SEISAN_KANRYO.Height = 0.1968504!
-        Me.SEISAN_KANRYO.Left = 1.979921!
+        Me.SEISAN_KANRYO.Height = 0.1968508!
+        Me.SEISAN_KANRYO.Left = 2.058661!
         Me.SEISAN_KANRYO.Name = "SEISAN_KANRYO"
-        Me.SEISAN_KANRYO.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: nowrap"
-        Me.SEISAN_KANRYO.Text = Nothing
+        Me.SEISAN_KANRYO.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: inherit"
         Me.SEISAN_KANRYO.Top = 9.311813!
-        Me.SEISAN_KANRYO.Width = 5.570473!
+        Me.SEISAN_KANRYO.Width = 5.491733!
         '
         'lblKEI_991330401_T
         '
@@ -2685,11 +2683,6 @@ Partial Public Class SeisanRegistReport
         Me.Line55.Y1 = 3.951969!
         Me.Line55.Y2 = 3.951969!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.01041667!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'Label12
         '
         Me.Label12.Height = 0.1968504!
@@ -2723,6 +2716,11 @@ Partial Public Class SeisanRegistReport
         Me.Label14.Text = "円"
         Me.Label14.Top = 5.326772!
         Me.Label14.Width = 0.2015748!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.01041667!
+        Me.PageFooter.Name = "PageFooter"
         '
         'SeisanRegistReport
         '

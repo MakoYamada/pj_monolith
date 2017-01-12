@@ -4961,7 +4961,7 @@ Public Class AppModule
             Case AppConst.SEISAN.SEISAN_KANRYO.Code.Kanryo
                 Return AppConst.SEISAN.SEISAN_KANRYO.Name.Kanryo
             Case Else
-                Return String.Empty
+                Return SEISAN_KANRYO
         End Select
     End Function
     Public Shared Function GetMark_SEISAN_KANRYO(ByVal SEISAN_KANRYO As String) As String
