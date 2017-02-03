@@ -247,71 +247,71 @@ Public Class Proc
         CNT_TBL_KOUENKAI += wCnt
         If Not wFlag Then Return False
 
-        ''会場手配
-        ''過去データ用DBの会場手配テーブルの該当会合番号のデータを削除
-        'Try
-        '    strSQL = SQL.TBL_KAIJO.DeleteByKOUENKAI_NO(KOUENKAI_NO)
-        '    CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
-        'Catch ex As Exception
+        '会場手配
+        '過去データ用DBの会場手配テーブルの該当会合番号のデータを削除
+        Try
+            strSQL = SQL.TBL_KAIJO.DeleteByKOUENKAI_NO(KOUENKAI_NO)
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        Catch ex As Exception
 
-        'End Try
-        ''本番用DBの会場手配テーブルの該当会合番号データ取得
-        'wCnt = 0
-        'strSQL = SQL.TBL_KAIJO.byKOUENKAI_NO(KOUENKAI_NO)
-        'Dim wTBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct = Nothing
-        'Dim RsKaijo As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        'While RsKaijo.Read
-        '    ReDim Preserve wTBL_KAIJO(wCnt)
-        '    wTBL_KAIJO(wCnt) = AppModule.SetRsData(RsKaijo, wTBL_KAIJO(wCnt))
-        '    Try
-        '        '1レコードずつ過去データ用DBの会場手配テーブルにInsert
-        '        strSQL = SQL.TBL_KAIJO.Insert(wTBL_KAIJO(wCnt))
-        '        CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        End Try
+        '本番用DBの会場手配テーブルの該当会合番号データ取得
+        wCnt = 0
+        strSQL = SQL.TBL_KAIJO.byKOUENKAI_NO(KOUENKAI_NO)
+        Dim wTBL_KAIJO() As TableDef.TBL_KAIJO.DataStruct = Nothing
+        Dim RsKaijo As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsKaijo.Read
+            ReDim Preserve wTBL_KAIJO(wCnt)
+            wTBL_KAIJO(wCnt) = AppModule.SetRsData(RsKaijo, wTBL_KAIJO(wCnt))
+            Try
+                '1レコードずつ過去データ用DBの会場手配テーブルにInsert
+                strSQL = SQL.TBL_KAIJO.Insert(wTBL_KAIJO(wCnt))
+                CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-        '    Catch ex As Exception
-        '        wFlag = False
-        '        MyBase.RollbackPast()
-        '        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "会場手配データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
-        '        Exit While
-        '    End Try
-        '    wCnt += 1
-        'End While
-        'RsKaijo.Close()
-        'CNT_TBL_KAIJO += wCnt
-        'If Not wFlag Then Return False
+            Catch ex As Exception
+                wFlag = False
+                MyBase.RollbackPast()
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "会場手配データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
+                Exit While
+            End Try
+            wCnt += 1
+        End While
+        RsKaijo.Close()
+        CNT_TBL_KAIJO += wCnt
+        If Not wFlag Then Return False
 
-        ''交通ホテル手配
-        ''過去データ用DBの交通ホテル手配テーブルの該当会合番号のデータを削除
-        'Try
-        '    strSQL = SQL.TBL_KOTSUHOTEL.DeleteByKOUENKAI_NO(KOUENKAI_NO)
-        '    CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
-        'Catch ex As Exception
+        '交通ホテル手配
+        '過去データ用DBの交通ホテル手配テーブルの該当会合番号のデータを削除
+        Try
+            strSQL = SQL.TBL_KOTSUHOTEL.DeleteByKOUENKAI_NO(KOUENKAI_NO)
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        Catch ex As Exception
 
-        'End Try
-        ''本番用DBの交通ホテル手配テーブルの該当会合番号データ取得
-        'wCnt = 0
-        'strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO(KOUENKAI_NO)
-        'Dim wTBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
-        'Dim RsKotsuHotel As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        'While RsKotsuHotel.Read
-        '    ReDim Preserve wTBL_KOTSUHOTEL(wCnt)
-        '    wTBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsKotsuHotel, wTBL_KOTSUHOTEL(wCnt))
-        '    Try
-        '        '1レコードずつ過去データ用DBの交通ホテル手配テーブルにInsert
-        '        strSQL = SQL.TBL_KOTSUHOTEL.Insert(wTBL_KOTSUHOTEL(wCnt))
-        '        CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        End Try
+        '本番用DBの交通ホテル手配テーブルの該当会合番号データ取得
+        wCnt = 0
+        strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO(KOUENKAI_NO)
+        Dim wTBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
+        Dim RsKotsuHotel As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsKotsuHotel.Read
+            ReDim Preserve wTBL_KOTSUHOTEL(wCnt)
+            wTBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsKotsuHotel, wTBL_KOTSUHOTEL(wCnt))
+            Try
+                '1レコードずつ過去データ用DBの交通ホテル手配テーブルにInsert
+                strSQL = SQL.TBL_KOTSUHOTEL.Insert(wTBL_KOTSUHOTEL(wCnt))
+                CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-        '    Catch ex As Exception
-        '        wFlag = False
-        '        MyBase.RollbackPast()
-        '        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "交通ホテル手配データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
-        '        Exit While
-        '    End Try
-        '    wCnt += 1
-        'End While
-        'RsKotsuHotel.Close()
-        'CNT_TBL_KOTSUHOTEL += wCnt
-        'If Not wFlag Then Return False
+            Catch ex As Exception
+                wFlag = False
+                MyBase.RollbackPast()
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "交通ホテル手配データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
+                Exit While
+            End Try
+            wCnt += 1
+        End While
+        RsKotsuHotel.Close()
+        CNT_TBL_KOTSUHOTEL += wCnt
+        If Not wFlag Then Return False
 
         ''参加者
         ''過去データ用DBの参加者テーブルの該当会合番号のデータを削除
@@ -347,7 +347,7 @@ Public Class Proc
         'If Not wFlag Then Return False
 
         ''請求
-        ''過去データ用DBの参加者テーブルの該当会合番号のデータを削除
+        ''過去データ用DBの請求テーブルの該当会合番号のデータを削除
         'Try
         '    strSQL = SQL.TBL_SEIKYU.DeleteByKOUENKAI_NO(KOUENKAI_NO)
         '    CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
