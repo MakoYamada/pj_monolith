@@ -176,6 +176,9 @@ Public Class MessageDef
         Public Shared Function Copy() As String
             Return "回答欄に入力済みのため、依頼内容をコピーできません"
         End Function
+        Public Shared Function AnsTaxiCopy() As String
+            Return "回答欄に入力済みのため、タクチケ１の回答内容をコピーできません"
+        End Function
 
         Public Class Csv
             'Csvファイル関連

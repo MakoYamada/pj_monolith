@@ -2753,7 +2753,9 @@
                             ◆行程１
                         </td>
                         <td align="left" valign="middle" class="TdTitle" colspan="2">
-                            ◆１
+                            ◆１<br />
+            				<asp:Button ID="BtnTaxiAnsCopy" runat="server" Width="100px" Text="下へコピー" 
+                                CssClass="ButtonList" TabIndex="163" />
             				<asp:Button ID="BtnTicketClear1" runat="server" Width="130px" Text="タクチケ1クリア" 
                                 CssClass="ButtonList" TabIndex="163" />                            
             			</td>

@@ -3022,6 +3022,15 @@ Partial Public Class DrRegist
     Protected WithEvents ANS_TAXI_NOTE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''BtnTaxiAnsCopy コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiAnsCopy As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnTicketClear1 コントロール。
     '''</summary>
     '''<remarks>
