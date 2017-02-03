@@ -122,7 +122,8 @@
                     <tr>
                         <td style="text-align:left" class="style1">
                             íçï∂î‘çÜ &nbsp;
-                            ó·)450000<a style="color:Red">XXXX</a> 
+                            <%--ó·)450000<a style="color:Red">XXXX</a> --%>
+                            ó·)<a style="color:Red">XXXXXXXXXX</a> 
                         </td>
                         <td align="left" style="width:200px">
                             <asp:TextBox ID="DOCUMENT_HEADER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>
@@ -131,7 +132,8 @@
                     <tr>
                         <td style="text-align:left" class="style1">
                             Account Code &nbsp;
-                            ó·)69<a style="color:Red">XXXXX</a> 
+                            <%--ó·)69<a style="color:Red">XXXXX</a> --%>
+                            ó·)<a style="color:Red">XXXXXXX</a> 
                         </td>
                         <td align="left" style="width:200px">
                             <asp:TextBox ID="ACCOUNT_CODE" runat="server" Width="114px" MaxLength="7"></asp:TextBox>
@@ -140,7 +142,8 @@
                     <tr>
                         <td style="text-align:left" class="style1">
                             Cost Center &nbsp;
-                            ó·)YA00627<a style="color:Red">XXX</a> 
+                            <%--ó·)YA00627<a style="color:Red">XXX</a> --%>
+                            ó·)YA00627<a style="color:Red">XXXXXXXXXX</a> 
                         </td>
                         <td align="left" style="width:200px">
                             <asp:TextBox ID="COST_CENTER" runat="server" Width="114px" MaxLength="10"></asp:TextBox>

@@ -87,6 +87,24 @@
             Throw New Exception(ex.Message)
         End Try
     End Function
+    Public Shared Function Execute(ByVal strSQL As String, ByVal DbConn1 As SqlClient.SqlConnection, ByVal DbConn2 As SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction) As Integer
+        Dim DbCmd As System.Data.SqlClient.SqlCommand
+        Dim ret As Integer
+        If Not IsNothing(DbCmd) Then DbCmd.Dispose()
+
+        Try
+            DbOpen(DbConn1)
+            DbOpen(DbConn2)
+            DbCmd = New System.Data.SqlClient.SqlCommand(strSQL, DbConn1)
+            DbCmd.Transaction = DbTrans
+            ret = DbCmd.ExecuteNonQuery()
+            DbCmd.Dispose()
+
+            Return ret
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
 
     'SQL実行(選択)
     Public Shared Function Read(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction) As SqlClient.SqlDataReader

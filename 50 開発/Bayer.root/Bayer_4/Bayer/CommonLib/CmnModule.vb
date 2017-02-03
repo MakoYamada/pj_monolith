@@ -644,6 +644,15 @@ Public Class CmnModule
         End If
     End Function
 
+    Public Shared Function ClearHtmlampersand(ByVal inData As String) As String
+        '&nbsp;を除去して返す
+        If Trim(inData) = CmnConst.Html.Ampersand Then
+            Return "&"
+        Else
+            Return Replace(inData, CmnConst.Html.Ampersand, "&")
+        End If
+    End Function
+
     'プルダウンの値を返す
     Public Shared Function GetSelectedItemValue(ByVal DropDownList As System.Web.UI.WebControls.DropDownList, Optional ByVal Mode As Boolean = False) As String
         If Not CmnCheck.IsInput(DropDownList, Mode) Then

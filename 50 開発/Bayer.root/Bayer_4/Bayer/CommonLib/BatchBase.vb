@@ -13,7 +13,9 @@ Public MustInherit Class batchBase
     Private pparam As String = ""
 
     Private pDbConnection As SqlClient.SqlConnection
+    Private pDbConnectionPast As SqlClient.SqlConnection
     Private pDbTransaction As SqlClient.SqlTransaction
+    Private pDbTransactionPast As SqlClient.SqlTransaction
 
     Public MustOverride Sub run()
 
@@ -179,11 +181,21 @@ Public MustInherit Class batchBase
             Return pDbConnection
         End Get
     End Property
+    Public ReadOnly Property DbConnectionPast() As SqlClient.SqlConnection
+        Get
+            Return pDbConnectionPast
+        End Get
+    End Property
 
     'トランザクション
     Public ReadOnly Property DbTransaction() As SqlClient.SqlTransaction
         Get
             Return pDbTransaction
+        End Get
+    End Property
+    Public ReadOnly Property DbTransactionPast() As SqlClient.SqlTransaction
+        Get
+            Return pDbTransactionPast
         End Get
     End Property
 
@@ -200,6 +212,12 @@ Public MustInherit Class batchBase
         End If
 
         CmnDbBatch.DbOpen(pDbConnection)
+
+        If pDbConnectionPast Is Nothing Then
+            pDbConnectionPast = New SqlClient.SqlConnection(Configuration.ConfigurationManager.AppSettings("ConnectionString_Past"))
+        End If
+
+        CmnDbBatch.DbOpen(pDbConnectionPast)
     End Sub
 
     '---------------------------------------------------------
@@ -210,6 +228,7 @@ Public MustInherit Class batchBase
     Private Sub PostAction()
         'DB切断
         CmnDbBatch.DbClose(pDbConnection)
+        CmnDbBatch.DbClose(pDbConnectionPast)
     End Sub
 
     '---------------------------------------------------------
@@ -218,6 +237,13 @@ Public MustInherit Class batchBase
     Public Sub BeginTransaction()
         Try
             pDbTransaction = pDbConnection.BeginTransaction
+        Catch ex As Exception
+            Throw New Exception("BeginTransaction Error:" & ex.Message, ex)
+        End Try
+    End Sub
+    Public Sub BeginTransactionPast()
+        Try
+            pDbTransactionPast = pDbConnectionPast.BeginTransaction
         Catch ex As Exception
             Throw New Exception("BeginTransaction Error:" & ex.Message, ex)
         End Try
@@ -233,6 +259,17 @@ Public MustInherit Class batchBase
             pDbTransaction = Nothing
         End Try
     End Sub
+    Public Sub CommitPast()
+        Try
+            If pDbTransactionPast Is Nothing = False Then
+                pDbTransactionPast.Commit()
+            End If
+        Catch ex As Exception
+            Throw New Exception("CommitTransaction Error:" & ex.Message, ex)
+        Finally
+            pDbTransactionPast = Nothing
+        End Try
+    End Sub
     Public Sub Rollback()
         Try
             If pDbTransaction Is Nothing = False Then
@@ -242,6 +279,17 @@ Public MustInherit Class batchBase
             Throw New Exception("RollbackTransaction Error:" & ex.Message, ex)
         Finally
             pDbTransaction = Nothing
+        End Try
+    End Sub
+    Public Sub RollbackPast()
+        Try
+            If pDbTransactionPast Is Nothing = False Then
+                pDbTransactionPast.Rollback()
+            End If
+        Catch ex As Exception
+            Throw New Exception("RollbackTransaction Error:" & ex.Message, ex)
+        Finally
+            pDbTransactionPast = Nothing
         End Try
     End Sub
 

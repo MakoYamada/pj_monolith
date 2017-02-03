@@ -1822,253 +1822,253 @@ Partial Public Class DrRegist
         End If
 
         If Not CmnCheck.IsLengthLE(Me.ANS_KOTSU_BIKO, Me.ANS_KOTSU_BIKO.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_KOTSU_BIKO, Me.ANS_KOTSU_BIKO.MaxLength, True), Me)
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_KOTSU_BIKO, Me.ANS_KOTSU_BIKO.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_KOTSU_BIKO)
             Return False
         End If
 
         If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_NOTE, Me.ANS_TAXI_NOTE.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_NOTE, Me.ANS_TAXI_NOTE.MaxLength, True), Me)
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_NOTE, Me.ANS_TAXI_NOTE.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_NOTE)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_1, Me.ANS_TAXI_SRMKS_1.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_1, Me.ANS_TAXI_SRMKS_1.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_1, Me.ANS_TAXI_SRMKS_1.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_1, Me.ANS_TAXI_SRMKS_1.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_1)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_2, Me.ANS_TAXI_SRMKS_2.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_2, Me.ANS_TAXI_SRMKS_2.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_2, Me.ANS_TAXI_SRMKS_2.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_2, Me.ANS_TAXI_SRMKS_2.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_2)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_3, Me.ANS_TAXI_SRMKS_3.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_3, Me.ANS_TAXI_SRMKS_3.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_3, Me.ANS_TAXI_SRMKS_3.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_3, Me.ANS_TAXI_SRMKS_3.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_3)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_4, Me.ANS_TAXI_SRMKS_4.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_4, Me.ANS_TAXI_SRMKS_4.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_4, Me.ANS_TAXI_SRMKS_4.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_4, Me.ANS_TAXI_SRMKS_4.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_4)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_5, Me.ANS_TAXI_SRMKS_5.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_5, Me.ANS_TAXI_SRMKS_5.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_5, Me.ANS_TAXI_SRMKS_5.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_5, Me.ANS_TAXI_SRMKS_5.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_5)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_6, Me.ANS_TAXI_SRMKS_6.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_6, Me.ANS_TAXI_SRMKS_6.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_6, Me.ANS_TAXI_SRMKS_6.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_6, Me.ANS_TAXI_SRMKS_6.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_6)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_7, Me.ANS_TAXI_SRMKS_7.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_7, Me.ANS_TAXI_SRMKS_7.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_7, Me.ANS_TAXI_SRMKS_7.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_7, Me.ANS_TAXI_SRMKS_7.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_7)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_8, Me.ANS_TAXI_SRMKS_8.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_8, Me.ANS_TAXI_SRMKS_8.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_8, Me.ANS_TAXI_SRMKS_8.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_8, Me.ANS_TAXI_SRMKS_8.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_8)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_9, Me.ANS_TAXI_SRMKS_9.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_9, Me.ANS_TAXI_SRMKS_9.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_9, Me.ANS_TAXI_SRMKS_9.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_9, Me.ANS_TAXI_SRMKS_9.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_9)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_10, Me.ANS_TAXI_SRMKS_10.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_10, Me.ANS_TAXI_SRMKS_10.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_10, Me.ANS_TAXI_SRMKS_10.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_10, Me.ANS_TAXI_SRMKS_10.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_10)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_11, Me.ANS_TAXI_SRMKS_11.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_11, Me.ANS_TAXI_SRMKS_11.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_11, Me.ANS_TAXI_SRMKS_11.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_11, Me.ANS_TAXI_SRMKS_11.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_11)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_12, Me.ANS_TAXI_SRMKS_12.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_12, Me.ANS_TAXI_SRMKS_12.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_12, Me.ANS_TAXI_SRMKS_12.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_12, Me.ANS_TAXI_SRMKS_12.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_12)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_13, Me.ANS_TAXI_SRMKS_13.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_13, Me.ANS_TAXI_SRMKS_13.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_13, Me.ANS_TAXI_SRMKS_13.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_13, Me.ANS_TAXI_SRMKS_13.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_13)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_14, Me.ANS_TAXI_SRMKS_14.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_14, Me.ANS_TAXI_SRMKS_14.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_14, Me.ANS_TAXI_SRMKS_14.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_14, Me.ANS_TAXI_SRMKS_14.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_14)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_15, Me.ANS_TAXI_SRMKS_15.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_15, Me.ANS_TAXI_SRMKS_15.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_15, Me.ANS_TAXI_SRMKS_15.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_15, Me.ANS_TAXI_SRMKS_15.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_15)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_16, Me.ANS_TAXI_SRMKS_16.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_16, Me.ANS_TAXI_SRMKS_16.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_16, Me.ANS_TAXI_SRMKS_16.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_16, Me.ANS_TAXI_SRMKS_16.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_16)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_17, Me.ANS_TAXI_SRMKS_17.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_17, Me.ANS_TAXI_SRMKS_17.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_17, Me.ANS_TAXI_SRMKS_17.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_17, Me.ANS_TAXI_SRMKS_17.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_17)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_18, Me.ANS_TAXI_SRMKS_18.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_18, Me.ANS_TAXI_SRMKS_18.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_18, Me.ANS_TAXI_SRMKS_18.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_18, Me.ANS_TAXI_SRMKS_18.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_18)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_19, Me.ANS_TAXI_SRMKS_19.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_19, Me.ANS_TAXI_SRMKS_19.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_19, Me.ANS_TAXI_SRMKS_19.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_19, Me.ANS_TAXI_SRMKS_19.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_19)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_20, Me.ANS_TAXI_SRMKS_20.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_20, Me.ANS_TAXI_SRMKS_20.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_SRMKS_20, Me.ANS_TAXI_SRMKS_20.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_SRMKS_20, Me.ANS_TAXI_SRMKS_20.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_SRMKS_20)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_1.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_1.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_1.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_1, Me.ANS_TAXI_RMKS_1.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_1)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_2.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_2.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_2.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_2, Me.ANS_TAXI_RMKS_2.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_2)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_3.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_3.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_3.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_3, Me.ANS_TAXI_RMKS_3.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_3)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_4.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_4.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_4.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_4, Me.ANS_TAXI_RMKS_4.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_4)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_5.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_5.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_5.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_5, Me.ANS_TAXI_RMKS_5.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_5)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_6.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_6.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_6.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_6, Me.ANS_TAXI_RMKS_6.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_6)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_7.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_7.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_7.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_7, Me.ANS_TAXI_RMKS_7.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_7)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_8.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_8.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_8.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_8, Me.ANS_TAXI_RMKS_8.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_8)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_9.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_9.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_9.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_9, Me.ANS_TAXI_RMKS_9.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_9)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_10.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_10.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_10.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_10, Me.ANS_TAXI_RMKS_10.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_10)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_11.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_11.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_11.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_11, Me.ANS_TAXI_RMKS_11.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_11)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_12.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_12.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_12.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_12, Me.ANS_TAXI_RMKS_12.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_12)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_13.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_13.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_13.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_13, Me.ANS_TAXI_RMKS_13.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_13)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_14.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_14.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_14.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_14.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_14)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_15.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_15.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_15.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_15, Me.ANS_TAXI_RMKS_15.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_15)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_16.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_16.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_16.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_16, Me.ANS_TAXI_RMKS_16.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_16)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_17.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_17.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_17.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_17, Me.ANS_TAXI_RMKS_17.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_17)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_18.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_18.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_18.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_18, Me.ANS_TAXI_RMKS_18.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_18)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_19.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_19.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_19.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_19, Me.ANS_TAXI_RMKS_19.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_19)
             Return False
         End If
 
-        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_RMKS_20.MaxLength) Then
-            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_20, Me.ANS_TAXI_RMKS_20.MaxLength, True), Me)
+        If Not CmnCheck.IsLengthLE(Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_RMKS_20.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_KOTSUHOTEL.Name.ANS_TAXI_RMKS_20, Me.ANS_TAXI_RMKS_20.MaxLength * 2, True), Me)
             SetFocus(Me.ANS_TAXI_RMKS_20)
             Return False
         End If

@@ -12,7 +12,7 @@
                                     <td colspan="3">
                                         <asp:Button ID="BtnLockCancel" runat="server" Width="80px" Text="解除" 
                                             CssClass="Button" BackColor="#ececec" />&nbsp;&nbsp;&nbsp;
-						                <asp:Button ID="BtnCalc" runat="server" Width="130px" Text="再計算" 
+						                <asp:Button ID="BtnCalc" runat="server" Width="130px" Text="登録" 
                                             CssClass="Button" BackColor="#ececec" />
                                         <asp:Button ID="BtnPrint1" runat="server" Width="130px" Text="印刷" 
                                             CssClass="Button" BackColor="#ececec" />

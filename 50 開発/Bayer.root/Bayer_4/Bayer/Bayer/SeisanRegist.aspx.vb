@@ -709,16 +709,16 @@ Partial Public Class SeisanRegist
         Return True
     End Function
 
-    '[再計算]
-    Private Sub BtnCalc_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCalc.Click
-        If Not CheckCalcItem() Then Exit Sub
-        CalculateKingaku()
-        Me.DivMessage.Visible = False
-        SetFocus(Me.BtnCalc)
-    End Sub
+    ''[再計算]
+    'Private Sub BtnCalc_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCalc.Click
+    '    If Not CheckCalcItem() Then Exit Sub
+    '    CalculateKingaku()
+    '    Me.DivMessage.Visible = False
+    '    SetFocus(Me.BtnCalc)
+    'End Sub
 
     '[登録]
-    Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click
+    Private Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSubmit.Click, BtnCalc.Click
 
         '再計算
         If Not CheckCalcItem() Then Exit Sub

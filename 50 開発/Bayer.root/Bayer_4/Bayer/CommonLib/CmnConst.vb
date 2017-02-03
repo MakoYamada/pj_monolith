@@ -21,6 +21,7 @@ Public Class CmnConst
     Public Class Html
         'HTMLíËêî
         Public Const Space As String = "&nbsp;"
+        Public Const Ampersand As String = "&amp;"
         Public Const Break As String = "<br />"
         Public Const BreakEscape As String = "\n"
         Public Class Color

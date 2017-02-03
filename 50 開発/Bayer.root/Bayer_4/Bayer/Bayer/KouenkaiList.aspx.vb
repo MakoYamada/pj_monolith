@@ -273,7 +273,7 @@ Partial Public Class KouenkaiList
             Dim whereData As New StringDictionary
             whereData.Add(TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO, e.Row.Cells(CellIndex.KOUENKAI_NO).Text)
             whereData.Add(TableDef.TBL_KOUENKAI.Column.TIME_STAMP, e.Row.Cells(CellIndex.TIME_STAMP2).Text)
-            whereData.Add(TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE, e.Row.Cells(CellIndex.KOUENKAI_TITLE).Text)
+            whereData.Add(TableDef.TBL_KOUENKAI.Column.KOUENKAI_TITLE, CmnModule.ClearHtmlampersand(CmnModule.ClearHtmlSpace(e.Row.Cells(CellIndex.KOUENKAI_TITLE).Text)))
 
             Dim GRID_KOUENKAI As New TableDef.TBL_KOUENKAI.DataStruct
             If Not GetGridData(whereData, GRID_KOUENKAI) Then Exit Sub
@@ -333,8 +333,8 @@ Partial Public Class KouenkaiList
                 Dim row As GridViewRow = GrvList.Rows(index)
                 Session.Item(SessionDef.KOUENKAI_NO) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NO), DataControlFieldCell).Text()
                 Session.Item(SessionDef.TIME_STAMP) = DirectCast(GrvList.Rows(index).Controls(CellIndex.TIME_STAMP2), DataControlFieldCell).Text()
-                Session.Item(SessionDef.KOUENKAI_TITLE) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_TITLE), DataControlFieldCell).Text()
-                Session.Item(SessionDef.KOUENKAI_NAME) = DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NAME), DataControlFieldCell).Text()
+                Session.Item(SessionDef.KOUENKAI_TITLE) = CmnModule.ClearHtmlampersand(CmnModule.ClearHtmlSpace(DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_TITLE), DataControlFieldCell).Text()))
+                Session.Item(SessionDef.KOUENKAI_NAME) = CmnModule.ClearHtmlampersand(CmnModule.ClearHtmlSpace(DirectCast(GrvList.Rows(index).Controls(CellIndex.KOUENKAI_NAME), DataControlFieldCell).Text()))
 
                 '履歴画面用セッション変数をクリア
                 Session.Remove(SessionDef.KaijoRireki)

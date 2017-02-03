@@ -2827,7 +2827,7 @@
                             Tîıçl
                         </td>
                         <td align="left" valign="middle" class="TdItem">
-                            <asp:TextBox ID="ANS_TAXI_RMKS_1" runat="server" MaxLength="10" Height="18px" 
+                            <asp:TextBox ID="ANS_TAXI_RMKS_1" runat="server" MaxLength="20" Height="18px" 
                                 Width="138px" TabIndex="169" Wrap="False"></asp:TextBox>                            
                         </td>
                     </tr>

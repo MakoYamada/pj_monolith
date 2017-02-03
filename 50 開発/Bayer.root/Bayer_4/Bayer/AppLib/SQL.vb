@@ -462,6 +462,49 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Search_DelData(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= " SELECT *"
+            strSQL &= ", USER_NAME"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT *,"
+            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
+            strSQL &= " ) CNT"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI)"
+            strSQL &= " WK_KOUENKAI, "
+
+            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
+            strSQL &= " UNION ALL "
+            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
+            strSQL &= ") AS MS_USER"
+            strSQL &= " WHERE"
+            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
+            strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            If Trim(Joken.FROM_DATE) <> "" Then
+                strSQL &= " AND "
+                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
+                strSQL &= "<= '" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
+            End If
+
+            strSQL &= " ORDER BY "
+            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
+
+            Return strSQL
+        End Function
+
         Public Shared Function Rireki(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = ""
 
@@ -944,6 +987,26 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_KOUENKAI.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_KOUENKAI.Column.TIME_STAMP & "=N'" & CmnDb.SqlString(TBL_KOUENKAI.TIME_STAMP) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Migragion(ByVal KOUENKAI_NO As String, ByVal OrgDbName As String, ByVal PastDbName As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "SELECT * INTO " & PastDbName & ".TBL_KOUENKAI"
+            strSQL &= " FROM " & OrgDbName & ".TBL_KOUENKAI"
+            strSQL &= " WHERE " & OrgDbName & ".TBL_KOUENKAI.KOUENKAI_NO='" & KOUENKAI_NO & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
 
             Return strSQL
         End Function
@@ -2018,6 +2081,16 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEIKYU_NO_TOPTOUR) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_SEIKYU"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
 
             Return strSQL
         End Function
@@ -6344,6 +6417,16 @@ Public Class SQL
 
             Return strSQL
         End Function
+
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_KOTSUHOTEL"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
+
+            Return strSQL
+        End Function
     End Class
 
     Public Class TBL_KAIJO
@@ -6357,6 +6440,15 @@ Public Class SQL
         = " ORDER BY" _
         & " TBL_KAIJO.KOUENKAI_NO" _
         & ",TBL_KAIJO.TIME_STAMP_BYL"
+
+        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_KAIJO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
 
         Public Shared Function byKOUENKAI_NO_TEHAI_ID(ByVal KOUENKAI_NO As String, ByVal TEHAI_ID As String) As String
             Dim strSQL As String = SQL_SELECT
@@ -7353,6 +7445,16 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_KAIJO"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class TBL_BENTO
@@ -8263,6 +8365,39 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Insert(ByVal MS_ZEI As TableDef.MS_ZEI.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO MS_ZEI"
+            strSQL &= "(" & TableDef.MS_ZEI.Column.ZEI_CD
+            strSQL &= "," & TableDef.MS_ZEI.Column.ZEI_NAME
+            strSQL &= "," & TableDef.MS_ZEI.Column.ZEI_RATE
+            strSQL &= "," & TableDef.MS_ZEI.Column.START_DATE
+            strSQL &= "," & TableDef.MS_ZEI.Column.END_DATE
+            strSQL &= "," & TableDef.MS_ZEI.Column.SAP_ZEI_CD
+            strSQL &= "," & TableDef.MS_ZEI.Column.STOP_FLG
+            strSQL &= "," & TableDef.MS_ZEI.Column.INPUT_DATE
+            strSQL &= "," & TableDef.MS_ZEI.Column.INPUT_USER
+            strSQL &= "," & TableDef.MS_ZEI.Column.UPDATE_DATE
+            strSQL &= "," & TableDef.MS_ZEI.Column.UPDATE_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(MS_ZEI.ZEI_CD) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.ZEI_NAME) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.ZEI_RATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.START_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.END_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.SAP_ZEI_CD) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.STOP_FLG) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.INPUT_USER) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(MS_ZEI.UPDATE_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class MS_SAPKANRI
@@ -8299,6 +8434,7 @@ Public Class SQL
             strSQL = "INSERT INTO MS_SAPKANRI"
             strSQL &= "(" & TableDef.MS_SAPKANRI.Column.DATA_ID
             strSQL &= "," & TableDef.MS_SAPKANRI.Column.CODE
+            strSQL &= "," & TableDef.MS_SAPKANRI.Column.BIKO
             strSQL &= "," & TableDef.MS_SAPKANRI.Column.UPDATE_DATE
             strSQL &= "," & TableDef.MS_SAPKANRI.Column.UPDATE_USER
             strSQL &= ")"
@@ -8797,6 +8933,15 @@ Public Class SQL
             Dim strSQL As String = SQL_SELECT
 
             strSQL &= " WHERE TBL_TAXITICKET_HAKKO.TKT_NO=N'" & CmnDb.SqlString(TKT_NO) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_TAXITICKET_HAKKO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= SQL_ORDERBY
 
             Return strSQL
@@ -9468,6 +9613,16 @@ Public Class SQL
 
             Return strSQL
         End Function
+
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_TAXITICKET_HAKKO"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
+
+            Return strSQL
+        End Function
     End Class
 
     Public Class TBL_SANKA
@@ -9539,6 +9694,16 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_SANKA"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
+
+            Return strSQL
+        End Function
+
     End Class
 
     Public Class TBL_SHOUNIN
@@ -9548,6 +9713,14 @@ Public Class SQL
 
             strSQL &= " WHERE TBL_SHOUNIN.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_SHOUNIN.SEIKYU_NO_TOPTOUR=N'" & CmnDb.SqlString(SEIKYU_NO_TOPTOUR) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = "SELECT * FROM TBL_SHOUNIN"
+
+            strSQL &= " WHERE TBL_SHOUNIN.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
 
             Return strSQL
         End Function
@@ -9607,6 +9780,16 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SHOUNIN.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.UPDATE_USER) & "'"
             strSQL &= " WHERE " & TableDef.TBL_SHOUNIN.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.KOUENKAI_NO) & "'"
             strSQL &= " AND " & TableDef.TBL_SHOUNIN.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_SHOUNIN.SEIKYU_NO_TOPTOUR) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_SHOUNIN"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO='" & KOUENKAI_NO & "'"
 
             Return strSQL
         End Function
@@ -9757,4 +9940,55 @@ Public Class SQL
         End Function
     End Class
 
+    Public Class ALTER_INDEX
+        Public Shared Function AlterIndex1() As String
+            Dim strSQL As String = ""
+
+            strSQL = "ALTER INDEX ALL ON TBL_KOUENKAI REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+        Public Shared Function AlterIndex2() As String
+            Dim strSQL As String = ""
+
+            strSQL &= "ALTER INDEX ALL ON TBL_KAIJO REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+        Public Shared Function AlterIndex3() As String
+            Dim strSQL As String = ""
+
+            strSQL &= "ALTER INDEX ALL ON TBL_KOTSUHOTEL REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+        Public Shared Function AlterIndex4() As String
+            Dim strSQL As String = ""
+
+            strSQL &= "ALTER INDEX ALL ON TBL_SANKA REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+        Public Shared Function AlterIndex5() As String
+            Dim strSQL As String = ""
+
+            strSQL &= "ALTER INDEX ALL ON TBL_SEIKYU REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+        Public Shared Function AlterIndex6() As String
+            Dim strSQL As String = ""
+
+            strSQL &= "ALTER INDEX ALL ON TBL_TAXITICKET_HAKKO REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+        Public Shared Function AlterIndex7() As String
+            Dim strSQL As String = ""
+
+            strSQL &= "ALTER INDEX ALL ON TBL_SHOUNIN REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+    End Class
 End Class

@@ -6,9 +6,9 @@ Partial Public Class SapCsv
 
     Private Const ZEI_CD_HIKAZEI As String = "98" '消費税コード(非課税)
 
-    Private Const LEN_DocumentHeader As Integer = 6
-    Private Const LEN_AccountCode As Integer = 2
-    Private Const LEN_CostCenter As Integer = 7
+    Private Const LEN_DocumentHeader As Integer = 10
+    Private Const LEN_AccountCode As Integer = 7
+    Private Const LEN_CostCenter As Integer = 10
 
     Dim SAP_DocumentHeader As String
     Dim SAP_AccountCode As String
@@ -289,18 +289,32 @@ Partial Public Class SapCsv
         End If
 
         '内容
-        If Left(Me.DOCUMENT_HEADER.Text, Me.LEN_DocumentHeader) <> Left(SAP_DocumentHeader, Me.LEN_DocumentHeader) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("注文番号の形式"), Me)
+        '20170130 Update Start
+        'If Left(Me.DOCUMENT_HEADER.Text, Me.LEN_DocumentHeader) <> Left(SAP_DocumentHeader, Me.LEN_DocumentHeader) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.Invalid("注文番号の形式"), Me)
+        '    Return False
+        'End If
+        'If Left(Me.ACCOUNT_CODE.Text, Me.LEN_AccountCode) <> Left(SAP_AccountCode, Me.LEN_AccountCode) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.Invalid("Account Codeの形式"), Me)
+        '    Return False
+        'End If
+        'If Left(Me.COST_CENTER.Text, Me.LEN_CostCenter) <> Left(SAP_CostCenter, Me.LEN_CostCenter) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.Invalid("Cost Centerの形式"), Me)
+        '    Return False
+        'End If
+        If Not CmnCheck.IsAlphanumeric(Me.DOCUMENT_HEADER.Text) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("注文番号"), Me)
             Return False
         End If
-        If Left(Me.ACCOUNT_CODE.Text, Me.LEN_AccountCode) <> Left(SAP_AccountCode, Me.LEN_AccountCode) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("Account Codeの形式"), Me)
+        If Not CmnCheck.IsAlphanumeric(Me.ACCOUNT_CODE.Text) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("Account Code"), Me)
             Return False
         End If
-        If Left(Me.COST_CENTER.Text, Me.LEN_CostCenter) <> Left(SAP_CostCenter, Me.LEN_CostCenter) Then
-            CmnModule.AlertMessage(MessageDef.Error.Invalid("Cost Centerの形式"), Me)
+        If Not CmnCheck.IsAlphanumeric(Me.COST_CENTER.Text) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("Cost Center"), Me)
             Return False
         End If
+        '20170130 Update End
 
         Return True
     End Function
