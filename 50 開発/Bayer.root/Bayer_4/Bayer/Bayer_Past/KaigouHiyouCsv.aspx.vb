@@ -904,7 +904,7 @@ Partial Public Class KaigouHiyouCsv
         Response.Clear()
         Response.ContentType = CmnConst.Csv.ContentType
         Response.Charset = CmnConst.Csv.Charset
-        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("会合費用総合一覧表_" & Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text & "_" & Now.ToString("yyyyMMddHHmmss") & ".csv"))
+        Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & HttpUtility.UrlEncode("会合費用総合一覧表(過去データ)_" & Me.JokenSHOUNIN_Y.Text & Me.JokenSHOUNIN_M.Text & "_" & Now.ToString("yyyyMMddHHmmss") & ".csv"))
         Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
 
         Response.Write(csvStr)

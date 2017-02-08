@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.vb" Inherits="Bayer.Global" %>
+﻿<%@ Application Codebehind="Global.asax.vb" Inherits="Bayer_Past.Global" %>

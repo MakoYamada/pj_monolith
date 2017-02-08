@@ -67,9 +67,9 @@ Partial Public Class Base
         If Trim(WebConfig.Site.HeaderComment1) <> "" AndAlso Trim(WebConfig.Site.HeaderComment2) <> "" Then
             Me.HeaderComment1.Text = WebConfig.Site.HeaderComment1
             Me.HeaderComment2.Text = WebConfig.Site.HeaderComment2
-            Me.TdHeader2.Visible = True
+            'Me.TdHeader2.Visible = True
         Else
-            Me.TdHeader2.Visible = False
+            'Me.TdHeader2.Visible = False
         End If
 
         If Trim(Session.Item(SessionDef.LoginID)) = "" Then

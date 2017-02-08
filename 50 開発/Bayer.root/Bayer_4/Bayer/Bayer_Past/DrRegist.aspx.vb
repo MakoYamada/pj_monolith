@@ -93,40 +93,40 @@ Partial Public Class DrRegist
             SetForm()
 
             '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
-            If URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
-                URL.DrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
-                BtnSubmit1.Visible = True
-                BtnSubmit2.Visible = True
-                BtnNozomi1.Visible = True
-                BtnNozomi2.Visible = True
-            Else
-                BtnSubmit1.Visible = False
-                BtnSubmit2.Visible = False
-                BtnNozomi1.Visible = False
-                BtnNozomi2.Visible = False
-            End If
+            'If URL.NewDrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
+            '    URL.DrList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
+            '    BtnSubmit1.Visible = True
+            '    BtnSubmit2.Visible = True
+            '    BtnNozomi1.Visible = True
+            '    BtnNozomi2.Visible = True
+            'Else
+            BtnSubmit1.Visible = False
+            BtnSubmit2.Visible = False
+            BtnNozomi1.Visible = False
+            BtnNozomi2.Visible = False
+            'End If
 
             '呼び元が履歴一覧の場合は履歴表示ボタンは非表示
             If Popup Then
                 BtnRireki.Visible = False
-                BtnSubmit1.Visible = False
-                BtnSubmit2.Visible = False
-                BtnNozomi1.Visible = False
-                BtnNozomi2.Visible = False
+                'BtnSubmit1.Visible = False
+                'BtnSubmit2.Visible = False
+                'BtnNozomi1.Visible = False
+                'BtnNozomi2.Visible = False
             Else
                 BtnRireki.Visible = True
-                BtnSubmit1.Visible = True
-                BtnSubmit2.Visible = True
-                BtnNozomi1.Visible = True
-                BtnNozomi2.Visible = True
+                '    BtnSubmit1.Visible = True
+                '    BtnSubmit2.Visible = True
+                '    BtnNozomi1.Visible = True
+                '    BtnNozomi2.Visible = True
 
-                '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
-                If Not ChkNewData() Then
-                    BtnNozomi1.Visible = False
-                    BtnNozomi2.Visible = False
-                    BtnSubmit1.Visible = False
-                    BtnSubmit2.Visible = False
-                End If
+                '    '表示対象より新しい交通・宿泊情報がある場合はNOZOMIボタンは使用不可
+                '    If Not ChkNewData() Then
+                '        BtnNozomi1.Visible = False
+                '        BtnNozomi2.Visible = False
+                '        BtnSubmit1.Visible = False
+                '        BtnSubmit2.Visible = False
+                '    End If
             End If
 
             '発行済のタクチケがある場合は、タクチケコピー・クリアボタンは使用不可
@@ -240,22 +240,22 @@ Partial Public Class DrRegist
             'If Not Popup Then AppModule.SetForm_SEND_FLAG(DSP_KOTSUHOTEL(SEQ).SEND_FLAG, Me.SEND_FLAG)
             '@@@ Phase2
         End If
-        Session.Remove(SessionDef.HotelKensaku_Back)
-        Session.Remove(SessionDef.KaijoPrint_SQL)
-        Session.Remove(SessionDef.BackURL_Print)
-        Session.Remove(SessionDef.PrintPreview)
+            Session.Remove(SessionDef.HotelKensaku_Back)
+            Session.Remove(SessionDef.KaijoPrint_SQL)
+            Session.Remove(SessionDef.BackURL_Print)
+            Session.Remove(SessionDef.PrintPreview)
 
-        'マスターページ設定
-        With Me.Master
-            .PageTitle = "交通・宿泊手配回答登録"
-            If Popup Then
-                .HideLogout = True
-                .HideMenu = True
-            Else
-                .HideLogout = False
-                .HideMenu = False
-            End If
-        End With
+            'マスターページ設定
+            With Me.Master
+                .PageTitle = "交通・宿泊手配回答登録"
+                If Popup Then
+                    .HideLogout = True
+                    .HideMenu = True
+                Else
+                    .HideLogout = False
+                    .HideMenu = False
+                End If
+            End With
     End Sub
 
     'セッションを変数に格納

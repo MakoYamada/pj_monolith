@@ -236,7 +236,7 @@
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnSubmit" runat="server" Text="–¢Œˆ“o˜^" Width="130px" 
-                                CssClass="Button" tabindex="2"/>
+                                CssClass="Button" tabindex="2" Visible="false"/>
                             <asp:Button ID="BtnBack2" runat="server" Text="–ß‚é" Width="130px" 
                                 CssClass="Button" TabIndex="3" />
                         </td>

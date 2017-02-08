@@ -653,7 +653,7 @@ Partial Public Class DrList
             Response.Clear()
             Response.ContentType = CmnConst.Csv.ContentType
             Response.Charset = CmnConst.Csv.Charset
-            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "DrList_" & Now.ToString("yyyyMMddHHmmss") & ".csv")
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "PastDrList_" & Now.ToString("yyyyMMddHHmmss") & ".csv")
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
 
             Response.Write(MyModule.Csv.DrKensakuCsv(CsvData, MyBase.DbConnection))

@@ -77,7 +77,8 @@
                                     </td>
                                     <td>
                                         <asp:Button ID="BtnSearch" runat="server" Width="130px" Text="ŒŸõ" CssClass="Button" />
-                                        <asp:Button ID="BtnInsert" runat="server" Width="130px" Text="V‹K“o˜^" CssClass="Button" />
+                                        <asp:Button ID="BtnInsert" runat="server" Width="130px" Text="V‹K“o˜^" 
+                                            CssClass="Button" Visible="False" />
                                     </td>
                                 </tr>
                             </table>                            

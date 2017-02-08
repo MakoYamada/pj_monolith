@@ -10,7 +10,7 @@
                         </td>
                         <td style="width:50%" align="right">
 				            <asp:Button ID="BtnSubmit1" runat="server" Width="150px" Text="“o˜^" 
-                                CssClass="Button" TabIndex="1" />
+                                CssClass="Button" TabIndex="1"  Visible="false"/>
                             <asp:Button ID="BtnBack1" runat="server" Text="–ß‚é" Width="130px" 
                                 CssClass="Button" TabIndex="2" />
                         </td>
@@ -321,7 +321,7 @@
 				        </td>
 				        <td align="right" style="width:70%">
 				            <asp:Button ID="BtnSubmit2" runat="server" Width="150px" Text="“o˜^" 
-                                CssClass="Button" TabIndex="7" />
+                                CssClass="Button" TabIndex="7"  Visible="false"/>
 				            <!-- <asp:Button ID="BtnNozomi" runat="server" Width="150px" Text="NOZOMI‚Ö" 
                                 CssClass="Button" /> -->
 					        <asp:Button ID="BtnBack2" runat="server" Width="150px" Text="–ß‚é" 

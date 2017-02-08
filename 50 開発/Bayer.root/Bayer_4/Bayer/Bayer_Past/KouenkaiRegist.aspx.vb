@@ -70,8 +70,8 @@ Partial Public Class KouenkaiRegist
             '呼び元が新着一覧・検索以外の場合は登録・NOZOMIボタンは非表示
             If URL.NewKouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 OrElse _
                 URL.KouenkaiList.IndexOf(Session.Item(SessionDef.BackURL2)) > 0 Then
-                BtnSubmit1.Visible = True
-                BtnSubmit2.Visible = True
+                'BtnSubmit1.Visible = True
+                'BtnSubmit2.Visible = True
                 'BtnNozomi.Visible = True
             Else
                 BtnSubmit1.Visible = False
@@ -87,8 +87,8 @@ Partial Public Class KouenkaiRegist
                 'BtnNozomi.Visible = False
             Else
                 BtnRireki.Visible = True
-                BtnSubmit1.Visible = True
-                BtnSubmit2.Visible = True
+                'BtnSubmit1.Visible = True
+                'BtnSubmit2.Visible = True
                 'BtnNozomi.Visible = True
             End If
 

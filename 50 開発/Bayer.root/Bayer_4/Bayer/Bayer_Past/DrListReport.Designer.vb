@@ -79,6 +79,8 @@ Partial Public Class DrListReport
         Me.Label27 = New DataDynamics.ActiveReports.Label
         Me.Line20 = New DataDynamics.ActiveReports.Line
         Me.Line31 = New DataDynamics.ActiveReports.Line
+        Me.Label28 = New DataDynamics.ActiveReports.Label
+        Me.JOKEN_SEND_FLAG = New DataDynamics.ActiveReports.TextBox
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.SEND_FLAG = New DataDynamics.ActiveReports.TextBox
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
@@ -122,8 +124,6 @@ Partial Public Class DrListReport
         Me.REQ_MR_HOTEL_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.ANS_MR_HOTEL_NOTE = New DataDynamics.ActiveReports.TextBox
         Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Label28 = New DataDynamics.ActiveReports.Label
-        Me.JOKEN_SEND_FLAG = New DataDynamics.ActiveReports.TextBox
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,6 +164,8 @@ Partial Public Class DrListReport
         CType(Me.Label25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label27, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JOKEN_SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,8 +193,6 @@ Partial Public Class DrListReport
         CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.REQ_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ANS_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JOKEN_SEND_FLAG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -417,7 +417,7 @@ Partial Public Class DrListReport
         Me.Label1.Left = 0.03937008!
         Me.Label1.Name = "Label1"
         Me.Label1.Style = resources.GetString("Label1.Style")
-        Me.Label1.Text = "【検索】交通・宿泊一覧"
+        Me.Label1.Text = "【検索】交通・宿泊一覧＜過去データ＞"
         Me.Label1.Top = 0.6874017!
         Me.Label1.Width = 12.08661!
         '
@@ -891,6 +891,28 @@ Partial Public Class DrListReport
         Me.Line31.X2 = 11.64685!
         Me.Line31.Y1 = 3.094488!
         Me.Line31.Y2 = 3.376379!
+        '
+        'Label28
+        '
+        Me.Label28.Height = 0.2!
+        Me.Label28.HyperLink = Nothing
+        Me.Label28.Left = 2.978347!
+        Me.Label28.Name = "Label28"
+        Me.Label28.Style = "font-family: ＭＳ ゴシック; text-align: right"
+        Me.Label28.Text = "NZ送信："
+        Me.Label28.Top = 1.633071!
+        Me.Label28.Width = 0.8027562!
+        '
+        'JOKEN_SEND_FLAG
+        '
+        Me.JOKEN_SEND_FLAG.CanGrow = False
+        Me.JOKEN_SEND_FLAG.Height = 0.2!
+        Me.JOKEN_SEND_FLAG.Left = 3.781103!
+        Me.JOKEN_SEND_FLAG.Name = "JOKEN_SEND_FLAG"
+        Me.JOKEN_SEND_FLAG.Style = "white-space: nowrap"
+        Me.JOKEN_SEND_FLAG.Text = Nothing
+        Me.JOKEN_SEND_FLAG.Top = 1.633071!
+        Me.JOKEN_SEND_FLAG.Width = 1.479134!
         '
         'Detail
         '
@@ -1424,28 +1446,6 @@ Partial Public Class DrListReport
         Me.PageFooter.Height = 0.0!
         Me.PageFooter.Name = "PageFooter"
         '
-        'Label28
-        '
-        Me.Label28.Height = 0.2!
-        Me.Label28.HyperLink = Nothing
-        Me.Label28.Left = 2.978347!
-        Me.Label28.Name = "Label28"
-        Me.Label28.Style = "font-family: ＭＳ ゴシック; text-align: right"
-        Me.Label28.Text = "NZ送信："
-        Me.Label28.Top = 1.633071!
-        Me.Label28.Width = 0.8027562!
-        '
-        'JOKEN_SEND_FLAG
-        '
-        Me.JOKEN_SEND_FLAG.CanGrow = False
-        Me.JOKEN_SEND_FLAG.Height = 0.2!
-        Me.JOKEN_SEND_FLAG.Left = 3.781103!
-        Me.JOKEN_SEND_FLAG.Name = "JOKEN_SEND_FLAG"
-        Me.JOKEN_SEND_FLAG.Style = "white-space: nowrap"
-        Me.JOKEN_SEND_FLAG.Text = Nothing
-        Me.JOKEN_SEND_FLAG.Top = 1.633071!
-        Me.JOKEN_SEND_FLAG.Width = 1.479134!
-        '
         'DrListReport
         '
         Me.MasterReport = False
@@ -1500,6 +1500,8 @@ Partial Public Class DrListReport
         CType(Me.Label25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label27, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JOKEN_SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1527,8 +1529,6 @@ Partial Public Class DrListReport
         CType(Me.REQ_MR_F_TEHAI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.REQ_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ANS_MR_HOTEL_NOTE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JOKEN_SEND_FLAG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

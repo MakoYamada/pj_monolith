@@ -19,6 +19,7 @@ Partial Public Class KouenkaiRirekiReport
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(KouenkaiRirekiReport))
         Me.PageHeader = New DataDynamics.ActiveReports.PageHeader
+        Me.Shape2 = New DataDynamics.ActiveReports.Shape
         Me.Label2 = New DataDynamics.ActiveReports.Label
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Label3 = New DataDynamics.ActiveReports.Label
@@ -36,6 +37,24 @@ Partial Public Class KouenkaiRirekiReport
         Me.Label17 = New DataDynamics.ActiveReports.Label
         Me.JOKEN_KOUENKAI_NAME = New DataDynamics.ActiveReports.TextBox
         Me.Label7 = New DataDynamics.ActiveReports.Label
+        Me.Label10 = New DataDynamics.ActiveReports.Label
+        Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
+        Me.Shape1 = New DataDynamics.ActiveReports.Shape
+        Me.Label11 = New DataDynamics.ActiveReports.Label
+        Me.Line3 = New DataDynamics.ActiveReports.Line
+        Me.Line16 = New DataDynamics.ActiveReports.Line
+        Me.Line18 = New DataDynamics.ActiveReports.Line
+        Me.Line4 = New DataDynamics.ActiveReports.Line
+        Me.Line5 = New DataDynamics.ActiveReports.Line
+        Me.Line6 = New DataDynamics.ActiveReports.Line
+        Me.Line7 = New DataDynamics.ActiveReports.Line
+        Me.Line11 = New DataDynamics.ActiveReports.Line
+        Me.Line14 = New DataDynamics.ActiveReports.Line
+        Me.Line17 = New DataDynamics.ActiveReports.Line
+        Me.Line20 = New DataDynamics.ActiveReports.Line
+        Me.Line21 = New DataDynamics.ActiveReports.Line
+        Me.Line24 = New DataDynamics.ActiveReports.Line
+        Me.Line25 = New DataDynamics.ActiveReports.Line
         Me.Detail = New DataDynamics.ActiveReports.Detail
         Me.TO_DATE = New DataDynamics.ActiveReports.TextBox
         Me.BU = New DataDynamics.ActiveReports.TextBox
@@ -45,35 +64,16 @@ Partial Public Class KouenkaiRirekiReport
         Me.TIME_STAMP = New DataDynamics.ActiveReports.TextBox
         Me.USER_NAME = New DataDynamics.ActiveReports.TextBox
         Me.UPDATE_DATE = New DataDynamics.ActiveReports.TextBox
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
-        Me.Label10 = New DataDynamics.ActiveReports.Label
-        Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
-        Me.Shape1 = New DataDynamics.ActiveReports.Shape
-        Me.Label11 = New DataDynamics.ActiveReports.Label
-        Me.Line3 = New DataDynamics.ActiveReports.Line
-        Me.Line16 = New DataDynamics.ActiveReports.Line
-        Me.Line18 = New DataDynamics.ActiveReports.Line
-        Me.Shape2 = New DataDynamics.ActiveReports.Shape
-        Me.Line4 = New DataDynamics.ActiveReports.Line
-        Me.Line5 = New DataDynamics.ActiveReports.Line
-        Me.Line6 = New DataDynamics.ActiveReports.Line
-        Me.Line7 = New DataDynamics.ActiveReports.Line
         Me.Line8 = New DataDynamics.ActiveReports.Line
         Me.Line9 = New DataDynamics.ActiveReports.Line
         Me.Line10 = New DataDynamics.ActiveReports.Line
-        Me.Line11 = New DataDynamics.ActiveReports.Line
         Me.Line12 = New DataDynamics.ActiveReports.Line
         Me.Line13 = New DataDynamics.ActiveReports.Line
-        Me.Line14 = New DataDynamics.ActiveReports.Line
         Me.Line15 = New DataDynamics.ActiveReports.Line
-        Me.Line17 = New DataDynamics.ActiveReports.Line
         Me.Line19 = New DataDynamics.ActiveReports.Line
-        Me.Line20 = New DataDynamics.ActiveReports.Line
-        Me.Line21 = New DataDynamics.ActiveReports.Line
         Me.Line22 = New DataDynamics.ActiveReports.Line
         Me.Line23 = New DataDynamics.ActiveReports.Line
-        Me.Line24 = New DataDynamics.ActiveReports.Line
-        Me.Line25 = New DataDynamics.ActiveReports.Line
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +89,9 @@ Partial Public Class KouenkaiRirekiReport
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JOKEN_KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BU, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,9 +100,6 @@ Partial Public Class KouenkaiRirekiReport
         CType(Me.TIME_STAMP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Label11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -107,6 +107,16 @@ Partial Public Class KouenkaiRirekiReport
         Me.PageHeader.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Shape2, Me.Label2, Me.PRINT_DATE, Me.Label3, Me.Label4, Me.Label5, Me.Label6, Me.Label8, Me.Line1, Me.Line2, Me.Label9, Me.ReportInfo1, Me.Label13, Me.Label16, Me.JOKEN_KOUENKAI_NO, Me.Label17, Me.JOKEN_KOUENKAI_NAME, Me.Label7, Me.Label10, Me.PRINT_USER, Me.Shape1, Me.Label11, Me.Line3, Me.Line16, Me.Line18, Me.Line4, Me.Line5, Me.Line6, Me.Line7, Me.Line11, Me.Line14, Me.Line17, Me.Line20, Me.Line21, Me.Line24, Me.Line25})
         Me.PageHeader.Height = 1.58411!
         Me.PageHeader.Name = "PageHeader"
+        '
+        'Shape2
+        '
+        Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Shape2.Height = 0.2818897!
+        Me.Shape2.Left = 0.0!
+        Me.Shape2.Name = "Shape2"
+        Me.Shape2.RoundingRadius = 9.999999!
+        Me.Shape2.Top = 1.295276!
+        Me.Shape2.Width = 12.16535!
         '
         'Label2
         '
@@ -297,6 +307,230 @@ Partial Public Class KouenkaiRirekiReport
         Me.Label7.Top = 1.336221!
         Me.Label7.Width = 1.051969!
         '
+        'Label10
+        '
+        Me.Label10.Height = 0.2!
+        Me.Label10.HyperLink = Nothing
+        Me.Label10.Left = 9.833466!
+        Me.Label10.Name = "Label10"
+        Me.Label10.Style = "text-align: right"
+        Me.Label10.Text = "出力担当："
+        Me.Label10.Top = 0.2!
+        Me.Label10.Width = 0.7870083!
+        '
+        'PRINT_USER
+        '
+        Me.PRINT_USER.Height = 0.2!
+        Me.PRINT_USER.Left = 10.62047!
+        Me.PRINT_USER.Name = "PRINT_USER"
+        Me.PRINT_USER.Style = "white-space: nowrap"
+        Me.PRINT_USER.Text = Nothing
+        Me.PRINT_USER.Top = 0.2!
+        Me.PRINT_USER.Width = 1.364567!
+        '
+        'Shape1
+        '
+        Me.Shape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Shape1.Height = 0.3149607!
+        Me.Shape1.Left = 0.0!
+        Me.Shape1.Name = "Shape1"
+        Me.Shape1.RoundingRadius = 9.999999!
+        Me.Shape1.Top = 0.6409449!
+        Me.Shape1.Width = 12.16535!
+        '
+        'Label11
+        '
+        Me.Label11.Height = 0.2169291!
+        Me.Label11.HyperLink = Nothing
+        Me.Label11.Left = 0.03937007!
+        Me.Label11.Name = "Label11"
+        Me.Label11.Style = resources.GetString("Label11.Style")
+        Me.Label11.Text = "会合基本情報履歴一覧＜過去データ＞"
+        Me.Label11.Top = 0.6870081!
+        Me.Label11.Width = 12.08661!
+        '
+        'Line3
+        '
+        Me.Line3.Height = 0.0!
+        Me.Line3.Left = 0.0!
+        Me.Line3.LineWeight = 1.0!
+        Me.Line3.Name = "Line3"
+        Me.Line3.Top = 0.6409449!
+        Me.Line3.Width = 12.16535!
+        Me.Line3.X1 = 0.0!
+        Me.Line3.X2 = 12.16535!
+        Me.Line3.Y1 = 0.6409449!
+        Me.Line3.Y2 = 0.6409449!
+        '
+        'Line16
+        '
+        Me.Line16.Height = 0.0!
+        Me.Line16.Left = 0.0!
+        Me.Line16.LineWeight = 1.0!
+        Me.Line16.Name = "Line16"
+        Me.Line16.Top = 0.9559056!
+        Me.Line16.Width = 12.16535!
+        Me.Line16.X1 = 0.0!
+        Me.Line16.X2 = 12.16535!
+        Me.Line16.Y1 = 0.9559056!
+        Me.Line16.Y2 = 0.9559056!
+        '
+        'Line18
+        '
+        Me.Line18.Height = 0.3149607!
+        Me.Line18.Left = 12.16535!
+        Me.Line18.LineWeight = 1.0!
+        Me.Line18.Name = "Line18"
+        Me.Line18.Top = 0.6409449!
+        Me.Line18.Width = 0.0!
+        Me.Line18.X1 = 12.16535!
+        Me.Line18.X2 = 12.16535!
+        Me.Line18.Y1 = 0.6409449!
+        Me.Line18.Y2 = 0.9559056!
+        '
+        'Line4
+        '
+        Me.Line4.Height = 0.0!
+        Me.Line4.Left = 0.0!
+        Me.Line4.LineWeight = 1.0!
+        Me.Line4.Name = "Line4"
+        Me.Line4.Top = 1.295276!
+        Me.Line4.Width = 12.16535!
+        Me.Line4.X1 = 0.0!
+        Me.Line4.X2 = 12.16535!
+        Me.Line4.Y1 = 1.295276!
+        Me.Line4.Y2 = 1.295276!
+        '
+        'Line5
+        '
+        Me.Line5.Height = 0.0!
+        Me.Line5.Left = 0.0!
+        Me.Line5.LineWeight = 1.0!
+        Me.Line5.Name = "Line5"
+        Me.Line5.Top = 1.577165!
+        Me.Line5.Width = 12.16535!
+        Me.Line5.X1 = 0.0!
+        Me.Line5.X2 = 12.16535!
+        Me.Line5.Y1 = 1.577165!
+        Me.Line5.Y2 = 1.577165!
+        '
+        'Line6
+        '
+        Me.Line6.Height = 0.281889!
+        Me.Line6.Left = 12.16535!
+        Me.Line6.LineWeight = 1.0!
+        Me.Line6.Name = "Line6"
+        Me.Line6.Top = 1.295276!
+        Me.Line6.Width = 0.0!
+        Me.Line6.X1 = 12.16535!
+        Me.Line6.X2 = 12.16535!
+        Me.Line6.Y1 = 1.295276!
+        Me.Line6.Y2 = 1.577165!
+        '
+        'Line7
+        '
+        Me.Line7.Height = 0.281889!
+        Me.Line7.Left = 9.936221!
+        Me.Line7.LineWeight = 1.0!
+        Me.Line7.Name = "Line7"
+        Me.Line7.Top = 1.295276!
+        Me.Line7.Width = 0.0!
+        Me.Line7.X1 = 9.936221!
+        Me.Line7.X2 = 9.936221!
+        Me.Line7.Y1 = 1.295276!
+        Me.Line7.Y2 = 1.577165!
+        '
+        'Line11
+        '
+        Me.Line11.Height = 0.281889!
+        Me.Line11.Left = 8.177954!
+        Me.Line11.LineWeight = 1.0!
+        Me.Line11.Name = "Line11"
+        Me.Line11.Top = 1.295276!
+        Me.Line11.Width = 0.0!
+        Me.Line11.X1 = 8.177954!
+        Me.Line11.X2 = 8.177954!
+        Me.Line11.Y1 = 1.295276!
+        Me.Line11.Y2 = 1.577165!
+        '
+        'Line14
+        '
+        Me.Line14.Height = 0.281889!
+        Me.Line14.Left = 6.636221!
+        Me.Line14.LineWeight = 1.0!
+        Me.Line14.Name = "Line14"
+        Me.Line14.Top = 1.295276!
+        Me.Line14.Width = 0.0!
+        Me.Line14.X1 = 6.636221!
+        Me.Line14.X2 = 6.636221!
+        Me.Line14.Y1 = 1.295276!
+        Me.Line14.Y2 = 1.577165!
+        '
+        'Line17
+        '
+        Me.Line17.Height = 0.281889!
+        Me.Line17.Left = 5.094489!
+        Me.Line17.LineWeight = 1.0!
+        Me.Line17.Name = "Line17"
+        Me.Line17.Top = 1.295276!
+        Me.Line17.Width = 0.0!
+        Me.Line17.X1 = 5.094489!
+        Me.Line17.X2 = 5.094489!
+        Me.Line17.Y1 = 1.295276!
+        Me.Line17.Y2 = 1.577165!
+        '
+        'Line20
+        '
+        Me.Line20.Height = 0.281889!
+        Me.Line20.Left = 3.532284!
+        Me.Line20.LineWeight = 1.0!
+        Me.Line20.Name = "Line20"
+        Me.Line20.Top = 1.295276!
+        Me.Line20.Width = 0.0!
+        Me.Line20.X1 = 3.532284!
+        Me.Line20.X2 = 3.532284!
+        Me.Line20.Y1 = 1.295276!
+        Me.Line20.Y2 = 1.577165!
+        '
+        'Line21
+        '
+        Me.Line21.Height = 0.281889!
+        Me.Line21.Left = 1.480315!
+        Me.Line21.LineWeight = 1.0!
+        Me.Line21.Name = "Line21"
+        Me.Line21.Top = 1.295276!
+        Me.Line21.Width = 0.0!
+        Me.Line21.X1 = 1.480315!
+        Me.Line21.X2 = 1.480315!
+        Me.Line21.Y1 = 1.295276!
+        Me.Line21.Y2 = 1.577165!
+        '
+        'Line24
+        '
+        Me.Line24.Height = 0.281889!
+        Me.Line24.Left = 0.0003937008!
+        Me.Line24.LineWeight = 1.0!
+        Me.Line24.Name = "Line24"
+        Me.Line24.Top = 1.295276!
+        Me.Line24.Width = 0.0!
+        Me.Line24.X1 = 0.0003937008!
+        Me.Line24.X2 = 0.0003937008!
+        Me.Line24.Y1 = 1.295276!
+        Me.Line24.Y2 = 1.577165!
+        '
+        'Line25
+        '
+        Me.Line25.Height = 0.3149607!
+        Me.Line25.Left = 0.0003936999!
+        Me.Line25.LineWeight = 1.0!
+        Me.Line25.Name = "Line25"
+        Me.Line25.Top = 0.6409449!
+        Me.Line25.Width = 0.0!
+        Me.Line25.X1 = 0.0003936999!
+        Me.Line25.X2 = 0.0003936999!
+        Me.Line25.Y1 = 0.6409449!
+        Me.Line25.Y2 = 0.9559056!
+        '
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
@@ -401,153 +635,6 @@ Partial Public Class KouenkaiRirekiReport
         Me.UPDATE_DATE.Top = 0.0!
         Me.UPDATE_DATE.Width = 1.312598!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.0!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'Label10
-        '
-        Me.Label10.Height = 0.2!
-        Me.Label10.HyperLink = Nothing
-        Me.Label10.Left = 9.833466!
-        Me.Label10.Name = "Label10"
-        Me.Label10.Style = "text-align: right"
-        Me.Label10.Text = "出力担当："
-        Me.Label10.Top = 0.2!
-        Me.Label10.Width = 0.7870083!
-        '
-        'PRINT_USER
-        '
-        Me.PRINT_USER.Height = 0.2!
-        Me.PRINT_USER.Left = 10.62047!
-        Me.PRINT_USER.Name = "PRINT_USER"
-        Me.PRINT_USER.Style = "white-space: nowrap"
-        Me.PRINT_USER.Top = 0.2!
-        Me.PRINT_USER.Width = 1.364567!
-        '
-        'Shape1
-        '
-        Me.Shape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Shape1.Height = 0.3149607!
-        Me.Shape1.Left = 0.0!
-        Me.Shape1.Name = "Shape1"
-        Me.Shape1.RoundingRadius = 9.999999!
-        Me.Shape1.Top = 0.6409449!
-        Me.Shape1.Width = 12.16535!
-        '
-        'Label11
-        '
-        Me.Label11.Height = 0.2169291!
-        Me.Label11.HyperLink = Nothing
-        Me.Label11.Left = 0.03937007!
-        Me.Label11.Name = "Label11"
-        Me.Label11.Style = resources.GetString("Label11.Style")
-        Me.Label11.Text = "会合基本情報履歴一覧"
-        Me.Label11.Top = 0.6870081!
-        Me.Label11.Width = 12.08661!
-        '
-        'Line3
-        '
-        Me.Line3.Height = 0.0!
-        Me.Line3.Left = 0.0!
-        Me.Line3.LineWeight = 1.0!
-        Me.Line3.Name = "Line3"
-        Me.Line3.Top = 0.6409449!
-        Me.Line3.Width = 12.16535!
-        Me.Line3.X1 = 0.0!
-        Me.Line3.X2 = 12.16535!
-        Me.Line3.Y1 = 0.6409449!
-        Me.Line3.Y2 = 0.6409449!
-        '
-        'Line16
-        '
-        Me.Line16.Height = 0.0!
-        Me.Line16.Left = 0.0!
-        Me.Line16.LineWeight = 1.0!
-        Me.Line16.Name = "Line16"
-        Me.Line16.Top = 0.9559056!
-        Me.Line16.Width = 12.16535!
-        Me.Line16.X1 = 0.0!
-        Me.Line16.X2 = 12.16535!
-        Me.Line16.Y1 = 0.9559056!
-        Me.Line16.Y2 = 0.9559056!
-        '
-        'Line18
-        '
-        Me.Line18.Height = 0.3149607!
-        Me.Line18.Left = 12.16535!
-        Me.Line18.LineWeight = 1.0!
-        Me.Line18.Name = "Line18"
-        Me.Line18.Top = 0.6409449!
-        Me.Line18.Width = 0.0!
-        Me.Line18.X1 = 12.16535!
-        Me.Line18.X2 = 12.16535!
-        Me.Line18.Y1 = 0.6409449!
-        Me.Line18.Y2 = 0.9559056!
-        '
-        'Shape2
-        '
-        Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Shape2.Height = 0.2818897!
-        Me.Shape2.Left = 0.0!
-        Me.Shape2.Name = "Shape2"
-        Me.Shape2.RoundingRadius = 9.999999!
-        Me.Shape2.Top = 1.295276!
-        Me.Shape2.Width = 12.16535!
-        '
-        'Line4
-        '
-        Me.Line4.Height = 0.0!
-        Me.Line4.Left = 0.0!
-        Me.Line4.LineWeight = 1.0!
-        Me.Line4.Name = "Line4"
-        Me.Line4.Top = 1.295276!
-        Me.Line4.Width = 12.16535!
-        Me.Line4.X1 = 0.0!
-        Me.Line4.X2 = 12.16535!
-        Me.Line4.Y1 = 1.295276!
-        Me.Line4.Y2 = 1.295276!
-        '
-        'Line5
-        '
-        Me.Line5.Height = 0.0!
-        Me.Line5.Left = 0.0!
-        Me.Line5.LineWeight = 1.0!
-        Me.Line5.Name = "Line5"
-        Me.Line5.Top = 1.577165!
-        Me.Line5.Width = 12.16535!
-        Me.Line5.X1 = 0.0!
-        Me.Line5.X2 = 12.16535!
-        Me.Line5.Y1 = 1.577165!
-        Me.Line5.Y2 = 1.577165!
-        '
-        'Line6
-        '
-        Me.Line6.Height = 0.2818898!
-        Me.Line6.Left = 12.16535!
-        Me.Line6.LineWeight = 1.0!
-        Me.Line6.Name = "Line6"
-        Me.Line6.Top = 1.295276!
-        Me.Line6.Width = 0.0!
-        Me.Line6.X1 = 12.16535!
-        Me.Line6.X2 = 12.16535!
-        Me.Line6.Y1 = 1.295276!
-        Me.Line6.Y2 = 1.577165!
-        '
-        'Line7
-        '
-        Me.Line7.Height = 0.2818894!
-        Me.Line7.Left = 9.936221!
-        Me.Line7.LineWeight = 1.0!
-        Me.Line7.Name = "Line7"
-        Me.Line7.Top = 1.295276!
-        Me.Line7.Width = 0.0!
-        Me.Line7.X1 = 9.936221!
-        Me.Line7.X2 = 9.936221!
-        Me.Line7.Y1 = 1.295276!
-        Me.Line7.Y2 = 1.577165!
-        '
         'Line8
         '
         Me.Line8.Height = 0.0!
@@ -587,19 +674,6 @@ Partial Public Class KouenkaiRirekiReport
         Me.Line10.Y1 = 0.0!
         Me.Line10.Y2 = 0.2311024!
         '
-        'Line11
-        '
-        Me.Line11.Height = 0.2818897!
-        Me.Line11.Left = 8.177954!
-        Me.Line11.LineWeight = 1.0!
-        Me.Line11.Name = "Line11"
-        Me.Line11.Top = 1.295276!
-        Me.Line11.Width = 0.0!
-        Me.Line11.X1 = 8.177954!
-        Me.Line11.X2 = 8.177954!
-        Me.Line11.Y1 = 1.295276!
-        Me.Line11.Y2 = 1.577165!
-        '
         'Line12
         '
         Me.Line12.Height = 0.2311024!
@@ -626,19 +700,6 @@ Partial Public Class KouenkaiRirekiReport
         Me.Line13.Y1 = 0.0!
         Me.Line13.Y2 = 0.2311024!
         '
-        'Line14
-        '
-        Me.Line14.Height = 0.2818894!
-        Me.Line14.Left = 6.636221!
-        Me.Line14.LineWeight = 1.0!
-        Me.Line14.Name = "Line14"
-        Me.Line14.Top = 1.295276!
-        Me.Line14.Width = 0.0!
-        Me.Line14.X1 = 6.636221!
-        Me.Line14.X2 = 6.636221!
-        Me.Line14.Y1 = 1.295276!
-        Me.Line14.Y2 = 1.577165!
-        '
         'Line15
         '
         Me.Line15.Height = 0.2311024!
@@ -652,19 +713,6 @@ Partial Public Class KouenkaiRirekiReport
         Me.Line15.Y1 = 0.0!
         Me.Line15.Y2 = 0.2311024!
         '
-        'Line17
-        '
-        Me.Line17.Height = 0.2818897!
-        Me.Line17.Left = 5.094489!
-        Me.Line17.LineWeight = 1.0!
-        Me.Line17.Name = "Line17"
-        Me.Line17.Top = 1.295276!
-        Me.Line17.Width = 0.0!
-        Me.Line17.X1 = 5.094489!
-        Me.Line17.X2 = 5.094489!
-        Me.Line17.Y1 = 1.295276!
-        Me.Line17.Y2 = 1.577165!
-        '
         'Line19
         '
         Me.Line19.Height = 0.2311024!
@@ -677,32 +725,6 @@ Partial Public Class KouenkaiRirekiReport
         Me.Line19.X2 = 3.532284!
         Me.Line19.Y1 = 0.0!
         Me.Line19.Y2 = 0.2311024!
-        '
-        'Line20
-        '
-        Me.Line20.Height = 0.2818894!
-        Me.Line20.Left = 3.532284!
-        Me.Line20.LineWeight = 1.0!
-        Me.Line20.Name = "Line20"
-        Me.Line20.Top = 1.295276!
-        Me.Line20.Width = 0.0!
-        Me.Line20.X1 = 3.532284!
-        Me.Line20.X2 = 3.532284!
-        Me.Line20.Y1 = 1.295276!
-        Me.Line20.Y2 = 1.577165!
-        '
-        'Line21
-        '
-        Me.Line21.Height = 0.2818897!
-        Me.Line21.Left = 1.480315!
-        Me.Line21.LineWeight = 1.0!
-        Me.Line21.Name = "Line21"
-        Me.Line21.Top = 1.295276!
-        Me.Line21.Width = 0.0!
-        Me.Line21.X1 = 1.480315!
-        Me.Line21.X2 = 1.480315!
-        Me.Line21.Y1 = 1.295276!
-        Me.Line21.Y2 = 1.577165!
         '
         'Line22
         '
@@ -730,31 +752,10 @@ Partial Public Class KouenkaiRirekiReport
         Me.Line23.Y1 = 0.0!
         Me.Line23.Y2 = 0.2311024!
         '
-        'Line24
+        'PageFooter
         '
-        Me.Line24.Height = 0.2818896!
-        Me.Line24.Left = 0.0003937008!
-        Me.Line24.LineWeight = 1.0!
-        Me.Line24.Name = "Line24"
-        Me.Line24.Top = 1.295276!
-        Me.Line24.Width = 0.0!
-        Me.Line24.X1 = 0.0003937008!
-        Me.Line24.X2 = 0.0003937008!
-        Me.Line24.Y1 = 1.295276!
-        Me.Line24.Y2 = 1.577165!
-        '
-        'Line25
-        '
-        Me.Line25.Height = 0.3149607!
-        Me.Line25.Left = 0.0003936999!
-        Me.Line25.LineWeight = 1.0!
-        Me.Line25.Name = "Line25"
-        Me.Line25.Top = 0.6409449!
-        Me.Line25.Width = 0.0!
-        Me.Line25.X1 = 0.0003936999!
-        Me.Line25.X2 = 0.0003936999!
-        Me.Line25.Y1 = 0.6409449!
-        Me.Line25.Y2 = 0.9559056!
+        Me.PageFooter.Height = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'KouenkaiRirekiReport
         '
@@ -785,6 +786,9 @@ Partial Public Class KouenkaiRirekiReport
         CType(Me.Label17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JOKEN_KOUENKAI_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TO_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BU, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KIKAKU_TANTO_AREA, System.ComponentModel.ISupportInitialize).EndInit()
@@ -793,9 +797,6 @@ Partial Public Class KouenkaiRirekiReport
         CType(Me.TIME_STAMP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USER_NAME, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UPDATE_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Label11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

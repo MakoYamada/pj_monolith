@@ -523,12 +523,12 @@ Partial Public Class KaijoReport
         '
         Me.Label8.Height = 0.2362205!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 3.232284!
+        Me.Label8.Left = 2.877953!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = resources.GetString("Label8.Style")
-        Me.Label8.Text = "会場手配依頼"
+        Me.Label8.Text = "会場手配依頼＜過去データ＞"
         Me.Label8.Top = 0.5696851!
-        Me.Label8.Width = 1.574803!
+        Me.Label8.Width = 2.272835!
         '
         'Detail
         '
@@ -2899,7 +2899,7 @@ Partial Public Class KaijoReport
         Me.Line67.LineWeight = 1.0!
         Me.Line67.Name = "Line67"
         Me.Line67.Top = 5.033465!
-        Me.Line67.Width = 0.00006484985!
+        Me.Line67.Width = 0.00006508827!
         Me.Line67.X1 = 2.509449!
         Me.Line67.X2 = 2.509514!
         Me.Line67.Y1 = 5.033465!
@@ -3011,7 +3011,7 @@ Partial Public Class KaijoReport
         Me.Line68.LineWeight = 1.0!
         Me.Line68.Name = "Line68"
         Me.Line68.Top = 5.033465!
-        Me.Line68.Width = 0.00006628036!
+        Me.Line68.Width = 0.00006604195!
         Me.Line68.X1 = 3.968111!
         Me.Line68.X2 = 3.968177!
         Me.Line68.Y1 = 5.033465!

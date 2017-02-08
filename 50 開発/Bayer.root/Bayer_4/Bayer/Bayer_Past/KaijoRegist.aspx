@@ -10,9 +10,9 @@
 				<asp:Button ID="BtnPrint1" runat="server" Width="150px" Text="Žè”z‘ˆóü" CssClass="Button" />
 			</td>
 			<td nowrap="nowrap" align="right">
-				<asp:Button ID="BtnNozomi1" runat="server" Width="150px" Text="NOZOMI‚Ö" CssClass="Button" />
-				<asp:Button ID="BtnSubmit1" runat="server" Width="150px" Text="“o˜^" CssClass="Button" />
-				<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="–ß‚é" CssClass="Button" />
+				<asp:Button ID="BtnNozomi1" runat="server" Width="150px" Text="NOZOMI‚Ö" CssClass="Button" Visible="false" />
+				<asp:Button ID="BtnSubmit1" runat="server" Width="150px" Text="“o˜^" CssClass="Button" Visible="false" />
+				<asp:Button ID="BtnBack1" runat="server" Width="150px" Text="–ß‚é" CssClass="Button"/>
 			</td>
 		</tr>
 	</table>
@@ -1016,7 +1016,7 @@
 													<asp:Label ID="ANS_TOTAL_TF" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
-													<asp:Button ID="BtnCalc_ANS_TOTAL_TF" runat="server" Text="ÄŒvŽZ" Width="60px" CssClass="ButtonList" />
+													<asp:Button ID="BtnCalc_ANS_TOTAL_TF" runat="server" Text="ÄŒvŽZ" Width="60px" CssClass="ButtonList"  Visible="false"/>
 												</td>
 												<td>&nbsp;</td>
 											</tr>
@@ -1127,7 +1127,7 @@
 													<asp:Label ID="ANS_TOTAL_T" runat="server" Text="1,234,567,890"></asp:Label>
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
-													<asp:Button ID="BtnCalc_ANS_TOTAL_T" runat="server" Text="ÄŒvŽZ" Width="60px" CssClass="ButtonList" />
+													<asp:Button ID="BtnCalc_ANS_TOTAL_T" runat="server" Text="ÄŒvŽZ" Width="60px" CssClass="ButtonList"  Visible="false"/>
 												</td>
 												<td>&nbsp;</td>
 											</tr>
@@ -1165,7 +1165,7 @@
 													&nbsp;&nbsp;&nbsp;
 												</td>
 												<td nowrap="nowrap" align="left" class="TdItemKaijo">
-													<asp:Button ID="BtnCalc_ANS_MITSUMORI" runat="server" Text="ÄŒvŽZ" Width="60px" CssClass="ButtonList" />
+													<asp:Button ID="BtnCalc_ANS_MITSUMORI" runat="server" Text="ÄŒvŽZ" Width="60px" CssClass="ButtonList" Visible="false" />
 												</td>
 											</tr>
 										</table>
@@ -1212,8 +1212,8 @@
 						</td>
 						<td>&nbsp;</td>
 						<td nowrap="nowrap" align="right">
-							<asp:Button ID="BtnNozomi2" runat="server" Width="150px" Text="NOZOMI‚Ö" CssClass="Button" />
-							<asp:Button ID="BtnSubmit2" runat="server" Width="150px" Text="“o˜^" CssClass="Button" />
+							<asp:Button ID="BtnNozomi2" runat="server" Width="150px" Text="NOZOMI‚Ö" CssClass="Button" Visible="false" />
+							<asp:Button ID="BtnSubmit2" runat="server" Width="150px" Text="“o˜^" CssClass="Button" Visible="false" />
 							<asp:Button ID="BtnBack2" runat="server" Width="150px" Text="–ß‚é" CssClass="Button" />
 						</td>
 					</tr>

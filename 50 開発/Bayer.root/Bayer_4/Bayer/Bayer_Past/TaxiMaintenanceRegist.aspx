@@ -131,7 +131,7 @@
 		                    <asp:TextBox ID="SANKASHA_ID" runat="server" Width="124px" 
                                 MaxLength="14"></asp:TextBox>							
                             <asp:Button ID="BtnSankasha" runat="server" Text="ŽQ‰ÁŽÒÄ•\Ž¦" Width="130px" 
-                                CssClass="Button" />
+                                CssClass="Button" visible="false"/>
 		                </td>
 		            </tr>
 	                <tr>
@@ -417,7 +417,7 @@
                     <tr>
                         <td style="width:100%">
                             <asp:Button ID="BtnSubmit" runat="server" Text="“o˜^" Width="130px" 
-                                CssClass="Button" />
+                                CssClass="Button" visible="false"/>
                             <asp:Button ID="BtnBack2" runat="server" Text="–ß‚é" Width="130px" 
                                 CssClass="Button" />
                         </td>

@@ -16,31 +16,13 @@ Option Explicit On
 Partial Public Class TaxiMenu
 
     '''<summary>
-    '''BtnTaxiNouhinTorikomi コントロール。
+    '''BtnTaxiMeisaiCsv コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiNouhinTorikomi As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnTaxiPrintCsv コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnTaxiPrintCsv As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnTaxiScan コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnTaxiScan As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnTaxiMeisaiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnTaxiMaintenance コントロール。
@@ -95,15 +77,6 @@ Partial Public Class TaxiMenu
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnTaxiJissekiOTH As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''BtnTaxiMeisaiCsv コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents BtnTaxiMeisaiCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnTaxiSoufujoIkkatsu コントロール。

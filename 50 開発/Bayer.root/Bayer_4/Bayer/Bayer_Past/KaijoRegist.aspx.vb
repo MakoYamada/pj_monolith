@@ -166,24 +166,24 @@ Partial Public Class KaijoRegist
             Me.DivComment.Visible = False
             Me.TdHelp.Visible = False
         Else
-            Me.BtnShisetsuKensaku.Visible = True
-            Me.BtnCalc_ANS_MITSUMORI.Visible = True
-            Me.BtnCalc_ANS_TOTAL_TF.Visible = True
-            Me.BtnCalc_ANS_TOTAL_T.Visible = True
+            'Me.BtnShisetsuKensaku.Visible = True
+            'Me.BtnCalc_ANS_MITSUMORI.Visible = True
+            'Me.BtnCalc_ANS_TOTAL_TF.Visible = True
+            'Me.BtnCalc_ANS_TOTAL_T.Visible = True
             Me.BtnRireki.Visible = True
-            Me.BtnNozomi1.Visible = True
-            Me.BtnNozomi2.Visible = True
-            Me.BtnSubmit1.Visible = True
-            Me.BtnSubmit2.Visible = True
-            Me.DivComment.Visible = True
-            Me.TdHelp.Visible = True
-            'タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
-            If IsExistLaterData() Then
-                CmnModule.SetEnabled(Me.BtnNozomi1, False)
-                CmnModule.SetEnabled(Me.BtnNozomi2, False)
-                CmnModule.SetEnabled(Me.BtnSubmit1, False)
-                CmnModule.SetEnabled(Me.BtnSubmit2, False)
-            End If
+            'Me.BtnNozomi1.Visible = True
+            'Me.BtnNozomi2.Visible = True
+            'Me.BtnSubmit1.Visible = True
+            'Me.BtnSubmit2.Visible = True
+            'Me.DivComment.Visible = True
+            'Me.TdHelp.Visible = True
+            ''タイムスタンプが新しい物がある時は、登録/Nozomiへは不可
+            'If IsExistLaterData() Then
+            '    CmnModule.SetEnabled(Me.BtnNozomi1, False)
+            '    CmnModule.SetEnabled(Me.BtnNozomi2, False)
+            '    CmnModule.SetEnabled(Me.BtnSubmit1, False)
+            '    CmnModule.SetEnabled(Me.BtnSubmit2, False)
+            'End If
         End If
     End Sub
 

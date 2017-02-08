@@ -16,6 +16,24 @@ Option Explicit On
 Partial Public Class Menu1
 
     '''<summary>
+    '''TrNewTitle コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrNewTitle As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''TrNew コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrNew As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
     '''BtnNewKoenkaiList コントロール。
     '''</summary>
     '''<remarks>
@@ -43,6 +61,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnNewKotsuList As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''TdBentou コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TdBentou As Global.System.Web.UI.HtmlControls.HtmlTableCell
+
+    '''<summary>
     '''BtnNewBentoList コントロール。
     '''</summary>
     '''<remarks>
@@ -50,6 +77,15 @@ Partial Public Class Menu1
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnNewBentoList As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TrNewCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrNewCsv As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
     '''BtnNewKotsuCsv コントロール。
@@ -97,6 +133,24 @@ Partial Public Class Menu1
     Protected WithEvents BtnBentoList As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''TrMstMenteTitle コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrMstMenteTitle As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''TrMstMente コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrMstMente As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
     '''BtnMstShisetsu コントロール。
     '''</summary>
     '''<remarks>
@@ -131,6 +185,24 @@ Partial Public Class Menu1
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnMstCostcenter As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TrLogTitle コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrLogTitle As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''TrLog コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrLog As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
     '''BtnLogFile コントロール。
@@ -248,6 +320,24 @@ Partial Public Class Menu1
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnTaxiMenu As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TrDataMenteTitle コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrDataMenteTitle As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''TrDataMente コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrDataMente As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
     '''BtnKotsuMaintenance コントロール。

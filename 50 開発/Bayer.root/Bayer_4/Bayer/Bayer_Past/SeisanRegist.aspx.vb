@@ -224,31 +224,31 @@ Partial Public Class SeisanRegist
         If Not CheckCalcItem() Then Exit Sub
         CalculateKingaku()
 
-        'ボタン制御
-        If MS_USER.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
-            Me.BtnLockCancel.Visible = True
-        Else
-            Me.BtnLockCancel.Visible = False
-        End If
+        ''ボタン制御
+        'If MS_USER.KENGEN = AppConst.MS_USER.KENGEN.Code.Admin Then
+        '    'Me.BtnLockCancel.Visible = True
+        'Else
+        '    Me.BtnLockCancel.Visible = False
+        'End If
 
-        Select Case Me.SEND_FLAG.SelectedValue
-            Case AppConst.SEND_FLAG.Code.Mi
-                CmnModule.SetEnabled(Me.BtnLockCancel, False)
-                CmnModule.SetEnabled(Me.BtnSubmit, True)
-                CmnModule.SetEnabled(Me.BtnNozomi, True)
-            Case AppConst.SEND_FLAG.Code.Taisho
-                CmnModule.SetEnabled(Me.BtnLockCancel, False)
-                '20161220 Update Start
-                'CmnModule.SetEnabled(Me.BtnSubmit, False)
-                'CmnModule.SetEnabled(Me.BtnNozomi, False)
-                CmnModule.SetEnabled(Me.BtnSubmit, True)
-                CmnModule.SetEnabled(Me.BtnNozomi, True)
-                '20161220 Update End
-            Case AppConst.SEND_FLAG.Code.Sumi
-                CmnModule.SetEnabled(Me.BtnLockCancel, True)
-                CmnModule.SetEnabled(Me.BtnSubmit, False)
-                CmnModule.SetEnabled(Me.BtnNozomi, False)
-        End Select
+        'Select Case Me.SEND_FLAG.SelectedValue
+        '    Case AppConst.SEND_FLAG.Code.Mi
+        '        CmnModule.SetEnabled(Me.BtnLockCancel, False)
+        '        CmnModule.SetEnabled(Me.BtnSubmit, True)
+        '        CmnModule.SetEnabled(Me.BtnNozomi, True)
+        '    Case AppConst.SEND_FLAG.Code.Taisho
+        '        CmnModule.SetEnabled(Me.BtnLockCancel, False)
+        '        '20161220 Update Start
+        '        'CmnModule.SetEnabled(Me.BtnSubmit, False)
+        '        'CmnModule.SetEnabled(Me.BtnNozomi, False)
+        '        CmnModule.SetEnabled(Me.BtnSubmit, True)
+        '        CmnModule.SetEnabled(Me.BtnNozomi, True)
+        '        '20161220 Update End
+        '    Case AppConst.SEND_FLAG.Code.Sumi
+        '        CmnModule.SetEnabled(Me.BtnLockCancel, True)
+        '        CmnModule.SetEnabled(Me.BtnSubmit, False)
+        '        CmnModule.SetEnabled(Me.BtnNozomi, False)
+        'End Select
 
         '登録処理後のコントロール制御
         If Not MyModule.IsInsertMode() Then

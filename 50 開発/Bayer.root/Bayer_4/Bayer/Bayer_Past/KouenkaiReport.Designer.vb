@@ -525,7 +525,7 @@ Partial Public Class KouenkaiReport
         Me.Label23.Left = 0.03937007!
         Me.Label23.Name = "Label23"
         Me.Label23.Style = resources.GetString("Label23.Style")
-        Me.Label23.Text = "【検索】会合一覧"
+        Me.Label23.Text = "【検索】会合一覧＜過去データ＞"
         Me.Label23.Top = 0.6870081!
         Me.Label23.Width = 12.08661!
         '

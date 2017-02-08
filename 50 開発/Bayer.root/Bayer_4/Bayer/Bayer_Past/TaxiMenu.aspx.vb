@@ -55,15 +55,15 @@ Partial Public Class TaxiMenu
     Private Sub SetForm()
     End Sub
  
-    '[タクチケ印刷データ作成]
-    Protected Sub BtnTaxiPrintCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiPrintCsv.Click
-        Response.Redirect(URL.TaxiPrintCsv)
-    End Sub
+    ''[タクチケ印刷データ作成]
+    'Protected Sub BtnTaxiPrintCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiPrintCsv.Click
+    '    Response.Redirect(URL.TaxiPrintCsv)
+    'End Sub
 
-    '[タクチケ納品データ取込]
-    Private Sub BtnTaxiNouhinTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTaxiNouhinTorikomi.Click
-        Response.Redirect(URL.TaxiNouhinTorikomi)
-    End Sub
+    ''[タクチケ納品データ取込]
+    'Private Sub BtnTaxiNouhinTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTaxiNouhinTorikomi.Click
+    '    Response.Redirect(URL.TaxiNouhinTorikomi)
+    'End Sub
 
     '[タクチケ未決処理]
     Protected Sub BtnTaxiMiketsu_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMiketsu.Click
@@ -109,10 +109,10 @@ Partial Public Class TaxiMenu
 
     End Sub
 
-    '[タクチケスキャンデータ取込]
-    Protected Sub BtnTaxiScan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiScan.Click
-        Response.Redirect(URL.TaxiScan)
-    End Sub
+    ''[タクチケスキャンデータ取込]
+    'Protected Sub BtnTaxiScan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiScan.Click
+    '    Response.Redirect(URL.TaxiScan)
+    'End Sub
 
     '[タクチケメンテナンス]
     Protected Sub BtnTaxiMaintenance_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMaintenance.Click

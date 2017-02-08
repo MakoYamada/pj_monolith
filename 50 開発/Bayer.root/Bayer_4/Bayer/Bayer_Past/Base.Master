@@ -25,7 +25,7 @@
 								<td align="left" style="background-position: top left; background-repeat: no-repeat; background-color: #ffffff;" id="TdHeader1" runat="server">
 									<asp:Image ID="ImgSiteName" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/logo.png" />
 								</td>
-								<td align="right" style="background-color: #ffffff; color: #0c2f76; padding-right: 2px;" id="TdHeader2" runat="server">
+								<td align="right" style="background-color: #ffffff; color: #0c2f76; padding-right: 2px;" id="TdHeader2" runat="server" visible="false">
 									<table border="0" cellpadding="2" cellspacing="0">
 										<tr>
 											<td align="left" style="background-color: #ffffff;">
@@ -44,7 +44,7 @@
 									<asp:Label ID="LabelPageTitle" runat="server"></asp:Label>
 								</td>
 								<td align="right" style="font-weight: bold; color: #1c75bc; vertical-align: middle;">
-									<span id="SpnTaxiMenu" runat="server">
+									<span id="SpnTaxiMenu" runat="server" visible="false">
 										<asp:Image ID="Image3" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/gomenu.gif" />
 										<asp:LinkButton ID="LnkBTaxiMenu" runat="server" CssClass="baselink">タクシーチケット管理メニューへ</asp:LinkButton>
 									</span>

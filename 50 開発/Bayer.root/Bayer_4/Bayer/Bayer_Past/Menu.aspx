@@ -5,12 +5,12 @@
 		<tr>
 			<td align="center">
 				<table cellpadding="3" cellspacing="2" border="0">
-					<tr valign="middle">
+					<tr valign="middle" id="TrNewTitle" runat="server" visible="false">
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
 							■新着情報一覧
 						</td>
 					</tr>
-					<tr valign="top">
+					<tr valign="top" id="TrNew" runat="server" visible="false">
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnNewKoenkaiList" runat="server" Text="【新着】基本情報" Width="200px" 
                                 CssClass="Button" />
@@ -23,11 +23,11 @@
 							<asp:Button ID="BtnNewKotsuList" runat="server" Text="【新着】交通・手配" Width="200px" 
                                 CssClass="Button" />
 						</td>
-						<td align="center" style="width: 210px;">
+						<td align="center" style="width: 210px;" id="TdBentou" runat="server" visible="false">
 							<asp:Button ID="BtnNewBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
 						</td>
 					</tr>
-					<tr valign="top">
+					<tr valign="top" id="TrNewCsv" runat="server" visible="false">
 						<td align="center" style="width: 210px;">
 						</td>
 						<td align="center" style="width: 210px;">
@@ -61,18 +61,18 @@
                                 CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnBentoList" runat="server" Text="お弁当" Width="200px" CssClass="Button" visible="false"/>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="4"></td>
 					</tr>
-					<tr valign="middle">
+					<tr valign="middle" id="TrMstMenteTitle" runat="server" visible="false" >
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
 							■マスタメンテナンス
 						</td>
 					</tr>
-					<tr valign="top">
+					<tr valign="top" id="TrMstMente" runat="server" visible="false" >
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnMstShisetsu" runat="server" Text="施設マスタ" Width="200px" CssClass="Button" />
 						</td>
@@ -90,12 +90,12 @@
 					<tr>
 						<td colspan="4"></td>
 					</tr>
-					<tr valign="middle">
+					<tr valign="middle" id="TrLogTitle" runat="server" visible="false" >
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
 							■ログ照会
 						</td>
 					</tr>
-					<tr valign="top">
+					<tr valign="top" id="TrLog" runat="server" visible="false" >
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnLogFile" runat="server" Text="送受信ログ照会" Width="200px" CssClass="Button" />
 						</td>
@@ -121,11 +121,11 @@
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnSap" runat="server" Text="WPAデータ作成" Width="200px" 
-                                CssClass="Button" />
+                                CssClass="Button" Visible="False" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnToptour" runat="server" Text="WPAデータ作成(TOPTOUR用)" 
-                                Width="200px" CssClass="Button" />
+                                Width="200px" CssClass="Button" Visible="False" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnCost" runat="server" Text="コストセンター別費用入力" Width="200px" CssClass="Button" Visible="false" />
@@ -162,12 +162,12 @@
 					<tr>
 						<td colspan="4"></td>
 					</tr>
-					<tr valign="middle">
+					<tr valign="middle" id="TrDataMenteTitle" runat="server" visible="false" >
 						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
 							■データメンテナンス
 						</td>
 					</tr>
-					<tr valign="top">
+					<tr valign="top" id="TrDataMente" runat="server" visible="false" >
 						<td>
 							<asp:Button ID="BtnKotsuMaintenance" runat="server" Text="交通・宿泊データメンテナンス" Width="200px" 
                                 CssClass="Button" />

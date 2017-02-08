@@ -11,15 +11,18 @@
 						</td>
 					</tr>
 					<tr valign="top">
-						<td align="center" style="width: 210px;">
+						<%--<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiNouhinTorikomi" runat="server" Text="タクチケ納品データ取込" 
-                                Width="200px" CssClass="Button" />
+                                Width="200px" CssClass="Button" Visible="false" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiPrintCsv" runat="server" Text="タクチケ印刷データ作成" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiPrintCsv" runat="server" Text="タクチケ印刷データ作成" Width="200px" CssClass="Button" Visible="false" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiScan" runat="server" Text="タクチケスキャンデータ取込" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiScan" runat="server" Text="タクチケスキャンデータ取込" Width="200px" CssClass="Button" Visible="false" />
+						</td>--%>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiMeisaiCsv" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiMaintenance" runat="server" Text="タクチケメンテナンス" 
@@ -28,36 +31,36 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiJisseki" runat="server" Text="タクチケ実績データ取込" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiJisseki" runat="server" Text="タクチケ実績データ取込" Width="200px" CssClass="Button" Visible="false" />
 						</td>
 						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiMiseisan" runat="server" Text="精算未完了リスト" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiMiseisan" runat="server" Text="精算未完了リスト" Width="200px" CssClass="Button"  Visible="false"/>
 						</td>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiMiketsu" runat="server" Text="タクチケ未決処理" Width="200px" 
-                                CssClass="Button" />
+                                CssClass="Button" Visible="false" />
 						</td>
 						<td>
 							<asp:Button ID="BtnTaxiMiseisanCsv" runat="server" Text="タクチケ実績未精算CSV" Width="200px" 
-                                CssClass="Button" />
+                                CssClass="Button" Visible="false" />
 						</td>
 					</tr>
 					<tr valign="top" visible="true">
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiJissekiOTH" runat="server" Text="その他タクチケ実績データ取込" 
-                                Width="200px" CssClass="Button" Visible="true" />
+                                Width="200px" CssClass="Button" Visible="false"/>
 						</td>
 						<td></td>
 						<td></td>
 						<td></td>
 					</tr>
 					<tr valign="top">
-						<td align="center" style="width: 210px;">
+						<%--<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiMeisaiCsv" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
-						</td>
+						</td>--%>
 						<td align="center" style="width: 210px;">
 							<asp:Button ID="BtnTaxiSoufujoIkkatsu" runat="server" Text="送付状・確認票一括印刷" 
-                                Width="200px" CssClass="Button" />
+                                Width="200px" CssClass="Button" Visible="false" />
 						</td>
 						<td></td>
 						<td></td>

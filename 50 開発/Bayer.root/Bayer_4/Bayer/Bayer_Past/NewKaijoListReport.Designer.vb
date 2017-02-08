@@ -245,12 +245,12 @@ Partial Public Class NewKaijoListReport
         '
         Me.Label8.Height = 0.2688977!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 5.599213!
+        Me.Label8.Left = 5.105118!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = resources.GetString("Label8.Style")
-        Me.Label8.Text = "新着 会場手配依頼一覧"
+        Me.Label8.Text = "新着 会場手配依頼一覧＜過去データ＞"
         Me.Label8.Top = 0.664239!
-        Me.Label8.Width = 1.770473!
+        Me.Label8.Width = 3.066535!
         '
         'Shape2
         '

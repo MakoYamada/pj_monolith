@@ -347,7 +347,7 @@ Partial Public Class TaxiMeisaiCsv
                     wFileName &= "_SeikyuFuka"
                 Else
                 End If
-                wFileName &= ".csv"
+                wFileName &= "(過去データ).csv"
 
                 Response.Clear()
                 Response.ContentType = CmnConst.Csv.ContentType
