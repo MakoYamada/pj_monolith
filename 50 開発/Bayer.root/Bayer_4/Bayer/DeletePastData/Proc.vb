@@ -36,17 +36,17 @@ Public Class Proc
             Exit Sub
         End If
 
-        ''過去データ用DBマスターデータ削除
-        'If Not DelPastMaster() Then
-        '    InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "過去データ用DBマスターデータ削除に失敗しました")
-        '    Exit Sub
-        'End If
+        '過去データ用DBマスターデータ削除
+        If Not DelPastMaster() Then
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "過去データ用DBマスターデータ削除に失敗しました")
+            Exit Sub
+        End If
 
-        ''マスターデータ移行
-        'If Not InsertPastMaster() Then
-        '    InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "マスターデータ移行に失敗しました")
-        '    Exit Sub
-        'End If
+        'マスターデータ移行
+        If Not InsertPastMaster() Then
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "マスターデータ移行に失敗しました")
+            Exit Sub
+        End If
 
         '削除対象会合番号抽出
         Dim wKOUENKAI_NO() As String = GetData(wDate)
@@ -313,71 +313,71 @@ Public Class Proc
         CNT_TBL_KOTSUHOTEL += wCnt
         If Not wFlag Then Return False
 
-        ''参加者
-        ''過去データ用DBの参加者テーブルの該当会合番号のデータを削除
-        'Try
-        '    strSQL = SQL.TBL_SANKA.DeleteByKOUENKAI_NO(KOUENKAI_NO)
-        '    CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
-        'Catch ex As Exception
+        '参加者
+        '過去データ用DBの参加者テーブルの該当会合番号のデータを削除
+        Try
+            strSQL = SQL.TBL_SANKA.DeleteByKOUENKAI_NO(KOUENKAI_NO)
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        Catch ex As Exception
 
-        'End Try
-        ''本番用DBの参加者テーブルの該当会合番号データ取得
-        'wCnt = 0
-        'strSQL = SQL.TBL_SANKA.byKOUENKAI_NO(KOUENKAI_NO)
-        'Dim wTBL_SANKA() As TableDef.TBL_SANKA.DataStruct = Nothing
-        'Dim RsSankasha As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        'While RsSankasha.Read
-        '    ReDim Preserve wTBL_SANKA(wCnt)
-        '    wTBL_SANKA(wCnt) = AppModule.SetRsData(RsSankasha, wTBL_SANKA(wCnt))
-        '    Try
-        '        '1レコードずつ過去データ用DBの参加者テーブルにInsert
-        '        strSQL = SQL.TBL_SANKA.Insert(wTBL_SANKA(wCnt))
-        '        CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        End Try
+        '本番用DBの参加者テーブルの該当会合番号データ取得
+        wCnt = 0
+        strSQL = SQL.TBL_SANKA.byKOUENKAI_NO(KOUENKAI_NO)
+        Dim wTBL_SANKA() As TableDef.TBL_SANKA.DataStruct = Nothing
+        Dim RsSankasha As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsSankasha.Read
+            ReDim Preserve wTBL_SANKA(wCnt)
+            wTBL_SANKA(wCnt) = AppModule.SetRsData(RsSankasha, wTBL_SANKA(wCnt))
+            Try
+                '1レコードずつ過去データ用DBの参加者テーブルにInsert
+                strSQL = SQL.TBL_SANKA.Insert(wTBL_SANKA(wCnt))
+                CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-        '    Catch ex As Exception
-        '        wFlag = False
-        '        MyBase.RollbackPast()
-        '        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "参加者データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
-        '        Exit While
-        '    End Try
-        '    wCnt += 1
-        'End While
-        'RsSankasha.Close()
-        'CNT_TBL_SANKA += wCnt
-        'If Not wFlag Then Return False
+            Catch ex As Exception
+                wFlag = False
+                MyBase.RollbackPast()
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "参加者データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
+                Exit While
+            End Try
+            wCnt += 1
+        End While
+        RsSankasha.Close()
+        CNT_TBL_SANKA += wCnt
+        If Not wFlag Then Return False
 
-        ''請求
-        ''過去データ用DBの請求テーブルの該当会合番号のデータを削除
-        'Try
-        '    strSQL = SQL.TBL_SEIKYU.DeleteByKOUENKAI_NO(KOUENKAI_NO)
-        '    CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
-        'Catch ex As Exception
+        '請求
+        '過去データ用DBの請求テーブルの該当会合番号のデータを削除
+        Try
+            strSQL = SQL.TBL_SEIKYU.DeleteByKOUENKAI_NO(KOUENKAI_NO)
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        Catch ex As Exception
 
-        'End Try
-        ''本番用DBの請求テーブルの該当会合番号データ取得
-        'wCnt = 0
-        'strSQL = SQL.TBL_SEIKYU.byKOUENKAI_NO(KOUENKAI_NO)
-        'Dim wTBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct = Nothing
-        'Dim RsSeikyu As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        'While RsSeikyu.Read
-        '    ReDim Preserve wTBL_SEIKYU(wCnt)
-        '    wTBL_SEIKYU(wCnt) = AppModule.SetRsData(RsSeikyu, wTBL_SEIKYU(wCnt))
-        '    Try
-        '        '1レコードずつ過去データ用DBの請求テーブルにInsert
-        '        strSQL = SQL.TBL_SEIKYU.Insert(wTBL_SEIKYU(wCnt))
-        '        CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        End Try
+        '本番用DBの請求テーブルの該当会合番号データ取得
+        wCnt = 0
+        strSQL = SQL.TBL_SEIKYU.byKOUENKAI_NO(KOUENKAI_NO)
+        Dim wTBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct = Nothing
+        Dim RsSeikyu As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsSeikyu.Read
+            ReDim Preserve wTBL_SEIKYU(wCnt)
+            wTBL_SEIKYU(wCnt) = AppModule.SetRsData(RsSeikyu, wTBL_SEIKYU(wCnt))
+            Try
+                '1レコードずつ過去データ用DBの請求テーブルにInsert
+                strSQL = SQL.TBL_SEIKYU.Insert(wTBL_SEIKYU(wCnt))
+                CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-        '    Catch ex As Exception
-        '        wFlag = False
-        '        MyBase.RollbackPast()
-        '        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "請求データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
-        '        Exit While
-        '    End Try
-        '    wCnt += 1
-        'End While
-        'RsSeikyu.Close()
-        'CNT_TBL_SEIKYU += wCnt
-        'If Not wFlag Then Return False
+            Catch ex As Exception
+                wFlag = False
+                MyBase.RollbackPast()
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "請求データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
+                Exit While
+            End Try
+            wCnt += 1
+        End While
+        RsSeikyu.Close()
+        CNT_TBL_SEIKYU += wCnt
+        If Not wFlag Then Return False
 
         'タクチケ発行
         '過去データ用DBのタクチケ発行テーブルの該当会合番号のデータを削除
@@ -412,38 +412,38 @@ Public Class Proc
         CNT_TBL_TAXITICKET_HAKKO += wCnt
         If Not wFlag Then Return False
 
-        ''請求承認
-        ''過去データ用DBのタクチケ発行テーブルの該当会合番号のデータを削除
-        'Try
-        '    strSQL = SQL.TBL_SHOUNIN.DeleteByKOUENKAI_NO(KOUENKAI_NO)
-        '    CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
-        'Catch ex As Exception
+        '請求承認
+        '過去データ用DBのタクチケ発行テーブルの該当会合番号のデータを削除
+        Try
+            strSQL = SQL.TBL_SHOUNIN.DeleteByKOUENKAI_NO(KOUENKAI_NO)
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        Catch ex As Exception
 
-        'End Try
-        ''本番用DBの請求承認テーブルの該当会合番号データ取得
-        'wCnt = 0
-        'strSQL = SQL.TBL_SHOUNIN.byKOUENKAI_NO(KOUENKAI_NO)
-        'Dim wTBL_SHOUNIN() As TableDef.TBL_SHOUNIN.DataStruct = Nothing
-        'Dim RsShounin As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        'While RsShounin.Read
-        '    ReDim Preserve wTBL_SHOUNIN(wCnt)
-        '    wTBL_SHOUNIN(wCnt) = AppModule.SetRsData(RsShounin, wTBL_SHOUNIN(wCnt))
-        '    Try
-        '        '1レコードずつ過去データ用DBの請求承認テーブルにInsert
-        '        strSQL = SQL.TBL_SHOUNIN.Insert(wTBL_SHOUNIN(wCnt))
-        '        CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+        End Try
+        '本番用DBの請求承認テーブルの該当会合番号データ取得
+        wCnt = 0
+        strSQL = SQL.TBL_SHOUNIN.byKOUENKAI_NO(KOUENKAI_NO)
+        Dim wTBL_SHOUNIN() As TableDef.TBL_SHOUNIN.DataStruct = Nothing
+        Dim RsShounin As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsShounin.Read
+            ReDim Preserve wTBL_SHOUNIN(wCnt)
+            wTBL_SHOUNIN(wCnt) = AppModule.SetRsData(RsShounin, wTBL_SHOUNIN(wCnt))
+            Try
+                '1レコードずつ過去データ用DBの請求承認テーブルにInsert
+                strSQL = SQL.TBL_SHOUNIN.Insert(wTBL_SHOUNIN(wCnt))
+                CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-        '    Catch ex As Exception
-        '        wFlag = False
-        '        MyBase.RollbackPast()
-        '        InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "請求承認データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
-        '        Exit While
-        '    End Try
-        '    wCnt += 1
-        'End While
-        'RsShounin.Close()
-        'CNT_TBL_SHOUNIN += wCnt
-        'If Not wFlag Then Return False
+            Catch ex As Exception
+                wFlag = False
+                MyBase.RollbackPast()
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "請求承認データの移行に失敗しました。(会合番号：" & KOUENKAI_NO & ")")
+                Exit While
+            End Try
+            wCnt += 1
+        End While
+        RsShounin.Close()
+        CNT_TBL_SHOUNIN += wCnt
+        If Not wFlag Then Return False
 
         MyBase.CommitPast()
         Return True
