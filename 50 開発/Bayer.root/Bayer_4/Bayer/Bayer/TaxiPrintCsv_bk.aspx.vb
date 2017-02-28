@@ -1,6 +1,6 @@
 ﻿Imports CommonLib
 Imports AppLib
-Partial Public Class TaxiPrintCsv
+Partial Public Class TaxiPrintCsv_bk
     Inherits WebBase
 
     <Serializable()> Private Structure AnsTaxiStructure
@@ -60,8 +60,8 @@ Partial Public Class TaxiPrintCsv
         'クリア
         CmnModule.ClearAllControl(Me)
 
-        'ボタン設定        'Me.TrNoData.Visible = False
-        If CmnDb.IsExist(SQL.TBL_KOUENKAI.TaxiPrintCsv(), MyBase.DbConnection) Then
+        'ボタン設定
+        If CmnDb.IsExist(Sql.TBL_KOUENKAI.TaxiPrintCsv(), MyBase.DbConnection) Then
             CmnModule.SetEnabled(Me.BtnCsv, True)
             Me.TrNoData.Visible = False
         Else
@@ -100,7 +100,7 @@ Partial Public Class TaxiPrintCsv
         wCnt = 0
         wFlag = False
         ReDim TBL_KOUENKAI(wCnt)
-        strSQL = SQL.TBL_KOUENKAI.TaxiPrintCsv()
+        strSQL = Sql.TBL_KOUENKAI.TaxiPrintCsv()
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -125,7 +125,7 @@ Partial Public Class TaxiPrintCsv
         wCnt = 0
         wFlag = False
         ReDim KENSHU(wCnt)
-        strSQL = SQL.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_KENSHU)
+        strSQL = Sql.MS_CODE.byCODE(AppConst.MS_CODE.TAXI_KENSHU)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             If Trim(CmnDb.DbData(TableDef.MS_CODE.Column.DISP_VALUE, RsData)) <> "" Then    '未指定を除く
@@ -182,7 +182,7 @@ Partial Public Class TaxiPrintCsv
         For wCnt = LBound(TBL_KOUENKAI) To UBound(TBL_KOUENKAI)
 
             TBL_KOTSUHOTEL = Nothing
-            strSQL = SQL.TBL_KOTSUHOTEL.TaxiPrintCsv(TBL_KOUENKAI(wCnt).KOUENKAI_NO)
+            strSQL = Sql.TBL_KOTSUHOTEL.TaxiPrintCsv(TBL_KOUENKAI(wCnt).KOUENKAI_NO)
             RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
             While RsData.Read()
                 wFlag = True
@@ -212,7 +212,7 @@ Partial Public Class TaxiPrintCsv
                    (TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_20 = "1" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_HAKKO_DATE_20 = "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 <> "" AndAlso TBL_KOTSUHOTEL.ANS_TAXI_KENSHU_20 <> "") Then
                     wPrintFlag = True
                 End If
- 
+
                 If wPrintFlag = True Then
                     '利用日1～20の降順にソートして再設定                    TBL_KOTSUHOTEL = SortAnsTaxi(TBL_KOTSUHOTEL)
                     For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
@@ -382,7 +382,7 @@ Partial Public Class TaxiPrintCsv
                             wTBL_KOTSUHOTEL.DR_MPID = CsvData.DR_MPID
                             wTBL_KOTSUHOTEL.UPDATE_USER = Session.Item(SessionDef.LoginID)
 
-                            strSQL = SQL.TBL_KOTSUHOTEL.Update_TaxiPrint(CsvData.TKT_LINE_NO, wTAXI_HAKKO_DATE, wTBL_KOTSUHOTEL)
+                            strSQL = Sql.TBL_KOTSUHOTEL.Update_TaxiPrint(CsvData.TKT_LINE_NO, wTAXI_HAKKO_DATE, wTBL_KOTSUHOTEL)
                             CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                             'ログ登録

@@ -3,7 +3,7 @@
     Assembly="ActiveReports.Web, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" %>
 <%@ MasterType VirtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<style type="text/css">
+    <style type="text/css">
 	html, body, #ctl00_ContentPlaceHolder1_WebViewer1_fvo, #ctl00_ContentPlaceHolder1_WebViewer1_controlDiv
 	{
 		width: 100%;
@@ -27,7 +27,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%">
+    <table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%">
 		<tr valign="top">
 			<td align="left">
 				<table cellspacing="0" cellpadding="2" border="0" style="width: 100%; height: 100%;" id="TblWebViewer" runat="server">

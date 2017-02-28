@@ -13,52 +13,34 @@ Option Explicit On
 
 
 
-Partial Public Class Preview
+Partial Public Class TaxiPrintCsv_bk
 
     '''<summary>
-    '''TblWebViewer コントロール。
+    '''TrNoData コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TblWebViewer As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents TrNoData As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''BtnBack コントロール。
+    '''LabelNoData コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnBack As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TrWebViewer コントロール。
+    '''BtnCsv コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents TrWebViewer As Global.System.Web.UI.HtmlControls.HtmlTableRow
-
-    '''<summary>
-    '''WebViewer1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents WebViewer1 As Global.DataDynamics.ActiveReports.Web.WebViewer
-
-    '''<summary>
-    '''SqlDataSource1 コントロール。
-    '''</summary>
-    '''<remarks>
-    '''自動生成されたフィールド。
-    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
-    '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents BtnCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。
