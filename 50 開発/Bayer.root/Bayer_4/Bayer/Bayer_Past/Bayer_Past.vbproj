@@ -536,13 +536,6 @@
       <DependentUpon>TaxiNouhinTorikomi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TaxiPrintCsv.aspx.designer.vb">
-      <DependentUpon>TaxiPrintCsv.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TaxiPrintCsv.aspx.vb">
-      <DependentUpon>TaxiPrintCsv.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="TaxiScan.aspx.designer.vb">
       <DependentUpon>TaxiScan.aspx</DependentUpon>
     </Compile>
@@ -666,7 +659,6 @@
     <Content Include="TaxiMiketsu.aspx" />
     <Content Include="TaxiMiketsuRegist.aspx" />
     <Content Include="TaxiNouhinTorikomi.aspx" />
-    <Content Include="TaxiPrintCsv.aspx" />
     <Content Include="TaxiScan.aspx" />
     <Content Include="TaxiSoufujoIkkatsu.aspx" />
     <Content Include="TimeOut.html" />

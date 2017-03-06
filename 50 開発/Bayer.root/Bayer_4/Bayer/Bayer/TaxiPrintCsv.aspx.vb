@@ -60,14 +60,14 @@ Partial Public Class TaxiPrintCsv
         'クリア
         CmnModule.ClearAllControl(Me)
 
-        'ボタン設定        'Me.TrNoData.Visible = False
-        If CmnDb.IsExist(SQL.TBL_KOUENKAI.TaxiPrintCsv(), MyBase.DbConnection) Then
-            CmnModule.SetEnabled(Me.BtnCsv, True)
-            Me.TrNoData.Visible = False
-        Else
-            CmnModule.SetEnabled(Me.BtnCsv, False)
-            Me.TrNoData.Visible = True
-        End If
+        'ボタン設定        Me.TrNoData.Visible = False
+        'If CmnDb.IsExist(SQL.TBL_KOUENKAI.TaxiPrintCsv(), MyBase.DbConnection) Then
+        '    CmnModule.SetEnabled(Me.BtnCsv, True)
+        '    Me.TrNoData.Visible = False
+        'Else
+        '    CmnModule.SetEnabled(Me.BtnCsv, False)
+        '    Me.TrNoData.Visible = True
+        'End If
     End Sub
 
     '画面項目 表示
@@ -85,6 +85,20 @@ Partial Public Class TaxiPrintCsv
 
     '入力チェック
     Private Function Check() As Boolean
+        If Not CmnCheck.IsInput(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("会合番号"), Me)
+            Return False
+        End If
+        If Not CmnCheck.IsLengthEQ(Me.JokenKOUENKAI_NO, Me.JokenKOUENKAI_NO.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ("会合番号", Me.JokenKOUENKAI_NO.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumeric(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericOnly("会合番号"), Me)
+            Return False
+        End If
+
         Return True
     End Function
 
@@ -100,7 +114,7 @@ Partial Public Class TaxiPrintCsv
         wCnt = 0
         wFlag = False
         ReDim TBL_KOUENKAI(wCnt)
-        strSQL = SQL.TBL_KOUENKAI.TaxiPrintCsv()
+        strSQL = SQL.TBL_KOUENKAI.TaxiPrintCsv(Me.JokenKOUENKAI_NO.Text)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         While RsData.Read()
             wFlag = True
@@ -345,7 +359,7 @@ Partial Public Class TaxiPrintCsv
                         wSplit = Split(stBuffer, """,""")
                         If UBound(wSplit) < MyModule.Csv.TaxiPrintCsv.CsvIndex.BARCODE Then
                             'ログ登録
-                            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, CsvPath(wKenshuCnt) & " 項目数が正しくありません。", MyBase.DbConnection)
+                            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiPrintCsv, False, CsvPath(wKenshuCnt) & " 項目数が正しくありません。", MyBase.DbConnection, MyBase.DbTransaction)
                         Else
                             '発行日
                             Dim wTAXI_HAKKO_DATE As String = "20" & Mid(TAXI_HAKKO_DATE, 1, 6)
