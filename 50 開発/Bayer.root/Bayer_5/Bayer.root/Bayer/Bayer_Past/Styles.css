@@ -1,0 +1,573 @@
+* 
+{
+	font-family: 'ÉqÉâÉMÉmäpÉS Pro W3', 'Hiragino Kaku Gothic Pro', 'ÉÅÉCÉäÉI', Meiryo, 'ÇlÇr ÇoÉSÉVÉbÉN', 'MS PGothic', sans-serif;
+ 	line-height: 1.3;
+	font-size: 10pt;
+}
+html 
+{
+	height: 100%;
+	overflow: auto;
+}
+body 
+{
+	height: 100%;
+	min-height: 100%;
+	overflow: auto;
+	color: #0a0a0a;
+    background-color: #ffffff;
+    text-align: center;
+	margin: 0;
+	padding: 0;
+}
+div#container
+{
+	background-color: #ffffff;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	height: 100%;
+	min-height: 100%;
+}
+div#header
+{
+	background-color: #ffffff;
+}
+div#content
+{
+	background-color: #ffffff;
+}
+form
+{
+	height: 100%;
+}
+input, select, textarea 
+{
+	color: #0a0a0a;
+	background-color: #ffffff;
+	font-weight: normal;
+}
+input[type="text"] 
+{
+	height: 1.3em;
+	line-height: 1.3;
+	vertical-align: middle;
+	border: 1px solid #7f9db9;
+}
+input[type="password"] 
+{
+	height: 1.3em;
+	line-height: 1.3;
+	vertical-align: middle;
+	border: 1px solid #7f9db9;
+}
+select 
+{
+	vertical-align: middle;
+	border: 1px solid #7f9db9;
+}
+textarea 
+{
+	height: 50px;
+	border: 1px solid #7f9db9;
+}
+img 
+{
+	margin: 0px;
+	border: none;
+}
+.Must 
+{
+	color: #e72410;
+	font-weight: bold;
+}
+.Comment 
+{
+	font-size: 9pt;
+	color: #2d2f87;
+}
+.Example
+{
+	color: #1c485c;
+}
+.DispMultiLine 
+{
+	border: 1px solid #f8f8f8;
+}
+.TrPageTitle
+{
+	background-image: url('Images/bgtitle.png');
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-color: #dfe2e4;
+}
+.TdTitle 
+{
+	background-color: #b8c3c8;
+	color: #273034;
+	font-weight: bold;
+}
+.TdTitleHeader
+{
+	background-color: #738891;
+	color: #ffffff;
+	font-weight: bold;
+}
+.TdItem 
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;		
+}
+.TdTitleKaijo
+{
+	background-color: #b8c3c8;
+	color: #273034;
+	font-weight: bold;
+}
+.TdTitleKaijoDisp
+{
+	background-color: #738891;
+	color: #ffffff;
+	font-weight: bold;
+}
+.TdTitleKaijoDisp2
+{
+	background-color: #e1e1e1;
+	color: #4e4e4e;
+	font-weight: bold;
+}
+.TdTitleKaijoAnswer
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+}
+.TdItemKaijo 
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
+}
+.TdTitleSeisan1
+{
+	background-color: #b8c3c8;
+	color: #273034;
+	font-weight: bold;
+	width: 80px;
+}
+.TdTitleSeisan2
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 130px;
+}
+.TdTitleSeisan3
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 180px;
+}
+.TdTitleSeisanTaxi2
+{
+	background-color: #80cfff;
+	color: #273034;
+	font-weight: bold;
+	width: 130px;
+}
+.TdTitleSeisanTaxi3
+{
+	background-color: #80cfff;
+	color: #273034;
+	font-weight: bold;
+	width: 180px;
+}
+.TdTitleSeisanKei1
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 85px;
+}
+.TdTitleSeisanKei2
+{
+	background-color: #e3e8eb;
+	color: #273034;
+	font-weight: bold;
+	width: 700px;
+	height:30px;
+}
+.TdTitleSeisanKei3
+{
+	color: #273034;
+	font-weight: bold;
+	font-size:12pt;
+	width: 720px;
+	height:30px;
+}
+.TdItemSeisan1
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
+	width: 130px;
+}
+.TdItemSeisanKei1
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
+	width: 180px;
+	text-align:right;
+}
+.TdItemSeisanKei2
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+	padding-right: 5px;
+	width: 130px;
+	text-align:right;
+}
+.TdTitleMR
+{
+	background-color: #202f55;
+	color: #ffffff;
+	font-weight: bold;
+}
+.TdTitleHotel
+{
+	background-color: #fffacd;
+	color: #4c4b3d;
+	font-weight: bold;
+}
+.TdTitleOuro
+{
+	background-color: #6699cc;
+	color: #26394c;
+	font-weight: bold;
+}
+.TdTitleFukuro
+{
+	background-color: #003366;
+	color: #ffffff;
+	font-weight: bold;
+}
+.TdTitleTaxi
+{
+	background-color: #e5a800;
+	color: #332500;
+	font-weight: bold;
+}
+.ItemConfirm 
+{
+	background-color: #ffffff;
+	color: #0a0a0a;
+	font-weight: normal;
+}
+.Button 
+{
+	background-image: url('Images/btn01.png');
+	background-repeat: repeat-x;
+	height: 28px;
+	color: #262626;
+	border: 1px #707070 solid;
+	font-weight: bold;
+}
+.Button:hover 
+{
+	background-image: url('Images/btn02.png');
+	background-repeat: repeat-x;
+	border: 1px #3c7fb1 solid;
+}
+.Button:active 
+{
+	background-image: url('Images/btn03.png');
+	background-repeat: repeat-x;
+	border: 1px #2c628b solid;
+}
+.ButtonCancel 
+{
+	background-image: url('Images/btn01.png');
+	background-repeat: repeat-x;
+	height: 28px;
+	color: #ac0529;
+	height: 28px;
+	border: 1px #707070 solid;
+	font-weight: bold;
+}
+.ButtonCancel:hover 
+{
+	background-image: url('Images/btn02.png');
+	background-repeat: repeat-x;
+	border: 1px #3c7fb1 solid;
+}
+.ButtonCancel:active 
+{
+	background-image: url('Images/btn03.png');
+	background-repeat: repeat-x;
+	border: 1px #2c628b solid;
+}
+.ButtonHidden
+{
+	/* visibility: hidden ; */
+	display:none;
+}
+.ButtonList 
+{
+	background-image: url('Images/btnlist01.png');
+	background-repeat: repeat-x;
+	color: #262626;
+	height: 24px;
+	border: 1px #707070 solid;
+	font-weight: bold;
+}
+.ButtonList:hover 
+{
+	background-image: url('Images/btnlist02.png');
+	background-repeat: repeat-x;
+	border: 1px #3c7fb1 solid;
+}
+.ButtonList:active 
+{
+	background-image: url('Images/btnlist03.png');
+	background-repeat: repeat-x;
+	border: 1px #2c628b solid;
+}
+.baselink
+{
+	color: #276af1;
+	font-weight: bold;
+}
+a.baselink:link 
+{
+	color: #276af1;
+	text-decoration: none;
+}
+a.baselink:visited 
+{
+	color: #276af1;
+	text-decoration: none;
+}
+a.baselink:hover 
+{
+	color: #109dcc;
+	text-decoration: underline;
+}
+a.baselink:active 
+{
+	color: #109dcc;
+	text-decoration: underline;
+}
+.baselinkmenu
+{
+	font-size: 12pt;
+	color: #4617f5;
+	font-weight: bold;
+}
+a.baselinkmenu:link 
+{
+	color: #4617f5;
+	text-decoration: none;
+}
+a.baselinkmenu:visited 
+{
+	color: #4617f5;
+	text-decoration: none;
+}
+a.baselinkmenu:hover 
+{
+	color: #cc1e1e;
+	text-decoration: underline;
+}
+a.baselinkmenu:active 
+{
+	color: #cc1e1e;
+	text-decoration: underline;
+}
+.baselinktaximenu
+{
+	font-size: 11pt;
+	color: #095a71;
+	font-weight: bold;
+}
+a.baselinktaximenu:link 
+{
+	color: #095a71;
+	text-decoration: none;
+}
+a.baselinktaximenu:visited 
+{
+	color: #095a71;
+	text-decoration: none;
+}
+a.baselinktaximenu:hover 
+{
+	color: #cc1e1e;
+	text-decoration: underline;
+}
+a.baselinktaximenu:active 
+{
+	color: #cc1e1e;
+	text-decoration: underline;
+}
+.FontSize1 
+{
+	font-size: 1pt;
+}
+.NoData 
+{
+	color: #bd3021;
+	font-weight: bold;
+}
+a.link:link 
+{
+	cursor: pointer;
+	font-weight: bold;
+	color: #262626;
+	text-decoration: none;
+}
+a.link:visited 
+{
+	font-weight: bold;
+	color: #262626;
+	text-decoration: none;
+}
+a.link:hover 
+{
+	font-weight: bold;
+	color: #397bcd;
+	text-decoration: underline;
+}
+a.link:active 
+{
+	font-weight: bold;
+	color: #397bcd;
+	text-decoration: underline;
+}
+a.linkpwr:link 
+{
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 9pt;
+	color: #397bcd;
+	text-decoration: none;
+}
+a.linkpwr:visited 
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #397bcd;
+	text-decoration: none;
+}
+a.linkpwr:hover 
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #397bcd;
+	text-decoration: underline;
+}
+a.linkpwr:active 
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #397bcd;
+	text-decoration: underline;
+}
+a.menulink:link 
+{
+	cursor: pointer;
+	font-weight: bold;
+	color: #415259;
+	text-decoration: none;
+}
+a.menulink:visited 
+{
+	font-weight: bold;
+	color: #415259;
+	text-decoration: none;
+}
+a.menulink:hover 
+{
+	font-weight: bold;
+	color: #c60000;
+	text-decoration: underline;
+}
+a.menulink:active 
+{
+	font-weight: bold;
+	color: #c60000;
+	text-decoration: underline;
+}
+a.link:link 
+{
+	cursor: pointer;
+	color: #339933;
+	text-decoration: underline;
+}
+a.link:visited 
+{
+	color: #339933;
+	text-decoration: underline;
+}
+a.link:hover 
+{
+	color: #263d52;
+	text-decoration: underline;
+}
+a.link:active 
+{
+	color: #263d52;
+	text-decoration: underline;
+}
+.pagerlink span
+{
+	font-weight: bold;
+	border: 0 none;
+	text-decoration: none;
+	vertical-align: middle;
+	padding: 1px 4px 1px 4px;
+	display: block;
+}
+.pagerlink a
+{
+	font-weight: bold;
+	color: #ffffff;
+	border: 1px #6e7f88 solid;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 1px 4px 1px 4px;
+	display: block;
+}
+.pagerlink a:link 
+{
+	color: #ffffff;
+	background-color: #8297a1;
+}
+.pagerlink a:visited 
+{
+	color: #ffffff;
+	background-color: #8297a1;
+}
+.pagerlink a:hover 
+{
+	color: #ffffff;
+	background-color: #505d64;
+}
+.pagerlink a:active 
+{
+	color: #ffffff;
+	background-color: #505d64;
+}
+.disp
+{
+	background-color: #e3e6e7;
+	border: 0 none;
+}

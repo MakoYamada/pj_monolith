@@ -1,0 +1,171 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Bayer", "Bayer\Bayer.vbproj", "{572779AB-7C18-4CEB-B49E-38B76FDA638E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AppLib", "AppLib\AppLib.vbproj", "{ABFCAC25-F9FA-4E55-A79B-10FE5643E5CA}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CommonLib", "CommonLib\CommonLib.vbproj", "{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintLog", "PrintLog\PrintLog.vbproj", "{9381C786-FB93-4DDB-B594-33D29E849BF5}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKouenkai", "ImportKouenkai\ImportKouenkai.vbproj", "{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKotsuHotel", "ImportKotsuHotel\ImportKotsuHotel.vbproj", "{6D91E2AB-479A-4564-98F7-228AE5CC3C4C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKaijo", "ImportKaijo\ImportKaijo.vbproj", "{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportKotsuHotel", "ExportKotsuHotel\ExportKotsuHotel.vbproj", "{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportKaijo", "ExportKaijo\ExportKaijo.vbproj", "{60394F12-E325-4FB4-BCEF-8959826FE848}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportSanka", "ImportSanka\ImportSanka.vbproj", "{D92DBF8D-A980-4846-BE0E-6FDFBBDDE094}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportSeisan", "ExportSeisan\ExportSeisan.vbproj", "{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportSeisan", "ImportSeisan\ImportSeisan.vbproj", "{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKouenkaiManual", "ImportKouenkaiManual\ImportKouenkaiManual.vbproj", "{E9D37E96-131E-4F53-BF7E-DC522D2CFAB6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKaijoManual", "ImportKaijoManual\ImportKaijoManual.vbproj", "{CD19CF20-CEEE-4D13-9B3E-BFB3471F3DB8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ImportKotsuhotelManual", "ImportKotsuhotelManual\ImportKotsuhotelManual.vbproj", "{A2D5C61E-512D-4B13-96A6-2CB8D3DB9A15}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Bayer_Past", "Bayer_Past\Bayer_Past.vbproj", "{ACCDC949-F7FA-48C5-A7BB-5DA86B010D4C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DeletePastData", "DeletePastData\DeletePastData.vbproj", "{8350517C-7BDE-43F0-B712-F79DBDE55F7C}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 18
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AppLib\\AppLib.vbproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = AppLib\\
+		SccProjectUniqueName2 = Bayer\\Bayer.vbproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = Bayer\\
+		SccProjectUniqueName3 = Bayer_Past\\Bayer_Past.vbproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = Bayer_Past\\
+		SccProjectUniqueName4 = CommonLib\\CommonLib.vbproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = CommonLib\\
+		SccProjectUniqueName5 = DeletePastData\\DeletePastData.vbproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = DeletePastData\\
+		SccProjectUniqueName6 = ExportKaijo\\ExportKaijo.vbproj
+		SccLocalPath6 = .
+		SccProjectFilePathRelativizedFromConnection6 = ExportKaijo\\
+		SccProjectUniqueName7 = ExportKotsuHotel\\ExportKotsuHotel.vbproj
+		SccLocalPath7 = .
+		SccProjectFilePathRelativizedFromConnection7 = ExportKotsuHotel\\
+		SccProjectUniqueName8 = ExportSeisan\\ExportSeisan.vbproj
+		SccLocalPath8 = .
+		SccProjectFilePathRelativizedFromConnection8 = ExportSeisan\\
+		SccProjectUniqueName9 = ImportKaijo\\ImportKaijo.vbproj
+		SccLocalPath9 = .
+		SccProjectFilePathRelativizedFromConnection9 = ImportKaijo\\
+		SccProjectUniqueName10 = ImportKaijoManual\\ImportKaijoManual.vbproj
+		SccLocalPath10 = .
+		SccProjectFilePathRelativizedFromConnection10 = ImportKaijoManual\\
+		SccProjectUniqueName11 = ImportKotsuHotel\\ImportKotsuHotel.vbproj
+		SccLocalPath11 = .
+		SccProjectFilePathRelativizedFromConnection11 = ImportKotsuHotel\\
+		SccProjectUniqueName12 = ImportKotsuhotelManual\\ImportKotsuhotelManual.vbproj
+		SccLocalPath12 = .
+		SccProjectFilePathRelativizedFromConnection12 = ImportKotsuhotelManual\\
+		SccProjectUniqueName13 = ImportKouenkai\\ImportKouenkai.vbproj
+		SccLocalPath13 = .
+		SccProjectFilePathRelativizedFromConnection13 = ImportKouenkai\\
+		SccProjectUniqueName14 = ImportKouenkaiManual\\ImportKouenkaiManual.vbproj
+		SccLocalPath14 = .
+		SccProjectFilePathRelativizedFromConnection14 = ImportKouenkaiManual\\
+		SccProjectUniqueName15 = ImportSanka\\ImportSanka.vbproj
+		SccLocalPath15 = .
+		SccProjectFilePathRelativizedFromConnection15 = ImportSanka\\
+		SccProjectUniqueName16 = ImportSeisan\\ImportSeisan.vbproj
+		SccLocalPath16 = .
+		SccProjectFilePathRelativizedFromConnection16 = ImportSeisan\\
+		SccProjectUniqueName17 = PrintLog\\PrintLog.vbproj
+		SccLocalPath17 = .
+		SccProjectFilePathRelativizedFromConnection17 = PrintLog\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{572779AB-7C18-4CEB-B49E-38B76FDA638E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572779AB-7C18-4CEB-B49E-38B76FDA638E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572779AB-7C18-4CEB-B49E-38B76FDA638E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572779AB-7C18-4CEB-B49E-38B76FDA638E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABFCAC25-F9FA-4E55-A79B-10FE5643E5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFCAC25-F9FA-4E55-A79B-10FE5643E5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFCAC25-F9FA-4E55-A79B-10FE5643E5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFCAC25-F9FA-4E55-A79B-10FE5643E5CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9381C786-FB93-4DDB-B594-33D29E849BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE8DF4F-F3F5-411E-9F80-6FA260D275F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D91E2AB-479A-4564-98F7-228AE5CC3C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D91E2AB-479A-4564-98F7-228AE5CC3C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D91E2AB-479A-4564-98F7-228AE5CC3C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D91E2AB-479A-4564-98F7-228AE5CC3C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B88881D-7EE4-489C-A836-CCE9FBB6BC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CF76AC-FE0A-4172-89C6-4A2FD52E43C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60394F12-E325-4FB4-BCEF-8959826FE848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60394F12-E325-4FB4-BCEF-8959826FE848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60394F12-E325-4FB4-BCEF-8959826FE848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60394F12-E325-4FB4-BCEF-8959826FE848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D92DBF8D-A980-4846-BE0E-6FDFBBDDE094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92DBF8D-A980-4846-BE0E-6FDFBBDDE094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92DBF8D-A980-4846-BE0E-6FDFBBDDE094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92DBF8D-A980-4846-BE0E-6FDFBBDDE094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8E0632-C5AB-4989-94EF-7EA89FF519B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E341D975-A249-4B4F-8F4F-0B8F8F5E37C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D37E96-131E-4F53-BF7E-DC522D2CFAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D37E96-131E-4F53-BF7E-DC522D2CFAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D37E96-131E-4F53-BF7E-DC522D2CFAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D37E96-131E-4F53-BF7E-DC522D2CFAB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD19CF20-CEEE-4D13-9B3E-BFB3471F3DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD19CF20-CEEE-4D13-9B3E-BFB3471F3DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD19CF20-CEEE-4D13-9B3E-BFB3471F3DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD19CF20-CEEE-4D13-9B3E-BFB3471F3DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D5C61E-512D-4B13-96A6-2CB8D3DB9A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D5C61E-512D-4B13-96A6-2CB8D3DB9A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D5C61E-512D-4B13-96A6-2CB8D3DB9A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D5C61E-512D-4B13-96A6-2CB8D3DB9A15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACCDC949-F7FA-48C5-A7BB-5DA86B010D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCDC949-F7FA-48C5-A7BB-5DA86B010D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCDC949-F7FA-48C5-A7BB-5DA86B010D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCDC949-F7FA-48C5-A7BB-5DA86B010D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8350517C-7BDE-43F0-B712-F79DBDE55F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8350517C-7BDE-43F0-B712-F79DBDE55F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8350517C-7BDE-43F0-B712-F79DBDE55F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8350517C-7BDE-43F0-B712-F79DBDE55F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

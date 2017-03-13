@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACCDC949-F7FA-48C5-A7BB-5DA86B010D4C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bayer_Past</RootNamespace>
+    <AssemblyName>Bayer_Past</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Bayer_Past.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Bayer_Past.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Design6, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.Document, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.PdfExport, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.Viewer6, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.Web, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports.XlsExport, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="ActiveReports6, Version=6.5.4530.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL" />
+    <Reference Include="PrintLog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PrintLog\bin\Release\PrintLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActiveReports.FlashViewer.Resources.swf" />
+    <Content Include="ActiveReports.FlashViewer.swf" />
+    <Content Include="Images\bgall.png" />
+    <Content Include="Images\bgheader.png" />
+    <Content Include="Images\bgtitle.png" />
+    <Content Include="Images\btn01.png" />
+    <Content Include="Images\btn02.png" />
+    <Content Include="Images\btn03.png" />
+    <Content Include="Images\btnlist01.png" />
+    <Content Include="Images\btnlist02.png" />
+    <Content Include="Images\btnlist03.png" />
+    <Content Include="Images\button-cross-alt.png" />
+    <Content Include="Images\button-tick-alt.png" />
+    <Content Include="Images\exclamation.png" />
+    <Content Include="Images\gomenu.gif" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logout.gif" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base.Master.designer.vb">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Base.Master.vb">
+      <DependentUpon>Base.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BunsekiCsv.aspx.designer.vb">
+      <DependentUpon>BunsekiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BunsekiCsv.aspx.vb">
+      <DependentUpon>BunsekiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Common.vb" />
+    <Compile Include="Common\MyModule.vb" />
+    <Compile Include="Common\URL.vb" />
+    <Compile Include="Common\WebConfig.vb" />
+    <Compile Include="CostRegist.aspx.designer.vb">
+      <DependentUpon>CostRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CostRegist.aspx.vb">
+      <DependentUpon>CostRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrList.aspx.designer.vb">
+      <DependentUpon>DrList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrList.aspx.vb">
+      <DependentUpon>DrList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrListReport.Designer.vb">
+      <DependentUpon>DrListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrListReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrRegist.aspx.designer.vb">
+      <DependentUpon>DrRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrRegist.aspx.vb">
+      <DependentUpon>DrRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrReport.Designer.vb">
+      <DependentUpon>DrReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrRireki.aspx.designer.vb">
+      <DependentUpon>DrRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrRireki.aspx.vb">
+      <DependentUpon>DrRireki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrRirekiReport.Designer.vb">
+      <DependentUpon>DrRirekiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrRirekiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrSoufujo.Designer.vb">
+      <DependentUpon>DrSoufujo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DrSoufujo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HotelKensaku.aspx.designer.vb">
+      <DependentUpon>HotelKensaku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelKensaku.aspx.vb">
+      <DependentUpon>HotelKensaku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KaigouHiyouCsv.aspx.designer.vb">
+      <DependentUpon>KaigouHiyouCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaigouHiyouCsv.aspx.vb">
+      <DependentUpon>KaigouHiyouCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KaijoList.aspx.designer.vb">
+      <DependentUpon>KaijoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoList.aspx.vb">
+      <DependentUpon>KaijoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KaijoListReport.Designer.vb">
+      <DependentUpon>KaijoListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoListReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KaijoRegist.aspx.designer.vb">
+      <DependentUpon>KaijoRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoRegist.aspx.vb">
+      <DependentUpon>KaijoRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KaijoReport.Designer.vb">
+      <DependentUpon>KaijoReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KaijoRireki.aspx.designer.vb">
+      <DependentUpon>KaijoRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoRireki.aspx.vb">
+      <DependentUpon>KaijoRireki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KaijoRirekiReport.Designer.vb">
+      <DependentUpon>KaijoRirekiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KaijoRirekiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KouenkaiList.aspx.designer.vb">
+      <DependentUpon>KouenkaiList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiList.aspx.vb">
+      <DependentUpon>KouenkaiList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KouenkaiRegist.aspx.designer.vb">
+      <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiRegist.aspx.vb">
+      <DependentUpon>KouenkaiRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KouenkaiReport.Designer.vb">
+      <DependentUpon>KouenkaiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KouenkaiRireki.aspx.designer.vb">
+      <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiRireki.aspx.vb">
+      <DependentUpon>KouenkaiRireki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KouenkaiRirekiReport.Designer.vb">
+      <DependentUpon>KouenkaiRirekiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KouenkaiRirekiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MishuHoukoku.Designer.vb">
+      <DependentUpon>MishuHoukoku.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MishuHoukoku.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MRRyohiCsv.aspx.designer.vb">
+      <DependentUpon>MRRyohiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MRRyohiCsv.aspx.vb">
+      <DependentUpon>MRRyohiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NewDrList.aspx.designer.vb">
+      <DependentUpon>NewDrList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewDrList.aspx.vb">
+      <DependentUpon>NewDrList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewDrListReport.Designer.vb">
+      <DependentUpon>NewDrListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewDrListReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NewKaijoList.aspx.designer.vb">
+      <DependentUpon>NewKaijoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewKaijoList.aspx.vb">
+      <DependentUpon>NewKaijoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewKaijoListReport.Designer.vb">
+      <DependentUpon>NewKaijoListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewKaijoListReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NewKouenkaiList.aspx.designer.vb">
+      <DependentUpon>NewKouenkaiList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewKouenkaiList.aspx.vb">
+      <DependentUpon>NewKouenkaiList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewKouenkaiReport.Designer.vb">
+      <DependentUpon>NewKouenkaiReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewKouenkaiReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Preview.aspx.designer.vb">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preview.aspx.vb">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SankashaRyohiCsv.aspx.designer.vb">
+      <DependentUpon>SankashaRyohiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SankashaRyohiCsv.aspx.vb">
+      <DependentUpon>SankashaRyohiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SapCsv.aspx.designer.vb">
+      <DependentUpon>SapCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SapCsv.aspx.vb">
+      <DependentUpon>SapCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SapCsvTop.aspx.designer.vb">
+      <DependentUpon>SapCsvTop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SapCsvTop.aspx.vb">
+      <DependentUpon>SapCsvTop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeisanKensaku.aspx.designer.vb">
+      <DependentUpon>SeisanKensaku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanKensaku.aspx.vb">
+      <DependentUpon>SeisanKensaku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeisanList.aspx.designer.vb">
+      <DependentUpon>SeisanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanList.aspx.vb">
+      <DependentUpon>SeisanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeisanListReport.Designer.vb">
+      <DependentUpon>SeisanListReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanListReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SeisanMaintenance.aspx.designer.vb">
+      <DependentUpon>SeisanMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanMaintenance.aspx.vb">
+      <DependentUpon>SeisanMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeisanRegist.aspx.designer.vb">
+      <DependentUpon>SeisanRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanRegist.aspx.vb">
+      <DependentUpon>SeisanRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeisanRegistReport.Designer.vb">
+      <DependentUpon>SeisanRegistReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanRegistReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShisetsuKensaku.aspx.designer.vb">
+      <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShisetsuKensaku.aspx.vb">
+      <DependentUpon>ShisetsuKensaku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiJisseki.aspx.designer.vb">
+      <DependentUpon>TaxiJisseki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiJisseki.aspx.vb">
+      <DependentUpon>TaxiJisseki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiJissekiCsv.aspx.designer.vb">
+      <DependentUpon>TaxiJissekiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiJissekiCsv.aspx.vb">
+      <DependentUpon>TaxiJissekiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiJissekiMiseisanCsv.aspx.designer.vb">
+      <DependentUpon>TaxiJissekiMiseisanCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiJissekiMiseisanCsv.aspx.vb">
+      <DependentUpon>TaxiJissekiMiseisanCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiJissekiOTH.aspx.designer.vb">
+      <DependentUpon>TaxiJissekiOTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiJissekiOTH.aspx.vb">
+      <DependentUpon>TaxiJissekiOTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiKakuninReport.Designer.vb">
+      <DependentUpon>TaxiKakuninReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiKakuninReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TaxiMaintenance.aspx.designer.vb">
+      <DependentUpon>TaxiMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMaintenance.aspx.vb">
+      <DependentUpon>TaxiMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMaintenanceRegist.aspx.designer.vb">
+      <DependentUpon>TaxiMaintenanceRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMaintenanceRegist.aspx.vb">
+      <DependentUpon>TaxiMaintenanceRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMeisaiCsv.aspx.designer.vb">
+      <DependentUpon>TaxiMeisaiCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMeisaiCsv.aspx.vb">
+      <DependentUpon>TaxiMeisaiCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMeisaiCsv2.aspx.designer.vb">
+      <DependentUpon>TaxiMeisaiCsv2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMeisaiCsv2.aspx.vb">
+      <DependentUpon>TaxiMeisaiCsv2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMenu.aspx.designer.vb">
+      <DependentUpon>TaxiMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMenu.aspx.vb">
+      <DependentUpon>TaxiMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMikanryou.aspx.designer.vb">
+      <DependentUpon>TaxiMikanryou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMikanryou.aspx.vb">
+      <DependentUpon>TaxiMikanryou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMiketsu.aspx.designer.vb">
+      <DependentUpon>TaxiMiketsu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMiketsu.aspx.vb">
+      <DependentUpon>TaxiMiketsu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiMiketsuRegist.aspx.designer.vb">
+      <DependentUpon>TaxiMiketsuRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiMiketsuRegist.aspx.vb">
+      <DependentUpon>TaxiMiketsuRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiNouhinTorikomi.aspx.designer.vb">
+      <DependentUpon>TaxiNouhinTorikomi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiNouhinTorikomi.aspx.vb">
+      <DependentUpon>TaxiNouhinTorikomi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiScan.aspx.designer.vb">
+      <DependentUpon>TaxiScan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiScan.aspx.vb">
+      <DependentUpon>TaxiScan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiSoufujoIkkatsu.aspx.designer.vb">
+      <DependentUpon>TaxiSoufujoIkkatsu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxiSoufujoIkkatsu.aspx.vb">
+      <DependentUpon>TaxiSoufujoIkkatsu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DrListReport.resx">
+      <DependentUpon>DrListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrReport.resx">
+      <DependentUpon>DrReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrRirekiReport.resx">
+      <DependentUpon>DrRirekiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrSoufujo.resx">
+      <DependentUpon>DrSoufujo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaijoListReport.resx">
+      <DependentUpon>KaijoListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaijoReport.resx">
+      <DependentUpon>KaijoReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaijoRirekiReport.resx">
+      <DependentUpon>KaijoRirekiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KouenkaiReport.resx">
+      <DependentUpon>KouenkaiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KouenkaiRirekiReport.resx">
+      <DependentUpon>KouenkaiRirekiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MishuHoukoku.resx">
+      <DependentUpon>MishuHoukoku.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDrListReport.resx">
+      <DependentUpon>NewDrListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewKaijoListReport.resx">
+      <DependentUpon>NewKaijoListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewKouenkaiReport.resx">
+      <DependentUpon>NewKouenkaiReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeisanListReport.resx">
+      <DependentUpon>SeisanListReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeisanRegistReport.resx">
+      <DependentUpon>SeisanRegistReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxiKakuninReport.resx">
+      <DependentUpon>TaxiKakuninReport.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\HttpResponseServername.cs" />
+    <Content Include="Base.Master" />
+    <Content Include="BunsekiCsv.aspx" />
+    <Content Include="Close.html" />
+    <Content Include="CostRegist.aspx" />
+    <Content Include="DrList.aspx" />
+    <Content Include="DrRegist.aspx" />
+    <Content Include="DrRireki.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HotelKensaku.aspx" />
+    <Content Include="KaigouHiyouCsv.aspx" />
+    <Content Include="KaijoList.aspx" />
+    <Content Include="KaijoRegist.aspx" />
+    <Content Include="KaijoRireki.aspx" />
+    <Content Include="KaijoStatus.html" />
+    <Content Include="KouenkaiList.aspx" />
+    <Content Include="KouenkaiRegist.aspx" />
+    <Content Include="KouenkaiRireki.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Maintenance.html" />
+    <Content Include="Menu.aspx" />
+    <Content Include="MRRyohiCsv.aspx" />
+    <Content Include="NewDrList.aspx" />
+    <Content Include="NewKaijoList.aspx" />
+    <Content Include="NewKouenkaiList.aspx" />
+    <Content Include="Preview.aspx" />
+    <Content Include="SankashaRyohiCsv.aspx" />
+    <Content Include="SapCsv.aspx" />
+    <Content Include="SapCsvTop.aspx" />
+    <Content Include="Script.js" />
+    <Content Include="SeisanKensaku.aspx" />
+    <Content Include="SeisanList.aspx" />
+    <Content Include="SeisanMaintenance.aspx" />
+    <Content Include="SeisanRegist.aspx" />
+    <Content Include="ShisetsuKensaku.aspx" />
+    <Content Include="Sorry.html" />
+    <Content Include="Styles.css" />
+    <Content Include="TaxiJisseki.aspx" />
+    <Content Include="TaxiJissekiCsv.aspx" />
+    <Content Include="TaxiJissekiMiseisanCsv.aspx" />
+    <Content Include="TaxiJissekiOTH.aspx" />
+    <Content Include="TaxiMaintenance.aspx" />
+    <Content Include="TaxiMaintenanceRegist.aspx" />
+    <Content Include="TaxiMeisaiCsv.aspx" />
+    <Content Include="TaxiMeisaiCsv2.aspx" />
+    <Content Include="TaxiMenu.aspx" />
+    <Content Include="TaxiMikanryou.aspx" />
+    <Content Include="TaxiMiketsu.aspx" />
+    <Content Include="TaxiMiketsuRegist.aspx" />
+    <Content Include="TaxiNouhinTorikomi.aspx" />
+    <Content Include="TaxiScan.aspx" />
+    <Content Include="TaxiSoufujoIkkatsu.aspx" />
+    <Content Include="TimeOut.html" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppLib\AppLib.vbproj">
+      <Project>{ABFCAC25-F9FA-4E55-A79B-10FE5643E5CA}</Project>
+      <Name>AppLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLib\CommonLib.vbproj">
+      <Project>{A3E806FD-19B9-45BF-91D3-AF06B42CD3AE}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49538</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Bayer_Past</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
