@@ -702,7 +702,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49538</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Bayer_Past</IISUrl>
+          <IISUrl>http://localhost/Bayer_Past_V5</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/Bayer_Past_V5</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

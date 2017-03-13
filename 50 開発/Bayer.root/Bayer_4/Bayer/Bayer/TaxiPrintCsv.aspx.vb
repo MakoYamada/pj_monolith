@@ -133,6 +133,7 @@ Partial Public Class TaxiPrintCsv
 
         '券種毎にCsv作成
         Dim TAXI_HAKKO_DATE As String = Now.ToString("yyMMddHHmm")
+        Dim TAXI_HAKKO_DATE2 As String = Now.ToString("yyMMddHHmmss")
         Dim KENSHU() As String
         Dim wKenshuCnt As Integer
 
@@ -169,7 +170,7 @@ Partial Public Class TaxiPrintCsv
         ReDim DataFlag(UBound(KENSHU))
 
         For wKenshuCnt = LBound(KENSHU) To UBound(KENSHU)
-            CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "_" & TAXI_HAKKO_DATE & ".csv"
+            CsvPath(wKenshuCnt) = WebConfig.Path.TaxiPrintCsv & GetName_TKT_KENSHU(KENSHU(wKenshuCnt)) & "_" & TAXI_HAKKO_DATE2 & ".csv"
             sb(wKenshuCnt) = New System.Text.StringBuilder
             sw(wKenshuCnt) = New System.IO.StreamWriter(CsvPath(wKenshuCnt), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
             DataFlag(wKenshuCnt) = False
@@ -441,7 +442,7 @@ Partial Public Class TaxiPrintCsv
         End Try
 
         'Zipファイル名
-        Dim ZipFileName As String = "PrintData_" & TAXI_HAKKO_DATE & ".zip"
+        Dim ZipFileName As String = "PrintData_" & TAXI_HAKKO_DATE2 & ".zip"
         Dim ZipPath As String = WebConfig.Path.TaxiPrintCsv & ZipFileName
         'Zip作成
         Using zip As New Ionic.Zip.ZipFile
