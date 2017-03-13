@@ -6492,4 +6492,18 @@ Partial Public Class DrRegist
         Me.ANS_TAXI_KENSHU_20.SelectedIndex = Me.ANS_TAXI_KENSHU_1.SelectedIndex
         SetFocus(Me.ANS_TAXI_DATE_1)
     End Sub
+
+    ''' <summary>
+    ''' 回答ステータス変更時(20170313 ADD)
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Sub ANS_STATUS_TEHAI_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ANS_STATUS_TEHAI.SelectedIndexChanged
+
+        If ANS_STATUS_TEHAI.SelectedValue = AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend _
+            And Me.ANS_TICKET_SEND_DAY.Text = "" Then
+            Me.ANS_TICKET_SEND_DAY.Text = Now.ToString("yyyyMMdd")
+        End If
+    End Sub
 End Class

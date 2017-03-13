@@ -133,7 +133,7 @@
 		                </td>
 		                <td align="left" valign="middle">							
 		                    <asp:DropDownList ID="ANS_STATUS_TEHAI" runat="server" Width="150px" 
-                                TabIndex="9">
+                                TabIndex="9" AutoPostBack="True">
                             </asp:DropDownList>						
 		                </td>
 		                <td align="left" valign="middle" class="TdTitle" style="width:100px">
