@@ -4052,4 +4052,34 @@
         End Class
     End Class
 
+    Public Class TBL_FILE
+        <Serializable()> Public Structure DataStruct
+            Public FILE_SEQ As String
+            Public FILE_NAME As Integer
+            Public FILE_TYPE As String
+            Public DATUME() As Byte
+            Public INS_DATE As String
+            Public INS_USER As String
+            Public INS_PGM As String
+        End Structure
+        Public Class Column
+            Public Const FILE_SEQ As String = "FILE_SEQ"
+            Public Const FILE_NAME As String = "FILE_NAME"
+            Public Const FILE_TYPE As String = "FILE_TYPE"
+            Public Const DATUME As String = "DATUME"
+            Public Const INS_DATE As String = "INS_DATE"
+            Public Const INS_USER As String = "INS_USER"
+            Public Const INS_PGM As String = "INS_PGM"
+        End Class
+        Public Class Name
+            Public Const FILE_SEQ As String = "ファイルSEQ"
+            Public Const FILE_NAME As String = "ファイル名"
+            Public Const FILE_TYPE As String = "ファイルタイプ"
+            Public Const DATUME As String = "データ内容"
+            Public Const INS_DATE As String = "登録日時"
+            Public Const INS_USER As String = "登録担当者"
+            Public Const INS_PGM As String = "登録プログラム"
+        End Class
+    End Class
+
 End Class
