@@ -55,7 +55,7 @@ Public Class CmnDb
     End Function
 
     'SQLé¿çs(çXêV)
-    Public Shared Function Execute(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction) As Integer
+    Public Shared Function Execute(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction, Optional ByVal BatchFlag As Boolean = False) As Integer
         Dim DbCmd As System.Data.SqlClient.SqlCommand
         Dim ret As Integer
         If Not IsNothing(DbCmd) Then DbCmd.Dispose()
@@ -67,7 +67,7 @@ Public Class CmnDb
             ret = DbCmd.ExecuteNonQuery()
             DbCmd.Dispose()
 
-            System.Web.HttpContext.Current.Session.Item(SessionDbError) = ""
+            If Not BatchFlag Then System.Web.HttpContext.Current.Session.Item(SessionDbError) = ""
 
             Return ret
         Catch ex As Exception

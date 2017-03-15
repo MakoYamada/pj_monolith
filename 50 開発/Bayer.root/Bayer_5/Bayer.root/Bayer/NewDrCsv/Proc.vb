@@ -2,29 +2,12 @@
 Imports CommonLib
 Imports System.IO
 Imports System.Data.SqlClient
+Imports System.Text
 Public Class Proc
     Inherits batchBase
 
     Private Const pbatchID As String = "NewDrCsv" 'バッチID
     Private Const pDelimiter As String = ","
-
-#Region "ファイル項目"
-
-    Private Const COL_COUNT As Integer = 3 'ファイルの項目数
-
-    Private Enum COL_NO
-        Field1 = 0
-        Field2
-        Field3
-    End Enum
-
-    Private Class COL_NAME
-        Public Const Field1 As String = "講演会番号"
-        Public Const Field2 As String = "MTP ID (参加者ID)"
-        Public Const Field3 As String = "参加・不参加"
-    End Class
-
-#End Region
 
     Public Sub New()
         MyBase.New(pbatchID)
@@ -93,32 +76,32 @@ Public Class Proc
         '新着一覧CSV保存テーブル登録
         Dim W_FILE As New TableDef.TBL_FILE.DataStruct
         Call GetValueFile(strFileFull, strFileName, W_FILE)
-        If ShoruiUpload(W_FILE) Then
+        If CsvUpload(W_FILE) Then
             'サーバフォルダ内に生成したPDFを削除
-            System.IO.File.Delete(strFileFull)
+            ' ''System.IO.File.Delete(strFileFull)
         End If
 
         InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, outputData.Length.ToString & "件のデータを出力しました。")
 
     End Sub
 
-    '契約書用書類テーブル用データセット
+    '新着一覧CSV保存テーブル用データセット
     Private Sub GetValueFile(ByVal pFileFull As String, ByVal pFileName As String, ByRef pFILE As TableDef.TBL_FILE.DataStruct)
         Dim sysDT As String = Now.ToString("yyyyMMddHHmmss")
 
         If Not pFileName Is Nothing AndAlso pFileName.ToString.Trim <> "" Then
             pFILE.FILE_NAME = pFileName
-            pFILE.FILE_TYPE = "application/pdf"
-            Dim aryData() As Byte = System.IO.File.ReadAllBytes(pFileName)
+            'pFILE.FILE_TYPE = "text/csv"
+            pFILE.FILE_TYPE = "Application/octet-stream"
+            Dim aryData() As Byte = System.IO.File.ReadAllBytes(pFileFull)
             pFILE.DATUME = aryData
             pFILE.INS_DATE = sysDT
-            pFILE.INS_USER = ""
-            pFILE.INS_PGM = SQL.GetValue.PGM
+            pFILE.INS_PGM = "NewDrCsv"
         End If
     End Sub
 
     '契約書用書類テーブル登録
-    Private Function ShoruiUpload(ByVal pFILE As TableDef.TBL_FILE.DataStruct) As Boolean
+    Private Function CsvUpload(ByVal pFILE As TableDef.TBL_FILE.DataStruct) As Boolean
         If Not DeleteTBL_FILE(pFILE) Then Return False
         If Not InsertTBL_FILE(pFILE) Then Return False
 
@@ -127,32 +110,26 @@ Public Class Proc
     Private Function InsertTBL_FILE(ByVal pTBL_FILE As TableDef.TBL_FILE.DataStruct) As Boolean
         Dim strSQL As String = ""
         strSQL &= "INSERT INTO TBL_FILE"
-        strSQL &= "(" & TableDef.TBL_FILE.Column.FILE_SEQ
-        strSQL &= "," & TableDef.TBL_FILE.Column.FILE_NAME
+        strSQL &= "(" & TableDef.TBL_FILE.Column.FILE_NAME
         strSQL &= "," & TableDef.TBL_FILE.Column.FILE_TYPE
         strSQL &= "," & TableDef.TBL_FILE.Column.DATUME
         strSQL &= "," & TableDef.TBL_FILE.Column.INS_DATE
-        strSQL &= "," & TableDef.TBL_FILE.Column.INS_USER
         strSQL &= "," & TableDef.TBL_FILE.Column.INS_PGM
         strSQL &= ") VALUES "
-        strSQL &= "(@" & TableDef.TBL_FILE.Column.FILE_SEQ
-        strSQL &= ",@" & TableDef.TBL_FILE.Column.FILE_NAME
+        strSQL &= "(@" & TableDef.TBL_FILE.Column.FILE_NAME
         strSQL &= ",@" & TableDef.TBL_FILE.Column.FILE_TYPE
         strSQL &= ",@" & TableDef.TBL_FILE.Column.DATUME
         strSQL &= ",@" & TableDef.TBL_FILE.Column.INS_DATE
-        strSQL &= ",@" & TableDef.TBL_FILE.Column.INS_USER
         strSQL &= ",@" & TableDef.TBL_FILE.Column.INS_PGM
         strSQL &= ")"
 
         ' データの登録
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
         Try
-            objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_SEQ, pTBL_FILE.FILE_SEQ)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_NAME, pTBL_FILE.FILE_NAME)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_TYPE, pTBL_FILE.FILE_TYPE)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.DATUME, pTBL_FILE.DATUME)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.INS_DATE, pTBL_FILE.INS_DATE)
-            objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.INS_USER, pTBL_FILE.INS_USER)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.INS_PGM, pTBL_FILE.INS_PGM)
             objCom.ExecuteNonQuery()
             objCom.Dispose()
@@ -166,9 +143,9 @@ Public Class Proc
         Dim strSQL As String = ""
 
         Try
-            strSQL = "DELETE FROM TBL_FILE WHERE FILE_SEQ='" & pTBL_FILE.FILE_SEQ & "'"
+            strSQL = "DELETE FROM TBL_FILE WHERE FILE_NAME='" & pTBL_FILE.FILE_NAME & "'"
 
-            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction, True)
             MyBase.Commit()
         Catch ex As Exception
             Return False
@@ -177,11 +154,12 @@ Public Class Proc
     End Function
 
     '新着交通・宿泊一覧CSV
-    Private Function NewDrCsv(ByVal filename As String, ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
+    Private Function NewDrCsv(ByVal filename As String, ByVal CsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct) As Boolean
         Dim wCnt As Integer = 0
 
         '出力ファイル作成
-        Dim sw As New StreamWriter(filename, False, New System.Text.UTF8Encoding(False))
+        'Dim sw As New StreamWriter(filename, False, New System.Text.UTF8Encoding(False))
+        Dim sw As New StreamWriter(filename, False, System.Text.Encoding.GetEncoding("shift_jis"))
         sw.NewLine = vbCrLf
 
         Try
@@ -195,7 +173,13 @@ Public Class Proc
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.SANKASHA_ID)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.DR_NAME)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.DR_KANA)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_BU)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_AREA)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_EIGYOSHO)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_NAME)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_KANA)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_SEND_SAKI_FS)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.MR_SEND_SAKI_OTHER)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.TIME_STAMP_BYL)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.INPUT_DATE)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(TableDef.NEW_DR_CSV.Name.USER_NAME)))
@@ -216,7 +200,13 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).SANKASHA_ID)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_NAME)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).DR_KANA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_BU)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_AREA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_EIGYOSHO)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_NAME)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_KANA)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_SEND_SAKI_FS)))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).MR_SEND_SAKI_OTHER)))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_Date(CsvData(wCnt).TIME_STAMP_BYL, CmnModule.DateFormatType.YYYYMMDDHHMMSS))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_Date(CsvData(wCnt).INPUT_DATE, CmnModule.DateFormatType.YYYYMMDDHHMMSS))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).USER_NAME)))

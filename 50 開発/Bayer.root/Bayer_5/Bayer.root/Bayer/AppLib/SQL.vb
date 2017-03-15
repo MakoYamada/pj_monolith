@@ -3030,7 +3030,13 @@ Public Class SQL
             strSQL &= ", WK_KOTSUHOTEL.SANKASHA_ID"
             strSQL &= ", WK_KOTSUHOTEL.DR_NAME"
             strSQL &= ", WK_KOTSUHOTEL.DR_KANA"
+            strSQL &= ", WK_KOTSUHOTEL.MR_BU"
+            strSQL &= ", WK_KOTSUHOTEL.MR_AREA"
+            strSQL &= ", WK_KOTSUHOTEL.MR_EIGYOSHO"
             strSQL &= ", WK_KOTSUHOTEL.MR_NAME"
+            strSQL &= ", WK_KOTSUHOTEL.MR_KANA"
+            strSQL &= ", WK_KOTSUHOTEL.MR_SEND_SAKI_FS"
+            strSQL &= ", WK_KOTSUHOTEL.MR_SEND_SAKI_OTHER"
             strSQL &= ", WK_KOTSUHOTEL.TIME_STAMP_BYL"
             strSQL &= ", WK_KOTSUHOTEL.INPUT_DATE"
             strSQL &= ", WK_KOTSUHOTEL.REQ_STATUS_TEHAI"
@@ -10092,6 +10098,25 @@ Public Class SQL
             Dim strSQL As String = ""
 
             strSQL &= "ALTER INDEX ALL ON TBL_SHOUNIN REBUILD;" & vbCrLf
+
+            Return strSQL
+        End Function
+    End Class
+    Public Class TBL_FILE
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_FILE.*" _
+        & " FROM TBL_FILE"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY" _
+        & " TBL_FILE.FILE_NAME"
+
+        Public Shared Function AllData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
 
             Return strSQL
         End Function

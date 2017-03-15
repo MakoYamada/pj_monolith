@@ -3158,6 +3158,8 @@
             Public DR_MPID As String
             Public SALESFORCE_ID As String
             Public SEND_FLAG As String
+
+            Public FILE_NAME As String
         End Structure
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
@@ -3203,6 +3205,8 @@
             Public Const TIME_STAMP_BYL As String = "Timestamp(BYL)"
             Public Const TKT_NO As String = "タクチケ番号"
             Public Const SEND_FLAG As String = "Nozomi送信フラグ"
+
+            Public Const FILE_NAME As String = "新着一覧CSVファイル名"
         End Class
     End Class
 
@@ -3941,7 +3945,13 @@
             Public SANKASHA_ID As String
             Public DR_NAME As String
             Public DR_KANA As String
+            Public MR_BU As String
+            Public MR_AREA As String
+            Public MR_EIGYOSHO As String
             Public MR_NAME As String
+            Public MR_KANA As String
+            Public MR_SEND_SAKI_FS As String
+            Public MR_SEND_SAKI_OTHER As String
             Public TIME_STAMP_BYL As String
             Public INPUT_DATE As String
             Public USER_NAME As String
@@ -3961,7 +3971,13 @@
             Public Const SANKASHA_ID As String = "SANKASHA_ID"
             Public Const DR_NAME As String = "DR_NAME"
             Public Const DR_KANA As String = "DR_KANA"
+            Public Const MR_BU As String = "MR_BU"
+            Public Const MR_AREA As String = "MR_AREA"
+            Public Const MR_EIGYOSHO As String = "MR_EIGYOSHO"
             Public Const MR_NAME As String = "MR_NAME"
+            Public Const MR_KANA As String = "MR_KANA"
+            Public Const MR_SEND_SAKI_FS As String = "MR_SEND_SAKI_FS"
+            Public Const MR_SEND_SAKI_OTHER As String = "MR_SEND_SAKI_OTHER"
             Public Const TIME_STAMP_BYL As String = "TIME_STAMP_BYL"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const USER_NAME As String = "USER_NAME"
@@ -3981,7 +3997,13 @@
             Public Const SANKASHA_ID As String = "参加者番号"
             Public Const DR_NAME As String = "DR氏名"
             Public Const DR_KANA As String = "DR氏名カナ"
+            Public Const MR_BU As String = "DR担当MRのBU"
+            Public Const MR_AREA As String = "DR担当MRのエリア名"
+            Public Const MR_EIGYOSHO As String = "DR担当MRの営業所名"
             Public Const MR_NAME As String = "DR担当MR"
+            Public Const MR_KANA As String = "DR担当MR(カナ)"
+            Public Const MR_SEND_SAKI_FS As String = "チケット送付先FS"
+            Public Const MR_SEND_SAKI_OTHER As String = "チケット送付先(その他)"
             Public Const TIME_STAMP_BYL As String = "BYL Timestamp"
             Public Const INPUT_DATE As String = "TOP受信日時"
             Public Const USER_NAME As String = "TOP担当"
@@ -4054,31 +4076,32 @@
 
     Public Class TBL_FILE
         <Serializable()> Public Structure DataStruct
-            Public FILE_SEQ As String
-            Public FILE_NAME As Integer
+            Public FILE_NAME As String
             Public FILE_TYPE As String
             Public DATUME() As Byte
             Public INS_DATE As String
-            Public INS_USER As String
             Public INS_PGM As String
         End Structure
         Public Class Column
-            Public Const FILE_SEQ As String = "FILE_SEQ"
             Public Const FILE_NAME As String = "FILE_NAME"
             Public Const FILE_TYPE As String = "FILE_TYPE"
-            Public Const DATUME As String = "DATUME"
+            Public Const DATUME As String = "DATUM"
             Public Const INS_DATE As String = "INS_DATE"
-            Public Const INS_USER As String = "INS_USER"
             Public Const INS_PGM As String = "INS_PGM"
         End Class
         Public Class Name
-            Public Const FILE_SEQ As String = "ファイルSEQ"
             Public Const FILE_NAME As String = "ファイル名"
             Public Const FILE_TYPE As String = "ファイルタイプ"
             Public Const DATUME As String = "データ内容"
             Public Const INS_DATE As String = "登録日時"
-            Public Const INS_USER As String = "登録担当者"
             Public Const INS_PGM As String = "登録プログラム"
+        End Class
+        Public Class ColumnNo
+            Public Const FILE_NAME As Integer = 0
+            Public Const FILE_TYPE As Integer = 1
+            Public Const DATUME As Integer = 2
+            Public Const INS_DATE As Integer = 3
+            Public Const INS_PGM As Integer = 4
         End Class
     End Class
 

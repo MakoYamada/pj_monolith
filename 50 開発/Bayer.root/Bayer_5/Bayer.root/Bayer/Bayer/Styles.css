@@ -339,7 +339,47 @@ img
 	background-repeat: repeat-x;
 	border: 1px #2c628b solid;
 }
-.baselink
+.ButtonList90 
+{
+	background-image: url('Images/btnlist90.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	border: 0 none;
+	color: #262626;
+	height: 24px;
+	width: 90px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+.ButtonList90:hover 
+{
+	background-position: left center;
+	cursor: pointer;
+	text-decoration: none;
+}
+.ButtonList90:active 
+{
+	background-position: left bottom;
+	cursor: pointer;
+	text-decoration: none;
+}
+.xButtonList90 
+{
+	display: block;
+	background-image: url('Images/btnlist90x.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	border: 0 none;
+	color: #a0a0a0;
+	height: 24px;
+	width: 90px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}.baselink
 {
 	color: #276af1;
 	font-weight: bold;
