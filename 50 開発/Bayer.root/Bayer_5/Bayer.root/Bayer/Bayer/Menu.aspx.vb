@@ -196,8 +196,6 @@ Partial Public Class Menu1
 
     '[新着 交通・宿泊CSV出力]
     Private Sub BtnNewKotsuCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNewKotsuCsv.Click
-        'Call OutputDrCsv()
-        Session.Item(SessionDef.DATA_MAINTENANCE) = CmnConst.Flag.Off
         Response.Redirect(URL.NewDrCsv)
     End Sub
 

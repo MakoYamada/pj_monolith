@@ -95,6 +95,7 @@ Public Class MyModule
             AddChkArray(cnt, chkArray, URL.NewKouenkaiList)
             AddChkArray(cnt, chkArray, URL.NewKaijoList)
             AddChkArray(cnt, chkArray, URL.NewDrList)
+            AddChkArray(cnt, chkArray, URL.NewDrCsv)   '20170315 ADD
             AddChkArray(cnt, chkArray, URL.KouenkaiList)
             AddChkArray(cnt, chkArray, URL.KouenkaiRegist)
             AddChkArray(cnt, chkArray, URL.KouenkaiRireki)

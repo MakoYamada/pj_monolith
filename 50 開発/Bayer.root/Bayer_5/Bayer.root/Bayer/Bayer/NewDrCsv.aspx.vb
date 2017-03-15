@@ -20,10 +20,6 @@ Partial Public Class NewDrCsv
         BUTTON2
     End Enum
 
-    Private Sub DrList_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-
-    End Sub
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         '遷移元チェック
         If Not Page.IsPostBack Then
