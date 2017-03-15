@@ -158,7 +158,6 @@ Public Class Proc
         Dim wCnt As Integer = 0
 
         '出力ファイル作成
-        'Dim sw As New StreamWriter(filename, False, New System.Text.UTF8Encoding(False))
         Dim sw As New StreamWriter(filename, False, System.Text.Encoding.GetEncoding("shift_jis"))
         sw.NewLine = vbCrLf
 
