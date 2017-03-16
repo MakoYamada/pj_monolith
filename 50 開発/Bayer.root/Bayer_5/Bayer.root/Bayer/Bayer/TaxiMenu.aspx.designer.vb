@@ -115,6 +115,51 @@ Partial Public Class TaxiMenu
     Protected WithEvents BtnTaxiSoufujoIkkatsu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnTaxiSeisanImport コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiSeisanImport As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTaxiSeisanAuto コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiSeisanAuto As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTaxiSeisanAutoCsv コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiSeisanAutoCsv As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnSeisanshoAuto コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSeisanshoAuto As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnTaxiSeisanToNozomi コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiSeisanToNozomi As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>

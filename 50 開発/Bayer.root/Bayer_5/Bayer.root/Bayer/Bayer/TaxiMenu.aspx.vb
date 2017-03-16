@@ -145,6 +145,33 @@ Partial Public Class TaxiMenu
         Response.Redirect(URL.TaxiJissekiOTH)
     End Sub
 
+    '@@@ 20170317 Add Start
+    '[タクチケ精算用CSV取込]
+    Protected Sub BtnTaxiSeisanImport_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanImport.Click
+        Response.Redirect(URL.TaxiSeisanImport)
+    End Sub
+
+    '[タクチケ自動精算指示]
+    Protected Sub TaxiSeisanAuto_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanAuto.Click
+        Response.Redirect(URL.TaxiSeisanAuto)
+    End Sub
+
+    '[自動精算済タクチケCSV DL]
+    Protected Sub BtnTaxiSeisanAutoCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanAutoCsv.Click
+        Response.Redirect(URL.TaxiSeisanAutoCsv)
+    End Sub
+
+    '[総合精算書PDF DL]
+    Protected Sub BtnSeisanshoAuto_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSeisanshoAuto.Click
+        Response.Redirect(URL.SeisanshoAuto)
+    End Sub
+
+    '[Nozomi送信対象精算データ取込]
+    Protected Sub BtnTaxiSeisanToNozomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanToNozomi.Click
+        Response.Redirect(URL.TaxiSeisanToNozomi)
+    End Sub
+    '@@@ 20170317 Add End
+
     'タクチケ未精算csv出力
     Private Function CreateCsv(ByVal CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
         Dim wCnt As Integer = 0

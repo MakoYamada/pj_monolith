@@ -66,4 +66,12 @@ Public Class URL
     Public Shared TaxiJissekiMiseisanCsv As String = WebConfig.Site.URL & "TaxiJissekiMiseisanCsv.aspx"
     Public Shared TaxiSoufujoIkkatsu As String = WebConfig.Site.URL & "TaxiSoufujoIkkatsu.aspx"
     Public Shared TaxiJissekiOTH As String = WebConfig.Site.URL & "TaxiJissekiOTH.aspx"
+
+    '@@@ 20170317 Add Start
+    Public Shared TaxiSeisanImport As String = WebConfig.Site.URL & "TaxiSeisanImport.aspx"
+    Public Shared TaxiSeisanAuto As String = WebConfig.Site.URL & "TaxiSeisanAuto.aspx"
+    Public Shared TaxiSeisanAutoCsv As String = WebConfig.Site.URL & "TaxiSeisanAutoCsv.aspx"
+    Public Shared SeisanshoAuto As String = WebConfig.Site.URL & "SeisanshoAuto.aspx"
+    Public Shared TaxiSeisanToNozomi As String = WebConfig.Site.URL & "TaxiSeisanToNozomi.aspx"
+    '@@@ 20170317 Add End
 End Class

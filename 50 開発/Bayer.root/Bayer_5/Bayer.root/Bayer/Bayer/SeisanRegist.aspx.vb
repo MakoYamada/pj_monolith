@@ -37,6 +37,18 @@ Partial Public Class SeisanRegist
                 If Not MyModule.IsInsertMode() Then
                     '画面項目表示
                     SetForm()
+                Else
+                    Dim W_KOUENKAI As New TableDef.TBL_KOUENKAI.DataStruct
+                    If GetKouenkaiData(Joken.KOUENKAI_NO, W_KOUENKAI) Then
+                        Me.FROM_DATE.Text = AppModule.GetName_FROM_DATE(W_KOUENKAI.FROM_DATE)
+                        Me.KOUENKAI_NAME.Text = AppModule.GetName_KOUENKAI_NAME(W_KOUENKAI.KOUENKAI_NAME)
+                        Me.BU.Text = AppModule.GetName_BU(W_KOUENKAI.KIKAKU_TANTO_JIGYOUBU)
+                        Me.KIKAKU_TANTO_AREA.Text = AppModule.GetName_KIKAKU_TANTO_AREA(W_KOUENKAI.KIKAKU_TANTO_AREA)
+                        Me.KIKAKU_TANTO_EIGYOSHO.Text = AppModule.GetName_KIKAKU_TANTO_EIGYOSHO(W_KOUENKAI.KIKAKU_TANTO_EIGYOSHO)
+                        Me.KIKAKU_TANTO_NAME.Text = AppModule.GetName_KIKAKU_TANTO_NAME(W_KOUENKAI.KIKAKU_TANTO_NAME)
+                        Me.SEIHIN_NAME.Text = AppModule.GetName_SEIHIN_NAME(W_KOUENKAI.SEIHIN_NAME)
+                        Me.SRM_HACYU_KBN.Text = AppModule.GetName_SRM_HACYU_KBN(W_KOUENKAI.SRM_HACYU_KBN)
+                    End If
                 End If
             End If
         End If

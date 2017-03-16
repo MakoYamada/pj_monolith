@@ -62,6 +62,39 @@
 						<td></td>
 						<td></td>
 					</tr>
+					<tr>
+					    <td colspan="4"></td>
+					</tr>
+					<tr valign="middle">
+						<td align="left" valign="middle" class="TdTitleHeader" colspan="4">
+							■タクシーチケット自動精算
+						</td>
+					</tr>
+					<tr valign="top">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiSeisanImport" runat="server" Text="タクチケ精算用CSV取込" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiSeisanAuto" runat="server" Text="タクチケ自動精算指示" Width="200px" CssClass="Button" />
+						</td>
+						<td>
+							<asp:Button ID="BtnTaxiSeisanAutoCsv" runat="server" Text="自動精算済タクチケCSV DL" Width="200px" CssClass="Button" />
+						</td>
+						<td>
+							<asp:Button ID="BtnSeisanshoAuto" runat="server" Text="総合精算書PDF DL" Width="200px" CssClass="Button" />
+						</td>
+					</tr>
+					<tr>
+					    <td>
+							<asp:Button ID="BtnTaxiSeisanToNozomi" runat="server" Text="Nozomi送信対象精算データ取込" Width="200px" CssClass="Button" />
+					    </td>
+					    <td>
+					    </td>
+					    <td>
+					    </td>
+					    <td>
+					    </td>
+					</tr>
 				</table>
 			</td>
 		</tr>
