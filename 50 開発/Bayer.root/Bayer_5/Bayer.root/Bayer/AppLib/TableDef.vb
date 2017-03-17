@@ -4074,8 +4074,10 @@
         End Class
     End Class
 
+    '20170317 Add Start
     Public Class TBL_FILE
         <Serializable()> Public Structure DataStruct
+            Public FILE_KBN As String
             Public FILE_NAME As String
             Public FILE_TYPE As String
             Public DATUME() As Byte
@@ -4083,13 +4085,15 @@
             Public INS_PGM As String
         End Structure
         Public Class Column
+            Public Const FILE_KBN As String = "FILE_KBN"
             Public Const FILE_NAME As String = "FILE_NAME"
             Public Const FILE_TYPE As String = "FILE_TYPE"
-            Public Const DATUME As String = "DATUM"
+            Public Const DATUME As String = "DATUME"
             Public Const INS_DATE As String = "INS_DATE"
             Public Const INS_PGM As String = "INS_PGM"
         End Class
         Public Class Name
+            Public Const FILE_KBN As String = "ファイル区分"
             Public Const FILE_NAME As String = "ファイル名"
             Public Const FILE_TYPE As String = "ファイルタイプ"
             Public Const DATUME As String = "データ内容"
@@ -4097,12 +4101,53 @@
             Public Const INS_PGM As String = "登録プログラム"
         End Class
         Public Class ColumnNo
-            Public Const FILE_NAME As Integer = 0
-            Public Const FILE_TYPE As Integer = 1
-            Public Const DATUME As Integer = 2
-            Public Const INS_DATE As Integer = 3
-            Public Const INS_PGM As Integer = 4
+            Public Const FILE_KBN As Integer = 0
+            Public Const FILE_NAME As Integer = 1
+            Public Const FILE_TYPE As Integer = 2
+            Public Const DATUME As Integer = 3
+            Public Const INS_DATE As Integer = 4
+            Public Const INS_PGM As Integer = 5
         End Class
     End Class
+
+    Public Class TBL_SEISAN_TKTNO
+        <Serializable()> Public Structure DataStruct
+            Public TKT_NO As String
+            Public KOUENKAI_NO As String
+            Public SEISAN_YM As String
+            Public SEISAN_DANTAI As Byte
+            Public SEISAN_COMMENT As Byte
+            Public INS_DATE As String
+            Public INS_PGM As String
+        End Structure
+        Public Class Column
+            Public Const TKT_NO As String = "TKT_NO"
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const SEISAN_YM As String = "SEISAN_YM"
+            Public Const SEISAN_DANTAI As String = "SEISAN_DANTAI"
+            Public Const SEISAN_COMMENT As String = "SEISAN_COMMENT"
+            Public Const INS_DATE As String = "INS_DATE"
+            Public Const INS_PGM As String = "INS_PGM"
+        End Class
+        Public Class Name
+            Public Const TKT_NO As String = "タクシーチケット番号"
+            Public Const KOUENKAI_NO As String = "会合番号"
+            Public Const SEISAN_YM As String = "精算年月"
+            Public Const SEISAN_DANTAI As String = "精算団体コード"
+            Public Const SEISAN_COMMENT As String = "精算コメント"
+            Public Const INS_DATE As String = "登録日時"
+            Public Const INS_PGM As String = "登録プログラム"
+        End Class
+        Public Class ColumnNo
+            Public Const TKT_NO As Integer = 0
+            Public Const KOUENKAI_NO As Integer = 1
+            Public Const SEISAN_YM As Integer = 2
+            Public Const SEISAN_DANTAI As Integer = 3
+            Public Const SEISAN_COMMENT As Integer = 4
+            Public Const INS_DATE As Integer = 5
+            Public Const INS_PGM As Integer = 6
+        End Class
+    End Class
+    '20170317 Add End
 
 End Class

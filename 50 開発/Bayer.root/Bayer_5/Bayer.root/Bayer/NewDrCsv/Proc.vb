@@ -90,8 +90,8 @@ Public Class Proc
         Dim sysDT As String = Now.ToString("yyyyMMddHHmmss")
 
         If Not pFileName Is Nothing AndAlso pFileName.ToString.Trim <> "" Then
+            pFILE.FILE_KBN = AppConst.FILE_KBN.Code.NewDrCsv
             pFILE.FILE_NAME = pFileName
-            'pFILE.FILE_TYPE = "text/csv"
             pFILE.FILE_TYPE = "Application/octet-stream"
             Dim aryData() As Byte = System.IO.File.ReadAllBytes(pFileFull)
             pFILE.DATUME = aryData
@@ -110,13 +110,15 @@ Public Class Proc
     Private Function InsertTBL_FILE(ByVal pTBL_FILE As TableDef.TBL_FILE.DataStruct) As Boolean
         Dim strSQL As String = ""
         strSQL &= "INSERT INTO TBL_FILE"
-        strSQL &= "(" & TableDef.TBL_FILE.Column.FILE_NAME
+        strSQL &= "(" & TableDef.TBL_FILE.Column.FILE_KBN
+        strSQL &= "," & TableDef.TBL_FILE.Column.FILE_NAME
         strSQL &= "," & TableDef.TBL_FILE.Column.FILE_TYPE
         strSQL &= "," & TableDef.TBL_FILE.Column.DATUME
         strSQL &= "," & TableDef.TBL_FILE.Column.INS_DATE
         strSQL &= "," & TableDef.TBL_FILE.Column.INS_PGM
         strSQL &= ") VALUES "
-        strSQL &= "(@" & TableDef.TBL_FILE.Column.FILE_NAME
+        strSQL &= "(@" & TableDef.TBL_FILE.Column.FILE_KBN
+        strSQL &= ",@" & TableDef.TBL_FILE.Column.FILE_NAME
         strSQL &= ",@" & TableDef.TBL_FILE.Column.FILE_TYPE
         strSQL &= ",@" & TableDef.TBL_FILE.Column.DATUME
         strSQL &= ",@" & TableDef.TBL_FILE.Column.INS_DATE
@@ -126,6 +128,7 @@ Public Class Proc
         ' データの登録
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
         Try
+            objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, pTBL_FILE.FILE_KBN)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_NAME, pTBL_FILE.FILE_NAME)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_TYPE, pTBL_FILE.FILE_TYPE)
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.DATUME, pTBL_FILE.DATUME)

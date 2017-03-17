@@ -33,6 +33,22 @@ Public Class AppConst
         End Class
     End Class
 
+    '20170317 Add Start
+    Public Class FILE_KBN
+        'ファイル区分
+        Public Class Code
+            Public Const NewDrCsv As String = "0"
+            Public Const TaxiSeisan As String = "1"
+            Public Const SougouSeisan As String = "2"
+        End Class
+        Public Class Name
+            Public Const NewDrCsv As String = "【新着】交通・手配CSV"
+            Public Const TaxiSeisan As String = "精算番号表"
+            Public Const SougouSeisan As String = "総合精算書"
+        End Class
+    End Class
+    '20170317 Add End
+
     Public Class KOTSUHOTEL
         Public Const NotSelect As String = ""
 

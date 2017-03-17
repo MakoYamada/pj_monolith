@@ -4,7 +4,7 @@ Imports System.IO
 Partial Public Class TaxiSeisanImport
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 11 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 13 'ファイルの項目数
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "0"
     Private HAKKO_TESURYO As String = "0"
@@ -12,31 +12,35 @@ Partial Public Class TaxiSeisanImport
     Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
 
     Private Enum COL_NO
-        KOUZA_NO = 0
-        KOUZA_SUBNO
-        KOUZA_NAME1
-        KOUZA_NAME2
-        KOUZA_BUKA
+        TKT_KAISHA = 0
         TKT_NO
-        USED_DATE
-        USED_TAXI
-        URIAGE
-        HATUTI
-        CHAKUTI
+        TKT_KENSHU
+        KOUENKAI_NO
+        SANKASHA_ID
+        TKT_LINE_NO
+        TKT_USED_DATE
+        TKT_HATUTI
+        TKT_CHAKUTI
+        TKT_URIAGE
+        TKT_SEISAN_FEE
+        TKT_HAKKO_FEE
+        TKT_ENTA
     End Enum
 
     Private Class COL_NAME
-        Public Const KOUZA_NO As String = "口座番号"
-        Public Const KOUZA_SUBNO As String = "口座番号枝番"
-        Public Const KOUZA_NAME1 As String = "口座名１"
-        Public Const KOUZA_NAME2 As String = "口座名２"
-        Public Const KOUZA_BUKA As String = "部課名"
-        Public Const TKT_NO As String = "チケット番号"
-        Public Const USED_DATE As String = "使用日付"
-        Public Const USED_TAXI As String = "タクシー会社コード"
-        Public Const URIAGE As String = "金額"
-        Public Const HATUTI As String = "実車発地"
-        Public Const CHAKUTI As String = "実車着地"
+        Public Const TKT_KAISHA As String = "タクシー会社"
+        Public Const TKT_NO As String = "タクシーチケット番号"
+        Public Const TKT_KENSHU As String = "券種"
+        Public Const KOUENKAI_NO As String = "会合番号"
+        Public Const SANKASHA_ID As String = "参加者ID"
+        Public Const TKT_LINE_NO As String = "交通手配タクチケ行番号"
+        Public Const TKT_USED_DATE As String = "利用日"
+        Public Const TKT_HATUTI As String = "実車発地"
+        Public Const TKT_CHAKUTI As String = "実車着地"
+        Public Const TKT_URIAGE As String = "売上金額"
+        Public Const TKT_SEISAN_FEE As String = "精算手数料"
+        Public Const TKT_HAKKO_FEE As String = "発行手数料"
+        Public Const TKT_ENTA As String = "エンタ"
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -59,7 +63,7 @@ Partial Public Class TaxiSeisanImport
         'マスターページ設定
         With Me.Master
             .DispTaxiMenu = True
-            .PageTitle = "タクチケ実績データ取込"
+            .PageTitle = "タクチケ精算用CSV取込"
         End With
 
     End Sub
@@ -83,40 +87,37 @@ Partial Public Class TaxiSeisanImport
         If Not Check() Then Exit Sub
 
         'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.JISSEKI_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.JISSEKI_CSV))
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_CSV))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_CSV_BK))
 
         '指定されたファイルをサーバに保存
         Try
-            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.JISSEKI_CSV) & FileUpload1.FileName)
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.SEISAN_CSV) & FileUpload1.FileName)
         Catch ex As Exception
             CmnModule.AlertMessage("実績データをアップロードできませんでした。", Me)
             Exit Sub
         End Try
 
         'CSVファイルをタクチケTBLへImport
-        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.JISSEKI_CSV))
-        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.JISSEKI_CSV))
+        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_CSV))
+        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_CSV))
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
         If workFiles.Length = 0 Then
             'ログ登録
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, "取込対象CSVファイルが存在しません。", MyBase.DbConnection)
             CmnModule.AlertMessage("取込対象CSVファイルが存在しません。", Me)
             Exit Sub
         End If
 
-        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.JISSEKI_CSV) & FileUpload1.FileName
+        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.SEISAN_CSV) & FileUpload1.FileName
         ImportData(filePath, insCnt)
-
-        'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, True, (insCnt * -1).ToString & "件のデータを登録しました。", MyBase.DbConnection)
         Me.LabelErrorMessage.Text &= (insCnt * -1).ToString & "件のデータを登録しました。" & vbNewLine
 
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
         Try
-            File.Copy(filePath, Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK) & Path.GetFileName(filePath))
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.SEISAN_CSV) & Path.GetFileName(filePath))
         Catch ex As Exception
-            File.Copy(filePath, Server.MapPath(WebConfig.Site.JISSEKI_CSV_BK) & Path.GetFileNameWithoutExtension(filePath) _
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.SEISAN_CSV) & Path.GetFileNameWithoutExtension(filePath) _
                                                                     & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
         End Try
         File.Delete(filePath)
@@ -133,7 +134,6 @@ Partial Public Class TaxiSeisanImport
             'CSVファイルをTextFieldParserクラスを使用して読み込む
             parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("SHIFT-JIS"))
         Else
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strFilePath & "が見つかりません。", MyBase.DbConnection)
             Me.LabelErrorMessage.Text &= strFilePath & "が見つかりません。" & vbNewLine
             Exit Function
         End If
@@ -144,10 +144,6 @@ Partial Public Class TaxiSeisanImport
 
         'ダブルクォート囲み、ダブルクォートのエスケープ対応
         parser.HasFieldsEnclosedInQuotes = True
-
-        ''手数料取得
-        'HAKKO_TESURYO = GetTesuryo(AppConst.MS_CODE.TAXI_TESURYO)
-        'SEISAN_TESURYO = GetTesuryo(AppConst.MS_CODE.TAXI_SEISAN_TESURYO)
 
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
@@ -186,7 +182,7 @@ Partial Public Class TaxiSeisanImport
     '入力チェック
     Private Function Check() As Boolean
         If Me.FileUpload1.FileName.Trim = String.Empty Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("取込む実績データ"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("取込むタクチケ精算用CSV"), Me)
             Return False
         End If
         Return True
@@ -194,33 +190,29 @@ Partial Public Class TaxiSeisanImport
 
     'CSVデータ内容チェック
     Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByRef ErrorMessage As String) As Boolean
+        Dim ErrStr As String = ""
 
         Try
             '項目数チェック
             If fileData.Count <> COL_COUNT Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
             End If
 
             If fileData(COL_NO.TKT_NO).Trim.Equals(String.Empty) Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_NO & "がセットされていません。" & vbNewLine
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_NO & "がセットされていません。" & vbNewLine
             End If
 
-            If fileData(COL_NO.USED_DATE).Trim.Equals(String.Empty) Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.USED_DATE & "がセットされていません。" & vbNewLine
-            End If
-
-            If fileData(COL_NO.URIAGE).Trim.Equals(String.Empty) Then
-                ErrorMessage &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.URIAGE & "がセットされていません。" & vbNewLine
+            If fileData(COL_NO.TKT_ENTA).Trim = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka Then
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_ENTA & "が｢N｣のため、取込できません。" & vbNewLine
             End If
 
         Catch ex As Exception
             Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
-            'Dim strErrMsg As String = strfileName & "【" & strRowCnt & "行目】" & ex.Message
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
             Return False
         End Try
 
-        If Trim(ErrorMessage) <> "" Then
+        If Trim(ErrStr) <> "" Then
+            ErrorMessage &= ErrStr
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
             Me.LabelErrorMessage.Text = ErrorMessage
@@ -249,7 +241,6 @@ Partial Public Class TaxiSeisanImport
             MyBase.Rollback()
 
             'ログ登録
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_TAXITICKET_HAKKO, False, "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL, MyBase.DbConnection)
             ErrorMessage &= "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
             Return False
         End Try
@@ -266,134 +257,14 @@ Partial Public Class TaxiSeisanImport
             If GetTaxiticketHakko(fileData(COL_NO.TKT_NO)) Then
                 '未決登録済みのタクチケは取込エラーとする。
                 If TBL_TAXITICKET_HAKKO.TKT_MIKETSU = CmnConst.Flag.On Then
-                    Throw New Exception("未決登録済のため、実績取込できません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
+                    Throw New Exception("未決登録済のため、精算データ取込できません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
                 Else
 
                     '実績CSVの内容をタクチケ発行テーブルの項目へセット
                     Call SetItem(fileData)
 
-                    '交通宿泊テーブル最新レコード取得
-                    If GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_TAXITICKET_HAKKO.SANKASHA_ID) Then
-                        '会合の開催日に基づいて、発行手数料と精算手数料を取得
-                        TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = AppModule.GetName_TAXI_TESURYO(TBL_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
-                        TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = AppModule.GetName_TAXI_SEISAN_TESURYO(TBL_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
-
-                        '実績CSVに利用日・金額が設定されているが、DRが不参加の場合エンタ="E"
-                        '※参加不参加判定は行わない事となった為、削除 (2015/6/15)
-                        'If fileData(COL_NO.USED_DATE).Trim <> "" AndAlso _
-                        '    Val(fileData(COL_NO.URIAGE).Trim) <> 0 AndAlso _
-                        '    (TBL_KOTSUHOTEL.SANKA_FLAG = AppConst.KOTSUHOTEL.DR_SANKA.Code.No OrElse _
-                        '    TBL_KOTSUHOTEL.SANKA_FLAG = String.Empty) Then
-                        '    TBL_TAXITICKET_HAKKO.TKT_ENTA = "E"
-                        'End If
-
-                        '実績CSVの利用日(実車日)と、交通宿泊テーブルの利用日(予定日)が異なる場合
-                        Dim wDate As Date = fileData(COL_NO.USED_DATE)
-                        Dim wDateStr As String = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
-
-                        Select Case Val(TBL_TAXITICKET_HAKKO.TKT_LINE_NO)
-                            Case 1
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_1 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 2
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_2 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 3
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_3 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 4
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_4 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 5
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_5 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 6
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_6 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 7
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_7 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 8
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_8 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 9
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_9 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 10
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_10 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 11
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_11 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 12
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_12 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 13
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_13 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 14
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_14 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 15
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_15 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 16
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_16 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 17
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_17 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 18
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_18 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 19
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_19 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                            Case 20
-                                If wDateStr <> TBL_KOTSUHOTEL.ANS_TAXI_DATE_20 Then
-                                    TBL_TAXITICKET_HAKKO.TKT_ENTA = "N"
-                                    TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = "0"
-                                End If
-                        End Select
-                    Else
+                    '交通宿泊テーブルに未登録の場合はエラー
+                    If Not GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_TAXITICKET_HAKKO.SANKASHA_ID) Then
                         Throw New Exception("交通宿泊テーブルに登録されていません。[会合番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
                     End If
                 End If
@@ -401,28 +272,12 @@ Partial Public Class TaxiSeisanImport
                 Throw New Exception("タクチケ発行テーブルに登録されていません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
             End If
         Catch ex As Exception
-            'Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
             Dim strErrMsg As String = strFileName & "【" & rowCnt & "行目】" & ex.Message
             ErrorMessage &= strErrMsg & vbNewLine
-            'MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.TaxiJisseki, TBL_LOG, False, strErrMsg, MyBase.DbConnection)
         End Try
 
         Return TBL_TAXITICKET_HAKKO
 
-    End Function
-
-    '手数料取得
-    Private Function GetTesuryo(ByVal Code As String) As String
-        Dim MS_CODE As New List(Of TableDef.MS_CODE.DataStruct)
-        Dim wStr As String = ""
-        MS_CODE = System.Web.HttpContext.Current.Session(SessionDef.MS_CODE)
-        For wCnt As Integer = 0 To MS_CODE.Count - 1
-            If MS_CODE(wCnt).CODE = Code Then
-                wStr = MS_CODE(wCnt).DISP_VALUE
-                Exit For
-            End If
-        Next
-        Return wStr
     End Function
 
     'タクチケ発行情報取得
@@ -459,17 +314,17 @@ Partial Public Class TaxiSeisanImport
         Return wFlag
     End Function
 
-    '実績CSV→タクチケ発行テーブル項目セット
+    '精算用CSV→タクチケ発行テーブル項目セット
     Private Sub SetItem(ByVal filedata() As String)
-        Dim wDate As Date = filedata(COL_NO.USED_DATE)
+        Dim wDate As Date = filedata(COL_NO.TKT_USED_DATE)
         TBL_TAXITICKET_HAKKO.TKT_USED_DATE = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
-        TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.URIAGE)
-        TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = HAKKO_TESURYO
-        TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO
+        TBL_TAXITICKET_HAKKO.TKT_HATUTI = filedata(COL_NO.TKT_HATUTI)
+        TBL_TAXITICKET_HAKKO.TKT_CHAKUTI = filedata(COL_NO.TKT_CHAKUTI)
+        TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.TKT_URIAGE)
+        TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = filedata(COL_NO.TKT_SEISAN_FEE)
+        TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = filedata(COL_NO.TKT_HAKKO_FEE)
         TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
         TBL_TAXITICKET_HAKKO.TKT_MIKETSU = "0"
         TBL_TAXITICKET_HAKKO.UPDATE_USER = Session.Item(SessionDef.LoginID)
-        TBL_TAXITICKET_HAKKO.TKT_HATUTI = filedata(COL_NO.HATUTI)
-        TBL_TAXITICKET_HAKKO.TKT_CHAKUTI = filedata(COL_NO.CHAKUTI)
     End Sub
 End Class

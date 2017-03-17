@@ -89,9 +89,11 @@ Partial Public Class NewDrCsv
 
         strSQL &= "SELECT *"
         strSQL &= " FROM TBL_FILE"
+        strSQL &= " WHERE"
+        strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "=@" & TableDef.TBL_FILE.Column.FILE_KBN
 
         If Trim(Joken.FILE_NAME) <> "" Then
-            strSQL &= " WHERE"
+            strSQL &= " AND"
             strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & "=@" & TableDef.TBL_FILE.Column.FILE_NAME
         End If
 
@@ -99,6 +101,7 @@ Partial Public Class NewDrCsv
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.INS_DATE & " DESC"
 
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
+        objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.NewDrCsv)
         If Trim(Joken.FILE_NAME) <> "" Then
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_NAME, Joken.FILE_NAME)
         End If
