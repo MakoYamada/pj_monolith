@@ -4118,7 +4118,7 @@
             Public SEISAN_DANTAI As Byte
             Public SEISAN_COMMENT As Byte
             Public INS_DATE As String
-            Public INS_PGM As String
+            Public INS_USER As String
         End Structure
         Public Class Column
             Public Const TKT_NO As String = "TKT_NO"
@@ -4127,7 +4127,7 @@
             Public Const SEISAN_DANTAI As String = "SEISAN_DANTAI"
             Public Const SEISAN_COMMENT As String = "SEISAN_COMMENT"
             Public Const INS_DATE As String = "INS_DATE"
-            Public Const INS_PGM As String = "INS_PGM"
+            Public Const INS_USER As String = "INS_USER"
         End Class
         Public Class Name
             Public Const TKT_NO As String = "タクシーチケット番号"
@@ -4136,7 +4136,7 @@
             Public Const SEISAN_DANTAI As String = "精算団体コード"
             Public Const SEISAN_COMMENT As String = "精算コメント"
             Public Const INS_DATE As String = "登録日時"
-            Public Const INS_PGM As String = "登録プログラム"
+            Public Const INS_USER As String = "登録者"
         End Class
         Public Class ColumnNo
             Public Const TKT_NO As Integer = 0
@@ -4145,7 +4145,7 @@
             Public Const SEISAN_DANTAI As Integer = 3
             Public Const SEISAN_COMMENT As Integer = 4
             Public Const INS_DATE As Integer = 5
-            Public Const INS_PGM As Integer = 6
+            Public Const INS_USER As Integer = 6
         End Class
     End Class
     '20170317 Add End

@@ -10102,23 +10102,72 @@ Public Class SQL
             Return strSQL
         End Function
     End Class
-    Public Class TBL_FILE
+
+    '20170317 Add Start
+    Public Class TBL_SEISAN_TKTNO
 
         Private Const SQL_SELECT As String _
         = "SELECT" _
-        & " TBL_FILE.*" _
+        & " TBL_SEISAN_TKTNO.*" _
         & " FROM TBL_FILE"
 
-        Private Const SQL_ORDERBY As String _
-        = " ORDER BY" _
-        & " TBL_FILE.FILE_NAME"
-
-        Public Shared Function AllData() As String
+        Public Shared Function byTKT_NO(ByVal TKT_NO As String) As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= SQL_ORDERBY
+            strSQL &= " WHERE"
+            strSQL &= " TKT_NO = '" & TKT_NO & "'"
 
             Return strSQL
         End Function
+        Public Shared Function Insert(ByVal TBL_SEISAN_TKTNO As TableDef.TBL_SEISAN_TKTNO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_SEISAN_TKTNO"
+            strSQL &= " (" & TableDef.TBL_SEISAN_TKTNO.Column.TKT_NO
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_YM
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_DANTAI
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_COMMENT
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.INS_DATE
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.INS_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.TKT_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_YM) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_DANTAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_COMMENT) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.INS_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.INS_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_SEISAN_TKTNO As TableDef.TBL_SEISAN_TKTNO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_SEISAN_TKTNO SET"
+            strSQL &= " " & TableDef.TBL_SEISAN_TKTNO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.KOUENKAI_NO) & "'"
+            strSQL &= " " & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_YM & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_YM) & "'"
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_DANTAI & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_DANTAI) & "'"
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_COMMENT & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_COMMENT) & "'"
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.INS_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.INS_USER & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.INS_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_SEISAN_TKTNO.Column.TKT_NO & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.TKT_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Delete(ByVal TKT_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_SEISAN_TKTNO"
+            strSQL &= " WHERE"
+            strSQL &= " TKT_NO = '" & TKT_NO & "'"
+
+            Return strSQL
+        End Function
+        '20170317 Add End
     End Class
 End Class

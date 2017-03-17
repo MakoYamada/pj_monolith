@@ -61,6 +61,42 @@ Partial Public Class TaxiSeisanAuto
     Protected WithEvents BtnTorikomi As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''TrError コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrError As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''LabelErrorMessage コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelErrorMessage As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TrEnd コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrEnd As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''LabelUpdatedCount コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelUpdatedCount As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>

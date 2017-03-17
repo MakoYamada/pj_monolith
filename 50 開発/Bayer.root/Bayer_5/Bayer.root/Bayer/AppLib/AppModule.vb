@@ -1527,6 +1527,24 @@ Public Class AppModule
     End Function
 
 #End Region
+
+#Region "自動精算対象タクチケテーブル"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_SEISAN_TKTNO As TableDef.TBL_SEISAN_TKTNO.DataStruct) As TableDef.TBL_SEISAN_TKTNO.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.TKT_NO.ToUpper Then TBL_SEISAN_TKTNO.TKT_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.KOUENKAI_NO.ToUpper Then TBL_SEISAN_TKTNO.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_YM.ToUpper Then TBL_SEISAN_TKTNO.SEISAN_YM = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_DANTAI.ToUpper Then TBL_SEISAN_TKTNO.SEISAN_DANTAI = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_COMMENT.ToUpper Then TBL_SEISAN_TKTNO.SEISAN_COMMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.INS_DATE.ToUpper Then TBL_SEISAN_TKTNO.INS_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.INS_USER.ToUpper Then TBL_SEISAN_TKTNO.INS_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_SEISAN_TKTNO
+    End Function
+#End Region
 #End Region
 
 

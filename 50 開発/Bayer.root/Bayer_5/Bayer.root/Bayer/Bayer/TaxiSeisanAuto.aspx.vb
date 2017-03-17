@@ -8,8 +8,7 @@ Partial Public Class TaxiSeisanAuto
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "0"
     Private HAKKO_TESURYO As String = "0"
-    Private TBL_TAXITICKET_HAKKO As TableDef.TBL_TAXITICKET_HAKKO.DataStruct = Nothing
-    Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
+    Private TBL_SEISAN_TKTNO As TableDef.TBL_SEISAN_TKTNO.DataStruct = Nothing
 
     Private Enum COL_NO
         TKT_KAISHA = 0
@@ -80,25 +79,28 @@ Partial Public Class TaxiSeisanAuto
 
     '[データ作成予約]
     Private Sub BtnTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTorikomi.Click
+        Me.LabelErrorMessage.Text = ""
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
 
         '入力チェック
         If Not Check() Then Exit Sub
 
         'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_CSV))
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_CSV_BK))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV_BK))
 
         '指定されたファイルをサーバに保存
         Try
-            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.SEISAN_CSV) & FileUpload1.FileName)
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV) & FileUpload1.FileName)
         Catch ex As Exception
             CmnModule.AlertMessage("実績データをアップロードできませんでした。", Me)
             Exit Sub
         End Try
 
         'CSVファイルをタクチケTBLへImport
-        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_CSV))
-        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_CSV))
+        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
+        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
         If workFiles.Length = 0 Then
             'ログ登録
@@ -106,15 +108,17 @@ Partial Public Class TaxiSeisanAuto
             Exit Sub
         End If
 
-        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.SEISAN_CSV) & FileUpload1.FileName
+        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV) & FileUpload1.FileName
         ImportData(filePath, insCnt)
+
+        Me.LabelErrorMessage.Text &= (insCnt * -1).ToString & "件のデータを登録しました。" & vbNewLine
 
         '作業フォルダ→バックアップフォルダへコピー
         '作業フォルダからファイルを削除
         Try
-            File.Copy(filePath, Server.MapPath(WebConfig.Site.SEISAN_CSV) & Path.GetFileName(filePath))
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV) & Path.GetFileName(filePath))
         Catch ex As Exception
-            File.Copy(filePath, Server.MapPath(WebConfig.Site.SEISAN_CSV) & Path.GetFileNameWithoutExtension(filePath) _
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV) & Path.GetFileNameWithoutExtension(filePath) _
                                                                     & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
         End Try
         File.Delete(filePath)
@@ -131,6 +135,7 @@ Partial Public Class TaxiSeisanAuto
             'CSVファイルをTextFieldParserクラスを使用して読み込む
             parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("SHIFT-JIS"))
         Else
+            Me.LabelErrorMessage.Text &= strFilePath & "が見つかりません。" & vbNewLine
             Exit Function
         End If
 
@@ -152,8 +157,13 @@ Partial Public Class TaxiSeisanAuto
             '1行目はタイトル行のため読み飛ばす
             If rowCnt > 1 Then
                 If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
-                    'タクチケ発行テーブル更新
-                    insCnt += UpdateTable(fileData, strFileName, rowCnt, ErrorMessage)
+                    If Not CheckExists(fileData) Then
+                        '自動精算対象タクチケテーブル追加
+                        insCnt += UpdateTable(fileData, strFileName, rowCnt, ErrorMessage)
+                    Else
+                        '自動精算対象タクチケテーブル更新
+                        insCnt += UpdateTable(fileData, strFileName, rowCnt, ErrorMessage)
+                    End If
                 End If
             End If
         End While
@@ -161,12 +171,72 @@ Partial Public Class TaxiSeisanAuto
         'インスタンス開放
         parser.Dispose()
 
+        If Trim(ErrorMessage) <> "" Then
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Me.TrError.Visible = False
+            Me.TrEnd.Visible = True
+            Me.LabelUpdatedCount.Text = (rowCnt - 1).ToString
+            Return True
+        End If
+
     End Function
 
     '入力チェック
     Private Function Check() As Boolean
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        '必須入力
+        If Not CmnCheck.IsInput(Me.SEISAN_YM) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEISAN_TKTNO.Name.SEISAN_YM), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEISAN_YM) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.SEISAN_YM, Me.SEISAN_YM.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ(TableDef.TBL_SEIKYU.Name.SEISAN_YM, Me.SEISAN_YM.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsValidDateYMD(Me.SEISAN_YM.Text & "01") Then
+            CmnModule.AlertMessage(MessageDef.Error.Invalid(TableDef.TBL_SEIKYU.Name.SEISAN_YM), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsInput(Me.SEISAN_DANTAI) Then
+            CmnModule.AlertMessage(MessageDef.Error.MustInput(TableDef.TBL_SEIKYU.Name.SEISAN_DANTAI), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsNumberOnly(Me.SEISAN_DANTAI) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly(TableDef.TBL_SEIKYU.Name.SEISAN_DANTAI), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthEQ(Me.SEISAN_DANTAI, Me.SEISAN_DANTAI.MaxLength) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthEQ(TableDef.TBL_SEIKYU.Name.SEISAN_DANTAI, Me.SEISAN_DANTAI.MaxLength), Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsLengthLE(Me.SEISAN_COMMENT, Me.SEISAN_COMMENT.MaxLength * 2) Then
+            CmnModule.AlertMessage(MessageDef.Error.LengthLE(TableDef.TBL_SEIKYU.Name.SEISAN_KANRYO, Me.SEISAN_COMMENT.MaxLength * 2, True), Me)
+            SetFocus(Me.SEISAN_COMMENT)
+            Return False
+        End If
+
         If Me.FileUpload1.FileName.Trim = String.Empty Then
-            CmnModule.AlertMessage(MessageDef.Error.MustInput("取込むタクチケ精算用CSV"), Me)
+            CmnModule.AlertMessage(MessageDef.Error.MustInput("取込むタクチケ自動精算用CSV"), Me)
             Return False
         End If
         Return True
@@ -195,20 +265,69 @@ Partial Public Class TaxiSeisanAuto
             Return False
         End Try
 
-        Return True
+        If Trim(ErrStr) <> "" Then
+            ErrorMessage &= ErrStr
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Return True
+        End If
 
     End Function
 
+    Private Function CheckExists(ByVal filedata As String()) As Boolean
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_SEISAN_TKTNO.byTKT_NO(filedata(COL_NO.TKT_NO))
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlag = True
+            TBL_SEISAN_TKTNO = AppModule.SetRsData(RsData, TBL_SEISAN_TKTNO)
+        End If
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
     'データ登録
+    Private Function InsertTable(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As Integer
+
+        Dim strSQL As String = ""
+        Dim insCnt As Integer = 0
+        Dim TBL_SEISAN_TKTNO As TableDef.TBL_SEISAN_TKTNO.DataStruct = Nothing
+
+        TBL_SEISAN_TKTNO = SetItem(fileData)
+        Try
+            strSQL = SQL.TBL_SEISAN_TKTNO.Insert(TBL_SEISAN_TKTNO)
+            insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            MyBase.Commit()
+            Return True
+
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'ログ登録
+            ErrorMessage &= "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
+            Return False
+        End Try
+
+        '登録成功件数を返す
+        Return insCnt
+
+    End Function
     Private Function UpdateTable(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As Integer
 
         Dim strSQL As String = ""
         Dim insCnt As Integer = 0
-        Dim TBL_TAITICKET_HAKKO_UPD As TableDef.TBL_TAXITICKET_HAKKO.DataStruct = Nothing
+        Dim TBL_SEISAN_TKTNO As TableDef.TBL_SEISAN_TKTNO.DataStruct = Nothing
 
-        TBL_TAITICKET_HAKKO_UPD = SetUpdateData(fileData, strFileName, rowCnt, ErrorMessage)
+        TBL_SEISAN_TKTNO = SetItem(fileData)
         Try
-            strSQL = Sql.TBL_TAXITICKET_HAKKO.Update(TBL_TAITICKET_HAKKO_UPD)
+            strSQL = SQL.TBL_SEISAN_TKTNO.Update(TBL_SEISAN_TKTNO)
             insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
             Return True
@@ -226,81 +345,16 @@ Partial Public Class TaxiSeisanAuto
 
     End Function
 
-    '登録内容をセットする
-    Private Function SetUpdateData(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
-        Try
-            'タクチケ発行テーブル更新対象レコード取得
-            If GetTaxiticketHakko(fileData(COL_NO.TKT_NO)) Then
-                '未決登録済みのタクチケは取込エラーとする。
-                If TBL_TAXITICKET_HAKKO.TKT_MIKETSU = CmnConst.Flag.On Then
-                    Throw New Exception("未決登録済のため、精算データ取込できません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
-                Else
-
-                    '実績CSVの内容をタクチケ発行テーブルの項目へセット
-                    Call SetItem(fileData)
-
-                    '交通宿泊テーブルに未登録の場合はエラー
-                    If Not GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_TAXITICKET_HAKKO.SANKASHA_ID) Then
-                        Throw New Exception("交通宿泊テーブルに登録されていません。[会合番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
-                    End If
-                End If
-            Else
-                Throw New Exception("タクチケ発行テーブルに登録されていません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
-            End If
-        Catch ex As Exception
-            Dim strErrMsg As String = strFileName & "【" & rowCnt & "行目】" & ex.Message
-            ErrorMessage &= strErrMsg & vbNewLine
-        End Try
-
-        Return TBL_TAXITICKET_HAKKO
-
-    End Function
-
-    'タクチケ発行情報取得
-    Private Function GetTaxiticketHakko(ByVal TKT_NO As String) As Boolean
-        Dim wFlag As Boolean = False
-        Dim strSQL As String = ""
-        Dim RsData As System.Data.SqlClient.SqlDataReader
-
-        strSQL = Sql.TBL_TAXITICKET_HAKKO.byTKT_NO(TKT_NO)
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        If RsData.Read() Then
-            wFlag = True
-            TBL_TAXITICKET_HAKKO = AppModule.SetRsData(RsData, TBL_TAXITICKET_HAKKO)
-        End If
-        RsData.Close()
-
-        Return wFlag
-    End Function
-
-    '交通宿泊最新情報取得
-    Private Function GetKotsuhotel(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As Boolean
-        Dim wFlag As Boolean = False
-        Dim strSQL As String = ""
-        Dim RsData As System.Data.SqlClient.SqlDataReader
-
-        strSQL = Sql.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID_NEW(KOUENKAI_NO, SANKASHA_ID)
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        If RsData.Read() Then
-            wFlag = True
-            TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
-        End If
-        RsData.Close()
-
-        Return wFlag
-    End Function
-
     '精算用CSV→タクチケ発行テーブル項目セット
-    Private Sub SetItem(ByVal filedata() As String)
-        Dim wDate As Date = filedata(COL_NO.TKT_USED_DATE)
-        TBL_TAXITICKET_HAKKO.TKT_USED_DATE = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
-        TBL_TAXITICKET_HAKKO.TKT_HATUTI = filedata(COL_NO.TKT_HATUTI)
-        TBL_TAXITICKET_HAKKO.TKT_CHAKUTI = filedata(COL_NO.TKT_CHAKUTI)
-        TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.TKT_URIAGE)
-        TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = filedata(COL_NO.TKT_SEISAN_FEE)
-        TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = filedata(COL_NO.TKT_HAKKO_FEE)
-        TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
-        TBL_TAXITICKET_HAKKO.TKT_MIKETSU = "0"
-        TBL_TAXITICKET_HAKKO.UPDATE_USER = Session.Item(SessionDef.LoginID)
-    End Sub
+    Private Function SetItem(ByVal filedata() As String) As TableDef.TBL_SEISAN_TKTNO.DataStruct
+
+        TBL_SEISAN_TKTNO.TKT_NO = filedata(COL_NO.TKT_NO)
+        TBL_SEISAN_TKTNO.KOUENKAI_NO = filedata(COL_NO.KOUENKAI_NO)
+        TBL_SEISAN_TKTNO.SEISAN_YM = Me.SEISAN_YM.Text
+        TBL_SEISAN_TKTNO.SEISAN_DANTAI = Me.SEISAN_DANTAI.Text
+        TBL_SEISAN_TKTNO.SEISAN_COMMENT = Me.SEISAN_COMMENT.Text
+        TBL_SEISAN_TKTNO.INS_USER = Session.Item(SessionDef.LoginID)
+
+        Return TBL_SEISAN_TKTNO
+    End Function
 End Class
