@@ -608,13 +608,6 @@
       <DependentUpon>NewDrCsv.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TaxiSeisanImport.aspx.designer.vb">
-      <DependentUpon>TaxiSeisanImport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TaxiSeisanImport.aspx.vb">
-      <DependentUpon>TaxiSeisanImport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="TaxiSeisanAuto.aspx.designer.vb">
       <DependentUpon>TaxiSeisanAuto.aspx</DependentUpon>
     </Compile>
@@ -767,7 +760,6 @@
     <Content Include="TaxiJissekiMiseisanCsv.aspx" />
     <Content Include="TaxiMeisaiCsv2.aspx" />
     <Content Include="NewDrCsv.aspx" />
-    <Content Include="TaxiSeisanImport.aspx" />
     <Content Include="TaxiSeisanAuto.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

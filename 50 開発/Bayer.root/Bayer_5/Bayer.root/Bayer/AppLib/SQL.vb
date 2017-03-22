@@ -10109,7 +10109,7 @@ Public Class SQL
         Private Const SQL_SELECT As String _
         = "SELECT" _
         & " TBL_SEISAN_TKTNO.*" _
-        & " FROM TBL_FILE"
+        & " FROM TBL_SEISAN_TKTNO"
 
         Public Shared Function byTKT_NO(ByVal TKT_NO As String) As String
             Dim strSQL As String = SQL_SELECT
@@ -10137,7 +10137,7 @@ Public Class SQL
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_YM) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_DANTAI) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_COMMENT) & "'"
-            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.INS_DATE) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.INS_USER) & "'"
             strSQL &= ")"
 
@@ -10149,7 +10149,7 @@ Public Class SQL
 
             strSQL = "UPDATE TBL_SEISAN_TKTNO SET"
             strSQL &= " " & TableDef.TBL_SEISAN_TKTNO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.KOUENKAI_NO) & "'"
-            strSQL &= " " & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_YM & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_YM) & "'"
+            strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_YM & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_YM) & "'"
             strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_DANTAI & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_DANTAI) & "'"
             strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_COMMENT & "=N'" & CmnDb.SqlString(TBL_SEISAN_TKTNO.SEISAN_COMMENT) & "'"
             strSQL &= "," & TableDef.TBL_SEISAN_TKTNO.Column.INS_DATE & "=N'" & GetValue.DATE() & "'"

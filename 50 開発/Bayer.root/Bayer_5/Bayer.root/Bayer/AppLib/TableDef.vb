@@ -4115,8 +4115,8 @@
             Public TKT_NO As String
             Public KOUENKAI_NO As String
             Public SEISAN_YM As String
-            Public SEISAN_DANTAI As Byte
-            Public SEISAN_COMMENT As Byte
+            Public SEISAN_DANTAI As String
+            Public SEISAN_COMMENT As String
             Public INS_DATE As String
             Public INS_USER As String
         End Structure

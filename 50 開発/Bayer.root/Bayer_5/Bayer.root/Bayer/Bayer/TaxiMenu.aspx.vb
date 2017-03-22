@@ -146,10 +146,6 @@ Partial Public Class TaxiMenu
     End Sub
 
     '@@@ 20170317 Add Start
-    '[タクチケ精算用CSV取込]
-    Protected Sub BtnTaxiSeisanImport_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanImport.Click
-        Response.Redirect(URL.TaxiSeisanImport)
-    End Sub
 
     '[タクチケ自動精算指示]
     Protected Sub TaxiSeisanAuto_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanAuto.Click
