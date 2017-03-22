@@ -37,9 +37,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DeletePastData", "DeletePas
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NewDrCsv", "NewDrCsv\NewDrCsv.vbproj", "{CA24334B-8E81-4191-9AFA-B57F73030719}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SeisanAuto", "SeisanAuto\SeisanAuto.vbproj", "{F0253323-AA29-476F-A615-94E39A55B597}"
+EndProject
 Global
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 19
+		SccNumberOfProjects = 20
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = AppLib\\AppLib.vbproj
 		SccLocalPath1 = .
@@ -95,6 +97,9 @@ Global
 		SccProjectUniqueName18 = NewDrCsv\\NewDrCsv.vbproj
 		SccLocalPath18 = .
 		SccProjectFilePathRelativizedFromConnection18 = NewDrCsv\\
+		SccProjectUniqueName19 = SeisanAuto\\SeisanAuto.vbproj
+		SccLocalPath19 = .
+		SccProjectFilePathRelativizedFromConnection19 = SeisanAuto\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -173,6 +178,10 @@ Global
 		{CA24334B-8E81-4191-9AFA-B57F73030719}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA24334B-8E81-4191-9AFA-B57F73030719}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA24334B-8E81-4191-9AFA-B57F73030719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0253323-AA29-476F-A615-94E39A55B597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0253323-AA29-476F-A615-94E39A55B597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0253323-AA29-476F-A615-94E39A55B597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0253323-AA29-476F-A615-94E39A55B597}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
