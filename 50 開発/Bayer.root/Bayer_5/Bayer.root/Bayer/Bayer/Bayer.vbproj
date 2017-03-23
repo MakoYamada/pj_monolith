@@ -629,6 +629,7 @@
     <EmbeddedResource Include="KaijoRirekiReport.resx">
       <DependentUpon>KaijoRirekiReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

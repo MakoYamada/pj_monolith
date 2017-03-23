@@ -3,10 +3,13 @@ Imports CommonLib
 Imports System.IO
 Imports System.Data.SqlClient
 Imports System.Text
+Imports System.Configuration
+Imports DataDynamics.ActiveReports
+Imports DataDynamics.ActiveReports.Export.Pdf
 Public Class Proc
     Inherits batchBase
 
-    Private Const pbatchID As String = "NewDrCsv" 'バッチID
+    Private Const pbatchID As String = "SeisanAuto" 'バッチID
     Private Const pDelimiter As String = ","
 
     Public Sub New()
@@ -14,49 +17,50 @@ Public Class Proc
     End Sub
 
     Public Overrides Sub run()
-        Call OutputDrCsv()
+        Call PrintSeisanRegistReport()
     End Sub
 
-    '新着交通・宿泊一覧CSV出力
-    Private Sub OutputDrCsv()
+    '総合精算書印刷
+    Private Sub PrintSeisanRegistReport()
 
-        Dim TBL_KOTSUHOTEL() As TableDef.TBL_KOTSUHOTEL.DataStruct = GetDrCsvData()
+        Dim rpt As New SeisanRegistReport
+        Dim reportJoken As New TableDef.Joken.DataStruct
 
-        If TBL_KOTSUHOTEL Is Nothing Then
-            '対象データなし
-            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "処理対象データがありません。")
-            Exit Sub
-        Else
-            ExportData(TBL_KOTSUHOTEL)
-        End If
+        reportJoken.KOUENKAI_NO = "MTG15-00074014"
+        reportJoken.SEIKYU_NO_TOPTOUR = "00000000020609"
+        Dim strSQL As String = SQL.TBL_SEIKYU.Search(reportJoken)
+
+        ' 接続文字列をapp.configファイルから取得
+        Dim conn As New SqlConnection
+        conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings("ConnectionString")
+        Dim cmd As New SqlCommand
+        cmd.Connection = conn
+        cmd.CommandText = strSQL
+        Dim da As New SqlDataAdapter()
+        da.SelectCommand = cmd
+        Dim dt As New DataTable
+        da.Fill(dt)
+
+        'データ設定
+        rpt.DataSource = dt
+        rpt.Document.Printer.PrinterName = ""
+
+        'A4縦
+        rpt.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+        rpt.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+
+        '必要に応じマージン設定
+        rpt.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+        rpt.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+        rpt.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+        rpt.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+
+        'レポートを作成
+        rpt.Run()
+
+        Dim pdf As New PdfExport
+        pdf.Export(rpt.Document, System.IO.Path.Combine(My.Settings.PATH_WORK, reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF"))
     End Sub
-
-    '新着交通・宿泊CSV用データ取得
-    Private Function GetDrCsvData() As TableDef.TBL_KOTSUHOTEL.DataStruct()
-        Dim wCnt As Integer = 0
-        Dim strSQL As String = ""
-        Dim wFlag As Boolean = False
-
-        Dim csvJoken As TableDef.Joken.DataStruct
-        Dim TBL_KOTSUHOTEL(wCnt) As TableDef.TBL_KOTSUHOTEL.DataStruct
-
-        strSQL = SQL.TBL_KOTSUHOTEL.NewDrCsv(csvJoken, True)
-        Dim RsData As System.Data.SqlClient.SqlDataReader = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-        While RsData.Read()
-            wFlag = True
-            ReDim Preserve TBL_KOTSUHOTEL(wCnt)
-
-            TBL_KOTSUHOTEL(wCnt) = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL(wCnt))
-            wCnt += 1
-        End While
-        RsData.Close()
-
-        If wFlag Then
-            Return TBL_KOTSUHOTEL
-        Else
-            Return Nothing
-        End If
-    End Function
 
     Private Sub ExportData(ByVal outputData() As TableDef.TBL_KOTSUHOTEL.DataStruct)
 
