@@ -10111,6 +10111,22 @@ Public Class SQL
         & " TBL_SEISAN_TKTNO.*" _
         & " FROM TBL_SEISAN_TKTNO"
 
+        Public Shared Function GrpByKOUENKAI_NO() As String
+            Dim strSQL As String = ""
+
+            strSQL = "SELECT DISTINCT"
+            strSQL &= " KOUENKAI_NO"
+            strSQL &= ", SEIKYU_YM"
+            strSQL &= ", SEISAN_DANTAI"
+            strSQL &= ", SEISAN_COMMENT"
+            strSQL &= " FROM TBL_SEISAN_TKTNO"
+            strSQL &= " ORDER BY"
+            strSQL &= " KOUENKAI_NO"
+            strSQL &= ", SEIKYU_YM"
+
+            Return strSQL
+        End Function
+
         Public Shared Function byTKT_NO(ByVal TKT_NO As String) As String
             Dim strSQL As String = SQL_SELECT
 
