@@ -20,7 +20,7 @@ Public Class Proc
     End Sub
 
     Public Overrides Sub run()
-        Call PrintSeisanRegistReport()
+        Call SeisanMain()
     End Sub
 
     '精算処理
@@ -33,7 +33,7 @@ Public Class Proc
 
         '自動精算対象タクチケテーブルデータ取得(対象の会合番号と画面で指示された精算年月等)
         strSQL = SQL.TBL_SEISAN_TKTNO.GrpByKOUENKAI_NO()
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
         While RsData.Read()
             wFlag = True
             ReDim Preserve W_SEISAN_TKTNO(wCnt)
@@ -49,6 +49,13 @@ Public Class Proc
         'タクチケ発行テーブルに請求番号を登録
         If Not UpdateTaxiData(W_SEISAN_TKTNO) Then Exit Sub
 
+        '請求データにタクチケ関連金額セット
+        Dim W_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
+        If Not UpdateSeikyu(W_SEIKYU) Then Exit Sub
+
+        '総合精算書出力
+        Call PrintSeisanRegistReport(W_SEIKYU)
+
     End Sub
 
     'タクチケ発行テーブルに請求番号を登録
@@ -60,45 +67,98 @@ Public Class Proc
         For i As Integer = LBound(TBL_SEISAN_TKTNO) To UBound(TBL_SEISAN_TKTNO)
             Dim kensakuJoken As TableDef.Joken.DataStruct
             kensakuJoken.KOUENKAI_NO = TBL_SEISAN_TKTNO(i).KOUENKAI_NO
-            If AppModule.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanCsvCheck(kensakuJoken), MyBase.DbConnection) Then
+            If CmnDbBatch.IsExist(SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanCsvCheck(kensakuJoken), MyBase.DbConnection, MyBase.DbTransaction) Then
                 Try
+                    Dim W_SEIKYU As New TableDef.TBL_SEIKYU.DataStruct
                     '請求データ(キー項目と送信フラグのみ)を登録する
-                    TBL_SEIKYU(SEQ).KOUENKAI_NO = TBL_SEISAN_TKTNO(i).KOUENKAI_NO
-                    TBL_SEIKYU(SEQ).SEISAN_YM = TBL_SEISAN_TKTNO(i).SEISAN_YM
-                    TBL_SEIKYU(SEQ).SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
-                    TBL_SEIKYU(SEQ).INPUT_USER = Me.batchID
-                    TBL_SEIKYU(SEQ).UPDATE_USER = Me.batchID
+                    W_SEIKYU.KOUENKAI_NO = TBL_SEISAN_TKTNO(i).KOUENKAI_NO
+                    W_SEIKYU.SEISAN_YM = TBL_SEISAN_TKTNO(i).SEISAN_YM
+                    W_SEIKYU.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
+                    W_SEIKYU.INPUT_USER = Me.batchID
+                    W_SEIKYU.UPDATE_USER = Me.batchID
 
                     Dim wRtn As Boolean = True
                     'TOPTOUR請求番号が重複しなくなるまで最大値を取得し続ける
                     Do Until wRtn = False
                         '自動採番
-                        TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR = GetMaxSEISAN_NO(MyBase.DbConnection)
-                        wRtn = AppModule.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(TBL_SEIKYU(SEQ).KOUENKAI_NO, _
-                                                                                            TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR), _
-                                                                                            MyBase.DbConnection)
+                        W_SEIKYU.SEIKYU_NO_TOPTOUR = GetMaxSEISAN_NO(MyBase.DbConnection)
+                        wRtn = CmnDbBatch.IsExist(SQL.TBL_SEIKYU.byKOUENKAI_NO_SEIKYU_NO_TOPTOUR(W_SEIKYU.KOUENKAI_NO, _
+                                                                                            W_SEIKYU.SEIKYU_NO_TOPTOUR), _
+                                                                                            MyBase.DbConnection, MyBase.DbTransaction)
                     Loop
 
-                    MyBase.BeginTransaction()
+                    'MyBase.BeginTransaction()
 
-                    Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(TBL_SEIKYU(SEQ))
-                    CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                    Dim strSQL As String = SQL.TBL_SEIKYU.InsertSEIKYU_NO(W_SEIKYU)
+                    CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
                     '会合番号をキーにタクチケ発行テーブルに請求番号、精算年月を登録(請求番号未設定のデータのみ)
                     Dim updateData As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
                     updateData.KOUENKAI_NO = TBL_SEISAN_TKTNO(i).KOUENKAI_NO
                     updateData.TKT_SEIKYU_YM = TBL_SEISAN_TKTNO(i).SEISAN_YM
-                    updateData.SEIKYU_NO_TOPTOUR = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
+                    updateData.SEIKYU_NO_TOPTOUR = W_SEIKYU.SEIKYU_NO_TOPTOUR
                     updateData.UPDATE_USER = Me.batchID
                     strSQL = SQL.TBL_TAXITICKET_HAKKO.Update_SEIKYU_NO_YM(updateData)
-                    CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                    CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-                    MyBase.Commit()
+                    'MyBase.Commit()
 
                     ReDim Preserve CSV_TAXI_TICKET_HAKKO(j)
                     CSV_TAXI_TICKET_HAKKO(j).KOUENKAI_NO = TBL_SEISAN_TKTNO(i).KOUENKAI_NO
-                    CSV_TAXI_TICKET_HAKKO(j).SEIKYU_NO_TOPTOUR = TBL_SEIKYU(SEQ).SEIKYU_NO_TOPTOUR
+                    CSV_TAXI_TICKET_HAKKO(j).SEIKYU_NO_TOPTOUR = W_SEIKYU.SEIKYU_NO_TOPTOUR
                     j += 1
+
+                Catch ex As Exception
+                    MyBase.Rollback()
+
+                    'ログ登録
+                    InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(0), False, ex.ToString, MyBase.DbConnection)
+                End Try
+            End If
+        Next
+
+        Return True
+    End Function
+
+    '請求データにタクチケ関連金額セット
+    Private Function UpdateSeikyu(ByRef P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wFlag As Boolean = False
+
+        P_SEIKYU = Nothing
+
+        For i As Integer = LBound(CSV_TAXI_TICKET_HAKKO) To UBound(CSV_TAXI_TICKET_HAKKO)
+            '精算対象の会合番号+精算番号でタクチケデータの金額を集計
+            Dim wJoken As TableDef.Joken.DataStruct
+            wJoken.KOUENKAI_NO = CSV_TAXI_TICKET_HAKKO(i).KOUENKAI_NO
+            wJoken.SEIKYU_NO_TOPTOUR = CSV_TAXI_TICKET_HAKKO(i).SEIKYU_NO_TOPTOUR
+            strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanAuto(wJoken)
+            RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            If RsData.Read Then
+                Dim W_TAXITICKET_HAKKO As New TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+                W_TAXITICKET_HAKKO = AppModule.SetRsData(RsData, W_TAXITICKET_HAKKO)
+                RsData.Close()
+
+                Dim W_SEIKYU As New TableDef.TBL_SEIKYU.DataStruct
+                W_SEIKYU.KOUENKAI_NO = wJoken.KOUENKAI_NO
+                W_SEIKYU.SEIKYU_NO_TOPTOUR = wJoken.SEIKYU_NO_TOPTOUR
+                W_SEIKYU.TAXI_TF = W_TAXITICKET_HAKKO.TAXI_TF
+                W_SEIKYU.TAXI_T = W_TAXITICKET_HAKKO.TAXI_T
+                W_SEIKYU.TAXI_SEISAN_TF = W_TAXITICKET_HAKKO.TAXI_SEISAN_TF
+                W_SEIKYU.TAXI_SEISAN_T = W_TAXITICKET_HAKKO.TAXI_SEISAN_T
+                W_SEIKYU.UPDATE_USER = Me.batchID
+                strSQL = SQL.TBL_SEIKYU.Update_KINGAKU(W_SEIKYU)
+
+                Try
+                    'MyBase.BeginTransaction()
+                    CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                    'MyBase.Commit()
+
+                    ReDim Preserve P_SEIKYU(wCnt)
+                    P_SEIKYU(wCnt) = W_SEIKYU
+                    wCnt += 1
 
                 Catch ex As Exception
                     MyBase.Rollback()
@@ -106,9 +166,11 @@ Public Class Proc
                     'ログ登録
                     InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, ex.ToString, MyBase.DbConnection)
                 End Try
+
+            Else
+                RsData.Close()
             End If
         Next
-
         Return True
     End Function
 
@@ -120,7 +182,7 @@ Public Class Proc
 
         strSQL = SQL.TBL_SEIKYU.MaxSEISAN_NO()
 
-        RsData = CmnDb.Read(strSQL, DbConn)
+        RsData = CmnDbBatch.Read(strSQL, DbConn, MyBase.DbTransaction)
         If RsData.Read() Then
             wSEISAN_NO = CmnModule.DbVal(CmnDb.DbData(TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR, RsData))
         End If
@@ -179,55 +241,57 @@ Public Class Proc
     End Function
 
     '総合精算書印刷
-    Private Sub PrintSeisanRegistReport()
+    Private Sub PrintSeisanRegistReport(ByVal P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct)
 
-        Dim rpt As New SeisanRegistReport
-        Dim reportJoken As New TableDef.Joken.DataStruct
+        For i As Integer = LBound(P_seikyu) To UBound(P_seikyu)
+            Dim rpt As New SeisanRegistReport
+            Dim reportJoken As New TableDef.Joken.DataStruct
 
-        reportJoken.KOUENKAI_NO = "MTG15-00074014"
-        reportJoken.SEIKYU_NO_TOPTOUR = "00000000020609"
-        Dim strSQL As String = SQL.TBL_SEIKYU.Search(reportJoken)
+            reportJoken.KOUENKAI_NO = P_SEIKYU(i).KOUENKAI_NO
+            reportJoken.SEIKYU_NO_TOPTOUR = P_SEIKYU(i).SEIKYU_NO_TOPTOUR
+            Dim strSQL As String = SQL.TBL_SEIKYU.Search(reportJoken)
 
-        ' 接続文字列をapp.configファイルから取得
-        Dim conn As New SqlConnection
-        conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings("ConnectionString")
-        Dim cmd As New SqlCommand
-        cmd.Connection = conn
-        cmd.CommandText = strSQL
-        Dim da As New SqlDataAdapter()
-        da.SelectCommand = cmd
-        Dim dt As New DataTable
-        da.Fill(dt)
+            ' 接続文字列をapp.configファイルから取得
+            Dim conn As New SqlConnection
+            conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings("ConnectionString")
+            Dim cmd As New SqlCommand
+            cmd.Connection = conn
+            cmd.CommandText = strSQL
+            Dim da As New SqlDataAdapter()
+            da.SelectCommand = cmd
+            Dim dt As New DataTable
+            da.Fill(dt)
 
-        'データ設定
-        rpt.DataSource = dt
-        rpt.Document.Printer.PrinterName = ""
+            'データ設定
+            rpt.DataSource = dt
+            rpt.Document.Printer.PrinterName = ""
 
-        'A4縦
-        rpt.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
-        rpt.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
+            'A4縦
+            rpt.Document.Printer.PaperKind = Drawing.Printing.PaperKind.A4
+            rpt.PageSettings.Orientation = DataDynamics.ActiveReports.Document.PageOrientation.Portrait
 
-        '必要に応じマージン設定
-        rpt.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
-        rpt.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
-        rpt.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
-        rpt.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
+            '必要に応じマージン設定
+            rpt.PageSettings.Margins.Top = ActiveReport.CmToInch(0.9)
+            rpt.PageSettings.Margins.Bottom = ActiveReport.CmToInch(0.9)
+            rpt.PageSettings.Margins.Left = ActiveReport.CmToInch(0.9)
+            rpt.PageSettings.Margins.Right = ActiveReport.CmToInch(0.9)
 
-        'レポートを作成
-        rpt.Run()
+            'レポートを作成
+            rpt.Run()
 
-        Dim pdf As New PdfExport
-        Dim wFullPath As String = System.IO.Path.Combine(My.Settings.PATH_WORK, reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF")
-        pdf.Export(rpt.Document, wFullPath)
+            Dim pdf As New PdfExport
+            Dim wFullPath As String = System.IO.Path.Combine(My.Settings.PATH_WORK, reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF")
+            pdf.Export(rpt.Document, wFullPath)
 
-        '書類テーブル登録
-        Dim W_FILE As New TableDef.TBL_FILE.DataStruct
-        Dim wFileName As String = reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF"
-        Call GetValueShorui(wFileName, wFullPath, W_FILE)
-        If ShoruiUpload(W_FILE) Then
-            'サーバフォルダ内に生成したPDFを削除
-            System.IO.File.Delete(wFullPath)
-        End If
+            '書類テーブル登録
+            Dim W_FILE As New TableDef.TBL_FILE.DataStruct
+            Dim wFileName As String = reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF"
+            Call GetValueShorui(wFileName, wFullPath, W_FILE)
+            If ShoruiUpload(W_FILE) Then
+                'サーバフォルダ内に生成したPDFを削除
+                System.IO.File.Delete(wFullPath)
+            End If
+        Next
     End Sub
 
     '書類テーブル用データセット
@@ -343,7 +407,7 @@ Public Class Proc
         Try
             strSQL = "DELETE FROM TBL_FILE WHERE FILE_NAME='" & pTBL_FILE.FILE_NAME & "'"
 
-            CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction, True)
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
         Catch ex As Exception
             Return False
@@ -508,7 +572,7 @@ Public Class Proc
 
         Try
             strSQL = SQL.TBL_LOG.Insert(TBL_LOG)
-            CmnDb.Execute(strSQL, DbConn)
+            CmnDb.Execute(strSQL, DbConn, MyBase.DbTransaction, True)
             Return True
         Catch ex As Exception
             Return False

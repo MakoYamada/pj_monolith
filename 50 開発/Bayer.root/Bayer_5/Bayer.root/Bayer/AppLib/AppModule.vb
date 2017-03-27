@@ -1230,6 +1230,11 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_18.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_18 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_19.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_19 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.ANS_TAXI_SRMKS_20.ToUpper Then TBL_TAXITICKET_HAKKO.ANS_TAXI_SRMKS_20 = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TAXI_TF.ToUpper Then TBL_TAXITICKET_HAKKO.TAXI_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TAXI_SEISAN_TF.ToUpper Then TBL_TAXITICKET_HAKKO.TAXI_SEISAN_TF = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TAXI_T.ToUpper Then TBL_TAXITICKET_HAKKO.TAXI_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXITICKET_HAKKO.Column.TAXI_SEISAN_T.ToUpper Then TBL_TAXITICKET_HAKKO.TAXI_SEISAN_T = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_TAXITICKET_HAKKO

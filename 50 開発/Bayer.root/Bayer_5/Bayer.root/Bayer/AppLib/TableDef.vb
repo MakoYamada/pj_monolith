@@ -3560,6 +3560,13 @@
             Public ANS_TAXI_SRMKS_20 As String
             '@@@ Phase3
 
+            '@@@ Phase5
+            Public TAXI_TF As String
+            Public TAXI_T As String
+            Public TAXI_SEISAN_TF As String
+            Public TAXI_SEISAN_T As String
+            '@@@ Phase5
+
         End Structure
         Public Class Column
             Public Const TKT_KAISHA As String = "TKT_KAISHA"
@@ -3788,6 +3795,13 @@
             Public Const ANS_TAXI_SRMKS_19 As String = "ANS_TAXI_SRMKS_19"
             Public Const ANS_TAXI_SRMKS_20 As String = "ANS_TAXI_SRMKS_20"
             '@@@ Phase3
+
+            '@@@ Phase5
+            Public Const TAXI_TF As String = "TAXI_TF"
+            Public Const TAXI_T As String = "TAXI_T"
+            Public Const TAXI_SEISAN_TF As String = "TAXI_SEISAN_TF"
+            Public Const TAXI_SEISAN_T As String = "TAXI_SEISAN_T"
+            '@@@ Phase5
         End Class
         Public Class Name
             Public Const TKT_KAISHA As String = "タクシー会社"

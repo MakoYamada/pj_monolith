@@ -2190,6 +2190,23 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function Update_KINGAKU(ByVal TBL_SEIKYU As TableDef.TBL_SEIKYU.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_SEIKYU SET"
+            strSQL &= " " & TableDef.TBL_SEIKYU.Column.TAXI_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_TF) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_T & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_T) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_T & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_T) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEIKYU_NO_TOPTOUR) & "'"
+
+            Return strSQL
+        End Function
+
         Public Shared Function DeleteByKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = ""
 
@@ -9233,6 +9250,45 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function TaxiSeisanAuto(ByVal Joken As TableDef.Joken.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL &= "SELECT"
+            strSQL &= " TTH1.KOUENKAI_NO"
+            strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
+            strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_TF"
+            strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_TF"
+            strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_T"
+            strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_T"
+            strSQL &= " FROM"
+            strSQL &= " (SELECT * FROM"
+            strSQL &= " TBL_TAXITICKET_HAKKO"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
+            strSQL &= " ) TTH1"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM"
+            strSQL &= " TBL_TAXITICKET_HAKKO"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " AND ISNULL(TKT_ENTA,N'') = N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
+            strSQL &= " ) TTH2"
+            strSQL &= " ON"
+            strSQL &= " TTH1.KOUENKAI_NO = TTH2.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " TTH1.SEIKYU_NO_TOPTOUR = TTH2.SEIKYU_NO_TOPTOUR"
+            strSQL &= " GROUP BY"
+            strSQL &= " TTH1.KOUENKAI_NO"
+            strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
+
+            Return strSQL
+        End Function
+
         Public Shared Function SapCsvTaxi(ByVal kouenkaiNo As String, ByVal seisanNo As String) As String
             Dim strSQL As String = ""
 
@@ -10116,13 +10172,14 @@ Public Class SQL
 
             strSQL = "SELECT DISTINCT"
             strSQL &= " KOUENKAI_NO"
-            strSQL &= ", SEIKYU_YM"
+            strSQL &= ", SEISAN_YM"
             strSQL &= ", SEISAN_DANTAI"
             strSQL &= ", SEISAN_COMMENT"
             strSQL &= " FROM TBL_SEISAN_TKTNO"
+            strSQL &= " WHERE KOUENKAI_NO<>''"
             strSQL &= " ORDER BY"
             strSQL &= " KOUENKAI_NO"
-            strSQL &= ", SEIKYU_YM"
+            strSQL &= ", SEISAN_YM"
 
             Return strSQL
         End Function

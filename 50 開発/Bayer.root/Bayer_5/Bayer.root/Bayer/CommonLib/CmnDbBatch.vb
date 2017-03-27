@@ -154,4 +154,38 @@
 
         Return wFlag
     End Function
+
+    'SQL実行(選択)
+    Public Shared Function IsExist(ByVal strSQL As String, ByVal DbConn As SqlClient.SqlConnection, ByVal DbTrans As SqlClient.SqlTransaction) As Boolean
+        Dim wFlag As Boolean = False
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        RsData = Read(strSQL, DbConn, DbTrans)
+        If RsData.Read() Then
+            wFlag = True
+        End If
+        RsData.Close()
+
+        Return wFlag
+
+        'Dim wFlag As Boolean = False
+        'Dim DbCmd As System.Data.SqlClient.SqlCommand
+        'Dim RsData As SqlClient.SqlDataReader
+        'If Not IsNothing(DbCmd) Then DbCmd.Dispose()
+
+        'Try
+        '    DbOpen(DbConn)
+        '    DbCmd = New System.Data.SqlClient.SqlCommand(strSQL, DbConn)
+        '    DbCmd.Transaction = DbTrans
+        '    RsData = DbCmd.ExecuteReader
+        '    If RsData.Read Then
+        '        wflag = True
+        '    End If
+        '    DbCmd.Dispose()
+
+        '    Return wflag
+        'Catch ex As Exception
+        '    Throw New Exception(ex.Message)
+        'End Try
+    End Function
 End Class

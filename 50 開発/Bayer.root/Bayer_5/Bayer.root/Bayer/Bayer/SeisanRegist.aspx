@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Base.Master" CodeBehind="SeisanRegist.aspx.vb" Inherits="Bayer.SeisanRegist" MaintainScrollPositionOnPostback="true" %>
 <%@ MasterType virtualPath="~/Base.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table cellspacing="2" border="0">
+T)<table cellspacing="2" border="0">
         <tr>
             <td nowrap="nowrap" align="left" >
                 <table  border="0" cellpadding="2" cellspacing="0" width="100%">
