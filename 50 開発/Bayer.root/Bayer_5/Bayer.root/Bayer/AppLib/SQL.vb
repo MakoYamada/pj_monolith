@@ -2073,6 +2073,8 @@ Public Class SQL
             strSQL &= " (" & TableDef.TBL_SEIKYU.Column.KOUENKAI_NO
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEIKYU_NO_TOPTOUR
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_YM
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_DANTAI
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEISAN_KANRYO
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_DATE
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.INPUT_USER
@@ -2083,6 +2085,8 @@ Public Class SQL
             strSQL &= "(N'" & CmnDb.SqlString(TBL_SEIKYU.KOUENKAI_NO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEIKYU_NO_TOPTOUR) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_YM) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_DANTAI) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEISAN_KANRYO) & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= ",N'" & GetValue.DATE() & "'"
             strSQL &= ",N'" & CmnDb.SqlString(TBL_SEIKYU.INPUT_USER) & "'"
@@ -2198,6 +2202,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_T & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_T) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_TF & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_TF) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_SEISAN_T & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_SEISAN_T) & "'"
+            strSQL &= "," & TableDef.TBL_SEIKYU.Column.TAXI_TICKET_URL & "=N'" & CmnDb.SqlString(TBL_SEIKYU.TAXI_TICKET_URL) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_SEIKYU.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_SEIKYU.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_SEIKYU.UPDATE_USER) & "'"
@@ -9255,17 +9260,33 @@ Public Class SQL
 
             strSQL &= "SELECT"
             strSQL &= " TTH1.KOUENKAI_NO"
+            strSQL &= ", TTH1.KOUENKAI_NAME"
+            strSQL &= ", TTH1.FROM_DATE"
             strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
             strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_TF"
             strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_TF"
             strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_T"
             strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_T"
             strSQL &= " FROM"
-            strSQL &= " (SELECT * FROM"
+            strSQL &= " (SELECT TBL_TAXITICKET_HAKKO.*,WK_KOUENKAI.KOUENKAI_NAME,WK_KOUENKAI.FROM_DATE FROM"
             strSQL &= " TBL_TAXITICKET_HAKKO"
+            strSQL &= " JOIN "
+            strSQL &= " (SELECT TBL_KOUENKAI.KOUENKAI_NO,TBL_KOUENKAI.KOUENKAI_NAME,TBL_KOUENKAI.FROM_DATE,TBL_KOUENKAI.TIME_STAMP FROM TBL_KOUENKAI "
+            strSQL &= " JOIN "
+            strSQL &= " (SELECT KOUENKAI_NO,MAX(TIME_STAMP) AS TIME_STAMP FROM TBL_KOUENKAI"
             strSQL &= " WHERE"
             strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
+            strSQL &= " GROUP BY"
+            strSQL &= " TBL_KOUENKAI.KOUENKAI_NO) WK_KOUENKAI2"
+            strSQL &= " ON"
+            strSQL &= " TBL_KOUENKAI.KOUENKAI_NO = WK_KOUENKAI2.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOUENKAI.TIME_STAMP = WK_KOUENKAI2.TIME_STAMP) WK_KOUENKAI"
+            strSQL &= " ON"
+            strSQL &= " TBL_TAXITICKET_HAKKO.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " WHERE"
+            strSQL &= " TBL_TAXITICKET_HAKKO.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
+            strSQL &= " AND TBL_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
             strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
             strSQL &= " ) TTH1"
@@ -9284,6 +9305,8 @@ Public Class SQL
             strSQL &= " TTH1.SEIKYU_NO_TOPTOUR = TTH2.SEIKYU_NO_TOPTOUR"
             strSQL &= " GROUP BY"
             strSQL &= " TTH1.KOUENKAI_NO"
+            strSQL &= ", TTH1.KOUENKAI_NAME"
+            strSQL &= ", TTH1.FROM_DATE"
             strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
 
             Return strSQL

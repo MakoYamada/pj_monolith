@@ -8,5 +8,8 @@
     <Setting Name="FILE_NAME" Type="System.String" Scope="User">
       <Value Profile="(Default)">Seisansho</Value>
     </Setting>
+    <Setting Name="FILE_BANGOUHYO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Bangouhyo</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

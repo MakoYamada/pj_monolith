@@ -3,6 +3,7 @@ Imports CommonLib
 Imports System.IO
 Imports System.Data.SqlClient
 Imports System.Text
+Imports System.Text.Encoding
 Imports System.Configuration
 Imports DataDynamics.ActiveReports
 Imports DataDynamics.ActiveReports.Export.Pdf
@@ -51,10 +52,23 @@ Public Class Proc
 
         '請求データにタクチケ関連金額セット
         Dim W_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
-        If Not UpdateSeikyu(W_SEIKYU) Then Exit Sub
+        Dim wFilePath As String = ""
+        Dim wFileName As String = ""
+        If Not UpdateSeikyu(W_SEIKYU, wFilePath, wFileName) Then Exit Sub
+
+        MyBase.Commit()
+
+        '精算番号表保存
+        Dim W_FILE As New TableDef.TBL_FILE.DataStruct
+        Call GetValueFile(wFilePath, wFileName, W_FILE)
+        If Not CsvUpload(W_FILE) Then
+            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "精算番号表CSVの保存に失敗しました。")
+        End If
 
         '総合精算書出力
         Call PrintSeisanRegistReport(W_SEIKYU)
+
+        MyBase.BeginTransaction()
 
     End Sub
 
@@ -73,6 +87,8 @@ Public Class Proc
                     '請求データ(キー項目と送信フラグのみ)を登録する
                     W_SEIKYU.KOUENKAI_NO = TBL_SEISAN_TKTNO(i).KOUENKAI_NO
                     W_SEIKYU.SEISAN_YM = TBL_SEISAN_TKTNO(i).SEISAN_YM
+                    W_SEIKYU.SEISAN_KANRYO = TBL_SEISAN_TKTNO(i).SEISAN_COMMENT
+                    W_SEIKYU.SEISAN_DANTAI = TBL_SEISAN_TKTNO(i).SEISAN_DANTAI
                     W_SEIKYU.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi
                     W_SEIKYU.INPUT_USER = Me.batchID
                     W_SEIKYU.UPDATE_USER = Me.batchID
@@ -121,13 +137,21 @@ Public Class Proc
     End Function
 
     '請求データにタクチケ関連金額セット
-    Private Function UpdateSeikyu(ByRef P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct) As Boolean
+    Private Function UpdateSeikyu(ByRef P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct, ByRef pFilePath As String, ByRef pFileName As String) As Boolean
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
 
         P_SEIKYU = Nothing
+
+        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
+        pFileName = My.Settings.FILE_BANGOUHYO & Now.ToString("yyyyMMddHHmmss") & ".csv"
+        pFilePath = My.Settings.PATH_WORK & "\" & pFileName
+        Dim sw As New StreamWriter(pFilePath, False, System.Text.Encoding.GetEncoding("shift_jis"))
+        Dim sb As New System.Text.StringBuilder
+        sw.NewLine = vbCrLf
 
         For i As Integer = LBound(CSV_TAXI_TICKET_HAKKO) To UBound(CSV_TAXI_TICKET_HAKKO)
             '精算対象の会合番号+精算番号でタクチケデータの金額を集計
@@ -141,20 +165,26 @@ Public Class Proc
                 W_TAXITICKET_HAKKO = AppModule.SetRsData(RsData, W_TAXITICKET_HAKKO)
                 RsData.Close()
 
+                '請求テーブル更新
                 Dim W_SEIKYU As New TableDef.TBL_SEIKYU.DataStruct
+                Dim W_FROMDATE As String = ""
+                If Trim(W_TAXITICKET_HAKKO.FROM_DATE) <> "" Then
+                    W_FROMDATE = W_TAXITICKET_HAKKO.FROM_DATE.Substring(0, 4)
+                End If
                 W_SEIKYU.KOUENKAI_NO = wJoken.KOUENKAI_NO
                 W_SEIKYU.SEIKYU_NO_TOPTOUR = wJoken.SEIKYU_NO_TOPTOUR
                 W_SEIKYU.TAXI_TF = W_TAXITICKET_HAKKO.TAXI_TF
                 W_SEIKYU.TAXI_T = W_TAXITICKET_HAKKO.TAXI_T
                 W_SEIKYU.TAXI_SEISAN_TF = W_TAXITICKET_HAKKO.TAXI_SEISAN_TF
                 W_SEIKYU.TAXI_SEISAN_T = W_TAXITICKET_HAKKO.TAXI_SEISAN_T
+                W_SEIKYU.TAXI_TICKET_URL = System.Configuration.ConfigurationManager.AppSettings("TaxiTicketURL") _
+                                            & W_FROMDATE & "/" _
+                                            & W_TAXITICKET_HAKKO.KOUENKAI_NO & System.Configuration.ConfigurationManager.AppSettings("TaxiTicketURL_FileName")
                 W_SEIKYU.UPDATE_USER = Me.batchID
                 strSQL = SQL.TBL_SEIKYU.Update_KINGAKU(W_SEIKYU)
 
                 Try
-                    'MyBase.BeginTransaction()
                     CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-                    'MyBase.Commit()
 
                     ReDim Preserve P_SEIKYU(wCnt)
                     P_SEIKYU(wCnt) = W_SEIKYU
@@ -167,10 +197,53 @@ Public Class Proc
                     InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, ex.ToString, MyBase.DbConnection)
                 End Try
 
+                '精算番号表CSV出力
+                If wCnt = 1 Then
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("通番")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算番号")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催年")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催開始日")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（非課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料（非課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金小計")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料小計")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG合計")))
+                    sb.Append(vbNewLine)
+                End If
+
+                'CSV出力
+                Dim wTaxi As Long = Long.Parse(W_TAXITICKET_HAKKO.TAXI_TF) + Long.Parse(W_TAXITICKET_HAKKO.TAXI_T)
+                Dim wSeisan As Long = Long.Parse(W_TAXITICKET_HAKKO.TAXI_SEISAN_TF) + Long.Parse(W_TAXITICKET_HAKKO.TAXI_SEISAN_T)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(wCnt.ToString.PadLeft(4, "0")))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.KOUENKAI_NO))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_FROMDATE))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.Format_Date(W_TAXITICKET_HAKKO.FROM_DATE, CmnModule.DateFormatType.YYYYMMDD)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.KOUENKAI_NAME))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_TF)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_SEISAN_TF)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_T)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_SEISAN_T)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(wTaxi.ToString)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(wSeisan.ToString)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma((wTaxi + wSeisan).ToString)))))
+                sb.Append(vbNewLine)
+
             Else
                 RsData.Close()
             End If
         Next
+
+        sw.Write(sb.ToString)
+        sw.Flush()
+        sw.Close()
+        sw = Nothing
+
         Return True
     End Function
 
@@ -192,58 +265,10 @@ Public Class Proc
         Return wSEISAN_NO.ToString.PadLeft(14, "0"c)
     End Function
 
-    'タクチケ精算データCSV出力
-    Private Sub OutputTaxiCsv()
-
-        'Dim CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
-        'If GetTaxiCsvData(CsvData) Then
-        '    'CSV出力
-        '    Response.Clear()
-        '    Response.ContentType = CmnConst.Csv.ContentType
-        '    Response.Charset = CmnConst.Csv.Charset
-        '    Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "TaxiSeisan.csv")
-        '    Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
-
-        '    Response.Write(MyModule.Csv.TaxiSeisanCsv(CsvData, MyBase.DbConnection))
-        '    Response.End()
-        'End If
-    End Sub
-
-    'タクチケ精算データCSV出力用データ取得
-    Private Function GetTaxiCsvData(ByRef CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As Boolean
-        'Dim wCnt As Integer = 0
-        'Dim strSQL As String = ""
-        'Dim RsData As System.Data.SqlClient.SqlDataReader
-        'Dim wFlag As Boolean = False
-
-        'ReDim CsvData(wCnt)
-
-        'Dim csvJoken As TableDef.Joken.DataStruct
-        'csvJoken.KOUENKAI_NO = Me.KOUENKAI_NO.Text
-        'csvJoken.SEIKYU_NO_TOPTOUR = Me.SEIKYU_NO_TOPTOUR.Text
-        'strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanCsv(csvJoken)
-        'RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        'While RsData.Read()
-        '    wFlag = True
-        '    ReDim Preserve CsvData(wCnt)
-        '    CsvData(wCnt) = AppModule.SetRsData(RsData, CsvData(wCnt))
-
-        '    wCnt += 1
-        'End While
-        'RsData.Close()
-
-        'If wFlag = False Then
-        '    CmnModule.AlertMessage("対象データがありません。", Me)
-        '    Return False
-        'End If
-
-        Return True
-    End Function
-
     '総合精算書印刷
     Private Sub PrintSeisanRegistReport(ByVal P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct)
 
-        For i As Integer = LBound(P_seikyu) To UBound(P_seikyu)
+        For i As Integer = LBound(P_SEIKYU) To UBound(P_SEIKYU)
             Dim rpt As New SeisanRegistReport
             Dim reportJoken As New TableDef.Joken.DataStruct
 
@@ -320,8 +345,8 @@ Public Class Proc
     Private Sub ExportData(ByVal outputData() As TableDef.TBL_KOTSUHOTEL.DataStruct)
 
         Dim wNow As String = Now.ToString("yyyyMMddHHmmss")
-        Dim strFileFull As String = My.Settings.PATH_WORK & "\" & My.Settings.FILE_NAME & wNow & ".csv"
-        Dim strFileName As String = My.Settings.FILE_NAME & wNow & ".csv"
+        Dim strFileFull As String = My.Settings.PATH_WORK & "\" & My.Settings.FILE_BANGOUHYO & wNow & ".csv"
+        Dim strFileName As String = My.Settings.FILE_BANGOUHYO & wNow & ".csv"
 
         'ファイル作成
         If Not NewDrCsv(strFileFull, outputData) Then
@@ -332,30 +357,30 @@ Public Class Proc
             Exit Sub
         End If
 
-        '新着一覧CSV保存テーブル登録
+        'CSV保存テーブル登録
         Dim W_FILE As New TableDef.TBL_FILE.DataStruct
         Call GetValueFile(strFileFull, strFileName, W_FILE)
         If CsvUpload(W_FILE) Then
-            'サーバフォルダ内に生成したPDFを削除
-            ' ''System.IO.File.Delete(strFileFull)
+            'サーバフォルダ内に生成したCSVを削除
+            System.IO.File.Delete(strFileFull)
         End If
 
         InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, outputData.Length.ToString & "件のデータを出力しました。")
 
     End Sub
 
-    '新着一覧CSV保存テーブル用データセット
+    '精算番号表CSV保存テーブル用データセット
     Private Sub GetValueFile(ByVal pFileFull As String, ByVal pFileName As String, ByRef pFILE As TableDef.TBL_FILE.DataStruct)
         Dim sysDT As String = Now.ToString("yyyyMMddHHmmss")
 
         If Not pFileName Is Nothing AndAlso pFileName.ToString.Trim <> "" Then
-            pFILE.FILE_KBN = AppConst.FILE_KBN.Code.NewDrCsv
+            pFILE.FILE_KBN = AppConst.FILE_KBN.Code.TaxiSeisan
             pFILE.FILE_NAME = pFileName
             pFILE.FILE_TYPE = "Application/octet-stream"
             Dim aryData() As Byte = System.IO.File.ReadAllBytes(pFileFull)
             pFILE.DATUME = aryData
             pFILE.INS_DATE = sysDT
-            pFILE.INS_PGM = "NewDrCsv"
+            pFILE.INS_PGM = Me.batchID
         End If
     End Sub
 
