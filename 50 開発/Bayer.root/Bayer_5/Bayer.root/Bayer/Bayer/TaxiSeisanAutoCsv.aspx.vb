@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Imports System.Drawing
 Imports System.IO
 
-Partial Public Class NewDrCsv
+Partial Public Class TaxiSeisanAutoCsv
     Inherits WebBase
 
     Private TBL_FILE() As TableDef.TBL_FILE.DataStruct
@@ -44,7 +44,8 @@ Partial Public Class NewDrCsv
 
         'マスターページ設定
         With Me.Master
-            .PageTitle = "【新着】交通・宿泊手配依頼CSVダウンロード"
+            .DispTaxiMenu = True
+            .PageTitle = "精算番号表CSVダウンロード"
         End With
 
     End Sub
@@ -101,7 +102,7 @@ Partial Public Class NewDrCsv
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.INS_DATE & " DESC"
 
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
-        objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.NewDrCsv)
+        objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.TaxiSeisan)
         If Trim(Joken.FILE_NAME) <> "" Then
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_NAME, Joken.FILE_NAME)
         End If
@@ -164,7 +165,7 @@ Partial Public Class NewDrCsv
         strSQL &= "SELECT *"
         strSQL &= " FROM TBL_FILE"
         strSQL &= " WHERE"
-        strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "='" & AppConst.FILE_KBN.Code.NewDrCsv & "'"
+        strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "='" & AppConst.FILE_KBN.Code.TaxiSeisan & "'"
 
         strSQL &= " ORDER BY"
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.INS_DATE & " DESC"
@@ -227,16 +228,16 @@ Partial Public Class NewDrCsv
 
         Select Case e.CommandName
             Case "Download"
-                '新着一覧ダウンロード
+                '精算番号表CSVダウンロード
                 Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
                 Call DLCsvFile(Joken)
 
             Case "Delete"
-                '新着一覧CSV削除
+                '精算番号表CSV削除
                 Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
                 Call DeleteTBL_FILE(Joken)
 
-                '新着一覧CSV再表示
+                '精算番号表CSV再表示
                 Call SetForm()
         End Select
     End Sub

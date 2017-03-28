@@ -75,7 +75,8 @@
 							<asp:Button ID="BtnTaxiSeisanAuto" runat="server" Text="タクチケ自動精算指示" Width="200px" CssClass="Button" />
 						</td>
 						<td>
-							<asp:Button ID="BtnTaxiSeisanAutoCsv" runat="server" Text="自動精算済タクチケCSV DL" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiSeisanAutoCsv" runat="server" Text="精算番号表CSV DL" 
+                                Width="200px" CssClass="Button" />
 						</td>
 						<td>
 							<asp:Button ID="BtnSeisanshoAuto" runat="server" Text="総合精算書PDF DL" Width="200px" CssClass="Button" />

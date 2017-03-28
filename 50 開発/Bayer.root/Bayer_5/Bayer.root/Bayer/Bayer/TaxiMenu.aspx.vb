@@ -152,7 +152,7 @@ Partial Public Class TaxiMenu
         Response.Redirect(URL.TaxiSeisanAuto)
     End Sub
 
-    '[自動精算済タクチケCSV DL]
+    '[精算番号表CSV DL]
     Protected Sub BtnTaxiSeisanAutoCsv_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiSeisanAutoCsv.Click
         Response.Redirect(URL.TaxiSeisanAutoCsv)
     End Sub
