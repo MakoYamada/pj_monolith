@@ -39,7 +39,11 @@ Partial Public Class SeisanshoAuto
         If Not Page.IsPostBack Then
             '画面項目 初期化
             InitControls()
-            SetForm()
+            Me.TrButton1.Visible = False
+            Me.TrButton2.Visible = False
+            Me.LabelCount.Visible = False
+            Me.LabelNoData.Visible = False
+            'SetForm()
         End If
 
         'マスターページ設定
@@ -61,12 +65,32 @@ Partial Public Class SeisanshoAuto
         CmnModule.ClearAllControl(Me)
     End Sub
 
+    '入力チェック
+    Private Function Check() As Boolean
+        'セキュリティチェック
+        If Not CmnCheck.IsSecurityOK(Me) Then
+            CmnModule.AlertMessage(MessageDef.Error.SecurityCheck, Me)
+            Return False
+        End If
+
+        If Not CmnCheck.IsAlphanumericHyphen(Me.JokenKOUENKAI_NO) Then
+            CmnModule.AlertMessage(MessageDef.Error.AlphanumericHyphenOnly("会合番号"), Me)
+            Return False
+        End If
+
+        Return True
+    End Function
+
     '画面項目 表示
     Private Sub SetForm()
 
         'データ取得
         TBL_FILE = Nothing
         Joken = Nothing
+
+        Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
+        Joken.SEIKYU_NO_TOPTOUR = Trim(Me.JokenSEIKYU_NO_TOPTOUR.Text)
+
         If Not GetData(Joken, TBL_FILE) Then
             Me.LabelNoData.Visible = True
             Me.GrvList.Visible = False
@@ -85,6 +109,8 @@ Partial Public Class SeisanshoAuto
         Dim strSQL As String = ""
         Dim i As Integer = 0
         Dim wFlag As Boolean = False
+        Dim wKouenkaiFlag As Boolean = False
+        Dim wSeikyuFlag As Boolean = False
 
         Erase pFILE
 
@@ -98,6 +124,20 @@ Partial Public Class SeisanshoAuto
             strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & "=@" & TableDef.TBL_FILE.Column.FILE_NAME
         End If
 
+        If Trim(Joken.KOUENKAI_NO) <> "" Then
+            strSQL &= " AND"
+            strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & " LIKE @" & TableDef.TBL_FILE.Column.FILE_NAME
+            wKouenkaiFlag = True
+        End If
+
+        If Trim(Joken.SEIKYU_NO_TOPTOUR) <> "" Then
+            If Not wKouenkaiFlag Then
+                strSQL &= " AND"
+                strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & " LIKE @" & TableDef.TBL_FILE.Column.FILE_NAME
+            End If
+            wSeikyuFlag = True
+        End If
+
         strSQL &= " ORDER BY"
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.INS_DATE & " DESC"
 
@@ -105,6 +145,19 @@ Partial Public Class SeisanshoAuto
         objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.SougouSeisan)
         If Trim(Joken.FILE_NAME) <> "" Then
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_NAME, Joken.FILE_NAME)
+        End If
+        If Trim(Joken.KOUENKAI_NO) <> "" Then
+            If Not wSeikyuFlag Then
+                objCom.Parameters.Add(New SqlClient.SqlParameter(TableDef.TBL_FILE.Column.FILE_NAME, Joken.KOUENKAI_NO & "%"))
+            Else
+                Dim strLen As Integer = 29 - Len(Trim(Joken.KOUENKAI_NO)) - Len(Trim(Joken.SEIKYU_NO_TOPTOUR))
+                objCom.Parameters.Add(New SqlClient.SqlParameter(TableDef.TBL_FILE.Column.FILE_NAME, Joken.KOUENKAI_NO & StrDup(strLen, "_"c) & Joken.SEIKYU_NO_TOPTOUR & "%"))
+            End If
+        End If
+        If Trim(Joken.SEIKYU_NO_TOPTOUR) <> "" Then
+            If Not wKouenkaiFlag Then
+                objCom.Parameters.Add(New SqlClient.SqlParameter(TableDef.TBL_FILE.Column.FILE_NAME, "%" & Joken.SEIKYU_NO_TOPTOUR & "%"))
+            End If
         End If
 
         Dim objRs As Object = objCom.ExecuteReader()
@@ -173,6 +226,8 @@ Partial Public Class SeisanshoAuto
     'データソース設定
     Private Sub SetGridView()
         Dim strSQL As String = ""
+        Dim wKouenkaiFlag As Boolean = False
+        Dim wSeikyuFlag As Boolean = False
 
         'データソース設定
         strSQL &= "SELECT *"
@@ -180,12 +235,45 @@ Partial Public Class SeisanshoAuto
         strSQL &= " WHERE"
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "='" & AppConst.FILE_KBN.Code.SougouSeisan & "'"
 
+        If Trim(Joken.FILE_NAME) <> "" Then
+            strSQL &= " AND"
+            strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & "=@" & TableDef.TBL_FILE.Column.FILE_NAME
+        End If
+
+        If Trim(Joken.KOUENKAI_NO) <> "" Then
+            strSQL &= " AND"
+            strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & " LIKE @" & TableDef.TBL_FILE.Column.FILE_NAME
+            wKouenkaiFlag = True
+        End If
+
+        If Trim(Joken.SEIKYU_NO_TOPTOUR) <> "" Then
+            If Not wKouenkaiFlag Then
+                strSQL &= " AND"
+                strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_NAME & " LIKE @" & TableDef.TBL_FILE.Column.FILE_NAME
+            End If
+            wSeikyuFlag = True
+        End If
+
         strSQL &= " ORDER BY"
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.INS_DATE & " DESC"
 
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
         Me.SqlDataSource1.SelectParameters.Clear()
+
+        If Trim(Joken.KOUENKAI_NO) <> "" Then
+            If Not wSeikyuFlag Then
+                Me.SqlDataSource1.SelectParameters.Add(TableDef.TBL_FILE.Column.FILE_NAME, Joken.KOUENKAI_NO & "%")
+            Else
+                Dim strLen As Integer = 29 - Len(Trim(Joken.KOUENKAI_NO)) - Len(Trim(Joken.SEIKYU_NO_TOPTOUR))
+                Me.SqlDataSource1.SelectParameters.Add(TableDef.TBL_FILE.Column.FILE_NAME, Joken.KOUENKAI_NO & StrDup(strLen, "_"c) & Joken.SEIKYU_NO_TOPTOUR & "%")
+            End If
+        End If
+        If Trim(Joken.SEIKYU_NO_TOPTOUR) <> "" Then
+            If Not wKouenkaiFlag Then
+                Me.SqlDataSource1.SelectParameters.Add(TableDef.TBL_FILE.Column.FILE_NAME, "%" & Joken.SEIKYU_NO_TOPTOUR & "%")
+            End If
+        End If
 
         With Me.GrvList
             Try
@@ -255,7 +343,16 @@ Partial Public Class SeisanshoAuto
         End Select
     End Sub
 
-    '[精算番号表CSVファイルダウンロード]
+    '[検索]
+    Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+        '入力チェック
+        If Not Check() Then Exit Sub
+
+        '画面項目表示
+        SetForm()
+    End Sub
+
+    '[総合精算書PDFファイルダウンロード]
     Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct)
         Dim wFILE(0) As TableDef.TBL_FILE.DataStruct
 
@@ -264,13 +361,12 @@ Partial Public Class SeisanshoAuto
 
         Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
         Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
-        Response.Charset = CmnConst.Csv.Charset
         Response.ContentType = wFILE(0).FILE_TYPE
         Response.BinaryWrite(wFILE(0).DATUME)
         Response.End()
     End Sub
 
-    '[精算番号表CSVファイル削除]
+    '[総合精算書PDFファイル削除]
     Private Function DeleteTBL_FILE(ByVal Joken As TableDef.Joken.DataStruct) As Boolean
         Dim strSQL As String = ""
 

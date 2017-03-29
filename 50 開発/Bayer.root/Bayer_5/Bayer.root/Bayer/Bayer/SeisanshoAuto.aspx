@@ -6,6 +6,41 @@
 	</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table cellspacing="0" cellpadding="2" border="0">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td align="right">
+                            会合番号
+                        </td>
+                        <td colspan="2">
+                            <asp:TextBox ID="JokenKOUENKAI_NO" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            精算番号
+                        </td>
+                        <td colspan="5">
+                            <asp:TextBox ID="JokenSEIKYU_NO_TOPTOUR" runat="server" Text="12345678901234" Width="130px" MaxLength="14"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:Button ID="BtnSearch" runat="server" Width="130px" Text="検索" CssClass="Button" />
+                        </td>
+                    </tr>
+                </table>                            
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <hr style="width:100%" />
+                <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
+                <asp:Label ID="LabelCountTitle" runat="server">件数：</asp:Label>
+                <asp:Label ID="LabelCount" runat="server"></asp:Label>
+                <br />
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            </td>
+        </tr>
         <tr id="TrButton1" runat="server">
             <td align="right">
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">
@@ -24,15 +59,6 @@
                         </td>
                     </tr>
                 </table> 
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
-                <asp:Label ID="LabelNoData" runat="server" CssClass="NoData">対象データが登録されていません。</asp:Label>
-                <asp:Label ID="LabelCountTitle" runat="server">件数：</asp:Label>
-                <asp:Label ID="LabelCount" runat="server"></asp:Label>
-                <br />
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>
