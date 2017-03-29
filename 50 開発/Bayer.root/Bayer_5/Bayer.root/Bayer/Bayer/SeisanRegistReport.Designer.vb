@@ -225,9 +225,9 @@ Partial Public Class SeisanRegistReport
         Me.FROM_DATE = New DataDynamics.ActiveReports.TextBox
         Me.Label19 = New DataDynamics.ActiveReports.Label
         Me.SEISAN_DANTAI = New DataDynamics.ActiveReports.TextBox
-        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         Me.Label20 = New DataDynamics.ActiveReports.Label
         Me.TextBox1 = New DataDynamics.ActiveReports.TextBox
+        Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
         CType(Me.Label8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintDate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1759,7 +1759,7 @@ Partial Public Class SeisanRegistReport
         Me.SEISANSHO_URL.Height = 0.4511811!
         Me.SEISANSHO_URL.Left = 2.046457!
         Me.SEISANSHO_URL.Name = "SEISANSHO_URL"
-        Me.SEISANSHO_URL.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: inherit"
+        Me.SEISANSHO_URL.Style = "font-family: ＭＳ ゴシック; font-size: 8pt; text-align: left; white-space: inherit"
         Me.SEISANSHO_URL.Text = Nothing
         Me.SEISANSHO_URL.Top = 6.74882!
         Me.SEISANSHO_URL.Width = 5.570473!
@@ -1771,7 +1771,7 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_TICKET_URL.Height = 0.4251957!
         Me.TAXI_TICKET_URL.Left = 1.979921!
         Me.TAXI_TICKET_URL.Name = "TAXI_TICKET_URL"
-        Me.TAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; text-align: left; white-space: inherit"
+        Me.TAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; font-size: 8pt; text-align: left; white-space: inherit"
         Me.TAXI_TICKET_URL.Text = Nothing
         Me.TAXI_TICKET_URL.Top = 7.740947!
         Me.TAXI_TICKET_URL.Width = 5.570473!
@@ -2144,7 +2144,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line20
         '
-        Me.Line20.Height = 1.653542!
+        Me.Line20.Height = 1.653543!
         Me.Line20.Left = 3.272441!
         Me.Line20.LineWeight = 1.0!
         Me.Line20.Name = "Line20"
@@ -2157,7 +2157,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line21
         '
-        Me.Line21.Height = 1.653542!
+        Me.Line21.Height = 1.653543!
         Me.Line21.Left = 5.922835!
         Me.Line21.LineWeight = 1.0!
         Me.Line21.Name = "Line21"
@@ -2224,7 +2224,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line26
         '
-        Me.Line26.Height = 0.4724412!
+        Me.Line26.Height = 0.4724422!
         Me.Line26.Left = 3.272441!
         Me.Line26.LineWeight = 1.0!
         Me.Line26.Name = "Line26"
@@ -2237,7 +2237,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line27
         '
-        Me.Line27.Height = 0.3897635!
+        Me.Line27.Height = 0.3897634!
         Me.Line27.Left = 2.281496!
         Me.Line27.LineWeight = 1.0!
         Me.Line27.Name = "Line27"
@@ -2250,7 +2250,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line28
         '
-        Me.Line28.Height = 0.4724417!
+        Me.Line28.Height = 0.4724407!
         Me.Line28.Left = 5.918898!
         Me.Line28.LineWeight = 1.0!
         Me.Line28.Name = "Line28"
@@ -2289,7 +2289,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line31
         '
-        Me.Line31.Height = 0.589763!
+        Me.Line31.Height = 0.5897633!
         Me.Line31.Left = 4.933858!
         Me.Line31.LineWeight = 1.0!
         Me.Line31.Name = "Line31"
@@ -2432,7 +2432,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line45
         '
-        Me.Line45.Height = 0.3968495!
+        Me.Line45.Height = 0.3968493!
         Me.Line45.Left = 0.0!
         Me.Line45.LineWeight = 1.0!
         Me.Line45.Name = "Line45"
@@ -2445,7 +2445,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line46
         '
-        Me.Line46.Height = 0.5999992!
+        Me.Line46.Height = 0.5999995!
         Me.Line46.Left = 7.605512!
         Me.Line46.LineWeight = 1.0!
         Me.Line46.Name = "Line46"
@@ -2458,7 +2458,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line47
         '
-        Me.Line47.Height = 4.488187!
+        Me.Line47.Height = 4.488186!
         Me.Line47.Left = 7.605512!
         Me.Line47.LineWeight = 1.0!
         Me.Line47.Name = "Line47"
@@ -2484,7 +2484,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line49
         '
-        Me.Line49.Height = 0.3826768!
+        Me.Line49.Height = 0.3826764!
         Me.Line49.Left = 0.8622048!
         Me.Line49.LineWeight = 1.0!
         Me.Line49.Name = "Line49"
@@ -2497,7 +2497,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line50
         '
-        Me.Line50.Height = 0.5968497!
+        Me.Line50.Height = 0.59685!
         Me.Line50.Left = 5.861418!
         Me.Line50.LineWeight = 1.0!
         Me.Line50.Name = "Line50"
@@ -2510,7 +2510,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line51
         '
-        Me.Line51.Height = 4.488187!
+        Me.Line51.Height = 4.488186!
         Me.Line51.Left = 0.5287402!
         Me.Line51.LineWeight = 1.0!
         Me.Line51.Name = "Line51"
@@ -2523,7 +2523,7 @@ Partial Public Class SeisanRegistReport
         '
         'Line52
         '
-        Me.Line52.Height = 0.3897635!
+        Me.Line52.Height = 0.3897634!
         Me.Line52.Left = 3.79252!
         Me.Line52.LineWeight = 1.0!
         Me.Line52.Name = "Line52"
@@ -2813,11 +2813,6 @@ Partial Public Class SeisanRegistReport
         Me.SEISAN_DANTAI.Top = 0.1929134!
         Me.SEISAN_DANTAI.Width = 0.4893702!
         '
-        'PageFooter
-        '
-        Me.PageFooter.Height = 0.01041667!
-        Me.PageFooter.Name = "PageFooter"
-        '
         'Label20
         '
         Me.Label20.Height = 0.2!
@@ -2839,6 +2834,11 @@ Partial Public Class SeisanRegistReport
         Me.TextBox1.Text = Nothing
         Me.TextBox1.Top = 0.4!
         Me.TextBox1.Width = 1.433858!
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Height = 0.01041667!
+        Me.PageFooter.Name = "PageFooter"
         '
         'SeisanRegistReport
         '

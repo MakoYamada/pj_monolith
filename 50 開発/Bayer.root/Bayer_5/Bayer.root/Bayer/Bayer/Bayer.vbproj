@@ -622,6 +622,13 @@
       <DependentUpon>TaxiSeisanAutoCsv.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SeisanshoAuto.aspx.designer.vb">
+      <DependentUpon>SeisanshoAuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeisanshoAuto.aspx.vb">
+      <DependentUpon>SeisanshoAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DrReport.resx">
@@ -770,6 +777,7 @@
     <Content Include="NewDrCsv.aspx" />
     <Content Include="TaxiSeisanAuto.aspx" />
     <Content Include="TaxiSeisanAutoCsv.aspx" />
+    <Content Include="SeisanshoAuto.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
