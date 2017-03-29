@@ -16,6 +16,51 @@ Option Explicit On
 Partial Public Class TaxiSeisanAutoCsv
 
     '''<summary>
+    '''TrButton1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrButton1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''BtnAllSelect1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnAllSelect1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnAllClear1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnAllClear1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnDelete1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDelete1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''LabelNoData コントロール。
     '''</summary>
     '''<remarks>
@@ -59,6 +104,51 @@ Partial Public Class TaxiSeisanAutoCsv
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''TrButton2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrButton2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''BtnAllSelect2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnAllSelect2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnAllClear2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnAllClear2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnDelete2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDelete2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

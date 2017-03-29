@@ -123,6 +123,15 @@ Partial Public Class NewDrCsv
         End Try
         objRs.close()
         objCom.Cancel()
+
+        If i = 0 Then
+            Me.LabelCount.Visible = False
+            Me.LabelNoData.Visible = True
+        Else
+            Me.LabelCount.Visible = True
+            Me.LabelNoData.Visible = False
+            Me.LabelCount.Text = i.ToString & "件"
+        End If
         Return wFlag
     End Function
 

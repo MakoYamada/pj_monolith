@@ -136,6 +136,10 @@ Public Class MyModule
             AddChkArray(cnt, chkArray, URL.MRRyohiCsv)
             AddChkArray(cnt, chkArray, URL.TaxiJissekiCsv)
             AddChkArray(cnt, chkArray, URL.TaxiJissekiOTH)
+            AddChkArray(cnt, chkArray, URL.TaxiSeisanAuto)
+            AddChkArray(cnt, chkArray, URL.TaxiSeisanAutoCsv)
+            AddChkArray(cnt, chkArray, URL.SeisanshoAuto)
+            AddChkArray(cnt, chkArray, URL.TaxiSeisanToNozomi)
 
             Return IsReferrer(referreUrl, chkArray)
 

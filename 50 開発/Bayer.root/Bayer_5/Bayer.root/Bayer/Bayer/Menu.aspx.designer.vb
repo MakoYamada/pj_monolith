@@ -61,6 +61,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnNewKotsuCsv As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnNewKotsuDaily コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnNewKotsuDaily As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnKoenkaiList コントロール。
     '''</summary>
     '''<remarks>

@@ -196,6 +196,11 @@ Partial Public Class Menu1
 
     '[新着 交通・宿泊CSV出力]
     Private Sub BtnNewKotsuCsv_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnNewKotsuCsv.Click
+        Call OutputDrCsv()
+    End Sub
+
+    '[新着 交通・宿泊CSV出力（日次バッチ出力結果ダウンロード）]
+    Protected Sub BtnNewKotsuDaily_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNewKotsuDaily.Click
         Response.Redirect(URL.NewDrCsv)
     End Sub
 

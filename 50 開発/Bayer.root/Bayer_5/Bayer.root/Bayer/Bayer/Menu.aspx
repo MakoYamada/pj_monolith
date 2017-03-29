@@ -37,6 +37,8 @@
                                 CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnNewKotsuDaily" runat="server" Text="【新着(日次)】交通・手配CSV" Width="200px" 
+                                CssClass="Button" />
 						</td>
 					</tr>
 					<tr>

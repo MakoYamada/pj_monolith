@@ -13,11 +13,11 @@ Partial Public Class TaxiSeisanAutoCsv
 
     'グリッド列    Private Enum CellIndex
         ROW_NO
+        DATA_CHK
         FILE_NAME
         INS_DATE
         FILE_TYPE
         BUTTON1
-        BUTTON2
     End Enum
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -124,6 +124,19 @@ Partial Public Class TaxiSeisanAutoCsv
         End Try
         objRs.close()
         objCom.Cancel()
+
+        If i = 0 Then
+            Me.TrButton1.Visible = False
+            Me.TrButton2.Visible = False
+            Me.LabelCount.Visible = False
+            Me.LabelNoData.Visible = True
+        Else
+            Me.TrButton1.Visible = True
+            Me.TrButton2.Visible = True
+            Me.LabelCount.Visible = True
+            Me.LabelNoData.Visible = False
+            Me.LabelCount.Text = i.ToString & "件"
+        End If
         Return wFlag
     End Function
 
@@ -232,17 +245,17 @@ Partial Public Class TaxiSeisanAutoCsv
                 Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
                 Call DLCsvFile(Joken)
 
-            Case "Delete"
-                '精算番号表CSV削除
-                Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                Call DeleteTBL_FILE(Joken)
+                'Case "Delete"
+                '    '精算番号表CSV削除
+                '    Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+                '    Call DeleteTBL_FILE(Joken)
 
-                '精算番号表CSV再表示
-                Call SetForm()
+                '    '精算番号表CSV再表示
+                '    Call SetForm()
         End Select
     End Sub
 
-    '[新着一覧CSVファイルダウンロード]
+    '[精算番号表CSVファイルダウンロード]
     Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct)
         Dim wFILE(0) As TableDef.TBL_FILE.DataStruct
 
@@ -257,7 +270,7 @@ Partial Public Class TaxiSeisanAutoCsv
         Response.End()
     End Sub
 
-    '[新着一覧CSVファイル削除]
+    '[精算番号表CSVファイル削除]
     Private Function DeleteTBL_FILE(ByVal Joken As TableDef.Joken.DataStruct) As Boolean
         Dim strSQL As String = ""
 
@@ -283,4 +296,48 @@ Partial Public Class TaxiSeisanAutoCsv
 
         Return True
     End Function
+
+    '[削除]
+    Private Sub BtnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDelete1.Click, BtnDelete2.Click
+        Dim i As Integer = 0
+
+        For Each row As GridViewRow In Me.GrvList.Rows
+            If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then
+                '精算番号表CSV削除
+                Joken.FILE_NAME = DirectCast(GrvList.Rows(i).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+                Call DeleteTBL_FILE(Joken)
+            End If
+            i += 1
+        Next
+
+        '精算番号表CSV再表示
+        Call SetForm()
+    End Sub
+
+    '[全選択]
+    Protected Sub BtnAllSelect_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnAllSelect1.Click, BtnAllSelect2.Click
+
+        For i As Integer = 0 To GrvList.Rows.Count - 1
+            Dim cell As TableCell = GrvList.Rows(i).Cells(CellIndex.DATA_CHK)
+            Dim c As CheckBox = cell.FindControl("chkDelete")
+            c.Checked = True
+        Next
+
+    End Sub
+
+    '[全解除]
+    Private Sub BtnAllClear_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAllClear1.Click, BtnAllClear2.Click
+
+        For i As Integer = 0 To GrvList.Rows.Count - 1
+            Dim cell As TableCell = GrvList.Rows(i).Cells(CellIndex.DATA_CHK)
+            Dim c As CheckBox = cell.FindControl("chkDelete")
+            c.Checked = False
+        Next
+
+    End Sub
+
+    '[戻る]
+    Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
+        Response.Redirect(URL.TaxiMenu)
+    End Sub
 End Class
