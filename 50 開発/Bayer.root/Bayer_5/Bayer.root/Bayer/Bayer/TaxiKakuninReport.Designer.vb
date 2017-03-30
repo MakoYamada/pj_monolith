@@ -6411,14 +6411,14 @@ Partial Public Class TaxiKakuninReport
         '
         'LblMaisuu
         '
-        Me.LblMaisuu.Height = 0.4271654!
+        Me.LblMaisuu.Height = 0.3937008!
         Me.LblMaisuu.HyperLink = Nothing
-        Me.LblMaisuu.Left = 0.4488189!
+        Me.LblMaisuu.Left = 0.5307087!
         Me.LblMaisuu.Name = "LblMaisuu"
         Me.LblMaisuu.Style = "font-size: 14pt; text-align: left; vertical-align: bottom"
         Me.LblMaisuu.Text = "枚"
         Me.LblMaisuu.Top = 0.0!
-        Me.LblMaisuu.Width = 0.5834652!
+        Me.LblMaisuu.Width = 0.3129922!
         '
         'TaxiKakuninReport
         '

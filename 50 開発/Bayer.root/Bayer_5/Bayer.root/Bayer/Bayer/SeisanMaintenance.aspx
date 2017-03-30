@@ -60,7 +60,7 @@
                                     </td>
                                     <td nowrap="nowrap" align="left" colspan="5">
                                         <asp:TextBox ID="SEISANSHO_URL" runat="server"  BorderStyle="None" 
-                                            Width="718px" ReadOnly="True" TabIndex="-1"></asp:TextBox>
+                                            Width="801px" ReadOnly="True" TabIndex="-1"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
@@ -69,7 +69,7 @@
                                     </td>
                                     <td nowrap="nowrap" align="left" colspan="5">
                                         <asp:TextBox ID="TAXI_TICKET_URL" runat="server" BorderStyle="None" 
-                                            Width="480px" ReadOnly="True" TabIndex="-1"></asp:TextBox>
+                                            Width="800px" ReadOnly="True" TabIndex="-1"></asp:TextBox>
                                     </td>
                                     <%--<td nowrap="nowrap" align="left" class="TdTitleHeader" style="width:100px;">
                                         精算完了
