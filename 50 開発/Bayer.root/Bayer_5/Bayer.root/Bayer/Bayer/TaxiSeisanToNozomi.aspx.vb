@@ -4,7 +4,7 @@ Imports System.IO
 Partial Public Class TaxiSeisanToNozomi
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 13 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 3 'ファイルの項目数
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "0"
     Private HAKKO_TESURYO As String = "0"
@@ -77,7 +77,7 @@ Partial Public Class TaxiSeisanToNozomi
             Exit Sub
         End Try
 
-        'CSVファイルをタクチケTBLへImport
+        'CSVファイルを請求TBLへImport
         Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
         workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
@@ -139,14 +139,14 @@ Partial Public Class TaxiSeisanToNozomi
 
                     '請求データ存在チェック
                     Dim updCnt As Integer = 0
-                    If getseikyudata(TBL_SEISAN_TKTNO.TKT_NO) Then
-                        updCnt = UpdateSeisanTktno(ErrorMessage)
+                    If GetSeikyu(fileData(COL_NO.KOUENKAI_NO), fileData(COL_NO.SEIKYU_NO_TOPTOUR).PadLeft(14, "0")) Then
+                        '自動精算対象タクチケテーブルデータ項目セット()
+                        TBL_SEIKYU = SetSeikyuItem(fileData)
+                        updCnt = UpdateSeikyu(ErrorMessage)
                     Else
-                        updCnt = InsertSeisanTktno(ErrorMessage)
+                        Me.LabelErrorMessage.Text &= "講演会番号：" & fileData(COL_NO.KOUENKAI_NO) & "  精算番号：" & fileData(COL_NO.SEIKYU_NO_TOPTOUR) _
+                            & "は請求テーブルに登録されていません"
                     End If
-
-                    'タクチケ発行テーブル更新
-                    insCnt += UpdateSeikyu(fileData, strFileName, rowCnt, ErrorMessage)
 
                 End If
             End If
@@ -195,12 +195,12 @@ Partial Public Class TaxiSeisanToNozomi
                 ErrStr &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
             End If
 
-            If fileData(COL_NO.TKT_NO).Trim.Equals(String.Empty) Then
-                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_NO & "がセットされていません。" & vbNewLine
+            If fileData(COL_NO.KOUENKAI_NO).Trim.Equals(String.Empty) Then
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.KOUENKAI_NO & "がセットされていません。" & vbNewLine
             End If
 
-            If fileData(COL_NO.TKT_ENTA).Trim = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka Then
-                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.TKT_ENTA & "が｢N｣のため、取込できません。" & vbNewLine
+            If fileData(COL_NO.SEIKYU_NO_TOPTOUR).Trim.Equals(String.Empty) Then
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.SEIKYU_NO_TOPTOUR & "がセットされていません。" & vbNewLine
             End If
 
         Catch ex As Exception
@@ -220,30 +220,21 @@ Partial Public Class TaxiSeisanToNozomi
 
     End Function
 
-    Private Function CheckExists(ByVal filedata As String()) As Boolean
-        Dim wFlag As Boolean = False
-        Dim strSQL As String = ""
-        Dim RsData As System.Data.SqlClient.SqlDataReader
+    '送信対象CSV→請求データの送信フラグセット
+    Private Function SetSeikyuItem(ByVal filedata() As String) As TableDef.TBL_SEIKYU.DataStruct
 
-        strSQL = SQL.TBL_SEISAN_TKTNO.byTKT_NO(filedata(COL_NO.TKT_NO))
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        If RsData.Read() Then
-            wFlag = True
-            TBL_SEISAN_TKTNO = AppModule.SetRsData(RsData, TBL_SEISAN_TKTNO)
-        End If
-        RsData.Close()
+        TBL_SEIKYU.SEND_FLAG = AppConst.SEND_FLAG.Code.Taisho
 
-        Return wFlag
+        Return TBL_SEIKYU
     End Function
 
-    'データ登録
-    Private Function InsertSeisanTktno(ByRef ErrorMessage As String) As Integer
+    Private Function UpdateSeikyu(ByRef ErrorMessage As String) As Integer
 
         Dim strSQL As String = ""
         Dim insCnt As Integer = 0
 
         Try
-            strSQL = SQL.TBL_SEISAN_TKTNO.Insert(TBL_SEISAN_TKTNO)
+            strSQL = SQL.TBL_SEIKYU.Update_SEND_FLAG(TBL_SEIKYU)
             insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
             MyBase.Commit()
             Return True
@@ -252,90 +243,12 @@ Partial Public Class TaxiSeisanToNozomi
             MyBase.Rollback()
 
             'ログ登録
-            ErrorMessage &= "[自動精算対象タクチケ番号追加失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
+            ErrorMessage &= "[請求テーブル送信フラグ更新失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
             Return False
         End Try
 
         '登録成功件数を返す
         Return insCnt
-
-    End Function
-    Private Function UpdateSeisanTktno(ByRef ErrorMessage As String) As Integer
-
-        Dim strSQL As String = ""
-        Dim insCnt As Integer = 0
-
-        Try
-            strSQL = SQL.TBL_SEISAN_TKTNO.Update(TBL_SEISAN_TKTNO)
-            insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-            MyBase.Commit()
-            Return True
-
-        Catch ex As Exception
-            MyBase.Rollback()
-
-            'ログ登録
-            ErrorMessage &= "[自動精算対象タクチケ番号更新失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
-            Return False
-        End Try
-
-        '登録成功件数を返す
-        Return insCnt
-
-    End Function
-
-    Private Function UpdateSeikyu(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As Integer
-
-        Dim strSQL As String = ""
-        Dim insCnt As Integer = 0
-        Dim TBL_TAITICKET_HAKKO_UPD As TableDef.TBL_TAXITICKET_HAKKO.DataStruct = Nothing
-
-        TBL_TAITICKET_HAKKO_UPD = SetUpdateData(fileData, strFileName, rowCnt, ErrorMessage)
-        Try
-            strSQL = SQL.TBL_TAXITICKET_HAKKO.Update(TBL_TAITICKET_HAKKO_UPD)
-            insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
-            MyBase.Commit()
-            Return True
-
-        Catch ex As Exception
-            MyBase.Rollback()
-
-            'ログ登録
-            ErrorMessage &= "[データ取込失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
-            Return False
-        End Try
-
-        '登録成功件数を返す
-        Return insCnt
-    End Function
-
-    '登録内容をセットする
-    Private Function SetUpdateData(ByVal fileData As String(), ByVal strFileName As String, ByVal rowCnt As Long, ByRef ErrorMessage As String) As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
-        Try
-            'タクチケ発行テーブル更新対象レコード取得
-            If GetSeikyu(fileData(COL_NO.TKT_NO)) Then
-                '未決登録済みのタクチケは取込エラーとする。
-                If TBL_TAXITICKET_HAKKO.TKT_MIKETSU = CmnConst.Flag.On Then
-                    Throw New Exception("未決登録済のため、精算データ取込できません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
-                Else
-
-                    '実績CSVの内容をタクチケ発行テーブルの項目へセット
-                    Call SetItem(fileData)
-
-                    '交通宿泊テーブルに未登録の場合はエラー
-                    If Not GetKotsuhotel(TBL_TAXITICKET_HAKKO.KOUENKAI_NO, TBL_TAXITICKET_HAKKO.SANKASHA_ID) Then
-                        Throw New Exception("交通宿泊テーブルに登録されていません。[会合番号:" & TBL_TAXITICKET_HAKKO.KOUENKAI_NO & ",参加者番号:" & TBL_TAXITICKET_HAKKO.SANKASHA_ID & "]")
-                    End If
-                End If
-            Else
-                Throw New Exception("タクチケ発行テーブルに登録されていません。[タクチケ番号:" & fileData(COL_NO.TKT_NO) & "]")
-            End If
-        Catch ex As Exception
-            Dim strErrMsg As String = strFileName & "【" & rowCnt & "行目】" & ex.Message
-            ErrorMessage &= strErrMsg & vbNewLine
-        End Try
-
-        Return TBL_TAXITICKET_HAKKO
 
     End Function
 
@@ -349,7 +262,7 @@ Partial Public Class TaxiSeisanToNozomi
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
             wFlag = True
-            TBL_TAXITICKET_HAKKO = AppModule.SetRsData(RsData, TBL_TAXITICKET_HAKKO)
+            TBL_SEIKYU = AppModule.SetRsData(RsData, TBL_SEIKYU)
         End If
         RsData.Close()
 

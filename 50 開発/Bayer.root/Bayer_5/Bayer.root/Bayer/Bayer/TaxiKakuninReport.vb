@@ -19,6 +19,13 @@ Public Class TaxiKakuninReport
         End Set
     End Property
 
+    Private pTAXI_MAISUU As String
+    Public WriteOnly Property TAXI_MAISUU() As String
+        Set(ByVal value As String)
+            pTAXI_MAISUU = value
+        End Set
+    End Property
+
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '項目の編集
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
@@ -169,6 +176,7 @@ Public Class TaxiKakuninReport
     End Sub
 
     Private Sub PageFooter_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageFooter.Format
+        Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
         Me.PRINT_USER.Text = pMS_USER.USER_NAME
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
     End Sub

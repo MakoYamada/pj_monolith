@@ -485,6 +485,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label1 = New DataDynamics.ActiveReports.Label
         Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
         Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
+        Me.ANS_TAXI_MAISUU = New DataDynamics.ActiveReports.TextBox
+        Me.LblMaisuu = New DataDynamics.ActiveReports.Label
         CType(Me.Label198, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label201, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -844,6 +846,8 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ANS_TAXI_MAISUU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LblMaisuu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -6349,7 +6353,7 @@ Partial Public Class TaxiKakuninReport
         '
         'PageFooter
         '
-        Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label2, Me.Label1, Me.PRINT_DATE, Me.PRINT_USER})
+        Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label2, Me.Label1, Me.PRINT_DATE, Me.PRINT_USER, Me.ANS_TAXI_MAISUU, Me.LblMaisuu})
         Me.PageFooter.Height = 0.4271984!
         Me.PageFooter.Name = "PageFooter"
         '
@@ -6394,6 +6398,27 @@ Partial Public Class TaxiKakuninReport
         Me.PRINT_USER.Text = Nothing
         Me.PRINT_USER.Top = 0.2070864!
         Me.PRINT_USER.Width = 1.364567!
+        '
+        'ANS_TAXI_MAISUU
+        '
+        Me.ANS_TAXI_MAISUU.Height = 0.4271654!
+        Me.ANS_TAXI_MAISUU.Left = 0.0!
+        Me.ANS_TAXI_MAISUU.Name = "ANS_TAXI_MAISUU"
+        Me.ANS_TAXI_MAISUU.Style = "font-size: 24pt; text-align: right; vertical-align: bottom"
+        Me.ANS_TAXI_MAISUU.Text = Nothing
+        Me.ANS_TAXI_MAISUU.Top = 0.0!
+        Me.ANS_TAXI_MAISUU.Width = 0.4488189!
+        '
+        'LblMaisuu
+        '
+        Me.LblMaisuu.Height = 0.4271654!
+        Me.LblMaisuu.HyperLink = Nothing
+        Me.LblMaisuu.Left = 0.4488189!
+        Me.LblMaisuu.Name = "LblMaisuu"
+        Me.LblMaisuu.Style = "font-size: 14pt; text-align: left; vertical-align: bottom"
+        Me.LblMaisuu.Text = "枚"
+        Me.LblMaisuu.Top = 0.0!
+        Me.LblMaisuu.Width = 0.5834652!
         '
         'TaxiKakuninReport
         '
@@ -6768,6 +6793,8 @@ Partial Public Class TaxiKakuninReport
         CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PRINT_USER, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ANS_TAXI_MAISUU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LblMaisuu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -7235,4 +7262,6 @@ Partial Public Class TaxiKakuninReport
     Private WithEvents MR_SEND_SAKI_OTHER As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line12 As DataDynamics.ActiveReports.Line
     Private WithEvents Line31 As DataDynamics.ActiveReports.Line
+    Private WithEvents ANS_TAXI_MAISUU As DataDynamics.ActiveReports.TextBox
+    Private WithEvents LblMaisuu As DataDynamics.ActiveReports.Label
 End Class

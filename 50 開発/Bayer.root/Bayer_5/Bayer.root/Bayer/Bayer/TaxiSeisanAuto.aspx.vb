@@ -288,22 +288,6 @@ Partial Public Class TaxiSeisanAuto
 
     End Function
 
-    Private Function CheckExists(ByVal filedata As String()) As Boolean
-        Dim wFlag As Boolean = False
-        Dim strSQL As String = ""
-        Dim RsData As System.Data.SqlClient.SqlDataReader
-
-        strSQL = SQL.TBL_SEISAN_TKTNO.byTKT_NO(filedata(COL_NO.TKT_NO))
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
-        If RsData.Read() Then
-            wFlag = True
-            TBL_SEISAN_TKTNO = AppModule.SetRsData(RsData, TBL_SEISAN_TKTNO)
-        End If
-        RsData.Close()
-
-        Return wFlag
-    End Function
-
     'データ登録
     Private Function InsertSeisanTktno(ByRef ErrorMessage As String) As Integer
 

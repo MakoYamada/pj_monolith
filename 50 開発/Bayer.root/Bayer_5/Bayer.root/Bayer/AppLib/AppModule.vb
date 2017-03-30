@@ -6448,6 +6448,14 @@ Public Class AppModule
             control.Text = Math.Ceiling(Double.Parse(ANS_TAXI_TESURYO) / Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn))).ToString
         End If
     End Sub
+    Public Shared Sub SetForm_ANS_TAXI_MAISUU(ByVal ANS_TAXI_TESURYO As String, ByRef pANS_TAXI_MAISUU As String, ByVal FROM_DATE As String, ByVal dbConn As System.Data.SqlClient.SqlConnection)
+        If Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn)) = 0 OrElse Val(ANS_TAXI_TESURYO) = 0 Then
+            pANS_TAXI_MAISUU = "0"
+        Else
+            'タクチケ発券手数料÷タクチケ発券手数料単価を切り上げ
+            pANS_TAXI_MAISUU = Math.Ceiling(Double.Parse(ANS_TAXI_TESURYO) / Double.Parse(GetName_TAXI_TESURYO(FROM_DATE, dbConn))).ToString
+        End If
+    End Sub
 
     '登録管理手数料
     Public Shared Sub SetForm_TOUROKUKANRI_FEE(ByVal TOUROKUKANRI_FEE As String, ByRef control As TextBox)
