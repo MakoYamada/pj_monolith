@@ -128,6 +128,7 @@ Partial Public Class SeisanRegist
         CmnModule.SetIme(Me.SEISANSHO_URL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.TAXI_TICKET_URL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.SEISAN_KANRYO, CmnModule.ImeType.Active)
+        CmnModule.SetIme(Me.SEISAN_DANTAI, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_JR, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL, CmnModule.ImeType.Disabled)
         CmnModule.SetIme(Me.MR_HOTEL_TOZEI, CmnModule.ImeType.Disabled)
