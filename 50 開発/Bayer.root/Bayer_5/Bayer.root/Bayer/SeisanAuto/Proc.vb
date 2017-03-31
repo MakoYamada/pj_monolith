@@ -68,6 +68,9 @@ Public Class Proc
         '総合精算書出力
         Call PrintSeisanRegistReport(W_SEIKYU)
 
+        'タクチケ台帳CSV出力
+        dCall(TaxiMeisaiCsv(W_SEIKYU))
+
         MyBase.BeginTransaction()
 
     End Sub
@@ -181,6 +184,10 @@ Public Class Proc
                                             & W_FROMDATE & "/" _
                                             & W_TAXITICKET_HAKKO.KOUENKAI_NO & System.Configuration.ConfigurationManager.AppSettings("TaxiTicketURL_FileName")
                 W_SEIKYU.UPDATE_USER = Me.batchID
+
+                '金額計算
+                Call CalculateKingaku(W_SEIKYU)
+
                 strSQL = SQL.TBL_SEIKYU.Update_KINGAKU(W_SEIKYU)
 
                 Try
@@ -264,6 +271,36 @@ Public Class Proc
 
         Return wSEISAN_NO.ToString.PadLeft(14, "0"c)
     End Function
+
+    '各種金額計算
+    Private Sub CalculateKingaku(ByRef P_SEIKYU As TableDef.TBL_SEIKYU.DataStruct)
+
+        Dim wTOTAL_TF As Long = 0
+        Dim wTOTAL_T As Long = 0
+        Dim wMR_KINGAKU As Long = 0
+        Dim wTAXI_ENTA As Long = 0
+
+        Try
+            '41120200
+            wTOTAL_TF = CmnModule.DbVal_Kingaku(P_SEIKYU.TAXI_TF) + _
+                         CmnModule.DbVal_Kingaku(P_SEIKYU.TAXI_SEISAN_TF)
+
+            '41120200
+            wTOTAL_T = CmnModule.DbVal_Kingaku(P_SEIKYU.TAXI_T) + _
+                        CmnModule.DbVal_Kingaku(P_SEIKYU.TAXI_SEISAN_T)
+
+        Catch ex As Exception
+        End Try
+
+        '非課税金額
+        P_SEIKYU.KEI_41120200_TF = wTOTAL_TF.ToString
+        P_SEIKYU.KEI_TF = wTOTAL_TF.ToString
+
+        '課税金額
+        P_SEIKYU.KEI_41120200_T = wTOTAL_T.ToString
+        P_SEIKYU.KEI_T = wTOTAL_T.ToString
+
+    End Sub
 
     '総合精算書印刷
     Private Sub PrintSeisanRegistReport(ByVal P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct)
