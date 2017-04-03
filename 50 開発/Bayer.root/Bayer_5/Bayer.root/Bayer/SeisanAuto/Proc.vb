@@ -419,7 +419,7 @@ Public Class Proc
 
         '会合情報
         strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(KOUENKAI_NO)
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        RsData = CmnDbBatch.Read(strSQL, Me.DbConnection)
         If RsData.HasRows = False Then
             Return Nothing
         Else
@@ -433,7 +433,7 @@ Public Class Proc
         Joken.FROM_DATE = ""
         Joken.TKT_ENTA = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.ALL
         strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiMeisaiCsv(Joken)
-        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        RsData = CmnDbBatch.Read(strSQL, Me.DbConnection)
         ReDim TBL_TAXITICKET_HAKKO(wCnt)
         While RsData.Read()
             wFlag = True
@@ -483,7 +483,7 @@ Public Class Proc
         For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
             If Trim(TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID) <> "" AndAlso Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO) <> 0 Then
                 strSQL = SQL.TBL_KOTSUHOTEL.byTKT_NO_TKT_LINE_NO(TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID, TBL_TAXITICKET_HAKKO(wCnt).TKT_NO, TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
-                RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+                RsData = CmnDbBatch.Read(strSQL, Me.DbConnection)
                 If RsData.HasRows Then
                     RsData.Read()
                     TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
