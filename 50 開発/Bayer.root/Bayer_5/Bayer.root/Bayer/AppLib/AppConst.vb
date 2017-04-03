@@ -40,11 +40,13 @@ Public Class AppConst
             Public Const NewDrCsv As String = "0"
             Public Const TaxiSeisan As String = "1"
             Public Const SougouSeisan As String = "2"
+            Public Const TaxiMeisai As String = "3"
         End Class
         Public Class Name
             Public Const NewDrCsv As String = "【新着】交通・手配CSV"
             Public Const TaxiSeisan As String = "精算番号表"
             Public Const SougouSeisan As String = "総合精算書"
+            Public Const TaxiMeisai As String = "タクチケ台帳"
         End Class
     End Class
     '20170317 Add End
