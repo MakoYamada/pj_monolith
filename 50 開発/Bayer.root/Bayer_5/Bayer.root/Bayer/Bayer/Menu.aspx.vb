@@ -204,6 +204,11 @@ Partial Public Class Menu1
         Response.Redirect(URL.NewDrCsv)
     End Sub
 
+    '[発送日一括設定]
+    Protected Sub BtnSetTicketSend_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSetTicketSend.Click
+        Response.Redirect(URL.SetTicketSend)
+    End Sub
+
     '[検索 交通・宿泊]
     Protected Sub BtnKotsuList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnKotsuList.Click
         Session.Item(SessionDef.DATA_MAINTENANCE) = CmnConst.Flag.Off

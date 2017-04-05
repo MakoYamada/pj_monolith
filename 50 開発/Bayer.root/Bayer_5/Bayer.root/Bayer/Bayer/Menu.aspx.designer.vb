@@ -52,6 +52,15 @@ Partial Public Class Menu1
     Protected WithEvents BtnNewBentoList As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnSetTicketSend コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnSetTicketSend As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnNewKotsuCsv コントロール。
     '''</summary>
     '''<remarks>

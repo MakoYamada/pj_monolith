@@ -12,6 +12,7 @@ Public Class Proc
 
     Private Const pbatchID As String = "SeisanAuto" 'バッチID
     Private Const pDelimiter As String = ","
+    Private MS_CODE() As TableDef.MS_CODE.DataStruct
     Private TBL_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
     Private CSV_TAXI_TICKET_HAKKO() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct
     Private Joken As TableDef.Joken.DataStruct
@@ -347,7 +348,7 @@ Public Class Proc
             Dim wFullPath As String = System.IO.Path.Combine(My.Settings.PATH_WORK, reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF")
             pdf.Export(rpt.Document, wFullPath)
 
-            '書類テーブル登録
+            '書類テーブル登録            
             Dim W_FILE As New TableDef.TBL_FILE.DataStruct
             Dim wFileName As String = reportJoken.KOUENKAI_NO & "_" & reportJoken.SEIKYU_NO_TOPTOUR & ".PDF"
             Call GetValueShorui(wFileName, wFullPath, W_FILE)
@@ -360,6 +361,10 @@ Public Class Proc
 
     Private Sub TaxiMeisaiCsv(ByVal P_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct)
 
+        'コードマスターデータ取得
+        If Not GetMstData() Then Exit Sub
+
+        'タクチケ台帳出力
         For i As Integer = LBound(P_SEIKYU) To UBound(P_SEIKYU)
 
             Dim wNow As String = Now.ToString("yyyyMMddHHmmss")
@@ -369,12 +374,11 @@ Public Class Proc
             Dim CsvData() As TableDef.TaxiMeisaiCsv.DataStruct
             CsvData = GetCsvData(P_SEIKYU(i).KOUENKAI_NO, P_SEIKYU(i).SEISAN_YM, P_SEIKYU(i).FROM_DATE)
 
+            If File.Exists(strFileFull) Then
+                File.Delete(strFileFull)
+            End If
+
             If Not CsvData Is Nothing Then
-                'エラー
-                If File.Exists(strFileFull) Then
-                    File.Delete(strFileFull)
-                End If
-            Else
                 wCsvStr = CreateCsv(CsvData)
 
                 '出力ファイル作成
@@ -585,7 +589,7 @@ Public Class Proc
                     CsvData(wCnt).MR_AREA = TBL_KOTSUHOTEL.MR_AREA
                     CsvData(wCnt).MR_EIGYOSHO = TBL_KOTSUHOTEL.MR_EIGYOSHO
                     CsvData(wCnt).MR_NAME = TBL_KOTSUHOTEL.MR_NAME
-                    CsvData(wCnt).DR_YAKUWARI = AppModule.GetName_DR_YAKUWARI(TBL_KOTSUHOTEL.DR_YAKUWARI)
+                    CsvData(wCnt).DR_YAKUWARI = GetName_DR_YAKUWARI(TBL_KOTSUHOTEL.DR_YAKUWARI)
                     CsvData(wCnt).WBS_ELEMENT = AppModule.GetName_WBS_ELEMENT(TBL_KOTSUHOTEL.WBS_ELEMENT)
                     CsvData(wCnt).REQ_TAXI_NOTE = AppModule.GetName_REQ_TAXI_NOTE(TBL_KOTSUHOTEL.REQ_TAXI_NOTE)
                     CsvData(wCnt).ANS_TAXI_NOTE = AppModule.GetName_ANS_TAXI_NOTE(TBL_KOTSUHOTEL.ANS_TAXI_NOTE)
@@ -646,6 +650,40 @@ Public Class Proc
         Else
             Return ""
         End If
+    End Function
+
+    '参加者役割
+    Private Function GetName_DR_YAKUWARI(ByVal DR_YAKUWARI As String) As String
+        Dim wStr As String = ""
+        For wCnt As Integer = 0 To MS_CODE.Count - 1
+            If MS_CODE(wCnt).CODE = AppConst.MS_CODE.DR_YAKUWARI AndAlso MS_CODE(wCnt).DISP_VALUE = DR_YAKUWARI Then
+                wStr = MS_CODE(wCnt).DISP_TEXT
+                Exit For
+            End If
+        Next
+        Return wStr
+    End Function
+
+    Private Function GetMstData() As Boolean
+        Dim wFlag As Boolean = False
+        Dim wCnt As Integer = 0
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        ReDim MS_CODE(wCnt)
+        strSQL = SQL.MS_CODE.AllData
+        RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection)
+        While RsData.Read()
+            wFlag = True
+
+            ReDim Preserve MS_CODE(wCnt)
+            MS_CODE(wCnt) = AppModule.SetRsData(RsData, MS_CODE(wCnt))
+
+            wCnt += 1
+        End While
+        RsData.Close()
+
+        Return wFlag
     End Function
 
     'csv出力

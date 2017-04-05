@@ -85,6 +85,17 @@
 							<asp:Button ID="BtnTaxiSeisanToNozomi" runat="server" Text="Nozomi送信対象精算データ取込" Width="200px" CssClass="Button" />
 					    </td>
 					</tr>
+					<tr valign="top">
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiMeisaiCsv2" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					    <td>
+					    </td>
+					</tr>
 				</table>
 			</td>
 		</tr>

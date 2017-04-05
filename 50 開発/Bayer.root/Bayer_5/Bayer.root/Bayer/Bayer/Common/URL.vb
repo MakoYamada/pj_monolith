@@ -72,5 +72,6 @@ Public Class URL
     Public Shared TaxiSeisanAutoCsv As String = WebConfig.Site.URL & "TaxiSeisanAutoCsv.aspx"
     Public Shared SeisanshoAuto As String = WebConfig.Site.URL & "SeisanshoAuto.aspx"
     Public Shared TaxiSeisanToNozomi As String = WebConfig.Site.URL & "TaxiSeisanToNozomi.aspx"
+    Public Shared SetTicketSend As String = WebConfig.Site.URL & "SetTicketSend.aspx"
     '@@@ 20170317 Add End
 End Class

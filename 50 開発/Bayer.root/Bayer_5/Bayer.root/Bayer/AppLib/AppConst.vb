@@ -680,6 +680,7 @@ Public Class AppConst
                     Public Const TaxiSeisanMikanryou As String = "精算未完了CSV"
                     Public Const TaxiMiketsu As String = "タクチケ未決登録"
                     Public Const TaxiMeisaiCsv As String = "タクチケ管理台帳"
+                    Public Const SetTicketSend As String = "発送日自動セット"
                 End Class
                 Public Enum GamenType
                     KouenkaiRegist
@@ -702,6 +703,7 @@ Public Class AppConst
                     TaxiSeisanMikanryou
                     TaxiMiketsu
                     TaxiMeisaiCsv
+                    SetTicketSend
                 End Enum
             End Class
         End Class

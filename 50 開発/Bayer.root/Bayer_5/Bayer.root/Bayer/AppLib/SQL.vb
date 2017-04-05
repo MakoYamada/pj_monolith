@@ -1374,11 +1374,11 @@ Public Class SQL
                 strSQL &= TableDef.TBL_SEIKYU.Column.SEND_FLAG
                 strSQL &= ",N'')"
 
-                If Joken.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi Then
-                    strSQL &= " =N''"
-                Else
-                    strSQL &= " =N'" & CmnDb.SqlString(Joken.SEND_FLAG) & "'"
-                End If
+                'If Joken.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi Then
+                '    strSQL &= " =N''"
+                'Else
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.SEND_FLAG) & "'"
+                'End If
             End If
 
             If Trim(Joken.BU) <> "" Then
@@ -6551,6 +6551,23 @@ Public Class SQL
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL) & "'"
             strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.DR_MPID & "=N'" & whereData(TableDef.TBL_KOTSUHOTEL.Column.DR_MPID) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update_ANS_TICKET_SEND_DAY(ByVal TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_KOTSUHOTEL SET"
+            strSQL &= " " & TableDef.TBL_KOTSUHOTEL.Column.ANS_TICKET_SEND_DAY & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TICKET_SEND_DAY) & "'"
+            strSQL &= " " & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_KOTSUHOTEL.Column.SALEFORCE_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SALEFORCE_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.SANKASHA_ID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SANKASHA_ID) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.KOUENKAI_NO) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.TIME_STAMP_BYL & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.TIME_STAMP_BYL) & "'"
+            strSQL &= " AND " & TableDef.TBL_KOTSUHOTEL.Column.DR_MPID & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.DR_MPID) & "'"
 
             Return strSQL
         End Function

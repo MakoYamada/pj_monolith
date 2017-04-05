@@ -24,10 +24,10 @@
         Public Shared JISSEKI_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("JISSEKI_CSV_BK")
         Public Shared SCAN_CSV As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV")
         Public Shared SCAN_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SCAN_CSV_BK")
-        'Public Shared SEISAN_CSV As String = System.Configuration.ConfigurationManager.AppSettings("SEISAN_CSV")
-        'Public Shared SEISAN_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SEISAN_CSV_BK")
         Public Shared SEISAN_AUTO_CSV As String = System.Configuration.ConfigurationManager.AppSettings("SEISAN_AUTO_CSV")
         Public Shared SEISAN_AUTO_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SEISAN_AUTO_CSV_BK")
+        Public Shared TICKET_SEND_CSV As String = System.Configuration.ConfigurationManager.AppSettings("TICKET_SEND_CSV")
+        Public Shared TICKET_SEND_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("TICKET_SEND_CSV_BK")
 
         'チケット類送付状
         Public Shared AISATSU1 As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU1")

@@ -29,6 +29,8 @@
 					</tr>
 					<tr valign="top">
 						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnSetTicketSend" runat="server" Text="発送日一括設定" Width="200px" 
+                                CssClass="Button" />
 						</td>
 						<td align="center" style="width: 210px;">
 						</td>
