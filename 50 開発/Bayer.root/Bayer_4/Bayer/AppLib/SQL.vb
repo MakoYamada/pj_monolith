@@ -1374,11 +1374,11 @@ Public Class SQL
                 strSQL &= TableDef.TBL_SEIKYU.Column.SEND_FLAG
                 strSQL &= ",N'')"
 
-                If Joken.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi Then
-                    strSQL &= " =N''"
-                Else
-                    strSQL &= " =N'" & CmnDb.SqlString(Joken.SEND_FLAG) & "'"
-                End If
+                'If Joken.SEND_FLAG = AppConst.SEND_FLAG.Code.Mi Then
+                '    strSQL &= " =N''"
+                'Else
+                strSQL &= " =N'" & CmnDb.SqlString(Joken.SEND_FLAG) & "'"
+                'End If
             End If
 
             If Trim(Joken.BU) <> "" Then
