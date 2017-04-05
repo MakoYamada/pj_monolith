@@ -8,7 +8,7 @@
 			<td align="left">
                 <table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse;" bordercolor="#4f5b61" width="900px">
 					<tr style="width:100%">
-						<td align="center" style="width:30%" class="TdTitle ">
+						<td align="left" style="width:15%" class="TdTitle ">
 						    取込ファイル
 						</td>
 						<td align="left" class="TdItem">
@@ -20,7 +20,7 @@
 						    発送年月日
 						</td>
 						<td align="left" class="TdItem">
-				            <asp:TextBox ID="ANS_TICKET_SEND_DAY" runat="server" Width="62px" MaxLength="8"></asp:TextBox>
+				            <asp:TextBox ID="ANS_TICKET_SEND_DAY" runat="server" Width="65px" MaxLength="8"></asp:TextBox>
 						</td>
 					</tr>					
 				</table>

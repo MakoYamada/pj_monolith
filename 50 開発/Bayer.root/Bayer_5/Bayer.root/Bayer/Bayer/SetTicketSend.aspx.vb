@@ -148,8 +148,8 @@ Partial Public Class SetTicketSend
                         Call SetKotsuHotelItem(TBL_KOTSUHOTEL)
                         updCnt = UpdateKotsuhotel(ErrorMessage)
                     Else
-                        Me.LabelErrorMessage.Text &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。"
-                        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SetTicketSend, TBL_KOTSUHOTEL, False, Me.LabelErrorMessage.Text, MyBase.DbConnection)
+                        ErrorMessage &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。" & vbNewLine
+                        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SetTicketSend, TBL_KOTSUHOTEL, False, "交通宿泊テーブルに登録されていないか、対象外のステータスです。", MyBase.DbConnection)
                     End If
 
                 End If
