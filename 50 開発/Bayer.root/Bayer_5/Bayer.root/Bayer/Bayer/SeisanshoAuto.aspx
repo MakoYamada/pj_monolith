@@ -85,8 +85,8 @@
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Right" />
                         </asp:TemplateField>
-                        <asp:BoundField DataField="FILE_NAME" HeaderText="精算番号表CSVファイル名" />
-                        <asp:BoundField DataField="INS_DATE" HeaderText="精算番号表CSV作成日" />
+                        <asp:BoundField DataField="FILE_NAME" HeaderText="総合精算書PDFファイル名" />
+                        <asp:BoundField DataField="INS_DATE" HeaderText="総合精算書PDF作成日" />
                         <asp:BoundField DataField="FILE_TYPE" HeaderText="ファイルタイプ" />
                         <asp:ButtonField ButtonType="Button" CommandName="Download" HeaderText="ダウンロード" 
                             Text="ダウンロード">
