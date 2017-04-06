@@ -43,7 +43,6 @@ Partial Public Class SetTicketSend
 
         'マスターページ設定
         With Me.Master
-            .DispTaxiMenu = True
             .PageTitle = "発送日一括設定"
         End With
 
@@ -61,6 +60,8 @@ Partial Public Class SetTicketSend
 
     '[取込開始]
     Private Sub BtnTorikomi_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTorikomi.Click
+        Dim wErrMessage As String = ""
+
         Me.LabelErrorMessage.Text = ""
         Me.TrError.Visible = False
         Me.TrEnd.Visible = False
@@ -77,6 +78,7 @@ Partial Public Class SetTicketSend
             FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.TICKET_SEND_CSV) & FileUpload1.FileName)
         Catch ex As Exception
             CmnModule.AlertMessage("発送済対象取込用CSVファイルをアップロードできませんでした。", Me)
+            wErrMessage &= CmnCsv.Quotes("発送済対象取込用CSVファイルをアップロードできませんでした。") & vbNewLine
             Exit Sub
         End Try
 
@@ -87,11 +89,13 @@ Partial Public Class SetTicketSend
         If workFiles.Length = 0 Then
             'ログ登録
             CmnModule.AlertMessage("発送済対象取込用CSVファイルが存在しません。", Me)
+            wErrMessage &= CmnCsv.Quotes("発送済対象取込用CSVファイルが存在しません。") & vbNewLine
             Exit Sub
         End If
 
         Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.TICKET_SEND_CSV) & FileUpload1.FileName
-        ImportData(filePath, insCnt)
+
+        ImportData(filePath, insCnt, wErrMessage)
 
         Me.LabelErrorMessage.Text &= (insCnt * -1).ToString & "件の交通・宿泊データに発送日を登録しました。" & vbNewLine
 
@@ -104,10 +108,22 @@ Partial Public Class SetTicketSend
                                                                     & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
         End Try
         File.Delete(filePath)
+
+        If wErrMessage <> "" Then
+            'CSV出力
+            Response.Clear()
+            Response.ContentType = CmnConst.Csv.ContentType
+            Response.Charset = CmnConst.Csv.Charset
+            Response.AppendHeader(CmnConst.Csv.AppendHeader1, CmnConst.Csv.AppendHeader2 & "SetTicketSendErr_" & Now.ToString("yyyyMMddHHmmss") & ".csv")
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("Shift-jis")
+
+            Response.Write(wErrMessage)
+            Response.End()
+        End If
     End Sub
 
     'ファイル読み込み
-    Private Function ImportData(ByVal strFilePath As String, ByRef insCnt As Integer) As Boolean
+    Private Function ImportData(ByVal strFilePath As String, ByRef insCnt As Integer, ByRef wErrMessage As String) As Boolean
 
         Dim parser As FileIO.TextFieldParser
         Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
@@ -118,7 +134,7 @@ Partial Public Class SetTicketSend
             parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("SHIFT-JIS"))
         Else
             Me.LabelErrorMessage.Text &= strFilePath & "が見つかりません。" & vbNewLine
-            MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SetTicketSend, TBL_LOG, False, Me.LabelErrorMessage.Text, MyBase.DbConnection)
+            wErrMessage &= CmnCsv.Quotes(strFilePath & "が見つかりません。") & vbNewLine
             Exit Function
         End If
 
@@ -149,7 +165,7 @@ Partial Public Class SetTicketSend
                         updCnt = UpdateKotsuhotel(ErrorMessage)
                     Else
                         ErrorMessage &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。" & vbNewLine
-                        MyModule.InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SetTicketSend, TBL_KOTSUHOTEL, False, "交通宿泊テーブルに登録されていないか、対象外のステータスです。", MyBase.DbConnection)
+                        wErrMessage &= CmnCsv.Quotes("参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。") & vbNewLine
                     End If
 
                 End If
@@ -163,6 +179,7 @@ Partial Public Class SetTicketSend
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
             Me.LabelErrorMessage.Text = ErrorMessage
+
             Return False
         Else
             Me.TrError.Visible = False
