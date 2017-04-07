@@ -4133,6 +4133,9 @@
             Public SEISAN_COMMENT As String
             Public INS_DATE As String
             Public INS_USER As String
+
+            Public KOUENKAI_NAME As String
+            Public FROM_DATE As String
         End Structure
         Public Class Column
             Public Const TKT_NO As String = "TKT_NO"
@@ -4142,6 +4145,9 @@
             Public Const SEISAN_COMMENT As String = "SEISAN_COMMENT"
             Public Const INS_DATE As String = "INS_DATE"
             Public Const INS_USER As String = "INS_USER"
+
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const FROM_DATE As String = "FROM_DATE"
         End Class
         Public Class Name
             Public Const TKT_NO As String = "タクシーチケット番号"

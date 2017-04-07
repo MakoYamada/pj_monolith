@@ -11,5 +11,8 @@
     <Setting Name="FILE_BANGOUHYO" Type="System.String" Scope="User">
       <Value Profile="(Default)">Bangouhyo</Value>
     </Setting>
+    <Setting Name="FILE_TAXIMEISAI" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TaxiMeisaiTaisho</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

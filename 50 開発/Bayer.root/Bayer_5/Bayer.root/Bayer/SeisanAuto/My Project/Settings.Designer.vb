@@ -89,6 +89,18 @@ Namespace My
                 Me("FILE_BANGOUHYO") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("TaxiMeisaiTaisho")>  _
+        Public Property FILE_TAXIMEISAI() As String
+            Get
+                Return CType(Me("FILE_TAXIMEISAI"),String)
+            End Get
+            Set
+                Me("FILE_TAXIMEISAI") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -1545,6 +1545,9 @@ Public Class AppModule
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.SEISAN_COMMENT.ToUpper Then TBL_SEISAN_TKTNO.SEISAN_COMMENT = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.INS_DATE.ToUpper Then TBL_SEISAN_TKTNO.INS_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
             If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.INS_USER.ToUpper Then TBL_SEISAN_TKTNO.INS_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.KOUENKAI_NAME.ToUpper Then TBL_SEISAN_TKTNO.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_SEISAN_TKTNO.Column.FROM_DATE.ToUpper Then TBL_SEISAN_TKTNO.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
         Next wCnt
 
         Return TBL_SEISAN_TKTNO
