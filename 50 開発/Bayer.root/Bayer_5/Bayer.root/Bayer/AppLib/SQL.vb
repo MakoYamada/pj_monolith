@@ -10296,4 +10296,91 @@ Public Class SQL
         End Function
         '20170317 Add End
     End Class
+
+    '20170411 Add Start
+    Public Class TBL_TAXIDAICHO
+
+        Private Const SQL_SELECT As String _
+        = "SELECT" _
+        & " TBL_TAXIDAICHO.*" _
+        & " FROM TBL_TAXIDAICHO"
+
+        Private Const SQL_ORDERBY As String _
+        = " ORDER BY KOUENKAI_NO"
+
+        Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE TBL_TAXIDAICHO.KOUENKAI_NO=N'" & CmnDb.SqlString(KOUENKAI_NO) & "'"
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
+        Public Shared Function GetOutputData() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= " WHERE"
+            strSQL &= TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "='" & CmnConst.Flag.Off & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function GetCount() As String
+            Dim strSQL As String = ""
+
+            strSQL = "SELECT COUNT(*) AS W_CNT"
+            strSQL &= " FROM TBL_TAXIDAICHO"
+            strSQL &= " WHERE"
+            strSQL &= TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "='" & CmnConst.Flag.Off & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Insert(ByVal TBL_TAXIDAICHO As TableDef.TBL_TAXIDAICHO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "INSERT INTO TBL_TAXIDAICHO"
+            strSQL &= " (" & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.FROM_DATE
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.INPUT_DATE
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.INPUT_USER
+            strSQL &= ")"
+            strSQL &= " VALUES"
+            strSQL &= "(N'" & CmnDb.SqlString(TBL_TAXIDAICHO.KOUENKAI_NO) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXIDAICHO.FROM_DATE) & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXIDAICHO.OUTPUT_FLAG) & "'"
+            strSQL &= ",N'" & GetValue.DATE() & "'"
+            strSQL &= ",N'" & CmnDb.SqlString(TBL_TAXIDAICHO.INPUT_USER) & "'"
+            strSQL &= ")"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Update(ByVal TBL_TAXIDAICHO As TableDef.TBL_TAXIDAICHO.DataStruct) As String
+            Dim strSQL As String = ""
+
+            strSQL = "UPDATE TBL_TAXIDAICHO SET"
+            strSQL &= " " & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.KOUENKAI_NO) & "'"
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.FROM_DATE & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.FROM_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.OUTPUT_FLAG) & "'"
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.UPDATE_USER) & "'"
+            strSQL &= " WHERE " & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.KOUENKAI_NO) & "'"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function Delete(ByVal KOUENKAI_NO As String) As String
+            Dim strSQL As String = ""
+
+            strSQL = "DELETE FROM TBL_TAXIDAICHO"
+            strSQL &= " WHERE"
+            strSQL &= " KOUENKAI_NO = '" & KOUENKAI_NO & "'"
+
+            Return strSQL
+        End Function
+    End Class
+    '20170411 Add End
 End Class

@@ -6,6 +6,11 @@
 	</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<table cellspacing="0" cellpadding="2" border="0">
+        <tr>
+            <td align="left">
+                <asp:Label ID="Label1" runat="server" CssClass="NoData">下記一覧からダウンロードしたCSVファイルを編集し、タクチケ台帳を出力する会合のみを残して、ここでアップロードしてください。</asp:Label>
+            </td>
+        </tr>
 		<tr>
 			<td align="left">
                 <table cellpadding="2" cellspacing="0" style="border-collapse: collapse;" width="900px" border="0">
@@ -23,6 +28,29 @@
 			            </td>
 		            </tr>
 				</table>
+	            <table cellspacing="0" cellpadding="2" border="0">
+		            <tr id="TrError" runat="server">
+			            <td align="left" colspan="2" style="font-weight: bold; color: #cb1a1a;">
+				            エラーがありました。<br />
+				            詳細は操作ログ照会でご確認ください。
+
+				            <br />
+				            &nbsp;&nbsp;
+				            <asp:TextBox ID="LabelErrorMessage" runat="server" Width="900px" Height="108px" 
+                                TextMode="MultiLine" ForeColor="#cb1a1a" TabIndex="-1" ReadOnly="true"></asp:TextBox>
+			            </td>
+		            </tr>
+		            <tr id="TrEnd" runat="server">
+			            <td align="left" colspan="2" style="font-weight: bold; color:#003399;">
+				            正常に終了しました。
+
+				            <br />
+				            処理件数：
+
+				            <asp:Label ID="LabelUpdatedCount" runat="server"></asp:Label>件
+			            </td>
+		            </tr>
+	            </table>
 			</td>
 		</tr>
         <tr>
@@ -56,6 +84,11 @@
             </td>
         </tr>
         <tr>
+            <td align="left">
+                <asp:Label ID="Label2" runat="server" CssClass="NoData">自動精算時に生成されたタクチケ台帳出力対象データは下記の通りです。</asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td>
                 <asp:GridView ID="GrvList" runat="server" TabIndex="16" CellPadding="2" 
                     AutoGenerateColumns="False" PageSize="13" DataKeyNames="FILE_NAME" 
@@ -79,8 +112,8 @@
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Right" />
                         </asp:TemplateField>
-                        <asp:BoundField DataField="FILE_NAME" HeaderText="総合精算書PDFファイル名" />
-                        <asp:BoundField DataField="INS_DATE" HeaderText="総合精算書PDF作成日" />
+                        <asp:BoundField DataField="FILE_NAME" HeaderText="出力対象CSVファイル名" />
+                        <asp:BoundField DataField="INS_DATE" HeaderText="出力対象CSV自動生成日" />
                         <asp:BoundField DataField="FILE_TYPE" HeaderText="ファイルタイプ" />
                         <asp:ButtonField ButtonType="Button" CommandName="Download" HeaderText="ダウンロード" 
                             Text="ダウンロード">

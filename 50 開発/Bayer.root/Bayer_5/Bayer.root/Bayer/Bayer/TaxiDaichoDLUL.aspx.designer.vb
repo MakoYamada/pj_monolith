@@ -16,6 +16,15 @@ Option Explicit On
 Partial Public Class TaxiDaichoDLUL
 
     '''<summary>
+    '''Label1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''FileUpload1 コントロール。
     '''</summary>
     '''<remarks>
@@ -32,6 +41,42 @@ Partial Public Class TaxiDaichoDLUL
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnTorikomi As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TrError コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrError As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''LabelErrorMessage コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelErrorMessage As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TrEnd コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrEnd As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''LabelUpdatedCount コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents LabelUpdatedCount As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''LabelNoData コントロール。
@@ -113,6 +158,15 @@ Partial Public Class TaxiDaichoDLUL
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Label2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''GrvList コントロール。

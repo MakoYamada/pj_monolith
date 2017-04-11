@@ -7,11 +7,25 @@ Imports System.IO
 Partial Public Class TaxiDaichoDLUL
     Inherits WebBase
 
+    Private Const COL_COUNT As Integer = 3 'ファイルの項目数
     Private TBL_FILE() As TableDef.TBL_FILE.DataStruct
+    Private TBL_TAXIDAICHO As TableDef.TBL_TAXIDAICHO.DataStruct
     Private Joken As TableDef.Joken.DataStruct
     Private grv_selected() As String
+    Private Const pDelimiter As String = ","
 
-    'グリッド列    Private Enum CellIndex
+    Private Enum COL_NO
+        KOUENKAI_NO = 0
+        KOUENKAI_NAME
+        FROM_DATE
+    End Enum
+
+    Private Class COL_NAME
+        Public Const KOUENKAI_NO As String = "会合番号"
+        Public Const KOUENKAI_NAME As String = "会合名"
+        Public Const FROM_DATE As String = "開催開始日"
+    End Class
+    'グリッド列    Private Enum CellIndex
         ROW_NO
         DATA_CHK
         FILE_NAME
@@ -43,7 +57,7 @@ Partial Public Class TaxiDaichoDLUL
             Me.TrButton2.Visible = False
             Me.LabelCount.Visible = False
             Me.LabelNoData.Visible = False
-            'SetForm()
+            SetForm()
         End If
 
         'マスターページ設定
@@ -134,7 +148,7 @@ Partial Public Class TaxiDaichoDLUL
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.INS_DATE & " DESC"
 
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
-        objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.SougouSeisan)
+        objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.TaxiMeisaiTaisho)
         If Trim(Joken.FILE_NAME) <> "" Then
             objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_NAME, Joken.FILE_NAME)
         End If
@@ -324,14 +338,6 @@ Partial Public Class TaxiDaichoDLUL
                 '精算番号表CSVダウンロード
                 Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
                 Call DLCsvFile(Joken)
-
-                'Case "Delete"
-                '    '精算番号表CSV削除
-                '    Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                '    Call DeleteTBL_FILE(Joken)
-
-                '    '精算番号表CSV再表示
-                '    Call SetForm()
         End Select
     End Sub
 
@@ -419,4 +425,244 @@ Partial Public Class TaxiDaichoDLUL
     Private Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack1.Click, BtnBack2.Click
         Response.Redirect(URL.TaxiMenu)
     End Sub
+
+    '[取込開始]
+    Protected Sub BtnTorikomi_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTorikomi.Click
+        Me.LabelErrorMessage.Text = ""
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
+
+        '入力チェック
+        If Not Check() Then Exit Sub
+
+        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV_BK))
+
+        '指定されたファイルをサーバに保存
+        Try
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV) & FileUpload1.FileName)
+        Catch ex As Exception
+            CmnModule.AlertMessage("タクチケ台帳出力対象CSVファイルをアップロードできませんでした。", Me)
+            Exit Sub
+        End Try
+
+        'タクチケ台帳出力対象テーブルへImport
+        Dim workFiles() As String = Directory.GetFiles(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV))
+        workFiles = Directory.GetFiles(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV))
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+        If workFiles.Length = 0 Then
+            'ログ登録
+            CmnModule.AlertMessage("取込対象CSVファイルが存在しません。", Me)
+            Exit Sub
+        End If
+
+        Dim insCnt As Integer = 0  '取込み件数カウント        Dim filePath As String = Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV) & FileUpload1.FileName
+        ImportData(filePath, insCnt)
+
+        '作業フォルダ→バックアップフォルダへコピー
+        '作業フォルダからファイルを削除
+        Try
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV) & Path.GetFileName(filePath))
+        Catch ex As Exception
+            File.Copy(filePath, Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV) & Path.GetFileNameWithoutExtension(filePath) _
+                                                                    & "_" & Now.ToString("yyyyMMddHHmmss") & Path.GetExtension(filePath))
+        End Try
+        File.Delete(filePath)
+    End Sub
+
+    'ファイル読み込み→テーブル保存
+    Private Function ImportData(ByVal strFilePath As String, ByRef insCnt As Integer) As Boolean
+
+        Dim parser As FileIO.TextFieldParser
+        Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+
+        'ファイルの有無チェック
+        If File.Exists(strFilePath) Then
+            'CSVファイルをTextFieldParserクラスを使用して読み込む
+            parser = New FileIO.TextFieldParser(strFilePath, System.Text.Encoding.GetEncoding("SHIFT-JIS"))
+        Else
+            Me.LabelErrorMessage.Text &= strFilePath & "が見つかりません。" & vbNewLine
+            Exit Function
+        End If
+
+        'フィールドが区切られていることを指定
+        parser.TextFieldType = FileIO.FieldType.Delimited
+        parser.SetDelimiters(pDelimiter)
+
+        'ダブルクォート囲み、ダブルクォートのエスケープ対応
+        parser.HasFieldsEnclosedInQuotes = True
+
+        Dim strFileName As String = Path.GetFileName(strFilePath)
+        Dim rowCnt As Integer = 0  '行数カウント
+        Dim ErrorMessage As String = String.Empty
+
+        While Not parser.EndOfData
+            Dim fileData As String() = parser.ReadFields() ' 1行読み込み
+            rowCnt += 1
+
+            '1行目はタイトル行のため読み飛ばす
+            If rowCnt > 1 Then
+                If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
+
+                    Dim updCnt As Integer = 0
+                    'タクチケ台帳出力対象テーブルデータ項目セット()
+                    TBL_TAXIDAICHO = SetDaichoItem(fileData)
+                    'タクチケ台帳出力対象データ存在チェック
+                    If GetDaichoData(fileData(COL_NO.KOUENKAI_NO)) Then
+                        updCnt = UpdateTaxiDaicho(ErrorMessage)
+                    Else
+                        'タクチケ台帳出力対象登録件数チェック
+                        If GetDaichoCount() > Integer.Parse(WebConfig.Site.DAICHO_MAX_COUNT) Then
+                            Me.LabelErrorMessage.Text &= strFilePath & "【会合番号" & TBL_TAXIDAICHO.KOUENKAI_NO & "】タクチケ台帳出力の予約数が200を超えたので処理を中断します。" & vbNewLine
+                            Exit Function
+                        Else
+                            updCnt = InsertTaxiDaicho(ErrorMessage)
+                        End If
+                    End If
+
+                End If
+            End If
+        End While
+
+        'インスタンス開放
+        parser.Dispose()
+
+        If Trim(ErrorMessage) <> "" Then
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Me.TrError.Visible = False
+            Me.TrEnd.Visible = True
+            Me.LabelUpdatedCount.Text = (rowCnt - 1).ToString
+            Return True
+        End If
+
+    End Function
+
+    'CSVデータ内容チェック
+    Private Function CheckInput(ByVal fileData As String(), ByVal strfileName As String, ByVal strRowCnt As String, ByRef ErrorMessage As String) As Boolean
+        Dim ErrStr As String = ""
+
+        Try
+            '項目数チェック
+            If fileData.Count <> COL_COUNT Then
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & "項目数が不正です。" & vbNewLine
+            End If
+
+            If fileData(COL_NO.KOUENKAI_NO).Trim.Equals(String.Empty) Then
+                ErrStr &= strfileName & "【" & strRowCnt & "行目】" & COL_NAME.KOUENKAI_NO & "がセットされていません。" & vbNewLine
+            End If
+
+        Catch ex As Exception
+            Dim TBL_LOG As TableDef.TBL_LOG.DataStruct = Nothing
+            Return False
+        End Try
+
+        If Trim(ErrStr) <> "" Then
+            ErrorMessage &= ErrStr
+            Me.TrError.Visible = True
+            Me.TrEnd.Visible = False
+            Me.LabelErrorMessage.Text = ErrorMessage
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
+
+    'タクチケ台帳出力対象テーブルデータ登録済チェック
+    Private Function GetDaichoData(ByVal KouenkaiNo As String) As Boolean
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_TAXIDAICHO.byKOUENKAI_NO(KouenkaiNo)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wFlag = True
+            TBL_TAXIDAICHO = AppModule.SetRsData(RsData, TBL_TAXIDAICHO)
+        End If
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
+    'タクチケ台帳出力対象テーブル件数チェック
+    Private Function GetDaichoCount() As Integer
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+        Dim wCnt As Integer = 0
+
+        strSQL = SQL.TBL_TAXIDAICHO.GetCount()
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            wCnt = Integer.Parse(CmnDb.DbData(RsData.GetName("W_CNT"), RsData))
+        End If
+        RsData.Close()
+
+        Return wCnt
+    End Function
+
+    'CSV→タクチケ台帳出力対象テーブル項目セット
+    Private Function SetDaichoItem(ByVal filedata() As String) As TableDef.TBL_TAXIDAICHO.DataStruct
+
+        TBL_TAXIDAICHO.KOUENKAI_NO = filedata(COL_NO.KOUENKAI_NO)
+        TBL_TAXIDAICHO.FROM_DATE = filedata(COL_NO.FROM_DATE)
+        TBL_TAXIDAICHO.OUTPUT_FLAG = CmnConst.Flag.On
+        TBL_TAXIDAICHO.INPUT_USER = Session.Item(SessionDef.LoginID)
+        TBL_TAXIDAICHO.UPDATE_USER = Session.Item(SessionDef.LoginID)
+
+        Return TBL_TAXIDAICHO
+    End Function
+
+    Private Function InsertTaxiDaicho(ByRef ErrorMessage As String) As Integer
+
+        Dim strSQL As String = ""
+        Dim insCnt As Integer = 0
+
+        Try
+            strSQL = SQL.TBL_TAXIDAICHO.Insert(TBL_TAXIDAICHO)
+            insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            MyBase.Commit()
+            Return True
+
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'ログ登録
+            ErrorMessage &= "[タクチケ台帳出力対象テーブル追加失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
+            Return False
+        End Try
+
+        '登録成功件数を返す
+        Return insCnt
+
+    End Function
+
+    Private Function UpdateTaxiDaicho(ByRef ErrorMessage As String) As Integer
+
+        Dim strSQL As String = ""
+        Dim insCnt As Integer = 0
+
+        Try
+            strSQL = SQL.TBL_TAXIDAICHO.Update(TBL_TAXIDAICHO)
+            insCnt = CmnDb.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            MyBase.Commit()
+            Return True
+
+        Catch ex As Exception
+            MyBase.Rollback()
+
+            'ログ登録
+            ErrorMessage &= "[タクチケ台帳出力対象テーブル更新失敗]" & Session.Item(SessionDef.DbError) & " SQL:" & strSQL & vbNewLine
+            Return False
+        End Try
+
+        '登録成功件数を返す
+        Return insCnt
+
+    End Function
 End Class

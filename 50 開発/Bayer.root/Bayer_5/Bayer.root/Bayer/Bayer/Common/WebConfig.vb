@@ -28,6 +28,9 @@
         Public Shared SEISAN_AUTO_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("SEISAN_AUTO_CSV_BK")
         Public Shared TICKET_SEND_CSV As String = System.Configuration.ConfigurationManager.AppSettings("TICKET_SEND_CSV")
         Public Shared TICKET_SEND_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("TICKET_SEND_CSV_BK")
+        Public Shared TAXI_DAICHO_CSV As String = System.Configuration.ConfigurationManager.AppSettings("TAXI_DAICHO_CSV")
+        Public Shared TAXI_DAICHO_CSV_BK As String = System.Configuration.ConfigurationManager.AppSettings("TAXI_DAICHO_CSV_BK")
+        Public Shared DAICHO_MAX_COUNT As String = System.Configuration.ConfigurationManager.AppSettings("DAICHO_MAX_COUNT")
 
         'チケット類送付状
         Public Shared AISATSU1 As String = System.Configuration.ConfigurationManager.AppSettings("AISATSU1")

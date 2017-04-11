@@ -1553,6 +1553,25 @@ Public Class AppModule
         Return TBL_SEISAN_TKTNO
     End Function
 #End Region
+
+#Region "タクチケ台帳出力対象テーブル"
+    Public Shared Function SetRsData(ByVal RsData As System.Data.SqlClient.SqlDataReader, ByVal TBL_TAXIDAICHO As TableDef.TBL_TAXIDAICHO.DataStruct) As TableDef.TBL_TAXIDAICHO.DataStruct
+        Dim wCnt As Integer = 0
+
+        For wCnt = 0 To RsData.FieldCount - 1
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO.ToUpper Then TBL_TAXIDAICHO.KOUENKAI_NO = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NAME.ToUpper Then TBL_TAXIDAICHO.KOUENKAI_NAME = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.FROM_DATE.ToUpper Then TBL_TAXIDAICHO.FROM_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG.ToUpper Then TBL_TAXIDAICHO.OUTPUT_FLAG = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.INPUT_DATE.ToUpper Then TBL_TAXIDAICHO.INPUT_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.INPUT_USER.ToUpper Then TBL_TAXIDAICHO.INPUT_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.UPDATE_DATE.ToUpper Then TBL_TAXIDAICHO.UPDATE_DATE = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+            If RsData.GetName(wCnt).ToUpper = TableDef.TBL_TAXIDAICHO.Column.UPDATE_USER.ToUpper Then TBL_TAXIDAICHO.UPDATE_USER = CmnDb.DbData(RsData.GetName(wCnt), RsData)
+        Next wCnt
+
+        Return TBL_TAXIDAICHO
+    End Function
+#End Region
 #End Region
 
 

@@ -103,7 +103,7 @@ Partial Public Class TaxiSeisanToNozomi
         File.Delete(filePath)
     End Sub
 
-    'ファイル読み込み
+    'ファイル読み込み→テーブル保存
     Private Function ImportData(ByVal strFilePath As String, ByRef insCnt As Integer) As Boolean
 
         Dim parser As FileIO.TextFieldParser

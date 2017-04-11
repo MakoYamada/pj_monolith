@@ -70,7 +70,7 @@ Public Class Proc
         '総合精算書出力
         Call PrintSeisanRegistReport(W_SEIKYU)
 
-        'タクチケ台帳出力対象会合番号ファイル生成
+        'タクチケ台帳出力対象会合番号CSVファイル生成
         Call TaxiMeisaiCsv(W_SEISAN_TKTNO)
 
         MyBase.BeginTransaction()

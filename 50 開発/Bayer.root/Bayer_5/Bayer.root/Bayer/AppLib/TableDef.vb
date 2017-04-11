@@ -4089,6 +4089,7 @@
     End Class
 
     '20170317 Add Start
+    '書類・CSVファイル保存テーブル
     Public Class TBL_FILE
         <Serializable()> Public Structure DataStruct
             Public FILE_KBN As String
@@ -4124,6 +4125,7 @@
         End Class
     End Class
 
+    'タクチケ自動精算対象テーブル
     Public Class TBL_SEISAN_TKTNO
         <Serializable()> Public Structure DataStruct
             Public TKT_NO As String
@@ -4168,6 +4170,56 @@
             Public Const INS_USER As Integer = 6
         End Class
     End Class
+
+    'タクチケ台帳出力対象テーブル
+    Public Class TBL_TAXIDAICHO
+        <Serializable()> Public Structure DataStruct
+            Public KOUENKAI_NO As String
+            Public FROM_DATE As String
+            Public OUTPUT_FLAG As String
+            Public INPUT_DATE As String
+            Public INPUT_USER As String
+            Public UPDATE_DATE As String
+            Public UPDATE_USER As String
+
+            Public KOUENKAI_NAME As String
+            Public W_CNT As String
+        End Structure
+        Public Class Column
+            Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
+            Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const OUTPUT_FLAG As String = "OUTPUT_FLAG"
+            Public Const INPUT_DATE As String = "INPUT_DATE"
+            Public Const INPUT_USER As String = "INPUT_USER"
+            Public Const UPDATE_DATE As String = "UPDATE_DATE"
+            Public Const UPDATE_USER As String = "UPDATE_USER"
+
+            Public Const KOUENKAI_NAME As String = "KOUENKAI_NAME"
+            Public Const W_CNT As String = "W_CNT"
+        End Class
+        Public Class Name
+            Public Const KOUENKAI_NO As String = "会合番号"
+            Public Const FROM_DATE As String = "開催開始日"
+            Public Const OUTPUT_FLAG As String = "タクチケ台帳出力済フラグ"
+            Public Const INPUT_DATE As String = "登録日時"
+            Public Const INPUT_USER As String = "登録者"
+            Public Const UPDATE_DATE As String = "更新日時"
+            Public Const UPDATE_USER As String = "更新者"
+
+            Public Const KOUENKAI_NAME As String = "会合名"
+            Public Const W_CNT As String = "登録件数"
+        End Class
+        Public Class ColumnNo
+            Public Const KOUENKAI_NO As Integer = 0
+            Public Const FROM_DATE As Integer = 1
+            Public Const OUTPUT_FLAG As Integer = 2
+            Public Const INPUT_DATE As Integer = 3
+            Public Const INPUT_USER As Integer = 4
+            Public Const UPDATE_DATE As Integer = 5
+            Public Const UPDATE_USER As Integer = 6
+        End Class
+    End Class
+
     '20170317 Add End
 
 End Class
