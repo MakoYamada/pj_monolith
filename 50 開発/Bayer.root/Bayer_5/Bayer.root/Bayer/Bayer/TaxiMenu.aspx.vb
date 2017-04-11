@@ -168,6 +168,12 @@ Partial Public Class TaxiMenu
     End Sub
     '@@@ 20170317 Add End
 
+    '@@@ 20170411 Add Start
+    Protected Sub BtnTaxiDaicho_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiDaicho.Click
+        Response.Redirect(URL.TaxiDaicho)
+    End Sub
+    '@@@ 20170411 Add End
+
     'タクチケ未精算csv出力
     Private Function CreateCsv(ByVal CsvData() As TableDef.TBL_TAXITICKET_HAKKO.DataStruct) As String
         Dim wCnt As Integer = 0

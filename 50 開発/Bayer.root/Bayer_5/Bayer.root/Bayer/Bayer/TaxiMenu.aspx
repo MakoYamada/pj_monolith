@@ -82,7 +82,7 @@
 							<asp:Button ID="BtnSeisanshoAuto" runat="server" Text="総合精算書PDF DL" Width="200px" CssClass="Button" />
 						</td>
 					    <td>
-							<asp:Button ID="BtnTaxiSeisanToNozomi" runat="server" Text="Nozomi送信対象精算データ取込" Width="200px" CssClass="Button" />
+							<asp:Button ID="BtnTaxiSeisanToNozomi" runat="server" Text="NZ送信対象精算データ取込" Width="200px" CssClass="Button" />
 					    </td>
 					</tr>
 					<tr valign="top">
@@ -90,6 +90,7 @@
 							<asp:Button ID="BtnTaxiMeisaiCsv2" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
 						</td>
 						<td>
+							<asp:Button ID="BtnTaxiDaicho" runat="server" Text="台帳出力対象データDL/UL" Width="200px" CssClass="Button" />
 						</td>
 						<td>
 						</td>

@@ -74,6 +74,8 @@ Partial Public Class TaxiDaichoDLUL
     End Function
 
     '画面項目 初期化    Private Sub InitControls()
+        Me.TrError.Visible = False
+        Me.TrEnd.Visible = False
 
         'クリア
         CmnModule.ClearAllControl(Me)
@@ -239,7 +241,7 @@ Partial Public Class TaxiDaichoDLUL
         strSQL &= "SELECT *"
         strSQL &= " FROM TBL_FILE"
         strSQL &= " WHERE"
-        strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "='" & AppConst.FILE_KBN.Code.SougouSeisan & "'"
+        strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "='" & AppConst.FILE_KBN.Code.TaxiMeisaiTaisho & "'"
 
         If Trim(Joken.FILE_NAME) <> "" Then
             strSQL &= " AND"

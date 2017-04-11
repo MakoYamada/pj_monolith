@@ -160,6 +160,15 @@ Partial Public Class TaxiMenu
     Protected WithEvents BtnTaxiMeisaiCsv2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnTaxiDaicho コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnTaxiDaicho As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master プロパティ。
     '''</summary>
     '''<remarks>

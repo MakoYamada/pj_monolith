@@ -378,7 +378,7 @@ Public Class Proc
         For i As Integer = LBound(P_SEISAN_TKTNO) To UBound(P_SEISAN_TKTNO)
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(P_SEISAN_TKTNO(i).KOUENKAI_NO)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(P_SEISAN_TKTNO(i).KOUENKAI_NAME)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(P_SEISAN_TKTNO(i).FROM_DATE)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(P_SEISAN_TKTNO(i).FROM_DATE), True))
             sb.Append(vbNewLine)
         Next
 

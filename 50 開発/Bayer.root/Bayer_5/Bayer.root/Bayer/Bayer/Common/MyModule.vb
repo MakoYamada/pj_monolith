@@ -353,6 +353,7 @@ Public Class MyModule
             AddChkArray(cnt, chkArray, URL.TaxiScan)
             AddChkArray(cnt, chkArray, URL.TaxiSoufujoIkkatsu)
             AddChkArray(cnt, chkArray, URL.TaxiJissekiOTH)
+            AddChkArray(cnt, chkArray, URL.TaxiDaicho)
 
             Return IsReferrer(referreUrl, chkArray)
 
@@ -481,6 +482,15 @@ Public Class MyModule
             AddChkArray(cnt, chkArray, URL.TaxiMenu)
             AddChkArray(cnt, chkArray, URL.TaxiSoufujoIkkatsu)
             AddChkArray(cnt, chkArray, URL.Preview)
+
+            Return IsReferrer(referreUrl, chkArray)
+
+        ElseIf currentUrl.ToLower.IndexOf(URL.TaxiDaicho.ToLower) >= 0 Then
+            'タクチケ台帳出力対象データUL/DL
+            cnt = 0
+            ReDim chkArray(1)
+            AddChkArray(cnt, chkArray, URL.TaxiMenu)
+            AddChkArray(cnt, chkArray, URL.TaxiDaicho)
 
             Return IsReferrer(referreUrl, chkArray)
 
