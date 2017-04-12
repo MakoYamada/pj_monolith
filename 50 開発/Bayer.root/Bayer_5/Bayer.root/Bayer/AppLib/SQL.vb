@@ -10308,6 +10308,14 @@ Public Class SQL
         Private Const SQL_ORDERBY As String _
         = " ORDER BY KOUENKAI_NO"
 
+        Public Shared Function AllItem() As String
+            Dim strSQL As String = SQL_SELECT
+
+            strSQL &= SQL_ORDERBY
+
+            Return strSQL
+        End Function
+
         Public Shared Function byKOUENKAI_NO(ByVal KOUENKAI_NO As String) As String
             Dim strSQL As String = SQL_SELECT
 
@@ -10331,7 +10339,7 @@ Public Class SQL
 
             strSQL = "SELECT COUNT(*) AS W_CNT"
             strSQL &= " FROM TBL_TAXIDAICHO"
-            strSQL &= " WHERE"
+            strSQL &= " WHERE "
             strSQL &= TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "='" & CmnConst.Flag.Off & "'"
 
             Return strSQL

@@ -438,12 +438,12 @@ Partial Public Class TaxiDaichoDLUL
         If Not Check() Then Exit Sub
 
         'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV))
-        If Not Directory.Exists(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV_BK))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV))
+        If Not Directory.Exists(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV_BK)) Then Directory.CreateDirectory(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV))
 
         '指定されたファイルをサーバに保存
         Try
-            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.SEISAN_AUTO_CSV) & FileUpload1.FileName)
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(WebConfig.Site.TAXI_DAICHO_CSV) & FileUpload1.FileName)
         Catch ex As Exception
             CmnModule.AlertMessage("タクチケ台帳出力対象CSVファイルをアップロードできませんでした。", Me)
             Exit Sub
@@ -601,7 +601,7 @@ Partial Public Class TaxiDaichoDLUL
         strSQL = SQL.TBL_TAXIDAICHO.GetCount()
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
-            wCnt = Integer.Parse(CmnDb.DbData(RsData.GetName("W_CNT"), RsData))
+            wCnt = RsData(TableDef.TBL_TAXIDAICHO.Column.W_CNT)
         End If
         RsData.Close()
 
@@ -613,7 +613,7 @@ Partial Public Class TaxiDaichoDLUL
 
         TBL_TAXIDAICHO.KOUENKAI_NO = filedata(COL_NO.KOUENKAI_NO)
         TBL_TAXIDAICHO.FROM_DATE = filedata(COL_NO.FROM_DATE)
-        TBL_TAXIDAICHO.OUTPUT_FLAG = CmnConst.Flag.On
+        TBL_TAXIDAICHO.OUTPUT_FLAG = CmnConst.Flag.Off
         TBL_TAXIDAICHO.INPUT_USER = Session.Item(SessionDef.LoginID)
         TBL_TAXIDAICHO.UPDATE_USER = Session.Item(SessionDef.LoginID)
 
