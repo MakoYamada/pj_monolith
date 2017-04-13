@@ -49,6 +49,8 @@ Public Class Proc
         End If
 
         '削除対象会合番号抽出
+        '初回用削除基準日
+        wDate = "20151231"
         Dim wKOUENKAI_NO() As String = GetData(wDate)
         If wKOUENKAI_NO Is Nothing Then
             '対象データなし

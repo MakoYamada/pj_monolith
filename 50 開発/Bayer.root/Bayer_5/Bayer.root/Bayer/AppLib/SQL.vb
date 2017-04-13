@@ -465,40 +465,31 @@ Public Class SQL
         Public Shared Function Search_DelData(ByVal Joken As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = ""
 
-            strSQL &= " SELECT *"
-            strSQL &= ", USER_NAME"
+            strSQL &= " SELECT TBL_KOUENKAI.*"
+            strSQL &= ", WK1.TIME_STAMP_MAX"
             strSQL &= " FROM"
-            strSQL &= " (SELECT *,"
-            strSQL &= " ROW_NUMBER() OVER( PARTITION BY "
-            strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
-            strSQL &= " ORDER BY "
-            strSQL &= TableDef.TBL_KOUENKAI.Column.TIME_STAMP
-            strSQL &= " ) CNT"
-            strSQL &= " FROM"
-            strSQL &= " TBL_KOUENKAI)"
-            strSQL &= " WK_KOUENKAI, "
-
-            strSQL &= "(SELECT N'' AS LOGIN_ID,N'' AS USER_NAME"
-            strSQL &= " UNION ALL "
-            strSQL &= "SELECT LOGIN_ID,USER_NAME FROM MS_USER"
-            strSQL &= ") AS MS_USER"
-            strSQL &= " WHERE"
-            strSQL &= " ISNULL(WK_KOUENKAI." & TableDef.TBL_KOUENKAI.Column.TTEHAI_TANTO & ",N'')=MS_USER.LOGIN_ID"
-            strSQL &= " AND"
-            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
-            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " INNER JOIN ("
+            strSQL &= " SELECT "
+            strSQL &= " KOUENKAI_NO"
+            strSQL &= ", MAX(TIME_STAMP) TIME_STAMP_MAX"
             strSQL &= " FROM"
             strSQL &= " TBL_KOUENKAI"
             strSQL &= " WHERE"
-            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
-            strSQL &= " )"
-
-            If Trim(Joken.FROM_DATE) <> "" Then
-                strSQL &= " AND "
-                strSQL &= TableDef.TBL_KOUENKAI.Column.FROM_DATE
-                strSQL &= "<= '" & CmnDb.SqlString(Joken.FROM_DATE) & "'"
-            End If
-
+            strSQL &= " FROM_DATE <= '" & Joken.FROM_DATE & "'"
+            strSQL &= " AND"
+            strSQL &= " FROM_DATE <> ''"
+            strSQL &= " GROUP BY"
+            strSQL &= " KOUENKAI_NO"
+            strSQL &= ") WK1"
+            strSQL &= " ON"
+            strSQL &= " TBL_KOUENKAI.KOUENKAI_NO=WK1.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOUENKAI.TIME_STAMP=WK1.TIME_STAMP_MAX"
+            strSQL &= " WHERE"
+            strSQL &= " TBL_KOUENKAI.FROM_DATE <= '" & Joken.FROM_DATE & "'"
+            strSQL &= " AND"
+            strSQL &= " TBL_KOUENKAI.FROM_DATE <> ''"
             strSQL &= " ORDER BY "
             strSQL &= TableDef.TBL_KOUENKAI.Column.KOUENKAI_NO
 
