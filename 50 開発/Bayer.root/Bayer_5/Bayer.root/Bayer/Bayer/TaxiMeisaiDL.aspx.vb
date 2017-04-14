@@ -17,7 +17,7 @@ Partial Public Class TaxiMeisaiDL
         FILE_NAME
         INS_DATE
         FILE_TYPE
-        BUTTON1
+        'BUTTON1
     End Enum
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -63,6 +63,10 @@ Partial Public Class TaxiMeisaiDL
 
         'クリア
         CmnModule.ClearAllControl(Me)
+
+        '確認メッセージ
+        Me.BtnDelete1.Attributes(CmnConst.Html.Attributes.OnClick) = CmnModule.GetJavaConfirm("選択されている全てのタクチケ台帳CSVを削除します。よろしいですか？")
+        Me.BtnDelete2.Attributes(CmnConst.Html.Attributes.OnClick) = CmnModule.GetJavaConfirm("選択されている全てのタクチケ台帳CSVを削除します。よろしいですか？")
     End Sub
 
     '入力チェック
@@ -169,7 +173,7 @@ Partial Public Class TaxiMeisaiDL
         strSQL &= " WHERE"
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "=@" & TableDef.TBL_FILE.Column.FILE_KBN
         strSQL &= " AND"
-        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=@" & CmnConst.Flag.On
+        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=@OUTPUT_FLAG"
 
         If Trim(Joken.KOUENKAI_NO) <> "" Then
             strSQL &= " AND"
@@ -192,10 +196,11 @@ Partial Public Class TaxiMeisaiDL
         End If
 
         strSQL &= " ORDER BY"
-        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.FROM_DATE & " DESC"
+        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO
 
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
         objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.TaxiMeisai)
+        objCom.Parameters.AddWithValue("@" & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG, CmnConst.Flag.On)
         If Trim(Joken.KOUENKAI_NO) <> "" Then
             objCom.Parameters.Add(New SqlClient.SqlParameter(TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO, Joken.KOUENKAI_NO))
         End If
@@ -240,6 +245,61 @@ Partial Public Class TaxiMeisaiDL
         End If
         Return wFlag
     End Function
+    Private Function GetData(ByVal FILE_NAME As String, ByRef pFILE() As TableDef.TBL_FILE.DataStruct) As Boolean
+        Dim strSQL As String = ""
+        Dim i As Integer = 0
+        Dim wFlag As Boolean = False
+        Dim wKouenkaiFlag As Boolean = False
+        Dim wSeikyuFlag As Boolean = False
+
+        Erase pFILE
+
+        strSQL &= "SELECT TBL_FILE.*, TBL_TAXIDAICHO.*"
+        strSQL &= " FROM TBL_FILE"
+        strSQL &= " INNER JOIN TBL_TAXIDAICHO"
+        strSQL &= " ON"
+        strSQL &= " TBL_FILE.FILE_NAME = TBL_TAXIDAICHO.FILE_NAME"
+        strSQL &= " WHERE"
+        strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "=@" & TableDef.TBL_FILE.Column.FILE_KBN
+        strSQL &= " AND"
+        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=@OUTPUT_FLAG"
+
+        If Trim(FILE_NAME) <> "" Then
+            strSQL &= " AND"
+            strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.FILE_NAME & " = @" & TableDef.TBL_TAXIDAICHO.Column.FILE_NAME
+            wKouenkaiFlag = True
+        End If
+
+        strSQL &= " ORDER BY"
+        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO
+
+        Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
+        objCom.Parameters.AddWithValue("@" & TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.TaxiMeisai)
+        objCom.Parameters.AddWithValue("@" & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG, CmnConst.Flag.On)
+        If Trim(FILE_NAME) <> "" Then
+            objCom.Parameters.Add(New SqlClient.SqlParameter(TableDef.TBL_TAXIDAICHO.Column.FILE_NAME, FILE_NAME))
+        End If
+
+        Dim objRs As Object = objCom.ExecuteReader()
+        Try
+            While objRs.read()
+                ReDim Preserve pFILE(i)
+                pFILE(i).FILE_NAME = objRs.item(TableDef.TBL_FILE.ColumnNo.FILE_NAME)
+                pFILE(i).FILE_TYPE = objRs.item(TableDef.TBL_FILE.ColumnNo.FILE_TYPE)
+                pFILE(i).DATUME = CType(objRs.item(TableDef.TBL_FILE.ColumnNo.DATUME), Byte())
+                i += 1
+                wFlag = True
+            End While
+        Catch ex As Exception
+            objRs.close()
+            objCom.Cancel()
+            Return False
+        End Try
+        objRs.close()
+        objCom.Cancel()
+
+        Return wFlag
+    End Function
 
     'データソース設定
     Private Sub SetGridView()
@@ -257,7 +317,7 @@ Partial Public Class TaxiMeisaiDL
         strSQL &= " WHERE"
         strSQL &= " TBL_FILE." & TableDef.TBL_FILE.Column.FILE_KBN & "=@" & TableDef.TBL_FILE.Column.FILE_KBN
         strSQL &= " AND"
-        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=@" & CmnConst.Flag.On
+        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=@" & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG
 
         If Trim(Joken.KOUENKAI_NO) <> "" Then
             strSQL &= " AND"
@@ -280,7 +340,7 @@ Partial Public Class TaxiMeisaiDL
         End If
 
         strSQL &= " ORDER BY"
-        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.FROM_DATE & " DESC"
+        strSQL &= " TBL_TAXIDAICHO." & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO
 
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
         Me.SqlDataSource1.SelectCommand = strSQL
@@ -289,6 +349,7 @@ Partial Public Class TaxiMeisaiDL
 
         Dim objCom As New SqlCommand(strSQL, Me.DbConnection)
         Me.SqlDataSource1.SelectParameters.Add(TableDef.TBL_FILE.Column.FILE_KBN, AppConst.FILE_KBN.Code.TaxiMeisai)
+        Me.SqlDataSource1.SelectParameters.Add(TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG, CmnConst.Flag.On)
         If Trim(Joken.KOUENKAI_NO) <> "" Then
             Me.SqlDataSource1.SelectParameters.Add(TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO, Joken.KOUENKAI_NO)
         End If
@@ -350,15 +411,15 @@ Partial Public Class TaxiMeisaiDL
 
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
-        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-        Dim row As GridViewRow = GrvList.Rows(index)
+        'Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        'Dim row As GridViewRow = GrvList.Rows(index)
 
-        Select Case e.CommandName
-            Case "Download"
-                'タクチケ台帳CSVダウンロード
-                Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                Call DLCsvFile(Joken)
-        End Select
+        'Select Case e.CommandName
+        '    Case "Download"
+        '        'タクチケ台帳CSVダウンロード
+        '        Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+        '        Call DLCsvFile(Joken)
+        'End Select
     End Sub
 
     '[検索]
@@ -371,17 +432,26 @@ Partial Public Class TaxiMeisaiDL
     End Sub
 
     '[タクチケ台帳CSVファイルダウンロード]
-    Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct)
+    Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct, ByRef CsvPath() As String)
         Dim wFILE(0) As TableDef.TBL_FILE.DataStruct
 
         '書類テーブルデータ取得
-        If Not GetData(Joken, wFILE) Then Exit Sub
+        If Not GetData(Joken.FILE_NAME, wFILE) Then Exit Sub
 
-        Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
-        Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
-        Response.ContentType = wFILE(0).FILE_TYPE
-        Response.BinaryWrite(wFILE(0).DATUME)
-        Response.End()
+        Dim i As Integer = UBound(CsvPath)
+        CsvPath(i) = WebConfig.Path.TaxiMeisaiCsv & wFILE(0).FILE_NAME
+        Dim sb As New System.Text.StringBuilder
+        Dim sw As New System.IO.StreamWriter(CsvPath(i), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
+
+        sb.Append(System.Text.Encoding.GetEncoding("shift_jis").GetString(wFILE(0).DATUME))
+        sw.Write(sb)
+        sw.Close()
+
+        'Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
+        'Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
+        'Response.ContentType = wFILE(0).FILE_TYPE
+        'Response.BinaryWrite(wFILE(0).DATUME)
+        'Response.End()
     End Sub
 
     '[タクチケ台帳CSVファイル削除]
@@ -411,6 +481,58 @@ Partial Public Class TaxiMeisaiDL
         Return True
     End Function
 
+    '[ダウンロード]
+    Private Sub BtnDownload_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDownload1.Click, BtnDownload2.Click
+        Dim i As Integer = 0
+
+        'Zipファイル名
+        Dim ZipFileName As String = "TaxiMeisai_" & Now.ToString("yyyyMMddHHmmss") & ".zip"
+        Dim ZipPath As String = WebConfig.Path.TaxiMeisaiCsv & ZipFileName
+        Dim CsvPath() As String
+
+        'Zip作成
+        Using zip As New Ionic.Zip.ZipFile
+
+            For Each row As GridViewRow In Me.GrvList.Rows
+                If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then
+                    'タクチケ台帳CSVダウンロード
+                    Joken.FILE_NAME = DirectCast(GrvList.Rows(i).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+                    ReDim Preserve CsvPath(i)
+                    Call DLCsvFile(Joken, CsvPath)
+                    zip.AddFile(CsvPath(i), "")
+                End If
+                i += 1
+            Next
+            zip.Save(ZipPath)
+        End Using
+
+        'バックアップ作成
+        System.IO.File.Copy(ZipPath, WebConfig.Path.TaxiMeisaiCsv_Backup & ZipFileName)
+
+        'Csv削除
+        Try
+            For k As Integer = LBound(CsvPath) To UBound(CsvPath)
+                System.IO.File.Delete(CsvPath(k))
+            Next k
+        Catch ex As Exception
+        End Try
+
+        'ダウンロード
+        Response.Clear()
+        Response.ContentType = "application/x-zip"
+        Response.Charset = ""
+        Response.AddHeader("content-disposition", "attachment; filename=" & _
+            HttpUtility.UrlEncode(CStr(ZipFileName)))
+        Response.WriteFile(CStr(ZipPath))
+        Response.Flush()
+
+        'Zipファイル削除
+        Try
+            System.IO.File.Delete(ZipPath)
+        Catch ex As Exception
+        End Try
+    End Sub
+
     '[削除]
     Private Sub BtnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDelete1.Click, BtnDelete2.Click
         Dim i As Integer = 0
@@ -424,7 +546,7 @@ Partial Public Class TaxiMeisaiDL
             i += 1
         Next
 
-        '精算番号表CSV再表示
+        'タクチケ台帳CSV再表示
         Call SetForm()
     End Sub
 

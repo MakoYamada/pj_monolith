@@ -80,7 +80,6 @@ Public Class CmnModule
         wStr = "<script language='javascript' type='text/javascript'>"
         wStr &= "alert(" & ControlChars.Quote & Message & ControlChars.Quote & ")"
         wStr &= " </script>"
-
         Return wStr
     End Function
 

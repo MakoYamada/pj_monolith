@@ -52,6 +52,8 @@
     Public Class Path
         Public Shared TaxiPrintCsv As String = System.Configuration.ConfigurationManager.AppSettings("TaxiPrintCsv")
         Public Shared TaxiPrintCsv_BackUp As String = System.Configuration.ConfigurationManager.AppSettings("TaxiPrintCsv_BackUp")
+        Public Shared TaxiMeisaiCsv As String = System.Configuration.ConfigurationManager.AppSettings("TaxiMeisaiCsv")
+        Public Shared TaxiMeisaiCsv_Backup As String = System.Configuration.ConfigurationManager.AppSettings("TaxiMeisaiCsv_Backup")
     End Class
 
 End Class
