@@ -584,7 +584,7 @@ Public Class Proc
         TBL_LOG.INPUT_DATE = Now.ToString("yyyyMMddHHmmss")
         TBL_LOG.INPUT_USER = pbatchID
         TBL_LOG.SYORI_KBN = AppConst.TBL_LOG.SYORI_KBN.Code.BATCH
-        TBL_LOG.SYORI_NAME = "交通新着CSV"
+        TBL_LOG.SYORI_NAME = "タクチケ台帳CSV自動生成"
         TBL_LOG.TABLE_NAME = tableName
         TBL_LOG.STATUS = status
         TBL_LOG.NOTE = strMsg

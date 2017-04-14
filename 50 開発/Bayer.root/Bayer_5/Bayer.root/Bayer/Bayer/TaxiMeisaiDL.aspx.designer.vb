@@ -13,160 +13,214 @@ Option Explicit On
 
 
 
-Partial Public Class TaxiMenu
+Partial Public Class TaxiMeisaiDL
 
     '''<summary>
-    '''BtnTaxiNouhinTorikomi コントロール。
+    '''JokenKOUENKAI_NO コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiNouhinTorikomi As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenKOUENKAI_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiPrintCsv コントロール。
+    '''JokenFROM_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiPrintCsv As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenFROM_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiScan コントロール。
+    '''JokenFROM_DATE_MM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiScan As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenFROM_DATE_MM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiMaintenance コントロール。
+    '''JokenFROM_DATE_DD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiMaintenance As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenFROM_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiJisseki コントロール。
+    '''JokenTO_DATE_YYYY コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiJisseki As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenTO_DATE_YYYY As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiMiseisan コントロール。
+    '''JokenTO_DATE_MM コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiMiseisan As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenTO_DATE_MM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiMiketsu コントロール。
+    '''JokenTO_DATE_DD コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiMiketsu As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents JokenTO_DATE_DD As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''BtnTaxiMiseisanCsv コントロール。
+    '''BtnSearch コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiMiseisanCsv As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTaxiJissekiOTH コントロール。
+    '''LabelNoData コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiJissekiOTH As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents LabelNoData As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnTaxiMeisaiCsv コントロール。
+    '''LabelCountTitle コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiMeisaiCsv As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents LabelCountTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnTaxiSoufujoIkkatsu コントロール。
+    '''LabelCount コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiSoufujoIkkatsu As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents LabelCount As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BtnTaxiSeisanAuto コントロール。
+    '''SqlDataSource1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiSeisanAuto As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
-    '''BtnTaxiSeisanAutoCsv コントロール。
+    '''TrButton1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiSeisanAutoCsv As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TrButton1 As Global.System.Web.UI.HtmlControls.HtmlTableRow
 
     '''<summary>
-    '''BtnSeisanshoAuto コントロール。
+    '''BtnAllSelect1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnSeisanshoAuto As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnAllSelect1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTaxiSeisanToNozomi コントロール。
+    '''BtnAllClear1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiSeisanToNozomi As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnAllClear1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTaxiDaicho コントロール。
+    '''BtnDelete1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiDaicho As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnDelete1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''BtnTaxiMeisaiCsv2 コントロール。
+    '''BtnBack1 コントロール。
     '''</summary>
     '''<remarks>
     '''自動生成されたフィールド。
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
-    Protected WithEvents BtnTaxiMeisaiCsv2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnBack1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''GrvList コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents GrvList As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''TrButton2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents TrButton2 As Global.System.Web.UI.HtmlControls.HtmlTableRow
+
+    '''<summary>
+    '''BtnAllSelect2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnAllSelect2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnAllClear2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnAllClear2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnDelete2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDelete2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnBack2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnBack2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Master プロパティ。

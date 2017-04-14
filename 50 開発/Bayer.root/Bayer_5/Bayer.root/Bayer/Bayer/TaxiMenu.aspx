@@ -86,11 +86,11 @@
 					    </td>
 					</tr>
 					<tr valign="top">
-						<td align="center" style="width: 210px;">
-							<asp:Button ID="BtnTaxiMeisaiCsv2" runat="server" Text="タクチケ管理台帳" Width="200px" CssClass="Button" />
-						</td>
 						<td>
 							<asp:Button ID="BtnTaxiDaicho" runat="server" Text="台帳出力対象データDL/UL" Width="200px" CssClass="Button" />
+						</td>
+						<td align="center" style="width: 210px;">
+							<asp:Button ID="BtnTaxiMeisaiCsv2" runat="server" Text="タクチケ管理台帳DL" Width="200px" CssClass="Button" />
 						</td>
 						<td>
 						</td>

@@ -172,6 +172,10 @@ Partial Public Class TaxiMenu
     Protected Sub BtnTaxiDaicho_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiDaicho.Click
         Response.Redirect(URL.TaxiDaicho)
     End Sub
+
+    Protected Sub BtnTaxiMeisaiCsv2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnTaxiMeisaiCsv2.Click
+        Response.Redirect(URL.TaxiMeisaiDL)
+    End Sub
     '@@@ 20170411 Add End
 
     'タクチケ未精算csv出力
