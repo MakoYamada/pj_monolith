@@ -23,7 +23,7 @@ Public Class Proc
         Call DaichoMain()
     End Sub
 
-    '精算処理
+    'タクチケ台帳出力処理
     Private Sub DaichoMain()
         Dim wCnt As Integer = 0
         Dim strSQL As String = ""
@@ -31,7 +31,7 @@ Public Class Proc
         Dim wFlag As Boolean = False
 
         'タクチケ台帳出力対象データ取得
-        strSQL = SQL.TBL_TAXIDAICHO.AllItem
+        strSQL = SQL.TBL_TAXIDAICHO.GetOutputData
         RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
         While RsData.Read()
             wFlag = True
@@ -47,6 +47,9 @@ Public Class Proc
 
         'タクチケ台帳CSV出力→ファイル保存
         Call TaxiMeisaiCsv()
+
+        'タクチケ台帳出力対象データ 台帳出力済フラグ・ファイル名更新
+        UpdateOutputFlag()
 
         MyBase.BeginTransaction()
 
@@ -97,7 +100,8 @@ Public Class Proc
                     System.IO.File.Delete(strFileFull)
                 End If
 
-                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, CsvData.Length.ToString & "件のデータを出力しました。")
+                TBL_TAXIDAICHO(i).FILE_NAME = strFileName
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "【" & TBL_TAXIDAICHO(i).KOUENKAI_NO & "】" & CsvData.Length.ToString & "件のデータを出力しました。")
             End If
         Next
     End Sub
@@ -114,7 +118,7 @@ Public Class Proc
 
         '会合情報
         strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(KOUENKAI_NO)
-        RsData = CmnDbBatch.Read(strSQL, Me.DbConnection)
+        RsData = CmnDbBatch.Read(strSQL, Me.DbConnection, MyBase.DbTransaction)
         If RsData.HasRows = False Then
             Return Nothing
         Else
@@ -128,7 +132,7 @@ Public Class Proc
         Joken.FROM_DATE = ""
         Joken.TKT_ENTA = AppConst.TAXITICKET_HAKKO.TKT_ENTA.Joken_MeisaiCsv.ALL
         strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiMeisaiCsv(Joken)
-        RsData = CmnDbBatch.Read(strSQL, Me.DbConnection)
+        RsData = CmnDbBatch.Read(strSQL, Me.DbConnection, MyBase.DbTransaction)
         ReDim TBL_TAXITICKET_HAKKO(wCnt)
         While RsData.Read()
             wFlag = True
@@ -178,7 +182,7 @@ Public Class Proc
         For wCnt = LBound(TBL_TAXITICKET_HAKKO) To UBound(TBL_TAXITICKET_HAKKO)
             If Trim(TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID) <> "" AndAlso Val(TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO) <> 0 Then
                 strSQL = SQL.TBL_KOTSUHOTEL.byTKT_NO_TKT_LINE_NO(TBL_TAXITICKET_HAKKO(wCnt).SANKASHA_ID, TBL_TAXITICKET_HAKKO(wCnt).TKT_NO, TBL_TAXITICKET_HAKKO(wCnt).TKT_LINE_NO)
-                RsData = CmnDbBatch.Read(strSQL, Me.DbConnection)
+                RsData = CmnDbBatch.Read(strSQL, Me.DbConnection, MyBase.DbTransaction)
                 If RsData.HasRows Then
                     RsData.Read()
                     TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
@@ -363,7 +367,7 @@ Public Class Proc
 
         ReDim MS_CODE(wCnt)
         strSQL = SQL.MS_CODE.AllData
-        RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection)
+        RsData = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
         While RsData.Read()
             wFlag = True
 
@@ -676,4 +680,24 @@ Public Class Proc
 
         Return TBL_LOG
     End Function
+
+    'タクチケ台帳出力対象テーブル　出力対象フラグセット
+    Private Sub UpdateOutputFlag()
+
+        Dim strSQL As String = ""
+
+        For i As Integer = LBound(TBL_TAXIDAICHO) To UBound(TBL_TAXIDAICHO)
+            Try
+                TBL_TAXIDAICHO(i).UPDATE_USER = MyBase.batchID
+                TBL_TAXIDAICHO(i).OUTPUT_FLAG = CmnConst.Flag.On
+                strSQL = SQL.TBL_TAXIDAICHO.Update(TBL_TAXIDAICHO(i))
+                Call CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+            Catch ex As Exception
+                'ログテーブルに登録
+                InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.NG, "[データ登録失敗]" & ex.Message, "TBL_TAXIDAICHO", " SQL:" & strSQL)
+            End Try
+        Next
+
+    End Sub
 End Class

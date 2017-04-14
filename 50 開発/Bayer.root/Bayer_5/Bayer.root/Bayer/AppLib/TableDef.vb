@@ -4176,6 +4176,7 @@
         <Serializable()> Public Structure DataStruct
             Public KOUENKAI_NO As String
             Public FROM_DATE As String
+            Public FILE_NAME As String
             Public OUTPUT_FLAG As String
             Public INPUT_DATE As String
             Public INPUT_USER As String
@@ -4188,6 +4189,7 @@
         Public Class Column
             Public Const KOUENKAI_NO As String = "KOUENKAI_NO"
             Public Const FROM_DATE As String = "FROM_DATE"
+            Public Const FILE_NAME As String = "FILE_NAME"
             Public Const OUTPUT_FLAG As String = "OUTPUT_FLAG"
             Public Const INPUT_DATE As String = "INPUT_DATE"
             Public Const INPUT_USER As String = "INPUT_USER"
@@ -4200,6 +4202,7 @@
         Public Class Name
             Public Const KOUENKAI_NO As String = "会合番号"
             Public Const FROM_DATE As String = "開催開始日"
+            Public Const FILE_NAME As String = "ファイル名"
             Public Const OUTPUT_FLAG As String = "タクチケ台帳出力済フラグ"
             Public Const INPUT_DATE As String = "登録日時"
             Public Const INPUT_USER As String = "登録者"
@@ -4212,11 +4215,12 @@
         Public Class ColumnNo
             Public Const KOUENKAI_NO As Integer = 0
             Public Const FROM_DATE As Integer = 1
-            Public Const OUTPUT_FLAG As Integer = 2
-            Public Const INPUT_DATE As Integer = 3
-            Public Const INPUT_USER As Integer = 4
-            Public Const UPDATE_DATE As Integer = 5
-            Public Const UPDATE_USER As Integer = 6
+            Public Const FILE_NAME As Integer = 2
+            Public Const OUTPUT_FLAG As Integer = 3
+            Public Const INPUT_DATE As Integer = 4
+            Public Const INPUT_USER As Integer = 5
+            Public Const UPDATE_DATE As Integer = 6
+            Public Const UPDATE_USER As Integer = 7
         End Class
     End Class
 

@@ -10319,7 +10319,7 @@ Public Class SQL
         Public Shared Function GetOutputData() As String
             Dim strSQL As String = SQL_SELECT
 
-            strSQL &= " WHERE"
+            strSQL &= " WHERE "
             strSQL &= TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "='" & CmnConst.Flag.Off & "'"
 
             Return strSQL
@@ -10363,6 +10363,7 @@ Public Class SQL
             strSQL = "UPDATE TBL_TAXIDAICHO SET"
             strSQL &= " " & TableDef.TBL_TAXIDAICHO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.KOUENKAI_NO) & "'"
             strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.FROM_DATE & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.FROM_DATE) & "'"
+            strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.FILE_NAME & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.FILE_NAME) & "'"
             strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.OUTPUT_FLAG & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.OUTPUT_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_TAXIDAICHO.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_TAXIDAICHO.UPDATE_USER) & "'"
