@@ -409,19 +409,6 @@ Partial Public Class TaxiMeisaiDL
         End With
     End Sub
 
-    'グリッドビュー コマンドボタン押下時
-    Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
-        'Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-        'Dim row As GridViewRow = GrvList.Rows(index)
-
-        'Select Case e.CommandName
-        '    Case "Download"
-        '        'タクチケ台帳CSVダウンロード
-        '        Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-        '        Call DLCsvFile(Joken)
-        'End Select
-    End Sub
-
     '[検索]
     Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
         '入力チェック
@@ -446,38 +433,20 @@ Partial Public Class TaxiMeisaiDL
         sb.Append(System.Text.Encoding.GetEncoding("shift_jis").GetString(wFILE(0).DATUME))
         sw.Write(sb)
         sw.Close()
-
-        'Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
-        'Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
-        'Response.ContentType = wFILE(0).FILE_TYPE
-        'Response.BinaryWrite(wFILE(0).DATUME)
-        'Response.End()
     End Sub
 
     '[タクチケ台帳CSVファイル削除]
     Private Function DeleteTBL_FILE(ByVal Joken As TableDef.Joken.DataStruct) As Boolean
         Dim strSQL As String = ""
 
-        'データソース設定
-        strSQL = "DELETE FROM TBL_FILE WHERE FILE_NAME='" & Joken.FILE_NAME & "'"
+        Try
+            strSQL = "DELETE FROM TBL_FILE WHERE FILE_NAME='" & Joken.FILE_NAME & "'"
 
-        Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
-        Me.SqlDataSource1.DeleteCommand = strSQL
-        Me.SqlDataSource1.DeleteParameters.Clear()
-        Me.SqlDataSource1.DeleteParameters.Add("FILE_NAME", Joken.FILE_NAME)
-
-        With Me.GrvList
-            Try
-                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
-                .DataBind()
-            Catch ex As Exception
-                Session.Item(SessionDef.PageIndex) = 0
-                .PageIndex = CmnModule.DbVal(Session.Item(SessionDef.PageIndex))
-                .DataBind()
-            End Try
-            .Attributes(CmnConst.Html.Attributes.BorderColor) = CmnConst.Html.Color.Border
-        End With
-
+            CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            MyBase.Commit()
+        Catch ex As Exception
+            Return False
+        End Try
         Return True
     End Function
 
