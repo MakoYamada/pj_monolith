@@ -106,6 +106,15 @@ Partial Public Class SeisanshoAuto
     Protected WithEvents BtnAllClear1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''BtnDownload1 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDownload1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''BtnDelete1 コントロール。
     '''</summary>
     '''<remarks>
@@ -158,6 +167,15 @@ Partial Public Class SeisanshoAuto
     '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents BtnAllClear2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BtnDownload2 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナ ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents BtnDownload2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''BtnDelete2 コントロール。

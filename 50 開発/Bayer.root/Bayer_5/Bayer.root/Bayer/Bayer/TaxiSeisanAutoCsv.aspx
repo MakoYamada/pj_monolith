@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table cellspacing="0" cellpadding="2" border="0">
+	<table cellspacing="0" cellpadding="2" border="0">
         <tr id="TrButton1" runat="server">
             <td align="right">
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">

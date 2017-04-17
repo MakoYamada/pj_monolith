@@ -52,6 +52,8 @@
                                 CssClass="Button" tabindex="12" />
                         </td>
                         <td style="width:50%" align="right">
+                            <asp:Button ID="BtnDownload1" runat="server" Text="ダウンロード" Width="130px" 
+                                CssClass="Button" />
                             <asp:Button ID="BtnDelete1" runat="server" Text="削除" Width="130px" 
                                 CssClass="Button" tabindex="12" />
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
@@ -88,12 +90,12 @@
                         <asp:BoundField DataField="FILE_NAME" HeaderText="総合精算書PDFファイル名" />
                         <asp:BoundField DataField="INS_DATE" HeaderText="総合精算書PDF作成日" />
                         <asp:BoundField DataField="FILE_TYPE" HeaderText="ファイルタイプ" />
-                        <asp:ButtonField ButtonType="Button" CommandName="Download" HeaderText="ダウンロード" 
+                        <%--<asp:ButtonField ButtonType="Button" CommandName="Download" HeaderText="ダウンロード" 
                             Text="ダウンロード">
                         <ControlStyle CssClass="ButtonList90" />
                         <HeaderStyle HorizontalAlign="Center" />
                         <ItemStyle HorizontalAlign="Center" />
-                        </asp:ButtonField>
+                        </asp:ButtonField>--%>
                         <%--<asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="削除" 
                             Text="削除">
                         <ControlStyle CssClass="ButtonList90" />
@@ -115,6 +117,8 @@
                                 CssClass="Button" tabindex="12" />
                         </td>
                         <td style="width:50%" align="right">
+                            <asp:Button ID="BtnDownload2" runat="server" Text="ダウンロード" Width="130px" 
+                                CssClass="Button" />
                             <asp:Button ID="BtnDelete2" runat="server" Text="削除" Width="130px" 
                                 CssClass="Button" tabindex="12" />
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 

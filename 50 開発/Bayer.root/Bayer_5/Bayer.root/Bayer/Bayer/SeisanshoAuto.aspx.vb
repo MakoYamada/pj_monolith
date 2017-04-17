@@ -3,6 +3,9 @@ Imports AppLib
 Imports System.Data.SqlClient
 Imports System.Drawing
 Imports System.IO
+Imports System.Runtime.Serialization
+Imports System.Runtime.Serialization.Formatters.Binary
+
 
 Partial Public Class SeisanshoAuto
     Inherits WebBase
@@ -17,7 +20,7 @@ Partial Public Class SeisanshoAuto
         FILE_NAME
         INS_DATE
         FILE_TYPE
-        BUTTON1
+        'BUTTON1
     End Enum
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -327,20 +330,20 @@ Partial Public Class SeisanshoAuto
         Dim index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim row As GridViewRow = GrvList.Rows(index)
 
-        Select Case e.CommandName
-            Case "Download"
-                '精算番号表CSVダウンロード
-                Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                Call DLCsvFile(Joken)
+        'Select Case e.CommandName
+        '    Case "Download"
+        '        '精算番号表CSVダウンロード
+        '        Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+        '        Call DLPdfFile(Joken)
 
-                'Case "Delete"
-                '    '精算番号表CSV削除
-                '    Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                '    Call DeleteTBL_FILE(Joken)
+        'Case "Delete"
+        '    '精算番号表CSV削除
+        '    Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+        '    Call DeleteTBL_FILE(Joken)
 
-                '    '精算番号表CSV再表示
-                '    Call SetForm()
-        End Select
+        '    '精算番号表CSV再表示
+        '    Call SetForm()
+        'End Select
     End Sub
 
     '[検索]
@@ -353,24 +356,26 @@ Partial Public Class SeisanshoAuto
     End Sub
 
     '[総合精算書PDFファイルダウンロード]
-    Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct)
+    Protected Sub DLPdfFile(ByVal Joken As TableDef.Joken.DataStruct, ByRef PdfFile() As String)
         Dim wFILE(0) As TableDef.TBL_FILE.DataStruct
 
         '書類テーブルデータ取得
         If Not GetData(Joken, wFILE) Then Exit Sub
 
-        Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
-        Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
-        Response.ContentType = wFILE(0).FILE_TYPE
-        Response.BinaryWrite(wFILE(0).DATUME)
-        Response.End()
+        Dim i As Integer = UBound(PdfFile)
+        PdfFile(i) = WebConfig.Path.Seisansho & wFILE(0).FILE_NAME
+
+        Dim fs As New FileStream(PdfFile(i), FileMode.OpenOrCreate, FileAccess.ReadWrite)
+        fs.Write(wFILE(0).DATUME, 0, wFILE(0).DATUME.Length)
+        Dim f As New BinaryFormatter
+        fs.Close()
     End Sub
 
     '[総合精算書PDFファイル削除]
     Private Function DeleteTBL_FILE(ByVal Joken As TableDef.Joken.DataStruct) As Boolean
         Dim strSQL As String = ""
 
-        'データソース設定
+        'データソース設定b
         strSQL = "DELETE FROM TBL_FILE WHERE FILE_NAME='" & Joken.FILE_NAME & "'"
 
         Me.SqlDataSource1.ConnectionString = WebConfig.Db.ConnectionString
@@ -393,20 +398,87 @@ Partial Public Class SeisanshoAuto
         Return True
     End Function
 
+    '[ダウンロード]
+    Private Sub BtnDownload_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDownload1.Click, BtnDownload2.Click
+        Dim i As Integer = 0
+
+        For Each row As GridViewRow In Me.GrvList.Rows
+            If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then i += 1
+        Next
+
+        If i = 0 Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect("ダウンロードする総合精算書"), Me)
+            Exit Sub
+        End If
+
+        'Zipファイル名
+        Dim ZipFileName As String = "Seisansho_" & Now.ToString("yyyyMMddHHmmss") & ".zip"
+        Dim ZipPath As String = WebConfig.Path.SeisanCsv & ZipFileName
+        Dim PdfPath() As String
+
+        'Zip作成
+        i = 0
+        Using zip As New Ionic.Zip.ZipFile
+
+            For Each row As GridViewRow In Me.GrvList.Rows
+                If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then
+                    '総合精算書PDFダウンロード
+                    Joken.FILE_NAME = DirectCast(GrvList.Rows(i).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+                    ReDim Preserve PdfPath(i)
+                    Call DLPdfFile(Joken, PdfPath)
+                    zip.AddFile(PdfPath(i), "")
+                End If
+                i += 1
+            Next
+            zip.Save(ZipPath)
+        End Using
+
+        'バックアップ作成
+        System.IO.File.Copy(ZipPath, WebConfig.Path.SeisanCsv_Backup & ZipFileName)
+
+        'Csv削除
+        Try
+            For k As Integer = LBound(PdfPath) To UBound(PdfPath)
+                System.IO.File.Delete(PdfPath(k))
+            Next k
+        Catch ex As Exception
+        End Try
+
+        'ダウンロード
+        Response.Clear()
+        Response.ContentType = "application/x-zip"
+        Response.Charset = ""
+        Response.AddHeader("content-disposition", "attachment; filename=" & _
+            HttpUtility.UrlEncode(CStr(ZipFileName)))
+        Response.WriteFile(CStr(ZipPath))
+        Response.Flush()
+
+        'Zipファイル削除
+        Try
+            System.IO.File.Delete(ZipPath)
+        Catch ex As Exception
+        End Try
+    End Sub
+
     '[削除]
     Private Sub BtnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDelete1.Click, BtnDelete2.Click
         Dim i As Integer = 0
 
         For Each row As GridViewRow In Me.GrvList.Rows
             If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then
-                '精算番号表CSV削除
+                '総合精算書削除
                 Joken.FILE_NAME = DirectCast(GrvList.Rows(i).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
                 Call DeleteTBL_FILE(Joken)
             End If
             i += 1
         Next
 
-        '精算番号表CSV再表示
+        If i = 0 Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect("削除する総合精算書"), Me)
+            Exit Sub
+        End If
+
+        '総合精算書一覧再表示
         Call SetForm()
     End Sub
 
