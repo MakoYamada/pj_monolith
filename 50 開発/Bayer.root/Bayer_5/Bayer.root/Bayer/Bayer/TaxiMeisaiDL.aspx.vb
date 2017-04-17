@@ -454,14 +454,23 @@ Partial Public Class TaxiMeisaiDL
     Private Sub BtnDownload_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDownload1.Click, BtnDownload2.Click
         Dim i As Integer = 0
 
+        For Each row As GridViewRow In Me.GrvList.Rows
+            If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then i += 1
+        Next
+
+        If i = 0 Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect("ダウンロードするタクチケ台帳CSV"), Me)
+            Exit Sub
+        End If
+
         'Zipファイル名
         Dim ZipFileName As String = "TaxiMeisai_" & Now.ToString("yyyyMMddHHmmss") & ".zip"
         Dim ZipPath As String = WebConfig.Path.TaxiMeisaiCsv & ZipFileName
         Dim CsvPath() As String
 
         'Zip作成
+        i = 0
         Using zip As New Ionic.Zip.ZipFile
-
             For Each row As GridViewRow In Me.GrvList.Rows
                 If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then
                     'タクチケ台帳CSVダウンロード
@@ -514,6 +523,11 @@ Partial Public Class TaxiMeisaiDL
             End If
             i += 1
         Next
+
+        If i = 0 Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect("削除するタクチケ台帳CSV"), Me)
+            Exit Sub
+        End If
 
         'タクチケ台帳CSV再表示
         Call SetForm()

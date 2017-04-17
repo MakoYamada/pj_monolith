@@ -54,6 +54,10 @@
         Public Shared TaxiPrintCsv_BackUp As String = System.Configuration.ConfigurationManager.AppSettings("TaxiPrintCsv_BackUp")
         Public Shared TaxiMeisaiCsv As String = System.Configuration.ConfigurationManager.AppSettings("TaxiMeisaiCsv")
         Public Shared TaxiMeisaiCsv_Backup As String = System.Configuration.ConfigurationManager.AppSettings("TaxiMeisaiCsv_Backup")
+        Public Shared Seisansho As String = System.Configuration.ConfigurationManager.AppSettings("Seisansho")
+        Public Shared Seisansho_Backup As String = System.Configuration.ConfigurationManager.AppSettings("Seisansho_Backup")
+        Public Shared SeisanCsv As String = System.Configuration.ConfigurationManager.AppSettings("SeisanCsv")
+        Public Shared SeisanCsv_Backup As String = System.Configuration.ConfigurationManager.AppSettings("SeisanCsv_Backup")
     End Class
 
 End Class

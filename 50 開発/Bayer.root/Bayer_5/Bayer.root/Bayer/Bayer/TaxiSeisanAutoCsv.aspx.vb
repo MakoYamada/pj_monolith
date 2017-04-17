@@ -17,7 +17,7 @@ Partial Public Class TaxiSeisanAutoCsv
         FILE_NAME
         INS_DATE
         FILE_TYPE
-        BUTTON1
+        'BUTTON1
     End Enum
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -59,6 +59,9 @@ Partial Public Class TaxiSeisanAutoCsv
 
         'クリア
         CmnModule.ClearAllControl(Me)
+
+        Me.BtnDelete1.Attributes(CmnConst.Html.Attributes.OnClick) = CmnModule.GetJavaConfirm("選択されている全ての精算番号表CSVを削除します。よろしいですか？")
+        Me.BtnDelete2.Attributes(CmnConst.Html.Attributes.OnClick) = CmnModule.GetJavaConfirm("選択されている全ての精算番号表CSVを削除します。よろしいですか？")
     End Sub
 
     '画面項目 表示
@@ -236,38 +239,47 @@ Partial Public Class TaxiSeisanAutoCsv
 
     'グリッドビュー コマンドボタン押下時
     Protected Sub GrvList_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GrvList.RowCommand
-        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-        Dim row As GridViewRow = GrvList.Rows(index)
+        'Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        'Dim row As GridViewRow = GrvList.Rows(index)
 
-        Select Case e.CommandName
-            Case "Download"
-                '精算番号表CSVダウンロード
-                Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                Call DLCsvFile(Joken)
+        'Select Case e.CommandName
+        '    Case "Download"
+        '        '精算番号表CSVダウンロード
+        '        Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+        '        Call DLCsvFile(Joken)
 
-                'Case "Delete"
-                '    '精算番号表CSV削除
-                '    Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
-                '    Call DeleteTBL_FILE(Joken)
+        'Case "Delete"
+        '    '精算番号表CSV削除
+        '    Joken.FILE_NAME = DirectCast(GrvList.Rows(index).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+        '    Call DeleteTBL_FILE(Joken)
 
-                '    '精算番号表CSV再表示
-                '    Call SetForm()
-        End Select
+        '    '精算番号表CSV再表示
+        '    Call SetForm()
+        'End Select
     End Sub
 
     '[精算番号表CSVファイルダウンロード]
-    Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct)
+    Protected Sub DLCsvFile(ByVal Joken As TableDef.Joken.DataStruct, ByRef CsvPath() As String)
         Dim wFILE(0) As TableDef.TBL_FILE.DataStruct
 
         '書類テーブルデータ取得
         If Not GetData(Joken, wFILE) Then Exit Sub
 
-        Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
-        Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
-        Response.Charset = CmnConst.Csv.Charset
-        Response.ContentType = wFILE(0).FILE_TYPE
-        Response.BinaryWrite(wFILE(0).DATUME)
-        Response.End()
+        Dim i As Integer = UBound(CsvPath)
+        CsvPath(i) = WebConfig.Path.SeisanCsv & wFILE(0).FILE_NAME
+        Dim sb As New System.Text.StringBuilder
+        Dim sw As New System.IO.StreamWriter(CsvPath(i), False, System.Text.Encoding.GetEncoding("Shift-JIS"))
+
+        sb.Append(System.Text.Encoding.GetEncoding("shift_jis").GetString(wFILE(0).DATUME))
+        sw.Write(sb)
+        sw.Close()
+
+        'Response.HeaderEncoding = System.Text.Encoding.GetEncoding("shift_jis")
+        'Response.AddHeader("Content-Disposition", "attachment;filename=" & wFILE(0).FILE_NAME)
+        'Response.Charset = CmnConst.Csv.Charset
+        'Response.ContentType = wFILE(0).FILE_TYPE
+        'Response.BinaryWrite(wFILE(0).DATUME)
+        'Response.End()
     End Sub
 
     '[精算番号表CSVファイル削除]
@@ -297,6 +309,68 @@ Partial Public Class TaxiSeisanAutoCsv
         Return True
     End Function
 
+    '[ダウンロード]
+    Private Sub BtnDownload_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDownload1.Click, BtnDownload2.Click
+        Dim i As Integer = 0
+
+        For Each row As GridViewRow In Me.GrvList.Rows
+            If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then i += 1
+        Next
+
+        If i = 0 Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect("ダウンロードする精算番号表"), Me)
+            Exit Sub
+        End If
+
+        'Zipファイル名
+        Dim ZipFileName As String = "Bangouhyo_" & Now.ToString("yyyyMMddHHmmss") & ".zip"
+        Dim ZipPath As String = WebConfig.Path.SeisanCsv & ZipFileName
+        Dim CsvPath() As String
+
+        'Zip作成
+        i = 0
+        Using zip As New Ionic.Zip.ZipFile
+
+            For Each row As GridViewRow In Me.GrvList.Rows
+                If DirectCast(row.FindControl("chkDelete"), CheckBox).Checked Then
+                    'タクチケ台帳CSVダウンロード
+                    Joken.FILE_NAME = DirectCast(GrvList.Rows(i).Controls(CellIndex.FILE_NAME), DataControlFieldCell).Text()
+                    ReDim Preserve CsvPath(i)
+                    Call DLCsvFile(Joken, CsvPath)
+                    zip.AddFile(CsvPath(i), "")
+                End If
+                i += 1
+            Next
+            zip.Save(ZipPath)
+        End Using
+
+        'バックアップ作成
+        System.IO.File.Copy(ZipPath, WebConfig.Path.SeisanCsv_Backup & ZipFileName)
+
+        'Csv削除
+        Try
+            For k As Integer = LBound(CsvPath) To UBound(CsvPath)
+                System.IO.File.Delete(CsvPath(k))
+            Next k
+        Catch ex As Exception
+        End Try
+
+        'ダウンロード
+        Response.Clear()
+        Response.ContentType = "application/x-zip"
+        Response.Charset = ""
+        Response.AddHeader("content-disposition", "attachment; filename=" & _
+            HttpUtility.UrlEncode(CStr(ZipFileName)))
+        Response.WriteFile(CStr(ZipPath))
+        Response.Flush()
+
+        'Zipファイル削除
+        Try
+            System.IO.File.Delete(ZipPath)
+        Catch ex As Exception
+        End Try
+    End Sub
+
     '[削除]
     Private Sub BtnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnDelete1.Click, BtnDelete2.Click
         Dim i As Integer = 0
@@ -309,6 +383,11 @@ Partial Public Class TaxiSeisanAutoCsv
             End If
             i += 1
         Next
+
+        If i = 0 Then
+            CmnModule.AlertMessage(MessageDef.Error.MustSelect("削除する精算番号表"), Me)
+            Exit Sub
+        End If
 
         '精算番号表CSV再表示
         Call SetForm()

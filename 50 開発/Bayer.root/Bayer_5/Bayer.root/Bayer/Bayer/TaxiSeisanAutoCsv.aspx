@@ -5,22 +5,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<table cellspacing="0" cellpadding="2" border="0">
+    <table cellspacing="0" cellpadding="2" border="0">
         <tr id="TrButton1" runat="server">
             <td align="right">
                 <table cellpadding="2" cellspacing="0" border="0" width="100%">
                     <tr>
                         <td style="width:"50%" align="left">
                             <asp:Button ID="BtnAllSelect1" runat="server" Text="全選択" Width="130px" 
-                                CssClass="Button" tabindex="12" />
+                                CssClass="Button" />
                             <asp:Button ID="BtnAllClear1" runat="server" Text="全解除" Width="130px" 
-                                CssClass="Button" tabindex="12" />
+                                CssClass="Button" />
                         </td>
                         <td style="width:50%" align="right">
+                            <asp:Button ID="BtnDownload1" runat="server" Text="ダウンロード" Width="130px" 
+                                CssClass="Button" />
                             <asp:Button ID="BtnDelete1" runat="server" Text="削除" Width="130px" 
-                                CssClass="Button" tabindex="12" />
+                                CssClass="Button" />
                             <asp:Button ID="BtnBack1" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="13" />
+                                CssClass="Button" />
                         </td>
                     </tr>
                 </table> 
@@ -37,7 +39,7 @@
         </tr>
         <tr>
             <td>
-                <asp:GridView ID="GrvList" runat="server" TabIndex="16" CellPadding="2" 
+                <asp:GridView ID="GrvList" runat="server" CellPadding="2" 
                     AutoGenerateColumns="False" PageSize="13" DataKeyNames="FILE_NAME" 
                     DataSourceID="SqlDataSource1" Width="972px" AllowSorting="True">
                     <AlternatingRowStyle Wrap="false" BackColor="#f2f2f2" />
@@ -47,7 +49,7 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:TemplateField HeaderText="削除">
+                        <asp:TemplateField HeaderText="選択">
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkDelete" runat="server" />
                             </ItemTemplate>
@@ -62,12 +64,12 @@
                         <asp:BoundField DataField="FILE_NAME" HeaderText="精算番号表CSVファイル名" />
                         <asp:BoundField DataField="INS_DATE" HeaderText="精算番号表CSV作成日" />
                         <asp:BoundField DataField="FILE_TYPE" HeaderText="ファイルタイプ" />
-                        <asp:ButtonField ButtonType="Button" CommandName="Download" HeaderText="ダウンロード" 
+                        <%--<asp:ButtonField ButtonType="Button" CommandName="Download" HeaderText="ダウンロード" 
                             Text="ダウンロード">
                         <ControlStyle CssClass="ButtonList90" />
                         <HeaderStyle HorizontalAlign="Center" />
                         <ItemStyle HorizontalAlign="Center" />
-                        </asp:ButtonField>
+                        </asp:ButtonField>--%>
                         <%--<asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="削除" 
                             Text="削除">
                         <ControlStyle CssClass="ButtonList90" />
@@ -84,15 +86,17 @@
                     <tr>
                         <td style="width:"50%" align="left">
                             <asp:Button ID="BtnAllSelect2" runat="server" Text="全選択" Width="130px" 
-                                CssClass="Button" tabindex="12" />
+                                CssClass="Button" />
                             <asp:Button ID="BtnAllClear2" runat="server" Text="全解除" Width="130px" 
-                                CssClass="Button" tabindex="12" />
+                                CssClass="Button" />
                         </td>
                         <td style="width:50%" align="right">
+                            <asp:Button ID="BtnDownload2" runat="server" Text="ダウンロード" Width="130px" 
+                                CssClass="Button" />
                             <asp:Button ID="BtnDelete2" runat="server" Text="削除" Width="130px" 
-                                CssClass="Button" tabindex="12" />
+                                CssClass="Button" />
                             <asp:Button ID="BtnBack2" runat="server" Text="戻る" Width="130px" 
-                                CssClass="Button" TabIndex="13" />
+                                CssClass="Button" />
                         </td>
                     </tr>
                 </table> 
