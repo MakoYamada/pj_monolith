@@ -73,6 +73,9 @@ Public Class Proc
         'タクチケ台帳出力対象会合番号CSVファイル生成
         Call TaxiMeisaiCsv(W_SEISAN_TKTNO)
 
+        '自動精算対象タクチケテーブルから処理済みデータ削除
+        Call DeleteTBL_SEISAN_TKTNO(W_SEISAN_TKTNO)
+
         MyBase.BeginTransaction()
 
     End Sub
@@ -913,6 +916,23 @@ Public Class Proc
         Catch ex As Exception
             Return False
         End Try
+        Return True
+    End Function
+
+    '自動精算対象タクチケテーブルから処理済みデータ削除
+    Private Function DeleteTBL_SEISAN_TKTNO(ByVal pTBL_SEISAN_TKTNO() As TableDef.TBL_SEISAN_TKTNO.DataStruct) As Boolean
+
+        For i As Integer = LBound(pTBL_SEISAN_TKTNO) To UBound(pTBL_SEISAN_TKTNO)
+            Dim strSQL As String = ""
+            Try
+                strSQL = "DELETE FROM TBL_SEISAN_TKTNO WHERE TKT_NO='" & pTBL_SEISAN_TKTNO(i).TKT_NO & "'"
+
+                CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+                MyBase.Commit()
+            Catch ex As Exception
+                Return False
+            End Try
+        Next
         Return True
     End Function
 
