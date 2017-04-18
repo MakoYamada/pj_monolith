@@ -49,7 +49,7 @@ Partial Public Class TaxiMeisaiDL
         'マスターページ設定
         With Me.Master
             .DispTaxiMenu = True
-            .PageTitle = "総合精算書PDFダウンロード"
+            .PageTitle = "タクチケ台帳CSVダウンロード"
         End With
 
     End Sub
