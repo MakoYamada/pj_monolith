@@ -75,7 +75,7 @@
                         FirstPageText="&lt;&lt;" LastPageText="&gt;&gt;" />
                     <PagerStyle BackColor="#ffffff" Font-Bold="true" CssClass="pagerlink" />
                     <Columns>
-                        <asp:TemplateField HeaderText="削除">
+                        <asp:TemplateField HeaderText="選択">
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkDelete" runat="server" />
                             </ItemTemplate>
