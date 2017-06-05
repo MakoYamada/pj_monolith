@@ -1,4 +1,4 @@
-select count(*) from tbl_kouenkai
+delete from tbl_shounin 
 where kouenkai_no in 
 (SELECT
     TBL_KOUENKAI.kouenkai_no
