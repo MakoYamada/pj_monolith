@@ -8,9 +8,6 @@ FROM
                                 MAX(TIME_STAMP) TIME_STAMP_MAX
                             FROM
                                 TBL_KOUENKAI
-                            WHERE
-                                FROM_DATE <= '20151231' AND
-                                FROM_DATE <> ''
                             GROUP BY
                                 KOUENKAI_NO
                             ) WK1 ON TBL_KOUENKAI.KOUENKAI_NO=WK1.KOUENKAI_NO AND TBL_KOUENKAI.TIME_STAMP=WK1.TIME_STAMP_MAX
