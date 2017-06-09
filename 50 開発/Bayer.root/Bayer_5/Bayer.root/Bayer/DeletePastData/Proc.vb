@@ -36,17 +36,17 @@ Public Class Proc
             Exit Sub
         End If
 
-        '過去データ用DBマスターデータ削除
-        If Not DelPastMaster() Then
-            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "過去データ用DBマスターデータ削除に失敗しました")
-            Exit Sub
-        End If
+        ''過去データ用DBマスターデータ削除
+        'If Not DelPastMaster() Then
+        '    InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "過去データ用DBマスターデータ削除に失敗しました")
+        '    Exit Sub
+        'End If
 
-        'マスターデータ移行
-        If Not InsertPastMaster() Then
-            InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "マスターデータ移行に失敗しました")
-            Exit Sub
-        End If
+        ''マスターデータ移行
+        'If Not InsertPastMaster() Then
+        '    InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "マスターデータ移行に失敗しました")
+        '    Exit Sub
+        'End If
 
         '削除対象会合番号抽出
         '初回用削除基準日
@@ -69,8 +69,8 @@ Public Class Proc
             strSQL = SQL.ALTER_INDEX.AlterIndex2
             CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-            strSQL = SQL.ALTER_INDEX.AlterIndex3
-            CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            'strSQL = SQL.ALTER_INDEX.AlterIndex3
+            'CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             strSQL = SQL.ALTER_INDEX.AlterIndex4
             CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
@@ -78,8 +78,8 @@ Public Class Proc
             strSQL = SQL.ALTER_INDEX.AlterIndex5
             CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
-            strSQL = SQL.ALTER_INDEX.AlterIndex6
-            CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            'strSQL = SQL.ALTER_INDEX.AlterIndex6
+            'CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
 
             strSQL = SQL.ALTER_INDEX.AlterIndex7
             CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
@@ -98,8 +98,8 @@ Public Class Proc
             strSQL = SQL.ALTER_INDEX.AlterIndex2
             CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-            strSQL = SQL.ALTER_INDEX.AlterIndex3
-            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+            'strSQL = SQL.ALTER_INDEX.AlterIndex3
+            'CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
             strSQL = SQL.ALTER_INDEX.AlterIndex4
             CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
@@ -107,8 +107,8 @@ Public Class Proc
             strSQL = SQL.ALTER_INDEX.AlterIndex5
             CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
-            strSQL = SQL.ALTER_INDEX.AlterIndex6
-            CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
+            'strSQL = SQL.ALTER_INDEX.AlterIndex6
+            'CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)
 
             strSQL = SQL.ALTER_INDEX.AlterIndex7
             CmnDbBatch.Execute(strSQL, MyBase.DbConnectionPast, MyBase.DbTransactionPast)

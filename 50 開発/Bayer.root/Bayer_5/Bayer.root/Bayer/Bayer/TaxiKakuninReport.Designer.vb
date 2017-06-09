@@ -880,7 +880,6 @@ Partial Public Class TaxiKakuninReport
         '
         'Shape1
         '
-        Me.Shape1.BackColor = System.Drawing.Color.DarkGray
         Me.Shape1.Height = 0.2740157!
         Me.Shape1.Left = 0.0!
         Me.Shape1.Name = "Shape1"
@@ -916,8 +915,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label6.HyperLink = Nothing
         Me.Label6.Left = 0.0000004768372!
         Me.Label6.Name = "Label6"
-        Me.Label6.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label6.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align" & _
+            ": middle; white-space: nowrap"
         Me.Label6.Text = "会合番号"
         Me.Label6.Top = 0.4740149!
         Me.Label6.Width = 0.6570862!
@@ -928,8 +927,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label9.HyperLink = Nothing
         Me.Label9.Left = 2.155512!
         Me.Label9.Name = "Label9"
-        Me.Label9.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label9.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align" & _
+            ": middle; white-space: nowrap"
         Me.Label9.Text = "MTP ID(参加者ID)"
         Me.Label9.Top = 0.4740158!
         Me.Label9.Width = 1.081889!
@@ -940,8 +939,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label10.HyperLink = Nothing
         Me.Label10.Left = 4.942126!
         Me.Label10.Name = "Label10"
-        Me.Label10.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label10.Text = "DRコード"
         Me.Label10.Top = 0.4740158!
         Me.Label10.Width = 0.7047243!
@@ -952,8 +951,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label11.HyperLink = Nothing
         Me.Label11.Left = 0.0!
         Me.Label11.Name = "Label11"
-        Me.Label11.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label11.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align" & _
+            ": middle; white-space: nowrap"
         Me.Label11.Text = "DR氏名"
         Me.Label11.Top = 0.6996064!
         Me.Label11.Width = 1.323622!
@@ -1043,7 +1042,7 @@ Partial Public Class TaxiKakuninReport
         'Detail
         '
         Me.Detail.ColumnSpacing = 0.0!
-        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.MR_SEND_SAKI_OTHER, Me.Label174, Me.KINKYU_FLAG, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_HAKKO_DATE_16, Me.Label144, Me.Label53, Me.Label49, Me.Label45, Me.Label12, Me.Label202, Me.Label24, Me.REQ_TAXI_FROM_1, Me.Label5, Me.KOUENKAI_NAME, Me.DANTAI_CODE, Me.Label200, Me.Label8, Me.Label185, Me.REQ_MR_TEHAI, Me.Label178, Me.Label184, Me.TEHAI_HOTEL, Me.Label183, Me.TEHAI_KOTSU, Me.Label182, Me.ANS_TAXI_NOTE, Me.REQ_TAXI_NOTE, Me.Label180, Me.Label124, Me.Label90, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.TAXI_YOTEIKINGAKU_2, Me.KOUTEI_1, Me.REQ_TAXI_DATE_1, Me.Label73, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label71, Me.TEHAI_TAXI, Me.Shape1, Me.DR_SHISETSU_NAME, Me.Label6, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.KOUENKAI_NO, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.Line3, Me.Line51, Me.Label3, Me.Line62, Me.Line63, Me.Line163, Me.Line164, Me.Line1, Me.Line2, Me.Line5, Me.Line42, Me.Line23, Me.Line26, Me.Label21, Me.ANS_TAXI_DATE_1, Me.Label22, Me.ANS_TAXI_KENSHU_1, Me.Label23, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_HAKKO_DATE_1, Me.Label25, Me.ANS_TAXI_RMKS_1, Me.Label27, Me.ANS_TAXI_DATE_2, Me.Label28, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_NO_2, Me.Label30, Me.ANS_TAXI_HAKKO_DATE_2, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_DATE_3, Me.Label34, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_NO_3, Me.Label36, Me.ANS_TAXI_HAKKO_DATE_3, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_HAKKO_DATE_4, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_HAKKO_DATE_5, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_HAKKO_DATE_6, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_HAKKO_DATE_7, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_HAKKO_DATE_8, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_HAKKO_DATE_9, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_HAKKO_DATE_10, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_HAKKO_DATE_11, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_HAKKO_DATE_12, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_NO_12, Me.Label130, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_HAKKO_DATE_13, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_NO_13, Me.Label136, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_HAKKO_DATE_14, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_NO_14, Me.Label142, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_HAKKO_DATE_15, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_NO_15, Me.Label148, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_NO_16, Me.Label154, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_HAKKO_DATE_17, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_NO_17, Me.Label160, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_HAKKO_DATE_18, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_NO_18, Me.Label166, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_HAKKO_DATE_19, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_NO_19, Me.Label172, Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_HAKKO_DATE_20, Me.ANS_TAXI_DATE_20, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_20, Me.Label20, Me.Label26, Me.Label32, Me.Label38, Me.Label69, Me.Label94, Me.Label100, Me.Label106, Me.Label112, Me.Label118, Me.Line36, Me.Line104, Me.Label181, Me.REQ_O_TEHAI_1, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.Line32, Me.Label7, Me.Line37, Me.Line6, Me.Line7, Me.Line4, Me.Line152, Me.Line153, Me.Line155, Me.Line17, Me.Line107, Me.Line109, Me.Line18, Me.Line85, Me.Label46, Me.Line110, Me.Label50, Me.Line135, Me.Label203, Me.Label204, Me.Label31, Me.Label205, Me.Label13, Me.Label33, Me.Label35, Me.Label37, Me.Label54, Me.Label206, Me.Label207, Me.Label15, Me.Label16, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label55, Me.Label59, Me.Label62, Me.Label63, Me.Label64, Me.Label67, Me.Label68, Me.Label70, Me.Label17, Me.Label75, Me.Label91, Me.Label92, Me.Label93, Me.Label95, Me.Label208, Me.Label209, Me.Label210, Me.Label18, Me.Label66, Me.Label76, Me.Label77, Me.Label79, Me.Label80, Me.Label81, Me.Label96, Me.Label97, Me.Label98, Me.Label99, Me.Label101, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label19, Me.Label29, Me.Label83, Me.Label84, Me.Label85, Me.Label102, Me.Label103, Me.Label104, Me.Label105, Me.Label72, Me.Label87, Me.Label88, Me.Label89, Me.Label107, Me.Label108, Me.Line13, Me.Line16, Me.Line41, Me.Line111, Me.Line136, Me.Line106, Me.Line138, Me.Line11, Me.Line139, Me.Line140, Me.Line105, Me.Line143, Me.Line102, Me.Line144, Me.Line101, Me.Line145, Me.Line100, Me.Line15, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line35, Me.Line49, Me.Line54, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line64, Me.Line65, Me.Line67, Me.Line68, Me.Line69, Me.Line87, Me.Label109, Me.Label110, Me.Label111, Me.Label113, Me.Label114, Me.Label115, Me.Line99, Me.Line103, Me.Label116, Me.Label117, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Line8, Me.Label123, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Label129, Me.Line25, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label137, Me.Line27, Me.Label138, Me.Label139, Me.Label140, Me.Label141, Me.Label143, Me.Line33, Me.Label145, Me.Label146, Me.Label147, Me.Label149, Me.Label150, Me.Label151, Me.Line34, Me.Label152, Me.Label153, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Line40, Me.Label159, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Line43, Me.Label167, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label173, Me.Line44, Me.Line74, Me.Line112, Me.Line9, Me.Line45, Me.Line47, Me.Line48, Me.Line50, Me.Line52, Me.Line53, Me.Line55, Me.Line56, Me.Line57, Me.Line10, Me.Line66, Me.Line14, Me.Line24, Me.Line29, Me.Line76, Me.Line30, Me.Line70, Me.Line71, Me.Line72, Me.Line73, Me.Line28, Me.Label4, Me.Line75, Me.Line79, Me.Line38, Me.Line114, Me.Line12, Me.Line31})
+        Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label3, Me.Shape1, Me.Label25, Me.MR_SEND_SAKI_OTHER, Me.Label174, Me.KINKYU_FLAG, Me.ANS_TAXI_KENSHU_16, Me.ANS_TAXI_HAKKO_DATE_16, Me.Label144, Me.Label53, Me.Label49, Me.Label45, Me.Label12, Me.Label202, Me.Label24, Me.REQ_TAXI_FROM_1, Me.Label5, Me.KOUENKAI_NAME, Me.DANTAI_CODE, Me.Label200, Me.Label8, Me.Label185, Me.REQ_MR_TEHAI, Me.Label178, Me.Label184, Me.TEHAI_HOTEL, Me.Label183, Me.TEHAI_KOTSU, Me.Label182, Me.ANS_TAXI_NOTE, Me.REQ_TAXI_NOTE, Me.Label180, Me.Label124, Me.Label90, Me.REQ_TAXI_DATE_10, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.REQ_TAXI_DATE_9, Me.REQ_TAXI_FROM_9, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.REQ_TAXI_DATE_8, Me.REQ_TAXI_FROM_8, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.REQ_TAXI_DATE_7, Me.REQ_TAXI_FROM_7, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.REQ_TAXI_DATE_6, Me.REQ_TAXI_FROM_6, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.REQ_TAXI_FROM_4, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.REQ_TAXI_FROM_3, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.REQ_TAXI_FROM_2, Me.TAXI_YOTEIKINGAKU_2, Me.KOUTEI_1, Me.REQ_TAXI_DATE_1, Me.Label73, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label71, Me.TEHAI_TAXI, Me.DR_SHISETSU_NAME, Me.Label6, Me.Label9, Me.Label10, Me.Label11, Me.Label14, Me.KOUENKAI_NO, Me.SANKASHA_ID, Me.DR_CD, Me.DR_NAME, Me.Line3, Me.Line51, Me.Line62, Me.Line63, Me.Line163, Me.Line164, Me.Line1, Me.Line2, Me.Line5, Me.Line42, Me.Line23, Me.Line26, Me.Label21, Me.ANS_TAXI_DATE_1, Me.Label22, Me.ANS_TAXI_KENSHU_1, Me.Label23, Me.ANS_TAXI_NO_1, Me.ANS_TAXI_HAKKO_DATE_1, Me.ANS_TAXI_RMKS_1, Me.Label27, Me.ANS_TAXI_DATE_2, Me.Label28, Me.ANS_TAXI_KENSHU_2, Me.ANS_TAXI_NO_2, Me.Label30, Me.ANS_TAXI_HAKKO_DATE_2, Me.ANS_TAXI_RMKS_2, Me.ANS_TAXI_DATE_3, Me.Label34, Me.ANS_TAXI_KENSHU_3, Me.ANS_TAXI_NO_3, Me.Label36, Me.ANS_TAXI_HAKKO_DATE_3, Me.ANS_TAXI_RMKS_3, Me.ANS_TAXI_DATE_4, Me.ANS_TAXI_KENSHU_4, Me.ANS_TAXI_NO_4, Me.ANS_TAXI_HAKKO_DATE_4, Me.ANS_TAXI_RMKS_4, Me.ANS_TAXI_HAKKO_DATE_5, Me.ANS_TAXI_DATE_5, Me.ANS_TAXI_KENSHU_5, Me.ANS_TAXI_NO_5, Me.ANS_TAXI_RMKS_5, Me.ANS_TAXI_HAKKO_DATE_6, Me.ANS_TAXI_DATE_6, Me.ANS_TAXI_KENSHU_6, Me.ANS_TAXI_NO_6, Me.ANS_TAXI_RMKS_6, Me.ANS_TAXI_HAKKO_DATE_7, Me.ANS_TAXI_DATE_7, Me.ANS_TAXI_KENSHU_7, Me.ANS_TAXI_NO_7, Me.ANS_TAXI_RMKS_7, Me.ANS_TAXI_HAKKO_DATE_8, Me.ANS_TAXI_DATE_8, Me.ANS_TAXI_KENSHU_8, Me.ANS_TAXI_NO_8, Me.ANS_TAXI_RMKS_8, Me.ANS_TAXI_HAKKO_DATE_9, Me.ANS_TAXI_DATE_9, Me.ANS_TAXI_KENSHU_9, Me.ANS_TAXI_NO_9, Me.ANS_TAXI_RMKS_9, Me.ANS_TAXI_HAKKO_DATE_10, Me.ANS_TAXI_DATE_10, Me.ANS_TAXI_KENSHU_10, Me.ANS_TAXI_NO_10, Me.ANS_TAXI_RMKS_10, Me.ANS_TAXI_HAKKO_DATE_11, Me.ANS_TAXI_DATE_11, Me.ANS_TAXI_KENSHU_11, Me.ANS_TAXI_NO_11, Me.ANS_TAXI_RMKS_11, Me.ANS_TAXI_HAKKO_DATE_12, Me.ANS_TAXI_DATE_12, Me.ANS_TAXI_KENSHU_12, Me.ANS_TAXI_NO_12, Me.Label130, Me.ANS_TAXI_RMKS_12, Me.ANS_TAXI_HAKKO_DATE_13, Me.ANS_TAXI_DATE_13, Me.ANS_TAXI_KENSHU_13, Me.ANS_TAXI_NO_13, Me.Label136, Me.ANS_TAXI_RMKS_13, Me.ANS_TAXI_HAKKO_DATE_14, Me.ANS_TAXI_DATE_14, Me.ANS_TAXI_KENSHU_14, Me.ANS_TAXI_NO_14, Me.Label142, Me.ANS_TAXI_RMKS_14, Me.ANS_TAXI_RMKS_15, Me.ANS_TAXI_HAKKO_DATE_15, Me.ANS_TAXI_DATE_15, Me.ANS_TAXI_KENSHU_15, Me.ANS_TAXI_NO_15, Me.Label148, Me.ANS_TAXI_RMKS_16, Me.ANS_TAXI_DATE_16, Me.ANS_TAXI_NO_16, Me.Label154, Me.ANS_TAXI_RMKS_17, Me.ANS_TAXI_HAKKO_DATE_17, Me.ANS_TAXI_DATE_17, Me.ANS_TAXI_KENSHU_17, Me.ANS_TAXI_NO_17, Me.Label160, Me.ANS_TAXI_RMKS_18, Me.ANS_TAXI_HAKKO_DATE_18, Me.ANS_TAXI_DATE_18, Me.ANS_TAXI_KENSHU_18, Me.ANS_TAXI_NO_18, Me.Label166, Me.ANS_TAXI_RMKS_19, Me.ANS_TAXI_HAKKO_DATE_19, Me.ANS_TAXI_DATE_19, Me.ANS_TAXI_KENSHU_19, Me.ANS_TAXI_NO_19, Me.Label172, Me.ANS_TAXI_RMKS_20, Me.ANS_TAXI_HAKKO_DATE_20, Me.ANS_TAXI_DATE_20, Me.ANS_TAXI_KENSHU_20, Me.ANS_TAXI_NO_20, Me.Label20, Me.Label26, Me.Label32, Me.Label38, Me.Label69, Me.Label94, Me.Label100, Me.Label106, Me.Label112, Me.Label118, Me.Line36, Me.Line104, Me.Label181, Me.REQ_O_TEHAI_1, Me.REQ_O_TEHAI_2, Me.REQ_O_TEHAI_3, Me.REQ_O_TEHAI_4, Me.REQ_O_TEHAI_5, Me.REQ_F_TEHAI_1, Me.REQ_F_TEHAI_2, Me.REQ_F_TEHAI_3, Me.REQ_F_TEHAI_4, Me.REQ_F_TEHAI_5, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.Line32, Me.Label7, Me.Line37, Me.Line6, Me.Line7, Me.Line4, Me.Line152, Me.Line153, Me.Line155, Me.Line17, Me.Line107, Me.Line109, Me.Line18, Me.Line85, Me.Label46, Me.Line110, Me.Label50, Me.Line135, Me.Label203, Me.Label204, Me.Label31, Me.Label205, Me.Label13, Me.Label33, Me.Label35, Me.Label37, Me.Label54, Me.Label206, Me.Label207, Me.Label15, Me.Label16, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.Label44, Me.Label55, Me.Label59, Me.Label62, Me.Label63, Me.Label64, Me.Label67, Me.Label68, Me.Label70, Me.Label17, Me.Label75, Me.Label91, Me.Label92, Me.Label93, Me.Label95, Me.Label208, Me.Label209, Me.Label210, Me.Label18, Me.Label66, Me.Label76, Me.Label77, Me.Label79, Me.Label80, Me.Label81, Me.Label96, Me.Label97, Me.Label98, Me.Label99, Me.Label101, Me.Label211, Me.Label212, Me.Label213, Me.Label214, Me.Label215, Me.Label216, Me.Label19, Me.Label29, Me.Label83, Me.Label84, Me.Label85, Me.Label102, Me.Label103, Me.Label104, Me.Label105, Me.Label72, Me.Label87, Me.Label88, Me.Label89, Me.Label107, Me.Label108, Me.Line13, Me.Line16, Me.Line41, Me.Line111, Me.Line136, Me.Line106, Me.Line138, Me.Line11, Me.Line139, Me.Line140, Me.Line105, Me.Line143, Me.Line102, Me.Line144, Me.Line101, Me.Line145, Me.Line100, Me.Line15, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line35, Me.Line49, Me.Line54, Me.Line58, Me.Line59, Me.Line60, Me.Line61, Me.Line64, Me.Line65, Me.Line67, Me.Line68, Me.Line69, Me.Line87, Me.Label109, Me.Label110, Me.Label111, Me.Label113, Me.Label114, Me.Label115, Me.Line99, Me.Label116, Me.Label117, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Line8, Me.Label123, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Label129, Me.Line25, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label137, Me.Line27, Me.Label138, Me.Label139, Me.Label140, Me.Label141, Me.Label143, Me.Line33, Me.Label145, Me.Label146, Me.Label147, Me.Label149, Me.Label150, Me.Label151, Me.Line34, Me.Label152, Me.Label153, Me.Label155, Me.Label156, Me.Label157, Me.Label158, Me.Line40, Me.Label159, Me.Label161, Me.Label162, Me.Label163, Me.Label164, Me.Label165, Me.Line43, Me.Label167, Me.Label168, Me.Label169, Me.Label170, Me.Label171, Me.Label173, Me.Line44, Me.Line74, Me.Line112, Me.Line9, Me.Line45, Me.Line47, Me.Line48, Me.Line50, Me.Line52, Me.Line53, Me.Line55, Me.Line56, Me.Line57, Me.Line10, Me.Line66, Me.Line14, Me.Line24, Me.Line29, Me.Line76, Me.Line30, Me.Line70, Me.Line71, Me.Line72, Me.Line73, Me.Line28, Me.Label4, Me.Line75, Me.Line79, Me.Line38, Me.Line114, Me.Line12, Me.Line31, Me.Line103})
         Me.Detail.Height = 10.21198!
         Me.Detail.KeepTogether = True
         Me.Detail.Name = "Detail"
@@ -1065,8 +1064,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label174.HyperLink = Nothing
         Me.Label174.Left = 0.008661418!
         Me.Label174.Name = "Label174"
-        Me.Label174.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label174.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label174.Text = "チケット送付先(その他)"
         Me.Label174.Top = 8.682678!
         Me.Label174.Width = 2.77874!
@@ -1122,8 +1121,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label53.HyperLink = Nothing
         Me.Label53.Left = 1.612992!
         Me.Label53.Name = "Label53"
-        Me.Label53.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label53.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label53.Text = "依頼金額"
         Me.Label53.Top = 2.504331!
         Me.Label53.Width = 0.5811024!
@@ -1134,8 +1133,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label49.HyperLink = Nothing
         Me.Label49.Left = 1.612992!
         Me.Label49.Name = "Label49"
-        Me.Label49.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label49.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label49.Text = "依頼金額"
         Me.Label49.Top = 2.05315!
         Me.Label49.Width = 0.5811025!
@@ -1146,8 +1145,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label45.HyperLink = Nothing
         Me.Label45.Left = 1.612992!
         Me.Label45.Name = "Label45"
-        Me.Label45.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label45.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label45.Text = "依頼金額"
         Me.Label45.Top = 1.612599!
         Me.Label45.Width = 0.5811026!
@@ -1170,8 +1169,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label202.HyperLink = Nothing
         Me.Label202.Left = 5.966536!
         Me.Label202.Name = "Label202"
-        Me.Label202.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label202.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label202.Text = "備考"
         Me.Label202.Top = 1.827559!
         Me.Label202.Width = 0.3948819!
@@ -1182,8 +1181,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label24.HyperLink = Nothing
         Me.Label24.Left = 5.966536!
         Me.Label24.Name = "Label24"
-        Me.Label24.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label24.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label24.Text = "発行日"
         Me.Label24.Top = 1.150787!
         Me.Label24.Width = 0.3948817!
@@ -1216,8 +1215,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label200.HyperLink = Nothing
         Me.Label200.Left = 5.966536!
         Me.Label200.Name = "Label200"
-        Me.Label200.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label200.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label200.Text = "団体コード"
         Me.Label200.Top = 0.9251968!
         Me.Label200.Width = 0.7047244!
@@ -1262,8 +1261,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label178.HyperLink = Nothing
         Me.Label178.Left = 2.787402!
         Me.Label178.Name = "Label178"
-        Me.Label178.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label178.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label178.Text = "ﾀｸﾁｹ20"
         Me.Label178.Top = 9.723228!
         Me.Label178.Width = 0.4488189!
@@ -1274,7 +1273,7 @@ Partial Public Class TaxiKakuninReport
         Me.Label184.HyperLink = Nothing
         Me.Label184.Left = 3.329134!
         Me.Label184.Name = "Label184"
-        Me.Label184.Style = "background-color: darkgray; vertical-align: middle; white-space: nowrap"
+        Me.Label184.Style = "vertical-align: middle; white-space: nowrap"
         Me.Label184.Text = "MR手配"
         Me.Label184.Top = 0.9251968!
         Me.Label184.Width = 0.5811024!
@@ -1296,7 +1295,7 @@ Partial Public Class TaxiKakuninReport
         Me.Label183.HyperLink = Nothing
         Me.Label183.Left = 2.483465!
         Me.Label183.Name = "Label183"
-        Me.Label183.Style = "background-color: darkgray; vertical-align: middle; white-space: nowrap"
+        Me.Label183.Style = "vertical-align: middle; white-space: nowrap"
         Me.Label183.Text = "宿泊手配"
         Me.Label183.Top = 0.9251968!
         Me.Label183.Width = 0.5811024!
@@ -1317,7 +1316,7 @@ Partial Public Class TaxiKakuninReport
         Me.Label182.HyperLink = Nothing
         Me.Label182.Left = 1.612992!
         Me.Label182.Name = "Label182"
-        Me.Label182.Style = "background-color: darkgray; vertical-align: middle; white-space: nowrap"
+        Me.Label182.Style = "vertical-align: middle; white-space: nowrap"
         Me.Label182.Text = "交通手配"
         Me.Label182.Top = 0.9251968!
         Me.Label182.Width = 0.5811024!
@@ -1350,8 +1349,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label180.HyperLink = Nothing
         Me.Label180.Left = 2.842171E-14!
         Me.Label180.Name = "Label180"
-        Me.Label180.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label180.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label180.Text = "備考（依頼）"
         Me.Label180.Top = 5.662599!
         Me.Label180.Width = 2.787402!
@@ -1362,8 +1361,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label124.HyperLink = Nothing
         Me.Label124.Left = 2.787402!
         Me.Label124.Name = "Label124"
-        Me.Label124.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label124.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label124.Text = "ﾀｸﾁｹ11"
         Me.Label124.Top = 5.662599!
         Me.Label124.Width = 0.4488189!
@@ -1374,8 +1373,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label90.HyperLink = Nothing
         Me.Label90.Left = 2.842171E-14!
         Me.Label90.Name = "Label90"
-        Me.Label90.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label90.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label90.Text = "行程10"
         Me.Label90.Top = 5.211418!
         Me.Label90.Width = 0.448819!
@@ -1419,8 +1418,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label86.HyperLink = Nothing
         Me.Label86.Left = 0.0000001788139!
         Me.Label86.Name = "Label86"
-        Me.Label86.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label86.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label86.Text = "行程9"
         Me.Label86.Top = 4.760236!
         Me.Label86.Width = 0.4488189!
@@ -1464,8 +1463,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label82.HyperLink = Nothing
         Me.Label82.Left = 0.0000001788139!
         Me.Label82.Name = "Label82"
-        Me.Label82.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label82.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label82.Text = "行程8"
         Me.Label82.Top = 4.309055!
         Me.Label82.Width = 0.448819!
@@ -1509,8 +1508,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label78.HyperLink = Nothing
         Me.Label78.Left = 2.842171E-14!
         Me.Label78.Name = "Label78"
-        Me.Label78.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label78.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label78.Text = "行程7"
         Me.Label78.Top = 3.857874!
         Me.Label78.Width = 0.448819!
@@ -1554,8 +1553,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label65.HyperLink = Nothing
         Me.Label65.Left = 0.0000001788139!
         Me.Label65.Name = "Label65"
-        Me.Label65.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label65.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label65.Text = "行程6"
         Me.Label65.Top = 3.406693!
         Me.Label65.Width = 0.448819!
@@ -1599,8 +1598,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label61.HyperLink = Nothing
         Me.Label61.Left = 0.0000001788139!
         Me.Label61.Name = "Label61"
-        Me.Label61.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label61.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label61.Text = "行程5"
         Me.Label61.Top = 2.955512!
         Me.Label61.Width = 0.448819!
@@ -1611,8 +1610,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label60.HyperLink = Nothing
         Me.Label60.Left = 0.4488192!
         Me.Label60.Name = "Label60"
-        Me.Label60.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label60.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label60.Text = "利用日"
         Me.Label60.Top = 2.955512!
         Me.Label60.Width = 0.3948819!
@@ -1645,8 +1644,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label58.HyperLink = Nothing
         Me.Label58.Left = 1.612992!
         Me.Label58.Name = "Label58"
-        Me.Label58.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label58.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label58.Text = "依頼金額"
         Me.Label58.Top = 2.955512!
         Me.Label58.Width = 0.5811024!
@@ -1668,8 +1667,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label57.HyperLink = Nothing
         Me.Label57.Left = 0.0!
         Me.Label57.Name = "Label57"
-        Me.Label57.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label57.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label57.Text = "行程4"
         Me.Label57.Top = 2.504331!
         Me.Label57.Width = 0.448819!
@@ -1680,8 +1679,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label56.HyperLink = Nothing
         Me.Label56.Left = 0.4488189!
         Me.Label56.Name = "Label56"
-        Me.Label56.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label56.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label56.Text = "利用日"
         Me.Label56.Top = 2.504331!
         Me.Label56.Width = 0.3948819!
@@ -1725,8 +1724,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label52.HyperLink = Nothing
         Me.Label52.Left = 0.0000001788139!
         Me.Label52.Name = "Label52"
-        Me.Label52.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label52.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label52.Text = "行程3"
         Me.Label52.Top = 2.05315!
         Me.Label52.Width = 0.448819!
@@ -1737,8 +1736,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label51.HyperLink = Nothing
         Me.Label51.Left = 0.4488189!
         Me.Label51.Name = "Label51"
-        Me.Label51.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label51.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label51.Text = "利用日"
         Me.Label51.Top = 2.05315!
         Me.Label51.Width = 0.3948819!
@@ -1782,8 +1781,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label48.HyperLink = Nothing
         Me.Label48.Left = 2.842171E-14!
         Me.Label48.Name = "Label48"
-        Me.Label48.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label48.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap" & _
+            ""
         Me.Label48.Text = "行程2"
         Me.Label48.Top = 1.612599!
         Me.Label48.Width = 0.448819!
@@ -1794,8 +1793,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label47.HyperLink = Nothing
         Me.Label47.Left = 0.4488189!
         Me.Label47.Name = "Label47"
-        Me.Label47.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label47.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label47.Text = "利用日"
         Me.Label47.Top = 1.612599!
         Me.Label47.Width = 0.3948819!
@@ -1837,12 +1836,12 @@ Partial Public Class TaxiKakuninReport
         '
         Me.KOUTEI_1.Height = 0.4511811!
         Me.KOUTEI_1.HyperLink = Nothing
-        Me.KOUTEI_1.Left = 2.842171E-14!
+        Me.KOUTEI_1.Left = 0.0!
         Me.KOUTEI_1.Name = "KOUTEI_1"
-        Me.KOUTEI_1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.KOUTEI_1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.KOUTEI_1.Text = "行程1"
-        Me.KOUTEI_1.Top = 1.150787!
+        Me.KOUTEI_1.Top = 1.161417!
         Me.KOUTEI_1.Width = 0.4488189!
         '
         'REQ_TAXI_DATE_1
@@ -1862,8 +1861,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label73.HyperLink = Nothing
         Me.Label73.Left = 0.4488189!
         Me.Label73.Name = "Label73"
-        Me.Label73.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label73.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label73.Text = "発地"
         Me.Label73.Top = 1.376378!
         Me.Label73.Width = 0.3948819!
@@ -1874,8 +1873,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label74.HyperLink = Nothing
         Me.Label74.Left = 1.612992!
         Me.Label74.Name = "Label74"
-        Me.Label74.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label74.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label74.Text = "依頼金額"
         Me.Label74.Top = 1.150787!
         Me.Label74.Width = 0.5811025!
@@ -1897,7 +1896,7 @@ Partial Public Class TaxiKakuninReport
         Me.Label71.HyperLink = Nothing
         Me.Label71.Left = 2.842171E-14!
         Me.Label71.Name = "Label71"
-        Me.Label71.Style = "background-color: darkgray; white-space: nowrap"
+        Me.Label71.Style = "background-color: LightGrey; white-space: nowrap"
         Me.Label71.Text = "タクシーチケット手配"
         Me.Label71.Top = 0.9251968!
         Me.Label71.Width = 1.323622!
@@ -1930,8 +1929,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label14.HyperLink = Nothing
         Me.Label14.Left = 3.558662!
         Me.Label14.Name = "Label14"
-        Me.Label14.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: nowrap"
+        Me.Label14.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align" & _
+            ": middle; white-space: nowrap"
         Me.Label14.Text = "施設名"
         Me.Label14.Top = 0.6996063!
         Me.Label14.Width = 0.9488189!
@@ -2072,8 +2071,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label21.HyperLink = Nothing
         Me.Label21.Left = 3.236221!
         Me.Label21.Name = "Label21"
-        Me.Label21.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label21.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label21.Text = "利用日"
         Me.Label21.Top = 1.150787!
         Me.Label21.Width = 0.3948819!
@@ -2095,8 +2094,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label22.HyperLink = Nothing
         Me.Label22.Left = 4.378346!
         Me.Label22.Name = "Label22"
-        Me.Label22.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label22.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label22.Text = "券種"
         Me.Label22.Top = 1.150787!
         Me.Label22.Width = 0.5464567!
@@ -2152,8 +2151,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label25.HyperLink = Nothing
         Me.Label25.Left = 5.966536!
         Me.Label25.Name = "Label25"
-        Me.Label25.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label25.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label25.Text = "備考"
         Me.Label25.Top = 1.376378!
         Me.Label25.Width = 0.3948819!
@@ -2175,8 +2174,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label27.HyperLink = Nothing
         Me.Label27.Left = 3.236221!
         Me.Label27.Name = "Label27"
-        Me.Label27.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label27.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label27.Text = "利用日"
         Me.Label27.Top = 1.612599!
         Me.Label27.Width = 0.3948819!
@@ -2198,8 +2197,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label28.HyperLink = Nothing
         Me.Label28.Left = 4.378346!
         Me.Label28.Name = "Label28"
-        Me.Label28.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label28.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label28.Text = "券種"
         Me.Label28.Top = 1.612599!
         Me.Label28.Width = 0.5464567!
@@ -2232,8 +2231,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label30.HyperLink = Nothing
         Me.Label30.Left = 5.966536!
         Me.Label30.Name = "Label30"
-        Me.Label30.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label30.Text = "発行日"
         Me.Label30.Top = 1.612599!
         Me.Label30.Width = 0.3948819!
@@ -2277,8 +2276,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label34.HyperLink = Nothing
         Me.Label34.Left = 4.378347!
         Me.Label34.Name = "Label34"
-        Me.Label34.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label34.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label34.Text = "券種"
         Me.Label34.Top = 2.05315!
         Me.Label34.Width = 0.5464567!
@@ -2311,8 +2310,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label36.HyperLink = Nothing
         Me.Label36.Left = 5.966536!
         Me.Label36.Name = "Label36"
-        Me.Label36.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label36.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label36.Text = "発行日"
         Me.Label36.Top = 2.05315!
         Me.Label36.Width = 0.3948819!
@@ -2829,8 +2828,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label130.HyperLink = Nothing
         Me.Label130.Left = 2.787402!
         Me.Label130.Name = "Label130"
-        Me.Label130.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label130.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label130.Text = "ﾀｸﾁｹ12"
         Me.Label130.Top = 6.11378!
         Me.Label130.Width = 0.4488189!
@@ -2896,8 +2895,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label136.HyperLink = Nothing
         Me.Label136.Left = 2.787402!
         Me.Label136.Name = "Label136"
-        Me.Label136.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label136.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label136.Text = "ﾀｸﾁｹ13"
         Me.Label136.Top = 6.56496!
         Me.Label136.Width = 0.4488189!
@@ -2963,8 +2962,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label142.HyperLink = Nothing
         Me.Label142.Left = 2.787402!
         Me.Label142.Name = "Label142"
-        Me.Label142.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label142.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label142.Text = "ﾀｸﾁｹ14"
         Me.Label142.Top = 7.016141!
         Me.Label142.Width = 0.4488189!
@@ -3041,8 +3040,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label148.HyperLink = Nothing
         Me.Label148.Left = 2.787402!
         Me.Label148.Name = "Label148"
-        Me.Label148.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label148.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label148.Text = "ﾀｸﾁｹ15"
         Me.Label148.Top = 7.467322!
         Me.Label148.Width = 0.4488189!
@@ -3086,8 +3085,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label154.HyperLink = Nothing
         Me.Label154.Left = 2.787402!
         Me.Label154.Name = "Label154"
-        Me.Label154.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label154.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label154.Text = "ﾀｸﾁｹ16"
         Me.Label154.Top = 7.918504!
         Me.Label154.Width = 0.4488189!
@@ -3153,8 +3152,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label160.HyperLink = Nothing
         Me.Label160.Left = 2.787402!
         Me.Label160.Name = "Label160"
-        Me.Label160.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label160.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label160.Text = "ﾀｸﾁｹ17"
         Me.Label160.Top = 8.369685!
         Me.Label160.Width = 0.4488189!
@@ -3220,8 +3219,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label166.HyperLink = Nothing
         Me.Label166.Left = 2.787402!
         Me.Label166.Name = "Label166"
-        Me.Label166.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label166.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label166.Text = "ﾀｸﾁｹ18"
         Me.Label166.Top = 8.820867!
         Me.Label166.Width = 0.4488189!
@@ -3287,8 +3286,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label172.HyperLink = Nothing
         Me.Label172.Left = 2.787402!
         Me.Label172.Name = "Label172"
-        Me.Label172.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label172.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label172.Text = "ﾀｸﾁｹ19"
         Me.Label172.Top = 9.272048!
         Me.Label172.Width = 0.4488189!
@@ -3354,8 +3353,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label20.HyperLink = Nothing
         Me.Label20.Left = 2.787402!
         Me.Label20.Name = "Label20"
-        Me.Label20.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label20.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label20.Text = "ﾀｸﾁｹ1"
         Me.Label20.Top = 1.150787!
         Me.Label20.Width = 0.4488189!
@@ -3366,8 +3365,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label26.HyperLink = Nothing
         Me.Label26.Left = 2.787402!
         Me.Label26.Name = "Label26"
-        Me.Label26.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label26.Text = "ﾀｸﾁｹ2"
         Me.Label26.Top = 1.612599!
         Me.Label26.Width = 0.4488189!
@@ -3378,8 +3377,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label32.HyperLink = Nothing
         Me.Label32.Left = 2.787402!
         Me.Label32.Name = "Label32"
-        Me.Label32.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label32.Text = "ﾀｸﾁｹ3"
         Me.Label32.Top = 2.05315!
         Me.Label32.Width = 0.4488189!
@@ -3390,8 +3389,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label38.HyperLink = Nothing
         Me.Label38.Left = 2.787402!
         Me.Label38.Name = "Label38"
-        Me.Label38.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label38.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label38.Text = "ﾀｸﾁｹ4"
         Me.Label38.Top = 2.504331!
         Me.Label38.Width = 0.4488189!
@@ -3402,8 +3401,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label69.HyperLink = Nothing
         Me.Label69.Left = 2.787402!
         Me.Label69.Name = "Label69"
-        Me.Label69.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label69.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label69.Text = "ﾀｸﾁｹ5"
         Me.Label69.Top = 2.955512!
         Me.Label69.Width = 0.4488189!
@@ -3414,8 +3413,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label94.HyperLink = Nothing
         Me.Label94.Left = 2.787402!
         Me.Label94.Name = "Label94"
-        Me.Label94.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label94.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label94.Text = "ﾀｸﾁｹ6"
         Me.Label94.Top = 3.406693!
         Me.Label94.Width = 0.4488189!
@@ -3426,8 +3425,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label100.HyperLink = Nothing
         Me.Label100.Left = 2.787402!
         Me.Label100.Name = "Label100"
-        Me.Label100.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label100.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label100.Text = "ﾀｸﾁｹ7"
         Me.Label100.Top = 3.857874!
         Me.Label100.Width = 0.4488189!
@@ -3438,8 +3437,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label106.HyperLink = Nothing
         Me.Label106.Left = 2.787402!
         Me.Label106.Name = "Label106"
-        Me.Label106.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label106.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label106.Text = "ﾀｸﾁｹ8"
         Me.Label106.Top = 4.309055!
         Me.Label106.Width = 0.4488189!
@@ -3450,8 +3449,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label112.HyperLink = Nothing
         Me.Label112.Left = 2.787402!
         Me.Label112.Name = "Label112"
-        Me.Label112.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label112.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label112.Text = "ﾀｸﾁｹ9"
         Me.Label112.Top = 4.760236!
         Me.Label112.Width = 0.4488189!
@@ -3462,8 +3461,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label118.HyperLink = Nothing
         Me.Label118.Left = 2.787402!
         Me.Label118.Name = "Label118"
-        Me.Label118.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:" & _
-            " middle; white-space: inherit; ddo-font-vertical: none"
+        Me.Label118.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: inheri" & _
+            "t; ddo-font-vertical: none"
         Me.Label118.Text = "ﾀｸﾁｹ10"
         Me.Label118.Top = 5.211418!
         Me.Label118.Width = 0.4488189!
@@ -3500,8 +3499,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label181.HyperLink = Nothing
         Me.Label181.Left = 1.862645E-9!
         Me.Label181.Name = "Label181"
-        Me.Label181.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label181.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label181.Text = "備考（回答）"
         Me.Label181.Top = 7.177953!
         Me.Label181.Width = 2.787402!
@@ -3658,8 +3657,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label7.HyperLink = Nothing
         Me.Label7.Left = 0.4488189!
         Me.Label7.Name = "Label7"
-        Me.Label7.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label7.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label7.Text = "利用日"
         Me.Label7.Top = 1.150787!
         Me.Label7.Width = 0.3948819!
@@ -3710,12 +3709,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line4.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line4.LineWeight = 1.0!
         Me.Line4.Name = "Line4"
-        Me.Line4.Top = 1.827559!
+        Me.Line4.Top = 1.838189!
         Me.Line4.Width = 2.338583!
         Me.Line4.X1 = 0.4488189!
         Me.Line4.X2 = 2.787402!
-        Me.Line4.Y1 = 1.827559!
-        Me.Line4.Y2 = 1.827559!
+        Me.Line4.Y1 = 1.838189!
+        Me.Line4.Y2 = 1.838189!
         '
         'Line152
         '
@@ -3828,8 +3827,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label46.HyperLink = Nothing
         Me.Label46.Left = 0.4488189!
         Me.Label46.Name = "Label46"
-        Me.Label46.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label46.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label46.Text = "発地"
         Me.Label46.Top = 1.827559!
         Me.Label46.Width = 0.3948819!
@@ -3841,12 +3840,12 @@ Partial Public Class TaxiKakuninReport
         Me.Line110.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
         Me.Line110.LineWeight = 1.0!
         Me.Line110.Name = "Line110"
-        Me.Line110.Top = 1.827559!
+        Me.Line110.Top = 1.838189!
         Me.Line110.Width = 4.413386!
         Me.Line110.X1 = 3.236221!
         Me.Line110.X2 = 7.649607!
-        Me.Line110.Y1 = 1.827559!
-        Me.Line110.Y2 = 1.827559!
+        Me.Line110.Y1 = 1.838189!
+        Me.Line110.Y2 = 1.838189!
         '
         'Label50
         '
@@ -3854,8 +3853,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label50.HyperLink = Nothing
         Me.Label50.Left = 0.4488189!
         Me.Label50.Name = "Label50"
-        Me.Label50.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label50.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label50.Text = "発地"
         Me.Label50.Top = 2.27874!
         Me.Label50.Width = 0.3948819!
@@ -3880,8 +3879,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label203.HyperLink = Nothing
         Me.Label203.Left = 3.236221!
         Me.Label203.Name = "Label203"
-        Me.Label203.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label203.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label203.Text = "利用日"
         Me.Label203.Top = 2.05315!
         Me.Label203.Width = 0.3948819!
@@ -3904,8 +3903,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label31.HyperLink = Nothing
         Me.Label31.Left = 5.966536!
         Me.Label31.Name = "Label31"
-        Me.Label31.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label31.Text = "備考"
         Me.Label31.Top = 2.27874!
         Me.Label31.Width = 0.3948819!
@@ -3928,8 +3927,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label13.HyperLink = Nothing
         Me.Label13.Left = 0.4488189!
         Me.Label13.Name = "Label13"
-        Me.Label13.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label13.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label13.Text = "発地"
         Me.Label13.Top = 2.729921!
         Me.Label13.Width = 0.3948819!
@@ -3940,8 +3939,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label33.HyperLink = Nothing
         Me.Label33.Left = 3.236221!
         Me.Label33.Name = "Label33"
-        Me.Label33.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label33.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label33.Text = "利用日"
         Me.Label33.Top = 2.504331!
         Me.Label33.Width = 0.3948819!
@@ -3964,8 +3963,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label37.HyperLink = Nothing
         Me.Label37.Left = 4.378347!
         Me.Label37.Name = "Label37"
-        Me.Label37.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label37.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label37.Text = "券種"
         Me.Label37.Top = 2.504331!
         Me.Label37.Width = 0.5464567!
@@ -3976,8 +3975,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label54.HyperLink = Nothing
         Me.Label54.Left = 5.966536!
         Me.Label54.Name = "Label54"
-        Me.Label54.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label54.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label54.Text = "備考"
         Me.Label54.Top = 2.729921!
         Me.Label54.Width = 0.3948819!
@@ -3988,8 +3987,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label206.HyperLink = Nothing
         Me.Label206.Left = 5.966536!
         Me.Label206.Name = "Label206"
-        Me.Label206.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label206.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label206.Text = "発行日"
         Me.Label206.Top = 2.504331!
         Me.Label206.Width = 0.3948819!
@@ -4012,8 +4011,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label15.HyperLink = Nothing
         Me.Label15.Left = 0.4488189!
         Me.Label15.Name = "Label15"
-        Me.Label15.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label15.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label15.Text = "発地"
         Me.Label15.Top = 3.181102!
         Me.Label15.Width = 0.3948819!
@@ -4024,8 +4023,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label16.HyperLink = Nothing
         Me.Label16.Left = 3.236221!
         Me.Label16.Name = "Label16"
-        Me.Label16.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label16.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label16.Text = "利用日"
         Me.Label16.Top = 2.955512!
         Me.Label16.Width = 0.3948819!
@@ -4048,8 +4047,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label40.HyperLink = Nothing
         Me.Label40.Left = 4.378347!
         Me.Label40.Name = "Label40"
-        Me.Label40.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label40.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label40.Text = "券種"
         Me.Label40.Top = 2.955512!
         Me.Label40.Width = 0.5464567!
@@ -4060,10 +4059,10 @@ Partial Public Class TaxiKakuninReport
         Me.Label41.HyperLink = Nothing
         Me.Label41.Left = 5.966536!
         Me.Label41.Name = "Label41"
-        Me.Label41.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label41.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label41.Text = "備考"
-        Me.Label41.Top = 3.181102!
+        Me.Label41.Top = 3.181103!
         Me.Label41.Width = 0.3948819!
         '
         'Label42
@@ -4072,8 +4071,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label42.HyperLink = Nothing
         Me.Label42.Left = 5.966536!
         Me.Label42.Name = "Label42"
-        Me.Label42.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label42.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label42.Text = "発行日"
         Me.Label42.Top = 2.955512!
         Me.Label42.Width = 0.3948819!
@@ -4096,8 +4095,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label44.HyperLink = Nothing
         Me.Label44.Left = 0.4488192!
         Me.Label44.Name = "Label44"
-        Me.Label44.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label44.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label44.Text = "利用日"
         Me.Label44.Top = 3.406693!
         Me.Label44.Width = 0.3948819!
@@ -4108,8 +4107,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label55.HyperLink = Nothing
         Me.Label55.Left = 0.4488189!
         Me.Label55.Name = "Label55"
-        Me.Label55.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label55.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label55.Text = "発地"
         Me.Label55.Top = 3.632283!
         Me.Label55.Width = 0.3948819!
@@ -4120,8 +4119,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label59.HyperLink = Nothing
         Me.Label59.Left = 1.612992!
         Me.Label59.Name = "Label59"
-        Me.Label59.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label59.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label59.Text = "依頼金額"
         Me.Label59.Top = 3.406693!
         Me.Label59.Width = 0.5811024!
@@ -4132,8 +4131,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label62.HyperLink = Nothing
         Me.Label62.Left = 3.236221!
         Me.Label62.Name = "Label62"
-        Me.Label62.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label62.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label62.Text = "利用日"
         Me.Label62.Top = 3.406693!
         Me.Label62.Width = 0.3948819!
@@ -4156,8 +4155,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label64.HyperLink = Nothing
         Me.Label64.Left = 4.378347!
         Me.Label64.Name = "Label64"
-        Me.Label64.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label64.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label64.Text = "券種"
         Me.Label64.Top = 3.406693!
         Me.Label64.Width = 0.5464567!
@@ -4168,8 +4167,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label67.HyperLink = Nothing
         Me.Label67.Left = 5.966536!
         Me.Label67.Name = "Label67"
-        Me.Label67.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label67.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label67.Text = "備考"
         Me.Label67.Top = 3.632283!
         Me.Label67.Width = 0.3948819!
@@ -4180,8 +4179,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label68.HyperLink = Nothing
         Me.Label68.Left = 5.966536!
         Me.Label68.Name = "Label68"
-        Me.Label68.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label68.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label68.Text = "発行日"
         Me.Label68.Top = 3.406693!
         Me.Label68.Width = 0.3948819!
@@ -4204,8 +4203,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label17.HyperLink = Nothing
         Me.Label17.Left = 0.4488192!
         Me.Label17.Name = "Label17"
-        Me.Label17.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label17.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label17.Text = "利用日"
         Me.Label17.Top = 3.857874!
         Me.Label17.Width = 0.3948819!
@@ -4216,8 +4215,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label75.HyperLink = Nothing
         Me.Label75.Left = 0.4488189!
         Me.Label75.Name = "Label75"
-        Me.Label75.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label75.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label75.Text = "発地"
         Me.Label75.Top = 4.083465!
         Me.Label75.Width = 0.3948819!
@@ -4228,8 +4227,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label91.HyperLink = Nothing
         Me.Label91.Left = 1.612992!
         Me.Label91.Name = "Label91"
-        Me.Label91.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label91.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label91.Text = "依頼金額"
         Me.Label91.Top = 3.857874!
         Me.Label91.Width = 0.5811024!
@@ -4240,8 +4239,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label92.HyperLink = Nothing
         Me.Label92.Left = 3.236221!
         Me.Label92.Name = "Label92"
-        Me.Label92.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label92.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label92.Text = "利用日"
         Me.Label92.Top = 3.857874!
         Me.Label92.Width = 0.3948819!
@@ -4264,8 +4263,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label95.HyperLink = Nothing
         Me.Label95.Left = 4.378347!
         Me.Label95.Name = "Label95"
-        Me.Label95.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label95.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label95.Text = "券種"
         Me.Label95.Top = 3.857874!
         Me.Label95.Width = 0.5464567!
@@ -4276,8 +4275,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label208.HyperLink = Nothing
         Me.Label208.Left = 5.966536!
         Me.Label208.Name = "Label208"
-        Me.Label208.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label208.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label208.Text = "備考"
         Me.Label208.Top = 4.083465!
         Me.Label208.Width = 0.3948819!
@@ -4288,8 +4287,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label209.HyperLink = Nothing
         Me.Label209.Left = 5.966536!
         Me.Label209.Name = "Label209"
-        Me.Label209.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label209.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label209.Text = "発行日"
         Me.Label209.Top = 3.857874!
         Me.Label209.Width = 0.3948819!
@@ -4312,8 +4311,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label18.HyperLink = Nothing
         Me.Label18.Left = 0.4488192!
         Me.Label18.Name = "Label18"
-        Me.Label18.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label18.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label18.Text = "利用日"
         Me.Label18.Top = 4.309055!
         Me.Label18.Width = 0.3948819!
@@ -4324,8 +4323,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label66.HyperLink = Nothing
         Me.Label66.Left = 1.612992!
         Me.Label66.Name = "Label66"
-        Me.Label66.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label66.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label66.Text = "依頼金額"
         Me.Label66.Top = 4.309055!
         Me.Label66.Width = 0.5811024!
@@ -4336,8 +4335,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label76.HyperLink = Nothing
         Me.Label76.Left = 0.4488189!
         Me.Label76.Name = "Label76"
-        Me.Label76.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label76.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label76.Text = "発地"
         Me.Label76.Top = 4.534646!
         Me.Label76.Width = 0.3948819!
@@ -4348,8 +4347,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label77.HyperLink = Nothing
         Me.Label77.Left = 3.236221!
         Me.Label77.Name = "Label77"
-        Me.Label77.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label77.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label77.Text = "利用日"
         Me.Label77.Top = 4.309055!
         Me.Label77.Width = 0.3948819!
@@ -4372,8 +4371,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label80.HyperLink = Nothing
         Me.Label80.Left = 4.378347!
         Me.Label80.Name = "Label80"
-        Me.Label80.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label80.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label80.Text = "券種"
         Me.Label80.Top = 4.309055!
         Me.Label80.Width = 0.5464567!
@@ -4384,8 +4383,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label81.HyperLink = Nothing
         Me.Label81.Left = 5.966536!
         Me.Label81.Name = "Label81"
-        Me.Label81.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label81.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label81.Text = "備考"
         Me.Label81.Top = 4.534646!
         Me.Label81.Width = 0.3948819!
@@ -4396,8 +4395,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label96.HyperLink = Nothing
         Me.Label96.Left = 5.966536!
         Me.Label96.Name = "Label96"
-        Me.Label96.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label96.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label96.Text = "発行日"
         Me.Label96.Top = 4.309055!
         Me.Label96.Width = 0.3948819!
@@ -4420,8 +4419,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label98.HyperLink = Nothing
         Me.Label98.Left = 0.4488192!
         Me.Label98.Name = "Label98"
-        Me.Label98.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label98.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label98.Text = "利用日"
         Me.Label98.Top = 4.760236!
         Me.Label98.Width = 0.3948819!
@@ -4432,8 +4431,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label99.HyperLink = Nothing
         Me.Label99.Left = 0.4488189!
         Me.Label99.Name = "Label99"
-        Me.Label99.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label99.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label99.Text = "発地"
         Me.Label99.Top = 4.985826!
         Me.Label99.Width = 0.3948819!
@@ -4444,8 +4443,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label101.HyperLink = Nothing
         Me.Label101.Left = 1.612992!
         Me.Label101.Name = "Label101"
-        Me.Label101.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label101.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label101.Text = "依頼金額"
         Me.Label101.Top = 4.760236!
         Me.Label101.Width = 0.5811024!
@@ -4456,8 +4455,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label211.HyperLink = Nothing
         Me.Label211.Left = 3.236221!
         Me.Label211.Name = "Label211"
-        Me.Label211.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label211.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label211.Text = "利用日"
         Me.Label211.Top = 4.760236!
         Me.Label211.Width = 0.3948819!
@@ -4480,8 +4479,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label213.HyperLink = Nothing
         Me.Label213.Left = 4.378347!
         Me.Label213.Name = "Label213"
-        Me.Label213.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label213.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label213.Text = "券種"
         Me.Label213.Top = 4.760236!
         Me.Label213.Width = 0.5464567!
@@ -4492,8 +4491,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label214.HyperLink = Nothing
         Me.Label214.Left = 5.966536!
         Me.Label214.Name = "Label214"
-        Me.Label214.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label214.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label214.Text = "備考"
         Me.Label214.Top = 4.985826!
         Me.Label214.Width = 0.3948819!
@@ -4504,8 +4503,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label215.HyperLink = Nothing
         Me.Label215.Left = 5.966536!
         Me.Label215.Name = "Label215"
-        Me.Label215.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label215.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label215.Text = "発行日"
         Me.Label215.Top = 4.760236!
         Me.Label215.Width = 0.3948819!
@@ -4528,8 +4527,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label19.HyperLink = Nothing
         Me.Label19.Left = 0.4488192!
         Me.Label19.Name = "Label19"
-        Me.Label19.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label19.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label19.Text = "利用日"
         Me.Label19.Top = 5.211418!
         Me.Label19.Width = 0.3948819!
@@ -4540,8 +4539,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label29.HyperLink = Nothing
         Me.Label29.Left = 0.4488189!
         Me.Label29.Name = "Label29"
-        Me.Label29.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label29.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label29.Text = "発地"
         Me.Label29.Top = 5.437008!
         Me.Label29.Width = 0.3948819!
@@ -4552,8 +4551,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label83.HyperLink = Nothing
         Me.Label83.Left = 1.612992!
         Me.Label83.Name = "Label83"
-        Me.Label83.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label83.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label83.Text = "依頼金額"
         Me.Label83.Top = 5.211418!
         Me.Label83.Width = 0.5811024!
@@ -4564,8 +4563,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label84.HyperLink = Nothing
         Me.Label84.Left = 3.236221!
         Me.Label84.Name = "Label84"
-        Me.Label84.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label84.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label84.Text = "利用日"
         Me.Label84.Top = 5.211418!
         Me.Label84.Width = 0.3948819!
@@ -4588,8 +4587,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label102.HyperLink = Nothing
         Me.Label102.Left = 4.378347!
         Me.Label102.Name = "Label102"
-        Me.Label102.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label102.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label102.Text = "券種"
         Me.Label102.Top = 5.211418!
         Me.Label102.Width = 0.5464567!
@@ -4600,8 +4599,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label103.HyperLink = Nothing
         Me.Label103.Left = 5.966536!
         Me.Label103.Name = "Label103"
-        Me.Label103.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label103.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label103.Text = "備考"
         Me.Label103.Top = 5.437008!
         Me.Label103.Width = 0.3948819!
@@ -4612,8 +4611,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label104.HyperLink = Nothing
         Me.Label104.Left = 5.966536!
         Me.Label104.Name = "Label104"
-        Me.Label104.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label104.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label104.Text = "発行日"
         Me.Label104.Top = 5.211418!
         Me.Label104.Width = 0.3948819!
@@ -4636,8 +4635,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label72.HyperLink = Nothing
         Me.Label72.Left = 3.236221!
         Me.Label72.Name = "Label72"
-        Me.Label72.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label72.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label72.Text = "利用日"
         Me.Label72.Top = 5.662599!
         Me.Label72.Width = 0.3948819!
@@ -4660,8 +4659,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label88.HyperLink = Nothing
         Me.Label88.Left = 4.378347!
         Me.Label88.Name = "Label88"
-        Me.Label88.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label88.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label88.Text = "券種"
         Me.Label88.Top = 5.662599!
         Me.Label88.Width = 0.5464567!
@@ -4672,8 +4671,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label89.HyperLink = Nothing
         Me.Label89.Left = 5.966536!
         Me.Label89.Name = "Label89"
-        Me.Label89.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label89.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label89.Text = "備考"
         Me.Label89.Top = 5.888189!
         Me.Label89.Width = 0.3948819!
@@ -4684,8 +4683,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label107.HyperLink = Nothing
         Me.Label107.Left = 5.966536!
         Me.Label107.Name = "Label107"
-        Me.Label107.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label107.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label107.Text = "発行日"
         Me.Label107.Top = 5.662599!
         Me.Label107.Width = 0.3948819!
@@ -5171,8 +5170,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label109.HyperLink = Nothing
         Me.Label109.Left = 3.236221!
         Me.Label109.Name = "Label109"
-        Me.Label109.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label109.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label109.Text = "利用日"
         Me.Label109.Top = 6.11378!
         Me.Label109.Width = 0.3948819!
@@ -5183,8 +5182,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label110.HyperLink = Nothing
         Me.Label110.Left = 4.378347!
         Me.Label110.Name = "Label110"
-        Me.Label110.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label110.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label110.Text = "券種"
         Me.Label110.Top = 6.11378!
         Me.Label110.Width = 0.5464567!
@@ -5195,8 +5194,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label111.HyperLink = Nothing
         Me.Label111.Left = 5.966536!
         Me.Label111.Name = "Label111"
-        Me.Label111.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label111.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label111.Text = "発行日"
         Me.Label111.Top = 6.11378!
         Me.Label111.Width = 0.3948819!
@@ -5219,8 +5218,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label114.HyperLink = Nothing
         Me.Label114.Left = 5.966536!
         Me.Label114.Name = "Label114"
-        Me.Label114.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label114.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label114.Text = "備考"
         Me.Label114.Top = 6.33937!
         Me.Label114.Width = 0.3948819!
@@ -5270,8 +5269,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label116.HyperLink = Nothing
         Me.Label116.Left = 3.236221!
         Me.Label116.Name = "Label116"
-        Me.Label116.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label116.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label116.Text = "利用日"
         Me.Label116.Top = 6.56496!
         Me.Label116.Width = 0.3948819!
@@ -5294,8 +5293,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label119.HyperLink = Nothing
         Me.Label119.Left = 4.378347!
         Me.Label119.Name = "Label119"
-        Me.Label119.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label119.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label119.Text = "券種"
         Me.Label119.Top = 6.56496!
         Me.Label119.Width = 0.5464567!
@@ -5306,8 +5305,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label120.HyperLink = Nothing
         Me.Label120.Left = 5.966536!
         Me.Label120.Name = "Label120"
-        Me.Label120.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label120.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label120.Text = "備考"
         Me.Label120.Top = 6.790551!
         Me.Label120.Width = 0.3948819!
@@ -5318,8 +5317,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label121.HyperLink = Nothing
         Me.Label121.Left = 5.966536!
         Me.Label121.Name = "Label121"
-        Me.Label121.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label121.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label121.Text = "発行日"
         Me.Label121.Top = 6.56496!
         Me.Label121.Width = 0.3948819!
@@ -5356,8 +5355,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label123.HyperLink = Nothing
         Me.Label123.Left = 3.236221!
         Me.Label123.Name = "Label123"
-        Me.Label123.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label123.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label123.Text = "利用日"
         Me.Label123.Top = 7.016141!
         Me.Label123.Width = 0.3948819!
@@ -5380,8 +5379,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label126.HyperLink = Nothing
         Me.Label126.Left = 4.378347!
         Me.Label126.Name = "Label126"
-        Me.Label126.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label126.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label126.Text = "券種"
         Me.Label126.Top = 7.016141!
         Me.Label126.Width = 0.5464567!
@@ -5392,8 +5391,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label127.HyperLink = Nothing
         Me.Label127.Left = 5.966536!
         Me.Label127.Name = "Label127"
-        Me.Label127.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label127.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label127.Text = "備考"
         Me.Label127.Top = 7.241732!
         Me.Label127.Width = 0.3948819!
@@ -5404,8 +5403,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label128.HyperLink = Nothing
         Me.Label128.Left = 5.966536!
         Me.Label128.Name = "Label128"
-        Me.Label128.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label128.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label128.Text = "発行日"
         Me.Label128.Top = 7.016141!
         Me.Label128.Width = 0.3948819!
@@ -5442,8 +5441,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label131.HyperLink = Nothing
         Me.Label131.Left = 3.236221!
         Me.Label131.Name = "Label131"
-        Me.Label131.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label131.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label131.Text = "利用日"
         Me.Label131.Top = 7.467322!
         Me.Label131.Width = 0.3948819!
@@ -5466,8 +5465,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label133.HyperLink = Nothing
         Me.Label133.Left = 4.378347!
         Me.Label133.Name = "Label133"
-        Me.Label133.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label133.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label133.Text = "券種"
         Me.Label133.Top = 7.467322!
         Me.Label133.Width = 0.5464567!
@@ -5478,8 +5477,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label134.HyperLink = Nothing
         Me.Label134.Left = 5.966536!
         Me.Label134.Name = "Label134"
-        Me.Label134.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label134.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label134.Text = "備考"
         Me.Label134.Top = 7.692914!
         Me.Label134.Width = 0.3948819!
@@ -5490,8 +5489,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label135.HyperLink = Nothing
         Me.Label135.Left = 5.966536!
         Me.Label135.Name = "Label135"
-        Me.Label135.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label135.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label135.Text = "発行日"
         Me.Label135.Top = 7.467322!
         Me.Label135.Width = 0.3948819!
@@ -5528,8 +5527,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label138.HyperLink = Nothing
         Me.Label138.Left = 3.236221!
         Me.Label138.Name = "Label138"
-        Me.Label138.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label138.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label138.Text = "利用日"
         Me.Label138.Top = 7.918504!
         Me.Label138.Width = 0.3948819!
@@ -5552,8 +5551,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label140.HyperLink = Nothing
         Me.Label140.Left = 4.378347!
         Me.Label140.Name = "Label140"
-        Me.Label140.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label140.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label140.Text = "券種"
         Me.Label140.Top = 7.918504!
         Me.Label140.Width = 0.5464567!
@@ -5564,8 +5563,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label141.HyperLink = Nothing
         Me.Label141.Left = 5.966536!
         Me.Label141.Name = "Label141"
-        Me.Label141.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label141.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label141.Text = "備考"
         Me.Label141.Top = 8.144094!
         Me.Label141.Width = 0.3948819!
@@ -5576,8 +5575,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label143.HyperLink = Nothing
         Me.Label143.Left = 5.966536!
         Me.Label143.Name = "Label143"
-        Me.Label143.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label143.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label143.Text = "発行日"
         Me.Label143.Top = 7.918504!
         Me.Label143.Width = 0.3948819!
@@ -5602,8 +5601,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label145.HyperLink = Nothing
         Me.Label145.Left = 3.236221!
         Me.Label145.Name = "Label145"
-        Me.Label145.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label145.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label145.Text = "利用日"
         Me.Label145.Top = 8.369685!
         Me.Label145.Width = 0.3948819!
@@ -5626,8 +5625,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label147.HyperLink = Nothing
         Me.Label147.Left = 4.378347!
         Me.Label147.Name = "Label147"
-        Me.Label147.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label147.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label147.Text = "券種"
         Me.Label147.Top = 8.369685!
         Me.Label147.Width = 0.5464567!
@@ -5638,8 +5637,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label149.HyperLink = Nothing
         Me.Label149.Left = 5.966536!
         Me.Label149.Name = "Label149"
-        Me.Label149.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label149.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label149.Text = "備考"
         Me.Label149.Top = 8.595276!
         Me.Label149.Width = 0.3948819!
@@ -5650,8 +5649,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label150.HyperLink = Nothing
         Me.Label150.Left = 5.966536!
         Me.Label150.Name = "Label150"
-        Me.Label150.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label150.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label150.Text = "発行日"
         Me.Label150.Top = 8.369685!
         Me.Label150.Width = 0.3948819!
@@ -5688,8 +5687,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label152.HyperLink = Nothing
         Me.Label152.Left = 3.236221!
         Me.Label152.Name = "Label152"
-        Me.Label152.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label152.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label152.Text = "利用日"
         Me.Label152.Top = 8.820867!
         Me.Label152.Width = 0.3948819!
@@ -5712,8 +5711,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label155.HyperLink = Nothing
         Me.Label155.Left = 4.378347!
         Me.Label155.Name = "Label155"
-        Me.Label155.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label155.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label155.Text = "券種"
         Me.Label155.Top = 8.820867!
         Me.Label155.Width = 0.5464567!
@@ -5724,8 +5723,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label156.HyperLink = Nothing
         Me.Label156.Left = 5.966536!
         Me.Label156.Name = "Label156"
-        Me.Label156.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label156.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label156.Text = "備考"
         Me.Label156.Top = 9.046457!
         Me.Label156.Width = 0.3948819!
@@ -5736,8 +5735,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label157.HyperLink = Nothing
         Me.Label157.Left = 5.966536!
         Me.Label157.Name = "Label157"
-        Me.Label157.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label157.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label157.Text = "発行日"
         Me.Label157.Top = 8.820867!
         Me.Label157.Width = 0.3948819!
@@ -5774,8 +5773,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label159.HyperLink = Nothing
         Me.Label159.Left = 3.236221!
         Me.Label159.Name = "Label159"
-        Me.Label159.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label159.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label159.Text = "利用日"
         Me.Label159.Top = 9.272048!
         Me.Label159.Width = 0.3948819!
@@ -5798,8 +5797,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label162.HyperLink = Nothing
         Me.Label162.Left = 4.378347!
         Me.Label162.Name = "Label162"
-        Me.Label162.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label162.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label162.Text = "券種"
         Me.Label162.Top = 9.272048!
         Me.Label162.Width = 0.5464567!
@@ -5810,8 +5809,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label163.HyperLink = Nothing
         Me.Label163.Left = 5.966536!
         Me.Label163.Name = "Label163"
-        Me.Label163.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label163.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label163.Text = "備考"
         Me.Label163.Top = 9.497638!
         Me.Label163.Width = 0.3948819!
@@ -5822,8 +5821,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label164.HyperLink = Nothing
         Me.Label164.Left = 5.966536!
         Me.Label164.Name = "Label164"
-        Me.Label164.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label164.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label164.Text = "発行日"
         Me.Label164.Top = 9.272048!
         Me.Label164.Width = 0.3948819!
@@ -5860,8 +5859,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label167.HyperLink = Nothing
         Me.Label167.Left = 3.236221!
         Me.Label167.Name = "Label167"
-        Me.Label167.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label167.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label167.Text = "利用日"
         Me.Label167.Top = 9.723228!
         Me.Label167.Width = 0.3948819!
@@ -5884,8 +5883,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label169.HyperLink = Nothing
         Me.Label169.Left = 4.378347!
         Me.Label169.Name = "Label169"
-        Me.Label169.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label169.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
+            "nter; vertical-align: middle; white-space: nowrap"
         Me.Label169.Text = "券種"
         Me.Label169.Top = 9.723228!
         Me.Label169.Width = 0.5464567!
@@ -5896,8 +5895,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label170.HyperLink = Nothing
         Me.Label170.Left = 5.966536!
         Me.Label170.Name = "Label170"
-        Me.Label170.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce" & _
-            "nter; vertical-align: middle; white-space: nowrap"
+        Me.Label170.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label170.Text = "備考"
         Me.Label170.Top = 9.948819!
         Me.Label170.Width = 0.3948819!
@@ -5908,8 +5907,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label171.HyperLink = Nothing
         Me.Label171.Left = 5.966536!
         Me.Label171.Name = "Label171"
-        Me.Label171.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label171.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label171.Text = "発行日"
         Me.Label171.Top = 9.723228!
         Me.Label171.Width = 0.3948819!
@@ -6266,8 +6265,8 @@ Partial Public Class TaxiKakuninReport
         Me.Label4.HyperLink = Nothing
         Me.Label4.Left = 4.378346!
         Me.Label4.Name = "Label4"
-        Me.Label4.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen" & _
-            "ter; vertical-align: middle; white-space: nowrap"
+        Me.Label4.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;" & _
+            " white-space: nowrap"
         Me.Label4.Text = "緊急"
         Me.Label4.Top = 0.9251968!
         Me.Label4.Width = 0.5464566!
