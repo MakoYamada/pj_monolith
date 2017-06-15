@@ -4564,7 +4564,7 @@ Partial Public Class DrRegist
 
         '宿泊費（税込)
         If Me.ANS_HOTELHI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_HOTELHI) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費"), Me)
             SetFocus(Me.ANS_HOTELHI)
             Return False
@@ -4572,7 +4572,7 @@ Partial Public Class DrRegist
 
         '宿泊費都税
         If Me.ANS_HOTELHI_TOZEI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI_TOZEI) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_HOTELHI_TOZEI) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊費都税"), Me)
             SetFocus(Me.ANS_HOTELHI_TOZEI)
             Return False
@@ -4580,7 +4580,7 @@ Partial Public Class DrRegist
 
         '宿泊取消料
         If Me.ANS_HOTELHI_CANCEL.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_HOTELHI_CANCEL) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_HOTELHI_CANCEL) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("宿泊取消料"), Me)
             SetFocus(Me.ANS_HOTELHI_CANCEL)
             Return False
@@ -4588,7 +4588,7 @@ Partial Public Class DrRegist
 
         'JR券代
         If Me.ANS_RAIL_FARE.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_RAIL_FARE) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_RAIL_FARE) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("JR券代"), Me)
             SetFocus(Me.ANS_RAIL_FARE)
             Return False
@@ -4596,7 +4596,7 @@ Partial Public Class DrRegist
 
         'JR券取消料
         If Me.ANS_RAIL_CANCELLATION.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_RAIL_CANCELLATION) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_RAIL_CANCELLATION) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("JR券取消料"), Me)
             SetFocus(Me.ANS_RAIL_CANCELLATION)
             Return False
@@ -4604,7 +4604,7 @@ Partial Public Class DrRegist
 
         'その他鉄道等代金
         If Me.ANS_OTHER_FARE.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_OTHER_FARE) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_FARE) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("その他鉄道等代金"), Me)
             SetFocus(Me.ANS_OTHER_FARE)
             Return False
@@ -4612,7 +4612,7 @@ Partial Public Class DrRegist
 
         'その他鉄道等取消料
         If Me.ANS_OTHER_CANCELLATION.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_OTHER_CANCELLATION) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_OTHER_CANCELLATION) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("その他鉄道等取消料"), Me)
             SetFocus(Me.ANS_OTHER_CANCELLATION)
             Return False
@@ -4620,7 +4620,7 @@ Partial Public Class DrRegist
 
         '航空券代
         If Me.ANS_AIR_FARE.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_AIR_FARE) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_AIR_FARE) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("航空券代"), Me)
             SetFocus(Me.ANS_AIR_FARE)
             Return False
@@ -4628,7 +4628,7 @@ Partial Public Class DrRegist
 
         '航空券取消料
         If Me.ANS_AIR_CANCELLATION.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_AIR_CANCELLATION) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_AIR_CANCELLATION) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("航空券取消料"), Me)
             SetFocus(Me.ANS_AIR_CANCELLATION)
             Return False
@@ -4644,7 +4644,7 @@ Partial Public Class DrRegist
 
         'MR交通費
         If Me.ANS_MR_KOTSUHI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_MR_KOTSUHI) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_MR_KOTSUHI) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("MR交通費"), Me)
             SetFocus(Me.ANS_MR_KOTSUHI)
             Return False
@@ -4652,7 +4652,7 @@ Partial Public Class DrRegist
 
         'MR宿泊費（税込)
         If Me.ANS_MR_HOTELHI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_MR_HOTELHI) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費"), Me)
             SetFocus(Me.ANS_MR_HOTELHI)
             Return False
@@ -4660,7 +4660,7 @@ Partial Public Class DrRegist
 
         'MR宿泊費都税
         If Me.ANS_MR_HOTELHI_TOZEI.Text.Trim <> String.Empty AndAlso _
-            Not CmnCheck.IsValidKingaku(Me.ANS_MR_HOTELHI_TOZEI) Then
+            Not CmnCheck.IsNumberOnly(Me.ANS_MR_HOTELHI_TOZEI) Then
             CmnModule.AlertMessage(MessageDef.Error.Invalid("MR宿泊費都税"), Me)
             SetFocus(Me.ANS_MR_HOTELHI_TOZEI)
             Return False
