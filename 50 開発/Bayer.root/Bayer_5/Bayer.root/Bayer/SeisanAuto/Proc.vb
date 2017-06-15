@@ -56,7 +56,114 @@ Public Class Proc
         Dim W_SEIKYU() As TableDef.TBL_SEIKYU.DataStruct
         Dim wFilePath As String = ""
         Dim wFileName As String = ""
-        If Not UpdateSeikyu(W_SEIKYU, wFilePath, wFileName) Then Exit Sub
+        'If Not UpdateSeikyu(W_SEIKYU, wFilePath, wFileName) Then Exit Sub
+
+        Dim wCntSeikyu As Integer = 0
+        Dim RsSeikyu As System.Data.SqlClient.SqlDataReader
+
+        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
+        wFileName = My.Settings.FILE_BANGOUHYO & Now.ToString("yyyyMMddHHmmss") & ".csv"
+        wFilePath = My.Settings.PATH_WORK & "\" & wFileName
+        Dim sw As New StreamWriter(wFilePath, False, System.Text.Encoding.GetEncoding("shift_jis"))
+        Dim sb As New System.Text.StringBuilder
+        sw.NewLine = vbCrLf
+
+        For i As Integer = LBound(CSV_TAXI_TICKET_HAKKO) To UBound(CSV_TAXI_TICKET_HAKKO)
+            '精算対象の会合番号+精算番号でタクチケデータの金額を集計
+            Dim wJoken As TableDef.Joken.DataStruct
+            wJoken.KOUENKAI_NO = CSV_TAXI_TICKET_HAKKO(i).KOUENKAI_NO
+            wJoken.SEIKYU_NO_TOPTOUR = CSV_TAXI_TICKET_HAKKO(i).SEIKYU_NO_TOPTOUR
+            strSQL = SQL.TBL_TAXITICKET_HAKKO.TaxiSeisanAuto(wJoken)
+            RsSeikyu = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+            If RsSeikyu.Read Then
+                Dim W_TAXITICKET_HAKKO As New TableDef.TBL_TAXITICKET_HAKKO.DataStruct
+                W_TAXITICKET_HAKKO = AppModule.SetRsData(RsSeikyu, W_TAXITICKET_HAKKO)
+                RsSeikyu.Close()
+
+                '請求テーブル更新
+                Dim W_SEIKYU2 As New TableDef.TBL_SEIKYU.DataStruct
+                Dim W_FROMDATE As String = ""
+                If Trim(W_TAXITICKET_HAKKO.FROM_DATE) <> "" Then
+                    W_FROMDATE = W_TAXITICKET_HAKKO.FROM_DATE.Substring(0, 4)
+                End If
+                W_SEIKYU2.KOUENKAI_NO = wJoken.KOUENKAI_NO
+                W_SEIKYU2.SEIKYU_NO_TOPTOUR = wJoken.SEIKYU_NO_TOPTOUR
+                W_SEIKYU2.TAXI_TF = W_TAXITICKET_HAKKO.TAXI_TF
+                W_SEIKYU2.TAXI_T = W_TAXITICKET_HAKKO.TAXI_T
+                W_SEIKYU2.TAXI_SEISAN_TF = W_TAXITICKET_HAKKO.TAXI_SEISAN_TF
+                W_SEIKYU2.TAXI_SEISAN_T = W_TAXITICKET_HAKKO.TAXI_SEISAN_T
+                W_SEIKYU2.TAXI_TICKET_URL = System.Configuration.ConfigurationManager.AppSettings("TaxiTicketURL") _
+                                            & W_FROMDATE & "/" _
+                                            & W_TAXITICKET_HAKKO.KOUENKAI_NO & System.Configuration.ConfigurationManager.AppSettings("TaxiTicketURL_FileName")
+                W_SEIKYU2.UPDATE_USER = Me.batchID
+                W_SEIKYU2.FROM_DATE = W_TAXITICKET_HAKKO.FROM_DATE
+
+                '金額計算
+                Call CalculateKingaku(W_SEIKYU2)
+
+                strSQL = SQL.TBL_SEIKYU.Update_KINGAKU(W_SEIKYU2)
+
+                Try
+                    CmnDbBatch.Execute(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+
+                    ReDim Preserve W_SEIKYU(wCntSeikyu)
+                    W_SEIKYU(wCntSeikyu) = W_SEIKYU2
+                    wCntSeikyu += 1
+
+                Catch ex As Exception
+                    MyBase.Rollback()
+
+                    'ログ登録
+                    InsertTBL_LOG(AppConst.TBL_LOG.SYORI_NAME.GAMEN.GamenType.SeisanRegist, TBL_SEIKYU(SEQ), False, ex.ToString, MyBase.DbConnection)
+                End Try
+
+                '精算番号表CSV出力
+                If wCntSeikyu = 1 Then
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("通番")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算番号")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催年")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催開始日")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（非課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料（非課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金小計")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料小計")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG合計")))
+                    sb.Append(vbNewLine)
+                End If
+
+                'CSV出力
+                Dim wTaxi As Long = Long.Parse(W_TAXITICKET_HAKKO.TAXI_TF) + Long.Parse(W_TAXITICKET_HAKKO.TAXI_T)
+                Dim wSeisan As Long = Long.Parse(W_TAXITICKET_HAKKO.TAXI_SEISAN_TF) + Long.Parse(W_TAXITICKET_HAKKO.TAXI_SEISAN_T)
+
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(wCntSeikyu.ToString.PadLeft(4, "0")))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.KOUENKAI_NO))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_FROMDATE))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.Format_Date(W_TAXITICKET_HAKKO.FROM_DATE, CmnModule.DateFormatType.YYYYMMDD)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.KOUENKAI_NAME))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_TF)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_SEISAN_TF)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_T)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_SEISAN_T)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(wTaxi.ToString)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(wSeisan.ToString)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma((wTaxi + wSeisan).ToString)))))
+                sb.Append(vbNewLine)
+
+            Else
+                RsSeikyu.Close()
+            End If
+        Next
+
+        sw.Write(sb.ToString)
+        sw.Flush()
+        sw.Close()
+        sw = Nothing
 
         MyBase.Commit()
 
