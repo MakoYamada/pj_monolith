@@ -82,51 +82,75 @@ Partial Public Class TaxiMeisaiDL
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From(年)"), Me)
+        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From"), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From(月)"), Me)
+        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE) Then
+            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To"), Me)
             Return False
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_DD) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From(日)"), Me)
-            Return False
-        End If
-
-        If CmnCheck.IsInput(Me.JokenFROM_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenFROM_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenFROM_DATE_DD) Then
-            Dim wStr As String = StrConv(Trim(Me.JokenFROM_DATE_YYYY.Text) & "/" & Trim(Me.JokenFROM_DATE_MM.Text) & "/" & Trim(Me.JokenFROM_DATE_DD.Text), VbStrConv.Narrow)
-            If Not IsDate(wStr) Then
+        If CmnCheck.IsInput(Me.JokenFROM_DATE) Then
+            If Not IsDate(CmnModule.Format_Date(Me.JokenFROM_DATE.Text.ToString, CmnModule.DateFormatType.YYYYMMDD)) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("開催日From"), Me)
                 Return False
             End If
         End If
 
-        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_YYYY) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To(年)"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_MM) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To(月)"), Me)
-            Return False
-        End If
-
-        If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_DD) Then
-            CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To(日)"), Me)
-            Return False
-        End If
-
-        If CmnCheck.IsInput(Me.JokenTO_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenTO_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenTO_DATE_DD) Then
-            Dim wStr As String = StrConv(Trim(Me.JokenTO_DATE_YYYY.Text) & "/" & Trim(Me.JokenTO_DATE_MM.Text) & "/" & Trim(Me.JokenTO_DATE_DD.Text), VbStrConv.Narrow)
-            If Not IsDate(wStr) Then
+        If CmnCheck.IsInput(Me.JokenTO_DATE) Then
+            If Not IsDate(CmnModule.Format_Date(Me.JokenTO_DATE.Text.ToString, CmnModule.DateFormatType.YYYYMMDD)) Then
                 CmnModule.AlertMessage(MessageDef.Error.Invalid("開催日To"), Me)
                 Return False
             End If
         End If
+
+        'If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_YYYY) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From(年)"), Me)
+        '    Return False
+        'End If
+
+        'If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_MM) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From(月)"), Me)
+        '    Return False
+        'End If
+
+        'If Not CmnCheck.IsNumberOnly(Me.JokenFROM_DATE_DD) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日From(日)"), Me)
+        '    Return False
+        'End If
+
+        'If CmnCheck.IsInput(Me.JokenFROM_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenFROM_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenFROM_DATE_DD) Then
+        '    Dim wStr As String = StrConv(Trim(Me.JokenFROM_DATE_YYYY.Text) & "/" & Trim(Me.JokenFROM_DATE_MM.Text) & "/" & Trim(Me.JokenFROM_DATE_DD.Text), VbStrConv.Narrow)
+        '    If Not IsDate(wStr) Then
+        '        CmnModule.AlertMessage(MessageDef.Error.Invalid("開催日From"), Me)
+        '        Return False
+        '    End If
+        'End If
+
+        'If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_YYYY) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To(年)"), Me)
+        '    Return False
+        'End If
+
+        'If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_MM) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To(月)"), Me)
+        '    Return False
+        'End If
+
+        'If Not CmnCheck.IsNumberOnly(Me.JokenTO_DATE_DD) Then
+        '    CmnModule.AlertMessage(MessageDef.Error.NumberOnly("開催日To(日)"), Me)
+        '    Return False
+        'End If
+
+        'If CmnCheck.IsInput(Me.JokenTO_DATE_YYYY) OrElse CmnCheck.IsInput(Me.JokenTO_DATE_MM) OrElse CmnCheck.IsInput(Me.JokenTO_DATE_DD) Then
+        '    Dim wStr As String = StrConv(Trim(Me.JokenTO_DATE_YYYY.Text) & "/" & Trim(Me.JokenTO_DATE_MM.Text) & "/" & Trim(Me.JokenTO_DATE_DD.Text), VbStrConv.Narrow)
+        '    If Not IsDate(wStr) Then
+        '        CmnModule.AlertMessage(MessageDef.Error.Invalid("開催日To"), Me)
+        '        Return False
+        '    End If
+        'End If
 
         Return True
     End Function
@@ -139,8 +163,10 @@ Partial Public Class TaxiMeisaiDL
         Joken = Nothing
         Joken.KOUENKAI_NO = Trim(Me.JokenKOUENKAI_NO.Text)
         Joken.KOUENKAI_NO = Me.JokenKOUENKAI_NO.Text.Trim
-        Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
-        Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
+        Joken.FROM_DATE = Trim(Me.JokenFROM_DATE.Text)
+        Joken.TO_DATE = Trim(Me.JokenTO_DATE.Text)
+        'Joken.FROM_DATE = CmnModule.Format_DateToString(Me.JokenFROM_DATE_YYYY.Text, Me.JokenFROM_DATE_MM.Text, Me.JokenFROM_DATE_DD.Text)
+        'Joken.TO_DATE = CmnModule.Format_DateToString(Me.JokenTO_DATE_YYYY.Text, Me.JokenTO_DATE_MM.Text, Me.JokenTO_DATE_DD.Text)
 
         If Not GetData(Joken, TBL_FILE) Then
             Me.LabelNoData.Visible = True

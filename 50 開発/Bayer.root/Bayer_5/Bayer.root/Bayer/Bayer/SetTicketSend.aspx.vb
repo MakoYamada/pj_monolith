@@ -4,70 +4,72 @@ Imports System.IO
 Partial Public Class SetTicketSend
     Inherits WebBase
 
-    Private Const COL_COUNT As Integer = 23 'ファイルの項目数
+    Private Const COL_COUNT As Integer = 4 'ファイルの項目数
     Private Const pDelimiter As String = ","
     Private SEISAN_TESURYO As String = "0"
     Private HAKKO_TESURYO As String = "0"
     Private TBL_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct = Nothing
 
     Private Enum COL_NO
-        'KOUENKAI_NO = 0
-        'KOUENKAI_NAME
-        'SANKASHA_ID
-        'DR_NAME
-        FROM_DATE = 0
-        TO_DATE
-        KOUENKAI_NO
+        KOUENKAI_NO = 0
         KOUENKAI_NAME
         SANKASHA_ID
         DR_NAME
-        DR_KANA
-        MR_BU
-        MR_AREA
-        MR_EIGYOSHO
-        MR_NAME
-        MR_KANA
-        MR_SEND_SAKI_FS
-        MR_SEND_SAKI_OTHER
-        TIME_STAMP_BYL
-        INPUT_DATE
-        USER_NAME
-        REQ_STATUS_TEHAI
-        TEHAI_HOTEL
-        TEHAI_KOTSU
-        TEHAI_TAXI
-        TEHAI_MR
-        KINKYU_FLAG
+
+        'FROM_DATE = 0
+        'TO_DATE
+        'KOUENKAI_NO
+        'KOUENKAI_NAME
+        'SANKASHA_ID
+        'DR_NAME
+        'DR_KANA
+        'MR_BU
+        'MR_AREA
+        'MR_EIGYOSHO
+        'MR_NAME
+        'MR_KANA
+        'MR_SEND_SAKI_FS
+        'MR_SEND_SAKI_OTHER
+        'TIME_STAMP_BYL
+        'INPUT_DATE
+        'USER_NAME
+        'REQ_STATUS_TEHAI
+        'TEHAI_HOTEL
+        'TEHAI_KOTSU
+        'TEHAI_TAXI
+        'TEHAI_MR
+        'KINKYU_FLAG
     End Enum
 
     Private Class COL_NAME
-        'Public Const KOUENKAI_NO As String = "会合番号"
-        'Public Const KOUENKAI_NAME As String = "会合名"
-        'Public Const SANKASHA_ID As String = "参加者番号"
-        'Public Const DR_NAME As String = "DR氏名"
-        Public Const FROM_DATE = "開催日FROM"
-        Public Const TO_DATE = "開催日TO"
-        Public Const KOUENKAI_NO = "会合番号"
-        Public Const KOUENKAI_NAME = "会合名"
-        Public Const SANKASHA_ID = "参加者番号"
-        Public Const DR_NAME = "DR氏名"
-        Public Const DR_KANA = "DR氏名カナ"
-        Public Const MR_BU = "DR担当MRのBU"
-        Public Const MR_AREA = "DR担当MRのエリア名"
-        Public Const MR_EIGYOSHO = "DR担当MRの営業所名"
-        Public Const MR_NAME = "DR担当MR"
-        Public Const MR_KANA = "DR担当MR(カナ)"
-        Public Const MR_SEND_SAKI_FS = "チケット送付先FS"
-        Public Const MR_SEND_SAKI_OTHER = "チケット送付先(その他)"
-        Public Const TIME_STAMP_BYL = "BYL Timestamp"
-        Public Const INPUT_DATE = "TOP受信日時"
-        Public Const USER_NAME = "TOP担当"
-        Public Const REQ_STATUS_TEHAI = "依頼内容"
-        Public Const TEHAI_HOTEL = "宿泊"
-        Public Const TEHAI_KOTSU = "交通"
-        Public Const TEHAI_TAXI = "タク"
-        Public Const TEHAI_MR = "MR手配"
-        Public Const KINKYU_FLAG = "緊急"
+        Public Const KOUENKAI_NO As String = "会合番号"
+        Public Const KOUENKAI_NAME As String = "会合名"
+        Public Const SANKASHA_ID As String = "参加者番号"
+        Public Const DR_NAME As String = "DR氏名"
+
+        'Public Const FROM_DATE = "開催日FROM"
+        'Public Const TO_DATE = "開催日TO"
+        'Public Const KOUENKAI_NO = "会合番号"
+        'Public Const KOUENKAI_NAME = "会合名"
+        'Public Const SANKASHA_ID = "参加者番号"
+        'Public Const DR_NAME = "DR氏名"
+        'Public Const DR_KANA = "DR氏名カナ"
+        'Public Const MR_BU = "DR担当MRのBU"
+        'Public Const MR_AREA = "DR担当MRのエリア名"
+        'Public Const MR_EIGYOSHO = "DR担当MRの営業所名"
+        'Public Const MR_NAME = "DR担当MR"
+        'Public Const MR_KANA = "DR担当MR(カナ)"
+        'Public Const MR_SEND_SAKI_FS = "チケット送付先FS"
+        'Public Const MR_SEND_SAKI_OTHER = "チケット送付先(その他)"
+        'Public Const TIME_STAMP_BYL = "BYL Timestamp"
+        'Public Const INPUT_DATE = "TOP受信日時"
+        'Public Const USER_NAME = "TOP担当"
+        'Public Const REQ_STATUS_TEHAI = "依頼内容"
+        'Public Const TEHAI_HOTEL = "宿泊"
+        'Public Const TEHAI_KOTSU = "交通"
+        'Public Const TEHAI_TAXI = "タク"
+        'Public Const TEHAI_MR = "MR手配"
+        'Public Const KINKYU_FLAG = "緊急"
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -203,10 +205,10 @@ Partial Public Class SetTicketSend
             If rowCnt > 1 Then
                 If CheckInput(fileData, strFileName, rowCnt.ToString, ErrorMessage) Then
 
-                    '請求データ存在チェック
+                    '交通・宿泊データ存在チェック
                     Dim updCnt As Integer = 0
                     If GetKotsuHotel(fileData(COL_NO.KOUENKAI_NO), fileData(COL_NO.SANKASHA_ID)) Then
-                        '自動精算対象タクチケテーブルデータ項目セット()
+                        '発送日設定対象 交通・宿泊テーブルデータ項目セット()
                         Call SetKotsuHotelItem(TBL_KOTSUHOTEL)
                         updCnt = UpdateKotsuhotel(ErrorMessage)
                     Else

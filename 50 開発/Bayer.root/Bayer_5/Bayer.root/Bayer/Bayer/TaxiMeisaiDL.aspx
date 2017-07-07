@@ -22,22 +22,24 @@
                             開催開始日
                         </td>
                         <td colspan="5">
-				            <asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
+				            <%--<asp:TextBox ID="JokenFROM_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
                                 ></asp:TextBox>年
 				            <asp:TextBox ID="JokenFROM_DATE_MM" runat="server" Width="30px" MaxLength="2" 
                                 ></asp:TextBox>月
 
 				            <asp:TextBox ID="JokenFROM_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                ></asp:TextBox>日
-				            ～
-
-				            <asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
+                                ></asp:TextBox>日--%>
+				            <asp:TextBox ID="JokenFROM_DATE" runat="server" Width="80px" MaxLength="8" 
+                                ></asp:TextBox>&nbsp;～&nbsp;
+				            <asp:TextBox ID="JokenTO_DATE" runat="server" Width="80px" MaxLength="8" 
+                                ></asp:TextBox>
+				            <%--<asp:TextBox ID="JokenTO_DATE_YYYY" runat="server" Width="50px" MaxLength="4" 
                                 ></asp:TextBox>年
 				            <asp:TextBox ID="JokenTO_DATE_MM" runat="server" Width="30px" MaxLength="2" 
                                 ></asp:TextBox>月
 
 				            <asp:TextBox ID="JokenTO_DATE_DD" runat="server" Width="30px" MaxLength="2" 
-                                ></asp:TextBox>日
+                                ></asp:TextBox>日--%>
                         </td>
                         <td>
                             <asp:Button ID="BtnSearch" runat="server" Width="130px" Text="検索" CssClass="Button" />
