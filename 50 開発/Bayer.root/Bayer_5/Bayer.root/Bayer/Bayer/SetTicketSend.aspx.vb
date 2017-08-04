@@ -196,6 +196,13 @@ Partial Public Class SetTicketSend
         Dim strFileName As String = Path.GetFileName(strFilePath)
         Dim rowCnt As Integer = 0  '行数カウント
         Dim ErrorMessage As String = String.Empty
+        Dim sb As New System.Text.StringBuilder
+        Dim sbErr As New System.Text.StringBuilder
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("下記は交通宿泊テーブルに登録されていないか、対象外のステータスです。"), True))
+        sb.Append(vbNewLine)
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者番号")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("対象外ステータス"), True))
+        sb.Append(vbNewLine)
 
         While Not parser.EndOfData
             Dim fileData As String() = parser.ReadFields() ' 1行読み込み
@@ -207,13 +214,16 @@ Partial Public Class SetTicketSend
 
                     '交通・宿泊データ存在チェック
                     Dim updCnt As Integer = 0
-                    If GetKotsuHotel(fileData(COL_NO.KOUENKAI_NO), fileData(COL_NO.SANKASHA_ID)) Then
+                    Dim wStatus As String = ""
+                    If GetKotsuHotel(fileData(COL_NO.KOUENKAI_NO), fileData(COL_NO.SANKASHA_ID), wStatus) Then
                         '発送日設定対象 交通・宿泊テーブルデータ項目セット()
                         Call SetKotsuHotelItem(TBL_KOTSUHOTEL)
                         updCnt = UpdateKotsuhotel(ErrorMessage)
                     Else
+                        sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(fileData(COL_NO.SANKASHA_ID))))
+                        sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(wStatus), True))
+                        sbErr.Append(vbNewLine)
                         ErrorMessage &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。" & vbNewLine
-                        wErrMessage &= CmnCsv.Quotes("参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。") & vbNewLine
                     End If
 
                 End If
@@ -227,7 +237,7 @@ Partial Public Class SetTicketSend
             Me.TrError.Visible = True
             Me.TrEnd.Visible = False
             Me.LabelErrorMessage.Text = ErrorMessage
-
+            wErrMessage = sb.ToString & sbErr.ToString
             Return False
         Else
             Me.TrError.Visible = False
@@ -314,7 +324,7 @@ Partial Public Class SetTicketSend
 
         TBL_KOTSUHOTEL.ANS_TICKET_SEND_DAY = Me.ANS_TICKET_SEND_DAY.Text
         TBL_KOTSUHOTEL.SEND_FLAG = AppConst.SEND_FLAG.Code.Taisho
-
+        TBL_KOTSUHOTEL.ANS_STATUS_TEHAI = AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend
     End Sub
 
     Private Function UpdateKotsuhotel(ByRef ErrorMessage As String) As Integer
@@ -342,12 +352,12 @@ Partial Public Class SetTicketSend
     End Function
 
     '交通宿泊データ取得
-    Private Function GetKotsuHotel(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String) As Boolean
+    Private Function GetKotsuHotel(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String, ByRef STATUS_TEHAI As String) As Boolean
         Dim wFlag As Boolean = False
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
 
-        strSQL = SQL.TBL_KOTSUHOTEL.byKOUENKAI_NO_SANKASHA_ID_NEW(KOUENKAI_NO, SANKASHA_ID)
+        strSQL = SQL.TBL_KOTSUHOTEL.bySANKASHA_ID_NEW(SANKASHA_ID)
         RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
         If RsData.Read() Then
             TBL_KOTSUHOTEL = AppModule.SetRsData(RsData, TBL_KOTSUHOTEL)
@@ -356,7 +366,11 @@ Partial Public Class SetTicketSend
                 TBL_KOTSUHOTEL.ANS_STATUS_TEHAI = AppConst.KOTSUHOTEL.STATUS_TEHAI.Answer.Code.TicketSend Then
 
                 wFlag = True
+            Else
+                STATUS_TEHAI = AppModule.GetName_ANS_STATUS_TEHAI(TBL_KOTSUHOTEL.ANS_STATUS_TEHAI)
             End If
+        Else
+            STATUS_TEHAI = "交通宿泊テーブル未登録"
         End If
         RsData.Close()
 

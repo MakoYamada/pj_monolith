@@ -2303,6 +2303,58 @@ Public Class SQL
             Return strSQL
         End Function
 
+        Public Shared Function bySANKASHA_ID_NEW(ByVal SANKASHA_ID As String) As String
+            'Dim strSQL As String = SQL_SELECT
+            Dim strSQL As String = String.Empty
+
+            strSQL &= "SELECT DISTINCT"
+            strSQL &= " WK_KOTSUHOTEL.*"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_BU"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_AREA"
+            strSQL &= ", WK_KOUENKAI.TEHAI_TANTO_ROMA"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= ", WK_KOUENKAI.TO_DATE"
+            strSQL &= ", MS_USER.USER_NAME"
+            strSQL &= ", TBL_SANKA.DR_SANKA AS SANKA_FLAG"
+            strSQL &= " FROM (("
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL INNER JOIN "
+            strSQL &= " TBL_KOUENKAI AS WK_KOUENKAI ON "
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " ) LEFT JOIN TBL_SANKA ON ("
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO = TBL_SANKA.KOUENKAI_NO"
+            strSQL &= " ) AND ("
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID = TBL_SANKA.SANKASHA_ID"
+            strSQL &= " )) LEFT JOIN MS_USER ON "
+            strSQL &= " WK_KOUENKAI.TTEHAI_TANTO = MS_USER.LOGIN_ID"
+            strSQL &= " WHERE "
+            'strSQL &= " ISNULL(WK_KOUENKAI.TTEHAI_TANTO,N'')=MS_USER.LOGIN_ID"
+            'strSQL &= " AND"
+            strSQL &= " WK_KOUENKAI.TIME_STAMP=("
+            strSQL &= " SELECT MAX(TIME_STAMP)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOUENKAI"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOUENKAI.KOUENKAI_NO=KOUENKAI_NO"
+            strSQL &= " )"
+
+            strSQL &= " AND WK_KOTSUHOTEL.SANKASHA_ID=N'" & CmnDb.SqlString(SANKASHA_ID) & "'"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.TIME_STAMP_BYL=("
+            strSQL &= " SELECT MAX(TIME_STAMP_BYL)"
+            strSQL &= " FROM"
+            strSQL &= " TBL_KOTSUHOTEL AS WK_KOTSUHOTEL2"
+            strSQL &= " WHERE"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO=WK_KOTSUHOTEL2.KOUENKAI_NO"
+            strSQL &= " AND"
+            strSQL &= " WK_KOTSUHOTEL.SANKASHA_ID=WK_KOTSUHOTEL2.SANKASHA_ID)"
+            strSQL &= " ORDER BY"
+            strSQL &= " WK_KOTSUHOTEL.KOUENKAI_NO"
+            strSQL &= " ,WK_KOTSUHOTEL.SANKASHA_ID"
+
+            Return strSQL
+        End Function
+
         Public Shared Function byKEY(ByVal SearchKey As TableDef.Joken.DataStruct) As String
             Dim strSQL As String = String.Empty
 
@@ -6551,6 +6603,7 @@ Public Class SQL
 
             strSQL = "UPDATE TBL_KOTSUHOTEL SET"
             strSQL &= " " & TableDef.TBL_KOTSUHOTEL.Column.ANS_TICKET_SEND_DAY & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_TICKET_SEND_DAY) & "'"
+            strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.ANS_STATUS_TEHAI & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.ANS_STATUS_TEHAI) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.SEND_FLAG & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.SEND_FLAG) & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= "," & TableDef.TBL_KOTSUHOTEL.Column.UPDATE_USER & "=N'" & CmnDb.SqlString(TBL_KOTSUHOTEL.UPDATE_USER) & "'"
@@ -9275,15 +9328,17 @@ Public Class SQL
             strSQL &= ", TTH1.KOUENKAI_NAME"
             strSQL &= ", TTH1.FROM_DATE"
             strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
+            strSQL &= ", TTH1.SRM_HACYU_KBN"
             strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_TF"
             strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_TF"
             strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_T"
             strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_T"
             strSQL &= " FROM"
-            strSQL &= " (SELECT TBL_TAXITICKET_HAKKO.*,WK_KOUENKAI.KOUENKAI_NAME,WK_KOUENKAI.FROM_DATE FROM"
+            strSQL &= " (SELECT TBL_TAXITICKET_HAKKO.*,WK_KOUENKAI.KOUENKAI_NAME,WK_KOUENKAI.FROM_DATE,WK_KOUENKAI.SRM_HACYU_KBN FROM"
             strSQL &= " TBL_TAXITICKET_HAKKO"
             strSQL &= " JOIN "
-            strSQL &= " (SELECT TBL_KOUENKAI.KOUENKAI_NO,TBL_KOUENKAI.KOUENKAI_NAME,TBL_KOUENKAI.FROM_DATE,TBL_KOUENKAI.TIME_STAMP FROM TBL_KOUENKAI "
+            'strSQL &= " (SELECT TBL_KOUENKAI.KOUENKAI_NO,TBL_KOUENKAI.KOUENKAI_NAME,TBL_KOUENKAI.FROM_DATE,TBL_KOUENKAI.TIME_STAMP FROM TBL_KOUENKAI "
+            strSQL &= " (SELECT TBL_KOUENKAI.KOUENKAI_NO,TBL_KOUENKAI.KOUENKAI_NAME,TBL_KOUENKAI.FROM_DATE,TBL_KOUENKAI.TIME_STAMP,TBL_KOUENKAI.SRM_HACYU_KBN FROM TBL_KOUENKAI "
             strSQL &= " JOIN "
             strSQL &= " (SELECT KOUENKAI_NO,MAX(TIME_STAMP) AS TIME_STAMP FROM TBL_KOUENKAI"
             strSQL &= " WHERE"
@@ -9320,6 +9375,7 @@ Public Class SQL
             strSQL &= ", TTH1.KOUENKAI_NAME"
             strSQL &= ", TTH1.FROM_DATE"
             strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
+            strSQL &= ", TTH1.SRM_HACYU_KBN"
 
             Return strSQL
         End Function
@@ -9598,7 +9654,16 @@ Public Class SQL
         Public Shared Function TaxiJissekiMiseisanCsv() As String
             Dim strSQL As String = ""
 
-            strSQL &= " SELECT * FROM TBL_TAXITICKET_HAKKO"
+            strSQL &= " SELECT TBL_TAXITICKET_HAKKO.*"
+            strSQL &= ", WK_KOUENKAI.SRM_HACYU_KBN"
+            strSQL &= " FROM TBL_TAXITICKET_HAKKO"
+            strSQL &= " JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK1"
+            strSQL &= "   WHERE  WK1.TIME_STAMP = "
+            strSQL &= "   (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "    WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
+            strSQL &= "  )WK_KOUENKAI"
+            strSQL &= " ON TBL_TAXITICKET_HAKKO.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
             strSQL &= " WHERE "
             strSQL &= TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_USED_DATE
             strSQL &= " IS NOT NULL AND "

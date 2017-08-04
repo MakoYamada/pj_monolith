@@ -215,6 +215,9 @@ Partial Public Class Preview
         rpt1.OldTBL_KOTSUHOTEL = Session.Item(SessionDef.OldTBL_KOTSUHOTEL)
         '履歴=True
         rpt1.Rireki = pRireki
+        Dim wMaisuu As String = ""
+        Call AppModule.SetForm_ANS_TAXI_MAISUU(RPT_KOTSUHOTEL.ANS_TAXI_TESURYO, wMaisuu, RPT_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
+        rpt1.TAXI_MAISUU = wMaisuu
 
         'レポートを作成
         rpt1.Run()

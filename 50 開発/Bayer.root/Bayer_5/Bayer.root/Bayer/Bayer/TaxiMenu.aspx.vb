@@ -204,7 +204,8 @@ Partial Public Class TaxiMenu
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録日時")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("登録者")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("更新日時")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("更新者"), True))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("更新者")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("SRM発注区分"), True))
         sb.Append(vbNewLine)
 
         '明細
@@ -230,7 +231,8 @@ Partial Public Class TaxiMenu
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INPUT_DATE)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).INPUT_USER)))
             sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_DATE)))
-            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_USER), True))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CsvData(wCnt).UPDATE_USER)))
+            sb.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_SRM_HACYU_KBN(CsvData(wCnt).SRM_HACYU_KBN)), True))
             sb.Append(vbNewLine)
         Next wCnt
 

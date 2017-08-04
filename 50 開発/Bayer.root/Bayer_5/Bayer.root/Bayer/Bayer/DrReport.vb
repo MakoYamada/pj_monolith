@@ -25,6 +25,13 @@ Public Class DrReport
         End Set
     End Property
 
+    Private pTAXI_MAISUU As String
+    Public WriteOnly Property TAXI_MAISUU() As String
+        Set(ByVal value As String)
+            pTAXI_MAISUU = value
+        End Set
+    End Property
+
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '差異のある項目の背景色を変更
         If pRireki = False AndAlso Trim(pOldTBL_KOTSUHOTEL.KOUENKAI_NO) <> "" Then
@@ -56,6 +63,7 @@ Public Class DrReport
             SetChangedColor(Me.DR_SEX, pOldTBL_KOTSUHOTEL.DR_SEX, Me.DR_SEX.Text)
             SetChangedColor(Me.DR_SEX2, pOldTBL_KOTSUHOTEL.DR_SEX, Me.DR_SEX2.Text)
             SetChangedColor(Me.DR_YAKUWARI, pOldTBL_KOTSUHOTEL.DR_YAKUWARI, Me.DR_YAKUWARI.Text)
+            SetChangedColor(Me.DR_YAKUWARI2, pOldTBL_KOTSUHOTEL.DR_YAKUWARI, Me.DR_YAKUWARI2.Text)
             SetChangedColor(Me.SHONIN_NAME, pOldTBL_KOTSUHOTEL.SHONIN_NAME, Me.SHONIN_NAME.Text)
             SetChangedColor(Me.SHONIN_DATE, pOldTBL_KOTSUHOTEL.SHONIN_DATE, Me.SHONIN_DATE.Text)
             SetChangedColor(Me.SHITEIGAI_RIYU, pOldTBL_KOTSUHOTEL.SHITEIGAI_RIYU, Me.SHITEIGAI_RIYU.Text)
@@ -250,6 +258,7 @@ Public Class DrReport
         DR_SEX.Text = AppModule.GetName_DR_SEX(DR_SEX.Text)
         DR_SEX2.Text = AppModule.GetName_DR_SEX(DR_SEX2.Text)
         DR_YAKUWARI.Text = AppModule.GetName_DR_YAKUWARI(DR_YAKUWARI.Text)
+        DR_YAKUWARI2.Text = AppModule.GetName_DR_YAKUWARI(DR_YAKUWARI2.Text)
         If SHONIN_NAME.Text.Length > 19 Then SHONIN_NAME.Text = Left(SHONIN_NAME.Text, 19)
         SHONIN_DATE.Text = CmnModule.Format_Date(SHONIN_DATE.Text, CmnModule.DateFormatType.YYYYMD)
         If MR_NAME.Text.Length > 15 Then MR_NAME.Text = Left(MR_NAME.Text, 15)
@@ -423,6 +432,7 @@ Public Class DrReport
         ANS_MR_KOTSUHI.Text = CmnModule.EditComma(Me.ANS_MR_KOTSUHI.Text) & " 円"
         If REQ_KOTSU_BIKO.Text.Length > 346 Then REQ_KOTSU_BIKO.Text = Left(REQ_KOTSU_BIKO.Text, 346)
 
+        Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
     End Sub
 
     '差異

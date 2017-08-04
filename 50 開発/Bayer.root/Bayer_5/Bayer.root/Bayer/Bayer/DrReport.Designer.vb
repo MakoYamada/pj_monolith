@@ -62,6 +62,13 @@ Me.Line65 = New DataDynamics.ActiveReports.Line
 Me.Line6 = New DataDynamics.ActiveReports.Line
 Me.Line7 = New DataDynamics.ActiveReports.Line
 Me.Detail = New DataDynamics.ActiveReports.Detail
+Me.KINKYU_FLAG = New DataDynamics.ActiveReports.TextBox
+Me.Label239 = New DataDynamics.ActiveReports.Label
+Me.WBS_ELEMENT2 = New DataDynamics.ActiveReports.TextBox
+Me.Label238 = New DataDynamics.ActiveReports.Label
+Me.WBS_ELEMENT1 = New DataDynamics.ActiveReports.TextBox
+Me.WBS_ELEMENT = New DataDynamics.ActiveReports.TextBox
+Me.Label94 = New DataDynamics.ActiveReports.Label
 Me.Label237 = New DataDynamics.ActiveReports.Label
 Me.REQ_KOTSU_BIKO = New DataDynamics.ActiveReports.TextBox
 Me.TIME_STAMP_BYL1 = New DataDynamics.ActiveReports.TextBox
@@ -181,7 +188,6 @@ Me.REQ_F_BIN_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_SEAT_1 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_SEAT_KIBOU1 = New DataDynamics.ActiveReports.TextBox
 Me.Label87 = New DataDynamics.ActiveReports.Label
-Me.Label92 = New DataDynamics.ActiveReports.Label
 Me.Label91 = New DataDynamics.ActiveReports.Label
 Me.Label90 = New DataDynamics.ActiveReports.Label
 Me.Label89 = New DataDynamics.ActiveReports.Label
@@ -672,29 +678,25 @@ Me.Line170 = New DataDynamics.ActiveReports.Line
 Me.Label236 = New DataDynamics.ActiveReports.Label
 Me.DANTAI_CODE = New DataDynamics.ActiveReports.TextBox
 Me.Line171 = New DataDynamics.ActiveReports.Line
-Me.Line201 = New DataDynamics.ActiveReports.Line
 Me.Line172 = New DataDynamics.ActiveReports.Line
 Me.Line174 = New DataDynamics.ActiveReports.Line
 Me.Line175 = New DataDynamics.ActiveReports.Line
 Me.Line176 = New DataDynamics.ActiveReports.Line
-Me.KINKYU_FLAG = New DataDynamics.ActiveReports.TextBox
 Me.Label3 = New DataDynamics.ActiveReports.Label
 Me.DANTAI_CODE2 = New DataDynamics.ActiveReports.TextBox
+Me.Line177 = New DataDynamics.ActiveReports.Line
+Me.Line178 = New DataDynamics.ActiveReports.Line
+Me.Line201 = New DataDynamics.ActiveReports.Line
+Me.Line60 = New DataDynamics.ActiveReports.Line
+Me.Line61 = New DataDynamics.ActiveReports.Line
 Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 Me.Label1 = New DataDynamics.ActiveReports.Label
 Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
-Me.Line177 = New DataDynamics.ActiveReports.Line
-Me.Line178 = New DataDynamics.ActiveReports.Line
-Me.Label94 = New DataDynamics.ActiveReports.Label
-Me.WBS_ELEMENT = New DataDynamics.ActiveReports.TextBox
-Me.Label238 = New DataDynamics.ActiveReports.Label
-Me.WBS_ELEMENT1 = New DataDynamics.ActiveReports.TextBox
-Me.Label239 = New DataDynamics.ActiveReports.Label
-Me.WBS_ELEMENT2 = New DataDynamics.ActiveReports.TextBox
-Me.Line60 = New DataDynamics.ActiveReports.Line
-Me.Line61 = New DataDynamics.ActiveReports.Line
+Me.Label240 = New DataDynamics.ActiveReports.Label
+Me.DR_YAKUWARI2 = New DataDynamics.ActiveReports.TextBox
+Me.ANS_TAXI_MAISUU = New DataDynamics.ActiveReports.TextBox
 CType(Me.LBL_KINKYU,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SHISETSU_ADDRESS,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SHISETSU_NAME,System.ComponentModel.ISupportInitialize).BeginInit
@@ -724,6 +726,13 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TITLE1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label239,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.WBS_ELEMENT2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label238,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.WBS_ELEMENT1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.WBS_ELEMENT,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label94,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label237,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_KOTSU_BIKO,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TIME_STAMP_BYL1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -836,7 +845,6 @@ CType(Me.REQ_F_BIN_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label87,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label92,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label91,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label90,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label89,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1165,19 +1173,15 @@ CType(Me.Label221,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.KAIJO_NAME2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label236,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DANTAI_CODE,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DANTAI_CODE2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_USER,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label94,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.WBS_ELEMENT,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label238,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.WBS_ELEMENT1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label239,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.WBS_ELEMENT2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label240,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_YAKUWARI2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.ANS_TAXI_MAISUU,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
 '
 'PageHeader
@@ -1209,7 +1213,6 @@ Me.SHP_KINKYU.Width = 1.25!
 '
 'Shape1
 '
-Me.Shape1.BackColor = System.Drawing.Color.DarkGray
 Me.Shape1.Height = 0.2740157!
 Me.Shape1.Left = 0!
 Me.Shape1.Name = "Shape1"
@@ -1269,8 +1272,8 @@ Me.Label6.Height = 0.2!
 Me.Label6.HyperLink = Nothing
 Me.Label6.Left = 4.768372E-07!
 Me.Label6.Name = "Label6"
-Me.Label6.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label6.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label6.Text = "会合番号"
 Me.Label6.Top = 1.074015!
 Me.Label6.Width = 1.323622!
@@ -1281,8 +1284,8 @@ Me.Label7.Height = 0.2!
 Me.Label7.HyperLink = Nothing
 Me.Label7.Left = 3.558662!
 Me.Label7.Name = "Label7"
-Me.Label7.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label7.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label7.Text = "手配ステータス"
 Me.Label7.Top = 1.074016!
 Me.Label7.Width = 0.948819!
@@ -1293,8 +1296,8 @@ Me.Label8.Height = 0.2!
 Me.Label8.HyperLink = Nothing
 Me.Label8.Left = 4.828347!
 Me.Label8.Name = "Label8"
-Me.Label8.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label8.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label8.Text = "Timestamp(BYL)"
 Me.Label8.Top = 1.074016!
 Me.Label8.Width = 0.9590553!
@@ -1305,8 +1308,8 @@ Me.Label9.Height = 0.2!
 Me.Label9.HyperLink = Nothing
 Me.Label9.Left = 0!
 Me.Label9.Name = "Label9"
-Me.Label9.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label9.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label9.Text = "MTP ID(参加者ID)"
 Me.Label9.Top = 1.274015!
 Me.Label9.Width = 1.323622!
@@ -1317,8 +1320,8 @@ Me.Label10.Height = 0.2!
 Me.Label10.HyperLink = Nothing
 Me.Label10.Left = 3.558662!
 Me.Label10.Name = "Label10"
-Me.Label10.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label10.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label10.Text = "DRコード"
 Me.Label10.Top = 1.274015!
 Me.Label10.Width = 0.9488187!
@@ -1329,8 +1332,8 @@ Me.Label11.Height = 0.2!
 Me.Label11.HyperLink = Nothing
 Me.Label11.Left = 0!
 Me.Label11.Name = "Label11"
-Me.Label11.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label11.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label11.Text = "DR氏名"
 Me.Label11.Top = 1.474016!
 Me.Label11.Width = 1.323622!
@@ -1341,8 +1344,8 @@ Me.Label12.Height = 0.2!
 Me.Label12.HyperLink = Nothing
 Me.Label12.Left = 0!
 Me.Label12.Name = "Label12"
-Me.Label12.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label12.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label12.Text = "DR氏名(半角ｶﾀｶﾅ)"
 Me.Label12.Top = 1.674016!
 Me.Label12.Width = 1.323622!
@@ -1353,8 +1356,8 @@ Me.Label14.Height = 0.2!
 Me.Label14.HyperLink = Nothing
 Me.Label14.Left = 3.558662!
 Me.Label14.Name = "Label14"
-Me.Label14.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label14.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label14.Text = "施設名"
 Me.Label14.Top = 1.474016!
 Me.Label14.Width = 0.9488189!
@@ -1365,8 +1368,8 @@ Me.Label15.Height = 0.2!
 Me.Label15.HyperLink = Nothing
 Me.Label15.Left = 3.558662!
 Me.Label15.Name = "Label15"
-Me.Label15.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label15.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label15.Text = "施設住所"
 Me.Label15.Top = 1.674016!
 Me.Label15.Width = 0.9488189!
@@ -1377,8 +1380,8 @@ Me.Label16.Height = 0.2!
 Me.Label16.HyperLink = Nothing
 Me.Label16.Left = 0!
 Me.Label16.Name = "Label16"
-Me.Label16.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label16.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label16.Text = "参加者役割"
 Me.Label16.Top = 2.074016!
 Me.Label16.Width = 1.323622!
@@ -1389,8 +1392,8 @@ Me.Label17.Height = 0.2!
 Me.Label17.HyperLink = Nothing
 Me.Label17.Left = 3.558662!
 Me.Label17.Name = "Label17"
-Me.Label17.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label17.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label17.Text = "性別"
 Me.Label17.Top = 1.874016!
 Me.Label17.Width = 0.9488189!
@@ -1401,8 +1404,8 @@ Me.Label18.Height = 0.2!
 Me.Label18.HyperLink = Nothing
 Me.Label18.Left = 0!
 Me.Label18.Name = "Label18"
-Me.Label18.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label18.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label18.Text = "航空搭乗者年齢(年齢)"
 Me.Label18.Top = 1.874016!
 Me.Label18.Width = 1.323622!
@@ -1603,7 +1606,7 @@ Me.Line36.Left = 1.323622!
 Me.Line36.LineWeight = 1!
 Me.Line36.Name = "Line36"
 Me.Line36.Top = 1.074016!
-Me.Line36.Width = 1.192093E-07!
+Me.Line36.Width = 0!
 Me.Line36.X1 = 1.323622!
 Me.Line36.X2 = 1.323622!
 Me.Line36.Y1 = 1.074016!
@@ -1611,7 +1614,7 @@ Me.Line36.Y2 = 3.10118!
 '
 'Line62
 '
-Me.Line62.Height = 0.2000002!
+Me.Line62.Height = 0.2!
 Me.Line62.Left = 4.828347!
 Me.Line62.LineWeight = 1!
 Me.Line62.Name = "Line62"
@@ -1624,7 +1627,7 @@ Me.Line62.Y2 = 1.274016!
 '
 'Line63
 '
-Me.Line63.Height = 0.2000002!
+Me.Line63.Height = 0.2!
 Me.Line63.Left = 5.800788!
 Me.Line63.LineWeight = 1!
 Me.Line63.Name = "Line63"
@@ -1692,10 +1695,88 @@ Me.Line7.Y2 = 2.074015!
 'Detail
 '
 Me.Detail.ColumnSpacing = 0!
-Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.KINKYU_FLAG, Me.Label239, Me.WBS_ELEMENT2, Me.Label238, Me.WBS_ELEMENT1, Me.WBS_ELEMENT, Me.Label94, Me.Label237, Me.REQ_KOTSU_BIKO, Me.DR_CD, Me.TIME_STAMP_BYL, Me.TIME_STAMP_BYL1, Me.REQ_STATUS_TEHAI1, Me.ANS_TICKET_SEND_DAY, Me.REQ_MR_HOTEL_NOTE, Me.DR_NAME, Me.TAXI_PRT_NAME, Me.ANS_OTHER_FARE, Me.ANS_OTHER_CANCELLATION, Me.ANS_AIR_FARE, Me.ANS_AIR_CANCELLATION, Me.ANS_RAIL_FARE, Me.ANS_RAIL_CANCELLATION, Me.ANS_MR_HOTELHI, Me.ANS_MR_HOTELHI_TOZEI, Me.ANS_MR_KOTSUHI, Me.Label232, Me.Label235, Me.Label234, Me.Label233, Me.Label230, Me.Label229, Me.Label228, Me.Label231, Me.Label93, Me.REQ_TAXI_NOTE, Me.MR_BU, Me.Label227, Me.Label226, Me.ANS_TICKET_SEND_DAY2, Me.Label225, Me.FROM_DATE1, Me.Label224, Me.TAXI_PRT_NAME2, Me.Label223, Me.FROM_DATE2, Me.Label222, Me.Label206, Me.KOUENKAI_NAME2, Me.REQ_O_TIME1_3, Me.DR_SHISETSU_NAME2, Me.Label184, Me.REQ_F_SEAT_3, Me.Label187, Me.REQ_F_TIME1_3, Me.REQ_F_AIRPORT1_3, Me.Label189, Me.Label155, Me.Label158, Me.Label160, Me.Label156, Me.Label175, Me.FUKURO1, Me.Label172, Me.Label185, Me.Label188, Me.Label186, Me.Label191, Me.Label194, Me.FUKURO3, Me.Label195, Me.Label198, Me.Label200, Me.REQ_O_SEAT_1, Me.Label162, Me.REQ_O_TIME1_1, Me.Label165, Me.REQ_O_AIRPORT1_1, Me.Label167, Me.Label163, Me.REQ_O_DATE_1, Me.REQ_O_TEHAI_1, Me.Label171, Me.Label168, Me.FUKURO2, Me.REQ_O_TIME2_3, Me.REQ_O_AIRPORT2_3, Me.Label216, Me.Label215, Me.Label214, Me.Label211, Me.Label208, Me.Line140, Me.Label201, Me.Label199, Me.Label190, Me.REQ_O_AIRPORT1_3, Me.REQ_F_AIRPORT2_3, Me.REQ_F_TIME2_3, Me.TO_DATE, Me.TAXI_PRT_NAME1, Me.Label220, Me.FROM_DATE, Me.Label219, Me.FUKURO4, Me.Line117, Me.Line116, Me.Line115, Me.Line114, Me.Line113, Me.Line112, Me.REQ_F_DATE_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_TEHAI_1, Me.Label174, Me.Label173, Me.Label159, Me.Label157, Me.Label154, Me.REQ_F_AIRPORT1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_TIME1_1, Me.REQ_F_TIME2_1, Me.REQ_F_BIN_1, Me.REQ_F_SEAT_1, Me.REQ_F_SEAT_KIBOU1, Me.Label87, Me.Label92, Me.Label91, Me.Label90, Me.Label89, Me.REQ_TAXI_DATE_10, Me.Label88, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.Label85, Me.REQ_TAXI_DATE_9, Me.Label84, Me.REQ_TAXI_FROM_9, Me.Label83, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.Label81, Me.REQ_TAXI_DATE_8, Me.Label80, Me.REQ_TAXI_FROM_8, Me.Label79, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.Label77, Me.REQ_TAXI_DATE_7, Me.Label76, Me.REQ_TAXI_FROM_7, Me.Label66, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.Label64, Me.REQ_TAXI_DATE_6, Me.Label63, Me.REQ_TAXI_FROM_6, Me.Label62, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.Label59, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.Label54, Me.REQ_TAXI_FROM_4, Me.Label53, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.Label50, Me.REQ_TAXI_FROM_3, Me.Label49, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.Label46, Me.REQ_TAXI_FROM_2, Me.Label45, Me.TAXI_YOTEIKINGAKU_2, Me.Label44, Me.Label72, Me.REQ_TAXI_DATE_1, Me.Label73, Me.REQ_TAXI_FROM_1, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label75, Me.Label71, Me.TEHAI_TAXI, Me.ANS_HOTEL_NAME, Me.ANS_ROOM_TYPE, Me.ANS_HOTELHI, Me.ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_CANCEL, Me.Label70, Me.Label69, Me.Label35, Me.Label34, Me.Label32, Me.Label68, Me.Label67, Me.Label55, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.MR_KANA, Me.Label13, Me.Label25, Me.Label20, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label33, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.COST_CENTER, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.Line1, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line23, Me.Line26, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line37, Me.Line38, Me.Line2, Me.Line55, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line27, Me.Line34, Me.Line35, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line53, Me.Line57, Me.Line58, Me.Line59, Me.Line66, Me.PageBreak1, Me.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_NAME, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.SANKASHA_ID, Me.DR_NAME1, Me.DR_KANA, Me.DR_YAKUWARI, Me.DR_AGE, Me.Line3, Me.Line4, Me.Line5, Me.DR_SEX, Me.Line36, Me.Line62, Me.Line63, Me.Line64, Me.Line65, Me.Line6, Me.Shape2, Me.TITLE2, Me.Label95, Me.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_5, Me.REQ_F_BIN_5, Me.REQ_F_TIME2_5, Me.REQ_F_TIME1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_DATE_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_TEHAI_5, Me.REQ_F_SEAT_KIBOU4, Me.REQ_F_SEAT_4, Me.REQ_F_BIN_4, Me.REQ_F_TIME2_4, Me.REQ_F_TIME1_4, Me.REQ_F_AIRPORT2_4, Me.REQ_F_AIRPORT1_4, Me.REQ_F_DATE_4, Me.REQ_F_KOTSUKIKAN_4, Me.REQ_F_IRAINAIYOU_4, Me.REQ_F_TEHAI_4, Me.REQ_O_SEAT_KIBOU5, Me.REQ_O_SEAT_5, Me.REQ_O_BIN_5, Me.REQ_O_TIME2_5, Me.REQ_O_TIME1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_DATE_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_TEHAI_5, Me.REQ_F_SEAT_KIBOU2, Me.REQ_F_SEAT_2, Me.REQ_F_BIN_2, Me.REQ_F_TIME2_2, Me.REQ_F_TIME1_2, Me.REQ_F_AIRPORT2_2, Me.REQ_F_AIRPORT1_2, Me.REQ_F_DATE_2, Me.REQ_F_KOTSUKIKAN_2, Me.REQ_F_IRAINAIYOU_2, Me.REQ_O_SEAT_KIBOU2, Me.REQ_O_SEAT_2, Me.REQ_O_BIN_2, Me.REQ_O_TIME2_2, Me.REQ_O_TIME1_2, Me.REQ_O_AIRPORT2_2, Me.REQ_O_AIRPORT1_2, Me.REQ_O_DATE_2, Me.REQ_O_KOTSUKIKAN_2, Me.REQ_O_IRAINAIYOU_2, Me.REQ_F_TEHAI_2, Me.REQ_O_TEHAI_2, Me.Label108, Me.Label107, Me.Label106, Me.Label105, Me.Label104, Me.Label103, Me.Label102, Me.Label101, Me.Label100, Me.Label99, Me.Label98, Me.FUKURO5, Me.Label96, Me.Label97, Me.Label109, Me.Label110, Me.Label111, Me.Label112, Me.Label113, Me.Label114, Me.Label115, Me.Label116, Me.Label117, Me.OURO5, Me.Label118, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Label123, Me.Label124, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Line71, Me.Label129, Me.Label130, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label136, Me.Label137, Me.Label138, Me.Label139, Me.OURO2, Me.REQ_O_SEAT_KIBOU4, Me.REQ_O_SEAT_4, Me.REQ_O_BIN_4, Me.REQ_O_TIME2_4, Me.REQ_O_TIME1_4, Me.REQ_O_AIRPORT2_4, Me.REQ_O_AIRPORT1_4, Me.REQ_O_SEAT_KIBOU1, Me.REQ_O_BIN_1, Me.REQ_O_TIME2_1, Me.REQ_O_AIRPORT2_1, Me.Label140, Me.Label141, Me.Label142, Me.Label143, Me.Label144, Me.Label145, Me.Label146, Me.Label147, Me.Label148, Me.Label149, Me.Label150, Me.Label151, Me.Label152, Me.Label153, Me.OURO4, Me.Line75, Me.Label161, Me.Label164, Me.Label166, Me.OURO1, Me.Label169, Me.Label170, Me.Label176, Me.Label177, Me.Label178, Me.Label179, Me.Label181, Me.Label182, Me.Label183, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_TEHAI_4, Me.REQ_O_IRAINAIYOU_4, Me.REQ_O_KOTSUKIKAN_4, Me.REQ_O_DATE_4, Me.Line76, Me.REQ_F_SEAT_KIBOU3, Me.REQ_F_BIN_3, Me.REQ_F_DATE_3, Me.REQ_F_KOTSUKIKAN_3, Me.REQ_F_IRAINAIYOU_3, Me.REQ_O_SEAT_KIBOU3, Me.REQ_O_SEAT_3, Me.REQ_O_BIN_3, Me.REQ_O_DATE_3, Me.REQ_O_KOTSUKIKAN_3, Me.REQ_O_IRAINAIYOU_3, Me.REQ_F_TEHAI_3, Me.REQ_O_TEHAI_3, Me.Label192, Me.Label193, Me.Label196, Me.Label197, Me.Label202, Me.Label203, Me.Label204, Me.Label205, Me.OURO3, Me.Line80, Me.Line87, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line101, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line152, Me.Line173, Me.Line52, Me.DR_SHISETSU_ADDRESS2, Me.Label207, Me.Label209, Me.Label210, Me.Label212, Me.Label213, Me.Label217, Me.KOUENKAI_NO2, Me.REQ_STATUS_TEHAI2, Me.TIME_STAMP_BYL2, Me.SANKASHA_ID2, Me.DR_CD2, Me.DR_NAME2, Me.DR_KANA2, Me.DR_AGE2, Me.Line67, Me.Line192, Me.Line193, Me.Line194, Me.DR_SEX2, Me.Line195, Me.Line196, Me.Line199, Me.Line200, Me.Line79, Me.Line68, Me.Line203, Me.Line70, Me.Line74, Me.Line81, Me.Line82, Me.Line97, Me.Line99, Me.Line100, Me.Line102, Me.Line103, Me.Line98, Me.Line105, Me.Line106, Me.Line107, Me.Line108, Me.Line109, Me.Line110, Me.Line111, Me.Line132, Me.Line133, Me.Line134, Me.Line135, Me.Line137, Me.Line138, Me.Line139, Me.Line141, Me.Line153, Me.Line84, Me.Label180, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line122, Me.Line85, Me.Line86, Me.Line154, Me.Line155, Me.Line156, Me.Line83, Me.Line104, Me.Line72, Me.Line128, Me.Line129, Me.Line130, Me.Line131, Me.Line54, Me.Line142, Me.Line143, Me.Line144, Me.Line146, Me.Line147, Me.Line148, Me.Line149, Me.Line150, Me.Line151, Me.Line157, Me.Line158, Me.Line159, Me.Line160, Me.Line161, Me.Line162, Me.Line163, Me.Line164, Me.Line8, Me.Shape1, Me.Label218, Me.KAIJO_NAME, Me.Line136, Me.Line69, Me.Line73, Me.Line145, Me.Line198, Me.Line77, Me.Label221, Me.KAIJO_NAME2, Me.TITLE1, Me.Label4, Me.Line56, Me.Line165, Me.Line166, Me.Line167, Me.Line168, Me.Line169, Me.Line170, Me.Line51, Me.Label236, Me.DANTAI_CODE, Me.Line171, Me.Line172, Me.Line174, Me.Line175, Me.Line176, Me.Label3, Me.DANTAI_CODE2, Me.Line177, Me.Line178, Me.Line7, Me.Line201, Me.Line60, Me.Line61})
-Me.Detail.Height = 19.487!
+Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.ANS_TAXI_MAISUU, Me.DR_YAKUWARI2, Me.Label240, Me.TITLE1, Me.TITLE2, Me.KINKYU_FLAG, Me.Label239, Me.WBS_ELEMENT2, Me.Label238, Me.WBS_ELEMENT1, Me.WBS_ELEMENT, Me.Label94, Me.Label237, Me.REQ_KOTSU_BIKO, Me.DR_CD, Me.TIME_STAMP_BYL, Me.TIME_STAMP_BYL1, Me.REQ_STATUS_TEHAI1, Me.ANS_TICKET_SEND_DAY, Me.REQ_MR_HOTEL_NOTE, Me.DR_NAME, Me.TAXI_PRT_NAME, Me.ANS_OTHER_FARE, Me.ANS_OTHER_CANCELLATION, Me.ANS_AIR_FARE, Me.ANS_AIR_CANCELLATION, Me.ANS_RAIL_FARE, Me.ANS_RAIL_CANCELLATION, Me.ANS_MR_HOTELHI, Me.ANS_MR_HOTELHI_TOZEI, Me.ANS_MR_KOTSUHI, Me.Label232, Me.Label235, Me.Label233, Me.Label230, Me.Label229, Me.Label228, Me.Label231, Me.Label93, Me.REQ_TAXI_NOTE, Me.MR_BU, Me.Label227, Me.Label226, Me.ANS_TICKET_SEND_DAY2, Me.Label225, Me.FROM_DATE1, Me.Label224, Me.TAXI_PRT_NAME2, Me.Label223, Me.FROM_DATE2, Me.Label222, Me.Label206, Me.KOUENKAI_NAME2, Me.REQ_O_TIME1_3, Me.DR_SHISETSU_NAME2, Me.Label184, Me.REQ_F_SEAT_3, Me.Label187, Me.REQ_F_TIME1_3, Me.REQ_F_AIRPORT1_3, Me.Label189, Me.Label155, Me.Label158, Me.Label160, Me.Label156, Me.Label175, Me.FUKURO1, Me.Label172, Me.Label185, Me.Label188, Me.Label186, Me.Label191, Me.Label194, Me.FUKURO3, Me.Label195, Me.Label198, Me.Label200, Me.REQ_O_SEAT_1, Me.Label162, Me.REQ_O_TIME1_1, Me.Label165, Me.REQ_O_AIRPORT1_1, Me.Label167, Me.Label163, Me.REQ_O_DATE_1, Me.REQ_O_TEHAI_1, Me.Label171, Me.Label168, Me.FUKURO2, Me.REQ_O_TIME2_3, Me.REQ_O_AIRPORT2_3, Me.Label216, Me.Label215, Me.Label214, Me.Label211, Me.Label208, Me.Line140, Me.Label201, Me.Label199, Me.Label190, Me.REQ_O_AIRPORT1_3, Me.REQ_F_AIRPORT2_3, Me.REQ_F_TIME2_3, Me.TO_DATE, Me.TAXI_PRT_NAME1, Me.Label220, Me.FROM_DATE, Me.Label219, Me.FUKURO4, Me.Line117, Me.Line116, Me.Line115, Me.Line114, Me.Line113, Me.Line112, Me.REQ_F_DATE_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_TEHAI_1, Me.Label174, Me.Label173, Me.Label159, Me.Label157, Me.Label154, Me.REQ_F_AIRPORT1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_TIME1_1, Me.REQ_F_TIME2_1, Me.REQ_F_BIN_1, Me.REQ_F_SEAT_1, Me.REQ_F_SEAT_KIBOU1, Me.Label87, Me.Label91, Me.Label90, Me.Label89, Me.REQ_TAXI_DATE_10, Me.Label88, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.Label85, Me.REQ_TAXI_DATE_9, Me.Label84, Me.REQ_TAXI_FROM_9, Me.Label83, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.Label81, Me.REQ_TAXI_DATE_8, Me.Label80, Me.REQ_TAXI_FROM_8, Me.Label79, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.Label77, Me.REQ_TAXI_DATE_7, Me.Label76, Me.REQ_TAXI_FROM_7, Me.Label66, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.Label64, Me.REQ_TAXI_DATE_6, Me.Label63, Me.REQ_TAXI_FROM_6, Me.Label62, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.Label59, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.Label54, Me.REQ_TAXI_FROM_4, Me.Label53, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.Label50, Me.REQ_TAXI_FROM_3, Me.Label49, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.Label46, Me.REQ_TAXI_FROM_2, Me.Label45, Me.TAXI_YOTEIKINGAKU_2, Me.Label44, Me.Label72, Me.REQ_TAXI_DATE_1, Me.Label73, Me.REQ_TAXI_FROM_1, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label75, Me.Label71, Me.TEHAI_TAXI, Me.ANS_HOTEL_NAME, Me.ANS_ROOM_TYPE, Me.ANS_HOTELHI, Me.ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_CANCEL, Me.Label70, Me.Label69, Me.Label35, Me.Label34, Me.Label32, Me.Label68, Me.Label67, Me.Label55, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.MR_KANA, Me.Label13, Me.Label25, Me.Label20, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label33, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.COST_CENTER, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.Line1, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line23, Me.Line26, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line37, Me.Line38, Me.Line2, Me.Line55, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line27, Me.Line34, Me.Line35, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line53, Me.Line57, Me.Line58, Me.Line59, Me.Line66, Me.PageBreak1, Me.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_NAME, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.SANKASHA_ID, Me.DR_NAME1, Me.DR_KANA, Me.DR_YAKUWARI, Me.DR_AGE, Me.Line3, Me.Line4, Me.Line5, Me.DR_SEX, Me.Line36, Me.Line62, Me.Line63, Me.Line64, Me.Line65, Me.Line6, Me.Shape2, Me.Label95, Me.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_5, Me.REQ_F_BIN_5, Me.REQ_F_TIME2_5, Me.REQ_F_TIME1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_DATE_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_TEHAI_5, Me.REQ_F_SEAT_KIBOU4, Me.REQ_F_SEAT_4, Me.REQ_F_BIN_4, Me.REQ_F_TIME2_4, Me.REQ_F_TIME1_4, Me.REQ_F_AIRPORT2_4, Me.REQ_F_AIRPORT1_4, Me.REQ_F_DATE_4, Me.REQ_F_KOTSUKIKAN_4, Me.REQ_F_IRAINAIYOU_4, Me.REQ_F_TEHAI_4, Me.REQ_O_SEAT_KIBOU5, Me.REQ_O_SEAT_5, Me.REQ_O_BIN_5, Me.REQ_O_TIME2_5, Me.REQ_O_TIME1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_DATE_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_TEHAI_5, Me.REQ_F_SEAT_KIBOU2, Me.REQ_F_SEAT_2, Me.REQ_F_BIN_2, Me.REQ_F_TIME2_2, Me.REQ_F_TIME1_2, Me.REQ_F_AIRPORT2_2, Me.REQ_F_AIRPORT1_2, Me.REQ_F_DATE_2, Me.REQ_F_KOTSUKIKAN_2, Me.REQ_F_IRAINAIYOU_2, Me.REQ_O_SEAT_KIBOU2, Me.REQ_O_SEAT_2, Me.REQ_O_BIN_2, Me.REQ_O_TIME2_2, Me.REQ_O_TIME1_2, Me.REQ_O_AIRPORT2_2, Me.REQ_O_AIRPORT1_2, Me.REQ_O_DATE_2, Me.REQ_O_KOTSUKIKAN_2, Me.REQ_O_IRAINAIYOU_2, Me.REQ_F_TEHAI_2, Me.REQ_O_TEHAI_2, Me.Label108, Me.Label107, Me.Label106, Me.Label105, Me.Label104, Me.Label103, Me.Label102, Me.Label101, Me.Label100, Me.Label99, Me.Label98, Me.FUKURO5, Me.Label96, Me.Label97, Me.Label109, Me.Label110, Me.Label111, Me.Label112, Me.Label113, Me.Label114, Me.Label115, Me.Label116, Me.Label117, Me.OURO5, Me.Label118, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Label123, Me.Label124, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Line71, Me.Label129, Me.Label130, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label136, Me.Label137, Me.Label138, Me.Label139, Me.OURO2, Me.REQ_O_SEAT_KIBOU4, Me.REQ_O_SEAT_4, Me.REQ_O_BIN_4, Me.REQ_O_TIME2_4, Me.REQ_O_TIME1_4, Me.REQ_O_AIRPORT2_4, Me.REQ_O_AIRPORT1_4, Me.REQ_O_SEAT_KIBOU1, Me.REQ_O_BIN_1, Me.REQ_O_TIME2_1, Me.REQ_O_AIRPORT2_1, Me.Label140, Me.Label141, Me.Label142, Me.Label143, Me.Label144, Me.Label145, Me.Label146, Me.Label147, Me.Label148, Me.Label149, Me.Label150, Me.Label151, Me.Label152, Me.Label153, Me.OURO4, Me.Line75, Me.Label161, Me.Label164, Me.Label166, Me.OURO1, Me.Label169, Me.Label170, Me.Label176, Me.Label177, Me.Label178, Me.Label179, Me.Label181, Me.Label182, Me.Label183, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_TEHAI_4, Me.REQ_O_IRAINAIYOU_4, Me.REQ_O_KOTSUKIKAN_4, Me.REQ_O_DATE_4, Me.Line76, Me.REQ_F_SEAT_KIBOU3, Me.REQ_F_BIN_3, Me.REQ_F_DATE_3, Me.REQ_F_KOTSUKIKAN_3, Me.REQ_F_IRAINAIYOU_3, Me.REQ_O_SEAT_KIBOU3, Me.REQ_O_SEAT_3, Me.REQ_O_BIN_3, Me.REQ_O_DATE_3, Me.REQ_O_KOTSUKIKAN_3, Me.REQ_O_IRAINAIYOU_3, Me.REQ_F_TEHAI_3, Me.REQ_O_TEHAI_3, Me.Label192, Me.Label193, Me.Label196, Me.Label197, Me.Label202, Me.Label203, Me.Label204, Me.Label205, Me.OURO3, Me.Line80, Me.Line87, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line101, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line152, Me.Line173, Me.Line52, Me.DR_SHISETSU_ADDRESS2, Me.Label207, Me.Label209, Me.Label210, Me.Label212, Me.Label213, Me.Label217, Me.KOUENKAI_NO2, Me.REQ_STATUS_TEHAI2, Me.TIME_STAMP_BYL2, Me.SANKASHA_ID2, Me.DR_CD2, Me.DR_NAME2, Me.DR_KANA2, Me.DR_AGE2, Me.Line67, Me.Line192, Me.Line193, Me.Line194, Me.DR_SEX2, Me.Line195, Me.Line196, Me.Line199, Me.Line200, Me.Line68, Me.Line203, Me.Line70, Me.Line74, Me.Line81, Me.Line82, Me.Line97, Me.Line99, Me.Line100, Me.Line102, Me.Line103, Me.Line98, Me.Line105, Me.Line106, Me.Line107, Me.Line108, Me.Line109, Me.Line110, Me.Line111, Me.Line132, Me.Line133, Me.Line134, Me.Line137, Me.Line138, Me.Line139, Me.Line141, Me.Line153, Me.Line84, Me.Label180, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line122, Me.Line85, Me.Line86, Me.Line154, Me.Line155, Me.Line156, Me.Line83, Me.Line104, Me.Line72, Me.Line128, Me.Line129, Me.Line130, Me.Line131, Me.Line54, Me.Line142, Me.Line143, Me.Line144, Me.Line146, Me.Line147, Me.Line148, Me.Line149, Me.Line150, Me.Line151, Me.Line157, Me.Line158, Me.Line159, Me.Line160, Me.Line161, Me.Line162, Me.Line163, Me.Line164, Me.Line8, Me.Shape1, Me.Label218, Me.KAIJO_NAME, Me.Line136, Me.Line69, Me.Line73, Me.Line145, Me.Line198, Me.Line77, Me.Label221, Me.KAIJO_NAME2, Me.Label4, Me.Line56, Me.Line165, Me.Line166, Me.Line167, Me.Line170, Me.Line51, Me.Label236, Me.DANTAI_CODE, Me.Line171, Me.Line172, Me.Line174, Me.Line175, Me.Line176, Me.Label3, Me.DANTAI_CODE2, Me.Line177, Me.Line178, Me.Line7, Me.Line201, Me.Line60, Me.Line61, Me.Label234, Me.Line168, Me.Line135, Me.Line169, Me.Line79})
+Me.Detail.Height = 19.53426!
 Me.Detail.KeepTogether = true
 Me.Detail.Name = "Detail"
+'
+'KINKYU_FLAG
+'
+Me.KINKYU_FLAG.DataField = "KINKYU_FLAG"
+Me.KINKYU_FLAG.Height = 0.2!
+Me.KINKYU_FLAG.Left = 0!
+Me.KINKYU_FLAG.Name = "KINKYU_FLAG"
+Me.KINKYU_FLAG.Text = "[KINKYU_FLAG]"
+Me.KINKYU_FLAG.Top = 19.33425!
+Me.KINKYU_FLAG.Visible = false
+Me.KINKYU_FLAG.Width = 1!
+'
+'Label239
+'
+Me.Label239.Height = 0.2!
+Me.Label239.HyperLink = Nothing
+Me.Label239.Left = 0!
+Me.Label239.Name = "Label239"
+Me.Label239.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
+Me.Label239.Text = "WBS Element："
+Me.Label239.Top = 10.49685!
+Me.Label239.Width = 1.108662!
+'
+'WBS_ELEMENT2
+'
+Me.WBS_ELEMENT2.DataField = "WBS_ELEMENT_KOUENKAI"
+Me.WBS_ELEMENT2.Height = 0.2!
+Me.WBS_ELEMENT2.Left = 1.108662!
+Me.WBS_ELEMENT2.Name = "WBS_ELEMENT2"
+Me.WBS_ELEMENT2.Style = "font-weight: normal; white-space: nowrap"
+Me.WBS_ELEMENT2.Text = Nothing
+Me.WBS_ELEMENT2.Top = 10.49685!
+Me.WBS_ELEMENT2.Width = 5.826772!
+'
+'Label238
+'
+Me.Label238.Height = 0.2!
+Me.Label238.HyperLink = Nothing
+Me.Label238.Left = 0!
+Me.Label238.Name = "Label238"
+Me.Label238.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
+Me.Label238.Text = "WBS Element："
+Me.Label238.Top = 0.8740158!
+Me.Label238.Width = 1.108662!
+'
+'WBS_ELEMENT1
+'
+Me.WBS_ELEMENT1.DataField = "WBS_ELEMENT_KOUENKAI"
+Me.WBS_ELEMENT1.Height = 0.2!
+Me.WBS_ELEMENT1.Left = 1.108662!
+Me.WBS_ELEMENT1.Name = "WBS_ELEMENT1"
+Me.WBS_ELEMENT1.Style = "font-weight: normal; white-space: nowrap"
+Me.WBS_ELEMENT1.Text = Nothing
+Me.WBS_ELEMENT1.Top = 0.8740158!
+Me.WBS_ELEMENT1.Width = 5.738583!
+'
+'WBS_ELEMENT
+'
+Me.WBS_ELEMENT.DataField = "WBS_ELEMENT"
+Me.WBS_ELEMENT.Height = 0.2!
+Me.WBS_ELEMENT.Left = 4.507481!
+Me.WBS_ELEMENT.Name = "WBS_ELEMENT"
+Me.WBS_ELEMENT.Style = "vertical-align: middle"
+Me.WBS_ELEMENT.Text = Nothing
+Me.WBS_ELEMENT.Top = 2.074016!
+Me.WBS_ELEMENT.Width = 2.644488!
+'
+'Label94
+'
+Me.Label94.Height = 0.2!
+Me.Label94.HyperLink = Nothing
+Me.Label94.Left = 3.558661!
+Me.Label94.Name = "Label94"
+Me.Label94.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
+Me.Label94.Text = "WBS Element"
+Me.Label94.Top = 2.074016!
+Me.Label94.Width = 0.9488187!
 '
 'Label237
 '
@@ -1905,8 +1986,8 @@ Me.Label235.Height = 0.2!
 Me.Label235.HyperLink = Nothing
 Me.Label235.Left = 3.558661!
 Me.Label235.Name = "Label235"
-Me.Label235.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label235.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label235.Text = "MR交通費(税込)"
 Me.Label235.Top = 19.06968!
 Me.Label235.Width = 1.926772!
@@ -1917,8 +1998,8 @@ Me.Label234.Height = 0.2!
 Me.Label234.HyperLink = Nothing
 Me.Label234.Left = 1.192093E-07!
 Me.Label234.Name = "Label234"
-Me.Label234.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label234.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: mi"& _ 
+    "ddle; white-space: nowrap"
 Me.Label234.Text = "MR宿泊東京都税"
 Me.Label234.Top = 19.26969!
 Me.Label234.Width = 1.892126!
@@ -1929,8 +2010,8 @@ Me.Label233.Height = 0.2!
 Me.Label233.HyperLink = Nothing
 Me.Label233.Left = 1.192093E-07!
 Me.Label233.Name = "Label233"
-Me.Label233.Style = "background-color: DarkGray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label233.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label233.Text = "MR宿泊費(税込)"
 Me.Label233.Top = 19.06968!
 Me.Label233.Width = 1.892126!
@@ -2023,8 +2104,8 @@ Me.Label227.Height = 0.2!
 Me.Label227.HyperLink = Nothing
 Me.Label227.Left = 3.11063!
 Me.Label227.Name = "Label227"
-Me.Label227.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label227.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label227.Text = "BU(担当MR)"
 Me.Label227.Top = 2.901182!
 Me.Label227.Width = 1.167323!
@@ -2181,8 +2262,8 @@ Me.Label184.Height = 0.2!
 Me.Label184.HyperLink = Nothing
 Me.Label184.Left = 5.485433!
 Me.Label184.Name = "Label184"
-Me.Label184.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label184.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label184.Text = "座席希望"
 Me.Label184.Top = 15.09685!
 Me.Label184.Width = 0.6874018!
@@ -2204,8 +2285,8 @@ Me.Label187.Height = 0.2!
 Me.Label187.HyperLink = Nothing
 Me.Label187.Left = 5.485433!
 Me.Label187.Name = "Label187"
-Me.Label187.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label187.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label187.Text = "到着時間"
 Me.Label187.Top = 14.89685!
 Me.Label187.Width = 0.6874018!
@@ -2238,8 +2319,8 @@ Me.Label189.Height = 0.2!
 Me.Label189.HyperLink = Nothing
 Me.Label189.Left = 5.485433!
 Me.Label189.Name = "Label189"
-Me.Label189.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label189.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label189.Text = "到着地"
 Me.Label189.Top = 14.69685!
 Me.Label189.Width = 0.6874018!
@@ -2250,8 +2331,8 @@ Me.Label155.Height = 0.2!
 Me.Label155.HyperLink = Nothing
 Me.Label155.Left = 3.787795!
 Me.Label155.Name = "Label155"
-Me.Label155.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label155.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label155.Text = "座席区分"
 Me.Label155.Top = 12.69685!
 Me.Label155.Width = 0.7196856!
@@ -2262,8 +2343,8 @@ Me.Label158.Height = 0.2!
 Me.Label158.HyperLink = Nothing
 Me.Label158.Left = 3.787795!
 Me.Label158.Name = "Label158"
-Me.Label158.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label158.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label158.Text = "出発時間"
 Me.Label158.Top = 12.49685!
 Me.Label158.Width = 0.7196856!
@@ -2274,8 +2355,8 @@ Me.Label160.Height = 0.2!
 Me.Label160.HyperLink = Nothing
 Me.Label160.Left = 3.787796!
 Me.Label160.Name = "Label160"
-Me.Label160.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label160.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label160.Text = "出発地"
 Me.Label160.Top = 12.29685!
 Me.Label160.Width = 0.7196851!
@@ -2286,8 +2367,8 @@ Me.Label156.Height = 0.2!
 Me.Label156.HyperLink = Nothing
 Me.Label156.Left = 3.787795!
 Me.Label156.Name = "Label156"
-Me.Label156.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label156.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label156.Text = "列車・便名"
 Me.Label156.Top = 12.09685!
 Me.Label156.Width = 0.7196854!
@@ -2298,8 +2379,8 @@ Me.Label175.Height = 0.2!
 Me.Label175.HyperLink = Nothing
 Me.Label175.Left = 3.787795!
 Me.Label175.Name = "Label175"
-Me.Label175.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label175.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label175.Text = "利用日"
 Me.Label175.Top = 11.89685!
 Me.Label175.Width = 0.7196856!
@@ -2310,9 +2391,8 @@ Me.FUKURO1.Height = 1.2!
 Me.FUKURO1.HyperLink = Nothing
 Me.FUKURO1.Left = 3.558662!
 Me.FUKURO1.Name = "FUKURO1"
-Me.FUKURO1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
+Me.FUKURO1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold; text-align: center; vert"& _ 
+    "ical-align: middle; white-space: nowrap; ddo-font-vertical: true"
 Me.FUKURO1.Text = ""
 Me.FUKURO1.Top = 11.69685!
 Me.FUKURO1.Width = 0.2291338!
@@ -2323,8 +2403,8 @@ Me.Label172.Height = 0.1999999!
 Me.Label172.HyperLink = Nothing
 Me.Label172.Left = 3.787795!
 Me.Label172.Name = "Label172"
-Me.Label172.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label172.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label172.Text = "希望する"
 Me.Label172.Top = 11.69685!
 Me.Label172.Width = 0.7196856!
@@ -2335,8 +2415,8 @@ Me.Label185.Height = 0.2!
 Me.Label185.HyperLink = Nothing
 Me.Label185.Left = 3.763779!
 Me.Label185.Name = "Label185"
-Me.Label185.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label185.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label185.Text = "座席区分"
 Me.Label185.Top = 15.09685!
 Me.Label185.Width = 0.743701!
@@ -2347,8 +2427,8 @@ Me.Label188.Height = 0.2!
 Me.Label188.HyperLink = Nothing
 Me.Label188.Left = 3.763779!
 Me.Label188.Name = "Label188"
-Me.Label188.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label188.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label188.Text = "出発時間"
 Me.Label188.Top = 14.89685!
 Me.Label188.Width = 0.743701!
@@ -2359,8 +2439,8 @@ Me.Label186.Height = 0.2!
 Me.Label186.HyperLink = Nothing
 Me.Label186.Left = 3.763779!
 Me.Label186.Name = "Label186"
-Me.Label186.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label186.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label186.Text = "列車・便名"
 Me.Label186.Top = 14.49685!
 Me.Label186.Width = 0.7437013!
@@ -2371,8 +2451,8 @@ Me.Label191.Height = 0.2!
 Me.Label191.HyperLink = Nothing
 Me.Label191.Left = 3.763779!
 Me.Label191.Name = "Label191"
-Me.Label191.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label191.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label191.Text = "利用日"
 Me.Label191.Top = 14.29685!
 Me.Label191.Width = 0.743701!
@@ -2383,8 +2463,8 @@ Me.Label194.Height = 0.1999999!
 Me.Label194.HyperLink = Nothing
 Me.Label194.Left = 3.763779!
 Me.Label194.Name = "Label194"
-Me.Label194.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label194.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label194.Text = "希望する"
 Me.Label194.Top = 14.09685!
 Me.Label194.Width = 0.743701!
@@ -2395,9 +2475,8 @@ Me.FUKURO3.Height = 1.200001!
 Me.FUKURO3.HyperLink = Nothing
 Me.FUKURO3.Left = 3.558662!
 Me.FUKURO3.Name = "FUKURO3"
-Me.FUKURO3.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
+Me.FUKURO3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold; text-align: center; vert"& _ 
+    "ical-align: middle; white-space: nowrap; ddo-font-vertical: true"
 Me.FUKURO3.Text = ""
 Me.FUKURO3.Top = 14.09685!
 Me.FUKURO3.Width = 0.2051181!
@@ -2408,8 +2487,8 @@ Me.Label195.Height = 0.2!
 Me.Label195.HyperLink = Nothing
 Me.Label195.Left = 1.892126!
 Me.Label195.Name = "Label195"
-Me.Label195.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label195.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label195.Text = "座席希望"
 Me.Label195.Top = 15.09685!
 Me.Label195.Width = 0.6874014!
@@ -2420,8 +2499,8 @@ Me.Label198.Height = 0.2!
 Me.Label198.HyperLink = Nothing
 Me.Label198.Left = 1.892126!
 Me.Label198.Name = "Label198"
-Me.Label198.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label198.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label198.Text = "到着時間"
 Me.Label198.Top = 14.89685!
 Me.Label198.Width = 0.6874014!
@@ -2432,8 +2511,8 @@ Me.Label200.Height = 0.2!
 Me.Label200.HyperLink = Nothing
 Me.Label200.Left = 1.892126!
 Me.Label200.Name = "Label200"
-Me.Label200.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label200.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label200.Text = "到着地"
 Me.Label200.Top = 14.69685!
 Me.Label200.Width = 0.6874015!
@@ -2455,8 +2534,8 @@ Me.Label162.Height = 0.2!
 Me.Label162.HyperLink = Nothing
 Me.Label162.Left = 0.2291339!
 Me.Label162.Name = "Label162"
-Me.Label162.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label162.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label162.Text = "座席区分"
 Me.Label162.Top = 12.69685!
 Me.Label162.Width = 0.6874014!
@@ -2478,8 +2557,8 @@ Me.Label165.Height = 0.2!
 Me.Label165.HyperLink = Nothing
 Me.Label165.Left = 0.2291339!
 Me.Label165.Name = "Label165"
-Me.Label165.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label165.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label165.Text = "出発時間"
 Me.Label165.Top = 12.49685!
 Me.Label165.Width = 0.6874014!
@@ -2501,8 +2580,8 @@ Me.Label167.Height = 0.2!
 Me.Label167.HyperLink = Nothing
 Me.Label167.Left = 0.2291339!
 Me.Label167.Name = "Label167"
-Me.Label167.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label167.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label167.Text = "出発地"
 Me.Label167.Top = 12.29685!
 Me.Label167.Width = 0.6874015!
@@ -2513,8 +2592,8 @@ Me.Label163.Height = 0.2!
 Me.Label163.HyperLink = Nothing
 Me.Label163.Left = 0.2291339!
 Me.Label163.Name = "Label163"
-Me.Label163.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label163.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label163.Text = "列車・便名"
 Me.Label163.Top = 12.09685!
 Me.Label163.Width = 0.6874015!
@@ -2547,8 +2626,8 @@ Me.Label171.Height = 0.2!
 Me.Label171.HyperLink = Nothing
 Me.Label171.Left = 0.2291339!
 Me.Label171.Name = "Label171"
-Me.Label171.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label171.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label171.Text = "利用日"
 Me.Label171.Top = 11.89685!
 Me.Label171.Width = 0.6874015!
@@ -2559,8 +2638,8 @@ Me.Label168.Height = 0.1999999!
 Me.Label168.HyperLink = Nothing
 Me.Label168.Left = 0.2291339!
 Me.Label168.Name = "Label168"
-Me.Label168.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label168.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label168.Text = "希望する"
 Me.Label168.Top = 11.69685!
 Me.Label168.Width = 0.6874014!
@@ -2606,8 +2685,8 @@ Me.Label216.Height = 0.2!
 Me.Label216.HyperLink = Nothing
 Me.Label216.Left = 3.558662!
 Me.Label216.Name = "Label216"
-Me.Label216.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label216.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label216.Text = "性別"
 Me.Label216.Top = 11.49685!
 Me.Label216.Width = 0.9488187!
@@ -2618,8 +2697,8 @@ Me.Label215.Height = 0.2!
 Me.Label215.HyperLink = Nothing
 Me.Label215.Left = 3.558662!
 Me.Label215.Name = "Label215"
-Me.Label215.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label215.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label215.Text = "施設住所"
 Me.Label215.Top = 11.29685!
 Me.Label215.Width = 0.9488187!
@@ -2630,8 +2709,8 @@ Me.Label214.Height = 0.2!
 Me.Label214.HyperLink = Nothing
 Me.Label214.Left = 3.558662!
 Me.Label214.Name = "Label214"
-Me.Label214.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label214.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label214.Text = "施設名"
 Me.Label214.Top = 11.09685!
 Me.Label214.Width = 0.9488187!
@@ -2642,8 +2721,8 @@ Me.Label211.Height = 0.2!
 Me.Label211.HyperLink = Nothing
 Me.Label211.Left = 3.558662!
 Me.Label211.Name = "Label211"
-Me.Label211.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label211.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label211.Text = "DRコード"
 Me.Label211.Top = 10.89685!
 Me.Label211.Width = 0.9488187!
@@ -2654,8 +2733,8 @@ Me.Label208.Height = 0.2!
 Me.Label208.HyperLink = Nothing
 Me.Label208.Left = 3.558662!
 Me.Label208.Name = "Label208"
-Me.Label208.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label208.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label208.Text = "手配ステータス"
 Me.Label208.Top = 10.69685!
 Me.Label208.Width = 0.9488187!
@@ -2679,8 +2758,8 @@ Me.Label201.Height = 0.2!
 Me.Label201.HyperLink = Nothing
 Me.Label201.Left = 0.229134!
 Me.Label201.Name = "Label201"
-Me.Label201.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label201.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label201.Text = "出発地"
 Me.Label201.Top = 14.69685!
 Me.Label201.Width = 0.6874015!
@@ -2691,8 +2770,8 @@ Me.Label199.Height = 0.2!
 Me.Label199.HyperLink = Nothing
 Me.Label199.Left = 0.229134!
 Me.Label199.Name = "Label199"
-Me.Label199.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label199.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label199.Text = "出発時間"
 Me.Label199.Top = 14.89685!
 Me.Label199.Width = 0.6874014!
@@ -2703,8 +2782,8 @@ Me.Label190.Height = 0.2!
 Me.Label190.HyperLink = Nothing
 Me.Label190.Left = 3.763779!
 Me.Label190.Name = "Label190"
-Me.Label190.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label190.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label190.Text = "出発地"
 Me.Label190.Top = 14.69685!
 Me.Label190.Width = 0.743701!
@@ -2948,8 +3027,8 @@ Me.Label174.Height = 0.2!
 Me.Label174.HyperLink = Nothing
 Me.Label174.Left = 5.485433!
 Me.Label174.Name = "Label174"
-Me.Label174.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label174.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label174.Text = "交通機関"
 Me.Label174.Top = 11.89685!
 Me.Label174.Width = 0.6874018!
@@ -2960,8 +3039,8 @@ Me.Label173.Height = 0.2!
 Me.Label173.HyperLink = Nothing
 Me.Label173.Left = 5.485434!
 Me.Label173.Name = "Label173"
-Me.Label173.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label173.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label173.Text = "依頼内容"
 Me.Label173.Top = 11.69685!
 Me.Label173.Width = 0.6874018!
@@ -2972,8 +3051,8 @@ Me.Label159.Height = 0.2!
 Me.Label159.HyperLink = Nothing
 Me.Label159.Left = 5.485433!
 Me.Label159.Name = "Label159"
-Me.Label159.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label159.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label159.Text = "到着地"
 Me.Label159.Top = 12.29685!
 Me.Label159.Width = 0.6874022!
@@ -2984,8 +3063,8 @@ Me.Label157.Height = 0.2!
 Me.Label157.HyperLink = Nothing
 Me.Label157.Left = 5.485433!
 Me.Label157.Name = "Label157"
-Me.Label157.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label157.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label157.Text = "到着時間"
 Me.Label157.Top = 12.49685!
 Me.Label157.Width = 0.6874022!
@@ -2996,8 +3075,8 @@ Me.Label154.Height = 0.2!
 Me.Label154.HyperLink = Nothing
 Me.Label154.Left = 5.485433!
 Me.Label154.Name = "Label154"
-Me.Label154.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label154.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label154.Text = "座席希望"
 Me.Label154.Top = 12.69685!
 Me.Label154.Width = 0.6874018!
@@ -3085,24 +3164,11 @@ Me.Label87.Height = 0.2!
 Me.Label87.HyperLink = Nothing
 Me.Label87.Left = 3.329135!
 Me.Label87.Name = "Label87"
-Me.Label87.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label87.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label87.Text = "依頼金額"
 Me.Label87.Top = 9.102752!
 Me.Label87.Width = 0.5811025!
-'
-'Label92
-'
-Me.Label92.Height = 0.2!
-Me.Label92.HyperLink = Nothing
-Me.Label92.Left = 1.612992!
-Me.Label92.Name = "Label92"
-Me.Label92.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: center; vertical-align: middle;"& _ 
-    " white-space: nowrap"
-Me.Label92.Text = "×"
-Me.Label92.Top = 9.302755!
-Me.Label92.Visible = false
-Me.Label92.Width = 0.3948819!
 '
 'Label91
 '
@@ -3110,8 +3176,8 @@ Me.Label91.Height = 0.2!
 Me.Label91.HyperLink = Nothing
 Me.Label91.Left = 2.384186E-07!
 Me.Label91.Name = "Label91"
-Me.Label91.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label91.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label91.Text = "タクチケ発行枚数"
 Me.Label91.Top = 9.302755!
 Me.Label91.Width = 2.007874!
@@ -3122,8 +3188,8 @@ Me.Label90.Height = 0.2!
 Me.Label90.HyperLink = Nothing
 Me.Label90.Left = 4.172325E-07!
 Me.Label90.Name = "Label90"
-Me.Label90.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label90.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label90.Text = "行程10"
 Me.Label90.Top = 9.102752!
 Me.Label90.Width = 0.448819!
@@ -3134,8 +3200,8 @@ Me.Label89.Height = 0.2!
 Me.Label89.HyperLink = Nothing
 Me.Label89.Left = 0.4488194!
 Me.Label89.Name = "Label89"
-Me.Label89.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label89.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label89.Text = "利用日"
 Me.Label89.Top = 9.102752!
 Me.Label89.Width = 0.3948819!
@@ -3156,8 +3222,8 @@ Me.Label88.Height = 0.2!
 Me.Label88.HyperLink = Nothing
 Me.Label88.Left = 1.612993!
 Me.Label88.Name = "Label88"
-Me.Label88.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label88.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label88.Text = "発地"
 Me.Label88.Top = 9.102752!
 Me.Label88.Width = 0.3948819!
@@ -3188,8 +3254,8 @@ Me.Label86.Height = 0.2!
 Me.Label86.HyperLink = Nothing
 Me.Label86.Left = 4.172325E-07!
 Me.Label86.Name = "Label86"
-Me.Label86.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label86.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label86.Text = "行程9"
 Me.Label86.Top = 8.902754!
 Me.Label86.Width = 0.448819!
@@ -3200,8 +3266,8 @@ Me.Label85.Height = 0.2!
 Me.Label85.HyperLink = Nothing
 Me.Label85.Left = 0.4488194!
 Me.Label85.Name = "Label85"
-Me.Label85.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label85.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label85.Text = "利用日"
 Me.Label85.Top = 8.902754!
 Me.Label85.Width = 0.3948819!
@@ -3222,8 +3288,8 @@ Me.Label84.Height = 0.2!
 Me.Label84.HyperLink = Nothing
 Me.Label84.Left = 1.612993!
 Me.Label84.Name = "Label84"
-Me.Label84.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label84.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label84.Text = "発地"
 Me.Label84.Top = 8.902754!
 Me.Label84.Width = 0.3948819!
@@ -3244,8 +3310,8 @@ Me.Label83.Height = 0.2!
 Me.Label83.HyperLink = Nothing
 Me.Label83.Left = 3.329135!
 Me.Label83.Name = "Label83"
-Me.Label83.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label83.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label83.Text = "依頼金額"
 Me.Label83.Top = 8.902754!
 Me.Label83.Width = 0.5811025!
@@ -3266,8 +3332,8 @@ Me.Label82.Height = 0.2!
 Me.Label82.HyperLink = Nothing
 Me.Label82.Left = 4.172325E-07!
 Me.Label82.Name = "Label82"
-Me.Label82.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label82.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label82.Text = "行程8"
 Me.Label82.Top = 8.702752!
 Me.Label82.Width = 0.448819!
@@ -3278,8 +3344,8 @@ Me.Label81.Height = 0.2!
 Me.Label81.HyperLink = Nothing
 Me.Label81.Left = 0.4488194!
 Me.Label81.Name = "Label81"
-Me.Label81.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label81.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label81.Text = "利用日"
 Me.Label81.Top = 8.702752!
 Me.Label81.Width = 0.3948819!
@@ -3300,8 +3366,8 @@ Me.Label80.Height = 0.2!
 Me.Label80.HyperLink = Nothing
 Me.Label80.Left = 1.612993!
 Me.Label80.Name = "Label80"
-Me.Label80.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; white-space: nowrap"
+Me.Label80.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; white-space: nowrap"
 Me.Label80.Text = "発地"
 Me.Label80.Top = 8.702752!
 Me.Label80.Width = 0.3948819!
@@ -3322,8 +3388,8 @@ Me.Label79.Height = 0.2!
 Me.Label79.HyperLink = Nothing
 Me.Label79.Left = 3.329135!
 Me.Label79.Name = "Label79"
-Me.Label79.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label79.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label79.Text = "依頼金額"
 Me.Label79.Top = 8.702752!
 Me.Label79.Width = 0.5811025!
@@ -3344,8 +3410,8 @@ Me.Label78.Height = 0.2!
 Me.Label78.HyperLink = Nothing
 Me.Label78.Left = 4.172325E-07!
 Me.Label78.Name = "Label78"
-Me.Label78.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label78.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label78.Text = "行程7"
 Me.Label78.Top = 8.502752!
 Me.Label78.Width = 0.448819!
@@ -3356,8 +3422,8 @@ Me.Label77.Height = 0.2!
 Me.Label77.HyperLink = Nothing
 Me.Label77.Left = 0.4488194!
 Me.Label77.Name = "Label77"
-Me.Label77.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label77.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label77.Text = "利用日"
 Me.Label77.Top = 8.502752!
 Me.Label77.Width = 0.3948819!
@@ -3378,8 +3444,8 @@ Me.Label76.Height = 0.2!
 Me.Label76.HyperLink = Nothing
 Me.Label76.Left = 1.612993!
 Me.Label76.Name = "Label76"
-Me.Label76.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label76.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label76.Text = "発地"
 Me.Label76.Top = 8.502752!
 Me.Label76.Width = 0.3948819!
@@ -3400,8 +3466,8 @@ Me.Label66.Height = 0.2!
 Me.Label66.HyperLink = Nothing
 Me.Label66.Left = 3.329135!
 Me.Label66.Name = "Label66"
-Me.Label66.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label66.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label66.Text = "依頼金額"
 Me.Label66.Top = 8.502752!
 Me.Label66.Width = 0.5811025!
@@ -3422,8 +3488,8 @@ Me.Label65.Height = 0.2!
 Me.Label65.HyperLink = Nothing
 Me.Label65.Left = 4.172325E-07!
 Me.Label65.Name = "Label65"
-Me.Label65.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label65.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label65.Text = "行程6"
 Me.Label65.Top = 8.302748!
 Me.Label65.Width = 0.448819!
@@ -3434,8 +3500,8 @@ Me.Label64.Height = 0.2!
 Me.Label64.HyperLink = Nothing
 Me.Label64.Left = 0.4488194!
 Me.Label64.Name = "Label64"
-Me.Label64.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label64.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label64.Text = "利用日"
 Me.Label64.Top = 8.302748!
 Me.Label64.Width = 0.3948819!
@@ -3456,8 +3522,8 @@ Me.Label63.Height = 0.2!
 Me.Label63.HyperLink = Nothing
 Me.Label63.Left = 1.612993!
 Me.Label63.Name = "Label63"
-Me.Label63.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label63.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label63.Text = "発地"
 Me.Label63.Top = 8.302748!
 Me.Label63.Width = 0.3948819!
@@ -3478,8 +3544,8 @@ Me.Label62.Height = 0.2!
 Me.Label62.HyperLink = Nothing
 Me.Label62.Left = 3.329135!
 Me.Label62.Name = "Label62"
-Me.Label62.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label62.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label62.Text = "依頼金額"
 Me.Label62.Top = 8.302748!
 Me.Label62.Width = 0.5811025!
@@ -3500,8 +3566,8 @@ Me.Label61.Height = 0.2!
 Me.Label61.HyperLink = Nothing
 Me.Label61.Left = 4.172325E-07!
 Me.Label61.Name = "Label61"
-Me.Label61.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label61.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label61.Text = "行程5"
 Me.Label61.Top = 8.10275!
 Me.Label61.Width = 0.448819!
@@ -3512,8 +3578,8 @@ Me.Label60.Height = 0.2!
 Me.Label60.HyperLink = Nothing
 Me.Label60.Left = 0.4488194!
 Me.Label60.Name = "Label60"
-Me.Label60.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label60.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label60.Text = "利用日"
 Me.Label60.Top = 8.10275!
 Me.Label60.Width = 0.3948819!
@@ -3534,8 +3600,8 @@ Me.Label59.Height = 0.2!
 Me.Label59.HyperLink = Nothing
 Me.Label59.Left = 1.612993!
 Me.Label59.Name = "Label59"
-Me.Label59.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; white-space: nowrap"
+Me.Label59.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; white-space: nowrap"
 Me.Label59.Text = "発地"
 Me.Label59.Top = 8.10275!
 Me.Label59.Width = 0.3948819!
@@ -3556,8 +3622,8 @@ Me.Label58.Height = 0.2!
 Me.Label58.HyperLink = Nothing
 Me.Label58.Left = 3.329135!
 Me.Label58.Name = "Label58"
-Me.Label58.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label58.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label58.Text = "依頼金額"
 Me.Label58.Top = 8.10275!
 Me.Label58.Width = 0.5811025!
@@ -3578,8 +3644,8 @@ Me.Label57.Height = 0.2!
 Me.Label57.HyperLink = Nothing
 Me.Label57.Left = 4.172325E-07!
 Me.Label57.Name = "Label57"
-Me.Label57.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label57.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label57.Text = "行程4"
 Me.Label57.Top = 7.902749!
 Me.Label57.Width = 0.448819!
@@ -3590,8 +3656,8 @@ Me.Label56.Height = 0.2!
 Me.Label56.HyperLink = Nothing
 Me.Label56.Left = 0.4488194!
 Me.Label56.Name = "Label56"
-Me.Label56.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label56.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label56.Text = "利用日"
 Me.Label56.Top = 7.902749!
 Me.Label56.Width = 0.3948819!
@@ -3612,8 +3678,8 @@ Me.Label54.Height = 0.2!
 Me.Label54.HyperLink = Nothing
 Me.Label54.Left = 1.612993!
 Me.Label54.Name = "Label54"
-Me.Label54.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label54.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label54.Text = "発地"
 Me.Label54.Top = 7.902749!
 Me.Label54.Width = 0.3948819!
@@ -3634,8 +3700,8 @@ Me.Label53.Height = 0.2!
 Me.Label53.HyperLink = Nothing
 Me.Label53.Left = 3.329135!
 Me.Label53.Name = "Label53"
-Me.Label53.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label53.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label53.Text = "依頼金額"
 Me.Label53.Top = 7.902749!
 Me.Label53.Width = 0.5811025!
@@ -3656,8 +3722,8 @@ Me.Label52.Height = 0.2!
 Me.Label52.HyperLink = Nothing
 Me.Label52.Left = 4.172325E-07!
 Me.Label52.Name = "Label52"
-Me.Label52.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label52.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label52.Text = "行程3"
 Me.Label52.Top = 7.702749!
 Me.Label52.Width = 0.448819!
@@ -3668,8 +3734,8 @@ Me.Label51.Height = 0.2!
 Me.Label51.HyperLink = Nothing
 Me.Label51.Left = 0.4488194!
 Me.Label51.Name = "Label51"
-Me.Label51.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label51.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label51.Text = "利用日"
 Me.Label51.Top = 7.702749!
 Me.Label51.Width = 0.3948819!
@@ -3690,8 +3756,8 @@ Me.Label50.Height = 0.2!
 Me.Label50.HyperLink = Nothing
 Me.Label50.Left = 1.612993!
 Me.Label50.Name = "Label50"
-Me.Label50.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; white-space: nowrap"
+Me.Label50.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; white-space: nowrap"
 Me.Label50.Text = "発地"
 Me.Label50.Top = 7.702749!
 Me.Label50.Width = 0.3948819!
@@ -3712,8 +3778,8 @@ Me.Label49.Height = 0.2!
 Me.Label49.HyperLink = Nothing
 Me.Label49.Left = 3.329135!
 Me.Label49.Name = "Label49"
-Me.Label49.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label49.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label49.Text = "依頼金額"
 Me.Label49.Top = 7.702749!
 Me.Label49.Width = 0.5811025!
@@ -3734,8 +3800,8 @@ Me.Label48.Height = 0.2!
 Me.Label48.HyperLink = Nothing
 Me.Label48.Left = 2.384186E-07!
 Me.Label48.Name = "Label48"
-Me.Label48.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label48.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label48.Text = "行程2"
 Me.Label48.Top = 7.502749!
 Me.Label48.Width = 0.448819!
@@ -3746,8 +3812,8 @@ Me.Label47.Height = 0.2!
 Me.Label47.HyperLink = Nothing
 Me.Label47.Left = 0.4488192!
 Me.Label47.Name = "Label47"
-Me.Label47.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label47.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label47.Text = "利用日"
 Me.Label47.Top = 7.502749!
 Me.Label47.Width = 0.3948819!
@@ -3768,8 +3834,8 @@ Me.Label46.Height = 0.2!
 Me.Label46.HyperLink = Nothing
 Me.Label46.Left = 1.612992!
 Me.Label46.Name = "Label46"
-Me.Label46.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label46.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label46.Text = "発地"
 Me.Label46.Top = 7.502749!
 Me.Label46.Width = 0.3948819!
@@ -3790,8 +3856,8 @@ Me.Label45.Height = 0.2!
 Me.Label45.HyperLink = Nothing
 Me.Label45.Left = 3.329135!
 Me.Label45.Name = "Label45"
-Me.Label45.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label45.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label45.Text = "依頼金額"
 Me.Label45.Top = 7.502749!
 Me.Label45.Width = 0.5811025!
@@ -3812,8 +3878,8 @@ Me.Label44.Height = 0.2!
 Me.Label44.HyperLink = Nothing
 Me.Label44.Left = 2.384186E-07!
 Me.Label44.Name = "Label44"
-Me.Label44.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label44.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label44.Text = "行程1"
 Me.Label44.Top = 7.302749!
 Me.Label44.Width = 0.4488189!
@@ -3824,8 +3890,8 @@ Me.Label72.Height = 0.2!
 Me.Label72.HyperLink = Nothing
 Me.Label72.Left = 0.4488191!
 Me.Label72.Name = "Label72"
-Me.Label72.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label72.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label72.Text = "利用日"
 Me.Label72.Top = 7.302749!
 Me.Label72.Width = 0.3948819!
@@ -3846,8 +3912,8 @@ Me.Label73.Height = 0.2!
 Me.Label73.HyperLink = Nothing
 Me.Label73.Left = 1.612992!
 Me.Label73.Name = "Label73"
-Me.Label73.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label73.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label73.Text = "発地"
 Me.Label73.Top = 7.302749!
 Me.Label73.Width = 0.3948819!
@@ -3868,8 +3934,8 @@ Me.Label74.Height = 0.2!
 Me.Label74.HyperLink = Nothing
 Me.Label74.Left = 3.329134!
 Me.Label74.Name = "Label74"
-Me.Label74.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: cen"& _ 
-    "ter; vertical-align: middle; white-space: nowrap"
+Me.Label74.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ce"& _ 
+    "nter; vertical-align: middle; white-space: nowrap"
 Me.Label74.Text = "依頼金額"
 Me.Label74.Top = 7.302749!
 Me.Label74.Width = 0.5811025!
@@ -3890,8 +3956,8 @@ Me.Label75.Height = 0.1999998!
 Me.Label75.HyperLink = Nothing
 Me.Label75.Left = 4.919291!
 Me.Label75.Name = "Label75"
-Me.Label75.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; white-space: no"& _ 
-    "wrap"
+Me.Label75.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; white-space: n"& _ 
+    "owrap"
 Me.Label75.Text = "タクチケ備考"
 Me.Label75.Top = 7.102749!
 Me.Label75.Width = 2.232677!
@@ -3902,7 +3968,7 @@ Me.Label71.Height = 0.2!
 Me.Label71.HyperLink = Nothing
 Me.Label71.Left = 2.384186E-07!
 Me.Label71.Name = "Label71"
-Me.Label71.Style = "background-color: darkgray; white-space: nowrap"
+Me.Label71.Style = "white-space: nowrap"
 Me.Label71.Text = "タクシーチケット手配"
 Me.Label71.Top = 7.102749!
 Me.Label71.Width = 1.677953!
@@ -3978,8 +4044,8 @@ Me.Label70.Height = 0.2000001!
 Me.Label70.HyperLink = Nothing
 Me.Label70.Left = 3.558662!
 Me.Label70.Name = "Label70"
-Me.Label70.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label70.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label70.Text = "宿泊取消料"
 Me.Label70.Top = 6.236221!
 Me.Label70.Width = 0.9488187!
@@ -3990,8 +4056,8 @@ Me.Label69.Height = 0.2000001!
 Me.Label69.HyperLink = Nothing
 Me.Label69.Left = 3.558662!
 Me.Label69.Name = "Label69"
-Me.Label69.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label69.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label69.Text = "都税"
 Me.Label69.Top = 6.036222!
 Me.Label69.Width = 0.9488187!
@@ -4002,8 +4068,8 @@ Me.Label35.Height = 0.2000001!
 Me.Label35.HyperLink = Nothing
 Me.Label35.Left = 3.558662!
 Me.Label35.Name = "Label35"
-Me.Label35.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label35.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label35.Text = "宿泊費(税込)"
 Me.Label35.Top = 5.836222!
 Me.Label35.Width = 0.9488187!
@@ -4014,8 +4080,8 @@ Me.Label34.Height = 0.2000001!
 Me.Label34.HyperLink = Nothing
 Me.Label34.Left = 3.558662!
 Me.Label34.Name = "Label34"
-Me.Label34.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label34.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label34.Text = "部屋タイプ"
 Me.Label34.Top = 5.636222!
 Me.Label34.Width = 0.9488187!
@@ -4026,8 +4092,8 @@ Me.Label32.Height = 0.2000001!
 Me.Label32.HyperLink = Nothing
 Me.Label32.Left = 3.558662!
 Me.Label32.Name = "Label32"
-Me.Label32.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label32.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label32.Text = "宿泊ホテル"
 Me.Label32.Top = 5.43622!
 Me.Label32.Width = 0.9488187!
@@ -4038,7 +4104,7 @@ Me.Label68.Height = 0.4767717!
 Me.Label68.HyperLink = Nothing
 Me.Label68.Left = 0!
 Me.Label68.Name = "Label68"
-Me.Label68.Style = "background-color: LightGrey; white-space: nowrap"
+Me.Label68.Style = "white-space: nowrap"
 Me.Label68.Text = "社員用交通・宿泊備考"
 Me.Label68.Top = 4.301181!
 Me.Label68.Width = 1.677953!
@@ -4160,8 +4226,7 @@ Me.Label19.Height = 0.4271642!
 Me.Label19.HyperLink = Nothing
 Me.Label19.Left = 5.684342E-14!
 Me.Label19.Name = "Label19"
-Me.Label19.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; white-space: no"& _ 
-    "wrap"
+Me.Label19.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap"
 Me.Label19.Text = "指定外申請理由"
 Me.Label19.Top = 2.474016!
 Me.Label19.Width = 1.323622!
@@ -4172,8 +4237,8 @@ Me.Label21.Height = 0.2!
 Me.Label21.HyperLink = Nothing
 Me.Label21.Left = 3.11063!
 Me.Label21.Name = "Label21"
-Me.Label21.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label21.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label21.Text = "所属エリア(担当MR)"
 Me.Label21.Top = 3.101182!
 Me.Label21.Width = 1.167323!
@@ -4184,8 +4249,8 @@ Me.Label22.Height = 0.2!
 Me.Label22.HyperLink = Nothing
 Me.Label22.Left = 3.115748!
 Me.Label22.Name = "Label22"
-Me.Label22.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label22.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label22.Text = "所属営業所(担当MR)"
 Me.Label22.Top = 3.301182!
 Me.Label22.Width = 1.162205!
@@ -4220,8 +4285,8 @@ Me.Label26.Height = 0.2!
 Me.Label26.HyperLink = Nothing
 Me.Label26.Left = 3.11063!
 Me.Label26.Name = "Label26"
-Me.Label26.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label26.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label26.Text = "Emailアドレス(担当MR)"
 Me.Label26.Top = 3.901182!
 Me.Label26.Width = 1.615354!
@@ -4232,8 +4297,8 @@ Me.Label27.Height = 0.2!
 Me.Label27.HyperLink = Nothing
 Me.Label27.Left = 3.11063!
 Me.Label27.Name = "Label27"
-Me.Label27.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label27.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label27.Text = "携帯Emailアドレス(担当MR)"
 Me.Label27.Top = 3.701181!
 Me.Label27.Width = 1.615354!
@@ -4244,8 +4309,8 @@ Me.Label28.Height = 0.2!
 Me.Label28.HyperLink = Nothing
 Me.Label28.Left = 0!
 Me.Label28.Name = "Label28"
-Me.Label28.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label28.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label28.Text = "携帯電話番号(担当MR)"
 Me.Label28.Top = 3.701181!
 Me.Label28.Width = 1.677953!
@@ -4256,8 +4321,8 @@ Me.Label29.Height = 0.2!
 Me.Label29.HyperLink = Nothing
 Me.Label29.Left = 0!
 Me.Label29.Name = "Label29"
-Me.Label29.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; text-align: ju"& _ 
-    "stify; text-justify: distribute; vertical-align: middle; white-space: nowrap"
+Me.Label29.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; text-align: justify; text-justify: distribu"& _ 
+    "te; vertical-align: middle; white-space: nowrap"
 Me.Label29.Text = "オフィスの電話番号(担当MR)"
 Me.Label29.Top = 3.901182!
 Me.Label29.Width = 1.677953!
@@ -4268,8 +4333,8 @@ Me.Label30.Height = 0.2!
 Me.Label30.HyperLink = Nothing
 Me.Label30.Left = 0!
 Me.Label30.Name = "Label30"
-Me.Label30.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label30.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label30.Text = "チケット送付先FS"
 Me.Label30.Top = 4.777953!
 Me.Label30.Width = 1.677953!
@@ -4280,8 +4345,7 @@ Me.Label31.Height = 0.4582677!
 Me.Label31.HyperLink = Nothing
 Me.Label31.Left = 0!
 Me.Label31.Name = "Label31"
-Me.Label31.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; white-space: n"& _ 
-    "owrap"
+Me.Label31.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap"
 Me.Label31.Text = "チケット送付先(その他)"
 Me.Label31.Top = 4.977953!
 Me.Label31.Width = 1.677953!
@@ -4292,8 +4356,8 @@ Me.Label33.Height = 0.2!
 Me.Label33.HyperLink = Nothing
 Me.Label33.Left = 4.919291!
 Me.Label33.Name = "Label33"
-Me.Label33.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label33.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label33.Text = "Cost Center"
 Me.Label33.Top = 2.901182!
 Me.Label33.Width = 1.167323!
@@ -4304,8 +4368,8 @@ Me.Label36.Height = 0.2!
 Me.Label36.HyperLink = Nothing
 Me.Label36.Left = 0!
 Me.Label36.Name = "Label36"
-Me.Label36.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label36.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label36.Text = "最終承認者(氏名)"
 Me.Label36.Top = 2.274016!
 Me.Label36.Width = 1.323622!
@@ -4316,8 +4380,8 @@ Me.Label37.Height = 0.2!
 Me.Label37.HyperLink = Nothing
 Me.Label37.Left = 3.558662!
 Me.Label37.Name = "Label37"
-Me.Label37.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label37.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label37.Text = "最終承認日"
 Me.Label37.Top = 2.274016!
 Me.Label37.Width = 0.9488189!
@@ -4328,8 +4392,8 @@ Me.Label38.Height = 0.2!
 Me.Label38.HyperLink = Nothing
 Me.Label38.Left = 1.192093E-07!
 Me.Label38.Name = "Label38"
-Me.Label38.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label38.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label38.Text = "宿泊手配"
 Me.Label38.Top = 5.43622!
 Me.Label38.Width = 1.677953!
@@ -4340,8 +4404,8 @@ Me.Label39.Height = 0.2!
 Me.Label39.HyperLink = Nothing
 Me.Label39.Left = 1.192093E-07!
 Me.Label39.Name = "Label39"
-Me.Label39.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label39.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label39.Text = "宿泊依頼内容"
 Me.Label39.Top = 5.636222!
 Me.Label39.Width = 1.677953!
@@ -4352,8 +4416,8 @@ Me.Label40.Height = 0.2!
 Me.Label40.HyperLink = Nothing
 Me.Label40.Left = 1.192093E-07!
 Me.Label40.Name = "Label40"
-Me.Label40.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label40.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label40.Text = "宿泊日"
 Me.Label40.Top = 5.836222!
 Me.Label40.Width = 1.677953!
@@ -4364,8 +4428,8 @@ Me.Label41.Height = 0.2!
 Me.Label41.HyperLink = Nothing
 Me.Label41.Left = 1.192093E-07!
 Me.Label41.Name = "Label41"
-Me.Label41.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label41.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label41.Text = "泊数"
 Me.Label41.Top = 6.036223!
 Me.Label41.Width = 1.677953!
@@ -4376,8 +4440,8 @@ Me.Label42.Height = 0.2!
 Me.Label42.HyperLink = Nothing
 Me.Label42.Left = 1.192093E-07!
 Me.Label42.Name = "Label42"
-Me.Label42.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label42.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label42.Text = "宿泊ホテル喫煙"
 Me.Label42.Top = 6.236221!
 Me.Label42.Width = 1.677953!
@@ -4388,8 +4452,7 @@ Me.Label43.Height = 0.6665354!
 Me.Label43.HyperLink = Nothing
 Me.Label43.Left = 1.192093E-07!
 Me.Label43.Name = "Label43"
-Me.Label43.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; white-space: no"& _ 
-    "wrap"
+Me.Label43.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; white-space: nowrap"
 Me.Label43.Text = "宿泊備考"
 Me.Label43.Top = 6.436221!
 Me.Label43.Width = 1.677953!
@@ -5189,7 +5252,7 @@ Me.Line48.Y2 = 6.436221!
 '
 'Line49
 '
-Me.Line49.Height = 0.9999971!
+Me.Line49.Height = 0.9999967!
 Me.Line49.Left = 4.507481!
 Me.Line49.LineWeight = 1!
 Me.Line49.Name = "Line49"
@@ -5202,7 +5265,7 @@ Me.Line49.Y2 = 6.436218!
 '
 'Line50
 '
-Me.Line50.Height = 0.6000016!
+Me.Line50.Height = 0.6000023!
 Me.Line50.Left = 3.11063!
 Me.Line50.LineWeight = 1!
 Me.Line50.Name = "Line50"
@@ -5215,7 +5278,7 @@ Me.Line50.Y2 = 4.301184!
 '
 'Line53
 '
-Me.Line53.Height = 0.6000016!
+Me.Line53.Height = 0.6000023!
 Me.Line53.Left = 4.725985!
 Me.Line53.LineWeight = 1!
 Me.Line53.Name = "Line53"
@@ -5289,7 +5352,6 @@ Me.PageBreak1.Width = 6.5!
 '
 'Shape2
 '
-Me.Shape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192,Byte),Integer), CType(CType(192,Byte),Integer), CType(CType(192,Byte),Integer))
 Me.Shape2.Height = 0.2740157!
 Me.Shape2.Left = 0!
 Me.Shape2.Name = "Shape2"
@@ -5930,8 +5992,8 @@ Me.Label108.Height = 0.2!
 Me.Label108.HyperLink = Nothing
 Me.Label108.Left = 5.485435!
 Me.Label108.Name = "Label108"
-Me.Label108.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label108.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label108.Text = "座席希望"
 Me.Label108.Top = 17.49685!
 Me.Label108.Width = 0.6874015!
@@ -5942,8 +6004,8 @@ Me.Label107.Height = 0.2!
 Me.Label107.HyperLink = Nothing
 Me.Label107.Left = 3.763782!
 Me.Label107.Name = "Label107"
-Me.Label107.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label107.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label107.Text = "座席区分"
 Me.Label107.Top = 17.49685!
 Me.Label107.Width = 0.7436993!
@@ -5954,8 +6016,8 @@ Me.Label106.Height = 0.2!
 Me.Label106.HyperLink = Nothing
 Me.Label106.Left = 3.763782!
 Me.Label106.Name = "Label106"
-Me.Label106.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label106.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label106.Text = "列車・便名"
 Me.Label106.Top = 16.89685!
 Me.Label106.Width = 0.7436993!
@@ -5966,8 +6028,8 @@ Me.Label105.Height = 0.2!
 Me.Label105.HyperLink = Nothing
 Me.Label105.Left = 5.485435!
 Me.Label105.Name = "Label105"
-Me.Label105.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label105.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label105.Text = "到着時間"
 Me.Label105.Top = 17.29685!
 Me.Label105.Width = 0.6874015!
@@ -5978,8 +6040,8 @@ Me.Label104.Height = 0.2!
 Me.Label104.HyperLink = Nothing
 Me.Label104.Left = 3.763782!
 Me.Label104.Name = "Label104"
-Me.Label104.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label104.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label104.Text = "出発時間"
 Me.Label104.Top = 17.29685!
 Me.Label104.Width = 0.7436993!
@@ -5990,8 +6052,8 @@ Me.Label103.Height = 0.2!
 Me.Label103.HyperLink = Nothing
 Me.Label103.Left = 5.485434!
 Me.Label103.Name = "Label103"
-Me.Label103.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label103.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label103.Text = "到着地"
 Me.Label103.Top = 17.09685!
 Me.Label103.Width = 0.6874015!
@@ -6002,8 +6064,8 @@ Me.Label102.Height = 0.2!
 Me.Label102.HyperLink = Nothing
 Me.Label102.Left = 3.76378!
 Me.Label102.Name = "Label102"
-Me.Label102.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label102.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label102.Text = "出発地"
 Me.Label102.Top = 17.09685!
 Me.Label102.Width = 0.7436993!
@@ -6014,8 +6076,8 @@ Me.Label101.Height = 0.2!
 Me.Label101.HyperLink = Nothing
 Me.Label101.Left = 3.763782!
 Me.Label101.Name = "Label101"
-Me.Label101.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label101.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label101.Text = "利用日"
 Me.Label101.Top = 16.69685!
 Me.Label101.Width = 0.7436993!
@@ -6026,8 +6088,8 @@ Me.Label100.Height = 0.2!
 Me.Label100.HyperLink = Nothing
 Me.Label100.Left = 5.485435!
 Me.Label100.Name = "Label100"
-Me.Label100.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label100.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label100.Text = "交通機関"
 Me.Label100.Top = 16.69685!
 Me.Label100.Width = 0.6874015!
@@ -6038,8 +6100,8 @@ Me.Label99.Height = 0.2!
 Me.Label99.HyperLink = Nothing
 Me.Label99.Left = 5.485434!
 Me.Label99.Name = "Label99"
-Me.Label99.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label99.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label99.Text = "依頼内容"
 Me.Label99.Top = 16.49685!
 Me.Label99.Width = 0.7007875!
@@ -6050,8 +6112,8 @@ Me.Label98.Height = 0.1999999!
 Me.Label98.HyperLink = Nothing
 Me.Label98.Left = 3.76378!
 Me.Label98.Name = "Label98"
-Me.Label98.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label98.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label98.Text = "希望する"
 Me.Label98.Top = 16.49685!
 Me.Label98.Width = 0.7437003!
@@ -6062,9 +6124,8 @@ Me.FUKURO5.Height = 1.2!
 Me.FUKURO5.HyperLink = Nothing
 Me.FUKURO5.Left = 3.558662!
 Me.FUKURO5.Name = "FUKURO5"
-Me.FUKURO5.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
+Me.FUKURO5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold; text-align: center; vert"& _ 
+    "ical-align: middle; white-space: nowrap; ddo-font-vertical: true"
 Me.FUKURO5.Text = ""
 Me.FUKURO5.Top = 16.49685!
 Me.FUKURO5.Width = 0.2051181!
@@ -6075,8 +6136,8 @@ Me.Label96.Height = 0.2!
 Me.Label96.HyperLink = Nothing
 Me.Label96.Left = 1.892125!
 Me.Label96.Name = "Label96"
-Me.Label96.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label96.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label96.Text = "座席希望"
 Me.Label96.Top = 17.49685!
 Me.Label96.Width = 0.6874028!
@@ -6087,8 +6148,8 @@ Me.Label97.Height = 0.2!
 Me.Label97.HyperLink = Nothing
 Me.Label97.Left = 0.2291329!
 Me.Label97.Name = "Label97"
-Me.Label97.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label97.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label97.Text = "座席区分"
 Me.Label97.Top = 17.49685!
 Me.Label97.Width = 0.6874026!
@@ -6099,8 +6160,8 @@ Me.Label109.Height = 0.2!
 Me.Label109.HyperLink = Nothing
 Me.Label109.Left = 0.2291329!
 Me.Label109.Name = "Label109"
-Me.Label109.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label109.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label109.Text = "列車・便名"
 Me.Label109.Top = 16.89685!
 Me.Label109.Width = 0.6874026!
@@ -6111,8 +6172,8 @@ Me.Label110.Height = 0.2!
 Me.Label110.HyperLink = Nothing
 Me.Label110.Left = 1.902361!
 Me.Label110.Name = "Label110"
-Me.Label110.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label110.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label110.Text = "到着時間"
 Me.Label110.Top = 17.29685!
 Me.Label110.Width = 0.6771665!
@@ -6123,8 +6184,8 @@ Me.Label111.Height = 0.2!
 Me.Label111.HyperLink = Nothing
 Me.Label111.Left = 0.2291329!
 Me.Label111.Name = "Label111"
-Me.Label111.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label111.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label111.Text = "出発時間"
 Me.Label111.Top = 17.29685!
 Me.Label111.Width = 0.6874026!
@@ -6135,8 +6196,8 @@ Me.Label112.Height = 0.2!
 Me.Label112.HyperLink = Nothing
 Me.Label112.Left = 1.892125!
 Me.Label112.Name = "Label112"
-Me.Label112.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label112.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label112.Text = "到着地"
 Me.Label112.Top = 17.09685!
 Me.Label112.Width = 0.6874028!
@@ -6147,8 +6208,8 @@ Me.Label113.Height = 0.2!
 Me.Label113.HyperLink = Nothing
 Me.Label113.Left = 0.2291329!
 Me.Label113.Name = "Label113"
-Me.Label113.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label113.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label113.Text = "出発地"
 Me.Label113.Top = 17.09685!
 Me.Label113.Width = 0.6874026!
@@ -6159,23 +6220,23 @@ Me.Label114.Height = 0.2!
 Me.Label114.HyperLink = Nothing
 Me.Label114.Left = 0.2291329!
 Me.Label114.Name = "Label114"
-Me.Label114.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label114.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label114.Text = "利用日"
 Me.Label114.Top = 16.69685!
 Me.Label114.Width = 0.6874026!
 '
 'Label115
 '
-Me.Label115.Height = 0.2!
+Me.Label115.Height = 0.2000008!
 Me.Label115.HyperLink = Nothing
 Me.Label115.Left = 1.892125!
 Me.Label115.Name = "Label115"
-Me.Label115.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label115.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label115.Text = "交通機関"
 Me.Label115.Top = 16.69685!
-Me.Label115.Width = 0.6874027!
+Me.Label115.Width = 0.6874028!
 '
 'Label116
 '
@@ -6183,8 +6244,8 @@ Me.Label116.Height = 0.2!
 Me.Label116.HyperLink = Nothing
 Me.Label116.Left = 1.892125!
 Me.Label116.Name = "Label116"
-Me.Label116.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label116.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label116.Text = "依頼内容"
 Me.Label116.Top = 16.49685!
 Me.Label116.Width = 0.6874028!
@@ -6195,8 +6256,8 @@ Me.Label117.Height = 0.1999999!
 Me.Label117.HyperLink = Nothing
 Me.Label117.Left = 0.2291338!
 Me.Label117.Name = "Label117"
-Me.Label117.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label117.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label117.Text = "希望する"
 Me.Label117.Top = 16.49685!
 Me.Label117.Width = 0.6874017!
@@ -6207,9 +6268,8 @@ Me.OURO5.Height = 1.2!
 Me.OURO5.HyperLink = Nothing
 Me.OURO5.Left = 0!
 Me.OURO5.Name = "OURO5"
-Me.OURO5.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
+Me.OURO5.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold; text-align: center; vert"& _ 
+    "ical-align: middle; white-space: nowrap; ddo-font-vertical: true"
 Me.OURO5.Text = ""
 Me.OURO5.Top = 16.49685!
 Me.OURO5.Width = 0.2291338!
@@ -6220,8 +6280,8 @@ Me.Label118.Height = 0.2!
 Me.Label118.HyperLink = Nothing
 Me.Label118.Left = 5.485433!
 Me.Label118.Name = "Label118"
-Me.Label118.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label118.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label118.Text = "座席希望"
 Me.Label118.Top = 13.89685!
 Me.Label118.Width = 0.6874018!
@@ -6256,8 +6316,8 @@ Me.Label121.Height = 0.2!
 Me.Label121.HyperLink = Nothing
 Me.Label121.Left = 5.485433!
 Me.Label121.Name = "Label121"
-Me.Label121.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label121.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label121.Text = "到着時間"
 Me.Label121.Top = 13.69685!
 Me.Label121.Width = 0.6874018!
@@ -6280,8 +6340,8 @@ Me.Label123.Height = 0.2!
 Me.Label123.HyperLink = Nothing
 Me.Label123.Left = 5.485434!
 Me.Label123.Name = "Label123"
-Me.Label123.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label123.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label123.Text = "到着地"
 Me.Label123.Top = 13.49685!
 Me.Label123.Width = 0.6874018!
@@ -6316,8 +6376,8 @@ Me.Label126.Height = 0.2!
 Me.Label126.HyperLink = Nothing
 Me.Label126.Left = 5.485433!
 Me.Label126.Name = "Label126"
-Me.Label126.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label126.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label126.Text = "交通機関"
 Me.Label126.Top = 13.09685!
 Me.Label126.Width = 0.6874018!
@@ -6328,8 +6388,8 @@ Me.Label127.Height = 0.2!
 Me.Label127.HyperLink = Nothing
 Me.Label127.Left = 5.485433!
 Me.Label127.Name = "Label127"
-Me.Label127.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label127.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label127.Text = "依頼内容"
 Me.Label127.Top = 12.89685!
 Me.Label127.Width = 0.6874018!
@@ -6348,7 +6408,7 @@ Me.Label128.Width = 0.743701!
 '
 'Line71
 '
-Me.Line71.Height = 2.199999!
+Me.Line71.Height = 2.2!
 Me.Line71.Left = 0.2291343!
 Me.Line71.LineWeight = 1!
 Me.Line71.Name = "Line71"
@@ -6365,8 +6425,8 @@ Me.Label129.Height = 0.2!
 Me.Label129.HyperLink = Nothing
 Me.Label129.Left = 1.892126!
 Me.Label129.Name = "Label129"
-Me.Label129.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label129.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label129.Text = "座席希望"
 Me.Label129.Top = 13.89685!
 Me.Label129.Width = 0.6874014!
@@ -6401,8 +6461,8 @@ Me.Label132.Height = 0.2!
 Me.Label132.HyperLink = Nothing
 Me.Label132.Left = 1.892126!
 Me.Label132.Name = "Label132"
-Me.Label132.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label132.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label132.Text = "到着時間"
 Me.Label132.Top = 13.69685!
 Me.Label132.Width = 0.6874014!
@@ -6425,8 +6485,8 @@ Me.Label134.Height = 0.2!
 Me.Label134.HyperLink = Nothing
 Me.Label134.Left = 1.892126!
 Me.Label134.Name = "Label134"
-Me.Label134.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label134.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label134.Text = "到着地"
 Me.Label134.Top = 13.49685!
 Me.Label134.Width = 0.6874015!
@@ -6461,8 +6521,8 @@ Me.Label137.Height = 0.2!
 Me.Label137.HyperLink = Nothing
 Me.Label137.Left = 1.892126!
 Me.Label137.Name = "Label137"
-Me.Label137.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label137.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label137.Text = "交通機関"
 Me.Label137.Top = 13.09685!
 Me.Label137.Width = 0.6874015!
@@ -6473,8 +6533,8 @@ Me.Label138.Height = 0.2!
 Me.Label138.HyperLink = Nothing
 Me.Label138.Left = 1.892126!
 Me.Label138.Name = "Label138"
-Me.Label138.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label138.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label138.Text = "依頼内容"
 Me.Label138.Top = 12.89685!
 Me.Label138.Width = 0.6874016!
@@ -6631,8 +6691,8 @@ Me.Label140.Height = 0.2!
 Me.Label140.HyperLink = Nothing
 Me.Label140.Left = 5.485435!
 Me.Label140.Name = "Label140"
-Me.Label140.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label140.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label140.Text = "座席希望"
 Me.Label140.Top = 16.29685!
 Me.Label140.Width = 0.6874015!
@@ -6667,8 +6727,8 @@ Me.Label143.Height = 0.2!
 Me.Label143.HyperLink = Nothing
 Me.Label143.Left = 5.485435!
 Me.Label143.Name = "Label143"
-Me.Label143.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label143.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label143.Text = "到着時間"
 Me.Label143.Top = 16.09685!
 Me.Label143.Width = 0.6874015!
@@ -6691,8 +6751,8 @@ Me.Label145.Height = 0.2!
 Me.Label145.HyperLink = Nothing
 Me.Label145.Left = 5.485435!
 Me.Label145.Name = "Label145"
-Me.Label145.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label145.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label145.Text = "到着地"
 Me.Label145.Top = 15.89685!
 Me.Label145.Width = 0.6874015!
@@ -6715,8 +6775,8 @@ Me.Label147.Height = 0.2!
 Me.Label147.HyperLink = Nothing
 Me.Label147.Left = 1.892125!
 Me.Label147.Name = "Label147"
-Me.Label147.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label147.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label147.Text = "座席希望"
 Me.Label147.Top = 16.29685!
 Me.Label147.Width = 0.6874028!
@@ -6751,8 +6811,8 @@ Me.Label150.Height = 0.2!
 Me.Label150.HyperLink = Nothing
 Me.Label150.Left = 1.902361!
 Me.Label150.Name = "Label150"
-Me.Label150.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label150.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label150.Text = "到着時間"
 Me.Label150.Top = 16.09685!
 Me.Label150.Width = 0.6771665!
@@ -6775,8 +6835,8 @@ Me.Label152.Height = 0.2!
 Me.Label152.HyperLink = Nothing
 Me.Label152.Left = 1.892125!
 Me.Label152.Name = "Label152"
-Me.Label152.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label152.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label152.Text = "到着地"
 Me.Label152.Top = 15.89685!
 Me.Label152.Width = 0.6874028!
@@ -6808,7 +6868,7 @@ Me.OURO4.Width = 0.2291338!
 '
 'Line75
 '
-Me.Line75.Height = 2.2!
+Me.Line75.Height = 2.200001!
 Me.Line75.Left = 0.2291343!
 Me.Line75.LineWeight = 1!
 Me.Line75.Name = "Line75"
@@ -6825,8 +6885,8 @@ Me.Label161.Height = 0.2!
 Me.Label161.HyperLink = Nothing
 Me.Label161.Left = 1.892126!
 Me.Label161.Name = "Label161"
-Me.Label161.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label161.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label161.Text = "座席希望"
 Me.Label161.Top = 12.69685!
 Me.Label161.Width = 0.6874014!
@@ -6837,8 +6897,8 @@ Me.Label164.Height = 0.2!
 Me.Label164.HyperLink = Nothing
 Me.Label164.Left = 1.892126!
 Me.Label164.Name = "Label164"
-Me.Label164.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label164.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label164.Text = "到着時間"
 Me.Label164.Top = 12.49685!
 Me.Label164.Width = 0.6874014!
@@ -6849,8 +6909,8 @@ Me.Label166.Height = 0.2!
 Me.Label166.HyperLink = Nothing
 Me.Label166.Left = 1.892126!
 Me.Label166.Name = "Label166"
-Me.Label166.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label166.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label166.Text = "到着地"
 Me.Label166.Top = 12.29685!
 Me.Label166.Width = 0.6874015!
@@ -6861,9 +6921,8 @@ Me.OURO1.Height = 1.200002!
 Me.OURO1.HyperLink = Nothing
 Me.OURO1.Left = 4.768372E-07!
 Me.OURO1.Name = "OURO1"
-Me.OURO1.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
+Me.OURO1.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold; text-align: center; vert"& _ 
+    "ical-align: middle; white-space: nowrap; ddo-font-vertical: true"
 Me.OURO1.Text = ""
 Me.OURO1.Top = 11.69685!
 Me.OURO1.Width = 0.2291338!
@@ -6874,8 +6933,8 @@ Me.Label169.Height = 0.2!
 Me.Label169.HyperLink = Nothing
 Me.Label169.Left = 1.902362!
 Me.Label169.Name = "Label169"
-Me.Label169.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label169.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label169.Text = "依頼内容"
 Me.Label169.Top = 11.69685!
 Me.Label169.Width = 0.6874014!
@@ -6886,8 +6945,8 @@ Me.Label170.Height = 0.2!
 Me.Label170.HyperLink = Nothing
 Me.Label170.Left = 1.892126!
 Me.Label170.Name = "Label170"
-Me.Label170.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label170.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label170.Text = "交通機関"
 Me.Label170.Top = 11.89685!
 Me.Label170.Width = 0.6874016!
@@ -6910,8 +6969,8 @@ Me.Label177.Height = 0.2!
 Me.Label177.HyperLink = Nothing
 Me.Label177.Left = 1.892126!
 Me.Label177.Name = "Label177"
-Me.Label177.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label177.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label177.Text = "依頼内容"
 Me.Label177.Top = 15.29685!
 Me.Label177.Width = 0.6874018!
@@ -6922,8 +6981,8 @@ Me.Label178.Height = 0.2!
 Me.Label178.HyperLink = Nothing
 Me.Label178.Left = 1.892125!
 Me.Label178.Name = "Label178"
-Me.Label178.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label178.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label178.Text = "交通機関"
 Me.Label178.Top = 15.49685!
 Me.Label178.Width = 0.6874028!
@@ -6946,8 +7005,8 @@ Me.Label181.Height = 0.2!
 Me.Label181.HyperLink = Nothing
 Me.Label181.Left = 5.485434!
 Me.Label181.Name = "Label181"
-Me.Label181.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label181.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label181.Text = "依頼内容"
 Me.Label181.Top = 15.29685!
 Me.Label181.Width = 0.6874008!
@@ -6958,8 +7017,8 @@ Me.Label182.Height = 0.2!
 Me.Label182.HyperLink = Nothing
 Me.Label182.Left = 5.485435!
 Me.Label182.Name = "Label182"
-Me.Label182.Style = "background-color: Gainsboro; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
+Me.Label182.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label182.Text = "交通機関"
 Me.Label182.Top = 15.49685!
 Me.Label182.Width = 0.6874015!
@@ -7204,8 +7263,8 @@ Me.Label192.Height = 0.2!
 Me.Label192.HyperLink = Nothing
 Me.Label192.Left = 5.485433!
 Me.Label192.Name = "Label192"
-Me.Label192.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label192.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label192.Text = "交通機関"
 Me.Label192.Top = 14.29685!
 Me.Label192.Width = 0.6874018!
@@ -7216,8 +7275,8 @@ Me.Label193.Height = 0.2!
 Me.Label193.HyperLink = Nothing
 Me.Label193.Left = 5.485433!
 Me.Label193.Name = "Label193"
-Me.Label193.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label193.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label193.Text = "依頼内容"
 Me.Label193.Top = 14.09685!
 Me.Label193.Width = 0.6874018!
@@ -7228,8 +7287,8 @@ Me.Label196.Height = 0.2!
 Me.Label196.HyperLink = Nothing
 Me.Label196.Left = 0.229134!
 Me.Label196.Name = "Label196"
-Me.Label196.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label196.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label196.Text = "座席区分"
 Me.Label196.Top = 15.09685!
 Me.Label196.Width = 0.6874014!
@@ -7240,8 +7299,8 @@ Me.Label197.Height = 0.2!
 Me.Label197.HyperLink = Nothing
 Me.Label197.Left = 0.229134!
 Me.Label197.Name = "Label197"
-Me.Label197.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label197.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label197.Text = "列車・便名"
 Me.Label197.Top = 14.49685!
 Me.Label197.Width = 0.6874015!
@@ -7252,8 +7311,8 @@ Me.Label202.Height = 0.2!
 Me.Label202.HyperLink = Nothing
 Me.Label202.Left = 0.229134!
 Me.Label202.Name = "Label202"
-Me.Label202.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label202.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label202.Text = "利用日"
 Me.Label202.Top = 14.29685!
 Me.Label202.Width = 0.6874015!
@@ -7264,8 +7323,8 @@ Me.Label203.Height = 0.2!
 Me.Label203.HyperLink = Nothing
 Me.Label203.Left = 1.892126!
 Me.Label203.Name = "Label203"
-Me.Label203.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label203.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label203.Text = "交通機関"
 Me.Label203.Top = 14.29685!
 Me.Label203.Width = 0.6874015!
@@ -7276,8 +7335,8 @@ Me.Label204.Height = 0.2!
 Me.Label204.HyperLink = Nothing
 Me.Label204.Left = 1.892126!
 Me.Label204.Name = "Label204"
-Me.Label204.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label204.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label204.Text = "依頼内容"
 Me.Label204.Top = 14.09685!
 Me.Label204.Width = 0.6874014!
@@ -7288,8 +7347,8 @@ Me.Label205.Height = 0.1999999!
 Me.Label205.HyperLink = Nothing
 Me.Label205.Left = 0.229134!
 Me.Label205.Name = "Label205"
-Me.Label205.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label205.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: middle; white-space: nowrap"& _ 
+    ""
 Me.Label205.Text = "希望する"
 Me.Label205.Top = 14.09685!
 Me.Label205.Width = 0.6874014!
@@ -7300,16 +7359,15 @@ Me.OURO3.Height = 1.2!
 Me.OURO3.HyperLink = Nothing
 Me.OURO3.Left = 0!
 Me.OURO3.Name = "OURO3"
-Me.OURO3.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bo"& _ 
-    "ld; text-align: center; vertical-align: middle; white-space: nowrap; ddo-font-ve"& _ 
-    "rtical: true"
+Me.OURO3.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; font-weight: bold; text-align: center; vert"& _ 
+    "ical-align: middle; white-space: nowrap; ddo-font-vertical: true"
 Me.OURO3.Text = ""
 Me.OURO3.Top = 14.09685!
 Me.OURO3.Width = 0.2291338!
 '
 'Line80
 '
-Me.Line80.Height = 5.999999!
+Me.Line80.Height = 6!
 Me.Line80.Left = 0.2291335!
 Me.Line80.LineWeight = 1!
 Me.Line80.Name = "Line80"
@@ -7585,8 +7643,8 @@ Me.Label207.Height = 0.2!
 Me.Label207.HyperLink = Nothing
 Me.Label207.Left = 4.768372E-07!
 Me.Label207.Name = "Label207"
-Me.Label207.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label207.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label207.Text = "会合番号"
 Me.Label207.Top = 10.69685!
 Me.Label207.Width = 1.323622!
@@ -7597,8 +7655,8 @@ Me.Label209.Height = 0.2!
 Me.Label209.HyperLink = Nothing
 Me.Label209.Left = 4.828347!
 Me.Label209.Name = "Label209"
-Me.Label209.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label209.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label209.Text = "Timestamp(BYL)"
 Me.Label209.Top = 10.69685!
 Me.Label209.Width = 0.9590556!
@@ -7609,8 +7667,8 @@ Me.Label210.Height = 0.2!
 Me.Label210.HyperLink = Nothing
 Me.Label210.Left = 0!
 Me.Label210.Name = "Label210"
-Me.Label210.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label210.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label210.Text = "MTP ID(参加者ID)"
 Me.Label210.Top = 10.89685!
 Me.Label210.Width = 1.323622!
@@ -7621,8 +7679,8 @@ Me.Label212.Height = 0.2!
 Me.Label212.HyperLink = Nothing
 Me.Label212.Left = 0!
 Me.Label212.Name = "Label212"
-Me.Label212.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label212.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label212.Text = "DR氏名"
 Me.Label212.Top = 11.09685!
 Me.Label212.Width = 1.323622!
@@ -7633,8 +7691,8 @@ Me.Label213.Height = 0.2!
 Me.Label213.HyperLink = Nothing
 Me.Label213.Left = 0!
 Me.Label213.Name = "Label213"
-Me.Label213.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label213.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label213.Text = "DR氏名(半角ｶﾀｶﾅ)"
 Me.Label213.Top = 11.29685!
 Me.Label213.Width = 1.323622!
@@ -7645,8 +7703,8 @@ Me.Label217.Height = 0.2!
 Me.Label217.HyperLink = Nothing
 Me.Label217.Left = 0!
 Me.Label217.Name = "Label217"
-Me.Label217.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
+Me.Label217.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
 Me.Label217.Text = "航空搭乗者年齢(年齢)"
 Me.Label217.Top = 11.49685!
 Me.Label217.Width = 1.323622!
@@ -7797,13 +7855,13 @@ Me.Line194.Y2 = 10.69685!
 'DR_SEX2
 '
 Me.DR_SEX2.DataField = "DR_SEX"
-Me.DR_SEX2.Height = 0.2!
+Me.DR_SEX2.Height = 0.1999998!
 Me.DR_SEX2.Left = 4.507481!
 Me.DR_SEX2.Name = "DR_SEX2"
 Me.DR_SEX2.Style = "vertical-align: middle"
 Me.DR_SEX2.Text = Nothing
 Me.DR_SEX2.Top = 11.49685!
-Me.DR_SEX2.Width = 2.644488!
+Me.DR_SEX2.Width = 0.977953!
 '
 'Line195
 '
@@ -7860,7 +7918,7 @@ Me.Line200.Y2 = 11.69685!
 '
 'Line79
 '
-Me.Line79.Height = 8.772836!
+Me.Line79.Height = 8.77284!
 Me.Line79.Left = 0!
 Me.Line79.LineWeight = 1!
 Me.Line79.Name = "Line79"
@@ -7899,7 +7957,7 @@ Me.Line203.Y2 = 11.69685!
 '
 'Line70
 '
-Me.Line70.Height = 0.3999996!
+Me.Line70.Height = 0.4000006!
 Me.Line70.Left = 1.892126!
 Me.Line70.LineWeight = 1!
 Me.Line70.Name = "Line70"
@@ -8162,7 +8220,7 @@ Me.Line133.Y2 = 17.49686!
 '
 'Line134
 '
-Me.Line134.Height = 1!
+Me.Line134.Height = 1.000001!
 Me.Line134.Left = 1.892126!
 Me.Line134.LineWeight = 1!
 Me.Line134.Name = "Line134"
@@ -8188,7 +8246,7 @@ Me.Line135.Y2 = 19.46969!
 '
 'Line137
 '
-Me.Line137.Height = 0.3999996!
+Me.Line137.Height = 0.4000006!
 Me.Line137.Left = 2.589764!
 Me.Line137.LineWeight = 1!
 Me.Line137.Name = "Line137"
@@ -8227,7 +8285,7 @@ Me.Line139.Y2 = 14.49685!
 '
 'Line141
 '
-Me.Line141.Height = 1!
+Me.Line141.Height = 1.000001!
 Me.Line141.Left = 2.589764!
 Me.Line141.LineWeight = 1!
 Me.Line141.Name = "Line141"
@@ -8240,7 +8298,7 @@ Me.Line141.Y2 = 16.89685!
 '
 'Line153
 '
-Me.Line153.Height = 0.5999985!
+Me.Line153.Height = 0.6000004!
 Me.Line153.Left = 2.589764!
 Me.Line153.LineWeight = 1!
 Me.Line153.Name = "Line153"
@@ -8529,28 +8587,28 @@ Me.Line131.Y2 = 16.29685!
 '
 'Line54
 '
-Me.Line54.Height = 0.3999996!
+Me.Line54.Height = 0.6000004!
 Me.Line54.Left = 5.485434!
 Me.Line54.LineWeight = 1!
 Me.Line54.Name = "Line54"
-Me.Line54.Top = 11.69685!
+Me.Line54.Top = 11.49685!
 Me.Line54.Width = 0!
 Me.Line54.X1 = 5.485434!
 Me.Line54.X2 = 5.485434!
-Me.Line54.Y1 = 11.69685!
+Me.Line54.Y1 = 11.49685!
 Me.Line54.Y2 = 12.09685!
 '
 'Line142
 '
-Me.Line142.Height = 0.3999996!
+Me.Line142.Height = 0.6000004!
 Me.Line142.Left = 6.186221!
 Me.Line142.LineWeight = 1!
 Me.Line142.Name = "Line142"
-Me.Line142.Top = 11.69685!
+Me.Line142.Top = 11.49685!
 Me.Line142.Width = 0!
 Me.Line142.X1 = 6.186221!
 Me.Line142.X2 = 6.186221!
-Me.Line142.Y1 = 11.69685!
+Me.Line142.Y1 = 11.49685!
 Me.Line142.Y2 = 12.09685!
 '
 'Line143
@@ -8581,7 +8639,7 @@ Me.Line144.Y2 = 14.49685!
 '
 'Line146
 '
-Me.Line146.Height = 1!
+Me.Line146.Height = 1.000001!
 Me.Line146.Left = 5.485434!
 Me.Line146.LineWeight = 1!
 Me.Line146.Name = "Line146"
@@ -8633,7 +8691,7 @@ Me.Line149.Y2 = 15.69685!
 '
 'Line150
 '
-Me.Line150.Height = 1!
+Me.Line150.Height = 1.000001!
 Me.Line150.Left = 6.172835!
 Me.Line150.LineWeight = 1!
 Me.Line150.Name = "Line150"
@@ -8659,7 +8717,7 @@ Me.Line151.Y2 = 18.66969!
 '
 'Line157
 '
-Me.Line157.Height = 0.5999985!
+Me.Line157.Height = 0.6000004!
 Me.Line157.Left = 6.186221!
 Me.Line157.LineWeight = 1!
 Me.Line157.Name = "Line157"
@@ -8816,7 +8874,7 @@ Me.Line136.Y2 = 17.69686!
 '
 'Line69
 '
-Me.Line69.Height = 7.000001!
+Me.Line69.Height = 7!
 Me.Line69.Left = 3.558661!
 Me.Line69.LineWeight = 1!
 Me.Line69.Name = "Line69"
@@ -8829,7 +8887,7 @@ Me.Line69.Y2 = 17.69685!
 '
 'Line73
 '
-Me.Line73.Height = 5.999999!
+Me.Line73.Height = 6!
 Me.Line73.Left = 3.76378!
 Me.Line73.LineWeight = 1!
 Me.Line73.Name = "Line73"
@@ -8855,7 +8913,7 @@ Me.Line145.Y2 = 15.69685!
 '
 'Line198
 '
-Me.Line198.Height = 7.000001!
+Me.Line198.Height = 7!
 Me.Line198.Left = 4.507481!
 Me.Line198.LineWeight = 1!
 Me.Line198.Name = "Line198"
@@ -9027,22 +9085,9 @@ Me.Line171.X2 = 7.151965!
 Me.Line171.Y1 = 18.26969!
 Me.Line171.Y2 = 18.26969!
 '
-'Line201
-'
-Me.Line201.Height = 8.772836!
-Me.Line201.Left = 7.151969!
-Me.Line201.LineWeight = 1!
-Me.Line201.Name = "Line201"
-Me.Line201.Top = 10.69685!
-Me.Line201.Width = 0.009449005!
-Me.Line201.X1 = 7.151969!
-Me.Line201.X2 = 7.161418!
-Me.Line201.Y1 = 10.69685!
-Me.Line201.Y2 = 19.46969!
-'
 'Line172
 '
-Me.Line172.Height = 0.2000008!
+Me.Line172.Height = 0.2000103!
 Me.Line172.Left = 5.485434!
 Me.Line172.LineWeight = 1!
 Me.Line172.Name = "Line172"
@@ -9068,7 +9113,7 @@ Me.Line174.Y2 = 19.46969!
 '
 'Line175
 '
-Me.Line175.Height = 0.5999985!
+Me.Line175.Height = 0.6000004!
 Me.Line175.Left = 1.892126!
 Me.Line175.LineWeight = 1!
 Me.Line175.Name = "Line175"
@@ -9081,7 +9126,7 @@ Me.Line175.Y2 = 17.69685!
 '
 'Line176
 '
-Me.Line176.Height = 0.5999985!
+Me.Line176.Height = 0.6000004!
 Me.Line176.Left = 5.485434!
 Me.Line176.LineWeight = 1!
 Me.Line176.Name = "Line176"
@@ -9091,17 +9136,6 @@ Me.Line176.X1 = 5.485434!
 Me.Line176.X2 = 5.485434!
 Me.Line176.Y1 = 17.09685!
 Me.Line176.Y2 = 17.69685!
-'
-'KINKYU_FLAG
-'
-Me.KINKYU_FLAG.DataField = "KINKYU_FLAG"
-Me.KINKYU_FLAG.Height = 0.2!
-Me.KINKYU_FLAG.Left = 0!
-Me.KINKYU_FLAG.Name = "KINKYU_FLAG"
-Me.KINKYU_FLAG.Text = "[KINKYU_FLAG]"
-Me.KINKYU_FLAG.Top = 19.33425!
-Me.KINKYU_FLAG.Visible = false
-Me.KINKYU_FLAG.Width = 1!
 '
 'Label3
 '
@@ -9124,6 +9158,75 @@ Me.DANTAI_CODE2.Style = "vertical-align: middle"
 Me.DANTAI_CODE2.Text = Nothing
 Me.DANTAI_CODE2.Top = 10.09685!
 Me.DANTAI_CODE2.Width = 1.487007!
+'
+'Line177
+'
+Me.Line177.Height = 0!
+Me.Line177.Left = 5.684342E-14!
+Me.Line177.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line177.LineWeight = 1!
+Me.Line177.Name = "Line177"
+Me.Line177.Top = 3.101181!
+Me.Line177.Width = 7.165354!
+Me.Line177.X1 = 5.684342E-14!
+Me.Line177.X2 = 7.165354!
+Me.Line177.Y1 = 3.101181!
+Me.Line177.Y2 = 3.101181!
+'
+'Line178
+'
+Me.Line178.Height = 0!
+Me.Line178.Left = 5.684342E-14!
+Me.Line178.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line178.LineWeight = 1!
+Me.Line178.Name = "Line178"
+Me.Line178.Top = 3.301181!
+Me.Line178.Width = 7.165354!
+Me.Line178.X1 = 5.684342E-14!
+Me.Line178.X2 = 7.165354!
+Me.Line178.Y1 = 3.301181!
+Me.Line178.Y2 = 3.301181!
+'
+'Line201
+'
+Me.Line201.Height = 8.77284!
+Me.Line201.Left = 7.157087!
+Me.Line201.LineWeight = 1!
+Me.Line201.Name = "Line201"
+Me.Line201.Top = 10.71024!
+Me.Line201.Width = 0.009449005!
+Me.Line201.X1 = 7.157087!
+Me.Line201.X2 = 7.166536!
+Me.Line201.Y1 = 10.71024!
+Me.Line201.Y2 = 19.48308!
+'
+'Line60
+'
+Me.Line60.Height = 0!
+Me.Line60.Left = 0.2291339!
+Me.Line60.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line60.LineWeight = 1!
+Me.Line60.Name = "Line60"
+Me.Line60.Top = 14.89685!
+Me.Line60.Width = 3.329528!
+Me.Line60.X1 = 0.2291339!
+Me.Line60.X2 = 3.558662!
+Me.Line60.Y1 = 14.89685!
+Me.Line60.Y2 = 14.89685!
+'
+'Line61
+'
+Me.Line61.Height = 0!
+Me.Line61.Left = 3.787796!
+Me.Line61.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
+Me.Line61.LineWeight = 1!
+Me.Line61.Name = "Line61"
+Me.Line61.Top = 14.89685!
+Me.Line61.Width = 3.364169!
+Me.Line61.X1 = 3.787796!
+Me.Line61.X2 = 7.151965!
+Me.Line61.Y1 = 14.89685!
+Me.Line61.Y2 = 14.89685!
 '
 'PageFooter
 '
@@ -9173,128 +9276,39 @@ Me.PRINT_DATE.Text = "1234/56/78 12:34:56"
 Me.PRINT_DATE.Top = 0!
 Me.PRINT_DATE.Width = 1.364567!
 '
-'Line177
+'Label240
 '
-Me.Line177.Height = 0!
-Me.Line177.Left = 5.684342E-14!
-Me.Line177.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line177.LineWeight = 1!
-Me.Line177.Name = "Line177"
-Me.Line177.Top = 3.101181!
-Me.Line177.Width = 7.165354!
-Me.Line177.X1 = 5.684342E-14!
-Me.Line177.X2 = 7.165354!
-Me.Line177.Y1 = 3.101181!
-Me.Line177.Y2 = 3.101181!
+Me.Label240.Height = 0.2!
+Me.Label240.HyperLink = Nothing
+Me.Label240.Left = 5.485434!
+Me.Label240.Name = "Label240"
+Me.Label240.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
+Me.Label240.Text = "役割"
+Me.Label240.Top = 11.49685!
+Me.Label240.Width = 0.6874018!
 '
-'Line178
+'DR_YAKUWARI2
 '
-Me.Line178.Height = 0!
-Me.Line178.Left = 5.684342E-14!
-Me.Line178.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line178.LineWeight = 1!
-Me.Line178.Name = "Line178"
-Me.Line178.Top = 3.301181!
-Me.Line178.Width = 7.165354!
-Me.Line178.X1 = 5.684342E-14!
-Me.Line178.X2 = 7.165354!
-Me.Line178.Y1 = 3.301181!
-Me.Line178.Y2 = 3.301181!
+Me.DR_YAKUWARI2.DataField = "DR_YAKUWARI"
+Me.DR_YAKUWARI2.Height = 0.1999998!
+Me.DR_YAKUWARI2.Left = 6.182284!
+Me.DR_YAKUWARI2.Name = "DR_YAKUWARI2"
+Me.DR_YAKUWARI2.Style = "text-align: left; vertical-align: middle"
+Me.DR_YAKUWARI2.Text = Nothing
+Me.DR_YAKUWARI2.Top = 11.49685!
+Me.DR_YAKUWARI2.Width = 0.979134!
 '
-'Label94
+'ANS_TAXI_MAISUU
 '
-Me.Label94.Height = 0.2!
-Me.Label94.HyperLink = Nothing
-Me.Label94.Left = 3.558661!
-Me.Label94.Name = "Label94"
-Me.Label94.Style = "background-color: darkgray; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align:"& _ 
-    " middle; white-space: nowrap"
-Me.Label94.Text = "WBS Element"
-Me.Label94.Top = 2.074016!
-Me.Label94.Width = 0.9488187!
-'
-'WBS_ELEMENT
-'
-Me.WBS_ELEMENT.DataField = "WBS_ELEMENT"
-Me.WBS_ELEMENT.Height = 0.2!
-Me.WBS_ELEMENT.Left = 4.507481!
-Me.WBS_ELEMENT.Name = "WBS_ELEMENT"
-Me.WBS_ELEMENT.Style = "vertical-align: middle"
-Me.WBS_ELEMENT.Text = Nothing
-Me.WBS_ELEMENT.Top = 2.074016!
-Me.WBS_ELEMENT.Width = 2.644488!
-'
-'Label238
-'
-Me.Label238.Height = 0.2!
-Me.Label238.HyperLink = Nothing
-Me.Label238.Left = 0!
-Me.Label238.Name = "Label238"
-Me.Label238.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
-Me.Label238.Text = "WBS Element："
-Me.Label238.Top = 0.8740158!
-Me.Label238.Width = 1.108662!
-'
-'WBS_ELEMENT1
-'
-Me.WBS_ELEMENT1.DataField = "WBS_ELEMENT_KOUENKAI"
-Me.WBS_ELEMENT1.Height = 0.2!
-Me.WBS_ELEMENT1.Left = 1.108662!
-Me.WBS_ELEMENT1.Name = "WBS_ELEMENT1"
-Me.WBS_ELEMENT1.Style = "font-weight: normal; white-space: nowrap"
-Me.WBS_ELEMENT1.Text = Nothing
-Me.WBS_ELEMENT1.Top = 0.8740158!
-Me.WBS_ELEMENT1.Width = 5.738583!
-'
-'Label239
-'
-Me.Label239.Height = 0.2!
-Me.Label239.HyperLink = Nothing
-Me.Label239.Left = 0!
-Me.Label239.Name = "Label239"
-Me.Label239.Style = "font-family: ＭＳ ゴシック; font-size: 11pt; font-weight: bold"
-Me.Label239.Text = "WBS Element："
-Me.Label239.Top = 10.49685!
-Me.Label239.Width = 1.108662!
-'
-'WBS_ELEMENT2
-'
-Me.WBS_ELEMENT2.DataField = "WBS_ELEMENT_KOUENKAI"
-Me.WBS_ELEMENT2.Height = 0.2!
-Me.WBS_ELEMENT2.Left = 1.108662!
-Me.WBS_ELEMENT2.Name = "WBS_ELEMENT2"
-Me.WBS_ELEMENT2.Style = "font-weight: normal; white-space: nowrap"
-Me.WBS_ELEMENT2.Text = Nothing
-Me.WBS_ELEMENT2.Top = 10.49685!
-Me.WBS_ELEMENT2.Width = 5.826772!
-'
-'Line60
-'
-Me.Line60.Height = 0!
-Me.Line60.Left = 0.2291339!
-Me.Line60.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line60.LineWeight = 1!
-Me.Line60.Name = "Line60"
-Me.Line60.Top = 14.89685!
-Me.Line60.Width = 3.329528!
-Me.Line60.X1 = 0.2291339!
-Me.Line60.X2 = 3.558662!
-Me.Line60.Y1 = 14.89685!
-Me.Line60.Y2 = 14.89685!
-'
-'Line61
-'
-Me.Line61.Height = 0!
-Me.Line61.Left = 3.787796!
-Me.Line61.LineStyle = DataDynamics.ActiveReports.LineStyle.Dot
-Me.Line61.LineWeight = 1!
-Me.Line61.Name = "Line61"
-Me.Line61.Top = 14.89685!
-Me.Line61.Width = 3.364169!
-Me.Line61.X1 = 3.787796!
-Me.Line61.X2 = 7.151965!
-Me.Line61.Y1 = 14.89685!
-Me.Line61.Y2 = 14.89685!
+Me.ANS_TAXI_MAISUU.DataField = "REQ_TAXI_FROM_10"
+Me.ANS_TAXI_MAISUU.Height = 0.1999998!
+Me.ANS_TAXI_MAISUU.Left = 2.007874!
+Me.ANS_TAXI_MAISUU.Name = "ANS_TAXI_MAISUU"
+Me.ANS_TAXI_MAISUU.Style = "text-align: center"
+Me.ANS_TAXI_MAISUU.Text = Nothing
+Me.ANS_TAXI_MAISUU.Top = 9.302756!
+Me.ANS_TAXI_MAISUU.Width = 0.926378!
 '
 'DrReport
 '
@@ -9339,6 +9353,13 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TITLE1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label239,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.WBS_ELEMENT2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label238,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.WBS_ELEMENT1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.WBS_ELEMENT,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label94,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label237,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_KOTSU_BIKO,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TIME_STAMP_BYL1,System.ComponentModel.ISupportInitialize).EndInit
@@ -9451,7 +9472,6 @@ CType(Me.REQ_F_BIN_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_KIBOU1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label87,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label92,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label91,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label90,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label89,System.ComponentModel.ISupportInitialize).EndInit
@@ -9780,19 +9800,15 @@ CType(Me.Label221,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.KAIJO_NAME2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label236,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DANTAI_CODE,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DANTAI_CODE2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.PRINT_USER,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label94,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.WBS_ELEMENT,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label238,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.WBS_ELEMENT1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label239,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.WBS_ELEMENT2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label240,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_YAKUWARI2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.ANS_TAXI_MAISUU,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me,System.ComponentModel.ISupportInitialize).EndInit
 
 End Sub
@@ -10022,7 +10038,6 @@ End Sub
     Private WithEvents Line64 As DataDynamics.ActiveReports.Line
     Private WithEvents Line65 As DataDynamics.ActiveReports.Line
     Private WithEvents Label91 As DataDynamics.ActiveReports.Label
-    Private WithEvents Label92 As DataDynamics.ActiveReports.Label
     Private WithEvents Line66 As DataDynamics.ActiveReports.Line
     Private WithEvents PageBreak1 As DataDynamics.ActiveReports.PageBreak
     Private WithEvents Line68 As DataDynamics.ActiveReports.Line
@@ -10470,4 +10485,7 @@ End Sub
     Private WithEvents WBS_ELEMENT2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents Line60 As DataDynamics.ActiveReports.Line
     Private WithEvents Line61 As DataDynamics.ActiveReports.Line
+    Private WithEvents Label240 As DataDynamics.ActiveReports.Label
+    Private WithEvents DR_YAKUWARI2 As DataDynamics.ActiveReports.TextBox
+    Private WithEvents ANS_TAXI_MAISUU As DataDynamics.ActiveReports.TextBox
 End Class
