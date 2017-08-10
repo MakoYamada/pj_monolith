@@ -33,6 +33,7 @@ Public Class Proc
         Dim RsData As System.Data.SqlClient.SqlDataReader
         Dim wFlag As Boolean = False
         Dim W_SEISAN_TKTNO() As TableDef.TBL_SEISAN_TKTNO.DataStruct
+        Dim W_DAICHO_TKTNO() As TableDef.TBL_SEISAN_TKTNO.DataStruct
 
         '自動精算対象タクチケテーブルデータ取得(対象の会合番号と画面で指示された精算年月等)
         strSQL = SQL.TBL_SEISAN_TKTNO.GrpByKOUENKAI_NO()
@@ -48,6 +49,19 @@ Public Class Proc
         If wFlag = False Then
             InsertTBL_LOG(AppConst.TBL_LOG.STATUS.Code.OK, "自動精算処理対象データがありません。")
         End If
+
+        'タクチケ台帳出力対象会合番号抽出
+        wCnt = 0
+        strSQL = SQL.TBL_SEISAN_TKTNO.GrpByKOUENKAI_NO_ForDaicho()
+        Dim RsDaicho As System.Data.SqlClient.SqlDataReader
+        RsDaicho = CmnDbBatch.Read(strSQL, MyBase.DbConnection, MyBase.DbTransaction)
+        While RsDaicho.Read()
+            wFlag = True
+            ReDim Preserve W_DAICHO_TKTNO(wCnt)
+            W_DAICHO_TKTNO(wCnt) = AppModule.SetRsData(RsDaicho, W_DAICHO_TKTNO(wCnt))
+            wCnt += 1
+        End While
+        RsDaicho.Close()
 
         'タクチケ発行テーブルに請求番号を登録
         If Not UpdateTaxiData(W_SEISAN_TKTNO) Then Exit Sub
@@ -126,11 +140,11 @@ Public Class Proc
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催年")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催開始日")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（非課税）")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("SRM発注区分")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（非課税）")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料（非課税）")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（課税）")))
-                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金（課税）")))
+                    sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料（課税）")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("実車料金小計")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("精算手数料小計")))
                     sb.Append(CmnCsv.SetData(CmnCsv.Quotes("MTG合計")))
@@ -147,8 +161,8 @@ Public Class Proc
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_FROMDATE))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.Format_Date(W_TAXITICKET_HAKKO.FROM_DATE, CmnModule.DateFormatType.YYYYMMDD)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(W_TAXITICKET_HAKKO.KOUENKAI_NAME))))
-                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_TF)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(AppModule.GetName_SRM_HACYU_KBN(W_TAXITICKET_HAKKO.SRM_HACYU_KBN)))))
+                sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_TF)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_SEISAN_TF)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_T)))))
                 sb.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnCsv.EscapeQuotes(CmnModule.EditComma(W_TAXITICKET_HAKKO.TAXI_SEISAN_T)))))
@@ -180,7 +194,7 @@ Public Class Proc
         Call PrintSeisanRegistReport(W_SEIKYU)
 
         'タクチケ台帳出力対象会合番号CSVファイル生成
-        Call TaxiMeisaiCsv(W_SEISAN_TKTNO)
+        Call TaxiMeisaiCsv(W_DAICHO_TKTNO)
 
         '自動精算対象タクチケテーブルから処理済みデータ削除
         Call DeleteTBL_SEISAN_TKTNO(W_SEISAN_TKTNO)

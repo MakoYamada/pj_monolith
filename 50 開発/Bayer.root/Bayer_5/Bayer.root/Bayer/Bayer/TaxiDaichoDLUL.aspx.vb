@@ -515,9 +515,9 @@ Partial Public Class TaxiDaichoDLUL
                         updCnt = UpdateTaxiDaicho(ErrorMessage)
                     Else
                         'タクチケ台帳出力対象登録件数チェック
-                        If GetDaichoCount() > Integer.Parse(WebConfig.Site.DAICHO_MAX_COUNT) Then
-                            Me.LabelErrorMessage.Text &= strFilePath & "【会合番号" & TBL_TAXIDAICHO.KOUENKAI_NO & "】タクチケ台帳出力の予約数が200を超えたので処理を中断します。" & vbNewLine
-                            Exit Function
+                        If GetDaichoCount() >= Integer.Parse(WebConfig.Site.DAICHO_MAX_COUNT) Then
+                            ErrorMessage &= strFilePath & "【会合番号" & TBL_TAXIDAICHO.KOUENKAI_NO & "】タクチケ台帳出力の予約数が200を超えたので処理を中断します。" & vbNewLine
+                            Exit While
                         Else
                             updCnt = InsertTaxiDaicho(ErrorMessage)
                         End If
@@ -526,6 +526,7 @@ Partial Public Class TaxiDaichoDLUL
                 End If
             End If
         End While
+        parser.Close()
 
         'インスタンス開放
         parser.Dispose()

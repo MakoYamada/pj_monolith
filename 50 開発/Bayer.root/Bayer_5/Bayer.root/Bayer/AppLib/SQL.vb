@@ -9224,7 +9224,7 @@ Public Class SQL
             strSQL &= " TBL_TAXITICKET_HAKKO TTH"
             strSQL &= " WHERE"
             strSQL &= " TTH.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
-            strSQL &= " AND CAST(ISNULL(TTH.TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " AND CAST(ISNULL(REPLACE(TTH.TKT_URIAGE,',',''),'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TTH.TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
 
             If Trim(Joken.SEIKYU_NO_TOPTOUR) = "" Then
@@ -9289,7 +9289,7 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
-            strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " AND CAST(ISNULL(REPLACE(TKT_URIAGE,',',''),'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
             strSQL &= " ) TTH"
             strSQL &= " LEFT JOIN"
@@ -9329,10 +9329,10 @@ Public Class SQL
             strSQL &= ", TTH1.FROM_DATE"
             strSQL &= ", TTH1.SEIKYU_NO_TOPTOUR"
             strSQL &= ", TTH1.SRM_HACYU_KBN"
-            strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_TF"
-            strSQL &= ", SUM(CAST(ISNULL(TTH1.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_TF"
-            strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_URIAGE,'0') AS BIGINT)) AS TAXI_T"
-            strSQL &= ", SUM(CAST(ISNULL(TTH2.TKT_SEISAN_FEE,'0') AS BIGINT)) AS TAXI_SEISAN_T"
+            strSQL &= ", SUM(CAST(ISNULL(REPLACE(TTH1.TKT_URIAGE,',',''),'0') AS BIGINT)) AS TAXI_TF"
+            strSQL &= ", SUM(CAST(ISNULL(REPLACE(TTH1.TKT_SEISAN_FEE,',',''),'0') AS BIGINT)) AS TAXI_SEISAN_TF"
+            strSQL &= ", SUM(CAST(ISNULL(REPLACE(TTH2.TKT_URIAGE,',',''),'0') AS BIGINT)) AS TAXI_T"
+            strSQL &= ", SUM(CAST(ISNULL(REPLACE(TTH2.TKT_SEISAN_FEE,',',''),'0') AS BIGINT)) AS TAXI_SEISAN_T"
             strSQL &= " FROM"
             strSQL &= " (SELECT TBL_TAXITICKET_HAKKO.*,WK_KOUENKAI.KOUENKAI_NAME,WK_KOUENKAI.FROM_DATE,WK_KOUENKAI.SRM_HACYU_KBN FROM"
             strSQL &= " TBL_TAXITICKET_HAKKO"
@@ -9354,7 +9354,7 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " TBL_TAXITICKET_HAKKO.KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND TBL_TAXITICKET_HAKKO.SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
-            strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " AND CAST(ISNULL(REPLACE(TKT_URIAGE,',',''),'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TKT_ENTA,N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
             strSQL &= " ) TTH1"
             strSQL &= " LEFT JOIN"
@@ -9363,7 +9363,7 @@ Public Class SQL
             strSQL &= " WHERE"
             strSQL &= " KOUENKAI_NO = N'" & CmnDb.SqlString(Joken.KOUENKAI_NO) & "'"
             strSQL &= " AND SEIKYU_NO_TOPTOUR = N'" & CmnDb.SqlString(Joken.SEIKYU_NO_TOPTOUR) & "'"
-            strSQL &= " AND CAST(ISNULL(TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " AND CAST(ISNULL(REPLACE(TKT_URIAGE,',',''),'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(TKT_ENTA,N'') = N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
             strSQL &= " ) TTH2"
             strSQL &= " ON"
@@ -9385,7 +9385,7 @@ Public Class SQL
 
             strSQL &= "SELECT"
             strSQL &= " WK_KOTSUHOTEL.COST_CENTER"
-            strSQL &= ",SUM(CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) + CAST(ISNULL(WK_TAXI.TKT_SEISAN_FEE,'') AS BIGINT)) AS TKT_URIAGE"
+            strSQL &= ",SUM(CAST(ISNULL(REPLACE(WK_TAXI.TKT_URIAGE,',',''),'') AS BIGINT) + CAST(ISNULL(REPLACE(WK_TAXI.TKT_SEISAN_FEE,',',''),'') AS BIGINT)) AS TKT_URIAGE"
             strSQL &= " FROM"
             strSQL &= " (SELECT * FROM TBL_TAXITICKET_HAKKO"
             strSQL &= "  WHERE"
@@ -9409,7 +9409,7 @@ Public Class SQL
             strSQL &= " ) WK_KOTSUHOTEL"
             strSQL &= "  ON WK_TAXI.KOUENKAI_NO = WK_KOTSUHOTEL.KOUENKAI_NO"
             strSQL &= " AND WK_TAXI.SANKASHA_ID = WK_KOTSUHOTEL.SANKASHA_ID"
-            strSQL &= " WHERE CAST(ISNULL(WK_TAXI.TKT_URIAGE,'') AS BIGINT) <> 0"
+            strSQL &= " WHERE CAST(ISNULL(REPLACE(WK_TAXI.TKT_URIAGE,',',''),'') AS BIGINT) <> 0"
             strSQL &= " GROUP BY WK_KOTSUHOTEL.COST_CENTER"
             strSQL &= " ORDER BY WK_KOTSUHOTEL.COST_CENTER"
 
@@ -9865,7 +9865,7 @@ Public Class SQL
             strSQL &= "," & TableDef.TBL_TAXITICKET_HAKKO.Column.UPDATE_DATE & "=N'" & GetValue.DATE() & "'"
             strSQL &= " WHERE " & TableDef.TBL_TAXITICKET_HAKKO.Column.KOUENKAI_NO & "=N'" & CmnDb.SqlString(TBL_TAXITICKET_HAKKO.KOUENKAI_NO) & "'"
             strSQL &= " AND ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.SEIKYU_NO_TOPTOUR & ",N'') = N''"
-            strSQL &= " AND CAST(ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & ",'') AS BIGINT) <> 0"
+            strSQL &= " AND CAST(ISNULL(REPLACE(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_URIAGE & ",',',''),'') AS BIGINT) <> 0"
             strSQL &= " AND ISNULL(" & TableDef.TBL_TAXITICKET_HAKKO.Column.TKT_ENTA & ",N'') <> N'" & AppConst.TAXITICKET_HAKKO.TKT_ENTA.Code.SeisanFuka & "'"
 
             Return strSQL
@@ -10289,6 +10289,28 @@ Public Class SQL
             strSQL &= " ORDER BY"
             strSQL &= " KOUENKAI_NO"
             strSQL &= ", SEISAN_YM"
+
+            Return strSQL
+        End Function
+
+        Public Shared Function GrpByKOUENKAI_NO_ForDaicho() As String
+            Dim strSQL As String = ""
+
+            strSQL = "SELECT DISTINCT"
+            strSQL &= " TBL_SEISAN_TKTNO.KOUENKAI_NO"
+            strSQL &= ", WK_KOUENKAI.KOUENKAI_NAME"
+            strSQL &= ", WK_KOUENKAI.FROM_DATE"
+            strSQL &= " FROM TBL_SEISAN_TKTNO"
+            strSQL &= " LEFT JOIN"
+            strSQL &= " (SELECT * FROM TBL_KOUENKAI WK1"
+            strSQL &= "   WHERE  WK1.TIME_STAMP = "
+            strSQL &= "   (SELECT MAX(TBL_KOUENKAI.TIME_STAMP) FROM TBL_KOUENKAI"
+            strSQL &= "    WHERE TBL_KOUENKAI.KOUENKAI_NO = WK1.KOUENKAI_NO)"
+            strSQL &= "  )WK_KOUENKAI"
+            strSQL &= " ON TBL_SEISAN_TKTNO.KOUENKAI_NO = WK_KOUENKAI.KOUENKAI_NO"
+            strSQL &= " WHERE TBL_SEISAN_TKTNO.KOUENKAI_NO<>''"
+            strSQL &= " ORDER BY"
+            strSQL &= " KOUENKAI_NO"
 
             Return strSQL
         End Function
