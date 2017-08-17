@@ -200,8 +200,20 @@ Partial Public Class SetTicketSend
         Dim sbErr As New System.Text.StringBuilder
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("下記は交通宿泊テーブルに登録されていないか、対象外のステータスです。"), True))
         sb.Append(vbNewLine)
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合番号")))
         sb.Append(CmnCsv.SetData(CmnCsv.Quotes("参加者番号")))
-        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("対象外ステータス"), True))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("対象外ステータス")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("開催日From")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("会合名")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR名")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("DR名カナ")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当BU")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("所属エリア")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("所属営業所")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MR名")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("担当MR名カナ")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("送付先")))
+        sb.Append(CmnCsv.SetData(CmnCsv.Quotes("送付先(その他)"), True))
         sb.Append(vbNewLine)
 
         While Not parser.EndOfData
@@ -215,15 +227,56 @@ Partial Public Class SetTicketSend
                     '交通・宿泊データ存在チェック
                     Dim updCnt As Integer = 0
                     Dim wStatus As String = ""
-                    If GetKotsuHotel(fileData(COL_NO.KOUENKAI_NO), fileData(COL_NO.SANKASHA_ID), wStatus) Then
+                    If GetKotsuHotel(fileData(COL_NO.KOUENKAI_NO), fileData(COL_NO.SANKASHA_ID), TBL_KOTSUHOTEL, wStatus) Then
                         '発送日設定対象 交通・宿泊テーブルデータ項目セット()
                         Call SetKotsuHotelItem(TBL_KOTSUHOTEL)
                         updCnt = UpdateKotsuhotel(ErrorMessage)
                     Else
-                        sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(fileData(COL_NO.SANKASHA_ID))))
-                        sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(wStatus), True))
-                        sbErr.Append(vbNewLine)
-                        ErrorMessage &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていないか、対象外のステータスです。" & vbNewLine
+                        If wStatus = "" Then
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.KOUENKAI_NO)))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(fileData(COL_NO.SANKASHA_ID))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_ANS_STATUS_TEHAI(TBL_KOTSUHOTEL.ANS_STATUS_TEHAI))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(CmnModule.Format_Date(TBL_KOTSUHOTEL.FROM_DATE, CmnModule.DateFormatType.YYYYMMDD))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.KOUENKAI_NAME)))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.DR_NAME)))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(TBL_KOTSUHOTEL.DR_KANA)))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_BU(TBL_KOTSUHOTEL.MR_BU))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_AREA(TBL_KOTSUHOTEL.MR_AREA))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_EIGYOSHO(TBL_KOTSUHOTEL.MR_EIGYOSHO))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_NAME(TBL_KOTSUHOTEL.MR_NAME))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_KANA(TBL_KOTSUHOTEL.MR_KANA))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_SEND_SAKI_FS(TBL_KOTSUHOTEL.MR_SEND_SAKI_FS))))
+                            sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(AppModule.GetName_MR_SEND_SAKI_OTHER(TBL_KOTSUHOTEL.MR_SEND_SAKI_OTHER)), True))
+                            sbErr.Append(vbNewLine)
+                            ErrorMessage &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は対象外のステータスです。" & vbNewLine
+                        Else
+                            Dim W_KOUENKAI As New TableDef.TBL_KOUENKAI.DataStruct
+                            If GetKouenkai(fileData(COL_NO.KOUENKAI_NO), W_KOUENKAI) Then
+                                sbErr.Append(CmnCsv.SetData(W_KOUENKAI.KOUENKAI_NO))
+                                sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(fileData(COL_NO.SANKASHA_ID))))
+                                sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(wStatus)))
+                                sbErr.Append(CmnCsv.SetData(CmnModule.Format_Date(W_KOUENKAI.KOUENKAI_NO, CmnModule.DateFormatType.YYYYMMDD)))
+                                sbErr.Append(CmnCsv.SetData(W_KOUENKAI.KOUENKAI_NAME))
+                            Else
+                                sbErr.Append(CmnCsv.SetData(""))
+                                sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(fileData(COL_NO.SANKASHA_ID))))
+                                sbErr.Append(CmnCsv.SetData(CmnCsv.Quotes(wStatus)))
+                                sbErr.Append(CmnCsv.SetData(""))
+                                sbErr.Append(CmnCsv.SetData(""))
+                                sbErr.Append(CmnCsv.SetData(""))
+                            End If
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""))
+                            sbErr.Append(CmnCsv.SetData(""), True)
+                            sbErr.Append(vbNewLine)
+                            ErrorMessage &= "参加者ID：" & fileData(COL_NO.SANKASHA_ID) & "は交通宿泊テーブルに登録されていません。" & vbNewLine
+                        End If
                     End If
 
                 End If
@@ -352,7 +405,7 @@ Partial Public Class SetTicketSend
     End Function
 
     '交通宿泊データ取得
-    Private Function GetKotsuHotel(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String, ByRef STATUS_TEHAI As String) As Boolean
+    Private Function GetKotsuHotel(ByVal KOUENKAI_NO As String, ByVal SANKASHA_ID As String, ByRef W_KOTSUHOTEL As TableDef.TBL_KOTSUHOTEL.DataStruct, ByRef STATUS_TEHAI As String) As Boolean
         Dim wFlag As Boolean = False
         Dim strSQL As String = ""
         Dim RsData As System.Data.SqlClient.SqlDataReader
@@ -367,10 +420,27 @@ Partial Public Class SetTicketSend
 
                 wFlag = True
             Else
-                STATUS_TEHAI = AppModule.GetName_ANS_STATUS_TEHAI(TBL_KOTSUHOTEL.ANS_STATUS_TEHAI)
+                STATUS_TEHAI = ""
             End If
         Else
             STATUS_TEHAI = "交通宿泊テーブル未登録"
+        End If
+        RsData.Close()
+
+        Return wFlag
+    End Function
+
+    '基本情報データ取得
+    Private Function GetKouenkai(ByVal KOUENKAI_NO As String, ByRef W_KOUENKAI As TableDef.TBL_KOUENKAI.DataStruct) As Boolean
+        Dim wFlag As Boolean = False
+        Dim strSQL As String = ""
+        Dim RsData As System.Data.SqlClient.SqlDataReader
+
+        strSQL = SQL.TBL_KOUENKAI.byKOUENKAI_NO(KOUENKAI_NO)
+        RsData = CmnDb.Read(strSQL, MyBase.DbConnection)
+        If RsData.Read() Then
+            W_KOUENKAI = AppModule.SetRsData(RsData, W_KOUENKAI)
+            wFlag = True
         End If
         RsData.Close()
 
