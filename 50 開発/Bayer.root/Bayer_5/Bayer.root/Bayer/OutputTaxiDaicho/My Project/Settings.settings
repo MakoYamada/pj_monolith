@@ -5,5 +5,8 @@
     <Setting Name="PATH_WORK" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Keiwa\Bayer_Phase5Work\TaxiDaicho</Value>
     </Setting>
+    <Setting Name="FILE_TAXIMEISAI" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TaxiDaicho</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

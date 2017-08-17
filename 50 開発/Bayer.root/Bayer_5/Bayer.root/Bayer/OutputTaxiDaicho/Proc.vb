@@ -64,7 +64,7 @@ Public Class Proc
         For i As Integer = LBound(TBL_TAXIDAICHO) To UBound(TBL_TAXIDAICHO)
 
             Dim wNow As String = Now.ToString("yyyyMMddHHmmss")
-            Dim strFileName As String = TBL_TAXIDAICHO(i).KOUENKAI_NO & ".csv"
+            Dim strFileName As String = TBL_TAXIDAICHO(i).KOUENKAI_NO & My.Settings.FILE_TAXIMEISAI & ".csv"
             Dim strFileFull As String = My.Settings.PATH_WORK & "\" & strFileName
             Dim wCsvStr As String = ""
             Dim CsvData() As TableDef.TaxiMeisaiCsv.DataStruct

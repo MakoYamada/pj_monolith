@@ -490,7 +490,7 @@ Partial Public Class TaxiMeisaiDL
         End If
 
         'Zipファイル名
-        Dim ZipFileName As String = "TaxiMeisai_" & Now.ToString("yyyyMMddHHmmss") & ".zip"
+        Dim ZipFileName As String = "TaxiDaicho_" & Now.ToString("yyyyMMddHHmmss") & ".zip"
         Dim ZipPath As String = WebConfig.Path.TaxiMeisaiCsv & ZipFileName
         Dim CsvPath() As String
 
