@@ -75,7 +75,7 @@ Public Class Proc
         Dim wCntSeikyu As Integer = 0
         Dim RsSeikyu As System.Data.SqlClient.SqlDataReader
 
-        'フォルダが存在しないとエラーになるので念のためフォルダの存在チェック
+        'フォルダが存f在しないとエラーになるので念のためフォルダの存在チェック
         If Not Directory.Exists(My.Settings.PATH_WORK) Then Directory.CreateDirectory(My.Settings.PATH_WORK)
         wFileName = My.Settings.FILE_BANGOUHYO & Now.ToString("yyyyMMddHHmmss") & ".csv"
         wFilePath = My.Settings.PATH_WORK & "\" & wFileName

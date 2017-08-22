@@ -45,7 +45,7 @@
 		</tr>
 		<tr style="height: 50px;" valign="bottom">
 			<td align="left" colspan="2">
-				<span style="font-weight: bold; color: #cb1a1a;">※毎日○○時に自動精算処理を行います。</span><br />
+				<span style="font-weight: bold; color: #cb1a1a;">※毎日午前1時に自動精算処理を行います。</span><br />
 				<asp:Button ID="BtnTorikomi" runat="server" Text="データ作成予約" Width="180px" CssClass="Button" />
 			</td>
 		</tr>
