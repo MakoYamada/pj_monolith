@@ -279,9 +279,10 @@ Partial Public Class Preview
         rpt1.PageSettings.Margins.Right = ActiveReport.CmToInch(0.6)
 
         rpt1.KOTSUHOTEL_DATA = RPT_KOTSUHOTEL
-        Dim wMaisuu As String = ""
-        Call AppModule.SetForm_ANS_TAXI_MAISUU(RPT_KOTSUHOTEL.ANS_TAXI_TESURYO, wMaisuu, RPT_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
-        rpt1.TAXI_MAISUU = wMaisuu
+        rpt1.DB_CONNECTION = MyBase.DbConnection
+        'Dim wMaisuu As String = ""
+        'Call AppModule.SetForm_ANS_TAXI_MAISUU(RPT_KOTSUHOTEL.ANS_TAXI_TESURYO, wMaisuu, RPT_KOTSUHOTEL.FROM_DATE, MyBase.DbConnection)
+        'rpt1.TAXI_MAISUU = wMaisuu
 
         'ログイン者名
         rpt1.MS_USER = Session.Item(SessionDef.MS_USER)

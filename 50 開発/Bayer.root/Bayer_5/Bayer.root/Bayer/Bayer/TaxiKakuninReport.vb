@@ -26,6 +26,13 @@ Public Class TaxiKakuninReport
         End Set
     End Property
 
+    Private pDbConnection As System.Data.SqlClient.SqlConnection
+    Public WriteOnly Property DB_CONNECTION() As System.Data.SqlClient.SqlConnection
+        Set(ByVal value As SqlClient.SqlConnection)
+            pDbConnection = value
+        End Set
+    End Property
+
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '項目の編集
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
@@ -165,6 +172,8 @@ Public Class TaxiKakuninReport
             MR_SEND_SAKI_OTHER.Text = Left(MR_SEND_SAKI_OTHER.Text.Trim, 200)
         End If
 
+        'Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
+
         ''チケット送付先(その他)出力するため、備考の出力文字数削減(2014/9/4)
         'If REQ_TAXI_NOTE.Text.Trim.Length > 288 Then
         '    REQ_TAXI_NOTE.Text = Left(REQ_TAXI_NOTE.Text.Trim, 288)
@@ -176,7 +185,8 @@ Public Class TaxiKakuninReport
     End Sub
 
     Private Sub PageFooter_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles PageFooter.Format
-        Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
+        'Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
+        Me.ANS_TAXI_MAISUU.Text = AppModule.GetName_ANS_TAXI_MAISUU(Me.ANS_TAXI_TESURYO.Text.ToString, Me.FROM_DATE.Text.ToString, pDbConnection)
         Me.PRINT_USER.Text = pMS_USER.USER_NAME
         PRINT_DATE.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
     End Sub
