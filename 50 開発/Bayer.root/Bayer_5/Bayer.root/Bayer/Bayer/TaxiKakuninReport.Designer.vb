@@ -6432,6 +6432,7 @@ Partial Public Class TaxiKakuninReport
         Me.ANS_TAXI_TESURYO.Style = "white-space: nowrap"
         Me.ANS_TAXI_TESURYO.Text = Nothing
         Me.ANS_TAXI_TESURYO.Top = 0.007086615!
+        Me.ANS_TAXI_TESURYO.Visible = False
         Me.ANS_TAXI_TESURYO.Width = 1.364567!
         '
         'FROM_DATE
@@ -6443,6 +6444,7 @@ Partial Public Class TaxiKakuninReport
         Me.FROM_DATE.Style = "white-space: nowrap"
         Me.FROM_DATE.Text = Nothing
         Me.FROM_DATE.Top = 0.007086605!
+        Me.FROM_DATE.Visible = False
         Me.FROM_DATE.Width = 1.364567!
         '
         'TaxiKakuninReport

@@ -32,6 +32,13 @@ Public Class DrReport
         End Set
     End Property
 
+    Private pDbConnection As System.Data.SqlClient.SqlConnection
+    Public WriteOnly Property DB_CONNECTION() As System.Data.SqlClient.SqlConnection
+        Set(ByVal value As SqlClient.SqlConnection)
+            pDbConnection = value
+        End Set
+    End Property
+
     Private Sub Detail_Format(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.Format
         '差異のある項目の背景色を変更
         If pRireki = False AndAlso Trim(pOldTBL_KOTSUHOTEL.KOUENKAI_NO) <> "" Then
@@ -432,7 +439,8 @@ Public Class DrReport
         ANS_MR_KOTSUHI.Text = CmnModule.EditComma(Me.ANS_MR_KOTSUHI.Text) & " 円"
         If REQ_KOTSU_BIKO.Text.Length > 346 Then REQ_KOTSU_BIKO.Text = Left(REQ_KOTSU_BIKO.Text, 346)
 
-        Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
+        Me.ANS_TAXI_MAISUU.Text = AppModule.GetName_ANS_TAXI_MAISUU(Me.ANS_TAXI_TESURYO.Text.ToString, Me.FROM_DATE.Text.ToString, pDbConnection)
+        'Me.ANS_TAXI_MAISUU.Text = pTAXI_MAISUU
     End Sub
 
     '差異

@@ -62,6 +62,10 @@ Me.Line65 = New DataDynamics.ActiveReports.Line
 Me.Line6 = New DataDynamics.ActiveReports.Line
 Me.Line7 = New DataDynamics.ActiveReports.Line
 Me.Detail = New DataDynamics.ActiveReports.Detail
+Me.ANS_TAXI_MAISUU = New DataDynamics.ActiveReports.TextBox
+Me.DR_YAKUWARI2 = New DataDynamics.ActiveReports.TextBox
+Me.Label240 = New DataDynamics.ActiveReports.Label
+Me.TITLE2 = New DataDynamics.ActiveReports.Label
 Me.KINKYU_FLAG = New DataDynamics.ActiveReports.TextBox
 Me.Label239 = New DataDynamics.ActiveReports.Label
 Me.WBS_ELEMENT2 = New DataDynamics.ActiveReports.TextBox
@@ -88,7 +92,6 @@ Me.ANS_MR_HOTELHI_TOZEI = New DataDynamics.ActiveReports.TextBox
 Me.ANS_MR_KOTSUHI = New DataDynamics.ActiveReports.TextBox
 Me.Label232 = New DataDynamics.ActiveReports.Label
 Me.Label235 = New DataDynamics.ActiveReports.Label
-Me.Label234 = New DataDynamics.ActiveReports.Label
 Me.Label233 = New DataDynamics.ActiveReports.Label
 Me.Label230 = New DataDynamics.ActiveReports.Label
 Me.Label229 = New DataDynamics.ActiveReports.Label
@@ -373,7 +376,6 @@ Me.Line59 = New DataDynamics.ActiveReports.Line
 Me.Line66 = New DataDynamics.ActiveReports.Line
 Me.PageBreak1 = New DataDynamics.ActiveReports.PageBreak
 Me.Shape2 = New DataDynamics.ActiveReports.Shape
-Me.TITLE2 = New DataDynamics.ActiveReports.Label
 Me.Label95 = New DataDynamics.ActiveReports.Label
 Me.REQ_F_SEAT_KIBOU5 = New DataDynamics.ActiveReports.TextBox
 Me.REQ_F_SEAT_5 = New DataDynamics.ActiveReports.TextBox
@@ -590,7 +592,6 @@ Me.Line195 = New DataDynamics.ActiveReports.Line
 Me.Line196 = New DataDynamics.ActiveReports.Line
 Me.Line199 = New DataDynamics.ActiveReports.Line
 Me.Line200 = New DataDynamics.ActiveReports.Line
-Me.Line79 = New DataDynamics.ActiveReports.Line
 Me.Line68 = New DataDynamics.ActiveReports.Line
 Me.Line203 = New DataDynamics.ActiveReports.Line
 Me.Line70 = New DataDynamics.ActiveReports.Line
@@ -613,7 +614,6 @@ Me.Line111 = New DataDynamics.ActiveReports.Line
 Me.Line132 = New DataDynamics.ActiveReports.Line
 Me.Line133 = New DataDynamics.ActiveReports.Line
 Me.Line134 = New DataDynamics.ActiveReports.Line
-Me.Line135 = New DataDynamics.ActiveReports.Line
 Me.Line137 = New DataDynamics.ActiveReports.Line
 Me.Line138 = New DataDynamics.ActiveReports.Line
 Me.Line139 = New DataDynamics.ActiveReports.Line
@@ -672,8 +672,6 @@ Me.Line56 = New DataDynamics.ActiveReports.Line
 Me.Line165 = New DataDynamics.ActiveReports.Line
 Me.Line166 = New DataDynamics.ActiveReports.Line
 Me.Line167 = New DataDynamics.ActiveReports.Line
-Me.Line168 = New DataDynamics.ActiveReports.Line
-Me.Line169 = New DataDynamics.ActiveReports.Line
 Me.Line170 = New DataDynamics.ActiveReports.Line
 Me.Label236 = New DataDynamics.ActiveReports.Label
 Me.DANTAI_CODE = New DataDynamics.ActiveReports.TextBox
@@ -689,14 +687,18 @@ Me.Line178 = New DataDynamics.ActiveReports.Line
 Me.Line201 = New DataDynamics.ActiveReports.Line
 Me.Line60 = New DataDynamics.ActiveReports.Line
 Me.Line61 = New DataDynamics.ActiveReports.Line
+Me.Label234 = New DataDynamics.ActiveReports.Label
+Me.Line168 = New DataDynamics.ActiveReports.Line
+Me.Line135 = New DataDynamics.ActiveReports.Line
+Me.Line169 = New DataDynamics.ActiveReports.Line
+Me.Line79 = New DataDynamics.ActiveReports.Line
 Me.PageFooter = New DataDynamics.ActiveReports.PageFooter
 Me.Label1 = New DataDynamics.ActiveReports.Label
 Me.PRINT_USER = New DataDynamics.ActiveReports.TextBox
 Me.Label2 = New DataDynamics.ActiveReports.Label
 Me.PRINT_DATE = New DataDynamics.ActiveReports.TextBox
-Me.Label240 = New DataDynamics.ActiveReports.Label
-Me.DR_YAKUWARI2 = New DataDynamics.ActiveReports.TextBox
-Me.ANS_TAXI_MAISUU = New DataDynamics.ActiveReports.TextBox
+Me.ANS_TAXI_TESURYO = New DataDynamics.ActiveReports.TextBox
+Me.FROM_DATE3 = New DataDynamics.ActiveReports.TextBox
 CType(Me.LBL_KINKYU,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SHISETSU_ADDRESS,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SHISETSU_NAME,System.ComponentModel.ISupportInitialize).BeginInit
@@ -726,6 +728,10 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TITLE1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.ANS_TAXI_MAISUU,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DR_YAKUWARI2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label240,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.TITLE2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label239,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.WBS_ELEMENT2,System.ComponentModel.ISupportInitialize).BeginInit
@@ -752,7 +758,6 @@ CType(Me.ANS_MR_HOTELHI_TOZEI,System.ComponentModel.ISupportInitialize).BeginIni
 CType(Me.ANS_MR_KOTSUHI,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label232,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label235,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label234,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label233,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label230,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label229,System.ComponentModel.ISupportInitialize).BeginInit
@@ -979,7 +984,6 @@ CType(Me.REQ_HOTEL_DATE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_HAKUSU,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_HOTEL_SMOKING,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_HOTEL_NOTE,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.TITLE2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label95,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_KIBOU5,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.REQ_F_SEAT_5,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1175,13 +1179,13 @@ CType(Me.Label236,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DANTAI_CODE,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DANTAI_CODE2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.Label234,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_USER,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.Label240,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.DR_YAKUWARI2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.ANS_TAXI_MAISUU,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.ANS_TAXI_TESURYO,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.FROM_DATE3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
 '
 'PageHeader
@@ -1695,10 +1699,55 @@ Me.Line7.Y2 = 2.074015!
 'Detail
 '
 Me.Detail.ColumnSpacing = 0!
-Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.ANS_TAXI_MAISUU, Me.DR_YAKUWARI2, Me.Label240, Me.TITLE1, Me.TITLE2, Me.KINKYU_FLAG, Me.Label239, Me.WBS_ELEMENT2, Me.Label238, Me.WBS_ELEMENT1, Me.WBS_ELEMENT, Me.Label94, Me.Label237, Me.REQ_KOTSU_BIKO, Me.DR_CD, Me.TIME_STAMP_BYL, Me.TIME_STAMP_BYL1, Me.REQ_STATUS_TEHAI1, Me.ANS_TICKET_SEND_DAY, Me.REQ_MR_HOTEL_NOTE, Me.DR_NAME, Me.TAXI_PRT_NAME, Me.ANS_OTHER_FARE, Me.ANS_OTHER_CANCELLATION, Me.ANS_AIR_FARE, Me.ANS_AIR_CANCELLATION, Me.ANS_RAIL_FARE, Me.ANS_RAIL_CANCELLATION, Me.ANS_MR_HOTELHI, Me.ANS_MR_HOTELHI_TOZEI, Me.ANS_MR_KOTSUHI, Me.Label232, Me.Label235, Me.Label233, Me.Label230, Me.Label229, Me.Label228, Me.Label231, Me.Label93, Me.REQ_TAXI_NOTE, Me.MR_BU, Me.Label227, Me.Label226, Me.ANS_TICKET_SEND_DAY2, Me.Label225, Me.FROM_DATE1, Me.Label224, Me.TAXI_PRT_NAME2, Me.Label223, Me.FROM_DATE2, Me.Label222, Me.Label206, Me.KOUENKAI_NAME2, Me.REQ_O_TIME1_3, Me.DR_SHISETSU_NAME2, Me.Label184, Me.REQ_F_SEAT_3, Me.Label187, Me.REQ_F_TIME1_3, Me.REQ_F_AIRPORT1_3, Me.Label189, Me.Label155, Me.Label158, Me.Label160, Me.Label156, Me.Label175, Me.FUKURO1, Me.Label172, Me.Label185, Me.Label188, Me.Label186, Me.Label191, Me.Label194, Me.FUKURO3, Me.Label195, Me.Label198, Me.Label200, Me.REQ_O_SEAT_1, Me.Label162, Me.REQ_O_TIME1_1, Me.Label165, Me.REQ_O_AIRPORT1_1, Me.Label167, Me.Label163, Me.REQ_O_DATE_1, Me.REQ_O_TEHAI_1, Me.Label171, Me.Label168, Me.FUKURO2, Me.REQ_O_TIME2_3, Me.REQ_O_AIRPORT2_3, Me.Label216, Me.Label215, Me.Label214, Me.Label211, Me.Label208, Me.Line140, Me.Label201, Me.Label199, Me.Label190, Me.REQ_O_AIRPORT1_3, Me.REQ_F_AIRPORT2_3, Me.REQ_F_TIME2_3, Me.TO_DATE, Me.TAXI_PRT_NAME1, Me.Label220, Me.FROM_DATE, Me.Label219, Me.FUKURO4, Me.Line117, Me.Line116, Me.Line115, Me.Line114, Me.Line113, Me.Line112, Me.REQ_F_DATE_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_TEHAI_1, Me.Label174, Me.Label173, Me.Label159, Me.Label157, Me.Label154, Me.REQ_F_AIRPORT1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_TIME1_1, Me.REQ_F_TIME2_1, Me.REQ_F_BIN_1, Me.REQ_F_SEAT_1, Me.REQ_F_SEAT_KIBOU1, Me.Label87, Me.Label91, Me.Label90, Me.Label89, Me.REQ_TAXI_DATE_10, Me.Label88, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.Label85, Me.REQ_TAXI_DATE_9, Me.Label84, Me.REQ_TAXI_FROM_9, Me.Label83, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.Label81, Me.REQ_TAXI_DATE_8, Me.Label80, Me.REQ_TAXI_FROM_8, Me.Label79, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.Label77, Me.REQ_TAXI_DATE_7, Me.Label76, Me.REQ_TAXI_FROM_7, Me.Label66, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.Label64, Me.REQ_TAXI_DATE_6, Me.Label63, Me.REQ_TAXI_FROM_6, Me.Label62, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.Label59, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.Label54, Me.REQ_TAXI_FROM_4, Me.Label53, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.Label50, Me.REQ_TAXI_FROM_3, Me.Label49, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.Label46, Me.REQ_TAXI_FROM_2, Me.Label45, Me.TAXI_YOTEIKINGAKU_2, Me.Label44, Me.Label72, Me.REQ_TAXI_DATE_1, Me.Label73, Me.REQ_TAXI_FROM_1, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label75, Me.Label71, Me.TEHAI_TAXI, Me.ANS_HOTEL_NAME, Me.ANS_ROOM_TYPE, Me.ANS_HOTELHI, Me.ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_CANCEL, Me.Label70, Me.Label69, Me.Label35, Me.Label34, Me.Label32, Me.Label68, Me.Label67, Me.Label55, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.MR_KANA, Me.Label13, Me.Label25, Me.Label20, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label33, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.COST_CENTER, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.Line1, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line23, Me.Line26, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line37, Me.Line38, Me.Line2, Me.Line55, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line27, Me.Line34, Me.Line35, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line53, Me.Line57, Me.Line58, Me.Line59, Me.Line66, Me.PageBreak1, Me.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_NAME, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.SANKASHA_ID, Me.DR_NAME1, Me.DR_KANA, Me.DR_YAKUWARI, Me.DR_AGE, Me.Line3, Me.Line4, Me.Line5, Me.DR_SEX, Me.Line36, Me.Line62, Me.Line63, Me.Line64, Me.Line65, Me.Line6, Me.Shape2, Me.Label95, Me.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_5, Me.REQ_F_BIN_5, Me.REQ_F_TIME2_5, Me.REQ_F_TIME1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_DATE_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_TEHAI_5, Me.REQ_F_SEAT_KIBOU4, Me.REQ_F_SEAT_4, Me.REQ_F_BIN_4, Me.REQ_F_TIME2_4, Me.REQ_F_TIME1_4, Me.REQ_F_AIRPORT2_4, Me.REQ_F_AIRPORT1_4, Me.REQ_F_DATE_4, Me.REQ_F_KOTSUKIKAN_4, Me.REQ_F_IRAINAIYOU_4, Me.REQ_F_TEHAI_4, Me.REQ_O_SEAT_KIBOU5, Me.REQ_O_SEAT_5, Me.REQ_O_BIN_5, Me.REQ_O_TIME2_5, Me.REQ_O_TIME1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_DATE_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_TEHAI_5, Me.REQ_F_SEAT_KIBOU2, Me.REQ_F_SEAT_2, Me.REQ_F_BIN_2, Me.REQ_F_TIME2_2, Me.REQ_F_TIME1_2, Me.REQ_F_AIRPORT2_2, Me.REQ_F_AIRPORT1_2, Me.REQ_F_DATE_2, Me.REQ_F_KOTSUKIKAN_2, Me.REQ_F_IRAINAIYOU_2, Me.REQ_O_SEAT_KIBOU2, Me.REQ_O_SEAT_2, Me.REQ_O_BIN_2, Me.REQ_O_TIME2_2, Me.REQ_O_TIME1_2, Me.REQ_O_AIRPORT2_2, Me.REQ_O_AIRPORT1_2, Me.REQ_O_DATE_2, Me.REQ_O_KOTSUKIKAN_2, Me.REQ_O_IRAINAIYOU_2, Me.REQ_F_TEHAI_2, Me.REQ_O_TEHAI_2, Me.Label108, Me.Label107, Me.Label106, Me.Label105, Me.Label104, Me.Label103, Me.Label102, Me.Label101, Me.Label100, Me.Label99, Me.Label98, Me.FUKURO5, Me.Label96, Me.Label97, Me.Label109, Me.Label110, Me.Label111, Me.Label112, Me.Label113, Me.Label114, Me.Label115, Me.Label116, Me.Label117, Me.OURO5, Me.Label118, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Label123, Me.Label124, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Line71, Me.Label129, Me.Label130, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label136, Me.Label137, Me.Label138, Me.Label139, Me.OURO2, Me.REQ_O_SEAT_KIBOU4, Me.REQ_O_SEAT_4, Me.REQ_O_BIN_4, Me.REQ_O_TIME2_4, Me.REQ_O_TIME1_4, Me.REQ_O_AIRPORT2_4, Me.REQ_O_AIRPORT1_4, Me.REQ_O_SEAT_KIBOU1, Me.REQ_O_BIN_1, Me.REQ_O_TIME2_1, Me.REQ_O_AIRPORT2_1, Me.Label140, Me.Label141, Me.Label142, Me.Label143, Me.Label144, Me.Label145, Me.Label146, Me.Label147, Me.Label148, Me.Label149, Me.Label150, Me.Label151, Me.Label152, Me.Label153, Me.OURO4, Me.Line75, Me.Label161, Me.Label164, Me.Label166, Me.OURO1, Me.Label169, Me.Label170, Me.Label176, Me.Label177, Me.Label178, Me.Label179, Me.Label181, Me.Label182, Me.Label183, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_TEHAI_4, Me.REQ_O_IRAINAIYOU_4, Me.REQ_O_KOTSUKIKAN_4, Me.REQ_O_DATE_4, Me.Line76, Me.REQ_F_SEAT_KIBOU3, Me.REQ_F_BIN_3, Me.REQ_F_DATE_3, Me.REQ_F_KOTSUKIKAN_3, Me.REQ_F_IRAINAIYOU_3, Me.REQ_O_SEAT_KIBOU3, Me.REQ_O_SEAT_3, Me.REQ_O_BIN_3, Me.REQ_O_DATE_3, Me.REQ_O_KOTSUKIKAN_3, Me.REQ_O_IRAINAIYOU_3, Me.REQ_F_TEHAI_3, Me.REQ_O_TEHAI_3, Me.Label192, Me.Label193, Me.Label196, Me.Label197, Me.Label202, Me.Label203, Me.Label204, Me.Label205, Me.OURO3, Me.Line80, Me.Line87, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line101, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line152, Me.Line173, Me.Line52, Me.DR_SHISETSU_ADDRESS2, Me.Label207, Me.Label209, Me.Label210, Me.Label212, Me.Label213, Me.Label217, Me.KOUENKAI_NO2, Me.REQ_STATUS_TEHAI2, Me.TIME_STAMP_BYL2, Me.SANKASHA_ID2, Me.DR_CD2, Me.DR_NAME2, Me.DR_KANA2, Me.DR_AGE2, Me.Line67, Me.Line192, Me.Line193, Me.Line194, Me.DR_SEX2, Me.Line195, Me.Line196, Me.Line199, Me.Line200, Me.Line68, Me.Line203, Me.Line70, Me.Line74, Me.Line81, Me.Line82, Me.Line97, Me.Line99, Me.Line100, Me.Line102, Me.Line103, Me.Line98, Me.Line105, Me.Line106, Me.Line107, Me.Line108, Me.Line109, Me.Line110, Me.Line111, Me.Line132, Me.Line133, Me.Line134, Me.Line137, Me.Line138, Me.Line139, Me.Line141, Me.Line153, Me.Line84, Me.Label180, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line122, Me.Line85, Me.Line86, Me.Line154, Me.Line155, Me.Line156, Me.Line83, Me.Line104, Me.Line72, Me.Line128, Me.Line129, Me.Line130, Me.Line131, Me.Line54, Me.Line142, Me.Line143, Me.Line144, Me.Line146, Me.Line147, Me.Line148, Me.Line149, Me.Line150, Me.Line151, Me.Line157, Me.Line158, Me.Line159, Me.Line160, Me.Line161, Me.Line162, Me.Line163, Me.Line164, Me.Line8, Me.Shape1, Me.Label218, Me.KAIJO_NAME, Me.Line136, Me.Line69, Me.Line73, Me.Line145, Me.Line198, Me.Line77, Me.Label221, Me.KAIJO_NAME2, Me.Label4, Me.Line56, Me.Line165, Me.Line166, Me.Line167, Me.Line170, Me.Line51, Me.Label236, Me.DANTAI_CODE, Me.Line171, Me.Line172, Me.Line174, Me.Line175, Me.Line176, Me.Label3, Me.DANTAI_CODE2, Me.Line177, Me.Line178, Me.Line7, Me.Line201, Me.Line60, Me.Line61, Me.Label234, Me.Line168, Me.Line135, Me.Line169, Me.Line79})
+Me.Detail.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.ANS_TAXI_MAISUU, Me.DR_YAKUWARI2, Me.Label240, Me.TITLE1, Me.TITLE2, Me.KINKYU_FLAG, Me.Label239, Me.WBS_ELEMENT2, Me.Label238, Me.WBS_ELEMENT1, Me.WBS_ELEMENT, Me.Label94, Me.Label237, Me.REQ_KOTSU_BIKO, Me.DR_CD, Me.TIME_STAMP_BYL, Me.TIME_STAMP_BYL1, Me.REQ_STATUS_TEHAI1, Me.ANS_TICKET_SEND_DAY, Me.REQ_MR_HOTEL_NOTE, Me.DR_NAME, Me.TAXI_PRT_NAME, Me.ANS_OTHER_FARE, Me.ANS_OTHER_CANCELLATION, Me.ANS_AIR_FARE, Me.ANS_AIR_CANCELLATION, Me.ANS_RAIL_FARE, Me.ANS_RAIL_CANCELLATION, Me.ANS_MR_HOTELHI, Me.ANS_MR_HOTELHI_TOZEI, Me.ANS_MR_KOTSUHI, Me.Label232, Me.Label235, Me.Label233, Me.Label230, Me.Label229, Me.Label228, Me.Label231, Me.Label93, Me.REQ_TAXI_NOTE, Me.MR_BU, Me.Label227, Me.Label226, Me.ANS_TICKET_SEND_DAY2, Me.Label225, Me.FROM_DATE1, Me.Label224, Me.TAXI_PRT_NAME2, Me.Label223, Me.FROM_DATE2, Me.Label222, Me.Label206, Me.KOUENKAI_NAME2, Me.REQ_O_TIME1_3, Me.DR_SHISETSU_NAME2, Me.Label184, Me.REQ_F_SEAT_3, Me.Label187, Me.REQ_F_TIME1_3, Me.REQ_F_AIRPORT1_3, Me.Label189, Me.Label155, Me.Label158, Me.Label160, Me.Label156, Me.Label175, Me.FUKURO1, Me.Label172, Me.Label185, Me.Label188, Me.Label186, Me.Label191, Me.Label194, Me.FUKURO3, Me.Label195, Me.Label198, Me.Label200, Me.REQ_O_SEAT_1, Me.Label162, Me.REQ_O_TIME1_1, Me.Label165, Me.REQ_O_AIRPORT1_1, Me.Label167, Me.Label163, Me.REQ_O_DATE_1, Me.REQ_O_TEHAI_1, Me.Label171, Me.Label168, Me.FUKURO2, Me.REQ_O_TIME2_3, Me.REQ_O_AIRPORT2_3, Me.Label216, Me.Label215, Me.Label214, Me.Label211, Me.Label208, Me.Line140, Me.Label201, Me.Label199, Me.Label190, Me.REQ_O_AIRPORT1_3, Me.REQ_F_AIRPORT2_3, Me.REQ_F_TIME2_3, Me.TO_DATE, Me.TAXI_PRT_NAME1, Me.Label220, Me.FROM_DATE, Me.Label219, Me.FUKURO4, Me.Line117, Me.Line116, Me.Line115, Me.Line114, Me.Line113, Me.Line112, Me.REQ_F_DATE_1, Me.REQ_F_KOTSUKIKAN_1, Me.REQ_F_IRAINAIYOU_1, Me.REQ_F_TEHAI_1, Me.Label174, Me.Label173, Me.Label159, Me.Label157, Me.Label154, Me.REQ_F_AIRPORT1_1, Me.REQ_F_AIRPORT2_1, Me.REQ_F_TIME1_1, Me.REQ_F_TIME2_1, Me.REQ_F_BIN_1, Me.REQ_F_SEAT_1, Me.REQ_F_SEAT_KIBOU1, Me.Label87, Me.Label91, Me.Label90, Me.Label89, Me.REQ_TAXI_DATE_10, Me.Label88, Me.REQ_TAXI_FROM_10, Me.TAXI_YOTEIKINGAKU_10, Me.Label86, Me.Label85, Me.REQ_TAXI_DATE_9, Me.Label84, Me.REQ_TAXI_FROM_9, Me.Label83, Me.TAXI_YOTEIKINGAKU_9, Me.Label82, Me.Label81, Me.REQ_TAXI_DATE_8, Me.Label80, Me.REQ_TAXI_FROM_8, Me.Label79, Me.TAXI_YOTEIKINGAKU_8, Me.Label78, Me.Label77, Me.REQ_TAXI_DATE_7, Me.Label76, Me.REQ_TAXI_FROM_7, Me.Label66, Me.TAXI_YOTEIKINGAKU_7, Me.Label65, Me.Label64, Me.REQ_TAXI_DATE_6, Me.Label63, Me.REQ_TAXI_FROM_6, Me.Label62, Me.TAXI_YOTEIKINGAKU_6, Me.Label61, Me.Label60, Me.REQ_TAXI_DATE_5, Me.Label59, Me.REQ_TAXI_FROM_5, Me.Label58, Me.TAXI_YOTEIKINGAKU_5, Me.Label57, Me.Label56, Me.REQ_TAXI_DATE_4, Me.Label54, Me.REQ_TAXI_FROM_4, Me.Label53, Me.TAXI_YOTEIKINGAKU_4, Me.Label52, Me.Label51, Me.REQ_TAXI_DATE_3, Me.Label50, Me.REQ_TAXI_FROM_3, Me.Label49, Me.TAXI_YOTEIKINGAKU_3, Me.Label48, Me.Label47, Me.REQ_TAXI_DATE_2, Me.Label46, Me.REQ_TAXI_FROM_2, Me.Label45, Me.TAXI_YOTEIKINGAKU_2, Me.Label44, Me.Label72, Me.REQ_TAXI_DATE_1, Me.Label73, Me.REQ_TAXI_FROM_1, Me.Label74, Me.TAXI_YOTEIKINGAKU_1, Me.Label75, Me.Label71, Me.TEHAI_TAXI, Me.ANS_HOTEL_NAME, Me.ANS_ROOM_TYPE, Me.ANS_HOTELHI, Me.ANS_HOTELHI_TOZEI, Me.ANS_HOTELHI_CANCEL, Me.Label70, Me.Label69, Me.Label35, Me.Label34, Me.Label32, Me.Label68, Me.Label67, Me.Label55, Me.REQ_MR_O_TEHAI, Me.REQ_MR_F_TEHAI, Me.MR_SEX, Me.MR_AGE, Me.MR_KANA, Me.Label13, Me.Label25, Me.Label20, Me.Label19, Me.Label21, Me.Label22, Me.Label23, Me.Label24, Me.Label26, Me.Label27, Me.Label28, Me.Label29, Me.Label30, Me.Label31, Me.Label33, Me.Label36, Me.Label37, Me.Label38, Me.Label39, Me.Label40, Me.Label41, Me.Label42, Me.Label43, Me.SHITEIGAI_RIYU, Me.MR_AREA, Me.MR_EIGYOSHO, Me.MR_NAME, Me.MR_ROMA, Me.MR_EMAIL_PC, Me.MR_EMAIL_KEITAI, Me.MR_KEITAI, Me.MR_TEL, Me.MR_SEND_SAKI_FS, Me.MR_SEND_SAKI_OTHER, Me.COST_CENTER, Me.SHONIN_NAME, Me.SHONIN_DATE, Me.TEHAI_HOTEL, Me.HOTEL_IRAINAIYOU, Me.REQ_HOTEL_DATE, Me.REQ_HAKUSU, Me.REQ_HOTEL_SMOKING, Me.REQ_HOTEL_NOTE, Me.Line1, Me.Line9, Me.Line10, Me.Line11, Me.Line12, Me.Line13, Me.Line14, Me.Line15, Me.Line16, Me.Line17, Me.Line23, Me.Line26, Me.Line28, Me.Line29, Me.Line30, Me.Line31, Me.Line32, Me.Line33, Me.Line37, Me.Line38, Me.Line2, Me.Line55, Me.Line18, Me.Line19, Me.Line20, Me.Line21, Me.Line22, Me.Line24, Me.Line25, Me.Line27, Me.Line34, Me.Line35, Me.Line39, Me.Line40, Me.Line41, Me.Line42, Me.Line43, Me.Line44, Me.Line45, Me.Line46, Me.Line47, Me.Line48, Me.Line49, Me.Line50, Me.Line53, Me.Line57, Me.Line58, Me.Line59, Me.Line66, Me.PageBreak1, Me.DR_SHISETSU_ADDRESS, Me.DR_SHISETSU_NAME, Me.Label5, Me.KOUENKAI_NAME, Me.Label6, Me.Label7, Me.Label8, Me.Label9, Me.Label10, Me.Label11, Me.Label12, Me.Label14, Me.Label15, Me.Label16, Me.Label17, Me.Label18, Me.KOUENKAI_NO, Me.REQ_STATUS_TEHAI, Me.SANKASHA_ID, Me.DR_NAME1, Me.DR_KANA, Me.DR_YAKUWARI, Me.DR_AGE, Me.Line3, Me.Line4, Me.Line5, Me.DR_SEX, Me.Line36, Me.Line62, Me.Line63, Me.Line64, Me.Line65, Me.Line6, Me.Shape2, Me.Label95, Me.REQ_F_SEAT_KIBOU5, Me.REQ_F_SEAT_5, Me.REQ_F_BIN_5, Me.REQ_F_TIME2_5, Me.REQ_F_TIME1_5, Me.REQ_F_AIRPORT2_5, Me.REQ_F_AIRPORT1_5, Me.REQ_F_DATE_5, Me.REQ_F_KOTSUKIKAN_5, Me.REQ_F_IRAINAIYOU_5, Me.REQ_F_TEHAI_5, Me.REQ_F_SEAT_KIBOU4, Me.REQ_F_SEAT_4, Me.REQ_F_BIN_4, Me.REQ_F_TIME2_4, Me.REQ_F_TIME1_4, Me.REQ_F_AIRPORT2_4, Me.REQ_F_AIRPORT1_4, Me.REQ_F_DATE_4, Me.REQ_F_KOTSUKIKAN_4, Me.REQ_F_IRAINAIYOU_4, Me.REQ_F_TEHAI_4, Me.REQ_O_SEAT_KIBOU5, Me.REQ_O_SEAT_5, Me.REQ_O_BIN_5, Me.REQ_O_TIME2_5, Me.REQ_O_TIME1_5, Me.REQ_O_AIRPORT2_5, Me.REQ_O_AIRPORT1_5, Me.REQ_O_DATE_5, Me.REQ_O_KOTSUKIKAN_5, Me.REQ_O_IRAINAIYOU_5, Me.REQ_O_TEHAI_5, Me.REQ_F_SEAT_KIBOU2, Me.REQ_F_SEAT_2, Me.REQ_F_BIN_2, Me.REQ_F_TIME2_2, Me.REQ_F_TIME1_2, Me.REQ_F_AIRPORT2_2, Me.REQ_F_AIRPORT1_2, Me.REQ_F_DATE_2, Me.REQ_F_KOTSUKIKAN_2, Me.REQ_F_IRAINAIYOU_2, Me.REQ_O_SEAT_KIBOU2, Me.REQ_O_SEAT_2, Me.REQ_O_BIN_2, Me.REQ_O_TIME2_2, Me.REQ_O_TIME1_2, Me.REQ_O_AIRPORT2_2, Me.REQ_O_AIRPORT1_2, Me.REQ_O_DATE_2, Me.REQ_O_KOTSUKIKAN_2, Me.REQ_O_IRAINAIYOU_2, Me.REQ_F_TEHAI_2, Me.REQ_O_TEHAI_2, Me.Label108, Me.Label107, Me.Label106, Me.Label105, Me.Label104, Me.Label103, Me.Label102, Me.Label101, Me.Label100, Me.Label99, Me.Label98, Me.FUKURO5, Me.Label96, Me.Label97, Me.Label109, Me.Label110, Me.Label111, Me.Label112, Me.Label113, Me.Label114, Me.Label115, Me.Label116, Me.Label117, Me.OURO5, Me.Label118, Me.Label119, Me.Label120, Me.Label121, Me.Label122, Me.Label123, Me.Label124, Me.Label125, Me.Label126, Me.Label127, Me.Label128, Me.Line71, Me.Label129, Me.Label130, Me.Label131, Me.Label132, Me.Label133, Me.Label134, Me.Label135, Me.Label136, Me.Label137, Me.Label138, Me.Label139, Me.OURO2, Me.REQ_O_SEAT_KIBOU4, Me.REQ_O_SEAT_4, Me.REQ_O_BIN_4, Me.REQ_O_TIME2_4, Me.REQ_O_TIME1_4, Me.REQ_O_AIRPORT2_4, Me.REQ_O_AIRPORT1_4, Me.REQ_O_SEAT_KIBOU1, Me.REQ_O_BIN_1, Me.REQ_O_TIME2_1, Me.REQ_O_AIRPORT2_1, Me.Label140, Me.Label141, Me.Label142, Me.Label143, Me.Label144, Me.Label145, Me.Label146, Me.Label147, Me.Label148, Me.Label149, Me.Label150, Me.Label151, Me.Label152, Me.Label153, Me.OURO4, Me.Line75, Me.Label161, Me.Label164, Me.Label166, Me.OURO1, Me.Label169, Me.Label170, Me.Label176, Me.Label177, Me.Label178, Me.Label179, Me.Label181, Me.Label182, Me.Label183, Me.REQ_O_IRAINAIYOU_1, Me.REQ_O_KOTSUKIKAN_1, Me.REQ_O_TEHAI_4, Me.REQ_O_IRAINAIYOU_4, Me.REQ_O_KOTSUKIKAN_4, Me.REQ_O_DATE_4, Me.Line76, Me.REQ_F_SEAT_KIBOU3, Me.REQ_F_BIN_3, Me.REQ_F_DATE_3, Me.REQ_F_KOTSUKIKAN_3, Me.REQ_F_IRAINAIYOU_3, Me.REQ_O_SEAT_KIBOU3, Me.REQ_O_SEAT_3, Me.REQ_O_BIN_3, Me.REQ_O_DATE_3, Me.REQ_O_KOTSUKIKAN_3, Me.REQ_O_IRAINAIYOU_3, Me.REQ_F_TEHAI_3, Me.REQ_O_TEHAI_3, Me.Label192, Me.Label193, Me.Label196, Me.Label197, Me.Label202, Me.Label203, Me.Label204, Me.Label205, Me.OURO3, Me.Line80, Me.Line87, Me.Line88, Me.Line89, Me.Line90, Me.Line91, Me.Line92, Me.Line93, Me.Line94, Me.Line95, Me.Line96, Me.Line101, Me.Line118, Me.Line119, Me.Line120, Me.Line121, Me.Line152, Me.Line173, Me.Line52, Me.DR_SHISETSU_ADDRESS2, Me.Label207, Me.Label209, Me.Label210, Me.Label212, Me.Label213, Me.Label217, Me.KOUENKAI_NO2, Me.REQ_STATUS_TEHAI2, Me.TIME_STAMP_BYL2, Me.SANKASHA_ID2, Me.DR_CD2, Me.DR_NAME2, Me.DR_KANA2, Me.DR_AGE2, Me.Line67, Me.Line192, Me.Line193, Me.Line194, Me.DR_SEX2, Me.Line195, Me.Line196, Me.Line199, Me.Line200, Me.Line68, Me.Line203, Me.Line70, Me.Line74, Me.Line81, Me.Line82, Me.Line97, Me.Line99, Me.Line100, Me.Line102, Me.Line103, Me.Line98, Me.Line105, Me.Line106, Me.Line107, Me.Line108, Me.Line109, Me.Line110, Me.Line111, Me.Line132, Me.Line133, Me.Line134, Me.Line137, Me.Line138, Me.Line139, Me.Line141, Me.Line153, Me.Line84, Me.Label180, Me.Line123, Me.Line124, Me.Line125, Me.Line126, Me.Line127, Me.Line122, Me.Line85, Me.Line86, Me.Line154, Me.Line155, Me.Line156, Me.Line83, Me.Line104, Me.Line72, Me.Line128, Me.Line129, Me.Line130, Me.Line131, Me.Line54, Me.Line142, Me.Line143, Me.Line144, Me.Line146, Me.Line147, Me.Line148, Me.Line149, Me.Line150, Me.Line151, Me.Line157, Me.Line158, Me.Line159, Me.Line160, Me.Line161, Me.Line162, Me.Line163, Me.Line164, Me.Line8, Me.Shape1, Me.Label218, Me.KAIJO_NAME, Me.Line136, Me.Line69, Me.Line73, Me.Line145, Me.Line198, Me.Line77, Me.Label221, Me.KAIJO_NAME2, Me.Label4, Me.Line56, Me.Line165, Me.Line166, Me.Line167, Me.Line170, Me.Line51, Me.Label236, Me.DANTAI_CODE, Me.Line171, Me.Line172, Me.Line174, Me.Line175, Me.Line176, Me.Label3, Me.DANTAI_CODE2, Me.Line177, Me.Line178, Me.Line7, Me.Line201, Me.Line60, Me.Line61, Me.Label234, Me.Line168, Me.Line135, Me.Line169, Me.Line79, Me.ANS_TAXI_TESURYO, Me.FROM_DATE3})
 Me.Detail.Height = 19.53426!
 Me.Detail.KeepTogether = true
 Me.Detail.Name = "Detail"
+'
+'ANS_TAXI_MAISUU
+'
+Me.ANS_TAXI_MAISUU.DataField = "REQ_TAXI_FROM_10"
+Me.ANS_TAXI_MAISUU.Height = 0.1999998!
+Me.ANS_TAXI_MAISUU.Left = 2.007874!
+Me.ANS_TAXI_MAISUU.Name = "ANS_TAXI_MAISUU"
+Me.ANS_TAXI_MAISUU.Style = "text-align: center"
+Me.ANS_TAXI_MAISUU.Text = Nothing
+Me.ANS_TAXI_MAISUU.Top = 9.302756!
+Me.ANS_TAXI_MAISUU.Width = 0.926378!
+'
+'DR_YAKUWARI2
+'
+Me.DR_YAKUWARI2.DataField = "DR_YAKUWARI"
+Me.DR_YAKUWARI2.Height = 0.1999998!
+Me.DR_YAKUWARI2.Left = 6.182284!
+Me.DR_YAKUWARI2.Name = "DR_YAKUWARI2"
+Me.DR_YAKUWARI2.Style = "text-align: left; vertical-align: middle"
+Me.DR_YAKUWARI2.Text = Nothing
+Me.DR_YAKUWARI2.Top = 11.49685!
+Me.DR_YAKUWARI2.Width = 0.979134!
+'
+'Label240
+'
+Me.Label240.Height = 0.2!
+Me.Label240.HyperLink = Nothing
+Me.Label240.Left = 5.485434!
+Me.Label240.Name = "Label240"
+Me.Label240.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
+    ": middle; white-space: nowrap"
+Me.Label240.Text = "役割"
+Me.Label240.Top = 11.49685!
+Me.Label240.Width = 0.6874018!
+'
+'TITLE2
+'
+Me.TITLE2.Height = 0.2!
+Me.TITLE2.HyperLink = Nothing
+Me.TITLE2.Left = 0!
+Me.TITLE2.Name = "TITLE2"
+Me.TITLE2.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center"
+Me.TITLE2.Text = "交通宿泊タクチケ手配依頼"
+Me.TITLE2.Top = 9.65591!
+Me.TITLE2.Width = 7.151965!
 '
 'KINKYU_FLAG
 '
@@ -1991,18 +2040,6 @@ Me.Label235.Style = "font-family: ＭＳ ゴシック; font-size: 9pt; vertical-
 Me.Label235.Text = "MR交通費(税込)"
 Me.Label235.Top = 19.06968!
 Me.Label235.Width = 1.926772!
-'
-'Label234
-'
-Me.Label234.Height = 0.2!
-Me.Label234.HyperLink = Nothing
-Me.Label234.Left = 1.192093E-07!
-Me.Label234.Name = "Label234"
-Me.Label234.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: mi"& _ 
-    "ddle; white-space: nowrap"
-Me.Label234.Text = "MR宿泊東京都税"
-Me.Label234.Top = 19.26969!
-Me.Label234.Width = 1.892126!
 '
 'Label233
 '
@@ -5359,17 +5396,6 @@ Me.Shape2.RoundingRadius = 9.999999!
 Me.Shape2.Top = 9.622841!
 Me.Shape2.Width = 7.151965!
 '
-'TITLE2
-'
-Me.TITLE2.Height = 0.2!
-Me.TITLE2.HyperLink = Nothing
-Me.TITLE2.Left = 0!
-Me.TITLE2.Name = "TITLE2"
-Me.TITLE2.Style = "font-family: ＭＳ ゴシック; font-size: 12pt; font-weight: bold; text-align: center"
-Me.TITLE2.Text = "交通宿泊タクチケ手配依頼"
-Me.TITLE2.Top = 9.65591!
-Me.TITLE2.Width = 7.151965!
-'
 'Label95
 '
 Me.Label95.Height = 0.2!
@@ -7916,19 +7942,6 @@ Me.Line200.X2 = 7.165353!
 Me.Line200.Y1 = 11.69685!
 Me.Line200.Y2 = 11.69685!
 '
-'Line79
-'
-Me.Line79.Height = 8.77284!
-Me.Line79.Left = 0!
-Me.Line79.LineWeight = 1!
-Me.Line79.Name = "Line79"
-Me.Line79.Top = 10.69685!
-Me.Line79.Width = 0!
-Me.Line79.X1 = 0!
-Me.Line79.X2 = 0!
-Me.Line79.Y1 = 10.69685!
-Me.Line79.Y2 = 19.46969!
-'
 'Line68
 '
 Me.Line68.Height = 8.428741!
@@ -8230,19 +8243,6 @@ Me.Line134.X1 = 1.892126!
 Me.Line134.X2 = 1.892126!
 Me.Line134.Y1 = 15.89685!
 Me.Line134.Y2 = 16.89685!
-'
-'Line135
-'
-Me.Line135.Height = 1.200001!
-Me.Line135.Left = 1.892126!
-Me.Line135.LineWeight = 1!
-Me.Line135.Name = "Line135"
-Me.Line135.Top = 18.26969!
-Me.Line135.Width = 0!
-Me.Line135.X1 = 1.892126!
-Me.Line135.X2 = 1.892126!
-Me.Line135.Y1 = 18.26969!
-Me.Line135.Y2 = 19.46969!
 '
 'Line137
 '
@@ -9011,32 +9011,6 @@ Me.Line167.X2 = 7.151969!
 Me.Line167.Y1 = 19.06968!
 Me.Line167.Y2 = 19.06968!
 '
-'Line168
-'
-Me.Line168.Height = 0!
-Me.Line168.Left = 1.192093E-07!
-Me.Line168.LineWeight = 1!
-Me.Line168.Name = "Line168"
-Me.Line168.Top = 19.26969!
-Me.Line168.Width = 7.151969!
-Me.Line168.X1 = 1.192093E-07!
-Me.Line168.X2 = 7.151969!
-Me.Line168.Y1 = 19.26969!
-Me.Line168.Y2 = 19.26969!
-'
-'Line169
-'
-Me.Line169.Height = 0!
-Me.Line169.Left = 1.421085E-14!
-Me.Line169.LineWeight = 1!
-Me.Line169.Name = "Line169"
-Me.Line169.Top = 19.46969!
-Me.Line169.Width = 7.161417!
-Me.Line169.X1 = 1.421085E-14!
-Me.Line169.X2 = 7.161417!
-Me.Line169.Y1 = 19.46969!
-Me.Line169.Y2 = 19.46969!
-'
 'Line170
 '
 Me.Line170.Height = 0!
@@ -9228,6 +9202,70 @@ Me.Line61.X2 = 7.151965!
 Me.Line61.Y1 = 14.89685!
 Me.Line61.Y2 = 14.89685!
 '
+'Label234
+'
+Me.Label234.Height = 0.2!
+Me.Label234.HyperLink = Nothing
+Me.Label234.Left = 1.192093E-07!
+Me.Label234.Name = "Label234"
+Me.Label234.Style = "background-color: White; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align: mi"& _ 
+    "ddle; white-space: nowrap"
+Me.Label234.Text = "MR宿泊東京都税"
+Me.Label234.Top = 19.26969!
+Me.Label234.Width = 1.892126!
+'
+'Line168
+'
+Me.Line168.Height = 0!
+Me.Line168.Left = 1.192093E-07!
+Me.Line168.LineWeight = 1!
+Me.Line168.Name = "Line168"
+Me.Line168.Top = 19.26969!
+Me.Line168.Width = 7.151969!
+Me.Line168.X1 = 1.192093E-07!
+Me.Line168.X2 = 7.151969!
+Me.Line168.Y1 = 19.26969!
+Me.Line168.Y2 = 19.26969!
+'
+'Line135
+'
+Me.Line135.Height = 1.200001!
+Me.Line135.Left = 1.892126!
+Me.Line135.LineWeight = 1!
+Me.Line135.Name = "Line135"
+Me.Line135.Top = 18.26969!
+Me.Line135.Width = 0!
+Me.Line135.X1 = 1.892126!
+Me.Line135.X2 = 1.892126!
+Me.Line135.Y1 = 18.26969!
+Me.Line135.Y2 = 19.46969!
+'
+'Line169
+'
+Me.Line169.Height = 0!
+Me.Line169.Left = 1.421085E-14!
+Me.Line169.LineWeight = 1!
+Me.Line169.Name = "Line169"
+Me.Line169.Top = 19.46969!
+Me.Line169.Width = 7.161417!
+Me.Line169.X1 = 1.421085E-14!
+Me.Line169.X2 = 7.161417!
+Me.Line169.Y1 = 19.46969!
+Me.Line169.Y2 = 19.46969!
+'
+'Line79
+'
+Me.Line79.Height = 8.77284!
+Me.Line79.Left = 0!
+Me.Line79.LineWeight = 1!
+Me.Line79.Name = "Line79"
+Me.Line79.Top = 10.69685!
+Me.Line79.Width = 0!
+Me.Line79.X1 = 0!
+Me.Line79.X2 = 0!
+Me.Line79.Y1 = 10.69685!
+Me.Line79.Y2 = 19.46969!
+'
 'PageFooter
 '
 Me.PageFooter.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.Label1, Me.PRINT_USER, Me.Label2, Me.PRINT_DATE})
@@ -9276,39 +9314,29 @@ Me.PRINT_DATE.Text = "1234/56/78 12:34:56"
 Me.PRINT_DATE.Top = 0!
 Me.PRINT_DATE.Width = 1.364567!
 '
-'Label240
+'ANS_TAXI_TESURYO
 '
-Me.Label240.Height = 0.2!
-Me.Label240.HyperLink = Nothing
-Me.Label240.Left = 5.485434!
-Me.Label240.Name = "Label240"
-Me.Label240.Style = "background-color: LightGrey; font-family: ＭＳ ゴシック; font-size: 9pt; vertical-align"& _ 
-    ": middle; white-space: nowrap"
-Me.Label240.Text = "役割"
-Me.Label240.Top = 11.49685!
-Me.Label240.Width = 0.6874018!
+Me.ANS_TAXI_TESURYO.DataField = "ANS_TAXI_TESURYO"
+Me.ANS_TAXI_TESURYO.Height = 0.1999998!
+Me.ANS_TAXI_TESURYO.Left = 3.329134!
+Me.ANS_TAXI_TESURYO.Name = "ANS_TAXI_TESURYO"
+Me.ANS_TAXI_TESURYO.Style = "text-align: center"
+Me.ANS_TAXI_TESURYO.Text = Nothing
+Me.ANS_TAXI_TESURYO.Top = 9.302756!
+Me.ANS_TAXI_TESURYO.Visible = false
+Me.ANS_TAXI_TESURYO.Width = 0.2614174!
 '
-'DR_YAKUWARI2
+'FROM_DATE3
 '
-Me.DR_YAKUWARI2.DataField = "DR_YAKUWARI"
-Me.DR_YAKUWARI2.Height = 0.1999998!
-Me.DR_YAKUWARI2.Left = 6.182284!
-Me.DR_YAKUWARI2.Name = "DR_YAKUWARI2"
-Me.DR_YAKUWARI2.Style = "text-align: left; vertical-align: middle"
-Me.DR_YAKUWARI2.Text = Nothing
-Me.DR_YAKUWARI2.Top = 11.49685!
-Me.DR_YAKUWARI2.Width = 0.979134!
-'
-'ANS_TAXI_MAISUU
-'
-Me.ANS_TAXI_MAISUU.DataField = "REQ_TAXI_FROM_10"
-Me.ANS_TAXI_MAISUU.Height = 0.1999998!
-Me.ANS_TAXI_MAISUU.Left = 2.007874!
-Me.ANS_TAXI_MAISUU.Name = "ANS_TAXI_MAISUU"
-Me.ANS_TAXI_MAISUU.Style = "text-align: center"
-Me.ANS_TAXI_MAISUU.Text = Nothing
-Me.ANS_TAXI_MAISUU.Top = 9.302756!
-Me.ANS_TAXI_MAISUU.Width = 0.926378!
+Me.FROM_DATE3.DataField = "FROM_DATE"
+Me.FROM_DATE3.Height = 0.1999998!
+Me.FROM_DATE3.Left = 3.663386!
+Me.FROM_DATE3.Name = "FROM_DATE3"
+Me.FROM_DATE3.Style = "text-align: center"
+Me.FROM_DATE3.Text = Nothing
+Me.FROM_DATE3.Top = 9.302756!
+Me.FROM_DATE3.Visible = false
+Me.FROM_DATE3.Width = 0.2468507!
 '
 'DrReport
 '
@@ -9353,6 +9381,10 @@ CType(Me.DR_AGE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DR_SEX,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TITLE1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.ANS_TAXI_MAISUU,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DR_YAKUWARI2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label240,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.TITLE2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.KINKYU_FLAG,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label239,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.WBS_ELEMENT2,System.ComponentModel.ISupportInitialize).EndInit
@@ -9379,7 +9411,6 @@ CType(Me.ANS_MR_HOTELHI_TOZEI,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.ANS_MR_KOTSUHI,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label232,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label235,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label234,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label233,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label230,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label229,System.ComponentModel.ISupportInitialize).EndInit
@@ -9606,7 +9637,6 @@ CType(Me.REQ_HOTEL_DATE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_HAKUSU,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_HOTEL_SMOKING,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_HOTEL_NOTE,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.TITLE2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label95,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_KIBOU5,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.REQ_F_SEAT_5,System.ComponentModel.ISupportInitialize).EndInit
@@ -9802,13 +9832,13 @@ CType(Me.Label236,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DANTAI_CODE,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DANTAI_CODE2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.Label234,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.PRINT_USER,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.Label2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.PRINT_DATE,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.Label240,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.DR_YAKUWARI2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.ANS_TAXI_MAISUU,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.ANS_TAXI_TESURYO,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.FROM_DATE3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me,System.ComponentModel.ISupportInitialize).EndInit
 
 End Sub
@@ -10488,4 +10518,6 @@ End Sub
     Private WithEvents Label240 As DataDynamics.ActiveReports.Label
     Private WithEvents DR_YAKUWARI2 As DataDynamics.ActiveReports.TextBox
     Private WithEvents ANS_TAXI_MAISUU As DataDynamics.ActiveReports.TextBox
+    Private WithEvents ANS_TAXI_TESURYO As DataDynamics.ActiveReports.TextBox
+    Private WithEvents FROM_DATE3 As DataDynamics.ActiveReports.TextBox
 End Class
