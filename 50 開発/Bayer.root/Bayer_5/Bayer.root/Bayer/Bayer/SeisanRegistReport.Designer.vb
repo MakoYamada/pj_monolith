@@ -1771,7 +1771,8 @@ Partial Public Class SeisanRegistReport
         Me.TAXI_TICKET_URL.Height = 0.4251957!
         Me.TAXI_TICKET_URL.Left = 1.979921!
         Me.TAXI_TICKET_URL.Name = "TAXI_TICKET_URL"
-        Me.TAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; font-size: 8pt; text-align: left; white-space: inherit"
+        Me.TAXI_TICKET_URL.Style = "font-family: ＭＳ ゴシック; font-size: 8pt; text-align: left; white-space: inherit; ddo" & _
+            "-char-set: 1"
         Me.TAXI_TICKET_URL.Text = Nothing
         Me.TAXI_TICKET_URL.Top = 7.740947!
         Me.TAXI_TICKET_URL.Width = 5.570473!

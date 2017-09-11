@@ -463,7 +463,7 @@ Partial Public Class TaxiJisseki
     Private Sub SetItem(ByVal filedata() As String)
         Dim wDate As Date = filedata(COL_NO.USED_DATE)
         TBL_TAXITICKET_HAKKO.TKT_USED_DATE = CmnModule.Format_DateToString(wDate, CmnModule.DateFormatType.YYYYMMDD)
-        TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.URIAGE)
+        TBL_TAXITICKET_HAKKO.TKT_URIAGE = filedata(COL_NO.URIAGE).Replace(",", "")
         TBL_TAXITICKET_HAKKO.TKT_HAKKO_FEE = HAKKO_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_SEISAN_FEE = SEISAN_TESURYO
         TBL_TAXITICKET_HAKKO.TKT_ENTA = String.Empty
