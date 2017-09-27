@@ -512,6 +512,10 @@ Partial Public Class TaxiDaichoDLUL
                     TBL_TAXIDAICHO = SetDaichoItem(fileData)
                     'タクチケ台帳出力対象データ存在チェック
                     If GetDaichoData(fileData(COL_NO.KOUENKAI_NO)) Then
+                        TBL_TAXIDAICHO.FROM_DATE = ""
+                        TBL_TAXIDAICHO.FILE_NAME = ""
+                        TBL_TAXIDAICHO.OUTPUT_FLAG = CmnConst.Flag.Off
+                        TBL_TAXIDAICHO.UPDATE_USER = Session.Item(SessionDef.LoginID)
                         updCnt = UpdateTaxiDaicho(ErrorMessage)
                     Else
                         'タクチケ台帳出力対象登録件数チェック
